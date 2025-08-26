@@ -34,19 +34,24 @@ export default function HeroContent() {
             <span className="font-light">Coding Power</span>
           </motion.h1>
 
-          {/* Description */}
-          <motion.p
+          {/* Description - Split into multiple lines for better readability */}
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg text-white/50 mb-10 max-w-3xl mx-auto leading-relaxed"
+            className="space-y-3 mb-10 max-w-3xl mx-auto"
           >
-            Command <span className="text-white/80 font-medium">6 parallel Claude Code instances</span> like a maestro conducting a symphony. 
-            Each agent works in perfect synchronization through our <span className="text-white/80 font-medium">quantum task orchestration</span>, 
-            powered by real-time notifications, advanced MCP integrations, and an AI-driven Kanban that thinks ahead. 
-            Transform 8-hour projects into <span className="text-white/80 font-medium">30-minute victories</span>. 
-            This isn't just faster coding—it's coding at the speed of thought.
-          </motion.p>
+            <p className="text-xl text-white/80 font-medium">
+              6 parallel Claude Code instances. One command center.
+            </p>
+            <p className="text-lg text-white/50 leading-relaxed">
+              Orchestrate multiple AI agents with <span className="text-white/70">real-time notifications</span>, 
+              {" "}<span className="text-white/70">MCP integrations</span>, and an <span className="text-white/70">intelligent Kanban</span> that anticipates your needs.
+            </p>
+            <p className="text-2xl text-white/90 font-light italic mt-4">
+              Transform 8-hour marathons into 30-minute sprints.
+            </p>
+          </motion.div>
 
           {/* CTA Buttons */}
           <motion.div
