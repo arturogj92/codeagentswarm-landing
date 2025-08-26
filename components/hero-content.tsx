@@ -41,10 +41,11 @@ export default function HeroContent() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg text-white/50 mb-10 max-w-3xl mx-auto leading-relaxed"
           >
-            Unleash the power of <span className="text-white/80 font-medium">6 Claude Code instances</span> working simultaneously. 
-            Revolutionary task orchestration, real-time notifications, MCP integrations, and an intelligent Kanban system 
-            that transforms chaos into pure productivity. Watch your development speed <span className="text-white/80 font-medium">multiply exponentially</span> while 
-            your code quality soars.
+            Command <span className="text-white/80 font-medium">6 parallel Claude Code instances</span> like a maestro conducting a symphony. 
+            Each agent works in perfect synchronization through our <span className="text-white/80 font-medium">quantum task orchestration</span>, 
+            powered by real-time notifications, advanced MCP integrations, and an AI-driven Kanban that thinks ahead. 
+            Transform 8-hour projects into <span className="text-white/80 font-medium">30-minute victories</span>. 
+            This isn't just faster coding—it's coding at the speed of thought.
           </motion.p>
 
           {/* CTA Buttons */}
