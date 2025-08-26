@@ -12,7 +12,7 @@ export default function Header() {
             className="w-12 h-12 drop-shadow-lg"
           />
           <span className="text-white font-bold text-xl tracking-wider font-[var(--font-orbitron)]">
-            CodeAgentSwarm
+            CODEAGENTSWARM
           </span>
         </div>
 

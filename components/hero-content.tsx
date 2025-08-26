@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Sparkles } from "lucide-react"
+import { Sparkles, Bell, Layout } from "lucide-react"
 import VideoShowcase from "./video-showcase"
 
 export default function HeroContent() {
@@ -57,12 +57,27 @@ export default function HeroContent() {
                 <div className="text-sm text-white/50">MCP Integrations</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-white/90 mb-1">24/7</div>
+                <div className="relative inline-block">
+                  <motion.div
+                    animate={{ 
+                      scale: [1, 1.2, 1],
+                    }}
+                    transition={{ 
+                      duration: 2,
+                      repeat: Infinity,
+                      repeatType: "loop"
+                    }}
+                    className="absolute -top-1 -right-1"
+                  >
+                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                  </motion.div>
+                  <Bell className="w-8 h-8 text-white/90 mb-1" />
+                </div>
                 <div className="text-sm text-white/50">Live Notifications</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-white/90 mb-1">16x</div>
-                <div className="text-sm text-white/50">Faster Delivery</div>
+                <Layout className="w-8 h-8 text-white/90 mb-1 mx-auto" />
+                <div className="text-sm text-white/50">Smart Kanban</div>
               </div>
             </div>
             
