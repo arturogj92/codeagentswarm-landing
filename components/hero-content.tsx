@@ -34,22 +34,41 @@ export default function HeroContent() {
             <span className="font-light">Coding Power</span>
           </motion.h1>
 
-          {/* Description - Split into multiple lines for better readability */}
+          {/* Description - Clean bullet points */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-3 mb-10 max-w-3xl mx-auto"
+            className="mb-10 max-w-4xl mx-auto"
           >
-            <p className="text-xl text-white/80 font-medium">
+            {/* Main value prop */}
+            <p className="text-xl text-white/90 font-medium mb-6">
               6 parallel Claude Code instances. One command center.
             </p>
-            <p className="text-lg text-white/50 leading-relaxed">
-              Orchestrate multiple AI agents with <span className="text-white/70">real-time notifications</span>, 
-              {" "}<span className="text-white/70">MCP integrations</span>, and an <span className="text-white/70">intelligent Kanban</span> that anticipates your needs.
-            </p>
-            <p className="text-2xl text-white/90 font-light italic mt-4">
-              Transform 8-hour marathons into 30-minute sprints.
+            
+            {/* Feature grid */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-white/90 mb-1">6x</div>
+                <div className="text-sm text-white/50">AI Agents</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-white/90 mb-1">∞</div>
+                <div className="text-sm text-white/50">MCP Integrations</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-white/90 mb-1">24/7</div>
+                <div className="text-sm text-white/50">Live Notifications</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-white/90 mb-1">16x</div>
+                <div className="text-sm text-white/50">Faster Delivery</div>
+              </div>
+            </div>
+            
+            {/* Power statement */}
+            <p className="text-lg text-white/70 italic text-center">
+              Transform 8-hour marathons into 30-minute sprints
             </p>
           </motion.div>
 
