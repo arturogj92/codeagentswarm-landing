@@ -1,0 +1,53 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Hexagon Pattern -->
+  <g transform="translate(100, 100)">
+    <!-- Center Hexagon -->
+    <path d="M -30 -52 L 30 -52 L 60 0 L 30 52 L -30 52 L -60 0 Z" 
+          fill="#fbbf24" stroke="#d97706" stroke-width="3"/>
+    
+    <!-- Top Hexagon -->
+    <path d="M -20 -85 L 20 -85 L 40 -60 L 20 -35 L -20 -35 L -40 -60 Z" 
+          fill="#fbbf24" stroke="#d97706" stroke-width="2" opacity="0.9"/>
+    
+    <!-- Top Right Hexagon -->
+    <path d="M 35 -42 L 75 -42 L 95 -17 L 75 8 L 35 8 L 15 -17 Z" 
+          fill="#fbbf24" stroke="#d97706" stroke-width="2" opacity="0.9"/>
+    
+    <!-- Bottom Right Hexagon -->
+    <path d="M 35 42 L 75 42 L 95 67 L 75 92 L 35 92 L 15 67 Z" 
+          fill="#fbbf24" stroke="#d97706" stroke-width="2" opacity="0.9"/>
+    
+    <!-- Bottom Hexagon -->
+    <path d="M -20 85 L 20 85 L 40 60 L 20 35 L -20 35 L -40 60 Z" 
+          fill="#fbbf24" stroke="#d97706" stroke-width="2" opacity="0.9"/>
+    
+    <!-- Bottom Left Hexagon -->
+    <path d="M -75 42 L -35 42 L -15 67 L -35 92 L -75 92 L -95 67 Z" 
+          fill="#fbbf24" stroke="#d97706" stroke-width="2" opacity="0.9"/>
+    
+    <!-- Top Left Hexagon -->
+    <path d="M -75 -42 L -35 -42 L -15 -17 L -35 8 L -75 8 L -95 -17 Z" 
+          fill="#fbbf24" stroke="#d97706" stroke-width="2" opacity="0.9"/>
+    
+    <!-- Robot Face -->
+    <g transform="translate(0, -5)">
+      <!-- Head -->
+      <rect x="-25" y="-15" width="50" height="35" rx="8" fill="#fbbf24" stroke="#92400e" stroke-width="2"/>
+      
+      <!-- Antenna -->
+      <line x1="0" y1="-15" x2="0" y2="-25" stroke="#92400e" stroke-width="2"/>
+      <circle cx="0" cy="-27" r="3" fill="#92400e"/>
+      
+      <!-- Eyes -->
+      <circle cx="-10" cy="0" r="4" fill="#1f2937"/>
+      <circle cx="10" cy="0" r="4" fill="#1f2937"/>
+      
+      <!-- Mouth -->
+      <rect x="-12" y="10" width="24" height="3" rx="1" fill="#1f2937"/>
+      
+      <!-- Ears -->
+      <rect x="-28" y="-2" width="5" height="10" rx="2" fill="#d97706"/>
+      <rect x="23" y="-2" width="5" height="10" rx="2" fill="#d97706"/>
+    </g>
+  </g>
+</svg>
