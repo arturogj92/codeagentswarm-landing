@@ -30,6 +30,12 @@ export default function Header() {
           >
             Demo
           </a>
+          <a
+            href="#pricing"
+            className="text-sm text-white/70 hover:text-white transition-colors duration-200"
+          >
+            Pricing
+          </a>
         </nav>
 
         {/* Download Button */}

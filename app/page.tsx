@@ -4,6 +4,7 @@ import Header from "@/components/header"
 import HeroContent from "@/components/hero-content"
 import FeaturesSection from "@/components/features-section"
 import DemoSection from "@/components/demo-section"
+import PricingSection from "@/components/pricing-section"
 import CTASection from "@/components/cta-section"
 import Footer from "@/components/footer"
 import PulsingCircle from "@/components/pulsing-circle"
@@ -20,6 +21,7 @@ export default function Home() {
         {/* Content Sections */}
         <FeaturesSection />
         <DemoSection />
+        <PricingSection />
         <CTASection />
         <Footer />
       </ShaderBackground>
