@@ -15,7 +15,7 @@ export default function ShaderBackground({ children }: ShaderBackgroundProps) {
 
   const [speed, setSpeed] = useState(0.4)
   const [overlayOpacity, setOverlayOpacity] = useState(0.5)
-  const [colors, setColors] = useState(["#0a0a0a", "#6366f1", "#fbbf24", "#ec4899", "#06b6d4"])
+  const [colors, setColors] = useState(["#050505", "#4338ca", "#ca8a04", "#be185d", "#0891b2"])
 
   const handleSpeedChange = (newSpeed: number) => {
     setSpeed(newSpeed)
@@ -100,7 +100,7 @@ export default function ShaderBackground({ children }: ShaderBackgroundProps) {
         <MeshGradient
           className="absolute inset-0 w-full h-full"
           style={{ opacity: overlayOpacity }}
-          colors={["#000000", "#ffffff", "#8b5cf6", "#000000"]}
+          colors={["#000000", "#1a1a1a", "#6b46c1", "#000000"]}
           speed={speed * 0.67} // Made second layer speed relative to main speed
         />
       </div>

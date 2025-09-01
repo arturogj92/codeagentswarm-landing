@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Play, Download, ExternalLink } from "lucide-react"
+import { Play, Download } from "lucide-react"
 
 export default function DemoSection() {
   return (
@@ -35,60 +35,43 @@ export default function DemoSection() {
           {/* Video Wrapper */}
           <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-1">
             <div className="rounded-xl overflow-hidden bg-black/50 backdrop-blur-sm">
-              {/* Placeholder for demo video - replace with actual video */}
-              <div className="aspect-video flex items-center justify-center bg-gradient-to-br from-gray-900 to-gray-800 relative group cursor-pointer">
-                {/* Play Button */}
-                <motion.div
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-20 h-20 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/20 group-hover:bg-white/20 transition-all duration-300"
+              {/* Demo Video */}
+              <div className="aspect-video relative bg-gradient-to-br from-gray-900 to-gray-800">
+                <video
+                  className="w-full h-full object-cover"
+                  src="/demo-video.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  controls
+                  preload="auto"
                 >
-                  <Play className="w-8 h-8 text-white ml-1" fill="white" />
-                </motion.div>
-
-                {/* Video Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                  <source src="/demo-video.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
                 
-                {/* Demo Screenshot Placeholder */}
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-gray-900/80 to-pink-900/20 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-32 h-32 mx-auto mb-4 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
-                      <svg className="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 2L2 7L12 12L22 7L12 2ZM2 17L12 22L22 17M2 12L12 17L22 12" stroke="currentColor" strokeWidth="1" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                    </div>
-                    <p className="text-white/60 text-sm">Demo Video Coming Soon</p>
-                  </div>
-                </div>
+                {/* Video Overlay Gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
               </div>
             </div>
           </div>
 
           {/* Floating Action Cards */}
           <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 flex gap-4 z-10">
-            <motion.button
+            <motion.a
+              href="#download"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
               whileHover={{ y: -2 }}
-              className="px-6 py-3 bg-white text-black text-sm font-medium rounded-full hover:bg-white/90 transition-all duration-200 shadow-lg"
             >
-              <Download className="w-4 h-4 inline mr-2" />
-              Download Now
-            </motion.button>
-            
-            <motion.button
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -2 }}
-              className="px-6 py-3 bg-white/10 backdrop-blur-sm text-white text-sm font-medium rounded-full border border-white/20 hover:bg-white/20 transition-all duration-200 shadow-lg"
-            >
-              <ExternalLink className="w-4 h-4 inline mr-2" />
-              View on GitHub
-            </motion.button>
+              <button className="px-6 py-3 bg-white text-black text-sm font-medium rounded-full hover:bg-white/90 transition-all duration-200 shadow-lg">
+                <Download className="w-4 h-4 inline mr-2" />
+                Download Now
+              </button>
+            </motion.a>
           </div>
         </motion.div>
 

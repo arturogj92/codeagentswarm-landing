@@ -6,7 +6,7 @@
 
 ## Project Configuration
 
-**Project Name**: CodeAgentSwarm-Landing
+**Project Name**: codeagentswarm-landing
 
 _This project name is used for task organization in CodeAgentSwarm. All tasks created in this directory will be associated with this project._
 

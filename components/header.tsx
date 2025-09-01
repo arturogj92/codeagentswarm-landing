@@ -30,24 +30,14 @@ export default function Header() {
           >
             Demo
           </a>
-          <a
-            href="#docs"
-            className="text-sm text-white/70 hover:text-white transition-colors duration-200"
-          >
-            Docs
-          </a>
-          <a
-            href="https://github.com/art0xdev/codeagentswarm"
-            className="text-sm text-white/70 hover:text-white transition-colors duration-200"
-          >
-            GitHub
-          </a>
         </nav>
 
         {/* Download Button */}
-        <button className="px-5 py-2 bg-white text-black text-sm font-medium rounded-full hover:bg-white/90 transition-colors duration-200">
-          Download
-        </button>
+        <a href="#download">
+          <button className="px-5 py-2 bg-white text-black text-sm font-medium rounded-full hover:bg-white/90 transition-colors duration-200">
+            Download
+          </button>
+        </a>
       </div>
     </header>
   )

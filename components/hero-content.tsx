@@ -3,7 +3,6 @@
 import { motion } from "framer-motion"
 import { Sparkles, Bell, Layout } from "lucide-react"
 import VideoShowcase from "./video-showcase"
-import Link from "next/link"
 
 export default function HeroContent() {
   return (
@@ -98,11 +97,11 @@ export default function HeroContent() {
             <button className="px-8 py-4 bg-white/[0.08] backdrop-blur-sm text-white text-base font-normal rounded-full border border-white/[0.08] hover:bg-white/[0.12] transition-colors duration-200">
               View Demo
             </button>
-            <Link href="/downloads">
+            <a href="#download">
               <button className="px-8 py-4 bg-white text-black text-base font-medium rounded-full hover:bg-white/90 transition-colors duration-200">
                 Download Now
               </button>
-            </Link>
+            </a>
           </motion.div>
         </div>
 
