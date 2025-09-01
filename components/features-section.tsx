@@ -4,7 +4,19 @@ import { motion } from "framer-motion"
 import { useRef } from "react"
 import { Layout, Shield, Package, GitBranch, Bell, Sparkles, Terminal } from "lucide-react"
 
-const features = [
+interface Feature {
+  id: number
+  icon: any
+  title: string
+  description: string
+  size: "large" | "medium"
+  gradient: string
+  pattern: string
+  rotation: number
+  isNew?: boolean
+}
+
+const features: Feature[] = [
   {
     id: 1,
     icon: Layout,
@@ -73,7 +85,8 @@ const features = [
     size: "medium",
     gradient: "from-indigo-500 via-blue-600 to-purple-700",
     pattern: "▌▐▌",
-    rotation: -0.5
+    rotation: -0.5,
+    isNew: true
   }
 ]
 
@@ -150,7 +163,7 @@ export default function FeaturesSection() {
         </motion.div>
 
         {/* Bento Box Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[280px]" ref={containerRef}>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[280px] relative z-0" ref={containerRef}>
           {features.map((feature, index) => (
             <motion.div
               key={feature.id}
@@ -164,13 +177,15 @@ export default function FeaturesSection() {
               transition={{ duration: 0.6, delay: index * 0.08 }}
               viewport={{ once: true }}
               className={`
-                group relative overflow-hidden rounded-3xl
+                group relative rounded-3xl
                 ${feature.size === 'large' ? 'lg:col-span-2 lg:row-span-1' : 'col-span-1'}
                 cursor-pointer
               `}
               style={{
                 background: `linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%)`,
                 backdropFilter: 'blur(20px)',
+                overflow: feature.isNew ? 'visible' : 'hidden',
+                zIndex: feature.isNew ? 10 : 1,
               }}
             >
               {/* Animated Gradient Background */}
@@ -258,6 +273,32 @@ export default function FeaturesSection() {
               <div className="absolute top-0 left-0 w-20 h-20 overflow-hidden">
                 <div className="absolute -top-10 -left-10 w-20 h-20 bg-gradient-to-br from-white/[0.03] to-transparent rotate-45" />
               </div>
+
+              {/* NEW Badge */}
+              {feature.isNew && (
+                <motion.div 
+                  className="absolute -bottom-4 left-1/2 transform -translate-x-1/2"
+                  style={{ zIndex: 9999 }}
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ 
+                    delay: 0.8 + index * 0.08,
+                    type: "spring",
+                    stiffness: 300,
+                    damping: 15
+                  }}
+                >
+                  <span 
+                    className="feature-badge block
+                      bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 
+                      text-white text-xs font-bold px-3 py-1 rounded-full
+                      shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40
+                      hover:scale-110 transition-all duration-200"
+                  >
+                    NEW!
+                  </span>
+                </motion.div>
+              )}
             </motion.div>
           ))}
         </div>

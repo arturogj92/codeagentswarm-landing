@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Download, Github, ArrowRight } from "lucide-react"
+import Link from "next/link"
 
 export default function CTASection() {
   return (
@@ -26,25 +27,29 @@ export default function CTASection() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <motion.button
-              whileHover={{ y: -2 }}
-              whileTap={{ scale: 0.98 }}
-              className="group px-8 py-4 bg-white text-black text-base font-medium rounded-full hover:bg-white/90 transition-all duration-200 shadow-lg"
-            >
-              <Download className="w-5 h-5 inline mr-3" />
-              Download for macOS
-              <ArrowRight className="w-4 h-4 inline ml-2 group-hover:translate-x-1 transition-transform" />
-            </motion.button>
+            <Link href="/downloads">
+              <motion.button
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                className="group px-8 py-4 bg-white text-black text-base font-medium rounded-full hover:bg-white/90 transition-all duration-200 shadow-lg"
+              >
+                <Download className="w-5 h-5 inline mr-3" />
+                Download for macOS
+                <ArrowRight className="w-4 h-4 inline ml-2 group-hover:translate-x-1 transition-transform" />
+              </motion.button>
+            </Link>
             
-            <motion.button
-              whileHover={{ y: -2 }}
-              whileTap={{ scale: 0.98 }}
-              className="group px-8 py-4 bg-white/10 backdrop-blur-sm text-white text-base font-medium rounded-full border border-white/20 hover:bg-white/20 transition-all duration-200 shadow-lg"
-            >
-              <Github className="w-5 h-5 inline mr-3" />
-              View Source Code
-              <ArrowRight className="w-4 h-4 inline ml-2 group-hover:translate-x-1 transition-transform" />
-            </motion.button>
+            <a href="https://github.com/yourusername/codeagentswarm" target="_blank" rel="noopener noreferrer">
+              <motion.button
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                className="group px-8 py-4 bg-white/10 backdrop-blur-sm text-white text-base font-medium rounded-full border border-white/20 hover:bg-white/20 transition-all duration-200 shadow-lg"
+              >
+                <Github className="w-5 h-5 inline mr-3" />
+                View Source Code
+                <ArrowRight className="w-4 h-4 inline ml-2 group-hover:translate-x-1 transition-transform" />
+              </motion.button>
+            </a>
           </div>
         </motion.div>
 
