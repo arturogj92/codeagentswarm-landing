@@ -38,25 +38,7 @@ export default function CTASection() {
         }
       }
     } catch (err) {
-      // Silent fail - use static fallback data instead
-      // This handles CORS errors and backend unavailability
-      const fallbackRelease: Release = {
-        version: '1.0.24',
-        releaseDate: '2025-01-02',
-        formattedDownloads: {
-          macArm: {
-            fileName: 'CodeAgentSwarm-1.0.24-arm64.dmg',
-            fileUrl: 'https://github.com/art0xdev/codeagentswarm/releases/download/v1.0.24/CodeAgentSwarm-1.0.24-arm64.dmg',
-            fileSize: 150 * 1024 * 1024 // Aproximación de 150MB
-          },
-          macIntel: {
-            fileName: 'CodeAgentSwarm-1.0.24-x64.dmg',
-            fileUrl: 'https://github.com/art0xdev/codeagentswarm/releases/download/v1.0.24/CodeAgentSwarm-1.0.24-x64.dmg',
-            fileSize: 150 * 1024 * 1024 // Aproximación de 150MB
-          }
-        }
-      };
-      setLatestRelease(fallbackRelease);
+      console.error('Error fetching release:', err);
     } finally {
       setLoading(false);
     }
@@ -69,9 +51,7 @@ export default function CTASection() {
   };
 
   const getDirectDownloadUrl = (version: string, arch: string) => {
-    // Use GitHub releases directly to avoid CORS issues
-    const archSuffix = arch === 'arm64' ? 'arm64' : 'x64';
-    return `https://github.com/art0xdev/codeagentswarm/releases/download/v${version}/CodeAgentSwarm-${version}-${archSuffix}.dmg`;
+    return `https://codeagentswarm-backend-production.up.railway.app/api/releases/download-dmg/${version}/${arch}`;
   };
 
   return (
