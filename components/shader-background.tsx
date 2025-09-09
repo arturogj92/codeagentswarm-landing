@@ -12,7 +12,6 @@ interface ShaderBackgroundProps {
 export default function ShaderBackground({ children }: ShaderBackgroundProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const [isActive, setIsActive] = useState(false)
-  const [webGLSupported, setWebGLSupported] = useState(true)
 
   const [speed, setSpeed] = useState(0.4)
   const [overlayOpacity, setOverlayOpacity] = useState(0.5)
@@ -33,34 +32,6 @@ export default function ShaderBackground({ children }: ShaderBackgroundProps) {
   }
 
   useEffect(() => {
-    // Check WebGL support
-    const checkWebGLSupport = () => {
-      try {
-        const canvas = document.createElement('canvas')
-        const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl')
-        const isSupported = !!gl
-        
-        // Additional check for Chrome specific issues
-        if (isSupported && gl) {
-          const debugInfo = gl.getExtension('WEBGL_debug_renderer_info')
-          if (debugInfo) {
-            const renderer = gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL)
-            // Check if it's software rendering (SwiftShader) which might cause issues
-            if (renderer && renderer.toLowerCase().includes('swiftshader')) {
-              return false
-            }
-          }
-        }
-        
-        return isSupported
-      } catch (e) {
-        console.warn('WebGL detection failed:', e)
-        return false
-      }
-    }
-
-    setWebGLSupported(checkWebGLSupport())
-
     const handleMouseEnter = () => setIsActive(true)
     const handleMouseLeave = () => setIsActive(false)
 
@@ -119,43 +90,19 @@ export default function ShaderBackground({ children }: ShaderBackgroundProps) {
         </defs>
       </svg>
 
-      {/* Fixed Background Shaders or CSS Fallback */}
+      {/* Fixed Background Shaders */}
       <div className="fixed inset-0 pointer-events-none">
-        {webGLSupported ? (
-          <>
-            <MeshGradient
-              className="absolute inset-0 w-full h-full"
-              colors={colors}
-              speed={speed}
-            />
-            <MeshGradient
-              className="absolute inset-0 w-full h-full"
-              style={{ opacity: overlayOpacity }}
-              colors={["#000000", "#1a1a1a", "#6b46c1", "#000000"]}
-              speed={speed * 0.67} // Made second layer speed relative to main speed
-            />
-          </>
-        ) : (
-          /* CSS Gradient Fallback */
-          <div className="absolute inset-0 w-full h-full">
-            <div 
-              className="absolute inset-0 animate-gradient-shift"
-              style={{
-                background: `linear-gradient(135deg, ${colors[0]} 0%, ${colors[1]} 25%, ${colors[2]} 50%, ${colors[3]} 75%, ${colors[4]} 100%)`,
-                backgroundSize: '400% 400%',
-              }}
-            />
-            <div 
-              className="absolute inset-0 animate-gradient-shift-slow"
-              style={{
-                background: 'linear-gradient(225deg, #000000 0%, #1a1a1a 25%, #6b46c1 50%, #000000 100%)',
-                backgroundSize: '400% 400%',
-                opacity: overlayOpacity,
-                animationDelay: '-5s',
-              }}
-            />
-          </div>
-        )}
+        <MeshGradient
+          className="absolute inset-0 w-full h-full"
+          colors={colors}
+          speed={speed}
+        />
+        <MeshGradient
+          className="absolute inset-0 w-full h-full"
+          style={{ opacity: overlayOpacity }}
+          colors={["#000000", "#1a1a1a", "#6b46c1", "#000000"]}
+          speed={speed * 0.67} // Made second layer speed relative to main speed
+        />
       </div>
 
       {/* Content */}
