@@ -41,6 +41,20 @@ export default function VideoShowcase() {
   const [currentVideo, setCurrentVideo] = useState(0)
   const [isPlaying, setIsPlaying] = useState(true)
   const [isAutoAdvance, setIsAutoAdvance] = useState(true)
+  const [webGLSupported, setWebGLSupported] = useState(true)
+
+  useEffect(() => {
+    const checkWebGLSupport = () => {
+      try {
+        const canvas = document.createElement('canvas')
+        const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl')
+        return !!gl
+      } catch (e) {
+        return false
+      }
+    }
+    setWebGLSupported(checkWebGLSupport())
+  }, [])
 
   const handleVideoEnd = () => {
     if (isAutoAdvance && isPlaying) {
@@ -54,26 +68,37 @@ export default function VideoShowcase() {
       <div className="relative">
         {/* Pulsing Border Background - Thin */}
         <div className="absolute -inset-[2px] rounded-2xl overflow-hidden">
-          <PulsingBorder
-            colors={["#fbbf24", "#6366f1", "#ec4899", "#06b6d4", "#8b5cf6", "#fbbf24", "#10b981"]}
-            colorBack="#00000000"
-            speed={1.5}
-            roundness={0.02}
-            thickness={0.008}
-            softness={0.4}
-            intensity={3}
-            spotSize={0.1}
-            pulse={0.1}
-            smoke={0.3}
-            smokeSize={3}
-            scale={1}
-            rotation={0}
-            style={{
-              width: "100%",
-              height: "100%",
-              borderRadius: "1rem",
-            }}
-          />
+          {webGLSupported ? (
+            <PulsingBorder
+              colors={["#fbbf24", "#6366f1", "#ec4899", "#06b6d4", "#8b5cf6", "#fbbf24", "#10b981"]}
+              colorBack="#00000000"
+              speed={1.5}
+              roundness={0.02}
+              thickness={0.008}
+              softness={0.4}
+              intensity={3}
+              spotSize={0.1}
+              pulse={0.1}
+              smoke={0.3}
+              smokeSize={3}
+              scale={1}
+              rotation={0}
+              style={{
+                width: "100%",
+                height: "100%",
+                borderRadius: "1rem",
+              }}
+            />
+          ) : (
+            <div 
+              className="w-full h-full animate-gradient-shift"
+              style={{
+                background: "linear-gradient(135deg, #fbbf24, #6366f1, #ec4899, #06b6d4, #8b5cf6, #fbbf24)",
+                backgroundSize: "400% 400%",
+                borderRadius: "1rem",
+              }}
+            />
+          )}
         </div>
         
         {/* Video Container */}
