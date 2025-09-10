@@ -63,25 +63,6 @@ export default function FeaturesSection() {
 
   return (
     <section id="features" className="relative py-24 px-6 overflow-hidden">
-      {/* Subtle gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-950 to-black opacity-50" />
-      
-      {/* Single subtle orb */}
-      <motion.div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full"
-        style={{
-          background: "radial-gradient(circle, rgba(168, 85, 247, 0.08) 0%, transparent 50%)",
-          filter: "blur(80px)",
-        }}
-        animate={{
-          scale: [1, 1.1, 1],
-        }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-      />
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Simplified Header */}
@@ -112,20 +93,17 @@ export default function FeaturesSection() {
               className="group relative"
             >
               {/* Card */}
-              <div className="relative h-full rounded-2xl overflow-hidden">
-                {/* Background layer */}
-                <div className="absolute inset-0 bg-gradient-to-b from-white/[0.08] to-white/[0.02] backdrop-blur-xl" />
+              <div className="relative h-full rounded-2xl overflow-hidden border border-white/[0.08] hover:border-white/[0.12] transition-colors duration-300">
+                {/* Very subtle background */}
+                <div className="absolute inset-0 bg-white/[0.02] backdrop-blur-sm" />
                 
-                {/* Gradient accent - visible by default, stronger on hover */}
+                {/* Gradient accent on hover only */}
                 <div 
-                  className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-[0.15] group-hover:opacity-[0.25] transition-opacity duration-500`}
+                  className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-[0.08] transition-opacity duration-500`}
                 />
                 
-                {/* Border */}
-                <div className="absolute inset-[0.5px] rounded-2xl bg-black/50" />
-                
                 {/* Inner content container */}
-                <div className="relative h-full p-7 rounded-2xl bg-gradient-to-b from-white/[0.02] to-transparent">
+                <div className="relative h-full p-7">
                   {/* Content */}
                   <div className="relative z-10">
                     {/* Icon */}
