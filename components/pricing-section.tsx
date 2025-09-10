@@ -161,8 +161,8 @@ export default function PricingSection() {
           </p>
         </motion.div>
 
-        {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 max-w-6xl mx-auto">
+        {/* Pricing Cards - Limited width on mobile */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 max-w-xs sm:max-w-md md:max-w-6xl mx-auto">
           {/* Free Plan */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
