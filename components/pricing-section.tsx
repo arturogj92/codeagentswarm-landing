@@ -162,7 +162,7 @@ export default function PricingSection() {
         </motion.div>
 
         {/* Pricing Cards */}
-        <div className="grid lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 max-w-6xl mx-auto">
           {/* Free Plan */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -172,7 +172,7 @@ export default function PricingSection() {
             className="relative group"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-gray-600/20 to-gray-700/20 rounded-3xl blur-xl opacity-50 group-hover:opacity-70 transition-opacity" />
-            <div className="relative rounded-3xl border border-white/[0.08] bg-white/[0.02] backdrop-blur-sm p-6 h-full flex flex-col">
+            <div className="relative rounded-2xl md:rounded-3xl border border-white/[0.08] bg-white/[0.02] backdrop-blur-sm p-4 sm:p-5 md:p-6 h-full flex flex-col">
               {/* Plan Header */}
               <div className="mb-6">
                 <div className="flex items-center gap-3 mb-3">
@@ -182,8 +182,8 @@ export default function PricingSection() {
                   <h3 className="text-xl font-medium text-white">Free</h3>
                 </div>
                 <div className="flex items-baseline gap-2 mb-3">
-                  <span className="text-4xl font-light text-white">€0</span>
-                  <span className="text-white/40 text-sm">/month</span>
+                  <span className="text-3xl sm:text-4xl font-light text-white">€0</span>
+                  <span className="text-white/40 text-xs sm:text-sm">/month</span>
                 </div>
                 <p className="text-white/50 text-xs leading-relaxed">
                   Perfect for individuals and small projects
@@ -240,7 +240,7 @@ export default function PricingSection() {
             className="relative group"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-cyan-600/20 rounded-3xl blur-xl opacity-50 group-hover:opacity-70 transition-opacity" />
-            <div className="relative rounded-3xl border border-white/[0.08] bg-white/[0.02] backdrop-blur-sm p-6 h-full flex flex-col">
+            <div className="relative rounded-2xl md:rounded-3xl border border-white/[0.08] bg-white/[0.02] backdrop-blur-sm p-4 sm:p-5 md:p-6 h-full flex flex-col">
               {/* Plan Header */}
               <div className="mb-6">
                 <div className="flex items-center gap-3 mb-3">
@@ -250,8 +250,8 @@ export default function PricingSection() {
                   <h3 className="text-xl font-medium text-white">Starter</h3>
                 </div>
                 <div className="flex items-baseline gap-2 mb-3">
-                  <span className="text-4xl font-light text-white">€2.99</span>
-                  <span className="text-white/40 text-sm">/month</span>
+                  <span className="text-3xl sm:text-4xl font-light text-white">€2.99</span>
+                  <span className="text-white/40 text-xs sm:text-sm">/month</span>
                 </div>
                 <p className="text-white/50 text-xs leading-relaxed">
                   Perfect balance of features and price
@@ -330,12 +330,12 @@ export default function PricingSection() {
             </div>
 
             {/* Animated gradient border */}
-            <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 rounded-3xl opacity-30 blur-xl group-hover:opacity-50 transition-opacity" />
-            <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 rounded-3xl opacity-100" style={{ padding: '1px' }}>
-              <div className="h-full w-full bg-black rounded-3xl" />
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl md:rounded-3xl opacity-30 blur-xl group-hover:opacity-50 transition-opacity" />
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl md:rounded-3xl opacity-100" style={{ padding: '1px' }}>
+              <div className="h-full w-full bg-black rounded-2xl md:rounded-3xl" />
             </div>
             
-            <div className="relative rounded-3xl bg-gradient-to-br from-purple-900/10 to-pink-900/10 backdrop-blur-sm p-6 h-full flex flex-col overflow-hidden">
+            <div className="relative rounded-2xl md:rounded-3xl bg-gradient-to-br from-purple-900/10 to-pink-900/10 backdrop-blur-sm p-4 sm:p-5 md:p-6 h-full flex flex-col overflow-hidden">
               {/* Sparkle effect */}
               <div className="absolute top-4 right-4">
                 <Sparkles className="w-6 h-6 text-purple-400 opacity-50" />
@@ -349,10 +349,10 @@ export default function PricingSection() {
                   </div>
                   <h3 className="text-xl font-medium text-white">Pro</h3>
                 </div>
-                <div className="flex items-baseline gap-2 mb-1">
-                  <span className="text-4xl font-light text-white">€6.99</span>
-                  <span className="text-white/40 text-sm">/month</span>
-                  <span className="text-xs px-2 py-0.5 rounded-full bg-gradient-to-r from-green-500 to-emerald-500 text-white font-bold">
+                <div className="flex flex-wrap items-baseline gap-2 mb-1">
+                  <span className="text-3xl sm:text-4xl font-light text-white">€6.99</span>
+                  <span className="text-white/40 text-xs sm:text-sm">/month</span>
+                  <span className="text-[10px] sm:text-xs px-2 py-0.5 rounded-full bg-gradient-to-r from-green-500 to-emerald-500 text-white font-bold">
                     SAVE 30%
                   </span>
                 </div>
