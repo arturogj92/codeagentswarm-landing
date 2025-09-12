@@ -3,6 +3,7 @@
 import Header from "@/components/header"
 import HeroContent from "@/components/hero-content"
 import FeaturesSection from "@/components/features-section"
+import RoadmapSection from "@/components/roadmap-section"
 import DemoSection from "@/components/demo-section"
 import PricingSection from "@/components/pricing-section"
 import CTASection from "@/components/cta-section"
@@ -20,6 +21,7 @@ export default function Home() {
         
         {/* Content Sections */}
         <FeaturesSection />
+        <RoadmapSection />
         <DemoSection />
         <PricingSection />
         <CTASection />

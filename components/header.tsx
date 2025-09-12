@@ -25,6 +25,12 @@ export default function Header() {
             Features
           </a>
           <a
+            href="#roadmap"
+            className="text-sm text-white/70 hover:text-white transition-colors duration-200"
+          >
+            Roadmap
+          </a>
+          <a
             href="#demo"
             className="text-sm text-white/70 hover:text-white transition-colors duration-200"
           >
