@@ -33,7 +33,7 @@ const roadmapData: RoadmapItem[] = [
   {
     id: 1,
     quarter: "Q4",
-    year: "2024",
+    year: "2025",
     title: "Multi-Agent Integration",
     description: "Expand beyond Claude to support multiple AI CLI agents",
     features: [
@@ -49,7 +49,7 @@ const roadmapData: RoadmapItem[] = [
   {
     id: 2,
     quarter: "Q1",
-    year: "2025",
+    year: "2026",
     title: "Smart Rollback System",
     description: "Intelligent step-by-step rollback and recovery system",
     features: [
@@ -65,7 +65,7 @@ const roadmapData: RoadmapItem[] = [
   {
     id: 3,
     quarter: "Q2",
-    year: "2025",
+    year: "2026",
     title: "Agentic Task System",
     description: "Autonomous task creation and development workflow",
     features: [
@@ -81,7 +81,7 @@ const roadmapData: RoadmapItem[] = [
   {
     id: 4,
     quarter: "Q3",
-    year: "2025",
+    year: "2026",
     title: "Knowledge Intelligence",
     description: "Learn and leverage knowledge from completed tasks",
     features: [
