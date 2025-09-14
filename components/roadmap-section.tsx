@@ -250,29 +250,6 @@ export default function RoadmapSection() {
           </div>
         </div>
 
-        {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="text-center mt-16"
-        >
-          <p className="text-white/60 text-sm mb-4">
-            Want to contribute or suggest features?
-          </p>
-          <motion.a
-            href="https://github.com/codeagentswarm/roadmap"
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center space-x-2 px-6 py-3 bg-white/10 hover:bg-white/15 border border-white/20 rounded-full text-white text-sm font-medium transition-all duration-300"
-          >
-            <GitPullRequest className="w-4 h-4" />
-            <span>View on GitHub</span>
-          </motion.a>
-        </motion.div>
       </div>
     </section>
   )
