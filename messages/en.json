@@ -1,0 +1,336 @@
+{
+  "common": {
+    "downloadFree": "Download Free",
+    "getStarted": "Get Started (macOS)",
+    "seeHowItWorks": "See How It Works",
+    "watchDemo": "Watch Demo",
+    "downloadNow": "Download Now",
+    "learnMore": "Learn More",
+    "subscribeInApp": "Subscribe in App"
+  },
+  "header": {
+    "features": "Features",
+    "demo": "Demo",
+    "pricing": "Pricing",
+    "roadmap": "Roadmap"
+  },
+  "hero": {
+    "badge": "6 AI Agents Working in Perfect Harmony",
+    "badgeNew": "NEW",
+    "titleLine1": "The command center for",
+    "titleLine2": "coding with multiple AI agents",
+    "subtitle": "Orchestrate <highlight>up to 6 Claude Code terminals</highlight> in parallel — with full visibility, Git tools, per-terminal file history, and a shared MCP-powered task system.",
+    "powerStatement": "Build faster with less friction and zero context switching",
+    "authorityLine": "Built for developers who rely on AI every day. A faster, clearer way to work with multiple AI agents at once.",
+    "requirements": "Works with your Claude Code subscription. Requires macOS 12 or later.",
+    "stats": {
+      "terminals": "Parallel Terminals",
+      "terminalsDesc": "6 agents working together",
+      "searchableChats": "Search Everything",
+      "searchableChatsDesc": "Infinite conversation history",
+      "codePreview": "Live File Insight",
+      "codePreviewDesc": "See changes as they happen",
+      "kanban": "Shared Kanban",
+      "kanbanDesc": "Tasks for you and your agents"
+    },
+    "videos": {
+      "multiTerminal": {
+        "title": "Multi-Terminal Control",
+        "description": "Control multiple AI agents across terminals"
+      },
+      "kanban": {
+        "title": "Task Board",
+        "description": "Track and organize tasks with Kanban view"
+      },
+      "git": {
+        "title": "Git Integration",
+        "description": "Seamless version control workflow"
+      },
+      "notifications": {
+        "title": "Smart Notifications",
+        "description": "Stay updated with intelligent alerts"
+      }
+    }
+  },
+  "problem": {
+    "badge": "The Problem",
+    "titleLine1": "Working with a single AI agent",
+    "titleLine2": "slows you down",
+    "description": "When your entire workflow depends on one AI chat or terminal, things get messy fast. Context switching, repeated prompts, lost threads, and invisible changes kill productivity.",
+    "painPoints": {
+      "switching": "Constantly switching tabs and terminals.",
+      "noView": "No clear view of what the AI is editing.",
+      "repeating": "Sessions lose context and you repeat prompts.",
+      "confidence": "Hard to trust AI changes without visibility."
+    }
+  },
+  "solution": {
+    "badge": "The Solution",
+    "titleLine1": "The multi-agent workflow",
+    "titleLine2": "you always wanted",
+    "description": "CodeAgentSwarm turns Claude Code into a fully coordinated environment where up to six agents work in parallel, with total visibility over tasks, context, and file changes.",
+    "points": {
+      "terminals": "Six AI terminals running simultaneously.",
+      "notifications": "Dynamic titles and instant notifications.",
+      "git": "Integrated Git panel with diffs and commit context.",
+      "kanban": "MCP-powered Kanban your agents can update.",
+      "mcp": "MCP Marketplace: GitHub, Notion, Slack, Supabase, Brave Search, Playwright, PostgreSQL, and more.",
+      "history": "Searchable conversation history.",
+      "fileTracking": "Full file tracking so you always know what changed."
+    }
+  },
+  "features": {
+    "badge": "Unique Value",
+    "titleLine1": "What Makes Us",
+    "titleLine2": "Unique",
+    "subtitle": "A command center for parallel AI development.",
+    "items": {
+      "multiTerminal": {
+        "title": "Parallel Agent Orchestration",
+        "description": "Run 6 agents in grids or tabs."
+      },
+      "visibility": {
+        "title": "Full Real-Time Visibility",
+        "description": "Know exactly what each agent is doing."
+      },
+      "codeControl": {
+        "title": "Deep Code Insight",
+        "description": "Git, diffs, and session-based file history."
+      },
+      "taskWorkflow": {
+        "title": "Shared Kanban (MCP-Powered)",
+        "description": "Tasks managed by you — and your agents."
+      },
+      "permissions": {
+        "title": "Visual Permissions & Danger Mode",
+        "description": "Control exactly what each agent can do."
+      },
+      "history": {
+        "title": "Searchable History",
+        "description": "Recover past context instantly."
+      }
+    },
+    "pills": {
+      "shortcuts": "Keyboard Shortcuts",
+      "kanban": "Kanban Board",
+      "mcp": "MCP Servers",
+      "updates": "Auto Updates"
+    }
+  },
+  "socialProof": {
+    "stats": {
+      "workflow": {
+        "title": "3× Workflow Speed",
+        "subtitle": "Parallel agents reduce waiting time and context switching."
+      },
+      "agents": {
+        "title": "6 Agents, Zero Bottlenecks",
+        "subtitle": "Run tasks simultaneously with full visibility."
+      },
+      "insight": {
+        "title": "Instant Code Insight",
+        "subtitle": "Live file history and Git diffs that keep you in control."
+      },
+      "search": {
+        "title": "Search Anything",
+        "subtitle": "Find past chats, decisions, and explanations in seconds."
+      }
+    },
+    "title": "Loved by",
+    "titleHighlight": "Developers",
+    "subtitle": "Join thousands of developers who have transformed their workflow",
+    "testimonials": {
+      "alex": {
+        "quote": "Running backend, frontend, and tests in parallel completely changed the way I work.",
+        "author": "Alex C.",
+        "role": "Senior Developer"
+      },
+      "maria": {
+        "quote": "The MCP Kanban keeps agents aligned without repeating prompts.",
+        "author": "Maria S.",
+        "role": "Full Stack Engineer"
+      },
+      "david": {
+        "quote": "File history per terminal finally made me trust AI with real code.",
+        "author": "David P.",
+        "role": "Senior Engineer"
+      }
+    }
+  },
+  "demo": {
+    "badge": "See It In Action",
+    "titleLine1": "Watch the",
+    "titleLine2": "Magic",
+    "titleLine3": "Happen",
+    "subtitle": "Watch how CodeAgentSwarm transforms parallel AI development.",
+    "stats": {
+      "faster": "Faster Development",
+      "aiPowered": "AI-Powered",
+      "taskManagement": "Task Management",
+      "seamless": "Seamless",
+      "gitIntegration": "Git Integration"
+    }
+  },
+  "pricing": {
+    "title": "Simple",
+    "titleHighlight": "pricing",
+    "subtitle": "Start free and upgrade when you need more power. No hidden fees, no surprises.",
+    "perMonth": "month",
+    "plans": {
+      "free": {
+        "name": "Free",
+        "description": "Perfect for individuals and small projects",
+        "cta": "Get Started Free"
+      },
+      "starter": {
+        "name": "Starter",
+        "description": "Perfect balance of features and price",
+        "cta": "Get Starter + 14 Days Pro"
+      },
+      "pro": {
+        "name": "Pro",
+        "description": "Chosen by 73% of users • Early adopter price",
+        "cta": "Subscribe in App"
+      }
+    },
+    "features": {
+      "terminals2": "2 Parallel Terminals",
+      "terminals4": "4 Parallel Terminals",
+      "terminals6": "6 Parallel Terminals",
+      "kanban1": "1 Kanban Project",
+      "kanban4": "4 Kanban Projects",
+      "unlimitedProjects": "Unlimited Projects",
+      "notifications": "Live Notifications",
+      "resizable": "Resizable Terminals",
+      "mcpConfig": "MCP Configuration",
+      "mcpMarketplace": "MCP Marketplace",
+      "git": "Git Integration",
+      "gitAi": "Git Integration & AI Commits",
+      "shortcuts": "Keyboard Shortcuts",
+      "history": "Conversation History"
+    },
+    "badges": {
+      "bestValue": "BEST VALUE",
+      "save30": "SAVE 30%",
+      "unlimited": "UNLIMITED"
+    },
+    "trustBadge": "30-day money-back guarantee • Cancel anytime • Secure payment via Stripe",
+    "whyUpgrade": {
+      "title": "Why upgrade to Pro?",
+      "boost": "300% productivity boost",
+      "description1": "compared to Free tier. With 6 parallel AI agents, unlimited projects, and keyboard shortcuts, Pro users complete tasks",
+      "faster": "3x faster",
+      "description2": "Our data shows Pro developers ship code 70% more frequently and reduce debugging time by half.",
+      "tagline": "Transform hours into minutes."
+    }
+  },
+  "roadmap": {
+    "title": "Product",
+    "titleHighlight": "Roadmap",
+    "subtitle": "Our vision for the future of AI-powered development",
+    "status": {
+      "inProgress": "IN PROGRESS",
+      "upcoming": "UPCOMING"
+    },
+    "items": {
+      "multiAgent": {
+        "title": "Multi-Agent Integration",
+        "description": "Expand beyond Claude to support multiple AI CLI agents",
+        "features": {
+          "codex": "Codex CLI integration",
+          "deepseek": "DeepSeek CLI support",
+          "gemini": "Gemini CLI compatibility",
+          "orchestration": "Unified agent orchestration"
+        }
+      },
+      "crossPlatform": {
+        "title": "Cross-Platform Support",
+        "description": "Bringing CodeAgentSwarm to Windows and Linux",
+        "features": {
+          "windows": "Full Windows 10/11 support",
+          "linux": "Ubuntu, Debian, Fedora compatibility",
+          "sync": "Settings sync across platforms",
+          "native": "Native performance on all systems"
+        }
+      },
+      "agenticTask": {
+        "title": "Agentic Task System",
+        "description": "Autonomous task creation and development workflow",
+        "features": {
+          "decomposition": "AI-powered task decomposition",
+          "prioritization": "Smart task prioritization",
+          "autonomous": "Autonomous workflow execution",
+          "collaboration": "Cross-agent collaboration"
+        }
+      },
+      "knowledge": {
+        "title": "Knowledge Intelligence",
+        "description": "Learn and leverage knowledge from completed tasks",
+        "features": {
+          "patterns": "Task pattern recognition",
+          "library": "Solution library building",
+          "reuse": "Context reuse system",
+          "recommendations": "Smart recommendations"
+        }
+      }
+    }
+  },
+  "cta": {
+    "titleLine1": "Ready to",
+    "titleHighlight": "Transform",
+    "titleLine2": "Your Development?",
+    "subtitle": "Join thousands of developers who are already using CodeAgentSwarm to supercharge their workflow with AI-powered task management and seamless collaboration.",
+    "version": "Version",
+    "released": "Released",
+    "loading": "Loading releases...",
+    "noReleases": "No releases available. Check console for errors.",
+    "downloadFor": "Download for",
+    "downloadDmg": "Download DMG",
+    "platforms": {
+      "appleSilicon": "Apple Silicon",
+      "appleSiliconChips": "M1, M2, M3, M4",
+      "intel": "Intel",
+      "intelProcessors": "Intel processors",
+      "windowsSoon": "Windows (Soon)",
+      "linuxSoon": "Linux (Soon)"
+    },
+    "olderVersions": {
+      "show": "Show older versions",
+      "hide": "Hide older versions"
+    },
+    "availableFor": "Available for",
+    "requirements": {
+      "title": "System Requirements",
+      "macos": "12.0 or later",
+      "memoryLabel": "Memory",
+      "memory": "4GB RAM minimum",
+      "storageLabel": "Storage",
+      "storage": "500MB available",
+      "claudeCode": "Active subscription",
+      "gatekeeper": "First time installing? You might need to right-click and select \"Open\" to bypass Gatekeeper."
+    }
+  },
+  "footer": {
+    "description": "AI-powered workspace for parallel development, full visibility, and integrated task management.",
+    "product": "Product",
+    "company": "Company",
+    "links": {
+      "features": "Features",
+      "pricing": "Pricing",
+      "roadmap": "Roadmap",
+      "download": "Download",
+      "about": "About",
+      "contact": "Contact",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
+    },
+    "copyright": "CodeAgentSwarm. All rights reserved.",
+    "madeWith": "Made with",
+    "forDevelopers": "for developers"
+  },
+  "localeSwitcher": {
+    "label": "Language",
+    "en": "English",
+    "es": "Español"
+  }
+}
