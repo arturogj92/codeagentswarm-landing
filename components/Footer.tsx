@@ -72,7 +72,7 @@ export default function Footer() {
                   />
                 </div>
               </div>
-              <span className="text-amber-400 font-bold text-xl tracking-wider font-[var(--font-orbitron)]">
+              <span className="font-bold text-xl tracking-wider font-[var(--font-orbitron)] bg-gradient-to-r from-purple-500 to-amber-400 bg-clip-text text-transparent">
                 CODEAGENTSWARM
               </span>
             </motion.a>
