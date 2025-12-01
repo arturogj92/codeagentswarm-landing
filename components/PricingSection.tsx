@@ -277,17 +277,19 @@ export default function PricingSection() {
 
                   {/* CTA Button */}
                   <a
-                    href="#download"
+                    href={plan.isBeta ? '/beta' : '#download'}
                     className={`flex items-center justify-center gap-2 w-full py-3 px-6 rounded-xl font-medium transition-all duration-300 ${
-                      plan.popular
+                      plan.isBeta
+                        ? 'bg-neon-green text-black font-bold hover:opacity-90'
+                        : plan.popular
                         ? 'bg-gradient-to-r from-neon-purple to-neon-magenta text-white hover:shadow-neon-purple'
                         : plan.name === 'Starter'
                         ? 'bg-gradient-to-r from-blue-600/20 to-cyan-600/20 border border-blue-500/30 text-white/80 hover:from-blue-600/30 hover:to-cyan-600/30'
                         : 'bg-white/5 border border-white/10 text-white/70 hover:bg-white/10 hover:text-white'
                     }`}
                   >
-                    {plan.cta}
-                    {plan.popular && <Sparkles className="w-4 h-4" />}
+                    {plan.isBeta ? tBeta('cta') : plan.cta}
+                    {plan.popular && !plan.isBeta && <Sparkles className="w-4 h-4" />}
                   </a>
                 </div>
 
