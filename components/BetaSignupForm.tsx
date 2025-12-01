@@ -14,9 +14,9 @@ export default function BetaSignupForm() {
 
   const [formData, setFormData] = useState({
     email: '',
-    macosVersion: '',
-    usage: '',
-    consent: false,
+    osVersion: '',
+    usageNotes: '',
+    agreedToBetaEmails: false,
   })
 
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -45,9 +45,9 @@ export default function BetaSignupForm() {
       setIsSuccess(true)
       setFormData({
         email: '',
-        macosVersion: '',
-        usage: '',
-        consent: false,
+        osVersion: '',
+        usageNotes: '',
+        agreedToBetaEmails: false,
       })
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Something went wrong')
@@ -116,45 +116,45 @@ export default function BetaSignupForm() {
 
                 {/* macOS Version */}
                 <div>
-                  <label htmlFor="macosVersion" className="block text-sm font-medium text-white/80 mb-2">
+                  <label htmlFor="osVersion" className="block text-sm font-medium text-white/80 mb-2">
                     {t('macosLabel')}
                   </label>
                   <input
                     type="text"
-                    id="macosVersion"
-                    value={formData.macosVersion}
-                    onChange={(e) => setFormData({ ...formData, macosVersion: e.target.value })}
+                    id="osVersion"
+                    value={formData.osVersion}
+                    onChange={(e) => setFormData({ ...formData, osVersion: e.target.value })}
                     placeholder={t('macosPlaceholder')}
                     className="w-full px-4 py-3 rounded-xl glass border border-white/10 focus:border-neon-cyan/50 focus:outline-none text-white placeholder-white/30 transition-colors"
                   />
                 </div>
 
-                {/* Usage */}
+                {/* Usage Notes */}
                 <div>
-                  <label htmlFor="usage" className="block text-sm font-medium text-white/80 mb-2">
+                  <label htmlFor="usageNotes" className="block text-sm font-medium text-white/80 mb-2">
                     {t('usageLabel')}
                   </label>
                   <textarea
-                    id="usage"
+                    id="usageNotes"
                     rows={4}
-                    value={formData.usage}
-                    onChange={(e) => setFormData({ ...formData, usage: e.target.value })}
+                    value={formData.usageNotes}
+                    onChange={(e) => setFormData({ ...formData, usageNotes: e.target.value })}
                     placeholder={t('usagePlaceholder')}
                     className="w-full px-4 py-3 rounded-xl glass border border-white/10 focus:border-neon-cyan/50 focus:outline-none text-white placeholder-white/30 transition-colors resize-none"
                   />
                 </div>
 
-                {/* Consent */}
+                {/* Consent - Agreed to Beta Emails */}
                 <div className="flex items-start gap-3">
                   <input
                     type="checkbox"
-                    id="consent"
+                    id="agreedToBetaEmails"
                     required
-                    checked={formData.consent}
-                    onChange={(e) => setFormData({ ...formData, consent: e.target.checked })}
+                    checked={formData.agreedToBetaEmails}
+                    onChange={(e) => setFormData({ ...formData, agreedToBetaEmails: e.target.checked })}
                     className="mt-1 w-4 h-4 rounded border-white/20 bg-white/5 text-neon-cyan focus:ring-neon-cyan/50 focus:ring-offset-0"
                   />
-                  <label htmlFor="consent" className="text-sm text-white/70">
+                  <label htmlFor="agreedToBetaEmails" className="text-sm text-white/70">
                     {t('consentLabel')}
                   </label>
                 </div>
