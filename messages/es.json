@@ -80,34 +80,33 @@
     }
   },
   "features": {
-    "badge": "Valor Único",
-    "titleLine1": "Qué Nos Hace",
-    "titleLine2": "Únicos",
-    "subtitle": "Un centro de mando para desarrollo en paralelo.",
+    "badge": "Funcionalidades Core",
+    "titlePre": "Todo lo que",
+    "titleHighlight": "Necesitas",
     "items": {
       "multiTerminal": {
-        "title": "Orquestación de Agentes en Paralelo",
-        "description": "Ejecuta 6 agentes en grids o pestañas."
-      },
-      "visibility": {
-        "title": "Visibilidad Total en Tiempo Real",
-        "description": "Sabe exactamente qué hace cada agente."
-      },
-      "codeControl": {
-        "title": "Inspección Profunda del Código",
-        "description": "Git, diffs e historial por sesión."
+        "title": "Múltiples Agentes en Paralelo",
+        "description": "Ejecuta hasta 6 agentes Claude Code simultáneamente. Cada uno en su propio terminal, trabajando en tareas diferentes."
       },
       "taskWorkflow": {
-        "title": "Kanban Compartido (MCP)",
-        "description": "Tareas gestionadas por ti y por los agentes."
+        "title": "Gestión de Tareas con IA",
+        "description": "Tablero Kanban integrado que los agentes pueden leer y actualizar. Las tareas se sincronizan automáticamente en todos los terminales."
       },
-      "permissions": {
-        "title": "Permisos Visuales y Modo Turbo",
-        "description": "Control total sobre el acceso de cada agente."
+      "notifications": {
+        "title": "Notificaciones Inteligentes",
+        "description": "Sabe al instante cuando un agente termina, necesita input o encuentra un error. No te pierdas nada."
+      },
+      "visibility": {
+        "title": "Estado y Cambios en Tiempo Real",
+        "description": "Títulos de terminal dinámicos, cambios de archivos en vivo y visibilidad instantánea de lo que hace cada agente."
       },
       "history": {
-        "title": "Historial Buscable",
-        "description": "Recupera contexto al instante."
+        "title": "Historial de Conversaciones",
+        "description": "Historial completo y buscable de todos tus chats. Encuentra cualquier decisión, explicación o código al instante."
+      },
+      "turboMode": {
+        "title": "Modo Turbo y Permisos Visuales",
+        "description": "Ve rápido con confianza. Modo Turbo auto-aprueba acciones seguras mientras los controles visuales te mantienen al mando."
       }
     },
     "pills": {
@@ -377,15 +376,16 @@
   },
   "beta": {
     "hero": {
-      "headline": "Open Beta - Accede al plan Pro gratis",
-      "subheadline": "Únete a la Open Beta de CodeAgentSwarm y desbloquea todo el plan Pro sin coste mientras dure la beta.",
-      "valueLine": "Desbloquea 6 agentes en paralelo, integración con Git, Kanban, MCP y más - gratis durante la beta.",
+      "headline": "Únete a la Open Beta",
+      "subheadline": "Accede al plan Pro completo sin coste. Ejecuta 6 agentes IA en paralelo, integración con Git, Kanban, MCP y más.",
+      "microcopy": "Funciona en macOS (Apple Silicon). Requiere suscripción a Claude Code.",
       "primaryCta": "Unirse a la Beta",
       "primaryCtaHint": "(Paso 1)",
-      "secondaryCta": "Descargar app"
+      "secondaryCta": "Ver Características"
     },
     "howToJoin": {
-      "title": "Cómo unirte",
+      "titlePre": "Cómo",
+      "titleHighlight": "Unirte",
       "step1": {
         "title": "Rellena el formulario de beta",
         "description": "Cuéntanos tu email y tu entorno para preparar tu acceso Pro (Beta)."
@@ -401,11 +401,32 @@
       "note": "No necesitas tarjeta. Acceso completo al Pro durante la beta a cambio de tu feedback."
     },
     "whatIs": {
-      "title": "¿Qué es CodeAgentSwarm?",
-      "point1": "Una app de escritorio que te permite ejecutar hasta 6 agentes Claude Code en paralelo.",
-      "point2": "Panel Git, commits con IA y diffs completos de archivos.",
-      "point3": "Marketplace MCP + Kanban integrado actualizado por los agentes.",
-      "point4": "Flujo ultra-rápido para construir apps, herramientas y automatizaciones."
+      "titlePre": "Todo lo que",
+      "titleHighlight": "Necesitas",
+      "point1": {
+        "title": "Múltiples Agentes en Paralelo",
+        "description": "Ejecuta hasta 6 agentes Claude Code simultáneamente. Cada uno en su propio terminal, trabajando en tareas diferentes."
+      },
+      "point2": {
+        "title": "Gestión de Tareas con IA",
+        "description": "Tablero Kanban integrado que los agentes pueden leer y actualizar. Las tareas se sincronizan automáticamente en todos los terminales."
+      },
+      "point3": {
+        "title": "Notificaciones Inteligentes",
+        "description": "Sabe al instante cuando un agente termina, necesita input o encuentra un error. No te pierdas nada."
+      },
+      "point4": {
+        "title": "Estado y Cambios en Tiempo Real",
+        "description": "Títulos de terminal dinámicos, cambios de archivos en vivo y visibilidad instantánea de lo que hace cada agente."
+      },
+      "point5": {
+        "title": "Historial de Conversaciones",
+        "description": "Historial completo y buscable de todos tus chats. Encuentra cualquier decisión, explicación o código al instante."
+      },
+      "point6": {
+        "title": "Modo Turbo y Permisos Visuales",
+        "description": "Ve rápido con confianza. Modo Turbo auto-aprueba acciones seguras mientras los controles visuales te mantienen al mando."
+      }
     },
     "form": {
       "title": "Registro Beta",
@@ -438,7 +459,9 @@
       "socialProof": "Ya usado por testers iniciales que entregan 3 veces más rápido."
     },
     "whatYouGet": {
-      "title": "Qué obtienes en la Open Beta",
+      "titlePre": "Qué",
+      "titleHighlight": "obtienes",
+      "titlePost": "en la Open Beta",
       "features": {
         "fullPro": "Todas las funciones Pro desbloqueadas",
         "priority": "Prioridad en sugerencias",
@@ -460,7 +483,8 @@
       "cta": "Unirme a la Beta"
     },
     "faq": {
-      "title": "Preguntas Frecuentes",
+      "titlePre": "Preguntas",
+      "titleHighlight": "Frecuentes",
       "items": {
         "q1": "¿La Beta es realmente gratis?",
         "a1": "Sí. Durante la Open Beta, el plan Pro es completamente gratis - todas las funciones desbloqueadas, sin tarjeta.",

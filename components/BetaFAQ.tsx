@@ -71,7 +71,8 @@ export default function BetaFAQ() {
           className="text-center mb-12"
         >
           <h2 className="heading-lg mb-4">
-            <span className="gradient-text">{t('title')}</span>
+            <span className="text-white">{t('titlePre')} </span>
+            <span className="gradient-text">{t('titleHighlight')}</span>
           </h2>
         </motion.div>
 

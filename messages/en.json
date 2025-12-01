@@ -80,34 +80,33 @@
     }
   },
   "features": {
-    "badge": "Unique Value",
-    "titleLine1": "What Makes Us",
-    "titleLine2": "Unique",
-    "subtitle": "A command center for parallel AI development.",
+    "badge": "Core Features",
+    "titlePre": "Everything You",
+    "titleHighlight": "Need",
     "items": {
       "multiTerminal": {
-        "title": "Parallel Agent Orchestration",
-        "description": "Run 6 agents in grids or tabs."
-      },
-      "visibility": {
-        "title": "Full Real-Time Visibility",
-        "description": "Know exactly what each agent is doing."
-      },
-      "codeControl": {
-        "title": "Deep Code Insight",
-        "description": "Git, diffs, and session-based file history."
+        "title": "Multiple Agents in Parallel",
+        "description": "Run up to 6 Claude Code agents simultaneously. Each one in its own terminal, working on different tasks."
       },
       "taskWorkflow": {
-        "title": "Shared Kanban (MCP-Powered)",
-        "description": "Tasks managed by you — and your agents."
+        "title": "AI-Powered Task Management",
+        "description": "Integrated Kanban board that agents can read and update. Tasks sync automatically across all terminals."
       },
-      "permissions": {
-        "title": "Visual Permissions & Turbo Mode",
-        "description": "Control exactly what each agent can do."
+      "notifications": {
+        "title": "Smart Notifications",
+        "description": "Know instantly when an agent finishes, needs input, or encounters an error. Never miss a beat."
+      },
+      "visibility": {
+        "title": "Real-Time Status & Changes",
+        "description": "Dynamic terminal titles, live file changes, and instant visibility into what each agent is doing."
       },
       "history": {
-        "title": "Searchable History",
-        "description": "Recover past context instantly."
+        "title": "Conversation History",
+        "description": "Full searchable history of all your chats. Find any past decision, explanation, or code snippet instantly."
+      },
+      "turboMode": {
+        "title": "Turbo Mode & Visual Permissions",
+        "description": "Go fast with confidence. Turbo Mode auto-approves safe actions while visual permission controls keep you in charge."
       }
     },
     "pills": {
@@ -377,15 +376,16 @@
   },
   "beta": {
     "hero": {
-      "headline": "Open Beta - Get Pro tier for free",
-      "subheadline": "Join the CodeAgentSwarm Open Beta and unlock the full Pro experience at no cost while the beta lasts.",
-      "valueLine": "Unlock 6-agent parallel coding, Git integration, Kanban, MCP tools and more - free during the beta.",
+      "headline": "Join the Open Beta",
+      "subheadline": "Get the full Pro experience at no cost. Run 6 AI agents in parallel, Git integration, Kanban, MCP tools and more.",
+      "microcopy": "Works on macOS (Apple Silicon). Requires a Claude Code subscription.",
       "primaryCta": "Join Beta Now",
       "primaryCtaHint": "(Step 1)",
-      "secondaryCta": "Download App"
+      "secondaryCta": "See Features"
     },
     "howToJoin": {
-      "title": "How to join",
+      "titlePre": "How to",
+      "titleHighlight": "Join",
       "step1": {
         "title": "Fill in the beta form",
         "description": "Tell us your email and basic setup so we can prepare your Pro (Beta) access."
@@ -401,11 +401,32 @@
       "note": "No credit card required. Full Pro access during the beta in exchange for your feedback."
     },
     "whatIs": {
-      "title": "What is CodeAgentSwarm?",
-      "point1": "A desktop app that lets you run up to 6 Claude Code agents in parallel.",
-      "point2": "Git panel, AI commit messages, and full file diffs.",
-      "point3": "MCP marketplace + integrated Kanban updated by agents.",
-      "point4": "Ultra-fast workflow for building apps, tools and automations."
+      "titlePre": "Everything You",
+      "titleHighlight": "Need",
+      "point1": {
+        "title": "Multiple Agents in Parallel",
+        "description": "Run up to 6 Claude Code agents simultaneously. Each one in its own terminal, working on different tasks."
+      },
+      "point2": {
+        "title": "AI-Powered Task Management",
+        "description": "Integrated Kanban board that agents can read and update. Tasks sync automatically across all terminals."
+      },
+      "point3": {
+        "title": "Smart Notifications",
+        "description": "Know instantly when an agent finishes, needs input, or encounters an error. Never miss a beat."
+      },
+      "point4": {
+        "title": "Real-Time Status & Changes",
+        "description": "Dynamic terminal titles, live file changes, and instant visibility into what each agent is doing."
+      },
+      "point5": {
+        "title": "Conversation History",
+        "description": "Full searchable history of all your chats. Find any past decision, explanation, or code snippet instantly."
+      },
+      "point6": {
+        "title": "Turbo Mode & Visual Permissions",
+        "description": "Go fast with confidence. Turbo Mode auto-approves safe actions while visual permission controls keep you in charge."
+      }
     },
     "form": {
       "title": "Beta Signup",
@@ -438,7 +459,9 @@
       "socialProof": "Already used by early testers shipping apps 3x faster."
     },
     "whatYouGet": {
-      "title": "What you get in Open Beta",
+      "titlePre": "What you",
+      "titleHighlight": "get",
+      "titlePost": "in Open Beta",
       "features": {
         "fullPro": "Full Pro features unlocked",
         "priority": "Priority feature requests",
@@ -460,7 +483,8 @@
       "cta": "Join Beta"
     },
     "faq": {
-      "title": "Frequently Asked Questions",
+      "titlePre": "Frequently Asked",
+      "titleHighlight": "Questions",
       "items": {
         "q1": "Is the Beta really free?",
         "a1": "Yes. During the Open Beta, the entire Pro tier is free - all features unlocked, no credit card required.",

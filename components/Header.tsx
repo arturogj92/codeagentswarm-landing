@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils'
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 import { usePathname } from 'next/navigation'
+import { Link } from '@/i18n/navigation'
 import LocaleSwitcher from './LocaleSwitcher'
 
 export default function Header() {
@@ -67,28 +68,31 @@ export default function Header() {
       style={{ willChange: 'background-color', transform: 'translateZ(0)' }}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        {/* Logo - Using existing logo.png */}
-        <motion.a
-          href="#"
-          className="flex items-center gap-3 group"
+        {/* Logo - Always links to main landing */}
+        <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="relative">
-            <Image
-              src="/logo.png"
-              alt="CodeAgentSwarm Logo"
-              width={44}
-              height={44}
-              className="drop-shadow-lg"
-              priority
-            />
-          </div>
-          <span className="font-bold text-xl tracking-wider font-[var(--font-orbitron)] bg-clip-text text-transparent" style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-            CODEAGENTSWARM
-          </span>
-        </motion.a>
+          <Link
+            href="/"
+            className="flex items-center gap-3 group"
+          >
+            <div className="relative">
+              <Image
+                src="/logo.png"
+                alt="CodeAgentSwarm Logo"
+                width={44}
+                height={44}
+                className="drop-shadow-lg"
+                priority
+              />
+            </div>
+            <span className="font-bold text-xl tracking-wider font-[var(--font-orbitron)] bg-clip-text text-transparent" style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+              CODEAGENTSWARM
+            </span>
+          </Link>
+        </motion.div>
 
         {/* Desktop Navigation */}
         <motion.nav

@@ -59,7 +59,8 @@ export default function BetaHowToJoin() {
           className="text-center mb-16"
         >
           <h2 className="heading-lg mb-4">
-            <span className="gradient-text">{t('title')}</span>
+            <span className="text-white">{t('titlePre')} </span>
+            <span className="gradient-text">{t('titleHighlight')}</span>
           </h2>
         </motion.div>
 
