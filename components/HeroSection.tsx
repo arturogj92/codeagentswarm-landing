@@ -280,8 +280,8 @@ export default function HeroSection() {
         >
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href="#download" className="group relative">
-              <div className="absolute -inset-1 bg-gradient-to-r from-neon-cyan via-neon-purple to-neon-magenta rounded-full blur-lg opacity-40 group-hover:opacity-60 transition-opacity" />
-              <button className="relative flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-neon-cyan to-neon-green text-black font-semibold rounded-full transition-all">
+              <div className="absolute -inset-1 rounded-full blur-lg opacity-40 group-hover:opacity-60 transition-opacity" style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }} />
+              <button className="relative flex items-center gap-2 px-8 py-4 text-white font-semibold rounded-full transition-all" style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }}>
                 <Download className="w-5 h-5" />
                 {tCommon('getStarted')}
               </button>

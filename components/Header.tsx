@@ -117,9 +117,10 @@ export default function Header() {
           <LocaleSwitcher />
           <a
             href="#download"
-            className="relative group px-6 py-2.5 rounded-full overflow-hidden bg-gradient-to-r from-neon-cyan to-neon-green hover:opacity-90 transition-all duration-300"
+            className="relative group px-6 py-2.5 rounded-full overflow-hidden hover:opacity-90 transition-all duration-300"
+            style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }}
           >
-            <span className="relative text-sm font-semibold text-black">
+            <span className="relative text-sm font-semibold text-white">
               {tCommon('downloadFree')}
             </span>
           </a>
@@ -172,7 +173,8 @@ export default function Header() {
               </a>
               <a
                 href="#download"
-                className="mt-4 py-3 px-6 text-center bg-gradient-to-r from-neon-cyan to-neon-purple text-black font-semibold rounded-full"
+                className="mt-4 py-3 px-6 text-center text-white font-semibold rounded-full"
+                style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {tCommon('downloadFree')}
