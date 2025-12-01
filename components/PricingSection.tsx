@@ -11,11 +11,12 @@ import {
   Shield,
   ArrowRight,
 } from 'lucide-react'
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 
 export default function PricingSection() {
   const t = useTranslations('pricing')
   const tBeta = useTranslations('beta.pricing')
+  const locale = useLocale()
   const sectionRef = useRef(null)
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' })
 
@@ -277,7 +278,7 @@ export default function PricingSection() {
 
                   {/* CTA Button */}
                   <a
-                    href={plan.isBeta ? '/beta' : '#download'}
+                    href={plan.isBeta ? `/${locale}/beta` : '#download'}
                     className={`flex items-center justify-center gap-2 w-full py-3 px-6 rounded-xl font-medium transition-all duration-300 ${
                       plan.isBeta
                         ? 'bg-neon-green text-black font-bold hover:opacity-90'
