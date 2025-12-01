@@ -2,9 +2,10 @@
 
 import { motion } from 'framer-motion'
 import { Heart } from 'lucide-react'
-import Link from 'next/link'
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
+import { usePathname } from 'next/navigation'
+import { Link } from '@/i18n/navigation'
 
 // X (Twitter) icon
 const XIcon = () => (
@@ -27,15 +28,27 @@ const socialLinks = [
 
 export default function Footer() {
   const t = useTranslations('footer')
+  const tBeta = useTranslations('beta')
+  const pathname = usePathname()
   const currentYear = new Date().getFullYear()
 
+  const isBetaPage = pathname?.includes('/beta')
+
+  // Different links for beta page vs main landing
   const footerLinks = {
-    product: [
-      { name: t('links.features'), href: '#features' },
-      { name: t('links.pricing'), href: '#pricing' },
-      { name: t('links.roadmap'), href: '#roadmap' },
-      { name: t('links.download'), href: '#download' },
-    ],
+    product: isBetaPage
+      ? [
+          { name: 'Features', href: '#beta-what-is' },
+          { name: 'How to Join', href: '#beta-how-to-join' },
+          { name: 'Sign Up', href: '#beta-signup-form' },
+          { name: 'FAQ', href: '#beta-faq' },
+        ]
+      : [
+          { name: t('links.features'), href: '#features' },
+          { name: t('links.pricing'), href: '#pricing' },
+          { name: t('links.roadmap'), href: '#roadmap' },
+          { name: t('links.download'), href: '#download' },
+        ],
     company: [
       { name: t('links.about'), href: '#' },
       { name: t('links.contact'), href: '/contact' },
@@ -53,29 +66,32 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <motion.a
-              href="#"
-              className="flex items-center gap-3 mb-6 group"
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <div className="relative">
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center">
-                  <Image
-                    src="/logo.png"
-                    alt="CodeAgentSwarm Logo"
-                    width={40}
-                    height={40}
-                    className="rounded-xl"
-                  />
+              <Link
+                href="/"
+                className="flex items-center gap-3 mb-6 group"
+              >
+                <div className="relative">
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center">
+                    <Image
+                      src="/logo.png"
+                      alt="CodeAgentSwarm Logo"
+                      width={40}
+                      height={40}
+                      className="rounded-xl"
+                    />
+                  </div>
                 </div>
-              </div>
-              <span className="font-bold text-xl tracking-wider font-[var(--font-orbitron)] bg-clip-text text-transparent" style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-                CODEAGENTSWARM
-              </span>
-            </motion.a>
+                <span className="font-bold text-xl tracking-wider font-[var(--font-orbitron)] bg-clip-text text-transparent" style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                  CODEAGENTSWARM
+                </span>
+              </Link>
+            </motion.div>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -123,12 +139,12 @@ export default function Footer() {
             <ul className="space-y-3">
               {footerLinks.product.map((link) => (
                 <li key={link.name}>
-                  <Link
+                  <a
                     href={link.href}
                     className="text-white/40 hover:text-white transition-colors text-sm"
                   >
                     {link.name}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -147,12 +163,12 @@ export default function Footer() {
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
-                  <Link
+                  <a
                     href={link.href}
                     className="text-white/40 hover:text-white transition-colors text-sm"
                   >
                     {link.name}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
