@@ -241,7 +241,7 @@ export default function BetaSignupForm() {
                     onClick={() => {
                       document.getElementById('download')?.scrollIntoView({ behavior: 'smooth' })
                     }}
-                    className="w-full flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-white bg-gradient-to-r from-neon-cyan to-neon-purple hover:shadow-neon-cyan transition-all"
+                    className="w-full flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-white bg-gradient-to-r from-neon-cyan to-neon-purple hover:opacity-90 transition-all"
                   >
                     <Download className="w-5 h-5" />
                     {t('downloadButton')}
@@ -251,7 +251,7 @@ export default function BetaSignupForm() {
                     href={DISCORD_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-white bg-gradient-to-r from-neon-purple to-neon-magenta hover:shadow-neon-purple transition-all"
+                    className="w-full flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-white bg-gradient-to-r from-neon-purple to-neon-magenta hover:opacity-90 transition-all"
                   >
                     <MessageCircle className="w-5 h-5" />
                     {t('discordButton')}
