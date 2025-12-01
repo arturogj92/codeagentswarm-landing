@@ -14,7 +14,7 @@ export async function POST(request: Request) {
       )
     }
 
-    if (!body.consent) {
+    if (!body.agreedToBetaEmails) {
       return NextResponse.json(
         { error: 'You must agree to receive beta updates' },
         { status: 400 }
@@ -33,9 +33,9 @@ export async function POST(request: Request) {
       },
       body: JSON.stringify({
         email: body.email,
-        macos_version: body.macosVersion || null,
-        usage: body.usage || null,
-        consent: body.consent,
+        osVersion: body.osVersion || null,
+        usageNotes: body.usageNotes || null,
+        agreedToBetaEmails: body.agreedToBetaEmails,
       }),
     })
 
