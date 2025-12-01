@@ -153,7 +153,7 @@ export default function BetaPricingSection() {
                     initial={{ scale: 0 }}
                     animate={isInView ? { scale: 1 } : { scale: 0 }}
                     transition={{ delay: 0.7, type: 'spring', stiffness: 300 }}
-                    className="px-4 py-1.5 bg-gradient-to-r from-neon-cyan to-neon-purple text-white text-xs font-bold rounded-full shadow-lg"
+                    className="px-4 py-1.5 bg-neon-green text-black text-xs font-bold rounded-full shadow-lg"
                   >
                     {tBeta('badge')}
                   </motion.div>
