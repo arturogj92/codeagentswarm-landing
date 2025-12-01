@@ -1,13 +1,18 @@
-'use client'
-
+import { Metadata } from 'next'
 import Header from '@/components/Header'
 import BetaHeroSection from '@/components/BetaHeroSection'
+import BetaWhatIs from '@/components/BetaWhatIs'
 import BetaHowToJoin from '@/components/BetaHowToJoin'
 import BetaSignupForm from '@/components/BetaSignupForm'
 import BetaWhatYouGet from '@/components/BetaWhatYouGet'
 import BetaPricingSection from '@/components/BetaPricingSection'
 import CTASection from '@/components/CTASection'
 import Footer from '@/components/Footer'
+
+export const metadata: Metadata = {
+  title: 'CodeAgentSwarm Open Beta – Free Pro Access for Developers',
+  description: 'Join the open beta, get the full Pro tier for free, and help shape the future of multi-agent coding workflows.',
+}
 
 export default function BetaPage() {
   return (
@@ -24,6 +29,7 @@ export default function BetaPage() {
 
       <main>
         <BetaHeroSection />
+        <BetaWhatIs />
         <BetaHowToJoin />
         <BetaSignupForm />
         <BetaWhatYouGet />

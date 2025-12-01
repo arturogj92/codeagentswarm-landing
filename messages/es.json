@@ -379,7 +379,8 @@
     "hero": {
       "headline": "Open Beta - Accede al plan Pro gratis",
       "subheadline": "Únete a la Open Beta de CodeAgentSwarm y desbloquea todo el plan Pro sin coste mientras dure la beta.",
-      "primaryCta": "Unirme a la Beta (Acceso Pro Gratis)",
+      "valueLine": "Desbloquea 6 agentes en paralelo, integración con Git, Kanban, MCP y más - gratis durante la beta.",
+      "primaryCta": "Comenzar acceso Beta (Paso 1: Rellenar formulario)",
       "secondaryCta": "Descargar app"
     },
     "howToJoin": {
@@ -398,8 +399,16 @@
       },
       "note": "No necesitas tarjeta. Acceso completo al Pro durante la beta a cambio de tu feedback."
     },
+    "whatIs": {
+      "title": "¿Qué es CodeAgentSwarm?",
+      "point1": "Una app de escritorio que te permite ejecutar hasta 6 agentes Claude Code en paralelo.",
+      "point2": "Panel Git, commits con IA y diffs completos de archivos.",
+      "point3": "Marketplace MCP + Kanban integrado actualizado por los agentes.",
+      "point4": "Flujo ultra-rápido para construir apps, herramientas y automatizaciones."
+    },
     "form": {
       "title": "Registro Beta",
+      "stepTitle": "Paso 1 — Envíanos tu email para preparar tu activación Pro (Beta)",
       "emailLabel": "Email que usas (o usarás) en la app",
       "emailPlaceholder": "tu@email.com",
       "macosLabel": "Versión de macOS",
@@ -417,7 +426,15 @@
       "successStep3Title": "Únete a nuestro Discord",
       "successStep3Desc": "Requisito para activar Pro",
       "successNote": "¡Activaremos tu acceso Pro (Beta) cuando te unas a Discord!",
-      "downloadButton": "Descargar CodeAgentSwarm"
+      "downloadButton": "Descargar App (Paso 2)",
+      "discordButton": "Únete a Discord (Paso 3)",
+      "checklist": {
+        "step1Done": "Paso 1: Rellenaste el formulario de beta",
+        "step2": "Paso 2: Descargar la app",
+        "step3": "Paso 3: Iniciar sesión con el mismo email (Google/GitHub/Discord)",
+        "step4": "Paso 4: Únete a Discord para actualizaciones y feedback"
+      },
+      "socialProof": "Ya usado por testers iniciales que entregan 3 veces más rápido."
     },
     "whatYouGet": {
       "title": "Qué obtienes en la Open Beta",
@@ -432,13 +449,13 @@
     },
     "pricing": {
       "banner": "Durante la Open Beta, el plan Pro es 100% gratuito. Crea tu cuenta, envía tu email y te lo activamos.",
-      "badge": "GRATIS EN BETA",
+      "badge": "GRATIS DURANTE LA BETA",
       "priceStrikethrough": "~6,99 €/mes~",
       "priceFree": "Gratis durante la beta",
-      "cta": "Acceder al Pro en Beta"
+      "cta": "Activar Pro Beta Gratis (Paso 1)"
     },
     "banner": {
-      "text": "Estamos en Open Beta – consigue Pro gratis",
+      "text": "Estamos en Open Beta - Disfruta del plan Pro gratis",
       "cta": "Unirme a la Beta"
     }
   }

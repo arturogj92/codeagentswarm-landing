@@ -2,8 +2,10 @@
 
 import { motion, useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
-import { Send, CheckCircle, Download, LogIn, MessageCircle, ArrowRight } from 'lucide-react'
+import { Send, CheckCircle, Download, LogIn, MessageCircle, ArrowRight, Check, Square } from 'lucide-react'
 import { useTranslations } from 'next-intl'
+
+const DISCORD_URL = 'https://discord.gg/AMxQ7Zh6?utm_source=beta_page'
 
 export default function BetaSignupForm() {
   const t = useTranslations('beta.form')
@@ -75,6 +77,11 @@ export default function BetaSignupForm() {
           <h2 className="heading-lg mb-4">
             <span className="gradient-text">{t('title')}</span>
           </h2>
+          {!isSuccess && (
+            <p className="text-lg text-white/70 max-w-2xl mx-auto">
+              {t('stepTitle')}
+            </p>
+          )}
         </motion.div>
 
         {/* Form Card */}
@@ -193,67 +200,63 @@ export default function BetaSignupForm() {
                   </p>
                 </div>
 
-                {/* Steps */}
-                <div className="space-y-4 mb-8">
-                  {/* Step 1 */}
-                  <div className="flex items-start gap-4 p-4 rounded-xl bg-white/5 border border-white/10">
-                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-neon-cyan/20 flex items-center justify-center">
-                      <span className="text-neon-cyan font-bold">1</span>
+                {/* Visual Checklist */}
+                <div className="space-y-3 mb-8 p-6 rounded-xl bg-white/5 border border-white/10">
+                  <div className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-md bg-neon-green/20 flex items-center justify-center">
+                      <Check className="w-4 h-4 text-neon-green" />
                     </div>
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-1">
-                        <Download className="w-4 h-4 text-neon-cyan" />
-                        <span className="font-semibold text-white">{t('successStep1Title')}</span>
-                      </div>
-                      <p className="text-sm text-white/60">{t('successStep1Desc')}</p>
-                    </div>
+                    <p className="text-white/80 pt-0.5">{t('checklist.step1Done')}</p>
                   </div>
-
-                  {/* Step 2 */}
-                  <div className="flex items-start gap-4 p-4 rounded-xl bg-white/5 border border-white/10">
-                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-neon-purple/20 flex items-center justify-center">
-                      <span className="text-neon-purple font-bold">2</span>
+                  <div className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-md bg-white/10 flex items-center justify-center">
+                      <Square className="w-4 h-4 text-white/40" />
                     </div>
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-1">
-                        <LogIn className="w-4 h-4 text-neon-purple" />
-                        <span className="font-semibold text-white">{t('successStep2Title')}</span>
-                      </div>
-                      <p className="text-sm text-white/60">{t('successStep2Desc')}</p>
-                    </div>
+                    <p className="text-white/60 pt-0.5">{t('checklist.step2')}</p>
                   </div>
-
-                  {/* Step 3 */}
-                  <div className="flex items-start gap-4 p-4 rounded-xl bg-white/5 border border-white/10">
-                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-neon-magenta/20 flex items-center justify-center">
-                      <span className="text-neon-magenta font-bold">3</span>
+                  <div className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-md bg-white/10 flex items-center justify-center">
+                      <Square className="w-4 h-4 text-white/40" />
                     </div>
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-1">
-                        <MessageCircle className="w-4 h-4 text-neon-magenta" />
-                        <span className="font-semibold text-white">{t('successStep3Title')}</span>
-                      </div>
-                      <p className="text-sm text-white/60">{t('successStep3Desc')}</p>
+                    <p className="text-white/60 pt-0.5">{t('checklist.step3')}</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-md bg-white/10 flex items-center justify-center">
+                      <Square className="w-4 h-4 text-white/40" />
                     </div>
+                    <p className="text-white/60 pt-0.5">{t('checklist.step4')}</p>
                   </div>
                 </div>
 
-                {/* Note */}
-                <p className="text-center text-sm text-neon-green/80 mb-6">
-                  {t('successNote')}
-                </p>
+                {/* Social Proof */}
+                <div className="text-center mb-8">
+                  <p className="text-sm text-neon-cyan/80 font-medium">
+                    {t('socialProof')}
+                  </p>
+                </div>
 
-                {/* Download Button */}
-                <button
-                  onClick={() => {
-                    document.getElementById('download')?.scrollIntoView({ behavior: 'smooth' })
-                  }}
-                  className="w-full flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-white bg-gradient-to-r from-neon-cyan to-neon-purple hover:shadow-neon-cyan transition-all"
-                >
-                  <Download className="w-5 h-5" />
-                  {t('downloadButton')}
-                  <ArrowRight className="w-4 h-4" />
-                </button>
+                {/* Action Buttons */}
+                <div className="space-y-3">
+                  <button
+                    onClick={() => {
+                      document.getElementById('download')?.scrollIntoView({ behavior: 'smooth' })
+                    }}
+                    className="w-full flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-white bg-gradient-to-r from-neon-cyan to-neon-purple hover:shadow-neon-cyan transition-all"
+                  >
+                    <Download className="w-5 h-5" />
+                    {t('downloadButton')}
+                  </button>
+
+                  <a
+                    href={DISCORD_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-white bg-gradient-to-r from-neon-purple to-neon-magenta hover:shadow-neon-purple transition-all"
+                  >
+                    <MessageCircle className="w-5 h-5" />
+                    {t('discordButton')}
+                  </a>
+                </div>
               </div>
             )}
           </div>

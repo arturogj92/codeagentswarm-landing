@@ -379,7 +379,8 @@
     "hero": {
       "headline": "Open Beta - Get Pro tier for free",
       "subheadline": "Join the CodeAgentSwarm Open Beta and unlock the full Pro experience at no cost while the beta lasts.",
-      "primaryCta": "Join the Beta (Free Pro Access)",
+      "valueLine": "Unlock 6-agent parallel coding, Git integration, Kanban, MCP tools and more - free during the beta.",
+      "primaryCta": "Start Beta Access (Step 1: Fill the form)",
       "secondaryCta": "Download App"
     },
     "howToJoin": {
@@ -398,8 +399,16 @@
       },
       "note": "No credit card required. Full Pro access during the beta in exchange for your feedback."
     },
+    "whatIs": {
+      "title": "What is CodeAgentSwarm?",
+      "point1": "A desktop app that lets you run up to 6 Claude Code agents in parallel.",
+      "point2": "Git panel, AI commit messages, and full file diffs.",
+      "point3": "MCP marketplace + integrated Kanban updated by agents.",
+      "point4": "Ultra-fast workflow for building apps, tools and automations."
+    },
     "form": {
       "title": "Beta Signup",
+      "stepTitle": "Step 1 — Tell us your email to prepare your Pro (Beta) activation",
       "emailLabel": "Email you used (or will use) in the app",
       "emailPlaceholder": "your@email.com",
       "macosLabel": "macOS version",
@@ -417,7 +426,15 @@
       "successStep3Title": "Join our Discord",
       "successStep3Desc": "Required for Pro activation",
       "successNote": "We'll activate your Pro (Beta) access once you join Discord!",
-      "downloadButton": "Download CodeAgentSwarm"
+      "downloadButton": "Download App (Step 2)",
+      "discordButton": "Join Discord (Step 3)",
+      "checklist": {
+        "step1Done": "Step 1: You filled the beta form",
+        "step2": "Step 2: Download the app",
+        "step3": "Step 3: Sign in with the same email (Google/GitHub/Discord)",
+        "step4": "Step 4: Join Discord for updates & feedback"
+      },
+      "socialProof": "Already used by early testers shipping apps 3x faster."
     },
     "whatYouGet": {
       "title": "What you get in Open Beta",
@@ -432,13 +449,13 @@
     },
     "pricing": {
       "banner": "During the Open Beta, the Pro tier is 100% free. Create your account, submit your email and we'll unlock Pro for you.",
-      "badge": "FREE IN BETA",
+      "badge": "FREE DURING BETA",
       "priceStrikethrough": "~€6.99/month~",
       "priceFree": "Free during beta",
-      "cta": "Get Beta Pro Access"
+      "cta": "Activate Free Pro Beta Access (Step 1)"
     },
     "banner": {
-      "text": "We are in Open Beta – get Pro for free",
+      "text": "We're in Open Beta - Get the full Pro experience for free",
       "cta": "Join Beta"
     }
   }

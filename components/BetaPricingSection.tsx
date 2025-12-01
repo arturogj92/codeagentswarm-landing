@@ -55,35 +55,7 @@ export default function BetaPricingSection() {
       cta: t('plans.free.cta'),
       popular: false,
       isBeta: false,
-    },
-    {
-      name: t('plans.starter.name'),
-      icon: Sparkles,
-      price: 2.99,
-      description: t('plans.starter.description'),
-      gradient: 'from-blue-500 to-cyan-500',
-      features: [
-        { name: t('features.terminals4'), included: true, badge: t('badges.boost2x') },
-        { name: t('features.projects4'), included: true },
-        { name: t('features.notifications'), included: true },
-        { name: t('features.realTimeChanges'), included: true },
-        { name: t('features.gridOnly'), included: true },
-        { name: t('features.projectShortcut1'), included: true },
-        { name: t('features.terminalShortcut1'), included: true },
-        { name: t('features.resizable'), included: true },
-        { name: t('features.mcpConfig'), included: true },
-        { name: t('features.mcpMarketplace'), included: true },
-        { name: t('features.gitAi'), included: false },
-        { name: t('features.taskLabels'), included: false },
-        { name: t('features.shortcuts'), included: false },
-        { name: t('features.mcpPermissions'), included: false },
-        { name: t('features.claudePermissions'), included: false },
-        { name: t('features.turboMode'), included: false },
-        { name: t('features.history'), included: false },
-      ],
-      cta: t('plans.starter.cta'),
-      popular: false,
-      isBeta: false,
+      visible: true,
     },
     {
       name: t('plans.pro.name'),
@@ -114,8 +86,12 @@ export default function BetaPricingSection() {
       popular: true,
       savings: t('badges.save30'),
       isBeta: true,
+      visible: true,
     },
   ]
+
+  // Filter to show only visible plans (Free and Pro, hiding Starter)
+  const visiblePlans = plans.filter(plan => plan.visible)
 
   return (
     <section
@@ -161,8 +137,8 @@ export default function BetaPricingSection() {
         </motion.div>
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
-          {plans.map((plan, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          {visiblePlans.map((plan, index) => (
             <motion.div
               key={plan.name}
               initial={{ opacity: 0, y: 50 }}

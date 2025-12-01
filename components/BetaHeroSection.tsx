@@ -50,8 +50,12 @@ export default function BetaHeroSection() {
             <span className="gradient-text">{t('headline')}</span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-white/60 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-white/60 max-w-3xl mx-auto leading-relaxed mb-4">
             {t('subheadline')}
+          </p>
+
+          <p className="text-lg text-neon-cyan/90 max-w-3xl mx-auto leading-relaxed font-medium">
+            {t('valueLine')}
           </p>
         </motion.div>
 
