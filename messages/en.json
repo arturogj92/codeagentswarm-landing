@@ -102,7 +102,7 @@
         "description": "Tasks managed by you — and your agents."
       },
       "permissions": {
-        "title": "Visual Permissions & Danger Mode",
+        "title": "Visual Permissions & Turbo Mode",
         "description": "Control exactly what each agent can do."
       },
       "history": {
@@ -244,7 +244,7 @@
       "shortcuts": "Keyboard Shortcuts",
       "mcpPermissions": "Manage MCP Permissions",
       "claudePermissions": "Manage Claude Code Permissions",
-      "dangerMode": "Danger Mode",
+      "turboMode": "Turbo Mode",
       "history": "Conversation History"
     },
     "badges": {

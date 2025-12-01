@@ -155,7 +155,18 @@ export default function Header() {
                   key={link.name}
                   href={link.href}
                   className="text-lg text-white/70 hover:text-white transition-colors py-2"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={(e) => {
+                    e.preventDefault()
+                    setIsMobileMenuOpen(false)
+                    // Scroll after menu closes
+                    setTimeout(() => {
+                      const targetId = link.href.replace('#', '')
+                      const element = document.getElementById(targetId)
+                      if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' })
+                      }
+                    }, 100)
+                  }}
                 >
                   {link.name}
                 </a>
@@ -175,7 +186,16 @@ export default function Header() {
                 href="#download"
                 className="mt-4 py-3 px-6 text-center text-white font-semibold rounded-full"
                 style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }}
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={(e) => {
+                  e.preventDefault()
+                  setIsMobileMenuOpen(false)
+                  setTimeout(() => {
+                    const element = document.getElementById('download')
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth' })
+                    }
+                  }, 100)
+                }}
               >
                 {tCommon('downloadFree')}
               </a>

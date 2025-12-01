@@ -100,7 +100,7 @@ export default function SocialProofSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-32 px-6 overflow-hidden"
+      className="relative py-16 md:py-32 px-6 overflow-hidden"
     >
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-dark-900 via-black to-dark-900" />
@@ -112,7 +112,7 @@ export default function SocialProofSection() {
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.8 }}
-          className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-24"
+          className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 mb-12 md:mb-24"
         >
           {stats.map((stat, index) => (
             <motion.div
@@ -122,7 +122,7 @@ export default function SocialProofSection() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="relative group"
             >
-              <div className="relative p-6 rounded-2xl glass border border-white/5 text-center overflow-hidden h-full flex flex-col">
+              <div className="relative p-4 sm:p-6 rounded-2xl glass border border-white/5 text-center overflow-hidden h-full flex flex-col">
                 {/* Icon */}
                 <div
                   className={`inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br ${stat.gradient} mb-4 mx-auto`}
@@ -131,7 +131,7 @@ export default function SocialProofSection() {
                 </div>
 
                 {/* Title */}
-                <div className="text-xl md:text-2xl font-display font-bold text-white mb-2">
+                <div className="text-base sm:text-xl md:text-2xl font-display font-bold text-white mb-2">
                   {stat.title}
                 </div>
 
@@ -152,7 +152,7 @@ export default function SocialProofSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-center mb-16"
+          className="text-center mb-8 md:mb-16"
         >
           <h2 className="heading-lg mb-4">
             <span className="text-white">{t('title')}</span>{' '}
@@ -164,7 +164,7 @@ export default function SocialProofSection() {
         </motion.div>
 
         {/* Testimonials */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mb-12 md:mb-20">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.author}

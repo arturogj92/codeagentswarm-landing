@@ -27,13 +27,21 @@ export default function PricingSection() {
       gradient: 'from-gray-500 to-gray-600',
       features: [
         { name: t('features.terminals2'), included: true },
-        { name: t('features.kanban1'), included: true },
+        { name: t('features.projects2'), included: true },
         { name: t('features.notifications'), included: true },
-        { name: t('features.resizable'), included: true },
-        { name: t('features.mcpConfig'), included: true },
+        { name: t('features.realTimeChanges'), included: true },
+        { name: t('features.gridOnly'), included: true },
+        { name: t('features.projectShortcuts'), included: false },
+        { name: t('features.terminalShortcuts'), included: false },
+        { name: t('features.resizable'), included: false },
+        { name: t('features.mcpConfig'), included: false },
         { name: t('features.mcpMarketplace'), included: false },
-        { name: t('features.git'), included: false },
+        { name: t('features.gitAi'), included: false },
+        { name: t('features.taskLabels'), included: false },
         { name: t('features.shortcuts'), included: false },
+        { name: t('features.mcpPermissions'), included: false },
+        { name: t('features.claudePermissions'), included: false },
+        { name: t('features.turboMode'), included: false },
         { name: t('features.history'), included: false },
       ],
       cta: t('plans.free.cta'),
@@ -46,14 +54,22 @@ export default function PricingSection() {
       description: t('plans.starter.description'),
       gradient: 'from-blue-500 to-cyan-500',
       features: [
-        { name: t('features.terminals4'), included: true, badge: '2X BOOST' },
-        { name: t('features.kanban4'), included: true },
+        { name: t('features.terminals4'), included: true, badge: t('badges.boost2x') },
+        { name: t('features.projects4'), included: true },
         { name: t('features.notifications'), included: true },
+        { name: t('features.realTimeChanges'), included: true },
+        { name: t('features.gridOnly'), included: true },
+        { name: t('features.projectShortcut1'), included: true },
+        { name: t('features.terminalShortcut1'), included: true },
         { name: t('features.resizable'), included: true },
         { name: t('features.mcpConfig'), included: true },
         { name: t('features.mcpMarketplace'), included: true },
-        { name: t('features.git'), included: false },
+        { name: t('features.gitAi'), included: false },
+        { name: t('features.taskLabels'), included: false },
         { name: t('features.shortcuts'), included: false },
+        { name: t('features.mcpPermissions'), included: false },
+        { name: t('features.claudePermissions'), included: false },
+        { name: t('features.turboMode'), included: false },
         { name: t('features.history'), included: false },
       ],
       cta: t('plans.starter.cta'),
@@ -66,14 +82,22 @@ export default function PricingSection() {
       description: t('plans.pro.description'),
       gradient: 'from-neon-purple to-neon-magenta',
       features: [
-        { name: t('features.terminals6'), included: true, badge: '3X BOOST' },
+        { name: t('features.terminals6'), included: true, badge: t('badges.boost3x') },
         { name: t('features.unlimitedProjects'), included: true, badge: t('badges.unlimited') },
         { name: t('features.notifications'), included: true },
+        { name: t('features.realTimeChanges'), included: true },
+        { name: t('features.gridTabs'), included: true, badge: t('badges.modes2x') },
+        { name: t('features.projectShortcuts6'), included: true, badge: t('badges.boost6x') },
+        { name: t('features.terminalShortcutsUnlimited'), included: true, badge: t('badges.unlimited') },
         { name: t('features.resizable'), included: true },
         { name: t('features.mcpConfig'), included: true },
         { name: t('features.mcpMarketplace'), included: true },
         { name: t('features.gitAi'), included: true },
+        { name: t('features.taskLabels'), included: true },
         { name: t('features.shortcuts'), included: true },
+        { name: t('features.mcpPermissions'), included: true },
+        { name: t('features.claudePermissions'), included: true },
+        { name: t('features.turboMode'), included: true, badge: t('badges.boost3x') },
         { name: t('features.history'), included: true },
       ],
       cta: t('plans.pro.cta'),
@@ -86,7 +110,7 @@ export default function PricingSection() {
     <section
       id="pricing"
       ref={sectionRef}
-      className="relative py-32 px-6 overflow-hidden"
+      className="relative py-16 md:py-32 px-6 overflow-hidden"
     >
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-dark-900 via-black to-dark-900" />
@@ -111,7 +135,7 @@ export default function PricingSection() {
         </motion.div>
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
           {plans.map((plan, index) => (
             <motion.div
               key={plan.name}

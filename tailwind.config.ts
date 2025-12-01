@@ -13,7 +13,7 @@ const config: Config = {
         neon: {
           cyan: '#00f5ff',
           magenta: '#ff00ff',
-          purple: '#8b5cf6',
+          purple: '#a855f7',
           pink: '#f472b6',
           green: '#00ff88',
           orange: '#ff6b35',
@@ -94,7 +94,7 @@ const config: Config = {
       boxShadow: {
         'neon-cyan': '0 0 20px rgba(0, 245, 255, 0.3), 0 0 40px rgba(0, 245, 255, 0.2), 0 0 60px rgba(0, 245, 255, 0.1)',
         'neon-magenta': '0 0 20px rgba(255, 0, 255, 0.3), 0 0 40px rgba(255, 0, 255, 0.2), 0 0 60px rgba(255, 0, 255, 0.1)',
-        'neon-purple': '0 0 20px rgba(139, 92, 246, 0.3), 0 0 40px rgba(139, 92, 246, 0.2), 0 0 60px rgba(139, 92, 246, 0.1)',
+        'neon-purple': '0 0 20px rgba(168, 85, 247, 0.4), 0 0 40px rgba(168, 85, 247, 0.3), 0 0 60px rgba(168, 85, 247, 0.2)',
         'glass': '0 8px 32px rgba(0, 0, 0, 0.4)',
         'glass-lg': '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
       },

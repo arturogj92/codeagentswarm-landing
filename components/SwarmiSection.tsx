@@ -38,7 +38,7 @@ export default function SwarmiSection() {
     <section
       id="swarmi"
       ref={sectionRef}
-      className="relative py-32 px-6 overflow-hidden"
+      className="relative py-16 md:py-32 px-6 overflow-hidden"
     >
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-dark-900 to-black" />
@@ -51,7 +51,7 @@ export default function SwarmiSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-8 md:mb-16"
         >
           <motion.span
             initial={{ scale: 0.8, opacity: 0 }}
@@ -73,7 +73,7 @@ export default function SwarmiSection() {
         </motion.div>
 
         {/* Main Content */}
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Swarmi Character */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -97,7 +97,7 @@ export default function SwarmiSection() {
                 alt="Swarmi - Your AI Assistant"
                 width={280}
                 height={280}
-                className="drop-shadow-2xl"
+                className="drop-shadow-2xl w-[180px] h-[180px] sm:w-[220px] sm:h-[220px] md:w-[280px] md:h-[280px]"
               />
             </motion.div>
 
@@ -117,7 +117,7 @@ export default function SwarmiSection() {
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="grid sm:grid-cols-2 gap-6"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6"
           >
             {features.map((feature, index) => (
               <motion.div
@@ -125,7 +125,7 @@ export default function SwarmiSection() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-                className="group p-6 rounded-xl bg-[#0a0a0f] border border-white/10 hover:border-amber-500/30 transition-all duration-300"
+                className="group p-4 sm:p-6 rounded-xl bg-[#0a0a0f] border border-white/10 hover:border-amber-500/30 transition-all duration-300"
               >
                 <div className="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center mb-4 group-hover:bg-amber-500/20 transition-colors">
                   <feature.icon className="w-5 h-5 text-amber-400" />
@@ -142,7 +142,7 @@ export default function SwarmiSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="text-center mt-16"
+          className="text-center mt-8 md:mt-16"
         >
           <p className="text-white/40 text-sm">
             {t('cta')}

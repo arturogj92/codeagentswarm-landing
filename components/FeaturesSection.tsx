@@ -104,7 +104,7 @@ export default function FeaturesSection() {
     <section
       id="features"
       ref={sectionRef}
-      className="relative py-32 px-6 overflow-hidden"
+      className="relative py-16 md:py-32 px-6 overflow-hidden"
     >
       {/* Background Elements - Cool Blobs */}
       <div className="absolute inset-0 grid-bg opacity-20" />

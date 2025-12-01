@@ -85,7 +85,7 @@ export default function RoadmapSection() {
     <section
       id="roadmap"
       ref={sectionRef}
-      className="relative py-32 px-6 overflow-hidden"
+      className="relative py-16 md:py-32 px-6 overflow-hidden"
     >
       {/* Background */}
       <div className="absolute inset-0 grid-bg opacity-30" />
@@ -98,7 +98,7 @@ export default function RoadmapSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          className="text-center mb-10 md:mb-20"
         >
           <h2 className="heading-lg mb-6">
             <span className="text-white">{t('title')}</span>{' '}
@@ -111,11 +111,14 @@ export default function RoadmapSection() {
 
         {/* Timeline */}
         <div className="relative">
-          {/* Timeline Line */}
+          {/* Timeline Line - Desktop */}
           <div className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent hidden lg:block" />
 
+          {/* Timeline Line - Mobile */}
+          <div className="absolute top-0 bottom-0 left-4 w-0.5 bg-gradient-to-b from-neon-cyan/50 via-neon-purple/30 to-neon-cyan/50 lg:hidden" />
+
           {/* Timeline Items */}
-          <div className="space-y-8 lg:space-y-16">
+          <div className="space-y-6 lg:space-y-16">
             {roadmapItems.map((item, index) => (
               <motion.div
                 key={item.title}
@@ -126,7 +129,24 @@ export default function RoadmapSection() {
                   index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
                 }`}
               >
-                {/* Timeline Node */}
+                {/* Timeline Node - Mobile */}
+                <div className="absolute left-4 -translate-x-1/2 lg:hidden flex items-center justify-center z-10">
+                  <motion.div
+                    animate={
+                      item.status === 'in-progress'
+                        ? { scale: [1, 1.3, 1], boxShadow: ['0 0 0 0px rgba(0, 255, 255, 0.4)', '0 0 0 8px rgba(0, 255, 255, 0)'] }
+                        : {}
+                    }
+                    transition={{ duration: 2, repeat: Infinity }}
+                    className={`w-4 h-4 rounded-full border-2 ${
+                      item.status === 'in-progress'
+                        ? 'bg-neon-cyan border-neon-cyan shadow-lg shadow-neon-cyan/50'
+                        : 'bg-dark-900 border-white/30'
+                    }`}
+                  />
+                </div>
+
+                {/* Timeline Node - Desktop */}
                 <div className="absolute left-1/2 -translate-x-1/2 hidden lg:flex items-center justify-center">
                   <motion.div
                     animate={
@@ -145,7 +165,7 @@ export default function RoadmapSection() {
 
                 {/* Content Card */}
                 <div
-                  className={`w-full lg:w-[calc(50%-2rem)] ${
+                  className={`w-full pl-10 lg:pl-0 lg:w-[calc(50%-2rem)] ${
                     index % 2 === 0 ? 'lg:pr-8' : 'lg:pl-8'
                   }`}
                 >
@@ -159,25 +179,37 @@ export default function RoadmapSection() {
                   >
                     {/* Card */}
                     <div className="relative rounded-2xl overflow-hidden glass border border-white/5 hover:border-white/10 transition-all duration-500">
+                      {/* Top accent bar - visible on mobile */}
+                      <div className={`h-1 bg-gradient-to-r ${item.gradient}`} />
+
                       {/* Gradient overlay */}
                       <div
                         className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
                       />
 
-                      <div className="relative p-6">
+                      <div className="relative p-4 sm:p-6">
                         {/* Header */}
                         <div className="flex items-start justify-between mb-4">
                           <div className="flex items-center gap-4">
                             <div
-                              className={`w-12 h-12 rounded-xl bg-gradient-to-br ${item.gradient} p-3 shadow-lg`}
+                              className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br ${item.gradient} p-2 sm:p-3 shadow-lg flex-shrink-0 ${
+                                item.status === 'in-progress' ? 'animate-pulse' : ''
+                              }`}
                             >
                               <item.icon className="w-full h-full text-white" />
                             </div>
-                            <div>
-                              <div className="text-sm text-white/40 font-medium">
-                                {item.quarter} {item.year}
+                            <div className="min-w-0">
+                              <div className="flex items-center gap-2 mb-0.5">
+                                <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${
+                                  item.status === 'in-progress'
+                                    ? 'bg-neon-cyan/20 text-neon-cyan'
+                                    : 'bg-white/10 text-white/50'
+                                }`}>
+                                  {item.quarter}
+                                </span>
+                                <span className="text-xs text-white/30">{item.year}</span>
                               </div>
-                              <h3 className="text-xl font-display font-semibold text-white">
+                              <h3 className="text-base sm:text-xl font-display font-semibold text-white truncate">
                                 {item.title}
                               </h3>
                             </div>
@@ -185,18 +217,34 @@ export default function RoadmapSection() {
 
                           {/* Status Badge */}
                           <span
-                            className={`text-xs font-bold px-3 py-1 rounded-full ${
+                            className={`hidden sm:inline-block text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap ${
                               item.status === 'in-progress'
-                                ? 'bg-neon-cyan/20 text-neon-cyan'
+                                ? 'bg-neon-cyan/20 text-neon-cyan border border-neon-cyan/30'
                                 : 'bg-white/10 text-white/50'
                             }`}
                           >
-                            {item.status === 'in-progress' ? t('status.inProgress') : t('status.upcoming')}
+                            {item.status === 'in-progress' ? `● ${t('status.inProgress')}` : t('status.upcoming')}
                           </span>
                         </div>
 
                         {/* Description */}
-                        <p className="text-white/50 mb-4">{item.description}</p>
+                        <p className="text-white/50 text-sm sm:text-base mb-4">{item.description}</p>
+
+                        {/* Features Preview - Mobile only */}
+                        <div className="lg:hidden mb-3 pt-3 border-t border-white/5">
+                          <div className="flex flex-wrap gap-2">
+                            {item.features.slice(0, 2).map((feature) => (
+                              <span key={feature} className={`text-xs px-2 py-1 rounded-full bg-gradient-to-r ${item.gradient} bg-opacity-10 text-white/70`}>
+                                {feature}
+                              </span>
+                            ))}
+                            {item.features.length > 2 && (
+                              <span className="text-xs px-2 py-1 rounded-full bg-white/5 text-white/40">
+                                +{item.features.length - 2}
+                              </span>
+                            )}
+                          </div>
+                        </div>
 
                         {/* Expandable Features */}
                         <motion.div

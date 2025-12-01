@@ -69,7 +69,7 @@ export default function CTASection() {
     <section
       id="download"
       ref={sectionRef}
-      className="relative py-32 px-6 overflow-hidden"
+      className="relative py-16 md:py-32 px-6 overflow-hidden"
     >
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-dark-900 via-black to-dark-900" />

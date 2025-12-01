@@ -102,7 +102,7 @@
         "description": "Tareas gestionadas por ti y por los agentes."
       },
       "permissions": {
-        "title": "Permisos Visuales y Modo Peligro",
+        "title": "Permisos Visuales y Modo Turbo",
         "description": "Control total sobre el acceso de cada agente."
       },
       "history": {
@@ -244,7 +244,7 @@
       "shortcuts": "Atajos de Teclado",
       "mcpPermissions": "Gestionar Permisos MCP",
       "claudePermissions": "Gestionar Permisos Claude Code",
-      "dangerMode": "Modo Peligro",
+      "turboMode": "Modo Turbo",
       "history": "Historial de Conversaciones"
     },
     "badges": {

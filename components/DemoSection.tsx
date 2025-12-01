@@ -52,7 +52,7 @@ export default function DemoSection() {
     <section
       id="demo"
       ref={sectionRef}
-      className="relative py-32 px-6 overflow-hidden"
+      className="relative py-16 md:py-32 px-6 overflow-hidden"
     >
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-dark-900 to-black" />
@@ -161,12 +161,12 @@ export default function DemoSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="absolute -bottom-6 left-1/2 -translate-x-1/2"
+            className="absolute -bottom-6 left-0 right-0 flex justify-center"
           >
             <a href="#download" className="group relative inline-block">
               <div className="absolute -inset-1 rounded-full blur-lg opacity-70 group-hover:opacity-100 transition-opacity" style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }} />
-              <button className="relative flex items-center gap-2 px-8 py-4 text-white font-semibold rounded-full" style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }}>
-                <Download className="w-5 h-5" />
+              <button className="relative flex items-center gap-1.5 sm:gap-2 px-5 py-2.5 sm:px-8 sm:py-4 text-sm sm:text-base text-white font-semibold rounded-full" style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }}>
+                <Download className="w-4 h-4 sm:w-5 sm:h-5" />
                 {tCommon('downloadNow')}
               </button>
             </a>
@@ -178,14 +178,14 @@ export default function DemoSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="grid grid-cols-3 gap-8 mt-24 max-w-3xl mx-auto"
+          className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 mt-16 sm:mt-24 max-w-3xl mx-auto px-4"
         >
           {stats.map((stat) => (
             <div key={stat.label} className="text-center">
-              <div className="text-3xl md:text-4xl font-display font-bold gradient-text-static mb-2">
+              <div className="text-2xl sm:text-3xl md:text-4xl font-display font-bold gradient-text-static mb-1 sm:mb-2">
                 {stat.value}
               </div>
-              <div className="text-white/40 text-sm">{stat.label}</div>
+              <div className="text-white/50 sm:text-white/40 text-xs sm:text-sm">{stat.label}</div>
             </div>
           ))}
         </motion.div>
