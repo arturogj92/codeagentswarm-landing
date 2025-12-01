@@ -70,7 +70,7 @@ export default function Header() {
               priority
             />
           </div>
-          <span className="font-bold text-xl tracking-wider font-[var(--font-orbitron)] bg-gradient-to-r from-purple-500 to-amber-400 bg-clip-text text-transparent">
+          <span className="font-bold text-xl tracking-wider font-[var(--font-orbitron)] bg-clip-text text-transparent" style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
             CODEAGENTSWARM
           </span>
         </motion.a>
