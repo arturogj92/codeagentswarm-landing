@@ -31,7 +31,7 @@ export default function Home() {
       <Header />
 
       {/* Spacer for beta banner - only visible on non-beta pages */}
-      <div className="h-[52px]" />
+      <div className="h-9" />
 
       <main>
         <HeroSection />

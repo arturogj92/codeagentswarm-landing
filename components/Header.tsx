@@ -18,8 +18,8 @@ export default function Header() {
 
   // Check if we're on beta page (no banner)
   const isBetaPage = pathname?.includes('/beta')
-  // Banner height is ~52px (py-3 + content), so header needs top-[52px]
-  const topOffset = isBetaPage ? 'top-0' : 'top-[52px]'
+  // Banner height is ~36px (py-1.5 + content), so header needs top-9
+  const topOffset = isBetaPage ? 'top-0' : 'top-9'
 
   const navLinks = [
     { name: t('features'), href: '#features' },
