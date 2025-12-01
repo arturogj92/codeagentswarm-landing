@@ -200,13 +200,18 @@ export default function BetaPricingSection() {
                   {/* Price */}
                   <div className="flex items-baseline gap-2 mb-3">
                     {plan.isBeta ? (
-                      <div className="flex flex-col gap-1">
-                        <span className="text-2xl text-white/40 line-through">
+                      <div className="flex flex-col gap-2">
+                        <span className="text-lg text-white/40 line-through">
                           {tBeta('priceStrikethrough')}
                         </span>
-                        <span className="text-3xl font-display font-bold text-neon-cyan">
-                          {tBeta('priceFree')}
-                        </span>
+                        <div className="flex items-center gap-3">
+                          <span className="text-4xl font-display font-bold text-white">
+                            €0
+                          </span>
+                          <span className="px-3 py-1 rounded-full bg-gradient-to-r from-neon-cyan to-neon-purple text-white text-sm font-bold">
+                            {tBeta('priceFree')}
+                          </span>
+                        </div>
                       </div>
                     ) : (
                       <>
