@@ -64,7 +64,7 @@ export default function Footer() {
               <div className="relative">
                 <div className="w-10 h-10 rounded-xl flex items-center justify-center">
                   <Image
-                    src="/codeagentswarm-logo.svg"
+                    src="/logo.png"
                     alt="CodeAgentSwarm Logo"
                     width={40}
                     height={40}
@@ -72,7 +72,7 @@ export default function Footer() {
                   />
                 </div>
               </div>
-              <span className="text-white font-bold text-xl tracking-wider font-[var(--font-orbitron)]">
+              <span className="text-amber-400 font-bold text-xl tracking-wider font-[var(--font-orbitron)]">
                 CODEAGENTSWARM
               </span>
             </motion.a>

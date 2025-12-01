@@ -62,7 +62,7 @@ export default function Header() {
         >
           <div className="relative">
             <Image
-              src="/codeagentswarm-logo.svg"
+              src="/logo.png"
               alt="CodeAgentSwarm Logo"
               width={44}
               height={44}
@@ -70,7 +70,7 @@ export default function Header() {
               priority
             />
           </div>
-          <span className="text-white font-bold text-xl tracking-wider font-[var(--font-orbitron)]">
+          <span className="text-amber-400 font-bold text-xl tracking-wider font-[var(--font-orbitron)]">
             CODEAGENTSWARM
           </span>
         </motion.a>
