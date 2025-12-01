@@ -200,15 +200,18 @@ export default function BetaPricingSection() {
                   {/* Price */}
                   <div className="flex items-baseline gap-2 mb-3">
                     {plan.isBeta ? (
-                      <div className="flex flex-col gap-2">
-                        <span className="text-lg text-white/40 line-through">
-                          {tBeta('priceStrikethrough')}
-                        </span>
+                      <div className="flex flex-col gap-3">
+                        <div className="inline-flex items-center gap-2">
+                          <span className="relative text-white/50 text-lg font-medium">
+                            €6.99/mo
+                            <span className="absolute left-0 right-0 top-1/2 h-[2px] bg-red-500/80 -rotate-6" />
+                          </span>
+                        </div>
                         <div className="flex items-center gap-3">
                           <span className="text-4xl font-display font-bold text-white">
                             €0
                           </span>
-                          <span className="px-3 py-1 rounded-full bg-gradient-to-r from-neon-cyan to-neon-purple text-white text-sm font-bold">
+                          <span className="px-3 py-1.5 rounded-full bg-neon-green text-black text-sm font-bold uppercase tracking-wide">
                             {tBeta('priceFree')}
                           </span>
                         </div>
