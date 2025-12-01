@@ -374,5 +374,72 @@
     "label": "Idioma",
     "en": "English",
     "es": "Español"
+  },
+  "beta": {
+    "hero": {
+      "headline": "Open Beta - Accede al plan Pro gratis",
+      "subheadline": "Únete a la Open Beta de CodeAgentSwarm y desbloquea todo el plan Pro sin coste mientras dure la beta.",
+      "primaryCta": "Unirme a la Beta (Acceso Pro Gratis)",
+      "secondaryCta": "Descargar app"
+    },
+    "howToJoin": {
+      "title": "Cómo unirte",
+      "step1": {
+        "title": "Rellena el formulario de beta",
+        "description": "Cuéntanos tu email y tu entorno para preparar tu acceso Pro (Beta)."
+      },
+      "step2": {
+        "title": "Descarga la app y crea tu cuenta",
+        "description": "Instala CodeAgentSwarm en macOS e inicia sesión con el MISMO email (login con Google, GitHub o Discord)."
+      },
+      "step3": {
+        "title": "Únete a nuestro Discord y da feedback",
+        "description": "Unirse al Discord de CodeAgentSwarm es un requisito de la beta, ya que el feedback es parte del acuerdo Pro gratis."
+      },
+      "note": "No necesitas tarjeta. Acceso completo al Pro durante la beta a cambio de tu feedback."
+    },
+    "form": {
+      "title": "Registro Beta",
+      "emailLabel": "Email que usas (o usarás) en la app",
+      "emailPlaceholder": "tu@email.com",
+      "macosLabel": "Versión de macOS",
+      "macosPlaceholder": "ej., Sonoma 14.2",
+      "usageLabel": "¿Cómo piensas usar CodeAgentSwarm?",
+      "usagePlaceholder": "Cuéntanos tu caso de uso (opcional)",
+      "consentLabel": "Acepto recibir actualizaciones relacionadas con la beta.",
+      "submitButton": "Solicitar activación de beta",
+      "successTitle": "¡Ya estás dentro!",
+      "successSubtitle": "Hemos recibido tu solicitud. Ahora sigue estos pasos:",
+      "successStep1Title": "Descarga la app",
+      "successStep1Desc": "Obtén CodeAgentSwarm para macOS",
+      "successStep2Title": "Inicia sesión con el mismo email",
+      "successStep2Desc": "Usa Google, GitHub o Discord",
+      "successStep3Title": "Únete a nuestro Discord",
+      "successStep3Desc": "Requisito para activar Pro",
+      "successNote": "¡Activaremos tu acceso Pro (Beta) cuando te unas a Discord!",
+      "downloadButton": "Descargar CodeAgentSwarm"
+    },
+    "whatYouGet": {
+      "title": "Qué obtienes en la Open Beta",
+      "features": {
+        "fullPro": "Todas las funciones Pro desbloqueadas",
+        "priority": "Prioridad en sugerencias",
+        "earlyAccess": "Builds anticipadas",
+        "influence": "Influencia en la hoja de ruta",
+        "feedback": "Canal de feedback obligatorio",
+        "noPayments": "Ningún pago durante la beta"
+      }
+    },
+    "pricing": {
+      "banner": "Durante la Open Beta, el plan Pro es 100% gratuito. Crea tu cuenta, envía tu email y te lo activamos.",
+      "badge": "GRATIS EN BETA",
+      "priceStrikethrough": "~6,99 €/mes~",
+      "priceFree": "Gratis durante la beta",
+      "cta": "Acceder al Pro en Beta"
+    },
+    "banner": {
+      "text": "Estamos en Open Beta – consigue Pro gratis",
+      "cta": "Unirme a la Beta"
+    }
   }
 }

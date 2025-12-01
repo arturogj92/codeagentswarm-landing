@@ -6,13 +6,19 @@ import { Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
+import { usePathname } from 'next/navigation'
 import LocaleSwitcher from './LocaleSwitcher'
 
 export default function Header() {
   const t = useTranslations('header')
   const tCommon = useTranslations('common')
+  const pathname = usePathname()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
+  // Check if we're on beta page (no banner)
+  const isBetaPage = pathname?.includes('/beta')
+  const topOffset = isBetaPage ? 'top-0' : 'top-12'
 
   const navLinks = [
     { name: t('features'), href: '#features' },
@@ -44,7 +50,8 @@ export default function Header() {
   return (
     <header
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+        'fixed left-0 right-0 z-40 transition-all duration-300',
+        topOffset,
         isScrolled
           ? 'py-3 bg-black/95 border-b border-white/5'
           : 'py-6 bg-transparent'

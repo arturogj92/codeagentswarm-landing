@@ -374,5 +374,72 @@
     "label": "Language",
     "en": "English",
     "es": "Español"
+  },
+  "beta": {
+    "hero": {
+      "headline": "Open Beta - Get Pro tier for free",
+      "subheadline": "Join the CodeAgentSwarm Open Beta and unlock the full Pro experience at no cost while the beta lasts.",
+      "primaryCta": "Join the Beta (Free Pro Access)",
+      "secondaryCta": "Download App"
+    },
+    "howToJoin": {
+      "title": "How to join",
+      "step1": {
+        "title": "Fill in the beta form",
+        "description": "Tell us your email and basic setup so we can prepare your Pro (Beta) access."
+      },
+      "step2": {
+        "title": "Download the app & create your account",
+        "description": "Install CodeAgentSwarm on macOS and sign in with the SAME email (Google, GitHub or Discord login supported)."
+      },
+      "step3": {
+        "title": "Join our Discord & share feedback",
+        "description": "Joining the CodeAgentSwarm Discord is REQUIRED for the beta, since feedback is a condition for free Pro access."
+      },
+      "note": "No credit card required. Full Pro access during the beta in exchange for your feedback."
+    },
+    "form": {
+      "title": "Beta Signup",
+      "emailLabel": "Email you used (or will use) in the app",
+      "emailPlaceholder": "your@email.com",
+      "macosLabel": "macOS version",
+      "macosPlaceholder": "e.g., Sonoma 14.2",
+      "usageLabel": "How do you plan to use CodeAgentSwarm?",
+      "usagePlaceholder": "Tell us about your use case (optional)",
+      "consentLabel": "I agree to receive beta related updates.",
+      "submitButton": "Request Beta Activation",
+      "successTitle": "You're in!",
+      "successSubtitle": "Your beta request has been received. Now follow these steps:",
+      "successStep1Title": "Download the app",
+      "successStep1Desc": "Get CodeAgentSwarm for macOS",
+      "successStep2Title": "Sign in with the same email",
+      "successStep2Desc": "Use Google, GitHub or Discord",
+      "successStep3Title": "Join our Discord",
+      "successStep3Desc": "Required for Pro activation",
+      "successNote": "We'll activate your Pro (Beta) access once you join Discord!",
+      "downloadButton": "Download CodeAgentSwarm"
+    },
+    "whatYouGet": {
+      "title": "What you get in Open Beta",
+      "features": {
+        "fullPro": "Full Pro features unlocked",
+        "priority": "Priority feature requests",
+        "earlyAccess": "Early access builds",
+        "influence": "Influence on roadmap",
+        "feedback": "Required feedback channel",
+        "noPayments": "No payments during beta"
+      }
+    },
+    "pricing": {
+      "banner": "During the Open Beta, the Pro tier is 100% free. Create your account, submit your email and we'll unlock Pro for you.",
+      "badge": "FREE IN BETA",
+      "priceStrikethrough": "~€6.99/month~",
+      "priceFree": "Free during beta",
+      "cta": "Get Beta Pro Access"
+    },
+    "banner": {
+      "text": "We are in Open Beta – get Pro for free",
+      "cta": "Join Beta"
+    }
   }
 }
