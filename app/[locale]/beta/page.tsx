@@ -6,6 +6,7 @@ import BetaHowToJoin from '@/components/BetaHowToJoin'
 import BetaSignupForm from '@/components/BetaSignupForm'
 import BetaWhatYouGet from '@/components/BetaWhatYouGet'
 import BetaPricingSection from '@/components/BetaPricingSection'
+import BetaFAQ from '@/components/BetaFAQ'
 import CTASection from '@/components/CTASection'
 import Footer from '@/components/Footer'
 
@@ -34,6 +35,7 @@ export default function BetaPage() {
         <BetaSignupForm />
         <BetaWhatYouGet />
         <BetaPricingSection />
+        <BetaFAQ />
         <CTASection />
       </main>
 

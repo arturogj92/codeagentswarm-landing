@@ -457,6 +457,27 @@
     "banner": {
       "text": "We're in Open Beta - Get the full Pro experience for free",
       "cta": "Join Beta"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": {
+        "q1": "Is the Beta really free?",
+        "a1": "Yes. During the Open Beta, the entire Pro tier is free - all features unlocked, no credit card required.",
+        "q2": "Do I need a Claude Code subscription?",
+        "a2": "Yes. CodeAgentSwarm works on top of Claude Code, which powers all agentic reasoning, coding, parallel tasks and MCP tools. You need an active Claude Code subscription to run the agents.",
+        "q3": "Is Claude Code Amax recommended?",
+        "a3": "Highly recommended. If you work on multiple projects, heavy refactors, large codebases or parallel tasks, Amax delivers better performance and higher request limits.",
+        "q4": "Why do I need to join Discord?",
+        "a4": "Beta requires feedback. Discord is where we post updates, take feedback, fix bugs, and share Beta builds.",
+        "q5": "What happens when the Beta ends?",
+        "a5": "You choose: stay on Free, upgrade to Pro, or stop using the app. No automatic charges.",
+        "q6": "What OS is required?",
+        "a6": "macOS (Apple Silicon). Windows/Linux coming later.",
+        "q7": "Does CodeAgentSwarm store my code?",
+        "a7": "No. All code stays on your local machine.",
+        "q8": "How long does Pro activation take?",
+        "a8": "Usually a few hours after you complete all steps."
+      }
     }
   }
 }

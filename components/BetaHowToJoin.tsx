@@ -36,6 +36,7 @@ export default function BetaHowToJoin() {
 
   return (
     <section
+      id="beta-how-to-join"
       ref={sectionRef}
       className="relative py-16 md:py-24 px-6 overflow-hidden"
     >

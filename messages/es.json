@@ -457,6 +457,27 @@
     "banner": {
       "text": "Estamos en Open Beta - Disfruta del plan Pro gratis",
       "cta": "Unirme a la Beta"
+    },
+    "faq": {
+      "title": "Preguntas Frecuentes",
+      "items": {
+        "q1": "¿La Beta es realmente gratis?",
+        "a1": "Sí. Durante la Open Beta, el plan Pro es completamente gratis - todas las funciones desbloqueadas, sin tarjeta.",
+        "q2": "¿Necesito una suscripción a Claude Code?",
+        "a2": "Sí. CodeAgentSwarm funciona encima de Claude Code, que es lo que permite la inteligencia de los agentes, las tareas paralelas y el uso de MCP. Necesitas una suscripción activa a Claude Code.",
+        "q3": "¿Se recomienda Claude Code Amax?",
+        "a3": "Muy recomendable. Si trabajas en varios proyectos, refactors grandes, bases de código grandes o tareas paralelas, Amax da mejor rendimiento y más capacidad.",
+        "q4": "¿Por qué debo unirme a Discord?",
+        "a4": "La Beta requiere feedback. En Discord publicamos actualizaciones, recogemos feedback y resolvemos bugs.",
+        "q5": "¿Qué pasa cuando termine la Beta?",
+        "a5": "Tú eliges: seguir en Free, pasar a Pro o dejar de usarla. No hay cargos automáticos.",
+        "q6": "¿Qué sistema operativo necesito?",
+        "a6": "macOS (Apple Silicon). Windows/Linux más adelante.",
+        "q7": "¿CodeAgentSwarm almacena mi código?",
+        "a7": "No. Todo tu código permanece en tu máquina.",
+        "q8": "¿Cuánto tarda la activación de Pro?",
+        "a8": "Normalmente pocas horas después de completar todos los pasos."
+      }
     }
   }
 }

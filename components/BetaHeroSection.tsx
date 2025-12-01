@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Download, Sparkles } from 'lucide-react'
+import { Sparkles } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 
 export default function BetaHeroSection() {
@@ -70,19 +70,12 @@ export default function BetaHeroSection() {
             onClick={scrollToForm}
             className="group relative"
           >
-            <div className="absolute -inset-1 rounded-full blur-lg opacity-40 group-hover:opacity-60 transition-opacity" style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }} />
+            <div className="absolute -inset-1 rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity" style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }} />
             <div className="relative flex items-center gap-2 px-8 py-4 text-white font-semibold rounded-full transition-all" style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }}>
               <Sparkles className="w-5 h-5" />
               {t('primaryCta')}
             </div>
           </button>
-
-          <a href="#download">
-            <button className="flex items-center gap-2 px-8 py-4 glass hover:bg-white/10 text-white font-medium rounded-full border border-white/10 hover:border-neon-cyan/30 transition-all">
-              <Download className="w-5 h-5 text-neon-cyan" />
-              {t('secondaryCta')}
-            </button>
-          </a>
         </motion.div>
       </div>
     </section>

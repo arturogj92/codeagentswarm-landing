@@ -21,12 +21,19 @@ export default function Header() {
   // Banner height is ~36px (py-1.5 + content), so header needs top-9
   const topOffset = isBetaPage ? 'top-0' : 'top-9'
 
-  const navLinks = [
-    { name: t('features'), href: '#features' },
-    { name: t('demo'), href: '#demo' },
-    { name: t('pricing'), href: '#pricing' },
-    { name: t('roadmap'), href: '#roadmap' },
-  ]
+  const navLinks = isBetaPage
+    ? [
+        { name: 'How to Join', href: '#beta-how-to-join' },
+        { name: 'Sign Up', href: '#beta-signup-form' },
+        { name: t('pricing'), href: '#beta-pricing' },
+        { name: 'FAQ', href: '#beta-faq' },
+      ]
+    : [
+        { name: t('features'), href: '#features' },
+        { name: t('demo'), href: '#demo' },
+        { name: t('pricing'), href: '#pricing' },
+        { name: t('roadmap'), href: '#roadmap' },
+      ]
 
   // Throttled scroll handler for performance
   useEffect(() => {

@@ -95,7 +95,7 @@ export default function BetaPricingSection() {
 
   return (
     <section
-      id="pricing"
+      id="beta-pricing"
       ref={sectionRef}
       className="relative py-16 md:py-32 px-6 overflow-hidden"
     >
@@ -250,7 +250,7 @@ export default function BetaPricingSection() {
                         >
                           {feature.name}
                         </span>
-                        {feature.badge && (
+                        {'badge' in feature && feature.badge && (
                           <span
                             className={`text-[10px] px-2 py-0.5 rounded-full font-bold ${
                               feature.badge === '3X BOOST'
