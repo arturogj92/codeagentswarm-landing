@@ -104,7 +104,7 @@ export default function Footer() {
                   className="w-10 h-10 rounded-lg glass border border-white/5 flex items-center justify-center text-white/50 hover:text-neon-cyan hover:border-neon-cyan/30 transition-all"
                   aria-label={social.name}
                 >
-                  <social.icon className="w-5 h-5" />
+                  <social.icon />
                 </a>
               ))}
             </motion.div>
