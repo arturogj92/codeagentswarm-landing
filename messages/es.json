@@ -157,6 +157,32 @@
       }
     }
   },
+  "swarmi": {
+    "badge": "Conoce a Tu Guía IA",
+    "titleLine1": "Conoce a",
+    "titleLine2": "Swarmi",
+    "subtitle": "Tu asistente IA amigable dentro de CodeAgentSwarm. Swarmi te ayuda a aprender la app, explica funciones y responde tus preguntas en tiempo real.",
+    "speechBubble": "¡Hola! ¿Necesitas ayuda?",
+    "features": {
+      "chat": {
+        "title": "Chat en Tiempo Real",
+        "description": "Pregunta sobre CodeAgentSwarm y obtén respuestas instantáneas con IA."
+      },
+      "inspector": {
+        "title": "Inspector de UI",
+        "description": "Haz clic en cualquier elemento y Swarmi te explica qué hace y cómo usarlo."
+      },
+      "onboarding": {
+        "title": "Onboarding Guiado",
+        "description": "Recibe orientación paso a paso cuando empieces a usar la app."
+      },
+      "context": {
+        "title": "Ayuda Contextual",
+        "description": "Swarmi entiende en qué estás trabajando y te da sugerencias relevantes."
+      }
+    },
+    "cta": "Swarmi está disponible en la app — ¡solo haz clic en el logo para chatear!"
+  },
   "demo": {
     "badge": "Míralo en Acción",
     "titleLine1": "Mira la",
@@ -194,25 +220,41 @@
       }
     },
     "features": {
-      "terminals2": "2 Terminales Paralelos",
-      "terminals4": "4 Terminales Paralelos",
-      "terminals6": "6 Terminales Paralelos",
-      "kanban1": "1 Proyecto Kanban",
-      "kanban4": "4 Proyectos Kanban",
-      "unlimitedProjects": "Proyectos Ilimitados",
+      "terminals2": "2 terminales",
+      "terminals4": "4 terminales",
+      "terminals6": "6 terminales",
+      "projects2": "2 proyectos",
+      "projects4": "4 proyectos",
+      "unlimitedProjects": "Proyectos ilimitados",
       "notifications": "Notificaciones Live",
-      "resizable": "Terminales Resizables",
-      "mcpConfig": "Config MCP",
+      "realTimeChanges": "Cambios de Terminal en Tiempo Real",
+      "gridOnly": "Solo Grid",
+      "gridTabs": "Grid + Pestañas",
+      "projectShortcuts": "Atajos de Proyecto",
+      "terminalShortcuts": "Atajos de Terminal",
+      "projectShortcut1": "1 Atajo de Proyecto",
+      "terminalShortcut1": "1 Atajo de Terminal",
+      "projectShortcuts6": "6 Atajos de Proyecto",
+      "terminalShortcutsUnlimited": "Atajos de Terminal Ilimitados",
+      "resizable": "Terminales Redimensionables",
+      "mcpConfig": "Configuración MCP",
       "mcpMarketplace": "MCP Marketplace",
-      "git": "Git Integration",
       "gitAi": "Git + AI Commits",
+      "taskLabels": "Etiquetas de Tareas",
       "shortcuts": "Atajos de Teclado",
-      "history": "Historial de Chats"
+      "mcpPermissions": "Gestionar Permisos MCP",
+      "claudePermissions": "Gestionar Permisos Claude Code",
+      "dangerMode": "Modo Peligro",
+      "history": "Historial de Conversaciones"
     },
     "badges": {
       "bestValue": "MEJOR VALOR",
       "save30": "-30%",
-      "unlimited": "ILIMITADO"
+      "unlimited": "ILIMITADO",
+      "boost2x": "2X BOOST",
+      "boost3x": "3X BOOST",
+      "boost6x": "6X BOOST",
+      "modes2x": "2X MODOS"
     },
     "trustBadge": "30 días de garantía • Cancela cuando quieras • Pago seguro con Stripe",
     "whyUpgrade": {
