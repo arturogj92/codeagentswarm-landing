@@ -380,7 +380,8 @@
       "headline": "Open Beta - Get Pro tier for free",
       "subheadline": "Join the CodeAgentSwarm Open Beta and unlock the full Pro experience at no cost while the beta lasts.",
       "valueLine": "Unlock 6-agent parallel coding, Git integration, Kanban, MCP tools and more - free during the beta.",
-      "primaryCta": "Start Beta Access (Step 1: Fill the form)",
+      "primaryCta": "Join Beta Now",
+      "primaryCtaHint": "(Step 1)",
       "secondaryCta": "Download App"
     },
     "howToJoin": {

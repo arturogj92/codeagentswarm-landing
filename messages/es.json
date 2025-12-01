@@ -380,7 +380,8 @@
       "headline": "Open Beta - Accede al plan Pro gratis",
       "subheadline": "Únete a la Open Beta de CodeAgentSwarm y desbloquea todo el plan Pro sin coste mientras dure la beta.",
       "valueLine": "Desbloquea 6 agentes en paralelo, integración con Git, Kanban, MCP y más - gratis durante la beta.",
-      "primaryCta": "Comenzar acceso Beta (Paso 1: Rellenar formulario)",
+      "primaryCta": "Unirse a la Beta",
+      "primaryCtaHint": "(Paso 1)",
       "secondaryCta": "Descargar app"
     },
     "howToJoin": {

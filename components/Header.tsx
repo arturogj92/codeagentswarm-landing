@@ -142,16 +142,13 @@ export default function Header() {
         </motion.div>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden flex items-center gap-3">
-          <LocaleSwitcher />
-          <button
-            className="p-2 text-white/70 hover:text-white transition-colors"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
-        </div>
+        <button
+          className="md:hidden p-2 text-white/70 hover:text-white transition-colors"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </button>
       </div>
 
       {/* Mobile Menu */}
@@ -197,6 +194,10 @@ export default function Header() {
                 </svg>
                 Discord
               </a>
+              {/* Language Switcher in Mobile Menu */}
+              <div className="py-2">
+                <LocaleSwitcher />
+              </div>
               <a
                 href="#download"
                 className="mt-4 py-3 px-6 text-center text-white font-semibold rounded-full"

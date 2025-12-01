@@ -22,16 +22,14 @@ export default function BetaBanner() {
       transition={{ duration: 0.6 }}
       className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-neon-purple via-neon-magenta to-neon-cyan"
     >
-      <div className="max-w-7xl mx-auto px-4 py-1.5 flex items-center justify-center gap-2 text-center flex-wrap">
-        <div className="flex items-center gap-2">
-          <Sparkles className="w-4 h-4 text-white" />
-          <span className="text-white font-medium text-sm">
-            {t('text')}
-          </span>
-        </div>
+      <div className="max-w-7xl mx-auto px-2 sm:px-4 py-1 sm:py-1.5 flex items-center justify-center gap-1.5 sm:gap-2">
+        <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-white flex-shrink-0" />
+        <span className="text-white font-medium text-xs sm:text-sm whitespace-nowrap">
+          {t('text')}
+        </span>
         <a
           href={`/${locale}/beta`}
-          className="px-4 py-1.5 bg-white text-neon-purple font-semibold rounded-full text-sm hover:bg-white/90 transition-colors"
+          className="px-2.5 sm:px-4 py-1 sm:py-1.5 bg-white text-neon-purple font-semibold rounded-full text-xs sm:text-sm hover:bg-white/90 transition-colors whitespace-nowrap flex-shrink-0"
         >
           {t('cta')}
         </a>
