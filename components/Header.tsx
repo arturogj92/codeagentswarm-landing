@@ -62,7 +62,7 @@ export default function Header() {
         >
           <div className="relative">
             <Image
-              src="/logo.png"
+              src="/codeagentswarm-logo.svg"
               alt="CodeAgentSwarm Logo"
               width={44}
               height={44}

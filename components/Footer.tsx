@@ -64,7 +64,7 @@ export default function Footer() {
               <div className="relative">
                 <div className="w-10 h-10 rounded-xl flex items-center justify-center">
                   <Image
-                    src="/logo.png"
+                    src="/codeagentswarm-logo.svg"
                     alt="CodeAgentSwarm Logo"
                     width={40}
                     height={40}
