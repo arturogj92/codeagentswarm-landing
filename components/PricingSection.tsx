@@ -15,6 +15,7 @@ import { useTranslations } from 'next-intl'
 
 export default function PricingSection() {
   const t = useTranslations('pricing')
+  const tBeta = useTranslations('beta.pricing')
   const sectionRef = useRef(null)
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' })
 
@@ -103,6 +104,7 @@ export default function PricingSection() {
       cta: t('plans.pro.cta'),
       popular: true,
       savings: t('badges.save30'),
+      isBeta: true,
     },
   ]
 
@@ -144,16 +146,16 @@ export default function PricingSection() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className={`relative group ${plan.popular ? 'md:-mt-4 md:mb-4' : ''}`}
             >
-              {/* Popular Badge */}
-              {plan.popular && (
+              {/* Beta Badge */}
+              {plan.isBeta && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-20">
                   <motion.div
                     initial={{ scale: 0 }}
                     animate={isInView ? { scale: 1 } : { scale: 0 }}
                     transition={{ delay: 0.5, type: 'spring', stiffness: 300 }}
-                    className="px-4 py-1.5 bg-gradient-to-r from-neon-purple to-neon-magenta text-white text-xs font-bold rounded-full shadow-lg"
+                    className="px-4 py-1.5 bg-neon-green text-black text-xs font-bold rounded-full shadow-lg"
                   >
-                    {t('badges.bestValue')}
+                    {tBeta('badge')}
                   </motion.div>
                 </div>
               )}
@@ -197,10 +199,31 @@ export default function PricingSection() {
 
                   {/* Price */}
                   <div className="flex items-baseline gap-2 mb-3">
-                    <span className="text-4xl font-display font-bold text-white">
-                      €{plan.price}
-                    </span>
-                    <span className="text-white/40">/{t('perMonth')}</span>
+                    {plan.isBeta ? (
+                      <div className="flex flex-col gap-2">
+                        <div className="inline-flex items-center gap-2">
+                          <span className="relative text-white/50 text-lg font-medium">
+                            €{plan.price}/mo
+                            <span className="absolute left-0 right-0 top-1/2 h-[2px] bg-red-500/80 -rotate-6" />
+                          </span>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <span className="text-4xl font-display font-bold text-white">
+                            €0
+                          </span>
+                          <span className="px-3 py-1.5 rounded-full bg-neon-green text-black text-sm font-bold uppercase tracking-wide">
+                            {tBeta('priceFree')}
+                          </span>
+                        </div>
+                      </div>
+                    ) : (
+                      <>
+                        <span className="text-4xl font-display font-bold text-white">
+                          €{plan.price}
+                        </span>
+                        <span className="text-white/40">/{t('perMonth')}</span>
+                      </>
+                    )}
                   </div>
 
                   <p className="text-sm text-white/50 mb-6">{plan.description}</p>
