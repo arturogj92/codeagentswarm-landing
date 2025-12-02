@@ -1,4 +1,6 @@
-import { Metadata } from 'next'
+'use client'
+
+import { useEffect } from 'react'
 import Header from '@/components/Header'
 import BetaHeroSection from '@/components/BetaHeroSection'
 import BetaWhatIs from '@/components/BetaWhatIs'
@@ -10,12 +12,30 @@ import BetaFAQ from '@/components/BetaFAQ'
 import CTASection from '@/components/CTASection'
 import Footer from '@/components/Footer'
 
-export const metadata: Metadata = {
-  title: 'CodeAgentSwarm Open Beta – Free Pro Access for Developers',
-  description: 'Join the open beta, get the full Pro tier for free, and help shape the future of multi-agent coding workflows.',
-}
-
 export default function BetaPage() {
+  // Track 50% scroll depth on beta page
+  useEffect(() => {
+    let hasFiredScroll50 = false
+
+    const handleScroll = () => {
+      if (hasFiredScroll50) return
+
+      const maxScroll = document.body.scrollHeight - window.innerHeight
+      if (maxScroll <= 0) return
+
+      const ratio = window.scrollY / maxScroll
+
+      if (ratio > 0.5) {
+        window.umami?.track('beta_scroll_50')
+        hasFiredScroll50 = true
+        window.removeEventListener('scroll', handleScroll)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
     <div className="relative min-h-screen bg-black">
       {/* Fixed Grid Background */}

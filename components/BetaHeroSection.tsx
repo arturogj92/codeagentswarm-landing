@@ -9,6 +9,9 @@ export default function BetaHeroSection() {
   const t = useTranslations('beta.hero')
 
   const scrollToForm = () => {
+    if (typeof window !== 'undefined') {
+      window.umami?.track('beta_cta_click')
+    }
     const formElement = document.getElementById('beta-signup-form')
     if (formElement) {
       formElement.scrollIntoView({ behavior: 'smooth', block: 'center' })

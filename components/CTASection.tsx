@@ -155,6 +155,11 @@ export default function CTASection() {
                   {latestRelease.formattedDownloads.macArm && (
                     <motion.a
                       href={getDirectDownloadUrl(latestRelease.version, 'arm64')}
+                      onClick={() => {
+                        if (typeof window !== 'undefined') {
+                          window.umami?.track('download_app_home_silicon')
+                        }
+                      }}
                       whileHover={{ scale: 1.02, y: -4 }}
                       whileTap={{ scale: 0.98 }}
                       className="group relative"
@@ -196,6 +201,11 @@ export default function CTASection() {
                   {latestRelease.formattedDownloads.macIntel && (
                     <motion.a
                       href={getDirectDownloadUrl(latestRelease.version, 'x64')}
+                      onClick={() => {
+                        if (typeof window !== 'undefined') {
+                          window.umami?.track('download_app_home_intel')
+                        }
+                      }}
                       whileHover={{ scale: 1.02, y: -4 }}
                       whileTap={{ scale: 0.98 }}
                       className="group relative"
@@ -333,6 +343,11 @@ export default function CTASection() {
             href="https://discord.gg/AMxQ7Zh6?utm_source=download_section"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => {
+              if (typeof window !== 'undefined') {
+                window.umami?.track('discord_join_home')
+              }
+            }}
             className="inline-flex items-center gap-3 px-8 py-4 rounded-full glass border border-[#5865F2]/30 hover:border-[#5865F2]/60 hover:bg-[#5865F2]/10 transition-all group"
           >
             <svg className="w-6 h-6 text-[#5865F2]" viewBox="0 0 24 24" fill="currentColor">

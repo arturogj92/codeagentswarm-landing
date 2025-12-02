@@ -279,6 +279,11 @@ export default function PricingSection() {
                   {/* CTA Button */}
                   <a
                     href={plan.isBeta ? `/${locale}/beta` : '#download'}
+                    onClick={() => {
+                      if (typeof window !== 'undefined') {
+                        window.umami?.track('pricing_plan_click', { plan_name: plan.name })
+                      }
+                    }}
                     className={`flex items-center justify-center gap-2 w-full py-3 px-6 rounded-xl font-medium transition-all duration-300 ${
                       plan.isBeta
                         ? 'bg-neon-green text-black font-bold hover:opacity-90'

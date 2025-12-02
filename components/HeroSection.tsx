@@ -46,6 +46,10 @@ function VideoShowcase() {
   const [isAutoAdvance, setIsAutoAdvance] = useState(true)
 
   const handleVideoEnd = () => {
+    // Track video completion
+    if (typeof window !== 'undefined') {
+      window.umami?.track('video_complete', { video_name: videos[currentVideo].title })
+    }
     if (isAutoAdvance && isPlaying) {
       setCurrentVideo((prev) => (prev + 1) % videos.length)
     }
@@ -142,7 +146,12 @@ function VideoShowcase() {
         {videos.map((video, index) => (
           <button
             key={video.id}
-            onClick={() => setCurrentVideo(index)}
+            onClick={() => {
+              setCurrentVideo(index)
+              if (typeof window !== 'undefined') {
+                window.umami?.track('video_thumbnail_click', { video_name: video.title })
+              }
+            }}
             className={`relative rounded-xl overflow-hidden border-2 transition-all w-40 h-24 ${
               index === currentVideo
                 ? "border-neon-cyan shadow-2xl shadow-neon-cyan/20 scale-105"
@@ -279,7 +288,15 @@ export default function HeroSection() {
           className="flex flex-col items-center gap-4 mb-16"
         >
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="#download" className="group relative">
+            <a
+              href="#download"
+              className="group relative"
+              onClick={() => {
+                if (typeof window !== 'undefined') {
+                  window.umami?.track('hero_download_click')
+                }
+              }}
+            >
               <div className="absolute -inset-1 rounded-full blur-lg opacity-40 group-hover:opacity-60 transition-opacity" style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }} />
               <button className="relative flex items-center gap-2 px-8 py-4 text-white font-semibold rounded-full transition-all" style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }}>
                 <Download className="w-5 h-5" />
@@ -287,7 +304,14 @@ export default function HeroSection() {
               </button>
             </a>
 
-            <a href="#demo">
+            <a
+              href="#demo"
+              onClick={() => {
+                if (typeof window !== 'undefined') {
+                  window.umami?.track('hero_demo_click')
+                }
+              }}
+            >
               <button className="flex items-center gap-2 px-8 py-4 glass hover:bg-white/10 text-white font-medium rounded-full border border-white/10 hover:border-neon-cyan/30 transition-all">
                 <Play className="w-5 h-5 text-neon-cyan" />
                 {tCommon('seeHowItWorks')}

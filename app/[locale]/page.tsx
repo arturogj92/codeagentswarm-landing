@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect } from 'react'
 import Header from '@/components/Header'
 import BetaBanner from '@/components/BetaBanner'
 import HeroSection from '@/components/HeroSection'
@@ -15,6 +16,29 @@ import CTASection from '@/components/CTASection'
 import Footer from '@/components/Footer'
 
 export default function Home() {
+  // Track scroll depth on home page
+  useEffect(() => {
+    let hasFiredScroll50 = false
+
+    const handleScroll = () => {
+      if (hasFiredScroll50) return
+
+      const maxScroll = document.body.scrollHeight - window.innerHeight
+      if (maxScroll <= 0) return
+
+      const ratio = window.scrollY / maxScroll
+
+      if (ratio > 0.5) {
+        window.umami?.track('home_scroll_50')
+        hasFiredScroll50 = true
+        window.removeEventListener('scroll', handleScroll)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
     <div className="relative min-h-screen bg-black">
       {/* Fixed Grid Background */}

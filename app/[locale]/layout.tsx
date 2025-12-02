@@ -3,6 +3,7 @@ import { Inter, Orbitron } from 'next/font/google'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 import { notFound } from 'next/navigation'
+import Script from 'next/script'
 import { routing } from '@/i18n/routing'
 import '../globals.css'
 
@@ -87,6 +88,14 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} className="dark">
+      <head>
+        <Script
+          defer
+          src="https://umami-codeagentswarm-production.up.railway.app/script.js"
+          data-website-id="a6cf83f7-4ba1-47af-87b3-4fdbd2d537d9"
+          strategy="afterInteractive"
+        />
+      </head>
       <body className={`${inter.className} ${orbitron.variable} bg-black text-white antialiased`}>
         <NextIntlClientProvider messages={messages}>
           {/* Noise Overlay */}

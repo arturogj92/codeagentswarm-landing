@@ -29,6 +29,11 @@ export default function BetaBanner() {
         </span>
         <a
           href={`/${locale}/beta`}
+          onClick={() => {
+            if (typeof window !== 'undefined') {
+              window.umami?.track('beta_banner_click')
+            }
+          }}
           className="px-2 sm:px-4 py-0.5 sm:py-1.5 bg-white text-neon-purple font-semibold rounded-full text-[10px] sm:text-sm hover:bg-white/90 transition-colors whitespace-nowrap flex-shrink-0"
         >
           {t('cta')}

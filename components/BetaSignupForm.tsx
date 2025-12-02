@@ -42,6 +42,11 @@ export default function BetaSignupForm() {
         throw new Error(data.error || 'Failed to submit form')
       }
 
+      // Track successful form submission
+      if (typeof window !== 'undefined') {
+        window.umami?.track('beta_form_submit')
+      }
+
       setIsSuccess(true)
       setFormData({
         email: '',
@@ -50,6 +55,10 @@ export default function BetaSignupForm() {
         agreedToBetaEmails: false,
       })
     } catch (err) {
+      // Track form error
+      if (typeof window !== 'undefined') {
+        window.umami?.track('beta_form_error')
+      }
       setError(err instanceof Error ? err.message : 'Something went wrong')
     } finally {
       setIsSubmitting(false)
@@ -239,6 +248,9 @@ export default function BetaSignupForm() {
                 <div className="space-y-3">
                   <button
                     onClick={() => {
+                      if (typeof window !== 'undefined') {
+                        window.umami?.track('download_app_beta')
+                      }
                       document.getElementById('download')?.scrollIntoView({ behavior: 'smooth' })
                     }}
                     className="w-full flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-white bg-gradient-to-r from-neon-cyan to-neon-purple hover:opacity-90 transition-all"
@@ -251,6 +263,11 @@ export default function BetaSignupForm() {
                     href={DISCORD_URL}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => {
+                      if (typeof window !== 'undefined') {
+                        window.umami?.track('discord_join_beta')
+                      }
+                    }}
                     className="w-full flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-white bg-gradient-to-r from-neon-purple to-neon-magenta hover:opacity-90 transition-all"
                   >
                     <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">

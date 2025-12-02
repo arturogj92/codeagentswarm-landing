@@ -105,6 +105,11 @@ export default function Header() {
             <a
               key={link.name}
               href={link.href}
+              onClick={() => {
+                if (typeof window !== 'undefined') {
+                  window.umami?.track('nav_section_click', { section: link.name })
+                }
+              }}
               className="relative px-4 py-2 text-sm text-white/60 hover:text-white transition-colors group"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
@@ -125,6 +130,11 @@ export default function Header() {
             href="https://discord.gg/AMxQ7Zh6"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => {
+              if (typeof window !== 'undefined') {
+                window.umami?.track('discord_join_home')
+              }
+            }}
             className="flex items-center gap-2 px-4 py-2 rounded-full glass border border-white/10 hover:border-[#5865F2]/50 hover:bg-[#5865F2]/10 transition-all duration-300 group"
             title="Join our Discord"
           >
@@ -136,6 +146,11 @@ export default function Header() {
           <LocaleSwitcher />
           <a
             href="#download"
+            onClick={() => {
+              if (typeof window !== 'undefined') {
+                window.umami?.track('nav_download_header')
+              }
+            }}
             className="relative group px-6 py-2.5 rounded-full overflow-hidden hover:opacity-90 transition-all duration-300"
             style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }}
           >
@@ -148,7 +163,13 @@ export default function Header() {
         {/* Mobile Menu Button */}
         <button
           className="md:hidden p-2 text-white/70 hover:text-white transition-colors"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          onClick={() => {
+            const newState = !isMobileMenuOpen
+            setIsMobileMenuOpen(newState)
+            if (newState && typeof window !== 'undefined') {
+              window.umami?.track('mobile_menu_open')
+            }
+          }}
           aria-label="Toggle menu"
         >
           {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
