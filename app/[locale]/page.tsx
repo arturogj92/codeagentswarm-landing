@@ -16,21 +16,31 @@ import CTASection from '@/components/CTASection'
 import Footer from '@/components/Footer'
 
 export default function Home() {
-  // Track scroll depth on home page
+  // Track scroll depth on home page (25%, 50%, 75%, 100%)
   useEffect(() => {
-    let hasFiredScroll50 = false
+    const firedLevels = { 25: false, 50: false, 75: false, 100: false }
 
     const handleScroll = () => {
-      if (hasFiredScroll50) return
-
       const maxScroll = document.body.scrollHeight - window.innerHeight
       if (maxScroll <= 0) return
 
       const ratio = window.scrollY / maxScroll
 
-      if (ratio > 0.5) {
+      if (ratio >= 0.25 && !firedLevels[25]) {
+        window.umami?.track('home_scroll_25')
+        firedLevels[25] = true
+      }
+      if (ratio >= 0.5 && !firedLevels[50]) {
         window.umami?.track('home_scroll_50')
-        hasFiredScroll50 = true
+        firedLevels[50] = true
+      }
+      if (ratio >= 0.75 && !firedLevels[75]) {
+        window.umami?.track('home_scroll_75')
+        firedLevels[75] = true
+      }
+      if (ratio >= 0.98 && !firedLevels[100]) {
+        window.umami?.track('home_scroll_100')
+        firedLevels[100] = true
         window.removeEventListener('scroll', handleScroll)
       }
     }

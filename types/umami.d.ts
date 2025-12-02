@@ -16,7 +16,10 @@
  * - nav_section_click: Navigation link clicks with { section } (Header)
  * - nav_download_header: "Download Free" button in header (Header)
  * - mobile_menu_open: Mobile menu toggle (Header)
+ * - home_scroll_25: 25% scroll depth on home page (page.tsx)
  * - home_scroll_50: 50% scroll depth on home page (page.tsx)
+ * - home_scroll_75: 75% scroll depth on home page (page.tsx)
+ * - home_scroll_100: 100% scroll depth on home page (page.tsx)
  *
  * BETA PAGE EVENTS:
  * - beta_banner_click: Beta banner CTA (BetaBanner)
@@ -25,7 +28,10 @@
  * - beta_form_error: Form validation error (BetaSignupForm)
  * - download_app_beta: Download button after signup (BetaSignupForm)
  * - discord_join_beta: Discord button after signup (BetaSignupForm)
+ * - beta_scroll_25: 25% scroll depth on beta page (beta/page.tsx)
  * - beta_scroll_50: 50% scroll depth on beta page (beta/page.tsx)
+ * - beta_scroll_75: 75% scroll depth on beta page (beta/page.tsx)
+ * - beta_scroll_100: 100% scroll depth on beta page (beta/page.tsx)
  */
 
 interface UmamiTracker {
