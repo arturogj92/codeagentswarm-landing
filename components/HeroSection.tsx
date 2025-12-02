@@ -20,7 +20,7 @@ function VideoShowcase() {
     },
     {
       id: 2,
-      src: "/kanban.mp4",
+      src: "/tasks_video.mp4",
       title: t('kanban.title'),
       icon: Layout,
       description: t('kanban.description')
@@ -77,9 +77,9 @@ function VideoShowcase() {
                 loop={false}
                 muted
                 playsInline
-                className="absolute inset-0 w-full h-full object-cover"
+                className="absolute inset-0 w-full h-full object-contain"
                 style={{ backgroundColor: '#000' }}
-                showProgressBar={true}
+                showProgressBar={false}
                 progressBarPosition="bottom"
                 progressBarHeight={3}
                 progressBarColor="rgba(0, 255, 255, 0.8)"
