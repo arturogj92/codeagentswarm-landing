@@ -20,7 +20,7 @@ function VideoShowcase() {
     },
     {
       id: 2,
-      src: "/tasks_video.mp4",
+      src: "/kanban.mp4",
       title: t('kanban.title'),
       icon: Layout,
       description: t('kanban.description')
