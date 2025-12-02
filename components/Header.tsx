@@ -19,8 +19,9 @@ export default function Header() {
 
   // Check if we're on beta page (no banner)
   const isBetaPage = pathname?.includes('/beta')
-  // Banner height is ~36px (py-1.5 + content), so header needs top-9
-  const topOffset = isBetaPage ? 'top-0' : 'top-9'
+  // Banner height varies: mobile ~28px (py-1 + text-[10px]), desktop ~36px (py-1.5 + text-sm)
+  // Use responsive top offset to match banner height at each breakpoint
+  const topOffset = isBetaPage ? 'top-0' : 'top-7 sm:top-9'
 
   const navLinks = isBetaPage
     ? [
