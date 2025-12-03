@@ -38,6 +38,13 @@ function VideoShowcase() {
       title: t('notifications.title'),
       icon: Bell,
       description: t('notifications.description')
+    },
+    {
+      id: 5,
+      src: "/conversation_history.mp4",
+      title: t('conversationHistory.title'),
+      icon: History,
+      description: t('conversationHistory.description')
     }
   ]
 

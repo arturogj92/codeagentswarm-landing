@@ -49,6 +49,10 @@
       "notifications": {
         "title": "Smart Notifications",
         "description": "Stay updated with intelligent alerts"
+      },
+      "conversationHistory": {
+        "title": "Conversation History",
+        "description": "Search and revisit all your AI conversations"
       }
     }
   },

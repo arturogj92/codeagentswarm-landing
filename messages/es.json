@@ -49,6 +49,10 @@
       "notifications": {
         "title": "Notificaciones Inteligentes",
         "description": "Alertas en tiempo real"
+      },
+      "conversationHistory": {
+        "title": "Historial de Conversaciones",
+        "description": "Busca y revisa todas tus conversaciones con IA"
       }
     }
   },
