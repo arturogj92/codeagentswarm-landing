@@ -15,28 +15,28 @@
     "roadmap": "Roadmap"
   },
   "hero": {
-    "badge": "6 AI Agents Working in Perfect Harmony",
+    "badge": "6 Claude Code Terminals Working in Perfect Harmony",
     "badgeNew": "NEW",
-    "titleLine1": "The command center for",
-    "titleLine2": "coding with multiple AI agents",
-    "subtitle": "Orchestrate <highlight>up to 6 Claude Code terminals</highlight> in parallel — with full visibility, Git tools, per-terminal file history, and a shared MCP-powered task system.",
-    "powerStatement": "Build faster with less friction and zero context switching",
-    "authorityLine": "Built for developers who rely on AI every day. A faster, clearer way to work with multiple AI agents at once.",
+    "titleLine1": "The AI coding workspace for",
+    "titleLine2": "multiple Claude Code terminals",
+    "subtitle": "An AI developer workspace that orchestrates <highlight>up to 6 Claude Code terminals</highlight> in parallel — with real-time visibility, live notifications, full conversation history, permissions control and seamless multi-project management.",
+    "powerStatement": "Build faster with real-time change tracking and zero context switching",
+    "authorityLine": "The multi-terminal coding workspace built for developers who rely on Claude Code every day. See what each agent is doing, get instant notifications, and never lose context across projects.",
     "requirements": "Works with your Claude Code subscription. Requires macOS 12 or later.",
     "stats": {
       "terminals": "Parallel Terminals",
-      "terminalsDesc": "6 agents working together",
+      "terminalsDesc": "6 Claude Code agents working together",
       "searchableChats": "Search Everything",
-      "searchableChatsDesc": "Infinite conversation history",
-      "codePreview": "Live File Insight",
-      "codePreviewDesc": "See changes as they happen",
+      "searchableChatsDesc": "Full conversation history, never lose context",
+      "codePreview": "Real-Time Visibility",
+      "codePreviewDesc": "Live diffs and change tracking",
       "kanban": "Shared Kanban",
-      "kanbanDesc": "Tasks for you and your agents"
+      "kanbanDesc": "MCP-powered tasks for you and your agents"
     },
     "videos": {
       "multiTerminal": {
         "title": "Multi-Terminal Control",
-        "description": "Control multiple AI agents across terminals"
+        "description": "Manage multiple Claude Code sessions simultaneously"
       },
       "kanban": {
         "title": "Task Board",
@@ -47,40 +47,40 @@
         "description": "Seamless version control workflow"
       },
       "notifications": {
-        "title": "Smart Notifications",
-        "description": "Stay updated with intelligent alerts"
+        "title": "Claude Code Notifications",
+        "description": "Real-time notifications for AI coding updates"
       },
       "conversationHistory": {
         "title": "Conversation History",
-        "description": "Search and revisit all your AI conversations"
+        "description": "Save and search Claude Code history across all sessions"
       }
     }
   },
   "problem": {
     "badge": "The Problem",
-    "titleLine1": "Working with a single AI agent",
+    "titleLine1": "Working with a single Claude Code terminal",
     "titleLine2": "slows you down",
-    "description": "When your entire workflow depends on one AI chat or terminal, things get messy fast. Context switching, repeated prompts, lost threads, and invisible changes kill productivity.",
+    "description": "When your entire workflow depends on one AI chat or terminal, things get messy fast. No real-time visibility into what Claude Code is editing, lost context between projects, repeated prompts, and no notifications when tasks complete.",
     "painPoints": {
-      "switching": "Constantly switching tabs and terminals.",
-      "noView": "No clear view of what the AI is editing.",
-      "repeating": "Sessions lose context and you repeat prompts.",
-      "confidence": "Hard to trust AI changes without visibility."
+      "switching": "Constantly switching tabs and losing context across projects.",
+      "noView": "No real-time visibility — you can't see what Claude Code is changing.",
+      "repeating": "Sessions lose context and you repeat the same prompts.",
+      "confidence": "Hard to trust AI changes without live change tracking."
     }
   },
   "solution": {
     "badge": "The Solution",
-    "titleLine1": "The multi-agent workflow",
+    "titleLine1": "The multi-terminal Claude Code workflow",
     "titleLine2": "you always wanted",
-    "description": "CodeAgentSwarm turns Claude Code into a fully coordinated environment where up to six agents work in parallel, with total visibility over tasks, context, and file changes.",
+    "description": "CodeAgentSwarm is an AI coding workspace where up to six Claude Code terminals work in parallel with real-time visibility, live notifications, full conversation history and seamless multi-project management — so you never lose context.",
     "points": {
-      "terminals": "Six AI terminals running simultaneously.",
-      "notifications": "Dynamic titles and instant notifications.",
-      "git": "Integrated Git panel with diffs and commit context.",
-      "kanban": "MCP-powered Kanban your agents can update.",
+      "terminals": "Six Claude Code terminals running simultaneously.",
+      "notifications": "Real-time notifications when agents finish or need input.",
+      "git": "Integrated Git panel with live diffs and commit context.",
+      "kanban": "MCP-powered Kanban your agents can read and update.",
       "mcp": "MCP Marketplace: GitHub, Notion, Slack, Supabase, Brave Search, Playwright, PostgreSQL, and more.",
-      "history": "Searchable conversation history.",
-      "fileTracking": "Full file tracking so you always know what changed."
+      "history": "Full Claude Code conversation history — search any session instantly.",
+      "fileTracking": "Real-time change tracking so you always know what each agent modified."
     }
   },
   "features": {
@@ -89,30 +89,31 @@
     "titleHighlight": "Need",
     "items": {
       "multiTerminal": {
-        "title": "Multiple Agents in Parallel",
-        "description": "Run up to 6 Claude Code agents simultaneously. Each one in its own terminal, working on different tasks."
+        "title": "Multiple Claude Code Terminals in Parallel",
+        "description": "Run up to 6 Claude Code agents simultaneously in a true multi-terminal coding workspace. Each terminal works on different tasks across multiple projects."
       },
       "taskWorkflow": {
         "title": "AI-Powered Task Management",
-        "description": "Integrated Kanban board that agents can read and update. Tasks sync automatically across all terminals."
+        "description": "Integrated Kanban board that agents can read and update via MCP. Tasks sync automatically across all terminals for seamless multi-project workflows."
       },
       "notifications": {
-        "title": "Smart Notifications",
-        "description": "Know instantly when an agent finishes, needs input, or encounters an error. Never miss a beat."
+        "title": "Real-Time Claude Code Notifications",
+        "description": "Get instant notifications when any Claude Code terminal finishes, needs input, or encounters an error. Never miss a beat with AI coding notifications."
       },
       "visibility": {
-        "title": "Real-Time Status & Changes",
-        "description": "Dynamic terminal titles, live file changes, and instant visibility into what each agent is doing."
+        "title": "Real-Time Visibility & Change Tracking",
+        "description": "See AI code changes in real-time with live diffs. Dynamic terminal titles and instant visibility into what each Claude Code agent is doing."
       },
       "history": {
-        "title": "Conversation History",
-        "description": "Full searchable history of all your chats. Find any past decision, explanation, or code snippet instantly."
+        "title": "Full Conversation History",
+        "description": "Complete Claude Code conversation history across all sessions. Search any past decision, explanation, or code snippet — never lose context again."
       },
       "turboMode": {
-        "title": "Turbo Mode & Visual Permissions",
-        "description": "Go fast with confidence. Turbo Mode auto-approves safe actions while visual permission controls keep you in charge."
+        "title": "Permissions & Turbo Mode",
+        "description": "Manage Claude Code permissions and file access with visual controls. Turbo Mode auto-approves safe actions while you stay in charge of sensitive operations."
       }
     },
+    "seoLine": "Real-time change tracking so you always know what Claude Code is doing — ideal for coordinating multiple projects or large refactors.",
     "pills": {
       "shortcuts": "Keyboard Shortcuts",
       "kanban": "Kanban Board",
@@ -123,38 +124,38 @@
   "socialProof": {
     "stats": {
       "workflow": {
-        "title": "3× Workflow Speed",
-        "subtitle": "Parallel agents reduce waiting time and context switching."
+        "title": "3x Workflow Speed",
+        "subtitle": "Parallel Claude Code terminals reduce waiting and context switching."
       },
       "agents": {
-        "title": "6 Agents, Zero Bottlenecks",
-        "subtitle": "Run tasks simultaneously with full visibility."
+        "title": "6 Terminals, Zero Bottlenecks",
+        "subtitle": "Run multiple Claude Code sessions with full visibility."
       },
       "insight": {
-        "title": "Instant Code Insight",
-        "subtitle": "Live file history and Git diffs that keep you in control."
+        "title": "Real-Time Change Tracking",
+        "subtitle": "Live diffs and file history keep you in control."
       },
       "search": {
-        "title": "Search Anything",
-        "subtitle": "Find past chats, decisions, and explanations in seconds."
+        "title": "Search Any Conversation",
+        "subtitle": "Find Claude Code history, decisions, and code in seconds."
       }
     },
     "title": "Loved by",
     "titleHighlight": "Developers",
-    "subtitle": "Join thousands of developers who have transformed their workflow",
+    "subtitle": "Join thousands of developers who have transformed their Claude Code workflow",
     "testimonials": {
       "alex": {
-        "quote": "Running backend, frontend, and tests in parallel completely changed the way I work.",
+        "quote": "Running backend, frontend, and tests in parallel across multiple Claude Code terminals changed everything.",
         "author": "Alex C.",
         "role": "Senior Developer"
       },
       "maria": {
-        "quote": "The MCP Kanban keeps agents aligned without repeating prompts.",
+        "quote": "The MCP Kanban keeps all my Claude Code agents aligned without repeating prompts.",
         "author": "Maria S.",
         "role": "Full Stack Engineer"
       },
       "david": {
-        "quote": "File history per terminal finally made me trust AI with real code.",
+        "quote": "Real-time change tracking and conversation history finally made me trust AI with production code.",
         "author": "David P.",
         "role": "Senior Engineer"
       }
@@ -191,7 +192,7 @@
     "titleLine1": "Watch the",
     "titleLine2": "Magic",
     "titleLine3": "Happen",
-    "subtitle": "Watch how CodeAgentSwarm transforms parallel AI development.",
+    "subtitle": "Watch how CodeAgentSwarm transforms parallel Claude Code development with real-time visibility.",
     "stats": {
       "faster": "Faster Development",
       "aiPowered": "AI-Powered",
@@ -218,7 +219,7 @@
       },
       "pro": {
         "name": "Pro",
-        "description": "Chosen by 73% of users • Early adopter price",
+        "description": "For heavy Claude Code users: 6 terminals, real-time notifications, multi-project workflows and full MCP integration",
         "cta": "Subscribe in App"
       }
     },
@@ -259,11 +260,11 @@
       "boost6x": "6X BOOST",
       "modes2x": "2X MODES"
     },
-    "trustBadge": "30-day money-back guarantee • Cancel anytime • Secure payment via Stripe",
+    "trustBadge": "30-day money-back guarantee | Cancel anytime | Secure payment via Stripe",
     "whyUpgrade": {
       "title": "Why upgrade to Pro?",
       "boost": "300% productivity boost",
-      "description1": "compared to Free tier. With 6 parallel AI agents, unlimited projects, and keyboard shortcuts, Pro users complete tasks",
+      "description1": "compared to Free tier. With 6 parallel Claude Code terminals, unlimited projects, and keyboard shortcuts, Pro users complete tasks",
       "faster": "3x faster",
       "description2": "Our data shows Pro developers ship code 70% more frequently and reduce debugging time by half.",
       "tagline": "Transform hours into minutes."
@@ -320,11 +321,32 @@
       }
     }
   },
+  "faq": {
+    "badge": "Got Questions?",
+    "titlePre": "Frequently Asked",
+    "titleHighlight": "Questions",
+    "items": {
+      "q1": "How do I use multiple Claude Code terminals with CodeAgentSwarm?",
+      "a1": "CodeAgentSwarm makes multi-terminal Claude Code setup simple. Just open the app and you can run up to 6 Claude Code terminals simultaneously. Each terminal operates independently, letting you work on different tasks or projects in parallel with full real-time visibility.",
+      "q2": "How does CodeAgentSwarm handle project-level organization?",
+      "a2": "CodeAgentSwarm lets you manage multiple Claude Code projects seamlessly. Switch between projects without losing context — each project maintains its own terminal configurations, task boards, and conversation history. It's an AI multi-project workspace designed for developers juggling multiple codebases.",
+      "q3": "Do I get real-time visibility and live change tracking?",
+      "a3": "Yes! CodeAgentSwarm provides real-time coding visibility with live diffs so you can see AI code changes in real-time. Dynamic terminal titles show what each Claude Code agent is working on, and the file tracking system highlights exactly what changed and when.",
+      "q4": "Does CodeAgentSwarm support Claude Code notifications?",
+      "a4": "Absolutely. You get real-time notifications for AI coding events — when any Claude Code terminal finishes a task, needs your input, or encounters an error. Never miss an update with instant desktop notifications.",
+      "q5": "How does conversation history work?",
+      "a5": "CodeAgentSwarm saves your complete Claude Code conversation history across all sessions. Search any past chat, decision, or code snippet instantly. Session history is fully searchable, so you never lose context or have to repeat explanations.",
+      "q6": "Can I control what Claude Code has access to?",
+      "a6": "Yes. CodeAgentSwarm provides visual Claude Code permission settings to manage file access and actions. You can configure what each terminal can access, approve sensitive operations, and maintain a secure AI coding environment while using Turbo Mode for safe actions.",
+      "q7": "Does CodeAgentSwarm support MCP tools and the MCP marketplace?",
+      "a7": "Yes! CodeAgentSwarm includes full MCP integration with a built-in MCP marketplace. Connect Claude Code to GitHub, Notion, Slack, Supabase, Brave Search, Playwright, PostgreSQL and more. MCP tools extend what your Claude Code agents can do."
+    }
+  },
   "cta": {
     "titleLine1": "Ready to",
     "titleHighlight": "Transform",
     "titleLine2": "Your Development?",
-    "subtitle": "Join thousands of developers who are already using CodeAgentSwarm to supercharge their workflow with AI-powered task management and seamless collaboration.",
+    "subtitle": "Join thousands of developers using CodeAgentSwarm to orchestrate multiple Claude Code terminals with real-time visibility, notifications, and full conversation history.",
     "version": "Version",
     "released": "Released",
     "loading": "Loading releases...",
@@ -356,7 +378,7 @@
     }
   },
   "footer": {
-    "description": "AI-powered workspace for parallel development, full visibility, and integrated task management.",
+    "description": "AI coding workspace for multiple Claude Code terminals, real-time visibility, conversation history and integrated task management.",
     "product": "Product",
     "company": "Company",
     "links": {
@@ -376,12 +398,12 @@
   "localeSwitcher": {
     "label": "Language",
     "en": "English",
-    "es": "Español"
+    "es": "Espanol"
   },
   "beta": {
     "hero": {
       "headline": "Join the Open Beta",
-      "subheadline": "Get the full Pro experience at no cost. Run 6 AI agents in parallel, Git integration, Kanban, MCP tools and more.",
+      "subheadline": "An AI coding workspace with 6 Claude Code terminals in parallel, real-time visibility, live notifications, full conversation history and multi-project management — all Pro features free during beta.",
       "microcopy": "Works on macOS (Apple Silicon). Requires a Claude Code subscription.",
       "primaryCta": "Join Beta Now",
       "primaryCtaHint": "(Step 1)",
@@ -408,28 +430,28 @@
       "titlePre": "Everything You",
       "titleHighlight": "Need",
       "point1": {
-        "title": "Multiple Agents in Parallel",
-        "description": "Run up to 6 Claude Code agents simultaneously. Each one in its own terminal, working on different tasks."
+        "title": "Multiple Claude Code Terminals in Parallel",
+        "description": "Run up to 6 Claude Code agents simultaneously. Each terminal works independently on different tasks across multiple projects."
       },
       "point2": {
         "title": "AI-Powered Task Management",
-        "description": "Integrated Kanban board that agents can read and update. Tasks sync automatically across all terminals."
+        "description": "Integrated Kanban board that agents can read and update via MCP. Tasks sync automatically across all terminals."
       },
       "point3": {
-        "title": "Smart Notifications",
-        "description": "Know instantly when an agent finishes, needs input, or encounters an error. Never miss a beat."
+        "title": "Real-Time Claude Code Notifications",
+        "description": "Get instant notifications when any terminal finishes, needs input, or encounters an error. Never miss a beat."
       },
       "point4": {
-        "title": "Real-Time Status & Changes",
-        "description": "Dynamic terminal titles, live file changes, and instant visibility into what each agent is doing."
+        "title": "Real-Time Visibility & Change Tracking",
+        "description": "See AI code changes in real-time with live diffs. Dynamic terminal titles show what each Claude Code agent is doing."
       },
       "point5": {
-        "title": "Conversation History",
-        "description": "Full searchable history of all your chats. Find any past decision, explanation, or code snippet instantly."
+        "title": "Full Conversation History",
+        "description": "Complete Claude Code conversation history across all sessions. Search any past decision or code snippet instantly."
       },
       "point6": {
-        "title": "Turbo Mode & Visual Permissions",
-        "description": "Go fast with confidence. Turbo Mode auto-approves safe actions while visual permission controls keep you in charge."
+        "title": "Permissions & Turbo Mode",
+        "description": "Manage Claude Code permissions and file access visually. Turbo Mode auto-approves safe actions while you control sensitive operations."
       }
     },
     "form": {
@@ -478,7 +500,7 @@
     "pricing": {
       "banner": "During the Open Beta, the Pro tier is 100% free. Create your account, submit your email and we'll unlock Pro for you.",
       "badge": "FREE DURING BETA",
-      "priceStrikethrough": "~€6.99/month~",
+      "priceStrikethrough": "~$6.99/month~",
       "priceFree": "FREE",
       "cta": "Get Free Pro Access"
     },
@@ -505,7 +527,9 @@
         "q7": "Does CodeAgentSwarm store my code?",
         "a7": "No. All code stays on your local machine.",
         "q8": "How long does Pro activation take?",
-        "a8": "Usually a few hours after you complete all steps."
+        "a8": "Usually a few hours after you complete all steps.",
+        "q9": "Does CodeAgentSwarm support multi-project workflows with Claude Code?",
+        "a9": "Yes! CodeAgentSwarm is designed for multi-project management. Switch between Claude Code projects without losing context — each project maintains its own terminals, tasks and conversation history. Manage multiple Claude Code projects seamlessly in one workspace."
       }
     }
   }
