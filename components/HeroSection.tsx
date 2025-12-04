@@ -279,20 +279,22 @@ export default function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.6 }}
-          className="text-center text-lg md:text-xl text-white/40 italic mb-4 max-w-xl mx-auto"
+          className={`text-center text-lg md:text-xl text-white/40 italic max-w-xl mx-auto ${t('authorityLine') ? 'mb-4' : 'mb-12'}`}
         >
           {t('powerStatement')}
         </motion.p>
 
-        {/* Authority Line */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.45, duration: 0.6 }}
-          className="text-center text-base text-white/50 mb-12 max-w-2xl mx-auto"
-        >
-          {t('authorityLine')}
-        </motion.p>
+        {/* Authority Line - only render if not empty */}
+        {t('authorityLine') && (
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.45, duration: 0.6 }}
+            className="text-center text-base text-white/50 mb-12 max-w-2xl mx-auto"
+          >
+            {t('authorityLine')}
+          </motion.p>
+        )}
 
         {/* CTA Buttons */}
         <motion.div

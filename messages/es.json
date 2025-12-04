@@ -17,11 +17,11 @@
   "hero": {
     "badge": "6 Terminales de Claude Code en Perfecta Sincronia",
     "badgeNew": "NUEVO",
-    "titleLine1": "El espacio de trabajo de programacion con IA para",
-    "titleLine2": "varias terminales de Claude Code",
-    "subtitle": "Un espacio de trabajo para desarrolladores que orquesta <highlight>hasta 6 terminales de Claude Code</highlight> en paralelo, con visibilidad en tiempo real, notificaciones instantaneas, historial completo de conversaciones, control de permisos y gestion de multiples proyectos.",
-    "powerStatement": "Desarrolla mas rapido con seguimiento de cambios en tiempo real y sin cambios de contexto",
-    "authorityLine": "El espacio de trabajo multi-terminal creado para desarrolladores que usan Claude Code todos los dias. Ve lo que hace cada agente, recibe notificaciones instantaneas y nunca pierdas contexto entre proyectos.",
+    "titleLine1": "El espacio de trabajo con IA para",
+    "titleLine2": "multiples terminales de Claude Code",
+    "subtitle": "Un espacio de trabajo para desarrolladores que orquesta <highlight>hasta 6 terminales de Claude Code</highlight> en paralelo, con visibilidad en tiempo real, notificaciones instantaneas e historial completo de conversaciones entre proyectos.",
+    "powerStatement": "Desarrolla mas rapido con seguimiento de cambios en tiempo real y sin perdida de contexto.",
+    "authorityLine": "",
     "requirements": "Compatible con tu suscripcion de Claude Code. Requiere macOS 12+",
     "stats": {
       "terminals": "Terminales Paralelos",

@@ -19,9 +19,9 @@
     "badgeNew": "NEW",
     "titleLine1": "The AI coding workspace for",
     "titleLine2": "multiple Claude Code terminals",
-    "subtitle": "An AI developer workspace that orchestrates <highlight>up to 6 Claude Code terminals</highlight> in parallel — with real-time visibility, live notifications, full conversation history, permissions control and seamless multi-project management.",
-    "powerStatement": "Build faster with real-time change tracking and zero context switching",
-    "authorityLine": "The multi-terminal coding workspace built for developers who rely on Claude Code every day. See what each agent is doing, get instant notifications, and never lose context across projects.",
+    "subtitle": "An AI developer workspace that orchestrates <highlight>up to 6 Claude Code terminals</highlight> in parallel, with real time visibility, live notifications and full conversation history across projects.",
+    "powerStatement": "Build faster with real time change tracking and zero context loss.",
+    "authorityLine": "",
     "requirements": "Works with your Claude Code subscription. Requires macOS 12 or later.",
     "stats": {
       "terminals": "Parallel Terminals",
