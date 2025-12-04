@@ -47,6 +47,7 @@ export default function Footer() {
           { name: t('links.features'), href: '#features' },
           { name: t('links.pricing'), href: '#pricing' },
           { name: t('links.roadmap'), href: '#roadmap' },
+          { name: t('links.faq'), href: '#faq' },
           { name: t('links.download'), href: '#download' },
         ],
     company: [

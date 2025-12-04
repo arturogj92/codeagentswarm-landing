@@ -12,7 +12,8 @@
     "features": "Caracteristicas",
     "demo": "Demo",
     "pricing": "Precios",
-    "roadmap": "Roadmap"
+    "roadmap": "Roadmap",
+    "faq": "FAQ"
   },
   "hero": {
     "badge": "6 Terminales de Claude Code en Perfecta Sincronia",
@@ -385,6 +386,7 @@
       "features": "Caracteristicas",
       "pricing": "Precios",
       "roadmap": "Roadmap",
+      "faq": "FAQ",
       "download": "Descargar",
       "about": "Nosotros",
       "contact": "Contacto",

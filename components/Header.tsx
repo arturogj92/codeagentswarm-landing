@@ -35,6 +35,7 @@ export default function Header() {
         { name: t('demo'), href: '#demo' },
         { name: t('pricing'), href: '#pricing' },
         { name: t('roadmap'), href: '#roadmap' },
+        { name: t('faq'), href: '#faq' },
       ]
 
   // Throttled scroll handler for performance

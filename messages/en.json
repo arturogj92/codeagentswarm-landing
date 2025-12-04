@@ -12,7 +12,8 @@
     "features": "Features",
     "demo": "Demo",
     "pricing": "Pricing",
-    "roadmap": "Roadmap"
+    "roadmap": "Roadmap",
+    "faq": "FAQ"
   },
   "hero": {
     "badge": "6 Claude Code Terminals Working in Perfect Harmony",
@@ -385,6 +386,7 @@
       "features": "Features",
       "pricing": "Pricing",
       "roadmap": "Roadmap",
+      "faq": "FAQ",
       "download": "Download",
       "about": "About",
       "contact": "Contact",
