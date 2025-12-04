@@ -76,7 +76,13 @@ function VideoShowcase() {
         <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-dark-900">
           {/* Fixed aspect ratio container */}
           <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
-            <div className="absolute inset-0 w-full h-full">
+            <div
+                className="absolute inset-0 w-full h-full cursor-pointer"
+                onClick={() => {
+                  setIsPlaying(!isPlaying)
+                  setIsAutoAdvance(!isAutoAdvance)
+                }}
+              >
               <VideoWithProgress
                 key={videos[currentVideo].id}
                 src={videos[currentVideo].src}
