@@ -17,6 +17,7 @@ interface VideoWithProgressProps {
   progressBarHeight?: number
   progressBarColor?: string
   progressBarBackground?: string
+  isPlaying?: boolean
 }
 
 export default function VideoWithProgress({
@@ -33,10 +34,23 @@ export default function VideoWithProgress({
   progressBarPosition = "bottom",
   progressBarHeight = 2,
   progressBarColor = "rgba(255, 255, 255, 0.9)",
-  progressBarBackground = "rgba(255, 255, 255, 0.2)"
+  progressBarBackground = "rgba(255, 255, 255, 0.2)",
+  isPlaying = true
 }: VideoWithProgressProps) {
   const videoRef = useRef<HTMLVideoElement>(null)
   const [progress, setProgress] = useState(0)
+
+  // Control play/pause from external isPlaying prop
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
+
+    if (isPlaying) {
+      video.play().catch(() => {})
+    } else {
+      video.pause()
+    }
+  }, [isPlaying])
 
   useEffect(() => {
     const video = videoRef.current

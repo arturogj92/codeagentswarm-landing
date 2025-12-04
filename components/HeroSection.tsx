@@ -92,6 +92,7 @@ function VideoShowcase() {
                 progressBarColor="rgba(0, 255, 255, 0.8)"
                 progressBarBackground="rgba(255, 255, 255, 0.1)"
                 onVideoEnd={handleVideoEnd}
+                isPlaying={isPlaying}
               />
             </div>
           </div>
