@@ -102,7 +102,7 @@ export default function Header() {
             </div>
             <span className={cn(
               "font-bold tracking-wider font-[var(--font-orbitron)] bg-clip-text text-transparent transition-all duration-300",
-              isScrolled ? "text-[10px] xs:text-xs sm:text-base lg:text-lg" : "text-xs xs:text-sm sm:text-lg lg:text-xl"
+              isScrolled ? "text-sm sm:text-base lg:text-lg" : "text-base sm:text-lg lg:text-xl"
             )} style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
               CODEAGENTSWARM
             </span>
