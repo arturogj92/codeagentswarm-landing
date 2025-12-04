@@ -13,56 +13,78 @@ const orbitron = Orbitron({
   variable: '--font-orbitron',
 })
 
-export const metadata: Metadata = {
-  title: 'CodeAgentSwarm - Run 6 Parallel Claude Code AI Agents for Faster Development',
-  description: 'Boost developer productivity with CodeAgentSwarm - the ultimate AI coding assistant tool that runs 6 parallel Claude Code agents simultaneously. Transform hours of development into minutes with intelligent multi-agent orchestration, autonomous coding workflows, and parallel task execution.',
-  keywords: [
-    'AI coding assistant',
-    'Claude Code',
-    'parallel AI agents',
-    'AI development tools',
-    'developer productivity',
-    'CodeAgentSwarm',
-    'multi-agent coding',
-    'parallel development',
-    'AI agent orchestration',
-    'autonomous coding',
-  ],
-  authors: [{ name: 'CodeAgentSwarm Team' }],
-  creator: 'CodeAgentSwarm',
-  publisher: 'CodeAgentSwarm',
-  applicationName: 'CodeAgentSwarm',
-  icons: {
-    icon: '/favicon.png',
-    apple: '/logo.png',
-  },
-  openGraph: {
-    title: 'CodeAgentSwarm - 6 Parallel Claude Code AI Agents for Developers',
-    description: 'Multiply your coding power with 6 parallel Claude Code AI agents. The ultimate AI coding assistant for developers who want to build faster, smarter, and more efficiently.',
-    type: 'website',
-    siteName: 'CodeAgentSwarm',
-    url: 'https://codeagentswarm.com',
-    images: [
-      {
-        url: '/logo.png',
-        width: 1200,
-        height: 630,
-        alt: 'CodeAgentSwarm - Parallel AI Coding Agents Dashboard',
-      },
+const baseUrl = 'https://www.codeagentswarm.com'
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params
+  const canonicalUrl = `${baseUrl}/${locale}`
+
+  return {
+    title: 'CodeAgentSwarm – AI-powered multi-terminal coding workspace',
+    description:
+      'Orchestrate up to 6 Claude Code terminals in parallel with real time visibility, Git tools, live notifications, conversation history and intelligent task flows.',
+    keywords: [
+      'Claude Code',
+      'AI coding',
+      'developer tools',
+      'multi terminal',
+      'AI assistants',
+      'parallel AI agents',
+      'AI development tools',
+      'developer productivity',
+      'CodeAgentSwarm',
+      'multi-agent coding',
     ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    site: '@CodeAgentSwarm',
-    creator: '@CodeAgentSwarm',
-    title: 'CodeAgentSwarm - 6 Parallel Claude Code AI Agents',
-    description: 'Transform 8-hour development marathons into 30-minute sprints with 6 parallel Claude Code AI agents working simultaneously.',
-    images: ['/logo.png'],
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
+    authors: [{ name: 'CodeAgentSwarm Team' }],
+    creator: 'CodeAgentSwarm',
+    publisher: 'CodeAgentSwarm',
+    applicationName: 'CodeAgentSwarm',
+    icons: {
+      icon: '/favicon.png',
+      apple: '/logo.png',
+    },
+    alternates: {
+      canonical: canonicalUrl,
+      languages: {
+        en: `${baseUrl}/en`,
+        es: `${baseUrl}/es`,
+      },
+    },
+    openGraph: {
+      title: 'CodeAgentSwarm – Unleash Claude Code in parallel',
+      description:
+        'Work faster with multiple Claude Code terminals, Git integration, real time change tracking and full conversation history.',
+      type: 'website',
+      siteName: 'CodeAgentSwarm',
+      url: canonicalUrl,
+      locale: locale === 'es' ? 'es_ES' : 'en_US',
+      images: [
+        {
+          url: '/og.png',
+          width: 1200,
+          height: 630,
+          alt: 'CodeAgentSwarm - AI-powered multi-terminal coding workspace',
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      site: '@CodeAgentSwarm',
+      creator: '@CodeAgentSwarm',
+      title: 'CodeAgentSwarm – 6 Parallel Claude Code AI Agents',
+      description:
+        'Transform 8-hour development marathons into 30-minute sprints with 6 parallel Claude Code AI agents working simultaneously.',
+      images: ['/og.png'],
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+  }
 }
 
 export function generateStaticParams() {
