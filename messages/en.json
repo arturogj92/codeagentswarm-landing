@@ -20,9 +20,9 @@
     "badgeNew": "NEW",
     "titleLine1": "The AI coding workspace for",
     "titleLine2": "multiple Claude Code terminals",
-    "subtitle": "An AI developer workspace that orchestrates <highlight>up to 6 Claude Code terminals</highlight> in parallel, with real time visibility, live notifications and full conversation history across projects.",
+    "subtitle": "Orchestrate <highlight>up to 6 Claude Code terminals</highlight> with real time visibility, live notifications, conversation history and multiproject control.",
     "powerStatement": "Build faster with real time change tracking and zero context loss.",
-    "authorityLine": "",
+    "authorityLine": "CodeAgentSwarm is the multi terminal AI workspace for developers who rely on Claude Code every day. See what each agent is doing, receive instant notifications, keep full conversation history and manage multiple projects without losing context.",
     "requirements": "Works with your Claude Code subscription. Requires macOS 12 or later.",
     "stats": {
       "terminals": "Parallel Terminals",
@@ -64,7 +64,7 @@
     "description": "When your entire workflow depends on one AI chat or terminal, things get messy fast. No real-time visibility into what Claude Code is editing, lost context between projects, repeated prompts, and no notifications when tasks complete.",
     "painPoints": {
       "switching": "Constantly switching tabs and losing context across projects.",
-      "noView": "No real-time visibility — you can't see what Claude Code is changing.",
+      "noView": "No real-time visibility. You can't see what Claude Code is changing.",
       "repeating": "Sessions lose context and you repeat the same prompts.",
       "confidence": "Hard to trust AI changes without live change tracking."
     }
@@ -73,14 +73,14 @@
     "badge": "The Solution",
     "titleLine1": "The multi-terminal Claude Code workflow",
     "titleLine2": "you always wanted",
-    "description": "CodeAgentSwarm is an AI coding workspace where up to six Claude Code terminals work in parallel with real-time visibility, live notifications, full conversation history and seamless multi-project management — so you never lose context.",
+    "description": "CodeAgentSwarm is an AI coding workspace where up to six Claude Code terminals work in parallel with real-time visibility, live notifications, full conversation history and seamless multiproject management. You never lose context.",
     "points": {
       "terminals": "Six Claude Code terminals running simultaneously.",
       "notifications": "Real-time notifications when agents finish or need input.",
       "git": "Integrated Git panel with live diffs and commit context.",
       "kanban": "MCP-powered Kanban your agents can read and update.",
       "mcp": "MCP Marketplace: GitHub, Notion, Slack, Supabase, Brave Search, Playwright, PostgreSQL, and more.",
-      "history": "Full Claude Code conversation history — search any session instantly.",
+      "history": "Full Claude Code conversation history. Search any session instantly.",
       "fileTracking": "Real-time change tracking so you always know what each agent modified."
     }
   },
@@ -107,14 +107,14 @@
       },
       "history": {
         "title": "Full Conversation History",
-        "description": "Complete Claude Code conversation history across all sessions. Search any past decision, explanation, or code snippet — never lose context again."
+        "description": "Complete Claude Code conversation history across all sessions. Search any past decision, explanation, or code snippet. Never lose context again."
       },
       "turboMode": {
         "title": "Permissions & Turbo Mode",
         "description": "Manage Claude Code permissions and file access with visual controls. Turbo Mode auto-approves safe actions while you stay in charge of sensitive operations."
       }
     },
-    "seoLine": "Real-time change tracking so you always know what Claude Code is doing — ideal for coordinating multiple projects or large refactors.",
+    "seoLine": "Real-time change tracking so you always know what Claude Code is doing. Ideal for coordinating multiple projects or large refactors.",
     "pills": {
       "shortcuts": "Keyboard Shortcuts",
       "kanban": "Kanban Board",
@@ -186,7 +186,7 @@
         "description": "Swarmi understands what you're working on and provides relevant suggestions."
       }
     },
-    "cta": "Swarmi is available in the app — just click the logo to start chatting!"
+    "cta": "Swarmi is available in the app. Just click the logo to start chatting!"
   },
   "demo": {
     "badge": "See It In Action",
@@ -330,17 +330,19 @@
       "q1": "How do I use multiple Claude Code terminals with CodeAgentSwarm?",
       "a1": "CodeAgentSwarm makes multi-terminal Claude Code setup simple. Just open the app and you can run up to 6 Claude Code terminals simultaneously. Each terminal operates independently, letting you work on different tasks or projects in parallel with full real-time visibility.",
       "q2": "How does CodeAgentSwarm handle project-level organization?",
-      "a2": "CodeAgentSwarm lets you manage multiple Claude Code projects seamlessly. Switch between projects without losing context — each project maintains its own terminal configurations, task boards, and conversation history. It's an AI multi-project workspace designed for developers juggling multiple codebases.",
+      "a2": "CodeAgentSwarm lets you manage multiple Claude Code projects seamlessly. Switch between projects without losing context. Each project maintains its own terminal configurations, task boards, and conversation history. It's an AI multiproject workspace designed for developers juggling multiple codebases.",
       "q3": "Do I get real-time visibility and live change tracking?",
       "a3": "Yes! CodeAgentSwarm provides real-time coding visibility with live diffs so you can see AI code changes in real-time. Dynamic terminal titles show what each Claude Code agent is working on, and the file tracking system highlights exactly what changed and when.",
       "q4": "Does CodeAgentSwarm support Claude Code notifications?",
-      "a4": "Absolutely. You get real-time notifications for AI coding events — when any Claude Code terminal finishes a task, needs your input, or encounters an error. Never miss an update with instant desktop notifications.",
+      "a4": "Absolutely. You get real-time notifications for AI coding events. When any Claude Code terminal finishes a task, needs your input, or encounters an error, you'll know instantly. Never miss an update with instant desktop notifications.",
       "q5": "How does conversation history work?",
       "a5": "CodeAgentSwarm saves your complete Claude Code conversation history across all sessions. Search any past chat, decision, or code snippet instantly. Session history is fully searchable, so you never lose context or have to repeat explanations.",
       "q6": "Can I control what Claude Code has access to?",
       "a6": "Yes. CodeAgentSwarm provides visual Claude Code permission settings to manage file access and actions. You can configure what each terminal can access, approve sensitive operations, and maintain a secure AI coding environment while using Turbo Mode for safe actions.",
       "q7": "Does CodeAgentSwarm support MCP tools and the MCP marketplace?",
-      "a7": "Yes! CodeAgentSwarm includes full MCP integration with a built-in MCP marketplace. Connect Claude Code to GitHub, Notion, Slack, Supabase, Brave Search, Playwright, PostgreSQL and more. MCP tools extend what your Claude Code agents can do."
+      "a7": "Yes! CodeAgentSwarm includes full MCP integration with a built-in MCP marketplace. Connect Claude Code to GitHub, Notion, Slack, Supabase, Brave Search, Playwright, PostgreSQL and more. MCP tools extend what your Claude Code agents can do.",
+      "q8": "Does CodeAgentSwarm help prevent context loss in Claude Code?",
+      "a8": "Yes. CodeAgentSwarm keeps a synchronized conversation history across terminals, shows real time changes from each agent and links project structure with terminal context. This prevents Claude Code from forgetting past actions or losing track during multi step work."
     }
   },
   "cta": {
@@ -405,7 +407,7 @@
   "beta": {
     "hero": {
       "headline": "Join the Open Beta",
-      "subheadline": "An AI coding workspace with 6 Claude Code terminals in parallel, real-time visibility, live notifications, full conversation history and multi-project management — all Pro features free during beta.",
+      "subheadline": "Join the Open Beta and unlock the full Pro experience while we refine CodeAgentSwarm. Try 6 synchronized Claude Code terminals with real time visibility, notifications and full conversation history.",
       "microcopy": "Works on macOS (Apple Silicon). Requires a Claude Code subscription.",
       "primaryCta": "Join Beta Now",
       "primaryCtaHint": "(Step 1)",
@@ -458,7 +460,7 @@
     },
     "form": {
       "title": "Beta Signup",
-      "stepTitle": "Step 1 — Tell us your email to prepare your Pro (Beta) activation",
+      "stepTitle": "Step 1. Tell us your email to prepare your Pro (Beta) activation",
       "emailLabel": "Email you used (or will use) in the app",
       "emailPlaceholder": "your@email.com",
       "macosLabel": "macOS version",
@@ -531,7 +533,7 @@
         "q8": "How long does Pro activation take?",
         "a8": "Usually a few hours after you complete all steps.",
         "q9": "Does CodeAgentSwarm support multi-project workflows with Claude Code?",
-        "a9": "Yes! CodeAgentSwarm is designed for multi-project management. Switch between Claude Code projects without losing context — each project maintains its own terminals, tasks and conversation history. Manage multiple Claude Code projects seamlessly in one workspace."
+        "a9": "Yes! CodeAgentSwarm is designed for multiproject management. Switch between Claude Code projects without losing context. Each project maintains its own terminals, tasks and conversation history. Manage multiple Claude Code projects seamlessly in one workspace."
       }
     }
   }

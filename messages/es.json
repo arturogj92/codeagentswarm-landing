@@ -20,9 +20,9 @@
     "badgeNew": "NUEVO",
     "titleLine1": "El espacio de trabajo con IA para",
     "titleLine2": "multiples terminales de Claude Code",
-    "subtitle": "Un espacio de trabajo para desarrolladores que orquesta <highlight>hasta 6 terminales de Claude Code</highlight> en paralelo, con visibilidad en tiempo real, notificaciones instantaneas e historial completo de conversaciones entre proyectos.",
-    "powerStatement": "Desarrolla mas rapido con seguimiento de cambios en tiempo real y sin perdida de contexto.",
-    "authorityLine": "",
+    "subtitle": "Orquesta <highlight>hasta 6 terminales de Claude Code</highlight> con visibilidad en tiempo real, notificaciones instantaneas, historial de conversaciones y control multiproyecto.",
+    "powerStatement": "Desarrolla mas rapido con seguimiento de cambios en tiempo real y sin perder contexto.",
+    "authorityLine": "CodeAgentSwarm es el espacio de trabajo multi terminal para desarrolladores que usan Claude Code a diario. Visualiza lo que hace cada agente, recibe notificaciones al instante, conserva todo el historial y gestiona varios proyectos sin perder contexto.",
     "requirements": "Compatible con tu suscripcion de Claude Code. Requiere macOS 12+",
     "stats": {
       "terminals": "Terminales Paralelos",
@@ -73,7 +73,7 @@
     "badge": "La Solucion",
     "titleLine1": "El flujo multi-terminal de Claude Code",
     "titleLine2": "que siempre quisiste",
-    "description": "CodeAgentSwarm es un espacio de trabajo de programacion con IA donde hasta seis terminales de Claude Code trabajan en paralelo con visibilidad en tiempo real, notificaciones instantaneas, historial completo de conversaciones y gestion de multiples proyectos sin perder contexto.",
+    "description": "CodeAgentSwarm es un espacio de trabajo de programacion con IA donde hasta seis terminales de Claude Code trabajan en paralelo con visibilidad en tiempo real, notificaciones instantaneas, historial completo de conversaciones y gestion multiproyecto. Nunca pierdes contexto.",
     "points": {
       "terminals": "Seis terminales de Claude Code funcionando simultaneamente.",
       "notifications": "Notificaciones en tiempo real cuando los agentes terminan o necesitan input.",
@@ -330,7 +330,7 @@
       "q1": "Como uso varias terminales de Claude Code con CodeAgentSwarm?",
       "a1": "CodeAgentSwarm hace que la configuracion multi-terminal de Claude Code sea simple. Solo abre la app y puedes ejecutar hasta 6 terminales de Claude Code simultaneamente. Cada terminal opera independientemente, permitiendote trabajar en diferentes tareas o proyectos en paralelo con visibilidad en tiempo real completa.",
       "q2": "Como maneja CodeAgentSwarm la organizacion por proyectos?",
-      "a2": "CodeAgentSwarm te permite gestionar multiples proyectos de Claude Code sin problemas. Cambia entre proyectos sin perder contexto - cada proyecto mantiene sus propias configuraciones de terminal, tableros de tareas e historial de conversaciones. Es un espacio de trabajo multi-proyecto con IA disenado para desarrolladores que manejan multiples codebases.",
+      "a2": "CodeAgentSwarm te permite gestionar multiples proyectos de Claude Code sin problemas. Cambia entre proyectos sin perder contexto. Cada proyecto mantiene sus propias configuraciones de terminal, tableros de tareas e historial de conversaciones. Es un espacio de trabajo multiproyecto con IA disenado para desarrolladores que manejan multiples codebases.",
       "q3": "Tengo visibilidad en tiempo real y seguimiento de cambios en vivo?",
       "a3": "Si! CodeAgentSwarm proporciona visibilidad de codigo en tiempo real con diffs en vivo para que puedas ver los cambios de codigo de IA al instante. Los titulos dinamicos de terminal muestran en que esta trabajando cada agente Claude Code, y el sistema de seguimiento de archivos destaca exactamente que cambio y cuando.",
       "q4": "Soporta CodeAgentSwarm notificaciones de Claude Code?",
@@ -340,7 +340,9 @@
       "q6": "Puedo controlar a que tiene acceso Claude Code?",
       "a6": "Si. CodeAgentSwarm proporciona configuracion visual de permisos de Claude Code para gestionar acceso a archivos y acciones. Puedes configurar a que puede acceder cada terminal, aprobar operaciones sensibles y mantener un entorno seguro de programacion IA mientras usas el Modo Turbo para acciones seguras.",
       "q7": "Soporta CodeAgentSwarm herramientas MCP y el marketplace MCP?",
-      "a7": "Si! CodeAgentSwarm incluye integracion MCP completa con un marketplace MCP integrado. Conecta Claude Code a GitHub, Notion, Slack, Supabase, Brave Search, Playwright, PostgreSQL y mas. Las herramientas MCP extienden lo que tus agentes Claude Code pueden hacer."
+      "a7": "Si! CodeAgentSwarm incluye integracion MCP completa con un marketplace MCP integrado. Conecta Claude Code a GitHub, Notion, Slack, Supabase, Brave Search, Playwright, PostgreSQL y mas. Las herramientas MCP extienden lo que tus agentes Claude Code pueden hacer.",
+      "q8": "Ayuda CodeAgentSwarm a evitar la perdida de contexto en Claude Code?",
+      "a8": "Si. CodeAgentSwarm mantiene un historial sincronizado de conversaciones, muestra cambios en tiempo real de cada agente y vincula la estructura del proyecto con el contexto de cada terminal. Esto evita que Claude Code olvide acciones anteriores o pierda el hilo en tareas de varios pasos."
     }
   },
   "cta": {
@@ -405,7 +407,7 @@
   "beta": {
     "hero": {
       "headline": "Unete a la Open Beta",
-      "subheadline": "Un espacio de trabajo de programacion con IA con 6 terminales de Claude Code en paralelo, visibilidad en tiempo real, notificaciones instantaneas, historial completo de conversaciones y gestion de multiples proyectos - todas las funciones Pro gratis durante la beta.",
+      "subheadline": "Unete a la Beta Abierta y desbloquea toda la experiencia Pro mientras seguimos mejorando CodeAgentSwarm. Prueba 6 terminales sincronizadas de Claude Code con visibilidad en tiempo real, notificaciones e historial completo.",
       "microcopy": "Funciona en macOS (Apple Silicon). Requiere suscripcion a Claude Code.",
       "primaryCta": "Unirse a la Beta",
       "primaryCtaHint": "(Paso 1)",
@@ -458,7 +460,7 @@
     },
     "form": {
       "title": "Registro Beta",
-      "stepTitle": "Paso 1 - Envianos tu email para preparar tu activacion Pro (Beta)",
+      "stepTitle": "Paso 1. Envianos tu email para preparar tu activacion Pro (Beta)",
       "emailLabel": "Email que usas (o usaras) en la app",
       "emailPlaceholder": "tu@email.com",
       "macosLabel": "Version de macOS",
@@ -531,7 +533,7 @@
         "q8": "Cuanto tarda la activacion de Pro?",
         "a8": "Normalmente pocas horas despues de completar todos los pasos.",
         "q9": "Soporta CodeAgentSwarm flujos multi-proyecto con Claude Code?",
-        "a9": "Si! CodeAgentSwarm esta disenado para gestion de multiples proyectos. Cambia entre proyectos de Claude Code sin perder contexto - cada proyecto mantiene sus propios terminales, tareas e historial de conversaciones. Gestiona multiples proyectos de Claude Code sin problemas en un solo espacio de trabajo."
+        "a9": "Si! CodeAgentSwarm esta disenado para gestion multiproyecto. Cambia entre proyectos de Claude Code sin perder contexto. Cada proyecto mantiene sus propios terminales, tareas e historial de conversaciones. Gestiona multiples proyectos de Claude Code sin problemas en un solo espacio de trabajo."
       }
     }
   }
