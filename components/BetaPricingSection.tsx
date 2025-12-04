@@ -339,10 +339,7 @@ export default function BetaPricingSection() {
               {t('whyUpgrade.title')}
             </h4>
             <p className="text-white/50 text-sm leading-relaxed">
-              <span className="text-neon-purple font-semibold">{t('whyUpgrade.boost')}</span>{' '}
-              {t('whyUpgrade.description1')}{' '}
-              <span className="text-neon-purple">{t('whyUpgrade.faster')}</span>. {t('whyUpgrade.description2')}{' '}
-              <span className="italic">{t('whyUpgrade.tagline')}</span>
+              {t('whyUpgrade.description')}
             </p>
           </div>
         </motion.div>

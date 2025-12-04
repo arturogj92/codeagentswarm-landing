@@ -16,7 +16,7 @@
     "faq": "FAQ"
   },
   "hero": {
-    "badge": "6 Claude Code Terminals Working in Perfect Harmony",
+    "badge": "We're in Open Beta - Get the full Pro experience for free",
     "badgeNew": "NEW",
     "titleLine1": "The AI coding workspace for",
     "titleLine2": "multiple Claude Code terminals",
@@ -143,7 +143,7 @@
     },
     "title": "Loved by",
     "titleHighlight": "Developers",
-    "subtitle": "Join thousands of developers who have transformed their Claude Code workflow",
+    "subtitle": "See how developers are using CodeAgentSwarm to improve their Claude Code workflow.",
     "testimonials": {
       "alex": {
         "quote": "Running backend, frontend, and tests in parallel across multiple Claude Code terminals changed everything.",
@@ -264,11 +264,7 @@
     "trustBadge": "30-day money-back guarantee | Cancel anytime | Secure payment via Stripe",
     "whyUpgrade": {
       "title": "Why upgrade to Pro?",
-      "boost": "300% productivity boost",
-      "description1": "compared to Free tier. With 6 parallel Claude Code terminals, unlimited projects, and keyboard shortcuts, Pro users complete tasks",
-      "faster": "3x faster",
-      "description2": "Our data shows Pro developers ship code 70% more frequently and reduce debugging time by half.",
-      "tagline": "Transform hours into minutes."
+      "description": "Pro is built for heavy Claude Code users who need 6 terminals, unlimited projects and full MCP integration. Parallel terminals reduce waiting time and context switching, while keyboard shortcuts, advanced layouts and permissions help you keep all your agents in sync. Many workflows that used to take multiple steps can now be handled in a single focused session."
     }
   },
   "roadmap": {
@@ -349,7 +345,7 @@
     "titleLine1": "Ready to",
     "titleHighlight": "Transform",
     "titleLine2": "Your Development?",
-    "subtitle": "Join thousands of developers using CodeAgentSwarm to orchestrate multiple Claude Code terminals with real-time visibility, notifications, and full conversation history.",
+    "subtitle": "Join developers who want to orchestrate multiple Claude Code terminals with real time visibility, notifications and full conversation history.",
     "version": "Version",
     "released": "Released",
     "loading": "Loading releases...",
