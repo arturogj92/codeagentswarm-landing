@@ -16,13 +16,13 @@
     "faq": "FAQ"
   },
   "hero": {
-    "badge": "Estamos en Open Beta - Disfruta del plan Pro gratis",
+    "badge": "Open Beta – Todas las funciones Pro gratis",
     "badgeNew": "NUEVO",
-    "titleLine1": "El espacio de trabajo con IA para",
-    "titleLine2": "múltiples terminales de Claude Code",
-    "subtitle": "Orquesta <highlight>hasta 6 terminales de Claude Code</highlight> con visibilidad en tiempo real, notificaciones instantáneas, historial de conversaciones y control multiproyecto.",
-    "powerStatement": "Desarrolla más rápido con seguimiento de cambios en tiempo real y sin perder contexto.",
-    "authorityLine": "CodeAgentSwarm es el espacio de trabajo multi terminal para desarrolladores que usan Claude Code a diario. Visualiza lo que hace cada agente, recibe notificaciones al instante, conserva todo el historial y gestiona varios proyectos sin perder contexto.",
+    "titleLine1": "El workspace con IA para usar",
+    "titleLine2": "varias terminales de Claude Code a la vez",
+    "subtitle": "Trabaja con hasta 6 terminales de Claude Code en paralelo con visibilidad en tiempo real, notificaciones, historial completo y control de varios proyectos sin perder nada.",
+    "powerStatement": "",
+    "authorityLine": "",
     "requirements": "Compatible con tu suscripción de Claude Code. Requiere macOS 12+",
     "stats": {
       "terminals": "Terminales Paralelos",
