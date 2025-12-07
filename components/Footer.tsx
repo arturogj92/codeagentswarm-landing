@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { Heart } from 'lucide-react'
 import Image from 'next/image'
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import { usePathname } from 'next/navigation'
 import { Link } from '@/i18n/navigation'
 
@@ -30,9 +30,11 @@ export default function Footer() {
   const t = useTranslations('footer')
   const tBeta = useTranslations('beta')
   const pathname = usePathname()
+  const locale = useLocale()
   const currentYear = new Date().getFullYear()
 
   const isBetaPage = pathname?.includes('/beta')
+  const guidesHref = locale === 'es' ? '/es/guias' : '/en/guides'
 
   // Different links for beta page vs main landing
   const footerLinks = {
@@ -42,6 +44,7 @@ export default function Footer() {
           { name: 'How to Join', href: '#beta-how-to-join' },
           { name: 'Sign Up', href: '#beta-signup-form' },
           { name: 'FAQ', href: '#beta-faq' },
+          { name: t('links.guides'), href: guidesHref },
         ]
       : [
           { name: t('links.features'), href: '#features' },
@@ -49,6 +52,7 @@ export default function Footer() {
           { name: t('links.roadmap'), href: '#roadmap' },
           { name: t('links.faq'), href: '#faq' },
           { name: t('links.download'), href: '#download' },
+          { name: t('links.guides'), href: guidesHref },
         ],
     company: [
       { name: t('links.about'), href: '#' },
