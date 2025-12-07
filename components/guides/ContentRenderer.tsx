@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { Info, AlertTriangle, Lightbulb, ImageIcon } from 'lucide-react'
 import type { ContentBlock, GuideSection } from '@/content/guides/types'
 
-// Image placeholder component
+// Image placeholder component (when src is '#' or missing)
 function ImagePlaceholder({ alt, caption }: { alt: string; caption?: string }) {
   return (
     <figure className="my-8">
@@ -14,6 +14,48 @@ function ImagePlaceholder({ alt, caption }: { alt: string; caption?: string }) {
           <ImageIcon className="w-12 h-12" />
           <span className="text-sm text-center px-4">{alt}</span>
         </div>
+      </div>
+      {caption && (
+        <figcaption className="mt-3 text-center text-sm text-white/50">
+          {caption}
+        </figcaption>
+      )}
+    </figure>
+  )
+}
+
+// Real image component with size variants
+function GuideImage({ src, alt, caption, size = 'full' }: { src: string; alt: string; caption?: string; size?: 'inline' | 'small' | 'medium' | 'full' }) {
+  // Inline: very small, displayed inline with text
+  if (size === 'inline') {
+    return (
+      <span className="inline-block my-2">
+        <img
+          src={src}
+          alt={alt}
+          className="h-12 w-auto rounded-lg border border-white/10"
+          loading="lazy"
+        />
+      </span>
+    )
+  }
+
+  // Size classes for figure-based images
+  const sizeClasses = {
+    small: 'max-w-xs mx-auto',
+    medium: 'max-w-lg mx-auto',
+    full: 'w-full',
+  }
+
+  return (
+    <figure className={`my-8 ${size !== 'full' ? sizeClasses[size] : ''}`}>
+      <div className="relative rounded-xl border border-white/10 overflow-hidden">
+        <img
+          src={src}
+          alt={alt}
+          className={sizeClasses[size] || 'w-full'}
+          loading="lazy"
+        />
       </div>
       {caption && (
         <figcaption className="mt-3 text-center text-sm text-white/50">
@@ -130,7 +172,11 @@ function renderBlock(block: ContentBlock, index: number) {
       )
 
     case 'image':
-      return <ImagePlaceholder key={index} alt={block.alt} caption={block.caption} />
+      // Use placeholder if src is '#' or empty, otherwise show real image
+      if (!block.src || block.src === '#') {
+        return <ImagePlaceholder key={index} alt={block.alt} caption={block.caption} />
+      }
+      return <GuideImage key={index} src={block.src} alt={block.alt} caption={block.caption} size={block.size} />
 
     case 'callout':
       return <Callout key={index} variant={block.variant} content={block.content} />

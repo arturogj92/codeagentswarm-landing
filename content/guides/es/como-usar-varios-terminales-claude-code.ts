@@ -7,19 +7,17 @@ export const guide: Guide = {
     title: 'Cómo usar varios terminales de Claude Code sin complicarte la vida',
     metaTitle: 'Cómo usar varios terminales de Claude Code en paralelo (Guía humana y práctica)',
     metaDescription: 'Guía muy humana y directa sobre cómo trabajar con varios terminales de Claude Code en paralelo usando CodeAgentSwarm. Natural, cercana y sin tono robótico.',
-    intro: `Si alguna vez has intentado llevar varias conversaciones de Claude Code a la vez, ya sabes cómo acaba la película: pestañas abiertas por todos lados, pierdes el hilo y terminas pensando "¿pero en qué punto iba yo?".
+    intro: `Si alguna vez has intentado tener varias conversaciones de Claude Code simultaneas, ya sabes cómo acaba la película: pestañas abiertas por todos lados, pierdes el hilo y terminas pensando "¿pero en qué punto iba yo?".
 
-La clave está en esto: trabajar con varios terminales de Claude Code en paralelo lo cambia todo. Mientras un terminal te hace el refactor del backend, otro puede estar con los tests, y un tercero con la documentación. Ya no estás esperando. Todo avanza a la vez.
+Yo he pasado por eso. Y justo para evitar ese caos monté CodeAgentSwarm: para que trabajar en paralelo sea algo normal, cómodo y sin saturarte.
 
-Yo he pasado por eso. Y justo para evitar ese caos monté CodeAgentSwarm: para que trabajar en paralelo sea algo normal, cómodo y sin rayadas innecesarias.
-
-En esta guía te explico, tal cual se lo contaría a un colega, cómo usar varios terminales a la vez de forma sencilla y sin complicarte la vida.`,
+En esta guía te explico, tal cual se lo contaría a un amigo, cómo usar varios terminales a la vez de forma sencilla y sin complicarte la vida.`,
     alternateSlug: 'how-to-use-multiple-claude-code-terminals',
   },
   sections: [
     {
-      id: 'por-que-varios-terminales',
-      title: '¿Por qué usar varios terminales?',
+      id: 'por-que-usar-varios-terminales-claude-code',
+      title: '¿Por qué usar varios terminales de Claude Code?',
       content: [
         {
           type: 'paragraph',
@@ -27,224 +25,160 @@ En esta guía te explico, tal cual se lo contaría a un colega, cómo usar vario
         },
         {
           type: 'paragraph',
-          text: 'Usar varios terminales te permite:',
+          text: 'O incluso estás haciendo varias features simultáneas. Imagínate que estás haciendo un nuevo proyecto y has implementado un chat.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Seguramente quieras hacer varias cosas simultáneas en esta implementación, como poner imagen de los usuarios, añadir un selector de emojis, añadir notificaciones. Pues en la forma tradicional tendrías un solo terminal de Claude Code e irías haciendo todo esto de forma secuencial.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Usar varios terminales de Claude Code en paralelo te permite:',
         },
         {
           type: 'list',
           items: [
-            'separar bien las tareas',
-            'que cada cosa tenga su propio contexto',
-            'cambiar de una a otra sin perder el hilo',
-            'dejar a Claude currando mientras tú sigues con otra cosa',
+            'Separar bien las tareas para ir más rápido',
+            'Cada terminal tendrá su propio contexto, con una gestión más eficiente',
+            'Ver los cambios que está haciendo cada terminal de forma aislada',
+            'Claude gestiona muy bien los conflictos, los resolverá siempre automáticamente sin ningún problema, es muy fiable',
+            'Te enterarás cuando uno termina o necesita confirmación porque te lanzará una notificación',
           ],
         },
         {
           type: 'paragraph',
-          text: 'Cuando le pillas el punto, se nota muchísimo la diferencia.',
+          text: 'Cuando le pillas el punto, se nota muchísimo la diferencia. Además de que es muy satisfactorio conseguir resolver 6 tareas en one shot.',
         },
       ],
     },
     {
-      id: 'problemas-que-resuelve',
-      title: 'Problemas reales que esto soluciona',
-      content: [
-        {
-          type: 'heading',
-          level: 3,
-          text: '1. Cada cosa en su sitio',
-          id: 'cada-cosa-en-su-sitio',
-        },
-        {
-          type: 'paragraph',
-          text: 'Un terminal para backend. Otro para la UI. Otro para los tests. Otro para documentación.',
-        },
-        {
-          type: 'paragraph',
-          text: 'Tu cabeza deja de hacer malabares con la información.',
-        },
-        {
-          type: 'heading',
-          level: 3,
-          text: '2. Claude no mezcla contextos',
-          id: 'claude-no-mezcla',
-        },
-        {
-          type: 'paragraph',
-          text: 'Cada terminal tiene su propia historia y su propio contexto. No hay "¿por qué me está hablando ahora de otra cosa?".',
-        },
-        {
-          type: 'heading',
-          level: 3,
-          text: '3. Lo ves todo en directo',
-          id: 'ves-todo-en-directo',
-        },
-        {
-          type: 'image',
-          alt: 'Vista en cuadrícula con 4 terminales trabajando a la vez',
-          src: '#',
-          caption: 'Varios terminales abiertos a la vez, cada uno haciendo algo distinto.',
-        },
-        {
-          type: 'paragraph',
-          text: 'Es muy cómodo tener esa visión general y ver cómo avanza todo.',
-        },
-        {
-          type: 'heading',
-          level: 3,
-          text: '4. No te rompe el foco',
-          id: 'no-rompe-foco',
-        },
-        {
-          type: 'paragraph',
-          text: 'Cambias de terminal en un clic. Sin pestañas por ahí perdidas, sin scroll infinito.',
-        },
-      ],
-    },
-    {
-      id: 'como-codeagentswarm-ayuda',
-      title: 'Cómo CodeAgentSwarm te lo hace mucho más fácil',
+      id: 'como-se-ve-en-la-practica',
+      title: '¿Cómo se ve esto en la práctica?',
       content: [
         {
           type: 'paragraph',
-          text: 'De serie tienes:',
+          text: 'Siguiendo con el ejemplo del chat, podrías tener algo así:',
         },
         {
           type: 'list',
           items: [
-            'Hasta 6 terminales en paralelo',
-            'Historial completo en cada uno',
-            'Indicadores en tiempo real de lo que está pasando',
-            'Nombres personalizados para cada terminal',
-            'Una vista clara y ordenada de todo tu workspace',
+            'Terminal 1: Implementando el avatar de los usuarios',
+            'Terminal 2: Añadiendo notificaciones push',
+            'Terminal 3: Permitiendo editar mensajes enviados',
+            'Terminal 4: Poder enviar gifs fácilmente',
           ],
         },
         {
           type: 'image',
-          alt: 'Popup para renombrar un terminal',
-          src: '#',
-          caption: 'Renombrar terminales es tan fácil como hacer un clic.',
+          alt: 'Vista en cuadrícula con varios terminales de Claude Code trabajando en paralelo',
+          src: '/images/guides/multi-terminal.png',
+          caption: 'Varios terminales trabajando simultáneamente, cada uno en su feature.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Lo ves todo avanzando a la vez. Es muy satisfactorio ver cómo cada terminal va completando su parte mientras tú supervisas o sigues dando instrucciones.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Y cuando hay conflictos en el código (porque dos terminales tocaron el mismo archivo), Claude los resuelve automáticamente. No tienes que hacer nada.',
         },
       ],
     },
     {
-      id: 'ejemplo-real',
-      title: 'Ejemplo real (por si te ayuda a visualizarlo)',
+      id: 'que-ofrece-codeagentswarm',
+      title: '¿Qué te ofrece CodeAgentSwarm?',
       content: [
         {
           type: 'paragraph',
-          text: 'Mi setup típico cuando estoy metido en un proyecto suele ser algo así:',
+          text: 'CodeAgentSwarm es la herramienta que hace todo esto posible de forma cómoda. De serie tienes:',
         },
         {
           type: 'list',
           items: [
-            '"Refactor API"',
-            '"Ajustes UI"',
-            '"Tests"',
-            '"Docs"',
+            'Hasta 6 terminales de Claude Code en paralelo',
+            'Historial completo de conversaciones con buscador integrado para recuperar conversaciones antiguas',
+            'Notificaciones cuando un terminal termina o necesita tu atención',
+            'Vista en cuadrícula para ver todo lo que pasa a la vez o modo pestañas',
+            'Títulos dinámicos que van cambiando automáticamente según lo que esté haciendo cada terminal',
           ],
         },
         {
           type: 'paragraph',
-          text: 'Mientras un terminal está generando algo, sigo dándole caña a otro. Nada se mezcla, nada se pierde.',
-        },
-        {
-          type: 'paragraph',
-          text: 'Se siente como tener varios mini-compañeros currando contigo, cada uno a lo suyo.',
+          text: 'En lugar de tener pestañas sueltas o ventanas por ahí perdidas, tienes todo en un solo sitio.',
         },
       ],
     },
     {
-      id: 'paso-a-paso',
-      title: 'Cómo usar varios terminales (paso a paso)',
+      id: 'como-empezar-paso-a-paso',
+      title: 'Cómo empezar (paso a paso)',
       content: [
         {
           type: 'heading',
           level: 3,
-          text: '1. Abre CodeAgentSwarm',
-          id: 'paso-abre-app',
+          text: '1. Abre CodeAgentSwarm y crea tus terminales',
+          id: 'paso-abre-crea',
         },
         {
           type: 'paragraph',
-          text: 'Abres la app y se carga lo último que tenías o un workspace vacío si empiezas de cero.',
-        },
-        {
-          type: 'heading',
-          level: 3,
-          text: '2. Crea un terminal por cada tarea',
-          id: 'paso-crea-terminales',
-        },
-        {
-          type: 'paragraph',
-          text: 'Lo ideal es no mezclar temas porque sí. Una cosa → un terminal.',
-        },
-        {
-          type: 'heading',
-          level: 3,
-          text: '3. Pon nombres claros y simples',
-          id: 'paso-nombres',
-        },
-        {
-          type: 'paragraph',
-          text: 'Algo tipo:',
-        },
-        {
-          type: 'list',
-          items: [
-            '"Backend API"',
-            '"UI landing"',
-            '"Tests login"',
-            '"Docs onboarding"',
-          ],
+          text: 'Abres la app y creas hasta 6 terminales pulsando en el siguiente botón:',
         },
         {
           type: 'image',
-          alt: 'UI de renombrar terminal dentro de la app',
-          src: '#',
-          caption: 'Nombres claros = menos confusión.',
+          alt: 'Botón para crear un nuevo terminal en CodeAgentSwarm',
+          src: '/images/guides/create_terminal_button_image.png',
+          size: 'inline',
+        },
+        {
+          type: 'callout',
+          variant: 'tip',
+          content: 'También puedes crear las tareas desde el kanban y crear los terminales desde ahí, enviando la tarea directamente.',
+        },
+        {
+          type: 'image',
+          alt: 'Crear terminal desde el kanban en CodeAgentSwarm',
+          src: '/images/guides/open-terminal-from-kanban.png',
+          caption: 'Abre un terminal directamente desde una tarea del kanban.',
+          size: 'small',
         },
         {
           type: 'heading',
           level: 3,
-          text: '4. Deja que cada terminal mantenga su contexto',
-          id: 'paso-contexto',
+          text: '2. Dale instrucciones a cada terminal',
+          id: 'paso-instrucciones',
         },
         {
           type: 'paragraph',
-          text: 'No hace falta repetir las cosas veinte veces en sitios distintos. Cada terminal "piensa" solo de lo suyo.',
+          text: 'Cada terminal tiene su propio contexto. Le explicas una vez lo que tiene que hacer y se pone a trabajar. No mezcla nada con los otros.',
         },
         {
           type: 'heading',
           level: 3,
-          text: '5. Cambia entre terminales sin fricción',
-          id: 'paso-cambiar',
+          text: '3. Mira cómo avanzan',
+          id: 'paso-supervisa',
         },
         {
           type: 'paragraph',
-          text: 'Saltas de uno a otro cuando quieres ver resultados, corregir algo o dar nuevas instrucciones. Es muy fluido.',
+          text: 'Conforme cada terminal empiece a trabajar, irá cambiando el título dinámicamente para mostrarte en qué está trabajando en cada momento. También puedes ver los cambios actuales que está haciendo.',
         },
         {
-          type: 'heading',
-          level: 3,
-          text: '6. Mira cómo avanza cada uno',
-          id: 'paso-ver-avance',
-        },
-        {
-          type: 'paragraph',
-          text: 'Tener varios terminales currando en paralelo motiva bastante, la verdad.',
+          type: 'image',
+          alt: 'Terminal mostrando título dinámico y cambios actuales en CodeAgentSwarm',
+          src: '/images/guides/terminal-title-and-changes.png',
+          caption: '1. El título cambia según lo que esté haciendo. 2. Haciendo click en el botón puedes ver los cambios que hace el terminal en tiempo real en formato diff para no perder contexto de lo que hace la IA.',
+          size: 'medium',
         },
       ],
     },
     {
-      id: 'consejos',
-      title: 'Consejos rápidos',
+      id: 'consejos-practicos',
+      title: 'Consejos prácticos',
       content: [
         {
           type: 'list',
           items: [
-            'Divide las tareas grandes en partes más pequeñas',
-            'Usa nombres cortitos y claros',
-            'Cierra los terminales que ya no aportan nada',
-            'Evita mezclar temas completamente distintos en el mismo terminal',
+            'No hace falta usar los 6 terminales siempre, usa los que necesites',
+            'Si una tarea es grande, divídela en subtareas y dale cada una a un terminal',
+            'Cierra los terminales que ya terminaron para mantener el workspace limpio',
           ],
         },
       ],
@@ -253,15 +187,23 @@ En esta guía te explico, tal cual se lo contaría a un colega, cómo usar vario
   faq: [
     {
       question: '¿Claude mezcla contextos entre terminales?',
-      answer: 'No. Cada terminal es totalmente independiente del resto.',
+      answer: 'No. Cada terminal es totalmente independiente. Lo que le dices a uno no afecta a los otros.',
     },
     {
-      question: '¿Es más rápido que usar un solo terminal para todo?',
-      answer: 'Sí, mucho más. Trabajas más claro y con menos ruido mental.',
+      question: '¿Y si dos terminales tocan el mismo archivo?',
+      answer: 'Claude gestiona los conflictos automáticamente. Lo hemos probado mucho y es muy fiable. No tienes que hacer nada.',
     },
     {
-      question: '¿También sirve para cosas pequeñas?',
-      answer: 'Sí. Incluso para tareas pequeñas se nota la comodidad de tener cada cosa en su sitio.',
+      question: '¿Cuántos terminales puedo usar a la vez?',
+      answer: 'Hasta 6 en paralelo. Pero no hace falta usar todos, usa los que necesites para tu tarea.',
+    },
+    {
+      question: '¿Necesito una suscripción especial de Claude?',
+      answer: 'Necesitas tener Claude Code activo. CodeAgentSwarm funciona encima de tu suscripción existente.',
+    },
+    {
+      question: '¿Es realmente más rápido que un solo terminal?',
+      answer: 'Sí, bastante. Sobre todo cuando tienes varias cosas independientes que hacer. En vez de esperar a que termine una para empezar otra, van todas a la vez.',
     },
   ],
 }

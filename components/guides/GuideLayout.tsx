@@ -5,6 +5,7 @@ import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import type { Guide } from '@/content/guides/types'
 import { extractTOC } from '@/content/guides'
+import GuidesHeader from './GuidesHeader'
 import Breadcrumbs from './Breadcrumbs'
 import TableOfContents from './TableOfContents'
 import ContentRenderer from './ContentRenderer'
@@ -27,11 +28,14 @@ export default function GuideLayout({ guide }: GuideLayoutProps) {
 
   return (
     <div className="min-h-screen bg-black">
+      {/* Header */}
+      <GuidesHeader />
+
       {/* Background effects */}
       <div className="fixed inset-0 bg-gradient-to-b from-dark-900 via-black to-dark-900 pointer-events-none" />
       <div className="fixed inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-neon-cyan/5 via-transparent to-transparent pointer-events-none" />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12 lg:pt-28 lg:pb-20">
         {/* Breadcrumbs */}
         <Breadcrumbs
           locale={locale}

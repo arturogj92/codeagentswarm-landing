@@ -6,7 +6,7 @@ export type ContentBlock =
   | { type: 'list'; items: string[] }
   | { type: 'code'; language?: string; code: string }
   | { type: 'inline-code'; text: string }
-  | { type: 'image'; alt: string; src: string; caption?: string }
+  | { type: 'image'; alt: string; src: string; caption?: string; size?: 'inline' | 'small' | 'medium' | 'full' }
   | { type: 'callout'; variant: 'tip' | 'warning' | 'info'; content: string }
   | { type: 'divider' }
 
