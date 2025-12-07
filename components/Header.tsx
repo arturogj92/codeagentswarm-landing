@@ -30,12 +30,15 @@ export default function Header() {
       ? 'top-0'
       : 'top-7 sm:top-9'
 
+  const guidesHref = locale === 'es' ? '/es/guias' : '/en/guides'
+
   const navLinks = isBetaPage
     ? [
         { name: 'How to Join', href: '#beta-how-to-join' },
         { name: 'Sign Up', href: '#beta-signup-form' },
         { name: t('pricing'), href: '#beta-pricing' },
         { name: 'FAQ', href: '#beta-faq' },
+        { name: t('guides'), href: guidesHref, isExternal: true },
       ]
     : [
         { name: t('features'), href: '#features' },
@@ -43,6 +46,7 @@ export default function Header() {
         { name: t('pricing'), href: '#pricing' },
         { name: t('roadmap'), href: '#roadmap' },
         { name: t('faq'), href: '#faq' },
+        { name: t('guides'), href: guidesHref, isExternal: true },
       ]
 
   // Throttled scroll handler for performance
