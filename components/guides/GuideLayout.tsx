@@ -89,7 +89,8 @@ export default function GuideLayout({ guide }: GuideLayoutProps) {
                 </p>
                 <Link
                   href={ctaHref}
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-neon-cyan to-neon-purple text-black font-semibold rounded-lg hover:opacity-90 transition-opacity"
+                  className="inline-flex items-center gap-2 px-6 py-3 text-white font-semibold rounded-lg hover:opacity-90 transition-opacity"
+                  style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }}
                 >
                   {ctaText}
                   <ArrowRight className="w-4 h-4" />
