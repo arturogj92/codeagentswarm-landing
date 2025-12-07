@@ -6,10 +6,10 @@ export const guide: Guide = {
     locale: 'en',
     title: 'How to Use Multiple Claude Code Terminals (Without Losing Your Head)',
     metaTitle: 'How to Use Multiple Claude Code Terminals in Parallel (Human-Friendly Guide)',
-    metaDescription: 'A relaxed, practical guide explaining how to work with multiple Claude Code terminals in parallel using CodeAgentSwarm—written in natural human language, not robotic.',
+    metaDescription: 'A relaxed, practical guide explaining how to work with multiple Claude Code terminals in parallel using CodeAgentSwarm. Written in natural human language, not robotic.',
     intro: `If you've ever tried to keep several Claude Code sessions open at the same time, you already know how messy it gets. One tab here, another conversation there… and suddenly you're scrolling like crazy just to remember what you were doing.
 
-I've been there. That's literally why CodeAgentSwarm exists — so you can work on several things at once without your brain melting.
+I've been there. That's literally why CodeAgentSwarm exists - so you can work on several things at once without your brain melting.
 
 This guide explains, in a simple, down-to-earth way, how to actually use multiple Claude Code terminals without getting lost or drowning in tabs.`,
     alternateSlug: 'como-usar-varios-terminales-claude-code',
@@ -38,7 +38,7 @@ This guide explains, in a simple, down-to-earth way, how to actually use multipl
         },
         {
           type: 'paragraph',
-          text: 'It feels natural once you get used to it — like having a small team helping you out.',
+          text: 'It feels natural once you get used to it, like having a small team helping you out.',
         },
       ],
     },

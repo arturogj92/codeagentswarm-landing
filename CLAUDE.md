@@ -111,3 +111,11 @@ Use markdown-like syntax with `#` as src for placeholders:
 ```
 
 The system renders a styled placeholder that indicates where an image should go.
+
+### Writing Style
+
+- **NO em dashes (—)**: Never use em dashes in content. Use regular dashes (-) or commas instead.
+  - ❌ Wrong: `CodeAgentSwarm — the best tool`
+  - ✅ Correct: `CodeAgentSwarm - the best tool` or `CodeAgentSwarm, the best tool`
+- Keep the tone natural, human, and conversational
+- Avoid robotic or overly formal language
