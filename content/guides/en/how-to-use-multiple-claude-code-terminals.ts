@@ -7,7 +7,9 @@ export const guide: Guide = {
     title: 'How to Use Multiple Claude Code Terminals (Without Losing Your Head)',
     metaTitle: 'How to Use Multiple Claude Code Terminals in Parallel (Human-Friendly Guide)',
     metaDescription: 'A relaxed, practical guide explaining how to work with multiple Claude Code terminals in parallel using CodeAgentSwarm. Written in natural human language, not robotic.',
-    intro: `If you've ever tried to keep several Claude Code sessions open at the same time, you already know how messy it gets. One tab here, another conversation there… and suddenly you're scrolling like crazy just to remember what you were doing.
+    intro: `If you've ever tried to keep several Claude Code sessions open at the same time, you already know how messy it gets. One tab here, another conversation there... and suddenly you're scrolling like crazy just to remember what you were doing.
+
+Here's the thing: running multiple Claude Code terminals in parallel is a game changer. While one terminal handles your backend refactor, another can work on tests, and a third one on documentation. You're not waiting around anymore. Everything moves forward at the same time.
 
 I've been there. That's literally why CodeAgentSwarm exists - so you can work on several things at once without your brain melting.
 

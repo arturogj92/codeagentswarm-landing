@@ -9,6 +9,8 @@ export const guide: Guide = {
     metaDescription: 'Guía muy humana y directa sobre cómo trabajar con varios terminales de Claude Code en paralelo usando CodeAgentSwarm. Natural, cercana y sin tono robótico.',
     intro: `Si alguna vez has intentado llevar varias conversaciones de Claude Code a la vez, ya sabes cómo acaba la película: pestañas abiertas por todos lados, pierdes el hilo y terminas pensando "¿pero en qué punto iba yo?".
 
+La clave está en esto: trabajar con varios terminales de Claude Code en paralelo lo cambia todo. Mientras un terminal te hace el refactor del backend, otro puede estar con los tests, y un tercero con la documentación. Ya no estás esperando. Todo avanza a la vez.
+
 Yo he pasado por eso. Y justo para evitar ese caos monté CodeAgentSwarm: para que trabajar en paralelo sea algo normal, cómodo y sin rayadas innecesarias.
 
 En esta guía te explico, tal cual se lo contaría a un colega, cómo usar varios terminales a la vez de forma sencilla y sin complicarte la vida.`,
