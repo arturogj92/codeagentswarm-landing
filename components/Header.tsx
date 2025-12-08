@@ -39,7 +39,6 @@ export default function Header() {
       ]
     : [
         { name: t('features'), href: '#features' },
-        { name: t('demo'), href: '#demo' },
         { name: t('pricing'), href: '#pricing' },
         { name: t('faq'), href: '#faq' },
       ]

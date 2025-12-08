@@ -8,7 +8,6 @@ import ProblemSection from '@/components/ProblemSection'
 import SolutionSection from '@/components/SolutionSection'
 import FeaturesSection from '@/components/FeaturesSection'
 import SocialProofSection from '@/components/SocialProofSection'
-import DemoSection from '@/components/DemoSection'
 import SwarmiSection from '@/components/SwarmiSection'
 import PricingSection from '@/components/PricingSection'
 import RoadmapSection from '@/components/RoadmapSection'
@@ -74,7 +73,6 @@ export default function Home() {
         <SolutionSection />
         <FeaturesSection />
         <SocialProofSection />
-        <DemoSection />
         <SwarmiSection />
         <PricingSection />
         <RoadmapSection />
