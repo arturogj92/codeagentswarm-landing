@@ -11,7 +11,7 @@ export const guide: Guide = {
 
 Together, that becomes your Claude Code conversation history. It is your long term memory of what you have been building with the AI, organized and ready to search or resume whenever you need it.
 
-In short: Everything you talk about with Claude Code stays stored, organized by project, and ready to search or resume later.`,
+The bottom line: Everything you talk about with Claude Code stays stored, organized by project, and ready to search or resume later.`,
     alternateSlug: 'historial-claude-code',
   },
   sections: [
@@ -39,6 +39,10 @@ In short: Everything you talk about with Claude Code stays stored, organized by 
         {
           type: 'paragraph',
           text: 'With CodeAgentSwarm history, you can go back to those conversations and keep building on top of what you already did instead of restarting every time.',
+        },
+        {
+          type: 'paragraph',
+          text: 'On a small project this might not feel essential. But on large projects, where there are complex modules and giving Claude context about a specific part of the system can take several messages, history becomes indispensable. It is the difference between wasting 10 minutes explaining the same thing again or resuming in seconds exactly where you left off.',
         },
       ],
     },

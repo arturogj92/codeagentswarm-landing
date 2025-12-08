@@ -11,7 +11,7 @@ export const guide: Guide = {
 
 Todo eso forma tu historial de conversaciones de Claude Code. Es como una memoria larga de todo lo que has ido haciendo con la IA, organizada y lista para buscar o retomar cuando te haga falta.
 
-En corto: Todo lo que hablas con Claude Code queda guardado, organizado por proyecto y listo para buscar o retomar cuando quieras.`,
+La idea es simple: Todo lo que hablas con Claude Code queda guardado, organizado por proyecto y listo para buscar o retomar cuando quieras.`,
     alternateSlug: 'claude-code-history',
   },
   sections: [
@@ -39,6 +39,10 @@ En corto: Todo lo que hablas con Claude Code queda guardado, organizado por proy
         {
           type: 'paragraph',
           text: 'Con el historial de CodeAgentSwarm puedes volver a esas conversaciones y seguir construyendo sobre lo que ya hiciste, sin reiniciar la película cada vez.',
+        },
+        {
+          type: 'paragraph',
+          text: 'En un proyecto pequeño esto puede no parecer imprescindible. Pero en proyectos grandes, donde hay módulos complejos y darle contexto a Claude de una parte específica del sistema puede llevar varios mensajes, el historial se vuelve indispensable. Es la diferencia entre perder 10 minutos explicando lo mismo otra vez o retomar en segundos exactamente donde lo dejaste.',
         },
       ],
     },

@@ -119,3 +119,17 @@ The system renders a styled placeholder that indicates where an image should go.
   - ✅ Correct: `CodeAgentSwarm - the best tool` or `CodeAgentSwarm, the best tool`
 - Keep the tone natural, human, and conversational
 - Avoid robotic or overly formal language
+
+### 🚨 CRITICAL: Bilingual Content Rule
+
+**ALL content changes MUST be made in BOTH languages (English AND Spanish).**
+
+When modifying any guide or content:
+1. **Always update both versions** - EN and ES files must stay synchronized
+2. **Same structure** - Both versions should have the same sections and content blocks
+3. **Equivalent meaning** - Translations should convey the same message, adapted naturally to each language
+4. **Never leave one behind** - If you add a paragraph in ES, add it in EN too (and vice versa)
+
+Example:
+- Editing `/content/guides/es/historial-claude-code.ts` → Also edit `/content/guides/en/claude-code-history.ts`
+- Adding a new section in EN → Add the equivalent section in ES
