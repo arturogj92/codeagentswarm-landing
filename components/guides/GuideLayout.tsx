@@ -61,6 +61,21 @@ export default function GuideLayout({ guide }: GuideLayoutProps) {
               <div className="text-lg text-white/70 leading-relaxed whitespace-pre-line">
                 {meta.intro}
               </div>
+              {meta.introVideo && (
+                <figure className="mt-8">
+                  <div className="relative rounded-xl border border-white/10 overflow-hidden">
+                    <video
+                      src={meta.introVideo}
+                      controls
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      className="w-full"
+                    />
+                  </div>
+                </figure>
+              )}
             </motion.header>
 
             {/* Divider */}
@@ -83,9 +98,9 @@ export default function GuideLayout({ guide }: GuideLayoutProps) {
               <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-r from-neon-cyan/30 via-neon-purple/30 to-neon-magenta/30 opacity-50" />
               <div className="relative text-center">
                 <p className="text-white/80 mb-6">
-                  {locale === 'es'
-                    ? 'Prueba a trabajar con varios terminales durante diez minutos. Vas a notar enseguida que el flujo es mucho más cómodo que ir con pestañas sueltas y scroll infinito.'
-                    : 'Try working with multiple terminals for just 10 minutes. You\'ll instantly see why this workflow feels so much better than juggling tabs and endless scroll.'}
+                  {meta.ctaText ?? (locale === 'es'
+                    ? 'Usa el historial de conversaciones la próxima vez que retomes un proyecto. Vas a notar enseguida lo cómodo que es no tener que explicar todo desde cero a Claude.'
+                    : 'Use conversation history next time you resume a project. You\'ll instantly notice how comfortable it is not having to explain everything from scratch to Claude.')}
                 </p>
                 <Link
                   href={ctaHref}

@@ -5,20 +5,24 @@ import type { Guide } from './types'
 // English guides
 import enMultipleTerminals from './en/how-to-use-multiple-claude-code-terminals'
 import enClaudeCodeHistory from './en/claude-code-history'
+import enNotifications from './en/codeagentswarm-notifications'
 
 // Spanish guides
 import esMultipleTerminals from './es/como-usar-varios-terminales-claude-code'
 import esHistorialClaudeCode from './es/historial-claude-code'
+import esNotificaciones from './es/notificaciones-codeagentswarm'
 
 // Registry of all guides by locale and slug
 export const guides: Record<string, Record<string, Guide>> = {
   en: {
     'how-to-use-multiple-claude-code-terminals': enMultipleTerminals,
     'claude-code-history': enClaudeCodeHistory,
+    'codeagentswarm-notifications': enNotifications,
   },
   es: {
     'como-usar-varios-terminales-claude-code': esMultipleTerminals,
     'historial-claude-code': esHistorialClaudeCode,
+    'notificaciones-codeagentswarm': esNotificaciones,
   },
 }
 

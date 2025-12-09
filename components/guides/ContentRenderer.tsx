@@ -178,6 +178,29 @@ function renderBlock(block: ContentBlock, index: number) {
       }
       return <GuideImage key={index} src={block.src} alt={block.alt} caption={block.caption} size={block.size} />
 
+    case 'video':
+      return (
+        <figure key={index} className="my-8">
+          <div className="relative rounded-xl border border-white/10 overflow-hidden">
+            <video
+              src={block.src}
+              poster={block.poster}
+              controls
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full"
+            />
+          </div>
+          {block.caption && (
+            <figcaption className="mt-3 text-center text-sm text-white/50">
+              {block.caption}
+            </figcaption>
+          )}
+        </figure>
+      )
+
     case 'callout':
       return <Callout key={index} variant={block.variant} content={block.content} />
 

@@ -7,6 +7,7 @@ export type ContentBlock =
   | { type: 'code'; language?: string; code: string }
   | { type: 'inline-code'; text: string }
   | { type: 'image'; alt: string; src: string; caption?: string; size?: 'inline' | 'small' | 'medium' | 'full' }
+  | { type: 'video'; src: string; caption?: string; poster?: string }
   | { type: 'callout'; variant: 'tip' | 'warning' | 'info'; content: string }
   | { type: 'divider' }
 
@@ -28,6 +29,8 @@ export interface GuideMeta {
   metaTitle: string
   metaDescription: string
   intro: string
+  introVideo?: string // Optional video URL to show after intro
+  ctaText?: string // Optional custom CTA text for the final section
   publishedAt?: string
   updatedAt?: string
   author?: string
