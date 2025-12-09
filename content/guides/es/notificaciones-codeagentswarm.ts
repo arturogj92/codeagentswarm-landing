@@ -152,11 +152,11 @@ En esta guía te cuento cómo funcionan las notificaciones de CodeAgentSwarm y c
     },
     {
       id: 'como-activar-notificaciones',
-      title: 'Cómo activar las notificaciones en CodeAgentSwarm',
+      title: 'Cómo activar las notificaciones de Claude Code en CodeAgentSwarm',
       content: [
         {
           type: 'paragraph',
-          text: 'Para que todo esto funcione de verdad en tu día a día, lo primero es tener las notificaciones bien activadas.',
+          text: 'Si te preguntas cómo activar las notificaciones de Claude Code para no perderte cuando termina, CodeAgentSwarm lo gestiona desde un único sitio: los ajustes de notificaciones de la app.',
         },
         {
           type: 'paragraph',
@@ -168,7 +168,7 @@ En esta guía te cuento cómo funcionan las notificaciones de CodeAgentSwarm y c
             'Abre CodeAgentSwarm y entra con tu cuenta como siempre.',
             'Ve a la sección de ajustes / configuración de la app.',
             'Busca el apartado de notificaciones.',
-            'Activa las opciones para: recibir notificaciones cuando un terminal termine una tarea, y recibir notificaciones cuando un terminal se quede esperando algo de ti.',
+            'Activa las notificaciones de Claude Code cuando un terminal termine una tarea, y cuando un terminal se quede esperando algo de ti.',
           ],
         },
         {

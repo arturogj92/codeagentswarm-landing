@@ -152,11 +152,11 @@ In this guide I'll show you how CodeAgentSwarm notifications work and how to use
     },
     {
       id: 'how-to-enable-notifications',
-      title: 'How to enable notifications in CodeAgentSwarm',
+      title: 'How to enable Claude Code notifications in CodeAgentSwarm',
       content: [
         {
           type: 'paragraph',
-          text: 'For all of this to actually help in your day-to-day work, you first need notifications properly enabled.',
+          text: 'If you\'re wondering how to enable Claude Code notifications so you don\'t miss when it\'s done, CodeAgentSwarm handles that from a single place: the app\'s notification settings.',
         },
         {
           type: 'paragraph',
@@ -168,7 +168,7 @@ In this guide I'll show you how CodeAgentSwarm notifications work and how to use
             'Open CodeAgentSwarm and log in as usual.',
             'Go to the app settings / configuration section.',
             'Find the notifications section.',
-            'Enable the options to: receive notifications when a terminal finishes a task, and receive notifications when a terminal is waiting for something from you.',
+            'Activate Claude Code notifications when a terminal finishes a task, and when a terminal is waiting for something from you.',
           ],
         },
         {
