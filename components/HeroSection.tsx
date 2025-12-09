@@ -34,7 +34,7 @@ function VideoShowcase() {
     },
     {
       id: 4,
-      src: "/notifications.mp4",
+      src: "/terminal-notifications.mp4",
       title: t('notifications.title'),
       icon: Bell,
       description: t('notifications.description')
