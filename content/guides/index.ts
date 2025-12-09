@@ -6,11 +6,13 @@ import type { Guide } from './types'
 import enMultipleTerminals from './en/how-to-use-multiple-claude-code-terminals'
 import enClaudeCodeHistory from './en/claude-code-history'
 import enNotifications from './en/codeagentswarm-notifications'
+import enRealTimeChanges from './en/view-claude-code-changes-real-time'
 
 // Spanish guides
 import esMultipleTerminals from './es/como-usar-varios-terminales-claude-code'
 import esHistorialClaudeCode from './es/historial-claude-code'
 import esNotificaciones from './es/notificaciones-codeagentswarm'
+import esRealTimeChanges from './es/ver-cambios-claude-code-tiempo-real'
 
 // Registry of all guides by locale and slug
 export const guides: Record<string, Record<string, Guide>> = {
@@ -18,11 +20,13 @@ export const guides: Record<string, Record<string, Guide>> = {
     'how-to-use-multiple-claude-code-terminals': enMultipleTerminals,
     'claude-code-history': enClaudeCodeHistory,
     'codeagentswarm-notifications': enNotifications,
+    'view-claude-code-changes-real-time': enRealTimeChanges,
   },
   es: {
     'como-usar-varios-terminales-claude-code': esMultipleTerminals,
     'historial-claude-code': esHistorialClaudeCode,
     'notificaciones-codeagentswarm': esNotificaciones,
+    'ver-cambios-claude-code-tiempo-real': esRealTimeChanges,
   },
 }
 
