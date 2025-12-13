@@ -376,7 +376,7 @@ In CodeAgentSwarm the idea is precisely to avoid that black box feeling. The app
     },
     {
       question: 'How do I know what the AI is doing in each terminal?',
-      answer: 'Through dynamic titles. Claude updates the terminal title with the task it\'s doing, and you can also check the title history of that terminal to see what it has been doing over time.',
+      answer: 'Through dynamic titles and the session changes diff. Dynamic titles show what Claude is currently working on, while the session changes button in the terminal bar lets you see exactly what files have been modified in that session.',
     },
     {
       question: 'Can I see what Claude has changed before applying a commit?',

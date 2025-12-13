@@ -376,7 +376,7 @@ En CodeAgentSwarm la idea es justo evitar esa sensación de caja negra. La app c
     },
     {
       question: '¿Cómo sé qué está haciendo la IA en cada terminal?',
-      answer: 'Por los títulos dinámicos. Claude va actualizando el título del terminal con la tarea que está haciendo, y además puedes consultar el historial de títulos de ese terminal para ver qué ha ido haciendo a lo largo del tiempo.',
+      answer: 'Por los títulos dinámicos y el diff de cambios de sesión. Los títulos dinámicos te muestran en qué está trabajando Claude en cada momento, mientras que el botón de cambios de sesión en la barra del terminal te permite ver exactamente qué archivos se han modificado en esa sesión.',
     },
     {
       question: '¿Puedo ver qué ha cambiado Claude antes de aplicar un commit?',
