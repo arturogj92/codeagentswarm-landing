@@ -72,9 +72,8 @@ In CodeAgentSwarm the idea is precisely to avoid that black box feeling. The app
           text: 'In the UI you see it with a button in the terminal bar with a change counter, and a modal specific to that session.',
         },
         {
-          type: 'image',
-          alt: 'Gif showing a Claude Code terminal working, the changes badge going up as it edits files and opening the diff modal with that session changes',
-          src: '#',
+          type: 'video',
+          src: '/claude-code-session-changes.mp4',
           caption: 'The change counter goes up while Claude works. Click to see the diff for that session.',
         },
         {

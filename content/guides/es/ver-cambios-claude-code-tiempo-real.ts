@@ -72,9 +72,8 @@ En CodeAgentSwarm la idea es justo evitar esa sensación de caja negra. La app c
           text: 'En la UI lo ves con un botón en la barra del terminal con un contador de cambios, y un modal específico de esa sesión.',
         },
         {
-          type: 'image',
-          alt: 'Gif mostrando un terminal de Claude Code trabajando, el badge de cambios subiendo a medida que edita archivos y la apertura del modal de diff con los cambios de esa sesión',
-          src: '#',
+          type: 'video',
+          src: '/claude-code-session-changes.mp4',
           caption: 'El contador de cambios sube mientras Claude trabaja. Haz clic para ver el diff de esa sesión.',
         },
         {

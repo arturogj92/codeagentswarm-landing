@@ -16,6 +16,24 @@ La idea es simple: Todo lo que hablas con Claude Code queda guardado, organizado
   },
   sections: [
     {
+      id: 'que-es-historial',
+      title: 'Qué es el historial de Claude Code en CodeAgentSwarm',
+      content: [
+        {
+          type: 'paragraph',
+          text: 'El historial de Claude Code en CodeAgentSwarm es la funcionalidad que guarda automáticamente todas tus conversaciones con Claude: lo que escribes, lo que responde, el proyecto en el que estabas y cuándo ocurrió.',
+        },
+        {
+          type: 'paragraph',
+          text: 'En la práctica, es una memoria larga de todo lo que has ido construyendo con la IA, organizada por proyecto y fecha para que puedas buscar, filtrar y retomar cualquier conversación en segundos.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Si ya usas Claude Code, quizás conozcas el comando "claude -r" que permite retomar la última conversación. El historial nativo de Claude Code existe, pero es muy básico: no tiene buscador, no puedes buscar por contenido y solo funciona dentro de cada proyecto por separado. En CodeAgentSwarm, el historial va mucho más allá: buscador de texto completo, filtros por proyecto, vista global de todas tus conversaciones y la posibilidad de retomar cualquier conversación de cualquier proyecto desde cualquier terminal.',
+        },
+      ],
+    },
+    {
       id: 'por-que-es-importante',
       title: 'Por qué el historial es tan importante',
       content: [
@@ -157,16 +175,52 @@ La idea es simple: Todo lo que hablas con Claude Code queda guardado, organizado
     },
     {
       id: 'retomar-conversaciones',
-      title: 'Cómo retomar una conversación antigua en un nuevo terminal',
+      title: 'Qué pasa cuando seleccionas una conversación',
       content: [
+        {
+          type: 'paragraph',
+          text: 'Al seleccionar una conversación, si has usado el buscador, verás los mensajes donde aparecen tus términos de búsqueda. Así puedes confirmar rápidamente si es la conversación que buscabas antes de abrirla.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Una vez que eliges la conversación que quieres continuar:',
+        },
         {
           type: 'list',
           items: [
-            'Encuentras la conversación que te interesa en el historial.',
-            'Haces clic para abrirla.',
             'CodeAgentSwarm abre un nuevo terminal con todo el contexto cargado.',
             'Claude recuerda lo que se decidió y lo que se hizo en esa conversación.',
             'Sigues trabajando como si no hubiera pasado el tiempo.',
+          ],
+        },
+        {
+          type: 'image',
+          alt: 'Vista de selección de conversación al abrir proyecto en modo resume mostrando lista de conversaciones recientes con buscador y preview de mensajes',
+          src: '/images/guides/resume-selected-conversation.png',
+          caption: 'Al seleccionar una conversación, ves los mensajes que coinciden con tu búsqueda para confirmar que es la correcta.',
+          size: 'medium',
+        },
+      ],
+    },
+    {
+      id: 'seleccionar-conversacion-al-reanudar',
+      title: 'Cómo seleccionar qué conversación retomar al abrir un proyecto',
+      content: [
+        {
+          type: 'paragraph',
+          text: 'Cuando abres un proyecto, puedes elegir entre modo normal (conversación nueva) o modo resume. Si eliges modo resume, CodeAgentSwarm te muestra una vista con todas tus conversaciones recientes de ese proyecto para que elijas cuál retomar.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Desde esta vista puedes:',
+        },
+        {
+          type: 'list',
+          items: [
+            'Ver todas tus conversaciones anteriores organizadas por fecha',
+            'Buscar conversaciones específicas por texto',
+            'Elegir exactamente qué conversación continuar',
+            'O empezar una conversación nueva si lo prefieres',
           ],
         },
         {
@@ -175,6 +229,10 @@ La idea es simple: Todo lo que hablas con Claude Code queda guardado, organizado
           src: '/images/guides/resume-conversation.png',
           caption: 'Retoma cualquier conversación exactamente donde la dejaste.',
           size: 'medium',
+        },
+        {
+          type: 'paragraph',
+          text: 'Esto te da control total sobre tu contexto. No tienes que adivinar dónde estaba la conversación que necesitas - la buscas, la seleccionas y sigues trabajando.',
         },
       ],
     },
@@ -227,6 +285,10 @@ La idea es simple: Todo lo que hablas con Claude Code queda guardado, organizado
         {
           type: 'paragraph',
           text: 'La próxima vez que tengas que tocar alguna funcionalidad, en lugar de volver a contarle todo a Claude cómo funciona, usa el historial de conversaciones y rescata la conversación.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Y si además quieres trabajar en paralelo con varias partes del proyecto a la vez, puedes leer también la guía <a href="/es/guias/como-usar-varios-terminales-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">Cómo usar varios terminales de Claude Code sin complicarte la vida</a>.',
         },
       ],
     },

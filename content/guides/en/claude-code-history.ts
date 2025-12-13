@@ -16,6 +16,24 @@ The bottom line: Everything you talk about with Claude Code stays stored, organi
   },
   sections: [
     {
+      id: 'what-is-history',
+      title: 'What is Claude Code history in CodeAgentSwarm',
+      content: [
+        {
+          type: 'paragraph',
+          text: 'Claude Code history in CodeAgentSwarm is the feature that automatically stores all your conversations with Claude: what you write, what it replies, which project you were in and when it happened.',
+        },
+        {
+          type: 'paragraph',
+          text: 'In practice, it is a long term memory of everything you have been building with the AI, organized by project and date so you can search, filter and resume any conversation in seconds.',
+        },
+        {
+          type: 'paragraph',
+          text: 'If you already use Claude Code, you might know the "claude -r" command that lets you resume the last conversation. Native Claude Code history exists, but it is very basic: no search, no content filtering and it only works within each project separately. In CodeAgentSwarm, history goes much further: full text search, project filters, a global view of all your conversations and the ability to resume any conversation from any project in any terminal.',
+        },
+      ],
+    },
+    {
       id: 'why-history-matters',
       title: 'Why history is so important',
       content: [
@@ -157,16 +175,52 @@ The bottom line: Everything you talk about with Claude Code stays stored, organi
     },
     {
       id: 'resuming-old-conversations',
-      title: 'How to resume an old conversation in a new terminal',
+      title: 'What happens when you select a conversation',
       content: [
+        {
+          type: 'paragraph',
+          text: 'When you select a conversation, if you used the search bar, you will see the messages where your search terms appear. This lets you quickly confirm it is the right conversation before opening it.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Once you choose the conversation you want to continue:',
+        },
         {
           type: 'list',
           items: [
-            'You find the conversation you want in history.',
-            'You click to open it.',
             'CodeAgentSwarm opens a new terminal with all the previous context loaded.',
             'Claude remembers what you decided and what you built in that conversation.',
             'You keep working as if no time had passed.',
+          ],
+        },
+        {
+          type: 'image',
+          alt: 'Conversation selection view when opening project in resume mode showing list of recent conversations with search and message preview',
+          src: '/images/guides/resume-selected-conversation.png',
+          caption: 'When you select a conversation, you see matching messages to confirm it is the right one.',
+          size: 'medium',
+        },
+      ],
+    },
+    {
+      id: 'selecting-conversation-on-resume',
+      title: 'How to select which conversation to resume when opening a project',
+      content: [
+        {
+          type: 'paragraph',
+          text: 'When you open a project, you can choose between normal mode (new conversation) or resume mode. If you choose resume mode, CodeAgentSwarm shows you a view with all your recent conversations from that project so you can pick which one to continue.',
+        },
+        {
+          type: 'paragraph',
+          text: 'From this view you can:',
+        },
+        {
+          type: 'list',
+          items: [
+            'See all your previous conversations organized by date',
+            'Search for specific conversations by text',
+            'Choose exactly which conversation to continue',
+            'Or start a new conversation if you prefer',
           ],
         },
         {
@@ -175,6 +229,10 @@ The bottom line: Everything you talk about with Claude Code stays stored, organi
           src: '/images/guides/resume-conversation.png',
           caption: 'Resume any conversation exactly where you left off.',
           size: 'medium',
+        },
+        {
+          type: 'paragraph',
+          text: 'This gives you full control over your context. You do not have to guess where your needed conversation is - you search for it, select it and keep working.',
         },
       ],
     },
@@ -227,6 +285,10 @@ The bottom line: Everything you talk about with Claude Code stays stored, organi
         {
           type: 'paragraph',
           text: 'Next time you have to work on some functionality, instead of explaining everything to Claude from scratch, use the conversation history and pick up where you left off.',
+        },
+        {
+          type: 'paragraph',
+          text: 'And if you also want to work on multiple parts of the project in parallel, check out the guide <a href="/en/guides/how-to-use-multiple-claude-code-terminals" class="text-neon-cyan hover:text-neon-purple transition-colors">How to use multiple Claude Code terminals without the hassle</a>.',
         },
       ],
     },
