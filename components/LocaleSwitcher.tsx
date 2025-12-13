@@ -60,7 +60,7 @@ export default function LocaleSwitcher() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -10, scale: 0.95 }}
             transition={{ duration: 0.15 }}
-            className="absolute right-0 mt-2 w-36 rounded-xl glass border border-white/10 shadow-xl overflow-hidden z-50"
+            className="absolute left-0 lg:left-auto lg:right-0 mt-2 w-36 rounded-xl glass border border-white/10 shadow-xl overflow-hidden z-50"
           >
             {routing.locales.map((loc) => (
               <button

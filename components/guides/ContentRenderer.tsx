@@ -40,20 +40,20 @@ function GuideImage({ src, alt, caption, size = 'full' }: { src: string; alt: st
     )
   }
 
-  // Size classes for figure-based images
-  const sizeClasses = {
-    small: 'max-w-xs mx-auto',
-    medium: 'max-w-lg mx-auto',
+  // Size classes for figure-based images - responsive: full width on mobile, constrained on larger screens
+  const figureSizeClasses = {
+    small: 'max-w-full sm:max-w-xs mx-auto',
+    medium: 'max-w-full sm:max-w-lg mx-auto',
     full: 'w-full',
   }
 
   return (
-    <figure className={`my-8 ${size !== 'full' ? sizeClasses[size] : ''}`}>
+    <figure className={`my-8 ${figureSizeClasses[size] || ''}`}>
       <div className="relative rounded-xl border border-white/10 overflow-hidden">
         <img
           src={src}
           alt={alt}
-          className={sizeClasses[size] || 'w-full'}
+          className="w-full h-auto"
           loading="lazy"
         />
       </div>
