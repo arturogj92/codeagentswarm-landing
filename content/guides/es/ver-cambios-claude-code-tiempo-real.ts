@@ -15,11 +15,12 @@ Y si encima tienes varios terminales trabajando a la vez, la duda se divide en d
 
 En CodeAgentSwarm la idea es justo evitar esa sensación de caja negra. La app combina tres cosas: un diff en vivo por terminal para ver los cambios de Claude Code en tiempo real en esa sesión concreta, un visor de diff de Git para ver los cambios a nivel de proyecto frente al repositorio, y títulos dinámicos en los terminales (con historial) para saber qué está haciendo la IA en cada momento.`,
     alternateSlug: 'view-claude-code-changes-real-time',
+    introVideo: '/see-claude-code-changes-real-time.mp4',
   },
   sections: [
     {
-      id: 'dos-formas-ver-cambios',
-      title: 'Dos formas de ver qué ha cambiado y una para saber qué está haciendo',
+      id: 'tres-formas-ver-cambios',
+      title: 'Tres formas de ver qué ha cambiado y saber qué está haciendo la IA',
       content: [
         {
           type: 'paragraph',
