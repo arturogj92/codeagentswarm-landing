@@ -50,7 +50,7 @@ In CodeAgentSwarm the idea is precisely to avoid that black box feeling. The app
         },
         {
           type: 'paragraph',
-          text: 'As Claude writes files, CodeAgentSwarm hooks into everything it does using Claude Code hooks:',
+          text: 'As Claude writes files, CodeAgentSwarm automatically tracks everything it does:',
         },
         {
           type: 'list',
@@ -388,7 +388,7 @@ In CodeAgentSwarm the idea is precisely to avoid that black box feeling. The app
     },
     {
       question: 'Does the live diff per terminal also see changes I make manually in the editor?',
-      answer: 'No. That diff is designed to track what Claude Code does through hooks. Your manual changes then appear in the Git diff, not in the session diff.',
+      answer: 'No. That diff is designed to track only what Claude Code does. Your manual changes appear in the Git diff, not in the session diff.',
     },
   ],
 }

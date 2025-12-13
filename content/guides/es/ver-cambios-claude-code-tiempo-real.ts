@@ -50,7 +50,7 @@ En CodeAgentSwarm la idea es justo evitar esa sensación de caja negra. La app c
         },
         {
           type: 'paragraph',
-          text: 'Mientras Claude va escribiendo archivos, CodeAgentSwarm engancha todo lo que hace usando los hooks de Claude Code:',
+          text: 'Mientras Claude va escribiendo archivos, CodeAgentSwarm trackea automáticamente todo lo que hace:',
         },
         {
           type: 'list',
@@ -388,7 +388,7 @@ En CodeAgentSwarm la idea es justo evitar esa sensación de caja negra. La app c
     },
     {
       question: '¿El diff en vivo por terminal también ve cambios que hago yo a mano en el editor?',
-      answer: 'No. Ese diff está pensado para seguirle la pista a lo que hace Claude Code desde los hooks. Tus cambios manuales entran luego en el diff de Git, no en el diff de sesión.',
+      answer: 'No. Ese diff está pensado para seguirle la pista solo a lo que hace Claude Code. Tus cambios manuales aparecen en el diff de Git, no en el diff de sesión.',
     },
   ],
 }
