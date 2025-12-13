@@ -136,11 +136,9 @@ In CodeAgentSwarm the idea is precisely to avoid that black box feeling. The app
           ],
         },
         {
-          type: 'image',
-          alt: 'Screenshot of the Git diff modal in CodeAgentSwarm with split view, sidebar of modified files and synchronized scroll',
-          src: '#',
+          type: 'video',
+          src: '/see-git-diff-claude-code.mp4',
           caption: 'The Git diff viewer gives you the complete picture of changes in the project.',
-          size: 'medium',
         },
         {
           type: 'paragraph',

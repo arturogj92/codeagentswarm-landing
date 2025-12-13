@@ -136,11 +136,9 @@ En CodeAgentSwarm la idea es justo evitar esa sensación de caja negra. La app c
           ],
         },
         {
-          type: 'image',
-          alt: 'Captura del modal de diff de Git en CodeAgentSwarm con vista split, sidebar de archivos modificados y scroll sincronizado',
-          src: '#',
+          type: 'video',
+          src: '/see-git-diff-claude-code.mp4',
           caption: 'El visor de diff de Git te da la foto completa de los cambios en el proyecto.',
-          size: 'medium',
         },
         {
           type: 'paragraph',
