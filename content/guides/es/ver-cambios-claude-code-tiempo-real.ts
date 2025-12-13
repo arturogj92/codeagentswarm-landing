@@ -242,6 +242,11 @@ En CodeAgentSwarm la idea es justo evitar esa sensación de caja negra. La app c
           type: 'paragraph',
           text: 'Dejas de tener la sensación de "tengo tres IAs haciendo cosas y no sé muy bien qué está pasando en el repo".',
         },
+        {
+          type: 'video',
+          src: '/claude-terminal-titles.mp4',
+          caption: 'Los títulos dinámicos actualizándose mientras Claude trabaja en diferentes tareas en cada terminal.',
+        },
       ],
     },
     {

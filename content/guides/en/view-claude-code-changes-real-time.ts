@@ -242,6 +242,11 @@ In CodeAgentSwarm the idea is precisely to avoid that black box feeling. The app
           type: 'paragraph',
           text: 'You stop having the feeling of "I have three AIs doing things and I don\'t really know what\'s happening in the repo".',
         },
+        {
+          type: 'video',
+          src: '/claude-terminal-titles.mp4',
+          caption: 'Dynamic titles updating as Claude works on different tasks across terminals.',
+        },
       ],
     },
     {
