@@ -5,8 +5,8 @@ export const guide: Guide = {
     slug: 'how-to-use-multiple-claude-code-terminals',
     locale: 'en',
     title: 'How to Use Multiple Claude Code Terminals (Without Losing Your Head)',
-    metaTitle: 'How to Use Multiple Claude Code Terminals in Parallel (Human-Friendly Guide)',
-    metaDescription: 'A relaxed, practical guide explaining how to work with multiple Claude Code terminals in parallel using CodeAgentSwarm. Written in natural human language, not robotic.',
+    metaTitle: 'How to Use Multiple Claude Code Terminals in Parallel',
+    metaDescription: 'Learn how to work with multiple Claude Code terminals in parallel using CodeAgentSwarm. Practical guide with tips for managing concurrent AI coding sessions.',
     intro: `If you've ever tried to run multiple Claude Code conversations at once, you know how the story ends: tabs everywhere, you lose track, and you end up thinking "wait, where was I again?".
 
 I've been there. That's exactly why I built CodeAgentSwarm - so working in parallel feels normal, comfortable, and doesn't overwhelm you.
