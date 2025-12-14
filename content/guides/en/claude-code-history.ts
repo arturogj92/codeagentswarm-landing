@@ -12,6 +12,7 @@ export const guide: Guide = {
 Together, that becomes your Claude Code conversation history. It is your long term memory of what you have been building with the AI, organized and ready to search or resume whenever you need it.
 
 The bottom line: Everything you talk about with Claude Code stays stored, organized by project, and ready to search or resume later.`,
+    ctaText: 'Use conversation history next time you resume a project. You\'ll instantly notice how comfortable it is not having to explain everything from scratch to Claude.',
     alternateSlug: 'historial-claude-code',
   },
   sections: [

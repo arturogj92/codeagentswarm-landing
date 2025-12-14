@@ -12,6 +12,7 @@ export const guide: Guide = {
 Todo eso forma tu historial de conversaciones de Claude Code. Es como una memoria larga de todo lo que has ido haciendo con la IA, organizada y lista para buscar o retomar cuando te haga falta.
 
 La idea es simple: Todo lo que hablas con Claude Code queda guardado, organizado por proyecto y listo para buscar o retomar cuando quieras.`,
+    ctaText: 'Usa el historial de conversaciones la próxima vez que retomes un proyecto. Vas a notar enseguida lo cómodo que es no tener que explicar todo desde cero a Claude.',
     alternateSlug: 'claude-code-history',
   },
   sections: [

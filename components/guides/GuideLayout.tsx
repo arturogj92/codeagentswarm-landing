@@ -96,12 +96,38 @@ export default function GuideLayout({ guide }: GuideLayoutProps) {
             {/* FAQ section */}
             {faq && faq.length > 0 && <FAQAccordion items={faq} locale={locale} />}
 
+            {/* Final note / CTA */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+              className="mt-16 p-8 rounded-2xl relative overflow-hidden"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-neon-cyan/10 via-neon-purple/10 to-neon-magenta/10" />
+              <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-r from-neon-cyan/30 via-neon-purple/30 to-neon-magenta/30 opacity-50" />
+              <div className="relative text-center">
+                <p className="text-white/80 mb-6">
+                  {meta.ctaText ?? (locale === 'es'
+                    ? 'Usa el historial de conversaciones la próxima vez que retomes un proyecto. Vas a notar enseguida lo cómodo que es no tener que explicar todo desde cero a Claude.'
+                    : 'Use conversation history next time you resume a project. You\'ll instantly notice how comfortable it is not having to explain everything from scratch to Claude.')}
+                </p>
+                <Link
+                  href={ctaHref}
+                  className="inline-flex items-center gap-2 px-6 py-3 text-white font-semibold rounded-lg hover:opacity-90 transition-opacity"
+                  style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }}
+                >
+                  {ctaText}
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </motion.div>
+
             {/* Recommended guide section */}
             {randomGuide && (
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, duration: 0.5 }}
+                transition={{ delay: 0.4, duration: 0.5 }}
                 className="mt-16"
               >
                 <h3 className="text-xl font-semibold text-white mb-6">{recommendedTitle}</h3>
@@ -133,32 +159,6 @@ export default function GuideLayout({ guide }: GuideLayoutProps) {
                 </div>
               </motion.div>
             )}
-
-            {/* Final note / CTA */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.5 }}
-              className="mt-16 p-8 rounded-2xl relative overflow-hidden"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-neon-cyan/10 via-neon-purple/10 to-neon-magenta/10" />
-              <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-r from-neon-cyan/30 via-neon-purple/30 to-neon-magenta/30 opacity-50" />
-              <div className="relative text-center">
-                <p className="text-white/80 mb-6">
-                  {meta.ctaText ?? (locale === 'es'
-                    ? 'Usa el historial de conversaciones la próxima vez que retomes un proyecto. Vas a notar enseguida lo cómodo que es no tener que explicar todo desde cero a Claude.'
-                    : 'Use conversation history next time you resume a project. You\'ll instantly notice how comfortable it is not having to explain everything from scratch to Claude.')}
-                </p>
-                <Link
-                  href={ctaHref}
-                  className="inline-flex items-center gap-2 px-6 py-3 text-white font-semibold rounded-lg hover:opacity-90 transition-opacity"
-                  style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }}
-                >
-                  {ctaText}
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </motion.div>
           </article>
 
           {/* Sidebar with TOC (desktop only) */}

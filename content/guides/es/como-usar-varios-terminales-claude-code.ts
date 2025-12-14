@@ -12,6 +12,7 @@ export const guide: Guide = {
 Yo he pasado por eso. Y justo para evitar ese caos monté CodeAgentSwarm: para que trabajar en paralelo sea algo normal, cómodo y sin saturarte.
 
 En esta guía te explico, tal cual se lo contaría a un amigo, cómo usar varios terminales a la vez de forma sencilla y sin complicarte la vida.`,
+    ctaText: 'La próxima vez que tengas varias tareas en paralelo, abre varios terminales y deja que cada uno trabaje en lo suyo. Vas a notar la diferencia.',
     alternateSlug: 'how-to-use-multiple-claude-code-terminals',
   },
   sections: [
