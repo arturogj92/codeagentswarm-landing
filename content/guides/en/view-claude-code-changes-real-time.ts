@@ -14,7 +14,7 @@ You ask it to refactor an entire module, or to implement a complete feature, it 
 And if you have several terminals working at the same time, the question splits in two: what is the AI doing right now in each terminal, and what exactly has changed in the code.
 
 In CodeAgentSwarm the idea is precisely to avoid that black box feeling. The app combines three things: a live diff per terminal to see Claude Code changes in real time for that specific session, a Git diff viewer to see project-level changes against the repository, and dynamic titles in terminals (with history) to know what the AI is doing at any moment.`,
-    highlightedWords: ['view changes', 'real time'],
+    highlightedWords: ['view changes', 'changes', 'real time'],
     alternateSlug: 'ver-cambios-claude-code-tiempo-real',
     introVideo: '/see-claude-code-changes-real-time.mp4',
     ctaText: 'Next time you run Claude Code on a project, you\'ll know exactly what it changed. No more black box feeling.',
