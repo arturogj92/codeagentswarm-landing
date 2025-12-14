@@ -43,7 +43,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const enGuidePages: MetadataRoute.Sitemap = enGuideSlugs.map((slug) => ({
     url: `${baseUrl}/en/guides/${slug}`,
     lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
+    changeFrequency: 'weekly' as const,
     priority: 0.7,
   }));
 
@@ -52,7 +52,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const esGuidePages: MetadataRoute.Sitemap = esGuideSlugs.map((slug) => ({
     url: `${baseUrl}/es/guias/${slug}`,
     lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
+    changeFrequency: 'weekly' as const,
     priority: 0.7,
   }));
 
