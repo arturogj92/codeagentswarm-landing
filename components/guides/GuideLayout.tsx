@@ -1,10 +1,10 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, BookOpen } from 'lucide-react'
 import Link from 'next/link'
 import type { Guide } from '@/content/guides/types'
-import { extractTOC } from '@/content/guides'
+import { extractTOC, getAllGuides } from '@/content/guides'
 import GuidesHeader from './GuidesHeader'
 import Breadcrumbs from './Breadcrumbs'
 import TableOfContents from './TableOfContents'
@@ -25,6 +25,15 @@ export default function GuideLayout({ guide }: GuideLayoutProps) {
   const guidesHref = locale === 'es' ? '/es/guias' : '/en/guides'
   const ctaText = locale === 'es' ? 'Probar CodeAgentSwarm' : 'Try CodeAgentSwarm'
   const ctaHref = `/${locale}`
+
+  // Get a random guide recommendation (excluding current guide)
+  const allGuides = getAllGuides(locale)
+  const otherGuides = allGuides.filter((g) => g.meta.slug !== meta.slug)
+  const randomGuide = otherGuides.length > 0 ? otherGuides[Math.floor(Math.random() * otherGuides.length)] : null
+
+  // Localized text
+  const recommendedTitle = locale === 'es' ? 'También te puede interesar' : 'You might also like'
+  const viewAllGuidesText = locale === 'es' ? 'Ver todas las guías' : 'View all guides'
 
   return (
     <div className="min-h-screen bg-black">
@@ -86,6 +95,44 @@ export default function GuideLayout({ guide }: GuideLayoutProps) {
 
             {/* FAQ section */}
             {faq && faq.length > 0 && <FAQAccordion items={faq} locale={locale} />}
+
+            {/* Recommended guide section */}
+            {randomGuide && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.5 }}
+                className="mt-16"
+              >
+                <h3 className="text-xl font-semibold text-white mb-6">{recommendedTitle}</h3>
+                <div className="p-6 rounded-xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent hover:border-neon-cyan/30 transition-all group">
+                  <Link
+                    href={`/${locale}/${locale === 'es' ? 'guias' : 'guides'}/${randomGuide.meta.slug}`}
+                    className="block"
+                  >
+                    <h4 className="text-lg font-semibold text-white mb-3 group-hover:text-neon-cyan transition-colors">
+                      {randomGuide.meta.title}
+                    </h4>
+                    <p className="text-white/70 leading-relaxed line-clamp-3 mb-4">
+                      {randomGuide.meta.intro.split('\n')[0]}
+                    </p>
+                    <span className="inline-flex items-center gap-2 text-neon-cyan text-sm font-medium">
+                      {locale === 'es' ? 'Leer guía' : 'Read guide'}
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </span>
+                  </Link>
+                </div>
+                <div className="mt-6 text-center">
+                  <Link
+                    href={guidesHref}
+                    className="inline-flex items-center gap-2 text-white/60 hover:text-neon-cyan transition-colors text-sm"
+                  >
+                    <BookOpen className="w-4 h-4" />
+                    {viewAllGuidesText}
+                  </Link>
+                </div>
+              </motion.div>
+            )}
 
             {/* Final note / CTA */}
             <motion.div
