@@ -13,6 +13,7 @@ I've been there. That's exactly why I built CodeAgentSwarm - so working in paral
 
 In this guide I'll explain, just like I'd tell a friend, how to use multiple terminals at once in a simple way without overcomplicating things.`,
     ctaText: 'Next time you have multiple parallel tasks, open several terminals and let each one work on its own thing. You\'ll notice the difference.',
+    highlightedWords: ['multiple terminals', 'Claude Code'],
     alternateSlug: 'como-usar-varios-terminales-claude-code',
   },
   sections: [

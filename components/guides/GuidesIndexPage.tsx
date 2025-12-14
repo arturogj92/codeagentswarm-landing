@@ -11,6 +11,38 @@ interface GuidesIndexPageProps {
   locale: 'en' | 'es'
 }
 
+// Helper function to highlight keywords in title
+function highlightTitle(title: string, keywords?: string[]) {
+  if (!keywords || keywords.length === 0) {
+    return title
+  }
+
+  // Create a regex pattern that matches any of the keywords (case insensitive)
+  const pattern = new RegExp(`(${keywords.join('|')})`, 'gi')
+  const parts = title.split(pattern)
+
+  return (
+    <>
+      {parts.map((part, index) => {
+        // Check if this part matches any keyword (case insensitive)
+        const isKeyword = keywords.some(
+          keyword => keyword.toLowerCase() === part.toLowerCase()
+        )
+
+        if (isKeyword) {
+          return (
+            <span key={index} className="text-neon-cyan">
+              {part}
+            </span>
+          )
+        }
+
+        return <span key={index}>{part}</span>
+      })}
+    </>
+  )
+}
+
 export default function GuidesIndexPage({ guides, locale }: GuidesIndexPageProps) {
   const isSpanish = locale === 'es'
 
@@ -66,8 +98,8 @@ export default function GuidesIndexPage({ guides, locale }: GuidesIndexPageProps
               >
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
                   <div className="flex-1">
-                    <h2 className="text-xl sm:text-2xl font-bold text-white mb-3 group-hover:text-neon-cyan transition-colors">
-                      {guide.meta.title}
+                    <h2 className="text-xl sm:text-2xl font-bold text-white mb-3 transition-colors">
+                      {highlightTitle(guide.meta.title, guide.meta.highlightedWords)}
                     </h2>
                     <p className="text-white/60 line-clamp-2">
                       {guide.meta.metaDescription}

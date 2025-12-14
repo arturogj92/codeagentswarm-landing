@@ -15,6 +15,7 @@ El riesgo también es simple: si lo activas sin control, un comando mal plantead
 
 En CodeAgentSwarm lo planteamos como Turbo Mode (skip confirmations) más un sistema de permisos. Tú decides qué se auto aprueba y qué queda bloqueado, para poder ir muy rápido y seguro.`,
     ctaText: 'Activa Turbo Mode con permisos configurados y trabaja con Claude Code a máxima velocidad sin sacrificar seguridad.',
+    highlightedWords: ['YOLO mode', 'Turbo Mode'],
     alternateSlug: 'claude-code-yolo-turbo-mode',
   },
   sections: [
