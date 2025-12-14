@@ -60,6 +60,7 @@ const guide: Guide = {
     metaTitle: 'SEO Title (appears in browser tab)',
     metaDescription: 'SEO description for search results',
     intro: 'Introductory paragraph(s)',
+    ctaText: 'MANDATORY: Specific CTA text for this guide', // Must be specific to the guide, not generic
     alternateSlug: 'mi-guia-slug', // Spanish equivalent
   },
   sections: [
@@ -111,6 +112,32 @@ Use markdown-like syntax with `#` as src for placeholders:
 ```
 
 The system renders a styled placeholder that indicates where an image should go.
+
+### 🚨 MANDATORY: ctaText Field
+
+**Every guide MUST include a custom `ctaText` in the metadata:**
+
+```typescript
+meta: {
+  // ... other fields
+  ctaText: 'Specific call-to-action text for THIS guide',
+  // ... other fields
+}
+```
+
+**Why this is mandatory:**
+- The `ctaText` appears at the bottom of each guide as a final call-to-action before the "Probar CodeAgentSwarm" button
+- If omitted, the system shows a generic default text about "conversation history" which is irrelevant to most guides
+- Each guide should have a specific, relevant CTA that connects to its content
+
+**Good examples:**
+- ✅ "Activa Turbo Mode con permisos configurados y trabaja con Claude Code a máxima velocidad sin sacrificar seguridad."
+- ✅ "Activa las notificaciones de CodeAgentSwarm y deja de estar pendiente del terminal."
+- ✅ "La próxima vez que ejecutes Claude Code en un proyecto, vas a saber exactamente qué ha cambiado."
+
+**Bad examples:**
+- ❌ Generic text about conversation history (default fallback - means you forgot to add ctaText)
+- ❌ Empty or missing ctaText field
 
 ### Writing Style
 

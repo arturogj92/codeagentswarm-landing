@@ -91,7 +91,10 @@ function Callout({ variant, content }: { variant: 'tip' | 'warning' | 'info'; co
   return (
     <div className={`my-6 p-4 rounded-lg border ${bgClass} flex gap-3`}>
       <Icon className={`w-5 h-5 flex-shrink-0 mt-0.5 ${iconClass}`} />
-      <p className="text-white/80 leading-relaxed">{content}</p>
+      <p
+        className="text-white/80 leading-relaxed"
+        dangerouslySetInnerHTML={{ __html: content }}
+      />
     </div>
   )
 }
@@ -117,9 +120,11 @@ function renderBlock(block: ContentBlock, index: number) {
   switch (block.type) {
     case 'paragraph':
       return (
-        <p key={index} className="text-white/70 leading-relaxed mb-4">
-          {block.text}
-        </p>
+        <p
+          key={index}
+          className="text-white/70 leading-relaxed mb-4"
+          dangerouslySetInnerHTML={{ __html: block.text }}
+        />
       )
 
     case 'heading':
@@ -151,9 +156,8 @@ function renderBlock(block: ContentBlock, index: number) {
             <li
               key={i}
               className="text-white/70 leading-relaxed list-disc marker:text-neon-cyan"
-            >
-              {item}
-            </li>
+              dangerouslySetInnerHTML={{ __html: item }}
+            />
           ))}
         </ul>
       )
