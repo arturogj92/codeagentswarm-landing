@@ -106,6 +106,18 @@ En esta guía te explico, tal cual se lo contaría a un amigo, cómo usar varios
         },
         {
           type: 'paragraph',
+          text: 'Para aprender a recuperar contexto y ahorrar tiempo con el historial, consulta esta guía: <a href="/es/guias/historial-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">Cómo usar el historial de Claude Code para recuperar contexto y ahorrar tiempo</a>.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Si quieres recibir avisos sin perder el foco cuando un terminal termine, consulta esta guía: <a href="/es/guias/notificaciones-codeagentswarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Cómo usar las notificaciones de CodeAgentSwarm para no perder foco con Claude Code</a>.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Para aprender a ver qué está cambiando en cada sesión y a nivel de proyecto, consulta esta guía: <a href="/es/guias/ver-cambios-claude-code-tiempo-real" class="text-neon-cyan hover:text-neon-purple transition-colors">Cómo ver los cambios de Claude Code en tiempo real (y saber qué está haciendo la IA)</a>.',
+        },
+        {
+          type: 'paragraph',
           text: 'En lugar de tener pestañas sueltas o ventanas por ahí perdidas, tienes todo en un solo sitio.',
         },
       ],

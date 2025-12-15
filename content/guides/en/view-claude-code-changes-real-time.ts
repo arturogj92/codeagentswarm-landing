@@ -40,6 +40,10 @@ In CodeAgentSwarm the idea is precisely to avoid that black box feeling. The app
           type: 'paragraph',
           text: 'All three together answer: what is the AI doing right now, what has changed in this session, and what has changed in the project overall.',
         },
+        {
+          type: 'paragraph',
+          text: 'These tools really shine when you\'re running several Claude Code sessions in parallel. To learn how to set them up, see this guide: <a href="/en/guides/how-to-use-multiple-claude-code-terminals" class="text-neon-cyan hover:text-neon-purple transition-colors">How to Use Multiple Claude Code Terminals (Without Losing Your Head)</a>.',
+        },
       ],
     },
     {
@@ -150,6 +154,10 @@ In CodeAgentSwarm the idea is precisely to avoid that black box feeling. The app
           type: 'paragraph',
           text: 'This diff doesn\'t distinguish whether the changes come from Claude, from you, or from an external script. It\'s the global picture of the project against the repository, and it\'s the answer to the classic question before committing: what exactly am I going to push.',
         },
+        {
+          type: 'paragraph',
+          text: 'To resume past conversations and avoid re-explaining your code decisions, see this guide: <a href="/en/guides/claude-code-history" class="text-neon-cyan hover:text-neon-purple transition-colors">How to Use Claude Code History to Recover Context and Save Time</a>.',
+        },
       ],
     },
     {
@@ -206,6 +214,10 @@ In CodeAgentSwarm the idea is precisely to avoid that black box feeling. The app
         {
           type: 'paragraph',
           text: 'They combine very well with diffs: you see the current title or the title history to understand what Claude was doing, you open the session diff to see what has changed in that stage, and you use the Git diff to see how it all fits in the project.',
+        },
+        {
+          type: 'paragraph',
+          text: 'If you want to receive notifications when a session finishes or needs input, see this guide: <a href="/en/guides/codeagentswarm-notifications" class="text-neon-cyan hover:text-neon-purple transition-colors">How to Use CodeAgentSwarm Notifications to Stay in Focus with Claude Code</a>.',
         },
         {
           type: 'callout',

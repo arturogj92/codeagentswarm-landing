@@ -12,6 +12,7 @@ import SwarmiSection from '@/components/SwarmiSection'
 import PricingSection from '@/components/PricingSection'
 import RoadmapSection from '@/components/RoadmapSection'
 import FAQSection from '@/components/FAQSection'
+import GuidesSection from '@/components/GuidesSection'
 import CTASection from '@/components/CTASection'
 import Footer from '@/components/Footer'
 
@@ -77,6 +78,7 @@ export default function Home() {
         <PricingSection />
         <RoadmapSection />
         <FAQSection />
+        <GuidesSection />
         <CTASection />
       </main>
 

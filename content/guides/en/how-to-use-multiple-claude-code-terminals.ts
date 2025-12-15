@@ -106,6 +106,18 @@ In this guide I'll explain, just like I'd tell a friend, how to use multiple ter
         },
         {
           type: 'paragraph',
+          text: 'To learn how to resume context quickly and save time with conversation history, see this guide: <a href="/en/guides/claude-code-history" class="text-neon-cyan hover:text-neon-purple transition-colors">How to Use Claude Code History to Recover Context and Save Time</a>.',
+        },
+        {
+          type: 'paragraph',
+          text: 'If you want to make sure you never miss when a terminal finishes or needs attention, see this guide: <a href="/en/guides/codeagentswarm-notifications" class="text-neon-cyan hover:text-neon-purple transition-colors">How to Use CodeAgentSwarm Notifications to Stay in Focus with Claude Code</a>.',
+        },
+        {
+          type: 'paragraph',
+          text: 'To inspect what\'s changing in each session and at project level, see this guide: <a href="/en/guides/view-claude-code-changes-real-time" class="text-neon-cyan hover:text-neon-purple transition-colors">How to view Claude Code changes in real time (and know what the AI is doing)</a>.',
+        },
+        {
+          type: 'paragraph',
           text: 'Instead of having loose tabs or windows scattered around, you have everything in one place.',
         },
       ],

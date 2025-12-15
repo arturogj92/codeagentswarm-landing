@@ -257,6 +257,10 @@ La idea es simple: Todo lo que hablas con Claude Code queda guardado, organizado
             'Ahorras tokens al no tener que repetir contexto que ya existe en conversaciones anteriores',
           ],
         },
+        {
+          type: 'paragraph',
+          text: 'Si ya dominas el historial y quieres multiplicar tu productividad con varias sesiones, consulta esta guía: <a href="/es/guias/como-usar-varios-terminales-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">Cómo usar varios terminales de Claude Code sin complicarte la vida</a>.',
+        },
       ],
     },
     {
@@ -273,6 +277,10 @@ La idea es simple: Todo lo que hablas con Claude Code queda guardado, organizado
             '"¿Cómo solucionamos ese bug de auth hace 3 días?" - Buscas "auth" y ves exactamente qué se hizo.',
             '"Quiero seguir con lo que estaba haciendo ayer" - Abres History y entras en la conversación más reciente relevante.',
           ],
+        },
+        {
+          type: 'paragraph',
+          text: 'Para saber exactamente qué cambió en cada sesión o en el proyecto antes de seguir trabajando, consulta esta guía: <a href="/es/guias/ver-cambios-claude-code-tiempo-real" class="text-neon-cyan hover:text-neon-purple transition-colors">Cómo ver los cambios de Claude Code en tiempo real (y saber qué está haciendo la IA)</a>.',
         },
       ],
     },

@@ -55,7 +55,7 @@ En esta guía te cuento cómo funcionan las notificaciones de CodeAgentSwarm y c
         },
         {
           type: 'paragraph',
-          text: 'Y si encima haces divide & conquer - varios terminales de Claude Code en paralelo, cada uno con una tarea distinta, y tú saltando entre proyectos... sin un sistema de notificaciones decente es cuestión de tiempo que pierdas el hilo.',
+          text: 'Y si encima haces divide & conquer - varios terminales de Claude Code en paralelo, cada uno con una tarea distinta, y tú saltando entre proyectos... sin un sistema de notificaciones decente es cuestión de tiempo que pierdas el hilo. Si todavía no sabes cómo crear y gestionar varios terminales, consulta esta guía: <a href="/es/guias/como-usar-varios-terminales-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">Cómo usar varios terminales de Claude Code sin complicarte la vida</a>.',
         },
         {
           type: 'paragraph',
@@ -148,6 +148,10 @@ En esta guía te cuento cómo funcionan las notificaciones de CodeAgentSwarm y c
           src: '/images/guides/terminal-status-indicators.png',
           caption: 'Los colores y estados te permiten ver de un vistazo qué está pasando en cada terminal.',
           size: 'medium',
+        },
+        {
+          type: 'paragraph',
+          text: 'Si necesitas ver qué ha cambiado en cada terminal o a nivel de proyecto, consulta esta guía: <a href="/es/guias/ver-cambios-claude-code-tiempo-real" class="text-neon-cyan hover:text-neon-purple transition-colors">Cómo ver los cambios de Claude Code en tiempo real (y saber qué está haciendo la IA)</a>.',
         },
       ],
     },

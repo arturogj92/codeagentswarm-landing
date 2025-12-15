@@ -54,7 +54,7 @@ In this guide I'll show you how CodeAgentSwarm notifications work and how to use
         },
         {
           type: 'paragraph',
-          text: 'And if you also do divide & conquer - several Claude Code terminals in parallel, each one with a different task, and you jumping between projects... without a decent notification system it\'s just a matter of time before you lose the thread.',
+          text: 'And if you also do divide & conquer - several Claude Code terminals in parallel, each one with a different task, and you jumping between projects... without a decent notification system it\'s just a matter of time before you lose the thread. If you\'re not yet familiar with creating and managing multiple sessions, see this guide: <a href="/en/guides/how-to-use-multiple-claude-code-terminals" class="text-neon-cyan hover:text-neon-purple transition-colors">How to Use Multiple Claude Code Terminals (Without Losing Your Head)</a>.',
         },
         {
           type: 'paragraph',
@@ -147,6 +147,10 @@ In this guide I'll show you how CodeAgentSwarm notifications work and how to use
           src: '/images/guides/terminal-status-indicators.png',
           caption: 'Colours and statuses let you see at a glance what\'s happening in each terminal.',
           size: 'medium',
+        },
+        {
+          type: 'paragraph',
+          text: 'If you also want to inspect the specific changes made in each session or the project as a whole, see this guide: <a href="/en/guides/view-claude-code-changes-real-time" class="text-neon-cyan hover:text-neon-purple transition-colors">How to view Claude Code changes in real time (and know what the AI is doing)</a>.',
         },
       ],
     },

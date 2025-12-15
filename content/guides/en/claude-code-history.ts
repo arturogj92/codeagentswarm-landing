@@ -257,6 +257,10 @@ The bottom line: Everything you talk about with Claude Code stays stored, organi
             'You save tokens by not having to repeat context that already exists in previous conversations',
           ],
         },
+        {
+          type: 'paragraph',
+          text: 'When you master history, working with multiple sessions becomes much easier. To learn how to set up several terminals, see this guide: <a href="/en/guides/how-to-use-multiple-claude-code-terminals" class="text-neon-cyan hover:text-neon-purple transition-colors">How to Use Multiple Claude Code Terminals (Without Losing Your Head)</a>.',
+        },
       ],
     },
     {
@@ -273,6 +277,10 @@ The bottom line: Everything you talk about with Claude Code stays stored, organi
             '"How did we fix that auth bug three days ago?" - Search "auth" and see exactly what you did.',
             '"I want to continue what I was doing yesterday." - Open History, pick the latest relevant conversation and continue.',
           ],
+        },
+        {
+          type: 'paragraph',
+          text: 'To see exactly what changed in a particular session or across the entire project before you resume work, see this guide: <a href="/en/guides/view-claude-code-changes-real-time" class="text-neon-cyan hover:text-neon-purple transition-colors">How to view Claude Code changes in real time (and know what the AI is doing)</a>.',
         },
       ],
     },

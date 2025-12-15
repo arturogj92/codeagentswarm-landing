@@ -2,20 +2,25 @@
 
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { Users, Kanban, Bell, Activity, MessageSquare, Zap } from 'lucide-react'
-import { useTranslations } from 'next-intl'
+import { Users, Kanban, Bell, Activity, MessageSquare, Zap, ArrowRight } from 'lucide-react'
+import { useTranslations, useLocale } from 'next-intl'
+import Link from 'next/link'
 
 export default function FeaturesSection() {
   const t = useTranslations('features')
+  const locale = useLocale()
   const sectionRef = useRef(null)
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' })
+
+  const guideBasePath = locale === 'es' ? 'guias' : 'guides'
 
   const features = [
     {
       icon: Users,
       title: t('items.multiTerminal.title'),
       description: t('items.multiTerminal.description'),
-      gradient: 'from-neon-purple/30 to-neon-cyan/20'
+      gradient: 'from-neon-purple/30 to-neon-cyan/20',
+      guideSlug: locale === 'es' ? 'como-usar-varios-terminales-claude-code' : 'how-to-use-multiple-claude-code-terminals'
     },
     {
       icon: Kanban,
@@ -27,25 +32,29 @@ export default function FeaturesSection() {
       icon: Bell,
       title: t('items.notifications.title'),
       description: t('items.notifications.description'),
-      gradient: 'from-amber-500/30 to-orange-500/20'
+      gradient: 'from-amber-500/30 to-orange-500/20',
+      guideSlug: locale === 'es' ? 'notificaciones-codeagentswarm' : 'codeagentswarm-notifications'
     },
     {
       icon: Activity,
       title: t('items.visibility.title'),
       description: t('items.visibility.description'),
-      gradient: 'from-emerald-500/30 to-teal-500/20'
+      gradient: 'from-emerald-500/30 to-teal-500/20',
+      guideSlug: locale === 'es' ? 'ver-cambios-claude-code-tiempo-real' : 'view-claude-code-changes-real-time'
     },
     {
       icon: MessageSquare,
       title: t('items.history.title'),
       description: t('items.history.description'),
-      gradient: 'from-blue-500/30 to-indigo-500/20'
+      gradient: 'from-blue-500/30 to-indigo-500/20',
+      guideSlug: locale === 'es' ? 'historial-claude-code' : 'claude-code-history'
     },
     {
       icon: Zap,
       title: t('items.turboMode.title'),
       description: t('items.turboMode.description'),
-      gradient: 'from-yellow-500/30 to-amber-500/20'
+      gradient: 'from-yellow-500/30 to-amber-500/20',
+      guideSlug: 'claude-code-yolo-turbo-mode'
     },
   ]
 
@@ -96,9 +105,18 @@ export default function FeaturesSection() {
                   <h3 className="text-lg font-semibold text-white mb-2">
                     {feature.title}
                   </h3>
-                  <p className="text-white/60 text-sm leading-relaxed">
+                  <p className="text-white/60 text-sm leading-relaxed mb-3">
                     {feature.description}
                   </p>
+                  {feature.guideSlug && (
+                    <Link
+                      href={`/${locale}/${guideBasePath}/${feature.guideSlug}`}
+                      className="inline-flex items-center text-neon-cyan hover:text-neon-purple text-xs font-medium transition-colors group/link"
+                    >
+                      {t('viewGuide')}
+                      <ArrowRight className="w-3 h-3 ml-1 group-hover/link:translate-x-0.5 transition-transform" />
+                    </Link>
+                  )}
                 </div>
               </div>
             </motion.div>
@@ -127,9 +145,18 @@ export default function FeaturesSection() {
                   <h3 className="text-lg font-semibold text-white mb-2">
                     {feature.title}
                   </h3>
-                  <p className="text-white/60 text-sm leading-relaxed">
+                  <p className="text-white/60 text-sm leading-relaxed mb-3">
                     {feature.description}
                   </p>
+                  {feature.guideSlug && (
+                    <Link
+                      href={`/${locale}/${guideBasePath}/${feature.guideSlug}`}
+                      className="inline-flex items-center text-neon-cyan hover:text-neon-purple text-xs font-medium transition-colors group/link"
+                    >
+                      {t('viewGuide')}
+                      <ArrowRight className="w-3 h-3 ml-1 group-hover/link:translate-x-0.5 transition-transform" />
+                    </Link>
+                  )}
                 </div>
               </div>
             </motion.div>
@@ -158,9 +185,18 @@ export default function FeaturesSection() {
                   <h3 className="text-lg font-semibold text-white mb-2">
                     {feature.title}
                   </h3>
-                  <p className="text-white/60 text-sm leading-relaxed">
+                  <p className="text-white/60 text-sm leading-relaxed mb-3">
                     {feature.description}
                   </p>
+                  {feature.guideSlug && (
+                    <Link
+                      href={`/${locale}/${guideBasePath}/${feature.guideSlug}`}
+                      className="inline-flex items-center text-neon-cyan hover:text-neon-purple text-xs font-medium transition-colors group/link"
+                    >
+                      {t('viewGuide')}
+                      <ArrowRight className="w-3 h-3 ml-1 group-hover/link:translate-x-0.5 transition-transform" />
+                    </Link>
+                  )}
                 </div>
               </div>
             </motion.div>

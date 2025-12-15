@@ -89,6 +89,7 @@
     "badge": "Core Features",
     "titlePre": "Everything You",
     "titleHighlight": "Need",
+    "viewGuide": "View guide →",
     "items": {
       "multiTerminal": {
         "title": "Multiple Claude Code Terminals in Parallel",
@@ -532,6 +533,26 @@
         "a8": "Usually a few hours after you complete all steps.",
         "q9": "Does CodeAgentSwarm support multi-project workflows with Claude Code?",
         "a9": "Yes! CodeAgentSwarm is designed for multiproject management. Switch between Claude Code projects without losing context. Each project maintains its own terminals, tasks and conversation history. Manage multiple Claude Code projects seamlessly in one workspace."
+      }
+    }
+  },
+  "guides": {
+    "sectionTitle": "Learn to Master",
+    "sectionHighlight": "CodeAgentSwarm",
+    "sectionSubtitle": "Practical guides to get the most out of it",
+    "readGuide": "Read guide",
+    "featured": {
+      "0": {
+        "title": "Multiple Terminals at Once",
+        "description": "Learn how to work with multiple Claude Code terminals in parallel without losing your head"
+      },
+      "1": {
+        "title": "See Changes in Real Time",
+        "description": "Discover how to see what Claude is changing in your code while it works"
+      },
+      "2": {
+        "title": "Safe Turbo Mode",
+        "description": "Speed up your workflow by skipping confirmations without losing control"
       }
     }
   }

@@ -160,3 +160,71 @@ When modifying any guide or content:
 Example:
 - Editing `/content/guides/es/historial-claude-code.ts` → Also edit `/content/guides/en/claude-code-history.ts`
 - Adding a new section in EN → Add the equivalent section in ES
+
+### 🔗 Updating the Landing Page with New Guides
+
+**When you add a new guide, consider updating the homepage landing page to promote it:**
+
+#### 1. Featured Guides Section (GuidesSection component)
+
+The homepage displays **3 featured guides** in `/components/GuidesSection.tsx`. When adding a particularly important new guide:
+
+1. **Decide if it should replace one of the current featured guides:**
+   - Current featured guides: Multiple Terminals, View Changes, Turbo Mode
+   - Only replace if the new guide is more important for user onboarding/conversion
+
+2. **If replacing, update the `guides` array in GuidesSection.tsx:**
+   ```typescript
+   const guides = [
+     {
+       icon: Users, // Choose appropriate Lucide icon
+       slug: locale === 'es' ? 'nuevo-slug-es' : 'new-slug-en',
+       gradient: 'from-neon-purple/30 to-neon-cyan/20' // Choose gradient
+     },
+     // ... other guides
+   ]
+   ```
+
+3. **Update translations in both `/messages/es.json` and `/messages/en.json`:**
+   ```json
+   "guides": {
+     "featured": {
+       "0": {
+         "title": "Guide Title",
+         "description": "Guide description for the card"
+       }
+     }
+   }
+   ```
+
+#### 2. Inline Feature Links (FeaturesSection component)
+
+If the new guide is directly related to one of the 6 features shown on the homepage, add an inline link:
+
+1. **Open `/components/FeaturesSection.tsx`**
+2. **Add `guideSlug` property to the relevant feature:**
+   ```typescript
+   {
+     icon: Bell,
+     title: t('items.notifications.title'),
+     description: t('items.notifications.description'),
+     gradient: 'from-amber-500/30 to-orange-500/20',
+     guideSlug: locale === 'es' ? 'nuevo-slug-es' : 'new-slug-en' // Add this
+   }
+   ```
+
+3. **The "Ver guía →" link will automatically appear below the feature description**
+
+#### 3. Quick Checklist for New Guides
+
+When adding a new guide, ask yourself:
+
+- ❓ **Is this guide crucial for new users?** → Consider adding to GuidesSection
+- ❓ **Does it explain a specific feature?** → Consider adding inline link in FeaturesSection
+- ❓ **Is it better than current featured guides?** → Consider replacing one
+- ❓ **Is it a niche/advanced topic?** → Keep it only in guides index, don't promote on homepage
+
+**Remember:** Not every guide needs to be on the homepage. Only promote guides that:
+- Help new users get started quickly
+- Explain core/differentiating features
+- Drive conversions (free → paid)

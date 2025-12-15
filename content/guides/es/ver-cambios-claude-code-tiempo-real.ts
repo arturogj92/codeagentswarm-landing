@@ -40,6 +40,10 @@ En CodeAgentSwarm la idea es justo evitar esa sensación de caja negra. La app c
           type: 'paragraph',
           text: 'Los tres juntos responden a: qué está haciendo la IA ahora mismo, qué ha cambiado en esta sesión, y qué ha cambiado en el proyecto en general.',
         },
+        {
+          type: 'paragraph',
+          text: 'Estas funciones tienen aún más sentido cuando trabajas con varias sesiones paralelas. Para aprender a crear y gestionar múltiples terminales de Claude, consulta esta guía: <a href="/es/guias/como-usar-varios-terminales-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">Cómo usar varios terminales de Claude Code sin complicarte la vida</a>.',
+        },
       ],
     },
     {
@@ -150,6 +154,10 @@ En CodeAgentSwarm la idea es justo evitar esa sensación de caja negra. La app c
           type: 'paragraph',
           text: 'Este diff no distingue si los cambios vienen de Claude, de ti o de un script externo. Es la foto global del proyecto frente al repositorio, y es la respuesta a la pregunta clásica de antes de hacer commit: qué voy a subir exactamente.',
         },
+        {
+          type: 'paragraph',
+          text: 'Para retomar el contexto de una conversación y evitar repetir decisiones previas, consulta esta guía: <a href="/es/guias/historial-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">Cómo usar el historial de Claude Code para recuperar contexto y ahorrar tiempo</a>.',
+        },
       ],
     },
     {
@@ -206,6 +214,10 @@ En CodeAgentSwarm la idea es justo evitar esa sensación de caja negra. La app c
         {
           type: 'paragraph',
           text: 'Se combinan muy bien con los diffs: ves el título actual o el histórico de títulos para entender qué estaba haciendo Claude, abres el diff de sesión para ver qué ha cambiado en esa etapa, y usas el diff de Git para ver cómo encaja todo en el proyecto.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Si quieres recibir notificaciones cuando un terminal termine o necesite tu atención, consulta esta guía: <a href="/es/guias/notificaciones-codeagentswarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Cómo usar las notificaciones de CodeAgentSwarm para no perder foco con Claude Code</a>.',
         },
         {
           type: 'callout',
