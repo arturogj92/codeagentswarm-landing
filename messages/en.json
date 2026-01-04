@@ -19,12 +19,15 @@
   "hero": {
     "badge": "Open Beta – All Pro features free",
     "badgeNew": "NEW",
-    "titleLine1": "The AI coding workspace built for",
-    "titleLine2": "multiple Claude Code terminals",
+    "titleLine1": "Stop Alt-Tabbing.",
+    "titleLine2": "Start Orchestrating.",
+    "titleLine3": "6 Claude Code Terminals. One Workspace. 10x the Throughput.",
     "subtitle": "Run up to 6 Claude Code terminals in parallel with real time visibility, live notifications, full conversation history and multi project control.",
     "powerStatement": "",
     "authorityLine": "",
     "requirements": "Works with your Claude Code subscription. Requires macOS 12 or later.",
+    "claimAccess": "Claim Free Pro Access",
+    "securityBadge": "Read-Only by Default. You control Write permissions.",
     "stats": {
       "terminals": "Parallel Terminals",
       "terminalsDesc": "6 Claude Code agents working together",
@@ -59,15 +62,28 @@
     }
   },
   "problem": {
-    "badge": "The Problem",
-    "titleLine1": "Working with a single Claude Code terminal",
-    "titleLine2": "slows you down",
-    "description": "When your entire workflow depends on one AI chat or terminal, things get messy fast. No real-time visibility into what Claude Code is editing, lost context between projects, repeated prompts, and no notifications when tasks complete.",
+    "badge": "The Alt-Tab Tax",
+    "titleLine1": "The Alt-Tab Purgatory",
+    "titleLine2": "where developers go to die",
+    "description": "When your entire workflow depends on one AI chat or terminal, the mental tax compounds. Context switching between windows, lost threads, repeated prompts - you're paying an invisible productivity tax every single minute.",
     "painPoints": {
-      "switching": "Constantly switching tabs and losing context across projects.",
-      "noView": "No real-time visibility. You can't see what Claude Code is changing.",
-      "repeating": "Sessions lose context and you repeat the same prompts.",
-      "confidence": "Hard to trust AI changes without live change tracking."
+      "switching": "Constantly Alt-Tabbing between windows, losing your train of thought.",
+      "noView": "No visibility. Claude Code makes changes and you're flying blind.",
+      "repeating": "Sessions lose context. You repeat the same prompts like a broken record.",
+      "confidence": "Zero confidence in AI changes without live tracking. One wrong edit and boom."
+    },
+    "calculator": {
+      "title": "The Context Switching Tax",
+      "question": "How many projects are you juggling?",
+      "placeholder": "3",
+      "result": "You're losing roughly {minutes} minutes a day just clicking between windows. That's {hours} hours a month.",
+      "cta": "Stop the bleed"
+    },
+    "chaos": {
+      "oldWay": "The Old Way",
+      "oldWayDesc": "Alt-Tab chaos, lost context, repeated prompts",
+      "newWay": "The Swarm Way",
+      "newWayDesc": "6 terminals, one view, zero context loss"
     }
   },
   "solution": {
@@ -150,45 +166,50 @@
       "alex": {
         "quote": "Running backend, frontend, and tests in parallel across multiple Claude Code terminals changed everything.",
         "author": "Alex C.",
-        "role": "Senior Developer"
+        "role": "Managing a 12-microservice Go/React architecture"
       },
       "maria": {
         "quote": "The MCP Kanban keeps all my Claude Code agents aligned without repeating prompts.",
         "author": "Maria S.",
-        "role": "Full Stack Engineer"
+        "role": "Scaling a Supabase/Next.js SaaS solo"
       },
       "david": {
         "quote": "Real-time change tracking and conversation history finally made me trust AI with production code.",
         "author": "David P.",
-        "role": "Senior Engineer"
+        "role": "Building a distributed Python/FastAPI system"
       }
     }
   },
   "swarmi": {
-    "badge": "Meet Your AI Guide",
+    "badge": "Your Terminal Orchestrator",
     "titleLine1": "Meet",
     "titleLine2": "Swarmi",
-    "subtitle": "Your friendly AI assistant inside CodeAgentSwarm. Swarmi helps you learn the app, explains features, and answers your questions in real-time.",
-    "speechBubble": "Hi! Need help? Just ask!",
+    "subtitle": "Not just a help menu. Swarmi is an orchestrator that coordinates your terminals with a single command.",
+    "speechBubble": "Swarmi, sync my terminals!",
+    "killerDemo": {
+      "prompt": "Swarmi, update the env variables in all active projects",
+      "result": "✓ Updated .env in 6 projects across 6 terminals",
+      "description": "One prompt. Six terminals. Zero tab switching."
+    },
     "features": {
       "chat": {
-        "title": "Real-Time Chat",
-        "description": "Ask questions about CodeAgentSwarm and get instant answers powered by AI."
+        "title": "Terminal Orchestration",
+        "description": "Issue commands that execute across all your Claude Code terminals simultaneously."
       },
       "inspector": {
-        "title": "UI Inspector",
-        "description": "Click any element and Swarmi explains what it does and how to use it."
+        "title": "Smart Sync",
+        "description": "Keep configurations, environment variables, and dependencies in sync across projects."
       },
       "onboarding": {
-        "title": "Guided Onboarding",
-        "description": "Get step-by-step guidance when you first start using the app."
+        "title": "Batch Operations",
+        "description": "Run tests, deploy, or update multiple projects with a single instruction."
       },
       "context": {
-        "title": "Context-Aware Help",
-        "description": "Swarmi understands what you're working on and provides relevant suggestions."
+        "title": "Context-Aware",
+        "description": "Swarmi knows what each terminal is working on and routes commands intelligently."
       }
     },
-    "cta": "Swarmi is available in the app. Just click the logo to start chatting!"
+    "cta": "Swarmi is available in the app. Just click the logo to start orchestrating!"
   },
   "demo": {
     "badge": "See It In Action",
@@ -204,11 +225,70 @@
       "gitIntegration": "Git Integration"
     }
   },
+  "mcp": {
+    "badge": "One-Click Integrations",
+    "titleLine1": "Connect Everything",
+    "titleHighlight": "in One Click",
+    "subtitle": "One prompt triggers the swarm: Claude writes the code, Supabase updates the schema, and Slack notifies the team. All from one view.",
+    "installAll": "Install All MCPs",
+    "allInstalled": "All MCPs Installed!",
+    "installed": "MCPs installed",
+    "clickToInstall": "Click any integration to install",
+    "integrations": {
+      "notion": "Sync docs and wikis",
+      "supabase": "Database and auth",
+      "playwright": "Browser automation",
+      "puppeteer": "Web scraping",
+      "github": "Repos and PRs",
+      "slack": "Team notifications",
+      "googledrive": "File storage"
+    },
+    "features": {
+      "database": {
+        "title": "Database & Storage",
+        "description": "Supabase, PostgreSQL, Google Drive - all your data sources in one place."
+      },
+      "automation": {
+        "title": "Browser Automation",
+        "description": "Playwright and Puppeteer for testing, scraping, and automation."
+      },
+      "communication": {
+        "title": "Team Communication",
+        "description": "Slack, Notion, GitHub - keep your team in sync automatically."
+      }
+    }
+  },
+  "fomo": {
+    "title": "Skip the Line",
+    "description": "We're shipping {platform} in 3 weeks. Drop your email to get a 'Skip the Line' invite for the {platform} Beta.",
+    "emailPlaceholder": "your@email.com",
+    "submit": "Get Early Access",
+    "sending": "Sending...",
+    "success": "You're on the list!",
+    "successDesc": "We'll email you the moment {platform} is ready.",
+    "benefit1": "First access when we launch",
+    "benefit2": "Early adopter perks and discounts",
+    "privacy": "We'll only email you about {platform} availability. No spam, ever."
+  },
   "pricing": {
     "title": "Simple",
     "titleHighlight": "pricing",
     "subtitle": "Start free and upgrade when you need more power. No hidden fees, no surprises.",
     "perMonth": "month",
+    "betaSpecial": {
+      "badge": "BETA SPECIAL",
+      "title": "Pro is €0",
+      "subtitle": "During Beta",
+      "strikethrough": "After Beta: €6.99/mo",
+      "bullets": {
+        "terminals": "6 Terminals",
+        "projects": "Unlimited Projects",
+        "mcp": "Full MCP Access"
+      },
+      "cta": "Claim Free Pro Access"
+    },
+    "showFeatures": "View full feature list",
+    "hideFeatures": "Hide feature list",
     "plans": {
       "free": {
         "name": "Free",
@@ -360,7 +440,8 @@
       "intel": "Intel",
       "intelProcessors": "Intel processors",
       "windowsSoon": "Windows (Soon)",
-      "linuxSoon": "Linux (Soon)"
+      "linuxSoon": "Linux (Soon)",
+      "notify": "Notify me"
     },
     "olderVersions": {
       "show": "Show older versions",

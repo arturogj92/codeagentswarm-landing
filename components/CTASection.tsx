@@ -1,10 +1,155 @@
 'use client'
 
-import { motion, useInView } from 'framer-motion'
+import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { useRef, useState, useEffect } from 'react'
-import { Download, ChevronDown, Calendar } from 'lucide-react'
+import { Download, ChevronDown, Calendar, X, Mail, Rocket, Bell } from 'lucide-react'
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
+
+// FOMO Popup Component for Windows/Linux users
+function FOMOPopup({
+  isOpen,
+  onClose,
+  platform
+}: {
+  isOpen: boolean
+  onClose: () => void
+  platform: 'windows' | 'linux'
+}) {
+  const t = useTranslations('fomo')
+  const [email, setEmail] = useState('')
+  const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!email) return
+
+    setLoading(true)
+
+    // Track the submission
+    if (typeof window !== 'undefined') {
+      window.umami?.track('fomo_email_submit', { platform, email: email.split('@')[1] })
+    }
+
+    // Here you would typically send to your backend
+    // For now, we'll simulate success
+    await new Promise(resolve => setTimeout(resolve, 1000))
+
+    setSubmitted(true)
+    setLoading(false)
+  }
+
+  if (!isOpen) return null
+
+  return (
+    <AnimatePresence>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className="fixed inset-0 z-50 flex items-center justify-center p-4"
+        onClick={onClose}
+      >
+        {/* Backdrop */}
+        <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" />
+
+        {/* Modal */}
+        <motion.div
+          initial={{ scale: 0.9, opacity: 0, y: 20 }}
+          animate={{ scale: 1, opacity: 1, y: 0 }}
+          exit={{ scale: 0.9, opacity: 0, y: 20 }}
+          transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+          className="relative w-full max-w-md"
+          onClick={(e) => e.stopPropagation()}
+        >
+          {/* Glow effect */}
+          <div className="absolute -inset-2 bg-gradient-to-r from-neon-purple/30 via-neon-cyan/30 to-neon-magenta/30 rounded-3xl blur-xl opacity-60" />
+
+          <div className="relative bg-dark-900 rounded-2xl border border-white/10 p-8 overflow-hidden">
+            {/* Close button */}
+            <button
+              onClick={onClose}
+              className="absolute top-4 right-4 p-2 rounded-full hover:bg-white/10 transition-colors"
+            >
+              <X className="w-5 h-5 text-white/50" />
+            </button>
+
+            {/* Icon */}
+            <div className="flex justify-center mb-6">
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-neon-purple to-neon-cyan flex items-center justify-center">
+                <Rocket className="w-8 h-8 text-white" />
+              </div>
+            </div>
+
+            {!submitted ? (
+              <>
+                {/* Title */}
+                <h3 className="text-2xl font-display font-bold text-center text-white mb-2">
+                  {t('title')}
+                </h3>
+
+                <p className="text-center text-white/60 mb-6">
+                  {t('description').replace('{platform}', platform === 'windows' ? 'Windows' : 'Linux')}
+                </p>
+
+                {/* Benefits */}
+                <div className="space-y-3 mb-6">
+                  <div className="flex items-center gap-3 text-white/70 text-sm">
+                    <Bell className="w-4 h-4 text-neon-cyan" />
+                    <span>{t('benefit1')}</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-white/70 text-sm">
+                    <Rocket className="w-4 h-4 text-neon-purple" />
+                    <span>{t('benefit2')}</span>
+                  </div>
+                </div>
+
+                {/* Form */}
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div className="relative">
+                    <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/30" />
+                    <input
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder={t('emailPlaceholder')}
+                      required
+                      className="w-full pl-12 pr-4 py-4 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/30 focus:outline-none focus:border-neon-cyan/50 transition-colors"
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="w-full py-4 rounded-xl bg-gradient-to-r from-neon-purple to-neon-cyan text-white font-semibold hover:scale-[1.02] transition-transform disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {loading ? t('sending') : t('submit')}
+                  </button>
+                </form>
+
+                <p className="text-center text-white/30 text-xs mt-4">
+                  {t('privacy')}
+                </p>
+              </>
+            ) : (
+              /* Success State */
+              <div className="text-center py-4">
+                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-green-500/20 flex items-center justify-center">
+                  <svg className="w-8 h-8 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-display font-bold text-white mb-2">{t('success')}</h3>
+                <p className="text-white/60">{t('successDesc')}</p>
+              </div>
+            )}
+          </div>
+        </motion.div>
+      </motion.div>
+    </AnimatePresence>
+  )
+}
 
 interface Release {
   version: string
@@ -23,6 +168,7 @@ export default function CTASection() {
   const [olderReleases, setOlderReleases] = useState<Release[]>([])
   const [showOlderVersions, setShowOlderVersions] = useState(false)
   const [loading, setLoading] = useState(true)
+  const [fomoPopup, setFomoPopup] = useState<{ open: boolean; platform: 'windows' | 'linux' }>({ open: false, platform: 'windows' })
 
   useEffect(() => {
     fetchLatestRelease()
@@ -376,26 +522,48 @@ export default function CTASection() {
               />
               <span className="text-white/70">macOS</span>
             </div>
-            <div className="flex items-center gap-2 px-4 py-2 rounded-full glass border border-white/5 opacity-50">
+            <button
+              onClick={() => {
+                setFomoPopup({ open: true, platform: 'windows' })
+                if (typeof window !== 'undefined') {
+                  window.umami?.track('windows_coming_soon_click')
+                }
+              }}
+              className="flex items-center gap-2 px-4 py-2 rounded-full glass border border-white/10 hover:border-neon-purple/30 hover:bg-white/5 transition-all cursor-pointer group"
+            >
               <Image
                 src="/icons/windows-logo.png"
                 alt="Windows"
                 width={20}
                 height={20}
-                className="opacity-70"
+                className="opacity-70 group-hover:opacity-100 transition-opacity"
               />
-              <span className="text-white/40">{t('platforms.windowsSoon')}</span>
-            </div>
-            <div className="flex items-center gap-2 px-4 py-2 rounded-full glass border border-white/5 opacity-50">
+              <span className="text-white/50 group-hover:text-white/70 transition-colors">{t('platforms.windowsSoon')}</span>
+              <span className="text-[10px] px-2 py-0.5 rounded-full bg-neon-purple/20 text-neon-purple font-medium">
+                {t('platforms.notify')}
+              </span>
+            </button>
+            <button
+              onClick={() => {
+                setFomoPopup({ open: true, platform: 'linux' })
+                if (typeof window !== 'undefined') {
+                  window.umami?.track('linux_coming_soon_click')
+                }
+              }}
+              className="flex items-center gap-2 px-4 py-2 rounded-full glass border border-white/10 hover:border-neon-cyan/30 hover:bg-white/5 transition-all cursor-pointer group"
+            >
               <Image
                 src="/icons/linux-logo.png"
                 alt="Linux"
                 width={20}
                 height={20}
-                className="opacity-70"
+                className="opacity-70 group-hover:opacity-100 transition-opacity"
               />
-              <span className="text-white/40">{t('platforms.linuxSoon')}</span>
-            </div>
+              <span className="text-white/50 group-hover:text-white/70 transition-colors">{t('platforms.linuxSoon')}</span>
+              <span className="text-[10px] px-2 py-0.5 rounded-full bg-neon-cyan/20 text-neon-cyan font-medium">
+                {t('platforms.notify')}
+              </span>
+            </button>
           </div>
         </motion.div>
 
@@ -428,6 +596,13 @@ export default function CTASection() {
           </p>
         </motion.div>
       </div>
+
+      {/* FOMO Popup for Windows/Linux */}
+      <FOMOPopup
+        isOpen={fomoPopup.open}
+        onClose={() => setFomoPopup({ ...fomoPopup, open: false })}
+        platform={fomoPopup.platform}
+      />
     </section>
   )
 }

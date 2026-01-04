@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Play, Download, Sparkles, Zap, Grid3X3, Bell, Terminal, Monitor, Layout, GitBranch, Pause, History } from 'lucide-react'
+import { Play, Download, Sparkles, Zap, Grid3X3, Bell, Terminal, Monitor, Layout, GitBranch, Pause, History, Shield } from 'lucide-react'
 import { useState } from 'react'
 import { useTranslations } from 'next-intl'
 import VideoWithProgress from './VideoWithProgress'
@@ -254,7 +254,7 @@ export default function HeroSection() {
           </div>
         </motion.div>
 
-        {/* Main Heading */}
+        {/* Main Heading - God Mode */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -267,7 +267,12 @@ export default function HeroSection() {
             <span className="gradient-text">{t('titleLine2')}</span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-white/60 max-w-3xl mx-auto leading-relaxed">
+          {/* Third line - the power statement */}
+          <p className="text-2xl md:text-3xl lg:text-4xl font-display font-bold text-white/90 mb-6">
+            {t('titleLine3')}
+          </p>
+
+          <p className="text-lg md:text-xl text-white/50 max-w-3xl mx-auto leading-relaxed">
             {t.rich('subtitle', {
               highlight: (chunks) => <span className="text-white font-medium">{chunks}</span>
             })}
@@ -303,36 +308,27 @@ export default function HeroSection() {
           transition={{ delay: 0.5, duration: 0.6 }}
           className="flex flex-col items-center gap-4 mb-16"
         >
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href="#download"
-              className="group relative"
-              onClick={() => {
-                if (typeof window !== 'undefined') {
-                  window.umami?.track('hero_download_click')
-                }
-              }}
-            >
-              <div className="absolute -inset-1 rounded-full blur-lg opacity-40 group-hover:opacity-60 transition-opacity" style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }} />
-              <button className="relative flex items-center gap-2 px-8 py-4 text-white font-semibold rounded-full transition-all" style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }}>
-                <Download className="w-5 h-5" />
-                {tCommon('getStarted')}
-              </button>
-            </a>
+          {/* Single Primary CTA */}
+          <a
+            href="#download"
+            className="group relative"
+            onClick={() => {
+              if (typeof window !== 'undefined') {
+                window.umami?.track('hero_claim_access_click')
+              }
+            }}
+          >
+            <div className="absolute -inset-1 rounded-full blur-lg opacity-50 group-hover:opacity-70 transition-opacity bg-gradient-to-r from-neon-cyan via-neon-purple to-neon-magenta" />
+            <button className="relative flex items-center gap-3 px-10 py-5 text-white font-bold text-lg rounded-full transition-all bg-gradient-to-r from-neon-purple to-neon-cyan hover:scale-105">
+              <Zap className="w-6 h-6" />
+              {t('claimAccess')}
+            </button>
+          </a>
 
-            <a
-              href="#demo"
-              onClick={() => {
-                if (typeof window !== 'undefined') {
-                  window.umami?.track('hero_demo_click')
-                }
-              }}
-            >
-              <button className="flex items-center gap-2 px-8 py-4 glass hover:bg-white/10 text-white font-medium rounded-full border border-white/10 hover:border-neon-cyan/30 transition-all">
-                <Play className="w-5 h-5 text-neon-cyan" />
-                {tCommon('seeHowItWorks')}
-              </button>
-            </a>
+          {/* Security Badge */}
+          <div className="flex items-center gap-2 px-4 py-2 rounded-full glass border border-green-500/30">
+            <Shield className="w-4 h-4 text-green-400" />
+            <span className="text-sm text-green-400/90">{t('securityBadge')}</span>
           </div>
 
           {/* Requirements note */}

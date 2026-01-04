@@ -17,14 +17,17 @@
     "guides": "Guías"
   },
   "hero": {
-    "badge": "Open Beta – Todas las funciones Pro gratis",
+    "badge": "Open Beta – Acceso Pro gratuito",
     "badgeNew": "NUEVO",
-    "titleLine1": "El workspace con IA para usar",
-    "titleLine2": "varias terminales de Claude Code a la vez",
-    "subtitle": "Trabaja con hasta 6 terminales de Claude Code en paralelo con visibilidad en tiempo real, notificaciones, historial completo y control de varios proyectos sin perder nada.",
+    "titleLine1": "Deja el Alt-Tab.",
+    "titleLine2": "Empieza a orquestar.",
+    "titleLine3": "6 Terminales Claude Code. Un workspace. 10x más productividad.",
+    "subtitle": "Ejecuta hasta 6 terminales de Claude Code en paralelo. Visibilidad en tiempo real de lo que hace cada agente. Notificaciones instantáneas. Historial completo. Control total sobre múltiples proyectos.",
     "powerStatement": "",
     "authorityLine": "",
-    "requirements": "Compatible con tu suscripción de Claude Code. Requiere macOS 12+",
+    "requirements": "Compatible con tu suscripción de Claude Code. macOS 12+",
+    "claimAccess": "Acceder a Pro Gratis",
+    "securityBadge": "Solo lectura por defecto. Tú controlas los permisos de escritura.",
     "stats": {
       "terminals": "Terminales Paralelos",
       "terminalsDesc": "6 agentes Claude Code trabajando juntos",
@@ -59,30 +62,43 @@
     }
   },
   "problem": {
-    "badge": "El Problema",
-    "titleLine1": "Trabajar con una sola terminal de Claude Code",
-    "titleLine2": "te frena",
-    "description": "Cuando todo tu flujo depende de un único chat o terminal, el caos aparece rápido. Sin visibilidad en tiempo real de lo que Claude Code está editando, contexto perdido entre proyectos, prompts repetidos y sin notificaciones cuando terminan las tareas.",
+    "badge": "El Coste Oculto",
+    "titleLine1": "El Problema del Alt-Tab",
+    "titleLine2": "está frenando tu productividad",
+    "description": "Un solo terminal de Claude Code significa cambios de contexto constantes. Cada Alt-Tab rompe tu concentración. Cada prompt repetido es tiempo perdido. Cada cambio sin visibilidad es un riesgo.",
     "painPoints": {
-      "switching": "Cambios constantes de ventana y pérdida de contexto entre proyectos.",
-      "noView": "Sin visibilidad en tiempo real, no ves qué está cambiando Claude Code.",
-      "repeating": "Las sesiones pierden contexto y repites los mismos prompts.",
-      "confidence": "Difícil confiar en los cambios de IA sin seguimiento en vivo."
+      "switching": "Cambios de ventana constantes que fragmentan tu concentración.",
+      "noView": "Claude Code modifica archivos sin que puedas ver qué está haciendo.",
+      "repeating": "Sesiones que pierden contexto. Prompts que repites continuamente.",
+      "confidence": "Cambios de IA sin seguimiento en vivo. Riesgo en cada edición."
+    },
+    "calculator": {
+      "title": "Calculadora de Productividad Perdida",
+      "question": "¿Cuántos proyectos gestionas actualmente?",
+      "placeholder": "3",
+      "result": "Estás perdiendo aproximadamente {minutes} minutos al día en cambios de contexto. Son {hours} horas al mes.",
+      "cta": "Recuperar ese tiempo"
+    },
+    "chaos": {
+      "oldWay": "Sin CodeAgentSwarm",
+      "oldWayDesc": "Alt-Tab constante, contexto fragmentado, prompts repetidos",
+      "newWay": "Con CodeAgentSwarm",
+      "newWayDesc": "6 terminales, visibilidad total, cero pérdida de contexto"
     }
   },
   "solution": {
     "badge": "La Solución",
-    "titleLine1": "El flujo multi-terminal de Claude Code",
-    "titleLine2": "que siempre quisiste",
-    "description": "CodeAgentSwarm es un espacio de trabajo de programación con IA donde hasta seis terminales de Claude Code trabajan en paralelo con visibilidad en tiempo real, notificaciones instantáneas, historial completo de conversaciones y gestión multiproyecto. Nunca pierdes contexto.",
+    "titleLine1": "El workspace multi-terminal",
+    "titleLine2": "que necesitas",
+    "description": "6 terminales de Claude Code ejecutándose en paralelo. Visibilidad completa de cada agente. Notificaciones en tiempo real. Historial persistente. Gestión multi-proyecto sin fricción.",
     "points": {
-      "terminals": "Seis terminales de Claude Code funcionando simultáneamente.",
-      "notifications": "Notificaciones en tiempo real cuando los agentes terminan o necesitan input.",
-      "git": "Panel Git integrado con diffs en vivo y contexto de commits.",
-      "kanban": "Kanban con MCP que los agentes pueden leer y actualizar.",
-      "mcp": "Marketplace MCP: GitHub, Notion, Slack, Supabase, Brave Search, Playwright, PostgreSQL y más.",
-      "history": "Historial completo de conversaciones de Claude Code. Busca cualquier sesión al instante.",
-      "fileTracking": "Seguimiento de cambios en tiempo real para saber siempre qué modificó cada agente."
+      "terminals": "6 terminales de Claude Code trabajando simultáneamente.",
+      "notifications": "Notificaciones instantáneas cuando un agente termina o requiere input.",
+      "git": "Panel Git integrado con diffs en vivo.",
+      "kanban": "Kanban que los agentes pueden leer y actualizar automáticamente.",
+      "mcp": "Integraciones MCP: GitHub, Notion, Slack, Supabase, Brave Search, Playwright, PostgreSQL...",
+      "history": "Historial completo de conversaciones. Búsqueda instantánea.",
+      "fileTracking": "Seguimiento en tiempo real de los archivos que modifica cada agente."
     }
   },
   "features": {
@@ -150,45 +166,50 @@
       "alex": {
         "quote": "Ejecutar backend, frontend y tests en paralelo en varias terminales de Claude Code lo cambió todo.",
         "author": "Alex C.",
-        "role": "Senior Developer"
+        "role": "Gestionando arquitectura Go/React de 12 microservicios"
       },
       "maria": {
         "quote": "El Kanban con MCP mantiene todos mis agentes Claude Code alineados sin repetir prompts.",
         "author": "María S.",
-        "role": "Full Stack Engineer"
+        "role": "Escalando un SaaS Supabase/Next.js en solitario"
       },
       "david": {
         "quote": "El seguimiento de cambios en tiempo real y el historial de conversaciones me hicieron confiar en la IA con código de producción.",
         "author": "David P.",
-        "role": "Senior Engineer"
+        "role": "Construyendo sistema distribuido Python/FastAPI"
       }
     }
   },
   "swarmi": {
-    "badge": "Conoce a Tu Guía IA",
+    "badge": "Orquestador de Terminales",
     "titleLine1": "Conoce a",
     "titleLine2": "Swarmi",
-    "subtitle": "Tu asistente IA amigable dentro de CodeAgentSwarm. Swarmi te ayuda a aprender la app, explica funciones y responde tus preguntas en tiempo real.",
-    "speechBubble": "¡Hola! ¿Necesitas ayuda?",
+    "subtitle": "Más que un asistente. Swarmi coordina todos tus terminales con un solo comando.",
+    "speechBubble": "Swarmi, sincroniza mis terminales",
+    "killerDemo": {
+      "prompt": "Swarmi, actualiza las variables de entorno en todos los proyectos",
+      "result": "✓ Actualizado .env en 6 proyectos en 6 terminales",
+      "description": "Un comando. Seis terminales. Sin cambiar de ventana."
+    },
     "features": {
       "chat": {
-        "title": "Chat en Tiempo Real",
-        "description": "Pregunta sobre CodeAgentSwarm y obtén respuestas instantáneas con IA."
+        "title": "Orquestación Multi-Terminal",
+        "description": "Ejecuta comandos en todos tus terminales Claude Code simultáneamente."
       },
       "inspector": {
-        "title": "Inspector de UI",
-        "description": "Haz clic en cualquier elemento y Swarmi te explica qué hace y cómo usarlo."
+        "title": "Sincronización Automática",
+        "description": "Mantén configuraciones, variables de entorno y dependencias sincronizadas."
       },
       "onboarding": {
-        "title": "Onboarding Guiado",
-        "description": "Recibe orientación paso a paso cuando empieces a usar la app."
+        "title": "Operaciones en Lote",
+        "description": "Tests, deploys y actualizaciones en múltiples proyectos con una instrucción."
       },
       "context": {
-        "title": "Ayuda Contextual",
-        "description": "Swarmi entiende en qué estás trabajando y te da sugerencias relevantes."
+        "title": "Contexto Inteligente",
+        "description": "Swarmi conoce el estado de cada terminal y enruta comandos automáticamente."
       }
     },
-    "cta": "Swarmi está disponible en la app. Solo haz clic en el logo para chatear."
+    "cta": "Swarmi está integrado en la app. Haz clic en el logo para comenzar."
   },
   "demo": {
     "badge": "Míralo en Acción",
@@ -204,11 +225,70 @@
       "gitIntegration": "Git Integrado"
     }
   },
+  "mcp": {
+    "badge": "Integraciones MCP",
+    "titleLine1": "Conecta tus herramientas",
+    "titleHighlight": "en un clic",
+    "subtitle": "Un comando activa todo el flujo: Claude genera el código, Supabase actualiza el schema, Slack notifica al equipo. Todo coordinado desde un único workspace.",
+    "installAll": "Instalar todas las integraciones",
+    "allInstalled": "Todas las integraciones instaladas",
+    "installed": "integraciones activas",
+    "clickToInstall": "Haz clic en cualquier integración para activarla",
+    "integrations": {
+      "notion": "Sincroniza docs y wikis",
+      "supabase": "Base de datos y auth",
+      "playwright": "Automatización browser",
+      "puppeteer": "Web scraping",
+      "github": "Repos y PRs",
+      "slack": "Notificaciones de equipo",
+      "googledrive": "Almacenamiento de archivos"
+    },
+    "features": {
+      "database": {
+        "title": "Base de Datos y Almacenamiento",
+        "description": "Supabase, PostgreSQL, Google Drive - todas tus fuentes de datos en un lugar."
+      },
+      "automation": {
+        "title": "Automatización de Browser",
+        "description": "Playwright y Puppeteer para testing, scraping y automatización."
+      },
+      "communication": {
+        "title": "Comunicación de Equipo",
+        "description": "Slack, Notion, GitHub - mantén a tu equipo sincronizado automáticamente."
+      }
+    }
+  },
+  "fomo": {
+    "title": "Acceso Anticipado",
+    "description": "La versión para {platform} llega en 3 semanas. Déjanos tu email para recibir acceso prioritario a la beta.",
+    "emailPlaceholder": "tu@email.com",
+    "submit": "Solicitar Acceso Anticipado",
+    "sending": "Enviando...",
+    "success": "Solicitud registrada",
+    "successDesc": "Te notificaremos en cuanto {platform} esté disponible.",
+    "benefit1": "Acceso prioritario en el lanzamiento",
+    "benefit2": "Precio especial de early adopter",
+    "privacy": "Solo recibirás emails sobre la disponibilidad de {platform}. Sin spam."
+  },
   "pricing": {
     "title": "Precios",
-    "titleHighlight": "simples",
-    "subtitle": "Empieza gratis. Escala cuando lo necesites. Sin sorpresas.",
+    "titleHighlight": "transparentes",
+    "subtitle": "Comienza gratis. Escala según tus necesidades. Sin costes ocultos.",
     "perMonth": "mes",
+    "betaSpecial": {
+      "badge": "OFERTA BETA",
+      "title": "Pro a €0",
+      "subtitle": "Durante la Open Beta",
+      "strikethrough": "Precio post-beta: €6.99/mes",
+      "bullets": {
+        "terminals": "6 Terminales",
+        "projects": "Proyectos Ilimitados",
+        "mcp": "Todas las integraciones MCP"
+      },
+      "cta": "Acceder a Pro Gratis"
+    },
+    "showFeatures": "Ver comparativa completa",
+    "hideFeatures": "Ocultar comparativa",
     "plans": {
       "free": {
         "name": "Free",
@@ -360,7 +440,8 @@
       "intel": "Intel",
       "intelProcessors": "Procesadores Intel",
       "windowsSoon": "Windows (Proximamente)",
-      "linuxSoon": "Linux (Proximamente)"
+      "linuxSoon": "Linux (Proximamente)",
+      "notify": "Avisarme"
     },
     "olderVersions": {
       "show": "Ver versiones anteriores",
