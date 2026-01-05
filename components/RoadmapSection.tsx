@@ -22,6 +22,19 @@ export default function RoadmapSection() {
     {
       quarter: 'Q1',
       year: '2026',
+      title: t('items.crossPlatform.title'),
+      description: t('items.crossPlatform.description'),
+      features: [
+        t('items.crossPlatform.features.windows'),
+        t('items.crossPlatform.features.linux'),
+      ],
+      icon: Monitor,
+      status: 'in-progress',
+      gradient: 'from-neon-cyan to-blue-500',
+    },
+    {
+      quarter: 'Q2',
+      year: '2026',
       title: t('items.multiAgent.title'),
       description: t('items.multiAgent.description'),
       features: [
@@ -31,21 +44,6 @@ export default function RoadmapSection() {
         t('items.multiAgent.features.orchestration'),
       ],
       icon: Code2,
-      status: 'in-progress',
-      gradient: 'from-neon-cyan to-blue-500',
-    },
-    {
-      quarter: 'Q2',
-      year: '2026',
-      title: t('items.crossPlatform.title'),
-      description: t('items.crossPlatform.description'),
-      features: [
-        t('items.crossPlatform.features.windows'),
-        t('items.crossPlatform.features.linux'),
-        t('items.crossPlatform.features.sync'),
-        t('items.crossPlatform.features.native'),
-      ],
-      icon: Monitor,
       status: 'upcoming',
       gradient: 'from-purple-500 to-pink-500',
     },

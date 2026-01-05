@@ -19,7 +19,7 @@
   "hero": {
     "badge": "Open Beta – Acceso Pro gratuito",
     "badgeNew": "NUEVO",
-    "titleLine1": "Deja el Alt-Tab.",
+    "titleLine1": "Deja de cambiar de ventana.",
     "titleLine2": "Empieza a orquestar.",
     "titleLine3": "6 Terminales Claude Code. Un workspace. 10x más productividad.",
     "subtitle": "Ejecuta hasta 6 terminales de Claude Code en paralelo. Visibilidad en tiempo real de lo que hace cada agente. Notificaciones instantáneas. Historial completo. Control total sobre múltiples proyectos.",
@@ -27,7 +27,7 @@
     "authorityLine": "",
     "requirements": "Compatible con tu suscripción de Claude Code. macOS 12+",
     "claimAccess": "Acceder a Pro Gratis",
-    "securityBadge": "Solo lectura por defecto. Tú controlas los permisos de escritura.",
+    "securityBadge": "Modo automático con protección integrada. Tú defines los límites.",
     "stats": {
       "terminals": "Terminales Paralelos",
       "terminalsDesc": "6 agentes Claude Code trabajando juntos",
@@ -63,9 +63,9 @@
   },
   "problem": {
     "badge": "El Coste Oculto",
-    "titleLine1": "El Problema del Alt-Tab",
-    "titleLine2": "está frenando tu productividad",
-    "description": "Un solo terminal de Claude Code significa cambios de contexto constantes. Cada Alt-Tab rompe tu concentración. Cada prompt repetido es tiempo perdido. Cada cambio sin visibilidad es un riesgo.",
+    "titleLine1": "Cambiar de ventana",
+    "titleLine2": "te está costando horas",
+    "description": "Un solo terminal de Claude Code significa cambios de contexto constantes. Cada interrupción rompe tu concentración. Cada prompt repetido es tiempo perdido. Cada cambio sin visibilidad es un riesgo.",
     "painPoints": {
       "switching": "Cambios de ventana constantes que fragmentan tu concentración.",
       "noView": "Claude Code modifica archivos sin que puedas ver qué está haciendo.",
@@ -73,17 +73,32 @@
       "confidence": "Cambios de IA sin seguimiento en vivo. Riesgo en cada edición."
     },
     "calculator": {
-      "title": "Calculadora de Productividad Perdida",
-      "question": "¿Cuántos proyectos gestionas actualmente?",
-      "placeholder": "3",
-      "result": "Estás perdiendo aproximadamente {minutes} minutos al día en cambios de contexto. Son {hours} horas al mes.",
-      "cta": "Recuperar ese tiempo"
+      "title": "Calculadora de Ahorro de Tiempo",
+      "question": "¿Cuántos terminales de Claude Code usas?",
+      "terminals": "terminales",
+      "withOneTerminal": "Con 1 terminal",
+      "withSixTerminals": "Con 6 terminales",
+      "minutesPerDay": "minutos/día",
+      "youSave": "Ahorras",
+      "perDay": "al día",
+      "withCodeAgentSwarm": "con CodeAgentSwarm",
+      "perMonth": "al mes",
+      "perYear": "al año",
+      "minutes": "min",
+      "hours": "horas",
+      "days": "días",
+      "cta": "Empieza a ahorrar tiempo"
     },
     "chaos": {
       "oldWay": "Sin CodeAgentSwarm",
-      "oldWayDesc": "Alt-Tab constante, contexto fragmentado, prompts repetidos",
+      "oldWayDesc": "Cambio de ventanas constante, contexto fragmentado, prompts repetidos",
       "newWay": "Con CodeAgentSwarm",
-      "newWayDesc": "6 terminales, visibilidad total, cero pérdida de contexto"
+      "newWayDesc": "6 terminales, visibilidad total, cero pérdida de contexto",
+      "switchingFatigue": "Cambiar de ventana",
+      "costingHours": "te está costando horas",
+      "allVisible": "Todo visible a la vez",
+      "sixTerminals": "6 terminales, 1 vista",
+      "appPlaceholder": "Tu screenshot aquí"
     }
   },
   "solution": {
@@ -181,35 +196,30 @@
     }
   },
   "swarmi": {
-    "badge": "Orquestador de Terminales",
+    "badge": "Conoce a Tu Guía IA",
     "titleLine1": "Conoce a",
     "titleLine2": "Swarmi",
-    "subtitle": "Más que un asistente. Swarmi coordina todos tus terminales con un solo comando.",
-    "speechBubble": "Swarmi, sincroniza mis terminales",
-    "killerDemo": {
-      "prompt": "Swarmi, actualiza las variables de entorno en todos los proyectos",
-      "result": "✓ Actualizado .env en 6 proyectos en 6 terminales",
-      "description": "Un comando. Seis terminales. Sin cambiar de ventana."
-    },
+    "subtitle": "Tu asistente IA amigable dentro de CodeAgentSwarm. Swarmi te ayuda a aprender la app, explica funciones y responde tus preguntas en tiempo real.",
+    "speechBubble": "¡Hola! ¿Necesitas ayuda?",
     "features": {
       "chat": {
-        "title": "Orquestación Multi-Terminal",
-        "description": "Ejecuta comandos en todos tus terminales Claude Code simultáneamente."
+        "title": "Chat en Tiempo Real",
+        "description": "Pregunta sobre CodeAgentSwarm y obtén respuestas instantáneas con IA."
       },
       "inspector": {
-        "title": "Sincronización Automática",
-        "description": "Mantén configuraciones, variables de entorno y dependencias sincronizadas."
+        "title": "Inspector de UI",
+        "description": "Haz clic en cualquier elemento y Swarmi te explica qué hace y cómo usarlo."
       },
       "onboarding": {
-        "title": "Operaciones en Lote",
-        "description": "Tests, deploys y actualizaciones en múltiples proyectos con una instrucción."
+        "title": "Onboarding Guiado",
+        "description": "Recibe orientación paso a paso cuando empieces a usar la app."
       },
       "context": {
-        "title": "Contexto Inteligente",
-        "description": "Swarmi conoce el estado de cada terminal y enruta comandos automáticamente."
+        "title": "Ayuda Contextual",
+        "description": "Swarmi entiende en qué estás trabajando y te da sugerencias relevantes."
       }
     },
-    "cta": "Swarmi está integrado en la app. Haz clic en el logo para comenzar."
+    "cta": "Swarmi está disponible en la app. Solo haz clic en el logo para chatear."
   },
   "demo": {
     "badge": "Míralo en Acción",
@@ -284,6 +294,12 @@
         "terminals": "6 Terminales",
         "projects": "Proyectos Ilimitados",
         "mcp": "Todas las integraciones MCP"
+      },
+      "features": {
+        "terminals": "6 terminales Claude Code en paralelo",
+        "projects": "Proyectos ilimitados sin restricciones",
+        "notifications": "Notificaciones en tiempo real",
+        "mcp": "Acceso completo al marketplace MCP"
       },
       "cta": "Acceder a Pro Gratis"
     },

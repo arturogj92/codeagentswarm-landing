@@ -9,11 +9,11 @@ import Image from 'next/image'
 // Time Saved Calculator
 function TimeSavedCalculator() {
   const t = useTranslations('problem.calculator')
-  const [projects, setProjects] = useState(4)
+  const [terminals, setTerminals] = useState(4)
 
-  const minPerProject = 30
-  const timeWith1Terminal = projects * minPerProject
-  const timeWith6Terminals = Math.round(timeWith1Terminal / 6) // 6x faster with 6 terminals
+  const minPerTerminal = 40
+  const timeWith1Terminal = terminals * minPerTerminal
+  const timeWith6Terminals = Math.round(timeWith1Terminal / 8) // 8x faster with 6 terminals
   const timeSavedPerDay = timeWith1Terminal - timeWith6Terminals
   const hoursSavedPerMonth = Math.round((timeSavedPerDay * 22) / 60)
   const daysSavedPerMonth = Math.round(hoursSavedPerMonth / 8)
@@ -24,18 +24,15 @@ function TimeSavedCalculator() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: 0.3 }}
-      className="mt-16 max-w-md mx-auto px-4"
+      className="mt-10 max-w-md mx-auto px-4"
     >
       {/* Card Container */}
       <div className="p-6 rounded-2xl border border-white/[0.08] bg-white/[0.02]">
         {/* Header */}
-        <div className="flex items-center justify-between mb-6">
-          <p className="text-white/30 text-xs uppercase tracking-wider">
+        <div className="mb-6">
+          <p className="text-white/30 text-xs uppercase tracking-wider text-center">
             {t('title')}
           </p>
-          <span className="text-xs px-2 py-1 rounded-full bg-white/10 text-white/50">
-            4x
-          </span>
         </div>
 
         {/* Question */}
@@ -43,14 +40,14 @@ function TimeSavedCalculator() {
           {t('question')}
         </p>
 
-        {/* Project Selector - Pills */}
+        {/* Terminal Selector - Pills */}
         <div className="flex justify-center gap-1.5 mb-8">
           {[1, 2, 3, 4, 5, 6].map((num) => (
             <button
               key={num}
-              onClick={() => setProjects(num)}
+              onClick={() => setTerminals(num)}
               className={`w-10 h-10 rounded-full text-sm font-medium transition-all duration-200 ${
-                projects === num
+                terminals === num
                   ? 'bg-white text-black scale-105'
                   : 'bg-white/5 text-white/40 hover:bg-white/10'
               }`}
@@ -73,9 +70,21 @@ function TimeSavedCalculator() {
           <span className="text-2xl text-white/25 ml-1">{t('minutes')}</span>
         </div>
 
-        <p className="text-white/40 text-center text-sm mb-6">
+        <p className="text-white/40 text-center text-sm mb-2">
           {t('youSave')} <span className="text-white/60">{t('perDay')}</span>
         </p>
+
+        {/* CodeAgentSwarm branding */}
+        <div className="flex items-center justify-center gap-2 mb-6">
+          <Image
+            src="/logo.png"
+            alt="CodeAgentSwarm"
+            width={20}
+            height={20}
+            className="rounded"
+          />
+          <span className="text-white/50 text-sm">{t('withCodeAgentSwarm')}</span>
+        </div>
 
         {/* Secondary Stats */}
         <div className="flex justify-center gap-6 mb-6 text-center">
@@ -85,8 +94,8 @@ function TimeSavedCalculator() {
           </div>
           <div className="w-px bg-white/10" />
           <div>
-            <p className="text-xl font-semibold text-white/60">{daysSavedPerYear}d</p>
-            <p className="text-[10px] text-white/25 uppercase">{t('perYear')}</p>
+            <p className="text-xl font-semibold text-white/60">{daysSavedPerMonth}d</p>
+            <p className="text-[10px] text-white/25 uppercase">{t('perMonth')}</p>
           </div>
         </div>
 

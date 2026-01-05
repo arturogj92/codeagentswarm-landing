@@ -12,10 +12,10 @@ const mcpIntegrations = [
   { id: 'github', icon: '/icons/mcp/github.png', name: 'GitHub' },
   { id: 'slack', icon: '/icons/mcp/slack.png', name: 'Slack' },
   { id: 'playwright', icon: '/icons/mcp/playwright.png', name: 'Playwright' },
-  { id: 'puppeteer', icon: '/icons/mcp/puppeteer.png', name: 'Puppeteer' },
+  { id: 'puppeteer', icon: '/icons/mcp/puppeteer.png', name: '' },
   { id: 'googledrive', icon: '/icons/mcp/google-drive.png', name: 'Google Drive' },
-  { id: 'postgres', icon: '/icons/mcp/postgres.png', name: 'PostgreSQL' },
-  { id: 'brave', icon: '/icons/mcp/brave-search.png', name: 'Brave Search' },
+  { id: 'postgres', icon: '/icons/mcp/postgres.png', name: 'Postgres' },
+  { id: 'brave', icon: '/icons/mcp/brave-search.png', name: 'Brave' },
 ]
 
 export default function MCPSection() {
@@ -26,7 +26,14 @@ export default function MCPSection() {
   const [installedItems, setInstalledItems] = useState<Set<string>>(new Set())
 
   const handleInstall = (id: string) => {
-    if (!installedItems.has(id)) {
+    if (installedItems.has(id)) {
+      // Toggle off - remove from installed
+      const newSet = new Set(installedItems)
+      newSet.delete(id)
+      setInstalledItems(newSet)
+      setInstalledCount(prev => prev - 1)
+    } else {
+      // Toggle on - add to installed
       setInstalledItems(new Set([...installedItems, id]))
       setInstalledCount(prev => prev + 1)
 

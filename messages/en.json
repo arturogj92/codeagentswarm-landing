@@ -19,7 +19,7 @@
   "hero": {
     "badge": "Open Beta – All Pro features free",
     "badgeNew": "NEW",
-    "titleLine1": "Stop Alt-Tabbing.",
+    "titleLine1": "Stop switching windows.",
     "titleLine2": "Start Orchestrating.",
     "titleLine3": "6 Claude Code Terminals. One Workspace. 10x the Throughput.",
     "subtitle": "Run up to 6 Claude Code terminals in parallel with real time visibility, live notifications, full conversation history and multi project control.",
@@ -27,7 +27,7 @@
     "authorityLine": "",
     "requirements": "Works with your Claude Code subscription. Requires macOS 12 or later.",
     "claimAccess": "Claim Free Pro Access",
-    "securityBadge": "Read-Only by Default. You control Write permissions.",
+    "securityBadge": "Auto mode with built-in guardrails. You set the limits.",
     "stats": {
       "terminals": "Parallel Terminals",
       "terminalsDesc": "6 Claude Code agents working together",
@@ -62,28 +62,43 @@
     }
   },
   "problem": {
-    "badge": "The Alt-Tab Tax",
-    "titleLine1": "The Alt-Tab Purgatory",
-    "titleLine2": "where developers go to die",
+    "badge": "The Hidden Cost",
+    "titleLine1": "Window switching",
+    "titleLine2": "is costing you hours",
     "description": "When your entire workflow depends on one AI chat or terminal, the mental tax compounds. Context switching between windows, lost threads, repeated prompts - you're paying an invisible productivity tax every single minute.",
     "painPoints": {
-      "switching": "Constantly Alt-Tabbing between windows, losing your train of thought.",
+      "switching": "Constantly switching between windows, losing your train of thought.",
       "noView": "No visibility. Claude Code makes changes and you're flying blind.",
       "repeating": "Sessions lose context. You repeat the same prompts like a broken record.",
       "confidence": "Zero confidence in AI changes without live tracking. One wrong edit and boom."
     },
     "calculator": {
-      "title": "The Context Switching Tax",
-      "question": "How many projects are you juggling?",
-      "placeholder": "3",
-      "result": "You're losing roughly {minutes} minutes a day just clicking between windows. That's {hours} hours a month.",
-      "cta": "Stop the bleed"
+      "title": "Time Savings Calculator",
+      "question": "How many Claude Code terminals do you use?",
+      "terminals": "terminals",
+      "withOneTerminal": "With 1 terminal",
+      "withSixTerminals": "With 6 terminals",
+      "minutesPerDay": "minutes/day",
+      "youSave": "You save",
+      "perDay": "per day",
+      "withCodeAgentSwarm": "with CodeAgentSwarm",
+      "perMonth": "per month",
+      "perYear": "per year",
+      "minutes": "min",
+      "hours": "hours",
+      "days": "days",
+      "cta": "Start saving time"
     },
     "chaos": {
       "oldWay": "The Old Way",
-      "oldWayDesc": "Alt-Tab chaos, lost context, repeated prompts",
+      "oldWayDesc": "Constant window switching, lost context, repeated prompts",
       "newWay": "The Swarm Way",
-      "newWayDesc": "6 terminals, one view, zero context loss"
+      "newWayDesc": "6 terminals, one view, zero context loss",
+      "switchingFatigue": "Window switching",
+      "costingHours": "is costing you hours",
+      "allVisible": "All visible at once",
+      "sixTerminals": "6 terminals, 1 view",
+      "appPlaceholder": "Your screenshot here"
     }
   },
   "solution": {
@@ -181,35 +196,30 @@
     }
   },
   "swarmi": {
-    "badge": "Your Terminal Orchestrator",
+    "badge": "Meet Your AI Guide",
     "titleLine1": "Meet",
     "titleLine2": "Swarmi",
-    "subtitle": "Not just a help menu. Swarmi is an orchestrator that coordinates your terminals with a single command.",
-    "speechBubble": "Swarmi, sync my terminals!",
-    "killerDemo": {
-      "prompt": "Swarmi, update the env variables in all active projects",
-      "result": "✓ Updated .env in 6 projects across 6 terminals",
-      "description": "One prompt. Six terminals. Zero tab switching."
-    },
+    "subtitle": "Your friendly AI assistant inside CodeAgentSwarm. Swarmi helps you learn the app, explains features, and answers your questions in real-time.",
+    "speechBubble": "Hi! Need help? Just ask!",
     "features": {
       "chat": {
-        "title": "Terminal Orchestration",
-        "description": "Issue commands that execute across all your Claude Code terminals simultaneously."
+        "title": "Real-Time Chat",
+        "description": "Ask questions about CodeAgentSwarm and get instant answers powered by AI."
       },
       "inspector": {
-        "title": "Smart Sync",
-        "description": "Keep configurations, environment variables, and dependencies in sync across projects."
+        "title": "UI Inspector",
+        "description": "Click any element and Swarmi explains what it does and how to use it."
       },
       "onboarding": {
-        "title": "Batch Operations",
-        "description": "Run tests, deploy, or update multiple projects with a single instruction."
+        "title": "Guided Onboarding",
+        "description": "Get step-by-step guidance when you first start using the app."
       },
       "context": {
-        "title": "Context-Aware",
-        "description": "Swarmi knows what each terminal is working on and routes commands intelligently."
+        "title": "Context-Aware Help",
+        "description": "Swarmi understands what you're working on and provides relevant suggestions."
       }
     },
-    "cta": "Swarmi is available in the app. Just click the logo to start orchestrating!"
+    "cta": "Swarmi is available in the app. Just click the logo to start chatting!"
   },
   "demo": {
     "badge": "See It In Action",
@@ -284,6 +294,12 @@
         "terminals": "6 Terminals",
         "projects": "Unlimited Projects",
         "mcp": "Full MCP Access"
+      },
+      "features": {
+        "terminals": "6 Claude Code terminals in parallel",
+        "projects": "Unlimited projects with no restrictions",
+        "notifications": "Real-time notifications",
+        "mcp": "Full access to MCP marketplace"
       },
       "cta": "Claim Free Pro Access"
     },

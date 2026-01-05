@@ -195,7 +195,7 @@ export default function PricingSection() {
 
               {/* CTA Button */}
               <a
-                href="#download"
+                href={`/${locale}/beta`}
                 onClick={() => {
                   if (typeof window !== 'undefined') {
                     window.umami?.track('beta_special_click')
@@ -217,26 +217,6 @@ export default function PricingSection() {
           </div>
         </motion.div>
 
-        {/* Toggle for Full Pricing */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-center mb-8"
-        >
-          <button
-            onClick={() => setShowFullPricing(!showFullPricing)}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full glass border border-white/10 hover:border-white/20 transition-all text-white/60 hover:text-white/80"
-          >
-            <motion.div
-              animate={{ rotate: showFullPricing ? 180 : 0 }}
-              transition={{ duration: 0.2 }}
-            >
-              <ChevronDown className="w-4 h-4" />
-            </motion.div>
-            {showFullPricing ? t('hideFeatures') : t('showFeatures')}
-          </button>
-        </motion.div>
 
         {/* Full Pricing Cards - Hidden by default */}
         <AnimatePresence>
