@@ -1,163 +1,10 @@
 'use client'
 
 import { motion, useInView } from 'framer-motion'
-import { useRef, useState, useEffect } from 'react'
-import { MessageCircle, MousePointerClick, Sparkles, HelpCircle, Terminal, Check, Send } from 'lucide-react'
+import { useRef } from 'react'
+import { MessageCircle, MousePointerClick, Sparkles, HelpCircle } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
-
-// Killer Skill Demo Component
-function KillerSkillDemo() {
-  const t = useTranslations('swarmi.killerDemo')
-  const [stage, setStage] = useState(0) // 0: idle, 1: typing, 2: executing, 3: complete
-  const [typedText, setTypedText] = useState('')
-  const fullPrompt = t('prompt')
-
-  useEffect(() => {
-    if (stage === 1) {
-      // Typing animation
-      let i = 0
-      const typingInterval = setInterval(() => {
-        if (i < fullPrompt.length) {
-          setTypedText(fullPrompt.slice(0, i + 1))
-          i++
-        } else {
-          clearInterval(typingInterval)
-          setTimeout(() => setStage(2), 500)
-        }
-      }, 50)
-      return () => clearInterval(typingInterval)
-    } else if (stage === 2) {
-      // Executing animation
-      setTimeout(() => setStage(3), 1500)
-    } else if (stage === 3) {
-      // Reset after showing result
-      setTimeout(() => {
-        setStage(0)
-        setTypedText('')
-      }, 4000)
-    }
-  }, [stage, fullPrompt])
-
-  const startDemo = () => {
-    if (stage === 0) {
-      setStage(1)
-    }
-  }
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
-      className="mt-12 max-w-3xl mx-auto"
-    >
-      {/* Demo container */}
-      <div className="relative rounded-2xl overflow-hidden bg-dark-900 border border-amber-500/20">
-        {/* Glow effect */}
-        <div className="absolute inset-0 bg-gradient-to-r from-amber-500/10 via-transparent to-orange-500/10" />
-
-        <div className="relative p-6">
-          {/* Terminal Header */}
-          <div className="flex items-center gap-2 mb-4">
-            <div className="flex gap-1.5">
-              <div className="w-3 h-3 rounded-full bg-red-500/60" />
-              <div className="w-3 h-3 rounded-full bg-yellow-500/60" />
-              <div className="w-3 h-3 rounded-full bg-green-500/60" />
-            </div>
-            <span className="text-white/40 text-sm ml-2">Swarmi Command</span>
-          </div>
-
-          {/* Command Input */}
-          <div className="bg-black/40 rounded-xl p-4 mb-4">
-            <div className="flex items-start gap-3">
-              <span className="text-amber-400 font-mono">❯</span>
-              <div className="flex-1">
-                <p className="text-white font-mono text-sm">
-                  {stage === 0 ? (
-                    <span className="text-white/40">{t('prompt')}</span>
-                  ) : (
-                    <>
-                      {typedText}
-                      {stage === 1 && <span className="animate-pulse">|</span>}
-                    </>
-                  )}
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Terminal Grid Visualization */}
-          <div className="grid grid-cols-3 gap-2 mb-4">
-            {[1, 2, 3, 4, 5, 6].map((num) => (
-              <motion.div
-                key={num}
-                className={`p-3 rounded-lg border transition-all duration-300 ${
-                  stage >= 2
-                    ? stage === 3
-                      ? 'border-green-500/50 bg-green-500/10'
-                      : 'border-amber-500/50 bg-amber-500/10'
-                    : 'border-white/10 bg-white/5'
-                }`}
-                animate={stage === 2 ? { scale: [1, 1.05, 1] } : {}}
-                transition={{ delay: num * 0.1, duration: 0.3 }}
-              >
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <Terminal className="w-4 h-4 text-white/50" />
-                    <span className="text-xs text-white/60">T{num}</span>
-                  </div>
-                  {stage === 3 && (
-                    <motion.div
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
-                      transition={{ delay: num * 0.1 }}
-                    >
-                      <Check className="w-4 h-4 text-green-400" />
-                    </motion.div>
-                  )}
-                  {stage === 2 && (
-                    <motion.div
-                      animate={{ rotate: 360 }}
-                      transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
-                      className="w-4 h-4 border-2 border-amber-400 border-t-transparent rounded-full"
-                    />
-                  )}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Result */}
-          {stage === 3 && (
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="bg-green-500/10 border border-green-500/30 rounded-lg p-4"
-            >
-              <p className="text-green-400 font-mono text-sm">{t('result')}</p>
-            </motion.div>
-          )}
-
-          {/* Run Demo Button */}
-          {stage === 0 && (
-            <button
-              onClick={startDemo}
-              className="w-full py-3 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 text-white font-semibold text-sm hover:scale-[1.02] transition-transform flex items-center justify-center gap-2"
-            >
-              <Send className="w-4 h-4" />
-              Run Demo
-            </button>
-          )}
-        </div>
-      </div>
-
-      {/* Description */}
-      <p className="text-center text-white/40 text-sm mt-4">{t('description')}</p>
-    </motion.div>
-  )
-}
 
 export default function SwarmiSection() {
   const t = useTranslations('swarmi')
@@ -289,9 +136,6 @@ export default function SwarmiSection() {
             ))}
           </motion.div>
         </div>
-
-        {/* Killer Skill Demo */}
-        <KillerSkillDemo />
 
         {/* Bottom CTA */}
         <motion.div

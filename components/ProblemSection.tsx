@@ -4,16 +4,19 @@ import { motion, useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
 import { AlertTriangle, RefreshCw, Brain, Eye, MessageSquare, X, Check, Calculator, ArrowRight } from 'lucide-react'
 import { useTranslations } from 'next-intl'
+import Image from 'next/image'
 
-// Context Switching Calculator
-function ContextCalculator() {
+// Time Saved Calculator
+function TimeSavedCalculator() {
   const t = useTranslations('problem.calculator')
-  const [switches, setSwitches] = useState(15)
+  const [projects, setProjects] = useState(4)
 
-  // Research shows each context switch costs 23 minutes on average
-  // Conservative estimate: 2-3 minutes per switch for developers
-  const minutesLost = switches * 2.5
-  const hoursPerMonth = Math.round((minutesLost * 22) / 60) // 22 work days
+  const minPerProject = 30
+  const timeWith1Terminal = projects * minPerProject
+  const timeWith6Terminals = Math.round(timeWith1Terminal / 6) // 6x faster with 6 terminals
+  const timeSavedPerDay = timeWith1Terminal - timeWith6Terminals
+  const hoursSavedPerMonth = Math.round((timeSavedPerDay * 22) / 60)
+  const daysSavedPerMonth = Math.round(hoursSavedPerMonth / 8)
 
   return (
     <motion.div
@@ -21,136 +24,246 @@ function ContextCalculator() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: 0.3 }}
-      className="mt-12 p-6 rounded-2xl glass border border-amber-500/20 max-w-md mx-auto"
+      className="mt-16 max-w-md mx-auto px-4"
     >
-      <div className="flex items-center gap-3 mb-4">
-        <div className="w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
-          <Calculator className="w-5 h-5 text-amber-400" />
+      {/* Card Container */}
+      <div className="p-6 rounded-2xl border border-white/[0.08] bg-white/[0.02]">
+        {/* Header */}
+        <div className="flex items-center justify-between mb-6">
+          <p className="text-white/30 text-xs uppercase tracking-wider">
+            {t('title')}
+          </p>
+          <span className="text-xs px-2 py-1 rounded-full bg-white/10 text-white/50">
+            4x
+          </span>
         </div>
-        <h3 className="text-lg font-semibold text-white">{t('title')}</h3>
-      </div>
 
-      <p className="text-sm text-white/60 mb-4">{t('question')}</p>
-
-      <div className="flex items-center gap-4 mb-4">
-        <input
-          type="range"
-          min="5"
-          max="50"
-          value={switches}
-          onChange={(e) => setSwitches(parseInt(e.target.value))}
-          className="flex-1 h-2 bg-white/10 rounded-full appearance-none cursor-pointer
-            [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:h-4
-            [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-amber-400 [&::-webkit-slider-thumb]:cursor-pointer
-            [&::-webkit-slider-thumb]:shadow-lg [&::-webkit-slider-thumb]:shadow-amber-500/30"
-        />
-        <span className="text-2xl font-bold text-amber-400 min-w-[3ch] text-right">{switches}</span>
-      </div>
-
-      <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/20">
-        <p className="text-red-400 text-sm">
-          {t('result')
-            .replace('{minutes}', Math.round(minutesLost).toString())
-            .replace('{hours}', hoursPerMonth.toString())
-          }
+        {/* Question */}
+        <p className="text-white/70 text-center mb-6">
+          {t('question')}
         </p>
-      </div>
 
-      <a href="#download" className="mt-4 block">
-        <button className="w-full py-3 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 text-white font-semibold text-sm hover:scale-[1.02] transition-transform">
-          {t('cta')}
-        </button>
-      </a>
+        {/* Project Selector - Pills */}
+        <div className="flex justify-center gap-1.5 mb-8">
+          {[1, 2, 3, 4, 5, 6].map((num) => (
+            <button
+              key={num}
+              onClick={() => setProjects(num)}
+              className={`w-10 h-10 rounded-full text-sm font-medium transition-all duration-200 ${
+                projects === num
+                  ? 'bg-white text-black scale-105'
+                  : 'bg-white/5 text-white/40 hover:bg-white/10'
+              }`}
+            >
+              {num}
+            </button>
+          ))}
+        </div>
+
+        {/* The Big Number */}
+        <div className="text-center mb-2">
+          <motion.span
+            key={timeSavedPerDay}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="text-6xl md:text-7xl font-display font-bold text-white inline-block"
+          >
+            {timeSavedPerDay}
+          </motion.span>
+          <span className="text-2xl text-white/25 ml-1">{t('minutes')}</span>
+        </div>
+
+        <p className="text-white/40 text-center text-sm mb-6">
+          {t('youSave')} <span className="text-white/60">{t('perDay')}</span>
+        </p>
+
+        {/* Secondary Stats */}
+        <div className="flex justify-center gap-6 mb-6 text-center">
+          <div>
+            <p className="text-xl font-semibold text-white/60">{hoursSavedPerMonth}h</p>
+            <p className="text-[10px] text-white/25 uppercase">{t('perMonth')}</p>
+          </div>
+          <div className="w-px bg-white/10" />
+          <div>
+            <p className="text-xl font-semibold text-white/60">{daysSavedPerYear}d</p>
+            <p className="text-[10px] text-white/25 uppercase">{t('perYear')}</p>
+          </div>
+        </div>
+
+        {/* Comparison */}
+        <div className="flex items-center justify-center gap-3 text-xs text-white/30 mb-6">
+          <span>{timeWith1Terminal} min</span>
+          <span className="text-white/20">→</span>
+          <span className="text-white/60">{timeWith6Terminals} min</span>
+        </div>
+
+        {/* CTA */}
+        <a href="#download" className="block">
+          <button className="w-full py-3 rounded-lg bg-white text-black text-sm font-semibold hover:bg-white/90 transition-colors">
+            {t('cta')}
+          </button>
+        </a>
+      </div>
     </motion.div>
   )
 }
 
-// Terminal Chaos Comparison
-function ChaosComparison() {
+// Visual Comparison - Sin/Con CodeAgentSwarm - REDESIGNED
+function VisualComparison() {
   const t = useTranslations('problem.chaos')
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.6, delay: 0.2 }}
-      className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6"
+      transition={{ duration: 1 }}
+      className="mt-20 relative"
     >
-      {/* The Old Way - Chaos */}
-      <div className="relative p-6 rounded-2xl border border-red-500/30 bg-gradient-to-br from-red-950/20 to-transparent overflow-hidden">
-        {/* Chaos visual representation */}
-        <div className="absolute top-4 right-4 flex gap-1 opacity-40">
-          {[...Array(6)].map((_, i) => (
-            <div
-              key={i}
-              className="w-8 h-6 rounded border border-red-500/50 bg-red-950/30"
-              style={{
-                transform: `rotate(${(Math.random() - 0.5) * 20}deg) translate(${(Math.random() - 0.5) * 10}px, ${(Math.random() - 0.5) * 10}px)`,
-              }}
-            />
-          ))}
+      {/* Main Comparison Container */}
+      <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-black/50 backdrop-blur-sm">
+        {/* Background Gradient Split */}
+        <div className="absolute inset-0 flex">
+          <div className="w-1/2 bg-gradient-to-br from-red-950/30 via-red-900/10 to-transparent" />
+          <div className="w-1/2 bg-gradient-to-bl from-neon-cyan/20 via-neon-cyan/5 to-transparent" />
         </div>
 
-        <div className="flex items-center gap-2 mb-4">
-          <X className="w-6 h-6 text-red-400" />
-          <h3 className="text-xl font-bold text-red-400">{t('oldWay')}</h3>
+        {/* Central Divider with Arrow */}
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 hidden lg:flex flex-col items-center gap-2">
+          <motion.div
+            initial={{ scale: 0, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.8, duration: 0.5, type: 'spring' }}
+            className="w-16 h-16 rounded-full bg-black border-2 border-white/20 flex items-center justify-center shadow-2xl"
+          >
+            <ArrowRight className="w-6 h-6 text-white" />
+          </motion.div>
         </div>
 
-        <p className="text-white/60 mb-4">{t('oldWayDesc')}</p>
+        {/* Content Grid */}
+        <div className="relative grid grid-cols-1 lg:grid-cols-2">
+          {/* LEFT SIDE - Chaos */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative p-6 lg:p-10 lg:pr-8 overflow-hidden"
+          >
+            {/* Red Glow */}
+            <div className="absolute -top-20 -left-20 w-60 h-60 bg-red-500/20 rounded-full blur-[100px] pointer-events-none" />
 
-        {/* Visual chaos elements */}
-        <div className="grid grid-cols-3 gap-2 opacity-60">
-          {['iTerm', 'VS Code', 'Chrome', 'Slack', 'iTerm 2', 'Finder'].map((app, i) => (
-            <div
-              key={i}
-              className="py-2 px-3 text-xs rounded border border-red-500/30 bg-red-950/30 text-red-300/60 text-center truncate"
-            >
-              {app}
+            {/* Header */}
+            <div className="relative flex items-center gap-4 mb-6">
+              <motion.div
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4, type: 'spring' }}
+                className="w-12 h-12 rounded-2xl bg-gradient-to-br from-red-500/30 to-red-600/20 border border-red-500/40 flex items-center justify-center shadow-lg shadow-red-500/20"
+              >
+                <X className="w-6 h-6 text-red-400" />
+              </motion.div>
+              <div>
+                <h3 className="text-2xl lg:text-3xl font-bold text-white">
+                  {t('oldWay')}
+                </h3>
+                <p className="text-red-400/80 text-sm">{t('switchingFatigue')} {t('costingHours')}</p>
+              </div>
             </div>
-          ))}
-        </div>
 
-        <div className="mt-4 flex items-center gap-2 text-red-400/70 text-sm">
-          <RefreshCw className="w-4 h-4 animate-spin" style={{ animationDuration: '3s' }} />
-          <span>Constantly switching...</span>
-        </div>
-      </div>
-
-      {/* The Swarm Way - Order */}
-      <div className="relative p-6 rounded-2xl border border-neon-cyan/30 bg-gradient-to-br from-neon-cyan/5 to-transparent overflow-hidden">
-        {/* Organized terminals visual */}
-        <div className="absolute top-4 right-4 grid grid-cols-3 gap-1 opacity-40">
-          {[...Array(6)].map((_, i) => (
-            <div
-              key={i}
-              className="w-6 h-4 rounded border border-neon-cyan/50 bg-neon-cyan/10"
-            />
-          ))}
-        </div>
-
-        <div className="flex items-center gap-2 mb-4">
-          <Check className="w-6 h-6 text-neon-cyan" />
-          <h3 className="text-xl font-bold text-neon-cyan">{t('newWay')}</h3>
-        </div>
-
-        <p className="text-white/60 mb-4">{t('newWayDesc')}</p>
-
-        {/* Visual organized grid */}
-        <div className="grid grid-cols-3 gap-2">
-          {['Frontend', 'Backend', 'Tests', 'Docs', 'Deploy', 'Review'].map((task, i) => (
-            <div
-              key={i}
-              className="py-2 px-3 text-xs rounded border border-neon-cyan/30 bg-neon-cyan/10 text-neon-cyan/80 text-center truncate"
+            {/* Chaos Image Container */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5, duration: 0.6 }}
+              className="relative group"
             >
-              {task}
+              <div className="absolute -inset-1 bg-gradient-to-r from-red-500/30 via-orange-500/20 to-red-500/30 rounded-2xl blur-lg opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative aspect-[16/10] rounded-2xl overflow-hidden bg-black border border-red-500/30 shadow-2xl shadow-red-500/10">
+                <Image
+                  src="/images/chaos-multitask.png"
+                  alt="Multitasking chaos - switching between apps"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+                {/* Overlay gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+              </div>
+            </motion.div>
+          </motion.div>
+
+          {/* Vertical Divider Line */}
+          <div className="hidden lg:block absolute left-1/2 top-10 bottom-10 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent" />
+
+          {/* RIGHT SIDE - CodeAgentSwarm */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="relative p-6 lg:p-10 lg:pl-8 overflow-hidden"
+          >
+            {/* Cyan Glow */}
+            <div className="absolute -top-20 -right-20 w-60 h-60 bg-neon-cyan/20 rounded-full blur-[100px] pointer-events-none" />
+
+            {/* Header */}
+            <div className="relative flex items-center gap-4 mb-6">
+              <motion.div
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.6, type: 'spring' }}
+                className="w-12 h-12 rounded-2xl bg-gradient-to-br from-neon-cyan/30 to-neon-cyan/20 border border-neon-cyan/40 flex items-center justify-center shadow-lg shadow-neon-cyan/20"
+              >
+                <Check className="w-6 h-6 text-neon-cyan" />
+              </motion.div>
+              <div>
+                <h3 className="text-2xl lg:text-3xl font-bold text-white">
+                  {t('newWay')}
+                </h3>
+                <p className="text-neon-cyan/80 text-sm">{t('allVisible')} - {t('sixTerminals')}</p>
+              </div>
             </div>
-          ))}
+
+            {/* CodeAgentSwarm Image Container */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.7, duration: 0.6 }}
+              className="relative group"
+            >
+              <div className="absolute -inset-1 bg-gradient-to-r from-neon-cyan/30 via-neon-purple/20 to-neon-cyan/30 rounded-2xl blur-lg opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative aspect-[16/10] rounded-2xl overflow-hidden bg-black border border-neon-cyan/30 shadow-2xl shadow-neon-cyan/10">
+                <Image
+                  src="/images/codeagentswarm-6terminals.jpeg"
+                  alt="CodeAgentSwarm - 6 terminales en paralelo"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+                {/* Overlay gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+              </div>
+            </motion.div>
+          </motion.div>
         </div>
 
-        <div className="mt-4 flex items-center gap-2 text-neon-cyan/70 text-sm">
-          <ArrowRight className="w-4 h-4" />
-          <span>All visible at once</span>
+        {/* Mobile Arrow (between sections on mobile) */}
+        <div className="lg:hidden flex justify-center -mt-4 mb-6">
+          <motion.div
+            initial={{ scale: 0, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.6, type: 'spring' }}
+            className="w-10 h-10 rounded-full bg-black border border-white/20 flex items-center justify-center rotate-90"
+          >
+            <ArrowRight className="w-4 h-4 text-white" />
+          </motion.div>
         </div>
       </div>
     </motion.div>
@@ -211,8 +324,7 @@ export default function ProblemSection() {
           </motion.div>
 
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
-            <span className="text-white">{t('titleLine1')}</span>
-            <br />
+            <span className="text-white">{t('titleLine1')}</span>{' '}
             <span className="text-red-400/80">{t('titleLine2')}</span>
           </h2>
 
@@ -241,11 +353,11 @@ export default function ProblemSection() {
           ))}
         </div>
 
-        {/* Chaos Comparison */}
-        <ChaosComparison />
+        {/* Visual Comparison */}
+        <VisualComparison />
 
-        {/* Context Calculator */}
-        <ContextCalculator />
+        {/* Time Saved Calculator */}
+        <TimeSavedCalculator />
       </div>
     </section>
   )
