@@ -56,11 +56,7 @@ export default function SolutionSection() {
       className="relative py-24 px-6 overflow-hidden"
     >
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-emerald-950/5 to-black" />
-
-      {/* Green/cyan glow for "solution" feel */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-neon-cyan/5 rounded-full blur-[100px]" />
-      <div className="absolute bottom-0 right-0 w-[400px] h-[300px] bg-emerald-500/5 rounded-full blur-[80px]" />
+      <div className="absolute inset-0 bg-black" />
 
       <div className="max-w-4xl mx-auto relative z-10">
         {/* Section Header */}
@@ -74,10 +70,10 @@ export default function SolutionSection() {
             initial={{ scale: 0.8, opacity: 0 }}
             animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0.8, opacity: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full glass border border-neon-cyan/20"
+            className="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full bg-neutral-900 border border-white/10"
           >
-            <Sparkles className="w-4 h-4 text-neon-cyan" />
-            <span className="text-sm text-white/70">{t('badge')}</span>
+            <Sparkles className="w-4 h-4 text-neutral-400" />
+            <span className="text-sm text-neutral-400">{t('badge')}</span>
           </motion.div>
 
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
@@ -86,7 +82,7 @@ export default function SolutionSection() {
             <span className="gradient-text">{t('titleLine2')}</span>
           </h2>
 
-          <p className="text-lg text-white/50 max-w-2xl mx-auto">
+          <p className="text-lg text-neutral-400 max-w-2xl mx-auto">
             {t('description')}
           </p>
         </motion.div>
@@ -99,14 +95,14 @@ export default function SolutionSection() {
               initial={{ opacity: 0, x: -20 }}
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
               transition={{ duration: 0.5, delay: 0.2 + index * 0.08 }}
-              className="flex items-start gap-4 p-4 rounded-xl border border-white/5 bg-white/[0.02] hover:border-neon-cyan/20 hover:bg-white/[0.04] transition-all group"
+              className="flex items-start gap-4 p-4 rounded-xl border border-white/10 bg-neutral-950 hover:border-white/20 transition-all group"
             >
-              <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-neon-cyan/10 flex items-center justify-center group-hover:bg-neon-cyan/20 transition-colors">
-                <point.icon className="w-5 h-5 text-neon-cyan" />
+              <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-colors">
+                <point.icon className="w-5 h-5 text-neutral-400" />
               </div>
               <div className="flex items-start gap-3 pt-2">
-                <CheckCircle2 className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" />
-                <p className="text-white/70 leading-relaxed">
+                <CheckCircle2 className="w-5 h-5 text-neutral-400 flex-shrink-0 mt-0.5" />
+                <p className="text-neutral-400 leading-relaxed">
                   {point.text}
                 </p>
               </div>

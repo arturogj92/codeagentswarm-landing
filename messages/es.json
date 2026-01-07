@@ -98,7 +98,15 @@
       "costingHours": "te está costando horas",
       "allVisible": "Todo visible a la vez",
       "sixTerminals": "6 terminales, 1 vista",
-      "appPlaceholder": "Tu screenshot aquí"
+      "appPlaceholder": "Tu screenshot aquí",
+      "pain1": "Alt+Tab constante entre ventanas",
+      "pain2": "Claude cambia código sin que lo veas",
+      "pain3": "Contexto perdido, prompts repetidos",
+      "benefit1": "6 terminales visibles a la vez",
+      "benefit2": "Diffs en tiempo real de cada cambio",
+      "benefit3": "Historial completo, cero pérdida",
+      "chaosLabel": "Frustración constante",
+      "controlLabel": "Control total"
     }
   },
   "solution": {
@@ -502,7 +510,7 @@
   },
   "beta": {
     "hero": {
-      "headline": "Únete a la Beta Abierta",
+      "headline": "Únete a la Open Beta",
       "subheadline": "Un espacio de trabajo con IA con 6 terminales de Claude Code en paralelo, visibilidad en tiempo real, notificaciones, historial completo de conversaciones y gestión multiproyecto, con todas las funciones Pro gratis durante la beta.",
       "microcopy": "Funciona en macOS (Apple Silicon). Requiere suscripción a Claude Code.",
       "primaryCta": "Unirse a la Beta",

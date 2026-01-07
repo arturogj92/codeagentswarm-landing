@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, Orbitron } from 'next/font/google'
+import { Inter, Manrope } from 'next/font/google'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 import { notFound } from 'next/navigation'
@@ -7,10 +7,15 @@ import Script from 'next/script'
 import { routing } from '@/i18n/routing'
 import '../globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
-const orbitron = Orbitron({
+const inter = Inter({
   subsets: ['latin'],
-  variable: '--font-orbitron',
+  variable: '--font-inter',
+})
+
+const manrope = Manrope({
+  subsets: ['latin'],
+  variable: '--font-manrope',
+  weight: ['200', '300', '400', '500', '600', '700', '800'],
 })
 
 const baseUrl = 'https://www.codeagentswarm.com'
@@ -141,7 +146,7 @@ export default async function LocaleLayout({
           strategy="afterInteractive"
         />
       </head>
-      <body className={`${inter.className} ${orbitron.variable} bg-black text-white antialiased`}>
+      <body className={`${inter.className} ${inter.variable} ${manrope.variable} bg-black text-white antialiased`}>
         <NextIntlClientProvider messages={messages}>
           {/* Noise Overlay */}
           <div className="noise-overlay" aria-hidden="true" />

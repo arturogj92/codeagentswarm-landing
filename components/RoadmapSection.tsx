@@ -87,7 +87,7 @@ export default function RoadmapSection() {
     >
       {/* Background */}
       <div className="absolute inset-0 grid-bg opacity-30" />
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-neon-purple/10 rounded-full blur-3xl" />
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-neutral-700/10 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-neon-cyan/10 rounded-full blur-3xl" />
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -113,7 +113,7 @@ export default function RoadmapSection() {
           <div className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent hidden lg:block" />
 
           {/* Timeline Line - Mobile */}
-          <div className="absolute top-0 bottom-0 left-4 w-0.5 bg-gradient-to-b from-neon-cyan/50 via-neon-purple/30 to-neon-cyan/50 lg:hidden" />
+          <div className="absolute top-0 bottom-0 left-4 w-0.5 bg-gradient-to-b from-cyan-400/50 via-white/20 to-cyan-400/50 lg:hidden" />
 
           {/* Timeline Items */}
           <div className="space-y-6 lg:space-y-16">

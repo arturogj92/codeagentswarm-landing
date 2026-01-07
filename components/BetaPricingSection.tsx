@@ -279,7 +279,7 @@ export default function BetaPricingSection() {
                   {plan.isBeta ? (
                     <button
                       onClick={scrollToForm}
-                      className="flex items-center justify-center gap-2 w-full py-3 px-6 rounded-xl font-medium transition-all duration-300 bg-gradient-to-r from-neon-purple to-neon-magenta text-white hover:shadow-neon-purple"
+                      className="flex items-center justify-center gap-2 w-full py-3 px-6 rounded-xl font-medium transition-all duration-300 bg-neon-purple text-white "
                     >
                       {plan.cta}
                       <Sparkles className="w-4 h-4" />

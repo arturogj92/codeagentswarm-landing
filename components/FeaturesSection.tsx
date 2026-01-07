@@ -19,41 +19,35 @@ export default function FeaturesSection() {
       icon: Users,
       title: t('items.multiTerminal.title'),
       description: t('items.multiTerminal.description'),
-      gradient: 'from-neon-purple/30 to-neon-cyan/20',
       guideSlug: locale === 'es' ? 'como-usar-varios-terminales-claude-code' : 'how-to-use-multiple-claude-code-terminals'
     },
     {
       icon: Kanban,
       title: t('items.taskWorkflow.title'),
       description: t('items.taskWorkflow.description'),
-      gradient: 'from-neon-cyan/30 to-neon-purple/20'
     },
     {
       icon: Bell,
       title: t('items.notifications.title'),
       description: t('items.notifications.description'),
-      gradient: 'from-amber-500/30 to-orange-500/20',
       guideSlug: locale === 'es' ? 'notificaciones-codeagentswarm' : 'codeagentswarm-notifications'
     },
     {
       icon: Activity,
       title: t('items.visibility.title'),
       description: t('items.visibility.description'),
-      gradient: 'from-emerald-500/30 to-teal-500/20',
       guideSlug: locale === 'es' ? 'ver-cambios-claude-code-tiempo-real' : 'view-claude-code-changes-real-time'
     },
     {
       icon: MessageSquare,
       title: t('items.history.title'),
       description: t('items.history.description'),
-      gradient: 'from-blue-500/30 to-indigo-500/20',
       guideSlug: locale === 'es' ? 'historial-claude-code' : 'claude-code-history'
     },
     {
       icon: Zap,
       title: t('items.turboMode.title'),
       description: t('items.turboMode.description'),
-      gradient: 'from-yellow-500/30 to-amber-500/20',
       guideSlug: 'claude-code-yolo-turbo-mode'
     },
   ]
@@ -65,9 +59,7 @@ export default function FeaturesSection() {
       className="relative py-16 md:py-24 px-6 overflow-hidden"
     >
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-dark-900 to-black" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-neon-cyan/5 rounded-full blur-3xl" />
-      <div className="absolute -top-40 -left-40 w-[500px] h-[500px] bg-neon-purple/10 rounded-full blur-[120px]" />
+      <div className="absolute inset-0 bg-black" />
 
       <div className="max-w-5xl mx-auto relative z-10">
         {/* Section Title */}
@@ -77,9 +69,8 @@ export default function FeaturesSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-14"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
-            <span className="text-white">{t('titlePre')} </span>
-            <span className="gradient-text">{t('titleHighlight')}</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">
+            {t('titlePre')} <span className="gradient-text">{t('titleHighlight')}</span>
           </h2>
         </motion.div>
 
@@ -93,25 +84,22 @@ export default function FeaturesSection() {
               transition={{ duration: 0.6, delay: index * 0.1 + 0.2 }}
               className="relative group"
             >
-              {/* Border glow on hover */}
-              <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-r from-neon-cyan/20 via-neon-purple/20 to-transparent opacity-50 group-hover:opacity-100 transition-opacity" />
-
               {/* Card */}
-              <div className="relative flex items-start gap-4 p-6 rounded-2xl glass h-full">
-                <div className={`flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center`}>
-                  <feature.icon className="w-7 h-7 text-white" />
+              <div className="relative flex items-start gap-4 p-6 rounded-2xl bg-neutral-950 border border-white/10 hover:border-white/20 transition-colors h-full">
+                <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
+                  <feature.icon className="w-7 h-7 text-neutral-400" />
                 </div>
                 <div className="flex-1">
                   <h3 className="text-lg font-semibold text-white mb-2">
                     {feature.title}
                   </h3>
-                  <p className="text-white/60 text-sm leading-relaxed mb-3">
+                  <p className="text-neutral-400 text-sm leading-relaxed mb-3">
                     {feature.description}
                   </p>
                   {feature.guideSlug && (
                     <Link
                       href={`/${locale}/${guideBasePath}/${feature.guideSlug}`}
-                      className="inline-flex items-center text-neon-cyan hover:text-neon-purple text-xs font-medium transition-colors group/link"
+                      className="inline-flex items-center text-neutral-500 hover:text-white text-xs font-medium transition-colors group/link"
                     >
                       {t('viewGuide')}
                       <ArrowRight className="w-3 h-3 ml-1 group-hover/link:translate-x-0.5 transition-transform" />
@@ -133,25 +121,22 @@ export default function FeaturesSection() {
               transition={{ duration: 0.6, delay: (index + 2) * 0.1 + 0.2 }}
               className="relative group"
             >
-              {/* Border glow on hover */}
-              <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-r from-neon-cyan/20 via-neon-purple/20 to-transparent opacity-50 group-hover:opacity-100 transition-opacity" />
-
               {/* Card */}
-              <div className="relative flex items-start gap-4 p-6 rounded-2xl glass h-full">
-                <div className={`flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center`}>
-                  <feature.icon className="w-7 h-7 text-white" />
+              <div className="relative flex items-start gap-4 p-6 rounded-2xl bg-neutral-950 border border-white/10 hover:border-white/20 transition-colors h-full">
+                <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
+                  <feature.icon className="w-7 h-7 text-neutral-400" />
                 </div>
                 <div className="flex-1">
                   <h3 className="text-lg font-semibold text-white mb-2">
                     {feature.title}
                   </h3>
-                  <p className="text-white/60 text-sm leading-relaxed mb-3">
+                  <p className="text-neutral-400 text-sm leading-relaxed mb-3">
                     {feature.description}
                   </p>
                   {feature.guideSlug && (
                     <Link
                       href={`/${locale}/${guideBasePath}/${feature.guideSlug}`}
-                      className="inline-flex items-center text-neon-cyan hover:text-neon-purple text-xs font-medium transition-colors group/link"
+                      className="inline-flex items-center text-neutral-500 hover:text-white text-xs font-medium transition-colors group/link"
                     >
                       {t('viewGuide')}
                       <ArrowRight className="w-3 h-3 ml-1 group-hover/link:translate-x-0.5 transition-transform" />
@@ -173,25 +158,22 @@ export default function FeaturesSection() {
               transition={{ duration: 0.6, delay: (index + 4) * 0.1 + 0.2 }}
               className="relative group"
             >
-              {/* Border glow on hover */}
-              <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-r from-neon-cyan/20 via-neon-purple/20 to-transparent opacity-50 group-hover:opacity-100 transition-opacity" />
-
               {/* Card */}
-              <div className="relative flex items-start gap-4 p-6 rounded-2xl glass h-full">
-                <div className={`flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center`}>
-                  <feature.icon className="w-7 h-7 text-white" />
+              <div className="relative flex items-start gap-4 p-6 rounded-2xl bg-neutral-950 border border-white/10 hover:border-white/20 transition-colors h-full">
+                <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
+                  <feature.icon className="w-7 h-7 text-neutral-400" />
                 </div>
                 <div className="flex-1">
                   <h3 className="text-lg font-semibold text-white mb-2">
                     {feature.title}
                   </h3>
-                  <p className="text-white/60 text-sm leading-relaxed mb-3">
+                  <p className="text-neutral-400 text-sm leading-relaxed mb-3">
                     {feature.description}
                   </p>
                   {feature.guideSlug && (
                     <Link
                       href={`/${locale}/${guideBasePath}/${feature.guideSlug}`}
-                      className="inline-flex items-center text-neon-cyan hover:text-neon-purple text-xs font-medium transition-colors group/link"
+                      className="inline-flex items-center text-neutral-500 hover:text-white text-xs font-medium transition-colors group/link"
                     >
                       {t('viewGuide')}
                       <ArrowRight className="w-3 h-3 ml-1 group-hover/link:translate-x-0.5 transition-transform" />

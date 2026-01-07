@@ -85,7 +85,7 @@ export default function FAQSection() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="relative"
         >
-          <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-r from-neon-cyan/20 via-neon-purple/20 to-neon-magenta/20" />
+          <div className="absolute -inset-[1px] rounded-2xl bg-white/10" />
           <div className="relative rounded-2xl glass p-8 md:p-10">
             {faqs.map((faq, index) => (
               <FAQItem

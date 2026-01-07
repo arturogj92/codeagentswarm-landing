@@ -43,7 +43,7 @@ export default function SwarmiSection() {
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-dark-900 to-black" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-amber-500/10 via-transparent to-transparent blur-3xl" />
-      <div className="absolute -top-40 -right-40 w-[500px] h-[500px] bg-neon-purple/10 rounded-full blur-[120px]" />
+      <div className="absolute -top-40 -right-40 w-[500px] h-[500px] bg-neutral-700/10 rounded-full blur-[120px]" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Header */}

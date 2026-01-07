@@ -56,7 +56,7 @@ export default function DemoSection() {
     >
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-dark-900 to-black" />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-gradient-radial from-neon-purple/20 via-transparent to-transparent blur-3xl" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-gradient-radial from-zinc-800/20 via-transparent to-transparent blur-3xl" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Header */}
@@ -70,7 +70,7 @@ export default function DemoSection() {
             initial={{ scale: 0.8, opacity: 0 }}
             animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0.8, opacity: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-block text-sm text-neon-magenta font-medium tracking-wider uppercase mb-4"
+            className="inline-block text-sm text-zinc-500 font-medium tracking-wider uppercase mb-4"
           >
             {t('badge')}
           </motion.span>
@@ -94,8 +94,8 @@ export default function DemoSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="relative max-w-5xl mx-auto"
         >
-          {/* Animated Border */}
-          <div className="absolute -inset-[2px] rounded-3xl bg-gradient-to-r from-neon-cyan via-neon-purple to-neon-magenta opacity-50 blur-sm animate-gradient-x" />
+          {/* Subtle Border */}
+          <div className="absolute -inset-[1px] rounded-3xl bg-white/10" />
 
           {/* Video Wrapper */}
           <div className="relative rounded-3xl overflow-hidden bg-dark-800">
@@ -164,8 +164,7 @@ export default function DemoSection() {
             className="absolute -bottom-6 left-0 right-0 flex justify-center"
           >
             <a href="#download" className="group relative inline-block">
-              <div className="absolute -inset-1 rounded-full blur-lg opacity-70 group-hover:opacity-100 transition-opacity" style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }} />
-              <button className="relative flex items-center gap-1.5 sm:gap-2 px-5 py-2.5 sm:px-8 sm:py-4 text-sm sm:text-base text-white font-semibold rounded-full" style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }}>
+              <button className="relative flex items-center gap-1.5 sm:gap-2 px-5 py-2.5 sm:px-8 sm:py-4 text-sm sm:text-base text-black font-semibold rounded-full bg-cyan-400 hover:bg-cyan-300 transition-all hover:shadow-[0_8px_30px_rgba(34,211,238,0.25)]">
                 <Download className="w-4 h-4 sm:w-5 sm:h-5" />
                 {tCommon('downloadNow')}
               </button>

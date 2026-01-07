@@ -61,7 +61,7 @@ export default function MCPSection() {
     >
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-dark-900 to-black" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-gradient-radial from-neon-cyan/10 via-transparent to-transparent blur-3xl" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-gradient-radial from-zinc-800/20 via-transparent to-transparent blur-3xl" />
 
       <div className="max-w-5xl mx-auto relative z-10">
         {/* Section Header */}
@@ -98,8 +98,8 @@ export default function MCPSection() {
             whileTap={{ scale: 0.98 }}
             className={`inline-flex items-center gap-3 px-8 py-4 rounded-full font-semibold text-lg transition-all ${
               installedCount === mcpIntegrations.length
-                ? 'bg-green-500/20 text-green-400 border border-green-500/30'
-                : 'bg-gradient-to-r from-neon-purple to-neon-cyan text-white hover:shadow-lg hover:shadow-neon-cyan/20'
+                ? 'bg-zinc-800 text-zinc-400 border border-zinc-700'
+                : 'bg-cyan-400 text-black hover:bg-cyan-300 hover:shadow-[0_8px_30px_rgba(34,211,238,0.2)]'
             }`}
           >
             {installedCount === mcpIntegrations.length ? (

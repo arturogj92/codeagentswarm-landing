@@ -5,6 +5,7 @@ import { Play, Download, Sparkles, Zap, Grid3X3, Bell, Terminal, Monitor, Layout
 import { useState } from 'react'
 import { useTranslations } from 'next-intl'
 import VideoWithProgress from './VideoWithProgress'
+import Image from 'next/image'
 
 // Video Showcase Component with Carousel
 function VideoShowcase() {
@@ -188,39 +189,55 @@ function VideoShowcase() {
   )
 }
 
-// Animated Stats
+// Modern Feature Cards with custom neon icons
 function Stats() {
   const t = useTranslations('hero.stats')
 
   const stats = [
-    { title: t('terminals'), description: t('terminalsDesc'), icon: Terminal },
-    { title: t('searchableChats'), description: t('searchableChatsDesc'), icon: History },
-    { title: t('codePreview'), description: t('codePreviewDesc'), icon: Monitor },
-    { title: t('kanban'), description: t('kanbanDesc'), icon: Layout },
+    { title: t('terminals'), description: t('terminalsDesc'), iconSrc: '/images/icons/icon-terminals.png', color: '#22d3ee', size: 64 },
+    { title: t('searchableChats'), description: t('searchableChatsDesc'), iconSrc: '/images/icons/icon-history.png', color: '#22d3ee', size: 64 },
+    { title: t('codePreview'), description: t('codePreviewDesc'), iconSrc: '/images/icons/icon-diff.png', color: '#22d3ee', size: 64 },
+    { title: t('kanban'), description: t('kanbanDesc'), iconSrc: '/images/icons/icon-kanban.png', color: '#22d3ee', size: 80 },
   ]
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-4xl mx-auto">
+    <div className="flex flex-wrap justify-center gap-x-12 gap-y-8 max-w-4xl mx-auto">
       {stats.map((stat, index) => (
         <motion.div
           key={stat.title}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 + index * 0.1, duration: 0.5 }}
-          className="text-center group"
+          transition={{ delay: 0.4 + index * 0.08, duration: 0.5 }}
+          className="group flex flex-col items-center text-center w-40 cursor-pointer"
         >
-          <div className="inline-flex items-center justify-center w-12 h-12 mb-3 rounded-xl bg-white/5 border border-white/10 group-hover:border-neon-cyan/30 transition-colors">
-            <stat.icon className="w-5 h-5 text-neon-cyan" />
-          </div>
-          <div className="text-lg md:text-xl font-display font-semibold text-white mb-1">
-            {stat.title}
-          </div>
-          <div className="text-sm text-white/50">{stat.description}</div>
+          {/* Custom neon icon */}
+          <motion.div
+            className="relative mb-4"
+            style={{ width: stat.size, height: stat.size }}
+            whileHover={{ scale: 1.08 }}
+            transition={{ type: 'spring', stiffness: 400 }}
+          >
+            {/* Glow effect on hover */}
+            <div
+              className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-40 transition-opacity duration-300 blur-lg"
+              style={{ backgroundColor: stat.color }}
+            />
+            <Image
+              src={stat.iconSrc}
+              alt={stat.title}
+              width={stat.size}
+              height={stat.size}
+              className="relative z-10 w-full h-full object-contain transition-transform duration-300"
+            />
+          </motion.div>
+          <h3 className="text-base font-semibold text-white mb-1">{stat.title}</h3>
+          <p className="text-sm text-neutral-500 leading-relaxed">{stat.description}</p>
         </motion.div>
       ))}
     </div>
   )
 }
+
 
 export default function HeroSection() {
   const t = useTranslations('hero')
@@ -264,7 +281,11 @@ export default function HeroSection() {
           <h1 className="heading-xl mb-6">
             <span className="text-white">{t('titleLine1')}</span>
             <br />
-            <span className="gradient-text">{t('titleLine2')}</span>
+            <motion.span 
+              className="gradient-text inline-block"
+              animate={{ textShadow: ['0 0 20px rgba(34, 211, 238, 0.3)', '0 0 40px rgba(34, 211, 238, 0.5)', '0 0 20px rgba(34, 211, 238, 0.3)'] }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+            >{t('titleLine2')}</motion.span>
           </h1>
 
           {/* Third line - the power statement */}
@@ -318,8 +339,8 @@ export default function HeroSection() {
               }
             }}
           >
-            <div className="absolute -inset-1 rounded-full blur-lg opacity-50 group-hover:opacity-70 transition-opacity bg-gradient-to-r from-neon-cyan via-neon-purple to-neon-magenta" />
-            <button className="relative flex items-center gap-3 px-10 py-5 text-white font-bold text-lg rounded-full transition-all bg-gradient-to-r from-neon-purple to-neon-cyan hover:scale-105">
+            <div className="absolute -inset-0.5 rounded-full blur-sm opacity-30 group-hover:opacity-70 transition-opacity bg-neon-cyan" />
+            <button className="relative flex items-center gap-3 px-10 py-5 text-black font-bold text-lg rounded-full transition-all bg-neon-cyan hover:bg-cyan-400 hover:scale-105">
               <Zap className="w-6 h-6" />
               {t('claimAccess')}
             </button>

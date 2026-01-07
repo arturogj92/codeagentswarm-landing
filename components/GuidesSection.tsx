@@ -16,7 +16,7 @@ export default function GuidesSection() {
     {
       icon: Users,
       slug: locale === 'es' ? 'como-usar-varios-terminales-claude-code' : 'how-to-use-multiple-claude-code-terminals',
-      gradient: 'from-neon-purple/30 to-neon-cyan/20'
+      gradient: 'from-cyan-500/30 to-blue-500/20'
     },
     {
       icon: Eye,
@@ -39,7 +39,7 @@ export default function GuidesSection() {
     >
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-dark-900 to-black" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-neon-purple/5 rounded-full blur-3xl" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-neutral-800/20 rounded-full blur-3xl" />
 
       <div className="max-w-5xl mx-auto relative z-10">
         {/* Section Title */}
@@ -72,7 +72,7 @@ export default function GuidesSection() {
                 className="relative group block h-full"
               >
                 {/* Border glow on hover */}
-                <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-r from-neon-cyan/20 via-neon-purple/20 to-transparent opacity-50 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute -inset-[1px] rounded-2xl bg-white/10 opacity-50 group-hover:opacity-100 transition-opacity" />
 
                 {/* Card */}
                 <div className="relative p-6 rounded-2xl glass h-full flex flex-col">
@@ -88,7 +88,7 @@ export default function GuidesSection() {
                     {t(`featured.${index}.description`)}
                   </p>
 
-                  <div className="flex items-center text-neon-cyan text-sm font-medium group-hover:text-neon-purple transition-colors">
+                  <div className="flex items-center text-cyan-400 text-sm font-medium group-hover:text-cyan-300 transition-colors">
                     {t('readGuide')}
                     <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                   </div>

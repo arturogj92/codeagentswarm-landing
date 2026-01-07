@@ -54,7 +54,7 @@ export default function SocialProofSection() {
       title: t('stats.agents.title'),
       subtitle: t('stats.agents.subtitle'),
       icon: TrendingUp,
-      gradient: 'from-neon-purple to-pink-500',
+      gradient: 'from-blue-500 to-indigo-500',
     },
     {
       title: t('stats.insight.title'),

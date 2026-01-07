@@ -92,7 +92,7 @@ export default function Footer() {
                     />
                   </div>
                 </div>
-                <span className="font-bold text-xl tracking-wider font-[var(--font-orbitron)] bg-clip-text text-transparent" style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                <span className="font-bold text-xl tracking-wider text-white">
                   CODEAGENTSWARM
                 </span>
               </Link>
@@ -192,7 +192,7 @@ export default function Footer() {
             &copy; {currentYear} {t('copyright')}
           </p>
           <p className="text-white/30 text-sm flex items-center gap-1">
-            {t('madeWith')} <Heart className="w-4 h-4 text-neon-magenta" /> {t('forDevelopers')}
+            {t('madeWith')} <Heart className="w-4 h-4 text-red-500" /> {t('forDevelopers')}
           </p>
         </motion.div>
       </div>

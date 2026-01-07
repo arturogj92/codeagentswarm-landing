@@ -117,9 +117,21 @@ function TimeSavedCalculator() {
   )
 }
 
-// Visual Comparison - Sin/Con CodeAgentSwarm - REDESIGNED
+// Visual Comparison - Sin/Con CodeAgentSwarm - DRAMATIC CONTRAST
 function VisualComparison() {
   const t = useTranslations('problem.chaos')
+
+  const painPoints = [
+    { icon: RefreshCw, text: t('pain1') },
+    { icon: AlertTriangle, text: t('pain2') },
+    { icon: Brain, text: t('pain3') },
+  ]
+
+  const benefits = [
+    { icon: Check, text: t('benefit1') },
+    { icon: Check, text: t('benefit2') },
+    { icon: Check, text: t('benefit3') },
+  ]
 
   return (
     <motion.div
@@ -130,12 +142,7 @@ function VisualComparison() {
       className="mt-20 relative"
     >
       {/* Main Comparison Container */}
-      <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-black/50 backdrop-blur-sm">
-        {/* Background Gradient Split */}
-        <div className="absolute inset-0 flex">
-          <div className="w-1/2 bg-gradient-to-br from-red-950/30 via-red-900/10 to-transparent" />
-          <div className="w-1/2 bg-gradient-to-bl from-neon-cyan/20 via-neon-cyan/5 to-transparent" />
-        </div>
+      <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-neutral-950">
 
         {/* Central Divider with Arrow */}
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 hidden lg:flex flex-col items-center gap-2">
@@ -144,7 +151,7 @@ function VisualComparison() {
             whileInView={{ scale: 1, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.8, duration: 0.5, type: 'spring' }}
-            className="w-16 h-16 rounded-full bg-black border-2 border-white/20 flex items-center justify-center shadow-2xl"
+            className="w-16 h-16 rounded-full bg-gradient-to-r from-red-500/20 to-emerald-500/20 border-2 border-white/30 flex items-center justify-center shadow-2xl backdrop-blur-sm"
           >
             <ArrowRight className="w-6 h-6 text-white" />
           </motion.div>
@@ -152,7 +159,7 @@ function VisualComparison() {
 
         {/* Content Grid */}
         <div className="relative grid grid-cols-1 lg:grid-cols-2">
-          {/* LEFT SIDE - Chaos */}
+          {/* LEFT SIDE - CHAOS (Red/Orange tones) */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -160,26 +167,50 @@ function VisualComparison() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative p-6 lg:p-10 lg:pr-8 overflow-hidden"
           >
-            {/* Red Glow */}
-            <div className="absolute -top-20 -left-20 w-60 h-60 bg-red-500/20 rounded-full blur-[100px] pointer-events-none" />
+            {/* Red background glow */}
+            <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 via-transparent to-orange-500/5 pointer-events-none" />
 
             {/* Header */}
-            <div className="relative flex items-center gap-4 mb-6">
+            <div className="relative flex items-center gap-4 mb-5">
               <motion.div
                 initial={{ scale: 0 }}
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.4, type: 'spring' }}
-                className="w-12 h-12 rounded-2xl bg-gradient-to-br from-red-500/30 to-red-600/20 border border-red-500/40 flex items-center justify-center shadow-lg shadow-red-500/20"
+                className="w-12 h-12 rounded-2xl bg-red-500/10 border border-red-500/30 flex items-center justify-center"
               >
-                <X className="w-6 h-6 text-red-400" />
+                <motion.div
+                  animate={{ scale: [1, 1.1, 1] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                >
+                  <X className="w-6 h-6 text-red-400" />
+                </motion.div>
               </motion.div>
               <div>
                 <h3 className="text-2xl lg:text-3xl font-bold text-white">
                   {t('oldWay')}
                 </h3>
-                <p className="text-red-400/80 text-sm">{t('switchingFatigue')} {t('costingHours')}</p>
+                <p className="text-red-400/80 text-sm font-medium">{t('switchingFatigue')} {t('costingHours')}</p>
               </div>
+            </div>
+
+            {/* Pain Points List */}
+            <div className="relative space-y-2 mb-5">
+              {painPoints.map((point, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.5 + index * 0.1 }}
+                  className="flex items-center gap-3 text-sm"
+                >
+                  <div className="w-5 h-5 rounded-full bg-red-500/20 flex items-center justify-center flex-shrink-0">
+                    <point.icon className="w-3 h-3 text-red-400" />
+                  </div>
+                  <span className="text-neutral-400">{point.text}</span>
+                </motion.div>
+              ))}
             </div>
 
             {/* Chaos Image Container */}
@@ -190,25 +221,36 @@ function VisualComparison() {
               transition={{ delay: 0.5, duration: 0.6 }}
               className="relative group"
             >
-              <div className="absolute -inset-1 bg-gradient-to-r from-red-500/30 via-orange-500/20 to-red-500/30 rounded-2xl blur-lg opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="relative aspect-[16/10] rounded-2xl overflow-hidden bg-black border border-red-500/30 shadow-2xl shadow-red-500/10">
+              <div className="relative aspect-[16/10] rounded-2xl overflow-hidden bg-black border-2 border-red-500/20 shadow-[0_0_30px_rgba(239,68,68,0.15)]">
                 <Image
                   src="/images/chaos-multitask.png"
                   alt="Multitasking chaos - switching between apps"
                   fill
-                  className="object-contain"
+                  className="object-contain opacity-90"
                   priority
                 />
-                {/* Overlay gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                {/* Red overlay gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-red-900/40 via-red-900/10 to-transparent" />
+                {/* Stress lines overlay */}
+                <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_48%,rgba(239,68,68,0.03)_49%,rgba(239,68,68,0.03)_51%,transparent_52%)] bg-[length:8px_8px]" />
               </div>
+              {/* Frustration badge */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.9 }}
+                className="absolute -bottom-3 left-1/2 -translate-x-1/2 px-4 py-1.5 bg-red-500/20 border border-red-500/30 rounded-full backdrop-blur-sm"
+              >
+                <span className="text-red-300 text-xs font-medium">{t('chaosLabel')}</span>
+              </motion.div>
             </motion.div>
           </motion.div>
 
-          {/* Vertical Divider Line */}
-          <div className="hidden lg:block absolute left-1/2 top-10 bottom-10 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent" />
+          {/* Vertical Divider Line - Gradient from red to green */}
+          <div className="hidden lg:block absolute left-1/2 top-10 bottom-10 w-px bg-gradient-to-b from-red-500/30 via-white/20 to-emerald-500/30" />
 
-          {/* RIGHT SIDE - CodeAgentSwarm */}
+          {/* RIGHT SIDE - SOLUTION (Green/Cyan tones) */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -216,26 +258,50 @@ function VisualComparison() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="relative p-6 lg:p-10 lg:pl-8 overflow-hidden"
           >
-            {/* Cyan Glow */}
-            <div className="absolute -top-20 -right-20 w-60 h-60 bg-neon-cyan/20 rounded-full blur-[100px] pointer-events-none" />
+            {/* Green background glow */}
+            <div className="absolute inset-0 bg-gradient-to-bl from-emerald-500/10 via-transparent to-cyan-500/5 pointer-events-none" />
 
             {/* Header */}
-            <div className="relative flex items-center gap-4 mb-6">
+            <div className="relative flex items-center gap-4 mb-5">
               <motion.div
                 initial={{ scale: 0 }}
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.6, type: 'spring' }}
-                className="w-12 h-12 rounded-2xl bg-gradient-to-br from-neon-cyan/30 to-neon-cyan/20 border border-neon-cyan/40 flex items-center justify-center shadow-lg shadow-neon-cyan/20"
+                className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center shadow-[0_0_20px_rgba(16,185,129,0.2)]"
               >
-                <Check className="w-6 h-6 text-neon-cyan" />
+                <motion.div
+                  animate={{ scale: [1, 1.05, 1] }}
+                  transition={{ duration: 3, repeat: Infinity }}
+                >
+                  <Check className="w-6 h-6 text-emerald-400" />
+                </motion.div>
               </motion.div>
               <div>
                 <h3 className="text-2xl lg:text-3xl font-bold text-white">
                   {t('newWay')}
                 </h3>
-                <p className="text-neon-cyan/80 text-sm">{t('allVisible')} - {t('sixTerminals')}</p>
+                <p className="text-emerald-400/80 text-sm font-medium">{t('allVisible')} - {t('sixTerminals')}</p>
               </div>
+            </div>
+
+            {/* Benefits List */}
+            <div className="relative space-y-2 mb-5">
+              {benefits.map((benefit, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.7 + index * 0.1 }}
+                  className="flex items-center gap-3 text-sm"
+                >
+                  <div className="w-5 h-5 rounded-full bg-emerald-500/20 flex items-center justify-center flex-shrink-0">
+                    <benefit.icon className="w-3 h-3 text-emerald-400" />
+                  </div>
+                  <span className="text-neutral-300">{benefit.text}</span>
+                </motion.div>
+              ))}
             </div>
 
             {/* CodeAgentSwarm Image Container */}
@@ -246,8 +312,10 @@ function VisualComparison() {
               transition={{ delay: 0.7, duration: 0.6 }}
               className="relative group"
             >
-              <div className="absolute -inset-1 bg-gradient-to-r from-neon-cyan/30 via-neon-purple/20 to-neon-cyan/30 rounded-2xl blur-lg opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="relative aspect-[16/10] rounded-2xl overflow-hidden bg-black border border-neon-cyan/30 shadow-2xl shadow-neon-cyan/10">
+              {/* Glow effect behind image */}
+              <div className="absolute -inset-2 bg-gradient-to-r from-emerald-500/20 via-cyan-500/20 to-emerald-500/20 rounded-3xl blur-xl opacity-50 group-hover:opacity-70 transition-opacity" />
+
+              <div className="relative aspect-[16/10] rounded-2xl overflow-hidden bg-black border-2 border-emerald-500/30 shadow-[0_0_40px_rgba(16,185,129,0.2)] hover:shadow-[0_0_50px_rgba(16,185,129,0.3)] transition-shadow">
                 <Image
                   src="/images/codeagentswarm-6terminals.jpeg"
                   alt="CodeAgentSwarm - 6 terminales en paralelo"
@@ -255,9 +323,19 @@ function VisualComparison() {
                   className="object-contain"
                   priority
                 />
-                {/* Overlay gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                {/* Success overlay gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/20 via-transparent to-transparent" />
               </div>
+              {/* Success badge */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 1.1 }}
+                className="absolute -bottom-3 left-1/2 -translate-x-1/2 px-4 py-1.5 bg-emerald-500/20 border border-emerald-500/30 rounded-full backdrop-blur-sm"
+              >
+                <span className="text-emerald-300 text-xs font-medium">{t('controlLabel')}</span>
+              </motion.div>
             </motion.div>
           </motion.div>
         </div>
@@ -269,7 +347,7 @@ function VisualComparison() {
             whileInView={{ scale: 1, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.6, type: 'spring' }}
-            className="w-10 h-10 rounded-full bg-black border border-white/20 flex items-center justify-center rotate-90"
+            className="w-10 h-10 rounded-full bg-gradient-to-r from-red-500/20 to-emerald-500/20 border border-white/20 flex items-center justify-center rotate-90"
           >
             <ArrowRight className="w-4 h-4 text-white" />
           </motion.div>
@@ -309,10 +387,7 @@ export default function ProblemSection() {
       className="relative py-24 px-6 overflow-hidden"
     >
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-red-950/5 to-black" />
-
-      {/* Subtle red glow for "problem" feel */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-red-500/5 rounded-full blur-[100px]" />
+      <div className="absolute inset-0 bg-black" />
 
       <div className="max-w-5xl mx-auto relative z-10">
         {/* Section Header */}
@@ -326,18 +401,18 @@ export default function ProblemSection() {
             initial={{ scale: 0.8, opacity: 0 }}
             animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0.8, opacity: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full glass border border-red-500/20"
+            className="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full bg-neutral-900 border border-white/10"
           >
-            <AlertTriangle className="w-4 h-4 text-red-400" />
-            <span className="text-sm text-white/70">{t('badge')}</span>
+            <AlertTriangle className="w-4 h-4 text-neutral-400" />
+            <span className="text-sm text-neutral-400">{t('badge')}</span>
           </motion.div>
 
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
             <span className="text-white">{t('titleLine1')}</span>{' '}
-            <span className="text-red-400/80">{t('titleLine2')}</span>
+            <span className="text-neutral-500">{t('titleLine2')}</span>
           </h2>
 
-          <p className="text-lg text-white/50 max-w-2xl mx-auto">
+          <p className="text-lg text-neutral-400 max-w-2xl mx-auto">
             {t('description')}
           </p>
         </motion.div>
@@ -350,12 +425,12 @@ export default function ProblemSection() {
               initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
               transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-              className="flex items-start gap-4 p-4 rounded-xl border border-white/5 bg-white/[0.02] hover:border-red-500/20 transition-colors"
+              className="flex items-start gap-4 p-4 rounded-xl border border-white/10 bg-neutral-950 hover:border-white/20 transition-colors"
             >
-              <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center">
-                <point.icon className="w-5 h-5 text-red-400/70" />
+              <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center">
+                <point.icon className="w-5 h-5 text-neutral-500" />
               </div>
-              <p className="text-white/60 leading-relaxed pt-2">
+              <p className="text-neutral-400 leading-relaxed pt-2">
                 {point.text}
               </p>
             </motion.div>

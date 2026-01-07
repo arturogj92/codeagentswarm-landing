@@ -90,15 +90,23 @@
       "cta": "Start saving time"
     },
     "chaos": {
-      "oldWay": "The Old Way",
+      "oldWay": "Without CodeAgentSwarm",
       "oldWayDesc": "Constant window switching, lost context, repeated prompts",
-      "newWay": "The Swarm Way",
+      "newWay": "With CodeAgentSwarm",
       "newWayDesc": "6 terminals, one view, zero context loss",
       "switchingFatigue": "Window switching",
       "costingHours": "is costing you hours",
       "allVisible": "All visible at once",
       "sixTerminals": "6 terminals, 1 view",
-      "appPlaceholder": "Your screenshot here"
+      "appPlaceholder": "Your screenshot here",
+      "pain1": "Constant Alt+Tab between windows",
+      "pain2": "Claude changes code without you seeing",
+      "pain3": "Lost context, repeated prompts",
+      "benefit1": "6 terminals visible at once",
+      "benefit2": "Real-time diffs of every change",
+      "benefit3": "Full history, zero context loss",
+      "chaosLabel": "Constant frustration",
+      "controlLabel": "Total control"
     }
   },
   "solution": {

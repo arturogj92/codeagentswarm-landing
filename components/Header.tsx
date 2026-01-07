@@ -99,9 +99,9 @@ export default function Header() {
               />
             </div>
             <span className={cn(
-              "font-bold tracking-wider font-[var(--font-orbitron)] bg-clip-text text-transparent transition-all duration-300",
+              "font-semibold tracking-wide text-white transition-all duration-300",
               isScrolled ? "text-sm sm:text-base lg:text-lg" : "text-base sm:text-lg lg:text-xl"
-            )} style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+            )}>
               CODEAGENTSWARM
             </span>
           </Link>
@@ -127,7 +127,7 @@ export default function Header() {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {link.name}
-              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-neon-cyan to-neon-purple group-hover:w-full transition-all duration-300" />
+              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300" />
             </a>
           ))}
         </motion.nav>
@@ -153,9 +153,9 @@ export default function Header() {
                     window.umami?.track('nav_beta_click')
                   }
                 }}
-                className="flex items-center gap-1.5 px-4 py-2 rounded-full border border-[#667eea]/50 bg-[#667eea]/10 hover:bg-[#667eea]/20 transition-all duration-300"
+                className="flex items-center gap-1.5 px-4 py-2 rounded-full border border-white/20 bg-white/5 hover:bg-white/10 transition-all duration-300"
               >
-                <Sparkles className="w-4 h-4 text-[#667eea]" />
+                <Sparkles className="w-4 h-4 text-neutral-400" />
                 <span className="text-sm font-medium text-white">{tBeta('cta')}</span>
               </motion.a>
             )}
@@ -186,10 +186,9 @@ export default function Header() {
                 window.umami?.track('nav_download_header')
               }
             }}
-            className="relative group px-5 py-2 rounded-full overflow-hidden hover:opacity-90 transition-all duration-300"
-            style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }}
+            className="relative group px-5 py-2 rounded-full overflow-hidden bg-white hover:bg-neutral-200 transition-all duration-300"
           >
-            <span className="relative text-sm font-semibold text-white">
+            <span className="relative text-sm font-semibold text-black">
               {tCommon('downloadFree')}
             </span>
           </a>
@@ -211,9 +210,9 @@ export default function Header() {
                     window.umami?.track('nav_beta_click_mobile')
                   }
                 }}
-                className="flex items-center gap-1 px-2.5 py-1.5 rounded-full border border-[#667eea]/50 bg-[#667eea]/10"
+                className="flex items-center gap-1 px-2.5 py-1.5 rounded-full border border-white/20 bg-white/5"
               >
-                <Sparkles className="w-3.5 h-3.5 text-[#667eea]" />
+                <Sparkles className="w-3.5 h-3.5 text-neutral-400" />
                 <span className="text-xs font-medium text-white">Beta</span>
               </motion.a>
             )}
@@ -250,8 +249,7 @@ export default function Header() {
               {!isBetaPage && (
                 <a
                   href={`/${locale}/beta`}
-                  className="flex items-center gap-2 text-lg font-medium py-2"
-                  style={{ color: '#667eea' }}
+                  className="flex items-center gap-2 text-lg font-medium py-2 text-white"
                   onClick={() => {
                     setIsMobileMenuOpen(false)
                     if (typeof window !== 'undefined') {
@@ -259,7 +257,7 @@ export default function Header() {
                     }
                   }}
                 >
-                  <Sparkles className="w-5 h-5" />
+                  <Sparkles className="w-5 h-5 text-neutral-400" />
                   {tBeta('cta')}
                 </a>
               )}
@@ -302,8 +300,7 @@ export default function Header() {
               </div>
               <a
                 href="#download"
-                className="mt-4 py-3 px-6 text-center text-white font-semibold rounded-full"
-                style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }}
+                className="mt-4 py-3 px-6 text-center text-black font-semibold rounded-full bg-white hover:bg-neutral-200 transition-colors"
                 onClick={(e) => {
                   e.preventDefault()
                   setIsMobileMenuOpen(false)
