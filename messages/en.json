@@ -166,8 +166,8 @@
   "socialProof": {
     "stats": {
       "workflow": {
-        "title": "Ship 3x Faster",
-        "subtitle": "No more waiting between windows. Each terminal makes progress on its own."
+        "title": "Orchestrate in Parallel",
+        "subtitle": "2 to 6 tasks progressing at once without losing control."
       },
       "agents": {
         "title": "6 Agents, 0 Wait",
@@ -245,7 +245,8 @@
       }
     },
     "stats": {
-      "faster": "Faster Development",
+      "parallelValue": "2-6",
+      "parallelLabel": "Parallel Tasks",
       "aiPowered": "AI-Powered",
       "taskManagement": "Task Management",
       "seamless": "Seamless",
