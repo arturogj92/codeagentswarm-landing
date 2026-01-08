@@ -16,17 +16,14 @@ export default function GuidesSection() {
     {
       icon: Users,
       slug: locale === 'es' ? 'como-usar-varios-terminales-claude-code' : 'how-to-use-multiple-claude-code-terminals',
-      gradient: 'from-cyan-500/30 to-blue-500/20'
     },
     {
       icon: Eye,
       slug: locale === 'es' ? 'ver-cambios-claude-code-tiempo-real' : 'view-claude-code-changes-real-time',
-      gradient: 'from-emerald-500/30 to-teal-500/20'
     },
     {
       icon: Zap,
       slug: locale === 'es' ? 'claude-code-yolo-turbo-mode' : 'claude-code-yolo-turbo-mode',
-      gradient: 'from-yellow-500/30 to-amber-500/20'
     },
   ]
 
@@ -71,26 +68,27 @@ export default function GuidesSection() {
                 href={`/${locale}/${guideBasePath}/${guide.slug}`}
                 className="relative group block h-full"
               >
-                {/* Border glow on hover */}
-                <div className="absolute -inset-[1px] rounded-2xl bg-white/10 opacity-50 group-hover:opacity-100 transition-opacity" />
-
-                {/* Card */}
-                <div className="relative p-6 rounded-2xl glass h-full flex flex-col">
-                  <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${guide.gradient} flex items-center justify-center mb-4`}>
-                    <guide.icon className="w-7 h-7 text-white" />
+                {/* Card with glass effect */}
+                <div className="relative h-full flex items-start gap-4 p-5 md:p-6 rounded-2xl glass border border-white/10 group-hover:border-neon-cyan/30 transition-all duration-300 group-hover:shadow-[0_0_40px_rgba(0,245,255,0.1)]">
+                  {/* Icon Container */}
+                  <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-neon-purple/20 to-neon-cyan/10 border border-white/10 flex items-center justify-center group-hover:border-neon-cyan/30 transition-all duration-300">
+                    <guide.icon className="w-5 h-5 text-white/70 group-hover:text-neon-cyan transition-colors duration-300" />
                   </div>
 
-                  <h3 className="text-xl font-semibold text-white mb-3">
-                    {t(`featured.${index}.title`)}
-                  </h3>
+                  {/* Content */}
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-base font-semibold text-white mb-2 leading-tight group-hover:text-white transition-colors">
+                      {t(`featured.${index}.title`)}
+                    </h3>
 
-                  <p className="text-white/60 text-sm leading-relaxed mb-4 flex-1">
-                    {t(`featured.${index}.description`)}
-                  </p>
+                    <p className="text-white/50 text-sm leading-relaxed mb-3 group-hover:text-white/70 transition-colors duration-300">
+                      {t(`featured.${index}.description`)}
+                    </p>
 
-                  <div className="flex items-center text-cyan-400 text-sm font-medium group-hover:text-cyan-300 transition-colors">
-                    {t('readGuide')}
-                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                    <div className="flex items-center text-neon-cyan text-sm font-medium group-hover:text-white transition-colors">
+                      {t('readGuide')}
+                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                    </div>
                   </div>
                 </div>
               </Link>
