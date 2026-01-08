@@ -158,7 +158,7 @@ function VisualComparison() {
         </div>
 
         {/* Content Grid */}
-        <div className="relative grid grid-cols-1 lg:grid-cols-2">
+        <div className="relative flex flex-col lg:grid lg:grid-cols-2">
           {/* LEFT SIDE - CHAOS (Red/Orange tones) */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -226,6 +226,7 @@ function VisualComparison() {
                   src="/images/chaos-multitask.png"
                   alt="Multitasking chaos - switching between apps"
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-contain opacity-90"
                   priority
                 />
@@ -246,6 +247,19 @@ function VisualComparison() {
               </motion.div>
             </motion.div>
           </motion.div>
+
+          {/* Mobile Arrow - BETWEEN sections */}
+          <div className="lg:hidden flex justify-center py-6">
+            <motion.div
+              initial={{ scale: 0, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4, type: 'spring' }}
+              className="w-12 h-12 rounded-full bg-gradient-to-r from-red-500/20 to-emerald-500/20 border border-white/20 flex items-center justify-center rotate-90"
+            >
+              <ArrowRight className="w-5 h-5 text-white" />
+            </motion.div>
+          </div>
 
           {/* Vertical Divider Line - Gradient from red to green */}
           <div className="hidden lg:block absolute left-1/2 top-10 bottom-10 w-px bg-gradient-to-b from-red-500/30 via-white/20 to-emerald-500/30" />
@@ -320,8 +334,9 @@ function VisualComparison() {
                   src="/images/codeagentswarm-6terminals.jpeg"
                   alt="CodeAgentSwarm - 6 terminales en paralelo"
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-contain"
-                  priority
+                  loading="lazy"
                 />
                 {/* Success overlay gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/20 via-transparent to-transparent" />
@@ -337,19 +352,6 @@ function VisualComparison() {
                 <span className="text-emerald-300 text-xs font-medium">{t('controlLabel')}</span>
               </motion.div>
             </motion.div>
-          </motion.div>
-        </div>
-
-        {/* Mobile Arrow (between sections on mobile) */}
-        <div className="lg:hidden flex justify-center -mt-4 mb-6">
-          <motion.div
-            initial={{ scale: 0, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.6, type: 'spring' }}
-            className="w-10 h-10 rounded-full bg-gradient-to-r from-red-500/20 to-emerald-500/20 border border-white/20 flex items-center justify-center rotate-90"
-          >
-            <ArrowRight className="w-4 h-4 text-white" />
           </motion.div>
         </div>
       </div>
