@@ -58,13 +58,10 @@ export default function FAQAccordion({ items, locale }: FAQAccordionProps) {
   return (
     <section id="faq" className="mt-16">
       <h2 className="text-2xl font-bold mb-6 text-white">{title}</h2>
-      <div className="relative">
-        <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-r from-neon-cyan/20 via-neon-purple/20 to-neon-magenta/20" />
-        <div className="relative rounded-2xl glass p-6">
-          {items.map((item, index) => (
-            <FAQItemComponent key={index} item={item} index={index} />
-          ))}
-        </div>
+      <div className="rounded-2xl bg-neutral-950 border border-white/10 p-6">
+        {items.map((item, index) => (
+          <FAQItemComponent key={index} item={item} index={index} />
+        ))}
       </div>
     </section>
   )

@@ -8,8 +8,7 @@ import type { ContentBlock, GuideSection } from '@/content/guides/types'
 function ImagePlaceholder({ alt, caption }: { alt: string; caption?: string }) {
   return (
     <figure className="my-8">
-      <div className="relative aspect-video bg-dark-800 rounded-xl border border-white/10 flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-neon-cyan/5 via-transparent to-neon-purple/5" />
+      <div className="relative aspect-video bg-neutral-900 rounded-xl border border-white/10 flex items-center justify-center overflow-hidden">
         <div className="flex flex-col items-center gap-3 text-white/40">
           <ImageIcon className="w-12 h-12" />
           <span className="text-sm text-center px-4">{alt}</span>
@@ -81,8 +80,8 @@ function Callout({ variant, content }: { variant: 'tip' | 'warning' | 'info'; co
     },
     info: {
       icon: Info,
-      bgClass: 'bg-neon-purple/10 border-neon-purple/30',
-      iconClass: 'text-neon-purple',
+      bgClass: 'bg-white/5 border-white/20',
+      iconClass: 'text-white/70',
     },
   }
 

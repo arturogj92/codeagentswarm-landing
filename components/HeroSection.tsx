@@ -197,7 +197,7 @@ function Stats() {
     { title: t('terminals'), description: t('terminalsDesc'), iconSrc: '/images/icons/icon-terminals.png', color: '#22d3ee', size: 64 },
     { title: t('searchableChats'), description: t('searchableChatsDesc'), iconSrc: '/images/icons/icon-history.png', color: '#22d3ee', size: 64 },
     { title: t('codePreview'), description: t('codePreviewDesc'), iconSrc: '/images/icons/icon-diff.png', color: '#22d3ee', size: 64 },
-    { title: t('kanban'), description: t('kanbanDesc'), iconSrc: '/images/icons/icon-kanban.png', color: '#22d3ee', size: 80 },
+    { title: t('kanban'), description: t('kanbanDesc'), iconSrc: '/images/icons/icon-kanban.png', color: '#22d3ee', size: 96 },
   ]
 
   return (
@@ -210,26 +210,28 @@ function Stats() {
           transition={{ delay: 0.4 + index * 0.08, duration: 0.5 }}
           className="group flex flex-col items-center text-center w-40 cursor-pointer"
         >
-          {/* Custom neon icon */}
-          <motion.div
-            className="relative mb-4"
-            style={{ width: stat.size, height: stat.size }}
-            whileHover={{ scale: 1.08 }}
-            transition={{ type: 'spring', stiffness: 400 }}
-          >
-            {/* Glow effect on hover */}
-            <div
-              className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-40 transition-opacity duration-300 blur-lg"
-              style={{ backgroundColor: stat.color }}
-            />
-            <Image
-              src={stat.iconSrc}
-              alt={stat.title}
-              width={stat.size}
-              height={stat.size}
-              className="relative z-10 w-full h-full object-contain transition-transform duration-300"
-            />
-          </motion.div>
+          {/* Custom neon icon - fixed height container for alignment */}
+          <div className="flex items-center justify-center mb-4" style={{ height: 96 }}>
+            <motion.div
+              className="relative"
+              style={{ width: stat.size, height: stat.size }}
+              whileHover={{ scale: 1.08 }}
+              transition={{ type: 'spring', stiffness: 400 }}
+            >
+              {/* Glow effect on hover */}
+              <div
+                className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-40 transition-opacity duration-300 blur-lg"
+                style={{ backgroundColor: stat.color }}
+              />
+              <Image
+                src={stat.iconSrc}
+                alt={stat.title}
+                width={stat.size}
+                height={stat.size}
+                className="relative z-10 w-full h-full object-contain transition-transform duration-300"
+              />
+            </motion.div>
+          </div>
           <h3 className="text-base font-semibold text-white mb-1">{stat.title}</h3>
           <p className="text-sm text-neutral-500 leading-relaxed">{stat.description}</p>
         </motion.div>

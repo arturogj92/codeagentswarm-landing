@@ -62,7 +62,7 @@ export default function BetaPricingSection() {
       icon: Crown,
       price: 6.99,
       description: t('plans.pro.description'),
-      gradient: 'from-neon-purple to-neon-magenta',
+      gradient: 'from-neon-cyan to-teal-500',
       features: [
         { name: t('features.terminals6'), included: true, badge: t('badges.boost3x') },
         { name: t('features.unlimitedProjects'), included: true, badge: t('badges.unlimited') },
@@ -101,8 +101,8 @@ export default function BetaPricingSection() {
     >
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-dark-900 via-black to-dark-900" />
-      <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-neon-purple/10 rounded-full blur-3xl -translate-y-1/2" />
-      <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-neon-cyan/10 rounded-full blur-3xl -translate-y-1/2" />
+      <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-neon-cyan/10 rounded-full blur-3xl -translate-y-1/2" />
+      <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl -translate-y-1/2" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Header */}
@@ -164,13 +164,13 @@ export default function BetaPricingSection() {
               <div
                 className={`relative h-full rounded-2xl overflow-hidden transition-all duration-500 ${
                   plan.popular
-                    ? 'border-2 border-neon-purple/50'
+                    ? 'border-2 border-neon-cyan/50'
                     : 'border border-white/5 hover:border-white/10'
                 }`}
               >
                 {/* Animated border for popular */}
                 {plan.popular && (
-                  <div className="absolute inset-0 bg-gradient-to-br from-neon-purple/20 to-neon-magenta/20" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-neon-cyan/20 to-teal-500/20" />
                 )}
 
                 {/* Background */}
@@ -236,13 +236,13 @@ export default function BetaPricingSection() {
                           <div
                             className={`w-5 h-5 rounded-full flex items-center justify-center ${
                               plan.popular
-                                ? 'bg-gradient-to-br from-neon-purple/30 to-neon-magenta/30'
+                                ? 'bg-gradient-to-br from-neon-cyan/30 to-teal-500/30'
                                 : 'bg-neon-green/20'
                             }`}
                           >
                             <Check
                               className={`w-3 h-3 ${
-                                plan.popular ? 'text-neon-purple' : 'text-neon-green'
+                                plan.popular ? 'text-neon-cyan' : 'text-neon-green'
                               }`}
                             />
                           </div>
@@ -279,7 +279,7 @@ export default function BetaPricingSection() {
                   {plan.isBeta ? (
                     <button
                       onClick={scrollToForm}
-                      className="flex items-center justify-center gap-2 w-full py-3 px-6 rounded-xl font-medium transition-all duration-300 bg-neon-purple text-white "
+                      className="flex items-center justify-center gap-2 w-full py-3 px-6 rounded-xl font-bold transition-all duration-300 bg-neon-cyan text-black hover:bg-cyan-400"
                     >
                       {plan.cta}
                       <Sparkles className="w-4 h-4" />
@@ -333,9 +333,9 @@ export default function BetaPricingSection() {
           transition={{ duration: 0.6, delay: 0.9 }}
           className="mt-12 max-w-3xl mx-auto"
         >
-          <div className="p-6 rounded-2xl glass border border-neon-purple/20">
+          <div className="p-6 rounded-2xl glass border border-neon-cyan/20">
             <h4 className="text-white/80 font-display font-medium mb-3 flex items-center gap-2">
-              <Crown className="w-5 h-5 text-neon-purple" />
+              <Crown className="w-5 h-5 text-neon-cyan" />
               {t('whyUpgrade.title')}
             </h4>
             <p className="text-white/50 text-sm leading-relaxed">

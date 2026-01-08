@@ -3,7 +3,7 @@
 import { useEffect } from 'react'
 import Header from '@/components/Header'
 import BetaHeroSection from '@/components/BetaHeroSection'
-import BetaWhatIs from '@/components/BetaWhatIs'
+import FeaturesSection from '@/components/FeaturesSection'
 import BetaHowToJoin from '@/components/BetaHowToJoin'
 import BetaSignupForm from '@/components/BetaSignupForm'
 import BetaWhatYouGet from '@/components/BetaWhatYouGet'
@@ -60,7 +60,7 @@ export default function BetaPage() {
 
       <main>
         <BetaHeroSection />
-        <BetaWhatIs />
+        <FeaturesSection />
         <BetaHowToJoin />
         <BetaSignupForm />
         <BetaWhatYouGet />

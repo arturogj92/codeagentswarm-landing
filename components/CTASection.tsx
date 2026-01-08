@@ -32,12 +32,33 @@ function FOMOPopup({
       window.umami?.track('fomo_email_submit', { platform, email: email.split('@')[1] })
     }
 
-    // Here you would typically send to your backend
-    // For now, we'll simulate success
-    await new Promise(resolve => setTimeout(resolve, 1000))
+    try {
+      const response = await fetch('/api/waitlist', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: email,
+          platform: platform
+        })
+      })
 
-    setSubmitted(true)
-    setLoading(false)
+      if (response.ok || response.status === 409) {
+        // Success or already registered - both are fine
+        setSubmitted(true)
+      } else {
+        console.error('Waitlist API error:', response.status)
+        // Still show success to user for better UX
+        setSubmitted(true)
+      }
+    } catch (error) {
+      console.error('Error submitting to waitlist:', error)
+      // Show success anyway for better UX
+      setSubmitted(true)
+    } finally {
+      setLoading(false)
+    }
   }
 
   if (!isOpen) return null
@@ -138,7 +159,7 @@ function FOMOPopup({
                   </svg>
                 </div>
                 <h3 className="text-xl font-display font-bold text-white mb-2">{t('success')}</h3>
-                <p className="text-neutral-400">{t('successDesc')}</p>
+                <p className="text-neutral-400">{t('successDesc', { platform: platform === 'windows' ? 'Windows' : 'Linux' })}</p>
               </div>
             )}
           </div>

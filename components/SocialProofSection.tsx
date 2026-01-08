@@ -48,25 +48,21 @@ export default function SocialProofSection() {
       title: t('stats.workflow.title'),
       subtitle: t('stats.workflow.subtitle'),
       icon: Zap,
-      gradient: 'from-neon-green to-emerald-500',
     },
     {
       title: t('stats.agents.title'),
       subtitle: t('stats.agents.subtitle'),
       icon: TrendingUp,
-      gradient: 'from-blue-500 to-indigo-500',
     },
     {
       title: t('stats.insight.title'),
       subtitle: t('stats.insight.subtitle'),
       icon: Code,
-      gradient: 'from-neon-cyan to-blue-500',
     },
     {
       title: t('stats.search.title'),
       subtitle: t('stats.search.subtitle'),
       icon: Star,
-      gradient: 'from-orange-500 to-red-500',
     },
   ]
 
@@ -112,36 +108,28 @@ export default function SocialProofSection() {
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.8 }}
-          className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 mb-12 md:mb-24"
+          className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12 md:mb-24"
         >
           {stats.map((stat, index) => (
             <motion.div
               key={stat.title}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="relative group"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <div className="relative p-4 sm:p-6 rounded-2xl glass border border-white/5 text-center overflow-hidden h-full flex flex-col">
-                {/* Icon */}
-                <div
-                  className={`inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br ${stat.gradient} mb-4 mx-auto`}
-                >
-                  <stat.icon className="w-6 h-6 text-white" />
-                </div>
-
-                {/* Title */}
-                <div className="text-base sm:text-xl md:text-2xl font-display font-bold text-white mb-2">
-                  {stat.title}
+              <div className="p-5 rounded-2xl bg-dark-800 border border-white/10 h-full">
+                {/* Title with Icon */}
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0">
+                    <stat.icon className="w-4 h-4 text-white/50" />
+                  </div>
+                  <div className="text-base font-semibold text-white">
+                    {stat.title}
+                  </div>
                 </div>
 
                 {/* Subtitle */}
-                <div className="text-sm text-white/50 leading-relaxed">{stat.subtitle}</div>
-
-                {/* Hover Glow */}
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${stat.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
-                />
+                <div className="text-sm text-white/40 leading-relaxed">{stat.subtitle}</div>
               </div>
             </motion.div>
           ))}

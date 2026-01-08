@@ -23,14 +23,14 @@ export default function BetaHowToJoin() {
       icon: FileText,
       title: t('step1.title'),
       description: t('step1.description'),
-      gradient: 'from-blue-500 to-cyan-500',
+      gradient: 'from-neon-cyan/80 to-cyan-600',
     },
     {
       number: 2,
       icon: Download,
       title: t('step2.title'),
       description: t('step2.description'),
-      gradient: 'from-neon-purple to-neon-magenta',
+      gradient: 'from-neon-cyan to-teal-500',
     },
     {
       number: 3,

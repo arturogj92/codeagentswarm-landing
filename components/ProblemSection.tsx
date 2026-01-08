@@ -139,7 +139,7 @@ function VisualComparison() {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 1 }}
-      className="mt-20 relative"
+      className="relative"
     >
       {/* Main Comparison Container */}
       <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-neutral-950">
@@ -384,61 +384,130 @@ export default function ProblemSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-24 px-6 overflow-hidden"
+      className="relative py-24 md:py-32 px-6 overflow-hidden"
     >
       {/* Background */}
       <div className="absolute inset-0 bg-black" />
 
+      {/* Dramatic radial gradients - using web palette */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-gradient-radial from-neon-purple/15 via-neon-magenta/5 to-transparent blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[600px] h-[400px] bg-gradient-radial from-neon-cyan/8 via-transparent to-transparent blur-3xl pointer-events-none" />
+      <div className="absolute bottom-20 right-0 w-[500px] h-[400px] bg-gradient-radial from-neon-purple/10 via-transparent to-transparent blur-3xl pointer-events-none" />
+
+      {/* Animated grid overlay */}
+      <div className="absolute inset-0 grid-bg opacity-30 pointer-events-none" />
+
       <div className="max-w-5xl mx-auto relative z-10">
-        {/* Section Header */}
+        {/* Visual Comparison - Sin/Con CodeAgentSwarm (FIRST) */}
+        <VisualComparison />
+
+        {/* Section Header - El Coste Oculto */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-16 mt-24"
         >
+          {/* Epic Badge with neon glow */}
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0.8, opacity: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full bg-neutral-900 border border-white/10"
+            className="inline-flex items-center gap-2.5 px-5 py-2.5 mb-10 rounded-full glass border border-neon-purple/30 shadow-[0_0_30px_rgba(168,85,247,0.2)]"
           >
-            <AlertTriangle className="w-4 h-4 text-neutral-400" />
-            <span className="text-sm text-neutral-400">{t('badge')}</span>
+            <motion.div
+              animate={{
+                scale: [1, 1.3, 1],
+                rotate: [0, 10, -10, 0],
+              }}
+              transition={{
+                duration: 2.5,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            >
+              <AlertTriangle className="w-4 h-4 text-neon-purple" />
+            </motion.div>
+            <span className="text-sm font-semibold bg-gradient-to-r from-neon-purple to-neon-magenta bg-clip-text text-transparent">{t('badge')}</span>
           </motion.div>
 
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
-            <span className="text-white">{t('titleLine1')}</span>{' '}
-            <span className="text-neutral-500">{t('titleLine2')}</span>
+          {/* Epic Title - MASSIVE */}
+          <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold mb-10 leading-tight">
+            <span className="text-white">{t('titleLine1')}</span>
+            <br className="hidden md:block" />{' '}
+            <motion.span
+              className="inline-block gradient-text"
+              animate={{
+                textShadow: [
+                  '0 0 30px rgba(0, 245, 255, 0.4)',
+                  '0 0 60px rgba(168, 85, 247, 0.5)',
+                  '0 0 30px rgba(255, 0, 255, 0.4)',
+                  '0 0 60px rgba(168, 85, 247, 0.5)',
+                  '0 0 30px rgba(0, 245, 255, 0.4)'
+                ]
+              }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            >
+              {t('titleLine2')}
+            </motion.span>
           </h2>
 
-          <p className="text-lg text-neutral-400 max-w-2xl mx-auto">
+          {/* Description */}
+          <p className="text-lg md:text-xl text-white/50 max-w-3xl mx-auto leading-relaxed">
             {t('description')}
           </p>
         </motion.div>
 
-        {/* Pain Points */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {/* Epic Pain Points - Glass Cards with Neon */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {painPoints.map((point, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-              transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-              className="flex items-start gap-4 p-4 rounded-xl border border-white/10 bg-neutral-950 hover:border-white/20 transition-colors"
+              initial={{ opacity: 0, y: 40, scale: 0.9 }}
+              animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 40, scale: 0.9 }}
+              transition={{ duration: 0.7, delay: 0.15 + index * 0.1 }}
+              className="group relative h-full"
             >
-              <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center">
-                <point.icon className="w-5 h-5 text-neutral-500" />
+              {/* Outer glow on hover */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-neon-cyan/20 via-neon-purple/20 to-neon-magenta/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500" />
+
+              {/* Card with glass effect */}
+              <div className="relative h-full flex items-start gap-5 p-6 md:p-7 rounded-2xl glass border border-white/10 group-hover:border-neon-cyan/30 transition-all duration-300 group-hover:shadow-[0_0_40px_rgba(0,245,255,0.1)]">
+                {/* Gradient border effect */}
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-neon-cyan/5 via-transparent to-neon-purple/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                {/* Animated Icon Container */}
+                <motion.div
+                  className="relative flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-neon-purple/20 to-neon-cyan/10 border border-white/10 flex items-center justify-center group-hover:border-neon-cyan/30 transition-all duration-300"
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  transition={{ type: "spring", stiffness: 400 }}
+                >
+                  {/* Icon glow */}
+                  <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-neon-cyan/20 to-neon-purple/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <motion.div
+                    animate={{
+                      scale: [1, 1.15, 1],
+                    }}
+                    transition={{
+                      duration: 2.5,
+                      repeat: Infinity,
+                      delay: index * 0.3,
+                      ease: "easeInOut"
+                    }}
+                    className="relative z-10"
+                  >
+                    <point.icon className="w-6 h-6 text-white/70 group-hover:text-neon-cyan transition-colors duration-300" />
+                  </motion.div>
+                </motion.div>
+
+                {/* Text */}
+                <p className="relative z-10 text-white/60 leading-relaxed pt-2 text-base md:text-lg group-hover:text-white/80 transition-colors duration-300">
+                  {point.text}
+                </p>
               </div>
-              <p className="text-neutral-400 leading-relaxed pt-2">
-                {point.text}
-              </p>
             </motion.div>
           ))}
         </div>
-
-        {/* Visual Comparison */}
-        <VisualComparison />
 
         {/* Time Saved Calculator */}
         <TimeSavedCalculator />

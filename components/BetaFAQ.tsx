@@ -82,7 +82,7 @@ export default function BetaFAQ() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="relative"
         >
-          <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-r from-neon-cyan/20 via-neon-purple/20 to-neon-magenta/20" />
+          <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-r from-neon-cyan/30 via-neon-cyan/20 to-neon-cyan/30" />
           <div className="relative rounded-2xl glass p-6 md:p-8">
             {faqs.map((faq, index) => (
               <FAQItem

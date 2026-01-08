@@ -7,15 +7,16 @@ import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 
 const mcpIntegrations = [
-  { id: 'notion', icon: '/icons/mcp/notion.png', name: 'Notion' },
-  { id: 'supabase', icon: '/icons/mcp/supabase.png', name: 'Supabase' },
-  { id: 'github', icon: '/icons/mcp/github.png', name: 'GitHub' },
-  { id: 'slack', icon: '/icons/mcp/slack.png', name: 'Slack' },
-  { id: 'playwright', icon: '/icons/mcp/playwright.png', name: 'Playwright' },
-  { id: 'puppeteer', icon: '/icons/mcp/puppeteer.png', name: '' },
-  { id: 'googledrive', icon: '/icons/mcp/google-drive.png', name: 'Google Drive' },
-  { id: 'postgres', icon: '/icons/mcp/postgres.png', name: 'Postgres' },
-  { id: 'brave', icon: '/icons/mcp/brave-search.png', name: 'Brave' },
+  { id: 'notion', icon: '/icons/mcp/notion.png', name: 'Notion', invertIcon: false },
+  { id: 'supabase', icon: '/icons/mcp/supabase.png', name: 'Supabase', invertIcon: false },
+  { id: 'github', icon: '/icons/mcp/github.png', name: 'GitHub', invertIcon: true },
+  { id: 'slack', icon: '/icons/mcp/slack.png', name: 'Slack', invertIcon: false },
+  { id: 'atlassian', icon: '/icons/mcp/atlassian.png', name: 'Atlassian', invertIcon: false },
+  { id: 'playwright', icon: '/icons/mcp/playwright.png', name: 'Playwright', invertIcon: true },
+  { id: 'puppeteer', icon: '/icons/mcp/puppeteer.png', name: '', invertIcon: false },
+  { id: 'googledrive', icon: '/icons/mcp/google-drive.png', name: 'Google Drive', invertIcon: false },
+  { id: 'postgres', icon: '/icons/mcp/postgres.png', name: 'Postgres', invertIcon: false },
+  { id: 'brave', icon: '/icons/mcp/brave-search.png', name: 'Brave', invertIcon: false },
 ]
 
 export default function MCPSection() {
@@ -57,7 +58,7 @@ export default function MCPSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-16 md:py-32 px-6 overflow-hidden"
+      className="relative py-16 md:py-20 px-6 overflow-hidden"
     >
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-dark-900 to-black" />
@@ -121,7 +122,7 @@ export default function MCPSection() {
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-9 gap-4"
+          className="grid grid-cols-5 sm:grid-cols-5 lg:grid-cols-10 gap-3"
         >
           {mcpIntegrations.map((mcp, index) => {
             const isInstalled = installedItems.has(mcp.id)
@@ -135,20 +136,20 @@ export default function MCPSection() {
                 transition={{ duration: 0.4, delay: 0.1 + index * 0.05 }}
                 whileHover={{ scale: 1.05, y: -4 }}
                 whileTap={{ scale: 0.95 }}
-                className={`relative group p-4 rounded-xl border transition-all ${
+                className={`relative group p-3 rounded-xl border transition-all ${
                   isInstalled
                     ? 'border-green-500/50 bg-green-500/10'
                     : 'border-white/10 bg-white/5 hover:border-neon-cyan/30 hover:bg-white/10'
                 }`}
               >
                 {/* Icon */}
-                <div className="w-12 h-12 mx-auto mb-2 relative">
+                <div className="w-10 h-10 mx-auto mb-2 relative">
                   <Image
                     src={mcp.icon}
                     alt={mcp.name}
-                    width={48}
-                    height={48}
-                    className="rounded-lg"
+                    width={40}
+                    height={40}
+                    className={`rounded-lg ${mcp.invertIcon ? 'brightness-0 invert' : ''}`}
                   />
                   {isInstalled && (
                     <motion.div

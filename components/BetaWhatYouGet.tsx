@@ -14,32 +14,32 @@ export default function BetaWhatYouGet() {
     {
       icon: Crown,
       text: t('features.fullPro'),
-      gradient: 'from-neon-purple to-neon-magenta',
+      gradient: 'from-neon-cyan to-teal-500',
     },
     {
       icon: Zap,
       text: t('features.priority'),
-      gradient: 'from-yellow-500 to-orange-500',
+      gradient: 'from-neon-cyan/80 to-cyan-600',
     },
     {
       icon: Rocket,
       text: t('features.earlyAccess'),
-      gradient: 'from-blue-500 to-cyan-500',
+      gradient: 'from-cyan-500 to-teal-500',
     },
     {
       icon: TrendingUp,
       text: t('features.influence'),
-      gradient: 'from-green-500 to-emerald-500',
+      gradient: 'from-teal-500 to-emerald-500',
     },
     {
       icon: MessageCircle,
       text: t('features.feedback'),
-      gradient: 'from-neon-cyan to-blue-500',
+      gradient: 'from-neon-cyan to-cyan-600',
     },
     {
       icon: DollarSign,
       text: t('features.noPayments'),
-      gradient: 'from-pink-500 to-rose-500',
+      gradient: 'from-emerald-500 to-green-500',
     },
   ]
 

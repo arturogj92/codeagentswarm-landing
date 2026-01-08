@@ -8,7 +8,6 @@ import {
   Lightbulb,
   Monitor,
   ChevronRight,
-  Circle,
 } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 
@@ -30,7 +29,6 @@ export default function RoadmapSection() {
       ],
       icon: Monitor,
       status: 'in-progress',
-      gradient: 'from-neon-cyan to-blue-500',
     },
     {
       quarter: 'Q2',
@@ -45,7 +43,6 @@ export default function RoadmapSection() {
       ],
       icon: Code2,
       status: 'upcoming',
-      gradient: 'from-purple-500 to-pink-500',
     },
     {
       quarter: 'Q3',
@@ -60,7 +57,6 @@ export default function RoadmapSection() {
       ],
       icon: Brain,
       status: 'upcoming',
-      gradient: 'from-orange-500 to-red-500',
     },
     {
       quarter: 'Q4',
@@ -75,7 +71,6 @@ export default function RoadmapSection() {
       ],
       icon: Lightbulb,
       status: 'upcoming',
-      gradient: 'from-emerald-500 to-teal-500',
     },
   ]
 
@@ -178,11 +173,11 @@ export default function RoadmapSection() {
                     {/* Card */}
                     <div className="relative rounded-2xl overflow-hidden glass border border-white/5 hover:border-white/10 transition-all duration-500">
                       {/* Top accent bar - visible on mobile */}
-                      <div className={`h-1 bg-gradient-to-r ${item.gradient}`} />
+                      <div className={`h-1 bg-gradient-to-r ${item.status === 'in-progress' ? 'from-neon-cyan to-neon-purple' : 'from-white/20 to-white/5'}`} />
 
                       {/* Gradient overlay */}
                       <div
-                        className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
+                        className="absolute inset-0 bg-gradient-to-br from-neon-cyan/5 via-transparent to-neon-purple/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                       />
 
                       <div className="relative p-4 sm:p-6">
@@ -190,11 +185,13 @@ export default function RoadmapSection() {
                         <div className="flex items-start justify-between mb-4">
                           <div className="flex items-center gap-4">
                             <div
-                              className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br ${item.gradient} p-2 sm:p-3 shadow-lg flex-shrink-0 ${
-                                item.status === 'in-progress' ? 'animate-pulse' : ''
+                              className={`relative w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br from-neon-purple/20 to-neon-cyan/10 border border-white/10 flex items-center justify-center flex-shrink-0 group-hover:border-neon-cyan/30 transition-all duration-300 ${
+                                item.status === 'in-progress' ? 'shadow-[0_0_20px_rgba(0,245,255,0.3)]' : ''
                               }`}
                             >
-                              <item.icon className="w-full h-full text-white" />
+                              {/* Icon glow on hover */}
+                              <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-neon-cyan/20 to-neon-purple/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                              <item.icon className={`relative z-10 w-6 h-6 ${item.status === 'in-progress' ? 'text-neon-cyan' : 'text-white/70'} group-hover:text-neon-cyan transition-colors duration-300`} />
                             </div>
                             <div className="min-w-0">
                               <div className="flex items-center gap-2 mb-0.5">
@@ -232,7 +229,7 @@ export default function RoadmapSection() {
                         <div className="lg:hidden mb-3 pt-3 border-t border-white/5">
                           <div className="flex flex-wrap gap-2">
                             {item.features.slice(0, 2).map((feature) => (
-                              <span key={feature} className={`text-xs px-2 py-1 rounded-full bg-gradient-to-r ${item.gradient} bg-opacity-10 text-white/70`}>
+                              <span key={feature} className="text-xs px-2 py-1 rounded-full bg-white/5 border border-white/10 text-white/60">
                                 {feature}
                               </span>
                             ))}
@@ -268,7 +265,7 @@ export default function RoadmapSection() {
                                 className="flex items-center gap-2"
                               >
                                 <div
-                                  className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${item.gradient}`}
+                                  className={`w-1.5 h-1.5 rounded-full ${item.status === 'in-progress' ? 'bg-neon-cyan' : 'bg-white/40'}`}
                                 />
                                 <span className="text-sm text-white/60">
                                   {feature}
@@ -291,7 +288,7 @@ export default function RoadmapSection() {
 
                       {/* Corner glow */}
                       <div
-                        className={`absolute -top-20 -right-20 w-40 h-40 bg-gradient-to-br ${item.gradient} rounded-full blur-3xl opacity-0 group-hover:opacity-20 transition-opacity duration-500`}
+                        className="absolute -top-20 -right-20 w-40 h-40 bg-gradient-to-br from-neon-cyan to-neon-purple rounded-full blur-3xl opacity-0 group-hover:opacity-20 transition-opacity duration-500"
                       />
                     </div>
                   </motion.div>

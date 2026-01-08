@@ -70,7 +70,7 @@
       "switching": "Cambios de ventana constantes que fragmentan tu concentración.",
       "noView": "Claude Code modifica archivos sin que puedas ver qué está haciendo.",
       "repeating": "Sesiones que pierden contexto. Prompts que repites continuamente.",
-      "confidence": "Cambios de IA sin seguimiento en vivo. Riesgo en cada edición."
+      "confidence": "La IA termina y no te enteras. Sin notificaciones, vives pendiente del terminal."
     },
     "calculator": {
       "title": "Calculadora de Ahorro de Tiempo",
@@ -126,33 +126,33 @@
   },
   "features": {
     "badge": "Funcionalidades Core",
-    "titlePre": "Todo lo que",
-    "titleHighlight": "Necesitas",
-    "viewGuide": "Ver guía →",
+    "titlePre": "Todo lo",
+    "titleHighlight": "Que Necesitas",
+    "viewGuide": "Ver guía",
     "items": {
       "multiTerminal": {
         "title": "Varias Terminales de Claude Code en Paralelo",
-        "description": "Ejecuta hasta 6 agentes Claude Code simultáneamente en un verdadero espacio de trabajo multi-terminal. Cada terminal trabaja en tareas diferentes en múltiples proyectos."
+        "description": "Cada terminal es independiente: su propio proyecto, su propio contexto, su propia tarea. Sin conflictos. Sin esperas. Trabajas en frontend mientras otro terminal hace backend."
       },
       "taskWorkflow": {
         "title": "Gestión de Tareas con IA",
-        "description": "Tablero Kanban integrado que los agentes pueden leer y actualizar vía MCP. Las tareas se sincronizan automáticamente en todos los terminales para flujos multi-proyecto."
+        "description": "Los agentes leen el tablero solos y actualizan su progreso vía MCP. Tú ves qué hace cada uno sin preguntarles. Coordinación automática, cero micromanagement."
       },
       "notifications": {
         "title": "Notificaciones de Claude Code en Tiempo Real",
-        "description": "Recibe notificaciones instantáneas cuando cualquier terminal de Claude Code termina, necesita input o encuentra un error. No te pierdas nada con las notificaciones de programación IA."
+        "description": "Deja de vigilar terminales. Cuando un agente termina, necesita input o falla, te avisa. Trabaja en otra cosa mientras Claude trabaja para ti."
       },
       "visibility": {
         "title": "Visibilidad y Seguimiento de Cambios en Tiempo Real",
-        "description": "Ve los cambios de código de IA en tiempo real con diffs en vivo. Títulos de terminal dinámicos y visibilidad instantánea de lo que hace cada agente Claude Code."
+        "description": "Diffs en vivo mientras Claude edita. Títulos dinámicos que muestran qué está haciendo cada agente. Sabes exactamente qué se modificó sin revisar git después."
       },
       "history": {
         "title": "Historial Completo de Conversaciones",
-        "description": "Historial completo de conversaciones de Claude Code en todas las sesiones. Busca cualquier decisión, explicación o código pasado. Nunca pierdas contexto."
+        "description": "Cada decisión, cada explicación, cada snippet - buscable. Recupera contexto de hace 3 semanas en segundos. Nunca repitas un prompt porque 'se perdió'."
       },
       "turboMode": {
         "title": "Permisos y Modo Turbo",
-        "description": "Gestiona permisos de Claude Code y acceso a archivos con controles visuales. Modo Turbo auto-aprueba acciones seguras mientras tú controlas las operaciones sensibles."
+        "description": "Auto-aprueba lo seguro, frena lo sensible. Máxima velocidad sin ceder control. Tú defines los límites, Claude respeta."
       }
     },
     "seoLine": "Seguimiento de cambios en tiempo real para saber siempre qué hace Claude Code. Ideal para coordinar múltiples proyectos o refactors grandes.",
@@ -166,20 +166,20 @@
   "socialProof": {
     "stats": {
       "workflow": {
-        "title": "3x Velocidad de Trabajo",
-        "subtitle": "Terminales Claude Code en paralelo reducen esperas y cambios de contexto."
+        "title": "Trabaja 3x Más Rápido",
+        "subtitle": "Sin esperas entre ventanas. Cada terminal avanza solo."
       },
       "agents": {
-        "title": "6 Terminales, Cero Cuellos de Botella",
-        "subtitle": "Ejecuta varias sesiones de Claude Code con visibilidad total."
+        "title": "6 Agentes, 0 Esperas",
+        "subtitle": "Frontend, backend, tests. Cada uno en lo suyo."
       },
       "insight": {
-        "title": "Seguimiento de Cambios en Tiempo Real",
-        "subtitle": "Diffs en vivo e historial de archivos te mantienen en control."
+        "title": "Ve Todo en Tiempo Real",
+        "subtitle": "Diffs en vivo. Sin sorpresas. Siempre sabes qué tocó Claude."
       },
       "search": {
-        "title": "Busca Cualquier Conversación",
-        "subtitle": "Encuentra historial de Claude Code, decisiones y código en segundos."
+        "title": "Encuentra Cualquier Chat",
+        "subtitle": "El prompt de hace 2 semanas sigue ahí. Búscalo."
       }
     },
     "title": "Elegido por",

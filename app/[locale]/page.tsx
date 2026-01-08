@@ -5,7 +5,6 @@ import Header from '@/components/Header'
 import BetaBanner from '@/components/BetaBanner'
 import HeroSection from '@/components/HeroSection'
 import ProblemSection from '@/components/ProblemSection'
-import SolutionSection from '@/components/SolutionSection'
 import FeaturesSection from '@/components/FeaturesSection'
 import MCPSection from '@/components/MCPSection'
 import SocialProofSection from '@/components/SocialProofSection'
@@ -72,7 +71,6 @@ export default function Home() {
       <main>
         <HeroSection />
         <ProblemSection />
-        <SolutionSection />
         <FeaturesSection />
         <MCPSection />
         <SocialProofSection />
