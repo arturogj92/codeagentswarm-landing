@@ -35,8 +35,8 @@
       "searchableChatsDesc": "Historial completo, nunca pierdas contexto",
       "codePreview": "Visibilidad en Tiempo Real",
       "codePreviewDesc": "Diffs en vivo y seguimiento de cambios",
-      "kanban": "Kanban Compartido",
-      "kanbanDesc": "Tareas con MCP para ti y tus agentes"
+      "kanban": "Tablero Agentic",
+      "kanbanDesc": "Tareas que tus agentes leen, actualizan y completan"
     },
     "videos": {
       "multiTerminal": {
