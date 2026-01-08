@@ -87,7 +87,7 @@ export default function BetaHeroSection() {
             }}
           >
             <Image
-              src="/downloads/app-image.png"
+              src="/images/guides/multi-terminal.png"
               alt="CodeAgentSwarm - Multiple AI Agents Interface"
               width={1800}
               height={1100}
