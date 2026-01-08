@@ -6,6 +6,10 @@ import { Star, Quote, Code, Zap, TrendingUp } from 'lucide-react'
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 
+// Feature flag: Set to true when real testimonials are available
+// Currently disabled because testimonials are placeholder content
+const SHOW_TESTIMONIALS = false
+
 // Animated Counter
 function AnimatedCounter({ end, suffix = '' }: { end: number; suffix?: string }) {
   const [count, setCount] = useState(0)
@@ -135,71 +139,76 @@ export default function SocialProofSection() {
           ))}
         </motion.div>
 
-        {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-center mb-8 md:mb-16"
-        >
-          <h2 className="heading-lg mb-4">
-            <span className="text-white">{t('title')}</span>{' '}
-            <span className="gradient-text">{t('titleHighlight')}</span>
-          </h2>
-          <p className="text-lg text-white/50 max-w-xl mx-auto">
-            {t('subtitle')}
-          </p>
-        </motion.div>
-
-        {/* Testimonials */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mb-12 md:mb-20">
-          {testimonials.map((testimonial, index) => (
+        {/* Testimonials Section - Only shown when real testimonials are available */}
+        {SHOW_TESTIMONIALS && (
+          <>
+            {/* Section Header */}
             <motion.div
-              key={testimonial.author}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-              transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
-              className="relative group"
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="text-center mb-8 md:mb-16"
             >
-              <div className="relative h-full p-6 rounded-2xl glass border border-white/5 hover:border-neon-cyan/20 transition-all duration-500 flex flex-col">
-                {/* Quote Icon */}
-                <Quote className="w-8 h-8 text-neon-cyan/30 mb-4" />
+              <h2 className="heading-lg mb-4">
+                <span className="text-white">{t('title')}</span>{' '}
+                <span className="gradient-text">{t('titleHighlight')}</span>
+              </h2>
+              <p className="text-lg text-white/50 max-w-xl mx-auto">
+                {t('subtitle')}
+              </p>
+            </motion.div>
 
-                {/* Quote Text */}
-                <p className="text-white/70 leading-relaxed mb-6 italic flex-grow">
-                  &ldquo;{testimonial.quote}&rdquo;
-                </p>
+            {/* Testimonials */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mb-12 md:mb-20">
+              {testimonials.map((testimonial, index) => (
+                <motion.div
+                  key={testimonial.author}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                  transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
+                  className="relative group"
+                >
+                  <div className="relative h-full p-6 rounded-2xl glass border border-white/5 hover:border-neon-cyan/20 transition-all duration-500 flex flex-col">
+                    {/* Quote Icon */}
+                    <Quote className="w-8 h-8 text-neon-cyan/30 mb-4" />
 
-                {/* Author */}
-                <div className="flex items-center gap-3">
-                  <Image
-                    src={testimonial.avatar}
-                    alt={testimonial.author}
-                    width={40}
-                    height={40}
-                    className="w-10 h-10 rounded-full object-cover"
-                  />
-                  <div>
-                    <div className="text-white font-medium">{testimonial.author}</div>
-                    <div className="text-sm text-white/40">
-                      {testimonial.role}
+                    {/* Quote Text */}
+                    <p className="text-white/70 leading-relaxed mb-6 italic flex-grow">
+                      &ldquo;{testimonial.quote}&rdquo;
+                    </p>
+
+                    {/* Author */}
+                    <div className="flex items-center gap-3">
+                      <Image
+                        src={testimonial.avatar}
+                        alt={testimonial.author}
+                        width={40}
+                        height={40}
+                        className="w-10 h-10 rounded-full object-cover"
+                      />
+                      <div>
+                        <div className="text-white font-medium">{testimonial.author}</div>
+                        <div className="text-sm text-white/40">
+                          {testimonial.role}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Stars */}
+                    <div className="absolute top-6 right-6 flex gap-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className="w-4 h-4 fill-neon-cyan text-neon-cyan"
+                        />
+                      ))}
                     </div>
                   </div>
-                </div>
-
-                {/* Stars */}
-                <div className="absolute top-6 right-6 flex gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className="w-4 h-4 fill-neon-cyan text-neon-cyan"
-                    />
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+                </motion.div>
+              ))}
+            </div>
+          </>
+        )}
 
       </div>
     </section>
