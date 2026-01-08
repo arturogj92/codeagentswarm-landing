@@ -185,12 +185,12 @@ export default function PricingSection() {
                 ))}
               </div>
 
-              {/* CTA Button - Keep gradient for primary CTA */}
+              {/* CTA Button - Direct to download */}
               <a
-                href={`/${locale}/beta`}
+                href="#download"
                 onClick={() => {
                   if (typeof window !== 'undefined') {
-                    window.umami?.track('beta_special_click')
+                    window.umami?.track('beta_special_download_click')
                   }
                 }}
                 className="block"

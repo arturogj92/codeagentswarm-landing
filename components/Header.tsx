@@ -33,7 +33,6 @@ export default function Header() {
   const navLinks = isBetaPage
     ? [
         { name: 'How to Join', href: '#beta-how-to-join' },
-        { name: 'Sign Up', href: '#beta-signup-form' },
         { name: t('pricing'), href: '#beta-pricing' },
         { name: 'FAQ', href: '#beta-faq' },
       ]

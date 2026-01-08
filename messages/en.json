@@ -27,7 +27,7 @@
     "authorityLine": "",
     "requirements": "Works with your Claude Code subscription. Requires macOS 12 or later.",
     "claimAccess": "Claim Free Pro Access",
-    "securityBadge": "Auto mode with built-in guardrails. You set the limits.",
+    "securityBadge": "Turbo Mode with built-in guardrails. You set the limits.",
     "stats": {
       "terminals": "Parallel Terminals",
       "terminalsDesc": "6 Claude Code agents working together",
@@ -64,7 +64,7 @@
   "problem": {
     "badge": "The Hidden Cost",
     "titleLine1": "Window switching",
-    "titleLine2": "is costing you hours",
+    "titleLine2": "is wasting your time",
     "description": "When your entire workflow depends on one AI chat or terminal, the mental tax compounds. Context switching between windows, lost threads, repeated prompts - you're paying an invisible productivity tax every single minute.",
     "painPoints": {
       "switching": "Constantly switching between windows, losing your train of thought.",
@@ -95,7 +95,7 @@
       "newWay": "With CodeAgentSwarm",
       "newWayDesc": "6 terminals, one view, zero context loss",
       "switchingFatigue": "Window switching",
-      "costingHours": "is costing you hours",
+      "costingHours": "is wasting your time",
       "allVisible": "All visible at once",
       "sixTerminals": "6 terminals, 1 view",
       "appPlaceholder": "Your screenshot here",
@@ -632,7 +632,7 @@
         "q7": "Does CodeAgentSwarm store my code?",
         "a7": "No. All code stays on your local machine.",
         "q8": "How long does Pro activation take?",
-        "a8": "Usually a few hours after you complete all steps.",
+        "a8": "Almost instant once you complete all steps.",
         "q9": "Does CodeAgentSwarm support multi-project workflows with Claude Code?",
         "a9": "Yes! CodeAgentSwarm is designed for multiproject management. Switch between Claude Code projects without losing context. Each project maintains its own terminals, tasks and conversation history. Manage multiple Claude Code projects seamlessly in one workspace."
       }

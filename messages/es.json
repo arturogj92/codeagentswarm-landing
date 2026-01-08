@@ -27,7 +27,7 @@
     "authorityLine": "",
     "requirements": "Compatible con tu suscripción de Claude Code. macOS 12+",
     "claimAccess": "Acceder a Pro Gratis",
-    "securityBadge": "Modo automático con protección integrada. Tú defines los límites.",
+    "securityBadge": "Modo Turbo con protección integrada. Tú defines los límites.",
     "stats": {
       "terminals": "Terminales Paralelos",
       "terminalsDesc": "6 agentes Claude Code trabajando juntos",
@@ -64,7 +64,7 @@
   "problem": {
     "badge": "El Coste Oculto",
     "titleLine1": "Cambiar de ventana",
-    "titleLine2": "te está costando horas",
+    "titleLine2": "te hace perder mucho tiempo",
     "description": "Un solo terminal de Claude Code significa cambios de contexto constantes. Cada interrupción rompe tu concentración. Cada prompt repetido es tiempo perdido. Cada cambio sin visibilidad es un riesgo.",
     "painPoints": {
       "switching": "Cambios de ventana constantes que fragmentan tu concentración.",
@@ -95,7 +95,7 @@
       "newWay": "Con CodeAgentSwarm",
       "newWayDesc": "6 terminales, visibilidad total, cero pérdida de contexto",
       "switchingFatigue": "Cambiar de ventana",
-      "costingHours": "te está costando horas",
+      "costingHours": "te hace perder mucho tiempo",
       "allVisible": "Todo visible a la vez",
       "sixTerminals": "6 terminales, 1 vista",
       "appPlaceholder": "Tu screenshot aquí",
@@ -632,7 +632,7 @@
         "q7": "¿CodeAgentSwarm almacena mi código?",
         "a7": "No. Todo tu código permanece en tu máquina.",
         "q8": "¿Cuánto tarda la activación de Pro?",
-        "a8": "Normalmente pocas horas después de completar todos los pasos.",
+        "a8": "Casi instantáneo una vez completes todos los pasos.",
         "q9": "¿Soporta CodeAgentSwarm flujos multi-proyecto con Claude Code?",
         "a9": "¡Sí! CodeAgentSwarm está diseñado para gestión multiproyecto. Cambia entre proyectos de Claude Code sin perder contexto. Cada proyecto mantiene sus propios terminales, tareas e historial de conversaciones. Gestiona múltiples proyectos de Claude Code sin problemas en un solo espacio de trabajo."
       }

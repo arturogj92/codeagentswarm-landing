@@ -2,7 +2,7 @@
 
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { FileText, Download, Info } from 'lucide-react'
+import { Download, Info, Zap } from 'lucide-react'
 
 // Discord icon component
 const DiscordIcon = ({ className }: { className?: string }) => (
@@ -20,23 +20,16 @@ export default function BetaHowToJoin() {
   const steps = [
     {
       number: 1,
-      icon: FileText,
+      icon: Download,
       title: t('step1.title'),
       description: t('step1.description'),
-      gradient: 'from-neon-cyan/80 to-cyan-600',
-    },
-    {
-      number: 2,
-      icon: Download,
-      title: t('step2.title'),
-      description: t('step2.description'),
       gradient: 'from-neon-cyan to-teal-500',
     },
     {
-      number: 3,
+      number: 2,
       icon: DiscordIcon,
-      title: t('step3.title'),
-      description: t('step3.description'),
+      title: t('step2.title'),
+      description: t('step2.description'),
       gradient: 'from-[#5865F2] to-[#7289DA]',
     },
   ]
@@ -65,7 +58,7 @@ export default function BetaHowToJoin() {
         </motion.div>
 
         {/* Steps */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {steps.map((step, index) => (
             <motion.div
               key={step.number}
@@ -128,6 +121,27 @@ export default function BetaHowToJoin() {
               {t('note')}
             </p>
           </div>
+        </motion.div>
+
+        {/* CTA Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="mt-8 text-center"
+        >
+          <a
+            href="#download"
+            onClick={() => {
+              if (typeof window !== 'undefined') {
+                window.umami?.track('how_to_join_download_click')
+              }
+            }}
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-cyan-400 text-black font-semibold text-lg hover:bg-cyan-300 transition-all hover:shadow-[0_0_20px_rgba(34,211,238,0.3)]"
+          >
+            <Zap className="w-5 h-5" />
+            {t('cta')}
+          </a>
         </motion.div>
       </div>
     </section>

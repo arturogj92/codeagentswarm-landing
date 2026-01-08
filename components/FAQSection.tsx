@@ -30,7 +30,7 @@ function FAQItem({ question, answer, index }: { question: string; answer: string
       </button>
       <div
         className={`overflow-hidden transition-all duration-300 ${
-          isOpen ? 'max-h-48 pb-5' : 'max-h-0'
+          isOpen ? 'max-h-[500px] pb-5' : 'max-h-0'
         }`}
       >
         <p className="text-white/70 leading-relaxed">{answer}</p>

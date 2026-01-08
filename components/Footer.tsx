@@ -34,7 +34,6 @@ export default function Footer() {
       ? [
           { name: 'Features', href: '#beta-what-is' },
           { name: 'How to Join', href: '#beta-how-to-join' },
-          { name: 'Sign Up', href: '#beta-signup-form' },
           { name: 'FAQ', href: '#beta-faq' },
           { name: t('links.guides'), href: guidesHref },
         ]

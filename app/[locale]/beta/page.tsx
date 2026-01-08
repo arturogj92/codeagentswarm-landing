@@ -5,7 +5,6 @@ import Header from '@/components/Header'
 import BetaHeroSection from '@/components/BetaHeroSection'
 import FeaturesSection from '@/components/FeaturesSection'
 import BetaHowToJoin from '@/components/BetaHowToJoin'
-import BetaSignupForm from '@/components/BetaSignupForm'
 import BetaWhatYouGet from '@/components/BetaWhatYouGet'
 import BetaPricingSection from '@/components/BetaPricingSection'
 import BetaFAQ from '@/components/BetaFAQ'
@@ -62,7 +61,6 @@ export default function BetaPage() {
         <BetaHeroSection />
         <FeaturesSection />
         <BetaHowToJoin />
-        <BetaSignupForm />
         <BetaWhatYouGet />
         <BetaPricingSection />
         <BetaFAQ />
