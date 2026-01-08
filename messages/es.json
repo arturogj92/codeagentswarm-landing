@@ -590,16 +590,16 @@
       "socialProof": "Ya usado por testers iniciales que entregan apps más rápido."
     },
     "whatYouGet": {
-      "titlePre": "Qué",
-      "titleHighlight": "obtienes",
+      "titlePre": "Esto es lo que",
+      "titleHighlight": "te llevas",
       "titlePost": "en la Open Beta",
       "features": {
-        "fullPro": "Todas las funciones Pro desbloqueadas",
-        "priority": "Prioridad en sugerencias",
-        "earlyAccess": "Builds anticipadas",
-        "influence": "Influencia en la hoja de ruta",
-        "feedback": "Canal de feedback obligatorio",
-        "noPayments": "Ningún pago durante la beta"
+        "fullPro": "Todo Pro, sin restricciones",
+        "priority": "Tu feedback va primero",
+        "earlyAccess": "Las novedades, antes que nadie",
+        "influence": "Decides qué construimos",
+        "feedback": "Línea directa con el equipo",
+        "noPayments": "Gratis mientras dure la beta"
       }
     },
     "pricing": {

@@ -590,16 +590,16 @@
       "socialProof": "Already used by early testers shipping apps 3x faster."
     },
     "whatYouGet": {
-      "titlePre": "What you",
+      "titlePre": "Here's what you",
       "titleHighlight": "get",
       "titlePost": "in Open Beta",
       "features": {
-        "fullPro": "Full Pro features unlocked",
-        "priority": "Priority feature requests",
-        "earlyAccess": "Early access builds",
-        "influence": "Influence on roadmap",
-        "feedback": "Required feedback channel",
-        "noPayments": "No payments during beta"
+        "fullPro": "Full Pro, no restrictions",
+        "priority": "Your feedback comes first",
+        "earlyAccess": "New features before anyone else",
+        "influence": "You decide what we build",
+        "feedback": "Direct line to the team",
+        "noPayments": "Free for the entire beta"
       }
     },
     "pricing": {
