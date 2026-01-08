@@ -326,8 +326,8 @@ function VisualComparison() {
               transition={{ delay: 0.7, duration: 0.6 }}
               className="relative group"
             >
-              {/* Glow effect behind image */}
-              <div className="absolute -inset-2 bg-gradient-to-r from-emerald-500/20 via-cyan-500/20 to-emerald-500/20 rounded-3xl blur-xl opacity-50 group-hover:opacity-70 transition-opacity" />
+              {/* Glow effect behind image - hidden on mobile for performance */}
+              <div className="hidden md:block absolute -inset-2 bg-gradient-to-r from-emerald-500/20 via-cyan-500/20 to-emerald-500/20 rounded-3xl blur-xl opacity-50 group-hover:opacity-70 transition-opacity" />
 
               <div className="relative aspect-[16/10] rounded-2xl overflow-hidden bg-black border-2 border-emerald-500/30 shadow-[0_0_40px_rgba(16,185,129,0.2)] hover:shadow-[0_0_50px_rgba(16,185,129,0.3)] transition-shadow">
                 <Image
@@ -391,10 +391,10 @@ export default function ProblemSection() {
       {/* Background */}
       <div className="absolute inset-0 bg-black" />
 
-      {/* Dramatic radial gradients - using web palette */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-gradient-radial from-neon-purple/15 via-neon-magenta/5 to-transparent blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[600px] h-[400px] bg-gradient-radial from-neon-cyan/8 via-transparent to-transparent blur-3xl pointer-events-none" />
-      <div className="absolute bottom-20 right-0 w-[500px] h-[400px] bg-gradient-radial from-neon-purple/10 via-transparent to-transparent blur-3xl pointer-events-none" />
+      {/* Dramatic radial gradients - hidden on mobile for performance */}
+      <div className="hidden md:block absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-gradient-radial from-neon-purple/15 via-neon-magenta/5 to-transparent blur-3xl pointer-events-none" />
+      <div className="hidden md:block absolute bottom-0 left-0 w-[600px] h-[400px] bg-gradient-radial from-neon-cyan/8 via-transparent to-transparent blur-3xl pointer-events-none" />
+      <div className="hidden md:block absolute bottom-20 right-0 w-[500px] h-[400px] bg-gradient-radial from-neon-purple/10 via-transparent to-transparent blur-3xl pointer-events-none" />
 
       {/* Animated grid overlay */}
       <div className="absolute inset-0 grid-bg opacity-30 pointer-events-none" />
@@ -470,8 +470,8 @@ export default function ProblemSection() {
               transition={{ duration: 0.7, delay: 0.15 + index * 0.1 }}
               className="group relative h-full"
             >
-              {/* Outer glow on hover */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-neon-cyan/20 via-neon-purple/20 to-neon-magenta/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500" />
+              {/* Outer glow on hover - hidden on mobile for performance */}
+              <div className="hidden md:block absolute -inset-1 bg-gradient-to-r from-neon-cyan/20 via-neon-purple/20 to-neon-magenta/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500" />
 
               {/* Card with glass effect */}
               <div className="relative h-full flex items-start gap-5 p-6 md:p-7 rounded-2xl glass border border-white/10 group-hover:border-neon-cyan/30 transition-all duration-300 group-hover:shadow-[0_0_40px_rgba(0,245,255,0.1)]">
@@ -484,8 +484,8 @@ export default function ProblemSection() {
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   transition={{ type: "spring", stiffness: 400 }}
                 >
-                  {/* Icon glow */}
-                  <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-neon-cyan/20 to-neon-purple/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  {/* Icon glow - hidden on mobile for performance */}
+                  <div className="hidden md:block absolute inset-0 rounded-xl bg-gradient-to-br from-neon-cyan/20 to-neon-purple/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <motion.div
                     animate={{
                       scale: [1, 1.15, 1],
