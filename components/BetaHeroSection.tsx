@@ -19,7 +19,7 @@ export default function BetaHeroSection() {
   }
 
   const scrollToFeatures = () => {
-    const featuresElement = document.getElementById('beta-what-is')
+    const featuresElement = document.getElementById('features')
     if (featuresElement) {
       featuresElement.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }
