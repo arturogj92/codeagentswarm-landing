@@ -2,7 +2,7 @@
 
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { Users, Kanban, Bell, Activity, MessageSquare, Zap, ArrowRight } from 'lucide-react'
+import { Users, Kanban, Bell, Activity, Search, Zap, ArrowRight } from 'lucide-react'
 import { useTranslations, useLocale } from 'next-intl'
 import Link from 'next/link'
 
@@ -34,7 +34,7 @@ export default function FeaturesSection() {
       guideSlug: locale === 'es' ? 'ver-cambios-claude-code-tiempo-real' : 'view-claude-code-changes-real-time'
     },
     {
-      icon: MessageSquare,
+      icon: Search,
       title: t('items.history.title'),
       description: t('items.history.description'),
       guideSlug: locale === 'es' ? 'historial-claude-code' : 'claude-code-history'
