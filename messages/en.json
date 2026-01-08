@@ -519,20 +519,17 @@
     },
     "howToJoin": {
       "titlePre": "How to",
-      "titleHighlight": "Join",
+      "titleHighlight": "Get Started",
       "step1": {
-        "title": "Fill in the beta form",
-        "description": "Tell us your email and basic setup so we can prepare your Pro (Beta) access."
+        "title": "Download the app & create your account",
+        "description": "Install CodeAgentSwarm on macOS and sign in with Google, GitHub or Discord. You'll automatically get Pro access."
       },
       "step2": {
-        "title": "Download the app & create your account",
-        "description": "Install CodeAgentSwarm on macOS and sign in with the SAME email (Google, GitHub or Discord login supported)."
-      },
-      "step3": {
         "title": "Join our Discord & share feedback",
-        "description": "Joining the CodeAgentSwarm Discord is REQUIRED for the beta, since feedback is a condition for free Pro access."
+        "description": "Joining the CodeAgentSwarm Discord is highly recommended for support and to share your feedback."
       },
-      "note": "No credit card required. Full Pro access during the beta in exchange for your feedback."
+      "note": "No credit card required. Full Pro access during the beta.",
+      "cta": "Download Now"
     },
     "whatIs": {
       "titlePre": "Everything You",
@@ -606,7 +603,7 @@
       }
     },
     "pricing": {
-      "banner": "During the Open Beta, the Pro tier is 100% free. Create your account, submit your email and we'll unlock Pro for you.",
+      "banner": "During the Open Beta, the Pro tier is 100% free. Create your account and it activates automatically.",
       "badge": "FREE DURING BETA",
       "priceStrikethrough": "~$6.99/month~",
       "priceFree": "FREE",
