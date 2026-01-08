@@ -5,6 +5,7 @@ import { useRef, useState } from 'react'
 import { AlertTriangle, RefreshCw, Brain, Eye, MessageSquare, X, Check, Calculator, ArrowRight } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
+import { useShouldReduceMotion } from '@/hooks/useIsMobile'
 
 // Time Saved Calculator
 function TimeSavedCalculator() {
@@ -120,6 +121,7 @@ function TimeSavedCalculator() {
 // Visual Comparison - Sin/Con CodeAgentSwarm - DRAMATIC CONTRAST
 function VisualComparison() {
   const t = useTranslations('problem.chaos')
+  const shouldReduceMotion = useShouldReduceMotion()
 
   const painPoints = [
     { icon: RefreshCw, text: t('pain1') },
@@ -180,8 +182,8 @@ function VisualComparison() {
                 className="w-12 h-12 rounded-2xl bg-red-500/10 border border-red-500/30 flex items-center justify-center"
               >
                 <motion.div
-                  animate={{ scale: [1, 1.1, 1] }}
-                  transition={{ duration: 2, repeat: Infinity }}
+                  animate={shouldReduceMotion ? {} : { scale: [1, 1.1, 1] }}
+                  transition={shouldReduceMotion ? {} : { duration: 2, repeat: Infinity }}
                 >
                   <X className="w-6 h-6 text-red-400" />
                 </motion.div>
@@ -285,8 +287,8 @@ function VisualComparison() {
                 className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center shadow-[0_0_20px_rgba(16,185,129,0.2)]"
               >
                 <motion.div
-                  animate={{ scale: [1, 1.05, 1] }}
-                  transition={{ duration: 3, repeat: Infinity }}
+                  animate={shouldReduceMotion ? {} : { scale: [1, 1.05, 1] }}
+                  transition={shouldReduceMotion ? {} : { duration: 3, repeat: Infinity }}
                 >
                   <Check className="w-6 h-6 text-emerald-400" />
                 </motion.div>
@@ -363,6 +365,7 @@ export default function ProblemSection() {
   const t = useTranslations('problem')
   const sectionRef = useRef(null)
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' })
+  const shouldReduceMotion = useShouldReduceMotion()
 
   const painPoints = [
     {
@@ -418,11 +421,11 @@ export default function ProblemSection() {
             className="inline-flex items-center gap-2.5 px-5 py-2.5 mb-10 rounded-full glass border border-neon-purple/30 shadow-[0_0_30px_rgba(168,85,247,0.2)]"
           >
             <motion.div
-              animate={{
+              animate={shouldReduceMotion ? {} : {
                 scale: [1, 1.3, 1],
                 rotate: [0, 10, -10, 0],
               }}
-              transition={{
+              transition={shouldReduceMotion ? {} : {
                 duration: 2.5,
                 repeat: Infinity,
                 ease: "easeInOut"
@@ -439,7 +442,7 @@ export default function ProblemSection() {
             <br className="hidden md:block" />{' '}
             <motion.span
               className="inline-block gradient-text"
-              animate={{
+              animate={shouldReduceMotion ? {} : {
                 textShadow: [
                   '0 0 30px rgba(0, 245, 255, 0.4)',
                   '0 0 60px rgba(168, 85, 247, 0.5)',
@@ -448,7 +451,7 @@ export default function ProblemSection() {
                   '0 0 30px rgba(0, 245, 255, 0.4)'
                 ]
               }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              transition={shouldReduceMotion ? {} : { duration: 4, repeat: Infinity, ease: "easeInOut" }}
             >
               {t('titleLine2')}
             </motion.span>
@@ -481,16 +484,16 @@ export default function ProblemSection() {
                 {/* Animated Icon Container */}
                 <motion.div
                   className="relative flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-neon-purple/20 to-neon-cyan/10 border border-white/10 flex items-center justify-center group-hover:border-neon-cyan/30 transition-all duration-300"
-                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  whileHover={shouldReduceMotion ? {} : { scale: 1.1, rotate: 5 }}
                   transition={{ type: "spring", stiffness: 400 }}
                 >
                   {/* Icon glow - hidden on mobile for performance */}
                   <div className="hidden md:block absolute inset-0 rounded-xl bg-gradient-to-br from-neon-cyan/20 to-neon-purple/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <motion.div
-                    animate={{
+                    animate={shouldReduceMotion ? {} : {
                       scale: [1, 1.15, 1],
                     }}
-                    transition={{
+                    transition={shouldReduceMotion ? {} : {
                       duration: 2.5,
                       repeat: Infinity,
                       delay: index * 0.3,

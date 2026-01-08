@@ -12,11 +12,13 @@ import {
   Eye,
 } from 'lucide-react'
 import { useTranslations } from 'next-intl'
+import { useShouldReduceMotion } from '@/hooks/useIsMobile'
 
 export default function SolutionSection() {
   const t = useTranslations('solution')
   const sectionRef = useRef(null)
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' })
+  const shouldReduceMotion = useShouldReduceMotion()
 
   const solutionPoints = [
     { icon: Terminal, text: t('points.terminals') },
@@ -40,8 +42,8 @@ export default function SolutionSection() {
       transition={{ duration: 0.7, delay: delay + index * 0.1 }}
       className="group relative h-full"
     >
-      {/* Outer glow on hover */}
-      <div className="absolute -inset-1 bg-gradient-to-r from-neon-cyan/20 via-neon-purple/20 to-neon-magenta/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500" />
+      {/* Outer glow on hover - hidden on mobile for performance */}
+      <div className="hidden md:block absolute -inset-1 bg-gradient-to-r from-neon-cyan/20 via-neon-purple/20 to-neon-magenta/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500" />
 
       {/* Card with glass effect */}
       <div className="relative h-full flex items-start gap-5 p-6 md:p-7 rounded-2xl glass border border-white/10 group-hover:border-neon-cyan/30 transition-all duration-300 group-hover:shadow-[0_0_40px_rgba(0,245,255,0.1)]">
@@ -51,16 +53,16 @@ export default function SolutionSection() {
         {/* Animated Icon Container */}
         <motion.div
           className="relative flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-neon-purple/20 to-neon-cyan/10 border border-white/10 flex items-center justify-center group-hover:border-neon-cyan/30 transition-all duration-300"
-          whileHover={{ scale: 1.1, rotate: 5 }}
+          whileHover={shouldReduceMotion ? {} : { scale: 1.1, rotate: 5 }}
           transition={{ type: "spring", stiffness: 400 }}
         >
-          {/* Icon glow */}
-          <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-neon-cyan/20 to-neon-purple/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          {/* Icon glow - hidden on mobile for performance */}
+          <div className="hidden md:block absolute inset-0 rounded-xl bg-gradient-to-br from-neon-cyan/20 to-neon-purple/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           <motion.div
-            animate={{
+            animate={shouldReduceMotion ? {} : {
               scale: [1, 1.15, 1],
             }}
-            transition={{
+            transition={shouldReduceMotion ? {} : {
               duration: 2.5,
               repeat: Infinity,
               delay: index * 0.3,
@@ -88,8 +90,8 @@ export default function SolutionSection() {
       {/* Background */}
       <div className="absolute inset-0 bg-black" />
 
-      {/* Subtle gradient glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-radial from-neon-cyan/10 via-neon-purple/5 to-transparent blur-3xl pointer-events-none" />
+      {/* Subtle gradient glow - hidden on mobile for performance */}
+      <div className="hidden md:block absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-radial from-neon-cyan/10 via-neon-purple/5 to-transparent blur-3xl pointer-events-none" />
 
       <div className="max-w-5xl mx-auto relative z-10">
         {/* Header */}
@@ -137,8 +139,8 @@ export default function SolutionSection() {
                 transition={{ duration: 0.7, delay: 0.5 }}
                 className="group relative"
               >
-                {/* Outer glow on hover */}
-                <div className="absolute -inset-1 bg-gradient-to-r from-neon-cyan/20 via-neon-purple/20 to-neon-magenta/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500" />
+                {/* Outer glow on hover - hidden on mobile for performance */}
+                <div className="hidden md:block absolute -inset-1 bg-gradient-to-r from-neon-cyan/20 via-neon-purple/20 to-neon-magenta/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500" />
 
                 {/* Card with glass effect */}
                 <div className="relative flex items-start gap-5 p-6 md:p-7 rounded-2xl glass border border-white/10 group-hover:border-neon-cyan/30 transition-all duration-300 group-hover:shadow-[0_0_40px_rgba(0,245,255,0.1)]">
@@ -148,16 +150,16 @@ export default function SolutionSection() {
                   {/* Animated Icon Container */}
                   <motion.div
                     className="relative flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-neon-purple/20 to-neon-cyan/10 border border-white/10 flex items-center justify-center group-hover:border-neon-cyan/30 transition-all duration-300"
-                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    whileHover={shouldReduceMotion ? {} : { scale: 1.1, rotate: 5 }}
                     transition={{ type: "spring", stiffness: 400 }}
                   >
-                    {/* Icon glow */}
-                    <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-neon-cyan/20 to-neon-purple/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    {/* Icon glow - hidden on mobile for performance */}
+                    <div className="hidden md:block absolute inset-0 rounded-xl bg-gradient-to-br from-neon-cyan/20 to-neon-purple/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <motion.div
-                      animate={{
+                      animate={shouldReduceMotion ? {} : {
                         scale: [1, 1.15, 1],
                       }}
-                      transition={{
+                      transition={shouldReduceMotion ? {} : {
                         duration: 2.5,
                         repeat: Infinity,
                         delay: 6 * 0.3,

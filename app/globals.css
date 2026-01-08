@@ -285,6 +285,50 @@ header {
   transform: translateZ(0);
 }
 
+/* ============================================
+   MOBILE PERFORMANCE OPTIMIZATIONS
+   Disable heavy blur effects on mobile devices
+   ============================================ */
+@media (max-width: 768px) {
+  /* Disable blur effects on mobile - they are GPU intensive */
+  .blur-3xl,
+  .blur-2xl,
+  .blur-xl,
+  .blur-lg {
+    filter: none !important;
+    -webkit-filter: none !important;
+  }
+
+  /* Reduce backdrop blur on mobile */
+  .backdrop-blur-sm,
+  .backdrop-blur,
+  .backdrop-blur-md,
+  .backdrop-blur-lg,
+  .backdrop-blur-xl {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+
+  /* Disable complex text shadows on mobile */
+  .text-glow-cyan {
+    text-shadow: none !important;
+  }
+
+  .gradient-text {
+    text-shadow: none !important;
+  }
+
+  /* Simplify box shadows on mobile */
+  .pulse-glow {
+    box-shadow: none !important;
+  }
+
+  /* Reduce animation complexity */
+  .card-hover:hover {
+    transform: translateY(-4px) !important;
+  }
+}
+
 /* Print styles */
 @media print {
   .no-print {

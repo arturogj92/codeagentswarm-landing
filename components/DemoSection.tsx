@@ -56,7 +56,8 @@ export default function DemoSection() {
     >
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-dark-900 to-black" />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-gradient-radial from-zinc-800/20 via-transparent to-transparent blur-3xl" />
+      {/* Gradient glow - hidden on mobile for performance */}
+      <div className="hidden md:block absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-gradient-radial from-zinc-800/20 via-transparent to-transparent blur-3xl" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Header */}

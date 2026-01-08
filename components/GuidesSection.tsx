@@ -36,7 +36,8 @@ export default function GuidesSection() {
     >
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-dark-900 to-black" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-neutral-800/20 rounded-full blur-3xl" />
+      {/* Gradient glow - hidden on mobile for performance */}
+      <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-neutral-800/20 rounded-full blur-3xl" />
 
       <div className="max-w-5xl mx-auto relative z-10">
         {/* Section Title */}

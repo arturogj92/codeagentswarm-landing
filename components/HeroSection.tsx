@@ -6,6 +6,7 @@ import { useState } from 'react'
 import { useTranslations } from 'next-intl'
 import VideoWithProgress from './VideoWithProgress'
 import Image from 'next/image'
+import { useShouldReduceMotion } from '@/hooks/useIsMobile'
 
 // Video Showcase Component with Carousel
 function VideoShowcase() {
@@ -65,8 +66,8 @@ function VideoShowcase() {
 
   return (
     <div className="relative w-full max-w-5xl mx-auto">
-      {/* Glow Background */}
-      <div className="absolute -inset-4 bg-gradient-to-r from-neon-cyan/20 via-neon-purple/20 to-neon-magenta/20 blur-2xl opacity-50 rounded-3xl" />
+      {/* Glow Background - hidden on mobile for performance */}
+      <div className="hidden md:block absolute -inset-4 bg-gradient-to-r from-neon-cyan/20 via-neon-purple/20 to-neon-magenta/20 blur-2xl opacity-50 rounded-3xl" />
 
       {/* Main Video Container */}
       <div className="relative">
@@ -218,9 +219,9 @@ function Stats() {
               whileHover={{ scale: 1.08 }}
               transition={{ type: 'spring', stiffness: 400 }}
             >
-              {/* Glow effect on hover */}
+              {/* Glow effect on hover - hidden on mobile for performance */}
               <div
-                className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-40 transition-opacity duration-300 blur-lg"
+                className="hidden md:block absolute inset-0 rounded-xl opacity-0 group-hover:opacity-40 transition-opacity duration-300 blur-lg"
                 style={{ backgroundColor: stat.color }}
               />
               <Image
@@ -244,15 +245,16 @@ function Stats() {
 export default function HeroSection() {
   const t = useTranslations('hero')
   const tCommon = useTranslations('common')
+  const shouldReduceMotion = useShouldReduceMotion()
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-24 pb-16 px-6">
       {/* Background Effects - Optimized */}
       <div className="absolute inset-0 grid-bg opacity-40" />
 
-      {/* Radial Gradients - Reduced blur for performance */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-gradient-radial from-neon-purple/10 via-transparent to-transparent blur-2xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[600px] h-[400px] bg-gradient-radial from-neon-cyan/5 via-transparent to-transparent blur-2xl pointer-events-none" />
+      {/* Radial Gradients - hidden on mobile for performance */}
+      <div className="hidden md:block absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-gradient-radial from-neon-purple/10 via-transparent to-transparent blur-2xl pointer-events-none" />
+      <div className="hidden md:block absolute bottom-0 left-0 w-[600px] h-[400px] bg-gradient-radial from-neon-cyan/5 via-transparent to-transparent blur-2xl pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto w-full">
         {/* Badge */}
@@ -283,10 +285,10 @@ export default function HeroSection() {
           <h1 className="heading-xl mb-6">
             <span className="text-white">{t('titleLine1')}</span>
             <br />
-            <motion.span 
+            <motion.span
               className="gradient-text inline-block"
-              animate={{ textShadow: ['0 0 20px rgba(34, 211, 238, 0.3)', '0 0 40px rgba(34, 211, 238, 0.5)', '0 0 20px rgba(34, 211, 238, 0.3)'] }}
-              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+              animate={shouldReduceMotion ? {} : { textShadow: ['0 0 20px rgba(34, 211, 238, 0.3)', '0 0 40px rgba(34, 211, 238, 0.5)', '0 0 20px rgba(34, 211, 238, 0.3)'] }}
+              transition={shouldReduceMotion ? {} : { duration: 3, repeat: Infinity, ease: "easeInOut" }}
             >{t('titleLine2')}</motion.span>
           </h1>
 
