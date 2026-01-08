@@ -43,7 +43,7 @@ export default function DemoSection() {
   }
 
   const stats = [
-    { value: '10x', label: t('stats.faster') },
+    { value: '6x', label: t('stats.faster') },
     { value: t('stats.aiPowered'), label: t('stats.taskManagement') },
     { value: t('stats.seamless'), label: t('stats.gitIntegration') },
   ]
