@@ -73,21 +73,21 @@
       "confidence": "The AI finishes and you don't even know. No notifications means you're glued to the terminal."
     },
     "calculator": {
-      "title": "Time Savings Calculator",
-      "question": "How many Claude Code terminals do you use?",
+      "title": "Context Switching Cost",
+      "question": "How many terminals do you want to manage?",
       "terminals": "terminals",
       "withOneTerminal": "With 1 terminal",
       "withSixTerminals": "With 6 terminals",
       "minutesPerDay": "minutes/day",
-      "youSave": "You save",
-      "perDay": "per day",
-      "withCodeAgentSwarm": "with CodeAgentSwarm",
+      "youSave": "Time lost",
+      "perDay": "per day without visibility",
+      "withCodeAgentSwarm": "that CodeAgentSwarm eliminates",
       "perMonth": "per month",
       "perYear": "per year",
       "minutes": "min",
       "hours": "hours",
       "days": "days",
-      "cta": "Start saving time"
+      "cta": "Recover that time"
     },
     "chaos": {
       "oldWay": "Without CodeAgentSwarm",
@@ -135,8 +135,8 @@
         "description": "Each terminal is independent: its own project, its own context, its own task. No conflicts. No waiting. Work on frontend while another terminal handles backend."
       },
       "taskWorkflow": {
-        "title": "AI-Powered Task Management",
-        "description": "Agents read the board themselves and update their progress via MCP. You see what each one is doing without asking. Automatic coordination, zero micromanagement."
+        "title": "Agent Task Board",
+        "description": "Create tasks. Assign them to terminals. Review changes when they finish. Agents read the board via MCP and update their progress automatically."
       },
       "notifications": {
         "title": "Real-Time Claude Code Notifications",
@@ -235,6 +235,15 @@
     "titleLine2": "Magic",
     "titleLine3": "Happen",
     "subtitle": "Watch how CodeAgentSwarm transforms parallel Claude Code development with real-time visibility.",
+    "whatYouSee": {
+      "title": "Why it works",
+      "items": {
+        "tasks": "Assign tasks. Agents read and execute them on their own.",
+        "notifications": "Alerts when they're done. Stop watching terminals.",
+        "diffs": "See what changes as they work. Zero surprises.",
+        "history": "That prompt from 3 weeks ago? Still there. Search it."
+      }
+    },
     "stats": {
       "faster": "Faster Development",
       "aiPowered": "AI-Powered",
@@ -444,7 +453,9 @@
       "q7": "Does CodeAgentSwarm support MCP tools and the MCP marketplace?",
       "a7": "Yes! CodeAgentSwarm includes full MCP integration with a built-in MCP marketplace. Connect Claude Code to GitHub, Notion, Slack, Supabase, Brave Search, Playwright, PostgreSQL and more. MCP tools extend what your Claude Code agents can do.",
       "q8": "Does CodeAgentSwarm help prevent context loss in Claude Code?",
-      "a8": "Yes. CodeAgentSwarm keeps a synchronized conversation history across terminals, shows real time changes from each agent and links project structure with terminal context. This prevents Claude Code from forgetting past actions or losing track during multi step work."
+      "a8": "Yes. CodeAgentSwarm keeps a synchronized conversation history across terminals, shows real time changes from each agent and links project structure with terminal context. This prevents Claude Code from forgetting past actions or losing track during multi step work.",
+      "q9": "Why not just use tmux?",
+      "a9": "tmux manages windows. CodeAgentSwarm manages agents: task state, notifications when they finish, live diffs, per-project history and configurable permissions. If you just need to split your screen, tmux works fine. If you want to know what each agent is doing and never miss a thing, you need CodeAgentSwarm."
     }
   },
   "cta": {
@@ -452,6 +463,7 @@
     "titleHighlight": "Transform",
     "titleLine2": "Your Development?",
     "subtitle": "Join developers who want to orchestrate multiple Claude Code terminals with real time visibility, notifications and full conversation history.",
+    "instantSetup": "Already using Claude Code? It just works. Install and open.",
     "version": "Version",
     "released": "Released",
     "loading": "Loading releases...",
@@ -610,8 +622,8 @@
       "cta": "Get Free Pro Access"
     },
     "banner": {
-      "text": "We're in Open Beta - Get the full Pro experience for free",
-      "cta": "Join Beta"
+      "text": "Open Beta - Pro free",
+      "cta": "Download Free"
     },
     "faq": {
       "titlePre": "Frequently Asked",

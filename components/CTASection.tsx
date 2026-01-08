@@ -253,8 +253,13 @@ export default function CTASection() {
             <span className="text-white">{t('titleLine2')}</span>
           </h2>
 
-          <p className="text-lg text-neutral-400 mb-8 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg text-neutral-400 mb-6 max-w-2xl mx-auto leading-relaxed">
             {t('subtitle')}
+          </p>
+
+          {/* Zero Friction Message */}
+          <p className="text-sm text-cyan-400/80 mb-8">
+            {t('instantSetup')}
           </p>
 
           {latestRelease && (

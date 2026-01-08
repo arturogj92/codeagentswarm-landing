@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Sparkles } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import Image from 'next/image'
 import { useTranslations, useLocale } from 'next-intl'
@@ -13,7 +13,6 @@ import LocaleSwitcher from './LocaleSwitcher'
 export default function Header() {
   const t = useTranslations('header')
   const tCommon = useTranslations('common')
-  const tBeta = useTranslations('beta.banner')
   const locale = useLocale()
   const pathname = usePathname()
   const [isScrolled, setIsScrolled] = useState(false)
@@ -61,9 +60,6 @@ export default function Header() {
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
-
-  // Show Join Beta button only when scrolled and not on beta page
-  const showBetaButton = isScrolled && !isBetaPage
 
   return (
     <header
@@ -138,28 +134,6 @@ export default function Header() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          {/* Join Beta Button - appears when scrolled */}
-          <AnimatePresence>
-            {showBetaButton && (
-              <motion.a
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.2 }}
-                href={`/${locale}/beta`}
-                onClick={() => {
-                  if (typeof window !== 'undefined') {
-                    window.umami?.track('nav_beta_click')
-                  }
-                }}
-                className="flex items-center gap-1.5 px-4 py-2 rounded-full border border-white/20 bg-white/5 hover:bg-white/10 transition-all duration-300"
-              >
-                <Sparkles className="w-4 h-4 text-neutral-400" />
-                <span className="text-sm font-medium text-white">{tBeta('cta')}</span>
-              </motion.a>
-            )}
-          </AnimatePresence>
-
           <a
             href="https://discord.gg/AMxQ7Zh6"
             target="_blank"
@@ -193,30 +167,8 @@ export default function Header() {
           </a>
         </motion.div>
 
-        {/* Mobile Right Side - Join Beta button + Menu */}
+        {/* Mobile Right Side - Menu */}
         <div className="flex lg:hidden items-center gap-2">
-          {/* Mobile Join Beta Button - appears when scrolled */}
-          <AnimatePresence>
-            {showBetaButton && (
-              <motion.a
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.2 }}
-                href={`/${locale}/beta`}
-                onClick={() => {
-                  if (typeof window !== 'undefined') {
-                    window.umami?.track('nav_beta_click_mobile')
-                  }
-                }}
-                className="flex items-center gap-1 px-2.5 py-1.5 rounded-full border border-white/20 bg-white/5"
-              >
-                <Sparkles className="w-3.5 h-3.5 text-neutral-400" />
-                <span className="text-xs font-medium text-white">Beta</span>
-              </motion.a>
-            )}
-          </AnimatePresence>
-
           <button
             className="p-2 text-white/70 hover:text-white transition-colors"
             onClick={() => {
@@ -244,23 +196,6 @@ export default function Header() {
             className="lg:hidden bg-black border-t border-white/5"
           >
             <nav className="flex flex-col p-6 gap-4">
-              {/* Join Beta link in mobile menu when not on beta page */}
-              {!isBetaPage && (
-                <a
-                  href={`/${locale}/beta`}
-                  className="flex items-center gap-2 text-lg font-medium py-2 text-white"
-                  onClick={() => {
-                    setIsMobileMenuOpen(false)
-                    if (typeof window !== 'undefined') {
-                      window.umami?.track('nav_beta_click_mobile_menu')
-                    }
-                  }}
-                >
-                  <Sparkles className="w-5 h-5 text-neutral-400" />
-                  {tBeta('cta')}
-                </a>
-              )}
-
               {navLinks.map((link) => (
                 <a
                   key={link.name}

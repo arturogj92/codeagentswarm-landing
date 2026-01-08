@@ -2,7 +2,7 @@
 
 import { motion, useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
-import { Play, Pause, Volume2, VolumeX, Maximize, Download } from 'lucide-react'
+import { Play, Pause, Volume2, VolumeX, Maximize, Download, CheckCircle2 } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 
 export default function DemoSection() {
@@ -173,12 +173,32 @@ export default function DemoSection() {
           </motion.div>
         </motion.div>
 
+        {/* What You'll See */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.8, delay: 0.35 }}
+          className="mt-16 sm:mt-20 max-w-2xl mx-auto"
+        >
+          <h3 className="text-lg sm:text-xl font-semibold text-white/80 text-center mb-6">
+            {t('whatYouSee.title')}
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+            {['tasks', 'notifications', 'diffs', 'history'].map((key) => (
+              <div key={key} className="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/[0.03] border border-white/[0.06]">
+                <CheckCircle2 className="w-4 h-4 text-cyan-400 flex-shrink-0" />
+                <span className="text-sm text-white/60">{t(`whatYouSee.items.${key}`)}</span>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
         {/* Stats Below Video */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 mt-16 sm:mt-24 max-w-3xl mx-auto px-4"
+          className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 mt-12 sm:mt-16 max-w-3xl mx-auto px-4"
         >
           {stats.map((stat) => (
             <div key={stat.label} className="text-center">

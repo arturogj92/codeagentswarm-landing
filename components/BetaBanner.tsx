@@ -52,10 +52,10 @@ export default function BetaBanner() {
           {t('text')}
         </span>
         <a
-          href={`/${locale}/beta`}
+          href="#download"
           onClick={() => {
             if (typeof window !== 'undefined') {
-              window.umami?.track('beta_banner_click')
+              window.umami?.track('beta_banner_download_click')
             }
           }}
           className="px-3 sm:px-4 py-1 sm:py-1.5 bg-cyan-400 text-black font-bold rounded-full text-[10px] sm:text-sm hover:bg-cyan-300 transition-all hover:shadow-[0_0_15px_rgba(34,211,238,0.4)] whitespace-nowrap flex-shrink-0"

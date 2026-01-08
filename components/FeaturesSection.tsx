@@ -22,6 +22,11 @@ export default function FeaturesSection() {
       guideSlug: locale === 'es' ? 'como-usar-varios-terminales-claude-code' : 'how-to-use-multiple-claude-code-terminals'
     },
     {
+      icon: Kanban,
+      title: t('items.taskWorkflow.title'),
+      description: t('items.taskWorkflow.description'),
+    },
+    {
       icon: Bell,
       title: t('items.notifications.title'),
       description: t('items.notifications.description'),
@@ -44,11 +49,6 @@ export default function FeaturesSection() {
       title: t('items.turboMode.title'),
       description: t('items.turboMode.description'),
       guideSlug: 'claude-code-yolo-turbo-mode'
-    },
-    {
-      icon: Kanban,
-      title: t('items.taskWorkflow.title'),
-      description: t('items.taskWorkflow.description'),
     },
   ]
 

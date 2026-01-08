@@ -73,21 +73,21 @@
       "confidence": "La IA termina y no te enteras. Sin notificaciones, vives pendiente del terminal."
     },
     "calculator": {
-      "title": "Calculadora de Ahorro de Tiempo",
-      "question": "¿Cuántos terminales de Claude Code usas?",
+      "title": "Coste de context switching",
+      "question": "¿Cuántos terminales quieres gestionar?",
       "terminals": "terminales",
       "withOneTerminal": "Con 1 terminal",
       "withSixTerminals": "Con 6 terminales",
       "minutesPerDay": "minutos/día",
-      "youSave": "Ahorras",
-      "perDay": "al día",
-      "withCodeAgentSwarm": "con CodeAgentSwarm",
+      "youSave": "Tiempo perdido",
+      "perDay": "al día sin visibilidad",
+      "withCodeAgentSwarm": "que CodeAgentSwarm elimina",
       "perMonth": "al mes",
       "perYear": "al año",
       "minutes": "min",
       "hours": "horas",
       "days": "días",
-      "cta": "Empieza a ahorrar tiempo"
+      "cta": "Recupera ese tiempo"
     },
     "chaos": {
       "oldWay": "Sin CodeAgentSwarm",
@@ -135,8 +135,8 @@
         "description": "Cada terminal es independiente: su propio proyecto, su propio contexto, su propia tarea. Sin conflictos. Sin esperas. Trabajas en frontend mientras otro terminal hace backend."
       },
       "taskWorkflow": {
-        "title": "Gestión de Tareas con IA",
-        "description": "Los agentes leen el tablero solos y actualizan su progreso vía MCP. Tú ves qué hace cada uno sin preguntarles. Coordinación automática, cero micromanagement."
+        "title": "Tablero de Tareas para Agentes",
+        "description": "Crea tareas. Asígnalas a terminales. Revisa los cambios cuando terminan. Los agentes leen el tablero vía MCP y actualizan su progreso automáticamente."
       },
       "notifications": {
         "title": "Notificaciones de Claude Code en Tiempo Real",
@@ -235,6 +235,15 @@
     "titleLine2": "Magia",
     "titleLine3": "en Acción",
     "subtitle": "Descubre cómo CodeAgentSwarm transforma el desarrollo paralelo con Claude Code con visibilidad en tiempo real.",
+    "whatYouSee": {
+      "title": "Por qué funciona",
+      "items": {
+        "tasks": "Asignas tareas. Los agentes las leen y ejecutan solos.",
+        "notifications": "Te avisa cuando terminan. Deja de vigilar terminales.",
+        "diffs": "Ves qué cambia mientras trabajan. Cero sorpresas.",
+        "history": "El prompt de hace 3 semanas sigue ahí. Búscalo."
+      }
+    },
     "stats": {
       "faster": "Desarrollo Rápido",
       "aiPowered": "AI-Powered",
@@ -444,7 +453,9 @@
       "q7": "¿Soporta CodeAgentSwarm herramientas MCP y el marketplace MCP?",
       "a7": "¡Sí! CodeAgentSwarm incluye integración MCP completa con un marketplace MCP integrado. Conecta Claude Code a GitHub, Notion, Slack, Supabase, Brave Search, Playwright, PostgreSQL y más. Las herramientas MCP extienden lo que tus agentes Claude Code pueden hacer.",
       "q8": "¿Ayuda CodeAgentSwarm a evitar la pérdida de contexto en Claude Code?",
-      "a8": "Sí. CodeAgentSwarm mantiene un historial sincronizado de conversaciones, muestra cambios en tiempo real de cada agente y vincula la estructura del proyecto con el contexto de cada terminal. Esto evita que Claude Code olvide acciones anteriores o pierda el hilo en tareas de varios pasos."
+      "a8": "Sí. CodeAgentSwarm mantiene un historial sincronizado de conversaciones, muestra cambios en tiempo real de cada agente y vincula la estructura del proyecto con el contexto de cada terminal. Esto evita que Claude Code olvide acciones anteriores o pierda el hilo en tareas de varios pasos.",
+      "q9": "¿Por qué no usar tmux?",
+      "a9": "tmux gestiona ventanas. CodeAgentSwarm gestiona agentes: estado de tareas, notificaciones cuando terminan, diffs en vivo, historial por proyecto y permisos configurables. Si solo necesitas dividir la pantalla, tmux va bien. Si quieres saber qué hace cada agente y no perderte nada, necesitas CodeAgentSwarm."
     }
   },
   "cta": {
@@ -452,6 +463,7 @@
     "titleHighlight": "Transformar",
     "titleLine2": "Tu Desarrollo?",
     "subtitle": "Únete a los desarrolladores que quieren orquestar varias terminales de Claude Code con visibilidad en tiempo real, notificaciones e historial completo.",
+    "instantSetup": "Si ya usas Claude Code, funciona al instante. Solo instala y abre.",
     "version": "Version",
     "released": "Released",
     "loading": "Cargando releases...",
@@ -610,8 +622,8 @@
       "cta": "Obtener Pro Gratis"
     },
     "banner": {
-      "text": "Estamos en Open Beta - Disfruta del plan Pro gratis",
-      "cta": "Unirme a la Beta"
+      "text": "Open Beta - Pro gratis",
+      "cta": "Descargar Gratis"
     },
     "faq": {
       "titlePre": "Preguntas",
