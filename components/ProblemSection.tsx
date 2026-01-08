@@ -223,7 +223,7 @@ function VisualComparison() {
             >
               <div className="relative aspect-[16/10] rounded-2xl overflow-hidden bg-black border-2 border-red-500/20 shadow-[0_0_30px_rgba(239,68,68,0.15)]">
                 <Image
-                  src="/images/chaos-multitask.png"
+                  src="/images/chaos-multitask.jpg"
                   alt="Multitasking chaos - switching between apps"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
@@ -331,7 +331,7 @@ function VisualComparison() {
 
               <div className="relative aspect-[16/10] rounded-2xl overflow-hidden bg-black border-2 border-emerald-500/30 shadow-[0_0_40px_rgba(16,185,129,0.2)] hover:shadow-[0_0_50px_rgba(16,185,129,0.3)] transition-shadow">
                 <Image
-                  src="/images/codeagentswarm-6terminals.jpeg"
+                  src="/images/codeagentswarm-6terminals-compressed.jpg"
                   alt="CodeAgentSwarm - 6 terminales en paralelo"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
