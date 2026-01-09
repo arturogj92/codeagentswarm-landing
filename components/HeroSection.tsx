@@ -55,10 +55,6 @@ function VideoShowcase() {
   const [isAutoAdvance, setIsAutoAdvance] = useState(true)
 
   const handleVideoEnd = () => {
-    // Track video completion
-    if (typeof window !== 'undefined') {
-      window.umami?.track('video_complete', { video_name: videos[currentVideo].title })
-    }
     if (isAutoAdvance && isPlaying) {
       setCurrentVideo((prev) => (prev + 1) % videos.length)
     }
