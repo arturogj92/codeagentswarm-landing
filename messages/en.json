@@ -144,7 +144,7 @@
       },
       "turboMode": {
         "title": "Turbo Mode (Skip Permissions)",
-        "description": "Skip confirmation prompts for routine operations but maintain guardrails for sensitive ones. You configure what's safe - Claude won't touch what it shouldn't."
+        "description": "Skip confirmation prompts for routine operations but maintain guardrails for sensitive ones. Block pushes to protected branches, prevent destructive deletes, limit sensitive commands. You set the limits."
       }
     },
     "seoLine": "Real-time change tracking so you always know what Claude Code is doing. Ideal for coordinating multiple projects or large refactors.",
@@ -249,19 +249,19 @@
     "badge": "One-Click Integrations",
     "titleLine1": "Connect Everything",
     "titleHighlight": "in One Click",
-    "subtitle": "One prompt triggers the swarm: Claude writes the code, Supabase updates the schema, and Slack notifies the team. All from one view.",
+    "subtitle": "A catalog of integrations you enable per project. Claude reads GitHub PRs, creates Jira tickets, updates Notion docs - without leaving the terminal.",
     "installAll": "Install All MCPs",
     "allInstalled": "All MCPs Installed!",
     "installed": "MCPs installed",
     "clickToInstall": "Click any integration to install",
     "integrations": {
-      "notion": "Sync docs and wikis",
-      "supabase": "Database and auth",
-      "playwright": "Browser automation",
-      "puppeteer": "Web scraping",
-      "github": "Repos and PRs",
-      "slack": "Team notifications",
-      "googledrive": "File storage"
+      "notion": "Create and edit docs",
+      "supabase": "Run SQL queries",
+      "playwright": "Automated testing",
+      "puppeteer": "Page scraping",
+      "github": "Read PRs, create issues",
+      "slack": "Send messages",
+      "googledrive": "Upload and download files"
     },
     "features": {
       "database": {

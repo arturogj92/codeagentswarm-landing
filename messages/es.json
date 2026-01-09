@@ -144,7 +144,7 @@
       },
       "turboMode": {
         "title": "Modo Turbo (Saltar Permisos)",
-        "description": "Salta las confirmaciones de operaciones rutinarias pero mantiene guardrails para lo sensible. Configuras qué es seguro - Claude no toca lo que no debe."
+        "description": "Salta las confirmaciones de operaciones rutinarias pero mantiene guardrails para lo sensible. Bloquea pushes a ramas protegidas, previene borrados destructivos, limita comandos sensibles. Tú defines los límites."
       }
     },
     "seoLine": "Seguimiento de cambios en tiempo real para saber siempre qué hace Claude Code. Ideal para coordinar múltiples proyectos o refactors grandes.",
@@ -249,19 +249,19 @@
     "badge": "Integraciones MCP",
     "titleLine1": "Conecta tus herramientas",
     "titleHighlight": "en un clic",
-    "subtitle": "Un comando activa todo el flujo: Claude genera el código, Supabase actualiza el schema, Slack notifica al equipo. Todo coordinado desde un único workspace.",
+    "subtitle": "Un catálogo de integraciones que activas por proyecto. Claude lee PRs de GitHub, crea tickets en Jira, actualiza docs en Notion - sin salir del terminal.",
     "installAll": "Instalar todas las integraciones",
     "allInstalled": "Todas las integraciones instaladas",
     "installed": "integraciones activas",
     "clickToInstall": "Haz clic en cualquier integración para activarla",
     "integrations": {
-      "notion": "Sincroniza docs y wikis",
-      "supabase": "Base de datos y auth",
-      "playwright": "Automatización browser",
-      "puppeteer": "Web scraping",
-      "github": "Repos y PRs",
-      "slack": "Notificaciones de equipo",
-      "googledrive": "Almacenamiento de archivos"
+      "notion": "Crea y edita docs",
+      "supabase": "Ejecuta queries SQL",
+      "playwright": "Tests automatizados",
+      "puppeteer": "Scraping de páginas",
+      "github": "Lee PRs, crea issues",
+      "slack": "Envía mensajes",
+      "googledrive": "Sube y descarga archivos"
     },
     "features": {
       "database": {

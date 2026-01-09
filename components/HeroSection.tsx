@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Play, Download, Sparkles, Zap, Grid3X3, Bell, Terminal, Monitor, Layout, GitBranch, Pause, History, Shield } from 'lucide-react'
+import { Play, Download, Zap, Grid3X3, Bell, Terminal, Monitor, Layout, GitBranch, Pause, History, Shield } from 'lucide-react'
 import { useState } from 'react'
 import { useTranslations } from 'next-intl'
 import VideoWithProgress from './VideoWithProgress'
@@ -257,24 +257,6 @@ export default function HeroSection() {
       <div className="hidden md:block absolute bottom-0 left-0 w-[600px] h-[400px] bg-gradient-radial from-neon-cyan/5 via-transparent to-transparent blur-2xl pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto w-full">
-        {/* Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="flex justify-center mb-8"
-        >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-neon-cyan/20">
-            <Sparkles className="w-4 h-4 text-neon-cyan" />
-            <span className="text-sm text-white/80">
-              {t('badge')}
-            </span>
-            <span className="px-2 py-0.5 text-[10px] font-bold bg-neon-cyan/20 text-neon-cyan rounded-full">
-              {t('badgeNew')}
-            </span>
-          </div>
-        </motion.div>
-
         {/* Main Heading - God Mode */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
