@@ -64,7 +64,11 @@ export async function generateMetadata({
     publisher: 'CodeAgentSwarm',
     applicationName: 'CodeAgentSwarm',
     icons: {
-      icon: '/favicon.png',
+      icon: [
+        { url: '/favicon.png', sizes: '96x96', type: 'image/png' },
+        { url: '/favicon-48.png', sizes: '48x48', type: 'image/png' },
+        { url: '/favicon-32.png', sizes: '32x32', type: 'image/png' },
+      ],
       apple: '/logo.png',
     },
     alternates: {
