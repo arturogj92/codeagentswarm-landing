@@ -200,11 +200,6 @@ export default function PricingSection() {
                   {tBeta('cta')}
                 </button>
               </a>
-
-              {/* Trust note */}
-              <p className="text-center text-neutral-500 text-xs mt-4">
-                {t('trustBadge')}
-              </p>
             </div>
           </div>
         </motion.div>

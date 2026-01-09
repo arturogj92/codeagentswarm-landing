@@ -72,22 +72,14 @@
       "repeating": "Sessions lose context. You repeat the same prompts like a broken record.",
       "confidence": "The AI finishes and you don't even know. No notifications means you're glued to the terminal."
     },
-    "calculator": {
-      "title": "Context Switching Cost",
-      "question": "How many terminals do you want to manage?",
-      "terminals": "terminals",
-      "withOneTerminal": "With 1 terminal",
-      "withSixTerminals": "With 6 terminals",
-      "minutesPerDay": "minutes/day",
-      "youSave": "Time lost",
-      "perDay": "per day without visibility",
-      "withCodeAgentSwarm": "that CodeAgentSwarm eliminates",
-      "perMonth": "per month",
-      "perYear": "per year",
-      "minutes": "min",
-      "hours": "hours",
-      "days": "days",
-      "cta": "Recover that time"
+    "benefits": {
+      "title": "What do you get with CodeAgentSwarm?",
+      "subtitle": "No inflated numbers - just real clarity.",
+      "seeAll": "See all agents at once, no window switching",
+      "getNotified": "Get notified when tasks complete",
+      "trackContext": "Track what each agent is doing without losing context",
+      "reviewChanges": "Review changes before they're committed",
+      "cta": "Try it free"
     },
     "chaos": {
       "oldWay": "Without CodeAgentSwarm",
@@ -104,7 +96,7 @@
       "pain3": "Lost context, repeated prompts",
       "benefit1": "6 terminals visible at once",
       "benefit2": "Real-time diffs of every change",
-      "benefit3": "Full history, zero context loss",
+      "benefit3": "Agents that create and complete tasks autonomously",
       "chaosLabel": "Constant frustration",
       "controlLabel": "Total control"
     }
@@ -151,8 +143,8 @@
         "description": "Every decision, every explanation, every snippet - searchable. Recover context from 3 weeks ago in seconds. Never repeat a prompt because it 'got lost'."
       },
       "turboMode": {
-        "title": "Permissions & Turbo Mode",
-        "description": "Auto-approve the safe stuff, halt the sensitive. Maximum speed without giving up control. You set the limits, Claude respects them."
+        "title": "Turbo Mode (Skip Permissions)",
+        "description": "Skip confirmation prompts for routine operations but maintain guardrails for sensitive ones. You configure what's safe - Claude won't touch what it shouldn't."
       }
     },
     "seoLine": "Real-time change tracking so you always know what Claude Code is doing. Ideal for coordinating multiple projects or large refactors.",
@@ -413,8 +405,8 @@
         }
       },
       "agenticTask": {
-        "title": "Agentic Task System",
-        "description": "Autonomous task creation and development workflow",
+        "title": "Autonomous Mode",
+        "description": "The agent creates its own tasks and completes them without intervention. You define the goal, it does the rest.",
         "features": {
           "decomposition": "AI-powered task decomposition",
           "prioritization": "Smart task prioritization",

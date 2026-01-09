@@ -1,23 +1,22 @@
 'use client'
 
 import { motion, useInView } from 'framer-motion'
-import { useRef, useState } from 'react'
-import { AlertTriangle, RefreshCw, Brain, Eye, MessageSquare, X, Check, Calculator, ArrowRight } from 'lucide-react'
+import { useRef } from 'react'
+import { AlertTriangle, RefreshCw, Brain, Eye, MessageSquare, X, Check, ArrowRight } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import { useShouldReduceMotion } from '@/hooks/useIsMobile'
 
-// Time Saved Calculator
-function TimeSavedCalculator() {
-  const t = useTranslations('problem.calculator')
-  const [terminals, setTerminals] = useState(4)
+// Benefits Block - Replaces inflated calculator with honest value props
+function BenefitsBlock() {
+  const t = useTranslations('problem.benefits')
 
-  const minPerTerminal = 40
-  const timeWith1Terminal = terminals * minPerTerminal
-  const timeWith6Terminals = Math.round(timeWith1Terminal / 8) // 8x faster with 6 terminals
-  const timeSavedPerDay = timeWith1Terminal - timeWith6Terminals
-  const hoursSavedPerMonth = Math.round((timeSavedPerDay * 22) / 60)
-  const daysSavedPerMonth = Math.round(hoursSavedPerMonth / 8)
+  const benefits = [
+    { icon: Eye, text: t('seeAll') },
+    { icon: AlertTriangle, text: t('getNotified') },
+    { icon: Brain, text: t('trackContext') },
+    { icon: Check, text: t('reviewChanges') },
+  ]
 
   return (
     <motion.div
@@ -25,86 +24,33 @@ function TimeSavedCalculator() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: 0.3 }}
-      className="mt-10 max-w-md mx-auto px-4"
+      className="mt-10 max-w-lg mx-auto px-4"
     >
       {/* Card Container */}
       <div className="p-6 rounded-2xl border border-white/[0.08] bg-white/[0.02]">
         {/* Header */}
-        <div className="mb-6">
-          <p className="text-white/30 text-xs uppercase tracking-wider text-center">
-            {t('title')}
-          </p>
+        <div className="mb-6 text-center">
+          <h3 className="text-lg font-semibold text-white mb-2">{t('title')}</h3>
+          <p className="text-white/50 text-sm">{t('subtitle')}</p>
         </div>
 
-        {/* Question */}
-        <p className="text-white/70 text-center mb-6">
-          {t('question')}
-        </p>
-
-        {/* Terminal Selector - Pills */}
-        <div className="flex justify-center gap-1.5 mb-8">
-          {[1, 2, 3, 4, 5, 6].map((num) => (
-            <button
-              key={num}
-              onClick={() => setTerminals(num)}
-              className={`w-10 h-10 rounded-full text-sm font-medium transition-all duration-200 ${
-                terminals === num
-                  ? 'bg-white text-black scale-105'
-                  : 'bg-white/5 text-white/40 hover:bg-white/10'
-              }`}
+        {/* Benefits List */}
+        <div className="space-y-3 mb-6">
+          {benefits.map((benefit, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, x: -10 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 + index * 0.1 }}
+              className="flex items-center gap-3"
             >
-              {num}
-            </button>
+              <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center flex-shrink-0">
+                <benefit.icon className="w-4 h-4 text-emerald-400" />
+              </div>
+              <span className="text-white/70 text-sm">{benefit.text}</span>
+            </motion.div>
           ))}
-        </div>
-
-        {/* The Big Number */}
-        <div className="text-center mb-2">
-          <motion.span
-            key={timeSavedPerDay}
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="text-6xl md:text-7xl font-display font-bold text-white inline-block"
-          >
-            {timeSavedPerDay}
-          </motion.span>
-          <span className="text-2xl text-white/25 ml-1">{t('minutes')}</span>
-        </div>
-
-        <p className="text-white/40 text-center text-sm mb-2">
-          {t('youSave')} <span className="text-white/60">{t('perDay')}</span>
-        </p>
-
-        {/* CodeAgentSwarm branding */}
-        <div className="flex items-center justify-center gap-2 mb-6">
-          <Image
-            src="/logo.png"
-            alt="CodeAgentSwarm"
-            width={20}
-            height={20}
-            className="rounded"
-          />
-          <span className="text-white/50 text-sm">{t('withCodeAgentSwarm')}</span>
-        </div>
-
-        {/* Secondary Stats */}
-        <div className="flex justify-center gap-6 mb-6 text-center">
-          <div>
-            <p className="text-xl font-semibold text-white/60">{hoursSavedPerMonth}h</p>
-            <p className="text-[10px] text-white/25 uppercase">{t('perMonth')}</p>
-          </div>
-          <div className="w-px bg-white/10" />
-          <div>
-            <p className="text-xl font-semibold text-white/60">{daysSavedPerMonth}d</p>
-            <p className="text-[10px] text-white/25 uppercase">{t('perMonth')}</p>
-          </div>
-        </div>
-
-        {/* Comparison */}
-        <div className="flex items-center justify-center gap-3 text-xs text-white/30 mb-6">
-          <span>{timeWith1Terminal} min</span>
-          <span className="text-white/20">→</span>
-          <span className="text-white/60">{timeWith6Terminals} min</span>
         </div>
 
         {/* CTA */}
@@ -514,8 +460,8 @@ export default function ProblemSection() {
           ))}
         </div>
 
-        {/* Time Saved Calculator */}
-        <TimeSavedCalculator />
+        {/* Benefits Block */}
+        <BenefitsBlock />
       </div>
     </section>
   )

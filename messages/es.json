@@ -44,8 +44,8 @@
         "description": "Gestiona varias sesiones de Claude Code simultáneamente"
       },
       "kanban": {
-        "title": "Tablero de Tareas",
-        "description": "Organiza con Kanban visual"
+        "title": "Tablero Agentic",
+        "description": "Tareas que tus agentes leen y completan"
       },
       "git": {
         "title": "Integración Git",
@@ -72,22 +72,14 @@
       "repeating": "Sesiones que pierden contexto. Prompts que repites continuamente.",
       "confidence": "La IA termina y no te enteras. Sin notificaciones, vives pendiente del terminal."
     },
-    "calculator": {
-      "title": "Coste de context switching",
-      "question": "¿Cuántos terminales quieres gestionar?",
-      "terminals": "terminales",
-      "withOneTerminal": "Con 1 terminal",
-      "withSixTerminals": "Con 6 terminales",
-      "minutesPerDay": "minutos/día",
-      "youSave": "Tiempo perdido",
-      "perDay": "al día sin visibilidad",
-      "withCodeAgentSwarm": "que CodeAgentSwarm elimina",
-      "perMonth": "al mes",
-      "perYear": "al año",
-      "minutes": "min",
-      "hours": "horas",
-      "days": "días",
-      "cta": "Recupera ese tiempo"
+    "benefits": {
+      "title": "¿Qué ganas con CodeAgentSwarm?",
+      "subtitle": "Sin números inflados - solo claridad real.",
+      "seeAll": "Ve todos los agentes a la vez, sin cambiar de ventana",
+      "getNotified": "Recibe notificaciones cuando las tareas terminan",
+      "trackContext": "Rastrea qué hace cada agente sin perder contexto",
+      "reviewChanges": "Revisa los cambios antes de que se commiteen",
+      "cta": "Pruébalo gratis"
     },
     "chaos": {
       "oldWay": "Sin CodeAgentSwarm",
@@ -104,7 +96,7 @@
       "pain3": "Contexto perdido, prompts repetidos",
       "benefit1": "6 terminales visibles a la vez",
       "benefit2": "Diffs en tiempo real de cada cambio",
-      "benefit3": "Historial completo, cero pérdida",
+      "benefit3": "Agentes que crean y completan tareas solos",
       "chaosLabel": "Frustración constante",
       "controlLabel": "Control total"
     }
@@ -135,7 +127,7 @@
         "description": "Cada terminal es independiente: su propio proyecto, su propio contexto, su propia tarea. Sin conflictos. Sin esperas. Trabajas en frontend mientras otro terminal hace backend."
       },
       "taskWorkflow": {
-        "title": "Tablero de Tareas para Agentes",
+        "title": "Tablero Agentic con MCP",
         "description": "Crea tareas. Asígnalas a terminales. Revisa los cambios cuando terminan. Los agentes leen el tablero vía MCP y actualizan su progreso automáticamente."
       },
       "notifications": {
@@ -151,8 +143,8 @@
         "description": "Cada decisión, cada explicación, cada snippet - buscable. Recupera contexto de hace 3 semanas en segundos. Nunca repitas un prompt porque 'se perdió'."
       },
       "turboMode": {
-        "title": "Permisos y Modo Turbo",
-        "description": "Auto-aprueba lo seguro, frena lo sensible. Máxima velocidad sin ceder control. Tú defines los límites, Claude respeta."
+        "title": "Modo Turbo (Saltar Permisos)",
+        "description": "Salta las confirmaciones de operaciones rutinarias pero mantiene guardrails para lo sensible. Configuras qué es seguro - Claude no toca lo que no debe."
       }
     },
     "seoLine": "Seguimiento de cambios en tiempo real para saber siempre qué hace Claude Code. Ideal para coordinar múltiples proyectos o refactors grandes.",
@@ -413,8 +405,8 @@
         }
       },
       "agenticTask": {
-        "title": "Sistema de Tareas Agentico",
-        "description": "Creacion autonoma de tasks y workflows",
+        "title": "Modo Autonomo",
+        "description": "El agente crea sus propias tareas y las completa sin intervencion. Tu defines el objetivo, el hace el resto.",
         "features": {
           "decomposition": "Descomposicion de tareas con IA",
           "prioritization": "Priorizacion inteligente",
