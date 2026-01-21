@@ -20,6 +20,19 @@ export default function RoadmapSection() {
   const roadmapItems = [
     {
       quarter: 'Q1',
+      year: '2025',
+      title: t('items.multiAgent.title'),
+      description: t('items.multiAgent.description'),
+      features: [
+        t('items.multiAgent.features.codex'),
+        t('items.multiAgent.features.gemini'),
+        t('items.multiAgent.features.orchestration'),
+      ],
+      icon: Code2,
+      status: 'completed',
+    },
+    {
+      quarter: 'Q2',
       year: '2026',
       title: t('items.crossPlatform.title'),
       description: t('items.crossPlatform.description'),
@@ -29,20 +42,6 @@ export default function RoadmapSection() {
       ],
       icon: Monitor,
       status: 'in-progress',
-    },
-    {
-      quarter: 'Q2',
-      year: '2026',
-      title: t('items.multiAgent.title'),
-      description: t('items.multiAgent.description'),
-      features: [
-        t('items.multiAgent.features.codex'),
-        t('items.multiAgent.features.deepseek'),
-        t('items.multiAgent.features.gemini'),
-        t('items.multiAgent.features.orchestration'),
-      ],
-      icon: Code2,
-      status: 'upcoming',
     },
     {
       quarter: 'Q3',
@@ -173,7 +172,7 @@ export default function RoadmapSection() {
                     {/* Card */}
                     <div className="relative rounded-2xl overflow-hidden glass border border-white/5 hover:border-white/10 transition-all duration-500">
                       {/* Top accent bar - visible on mobile */}
-                      <div className={`h-1 bg-gradient-to-r ${item.status === 'in-progress' ? 'from-neon-cyan to-neon-purple' : 'from-white/20 to-white/5'}`} />
+                      <div className={`h-1 bg-gradient-to-r ${item.status === 'completed' ? 'from-green-500 to-green-400' : item.status === 'in-progress' ? 'from-neon-cyan to-neon-purple' : 'from-white/20 to-white/5'}`} />
 
                       {/* Gradient overlay */}
                       <div
@@ -186,17 +185,19 @@ export default function RoadmapSection() {
                           <div className="flex items-center gap-4">
                             <div
                               className={`relative w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br from-neon-purple/20 to-neon-cyan/10 border border-white/10 flex items-center justify-center flex-shrink-0 group-hover:border-neon-cyan/30 transition-all duration-300 ${
-                                item.status === 'in-progress' ? 'shadow-[0_0_20px_rgba(0,245,255,0.3)]' : ''
+                                item.status === 'completed' ? 'shadow-[0_0_20px_rgba(34,197,94,0.3)]' : item.status === 'in-progress' ? 'shadow-[0_0_20px_rgba(0,245,255,0.3)]' : ''
                               }`}
                             >
                               {/* Icon glow on hover */}
                               <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-neon-cyan/20 to-neon-purple/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                              <item.icon className={`relative z-10 w-6 h-6 ${item.status === 'in-progress' ? 'text-neon-cyan' : 'text-white/70'} group-hover:text-neon-cyan transition-colors duration-300`} />
+                              <item.icon className={`relative z-10 w-6 h-6 ${item.status === 'completed' ? 'text-green-400' : item.status === 'in-progress' ? 'text-neon-cyan' : 'text-white/70'} group-hover:text-neon-cyan transition-colors duration-300`} />
                             </div>
                             <div className="min-w-0">
                               <div className="flex items-center gap-2 mb-0.5">
                                 <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${
-                                  item.status === 'in-progress'
+                                  item.status === 'completed'
+                                    ? 'bg-green-500/20 text-green-400'
+                                    : item.status === 'in-progress'
                                     ? 'bg-neon-cyan/20 text-neon-cyan'
                                     : 'bg-white/10 text-white/50'
                                 }`}>
@@ -213,12 +214,14 @@ export default function RoadmapSection() {
                           {/* Status Badge */}
                           <span
                             className={`hidden sm:inline-block text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap ${
-                              item.status === 'in-progress'
+                              item.status === 'completed'
+                                ? 'bg-green-500/20 text-green-400 border border-green-500/30'
+                                : item.status === 'in-progress'
                                 ? 'bg-neon-cyan/20 text-neon-cyan border border-neon-cyan/30'
                                 : 'bg-white/10 text-white/50'
                             }`}
                           >
-                            {item.status === 'in-progress' ? `● ${t('status.inProgress')}` : t('status.upcoming')}
+                            {item.status === 'completed' ? `✓ ${t('status.completed')}` : item.status === 'in-progress' ? `● ${t('status.inProgress')}` : t('status.upcoming')}
                           </span>
                         </div>
 
@@ -265,7 +268,7 @@ export default function RoadmapSection() {
                                 className="flex items-center gap-2"
                               >
                                 <div
-                                  className={`w-1.5 h-1.5 rounded-full ${item.status === 'in-progress' ? 'bg-neon-cyan' : 'bg-white/40'}`}
+                                  className={`w-1.5 h-1.5 rounded-full ${item.status === 'completed' ? 'bg-green-400' : item.status === 'in-progress' ? 'bg-neon-cyan' : 'bg-white/40'}`}
                                 />
                                 <span className="text-sm text-white/60">
                                   {feature}
