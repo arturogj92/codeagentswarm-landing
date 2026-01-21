@@ -87,8 +87,8 @@ export default function FeaturesSection() {
               <div className="p-5 md:p-6 rounded-xl bg-white/[0.02] border border-white/[0.06] hover:border-white/[0.12] hover:bg-white/[0.04] transition-all duration-300">
                 <div className="flex items-start gap-4">
                   {/* Icon */}
-                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-white/[0.05] flex items-center justify-center mt-0.5">
-                    <feature.icon className="w-5 h-5 text-white/40 group-hover:text-white/60 transition-colors" />
+                  <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-white/[0.05] flex items-center justify-center mt-0.5">
+                    <feature.icon className="w-6 h-6 text-white/40 group-hover:text-white/60 transition-colors" />
                   </div>
 
                   {/* Content */}
