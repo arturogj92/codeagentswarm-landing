@@ -13,12 +13,12 @@ export async function generateMetadata({
   const isSpanish = locale === 'es'
 
   const title = isSpanish
-    ? 'CodeAgentSwarm Open Beta – Acceso Pro Gratis para Desarrolladores'
-    : 'CodeAgentSwarm Open Beta – Free Pro Access with 6 Claude Code Terminals'
+    ? 'CodeAgentSwarm Open Beta – Acceso Pro Gratis para Terminales AI CLI'
+    : 'CodeAgentSwarm Open Beta – Free Pro Access with 6 AI CLI Terminals'
 
   const description = isSpanish
-    ? 'Unete a la open beta y accede gratis al plan Pro completo. 6 terminales de Claude Code en paralelo, visibilidad en tiempo real, notificaciones, historial de conversaciones y gestion de multiples proyectos.'
-    : 'Join the open beta and get full Pro tier access for free. 6 Claude Code terminals in parallel, real-time visibility, notifications, conversation history and multi-project management.'
+    ? 'Unete a la open beta y accede gratis al plan Pro completo. 6 terminales AI CLI (Claude Code, Codex, Gemini CLI) en paralelo, visibilidad en tiempo real, notificaciones, historial de conversaciones y gestion de multiples proyectos.'
+    : 'Join the open beta and get full Pro tier access for free. 6 AI CLI terminals (Claude Code, Codex, Gemini CLI) in parallel, real-time visibility, notifications, conversation history and multi-project management.'
 
   return {
     title,
@@ -26,10 +26,16 @@ export async function generateMetadata({
     keywords: [
       'CodeAgentSwarm beta',
       'Claude Code beta',
+      'Codex CLI beta',
+      'Gemini CLI beta',
       'AI coding workspace beta',
+      'AI CLI workspace',
       'free pro access',
       'multiple Claude Code terminals',
+      'multiple Codex terminals',
+      'multiple Gemini CLI terminals',
       'real time visibility',
+      'AI CLI notifications',
       'Claude Code notifications',
       'conversation history',
       'multi-project management',
@@ -44,11 +50,11 @@ export async function generateMetadata({
     },
     openGraph: {
       title: isSpanish
-        ? 'CodeAgentSwarm Open Beta – Acceso Pro Gratis'
-        : 'CodeAgentSwarm Open Beta – Free Pro Access',
+        ? 'CodeAgentSwarm Open Beta – Acceso Pro Gratis para AI CLI'
+        : 'CodeAgentSwarm Open Beta – Free Pro Access for AI CLI',
       description: isSpanish
-        ? 'Unete a la open beta y accede gratis al plan Pro. 6 terminales de Claude Code con visibilidad en tiempo real.'
-        : 'Join the open beta and get free Pro tier access. 6 Claude Code terminals with real-time visibility.',
+        ? 'Unete a la open beta y accede gratis al plan Pro. 6 terminales AI CLI (Claude Code, Codex, Gemini CLI) con visibilidad en tiempo real.'
+        : 'Join the open beta and get free Pro tier access. 6 AI CLI terminals (Claude Code, Codex, Gemini CLI) with real-time visibility.',
       type: 'website',
       siteName: 'CodeAgentSwarm',
       url: canonicalUrl,
@@ -67,11 +73,11 @@ export async function generateMetadata({
     twitter: {
       card: 'summary_large_image',
       title: isSpanish
-        ? 'CodeAgentSwarm Open Beta – Pro Gratis'
-        : 'CodeAgentSwarm Open Beta – Free Pro Access',
+        ? 'CodeAgentSwarm Open Beta – Pro Gratis para AI CLI'
+        : 'CodeAgentSwarm Open Beta – Free Pro for AI CLI',
       description: isSpanish
-        ? 'Unete a la beta y accede gratis a 6 terminales de Claude Code en paralelo.'
-        : 'Join the open beta and get free Pro tier access to 6 parallel Claude Code terminals.',
+        ? 'Unete a la beta y accede gratis a 6 terminales AI CLI (Claude Code, Codex, Gemini CLI) en paralelo.'
+        : 'Join the open beta and get free Pro tier access to 6 parallel AI CLI terminals (Claude Code, Codex, Gemini CLI).',
       images: ['/og.png'],
     },
   }

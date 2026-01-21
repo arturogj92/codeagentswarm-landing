@@ -21,16 +21,16 @@
     "badgeNew": "NUEVO",
     "titleLine1": "Deja de cambiar de ventana.",
     "titleLine2": "Empieza a orquestar.",
-    "titleLine3": "6 Terminales Claude Code. Un workspace. Todo bajo control.",
-    "subtitle": "Ejecuta hasta 6 terminales de Claude Code en paralelo. Visibilidad en tiempo real de lo que hace cada agente. Notificaciones instantáneas. Historial completo. Control total sobre múltiples proyectos.",
+    "titleLine3": "6 Terminales AI CLI. Un workspace. Todo bajo control.",
+    "subtitle": "Ejecuta hasta 6 terminales AI CLI en paralelo - Claude Code, Codex, Gemini CLI - con visibilidad en tiempo real, notificaciones instantáneas, historial completo y control total sobre múltiples proyectos.",
     "powerStatement": "",
     "authorityLine": "",
-    "requirements": "Compatible con tu suscripción de Claude Code. macOS 12+",
+    "requirements": "Compatible con Claude Code, Codex o Gemini CLI. macOS 12+",
     "claimAccess": "Acceder a Pro Gratis",
     "securityBadge": "Modo Turbo con protección integrada. Tú defines los límites.",
     "stats": {
       "terminals": "Terminales Paralelos",
-      "terminalsDesc": "6 agentes Claude Code trabajando juntos",
+      "terminalsDesc": "6 agentes AI CLI trabajando juntos",
       "searchableChats": "Búsqueda Total",
       "searchableChatsDesc": "Historial completo, nunca pierdas contexto",
       "codePreview": "Visibilidad en Tiempo Real",
@@ -41,7 +41,7 @@
     "videos": {
       "multiTerminal": {
         "title": "Control Multi-Terminal",
-        "description": "Gestiona varias sesiones de Claude Code simultáneamente"
+        "description": "Gestiona varias sesiones AI CLI simultáneamente"
       },
       "kanban": {
         "title": "Tablero Agentic",
@@ -52,12 +52,12 @@
         "description": "Control de versiones fluido"
       },
       "notifications": {
-        "title": "Notificaciones de Claude Code",
+        "title": "Notificaciones AI CLI",
         "description": "Notificaciones en tiempo real para programación con IA"
       },
       "conversationHistory": {
         "title": "Historial de Conversaciones",
-        "description": "Guarda y busca el historial de Claude Code en todas las sesiones"
+        "description": "Guarda y busca el historial AI CLI en todas las sesiones"
       }
     }
   },
@@ -105,9 +105,9 @@
     "badge": "La Solución",
     "titleLine1": "El workspace multi-terminal",
     "titleLine2": "que necesitas",
-    "description": "6 terminales de Claude Code ejecutándose en paralelo. Visibilidad completa de cada agente. Notificaciones en tiempo real. Historial persistente. Gestión multi-proyecto sin fricción.",
+    "description": "6 terminales AI CLI (Claude Code, Codex, Gemini CLI) ejecutándose en paralelo. Visibilidad completa de cada agente. Notificaciones en tiempo real. Historial persistente. Gestión multi-proyecto sin fricción.",
     "points": {
-      "terminals": "6 terminales de Claude Code trabajando simultáneamente.",
+      "terminals": "6 terminales AI CLI trabajando simultáneamente.",
       "notifications": "Notificaciones instantáneas cuando un agente termina o requiere input.",
       "git": "Panel Git integrado con diffs en vivo.",
       "kanban": "Kanban que los agentes pueden leer y actualizar automáticamente.",
@@ -123,7 +123,7 @@
     "viewGuide": "Ver guía",
     "items": {
       "multiTerminal": {
-        "title": "Varias Terminales de Claude Code en Paralelo",
+        "title": "Varias Terminales AI CLI en Paralelo",
         "description": "Cada terminal es independiente: su propio proyecto, su propio contexto, su propia tarea. Sin conflictos. Sin esperas. Trabajas en frontend mientras otro terminal hace backend."
       },
       "taskWorkflow": {
@@ -131,8 +131,8 @@
         "description": "Crea tareas. Asígnalas a terminales. Revisa los cambios cuando terminan. Los agentes leen el tablero vía MCP y actualizan su progreso automáticamente."
       },
       "notifications": {
-        "title": "Notificaciones de Claude Code en Tiempo Real",
-        "description": "Deja de vigilar terminales. Cuando un agente termina, necesita input o falla, te avisa. Trabaja en otra cosa mientras Claude trabaja para ti."
+        "title": "Notificaciones AI CLI en Tiempo Real",
+        "description": "Deja de vigilar terminales. Cuando un agente termina, necesita input o falla, te avisa. Trabaja en otra cosa mientras tus agentes IA trabajan para ti."
       },
       "visibility": {
         "title": "Visibilidad y Seguimiento de Cambios en Tiempo Real",
@@ -306,7 +306,7 @@
         "mcp": "Todas las integraciones MCP"
       },
       "features": {
-        "terminals": "6 terminales Claude Code en paralelo",
+        "terminals": "6 terminales AI CLI en paralelo",
         "projects": "Proyectos ilimitados sin restricciones",
         "notifications": "Notificaciones en tiempo real",
         "mcp": "Acceso completo al marketplace MCP"
@@ -328,7 +328,7 @@
       },
       "pro": {
         "name": "Pro",
-        "description": "Para usuarios intensivos de Claude Code: 6 terminales, notificaciones en tiempo real, flujos multi-proyecto e integración MCP completa",
+        "description": "Para usuarios intensivos de AI CLI: 6 terminales, notificaciones en tiempo real, flujos multi-proyecto e integración MCP completa",
         "cta": "Suscribirse en App"
       }
     },
@@ -356,7 +356,7 @@
       "taskLabels": "Etiquetas de Tareas",
       "shortcuts": "Atajos de Teclado",
       "mcpPermissions": "Gestionar Permisos MCP",
-      "claudePermissions": "Gestionar Permisos Claude Code",
+      "claudePermissions": "Gestionar Permisos AI CLI",
       "turboMode": "Modo Turbo",
       "history": "Historial de Conversaciones"
     },
@@ -372,7 +372,7 @@
     "trustBadge": "30 días de garantía | Cancela cuando quieras | Pago seguro con Stripe",
     "whyUpgrade": {
       "title": "¿Por qué Pro?",
-      "description": "Pro está pensado para desarrolladores que usan Claude Code de forma intensiva y necesitan 6 terminales, proyectos ilimitados e integración completa con MCP. Las terminales en paralelo reducen tiempos de espera y cambios de contexto, mientras que las pestañas, atajos y controles avanzados te ayudan a ir más rápido y mantener a todos tus agentes alineados."
+      "description": "Pro está pensado para desarrolladores que usan AI CLI de forma intensiva y necesitan 6 terminales, proyectos ilimitados e integración completa con MCP. Las terminales en paralelo reducen tiempos de espera y cambios de contexto, mientras que las pestañas, atajos y controles avanzados te ayudan a ir más rápido y mantener a todos tus agentes alineados."
     }
   },
   "roadmap": {
@@ -455,8 +455,8 @@
     "titleLine1": "Listo para",
     "titleHighlight": "Transformar",
     "titleLine2": "Tu Desarrollo?",
-    "subtitle": "Únete a los desarrolladores que quieren orquestar varias terminales de Claude Code con visibilidad en tiempo real, notificaciones e historial completo.",
-    "instantSetup": "Si ya usas Claude Code, funciona al instante. Solo instala y abre.",
+    "subtitle": "Únete a los desarrolladores que quieren orquestar varias terminales AI CLI con visibilidad en tiempo real, notificaciones e historial completo.",
+    "instantSetup": "Si ya usas Claude Code, Codex o Gemini CLI, funciona al instante. Solo instala y abre.",
     "version": "Version",
     "released": "Released",
     "loading": "Cargando releases...",
@@ -484,12 +484,12 @@
       "memory": "4GB minimo",
       "storageLabel": "Disco",
       "storage": "500MB",
-      "claudeCode": "Suscripcion activa",
+      "claudeCode": "Claude Code, Codex o Gemini CLI",
       "gatekeeper": "Primera vez? Haz clic derecho - \"Abrir\" para bypass Gatekeeper."
     }
   },
   "footer": {
-    "description": "Espacio de trabajo de programacion con IA para varias terminales de Claude Code, visibilidad en tiempo real, historial de conversaciones y gestion integrada de tareas.",
+    "description": "Espacio de trabajo de programacion con IA para varias terminales AI CLI (Claude Code, Codex, Gemini CLI), visibilidad en tiempo real, historial de conversaciones y gestion integrada de tareas.",
     "product": "Producto",
     "company": "Empresa",
     "links": {
@@ -516,8 +516,8 @@
   "beta": {
     "hero": {
       "headline": "Únete a la Open Beta",
-      "subheadline": "Un espacio de trabajo con IA con 6 terminales de Claude Code en paralelo, visibilidad en tiempo real, notificaciones, historial completo de conversaciones y gestión multiproyecto, con todas las funciones Pro gratis durante la beta.",
-      "microcopy": "Funciona en macOS (Apple Silicon). Requiere suscripción a Claude Code.",
+      "subheadline": "Un espacio de trabajo con IA con 6 terminales AI CLI (Claude Code, Codex, Gemini CLI) en paralelo, visibilidad en tiempo real, notificaciones, historial completo de conversaciones y gestión multiproyecto, con todas las funciones Pro gratis durante la beta.",
+      "microcopy": "Funciona en macOS (Apple Silicon). Requiere Claude Code, Codex o Gemini CLI.",
       "primaryCta": "Unirse a la Beta",
       "primaryCtaHint": "(Paso 1)",
       "secondaryCta": "Ver Características"
@@ -540,28 +540,28 @@
       "titlePre": "Todo lo que",
       "titleHighlight": "Necesitas",
       "point1": {
-        "title": "Varias Terminales de Claude Code en Paralelo",
-        "description": "Ejecuta hasta 6 agentes Claude Code simultáneamente. Cada terminal trabaja independientemente en diferentes tareas en múltiples proyectos."
+        "title": "Varias Terminales AI CLI en Paralelo",
+        "description": "Ejecuta hasta 6 agentes AI CLI (Claude Code, Codex, Gemini CLI) simultáneamente. Cada terminal trabaja independientemente en diferentes tareas en múltiples proyectos."
       },
       "point2": {
         "title": "Gestión de Tareas con IA",
         "description": "Tablero Kanban integrado que los agentes pueden leer y actualizar vía MCP. Las tareas se sincronizan automáticamente en todos los terminales."
       },
       "point3": {
-        "title": "Notificaciones de Claude Code en Tiempo Real",
+        "title": "Notificaciones AI CLI en Tiempo Real",
         "description": "Recibe notificaciones instantáneas cuando cualquier terminal termina, necesita input o encuentra un error. No te pierdas nada."
       },
       "point4": {
         "title": "Visibilidad y Seguimiento de Cambios en Tiempo Real",
-        "description": "Ve los cambios de código de IA en tiempo real con diffs en vivo. Los títulos dinámicos de terminal muestran qué hace cada agente Claude Code."
+        "description": "Ve los cambios de código de IA en tiempo real con diffs en vivo. Los títulos dinámicos de terminal muestran qué hace cada agente."
       },
       "point5": {
         "title": "Historial Completo de Conversaciones",
-        "description": "Historial completo de conversaciones de Claude Code en todas las sesiones. Busca cualquier decisión o código pasado al instante."
+        "description": "Historial completo de conversaciones AI CLI en todas las sesiones. Busca cualquier decisión o código pasado al instante."
       },
       "point6": {
         "title": "Permisos y Modo Turbo",
-        "description": "Gestiona permisos de Claude Code y acceso a archivos visualmente. Modo Turbo auto-aprueba acciones seguras mientras tú controlas operaciones sensibles."
+        "description": "Gestiona permisos AI CLI y acceso a archivos visualmente. Modo Turbo auto-aprueba acciones seguras mientras tú controlas operaciones sensibles."
       }
     },
     "form": {

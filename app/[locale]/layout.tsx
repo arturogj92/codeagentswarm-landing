@@ -31,24 +31,30 @@ export async function generateMetadata({
   const isSpanish = locale === 'es'
 
   const title = isSpanish
-    ? 'CodeAgentSwarm – Espacio de trabajo con IA para varias terminales de Claude Code'
-    : 'CodeAgentSwarm – AI coding workspace with multiple Claude Code terminals, real-time visibility and MCP tools'
+    ? 'CodeAgentSwarm – Espacio de trabajo con IA para terminales Claude Code, Codex y Gemini CLI'
+    : 'CodeAgentSwarm – AI coding workspace for Claude Code, Codex and Gemini CLI terminals with MCP tools'
 
   const description = isSpanish
-    ? 'Orquesta hasta 6 terminales de Claude Code en un espacio de trabajo para desarrolladores con visibilidad en tiempo real, notificaciones instantaneas, historial completo de conversaciones, control de permisos, gestion de multiples proyectos e integraciones MCP.'
-    : 'Orchestrate up to 6 Claude Code terminals in a single AI developer workspace with real-time visibility, live notifications, full conversation history, permissions control, multi-project management and MCP integrations.'
+    ? 'Orquesta hasta 6 terminales AI CLI (Claude Code, Codex, Gemini CLI) en un espacio de trabajo para desarrolladores con visibilidad en tiempo real, notificaciones instantaneas, historial completo de conversaciones, control de permisos, gestion de multiples proyectos e integraciones MCP.'
+    : 'Orchestrate up to 6 AI CLI terminals (Claude Code, Codex, Gemini CLI) in a single developer workspace with real-time visibility, live notifications, full conversation history, permissions control, multi-project management and MCP integrations.'
 
   return {
     title,
     description,
     keywords: [
       'Claude Code',
+      'Codex CLI',
+      'Gemini CLI',
       'AI coding workspace',
       'AI developer workspace',
+      'AI CLI workspace',
       'multi terminal coding workspace',
       'multiple Claude Code terminals',
+      'multiple Codex terminals',
+      'multiple Gemini CLI terminals',
       'Claude Code multi terminal setup',
       'real time visibility',
+      'AI CLI notifications',
       'Claude Code notifications',
       'Claude Code conversation history',
       'Claude Code permissions',
@@ -80,11 +86,11 @@ export async function generateMetadata({
     },
     openGraph: {
       title: isSpanish
-        ? 'CodeAgentSwarm – Varias terminales de Claude Code en paralelo'
-        : 'CodeAgentSwarm – Multiple Claude Code terminals in parallel',
+        ? 'CodeAgentSwarm – Terminales AI CLI en paralelo (Claude Code, Codex, Gemini)'
+        : 'CodeAgentSwarm – Multiple AI CLI terminals in parallel (Claude Code, Codex, Gemini)',
       description: isSpanish
-        ? 'Desarrolla mas rapido con varias terminales de Claude Code, integracion Git, seguimiento de cambios en tiempo real e historial completo de conversaciones.'
-        : 'Work faster with multiple Claude Code terminals, Git integration, real-time change tracking and full conversation history.',
+        ? 'Desarrolla mas rapido con terminales AI CLI (Claude Code, Codex, Gemini CLI), integracion Git, seguimiento de cambios en tiempo real e historial completo.'
+        : 'Work faster with multiple AI CLI terminals (Claude Code, Codex, Gemini CLI), Git integration, real-time change tracking and full conversation history.',
       type: 'website',
       siteName: 'CodeAgentSwarm',
       url: canonicalUrl,
@@ -95,8 +101,8 @@ export async function generateMetadata({
           width: 1200,
           height: 630,
           alt: isSpanish
-            ? 'CodeAgentSwarm - Espacio de trabajo multi-terminal para Claude Code'
-            : 'CodeAgentSwarm - AI coding workspace for multiple Claude Code terminals',
+            ? 'CodeAgentSwarm - Espacio de trabajo multi-terminal para AI CLI'
+            : 'CodeAgentSwarm - AI coding workspace for multiple AI CLI terminals',
         },
       ],
     },
@@ -105,11 +111,11 @@ export async function generateMetadata({
       site: '@CodeAgentSwarm',
       creator: '@CodeAgentSwarm',
       title: isSpanish
-        ? 'CodeAgentSwarm – 6 terminales de Claude Code en paralelo'
-        : 'CodeAgentSwarm – 6 Parallel Claude Code Terminals',
+        ? 'CodeAgentSwarm – 6 terminales AI CLI en paralelo'
+        : 'CodeAgentSwarm – 6 Parallel AI CLI Terminals',
       description: isSpanish
-        ? 'Transforma 8 horas de desarrollo en 30 minutos con 6 terminales de Claude Code trabajando simultaneamente.'
-        : 'Transform 8-hour development marathons into 30-minute sprints with 6 parallel Claude Code terminals working simultaneously.',
+        ? 'Orquesta 6 terminales AI CLI (Claude Code, Codex, Gemini CLI) en un workspace con visibilidad en tiempo real.'
+        : 'Orchestrate 6 AI CLI terminals (Claude Code, Codex, Gemini CLI) in one workspace with real-time visibility.',
       images: ['/og.png'],
     },
     robots: {
