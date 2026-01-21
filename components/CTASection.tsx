@@ -108,7 +108,7 @@ function FOMOPopup({
                 </h3>
 
                 <p className="text-center text-neutral-400 mb-6">
-                  {t('description').replace('{platform}', platform === 'windows' ? 'Windows' : 'Linux')}
+                  {t('description').replaceAll('{platform}', platform === 'windows' ? 'Windows' : 'Linux')}
                 </p>
 
                 {/* Benefits */}
@@ -147,7 +147,7 @@ function FOMOPopup({
                 </form>
 
                 <p className="text-center text-neutral-600 text-xs mt-4">
-                  {t('privacy')}
+                  {t('privacy').replaceAll('{platform}', platform === 'windows' ? 'Windows' : 'Linux')}
                 </p>
               </>
             ) : (

@@ -280,7 +280,7 @@
   },
   "fomo": {
     "title": "Acceso Anticipado",
-    "description": "La versión para {platform} llega en 3 semanas. Déjanos tu email para recibir acceso prioritario a la beta.",
+    "description": "La versión para {platform} llega en pocas semanas. Déjanos tu email para recibir acceso prioritario a la beta.",
     "emailPlaceholder": "tu@email.com",
     "submit": "Solicitar Acceso Anticipado",
     "sending": "Enviando...",

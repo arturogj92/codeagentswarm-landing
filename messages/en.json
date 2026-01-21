@@ -280,7 +280,7 @@
   },
   "fomo": {
     "title": "Skip the Line",
-    "description": "We're shipping {platform} in 3 weeks. Drop your email to get a 'Skip the Line' invite for the {platform} Beta.",
+    "description": "We're shipping {platform} in a few weeks. Drop your email to get a 'Skip the Line' invite for the {platform} Beta.",
     "emailPlaceholder": "your@email.com",
     "submit": "Get Early Access",
     "sending": "Sending...",
