@@ -226,7 +226,7 @@
     "titleLine1": "Watch the",
     "titleLine2": "Magic",
     "titleLine3": "Happen",
-    "subtitle": "Watch how CodeAgentSwarm transforms parallel Claude Code development with real-time visibility.",
+    "subtitle": "Watch how CodeAgentSwarm transforms parallel AI CLI development with real-time visibility.",
     "whatYouSee": {
       "title": "Why it works",
       "items": {
@@ -249,7 +249,7 @@
     "badge": "One-Click Integrations",
     "titleLine1": "Connect Everything",
     "titleHighlight": "in One Click",
-    "subtitle": "A catalog of integrations you enable per project. Claude reads GitHub PRs, creates Jira tickets, updates Notion docs - without leaving the terminal.",
+    "subtitle": "A catalog of integrations you enable per project. Your AI agent reads GitHub PRs, creates Jira tickets, updates Notion docs - without leaving the terminal.",
     "installAll": "Install All MCPs",
     "allInstalled": "All MCPs Installed!",
     "installed": "MCPs installed",

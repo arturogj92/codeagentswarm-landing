@@ -226,7 +226,7 @@
     "titleLine1": "Mira la",
     "titleLine2": "Magia",
     "titleLine3": "en Acción",
-    "subtitle": "Descubre cómo CodeAgentSwarm transforma el desarrollo paralelo con Claude Code con visibilidad en tiempo real.",
+    "subtitle": "Descubre cómo CodeAgentSwarm transforma el desarrollo paralelo con AI CLI con visibilidad en tiempo real.",
     "whatYouSee": {
       "title": "Por qué funciona",
       "items": {
@@ -249,7 +249,7 @@
     "badge": "Integraciones MCP",
     "titleLine1": "Conecta tus herramientas",
     "titleHighlight": "en un clic",
-    "subtitle": "Un catálogo de integraciones que activas por proyecto. Claude lee PRs de GitHub, crea tickets en Jira, actualiza docs en Notion - sin salir del terminal.",
+    "subtitle": "Un catálogo de integraciones que activas por proyecto. Tu agente IA lee PRs de GitHub, crea tickets en Jira, actualiza docs en Notion - sin salir del terminal.",
     "installAll": "Instalar todas las integraciones",
     "allInstalled": "Todas las integraciones instaladas",
     "installed": "integraciones activas",
