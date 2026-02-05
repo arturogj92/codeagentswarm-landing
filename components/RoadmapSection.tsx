@@ -20,7 +20,7 @@ export default function RoadmapSection() {
   const roadmapItems = [
     {
       quarter: 'Q1',
-      year: '2025',
+      year: '2026',
       title: t('items.multiAgent.title'),
       description: t('items.multiAgent.description'),
       features: [
