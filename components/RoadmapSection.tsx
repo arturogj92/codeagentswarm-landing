@@ -30,6 +30,7 @@ export default function RoadmapSection() {
       ],
       icon: Code2,
       status: 'completed',
+      current: true,
     },
     {
       quarter: 'Q2',
@@ -170,7 +171,7 @@ export default function RoadmapSection() {
                     transition={{ duration: 0.2 }}
                   >
                     {/* Card */}
-                    <div className="relative rounded-2xl overflow-hidden glass border border-white/5 hover:border-white/10 transition-all duration-500">
+                    <div className={`relative rounded-2xl overflow-hidden glass border transition-all duration-500 ${'current' in item && item.current ? 'border-green-500/40 shadow-[0_0_30px_rgba(34,197,94,0.2)] hover:shadow-[0_0_40px_rgba(34,197,94,0.3)] hover:border-green-400/50' : 'border-white/5 hover:border-white/10'}`}>
                       {/* Top accent bar - visible on mobile */}
                       <div className={`h-1 bg-gradient-to-r ${item.status === 'completed' ? 'from-green-500 to-green-400' : item.status === 'in-progress' ? 'from-neon-cyan to-neon-purple' : 'from-white/20 to-white/5'}`} />
 
@@ -204,6 +205,11 @@ export default function RoadmapSection() {
                                   {item.quarter}
                                 </span>
                                 <span className="text-xs text-white/30">{item.year}</span>
+                                {'current' in item && item.current && (
+                                  <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-green-500/30 text-green-300 border border-green-400/50 animate-pulse">
+                                    ✓ NOW
+                                  </span>
+                                )}
                               </div>
                               <h3 className="text-base sm:text-xl font-display font-semibold text-white truncate">
                                 {item.title}
