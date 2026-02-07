@@ -6,7 +6,7 @@ import BetaBanner from '@/components/BetaBanner'
 import HeroSection from '@/components/HeroSection'
 import ProblemSection from '@/components/ProblemSection'
 import FeaturesSection from '@/components/FeaturesSection'
-import DemoSection from '@/components/DemoSection'
+// import DemoSection from '@/components/DemoSection'
 import MCPSection from '@/components/MCPSection'
 import SocialProofSection from '@/components/SocialProofSection'
 import SwarmiSection from '@/components/SwarmiSection'
@@ -73,7 +73,7 @@ export default function Home() {
         <HeroSection />
         <ProblemSection />
         <FeaturesSection />
-        <DemoSection />
+        {/* <DemoSection /> */}
         <MCPSection />
         <SocialProofSection />
         <SwarmiSection />
