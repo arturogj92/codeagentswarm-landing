@@ -9,7 +9,7 @@ import FeaturesSection from '@/components/FeaturesSection'
 // import DemoSection from '@/components/DemoSection'
 import MCPSection from '@/components/MCPSection'
 import SocialProofSection from '@/components/SocialProofSection'
-import SwarmiSection from '@/components/SwarmiSection'
+// import SwarmiSection from '@/components/SwarmiSection'
 import PricingSection from '@/components/PricingSection'
 import RoadmapSection from '@/components/RoadmapSection'
 import FAQSection from '@/components/FAQSection'
@@ -76,7 +76,7 @@ export default function Home() {
         {/* <DemoSection /> */}
         <MCPSection />
         <SocialProofSection />
-        <SwarmiSection />
+        {/* <SwarmiSection /> */}
         <PricingSection />
         <RoadmapSection />
         <FAQSection />

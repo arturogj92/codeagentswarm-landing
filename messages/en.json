@@ -195,32 +195,6 @@
       }
     }
   },
-  "swarmi": {
-    "badge": "Meet Your AI Guide",
-    "titleLine1": "Meet the",
-    "titleLine2": "Onboarding Agent",
-    "subtitle": "Your friendly AI assistant inside CodeAgentSwarm. It helps you learn the app, explains features, and answers your questions in real-time.",
-    "speechBubble": "Hi! Need help? Just ask!",
-    "features": {
-      "chat": {
-        "title": "Real-Time Chat",
-        "description": "Ask questions about CodeAgentSwarm and get instant answers powered by AI."
-      },
-      "inspector": {
-        "title": "UI Inspector",
-        "description": "Click any element and the agent explains what it does and how to use it."
-      },
-      "onboarding": {
-        "title": "Guided Onboarding",
-        "description": "Get step-by-step guidance when you first start using the app."
-      },
-      "context": {
-        "title": "Context-Aware Help",
-        "description": "The agent understands what you're working on and provides relevant suggestions."
-      }
-    },
-    "cta": "The Onboarding Agent is available in the app. Just click the logo to start chatting!"
-  },
   "demo": {
     "badge": "See It In Action",
     "titleLine1": "Watch the",
