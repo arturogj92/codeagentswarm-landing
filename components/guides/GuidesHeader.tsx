@@ -7,6 +7,7 @@ import Image from 'next/image'
 import { useTranslations, useLocale } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 import LocaleSwitcher from '../LocaleSwitcher'
+import LogoText from '../LogoText'
 
 export default function GuidesHeader() {
   const tCommon = useTranslations('common')
@@ -26,17 +27,15 @@ export default function GuidesHeader() {
           <Link href="/" className="flex items-center gap-2 sm:gap-3 group">
             <div className="relative">
               <Image
-                src="/logo.png"
+                src="/isotipo.png"
                 alt="CodeAgentSwarm Logo"
-                width={36}
-                height={36}
+                width={32}
+                height={32}
                 className="drop-shadow-lg"
                 priority
               />
             </div>
-            <span className="font-semibold tracking-wide text-white text-sm sm:text-base lg:text-lg">
-              CODEAGENTSWARM
-            </span>
+            <LogoText className="text-sm sm:text-base lg:text-lg" />
           </Link>
         </motion.div>
 

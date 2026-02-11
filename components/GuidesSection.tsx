@@ -5,6 +5,7 @@ import { useRef } from 'react'
 import { Users, Eye, Zap, ArrowRight } from 'lucide-react'
 import { useTranslations, useLocale } from 'next-intl'
 import Link from 'next/link'
+import LogoText from './LogoText'
 
 export default function GuidesSection() {
   const t = useTranslations('guides')
@@ -49,7 +50,7 @@ export default function GuidesSection() {
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
             <span className="text-white">{t('sectionTitle')} </span>
-            <span className="gradient-text">{t('sectionHighlight')}</span>
+            <LogoText className="text-3xl md:text-4xl lg:text-5xl" />
           </h2>
           <p className="text-white/60 text-lg max-w-2xl mx-auto">
             {t('sectionSubtitle')}
@@ -70,7 +71,7 @@ export default function GuidesSection() {
                 className="relative group block h-full"
               >
                 {/* Card with glass effect */}
-                <div className="relative h-full flex items-start gap-4 p-5 md:p-6 rounded-2xl glass border border-white/10 group-hover:border-neon-cyan/30 transition-all duration-300 group-hover:shadow-[0_0_40px_rgba(0,245,255,0.1)]">
+                <div className="relative h-full flex items-start gap-4 p-5 md:p-6 rounded-2xl glass border border-white/10 group-hover:border-neon-cyan/30 transition-all duration-300 group-hover:shadow-[0_0_40px_rgba(251,191,36,0.1)]">
                   {/* Icon Container */}
                   <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-neon-purple/20 to-neon-cyan/10 border border-white/10 flex items-center justify-center group-hover:border-neon-cyan/30 transition-all duration-300">
                     <guide.icon className="w-5 h-5 text-white/70 group-hover:text-neon-cyan transition-colors duration-300" />

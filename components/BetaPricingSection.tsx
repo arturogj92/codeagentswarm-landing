@@ -264,7 +264,7 @@ export default function BetaPricingSection() {
                               feature.badge === '3X BOOST'
                                 ? 'bg-gradient-to-r from-yellow-500 to-orange-500 text-white'
                                 : feature.badge === '2X BOOST'
-                                ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white'
+                                ? 'bg-gradient-to-r from-amber-500 to-blue-500 text-white'
                                 : 'bg-gradient-to-r from-neon-purple to-neon-magenta text-white'
                             }`}
                           >
@@ -279,7 +279,7 @@ export default function BetaPricingSection() {
                   {plan.isBeta ? (
                     <button
                       onClick={scrollToForm}
-                      className="flex items-center justify-center gap-2 w-full py-3 px-6 rounded-xl font-bold transition-all duration-300 bg-neon-cyan text-black hover:bg-cyan-400"
+                      className="flex items-center justify-center gap-2 w-full py-3 px-6 rounded-xl font-bold transition-all duration-300 bg-neon-cyan text-black hover:bg-amber-400"
                     >
                       {plan.cta}
                       <Sparkles className="w-4 h-4" />
@@ -289,7 +289,7 @@ export default function BetaPricingSection() {
                       href="#download"
                       className={`flex items-center justify-center gap-2 w-full py-3 px-6 rounded-xl font-medium transition-all duration-300 ${
                         plan.name === 'Starter'
-                          ? 'bg-gradient-to-r from-blue-600/20 to-cyan-600/20 border border-blue-500/30 text-white/80 hover:from-blue-600/30 hover:to-cyan-600/30'
+                          ? 'bg-gradient-to-r from-blue-600/20 to-amber-600/20 border border-blue-500/30 text-white/80 hover:from-blue-600/30 hover:to-amber-600/30'
                           : 'bg-white/5 border border-white/10 text-white/70 hover:bg-white/10 hover:text-white'
                       }`}
                     >

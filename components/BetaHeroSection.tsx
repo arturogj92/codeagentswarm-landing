@@ -120,7 +120,7 @@ export default function BetaHeroSection() {
             className="group relative"
           >
             <div className="absolute -inset-0.5 rounded-full blur-sm opacity-30 group-hover:opacity-70 transition-opacity bg-neon-cyan" />
-            <div className="relative flex items-center gap-2 px-8 py-4 text-black font-bold rounded-full transition-all bg-neon-cyan hover:bg-cyan-400 hover:scale-105">
+            <div className="relative flex items-center gap-2 px-8 py-4 text-black font-bold rounded-full transition-all bg-neon-cyan hover:bg-amber-400 hover:scale-105">
               <Sparkles className="w-5 h-5" />
               {t('primaryCta')}
             </div>

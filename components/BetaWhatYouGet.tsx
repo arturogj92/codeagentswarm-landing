@@ -19,12 +19,12 @@ export default function BetaWhatYouGet() {
     {
       icon: Zap,
       text: t('features.priority'),
-      gradient: 'from-neon-cyan/80 to-cyan-600',
+      gradient: 'from-neon-cyan/80 to-amber-600',
     },
     {
       icon: Rocket,
       text: t('features.earlyAccess'),
-      gradient: 'from-cyan-500 to-teal-500',
+      gradient: 'from-amber-500 to-teal-500',
     },
     {
       icon: TrendingUp,
@@ -34,7 +34,7 @@ export default function BetaWhatYouGet() {
     {
       icon: MessageCircle,
       text: t('features.feedback'),
-      gradient: 'from-neon-cyan to-cyan-600',
+      gradient: 'from-neon-cyan to-amber-600',
     },
     {
       icon: DollarSign,

@@ -1,0 +1,23 @@
+[     545ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://umami-codeagentswarm-production.up.railway.app/api/auth/verify:0
+[    2120ms] [WARNING] WARN: A component changed from uncontrolled to controlled. @ https://umami-codeagentswarm-production.up.railway.app/_next/static/chunks/f79415a8f78af51f.js:0
+[    2749ms] [WARNING] WARN: A component changed from uncontrolled to controlled. @ https://umami-codeagentswarm-production.up.railway.app/_next/static/chunks/f79415a8f78af51f.js:0
+[    3319ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://umami-codeagentswarm-production.up.railway.app/api/auth/login:0
+[    3323ms] Error: Unauthorized
+    at ek (https://umami-codeagentswarm-production.up.railway.app/_next/static/chunks/d408b55ba7c758fb.js:1:478777)
+[    4845ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://umami-codeagentswarm-production.up.railway.app/api/auth/login:0
+[    4847ms] Error: Unauthorized
+    at ek (https://umami-codeagentswarm-production.up.railway.app/_next/static/chunks/d408b55ba7c758fb.js:1:478777)
+[    7492ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://umami-codeagentswarm-production.up.railway.app/api/auth/login:0
+[    7633ms] Error: Unauthorized
+    at ek (https://umami-codeagentswarm-production.up.railway.app/_next/static/chunks/d408b55ba7c758fb.js:1:478777)
+[    9493ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://umami-codeagentswarm-production.up.railway.app/api/auth/login:0
+[    9495ms] Error: Unauthorized
+    at ek (https://umami-codeagentswarm-production.up.railway.app/_next/static/chunks/d408b55ba7c758fb.js:1:478777)
+[   11477ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://umami-codeagentswarm-production.up.railway.app/api/auth/login:0
+[   11479ms] Error: Unauthorized
+    at ek (https://umami-codeagentswarm-production.up.railway.app/_next/static/chunks/d408b55ba7c758fb.js:1:478777)
+[   16297ms] [WARNING] <Pressable> child must be focusable. Please ensure the tabIndex prop is passed through. @ https://umami-codeagentswarm-production.up.railway.app/_next/static/chunks/f79415a8f78af51f.js:0
+[   16297ms] [WARNING] <Focusable> child must be focusable. Please ensure the tabIndex prop is passed through. @ https://umami-codeagentswarm-production.up.railway.app/_next/static/chunks/f79415a8f78af51f.js:0
+[   16297ms] [WARNING] <Focusable> child must be focusable. Please ensure the tabIndex prop is passed through. @ https://umami-codeagentswarm-production.up.railway.app/_next/static/chunks/f79415a8f78af51f.js:0
+[   16298ms] [WARNING] <Focusable> child must be focusable. Please ensure the tabIndex prop is passed through. @ https://umami-codeagentswarm-production.up.railway.app/_next/static/chunks/f79415a8f78af51f.js:0
+[   50888ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://icons.duckduckgo.com/ip3/com.slack.ico:0

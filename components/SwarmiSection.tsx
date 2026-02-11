@@ -74,27 +74,27 @@ export default function SwarmiSection() {
 
         {/* Main Content */}
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-          {/* Swarmi Character */}
+          {/* Onboarding Agent Logo */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative flex justify-center"
           >
-            {/* Glow behind Swarmi */}
+            {/* Glow behind logo */}
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="w-[300px] h-[300px] bg-gradient-radial from-amber-500/30 via-orange-500/10 to-transparent blur-2xl animate-pulse" />
             </div>
 
-            {/* Swarmi Image */}
+            {/* Logo */}
             <motion.div
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
               className="relative z-10"
             >
               <Image
-                src="/swarmi.png"
-                alt="Swarmi - Your AI Assistant"
+                src="/isotipo.png"
+                alt="CodeAgentSwarm Onboarding Agent"
                 width={280}
                 height={280}
                 className="drop-shadow-2xl w-[180px] h-[180px] sm:w-[220px] sm:h-[220px] md:w-[280px] md:h-[280px]"

@@ -108,7 +108,7 @@ export default function RoadmapSection() {
           <div className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent hidden lg:block" />
 
           {/* Timeline Line - Mobile */}
-          <div className="absolute top-0 bottom-0 left-4 w-0.5 bg-gradient-to-b from-cyan-400/50 via-white/20 to-cyan-400/50 lg:hidden" />
+          <div className="absolute top-0 bottom-0 left-4 w-0.5 bg-gradient-to-b from-amber-400/50 via-white/20 to-amber-400/50 lg:hidden" />
 
           {/* Timeline Items */}
           <div className="space-y-6 lg:space-y-16">

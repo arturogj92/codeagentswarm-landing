@@ -137,7 +137,7 @@ export default function BetaHowToJoin() {
                 window.umami?.track('how_to_join_download_click')
               }
             }}
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-cyan-400 text-black font-semibold text-lg hover:bg-cyan-300 transition-all hover:shadow-[0_0_20px_rgba(34,211,238,0.3)]"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-amber-400 text-black font-semibold text-lg hover:bg-amber-300 transition-all hover:shadow-[0_0_20px_rgba(251,191,36,0.3)]"
           >
             <Zap className="w-5 h-5" />
             {t('cta')}

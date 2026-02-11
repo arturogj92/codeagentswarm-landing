@@ -221,7 +221,7 @@ function VisualComparison() {
             className="relative p-6 lg:p-10 lg:pl-8 overflow-hidden"
           >
             {/* Green background glow */}
-            <div className="absolute inset-0 bg-gradient-to-bl from-emerald-500/10 via-transparent to-cyan-500/5 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-bl from-emerald-500/10 via-transparent to-amber-500/5 pointer-events-none" />
 
             {/* Header */}
             <div className="relative flex items-center gap-4 mb-5">
@@ -275,7 +275,7 @@ function VisualComparison() {
               className="relative group"
             >
               {/* Glow effect behind image - hidden on mobile for performance */}
-              <div className="hidden md:block absolute -inset-2 bg-gradient-to-r from-emerald-500/20 via-cyan-500/20 to-emerald-500/20 rounded-3xl blur-xl opacity-50 group-hover:opacity-70 transition-opacity" />
+              <div className="hidden md:block absolute -inset-2 bg-gradient-to-r from-emerald-500/20 via-amber-500/20 to-emerald-500/20 rounded-3xl blur-xl opacity-50 group-hover:opacity-70 transition-opacity" />
 
               <div className="relative aspect-[16/10] rounded-2xl overflow-hidden bg-black border-2 border-emerald-500/30 shadow-[0_0_40px_rgba(16,185,129,0.2)] hover:shadow-[0_0_50px_rgba(16,185,129,0.3)] transition-shadow">
                 <Image

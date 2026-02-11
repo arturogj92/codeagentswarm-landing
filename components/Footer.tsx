@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { useTranslations, useLocale } from 'next-intl'
 import { usePathname } from 'next/navigation'
 import { Link } from '@/i18n/navigation'
+import LogoText from './LogoText'
 
 // Discord icon
 const DiscordIcon = () => (
@@ -73,19 +74,16 @@ export default function Footer() {
                 className="flex items-center gap-3 mb-6 group"
               >
                 <div className="relative">
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center">
+                  <div className="w-10 h-10 flex items-center justify-center">
                     <Image
-                      src="/logo.png"
+                      src="/isotipo.png"
                       alt="CodeAgentSwarm Logo"
-                      width={40}
-                      height={40}
-                      className="rounded-xl"
+                      width={36}
+                      height={36}
                     />
                   </div>
                 </div>
-                <span className="font-bold text-xl tracking-wider text-white">
-                  CODEAGENTSWARM
-                </span>
+                <LogoText className="text-xl" />
               </Link>
             </motion.div>
 

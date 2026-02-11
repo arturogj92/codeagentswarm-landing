@@ -19,7 +19,7 @@ const config: Config = {
       colors: {
         // Neo-Terminal Cyberpunk Palette
         neon: {
-          cyan: '#00f5ff',
+          cyan: '#fbbf24',
           magenta: '#ff00ff',
           purple: '#a855f7',
           pink: '#f472b6',
@@ -94,13 +94,13 @@ const config: Config = {
         },
       },
       backgroundImage: {
-        'grid-pattern': `linear-gradient(rgba(0, 245, 255, 0.03) 1px, transparent 1px),
-                         linear-gradient(90deg, rgba(0, 245, 255, 0.03) 1px, transparent 1px)`,
+        'grid-pattern': `linear-gradient(rgba(251, 191, 36, 0.03) 1px, transparent 1px),
+                         linear-gradient(90deg, rgba(251, 191, 36, 0.03) 1px, transparent 1px)`,
         'radial-glow': 'radial-gradient(ellipse at center, var(--tw-gradient-from) 0%, transparent 70%)',
         'noise': `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
       },
       boxShadow: {
-        'neon-cyan': '0 0 20px rgba(0, 245, 255, 0.3), 0 0 40px rgba(0, 245, 255, 0.2), 0 0 60px rgba(0, 245, 255, 0.1)',
+        'neon-cyan': '0 0 20px rgba(251, 191, 36, 0.3), 0 0 40px rgba(251, 191, 36, 0.2), 0 0 60px rgba(251, 191, 36, 0.1)',
         'neon-magenta': '0 0 20px rgba(255, 0, 255, 0.3), 0 0 40px rgba(255, 0, 255, 0.2), 0 0 60px rgba(255, 0, 255, 0.1)',
         'neon-purple': '0 0 20px rgba(168, 85, 247, 0.4), 0 0 40px rgba(168, 85, 247, 0.3), 0 0 60px rgba(168, 85, 247, 0.2)',
         'glass': '0 8px 32px rgba(0, 0, 0, 0.4)',

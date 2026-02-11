@@ -265,7 +265,7 @@ export default function HeroSection() {
             <br />
             <motion.span
               className="gradient-text inline-block"
-              animate={shouldReduceMotion ? {} : { textShadow: ['0 0 20px rgba(34, 211, 238, 0.3)', '0 0 40px rgba(34, 211, 238, 0.5)', '0 0 20px rgba(34, 211, 238, 0.3)'] }}
+              animate={shouldReduceMotion ? {} : { textShadow: ['0 0 20px rgba(251, 191, 36, 0.3)', '0 0 40px rgba(251, 191, 36, 0.5)', '0 0 20px rgba(251, 191, 36, 0.3)'] }}
               transition={shouldReduceMotion ? {} : { duration: 3, repeat: Infinity, ease: "easeInOut" }}
             >{t('titleLine2')}</motion.span>
           </h1>
@@ -322,7 +322,7 @@ export default function HeroSection() {
             }}
           >
             <div className="absolute -inset-0.5 rounded-full blur-sm opacity-30 group-hover:opacity-70 transition-opacity bg-neon-cyan" />
-            <button className="relative flex items-center gap-3 px-10 py-5 text-black font-bold text-lg rounded-full transition-all bg-neon-cyan hover:bg-cyan-400 hover:scale-105">
+            <button className="relative flex items-center gap-3 px-10 py-5 text-black font-bold text-lg rounded-full transition-all bg-neon-cyan hover:bg-amber-400 hover:scale-105">
               <Zap className="w-6 h-6" />
               {t('claimAccess')}
             </button>

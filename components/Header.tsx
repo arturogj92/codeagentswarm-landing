@@ -9,6 +9,7 @@ import { useTranslations, useLocale } from 'next-intl'
 import { usePathname } from 'next/navigation'
 import { Link } from '@/i18n/navigation'
 import LocaleSwitcher from './LocaleSwitcher'
+import LogoText from './LogoText'
 
 export default function Header() {
   const t = useTranslations('header')
@@ -85,20 +86,18 @@ export default function Header() {
           >
             <div className="relative">
               <Image
-                src="/logo.png"
+                src="/isotipo.png"
                 alt="CodeAgentSwarm Logo"
-                width={isScrolled ? 36 : 44}
-                height={isScrolled ? 36 : 44}
+                width={isScrolled ? 32 : 38}
+                height={isScrolled ? 32 : 38}
                 className="drop-shadow-lg transition-all duration-300"
                 priority
               />
             </div>
-            <span className={cn(
-              "font-semibold tracking-wide text-white transition-all duration-300",
+            <LogoText className={cn(
+              "transition-all duration-300",
               isScrolled ? "text-sm sm:text-base lg:text-lg" : "text-base sm:text-lg lg:text-xl"
-            )}>
-              CODEAGENTSWARM
-            </span>
+            )} />
           </Link>
         </motion.div>
 

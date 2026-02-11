@@ -258,7 +258,7 @@ export default function CTASection() {
           </p>
 
           {/* Zero Friction Message */}
-          <p className="text-sm text-cyan-400/80 mb-8">
+          <p className="text-sm text-amber-400/80 mb-8">
             {t('instantSetup')}
           </p>
 

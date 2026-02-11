@@ -179,7 +179,7 @@ export default function BetaSignupForm() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-black bg-neon-cyan hover:bg-cyan-400 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-black bg-neon-cyan hover:bg-amber-400 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? (
                     <>
@@ -253,7 +253,7 @@ export default function BetaSignupForm() {
                       }
                       document.getElementById('download')?.scrollIntoView({ behavior: 'smooth' })
                     }}
-                    className="w-full flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-black bg-neon-cyan hover:bg-cyan-400 transition-all"
+                    className="w-full flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-black bg-neon-cyan hover:bg-amber-400 transition-all"
                   >
                     <Download className="w-5 h-5" />
                     {t('downloadButton')}

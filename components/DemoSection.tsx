@@ -165,7 +165,7 @@ export default function DemoSection() {
             className="absolute -bottom-6 left-0 right-0 flex justify-center"
           >
             <a href="#download" className="group relative inline-block">
-              <button className="relative flex items-center gap-1.5 sm:gap-2 px-5 py-2.5 sm:px-8 sm:py-4 text-sm sm:text-base text-black font-semibold rounded-full bg-cyan-400 hover:bg-cyan-300 transition-all hover:shadow-[0_8px_30px_rgba(34,211,238,0.25)]">
+              <button className="relative flex items-center gap-1.5 sm:gap-2 px-5 py-2.5 sm:px-8 sm:py-4 text-sm sm:text-base text-black font-semibold rounded-full bg-amber-400 hover:bg-amber-300 transition-all hover:shadow-[0_8px_30px_rgba(251,191,36,0.25)]">
                 <Download className="w-4 h-4 sm:w-5 sm:h-5" />
                 {tCommon('downloadNow')}
               </button>
@@ -186,7 +186,7 @@ export default function DemoSection() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             {['tasks', 'notifications', 'diffs', 'history'].map((key) => (
               <div key={key} className="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/[0.03] border border-white/[0.06]">
-                <CheckCircle2 className="w-4 h-4 text-cyan-400 flex-shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-amber-400 flex-shrink-0" />
                 <span className="text-sm text-white/60">{t(`whatYouSee.items.${key}`)}</span>
               </div>
             ))}

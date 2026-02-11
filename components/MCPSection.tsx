@@ -100,7 +100,7 @@ export default function MCPSection() {
             className={`inline-flex items-center gap-3 px-8 py-4 rounded-full font-semibold text-lg transition-all ${
               installedCount === mcpIntegrations.length
                 ? 'bg-zinc-800 text-zinc-400 border border-zinc-700'
-                : 'bg-cyan-400 text-black hover:bg-cyan-300 hover:shadow-[0_8px_30px_rgba(34,211,238,0.2)]'
+                : 'bg-amber-400 text-black hover:bg-amber-300 hover:shadow-[0_8px_30px_rgba(251,191,36,0.2)]'
             }`}
           >
             {installedCount === mcpIntegrations.length ? (

@@ -111,7 +111,7 @@ export default function GuideLayout({ guide }: GuideLayoutProps) {
                 </p>
                 <Link
                   href={ctaHref}
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-neon-cyan text-black font-semibold rounded-full hover:bg-cyan-400 transition-colors"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-neon-cyan text-black font-semibold rounded-full hover:bg-amber-400 transition-colors"
                 >
                   {ctaText}
                   <ArrowRight className="w-4 h-4" />

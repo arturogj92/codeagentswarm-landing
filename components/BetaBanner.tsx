@@ -43,11 +43,11 @@ export default function BetaBanner() {
         y: isHidden ? -40 : 0
       }}
       transition={{ duration: 0.3 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-cyan-950/90 via-black to-cyan-950/90 border-b border-cyan-400/20"
+      className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-amber-950/90 via-black to-amber-950/90 border-b border-amber-400/20"
       style={{ pointerEvents: isHidden ? 'none' : 'auto' }}
     >
       <div className="max-w-7xl mx-auto px-1.5 sm:px-4 py-1.5 sm:py-2 flex items-center justify-center gap-1.5 sm:gap-3">
-        <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-cyan-400 flex-shrink-0 hidden xs:block" />
+        <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-400 flex-shrink-0 hidden xs:block" />
         <span className="text-white font-medium text-[11px] sm:text-sm">
           {t('text')}
         </span>
@@ -58,7 +58,7 @@ export default function BetaBanner() {
               window.umami?.track('beta_banner_download_click')
             }
           }}
-          className="px-3 sm:px-4 py-1 sm:py-1.5 bg-cyan-400 text-black font-bold rounded-full text-[10px] sm:text-sm hover:bg-cyan-300 transition-all hover:shadow-[0_0_15px_rgba(34,211,238,0.4)] whitespace-nowrap flex-shrink-0"
+          className="px-3 sm:px-4 py-1 sm:py-1.5 bg-amber-400 text-black font-bold rounded-full text-[10px] sm:text-sm hover:bg-amber-300 transition-all hover:shadow-[0_0_15px_rgba(251,191,36,0.4)] whitespace-nowrap flex-shrink-0"
         >
           {t('cta')}
         </a>

@@ -55,7 +55,7 @@ export default function PricingSection() {
       icon: Sparkles,
       price: 2.99,
       description: t('plans.starter.description'),
-      gradient: 'from-blue-500 to-cyan-500',
+      gradient: 'from-blue-500 to-amber-500',
       features: [
         { name: t('features.terminals4'), included: true, badge: t('badges.boost2x') },
         { name: t('features.projects4'), included: true },
@@ -83,7 +83,7 @@ export default function PricingSection() {
       icon: Crown,
       price: 6.99,
       description: t('plans.pro.description'),
-      gradient: 'from-cyan-500 to-blue-500',
+      gradient: 'from-amber-500 to-blue-500',
       features: [
         { name: t('features.terminals6'), included: true, badge: t('badges.boost3x') },
         { name: t('features.unlimitedProjects'), included: true, badge: t('badges.unlimited') },
@@ -195,7 +195,7 @@ export default function PricingSection() {
                 }}
                 className="block"
               >
-                <button className="w-full py-4 rounded-xl bg-cyan-400 text-black font-semibold text-lg hover:bg-cyan-300 transition-all flex items-center justify-center gap-2">
+                <button className="w-full py-4 rounded-xl bg-amber-400 text-black font-semibold text-lg hover:bg-amber-300 transition-all flex items-center justify-center gap-2">
                   <Zap className="w-5 h-5" />
                   {tBeta('cta')}
                 </button>
@@ -333,9 +333,9 @@ export default function PricingSection() {
                           }}
                           className={`flex items-center justify-center gap-2 w-full py-3 px-6 rounded-xl font-medium transition-all duration-300 ${
                             plan.isBeta
-                              ? 'bg-cyan-400 text-black font-bold hover:bg-cyan-300'
+                              ? 'bg-amber-400 text-black font-bold hover:bg-amber-300'
                               : plan.popular
-                              ? 'bg-cyan-400 text-black hover:bg-cyan-300'
+                              ? 'bg-amber-400 text-black hover:bg-amber-300'
                               : 'bg-white/5 border border-white/10 text-neutral-400 hover:bg-white/10 hover:text-white'
                           }`}
                         >
