@@ -502,13 +502,13 @@
       "titleHighlight": "Get Started",
       "step1": {
         "title": "Download the app & create your account",
-        "description": "Install CodeAgentSwarm on macOS and sign in with Google, GitHub or Discord. You'll automatically get Pro access."
+        "description": "Install CodeAgentSwarm on macOS and sign in with Google, GitHub or Discord. Pro activates automatically - no extra steps needed."
       },
       "step2": {
         "title": "Join our Discord & share feedback",
         "description": "Joining the CodeAgentSwarm Discord is highly recommended for support and to share your feedback."
       },
-      "note": "No credit card required. Full Pro access during the beta.",
+      "note": "No credit card required. Pro activates automatically when you create your account.",
       "cta": "Download Now"
     },
     "whatIs": {
@@ -541,7 +541,7 @@
     },
     "form": {
       "title": "Beta Signup",
-      "stepTitle": "Step 1. Tell us your email to prepare your Pro (Beta) activation",
+      "stepTitle": "Step 1. Tell us your email so we can keep you updated",
       "emailLabel": "Email you used (or will use) in the app",
       "emailPlaceholder": "your@email.com",
       "macosLabel": "macOS version",
@@ -549,7 +549,7 @@
       "usageLabel": "How do you plan to use CodeAgentSwarm?",
       "usagePlaceholder": "Tell us about your use case (optional)",
       "consentLabel": "I agree to receive beta related updates.",
-      "submitButton": "Request Beta Activation",
+      "submitButton": "Join the Beta",
       "successTitle": "You're in!",
       "successSubtitle": "Your beta request has been received. Now follow these steps:",
       "successStep1Title": "Download the app",
@@ -557,8 +557,8 @@
       "successStep2Title": "Sign in with the same email",
       "successStep2Desc": "Use Google, GitHub or Discord",
       "successStep3Title": "Join our Discord",
-      "successStep3Desc": "Required for Pro activation",
-      "successNote": "We'll activate your Pro (Beta) access once you join Discord!",
+      "successStep3Desc": "For support and feedback",
+      "successNote": "Pro activates automatically when you create your account. No extra steps needed!",
       "downloadButton": "Download App (Step 2)",
       "discordButton": "Join Discord (Step 4)",
       "checklist": {
@@ -611,8 +611,8 @@
         "a6": "macOS (Apple Silicon). Windows/Linux coming later.",
         "q7": "Does CodeAgentSwarm store my code?",
         "a7": "No. All code stays on your local machine.",
-        "q8": "How long does Pro activation take?",
-        "a8": "Almost instant once you complete all steps.",
+        "q8": "How do I activate Pro?",
+        "a8": "You don't have to. During the beta, Pro activates automatically the moment you create your account. Just download, sign in, and you're Pro.",
         "q9": "Does CodeAgentSwarm support multi-project workflows with Claude Code?",
         "a9": "Yes! CodeAgentSwarm is designed for multiproject management. Switch between Claude Code projects without losing context. Each project maintains its own terminals, tasks and conversation history. Manage multiple Claude Code projects seamlessly in one workspace."
       }
