@@ -17,7 +17,7 @@
     "guides": "Guías"
   },
   "hero": {
-    "badge": "Open Beta – Acceso Pro gratuito",
+    "badge": "Open Beta – Pro se activa automáticamente al registrarte",
     "badgeNew": "NUEVO",
     "titleLine1": "Deja de cambiar de ventana.",
     "titleLine2": "Empieza a orquestar.",
@@ -26,7 +26,7 @@
     "powerStatement": "",
     "authorityLine": "",
     "requirements": "Compatible con Claude Code, Codex o Gemini CLI. macOS 12+",
-    "claimAccess": "Acceder a Pro Gratis",
+    "claimAccess": "Descargar Gratis – Pro Incluido",
     "securityBadge": "Modo Turbo con protección integrada. Tú defines los límites.",
     "stats": {
       "terminals": "Terminales Paralelos",
@@ -285,7 +285,7 @@
         "notifications": "Notificaciones en tiempo real",
         "mcp": "Acceso completo al marketplace MCP"
       },
-      "cta": "Acceder a Pro Gratis"
+      "cta": "Descargar – Pro se Activa Automáticamente"
     },
     "showFeatures": "Ver comparativa completa",
     "hideFeatures": "Ocultar comparativa",
@@ -590,7 +590,7 @@
       "cta": "Obtener Pro Gratis"
     },
     "banner": {
-      "text": "Open Beta - Pro gratis",
+      "text": "Open Beta – Pro se activa solo al registrarte",
       "cta": "Descargar Gratis"
     },
     "faq": {
@@ -611,8 +611,8 @@
         "a6": "macOS (Apple Silicon). Windows/Linux más adelante.",
         "q7": "¿CodeAgentSwarm almacena mi código?",
         "a7": "No. Todo tu código permanece en tu máquina.",
-        "q8": "¿Cuánto tarda la activación de Pro?",
-        "a8": "Casi instantáneo una vez completes todos los pasos.",
+        "q8": "¿Cómo activo Pro?",
+        "a8": "No tienes que hacer nada. Durante la beta, Pro se activa automáticamente al crear tu cuenta. Descarga, inicia sesión y ya eres Pro.",
         "q9": "¿Soporta CodeAgentSwarm flujos multi-proyecto con Claude Code?",
         "a9": "¡Sí! CodeAgentSwarm está diseñado para gestión multiproyecto. Cambia entre proyectos de Claude Code sin perder contexto. Cada proyecto mantiene sus propios terminales, tareas e historial de conversaciones. Gestiona múltiples proyectos de Claude Code sin problemas en un solo espacio de trabajo."
       }

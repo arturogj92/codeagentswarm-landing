@@ -17,7 +17,7 @@
     "guides": "Guides"
   },
   "hero": {
-    "badge": "Open Beta – All Pro features free",
+    "badge": "Open Beta – Pro activates automatically on signup",
     "badgeNew": "NEW",
     "titleLine1": "Stop switching windows.",
     "titleLine2": "Start Orchestrating.",
@@ -26,7 +26,7 @@
     "powerStatement": "",
     "authorityLine": "",
     "requirements": "Works with Claude Code, Codex or Gemini CLI. Requires macOS 12 or later.",
-    "claimAccess": "Claim Free Pro Access",
+    "claimAccess": "Download Free – Pro Included",
     "securityBadge": "Turbo Mode with built-in guardrails. You set the limits.",
     "stats": {
       "terminals": "Parallel Terminals",
@@ -285,7 +285,7 @@
         "notifications": "Real-time notifications",
         "mcp": "Full access to MCP marketplace"
       },
-      "cta": "Claim Free Pro Access"
+      "cta": "Download – Pro Activates Automatically"
     },
     "showFeatures": "View full feature list",
     "hideFeatures": "Hide feature list",
@@ -590,7 +590,7 @@
       "cta": "Get Free Pro Access"
     },
     "banner": {
-      "text": "Open Beta - Pro free",
+      "text": "Open Beta – Pro unlocks automatically when you sign up",
       "cta": "Download Free"
     },
     "faq": {
@@ -611,8 +611,8 @@
         "a6": "macOS (Apple Silicon). Windows/Linux coming later.",
         "q7": "Does CodeAgentSwarm store my code?",
         "a7": "No. All code stays on your local machine.",
-        "q8": "How long does Pro activation take?",
-        "a8": "Almost instant once you complete all steps.",
+        "q8": "How do I activate Pro?",
+        "a8": "You don't have to do anything. During the beta, Pro activates automatically the moment you create your account. Just download, sign in, and you're Pro.",
         "q9": "Does CodeAgentSwarm support multi-project workflows with Claude Code?",
         "a9": "Yes! CodeAgentSwarm is designed for multiproject management. Switch between Claude Code projects without losing context. Each project maintains its own terminals, tasks and conversation history. Manage multiple Claude Code projects seamlessly in one workspace."
       }
