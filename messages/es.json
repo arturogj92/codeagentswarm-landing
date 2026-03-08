@@ -637,5 +637,58 @@
         "description": "Acelera tu flujo de trabajo saltando confirmaciones sin perder el control"
       }
     }
+  },
+  "survey": {
+    "title": "Ayudanos a Mejorar",
+    "subtitle": "Tu feedback da forma al futuro de CodeAgentSwarm. Solo te llevara 2 minutos.",
+    "questions": {
+      "role": "Cual es tu rol principal?",
+      "rolePlaceholder": "Selecciona tu rol",
+      "roleOptions": {
+        "frontend": "Desarrollador Frontend",
+        "backend": "Desarrollador Backend",
+        "fullstack": "Desarrollador Full-Stack",
+        "devops": "DevOps / SRE",
+        "techlead": "Tech Lead / Manager",
+        "other": "Otro"
+      },
+      "frequency": "Con que frecuencia usas CodeAgentSwarm?",
+      "frequencyPlaceholder": "Selecciona frecuencia",
+      "frequencyOptions": {
+        "daily": "Todos los dias",
+        "fewTimesWeek": "Varias veces por semana",
+        "weekly": "Semanalmente",
+        "rarely": "Rara vez",
+        "notStarted": "Aun no lo uso"
+      },
+      "likes": "Que es lo que mas te gusta de CodeAgentSwarm?",
+      "likesPlaceholder": "Cuentanos que funciona bien para ti...",
+      "frustrations": "Que te frustra o cambiarias?",
+      "frustrationsPlaceholder": "Cuentanos que podria mejorar...",
+      "featureRequest": "Que feature andirias?",
+      "featureRequestPlaceholder": "Describe tu feature ideal...",
+      "willingness": "Pagarias por features premium?",
+      "willingnessPlaceholder": "Selecciona una opcion",
+      "willingnessOptions": {
+        "yes5_10": "Si, $5-10/mes",
+        "yes10_20": "Si, $10-20/mes",
+        "yes20plus": "Si, $20+/mes",
+        "freeOnly": "No, prefiero gratis"
+      },
+      "nps": "Del 0 al 10, recomendarias CodeAgentSwarm a un colega?",
+      "npsNotLikely": "Nada probable",
+      "npsVeryLikely": "Muy probable",
+      "email": "Tu email (opcional)",
+      "emailPlaceholder": "tu@email.com",
+      "emailHint": "Deja tu email si quieres que te contactemos"
+    },
+    "submit": "Enviar Feedback",
+    "submitting": "Enviando...",
+    "success": {
+      "title": "Gracias!",
+      "subtitle": "Tu feedback nos ayuda a construir un mejor CodeAgentSwarm.",
+      "backHome": "Volver al Inicio"
+    },
+    "error": "Algo salio mal. Intentalo de nuevo."
   }
 }

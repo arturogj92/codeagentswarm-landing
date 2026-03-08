@@ -637,5 +637,58 @@
         "description": "Speed up your workflow by skipping confirmations without losing control"
       }
     }
+  },
+  "survey": {
+    "title": "Help Us Build Better",
+    "subtitle": "Your feedback shapes the future of CodeAgentSwarm. This takes about 2 minutes.",
+    "questions": {
+      "role": "What's your primary role?",
+      "rolePlaceholder": "Select your role",
+      "roleOptions": {
+        "frontend": "Frontend Developer",
+        "backend": "Backend Developer",
+        "fullstack": "Full-Stack Developer",
+        "devops": "DevOps / SRE",
+        "techlead": "Tech Lead / Manager",
+        "other": "Other"
+      },
+      "frequency": "How often do you use CodeAgentSwarm?",
+      "frequencyPlaceholder": "Select frequency",
+      "frequencyOptions": {
+        "daily": "Daily",
+        "fewTimesWeek": "A few times per week",
+        "weekly": "Weekly",
+        "rarely": "Rarely",
+        "notStarted": "Haven't started yet"
+      },
+      "likes": "What do you like most about CodeAgentSwarm?",
+      "likesPlaceholder": "Tell us what works well for you...",
+      "frustrations": "What frustrates you or would you change?",
+      "frustrationsPlaceholder": "Tell us what could be better...",
+      "featureRequest": "What feature would you add?",
+      "featureRequestPlaceholder": "Describe your ideal feature...",
+      "willingness": "Would you pay for premium features?",
+      "willingnessPlaceholder": "Select an option",
+      "willingnessOptions": {
+        "yes5_10": "Yes, $5-10/month",
+        "yes10_20": "Yes, $10-20/month",
+        "yes20plus": "Yes, $20+/month",
+        "freeOnly": "No, I prefer free only"
+      },
+      "nps": "How likely are you to recommend CodeAgentSwarm to a colleague?",
+      "npsNotLikely": "Not likely",
+      "npsVeryLikely": "Very likely",
+      "email": "Your email (optional)",
+      "emailPlaceholder": "your@email.com",
+      "emailHint": "Leave your email if you'd like us to follow up"
+    },
+    "submit": "Submit Feedback",
+    "submitting": "Submitting...",
+    "success": {
+      "title": "Thank you!",
+      "subtitle": "Your feedback helps us build a better CodeAgentSwarm.",
+      "backHome": "Back to Home"
+    },
+    "error": "Something went wrong. Please try again."
   }
 }
