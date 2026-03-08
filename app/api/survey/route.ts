@@ -38,12 +38,12 @@ export async function POST(request: Request) {
       },
       body: JSON.stringify({
         role: body.role,
-        frequency: body.frequency,
+        usage_frequency: body.frequency,
         likes: body.likes,
         frustrations: body.frustrations,
-        featureRequest: body.featureRequest,
-        willingness: body.willingness,
-        nps: nps,
+        feature_request: body.featureRequest,
+        willingness_to_pay: body.willingness,
+        nps_score: nps,
         email: body.email || null,
       }),
     })
