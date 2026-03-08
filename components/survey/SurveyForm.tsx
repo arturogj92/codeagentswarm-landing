@@ -44,11 +44,6 @@ export default function SurveyForm() {
     e.preventDefault()
     setError('')
 
-    if (formData.nps === null) {
-      setError(t('error'))
-      return
-    }
-
     setIsSubmitting(true)
 
     try {
@@ -58,12 +53,12 @@ export default function SurveyForm() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          role: formData.role,
-          frequency: formData.frequency,
-          likes: formData.likes,
-          frustrations: formData.frustrations,
-          featureRequest: formData.featureRequest,
-          willingness: formData.willingness,
+          role: formData.role || null,
+          frequency: formData.frequency || null,
+          likes: formData.likes || null,
+          frustrations: formData.frustrations || null,
+          featureRequest: formData.featureRequest || null,
+          willingness: formData.willingness || null,
           nps: formData.nps,
           email: formData.email || null,
         }),
@@ -117,7 +112,7 @@ export default function SurveyForm() {
     <section
       id="survey-form"
       ref={sectionRef}
-      className="relative py-16 md:py-24 px-6 overflow-hidden"
+      className="relative pt-32 md:pt-40 pb-16 md:pb-24 px-6 overflow-hidden"
     >
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-dark-900 to-black" />
@@ -158,11 +153,10 @@ export default function SurveyForm() {
                 {/* Q1: Role */}
                 <div>
                   <label htmlFor="role" className="block text-sm font-medium text-white/80 mb-2">
-                    {t('questions.role')} <span className="text-red-500">*</span>
+                    {t('questions.role')}
                   </label>
                   <select
                     id="role"
-                    required
                     value={formData.role}
                     onChange={(e) => setFormData({ ...formData, role: e.target.value })}
                     className="w-full px-4 py-3 rounded-xl glass border border-white/10 focus:border-neon-cyan/50 focus:outline-none text-white transition-colors bg-transparent appearance-none cursor-pointer"
@@ -181,11 +175,10 @@ export default function SurveyForm() {
                 {/* Q2: Frequency */}
                 <div>
                   <label htmlFor="frequency" className="block text-sm font-medium text-white/80 mb-2">
-                    {t('questions.frequency')} <span className="text-red-500">*</span>
+                    {t('questions.frequency')}
                   </label>
                   <select
                     id="frequency"
-                    required
                     value={formData.frequency}
                     onChange={(e) => setFormData({ ...formData, frequency: e.target.value })}
                     className="w-full px-4 py-3 rounded-xl glass border border-white/10 focus:border-neon-cyan/50 focus:outline-none text-white transition-colors bg-transparent appearance-none cursor-pointer"
@@ -204,12 +197,11 @@ export default function SurveyForm() {
                 {/* Q3: Likes */}
                 <div>
                   <label htmlFor="likes" className="block text-sm font-medium text-white/80 mb-2">
-                    {t('questions.likes')} <span className="text-red-500">*</span>
+                    {t('questions.likes')}
                   </label>
                   <textarea
                     id="likes"
                     rows={4}
-                    required
                     value={formData.likes}
                     onChange={(e) => setFormData({ ...formData, likes: e.target.value })}
                     placeholder={t('questions.likesPlaceholder')}
@@ -220,12 +212,11 @@ export default function SurveyForm() {
                 {/* Q4: Frustrations */}
                 <div>
                   <label htmlFor="frustrations" className="block text-sm font-medium text-white/80 mb-2">
-                    {t('questions.frustrations')} <span className="text-red-500">*</span>
+                    {t('questions.frustrations')}
                   </label>
                   <textarea
                     id="frustrations"
                     rows={4}
-                    required
                     value={formData.frustrations}
                     onChange={(e) => setFormData({ ...formData, frustrations: e.target.value })}
                     placeholder={t('questions.frustrationsPlaceholder')}
@@ -236,12 +227,11 @@ export default function SurveyForm() {
                 {/* Q5: Feature Request */}
                 <div>
                   <label htmlFor="featureRequest" className="block text-sm font-medium text-white/80 mb-2">
-                    {t('questions.featureRequest')} <span className="text-red-500">*</span>
+                    {t('questions.featureRequest')}
                   </label>
                   <textarea
                     id="featureRequest"
                     rows={4}
-                    required
                     value={formData.featureRequest}
                     onChange={(e) => setFormData({ ...formData, featureRequest: e.target.value })}
                     placeholder={t('questions.featureRequestPlaceholder')}
@@ -252,11 +242,10 @@ export default function SurveyForm() {
                 {/* Q6: Willingness to Pay */}
                 <div>
                   <label htmlFor="willingness" className="block text-sm font-medium text-white/80 mb-2">
-                    {t('questions.willingness')} <span className="text-red-500">*</span>
+                    {t('questions.willingness')}
                   </label>
                   <select
                     id="willingness"
-                    required
                     value={formData.willingness}
                     onChange={(e) => setFormData({ ...formData, willingness: e.target.value })}
                     className="w-full px-4 py-3 rounded-xl glass border border-white/10 focus:border-neon-cyan/50 focus:outline-none text-white transition-colors bg-transparent appearance-none cursor-pointer"
@@ -275,7 +264,7 @@ export default function SurveyForm() {
                 {/* Q7: NPS Score */}
                 <div>
                   <label className="block text-sm font-medium text-white/80 mb-3">
-                    {t('questions.nps')} <span className="text-red-500">*</span>
+                    {t('questions.nps')}
                   </label>
                   <div className="flex flex-wrap gap-2 justify-center">
                     {NPS_SCORES.map((score) => (

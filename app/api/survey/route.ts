@@ -6,20 +6,9 @@ export async function POST(request: Request) {
   try {
     const body = await request.json()
 
-    // Validate required fields
-    const requiredFields = ['role', 'frequency', 'likes', 'frustrations', 'featureRequest', 'willingness', 'nps']
-    for (const field of requiredFields) {
-      if (body[field] === undefined || body[field] === null || body[field] === '') {
-        return NextResponse.json(
-          { error: `Field "${field}" is required` },
-          { status: 400 }
-        )
-      }
-    }
-
-    // Validate NPS score
-    const nps = Number(body.nps)
-    if (!Number.isInteger(nps) || nps < 0 || nps > 10) {
+    // Validate NPS score if provided
+    const nps = body.nps !== null && body.nps !== undefined ? Number(body.nps) : null
+    if (nps !== null && (!Number.isInteger(nps) || nps < 0 || nps > 10)) {
       return NextResponse.json(
         { error: 'NPS score must be an integer between 0 and 10' },
         { status: 400 }
@@ -38,11 +27,11 @@ export async function POST(request: Request) {
       },
       body: JSON.stringify({
         role: body.role,
-        usage_frequency: body.frequency,
-        likes: body.likes,
-        frustrations: body.frustrations,
-        feature_request: body.featureRequest,
-        willingness_to_pay: body.willingness,
+        usage_frequency: body.frequency || null,
+        likes: body.likes || null,
+        frustrations: body.frustrations || null,
+        feature_request: body.featureRequest || null,
+        willingness_to_pay: body.willingness || null,
         nps_score: nps,
         email: body.email || null,
       }),
