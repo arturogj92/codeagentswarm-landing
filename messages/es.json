@@ -666,13 +666,13 @@
       "frustrationsPlaceholder": "Cuentanos que podria mejorar...",
       "featureRequest": "Que feature andirias?",
       "featureRequestPlaceholder": "Describe tu feature ideal...",
-      "willingness": "Pagarias por features premium?",
+      "willingness": "Si CodeAgentSwarm desapareciera manana, como te sentirias?",
       "willingnessPlaceholder": "Selecciona una opcion",
       "willingnessOptions": {
-        "yes5_10": "Si, $5-10/mes",
-        "yes10_20": "Si, $10-20/mes",
-        "yes20plus": "Si, $20+/mes",
-        "freeOnly": "No, prefiero gratis"
+        "yes5_10": "Muy decepcionado - dependo de el",
+        "yes10_20": "Algo decepcionado - pero encontraria alternativas",
+        "yes20plus": "No me importaria - apenas lo uso",
+        "freeOnly": "No estoy seguro - aun lo estoy explorando"
       },
       "nps": "Del 0 al 10, recomendarias CodeAgentSwarm a un colega?",
       "npsNotLikely": "Nada probable",
