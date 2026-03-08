@@ -505,8 +505,8 @@
         "description": "Instala CodeAgentSwarm en macOS e inicia sesión con Google, GitHub o Discord. Automáticamente tendrás acceso Pro."
       },
       "step2": {
-        "title": "Únete a nuestro Discord y da feedback",
-        "description": "Unirse al Discord de CodeAgentSwarm es muy recomendado para recibir soporte y compartir feedback."
+        "title": "Comparte tu feedback",
+        "description": "Nos encanta saber de ti. Escribenos a hello@codeagentswarm.com para compartir feedback o recibir soporte."
       },
       "note": "No necesitas tarjeta. Acceso completo al Pro durante la beta.",
       "cta": "Descargar Ahora"
@@ -556,16 +556,15 @@
       "successStep1Desc": "Obtén CodeAgentSwarm para macOS",
       "successStep2Title": "Inicia sesión con el mismo email",
       "successStep2Desc": "Usa Google, GitHub o Discord",
-      "successStep3Title": "Únete a nuestro Discord",
-      "successStep3Desc": "Requisito para activar Pro",
-      "successNote": "¡Activaremos tu acceso Pro (Beta) cuando te unas a Discord!",
+      "successStep3Title": "Empieza a usarlo",
+      "successStep3Desc": "Pro se activa automaticamente",
+      "successNote": "Tu acceso Pro (Beta) se activa automaticamente al iniciar sesion!",
       "downloadButton": "Descargar App (Paso 2)",
-      "discordButton": "Únete a Discord (Paso 4)",
       "checklist": {
         "step1Done": "Paso 1: Rellenaste el formulario de beta",
         "step2": "Paso 2: Descargar la app",
         "step3": "Paso 3: Iniciar sesión con el mismo email (Google/GitHub/Discord)",
-        "step4": "Paso 4: Únete a Discord para actualizaciones y feedback"
+        "step4": "Paso 4: Comparte feedback en hello@codeagentswarm.com"
       },
       "socialProof": "Ya usado por testers iniciales que entregan apps más rápido."
     },
@@ -603,8 +602,8 @@
         "a2": "Sí. CodeAgentSwarm funciona encima de Claude Code, que es lo que permite la inteligencia de los agentes, las tareas paralelas y el uso de MCP. Necesitas una suscripción activa a Claude Code.",
         "q3": "¿Se recomienda Claude Code Max?",
         "a3": "Muy recomendable. Si trabajas en varios proyectos, refactors grandes, bases de código grandes o tareas paralelas, Max da mejor rendimiento y más capacidad.",
-        "q4": "¿Por qué debo unirme a Discord?",
-        "a4": "La Beta requiere feedback. En Discord publicamos actualizaciones, recogemos feedback y resolvemos bugs.",
+        "q4": "¿Como puedo dar feedback?",
+        "a4": "Nos encanta escuchar a nuestros usuarios. Envia tu feedback, reportes de bugs o peticiones de features a hello@codeagentswarm.com y te responderemos.",
         "q5": "¿Qué pasa cuando termine la Beta?",
         "a5": "Tú eliges: seguir en Free, pasar a Pro o dejar de usarla. No hay cargos automáticos. Los founders que se unan durante la beta mantendrán el precio original de Pro para siempre.",
         "q6": "¿Qué sistema operativo necesito?",

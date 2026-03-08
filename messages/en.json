@@ -505,8 +505,8 @@
         "description": "Install CodeAgentSwarm on macOS and sign in with Google, GitHub or Discord. You'll automatically get Pro access."
       },
       "step2": {
-        "title": "Join our Discord & share feedback",
-        "description": "Joining the CodeAgentSwarm Discord is highly recommended for support and to share your feedback."
+        "title": "Share your feedback",
+        "description": "We'd love to hear from you. Reach out at hello@codeagentswarm.com to share feedback or get support."
       },
       "note": "No credit card required. Full Pro access during the beta.",
       "cta": "Download Now"
@@ -556,16 +556,15 @@
       "successStep1Desc": "Get CodeAgentSwarm for macOS",
       "successStep2Title": "Sign in with the same email",
       "successStep2Desc": "Use Google, GitHub or Discord",
-      "successStep3Title": "Join our Discord",
-      "successStep3Desc": "Required for Pro activation",
-      "successNote": "We'll activate your Pro (Beta) access once you join Discord!",
+      "successStep3Title": "Start using it",
+      "successStep3Desc": "Pro activates automatically",
+      "successNote": "Your Pro (Beta) access is activated automatically when you sign in!",
       "downloadButton": "Download App (Step 2)",
-      "discordButton": "Join Discord (Step 4)",
       "checklist": {
         "step1Done": "Step 1: You filled the beta form",
         "step2": "Step 2: Download the app",
         "step3": "Step 3: Sign in with the same email (Google/GitHub/Discord)",
-        "step4": "Step 4: Join Discord for updates & feedback"
+        "step4": "Step 4: Share feedback at hello@codeagentswarm.com"
       },
       "socialProof": "Already used by early testers shipping apps 3x faster."
     },
@@ -603,8 +602,8 @@
         "a2": "Yes. CodeAgentSwarm works on top of Claude Code, which powers all agentic reasoning, coding, parallel tasks and MCP tools. You need an active Claude Code subscription to run the agents.",
         "q3": "Is Claude Code Max recommended?",
         "a3": "Highly recommended. If you work on multiple projects, heavy refactors, large codebases or parallel tasks, Max delivers better performance and higher request limits.",
-        "q4": "Why do I need to join Discord?",
-        "a4": "Beta requires feedback. Discord is where we post updates, take feedback, fix bugs, and share Beta builds.",
+        "q4": "How can I share feedback?",
+        "a4": "We love hearing from our users. Send your feedback, bug reports or feature requests to hello@codeagentswarm.com and we'll get back to you.",
         "q5": "What happens when the Beta ends?",
         "a5": "You choose: stay on Free, upgrade to Pro, or stop using the app. No automatic charges. Founders who join during the beta will keep the original Pro price forever.",
         "q6": "What OS is required?",
