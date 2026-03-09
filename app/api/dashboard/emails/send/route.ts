@@ -6,11 +6,15 @@ import path from 'path'
 
 const FROM_ADDRESS = 'Arturo from CodeAgentSwarm <hello@codeagentswarm.com>'
 
+interface Recipient {
+  email: string
+  name: string
+}
+
 interface SendRequest {
-  to: string[]
+  recipients: Recipient[]
   subject: string
   templateSlug: string
-  variables: Record<string, string>
 }
 
 interface ResendSendResponse {
@@ -33,9 +37,9 @@ export async function POST(request: NextRequest) {
 
   try {
     const body: SendRequest = await request.json()
-    const { to, subject, templateSlug, variables } = body
+    const { recipients, subject, templateSlug } = body
 
-    if (!to || !Array.isArray(to) || to.length === 0) {
+    if (!recipients || !Array.isArray(recipients) || recipients.length === 0) {
       return NextResponse.json({ error: 'At least one recipient is required' }, { status: 400 })
     }
 
@@ -55,23 +59,40 @@ export async function POST(request: NextRequest) {
     }
 
     const rawHtml = fs.readFileSync(filePath, 'utf-8')
-    const html = personalizeTemplate(rawHtml, variables || {})
 
-    const result = await resendPost<ResendSendResponse>({
-      path: '/emails',
-      body: {
-        from: FROM_ADDRESS,
-        to,
-        subject,
-        html,
-      },
-    })
+    const results: { email: string; id?: string; error?: string }[] = []
 
-    return NextResponse.json({ success: true, id: result.id })
+    for (const recipient of recipients) {
+      try {
+        const html = personalizeTemplate(rawHtml, { name: recipient.name || 'there' })
+
+        const result = await resendPost<ResendSendResponse>({
+          path: '/emails',
+          body: {
+            from: FROM_ADDRESS,
+            to: [recipient.email],
+            subject,
+            html,
+          },
+        })
+
+        results.push({ email: recipient.email, id: result.id })
+      } catch (err) {
+        results.push({
+          email: recipient.email,
+          error: err instanceof Error ? err.message : 'Failed to send',
+        })
+      }
+    }
+
+    const sent = results.filter(r => r.id).length
+    const failed = results.filter(r => r.error).length
+
+    return NextResponse.json({ success: true, sent, failed, results })
   } catch (error) {
-    console.error('Error sending email:', error)
+    console.error('Error sending emails:', error)
     return NextResponse.json(
-      { error: error instanceof Error ? error.message : 'Failed to send email' },
+      { error: error instanceof Error ? error.message : 'Failed to send emails' },
       { status: 500 }
     )
   }

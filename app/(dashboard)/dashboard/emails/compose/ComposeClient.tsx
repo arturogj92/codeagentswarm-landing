@@ -9,6 +9,20 @@ interface TemplateInfo {
   title: string
 }
 
+interface UserInfo {
+  id: string
+  email: string
+  name: string
+  provider: string
+  tier: string
+  createdAt: string
+}
+
+interface Recipient {
+  email: string
+  name: string
+}
+
 export default function ComposeClient() {
   const router = useRouter()
 
@@ -19,10 +33,17 @@ export default function ComposeClient() {
   const [loadingTemplates, setLoadingTemplates] = useState(true)
   const [loadingPreview, setLoadingPreview] = useState(false)
 
+  // Users state
+  const [users, setUsers] = useState<UserInfo[]>([])
+  const [loadingUsers, setLoadingUsers] = useState(true)
+  const [selectedUserIds, setSelectedUserIds] = useState<Set<string>>(new Set())
+  const [userSearch, setUserSearch] = useState('')
+  const [nameOverrides, setNameOverrides] = useState<Record<string, string>>({})
+
   // Form state
-  const [to, setTo] = useState('')
+  const [manualTo, setManualTo] = useState('')
+  const [manualName, setManualName] = useState('')
   const [subject, setSubject] = useState('')
-  const [name, setName] = useState('')
 
   // Send state
   const [sending, setSending] = useState(false)
@@ -32,7 +53,7 @@ export default function ComposeClient() {
 
   const iframeRef = useRef<HTMLIFrameElement>(null)
 
-  // Fetch available templates on mount
+  // Fetch templates and users on mount
   useEffect(() => {
     async function loadTemplates() {
       try {
@@ -46,7 +67,22 @@ export default function ComposeClient() {
         setLoadingTemplates(false)
       }
     }
+
+    async function loadUsers() {
+      try {
+        const res = await fetch('/api/dashboard/emails/users')
+        if (!res.ok) throw new Error('Failed to load users')
+        const json = await res.json()
+        setUsers(json.data || [])
+      } catch (err) {
+        setError(err instanceof Error ? err.message : 'Failed to load users')
+      } finally {
+        setLoadingUsers(false)
+      }
+    }
+
     loadTemplates()
+    loadUsers()
   }, [])
 
   // Load template HTML when selection changes
@@ -64,11 +100,8 @@ export default function ComposeClient() {
       const json = await res.json()
       setTemplateHtml(json.html || '')
 
-      // Extract title for subject pre-fill
       const titleMatch = json.html?.match(/<title>(.*?)<\/title>/i)
-      if (titleMatch) {
-        setSubject(titleMatch[1].trim())
-      }
+      if (titleMatch) setSubject(titleMatch[1].trim())
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to load template')
     } finally {
@@ -80,25 +113,83 @@ export default function ComposeClient() {
     loadTemplateContent(selectedSlug)
   }, [selectedSlug, loadTemplateContent])
 
-  // Personalized HTML for live preview
+  // Filtered users based on search
+  const filteredUsers = users.filter(u => {
+    if (!userSearch) return true
+    const q = userSearch.toLowerCase()
+    return u.email.toLowerCase().includes(q) || u.name.toLowerCase().includes(q)
+  })
+
+  // Selection handlers
+  function toggleUser(id: string) {
+    setSelectedUserIds(prev => {
+      const next = new Set(prev)
+      if (next.has(id)) next.delete(id)
+      else next.add(id)
+      return next
+    })
+  }
+
+  function selectAll() {
+    setSelectedUserIds(new Set(filteredUsers.map(u => u.id)))
+  }
+
+  function selectNone() {
+    setSelectedUserIds(new Set())
+  }
+
+  function getNameForUser(user: UserInfo): string {
+    return nameOverrides[user.id] ?? user.name
+  }
+
+  function setNameOverride(userId: string, name: string) {
+    setNameOverrides(prev => ({ ...prev, [userId]: name }))
+  }
+
+  // Build recipients list
+  function buildRecipients(): Recipient[] {
+    const recipients: Recipient[] = []
+
+    // From selected users
+    for (const user of users) {
+      if (selectedUserIds.has(user.id)) {
+        recipients.push({
+          email: user.email,
+          name: getNameForUser(user),
+        })
+      }
+    }
+
+    // From manual input
+    if (manualTo.trim()) {
+      const manualEmails = manualTo.split(',').map(e => e.trim()).filter(e => e.includes('@'))
+      for (const email of manualEmails) {
+        if (!recipients.some(r => r.email === email)) {
+          recipients.push({ email, name: manualName.trim() || '' })
+        }
+      }
+    }
+
+    return recipients
+  }
+
+  // Preview with first selected user's name
+  const previewName = (() => {
+    const firstSelected = users.find(u => selectedUserIds.has(u.id))
+    if (firstSelected) return getNameForUser(firstSelected) || '{{name}}'
+    if (manualName) return manualName
+    return '{{name}}'
+  })()
+
   const previewHtml = templateHtml
-    ? templateHtml.replaceAll('{{name}}', name || '{{name}}')
+    ? templateHtml.replaceAll('{{name}}', previewName)
     : ''
 
-  // Parse recipients
-  function parseRecipients(): string[] {
-    return to
-      .split(',')
-      .map(e => e.trim())
-      .filter(e => e.length > 0 && e.includes('@'))
-  }
-
-  // Validate form
   function isValid(): boolean {
-    return parseRecipients().length > 0 && subject.trim().length > 0 && selectedSlug.length > 0
+    return buildRecipients().length > 0 && subject.trim().length > 0 && selectedSlug.length > 0
   }
 
-  // Send email
+  // Send emails
   async function handleSend() {
     setShowConfirm(false)
     setSending(true)
@@ -106,31 +197,33 @@ export default function ComposeClient() {
     setSuccess('')
 
     try {
-      const recipients = parseRecipients()
+      const recipients = buildRecipients()
       const res = await fetch('/api/dashboard/emails/send', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          to: recipients,
+          recipients,
           subject: subject.trim(),
           templateSlug: selectedSlug,
-          variables: { name: name.trim() },
         }),
       })
 
       if (!res.ok) {
         const json = await res.json()
-        throw new Error(json.error || 'Failed to send email')
+        throw new Error(json.error || 'Failed to send')
       }
 
-      setSuccess(`Email sent to ${recipients.join(', ')}`)
-      setTimeout(() => router.push('/dashboard/emails'), 2000)
+      const json = await res.json()
+      setSuccess(`Sent ${json.sent} email${json.sent !== 1 ? 's' : ''}${json.failed ? ` (${json.failed} failed)` : ''}`)
+      setTimeout(() => router.push('/dashboard/emails'), 2500)
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Failed to send email')
+      setError(err instanceof Error ? err.message : 'Failed to send')
     } finally {
       setSending(false)
     }
   }
+
+  const recipients = buildRecipients()
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -166,7 +259,7 @@ export default function ComposeClient() {
         {/* Left: Form */}
         <div className="w-full lg:w-1/2 space-y-4">
           {/* Template Selector */}
-          <div className="bg-[#111111] border border-white/10 rounded-xl p-4 space-y-4">
+          <div className="bg-[#111111] border border-white/10 rounded-xl p-4 space-y-3">
             <label className="block text-xs font-medium text-white/40 uppercase tracking-wider">
               Template
             </label>
@@ -186,23 +279,6 @@ export default function ComposeClient() {
                 ))}
               </select>
             )}
-          </div>
-
-          {/* Recipients */}
-          <div className="bg-[#111111] border border-white/10 rounded-xl p-4 space-y-4">
-            <div>
-              <label className="block text-xs font-medium text-white/40 uppercase tracking-wider mb-2">
-                To
-              </label>
-              <input
-                type="text"
-                value={to}
-                onChange={e => setTo(e.target.value)}
-                placeholder="user@example.com, another@example.com"
-                className="w-full bg-black/50 border border-white/10 rounded-lg px-3 py-2.5 text-sm text-white/80 placeholder-white/20 focus:outline-none focus:border-amber-400/40 transition-colors"
-              />
-              <p className="mt-1.5 text-xs text-white/20">Separate multiple addresses with commas</p>
-            </div>
 
             <div>
               <label className="block text-xs font-medium text-white/40 uppercase tracking-wider mb-2">
@@ -216,23 +292,133 @@ export default function ComposeClient() {
                 className="w-full bg-black/50 border border-white/10 rounded-lg px-3 py-2.5 text-sm text-white/80 placeholder-white/20 focus:outline-none focus:border-amber-400/40 transition-colors"
               />
             </div>
+          </div>
 
-            <div>
-              <label className="block text-xs font-medium text-white/40 uppercase tracking-wider mb-2">
-                Name <span className="normal-case text-white/15">(replaces {'{{name}}'} in template)</span>
+          {/* User Selector */}
+          <div className="bg-[#111111] border border-white/10 rounded-xl p-4 space-y-3">
+            <div className="flex items-center justify-between">
+              <label className="text-xs font-medium text-white/40 uppercase tracking-wider">
+                Recipients ({selectedUserIds.size} selected)
               </label>
+              <div className="flex gap-2">
+                <button onClick={selectAll} className="text-xs text-amber-400/70 hover:text-amber-400 cursor-pointer transition-colors">
+                  Select all
+                </button>
+                <span className="text-white/10">|</span>
+                <button onClick={selectNone} className="text-xs text-white/30 hover:text-white/60 cursor-pointer transition-colors">
+                  None
+                </button>
+              </div>
+            </div>
+
+            {/* Search */}
+            <input
+              type="text"
+              value={userSearch}
+              onChange={e => setUserSearch(e.target.value)}
+              placeholder="Search users by name or email..."
+              className="w-full bg-black/50 border border-white/10 rounded-lg px-3 py-2 text-sm text-white/80 placeholder-white/20 focus:outline-none focus:border-amber-400/40 transition-colors"
+            />
+
+            {/* User List */}
+            {loadingUsers ? (
+              <div className="space-y-2">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <div key={i} className="h-10 bg-white/5 rounded-lg animate-pulse" />
+                ))}
+              </div>
+            ) : (
+              <div className="max-h-[320px] overflow-y-auto space-y-1 pr-1 custom-scrollbar">
+                {filteredUsers.map(user => {
+                  const isSelected = selectedUserIds.has(user.id)
+                  return (
+                    <div
+                      key={user.id}
+                      className={`flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer transition-colors ${
+                        isSelected ? 'bg-amber-400/5 border border-amber-400/15' : 'hover:bg-white/5 border border-transparent'
+                      }`}
+                      onClick={() => toggleUser(user.id)}
+                    >
+                      {/* Checkbox */}
+                      <div className={`w-4 h-4 rounded border flex-shrink-0 flex items-center justify-center ${
+                        isSelected ? 'bg-amber-400 border-amber-400' : 'border-white/20'
+                      }`}>
+                        {isSelected && (
+                          <svg className="w-3 h-3 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                          </svg>
+                        )}
+                      </div>
+
+                      {/* User info */}
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2">
+                          <span className="text-sm text-white/80 truncate">{user.email}</span>
+                          <span className={`text-[10px] px-1.5 py-0.5 rounded-full ${
+                            user.tier === 'pro'
+                              ? 'bg-amber-400/10 text-amber-400/70'
+                              : 'bg-white/5 text-white/30'
+                          }`}>
+                            {user.tier}
+                          </span>
+                        </div>
+                        {user.name && (
+                          <span className="text-xs text-white/30">{user.name}</span>
+                        )}
+                      </div>
+
+                      {/* Name override (only when selected) */}
+                      {isSelected && (
+                        <input
+                          type="text"
+                          value={nameOverrides[user.id] ?? user.name}
+                          onChange={e => {
+                            e.stopPropagation()
+                            setNameOverride(user.id, e.target.value)
+                          }}
+                          onClick={e => e.stopPropagation()}
+                          placeholder="Name..."
+                          className="w-28 bg-black/50 border border-white/10 rounded px-2 py-1 text-xs text-white/70 placeholder-white/20 focus:outline-none focus:border-amber-400/40 flex-shrink-0"
+                        />
+                      )}
+                    </div>
+                  )
+                })}
+
+                {filteredUsers.length === 0 && (
+                  <div className="py-4 text-center text-white/20 text-sm">
+                    No users match your search
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+
+          {/* Manual Recipients (additional) */}
+          <div className="bg-[#111111] border border-white/10 rounded-xl p-4 space-y-3">
+            <label className="block text-xs font-medium text-white/40 uppercase tracking-wider">
+              Additional Recipients <span className="normal-case text-white/15">(not in user list)</span>
+            </label>
+            <input
+              type="text"
+              value={manualTo}
+              onChange={e => setManualTo(e.target.value)}
+              placeholder="email@example.com, another@example.com"
+              className="w-full bg-black/50 border border-white/10 rounded-lg px-3 py-2.5 text-sm text-white/80 placeholder-white/20 focus:outline-none focus:border-amber-400/40 transition-colors"
+            />
+            {manualTo.trim() && (
               <input
                 type="text"
-                value={name}
-                onChange={e => setName(e.target.value)}
-                placeholder="Recipient name..."
+                value={manualName}
+                onChange={e => setManualName(e.target.value)}
+                placeholder="Name for manual recipients..."
                 className="w-full bg-black/50 border border-white/10 rounded-lg px-3 py-2.5 text-sm text-white/80 placeholder-white/20 focus:outline-none focus:border-amber-400/40 transition-colors"
               />
-            </div>
+            )}
           </div>
 
           {/* Actions */}
-          <div className="flex gap-3">
+          <div className="flex items-center gap-3">
             <button
               onClick={() => router.push('/dashboard/emails')}
               className="px-4 py-2.5 text-sm bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg text-white/60 hover:text-white/80 transition-colors cursor-pointer"
@@ -244,23 +430,19 @@ export default function ComposeClient() {
               disabled={!isValid() || sending}
               className="px-6 py-2.5 text-sm bg-amber-400/10 hover:bg-amber-400/20 border border-amber-400/20 hover:border-amber-400/30 rounded-lg text-amber-400 font-medium transition-colors cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
             >
-              {sending ? 'Sending...' : 'Send Email'}
+              {sending ? 'Sending...' : `Send to ${recipients.length} recipient${recipients.length !== 1 ? 's' : ''}`}
             </button>
           </div>
-
-          {/* Recipient summary */}
-          {to && parseRecipients().length > 0 && (
-            <p className="text-xs text-white/20">
-              Will send to {parseRecipients().length} recipient{parseRecipients().length > 1 ? 's' : ''}
-            </p>
-          )}
         </div>
 
         {/* Right: Preview */}
         <div className="w-full lg:w-1/2">
           <div className="bg-[#111111] border border-white/10 rounded-xl overflow-hidden sticky top-4">
-            <div className="px-4 py-3 border-b border-white/10">
+            <div className="px-4 py-3 border-b border-white/10 flex items-center justify-between">
               <h3 className="text-xs font-medium text-white/40 uppercase tracking-wider">Preview</h3>
+              {previewName !== '{{name}}' && (
+                <span className="text-xs text-white/20">Showing: {previewName}</span>
+              )}
             </div>
 
             {loadingPreview ? (
@@ -289,14 +471,24 @@ export default function ComposeClient() {
       {/* Confirmation Modal */}
       {showConfirm && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
-          <div className="bg-[#111111] border border-white/10 rounded-xl p-6 max-w-md w-full mx-4 shadow-2xl">
+          <div className="bg-[#111111] border border-white/10 rounded-xl p-6 max-w-lg w-full mx-4 shadow-2xl">
             <h3 className="text-base font-medium text-white/90 mb-3">Confirm Send</h3>
-            <div className="space-y-2 text-sm text-white/50 mb-6">
-              <p><span className="text-white/30">To:</span> {parseRecipients().join(', ')}</p>
+            <div className="space-y-2 text-sm text-white/50 mb-4">
               <p><span className="text-white/30">Subject:</span> {subject}</p>
               <p><span className="text-white/30">Template:</span> {selectedSlug}</p>
-              {name && <p><span className="text-white/30">Name:</span> {name}</p>}
+              <p><span className="text-white/30">Recipients:</span> {recipients.length}</p>
             </div>
+
+            {/* Recipient list */}
+            <div className="max-h-[200px] overflow-y-auto bg-black/30 rounded-lg p-3 mb-4 space-y-1">
+              {recipients.map((r, i) => (
+                <div key={i} className="flex justify-between text-xs">
+                  <span className="text-white/50 truncate">{r.email}</span>
+                  <span className="text-white/25 ml-2 flex-shrink-0">{r.name || '(no name)'}</span>
+                </div>
+              ))}
+            </div>
+
             <div className="flex gap-3 justify-end">
               <button
                 onClick={() => setShowConfirm(false)}
@@ -308,7 +500,7 @@ export default function ComposeClient() {
                 onClick={handleSend}
                 className="px-4 py-2 text-sm bg-amber-400/10 hover:bg-amber-400/20 border border-amber-400/20 rounded-lg text-amber-400 font-medium transition-colors cursor-pointer"
               >
-                Confirm Send
+                Confirm Send ({recipients.length})
               </button>
             </div>
           </div>
