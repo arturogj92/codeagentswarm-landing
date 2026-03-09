@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useCallback } from 'react'
+import { useRouter } from 'next/navigation'
 import type { ResendEmail, ResendReceivedEmail } from '@/types/email'
 
 type Tab = 'sent' | 'received'
@@ -51,6 +52,7 @@ function truncateAddress(address: string | string[]): string {
 }
 
 export default function EmailDashboardClient() {
+  const router = useRouter()
   const [tab, setTab] = useState<Tab>('sent')
   const [sentEmails, setSentEmails] = useState<ResendEmail[]>([])
   const [receivedEmails, setReceivedEmails] = useState<ResendReceivedEmail[]>([])
@@ -131,14 +133,25 @@ export default function EmailDashboardClient() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      {/* Tabs */}
-      <div className="flex gap-1 mb-6">
-        <TabButton active={tab === 'sent'} onClick={() => { setTab('sent'); setSelectedEmail(null) }}>
-          Sent
-        </TabButton>
-        <TabButton active={tab === 'received'} onClick={() => { setTab('received'); setSelectedEmail(null) }}>
-          Received
-        </TabButton>
+      {/* Tabs + Compose Button */}
+      <div className="flex items-center justify-between mb-6">
+        <div className="flex gap-1">
+          <TabButton active={tab === 'sent'} onClick={() => { setTab('sent'); setSelectedEmail(null) }}>
+            Sent
+          </TabButton>
+          <TabButton active={tab === 'received'} onClick={() => { setTab('received'); setSelectedEmail(null) }}>
+            Received
+          </TabButton>
+        </div>
+        <button
+          onClick={() => router.push('/dashboard/emails/compose')}
+          className="flex items-center gap-2 px-4 py-2 text-sm bg-amber-400/10 hover:bg-amber-400/20 border border-amber-400/20 hover:border-amber-400/30 rounded-lg text-amber-400 font-medium transition-colors cursor-pointer"
+        >
+          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
+          </svg>
+          Compose
+        </button>
       </div>
 
       {error && (

@@ -35,3 +35,26 @@ export async function resendGet<T>({ path, params }: ResendRequestOptions): Prom
 
   return response.json()
 }
+
+interface ResendPostOptions {
+  path: string
+  body: Record<string, unknown>
+}
+
+export async function resendPost<T>({ path, body }: ResendPostOptions): Promise<T> {
+  const response = await fetch(`${RESEND_BASE_URL}${path}`, {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${getApiKey()}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(body),
+  })
+
+  if (!response.ok) {
+    const error = await response.json().catch(() => ({}))
+    throw new Error(error.message || `Resend API error: ${response.status}`)
+  }
+
+  return response.json()
+}
