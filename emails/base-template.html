@@ -8,7 +8,7 @@
   <!-- LIGHT ONLY: Tell email clients NOT to apply dark mode inversion -->
   <meta name="color-scheme" content="light only">
   <meta name="supported-color-schemes" content="light only">
-  <title>Quick question about your experience</title>
+  <title>{{EMAIL_TITLE}}</title>
   <!--[if mso]>
   <noscript>
     <xml>
@@ -39,8 +39,7 @@
       .bullet-txt { font-size: 14px !important; }
       .cta-td { padding: 0 !important; }
       .cta-pill a { display: block !important; width: 100% !important; text-align: center !important; box-sizing: border-box !important; padding: 16px 16px !important; }
-      .logo-icon { width: 28px !important; height: 28px !important; }
-      .logo-name { font-size: 14px !important; letter-spacing: 1.5px !important; }
+      .logo-img { width: 220px !important; }
       .sig-icon { width: 32px !important; height: 32px !important; }
       .footer-txt { font-size: 11px !important; }
     }
@@ -52,7 +51,7 @@
 
   <!-- Preheader -->
   <div style="display: none; max-height: 0; overflow: hidden; font-size: 1px; line-height: 1px; color: #0a0a0a;">
-    2 min to shape the future of AI development &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+    {{PREHEADER_TEXT}} &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
   </div>
 
   <!-- OUTER WRAPPER -->
@@ -63,10 +62,10 @@
       <td align="center" class="outer-pad" style="padding: 28px 16px; background-color: #0a0a0a; background-image: linear-gradient(#0a0a0a, #0a0a0a);">
         <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="560" class="wrap" style="max-width: 560px; width: 100%;">
 
-          <!-- ===== LOGO ===== -->
+          <!-- ===== LOGO (STANDARD - DO NOT MODIFY) ===== -->
           <tr>
             <td align="center" style="padding-bottom: 28px; background-color: #0a0a0a; background-image: linear-gradient(#0a0a0a, #0a0a0a);" bgcolor="#0a0a0a">
-              <img src="https://www.codeagentswarm.com/email-logo.png" alt="CodeAgentSwarm" width="290" height="57" style="display: block; width: 290px; height: auto; max-width: 100%;" />
+              <img src="https://www.codeagentswarm.com/email-logo.png" alt="CodeAgentSwarm" width="290" height="57" class="logo-img" style="display: block; width: 290px; height: auto; max-width: 100%;" />
             </td>
           </tr>
 
@@ -79,113 +78,27 @@
                 <tr>
                   <td class="card-pad" bgcolor="#111111" style="padding: 36px 34px; background-color: #111111; background-image: linear-gradient(#111111, #111111);">
 
-                    <!-- Hero heading -->
-                    <p class="hero-title" style="margin: 0 0 6px 0; font-size: 26px; line-height: 34px; font-weight: 700; color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
-                      We'd love your <span style="color: #fbbf24;">feedback</span> &#128640;
-                    </p>
+                    <!-- ====================================== -->
+                    <!-- EMAIL BODY CONTENT GOES HERE           -->
+                    <!-- Replace this section for each template -->
+                    <!-- ====================================== -->
 
-                    <!-- Amber accent underline -->
-                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin-bottom: 24px;">
-                      <tr>
-                        <td bgcolor="#fbbf24" style="width: 40px; height: 3px; background-color: #fbbf24; background-image: linear-gradient(#fbbf24, #fbbf24); border-radius: 2px; font-size: 1px; line-height: 1px;">&nbsp;</td>
-                      </tr>
-                    </table>
-
-                    <!-- Greeting -->
                     <p class="body-txt" style="margin: 0 0 18px 0; font-size: 16px; line-height: 26px; color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
                       Hey {{name}} &#128075;
                     </p>
 
-                    <!-- Body copy -->
-                    <p class="body-txt" style="margin: 0 0 14px 0; font-size: 15px; line-height: 26px; color: #d4d4d4; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
-                      Thanks for being part of the <span style="color: #ffffff; font-weight: 600;">CodeAgentSwarm beta</span> - your perspective is incredibly valuable to us.
-                    </p>
-                    <p class="body-txt" style="margin: 0 0 22px 0; font-size: 15px; line-height: 26px; color: #d4d4d4; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
-                      We put together a super quick survey <span style="color: #ffffff;">(&#9201; 2 min)</span> to hear your thoughts on:
-                    </p>
-
-                    <!-- Bullet list card -->
-                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%"
-                           bgcolor="#161616"
-                           style="background-color: #161616; background-image: linear-gradient(#161616, #161616); border: 1px solid #2a2a2a; border-radius: 12px; margin-bottom: 28px;">
-                      <tr>
-                        <td bgcolor="#161616" style="padding: 18px 22px; background-color: #161616; background-image: linear-gradient(#161616, #161616);">
-                          <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                            <tr>
-                              <td style="padding-bottom: 12px;">
-                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                                  <tr>
-                                    <td valign="top" width="28" class="bullet-txt" style="font-size: 15px; line-height: 24px; color: #fbbf24;">&#10024;</td>
-                                    <td class="bullet-txt" style="font-size: 15px; line-height: 24px; color: #d4d4d4; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
-                                      What's <span style="color: #ffffff; font-weight: 600;">working well</span> for you
-                                    </td>
-                                  </tr>
-                                </table>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td style="padding-bottom: 12px;">
-                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                                  <tr>
-                                    <td valign="top" width="28" class="bullet-txt" style="font-size: 15px; line-height: 24px; color: #fbbf24;">&#128161;</td>
-                                    <td class="bullet-txt" style="font-size: 15px; line-height: 24px; color: #d4d4d4; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
-                                      What could be <span style="color: #ffffff; font-weight: 600;">improved</span>
-                                    </td>
-                                  </tr>
-                                </table>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                                  <tr>
-                                    <td valign="top" width="28" class="bullet-txt" style="font-size: 15px; line-height: 24px; color: #fbbf24;">&#9889;</td>
-                                    <td class="bullet-txt" style="font-size: 15px; line-height: 24px; color: #d4d4d4; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
-                                      What features you'd <span style="color: #ffffff; font-weight: 600;">love to see next</span>
-                                    </td>
-                                  </tr>
-                                </table>
-                              </td>
-                            </tr>
-                          </table>
-                        </td>
-                      </tr>
-                    </table>
-
-                    <!-- ===== CTA BUTTON ===== -->
-                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="cta-pill" style="margin-bottom: 28px;">
-                      <tr>
-                        <td align="center" class="cta-td">
-                          <!--[if mso]>
-                          <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.codeagentswarm.com/en/survey" style="height:52px;v-text-anchor:middle;width:280px;" arcsize="50%" strokecolor="#fbbf24" fillcolor="#fbbf24">
-                            <w:anchorlock/>
-                            <center style="color:#000000;font-family:'Segoe UI',sans-serif;font-size:16px;font-weight:bold;">Take the Survey &#8594;</center>
-                          </v:roundrect>
-                          <![endif]-->
-                          <!--[if !mso]><!-->
-                          <table role="presentation" cellspacing="0" cellpadding="0" border="0">
-                            <tr>
-                              <td bgcolor="#fbbf24" style="background-color: #fbbf24; background-image: linear-gradient(#fbbf24, #fbbf24); border-radius: 100px;">
-                                <a href="https://www.codeagentswarm.com/en/survey" target="_blank" style="display: inline-block; color: #000000; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 16px; font-weight: 700; text-decoration: none; padding: 15px 44px; border-radius: 100px;">
-                                  Take the Survey &#8594;
-                                </a>
-                              </td>
-                            </tr>
-                          </table>
-                          <!--<![endif]-->
-                        </td>
-                      </tr>
-                    </table>
-
-                    <!-- Closing -->
                     <p class="body-txt" style="margin: 0; font-size: 15px; line-height: 26px; color: #d4d4d4; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
-                      Every response goes straight to our team. No data shared with anyone. Your answers <span style="color: #ffffff; font-weight: 600;">directly shape</span> what we build next &#128170;
+                      Your email content goes here.
                     </p>
+
+                    <!-- ====================================== -->
+                    <!-- END OF EMAIL BODY CONTENT              -->
+                    <!-- ====================================== -->
 
                   </td>
                 </tr>
 
-                <!-- Divider -->
+                <!-- Divider (STANDARD - DO NOT MODIFY) -->
                 <tr>
                   <td bgcolor="#111111" style="padding: 0 34px; background-color: #111111; background-image: linear-gradient(#111111, #111111);">
                     <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
@@ -196,7 +109,7 @@
                   </td>
                 </tr>
 
-                <!-- Signature -->
+                <!-- Signature (STANDARD - DO NOT MODIFY) -->
                 <tr>
                   <td bgcolor="#111111" style="padding: 20px 34px 24px 34px; background-color: #111111; background-image: linear-gradient(#111111, #111111);">
                     <table role="presentation" cellspacing="0" cellpadding="0" border="0">
@@ -217,7 +130,7 @@
             </td>
           </tr>
 
-          <!-- ===== FOOTER ===== -->
+          <!-- ===== FOOTER (STANDARD - DO NOT MODIFY) ===== -->
           <tr>
             <td bgcolor="#0a0a0a" style="padding: 20px 0 0 0; background-color: #0a0a0a; background-image: linear-gradient(#0a0a0a, #0a0a0a);">
               <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">

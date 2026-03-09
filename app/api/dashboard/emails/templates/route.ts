@@ -14,7 +14,10 @@ function extractTitle(html: string): string {
   return match ? match[1].trim() : 'Untitled'
 }
 
-function isSendableTemplate(html: string): boolean {
+const EXCLUDED_TEMPLATES = ['base-template', 'setup-guide']
+
+function isSendableTemplate(slug: string, html: string): boolean {
+  if (EXCLUDED_TEMPLATES.includes(slug)) return false
   return html.includes('{{name}}') || html.includes('{{')
 }
 
@@ -33,9 +36,9 @@ export async function GET(request: NextRequest) {
     for (const filename of files) {
       const content = fs.readFileSync(path.join(emailsDir, filename), 'utf-8')
 
-      if (!isSendableTemplate(content)) continue
-
       const slug = filename.replace('.html', '')
+
+      if (!isSendableTemplate(slug, content)) continue
       templates.push({
         slug,
         filename,
