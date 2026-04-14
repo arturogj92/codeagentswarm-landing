@@ -25,7 +25,7 @@ Whether you are just getting started or already running Claude Code daily, there
       content: [
         {
           type: 'paragraph',
-          text: 'Before you ask Claude to write a single line of code, these five habits will set you up for consistently better results. They take minutes to implement and pay off on every session.',
+          text: 'Before you ask Claude to write a single line of code, these five habits will set you up for consistently better results. They take minutes to implement and pay off on every session. If you are new to <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, start by reading the official docs to understand the basics.',
         },
         {
           type: 'list',

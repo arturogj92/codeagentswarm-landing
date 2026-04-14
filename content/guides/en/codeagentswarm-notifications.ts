@@ -60,7 +60,7 @@ In this guide I'll show you how CodeAgentSwarm notifications work and how to use
         },
         {
           type: 'paragraph',
-          text: 'The question is simple: who is in control here? Are you controlling the AI, or is the AI working and the app tells you when you\'re needed?',
+          text: 'The question is simple: who is in control here? Are you controlling the AI, or is the AI working and the app tells you when you\'re needed? If you are not yet familiar with <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, it is Anthropic\'s agentic coding tool that runs in your terminal.',
         },
       ],
     },

@@ -33,7 +33,7 @@ La idea es simple: Todo lo que hablas con Claude Code queda guardado, organizado
         },
         {
           type: 'paragraph',
-          text: 'Si ya usas Claude Code, quizás conozcas el comando "claude -r" que permite retomar la última conversación. El historial nativo de Claude Code existe, pero es muy básico: no tiene buscador, no puedes buscar por contenido y solo funciona dentro de cada proyecto por separado. En CodeAgentSwarm, el historial va mucho más allá: buscador de texto completo, filtros por proyecto, vista global de todas tus conversaciones y la posibilidad de retomar cualquier conversación de cualquier proyecto desde cualquier terminal.',
+          text: 'Si ya usas <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, quizás conozcas el comando "claude -r" que permite retomar la última conversación. El historial nativo de Claude Code existe, pero es muy básico: no tiene buscador, no puedes buscar por contenido y solo funciona dentro de cada proyecto por separado. En CodeAgentSwarm, el historial va mucho más allá: buscador de texto completo, filtros por proyecto, vista global de todas tus conversaciones y la posibilidad de retomar cualquier conversación de cualquier proyecto desde cualquier terminal.',
         },
       ],
     },

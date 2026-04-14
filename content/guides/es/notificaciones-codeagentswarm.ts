@@ -61,7 +61,7 @@ En esta guía te cuento cómo funcionan las notificaciones de CodeAgentSwarm y c
         },
         {
           type: 'paragraph',
-          text: 'La pregunta es simple: ¿quién controla a quién? ¿Tú a la IA, o la IA trabaja y la app te avisa cuando hace falta?',
+          text: 'La pregunta es simple: ¿quién controla a quién? ¿Tú a la IA, o la IA trabaja y la app te avisa cuando hace falta? Si todavía no conoces <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, es la herramienta de programación agéntica de Anthropic que se ejecuta en tu terminal.',
         },
       ],
     },

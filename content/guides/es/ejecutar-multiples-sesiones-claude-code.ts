@@ -25,7 +25,7 @@ En esta guía te explico los tres métodos principales, los comparo de forma hon
       content: [
         {
           type: 'paragraph',
-          text: 'Las sesiones de Claude Code son procesos independientes. Cuando abres un terminal y ejecutas <code>claude</code>, esa sesión tiene su propio hilo de conversación, su propia ventana de contexto y su propio estado. No comparte nada con otras sesiones.',
+          text: 'Las sesiones de <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a> son procesos independientes. Cuando abres un terminal y ejecutas <code>claude</code>, esa sesión tiene su propio hilo de conversación, su propia ventana de contexto y su propio estado. No comparte nada con otras sesiones.',
         },
         {
           type: 'paragraph',
@@ -106,7 +106,7 @@ En esta guía te explico los tres métodos principales, los comparo de forma hon
       content: [
         {
           type: 'paragraph',
-          text: 'Si te manejas bien en el terminal, tmux te da paneles divididos y sesiones persistentes. Puedes ver varias sesiones de Claude Code en pantalla al mismo tiempo sin cambiar de pestaña.',
+          text: 'Si te manejas bien en el terminal, <a href="https://github.com/tmux/tmux/wiki" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">tmux</a> te da paneles divididos y sesiones persistentes. Puedes ver varias sesiones de Claude Code en pantalla al mismo tiempo sin cambiar de pestaña.',
         },
         {
           type: 'code',

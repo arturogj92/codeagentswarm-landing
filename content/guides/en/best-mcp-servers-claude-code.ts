@@ -25,7 +25,7 @@ This guide covers the 10 MCP servers that matter most for everyday development, 
       content: [
         {
           type: 'paragraph',
-          text: 'MCP stands for Model Context Protocol. It is an open standard created by Anthropic that lets AI tools like Claude Code connect to external services and data sources through a unified interface.',
+          text: 'MCP stands for <a href="https://modelcontextprotocol.io" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Model Context Protocol</a>. It is an open standard created by Anthropic that lets AI tools like Claude Code connect to external services and data sources through a unified interface.',
         },
         {
           type: 'paragraph',
@@ -44,7 +44,7 @@ This guide covers the 10 MCP servers that matter most for everyday development, 
         },
         {
           type: 'paragraph',
-          text: 'MCP is supported by Claude Code, Codex CLI, and a growing number of AI development tools. The servers are typically open source and run locally on your machine, connecting to services using your own credentials.',
+          text: 'MCP is supported by Claude Code, Codex CLI, and a growing number of AI development tools. The servers are typically open source and run locally on your machine, connecting to services using your own credentials. You can browse the full catalog of available servers in the <a href="https://github.com/modelcontextprotocol/servers" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">official MCP servers repository</a>.',
         },
       ],
     },

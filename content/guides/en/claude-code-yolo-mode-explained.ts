@@ -94,7 +94,7 @@ The speed gain is real. But so are the risks. This guide covers what YOLO mode a
         },
         {
           type: 'paragraph',
-          text: 'Anthropic introduced a middle ground called Auto mode. Instead of skipping everything or asking everything, it uses a classifier to decide which actions are safe to auto-approve and which need your confirmation:',
+          text: 'Anthropic introduced a middle ground called <a href="https://www.anthropic.com/engineering/claude-code-auto-mode" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Auto mode</a>. Instead of skipping everything or asking everything, it uses a classifier to decide which actions are safe to auto-approve and which need your confirmation. You can read more about all available options in the <a href="https://code.claude.com/docs/en/permission-modes" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">permission modes documentation</a>:',
         },
         {
           type: 'code',

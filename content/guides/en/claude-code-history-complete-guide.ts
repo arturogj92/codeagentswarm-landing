@@ -41,7 +41,7 @@ Claude Code does keep your conversation history. But finding, searching and resu
         },
         {
           type: 'paragraph',
-          text: 'These commands work, but they have real limitations once you start using Claude Code seriously across multiple projects.',
+          text: 'You can find full details on these commands in the <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">official Claude Code documentation</a>. They work, but they have real limitations once you start using Claude Code seriously across multiple projects.',
         },
       ],
     },

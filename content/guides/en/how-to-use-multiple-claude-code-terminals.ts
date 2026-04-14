@@ -37,7 +37,7 @@ In this guide I'll explain, just like I'd tell a friend, how to use multiple ter
         },
         {
           type: 'paragraph',
-          text: 'Using multiple Claude Code terminals in parallel lets you:',
+          text: 'Using multiple <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a> terminals in parallel lets you:',
         },
         {
           type: 'list',

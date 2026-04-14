@@ -27,7 +27,7 @@ In CodeAgentSwarm, Turbo Mode gives you the "skip confirmations" workflow paired
       content: [
         {
           type: 'paragraph',
-          text: 'When people say "YOLO mode" for Claude Code, they usually mean reducing confirmation prompts. On the CLI, the term you will see most is `--dangerously-skip-permissions`.',
+          text: 'When people say "YOLO mode" for Claude Code, they usually mean reducing confirmation prompts. On the CLI, the term you will see most is <code>--dangerously-skip-permissions</code>. Anthropic has since introduced <a href="https://www.anthropic.com/engineering/claude-code-auto-mode" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Auto mode</a> as a safer built-in alternative, and you can learn more about all available options in the <a href="https://code.claude.com/docs/en/permission-modes" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code permission modes documentation</a>.',
         },
         {
           type: 'paragraph',

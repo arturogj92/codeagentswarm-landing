@@ -41,7 +41,7 @@ Claude Code si guarda tu historial de conversaciones. Pero encontrar, buscar y r
         },
         {
           type: 'paragraph',
-          text: 'Estos comandos funcionan, pero tienen limitaciones reales en cuanto empiezas a usar Claude Code en serio con multiples proyectos.',
+          text: 'Puedes encontrar todos los detalles sobre estos comandos en la <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">documentacion oficial de Claude Code</a>. Estos comandos funcionan, pero tienen limitaciones reales en cuanto empiezas a usar Claude Code en serio con multiples proyectos.',
         },
       ],
     },

@@ -4,19 +4,13 @@ import { getGuideSlugs } from '@/content/guides';
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.codeagentswarm.com';
 
-  // Static pages
+  // Static pages (no bare root URL to avoid canonical duplication with /en)
   const staticPages: MetadataRoute.Sitemap = [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 1,
-    },
     {
       url: `${baseUrl}/en`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.9,
+      priority: 1,
     },
     {
       url: `${baseUrl}/es`,

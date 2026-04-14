@@ -40,7 +40,7 @@ In CodeAgentSwarm the idea is precisely to avoid that black box feeling. The app
         },
         {
           type: 'paragraph',
-          text: 'All three together answer: what is the AI doing right now, what has changed in this session, and what has changed in the project overall.',
+          text: 'All three together answer: what is the AI doing right now, what has changed in this session, and what has changed in the project overall. If you are new to <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, it is Anthropic\'s agentic coding tool that runs in your terminal and makes changes across your codebase autonomously.',
         },
         {
           type: 'paragraph',

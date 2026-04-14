@@ -33,7 +33,7 @@ The bottom line: Everything you talk about with Claude Code stays stored, organi
         },
         {
           type: 'paragraph',
-          text: 'If you already use Claude Code, you might know the "claude -r" command that lets you resume the last conversation. Native Claude Code history exists, but it is very basic: no search, no content filtering and it only works within each project separately. In CodeAgentSwarm, history goes much further: full text search, project filters, a global view of all your conversations and the ability to resume any conversation from any project in any terminal.',
+          text: 'If you already use <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, you might know the "claude -r" command that lets you resume the last conversation. Native Claude Code history exists, but it is very basic: no search, no content filtering and it only works within each project separately. In CodeAgentSwarm, history goes much further: full text search, project filters, a global view of all your conversations and the ability to resume any conversation from any project in any terminal.',
         },
       ],
     },

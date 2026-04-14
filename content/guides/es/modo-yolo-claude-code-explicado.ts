@@ -94,7 +94,7 @@ La ganancia de velocidad es real. Pero los riesgos también. Esta guía cubre qu
         },
         {
           type: 'paragraph',
-          text: 'Anthropic introdujo un punto intermedio llamado Auto mode. En lugar de saltar todo o preguntar todo, usa un clasificador para decidir qué acciones son seguras para auto-aprobar y cuáles necesitan tu confirmación:',
+          text: 'Anthropic introdujo un punto intermedio llamado <a href="https://www.anthropic.com/engineering/claude-code-auto-mode" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Auto mode</a>. En lugar de saltar todo o preguntar todo, usa un clasificador para decidir qué acciones son seguras para auto-aprobar y cuáles necesitan tu confirmación. Puedes conocer todas las opciones disponibles en la <a href="https://code.claude.com/docs/en/permission-modes" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">documentacion de modos de permisos</a>:',
         },
         {
           type: 'code',

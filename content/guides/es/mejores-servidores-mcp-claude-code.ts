@@ -25,7 +25,7 @@ Esta guía cubre los 10 servidores MCP más importantes para el desarrollo del d
       content: [
         {
           type: 'paragraph',
-          text: 'MCP significa Model Context Protocol. Es un estándar abierto creado por Anthropic que permite a herramientas de IA como Claude Code conectarse a servicios externos y fuentes de datos a través de una interfaz unificada.',
+          text: 'MCP significa <a href="https://modelcontextprotocol.io" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Model Context Protocol</a>. Es un estándar abierto creado por Anthropic que permite a herramientas de IA como Claude Code conectarse a servicios externos y fuentes de datos a través de una interfaz unificada.',
         },
         {
           type: 'paragraph',
@@ -44,7 +44,7 @@ Esta guía cubre los 10 servidores MCP más importantes para el desarrollo del d
         },
         {
           type: 'paragraph',
-          text: 'MCP es compatible con Claude Code, Codex CLI y un número creciente de herramientas de desarrollo con IA. Los servidores suelen ser open source y se ejecutan localmente en tu máquina, conectándose a los servicios con tus propias credenciales.',
+          text: 'MCP es compatible con Claude Code, Codex CLI y un número creciente de herramientas de desarrollo con IA. Los servidores suelen ser open source y se ejecutan localmente en tu máquina, conectándose a los servicios con tus propias credenciales. Puedes explorar el catálogo completo de servidores disponibles en el <a href="https://github.com/modelcontextprotocol/servers" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">repositorio oficial de servidores MCP</a>.',
         },
       ],
     },

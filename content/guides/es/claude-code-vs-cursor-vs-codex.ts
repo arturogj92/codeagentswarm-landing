@@ -27,15 +27,15 @@ En esta guía te cuento qué hace cada una, dónde destaca y dónde se queda cor
         },
         {
           type: 'paragraph',
-          text: '<strong>Claude Code</strong> es un agente CLI. Se ejecuta en tu terminal, lee tu código fuente, hace cambios en múltiples archivos, ejecuta comandos y gestiona tareas complejas de varios pasos de forma autónoma. Está desarrollado por Anthropic y funciona con los modelos Claude Sonnet y Opus.',
+          text: '<strong><a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a></strong> es un agente CLI. Se ejecuta en tu terminal, lee tu código fuente, hace cambios en múltiples archivos, ejecuta comandos y gestiona tareas complejas de varios pasos de forma autónoma. Está desarrollado por Anthropic y funciona con los modelos Claude Sonnet y Opus.',
         },
         {
           type: 'paragraph',
-          text: '<strong>Cursor</strong> es un IDE. Concretamente, es un fork de VS Code con IA profundamente integrada en la experiencia de edición. Ofrece autocompletado en línea, un chat lateral, un modo agente para tareas más grandes y agentes en segundo plano. Soporta múltiples modelos de IA.',
+          text: '<strong><a href="https://cursor.com" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Cursor</a></strong> es un IDE. Concretamente, es un fork de VS Code con IA profundamente integrada en la experiencia de edición. Ofrece autocompletado en línea, un chat lateral, un modo agente para tareas más grandes y agentes en segundo plano. Soporta múltiples modelos de IA.',
         },
         {
           type: 'paragraph',
-          text: '<strong>Codex CLI</strong> es el agente de terminal de OpenAI. Similar en concepto a Claude Code, se ejecuta en tu terminal, lee tu repositorio y hace cambios. Funciona con los modelos de OpenAI y está incluido en las suscripciones de ChatGPT.',
+          text: '<strong><a href="https://github.com/openai/codex" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex CLI</a></strong> es el agente de terminal de OpenAI. Similar en concepto a Claude Code, se ejecuta en tu terminal, lee tu repositorio y hace cambios. Funciona con los modelos de OpenAI y está incluido en las suscripciones de ChatGPT.',
         },
         {
           type: 'callout',

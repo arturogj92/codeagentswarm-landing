@@ -40,7 +40,7 @@ En CodeAgentSwarm la idea es justo evitar esa sensación de caja negra. La app c
         },
         {
           type: 'paragraph',
-          text: 'Los tres juntos responden a: qué está haciendo la IA ahora mismo, qué ha cambiado en esta sesión, y qué ha cambiado en el proyecto en general.',
+          text: 'Los tres juntos responden a: qué está haciendo la IA ahora mismo, qué ha cambiado en esta sesión, y qué ha cambiado en el proyecto en general. Si eres nuevo en <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, es la herramienta de programación agéntica de Anthropic que se ejecuta en tu terminal y hace cambios en tu código de forma autónoma.',
         },
         {
           type: 'paragraph',

@@ -37,7 +37,7 @@ En esta guía te explico, tal cual se lo contaría a un amigo, cómo usar varios
         },
         {
           type: 'paragraph',
-          text: 'Usar varios terminales de Claude Code en paralelo te permite:',
+          text: 'Usar varios terminales de <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a> en paralelo te permite:',
         },
         {
           type: 'list',
