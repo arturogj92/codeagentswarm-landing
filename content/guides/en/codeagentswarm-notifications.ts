@@ -4,9 +4,9 @@ export const guide: Guide = {
   meta: {
     slug: 'codeagentswarm-notifications',
     locale: 'en',
-    title: 'How to Use CodeAgentSwarm Notifications to Stay in Focus with Claude Code',
-    metaTitle: 'How to Use CodeAgentSwarm Notifications to Stay in Focus with Claude Code',
-    metaDescription: 'Learn how to use CodeAgentSwarm notifications to know when Claude Code finishes or needs your attention, without having to constantly watch the terminal.',
+    title: 'Claude Code Notifications: Know When AI Finishes Without Watching the Terminal',
+    metaTitle: 'Claude Code Notifications: Know When AI Finishes Without Watching the Terminal (2026)',
+    metaDescription: 'Get desktop notifications when Claude Code finishes a task or needs your input. Stop wasting time watching the terminal - set up smart alerts for your AI coding sessions in minutes.',
     intro: `If you use Claude Code while you're working on other things, this will sound familiar:
 
 You ask Claude to implement something relatively big, you can see it's going to take a few minutes, and you think: "in the meantime I'll check email / Slack / another repo".

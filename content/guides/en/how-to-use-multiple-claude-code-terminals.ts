@@ -4,9 +4,9 @@ export const guide: Guide = {
   meta: {
     slug: 'how-to-use-multiple-claude-code-terminals',
     locale: 'en',
-    title: 'How to Use Multiple Claude Code Terminals (Without Losing Your Head)',
-    metaTitle: 'How to Use Multiple Claude Code Terminals in Parallel',
-    metaDescription: 'Learn how to work with multiple Claude Code terminals in parallel using CodeAgentSwarm. Practical guide with tips for managing concurrent AI coding sessions.',
+    title: 'Run Multiple Claude Code Terminals in Parallel - Complete Guide',
+    metaTitle: 'Run Multiple Claude Code Sessions in Parallel - Step by Step (2026)',
+    metaDescription: 'How to run multiple Claude Code terminals simultaneously. Set up parallel AI coding sessions, manage concurrent agents, and resolve conflicts automatically. Works with Codex CLI and Gemini CLI too.',
     intro: `If you've ever tried to run multiple Claude Code conversations at once, you know how the story ends: tabs everywhere, you lose track, and you end up thinking "wait, where was I again?".
 
 I've been there. That's exactly why I built CodeAgentSwarm - so working in parallel feels normal, comfortable, and doesn't overwhelm you.

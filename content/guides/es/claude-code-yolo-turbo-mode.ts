@@ -4,9 +4,9 @@ export const guide: Guide = {
   meta: {
     slug: 'claude-code-yolo-turbo-mode',
     locale: 'es',
-    title: 'Turbo Mode en Claude Code: cómo saltar confirmaciones sin perder control',
-    metaTitle: 'Turbo Mode en Claude Code: cómo saltar confirmaciones sin perder control (permisos y Git)',
-    metaDescription: 'Guía práctica para usar el modo YOLO de Claude Code (`--dangerously-skip-permissions`) con seguridad: Turbo Mode en CodeAgentSwarm, permisos granulares por herramienta y MCP, y bloqueos para evitar git push o merge por accidente.',
+    title: 'Modo YOLO de Claude Code: activar --dangerously-skip-permissions con seguridad',
+    metaTitle: 'Modo YOLO de Claude Code: activar --dangerously-skip-permissions de forma segura (2026)',
+    metaDescription: 'Como activar el modo YOLO de Claude Code (--dangerously-skip-permissions) sin arriesgar tu codigo. Configura permisos granulares, protecciones Git y controles MCP. Guia paso a paso.',
     intro: `Si trabajas con Claude Code a diario, sabes que las confirmaciones hacen que vayas algo más lento, muchas veces apruebas los cambios sin ni siquiera saber bien lo que está haciendo.
 
 Por eso mucha gente acaba tirando del modo YOLO de Claude Code, normalmente asociado al flag \`--dangerously-skip-permissions\`. La idea es simple: saltar confirmaciones en Claude Code para que el flujo sea continuo.

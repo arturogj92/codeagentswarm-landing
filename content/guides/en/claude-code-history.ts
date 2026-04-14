@@ -4,9 +4,9 @@ export const guide: Guide = {
   meta: {
     slug: 'claude-code-history',
     locale: 'en',
-    title: 'How to Use Claude Code History to Recover Context and Save Time',
-    metaTitle: 'How to Use Claude Code History in CodeAgentSwarm to Recover Context and Save Time',
-    metaDescription: 'Learn how to use Claude Code history in CodeAgentSwarm to search past conversations, recover context in seconds, and avoid repeating the same explanations.',
+    title: 'Claude Code Conversation History: Find, Search & Resume Past Sessions',
+    metaTitle: 'Claude Code Conversation History: Find, Search & Resume Past Sessions (2026)',
+    metaDescription: 'How to find your Claude Code conversation history, search past sessions by keyword, and resume old conversations instantly. Complete guide to accessing and managing your Claude Code chat history.',
     intro: `In CodeAgentSwarm, every time you work with a Claude Code terminal, the system automatically stores everything: what you write, what Claude replies, which project you were working in, and when it happened.
 
 Together, that becomes your Claude Code conversation history. It is your long term memory of what you have been building with the AI, organized and ready to search or resume whenever you need it.

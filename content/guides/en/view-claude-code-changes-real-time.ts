@@ -4,9 +4,9 @@ export const guide: Guide = {
   meta: {
     slug: 'view-claude-code-changes-real-time',
     locale: 'en',
-    title: 'How to view Claude Code changes in real time (and know what the AI is doing)',
-    metaTitle: 'How to view Claude Code changes in real time (terminal diff, Git diff, and dynamic titles)',
-    metaDescription: 'Learn how to see what Claude Code is changing in your code in real time with CodeAgentSwarm session diff, how to review project-level changes with the Git diff viewer, and how to use dynamic titles to know what the AI is doing in each terminal.',
+    title: 'View Claude Code Changes in Real Time: Live Diff, Git Diff & AI Tracking',
+    metaTitle: 'View Claude Code Changes in Real Time: Live Diff, Git Diff & Terminal Tracking (2026)',
+    metaDescription: 'See exactly what Claude Code is changing in your code in real time. Three methods: session live diff per terminal, project-level Git diff viewer, and dynamic titles showing what each AI agent is doing.',
     intro: `If you use Claude Code to make changes to your code, there's something that has probably happened to you more than once.
 
 You ask it to refactor an entire module, or to implement a complete feature, it responds with a pretty convincing "all done", but you're left wondering: okay, but what exactly did you touch in the repo.

@@ -4,9 +4,9 @@ export const guide: Guide = {
   meta: {
     slug: 'ver-cambios-claude-code-tiempo-real',
     locale: 'es',
-    title: 'Cómo ver los cambios de Claude Code en tiempo real (y saber qué está haciendo la IA)',
-    metaTitle: 'Cómo ver los cambios de Claude Code en tiempo real (diff por terminal, diff Git y títulos dinámicos)',
-    metaDescription: 'Aprende cómo ver en tiempo real qué está cambiando Claude Code en tu código con el diff por sesión de CodeAgentSwarm, cómo revisar los cambios a nivel de proyecto con el visor de diff de Git y cómo usar los títulos dinámicos para saber qué está haciendo la IA en cada terminal.',
+    title: 'Ver cambios de Claude Code en tiempo real: diff en vivo, diff Git y seguimiento',
+    metaTitle: 'Ver cambios de Claude Code en tiempo real: diff en vivo, diff Git y seguimiento por terminal (2026)',
+    metaDescription: 'Ve exactamente que esta cambiando Claude Code en tu codigo en tiempo real. Tres metodos: diff en vivo por terminal, visor de diff Git a nivel de proyecto, y titulos dinamicos mostrando que hace cada agente IA.',
     intro: `Si usas Claude Code para hacer cambios en tu código, hay algo que seguramente te ha pasado más de una vez.
 
 Le pides que refactorice un módulo entero, o que implemente una feature completa, te responde con un "all done" bastante convincente, pero tú te quedas con la duda: vale, pero qué narices has tocado exactamente en el repo.
