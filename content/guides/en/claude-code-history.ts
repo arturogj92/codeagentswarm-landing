@@ -14,6 +14,8 @@ Together, that becomes your Claude Code conversation history. It is your long te
 The bottom line: Everything you talk about with Claude Code stays stored, organized by project, and ready to search or resume later.`,
     ctaText: 'Use conversation history next time you resume a project. You\'ll instantly notice how comfortable it is not having to explain everything from scratch to Claude.',
     highlightedWords: ['history', 'Claude Code'],
+    publishedAt: '2026-02-10',
+    updatedAt: '2026-04-15',
     alternateSlug: 'historial-claude-code',
   },
   sections: [

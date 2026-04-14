@@ -7,6 +7,8 @@ export const guide: Guide = {
     title: 'Claude Code Notifications: Know When AI Finishes Without Watching the Terminal',
     metaTitle: 'Claude Code Notifications: Know When AI Finishes Without Watching the Terminal (2026)',
     metaDescription: 'Get desktop notifications when Claude Code finishes a task or needs your input. Stop wasting time watching the terminal - set up smart alerts for your AI coding sessions in minutes.',
+    publishedAt: '2026-02-20',
+    updatedAt: '2026-04-15',
     intro: `If you use Claude Code while you're working on other things, this will sound familiar:
 
 You ask Claude to implement something relatively big, you can see it's going to take a few minutes, and you think: "in the meantime I'll check email / Slack / another repo".

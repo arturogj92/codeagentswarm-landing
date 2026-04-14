@@ -21,6 +21,8 @@ En esta guía te cuento cómo funcionan las notificaciones de CodeAgentSwarm y c
     introVideo: '/terminal-notifications.mp4',
     ctaText: 'Activa las notificaciones de CodeAgentSwarm y deja de estar pendiente del terminal. La app te avisará cuando Claude termine o necesite tu atención.',
     highlightedWords: ['notificaciones', 'CodeAgentSwarm'],
+    publishedAt: '2026-02-20',
+    updatedAt: '2026-04-15',
     alternateSlug: 'codeagentswarm-notifications',
   },
   sections: [

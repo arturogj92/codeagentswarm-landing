@@ -100,18 +100,24 @@ export default async function GuiaPage({ params }: PageProps) {
     notFound()
   }
 
-  // JSON-LD structured data
-  const jsonLd = {
+  // JSON-LD structured data - Article
+  const jsonLdArticle = {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: guide.meta.title,
     description: guide.meta.metaDescription,
     url: `${baseUrl}/es/guias/${slug}`,
+    ...(guide.meta.publishedAt && { datePublished: guide.meta.publishedAt }),
+    ...(guide.meta.updatedAt && { dateModified: guide.meta.updatedAt }),
     inLanguage: 'es',
     publisher: {
       '@type': 'Organization',
       name: 'CodeAgentSwarm',
       url: baseUrl,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${baseUrl}/logo.png`,
+      },
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
@@ -119,12 +125,62 @@ export default async function GuiaPage({ params }: PageProps) {
     },
   }
 
+  // JSON-LD - BreadcrumbList
+  const jsonLdBreadcrumb = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Inicio',
+        item: `${baseUrl}/es`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Guías',
+        item: `${baseUrl}/es/guias`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: guide.meta.title,
+        item: `${baseUrl}/es/guias/${slug}`,
+      },
+    ],
+  }
+
+  // JSON-LD - FAQPage (only if guide has FAQ)
+  const jsonLdFaq = guide.faq && guide.faq.length > 0 ? {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: guide.faq.map(item => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
+  } : null
+
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdArticle) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
+      />
+      {jsonLdFaq && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }}
+        />
+      )}
       <GuideLayout guide={guide} />
     </>
   )

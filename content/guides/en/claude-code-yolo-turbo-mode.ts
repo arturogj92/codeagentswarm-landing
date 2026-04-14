@@ -16,6 +16,8 @@ The risk is also simple: if you bypass permissions without guardrails, a bad com
 In CodeAgentSwarm, Turbo Mode gives you the "skip confirmations" workflow paired with permission controls. You decide what auto-approves and what gets blocked, so you can go fast and safe.`,
     ctaText: 'Enable Turbo Mode with configured permissions and work with Claude Code at maximum speed without sacrificing safety.',
     highlightedWords: ['YOLO mode', 'Turbo Mode'],
+    publishedAt: '2026-03-01',
+    updatedAt: '2026-04-15',
     alternateSlug: 'claude-code-yolo-turbo-mode',
   },
   sections: [

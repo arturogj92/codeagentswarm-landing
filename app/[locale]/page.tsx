@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
+import { useLocale, useTranslations } from 'next-intl'
 import Header from '@/components/Header'
 import BetaBanner from '@/components/BetaBanner'
 import HeroSection from '@/components/HeroSection'
@@ -18,6 +19,60 @@ import CTASection from '@/components/CTASection'
 import Footer from '@/components/Footer'
 
 export default function Home() {
+  const locale = useLocale()
+  const t = useTranslations('faq')
+  const baseUrl = 'https://www.codeagentswarm.com'
+
+  // SoftwareApplication schema - factual, no fake ratings
+  const jsonLdApp = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'CodeAgentSwarm',
+    description: locale === 'es'
+      ? 'Espacio de trabajo con IA para terminales Claude Code, Codex y Gemini CLI con herramientas MCP'
+      : 'AI coding workspace for Claude Code, Codex and Gemini CLI terminals with MCP tools',
+    url: baseUrl,
+    applicationCategory: 'DeveloperApplication',
+    operatingSystem: 'macOS, Windows',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD',
+      description: locale === 'es' ? 'Gratis con Pro incluido durante la Beta' : 'Free with Pro included during Beta',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'CodeAgentSwarm',
+      url: baseUrl,
+    },
+  }
+
+  // FAQPage schema from actual visible FAQ section
+  const faqItems = [
+    { q: t('items.q1'), a: t('items.a1') },
+    { q: t('items.q2'), a: t('items.a2') },
+    { q: t('items.q3'), a: t('items.a3') },
+    { q: t('items.q4'), a: t('items.a4') },
+    { q: t('items.q5'), a: t('items.a5') },
+    { q: t('items.q6'), a: t('items.a6') },
+    { q: t('items.q7'), a: t('items.a7') },
+    { q: t('items.q8'), a: t('items.a8') },
+    { q: t('items.q9'), a: t('items.a9') },
+  ]
+
+  const jsonLdFaq = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqItems.map(item => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.a,
+      },
+    })),
+  }
+
   // Track scroll depth on home page (25%, 50%, 75%, 100%)
   useEffect(() => {
     const firedLevels = { 25: false, 50: false, 75: false, 100: false }
@@ -53,6 +108,16 @@ export default function Home() {
 
   return (
     <div className="relative min-h-screen bg-black">
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdApp) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }}
+      />
+
       {/* Fixed Grid Background */}
       <div className="fixed inset-0 grid-bg opacity-40 pointer-events-none" />
 
