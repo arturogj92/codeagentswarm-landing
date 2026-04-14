@@ -8,6 +8,7 @@ import enClaudeCodeHistory from './en/claude-code-history'
 import enNotifications from './en/codeagentswarm-notifications'
 import enRealTimeChanges from './en/view-claude-code-changes-real-time'
 import enTurboMode from './en/claude-code-yolo-turbo-mode'
+import enHistoryCompleteGuide from './en/claude-code-history-complete-guide'
 
 // Spanish guides
 import esMultipleTerminals from './es/como-usar-varios-terminales-claude-code'
@@ -15,6 +16,7 @@ import esHistorialClaudeCode from './es/historial-claude-code'
 import esNotificaciones from './es/notificaciones-codeagentswarm'
 import esRealTimeChanges from './es/ver-cambios-claude-code-tiempo-real'
 import esTurboMode from './es/claude-code-yolo-turbo-mode'
+import esHistorialCompleteGuide from './es/guia-completa-historial-claude-code'
 
 // Registry of all guides by locale and slug
 export const guides: Record<string, Record<string, Guide>> = {
@@ -24,6 +26,7 @@ export const guides: Record<string, Record<string, Guide>> = {
     'codeagentswarm-notifications': enNotifications,
     'view-claude-code-changes-real-time': enRealTimeChanges,
     'claude-code-yolo-turbo-mode': enTurboMode,
+    'claude-code-history-complete-guide': enHistoryCompleteGuide,
   },
   es: {
     'como-usar-varios-terminales-claude-code': esMultipleTerminals,
@@ -31,6 +34,7 @@ export const guides: Record<string, Record<string, Guide>> = {
     'notificaciones-codeagentswarm': esNotificaciones,
     'ver-cambios-claude-code-tiempo-real': esRealTimeChanges,
     'claude-code-yolo-turbo-mode': esTurboMode,
+    'guia-completa-historial-claude-code': esHistorialCompleteGuide,
   },
 }
 
