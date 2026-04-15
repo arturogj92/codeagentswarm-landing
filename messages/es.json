@@ -43,6 +43,10 @@
         "title": "Control Multi-Terminal",
         "description": "Gestiona varias sesiones AI CLI simultáneamente"
       },
+      "multiModel": {
+        "title": "Multi-Modelo",
+        "description": "Ejecuta diferentes modelos de IA en paralelo"
+      },
       "kanban": {
         "title": "Tablero Agentic",
         "description": "Tareas que tus agentes leen y completan"

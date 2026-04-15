@@ -43,6 +43,10 @@
         "title": "Multi-Terminal Control",
         "description": "Manage multiple AI CLI sessions simultaneously"
       },
+      "multiModel": {
+        "title": "Multi-Model",
+        "description": "Run different AI models side by side"
+      },
       "kanban": {
         "title": "Task Board",
         "description": "Track and organize tasks with Kanban view"

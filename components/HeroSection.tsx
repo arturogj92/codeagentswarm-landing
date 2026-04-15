@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Play, Download, Zap, Grid3X3, Bell, Terminal, Monitor, Layout, GitBranch, Pause, History, Shield } from 'lucide-react'
+import { Play, Download, Zap, Grid3X3, Bell, Terminal, Monitor, Layout, GitBranch, Pause, History, Shield, Layers } from 'lucide-react'
 import { useState } from 'react'
 import { useTranslations } from 'next-intl'
 import VideoWithProgress from './VideoWithProgress'
@@ -22,31 +22,38 @@ function VideoShowcase() {
     },
     {
       id: 2,
+      src: "/multi-model.mp4",
+      title: t('multiModel.title'),
+      icon: Layers,
+      description: t('multiModel.description')
+    },
+    {
+      id: 3,
+      src: "/conversation_history.mp4",
+      title: t('conversationHistory.title'),
+      icon: History,
+      description: t('conversationHistory.description')
+    },
+    {
+      id: 4,
       src: "/kanban.mp4",
       title: t('kanban.title'),
       icon: Layout,
       description: t('kanban.description')
     },
     {
-      id: 3,
+      id: 5,
       src: "/gitmanager.mp4",
       title: t('git.title'),
       icon: GitBranch,
       description: t('git.description')
     },
     {
-      id: 4,
+      id: 6,
       src: "/terminal-notifications.mp4",
       title: t('notifications.title'),
       icon: Bell,
       description: t('notifications.description')
-    },
-    {
-      id: 5,
-      src: "/conversation_history.mp4",
-      title: t('conversationHistory.title'),
-      icon: History,
-      description: t('conversationHistory.description')
     }
   ]
 
