@@ -40,8 +40,8 @@ interface SendResult {
 // Configuration
 // ---------------------------------------------------------------------------
 
-const FROM_ADDRESS = "CodeAgentSwarm <hello@codeagentswarm.com>";
-const SUBJECT = "We'd love your feedback on CodeAgentSwarm";
+const FROM_ADDRESS = "Arturo from CodeAgentSwarm <hello@codeagentswarm.com>";
+const SUBJECT = "Quick question about your experience";
 const RATE_LIMIT_MS = 500; // 500ms between emails (2/sec max)
 
 // ---------------------------------------------------------------------------

@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email Setup Guide - CodeAgentSwarm</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #000;
+      color: #e2e2e8;
+      line-height: 1.7;
+    }
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+    h1 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
+    }
+    h1 span { color: #fbbf24; }
+    .subtitle {
+      color: #71717a;
+      font-size: 16px;
+      margin-bottom: 48px;
+    }
+
+    /* Steps */
+    .step {
+      position: relative;
+      padding: 28px 28px 28px 28px;
+      background: #0a0a0f;
+      border: 1px solid #1a1a2e;
+      border-radius: 16px;
+      margin-bottom: 20px;
+    }
+    .step.active {
+      border-color: #fbbf24;
+      box-shadow: 0 0 30px rgba(251, 191, 36, 0.08);
+    }
+    .step.done {
+      border-color: #22c55e;
+      opacity: 0.6;
+    }
+    .step-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .step-number {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #fbbf24;
+      color: #000;
+      font-weight: 700;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .step.done .step-number {
+      background: #22c55e;
+    }
+    .step.done .step-number::after {
+      content: '✓';
+    }
+    .step.done .step-number span { display: none; }
+    .step-title {
+      font-size: 20px;
+      font-weight: 600;
+    }
+    .step p, .step li {
+      color: #a1a1b5;
+      font-size: 15px;
+      margin-bottom: 12px;
+    }
+    .step ol {
+      padding-left: 20px;
+      margin-bottom: 16px;
+    }
+    .step li {
+      margin-bottom: 8px;
+    }
+    .step li strong {
+      color: #e2e2e8;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 100px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+    }
+    .btn-primary {
+      background: #fbbf24;
+      color: #000;
+    }
+    .btn-primary:hover {
+      background: #f59e0b;
+      transform: translateY(-1px);
+    }
+    .btn-secondary {
+      background: transparent;
+      color: #fbbf24;
+      border: 1px solid #fbbf24;
+    }
+    .btn-secondary:hover {
+      background: rgba(251, 191, 36, 0.1);
+    }
+    .btn-done {
+      background: #22c55e;
+      color: #000;
+    }
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    /* DNS Table */
+    .dns-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 13px;
+    }
+    .dns-table th {
+      text-align: left;
+      padding: 10px 12px;
+      background: #12121a;
+      color: #fbbf24;
+      font-weight: 600;
+      border-bottom: 1px solid #1a1a2e;
+    }
+    .dns-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid #111;
+      color: #c4c4d0;
+      vertical-align: top;
+    }
+    .dns-table tr:hover td {
+      background: #0f0f18;
+    }
+
+    /* Copy button */
+    .copy-val {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #12121a;
+      border: 1px solid #1a1a2e;
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+      font-size: 12px;
+      color: #e2e2e8;
+      cursor: pointer;
+      transition: all 0.15s;
+      word-break: break-all;
+      max-width: 100%;
+    }
+    .copy-val:hover {
+      border-color: #fbbf24;
+      background: #1a1a25;
+    }
+    .copy-val::after {
+      content: '📋';
+      font-size: 12px;
+      flex-shrink: 0;
+    }
+    .copy-val.copied {
+      border-color: #22c55e;
+    }
+    .copy-val.copied::after {
+      content: '✅';
+    }
+
+    /* Warning */
+    .warning {
+      background: rgba(251, 191, 36, 0.08);
+      border: 1px solid rgba(251, 191, 36, 0.25);
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 14px;
+      color: #fbbf24;
+    }
+    .warning strong { color: #fbbf24; }
+
+    /* Info box */
+    .info {
+      background: rgba(99, 102, 241, 0.08);
+      border: 1px solid rgba(99, 102, 241, 0.25);
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 14px;
+      color: #a5b4fc;
+    }
+
+    /* Progress bar */
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: #111;
+      z-index: 100;
+    }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #fbbf24, #f59e0b);
+      width: 0%;
+      transition: width 0.5s ease;
+      border-radius: 0 2px 2px 0;
+    }
+
+    /* Top header bar */
+    .topbar {
+      position: fixed;
+      top: 4px;
+      left: 0;
+      right: 0;
+      background: rgba(0,0,0,0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #1a1a2e;
+      padding: 12px 24px;
+      z-index: 99;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .topbar-logo {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+    .topbar-logo span { color: #fbbf24; }
+    .topbar-progress {
+      font-size: 13px;
+      color: #71717a;
+    }
+
+    .container { padding-top: 80px; }
+
+    /* Checkbox */
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 8px 0;
+    }
+    .check-item input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      accent-color: #fbbf24;
+      margin-top: 2px;
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+    .check-item label {
+      cursor: pointer;
+      color: #a1a1b5;
+      font-size: 14px;
+    }
+    .check-item input:checked + label {
+      color: #22c55e;
+      text-decoration: line-through;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 24px; }
+      .step { padding: 20px 18px; }
+      .dns-table { font-size: 11px; }
+      .dns-table td, .dns-table th { padding: 8px 6px; }
+      .copy-val { font-size: 11px; padding: 3px 8px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+  <div class="topbar">
+    <div class="topbar-logo">CODE<span>AGENT</span>SWARM</div>
+    <div class="topbar-progress" id="progressText">0 / 4 pasos</div>
+  </div>
+
+  <div class="container">
+    <h1>Setup de <span>Email Autenticado</span></h1>
+    <p class="subtitle">Para que los emails lleguen a Primary y no a Promotions/Spam</p>
+
+    <!-- =============================== -->
+    <!-- PASO 1: Resend                   -->
+    <!-- =============================== -->
+    <div class="step active" id="step1">
+      <div class="step-header">
+        <div class="step-number"><span>1</span></div>
+        <div class="step-title">Registrar dominio en Resend</div>
+      </div>
+
+      <ol>
+        <li>Abre Resend y ve a <strong>Domains</strong></li>
+        <li>Click <strong>"Add Domain"</strong></li>
+        <li>Escribe: <span class="copy-val" onclick="copyText(this, 'codeagentswarm.com')">codeagentswarm.com</span></li>
+        <li>Region: <strong>us-east-1</strong></li>
+        <li>Click <strong>"Add"</strong></li>
+        <li><strong>NO CIERRES la pantalla</strong> - necesitas los DNS records para el paso 2</li>
+      </ol>
+
+      <div class="btn-group">
+        <a href="https://resend.com/domains" target="_blank" class="btn btn-primary">
+          Abrir Resend Domains &rarr;
+        </a>
+        <button class="btn btn-done" onclick="markDone(1)">Hecho ✓</button>
+      </div>
+    </div>
+
+    <!-- =============================== -->
+    <!-- PASO 2: DNS en Namecheap         -->
+    <!-- =============================== -->
+    <div class="step" id="step2">
+      <div class="step-header">
+        <div class="step-number"><span>2</span></div>
+        <div class="step-title">Anadir DNS Records en Namecheap</div>
+      </div>
+
+      <p>Abre Namecheap, ve a tu dominio y a la pestana <strong>"Advanced DNS"</strong>. Anade estos 5 records:</p>
+
+      <div class="btn-group" style="margin-bottom: 20px;">
+        <a href="https://ap.www.namecheap.com/domains/domaincontrolpanel/codeagentswarm.com/advancedns" target="_blank" class="btn btn-primary">
+          Abrir Namecheap Advanced DNS &rarr;
+        </a>
+      </div>
+
+      <!-- Record 1: SPF -->
+      <h3 style="color: #fbbf24; font-size: 15px; margin: 24px 0 8px;">Record 1: SPF (TXT)</h3>
+      <table class="dns-table">
+        <tr><th>Campo</th><th>Valor</th></tr>
+        <tr><td><strong>Type</strong></td><td>TXT Record</td></tr>
+        <tr><td><strong>Host</strong></td><td><span class="copy-val" onclick="copyText(this, '@')">@</span></td></tr>
+        <tr><td><strong>Value</strong></td><td><span class="copy-val" onclick="copyText(this, 'v=spf1 include:send.resend.com ~all')">v=spf1 include:send.resend.com ~all</span></td></tr>
+        <tr><td><strong>TTL</strong></td><td>Automatic</td></tr>
+      </table>
+
+      <div class="warning">
+        <strong>Importante:</strong> Si ya tienes un TXT record que empieza por <code>v=spf1</code>, NO crees otro. Edita el existente y anade <code>include:send.resend.com</code> antes de <code>~all</code>. Solo puede haber UN record SPF.
+      </div>
+
+      <!-- Records 2-4: DKIM -->
+      <h3 style="color: #fbbf24; font-size: 15px; margin: 24px 0 8px;">Records 2, 3, 4: DKIM (3x CNAME)</h3>
+      <p>Copia los 3 CNAMEs exactos desde la pantalla de Resend. Seran algo asi:</p>
+
+      <table class="dns-table">
+        <tr><th>Type</th><th>Host</th><th>Value (copiar de Resend)</th></tr>
+        <tr>
+          <td>CNAME</td>
+          <td><span class="copy-val" onclick="copyText(this, 'resend._domainkey')">resend._domainkey</span></td>
+          <td style="color: #71717a; font-style: italic;">copiar de Resend dashboard</td>
+        </tr>
+        <tr>
+          <td>CNAME</td>
+          <td><span class="copy-val" onclick="copyText(this, 'resend2._domainkey')">resend2._domainkey</span></td>
+          <td style="color: #71717a; font-style: italic;">copiar de Resend dashboard</td>
+        </tr>
+        <tr>
+          <td>CNAME</td>
+          <td><span class="copy-val" onclick="copyText(this, 'resend3._domainkey')">resend3._domainkey</span></td>
+          <td style="color: #71717a; font-style: italic;">copiar de Resend dashboard</td>
+        </tr>
+      </table>
+
+      <div class="info">
+        Los valores exactos de los CNAME son unicos para tu dominio. Copialos tal cual desde la pantalla de Resend (parecen algo como <code>p3tre...dkim.resend.dev</code>).
+      </div>
+
+      <!-- Record 5: DMARC -->
+      <h3 style="color: #fbbf24; font-size: 15px; margin: 24px 0 8px;">Record 5: DMARC (TXT)</h3>
+      <table class="dns-table">
+        <tr><th>Campo</th><th>Valor</th></tr>
+        <tr><td><strong>Type</strong></td><td>TXT Record</td></tr>
+        <tr><td><strong>Host</strong></td><td><span class="copy-val" onclick="copyText(this, '_dmarc')">_dmarc</span></td></tr>
+        <tr><td><strong>Value</strong></td><td><span class="copy-val" onclick="copyText(this, 'v=DMARC1; p=none; rua=mailto:hello@codeagentswarm.com')">v=DMARC1; p=none; rua=mailto:hello@codeagentswarm.com</span></td></tr>
+        <tr><td><strong>TTL</strong></td><td>Automatic</td></tr>
+      </table>
+
+      <!-- Checklist -->
+      <div style="margin-top: 24px; padding: 16px; background: #0f0f18; border-radius: 10px;">
+        <p style="font-size: 14px; font-weight: 600; color: #e2e2e8; margin-bottom: 12px;">Checklist - marca cada record que hayas anadido:</p>
+        <div class="check-item">
+          <input type="checkbox" id="c_spf" onchange="checkStep2()">
+          <label for="c_spf">SPF (TXT record con <code>v=spf1</code>)</label>
+        </div>
+        <div class="check-item">
+          <input type="checkbox" id="c_dkim1" onchange="checkStep2()">
+          <label for="c_dkim1">DKIM 1 (CNAME <code>resend._domainkey</code>)</label>
+        </div>
+        <div class="check-item">
+          <input type="checkbox" id="c_dkim2" onchange="checkStep2()">
+          <label for="c_dkim2">DKIM 2 (CNAME <code>resend2._domainkey</code>)</label>
+        </div>
+        <div class="check-item">
+          <input type="checkbox" id="c_dkim3" onchange="checkStep2()">
+          <label for="c_dkim3">DKIM 3 (CNAME <code>resend3._domainkey</code>)</label>
+        </div>
+        <div class="check-item">
+          <input type="checkbox" id="c_dmarc" onchange="checkStep2()">
+          <label for="c_dmarc">DMARC (TXT record con <code>v=DMARC1</code>)</label>
+        </div>
+      </div>
+
+      <div class="btn-group">
+        <button class="btn btn-done" onclick="markDone(2)" id="btn-step2" disabled style="opacity:0.4;">Todos anadidos ✓</button>
+      </div>
+    </div>
+
+    <!-- =============================== -->
+    <!-- PASO 3: Verificar en Resend      -->
+    <!-- =============================== -->
+    <div class="step" id="step3">
+      <div class="step-header">
+        <div class="step-number"><span>3</span></div>
+        <div class="step-title">Verificar dominio en Resend</div>
+      </div>
+
+      <ol>
+        <li>Vuelve a <strong>Resend > Domains</strong></li>
+        <li>Click <strong>"Verify DNS Records"</strong> en tu dominio</li>
+        <li>Espera <strong>1-5 minutos</strong> (Namecheap suele ser rapido)</li>
+        <li>Recarga la pagina hasta que todos los records muestren <strong style="color: #22c55e;">checkmark verde</strong></li>
+      </ol>
+
+      <div class="info">
+        Si algun record no verifica despues de 10 minutos, revisa que los valores CNAME sean exactos (sin espacios extra ni puntos al final).
+      </div>
+
+      <div class="btn-group">
+        <a href="https://resend.com/domains" target="_blank" class="btn btn-primary">
+          Abrir Resend Domains &rarr;
+        </a>
+        <a href="https://mxtoolbox.com/SuperTool.aspx?action=txt:codeagentswarm.com" target="_blank" class="btn btn-secondary">
+          Verificar DNS en MXToolbox &rarr;
+        </a>
+        <button class="btn btn-done" onclick="markDone(3)">Verificado ✓</button>
+      </div>
+    </div>
+
+    <!-- =============================== -->
+    <!-- PASO 4: API Key                  -->
+    <!-- =============================== -->
+    <div class="step" id="step4">
+      <div class="step-header">
+        <div class="step-number"><span>4</span></div>
+        <div class="step-title">Generar API Key (si no la tienes)</div>
+      </div>
+
+      <p>Si ya tienes una API key de Resend (la <code>re_YSR...</code> que usamos), puedes saltar este paso.</p>
+
+      <ol>
+        <li>En Resend, ve a <strong>API Keys</strong></li>
+        <li>Click <strong>"Create API Key"</strong></li>
+        <li>Nombre: <span class="copy-val" onclick="copyText(this, 'codeagentswarm-emails')">codeagentswarm-emails</span></li>
+        <li>Permission: <strong>Sending access</strong></li>
+        <li>Domain: <strong>codeagentswarm.com</strong></li>
+        <li>Copia la key (empieza por <code>re_</code>)</li>
+      </ol>
+
+      <div class="btn-group">
+        <a href="https://resend.com/api-keys" target="_blank" class="btn btn-primary">
+          Abrir Resend API Keys &rarr;
+        </a>
+        <button class="btn btn-done" onclick="markDone(4)">Hecho ✓</button>
+      </div>
+    </div>
+
+    <!-- =============================== -->
+    <!-- FINAL: Success                   -->
+    <!-- =============================== -->
+    <div id="success-card" style="display: none; text-align: center; padding: 48px 28px; background: #0a0a0f; border: 1px solid #22c55e; border-radius: 16px; margin-top: 20px;">
+      <div style="font-size: 48px; margin-bottom: 16px;">🎉</div>
+      <h2 style="font-size: 24px; font-weight: 700; margin-bottom: 12px;">Setup completado</h2>
+      <p style="color: #a1a1b5; font-size: 15px; margin-bottom: 24px;">
+        Tu dominio esta autenticado con SPF + DKIM + DMARC.<br>
+        Los emails ahora llegaran a <strong style="color: #22c55e;">Primary</strong> en vez de Promotions.
+      </p>
+      <p style="color: #71717a; font-size: 13px;">
+        Dile a Claude que envie otro email de prueba para confirmar.
+      </p>
+    </div>
+
+  </div>
+
+  <script>
+    const totalSteps = 4;
+    let completedSteps = new Set();
+
+    function copyText(el, text) {
+      navigator.clipboard.writeText(text).then(() => {
+        el.classList.add('copied');
+        setTimeout(() => el.classList.remove('copied'), 1500);
+      });
+    }
+
+    function checkStep2() {
+      const all = ['c_spf', 'c_dkim1', 'c_dkim2', 'c_dkim3', 'c_dmarc'];
+      const allChecked = all.every(id => document.getElementById(id).checked);
+      const btn = document.getElementById('btn-step2');
+      btn.disabled = !allChecked;
+      btn.style.opacity = allChecked ? '1' : '0.4';
+    }
+
+    function markDone(stepNum) {
+      completedSteps.add(stepNum);
+      const stepEl = document.getElementById('step' + stepNum);
+      stepEl.classList.remove('active');
+      stepEl.classList.add('done');
+
+      // Activate next step
+      const nextStep = document.getElementById('step' + (stepNum + 1));
+      if (nextStep) {
+        nextStep.classList.add('active');
+        nextStep.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+
+      // Update progress
+      const pct = (completedSteps.size / totalSteps) * 100;
+      document.getElementById('progressFill').style.width = pct + '%';
+      document.getElementById('progressText').textContent = completedSteps.size + ' / ' + totalSteps + ' pasos';
+
+      // All done
+      if (completedSteps.size === totalSteps) {
+        document.getElementById('success-card').style.display = 'block';
+        document.getElementById('success-card').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        document.getElementById('progressText').textContent = 'Completado ✓';
+      }
+    }
+  </script>
+
+</body>
+</html>
