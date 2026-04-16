@@ -65,15 +65,24 @@ export async function POST(request: Request) {
       )
     }
 
-    // Send Telegram notification (fire-and-forget)
-    fetch(`${BACKEND_URL}/api/notifications/landing-event`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        event: 'waitlist_registration',
-        data: { email: body.email.toLowerCase().trim(), platform: body.platform }
+    // Send Telegram notification (awaited with 3s timeout - serverless requires await)
+    try {
+      const controller = new AbortController()
+      const timeout = setTimeout(() => controller.abort(), 3000)
+      await fetch(`${BACKEND_URL}/api/notifications/landing-event`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          event: 'waitlist_registration',
+          data: { email: body.email.toLowerCase().trim(), platform: body.platform }
+        }),
+        signal: controller.signal
       })
-    }).catch(() => {})
+      clearTimeout(timeout)
+    } catch (err) {
+      console.error('Telegram notification failed:', err)
+      // Don't fail the waitlist registration if Telegram fails
+    }
 
     return NextResponse.json(
       { success: true, message: 'Successfully added to waitlist' },
