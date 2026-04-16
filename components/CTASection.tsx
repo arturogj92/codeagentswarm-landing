@@ -229,6 +229,14 @@ export default function CTASection() {
     return `https://codeagentswarm-backend-production.up.railway.app/api/releases/download-dmg/${version}/${arch}`
   }
 
+  const notifyLandingEvent = (event: string, data: Record<string, string>) => {
+    fetch('https://codeagentswarm-backend-production.up.railway.app/api/notifications/landing-event', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ event, data })
+    }).catch(() => {})
+  }
+
   return (
     <section
       id="download"
@@ -321,6 +329,7 @@ export default function CTASection() {
                       onClick={() => {
                         if (typeof window !== 'undefined') {
                           window.umami?.track('download_app_home_silicon')
+                          notifyLandingEvent('download_app', { architecture: 'silicon', version: latestRelease?.version || '' })
                         }
                       }}
                       whileHover={{ scale: 1.02, y: -4 }}
@@ -366,6 +375,7 @@ export default function CTASection() {
                       onClick={() => {
                         if (typeof window !== 'undefined') {
                           window.umami?.track('download_app_home_intel')
+                          notifyLandingEvent('download_app', { architecture: 'intel', version: latestRelease?.version || '' })
                         }
                       }}
                       whileHover={{ scale: 1.02, y: -4 }}

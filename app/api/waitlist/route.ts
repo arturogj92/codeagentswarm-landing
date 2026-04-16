@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server'
 
 const SUPABASE_URL = 'https://fqamfucosytcyueqadog.supabase.co'
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZxYW1mdWNvc3l0Y3l1ZXFhZG9nIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTM4MTgwNzgsImV4cCI6MjA2OTM5NDA3OH0.xt7-hlYgNT0vYOcz96HhV278Pmoc5LNmoga7a65AraY'
+const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'https://codeagentswarm-backend-production.up.railway.app'
 
 export async function POST(request: Request) {
   try {
@@ -63,6 +64,16 @@ export async function POST(request: Request) {
         { status: 500 }
       )
     }
+
+    // Send Telegram notification (fire-and-forget)
+    fetch(`${BACKEND_URL}/api/notifications/landing-event`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        event: 'waitlist_registration',
+        data: { email: body.email.toLowerCase().trim(), platform: body.platform }
+      })
+    }).catch(() => {})
 
     return NextResponse.json(
       { success: true, message: 'Successfully added to waitlist' },
