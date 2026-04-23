@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { verifyToken, COOKIE_NAME } from '@/lib/auth'
 import { resendPost } from '@/lib/resend-client'
-import { bodyToHtml, escapeHtmlForAttribute } from '@/lib/email-body-to-html'
+import { bodyToHtml, buildInboxPreview, escapeHtmlForAttribute } from '@/lib/email-body-to-html'
 import fs from 'fs'
 import path from 'path'
 
@@ -66,8 +66,11 @@ export async function POST(request: NextRequest) {
     // Pre-compute substitutions that don't depend on recipient.
     // {{title}} is plain text (lands in <title> and hero) → escape.
     // {{body}} becomes pre-rendered HTML paragraphs (already safe).
+    // {{bodyPreview}} is a flattened ~110-char excerpt of the body for the
+    // inbox preheader — keeps the inbox preview from duplicating the title.
     const titleHtml = title ? escapeHtmlForAttribute(title) : ''
     const bodyHtml = bodyText ? bodyToHtml(bodyText) : ''
+    const bodyPreview = bodyText ? buildInboxPreview(bodyText) : ''
 
     const results: { email: string; id?: string; error?: string }[] = []
 
@@ -77,6 +80,7 @@ export async function POST(request: NextRequest) {
           name: recipient.name || 'there',
           title: titleHtml,
           body: bodyHtml,
+          bodyPreview,
         })
 
         const result = await resendPost<ResendSendResponse>({

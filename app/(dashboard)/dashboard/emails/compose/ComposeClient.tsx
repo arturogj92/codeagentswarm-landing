@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { useRouter } from 'next/navigation'
-import { bodyToHtml, escapeHtmlForAttribute } from '@/lib/email-body-to-html'
+import { bodyToHtml, buildInboxPreview, escapeHtmlForAttribute } from '@/lib/email-body-to-html'
 
 interface TemplateInfo {
   slug: string
@@ -193,6 +193,7 @@ export default function ComposeClient() {
         .replaceAll('{{name}}', previewName)
         .replaceAll('{{title}}', title ? escapeHtmlForAttribute(title) : '<span style="opacity:0.5">{{title}}</span>')
         .replaceAll('{{body}}', body ? bodyToHtml(body) : '<p style="opacity:0.5;font-style:italic">{{body}}</p>')
+        .replaceAll('{{bodyPreview}}', body ? buildInboxPreview(body) : '')
     : ''
 
   function isValid(): boolean {

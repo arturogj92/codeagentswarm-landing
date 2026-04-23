@@ -44,9 +44,11 @@
 
 <body style="margin: 0; padding: 0; background-color: #0a0a0a; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; -webkit-font-smoothing: antialiased;">
 
-  <!-- Preheader -->
+  <!-- Preheader: shown by Gmail/Apple Mail in the inbox row after the subject.
+       Uses an excerpt of the body (not the title) so the inbox row reads as
+       "[subject] - [body preview]" instead of duplicating the hero title. -->
   <div style="display: none; max-height: 0; overflow: hidden; font-size: 1px; line-height: 1px; color: #0a0a0a;">
-    {{title}} &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+    {{bodyPreview}} &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
   </div>
 
   <!-- OUTER WRAPPER -->

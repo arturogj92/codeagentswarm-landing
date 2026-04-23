@@ -51,3 +51,33 @@ export function bodyToHtml(text: string): string {
 export function escapeHtmlForAttribute(text: string): string {
   return escapeHtml(text)
 }
+
+/**
+ * Build a single-line plain-text preview suitable for the inbox preheader
+ * (the hidden div Gmail/Apple Mail show after the subject in the inbox row).
+ *
+ * The preheader should COMPLEMENT the subject, not duplicate the title — so
+ * we derive it from the body, not from the title field.
+ *
+ * - Collapses all whitespace to single spaces
+ * - Truncates to maxLen with an ellipsis if needed
+ * - Escapes HTML so it's safe to drop into the template
+ * - Returns "" if the body is empty (template will fall back to first body line)
+ */
+export function buildInboxPreview(text: string, maxLen = 110): string {
+  if (!text) return ''
+
+  const flattened = text
+    .replace(/\r\n/g, '\n')
+    .replace(/\s+/g, ' ')
+    .trim()
+
+  if (!flattened) return ''
+
+  const truncated =
+    flattened.length > maxLen
+      ? flattened.slice(0, maxLen).trimEnd() + '…'
+      : flattened
+
+  return escapeHtml(truncated)
+}
