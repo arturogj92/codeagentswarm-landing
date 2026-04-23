@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { useRouter } from 'next/navigation'
+import { bodyToHtml, escapeHtmlForAttribute } from '@/lib/email-body-to-html'
 
 interface TemplateInfo {
   slug: string
@@ -44,6 +45,8 @@ export default function ComposeClient() {
   const [manualTo, setManualTo] = useState('')
   const [manualName, setManualName] = useState('')
   const [subject, setSubject] = useState('')
+  const [title, setTitle] = useState('')
+  const [body, setBody] = useState('')
 
   // Send state
   const [sending, setSending] = useState(false)
@@ -181,12 +184,24 @@ export default function ComposeClient() {
     return '{{name}}'
   })()
 
+  // Templates may opt into free-text fields by including these markers.
+  const hasTitleField = templateHtml.includes('{{title}}')
+  const hasBodyField = templateHtml.includes('{{body}}')
+
   const previewHtml = templateHtml
-    ? templateHtml.replaceAll('{{name}}', previewName)
+    ? templateHtml
+        .replaceAll('{{name}}', previewName)
+        .replaceAll('{{title}}', title ? escapeHtmlForAttribute(title) : '<span style="opacity:0.5">{{title}}</span>')
+        .replaceAll('{{body}}', body ? bodyToHtml(body) : '<p style="opacity:0.5;font-style:italic">{{body}}</p>')
     : ''
 
   function isValid(): boolean {
-    return buildRecipients().length > 0 && subject.trim().length > 0 && selectedSlug.length > 0
+    if (buildRecipients().length === 0) return false
+    if (subject.trim().length === 0) return false
+    if (selectedSlug.length === 0) return false
+    if (hasTitleField && title.trim().length === 0) return false
+    if (hasBodyField && body.trim().length === 0) return false
+    return true
   }
 
   // Send emails
@@ -205,6 +220,8 @@ export default function ComposeClient() {
           recipients,
           subject: subject.trim(),
           templateSlug: selectedSlug,
+          title: hasTitleField ? title.trim() : undefined,
+          body: hasBodyField ? body : undefined,
         }),
       })
 
@@ -292,6 +309,36 @@ export default function ComposeClient() {
                 className="w-full bg-black/50 border border-white/10 rounded-lg px-3 py-2.5 text-sm text-white/80 placeholder-white/20 focus:outline-none focus:border-amber-400/40 transition-colors"
               />
             </div>
+
+            {hasTitleField && (
+              <div>
+                <label className="block text-xs font-medium text-white/40 uppercase tracking-wider mb-2">
+                  Title <span className="normal-case text-white/15">(shown in the email hero)</span>
+                </label>
+                <input
+                  type="text"
+                  value={title}
+                  onChange={e => setTitle(e.target.value)}
+                  placeholder="e.g. Your feedback just shipped"
+                  className="w-full bg-black/50 border border-white/10 rounded-lg px-3 py-2.5 text-sm text-white/80 placeholder-white/20 focus:outline-none focus:border-amber-400/40 transition-colors"
+                />
+              </div>
+            )}
+
+            {hasBodyField && (
+              <div>
+                <label className="block text-xs font-medium text-white/40 uppercase tracking-wider mb-2">
+                  Body <span className="normal-case text-white/15">(blank line = new paragraph)</span>
+                </label>
+                <textarea
+                  value={body}
+                  onChange={e => setBody(e.target.value)}
+                  placeholder="Write the email body here. Leave a blank line between paragraphs."
+                  rows={10}
+                  className="w-full bg-black/50 border border-white/10 rounded-lg px-3 py-2.5 text-sm text-white/80 placeholder-white/20 focus:outline-none focus:border-amber-400/40 transition-colors resize-y font-mono"
+                />
+              </div>
+            )}
           </div>
 
           {/* User Selector */}

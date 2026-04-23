@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { verifyToken, COOKIE_NAME } from '@/lib/auth'
 import { resendPost } from '@/lib/resend-client'
+import { bodyToHtml, escapeHtmlForAttribute } from '@/lib/email-body-to-html'
 import fs from 'fs'
 import path from 'path'
 
@@ -15,6 +16,8 @@ interface SendRequest {
   recipients: Recipient[]
   subject: string
   templateSlug: string
+  title?: string
+  body?: string
 }
 
 interface ResendSendResponse {
@@ -37,7 +40,7 @@ export async function POST(request: NextRequest) {
 
   try {
     const body: SendRequest = await request.json()
-    const { recipients, subject, templateSlug } = body
+    const { recipients, subject, templateSlug, title, body: bodyText } = body
 
     if (!recipients || !Array.isArray(recipients) || recipients.length === 0) {
       return NextResponse.json({ error: 'At least one recipient is required' }, { status: 400 })
@@ -60,11 +63,21 @@ export async function POST(request: NextRequest) {
 
     const rawHtml = fs.readFileSync(filePath, 'utf-8')
 
+    // Pre-compute substitutions that don't depend on recipient.
+    // {{title}} is plain text (lands in <title> and hero) → escape.
+    // {{body}} becomes pre-rendered HTML paragraphs (already safe).
+    const titleHtml = title ? escapeHtmlForAttribute(title) : ''
+    const bodyHtml = bodyText ? bodyToHtml(bodyText) : ''
+
     const results: { email: string; id?: string; error?: string }[] = []
 
     for (const recipient of recipients) {
       try {
-        const html = personalizeTemplate(rawHtml, { name: recipient.name || 'there' })
+        const html = personalizeTemplate(rawHtml, {
+          name: recipient.name || 'there',
+          title: titleHtml,
+          body: bodyHtml,
+        })
 
         const result = await resendPost<ResendSendResponse>({
           path: '/emails',
