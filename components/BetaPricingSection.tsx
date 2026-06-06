@@ -8,7 +8,6 @@ import {
   Zap,
   Sparkles,
   Crown,
-  Shield,
   Info,
 } from 'lucide-react'
 import { useTranslations } from 'next-intl'
@@ -310,21 +309,6 @@ export default function BetaPricingSection() {
             </motion.div>
           ))}
         </div>
-
-        {/* Trust Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="mt-16 text-center"
-        >
-          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full glass border border-white/5">
-            <Shield className="w-5 h-5 text-neon-green" />
-            <p className="text-white/50 text-sm">
-              {t('trustBadge')}
-            </p>
-          </div>
-        </motion.div>
 
         {/* Why Upgrade Box */}
         <motion.div

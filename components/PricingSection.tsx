@@ -8,7 +8,6 @@ import {
   Zap,
   Sparkles,
   Crown,
-  Shield,
   ChevronDown,
 } from 'lucide-react'
 import { useTranslations, useLocale } from 'next-intl'
@@ -369,20 +368,6 @@ export default function PricingSection() {
           )}
         </AnimatePresence>
 
-        {/* Trust Badge - Always visible */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="mt-12 text-center"
-        >
-          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-neutral-900 border border-white/10">
-            <Shield className="w-5 h-5 text-neutral-400" />
-            <p className="text-neutral-400 text-sm">
-              {t('trustBadge')}
-            </p>
-          </div>
-        </motion.div>
       </div>
     </section>
   )
