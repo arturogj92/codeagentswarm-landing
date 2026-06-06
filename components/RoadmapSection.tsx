@@ -38,7 +38,6 @@ export default function RoadmapSection() {
       title: t('items.crossPlatform.title'),
       description: t('items.crossPlatform.description'),
       features: [
-        t('items.crossPlatform.features.windows'),
         t('items.crossPlatform.features.linux'),
       ],
       icon: Monitor,

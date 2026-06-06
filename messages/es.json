@@ -374,8 +374,8 @@
         }
       },
       "crossPlatform": {
-        "title": "Soporte Multiplataforma",
-        "description": "CodeAgentSwarm en Windows y Linux",
+        "title": "Soporte Linux",
+        "description": "CodeAgentSwarm llega a Linux (Windows ya esta disponible!)",
         "features": {
           "windows": "Soporte completo Windows 10/11",
           "linux": "Compatibilidad Ubuntu, Debian, Fedora",
@@ -442,11 +442,18 @@
     "noReleases": "No hay releases disponibles.",
     "downloadFor": "Descargar para",
     "downloadDmg": "Descargar DMG",
+    "downloadExe": "Descargar instalador",
+    "windowsSmartScreen": "Build sin firmar - si Windows SmartScreen avisa, pulsa Mas informacion y luego Ejecutar de todas formas.",
     "platforms": {
       "appleSilicon": "Apple Silicon",
       "appleSiliconChips": "M1, M2, M3, M4",
       "intel": "Intel",
       "intelProcessors": "Procesadores Intel",
+      "windows": "Windows",
+      "windowsX64": "x64",
+      "windowsX64Desc": "Intel / AMD 64-bit",
+      "windowsArm": "ARM64",
+      "windowsArmDesc": "Dispositivos ARM",
       "windowsSoon": "Windows (Proximamente)",
       "linuxSoon": "Linux (Proximamente)",
       "notify": "Avisarme"

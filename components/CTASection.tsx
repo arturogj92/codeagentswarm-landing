@@ -169,13 +169,21 @@ function FOMOPopup({
   )
 }
 
+interface DownloadAsset {
+  fileName: string
+  fileUrl: string
+  fileSize: number
+}
+
 interface Release {
   version: string
   releaseDate: string
   formattedDownloads: {
-    macArm: { fileName: string; fileUrl: string; fileSize: number } | null
-    macIntel: { fileName: string; fileUrl: string; fileSize: number } | null
+    macArm: DownloadAsset | null
+    macIntel: DownloadAsset | null
   }
+  // Raw per-(platform-arch) map from the backend, e.g. 'win32-x64', 'win32-arm64'
+  downloads?: Record<string, DownloadAsset>
 }
 
 export default function CTASection() {
@@ -236,6 +244,25 @@ export default function CTASection() {
       body: JSON.stringify({ event, data })
     }).catch(() => {})
   }
+
+  // The newest version may be platform-specific (e.g. a Windows-only patch), so
+  // pick the latest release that actually has builds for each platform.
+  const allReleases = latestRelease ? [latestRelease, ...olderReleases] : []
+  const macRelease = allReleases.find(
+    (r) => r.formattedDownloads?.macArm || r.formattedDownloads?.macIntel
+  ) || null
+  const winRelease = allReleases.find(
+    (r) => r.downloads?.['win32-x64'] || r.downloads?.['win32-arm64']
+  ) || null
+  const winX64 = winRelease?.downloads?.['win32-x64'] || null
+  const winArm = winRelease?.downloads?.['win32-arm64'] || null
+  // "Older versions" lists macOS DMG downloads, so only show macOS releases
+  // (excluding the one already featured above) to avoid empty Windows-only cards.
+  const olderMacReleases = allReleases.filter(
+    (r) =>
+      (r.formattedDownloads?.macArm || r.formattedDownloads?.macIntel) &&
+      r.version !== macRelease?.version
+  )
 
   return (
     <section
@@ -306,6 +333,9 @@ export default function CTASection() {
           >
             <div className="relative rounded-3xl overflow-hidden border border-white/10">
               <div className="relative bg-neutral-950 rounded-3xl p-8">
+                {/* macOS */}
+                {macRelease && (
+                <>
                 {/* Platform Header */}
                 <div className="flex items-center justify-center gap-3 mb-8">
                   <Image
@@ -323,13 +353,13 @@ export default function CTASection() {
                 {/* Download Cards */}
                 <div className="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto">
                   {/* Apple Silicon */}
-                  {latestRelease.formattedDownloads.macArm && (
+                  {macRelease.formattedDownloads.macArm && (
                     <motion.a
-                      href={getDirectDownloadUrl(latestRelease.version, 'arm64')}
+                      href={getDirectDownloadUrl(macRelease.version, 'arm64')}
                       onClick={() => {
                         if (typeof window !== 'undefined') {
                           window.umami?.track('download_app_home_silicon')
-                          notifyLandingEvent('download_app', { architecture: 'silicon', version: latestRelease?.version || '' })
+                          notifyLandingEvent('download_app', { architecture: 'silicon', version: macRelease?.version || '' })
                         }
                       }}
                       whileHover={{ scale: 1.02, y: -4 }}
@@ -357,7 +387,7 @@ export default function CTASection() {
 
                         <div className="flex items-center justify-between">
                           <span className="text-neutral-600 text-sm">
-                            {formatFileSize(latestRelease.formattedDownloads.macArm.fileSize)}
+                            {formatFileSize(macRelease.formattedDownloads.macArm.fileSize)}
                           </span>
                           <div className="flex items-center gap-2 text-white">
                             <Download className="w-4 h-4" />
@@ -369,13 +399,13 @@ export default function CTASection() {
                   )}
 
                   {/* Intel */}
-                  {latestRelease.formattedDownloads.macIntel && (
+                  {macRelease.formattedDownloads.macIntel && (
                     <motion.a
-                      href={getDirectDownloadUrl(latestRelease.version, 'x64')}
+                      href={getDirectDownloadUrl(macRelease.version, 'x64')}
                       onClick={() => {
                         if (typeof window !== 'undefined') {
                           window.umami?.track('download_app_home_intel')
-                          notifyLandingEvent('download_app', { architecture: 'intel', version: latestRelease?.version || '' })
+                          notifyLandingEvent('download_app', { architecture: 'intel', version: macRelease?.version || '' })
                         }
                       }}
                       whileHover={{ scale: 1.02, y: -4 }}
@@ -403,7 +433,7 @@ export default function CTASection() {
 
                         <div className="flex items-center justify-between">
                           <span className="text-neutral-600 text-sm">
-                            {formatFileSize(latestRelease.formattedDownloads.macIntel.fileSize)}
+                            {formatFileSize(macRelease.formattedDownloads.macIntel.fileSize)}
                           </span>
                           <div className="flex items-center gap-2 text-white">
                             <Download className="w-4 h-4" />
@@ -414,9 +444,127 @@ export default function CTASection() {
                     </motion.a>
                   )}
                 </div>
+                </>
+                )}
+
+                {/* Windows */}
+                {winRelease && (
+                <>
+                <div className="flex items-center justify-center gap-3 mb-8 mt-14">
+                  <Image
+                    src="/icons/windows-logo.png"
+                    alt="Windows"
+                    width={28}
+                    height={28}
+                    className="opacity-80"
+                  />
+                  <span className="text-xl font-display font-medium text-white">
+                    {t('downloadFor')} Windows
+                  </span>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto">
+                  {/* Windows x64 */}
+                  {winX64 && (
+                    <motion.a
+                      href={winX64.fileUrl}
+                      onClick={() => {
+                        if (typeof window !== 'undefined') {
+                          window.umami?.track('download_app_home_windows_x64')
+                          notifyLandingEvent('download_app', { architecture: 'windows-x64', version: winRelease?.version || '' })
+                        }
+                      }}
+                      whileHover={{ scale: 1.02, y: -4 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="group relative"
+                    >
+                      <div className="relative p-6 rounded-xl bg-neutral-900 border border-white/10 group-hover:border-white/20 transition-all">
+                        <div className="flex items-start justify-between mb-4">
+                          <div>
+                            <h3 className="text-lg font-display font-medium text-white mb-1">
+                              {t('platforms.windowsX64')}
+                            </h3>
+                            <p className="text-neutral-500 text-sm">{t('platforms.windowsX64Desc')}</p>
+                          </div>
+                          <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center">
+                            <Image
+                              src="/icons/windows-logo.png"
+                              alt="Windows x64"
+                              width={20}
+                              height={20}
+                              className="opacity-90"
+                            />
+                          </div>
+                        </div>
+
+                        <div className="flex items-center justify-between">
+                          <span className="text-neutral-600 text-sm">
+                            {formatFileSize(winX64.fileSize)}
+                          </span>
+                          <div className="flex items-center gap-2 text-white">
+                            <Download className="w-4 h-4" />
+                            <span className="font-medium">{t('downloadExe')}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </motion.a>
+                  )}
+
+                  {/* Windows ARM64 */}
+                  {winArm && (
+                    <motion.a
+                      href={winArm.fileUrl}
+                      onClick={() => {
+                        if (typeof window !== 'undefined') {
+                          window.umami?.track('download_app_home_windows_arm64')
+                          notifyLandingEvent('download_app', { architecture: 'windows-arm64', version: winRelease?.version || '' })
+                        }
+                      }}
+                      whileHover={{ scale: 1.02, y: -4 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="group relative"
+                    >
+                      <div className="relative p-6 rounded-xl bg-neutral-900 border border-white/10 group-hover:border-white/20 transition-all">
+                        <div className="flex items-start justify-between mb-4">
+                          <div>
+                            <h3 className="text-lg font-display font-medium text-white mb-1">
+                              {t('platforms.windowsArm')}
+                            </h3>
+                            <p className="text-neutral-500 text-sm">{t('platforms.windowsArmDesc')}</p>
+                          </div>
+                          <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center">
+                            <Image
+                              src="/icons/windows-logo.png"
+                              alt="Windows ARM64"
+                              width={20}
+                              height={20}
+                              className="opacity-90"
+                            />
+                          </div>
+                        </div>
+
+                        <div className="flex items-center justify-between">
+                          <span className="text-neutral-600 text-sm">
+                            {formatFileSize(winArm.fileSize)}
+                          </span>
+                          <div className="flex items-center gap-2 text-white">
+                            <Download className="w-4 h-4" />
+                            <span className="font-medium">{t('downloadExe')}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </motion.a>
+                  )}
+                </div>
+
+                <p className="text-center text-neutral-600 text-xs mt-4 max-w-2xl mx-auto">
+                  {t('windowsSmartScreen')}
+                </p>
+                </>
+                )}
 
                 {/* Older Versions Toggle */}
-                {olderReleases.length > 0 && (
+                {olderMacReleases.length > 0 && (
                   <div className="mt-8 text-center">
                     <button
                       onClick={() => setShowOlderVersions(!showOlderVersions)}
@@ -442,7 +590,7 @@ export default function CTASection() {
                       className="overflow-hidden"
                     >
                       <div className="pt-6 mt-6 border-t border-white/10 space-y-4">
-                        {olderReleases.map((release) => (
+                        {olderMacReleases.map((release) => (
                           <div
                             key={release.version}
                             className="p-4 rounded-xl bg-neutral-900 border border-white/10"
@@ -546,27 +694,16 @@ export default function CTASection() {
               />
               <span className="text-neutral-400">macOS</span>
             </div>
-            <button
-              onClick={() => {
-                setFomoPopup({ open: true, platform: 'windows' })
-                if (typeof window !== 'undefined') {
-                  window.umami?.track('windows_coming_soon_click')
-                }
-              }}
-              className="flex items-center gap-2 px-4 py-2 rounded-full bg-neutral-900 border border-white/10 hover:border-white/20 transition-all cursor-pointer group"
-            >
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-neutral-900 border border-white/10">
               <Image
                 src="/icons/windows-logo.png"
                 alt="Windows"
                 width={20}
                 height={20}
-                className="opacity-70 group-hover:opacity-100 transition-opacity"
+                className="opacity-70"
               />
-              <span className="text-neutral-500 group-hover:text-neutral-400 transition-colors">{t('platforms.windowsSoon')}</span>
-              <span className="text-[10px] px-2 py-0.5 rounded-full bg-white/10 text-neutral-400 font-medium">
-                {t('platforms.notify')}
-              </span>
-            </button>
+              <span className="text-neutral-400">{t('platforms.windows')}</span>
+            </div>
             <button
               onClick={() => {
                 setFomoPopup({ open: true, platform: 'linux' })
