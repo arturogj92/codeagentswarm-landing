@@ -19,6 +19,13 @@ interface UserInfo {
   createdAt: string
 }
 
+interface WaitlistEntry {
+  id: string
+  email: string
+  platform: string
+  createdAt: string
+}
+
 interface Recipient {
   email: string
   name: string
@@ -40,6 +47,15 @@ export default function ComposeClient() {
   const [selectedUserIds, setSelectedUserIds] = useState<Set<string>>(new Set())
   const [userSearch, setUserSearch] = useState('')
   const [nameOverrides, setNameOverrides] = useState<Record<string, string>>({})
+
+  // Waitlist (platform_waitlist) state
+  const [recipientSource, setRecipientSource] = useState<'users' | 'waitlist'>('users')
+  const [waitlist, setWaitlist] = useState<WaitlistEntry[]>([])
+  const [loadingWaitlist, setLoadingWaitlist] = useState(true)
+  const [selectedWaitlistIds, setSelectedWaitlistIds] = useState<Set<string>>(new Set())
+  const [waitlistSearch, setWaitlistSearch] = useState('')
+  const [platformFilter, setPlatformFilter] = useState<'all' | 'windows' | 'linux'>('all')
+  const [waitlistError, setWaitlistError] = useState('')
 
   // Form state
   const [manualTo, setManualTo] = useState('')
@@ -84,8 +100,25 @@ export default function ComposeClient() {
       }
     }
 
+    async function loadWaitlist() {
+      try {
+        const res = await fetch('/api/dashboard/emails/waitlist')
+        if (!res.ok) throw new Error('Failed to load waitlist')
+        const json = await res.json()
+        setWaitlist(json.data || [])
+      } catch (err) {
+        // Keep this out of the global error banner: the waitlist is optional and
+        // may be unavailable (e.g. SUPABASE_SERVICE_ROLE_KEY not set yet). Surface
+        // it only inside the Waitlist tab so the users / paste flow is unaffected.
+        setWaitlistError(err instanceof Error ? err.message : 'Failed to load waitlist')
+      } finally {
+        setLoadingWaitlist(false)
+      }
+    }
+
     loadTemplates()
     loadUsers()
+    loadWaitlist()
   }, [])
 
   // Load template HTML when selection changes
@@ -122,6 +155,30 @@ export default function ComposeClient() {
     const q = userSearch.toLowerCase()
     return u.email.toLowerCase().includes(q) || u.name.toLowerCase().includes(q)
   })
+
+  // Filtered waitlist based on platform + search
+  const filteredWaitlist = waitlist.filter(w => {
+    if (platformFilter !== 'all' && w.platform !== platformFilter) return false
+    if (!waitlistSearch) return true
+    return w.email.toLowerCase().includes(waitlistSearch.toLowerCase())
+  })
+
+  function toggleWaitlist(id: string) {
+    setSelectedWaitlistIds(prev => {
+      const next = new Set(prev)
+      if (next.has(id)) next.delete(id)
+      else next.add(id)
+      return next
+    })
+  }
+
+  function selectAllWaitlist() {
+    setSelectedWaitlistIds(new Set(filteredWaitlist.map(w => w.id)))
+  }
+
+  function selectNoneWaitlist() {
+    setSelectedWaitlistIds(new Set())
+  }
 
   // Selection handlers
   function toggleUser(id: string) {
@@ -160,6 +217,16 @@ export default function ComposeClient() {
           email: user.email,
           name: getNameForUser(user),
         })
+      }
+    }
+
+    // From selected waitlist entries (platform_waitlist has no name on file,
+    // so the greeting falls back to the template default).
+    for (const entry of waitlist) {
+      if (selectedWaitlistIds.has(entry.id)) {
+        if (!recipients.some(r => r.email === entry.email)) {
+          recipients.push({ email: entry.email, name: '' })
+        }
       }
     }
 
@@ -342,7 +409,32 @@ export default function ComposeClient() {
             )}
           </div>
 
+          {/* Recipient source toggle */}
+          <div className="flex gap-2">
+            <button
+              onClick={() => setRecipientSource('users')}
+              className={`flex-1 px-4 py-2.5 text-sm rounded-lg border transition-colors cursor-pointer ${
+                recipientSource === 'users'
+                  ? 'bg-amber-400/10 border-amber-400/30 text-amber-400'
+                  : 'bg-white/5 border-white/10 text-white/50 hover:text-white/80'
+              }`}
+            >
+              Registered users ({selectedUserIds.size})
+            </button>
+            <button
+              onClick={() => setRecipientSource('waitlist')}
+              className={`flex-1 px-4 py-2.5 text-sm rounded-lg border transition-colors cursor-pointer ${
+                recipientSource === 'waitlist'
+                  ? 'bg-amber-400/10 border-amber-400/30 text-amber-400'
+                  : 'bg-white/5 border-white/10 text-white/50 hover:text-white/80'
+              }`}
+            >
+              Waitlist ({selectedWaitlistIds.size})
+            </button>
+          </div>
+
           {/* User Selector */}
+          {recipientSource === 'users' && (
           <div className="bg-[#111111] border border-white/10 rounded-xl p-4 space-y-3">
             <div className="flex items-center justify-between">
               <label className="text-xs font-medium text-white/40 uppercase tracking-wider">
@@ -441,6 +533,116 @@ export default function ComposeClient() {
               </div>
             )}
           </div>
+          )}
+
+          {/* Waitlist Selector */}
+          {recipientSource === 'waitlist' && (
+          <div className="bg-[#111111] border border-white/10 rounded-xl p-4 space-y-3">
+            <div className="flex items-center justify-between">
+              <label className="text-xs font-medium text-white/40 uppercase tracking-wider">
+                Waitlist ({selectedWaitlistIds.size} selected)
+              </label>
+              <div className="flex gap-2">
+                <button onClick={selectAllWaitlist} className="text-xs text-amber-400/70 hover:text-amber-400 cursor-pointer transition-colors">
+                  Select all
+                </button>
+                <span className="text-white/10">|</span>
+                <button onClick={selectNoneWaitlist} className="text-xs text-white/30 hover:text-white/60 cursor-pointer transition-colors">
+                  None
+                </button>
+              </div>
+            </div>
+
+            {/* Platform filter */}
+            <div className="flex gap-2">
+              {(['all', 'windows', 'linux'] as const).map(p => (
+                <button
+                  key={p}
+                  onClick={() => setPlatformFilter(p)}
+                  className={`px-3 py-1.5 text-xs rounded-lg border transition-colors cursor-pointer ${
+                    platformFilter === p
+                      ? 'bg-amber-400/10 border-amber-400/30 text-amber-400'
+                      : 'bg-black/30 border-white/10 text-white/40 hover:text-white/70'
+                  }`}
+                >
+                  {p === 'all' ? 'All' : p.charAt(0).toUpperCase() + p.slice(1)} ({p === 'all' ? waitlist.length : waitlist.filter(w => w.platform === p).length})
+                </button>
+              ))}
+            </div>
+
+            {/* Search */}
+            <input
+              type="text"
+              value={waitlistSearch}
+              onChange={e => setWaitlistSearch(e.target.value)}
+              placeholder="Search waitlist by email..."
+              className="w-full bg-black/50 border border-white/10 rounded-lg px-3 py-2 text-sm text-white/80 placeholder-white/20 focus:outline-none focus:border-amber-400/40 transition-colors"
+            />
+
+            {waitlistError && (
+              <div className="px-3 py-2 bg-red-400/10 border border-red-400/20 rounded-lg text-red-400 text-xs">
+                {waitlistError} — check that SUPABASE_SERVICE_ROLE_KEY is set.
+              </div>
+            )}
+
+            {/* Waitlist list */}
+            {loadingWaitlist ? (
+              <div className="space-y-2">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <div key={i} className="h-10 bg-white/5 rounded-lg animate-pulse" />
+                ))}
+              </div>
+            ) : (
+              <div className="max-h-[320px] overflow-y-auto space-y-1 pr-1 custom-scrollbar">
+                {filteredWaitlist.map(entry => {
+                  const isSelected = selectedWaitlistIds.has(entry.id)
+                  return (
+                    <div
+                      key={entry.id}
+                      className={`flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer transition-colors ${
+                        isSelected ? 'bg-amber-400/5 border border-amber-400/15' : 'hover:bg-white/5 border border-transparent'
+                      }`}
+                      onClick={() => toggleWaitlist(entry.id)}
+                    >
+                      {/* Checkbox */}
+                      <div className={`w-4 h-4 rounded border flex-shrink-0 flex items-center justify-center ${
+                        isSelected ? 'bg-amber-400 border-amber-400' : 'border-white/20'
+                      }`}>
+                        {isSelected && (
+                          <svg className="w-3 h-3 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                          </svg>
+                        )}
+                      </div>
+
+                      {/* Email */}
+                      <div className="flex-1 min-w-0">
+                        <span className="text-sm text-white/80 truncate">{entry.email}</span>
+                      </div>
+
+                      {/* Platform badge */}
+                      <span className={`text-[10px] px-1.5 py-0.5 rounded-full flex-shrink-0 ${
+                        entry.platform === 'windows'
+                          ? 'bg-sky-400/10 text-sky-400/70'
+                          : entry.platform === 'linux'
+                            ? 'bg-emerald-400/10 text-emerald-400/70'
+                            : 'bg-white/5 text-white/30'
+                      }`}>
+                        {entry.platform}
+                      </span>
+                    </div>
+                  )
+                })}
+
+                {filteredWaitlist.length === 0 && (
+                  <div className="py-4 text-center text-white/20 text-sm">
+                    No waitlist entries match
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+          )}
 
           {/* Manual Recipients (additional) */}
           <div className="bg-[#111111] border border-white/10 rounded-xl p-4 space-y-3">

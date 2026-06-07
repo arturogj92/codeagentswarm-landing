@@ -7,6 +7,19 @@ import path from 'path'
 
 const FROM_ADDRESS = 'Arturo from CodeAgentSwarm <hello@codeagentswarm.com>'
 
+// Bulk sends (e.g. the platform waitlist) can be dozens of recipients. Resend
+// allows ~2 requests/sec, so we throttle to stay safely under that and avoid
+// 429s that would silently drop part of a launch send.
+const RATE_LIMIT_MS = 600
+
+// Give the route enough wall-clock time for a throttled bulk send. 60s covers
+// ~90 recipients at RATE_LIMIT_MS; split larger sends into separate batches.
+export const maxDuration = 60
+
+function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms))
+}
+
 interface Recipient {
   email: string
   name: string
@@ -74,7 +87,8 @@ export async function POST(request: NextRequest) {
 
     const results: { email: string; id?: string; error?: string }[] = []
 
-    for (const recipient of recipients) {
+    for (let i = 0; i < recipients.length; i++) {
+      const recipient = recipients[i]
       try {
         const html = personalizeTemplate(rawHtml, {
           name: recipient.name || 'there',
@@ -99,6 +113,11 @@ export async function POST(request: NextRequest) {
           email: recipient.email,
           error: err instanceof Error ? err.message : 'Failed to send',
         })
+      }
+
+      // Throttle between sends (skip the wait after the last recipient).
+      if (i < recipients.length - 1) {
+        await sleep(RATE_LIMIT_MS)
       }
     }
 
