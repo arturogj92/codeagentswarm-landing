@@ -419,7 +419,7 @@ export default function ComposeClient() {
                   : 'bg-white/5 border-white/10 text-white/50 hover:text-white/80'
               }`}
             >
-              Registered users ({selectedUserIds.size})
+              Registered users ({users.length})
             </button>
             <button
               onClick={() => setRecipientSource('waitlist')}
@@ -429,7 +429,7 @@ export default function ComposeClient() {
                   : 'bg-white/5 border-white/10 text-white/50 hover:text-white/80'
               }`}
             >
-              Waitlist ({selectedWaitlistIds.size})
+              Waitlist ({waitlist.length})
             </button>
           </div>
 
