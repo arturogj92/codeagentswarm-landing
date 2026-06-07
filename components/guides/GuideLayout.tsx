@@ -26,10 +26,13 @@ export default function GuideLayout({ guide }: GuideLayoutProps) {
   const ctaText = locale === 'es' ? 'Probar CodeAgentSwarm' : 'Try CodeAgentSwarm'
   const ctaHref = `/${locale}`
 
-  // Get a random guide recommendation (excluding current guide)
+  // Deterministic related-guide recommendation (stable, crawlable link graph; no Math.random)
   const allGuides = getAllGuides(locale)
-  const otherGuides = allGuides.filter((g) => g.meta.slug !== meta.slug)
-  const randomGuide = otherGuides.length > 0 ? otherGuides[Math.floor(Math.random() * otherGuides.length)] : null
+  const otherGuides = allGuides
+    .filter((g) => g.meta.slug !== meta.slug)
+    .sort((a, b) => a.meta.slug.localeCompare(b.meta.slug))
+  const slugHash = meta.slug.split('').reduce((acc, c) => acc + c.charCodeAt(0), 0)
+  const randomGuide = otherGuides.length > 0 ? otherGuides[slugHash % otherGuides.length] : null
 
   // Localized text
   const recommendedTitle = locale === 'es' ? 'También te puede interesar' : 'You might also like'
@@ -67,9 +70,10 @@ export default function GuideLayout({ guide }: GuideLayoutProps) {
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
                 {meta.title}
               </h1>
-              <div className="text-lg text-white/70 leading-relaxed whitespace-pre-line">
-                {meta.intro}
-              </div>
+              <div
+                className="text-lg text-white/70 leading-relaxed whitespace-pre-line"
+                dangerouslySetInnerHTML={{ __html: meta.intro }}
+              />
               {meta.introVideo && (
                 <figure className="mt-8">
                   <div className="relative rounded-xl border border-white/10 overflow-hidden">

@@ -33,7 +33,7 @@ In this guide I will walk you through the three main methods, compare them hones
         },
         {
           type: 'paragraph',
-          text: 'This is not limited to Claude Code either. The same principle applies to Codex CLI and Gemini CLI. You can even mix different agents in parallel if your workflow calls for it.',
+          text: 'This is not limited to Claude Code either. The same principle applies to <a href="/en/guides/codex-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex CLI</a> and <a href="/en/guides/gemini-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Gemini CLI</a>. You can even mix different agents in parallel: the <a href="/en/guides/ai-cli-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">AI CLI agent swarm</a> guide covers running them together.',
         },
         {
           type: 'callout',

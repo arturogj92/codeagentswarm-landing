@@ -4,8 +4,8 @@ export const guide: Guide = {
   meta: {
     slug: 'claude-code-history',
     locale: 'en',
-    title: 'Claude Code Conversation History: Find, Search & Resume Past Sessions',
-    metaTitle: 'Claude Code Conversation History: Find, Search & Resume Past Sessions (2026)',
+    title: 'Search and Resume Any Claude Code Conversation with CodeAgentSwarm History',
+    metaTitle: 'Claude Code Conversation History in CodeAgentSwarm: Search & Resume Any Chat (2026)',
     metaDescription: 'How to find your Claude Code conversation history, search past sessions by keyword, and resume old conversations instantly. Complete guide to accessing and managing your Claude Code chat history.',
     intro: `In CodeAgentSwarm, every time you work with a Claude Code terminal, the system automatically stores everything: what you write, what Claude replies, which project you were working in, and when it happened.
 

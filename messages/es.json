@@ -427,7 +427,15 @@
       "q8": "¿Ayuda CodeAgentSwarm a evitar la pérdida de contexto en agentes AI CLI?",
       "a8": "Sí. CodeAgentSwarm mantiene un historial sincronizado de conversaciones, muestra cambios en tiempo real de cada agente y vincula la estructura del proyecto con el contexto de cada terminal. Esto evita que tus agentes AI CLI (Claude Code, Codex, Gemini CLI) olviden acciones anteriores o pierdan el hilo en tareas de varios pasos.",
       "q9": "¿Por qué no usar tmux?",
-      "a9": "tmux gestiona ventanas. CodeAgentSwarm gestiona agentes: estado de tareas, notificaciones cuando terminan, diffs en vivo, historial por proyecto y permisos configurables. Si solo necesitas dividir la pantalla, tmux va bien. Si quieres saber qué hace cada agente y no perderte nada, necesitas CodeAgentSwarm."
+      "a9": "tmux gestiona ventanas. CodeAgentSwarm gestiona agentes: estado de tareas, notificaciones cuando terminan, diffs en vivo, historial por proyecto y permisos configurables. Si solo necesitas dividir la pantalla, tmux va bien. Si quieres saber qué hace cada agente y no perderte nada, necesitas CodeAgentSwarm.",
+      "q10": "¿Puedo ejecutar Claude Code y Codex CLI a la vez?",
+      "a10": "Sí. Cada terminal de CodeAgentSwarm es un proceso independiente, así que puedes ejecutar Claude Code en uno y Codex CLI en otro al mismo tiempo. Eliges el agente por terminal (claude-code, codex cli o gemini cli) y ejecutas hasta 6 en paralelo.",
+      "q11": "¿Funciona CodeAgentSwarm con Gemini CLI?",
+      "a11": "Sí. CodeAgentSwarm ejecuta Gemini CLI junto a Claude Code y Codex CLI en el mismo espacio de trabajo, con notificaciones compartidas, historial buscable y diffs en vivo por terminal. Puedes montar un enjambre entero de agentes Gemini o mezclar Gemini con las otras CLIs.",
+      "q12": "¿Puedo mezclar distintos agentes AI CLI en un mismo enjambre?",
+      "a12": "Sí, y esa es la idea. Un mismo espacio de trabajo de CodeAgentSwarm puede ejecutar Claude Code, Codex CLI y Gemini CLI a la vez, cada uno en su terminal. Usa el agente que mejor encaje en cada tarea y vigílalos todos desde un solo sitio.",
+      "q13": "¿Qué es un enjambre de agentes AI CLI?",
+      "a13": "Un enjambre de agentes AI CLI son varios agentes de código por línea de comandos (como Claude Code, Codex y Gemini CLI) ejecutándose en paralelo en un solo sitio, con visibilidad, notificaciones e historial compartidos. CodeAgentSwarm es el espacio de trabajo de escritorio hecho para ejecutar y supervisar ese enjambre."
     }
   },
   "cta": {

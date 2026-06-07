@@ -4,8 +4,8 @@ export const guide: Guide = {
   meta: {
     slug: 'modo-yolo-claude-code-explicado',
     locale: 'es',
-    title: 'Modo YOLO de Claude Code explicado: qué es, riesgos y cómo activarlo',
-    metaTitle: 'Modo YOLO de Claude Code: qué hace --dangerously-skip-permissions y cómo activarlo de forma segura (2026)',
+    title: '¿Qué es el modo YOLO de Claude Code? Definición, Auto mode y alternativas más seguras',
+    metaTitle: '¿Qué es el modo YOLO de Claude Code? Auto mode vs --dangerously-skip-permissions (2026)',
     metaDescription: 'Todo sobre el modo YOLO de Claude Code: qué hace --dangerously-skip-permissions, los riesgos reales, cómo activarlo, Auto mode como alternativa más segura y buenas prácticas para workflows de auto-aprobación.',
     intro: `Si llevas más de un día trabajando con Claude Code, seguro que ya te has encontrado con la misma frustración: los prompts de confirmación constantes. Cada edición de archivo, cada comando de terminal, cada llamada a una herramienta MCP - Claude pide confirmación, y tú le das a "yes" sin ni siquiera leer lo que dice.
 
@@ -94,7 +94,7 @@ La ganancia de velocidad es real. Pero los riesgos también. Esta guía cubre qu
         },
         {
           type: 'paragraph',
-          text: 'Anthropic introdujo un punto intermedio llamado <a href="https://www.anthropic.com/engineering/claude-code-auto-mode" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Auto mode</a>. En lugar de saltar todo o preguntar todo, usa un clasificador para decidir qué acciones son seguras para auto-aprobar y cuáles necesitan tu confirmación. Puedes conocer todas las opciones disponibles en la <a href="https://code.claude.com/docs/en/permission-modes" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">documentacion de modos de permisos</a>:',
+          text: 'Anthropic introdujo un punto intermedio llamado <a href="https://www.anthropic.com/engineering/claude-code-auto-mode" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Auto mode</a>. En lugar de saltar todo o preguntar todo, usa un clasificador para decidir qué acciones son seguras para auto-aprobar y cuáles necesitan tu confirmación. Puedes conocer todas las opciones disponibles en la <a href="https://code.claude.com/docs/en/permission-modes" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">documentación de modos de permisos</a>:',
         },
         {
           type: 'code',

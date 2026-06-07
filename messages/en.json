@@ -427,7 +427,15 @@
       "q8": "Does CodeAgentSwarm help prevent context loss in AI CLI agents?",
       "a8": "Yes. CodeAgentSwarm keeps a synchronized conversation history across terminals, shows real time changes from each agent and links project structure with terminal context. This prevents your AI CLI agents (Claude Code, Codex, Gemini CLI) from forgetting past actions or losing track during multi step work.",
       "q9": "Why not just use tmux?",
-      "a9": "tmux manages windows. CodeAgentSwarm manages agents: task state, notifications when they finish, live diffs, per-project history and configurable permissions. If you just need to split your screen, tmux works fine. If you want to know what each agent is doing and never miss a thing, you need CodeAgentSwarm."
+      "a9": "tmux manages windows. CodeAgentSwarm manages agents: task state, notifications when they finish, live diffs, per-project history and configurable permissions. If you just need to split your screen, tmux works fine. If you want to know what each agent is doing and never miss a thing, you need CodeAgentSwarm.",
+      "q10": "Can I run Claude Code and Codex CLI at the same time?",
+      "a10": "Yes. Each terminal in CodeAgentSwarm is an independent process, so you can run Claude Code in one and Codex CLI in another at the same time. You pick the agent per terminal (claude-code, codex cli or gemini cli) and run up to 6 of them in parallel.",
+      "q11": "Does CodeAgentSwarm work with Gemini CLI?",
+      "a11": "Yes. CodeAgentSwarm runs Gemini CLI alongside Claude Code and Codex CLI in the same workspace, with shared notifications, searchable history and per-terminal live diffs. You can run a whole swarm of Gemini agents or mix Gemini with the other CLIs.",
+      "q12": "Can I mix different AI CLI agents in one swarm?",
+      "a12": "Yes, and that is the point. A single CodeAgentSwarm workspace can run Claude Code, Codex CLI and Gemini CLI side by side, each in its own terminal. Use whichever agent fits each task and watch all of them from one place.",
+      "q13": "What is an AI CLI agent swarm?",
+      "a13": "An AI CLI agent swarm is several independent AI coding CLI agents (such as Claude Code, Codex and Gemini CLI) running in parallel in one place, with shared visibility, notifications and history. CodeAgentSwarm is the desktop workspace built to run and supervise that swarm."
     }
   },
   "cta": {

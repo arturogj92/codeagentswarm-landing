@@ -46,6 +46,7 @@ export async function generateMetadata({
     : 'Orchestrate up to 6 AI CLI terminals (Claude Code, Codex, Gemini CLI) in a single developer workspace with real-time visibility, live notifications, full conversation history, permissions control, multi-project management and MCP integrations.'
 
   return {
+    metadataBase: new URL(baseUrl),
     title,
     description,
     keywords: [

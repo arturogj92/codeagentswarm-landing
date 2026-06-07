@@ -33,7 +33,7 @@ En esta guía te explico los tres métodos principales, los comparo de forma hon
         },
         {
           type: 'paragraph',
-          text: 'Esto no se limita a Claude Code. El mismo principio aplica a Codex CLI y Gemini CLI. Incluso puedes mezclar distintos agentes en paralelo si tu flujo de trabajo lo requiere.',
+          text: 'Esto no se limita a Claude Code. El mismo principio aplica a <a href="/es/guias/enjambre-de-agentes-codex" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex CLI</a> y <a href="/es/guias/enjambre-de-agentes-gemini" class="text-neon-cyan hover:text-neon-purple transition-colors">Gemini CLI</a>. Incluso puedes mezclar distintos agentes en paralelo: la guía del <a href="/es/guias/enjambre-de-agentes-cli-ia" class="text-neon-cyan hover:text-neon-purple transition-colors">enjambre de agentes CLI de IA</a> explica cómo ejecutarlos juntos.',
         },
         {
           type: 'callout',

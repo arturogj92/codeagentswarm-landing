@@ -4,8 +4,8 @@ export const guide: Guide = {
   meta: {
     slug: 'claude-code-yolo-mode-explained',
     locale: 'en',
-    title: 'Claude Code YOLO Mode Explained: What It Is, Risks & How to Enable It',
-    metaTitle: 'Claude Code YOLO Mode: What --dangerously-skip-permissions Does & How to Enable It Safely (2026)',
+    title: 'What Is Claude Code YOLO Mode? Definition, Auto Mode, and Safer Alternatives',
+    metaTitle: 'What Is Claude Code YOLO Mode? Auto Mode vs --dangerously-skip-permissions (2026)',
     metaDescription: 'Everything about Claude Code YOLO mode: what --dangerously-skip-permissions actually does, the real risks, how to enable it, Auto mode as safer alternative, and best practices for auto-approve workflows.',
     intro: `If you have spent more than a day working with Claude Code, you have probably run into the same frustration: constant permission prompts. Every file edit, every shell command, every MCP tool call - Claude asks for confirmation, and you click "yes" without really reading what it says.
 

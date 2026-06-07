@@ -298,7 +298,7 @@ Esta guía cubre los 10 servidores MCP más importantes para el desarrollo del d
         },
         {
           type: 'paragraph',
-          text: 'El archivo de configuración se encuentra en <code>~/.claude/claude_desktop_config.json</code>. Aquí tienes un ejemplo que configura los servidores MCP de GitHub y Brave Search:',
+          text: 'Claude Code lee los servidores MCP de un <code>.mcp.json</code> a nivel de proyecto (que versionas con tu repo) o de tu <code>~/.claude.json</code> global; también puedes añadirlos desde la terminal con <code>claude mcp add</code>. Aquí tienes un ejemplo de <code>.mcp.json</code> que configura los servidores MCP de GitHub y Brave Search:',
         },
         {
           type: 'code',
@@ -405,7 +405,7 @@ Esta guía cubre los 10 servidores MCP más importantes para el desarrollo del d
     },
     {
       question: 'Cómo instalo servidores MCP para Claude Code',
-      answer: 'Puedes editar ~/.claude/claude_desktop_config.json manualmente para añadir configuraciones de servidores MCP, o usar el MCP Marketplace de CodeAgentSwarm para una experiencia de configuración visual con configuración por proyecto.',
+      answer: 'Puedes añadir servidores desde la terminal con claude mcp add, editar manualmente un .mcp.json a nivel de proyecto (o tu ~/.claude.json global), o usar el MCP Marketplace de CodeAgentSwarm para una experiencia de configuración visual con configuración por proyecto.',
     },
     {
       question: 'Puedo usar varios servidores MCP a la vez',

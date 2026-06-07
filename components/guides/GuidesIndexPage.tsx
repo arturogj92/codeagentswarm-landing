@@ -11,6 +11,33 @@ interface GuidesIndexPageProps {
   locale: 'en' | 'es'
 }
 
+// Tool family for each guide, keyed by its canonical English slug so the
+// grouping works the same in both locales. Anything not listed falls back to
+// the Claude Code family.
+type Family = 'cross' | 'claude' | 'codex' | 'gemini'
+
+const FAMILY_BY_EN_SLUG: Record<string, Family> = {
+  'ai-cli-agent-swarm': 'cross',
+  'codex-agent-swarm': 'codex',
+  'run-multiple-codex-sessions': 'codex',
+  'codex-yolo-mode': 'codex',
+  'gemini-agent-swarm': 'gemini',
+  'run-multiple-gemini-sessions': 'gemini',
+}
+
+const FAMILY_ORDER: Family[] = ['cross', 'claude', 'codex', 'gemini']
+
+const FAMILY_META: Record<Family, { en: string; es: string; icons: string[] }> = {
+  cross: {
+    en: 'Cross-CLI & Agent Swarm',
+    es: 'Cross-CLI y enjambre de agentes',
+    icons: ['/icons/apps/claude-icon.svg', '/icons/apps/codex-icon.svg', '/icons/apps/gemini-icon.svg'],
+  },
+  claude: { en: 'Claude Code', es: 'Claude Code', icons: ['/icons/apps/claude-icon.svg'] },
+  codex: { en: 'Codex CLI', es: 'Codex CLI', icons: ['/icons/apps/codex-icon.svg'] },
+  gemini: { en: 'Gemini CLI', es: 'Gemini CLI', icons: ['/icons/apps/gemini-icon.svg'] },
+}
+
 // Helper function to highlight keywords in title
 function highlightTitle(title: string, keywords?: string[]) {
   if (!keywords || keywords.length === 0) {
@@ -48,10 +75,58 @@ export default function GuidesIndexPage({ guides, locale }: GuidesIndexPageProps
 
   const pageTitle = isSpanish ? 'Guías' : 'Guides'
   const pageSubtitle = isSpanish
-    ? 'Aprende a sacar el máximo partido a CodeAgentSwarm con nuestras guías prácticas.'
-    : 'Learn how to get the most out of CodeAgentSwarm with our practical guides.'
+    ? 'Aprende a sacar el máximo partido a CodeAgentSwarm con nuestras guías prácticas, agrupadas por la CLI que uses.'
+    : 'Learn how to get the most out of CodeAgentSwarm with our practical guides, grouped by the CLI you use.'
   const readMoreText = isSpanish ? 'Leer guía' : 'Read guide'
   const guidesBasePath = isSpanish ? '/es/guias' : '/en/guides'
+
+  // Group guides by tool family (using the canonical EN slug as the key)
+  const familyOf = (guide: Guide): Family => {
+    const enSlug = locale === 'en' ? guide.meta.slug : guide.meta.alternateSlug
+    return FAMILY_BY_EN_SLUG[enSlug] ?? 'claude'
+  }
+
+  const groups = FAMILY_ORDER.map(family => ({
+    family,
+    label: FAMILY_META[family][isSpanish ? 'es' : 'en'],
+    icons: FAMILY_META[family].icons,
+    items: guides.filter(g => familyOf(g) === family),
+  })).filter(group => group.items.length > 0)
+
+  let cardIndex = 0
+  const renderCard = (guide: Guide) => {
+    const delay = Math.min(cardIndex * 0.05, 0.4)
+    cardIndex += 1
+    return (
+      <motion.article
+        key={guide.meta.slug}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay }}
+        className="group relative"
+      >
+        <Link
+          href={`${guidesBasePath}/${guide.meta.slug}`}
+          className="block p-6 sm:p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-neon-cyan/30 hover:bg-white/[0.07] transition-all duration-300"
+        >
+          <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+            <div className="flex-1">
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 transition-colors">
+                {highlightTitle(guide.meta.title, guide.meta.highlightedWords)}
+              </h3>
+              <p className="text-white/60 line-clamp-2">
+                {guide.meta.metaDescription}
+              </p>
+            </div>
+            <div className="flex items-center gap-2 text-neon-cyan font-medium shrink-0">
+              <span>{readMoreText}</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </div>
+          </div>
+        </Link>
+      </motion.article>
+    )
+  }
 
   return (
     <div className="min-h-screen bg-black">
@@ -82,38 +157,24 @@ export default function GuidesIndexPage({ guides, locale }: GuidesIndexPageProps
           </p>
         </motion.div>
 
-        {/* Guides Grid */}
-        <div className="grid gap-6">
-          {guides.map((guide, index) => (
-            <motion.article
-              key={guide.meta.slug}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative"
-            >
-              <Link
-                href={`${guidesBasePath}/${guide.meta.slug}`}
-                className="block p-6 sm:p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-neon-cyan/30 hover:bg-white/[0.07] transition-all duration-300"
-              >
-                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
-                  <div className="flex-1">
-                    <h2 className="text-xl sm:text-2xl font-bold text-white mb-3 transition-colors">
-                      {highlightTitle(guide.meta.title, guide.meta.highlightedWords)}
-                    </h2>
-                    <p className="text-white/60 line-clamp-2">
-                      {guide.meta.metaDescription}
-                    </p>
-                  </div>
-                  <div className="flex items-center gap-2 text-neon-cyan font-medium shrink-0">
-                    <span>{readMoreText}</span>
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </div>
-              </Link>
-            </motion.article>
-          ))}
-        </div>
+        {/* Guides grouped by tool family */}
+        {groups.map(group => (
+          <section key={group.family} className="mb-12 last:mb-0">
+            <div className="flex items-center gap-2.5 mb-5 pl-1">
+              <span className="flex items-center gap-1.5">
+                {group.icons.map(icon => (
+                  <img key={icon} src={icon} alt="" aria-hidden="true" className="w-5 h-5" />
+                ))}
+              </span>
+              <h2 className="text-sm font-semibold uppercase tracking-wider text-neon-cyan/80">
+                {group.label}
+              </h2>
+            </div>
+            <div className="grid gap-6">
+              {group.items.map(renderCard)}
+            </div>
+          </section>
+        ))}
 
         {/* Empty state */}
         {guides.length === 0 && (

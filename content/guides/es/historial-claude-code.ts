@@ -4,9 +4,9 @@ export const guide: Guide = {
   meta: {
     slug: 'historial-claude-code',
     locale: 'es',
-    title: 'Historial de Claude Code: buscar, encontrar y retomar conversaciones',
-    metaTitle: 'Historial de Claude Code: buscar y retomar conversaciones anteriores (2026)',
-    metaDescription: 'Como acceder al historial de conversaciones de Claude Code, buscar sesiones anteriores y retomar chats antiguos. Guia paso a paso para gestionar tu historial completo.',
+    title: 'Busca y retoma cualquier conversación de Claude Code con el historial de CodeAgentSwarm',
+    metaTitle: 'Historial de conversaciones de Claude Code en CodeAgentSwarm: busca y retoma cualquier chat (2026)',
+    metaDescription: 'Cómo acceder al historial de conversaciones de Claude Code, buscar sesiones anteriores y retomar chats antiguos. Guía paso a paso para gestionar tu historial completo.',
     intro: `En CodeAgentSwarm, cada vez que trabajas con un terminal de Claude Code, el sistema guarda automáticamente todo: lo que escribes, lo que responde Claude, el proyecto en el que estabas y cuándo ocurrió.
 
 Todo eso forma tu historial de conversaciones de Claude Code. Es como una memoria larga de todo lo que has ido haciendo con la IA, organizada y lista para buscar o retomar cuando te haga falta.

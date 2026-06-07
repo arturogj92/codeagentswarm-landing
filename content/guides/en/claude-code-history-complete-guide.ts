@@ -4,8 +4,8 @@ export const guide: Guide = {
   meta: {
     slug: 'claude-code-history-complete-guide',
     locale: 'en',
-    title: 'Claude Code History: The Complete Guide to Past Conversations',
-    metaTitle: 'Claude Code History: Find Past Conversations, Search Sessions & Resume Chats (2026)',
+    title: 'Claude Code History: Where It Is Stored and How to Find, Back Up & Resume It',
+    metaTitle: 'Where Is Claude Code History Stored? Find, Back Up & Resume Past Sessions (2026)',
     metaDescription: 'Everything about Claude Code conversation history: where it is stored, how to find past sessions, search old chats, resume conversations, and manage your history effectively. Updated for 2026.',
     intro: `If you have been using Claude Code for a while, at some point you have probably wondered: where did that conversation go?
 

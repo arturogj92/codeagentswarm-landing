@@ -14,6 +14,19 @@ import enTipsAndTricks from './en/claude-code-tips-and-tricks'
 import enYoloModeExplained from './en/claude-code-yolo-mode-explained'
 import enClaudeCodeVsCursorVsCodex from './en/claude-code-vs-cursor-vs-codex'
 import enBestMcpServers from './en/best-mcp-servers-claude-code'
+import enCodexAgentSwarm from './en/codex-agent-swarm'
+import enGeminiAgentSwarm from './en/gemini-agent-swarm'
+import enAiCliAgentSwarm from './en/ai-cli-agent-swarm'
+import enSkillsMarketplace from './en/claude-code-skills-marketplace'
+import enTaskManagement from './en/claude-code-task-management'
+import enProjectSwitcher from './en/claude-code-project-switcher'
+import enAiCommits from './en/ai-commit-messages-claude-code'
+import enRunMultipleCodex from './en/run-multiple-codex-sessions'
+import enRunMultipleGemini from './en/run-multiple-gemini-sessions'
+import enCodexYolo from './en/codex-yolo-mode'
+import enAgentTeams from './en/claude-code-agent-teams-vs-codeagentswarm'
+import enClaudeGui from './en/claude-code-gui'
+import enMultipleChats from './en/run-multiple-claude-chats'
 
 // Spanish guides
 import esMultipleTerminals from './es/como-usar-varios-terminales-claude-code'
@@ -27,6 +40,19 @@ import esTipsAndTricks from './es/trucos-y-consejos-claude-code'
 import esYoloModeExplained from './es/modo-yolo-claude-code-explicado'
 import esClaudeCodeVsCursorVsCodex from './es/claude-code-vs-cursor-vs-codex'
 import esBestMcpServers from './es/mejores-servidores-mcp-claude-code'
+import esCodexAgentSwarm from './es/enjambre-de-agentes-codex'
+import esGeminiAgentSwarm from './es/enjambre-de-agentes-gemini'
+import esAiCliAgentSwarm from './es/enjambre-de-agentes-cli-ia'
+import esSkillsMarketplace from './es/marketplace-de-skills-claude-code'
+import esTaskManagement from './es/gestion-de-tareas-claude-code'
+import esProjectSwitcher from './es/cambio-rapido-de-proyecto-claude-code'
+import esAiCommits from './es/mensajes-de-commit-con-ia-claude-code'
+import esRunMultipleCodex from './es/ejecutar-multiples-sesiones-codex'
+import esRunMultipleGemini from './es/ejecutar-multiples-sesiones-gemini'
+import esCodexYolo from './es/modo-yolo-codex'
+import esAgentTeams from './es/agent-teams-de-claude-code-vs-codeagentswarm'
+import esClaudeGui from './es/interfaz-grafica-claude-code'
+import esMultipleChats from './es/varios-chats-de-claude-a-la-vez'
 
 // Registry of all guides by locale and slug
 export const guides: Record<string, Record<string, Guide>> = {
@@ -42,6 +68,19 @@ export const guides: Record<string, Record<string, Guide>> = {
     'claude-code-yolo-mode-explained': enYoloModeExplained,
     'claude-code-vs-cursor-vs-codex': enClaudeCodeVsCursorVsCodex,
     'best-mcp-servers-claude-code': enBestMcpServers,
+    'codex-agent-swarm': enCodexAgentSwarm,
+    'gemini-agent-swarm': enGeminiAgentSwarm,
+    'ai-cli-agent-swarm': enAiCliAgentSwarm,
+    'claude-code-skills-marketplace': enSkillsMarketplace,
+    'claude-code-task-management': enTaskManagement,
+    'claude-code-project-switcher': enProjectSwitcher,
+    'ai-commit-messages-claude-code': enAiCommits,
+    'run-multiple-codex-sessions': enRunMultipleCodex,
+    'run-multiple-gemini-sessions': enRunMultipleGemini,
+    'codex-yolo-mode': enCodexYolo,
+    'claude-code-agent-teams-vs-codeagentswarm': enAgentTeams,
+    'claude-code-gui': enClaudeGui,
+    'run-multiple-claude-chats': enMultipleChats,
   },
   es: {
     'como-usar-varios-terminales-claude-code': esMultipleTerminals,
@@ -55,6 +94,19 @@ export const guides: Record<string, Record<string, Guide>> = {
     'modo-yolo-claude-code-explicado': esYoloModeExplained,
     'claude-code-vs-cursor-vs-codex': esClaudeCodeVsCursorVsCodex,
     'mejores-servidores-mcp-claude-code': esBestMcpServers,
+    'enjambre-de-agentes-codex': esCodexAgentSwarm,
+    'enjambre-de-agentes-gemini': esGeminiAgentSwarm,
+    'enjambre-de-agentes-cli-ia': esAiCliAgentSwarm,
+    'marketplace-de-skills-claude-code': esSkillsMarketplace,
+    'gestion-de-tareas-claude-code': esTaskManagement,
+    'cambio-rapido-de-proyecto-claude-code': esProjectSwitcher,
+    'mensajes-de-commit-con-ia-claude-code': esAiCommits,
+    'ejecutar-multiples-sesiones-codex': esRunMultipleCodex,
+    'ejecutar-multiples-sesiones-gemini': esRunMultipleGemini,
+    'modo-yolo-codex': esCodexYolo,
+    'agent-teams-de-claude-code-vs-codeagentswarm': esAgentTeams,
+    'interfaz-grafica-claude-code': esClaudeGui,
+    'varios-chats-de-claude-a-la-vez': esMultipleChats,
   },
 }
 

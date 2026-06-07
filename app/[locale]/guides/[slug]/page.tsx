@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import { notFound, redirect } from 'next/navigation'
+import { notFound, permanentRedirect } from 'next/navigation'
 import { getGuide, getGuideSlugs } from '@/content/guides'
 import { GuideLayout } from '@/components/guides'
 
@@ -85,7 +85,7 @@ export default async function GuidePage({ params }: PageProps) {
   if (locale === 'es') {
     const guide = getGuide('en', slug)
     if (guide) {
-      redirect(`/es/guias/${guide.meta.alternateSlug}`)
+      permanentRedirect(`/es/guias/${guide.meta.alternateSlug}`)
     }
     notFound()
   }

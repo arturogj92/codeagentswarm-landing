@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import { permanentRedirect } from 'next/navigation'
 import { getAllGuides } from '@/content/guides'
 import GuidesIndexPage from '@/components/guides/GuidesIndexPage'
 
@@ -16,7 +17,14 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 }
 
-export default function GuiasPage() {
+export default async function GuiasPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params
+
+  // /guias/ is the Spanish listing only; send other locales to their canonical path
+  if (locale !== 'es') {
+    permanentRedirect('/en/guides')
+  }
+
   const guides = getAllGuides('es')
 
   return <GuidesIndexPage guides={guides} locale="es" />

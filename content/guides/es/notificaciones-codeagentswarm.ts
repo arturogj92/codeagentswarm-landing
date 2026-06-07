@@ -4,9 +4,9 @@ export const guide: Guide = {
   meta: {
     slug: 'notificaciones-codeagentswarm',
     locale: 'es',
-    title: 'Notificaciones de Claude Code: saber cuando termina la IA sin mirar el terminal',
-    metaTitle: 'Notificaciones de Claude Code: saber cuando termina la IA sin mirar el terminal (2026)',
-    metaDescription: 'Recibe notificaciones de escritorio cuando Claude Code termina una tarea o necesita tu atencion. Deja de perder tiempo mirando el terminal - configura alertas inteligentes en minutos.',
+    title: 'Notificaciones de Claude Code: saber cuándo termina la IA sin mirar el terminal',
+    metaTitle: 'Notificaciones de Claude Code: saber cuándo termina la IA sin mirar el terminal (2026)',
+    metaDescription: 'Recibe notificaciones de escritorio cuando Claude Code termina una tarea o necesita tu atención. Deja de perder tiempo mirando el terminal - configura alertas inteligentes en minutos.',
     intro: `Si usas Claude Code mientras trabajas en otras cosas, seguro que esto te suena:
 
 Le pides a Claude que implemente algo relativamente grande, ves que va a tardar unos minutos, y piensas: "mientras tanto miro el correo / reviso Slack / toco otro repo".

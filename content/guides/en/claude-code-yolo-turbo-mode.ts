@@ -5,7 +5,7 @@ export const guide: Guide = {
     slug: 'claude-code-yolo-turbo-mode',
     locale: 'en',
     title: 'Claude Code YOLO Mode: Enable --dangerously-skip-permissions Safely',
-    metaTitle: 'Claude Code YOLO Mode: How to Enable --dangerously-skip-permissions Safely (2026)',
+    metaTitle: 'Claude Code YOLO Mode (--dangerously-skip-permissions): Enable It Safely (2026)',
     metaDescription: 'Enable Claude Code YOLO mode (--dangerously-skip-permissions) without risking your codebase. Set up safe auto-approve with granular permissions, Git guardrails, and MCP tool controls. Step-by-step guide.',
     intro: `If you use Claude Code daily, you know that confirmations slow you down, and often you approve changes without really knowing what it's doing.
 

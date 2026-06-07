@@ -7,6 +7,7 @@ import BetaBanner from '@/components/BetaBanner'
 import HeroSection from '@/components/HeroSection'
 import ProblemSection from '@/components/ProblemSection'
 import FeaturesSection from '@/components/FeaturesSection'
+import WorksWithSection from '@/components/WorksWithSection'
 // import DemoSection from '@/components/DemoSection'
 import MCPSection from '@/components/MCPSection'
 import SocialProofSection from '@/components/SocialProofSection'
@@ -58,6 +59,10 @@ export default function Home() {
     { q: t('items.q7'), a: t('items.a7') },
     { q: t('items.q8'), a: t('items.a8') },
     { q: t('items.q9'), a: t('items.a9') },
+    { q: t('items.q10'), a: t('items.a10') },
+    { q: t('items.q11'), a: t('items.a11') },
+    { q: t('items.q12'), a: t('items.a12') },
+    { q: t('items.q13'), a: t('items.a13') },
   ]
 
   const jsonLdFaq = {
@@ -138,6 +143,7 @@ export default function Home() {
         <HeroSection />
         <ProblemSection />
         <FeaturesSection />
+        <WorksWithSection />
         {/* <DemoSection /> */}
         <MCPSection />
         <SocialProofSection />
