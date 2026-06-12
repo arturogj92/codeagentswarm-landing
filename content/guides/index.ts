@@ -27,6 +27,8 @@ import enCodexYolo from './en/codex-yolo-mode'
 import enAgentTeams from './en/claude-code-agent-teams-vs-codeagentswarm'
 import enClaudeGui from './en/claude-code-gui'
 import enMultipleChats from './en/run-multiple-claude-chats'
+import enClaudeCodeOnWindows from './en/claude-code-on-windows'
+import enBestSetupWindows from './en/best-claude-code-setup-windows'
 
 // Spanish guides
 import esMultipleTerminals from './es/como-usar-varios-terminales-claude-code'
@@ -53,6 +55,8 @@ import esCodexYolo from './es/modo-yolo-codex'
 import esAgentTeams from './es/agent-teams-de-claude-code-vs-codeagentswarm'
 import esClaudeGui from './es/interfaz-grafica-claude-code'
 import esMultipleChats from './es/varios-chats-de-claude-a-la-vez'
+import esClaudeCodeEnWindows from './es/claude-code-en-windows'
+import esMejorSetupWindows from './es/mejor-setup-claude-code-windows'
 
 // Registry of all guides by locale and slug
 export const guides: Record<string, Record<string, Guide>> = {
@@ -81,6 +85,8 @@ export const guides: Record<string, Record<string, Guide>> = {
     'claude-code-agent-teams-vs-codeagentswarm': enAgentTeams,
     'claude-code-gui': enClaudeGui,
     'run-multiple-claude-chats': enMultipleChats,
+    'claude-code-on-windows': enClaudeCodeOnWindows,
+    'best-claude-code-setup-windows': enBestSetupWindows,
   },
   es: {
     'como-usar-varios-terminales-claude-code': esMultipleTerminals,
@@ -107,6 +113,8 @@ export const guides: Record<string, Record<string, Guide>> = {
     'agent-teams-de-claude-code-vs-codeagentswarm': esAgentTeams,
     'interfaz-grafica-claude-code': esClaudeGui,
     'varios-chats-de-claude-a-la-vez': esMultipleChats,
+    'claude-code-en-windows': esClaudeCodeEnWindows,
+    'mejor-setup-claude-code-windows': esMejorSetupWindows,
   },
 }
 
