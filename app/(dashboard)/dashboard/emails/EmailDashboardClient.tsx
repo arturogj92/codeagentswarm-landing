@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react'
 import { useRouter } from 'next/navigation'
+import { extractEmailAddress } from '@/lib/reply-email'
 import type { ResendEmail, ResendReceivedEmail } from '@/types/email'
 
 type Tab = 'sent' | 'received'
@@ -292,9 +293,135 @@ export default function EmailDashboardClient() {
                   </div>
                 )}
               </div>
+
+              {tab === 'received' && !detailLoading && (
+                <ReplyBox key={selectedEmail.id} original={selectedEmail as ResendReceivedEmail} />
+              )}
             </div>
           </div>
         )}
+      </div>
+    </div>
+  )
+}
+
+function ReplyBox({ original }: { original: ResendReceivedEmail }) {
+  const [open, setOpen] = useState(false)
+  const [subject, setSubject] = useState(() => {
+    const s = original.subject || ''
+    return /^re:/i.test(s) ? s : `Re: ${s}`.trim()
+  })
+  const [body, setBody] = useState('')
+  const [format, setFormat] = useState<'plain' | 'branded'>('plain')
+  const [sending, setSending] = useState(false)
+  const [sent, setSent] = useState(false)
+  const [error, setError] = useState('')
+
+  const to = extractEmailAddress(typeof original.from === 'string' ? original.from : '')
+
+  async function handleSend() {
+    setSending(true)
+    setError('')
+    try {
+      const res = await fetch('/api/dashboard/emails/reply', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ to, subject, body, format, originalEmailId: original.id }),
+      })
+      const json = await res.json()
+      if (!res.ok) throw new Error(json.error || 'Failed to send reply')
+      setSent(true)
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to send reply')
+    } finally {
+      setSending(false)
+    }
+  }
+
+  if (sent) {
+    return (
+      <div className="px-4 py-3 border-t border-white/10 flex items-center gap-2 text-sm text-green-400">
+        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+        </svg>
+        Reply sent to {to}
+      </div>
+    )
+  }
+
+  if (!open) {
+    return (
+      <div className="px-4 py-3 border-t border-white/10">
+        <button
+          onClick={() => setOpen(true)}
+          className="flex items-center gap-2 px-3 py-1.5 text-sm bg-amber-400/10 hover:bg-amber-400/20 border border-amber-400/20 hover:border-amber-400/30 rounded-lg text-amber-400 font-medium transition-colors cursor-pointer"
+        >
+          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6" />
+          </svg>
+          Reply
+        </button>
+      </div>
+    )
+  }
+
+  return (
+    <div className="px-4 py-4 border-t border-white/10 space-y-3">
+      <div className="flex items-center justify-between gap-3">
+        <div className="text-xs text-white/40 truncate">
+          <span className="text-white/20">To:</span> {to}
+        </div>
+        <select
+          value={format}
+          onChange={(e) => setFormat(e.target.value as 'plain' | 'branded')}
+          className="shrink-0 px-2 py-1 text-xs bg-white/5 border border-white/10 rounded-lg text-white/60 cursor-pointer focus:outline-none focus:border-amber-400/30"
+        >
+          <option value="plain">Plain (personal)</option>
+          <option value="branded">Branded template</option>
+        </select>
+      </div>
+
+      <input
+        type="text"
+        value={subject}
+        onChange={(e) => setSubject(e.target.value)}
+        placeholder="Subject"
+        className="w-full px-3 py-2 text-sm bg-white/5 border border-white/10 rounded-lg text-white/80 placeholder-white/20 focus:outline-none focus:border-amber-400/30"
+      />
+
+      <textarea
+        value={body}
+        onChange={(e) => setBody(e.target.value)}
+        rows={8}
+        placeholder={
+          format === 'plain'
+            ? 'Write your reply... (the original message is quoted automatically below it)'
+            : 'Write your reply... (the template adds the greeting and branding)'
+        }
+        className="w-full px-3 py-2 text-sm bg-white/5 border border-white/10 rounded-lg text-white/80 placeholder-white/20 focus:outline-none focus:border-amber-400/30 resize-y"
+      />
+
+      {error && (
+        <div className="px-3 py-2 bg-red-400/10 border border-red-400/20 rounded-lg text-red-400 text-xs">
+          {error}
+        </div>
+      )}
+
+      <div className="flex items-center justify-end gap-2">
+        <button
+          onClick={() => setOpen(false)}
+          disabled={sending}
+          className="px-3 py-1.5 text-sm text-white/40 hover:text-white/60 transition-colors cursor-pointer disabled:opacity-50"
+        >
+          Cancel
+        </button>
+        <button
+          onClick={handleSend}
+          disabled={sending || !body.trim() || !subject.trim()}
+          className="px-4 py-1.5 text-sm bg-amber-400/10 hover:bg-amber-400/20 border border-amber-400/20 hover:border-amber-400/30 rounded-lg text-amber-400 font-medium transition-colors cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
+        >
+          {sending ? 'Sending...' : 'Send reply'}
+        </button>
       </div>
     </div>
   )
