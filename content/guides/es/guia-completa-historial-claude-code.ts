@@ -11,7 +11,7 @@ export const guide: Guide = {
 
 Puede que resolvieras un bug complicado la semana pasada, tomaras una decisión de arquitectura hace tres días, o pasaras 20 minutos explicándole un módulo a Claude y ahora necesitas retomar donde lo dejaste.
 
-Claude Code sí guarda tu historial de conversaciones. Pero encontrar, buscar y retomar sesiones anteriores no es tan fácil como debería, a menos que uses las herramientas adecuadas.`,
+La respuesta corta: Claude Code guarda cada sesión en local en ~/.claude/projects/, y puedes retomar la más reciente con "claude -c" o una concreta con "claude -r". La respuesta larga, cómo encontrar, buscar, respaldar y retomar cualquier conversación anterior, es lo que cubre esta guía.`,
     ctaText: 'Prueba a gestionar tu historial de Claude Code con CodeAgentSwarm. Busca cualquier conversación, filtra por proyecto y retoma con un clic.',
     highlightedWords: ['historial', 'Claude Code', 'conversaciones'],
     publishedAt: '2026-04-15',

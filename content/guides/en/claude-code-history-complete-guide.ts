@@ -11,7 +11,7 @@ export const guide: Guide = {
 
 Maybe you solved a tricky bug last week, made an architecture decision three days ago, or spent 20 minutes explaining a module to Claude and now you need to pick up where you left off.
 
-Claude Code does keep your conversation history. But finding, searching and resuming past sessions is not as easy as it should be - unless you use the right tools.`,
+The short answer: Claude Code stores every session locally in ~/.claude/projects/, and you can resume the most recent one with "claude -c" or a specific one with "claude -r". The longer answer, how to actually find, search, back up and resume any past conversation, is what this guide covers.`,
     ctaText: 'Try managing your Claude Code history with CodeAgentSwarm. Search any conversation, filter by project, and resume in one click.',
     highlightedWords: ['history', 'Claude Code', 'conversations'],
     publishedAt: '2026-04-15',

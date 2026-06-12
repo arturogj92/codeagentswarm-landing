@@ -7,11 +7,11 @@ export const guide: Guide = {
     title: 'Search and Resume Any Claude Code Conversation with CodeAgentSwarm History',
     metaTitle: 'Claude Code Conversation History in CodeAgentSwarm: Search & Resume Any Chat (2026)',
     metaDescription: 'How to find your Claude Code conversation history, search past sessions by keyword, and resume old conversations instantly. Complete guide to accessing and managing your Claude Code chat history.',
-    intro: `In CodeAgentSwarm, every time you work with a Claude Code terminal, the system automatically stores everything: what you write, what Claude replies, which project you were working in, and when it happened.
+    intro: `Claude Code already keeps a history of your conversations. Every session is stored locally in ~/.claude/projects/, and you can resume the most recent one with "claude --continue" or pick an older session with "claude --resume". The catch: there is no search, no content preview, and each project keeps its history separate.
 
-Together, that becomes your Claude Code conversation history. It is your long term memory of what you have been building with the AI, organized and ready to search or resume whenever you need it.
+That is exactly what the history view in CodeAgentSwarm solves. Every time you work with a Claude Code terminal, it stores what you write, what Claude replies, which project you were in and when it happened, and makes all of it searchable.
 
-The bottom line: Everything you talk about with Claude Code stays stored, organized by project, and ready to search or resume later.`,
+The bottom line: your Claude Code history is already on your machine. CodeAgentSwarm turns it into a long term memory you can search, filter and resume from any terminal.`,
     ctaText: 'Use conversation history next time you resume a project. You\'ll instantly notice how comfortable it is not having to explain everything from scratch to Claude.',
     highlightedWords: ['history', 'Claude Code'],
     publishedAt: '2026-02-10',
@@ -24,6 +24,18 @@ The bottom line: Everything you talk about with Claude Code stays stored, organi
       title: 'What is Claude Code history in CodeAgentSwarm',
       content: [
         {
+          type: 'callout',
+          variant: 'tip',
+          content: 'Quick answer: to see your Claude Code history right now, run <code>claude --continue</code> to resume your most recent conversation, or <code>claude --resume</code> to pick from recent sessions. The raw history lives in <code>~/.claude/projects/</code> as JSONL files. The rest of this guide shows how to make all of it searchable.',
+        },
+        {
+          type: 'code',
+          language: 'bash',
+          code: `claude --continue        # resume the most recent conversation
+claude --resume          # pick from a list of recent sessions
+ls ~/.claude/projects/   # where the raw history (JSONL files) lives`,
+        },
+        {
           type: 'paragraph',
           text: 'Claude Code history in CodeAgentSwarm is the feature that automatically stores all your conversations with Claude: what you write, what it replies, which project you were in and when it happened.',
         },
@@ -33,7 +45,7 @@ The bottom line: Everything you talk about with Claude Code stays stored, organi
         },
         {
           type: 'paragraph',
-          text: 'If you already use <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, you might know the "claude -r" command that lets you resume the last conversation. Native Claude Code history exists, but it is very basic: no search, no content filtering and it only works within each project separately. In CodeAgentSwarm, history goes much further: full text search, project filters, a global view of all your conversations and the ability to resume any conversation from any project in any terminal.',
+          text: 'If you already use <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, you have probably used "claude --continue" or "claude --resume" to get back into a past session. Native Claude Code history exists, but it is very basic: no search, no content filtering and it only works within each project separately. In CodeAgentSwarm, history goes much further: full text search, project filters, a global view of all your conversations and the ability to resume any conversation from any project in any terminal.',
         },
       ],
     },

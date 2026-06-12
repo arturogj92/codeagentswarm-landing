@@ -7,11 +7,11 @@ export const guide: Guide = {
     title: 'Busca y retoma cualquier conversación de Claude Code con el historial de CodeAgentSwarm',
     metaTitle: 'Historial de conversaciones de Claude Code en CodeAgentSwarm: busca y retoma cualquier chat (2026)',
     metaDescription: 'Cómo acceder al historial de conversaciones de Claude Code, buscar sesiones anteriores y retomar chats antiguos. Guía paso a paso para gestionar tu historial completo.',
-    intro: `En CodeAgentSwarm, cada vez que trabajas con un terminal de Claude Code, el sistema guarda automáticamente todo: lo que escribes, lo que responde Claude, el proyecto en el que estabas y cuándo ocurrió.
+    intro: `Claude Code ya guarda un historial de tus conversaciones. Cada sesión se almacena en local en ~/.claude/projects/, y puedes retomar la más reciente con "claude --continue" o elegir una sesión anterior con "claude --resume". El problema: no hay buscador, no hay vista previa del contenido y cada proyecto guarda su historial por separado.
 
-Todo eso forma tu historial de conversaciones de Claude Code. Es como una memoria larga de todo lo que has ido haciendo con la IA, organizada y lista para buscar o retomar cuando te haga falta.
+Eso es exactamente lo que resuelve la vista de historial de CodeAgentSwarm. Cada vez que trabajas con un terminal de Claude Code, guarda lo que escribes, lo que responde Claude, el proyecto en el que estabas y cuándo ocurrió, y lo hace todo buscable.
 
-La idea es simple: Todo lo que hablas con Claude Code queda guardado, organizado por proyecto y listo para buscar o retomar cuando quieras.`,
+La idea es simple: tu historial de Claude Code ya está en tu máquina. CodeAgentSwarm lo convierte en una memoria larga que puedes buscar, filtrar y retomar desde cualquier terminal.`,
     ctaText: 'Usa el historial de conversaciones la próxima vez que retomes un proyecto. Vas a notar enseguida lo cómodo que es no tener que explicar todo desde cero a Claude.',
     highlightedWords: ['historial', 'Claude Code'],
     publishedAt: '2026-02-10',
@@ -24,6 +24,18 @@ La idea es simple: Todo lo que hablas con Claude Code queda guardado, organizado
       title: 'Qué es el historial de Claude Code en CodeAgentSwarm',
       content: [
         {
+          type: 'callout',
+          variant: 'tip',
+          content: 'Respuesta rápida: para ver tu historial de Claude Code ahora mismo, ejecuta <code>claude --continue</code> para retomar la conversación más reciente, o <code>claude --resume</code> para elegir entre las sesiones recientes. El historial en bruto vive en <code>~/.claude/projects/</code> como archivos JSONL. El resto de esta guía te enseña a hacerlo todo buscable.',
+        },
+        {
+          type: 'code',
+          language: 'bash',
+          code: `claude --continue        # retoma la conversación más reciente
+claude --resume          # elige entre las sesiones recientes
+ls ~/.claude/projects/   # donde vive el historial en bruto (archivos JSONL)`,
+        },
+        {
           type: 'paragraph',
           text: 'El historial de Claude Code en CodeAgentSwarm es la funcionalidad que guarda automáticamente todas tus conversaciones con Claude: lo que escribes, lo que responde, el proyecto en el que estabas y cuándo ocurrió.',
         },
@@ -33,7 +45,7 @@ La idea es simple: Todo lo que hablas con Claude Code queda guardado, organizado
         },
         {
           type: 'paragraph',
-          text: 'Si ya usas <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, quizás conozcas el comando "claude -r" que permite retomar la última conversación. El historial nativo de Claude Code existe, pero es muy básico: no tiene buscador, no puedes buscar por contenido y solo funciona dentro de cada proyecto por separado. En CodeAgentSwarm, el historial va mucho más allá: buscador de texto completo, filtros por proyecto, vista global de todas tus conversaciones y la posibilidad de retomar cualquier conversación de cualquier proyecto desde cualquier terminal.',
+          text: 'Si ya usas <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, seguramente habrás usado "claude --continue" o "claude --resume" para volver a una sesión anterior. El historial nativo de Claude Code existe, pero es muy básico: no tiene buscador, no puedes buscar por contenido y solo funciona dentro de cada proyecto por separado. En CodeAgentSwarm, el historial va mucho más allá: buscador de texto completo, filtros por proyecto, vista global de todas tus conversaciones y la posibilidad de retomar cualquier conversación de cualquier proyecto desde cualquier terminal.',
         },
       ],
     },
