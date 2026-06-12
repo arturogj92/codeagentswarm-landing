@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="x-apple-disable-message-reformatting">
+  <meta name="color-scheme" content="light only">
+  <meta name="supported-color-schemes" content="light only">
+  <title>CodeAgentSwarm</title>
+  <!--[if mso]>
+  <noscript>
+    <xml>
+      <o:OfficeDocumentSettings>
+        <o:AllowPNG/>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml>
+  </noscript>
+  <style type="text/css">
+    body, table, td, p, a { font-family: 'Segoe UI', Helvetica, Arial, sans-serif !important; }
+  </style>
+  <![endif]-->
+  <style type="text/css">
+    :root { color-scheme: light only; }
+    body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+    table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+    img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
+    body { height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important; }
+    a[x-apple-data-detectors] { color: inherit !important; text-decoration: none !important; }
+
+    @media only screen and (max-width: 600px) {
+      .wrap { width: 100% !important; max-width: 100% !important; }
+      .card-pad { padding: 28px 20px !important; }
+      .outer-pad { padding: 16px 10px !important; }
+      .body-txt { font-size: 15px !important; line-height: 24px !important; }
+      .logo-img { width: 220px !important; }
+      .sig-icon { width: 32px !important; height: 32px !important; }
+      .footer-txt { font-size: 11px !important; }
+    }
+  </style>
+</head>
+
+<body style="margin: 0; padding: 0; background-color: #0a0a0a; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; -webkit-font-smoothing: antialiased;">
+
+  <!-- Preheader: shown by Gmail/Apple Mail in the inbox row after the subject. -->
+  <div style="display: none; max-height: 0; overflow: hidden; font-size: 1px; line-height: 1px; color: #0a0a0a;">
+    {{bodyPreview}} &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+  </div>
+
+  <!-- OUTER WRAPPER -->
+  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%"
+         bgcolor="#0a0a0a"
+         style="background-color: #0a0a0a; background-image: linear-gradient(#0a0a0a, #0a0a0a);">
+    <tr>
+      <td align="center" class="outer-pad" style="padding: 28px 16px; background-color: #0a0a0a; background-image: linear-gradient(#0a0a0a, #0a0a0a);">
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="560" class="wrap" style="max-width: 560px; width: 100%;">
+
+          <!-- ===== LOGO ===== -->
+          <tr>
+            <td align="center" style="padding-bottom: 28px; background-color: #0a0a0a; background-image: linear-gradient(#0a0a0a, #0a0a0a);" bgcolor="#0a0a0a">
+              <img src="https://www.codeagentswarm.com/email-logo.png" alt="CodeAgentSwarm" width="290" height="57" class="logo-img" style="display: block; width: 290px; height: auto; max-width: 100%;" />
+            </td>
+          </tr>
+
+          <!-- ===== MAIN CARD ===== -->
+          <tr>
+            <td bgcolor="#0a0a0a" style="background-color: #0a0a0a; background-image: linear-gradient(#0a0a0a, #0a0a0a);">
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%"
+                     bgcolor="#111111"
+                     style="background-color: #111111; background-image: linear-gradient(#111111, #111111); border: 1px solid #2a2a2a; border-radius: 16px;">
+                <tr>
+                  <td class="card-pad" bgcolor="#111111" style="padding: 36px 34px; background-color: #111111; background-image: linear-gradient(#111111, #111111);">
+
+                    <!-- Free-text body (rendered as styled paragraphs by bodyToHtml).
+                         No hero title, accent bar, or greeting: replies start
+                         directly with the operator's text. -->
+                    {{body}}
+
+                  </td>
+                </tr>
+
+                <!-- Divider -->
+                <tr>
+                  <td bgcolor="#111111" style="padding: 0 34px; background-color: #111111; background-image: linear-gradient(#111111, #111111);">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                      <tr>
+                        <td bgcolor="#2a2a2a" style="height: 1px; background-color: #2a2a2a; background-image: linear-gradient(#2a2a2a, #2a2a2a); font-size: 1px; line-height: 1px;">&nbsp;</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <!-- Signature -->
+                <tr>
+                  <td bgcolor="#111111" style="padding: 20px 34px 24px 34px; background-color: #111111; background-image: linear-gradient(#111111, #111111);">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                      <tr>
+                        <td valign="middle" style="padding-right: 14px;">
+                          <img src="https://www.codeagentswarm.com/isotipo.png" alt="" width="36" height="36" class="sig-icon" style="display: block; width: 36px; height: 36px; border-radius: 6px;" />
+                        </td>
+                        <td valign="middle" style="border-left: 2px solid #fbbf24; padding-left: 14px;">
+                          <p style="margin: 0; font-size: 14px; font-weight: 600; color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">Arturo</p>
+                          <p style="margin: 2px 0 0 0; font-size: 12px; color: #999999; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">Founder, CodeAgentSwarm</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+              </table>
+            </td>
+          </tr>
+
+          <!-- ===== FOOTER ===== -->
+          <tr>
+            <td bgcolor="#0a0a0a" style="padding: 20px 0 0 0; background-color: #0a0a0a; background-image: linear-gradient(#0a0a0a, #0a0a0a);">
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                <tr>
+                  <td align="center" class="footer-txt" style="font-size: 12px; line-height: 18px; color: #888888; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
+                    <a href="https://www.codeagentswarm.com" style="color: #999999; text-decoration: underline;">codeagentswarm.com</a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>

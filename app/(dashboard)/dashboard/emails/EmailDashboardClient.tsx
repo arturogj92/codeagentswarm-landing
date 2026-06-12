@@ -396,7 +396,7 @@ function ReplyBox({ original }: { original: ResendReceivedEmail }) {
         placeholder={
           format === 'plain'
             ? 'Write your reply... (the original message is quoted automatically below it)'
-            : 'Write your reply... (the template adds the greeting and branding)'
+            : 'Write your reply... (the template adds the logo, signature and footer)'
         }
         className="w-full px-3 py-2 text-sm bg-white/5 border border-white/10 rounded-lg text-white/80 placeholder-white/20 focus:outline-none focus:border-amber-400/30 resize-y"
       />

@@ -28,7 +28,7 @@ Payload:
 Behavior:
 
 - **plain** (default): minimal hand-written-looking HTML (system font, no branding) plus the original message quoted below in a muted blockquote, Gmail style. A `text` version is sent too, with `> ` quoting.
-- **branded**: reuses the `feedback-custom` template (`Hey {{name}},` greeting, dark theme). `name` is derived from the original sender's display name or address local part.
+- **branded**: uses `reply-branded.html`, a reply-specific variant of `feedback-custom` with the same dark shell, logo and signature but no hero title, no amber accent bar and no `Hey {{name}},` greeting (replies start directly with the operator's text). Its footer also drops the community/unsubscribe lines, which don't fit a 1-to-1 reply.
 - **Threading (best effort)**: the original email is fetched from Resend; if it exposes a `message_id` (top-level or in a headers list), the reply is sent with `In-Reply-To` and `References` headers so it threads in the recipient's client. If not, the reply still goes out with just the `Re:` subject.
 - Fetching the original is a nice-to-have: failures are logged and never block the send.
 - Sender is always `Arturo from CodeAgentSwarm <hello@codeagentswarm.com>`. Replies appear automatically in the dashboard's Sent tab since they go through Resend.

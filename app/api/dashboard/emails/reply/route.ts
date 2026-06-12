@@ -1,11 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { verifyToken, COOKIE_NAME } from '@/lib/auth'
 import { resendGet, resendPost } from '@/lib/resend-client'
-import { bodyToHtml, buildInboxPreview, escapeHtmlForAttribute } from '@/lib/email-body-to-html'
+import { bodyToHtml, buildInboxPreview } from '@/lib/email-body-to-html'
 import {
   buildPlainReplyHtml,
   buildPlainReplyText,
-  extractFirstName,
   type QuotedOriginal,
 } from '@/lib/reply-email'
 import type { ResendReceivedEmail } from '@/types/email'
@@ -13,7 +12,9 @@ import fs from 'fs'
 import path from 'path'
 
 const FROM_ADDRESS = 'Arturo from CodeAgentSwarm <hello@codeagentswarm.com>'
-const BRANDED_TEMPLATE = 'feedback-custom'
+// Reply-specific variant of the branded template: same dark shell and
+// signature, but no hero title / accent bar / "Hey {{name}}," greeting.
+const BRANDED_TEMPLATE = 'reply-branded'
 
 type ReplyFormat = 'plain' | 'branded'
 
@@ -44,13 +45,11 @@ function findMessageId(email: ReceivedEmailWithHeaders): string | null {
   return header?.value || null
 }
 
-function buildBrandedHtml(name: string, subject: string, body: string): string {
+function buildBrandedHtml(body: string): string {
   const filePath = path.join(process.cwd(), 'emails', `${BRANDED_TEMPLATE}.html`)
   let html = fs.readFileSync(filePath, 'utf-8')
 
   const variables: Record<string, string> = {
-    name: escapeHtmlForAttribute(name),
-    title: escapeHtmlForAttribute(subject.replace(/^(re:\s*)+/i, '')),
     body: bodyToHtml(body),
     bodyPreview: buildInboxPreview(body),
   }
@@ -98,7 +97,7 @@ export async function POST(request: NextRequest) {
     let text: string | undefined
 
     if (format === 'branded') {
-      html = buildBrandedHtml(extractFirstName(original?.from || to), subject, body)
+      html = buildBrandedHtml(body)
     } else {
       let quoted: QuotedOriginal | undefined
       if (original?.text) {

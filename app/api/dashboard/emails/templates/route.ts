@@ -14,7 +14,9 @@ function extractTitle(html: string): string {
   return match ? match[1].trim() : 'Untitled'
 }
 
-const EXCLUDED_TEMPLATES = ['base-template', 'setup-guide']
+// reply-branded is only used by the reply endpoint; it has no name/title
+// personalization so it would render wrong if picked from compose.
+const EXCLUDED_TEMPLATES = ['base-template', 'setup-guide', 'reply-branded']
 
 function isSendableTemplate(slug: string, html: string): boolean {
   if (EXCLUDED_TEMPLATES.includes(slug)) return false

@@ -90,17 +90,3 @@ export function extractEmailAddress(from: string): string {
   const match = from.match(/<([^>]+)>/)
   return (match ? match[1] : from).trim()
 }
-
-/**
- * Best-effort first name for the branded template greeting ("Hey {{name}},"):
- * display name first word if present, otherwise the address local part.
- */
-export function extractFirstName(from: string): string {
-  const displayName = from.replace(/<[^>]*>/g, '').replace(/["']/g, '').trim()
-  if (displayName) {
-    const first = displayName.split(/\s+/)[0]
-    if (first && !first.includes('@')) return first
-  }
-  const localPart = extractEmailAddress(from).split('@')[0]
-  return localPart || 'there'
-}
