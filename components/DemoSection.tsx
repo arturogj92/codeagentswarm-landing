@@ -4,6 +4,7 @@ import { motion, useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
 import { Play, Pause, Volume2, VolumeX, Maximize, Download, CheckCircle2 } from 'lucide-react'
 import { useTranslations } from 'next-intl'
+import { cdnVideo } from '@/lib/cdn'
 
 export default function DemoSection() {
   const t = useTranslations('demo')
@@ -105,14 +106,14 @@ export default function DemoSection() {
               <video
                 ref={videoRef}
                 className="w-full h-full object-cover"
-                src="/demo-video.mp4"
+                src={cdnVideo('demo-video.mp4')}
                 autoPlay={isInView}
                 loop
                 muted={isMuted}
                 playsInline
                 preload="auto"
               >
-                <source src="/demo-video.mp4" type="video/mp4" />
+                <source src={cdnVideo('demo-video.mp4')} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
 

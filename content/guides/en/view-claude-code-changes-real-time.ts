@@ -1,4 +1,5 @@
 import type { Guide } from '../types'
+import { cdnVideo } from '@/lib/cdn'
 
 export const guide: Guide = {
   meta: {
@@ -18,7 +19,7 @@ In CodeAgentSwarm the idea is precisely to avoid that black box feeling. The app
     publishedAt: '2026-02-15',
     updatedAt: '2026-04-15',
     alternateSlug: 'ver-cambios-claude-code-tiempo-real',
-    introVideo: '/see-claude-code-changes-real-time.mp4',
+    introVideo: cdnVideo('see-claude-code-changes-real-time.mp4'),
     ctaText: 'Next time you run Claude Code on a project, you\'ll know exactly what it changed. No more black box feeling.',
   },
   sections: [
@@ -81,7 +82,7 @@ In CodeAgentSwarm the idea is precisely to avoid that black box feeling. The app
         },
         {
           type: 'video',
-          src: '/claude-code-session-changes.mp4',
+          src: cdnVideo('claude-code-session-changes.mp4'),
           caption: 'The change counter goes up while Claude works. Click to see the diff for that session.',
         },
         {
@@ -145,7 +146,7 @@ In CodeAgentSwarm the idea is precisely to avoid that black box feeling. The app
         },
         {
           type: 'video',
-          src: '/see-git-diff-claude-code.mp4',
+          src: cdnVideo('see-git-diff-claude-code.mp4'),
           caption: 'The Git diff viewer gives you the complete picture of changes in the project.',
         },
         {
@@ -258,7 +259,7 @@ In CodeAgentSwarm the idea is precisely to avoid that black box feeling. The app
         },
         {
           type: 'video',
-          src: '/claude-terminal-titles.mp4',
+          src: cdnVideo('claude-terminal-titles.mp4'),
           caption: 'Dynamic titles updating as Claude works on different tasks across terminals.',
         },
       ],

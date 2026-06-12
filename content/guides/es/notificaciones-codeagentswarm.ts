@@ -1,4 +1,5 @@
 import type { Guide } from '../types'
+import { cdnVideo } from '@/lib/cdn'
 
 export const guide: Guide = {
   meta: {
@@ -18,7 +19,7 @@ Sí, Claude tiene sus propias notificaciones dentro del terminal, pero seamos si
 Con CodeAgentSwarm la idea es justo la contraria: Tú sigues a lo tuyo y es la app la que te avisa cuando Claude termina o necesita algo de ti.
 
 En esta guía te cuento cómo funcionan las notificaciones de CodeAgentSwarm y cómo usarlas para no perder el foco mientras trabajas con Claude Code.`,
-    introVideo: '/terminal-notifications.mp4',
+    introVideo: cdnVideo('terminal-notifications.mp4'),
     ctaText: 'Activa las notificaciones de CodeAgentSwarm y deja de estar pendiente del terminal. La app te avisará cuando Claude termine o necesite tu atención.',
     highlightedWords: ['notificaciones', 'CodeAgentSwarm'],
     publishedAt: '2026-02-20',

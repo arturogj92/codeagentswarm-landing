@@ -7,6 +7,7 @@ import { useTranslations } from 'next-intl'
 import VideoWithProgress from './VideoWithProgress'
 import Image from 'next/image'
 import { useShouldReduceMotion } from '@/hooks/useIsMobile'
+import { cdnVideo } from '@/lib/cdn'
 
 // Video Showcase Component with Carousel
 function VideoShowcase() {
@@ -15,42 +16,42 @@ function VideoShowcase() {
   const videos = [
     {
       id: 1,
-      src: "/terminals.mp4",
+      src: cdnVideo('terminals.mp4'),
       title: t('multiTerminal.title'),
       icon: Monitor,
       description: t('multiTerminal.description')
     },
     {
       id: 2,
-      src: "/multi-model.mp4",
+      src: cdnVideo('multi-model.mp4'),
       title: t('multiModel.title'),
       icon: Layers,
       description: t('multiModel.description')
     },
     {
       id: 3,
-      src: "/conversation_history.mp4",
+      src: cdnVideo('conversation_history.mp4'),
       title: t('conversationHistory.title'),
       icon: History,
       description: t('conversationHistory.description')
     },
     {
       id: 4,
-      src: "/kanban.mp4",
+      src: cdnVideo('kanban.mp4'),
       title: t('kanban.title'),
       icon: Layout,
       description: t('kanban.description')
     },
     {
       id: 5,
-      src: "/gitmanager.mp4",
+      src: cdnVideo('gitmanager.mp4'),
       title: t('git.title'),
       icon: GitBranch,
       description: t('git.description')
     },
     {
       id: 6,
-      src: "/terminal-notifications.mp4",
+      src: cdnVideo('terminal-notifications.mp4'),
       title: t('notifications.title'),
       icon: Bell,
       description: t('notifications.description')

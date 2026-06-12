@@ -1,4 +1,5 @@
 import type { Guide } from '../types'
+import { cdnVideo } from '@/lib/cdn'
 
 export const guide: Guide = {
   meta: {
@@ -20,7 +21,7 @@ Yes, Claude has its own notifications inside the terminal, but let's be honest: 
 With CodeAgentSwarm the idea is the opposite: You keep doing your thing and the app is the one that tells you when Claude has finished or needs something from you.
 
 In this guide I'll show you how CodeAgentSwarm notifications work and how to use them so you don't lose focus while working with Claude Code.`,
-    introVideo: '/terminal-notifications.mp4',
+    introVideo: cdnVideo('terminal-notifications.mp4'),
     ctaText: 'Enable CodeAgentSwarm notifications and stop watching the terminal. The app will let you know when Claude finishes or needs your attention.',
     alternateSlug: 'notificaciones-codeagentswarm',
   },

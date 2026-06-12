@@ -1,4 +1,5 @@
 import type { Guide } from '../types'
+import { cdnVideo } from '@/lib/cdn'
 
 export const guide: Guide = {
   meta: {
@@ -18,7 +19,7 @@ En CodeAgentSwarm la idea es justo evitar esa sensación de caja negra. La app c
     publishedAt: '2026-02-15',
     updatedAt: '2026-04-15',
     alternateSlug: 'view-claude-code-changes-real-time',
-    introVideo: '/see-claude-code-changes-real-time.mp4',
+    introVideo: cdnVideo('see-claude-code-changes-real-time.mp4'),
     ctaText: 'La próxima vez que ejecutes Claude Code en un proyecto, vas a saber exactamente qué ha cambiado. Sin sensación de caja negra.',
   },
   sections: [
@@ -81,7 +82,7 @@ En CodeAgentSwarm la idea es justo evitar esa sensación de caja negra. La app c
         },
         {
           type: 'video',
-          src: '/claude-code-session-changes.mp4',
+          src: cdnVideo('claude-code-session-changes.mp4'),
           caption: 'El contador de cambios sube mientras Claude trabaja. Haz clic para ver el diff de esa sesión.',
         },
         {
@@ -145,7 +146,7 @@ En CodeAgentSwarm la idea es justo evitar esa sensación de caja negra. La app c
         },
         {
           type: 'video',
-          src: '/see-git-diff-claude-code.mp4',
+          src: cdnVideo('see-git-diff-claude-code.mp4'),
           caption: 'El visor de diff de Git te da la foto completa de los cambios en el proyecto.',
         },
         {
@@ -258,7 +259,7 @@ En CodeAgentSwarm la idea es justo evitar esa sensación de caja negra. La app c
         },
         {
           type: 'video',
-          src: '/claude-terminal-titles.mp4',
+          src: cdnVideo('claude-terminal-titles.mp4'),
           caption: 'Los títulos dinámicos actualizándose mientras Claude trabaja en diferentes tareas en cada terminal.',
         },
       ],
