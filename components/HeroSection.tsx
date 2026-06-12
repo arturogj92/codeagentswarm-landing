@@ -113,15 +113,28 @@ function VideoShowcase() {
 
           {/* Current video info */}
           <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
-            <div className="flex items-center gap-3 text-white">
-              {(() => {
-                const Icon = videos[currentVideo].icon
-                return Icon ? <Icon className="w-5 h-5 text-neon-cyan" /> : null
-              })()}
-              <div>
-                <h3 className="text-sm font-semibold">{videos[currentVideo].title}</h3>
-                <p className="text-xs text-white/60">{videos[currentVideo].description}</p>
+            <div className="flex items-center justify-between gap-3">
+              <div className="flex items-center gap-3 text-white min-w-0">
+                {(() => {
+                  const Icon = videos[currentVideo].icon
+                  return Icon ? <Icon className="w-5 h-5 text-neon-cyan shrink-0" /> : null
+                })()}
+                <div className="min-w-0">
+                  <h3 className="text-sm font-semibold">{videos[currentVideo].title}</h3>
+                  <p className="text-xs text-white/60">{videos[currentVideo].description}</p>
+                </div>
               </div>
+              <a
+                href="#download"
+                onClick={(e) => {
+                  e.stopPropagation()
+                  window.umami?.track('video_cta_download_click', { video_name: videos[currentVideo].title })
+                }}
+                className="hidden sm:inline-flex shrink-0 items-center gap-2 px-4 py-2 mr-24 bg-neon-cyan text-black text-sm font-semibold rounded-full hover:bg-amber-400 transition-colors"
+              >
+                <Download className="w-4 h-4" />
+                {t('downloadCta')}
+              </a>
             </div>
           </div>
 

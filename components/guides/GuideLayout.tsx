@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { ArrowRight, BookOpen } from 'lucide-react'
 import Link from 'next/link'
+import { useEffect } from 'react'
 import type { Guide } from '@/content/guides/types'
 import { extractTOC, getAllGuides } from '@/content/guides'
 import GuidesHeader from './GuidesHeader'
@@ -10,6 +11,7 @@ import Breadcrumbs from './Breadcrumbs'
 import TableOfContents from './TableOfContents'
 import ContentRenderer from './ContentRenderer'
 import FAQAccordion from './FAQAccordion'
+import GuideInlineCTA from './GuideInlineCTA'
 
 interface GuideLayoutProps {
   guide: Guide
@@ -24,7 +26,45 @@ export default function GuideLayout({ guide }: GuideLayoutProps) {
   const guidesLabel = locale === 'es' ? 'Guías' : 'Guides'
   const guidesHref = locale === 'es' ? '/es/guias' : '/en/guides'
   const ctaText = locale === 'es' ? 'Probar CodeAgentSwarm' : 'Try CodeAgentSwarm'
-  const ctaHref = `/${locale}`
+  const ctaHref = `/${locale}#download`
+
+  // Scroll depth tracking per guide (25%, 50%, 75%, 100%) - mirrors home tracking
+  useEffect(() => {
+    const firedLevels: Record<25 | 50 | 75 | 100, boolean> = { 25: false, 50: false, 75: false, 100: false }
+
+    const handleScroll = () => {
+      const maxScroll = document.body.scrollHeight - window.innerHeight
+      if (maxScroll <= 0) return
+
+      const ratio = window.scrollY / maxScroll
+
+      if (ratio >= 0.25 && !firedLevels[25]) {
+        window.umami?.track('guide_scroll_25', { guide: meta.slug })
+        firedLevels[25] = true
+      }
+      if (ratio >= 0.5 && !firedLevels[50]) {
+        window.umami?.track('guide_scroll_50', { guide: meta.slug })
+        firedLevels[50] = true
+      }
+      if (ratio >= 0.75 && !firedLevels[75]) {
+        window.umami?.track('guide_scroll_75', { guide: meta.slug })
+        firedLevels[75] = true
+      }
+      if (ratio >= 0.98 && !firedLevels[100]) {
+        window.umami?.track('guide_scroll_100', { guide: meta.slug })
+        firedLevels[100] = true
+        window.removeEventListener('scroll', handleScroll)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [meta.slug])
+
+  // Split sections to place an inline CTA mid-content (only for guides with enough content)
+  const inlineCTAIndex = sections.length >= 3 ? Math.ceil(sections.length / 2) : 0
+  const sectionsBeforeCTA = inlineCTAIndex > 0 ? sections.slice(0, inlineCTAIndex) : sections
+  const sectionsAfterCTA = inlineCTAIndex > 0 ? sections.slice(inlineCTAIndex) : []
 
   // Deterministic related-guide recommendation (stable, crawlable link graph; no Math.random)
   const allGuides = getAllGuides(locale)
@@ -94,8 +134,14 @@ export default function GuideLayout({ guide }: GuideLayoutProps) {
             {/* Divider */}
             <hr className="border-t border-white/10 mb-10" />
 
-            {/* Content sections */}
-            <ContentRenderer sections={sections} />
+            {/* Content sections, with an inline CTA mid-content */}
+            <ContentRenderer sections={sectionsBeforeCTA} />
+            {sectionsAfterCTA.length > 0 && (
+              <>
+                <GuideInlineCTA locale={locale} slug={meta.slug} />
+                <ContentRenderer sections={sectionsAfterCTA} />
+              </>
+            )}
 
             {/* FAQ section */}
             {faq && faq.length > 0 && <FAQAccordion items={faq} locale={locale} />}
@@ -115,6 +161,9 @@ export default function GuideLayout({ guide }: GuideLayoutProps) {
                 </p>
                 <Link
                   href={ctaHref}
+                  onClick={() => {
+                    window.umami?.track('guide_cta_click', { guide: meta.slug, position: 'final' })
+                  }}
                   className="inline-flex items-center gap-2 px-6 py-3 bg-neon-cyan text-black font-semibold rounded-full hover:bg-amber-400 transition-colors"
                 >
                   {ctaText}
@@ -135,6 +184,9 @@ export default function GuideLayout({ guide }: GuideLayoutProps) {
                 <div className="p-6 rounded-xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent hover:border-neon-cyan/30 transition-all group">
                   <Link
                     href={`/${locale}/${locale === 'es' ? 'guias' : 'guides'}/${randomGuide.meta.slug}`}
+                    onClick={() => {
+                      window.umami?.track('guide_related_click', { from: meta.slug, to: randomGuide.meta.slug })
+                    }}
                     className="block"
                   >
                     <h4 className="text-lg font-semibold text-white mb-3 group-hover:text-neon-cyan transition-colors">

@@ -62,7 +62,8 @@
       "conversationHistory": {
         "title": "Historial de Conversaciones",
         "description": "Guarda y busca el historial AI CLI en todas las sesiones"
-      }
+      },
+      "downloadCta": "Descargar gratis"
     }
   },
   "problem": {

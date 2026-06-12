@@ -62,7 +62,8 @@
       "conversationHistory": {
         "title": "Conversation History",
         "description": "Save and search AI CLI history across all sessions"
-      }
+      },
+      "downloadCta": "Download free"
     }
   },
   "problem": {
