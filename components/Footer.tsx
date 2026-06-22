@@ -49,9 +49,10 @@ export default function Footer() {
         ],
     company: [
       { name: t('links.about'), href: '#' },
-      { name: t('links.contact'), href: '/contact' },
-      { name: t('links.privacy'), href: '/privacy' },
-      { name: t('links.terms'), href: '/terms' },
+      { name: t('links.contact'), href: 'mailto:hello@codeagentswarm.com' },
+      { name: t('links.privacy'), href: '/privacy', internal: true },
+      { name: t('links.terms'), href: '/terms', internal: true },
+      { name: t('links.cookies'), href: '/cookies', internal: true },
     ],
   }
 
@@ -158,12 +159,21 @@ export default function Footer() {
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
-                  <a
-                    href={link.href}
-                    className="text-white/40 hover:text-white transition-colors text-sm"
-                  >
-                    {link.name}
-                  </a>
+                  {'internal' in link && link.internal ? (
+                    <Link
+                      href={link.href}
+                      className="text-white/40 hover:text-white transition-colors text-sm"
+                    >
+                      {link.name}
+                    </Link>
+                  ) : (
+                    <a
+                      href={link.href}
+                      className="text-white/40 hover:text-white transition-colors text-sm"
+                    >
+                      {link.name}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
