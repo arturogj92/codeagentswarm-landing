@@ -29,6 +29,9 @@ import enClaudeGui from './en/claude-code-gui'
 import enMultipleChats from './en/run-multiple-claude-chats'
 import enClaudeCodeOnWindows from './en/claude-code-on-windows'
 import enBestSetupWindows from './en/best-claude-code-setup-windows'
+import enCodexVsCursor from './en/codex-cli-vs-cursor'
+import enCodexHistory from './en/codex-cli-conversation-history'
+import enCodexWindows from './en/codex-cli-on-windows'
 
 // Spanish guides
 import esMultipleTerminals from './es/como-usar-varios-terminales-claude-code'
@@ -57,6 +60,9 @@ import esClaudeGui from './es/interfaz-grafica-claude-code'
 import esMultipleChats from './es/varios-chats-de-claude-a-la-vez'
 import esClaudeCodeEnWindows from './es/claude-code-en-windows'
 import esMejorSetupWindows from './es/mejor-setup-claude-code-windows'
+import esCodexVsCursor from './es/codex-cli-vs-cursor'
+import esCodexHistory from './es/historial-conversaciones-codex'
+import esCodexWindows from './es/codex-cli-en-windows'
 
 // Registry of all guides by locale and slug
 export const guides: Record<string, Record<string, Guide>> = {
@@ -87,6 +93,9 @@ export const guides: Record<string, Record<string, Guide>> = {
     'run-multiple-claude-chats': enMultipleChats,
     'claude-code-on-windows': enClaudeCodeOnWindows,
     'best-claude-code-setup-windows': enBestSetupWindows,
+    'codex-cli-vs-cursor': enCodexVsCursor,
+    'codex-cli-conversation-history': enCodexHistory,
+    'codex-cli-on-windows': enCodexWindows,
   },
   es: {
     'como-usar-varios-terminales-claude-code': esMultipleTerminals,
@@ -115,6 +124,9 @@ export const guides: Record<string, Record<string, Guide>> = {
     'varios-chats-de-claude-a-la-vez': esMultipleChats,
     'claude-code-en-windows': esClaudeCodeEnWindows,
     'mejor-setup-claude-code-windows': esMejorSetupWindows,
+    'codex-cli-vs-cursor': esCodexVsCursor,
+    'historial-conversaciones-codex': esCodexHistory,
+    'codex-cli-en-windows': esCodexWindows,
   },
 }
 

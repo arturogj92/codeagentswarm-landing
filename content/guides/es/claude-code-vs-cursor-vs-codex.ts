@@ -209,7 +209,7 @@ En esta guía te cuento qué hace cada una, dónde destaca y dónde se queda cor
         },
         {
           type: 'paragraph',
-          text: 'Desarrolladores que ya están en el ecosistema de OpenAI, tareas rápidas de programación en terminal, cualquiera que quiera un agente CLI ligero sin suscripciones adicionales más allá de ChatGPT, y desarrolladores que valoran las herramientas open-source.',
+          text: 'Desarrolladores que ya están en el ecosistema de OpenAI, tareas rápidas de programación en terminal, cualquiera que quiera un agente CLI ligero sin suscripciones adicionales más allá de ChatGPT, y desarrolladores que valoran las herramientas open-source. Para una comparativa enfocada y cara a cara solo entre estos dos, mira <a href="/es/guias/codex-cli-vs-cursor" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex CLI vs Cursor</a>.',
         },
       ],
     },

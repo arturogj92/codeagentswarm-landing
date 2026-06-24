@@ -241,6 +241,10 @@ claude --version`,
       question: 'Does CodeAgentSwarm work on Windows?',
       answer: 'Yes. CodeAgentSwarm is available for Windows (x64 and ARM64) and macOS. It runs on top of your existing Claude Code install and lets you supervise several terminals in parallel.',
     },
+    {
+      question: 'Can I run OpenAI Codex CLI on Windows too?',
+      answer: 'Yes. Codex CLI runs on Windows, and you can run it side by side with Claude Code inside CodeAgentSwarm. For a Codex-specific install and setup walkthrough, see <a href="/en/guides/codex-cli-on-windows" class="text-neon-cyan hover:text-neon-purple transition-colors">how to run Codex CLI on Windows</a>.',
+    },
   ],
 }
 

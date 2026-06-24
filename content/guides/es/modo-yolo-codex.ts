@@ -252,6 +252,18 @@ Esta guía explica qué ofrece Codex de verdad, desde solo-sugerir hasta full au
       question: '¿Es YOLO una función oficial de Codex?',
       answer: 'No. YOLO es un término informal de la comunidad para ejecutar sin aprobaciones. Las funciones reales son los modos de aprobación y el sandbox. Usa codex --help para ver los flags y modos exactos que admite tu versión instalada, ya que OpenAI cambia los nombres entre versiones.',
     },
+    {
+      question: '¿Existe un flag codex --yolo?',
+      answer: 'No hay un flag literal --yolo. El modo YOLO es solo el apodo. La forma real de ejecutar Codex sin aprobaciones es el nivel de full auto, normalmente el flag --full-auto, o una opción aparte para saltarse las aprobaciones por completo en tiradas sin supervisión. Ejecuta codex --help para confirmar el flag exacto de tu versión instalada.',
+    },
+    {
+      question: '¿Qué es el modo auto y el auto-approve de Codex?',
+      answer: 'El modo auto es el punto intermedio del espectro de aprobaciones de Codex: ejecuta el trabajo rutinario por su cuenta y solo se para a preguntarte en acciones más arriesgadas o cuando falla un comando, en vez de aprobar cada paso o ninguno. El auto-approve es dejar pasar acciones concretas sin preguntar. En CodeAgentSwarm puedes autoaprobar categorías seguras como ediciones de archivos y tests por terminal mientras sigues bloqueando los comandos peligrosos de Git y de shell.',
+    },
+    {
+      question: '¿Cómo ejecuto Codex en modo YOLO?',
+      answer: 'Ejecuta Codex sin aprobaciones usando su nivel de full auto (revisa codex --help para el flag exacto, normalmente --full-auto), idealmente en una rama de feature y con un sandbox apretado. Para un setup más seguro, ejecuta Codex dentro de CodeAgentSwarm, activa Turbo Mode y configura permisos por terminal para que el trabajo seguro se autoapruebe mientras push, force-push y borrados siguen parándose para que los revises.',
+    },
   ],
 }
 
