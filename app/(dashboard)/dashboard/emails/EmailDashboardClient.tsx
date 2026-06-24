@@ -144,15 +144,26 @@ export default function EmailDashboardClient() {
             Received
           </TabButton>
         </div>
-        <button
-          onClick={() => router.push('/dashboard/emails/compose')}
-          className="flex items-center gap-2 px-4 py-2 text-sm bg-amber-400/10 hover:bg-amber-400/20 border border-amber-400/20 hover:border-amber-400/30 rounded-lg text-amber-400 font-medium transition-colors cursor-pointer"
-        >
-          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
-          </svg>
-          Compose
-        </button>
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() => router.push('/dashboard/emails/automation')}
+            className="flex items-center gap-2 px-4 py-2 text-sm bg-violet-400/10 hover:bg-violet-400/20 border border-violet-400/20 hover:border-violet-400/30 rounded-lg text-violet-400 font-medium transition-colors cursor-pointer"
+          >
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+            Automation
+          </button>
+          <button
+            onClick={() => router.push('/dashboard/emails/compose')}
+            className="flex items-center gap-2 px-4 py-2 text-sm bg-amber-400/10 hover:bg-amber-400/20 border border-amber-400/20 hover:border-amber-400/30 rounded-lg text-amber-400 font-medium transition-colors cursor-pointer"
+          >
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
+            </svg>
+            Compose
+          </button>
+        </div>
       </div>
 
       {error && (
