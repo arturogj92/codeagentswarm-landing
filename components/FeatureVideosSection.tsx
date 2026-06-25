@@ -8,7 +8,7 @@ import { VideoShowcase } from './HeroSection'
 export default function FeatureVideosSection() {
   const locale = useLocale()
   return (
-    <section className="relative py-20 px-6">
+    <section id="feature-videos" className="relative py-20 px-6 scroll-mt-32">
       <div className="max-w-7xl mx-auto text-center mb-10">
         <h2 className="heading-lg text-white mb-3">
           {locale === 'es' ? 'Cada función, en detalle' : 'See each feature in action'}
