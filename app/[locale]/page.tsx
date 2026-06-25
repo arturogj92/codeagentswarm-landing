@@ -5,6 +5,7 @@ import { useLocale, useTranslations } from 'next-intl'
 import Header from '@/components/Header'
 import BetaBanner from '@/components/BetaBanner'
 import HeroSection from '@/components/HeroSection'
+import FeatureVideosSection from '@/components/FeatureVideosSection'
 import ProblemSection from '@/components/ProblemSection'
 import FeaturesSection from '@/components/FeaturesSection'
 import WorksWithSection from '@/components/WorksWithSection'
@@ -141,6 +142,7 @@ export default function Home() {
 
       <main>
         <HeroSection />
+        <FeatureVideosSection />
         <ProblemSection />
         <FeaturesSection />
         <WorksWithSection />

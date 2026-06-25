@@ -2,15 +2,70 @@
 
 import { motion } from 'framer-motion'
 import { Play, Download, Zap, Grid3X3, Bell, Terminal, Monitor, Layout, GitBranch, Pause, History, Shield, Layers } from 'lucide-react'
-import { useState } from 'react'
-import { useTranslations } from 'next-intl'
+import { useState, useRef } from 'react'
+import { useTranslations, useLocale } from 'next-intl'
 import VideoWithProgress from './VideoWithProgress'
 import Image from 'next/image'
 import { useShouldReduceMotion } from '@/hooks/useIsMobile'
 import { cdnVideo } from '@/lib/cdn'
 
-// Video Showcase Component with Carousel
-function VideoShowcase() {
+// Hero promo video (single, autoplay-loop muted) per locale. Click to unmute.
+function HeroPromo() {
+  const locale = useLocale()
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const fired = useRef<Set<number>>(new Set())
+  const src = cdnVideo(locale === 'es' ? 'promo-es.mp4' : 'promo-en.mp4')
+
+  const handleTimeUpdate = () => {
+    const v = videoRef.current
+    if (!v || !v.duration) return
+    const pct = Math.floor((v.currentTime / v.duration) * 100)
+    for (const m of [25, 50, 75, 100]) {
+      if (pct >= m && !fired.current.has(m)) {
+        fired.current.add(m)
+        if (typeof window !== 'undefined') window.umami?.track('hero_promo_progress', { pct: m })
+      }
+    }
+  }
+
+  const toggleMute = () => {
+    const v = videoRef.current
+    if (!v) return
+    v.muted = !v.muted
+    if (!v.muted && typeof window !== 'undefined') window.umami?.track('hero_promo_unmute')
+  }
+
+  return (
+    <div className="relative w-full max-w-5xl mx-auto">
+      {/* Glow Background - hidden on mobile for performance */}
+      <div className="hidden md:block absolute -inset-4 bg-gradient-to-r from-neon-cyan/20 via-neon-purple/20 to-neon-magenta/20 blur-2xl opacity-50 rounded-3xl" />
+      <div className="relative">
+        <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-r from-neon-cyan/40 via-neon-purple/40 to-neon-magenta/40" />
+        <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-dark-900">
+          <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+            <video
+              ref={videoRef}
+              src={src}
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="metadata"
+              onClick={toggleMute}
+              onPlay={() => { if (typeof window !== 'undefined') window.umami?.track('hero_promo_play') }}
+              onTimeUpdate={handleTimeUpdate}
+              className="absolute inset-0 w-full h-full object-cover cursor-pointer"
+              style={{ backgroundColor: '#000' }}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// Video Showcase Component with Carousel (the 6 feature videos, moved below the hero)
+export function VideoShowcase() {
   const t = useTranslations('hero.videos')
 
   const videos = [
@@ -355,6 +410,19 @@ export default function HeroSection() {
             <span className="text-sm text-green-400/90">{t('securityBadge')}</span>
           </div>
 
+          {/* AI CLI badges - same treatment as the promo video outro (white / #0d0d0d / white, overlapping) */}
+          <div className="flex items-center -space-x-3" aria-label="Works with Claude Code, Codex and Gemini CLI">
+            <span className="w-10 h-10 rounded-full flex items-center justify-center bg-white border-2 border-[#0e0e12] shadow-lg">
+              <img src="/icons/apps/claude-icon.svg" alt="Claude Code" className="w-6 h-6 object-contain" />
+            </span>
+            <span className="w-10 h-10 rounded-full flex items-center justify-center bg-[#0d0d0d] border-2 border-[#0e0e12] shadow-lg">
+              <img src="/icons/apps/codex-icon.svg" alt="Codex CLI" className="w-6 h-6 object-contain" />
+            </span>
+            <span className="w-10 h-10 rounded-full flex items-center justify-center bg-white border-2 border-[#0e0e12] shadow-lg">
+              <img src="/icons/apps/gemini-icon.svg" alt="Gemini CLI" className="w-6 h-6 object-contain" />
+            </span>
+          </div>
+
           {/* Requirements note */}
           <p className="text-sm text-white/40">
             {t('requirements')}
@@ -371,13 +439,13 @@ export default function HeroSection() {
           <Stats />
         </motion.div>
 
-        {/* Video Showcase - Replaces Terminal Grid */}
+        {/* Hero promo video (the 6 feature videos moved to FeatureVideosSection below) */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7, duration: 0.8 }}
         >
-          <VideoShowcase />
+          <HeroPromo />
         </motion.div>
       </div>
     </section>

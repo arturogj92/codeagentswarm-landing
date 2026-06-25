@@ -10,6 +10,9 @@
  * - discord_join_home: Discord buttons in Header and CTASection
  * - hero_download_click: "Get Started" CTA in hero (HeroSection)
  * - hero_demo_click: "See How It Works" CTA in hero (HeroSection)
+ * - hero_promo_play: Hero promo video starts playing (HeroSection > HeroPromo)
+ * - hero_promo_unmute: User clicks the hero promo to unmute (HeroSection > HeroPromo)
+ * - hero_promo_progress: Hero promo watch depth with { pct } 25/50/75/100 (HeroSection > HeroPromo)
  * - video_thumbnail_click: Video thumbnail clicks with { video_name } (HeroSection)
  * - video_complete: Video finishes playing with { video_name } (HeroSection)
  * - pricing_plan_click: Plan CTA clicks with { plan_name } (PricingSection)
