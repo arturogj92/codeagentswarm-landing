@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Play, Download, Zap, Grid3X3, Bell, Terminal, Monitor, Layout, GitBranch, Pause, History, Shield, Layers } from 'lucide-react'
+import { Play, Download, Zap, Grid3X3, Bell, Terminal, Monitor, Layout, GitBranch, Pause, History, Shield, Layers, Volume2, VolumeX } from 'lucide-react'
 import { useState, useRef } from 'react'
 import { useTranslations, useLocale } from 'next-intl'
 import VideoWithProgress from './VideoWithProgress'
@@ -28,11 +28,15 @@ function HeroPromo() {
     }
   }
 
+  const [isMuted, setIsMuted] = useState(true)
+
   const toggleMute = () => {
     const v = videoRef.current
     if (!v) return
-    v.muted = !v.muted
-    if (!v.muted && typeof window !== 'undefined') window.umami?.track('hero_promo_unmute')
+    const next = !v.muted
+    v.muted = next
+    setIsMuted(next)
+    if (!next && typeof window !== 'undefined') window.umami?.track('hero_promo_unmute')
   }
 
   return (
@@ -57,6 +61,16 @@ function HeroPromo() {
               className="absolute inset-0 w-full h-full object-cover cursor-pointer"
               style={{ backgroundColor: '#000' }}
             />
+            {/* Tap-for-sound affordance (browsers force muted autoplay; voice is only heard on unmute) */}
+            <button
+              type="button"
+              onClick={(e) => { e.stopPropagation(); toggleMute() }}
+              aria-label={isMuted ? 'Unmute video' : 'Mute video'}
+              className="absolute bottom-3 right-3 z-10 flex items-center gap-2 px-3 py-2 rounded-full bg-black/55 backdrop-blur-sm border border-white/15 text-white/90 text-xs sm:text-sm font-medium hover:bg-black/75 transition-colors"
+            >
+              {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
+              <span>{isMuted ? (locale === 'es' ? 'Activar sonido' : 'Tap for sound') : (locale === 'es' ? 'Sonido' : 'Sound on')}</span>
+            </button>
           </div>
         </div>
       </div>

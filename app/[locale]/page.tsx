@@ -142,9 +142,9 @@ export default function Home() {
 
       <main>
         <HeroSection />
-        <FeatureVideosSection />
         <ProblemSection />
         <FeaturesSection />
+        <FeatureVideosSection />
         <WorksWithSection />
         {/* <DemoSection /> */}
         <MCPSection />
