@@ -56,3 +56,39 @@ export async function supabaseQuery<T>(options: SupabaseQueryOptions): Promise<T
 
   return response.json()
 }
+
+interface SupabaseRpcOptions {
+  /** Postgres function name exposed under /rest/v1/rpc/. */
+  fn: string
+  /** Named arguments for the function (must match the SQL parameter names). */
+  args?: Record<string, unknown>
+  /**
+   * Call with the service role key (server-side only). Defaults to true because
+   * the activity RPCs read protected tables (button_clicks, users) and are only
+   * ever invoked from auth-gated dashboard routes.
+   */
+  useServiceRole?: boolean
+}
+
+export async function supabaseRpc<T>(options: SupabaseRpcOptions): Promise<T> {
+  const { fn, args = {}, useServiceRole = true } = options
+  const { url, key } = getConfig(useServiceRole)
+
+  const response = await fetch(`${url}/rest/v1/rpc/${fn}`, {
+    method: 'POST',
+    headers: {
+      apikey: key,
+      Authorization: `Bearer ${key}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(args),
+    cache: 'no-store',
+  })
+
+  if (!response.ok) {
+    const error = await response.json().catch(() => ({}))
+    throw new Error(error.message || `Supabase RPC error: ${response.status}`)
+  }
+
+  return response.json()
+}
