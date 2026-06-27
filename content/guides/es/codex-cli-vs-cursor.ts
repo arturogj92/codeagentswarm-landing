@@ -360,7 +360,7 @@ En esta guía los comparo por capacidad y flujo de trabajo en lugar de perseguir
         },
         {
           type: 'paragraph',
-          text: '<a href="/" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a> es una app de escritorio para ejecutar y supervisar un enjambre de agentes CLI de IA en un solo workspace. Tienes hasta seis terminales a la vez y eliges el agente por terminal. Ponlos todos en Codex CLI para un enjambre puro de Codex, o mezcla Claude Code y Gemini CLI donde encajen mejor.',
+          text: '<a href="/" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a> es una app de escritorio para ejecutar y supervisar un enjambre de agentes CLI de IA en un solo workspace. Tienes varios terminales a la vez y eliges el agente por terminal. Ponlos todos en Codex CLI para un enjambre puro de Codex, o mezcla Claude Code y Gemini CLI donde encajen mejor.',
         },
         {
           type: 'image',
@@ -371,9 +371,9 @@ En esta guía los comparo por capacidad y flujo de trabajo en lugar de perseguir
         {
           type: 'list',
           items: [
-            '<strong>Hasta 6 agentes en paralelo</strong> - Ejecuta varias sesiones de Codex CLI a la vez, cada una un proceso independiente con su propia tarea y contexto',
+            '<strong>Varios agentes en paralelo</strong> - Ejecuta varias sesiones de Codex CLI a la vez, cada una un proceso independiente con su propia tarea y contexto',
             '<strong>Notificaciones de escritorio</strong> - Recibe un aviso cuando un agente termina o se para a pedir una aprobación, para dejar de estar pendiente de los terminales',
-            '<strong>Títulos dinámicos de terminal</strong> - Cada terminal muestra lo que su agente está haciendo ahora mismo, así lees "Migrando esquema de usuarios" en vez de seis pestañas con el mismo "codex"',
+            '<strong>Títulos dinámicos de terminal</strong> - Cada terminal muestra lo que su agente está haciendo ahora mismo, así lees "Migrando esquema de usuarios" en vez de varias pestañas con el mismo "codex"',
             '<strong>Historial de conversaciones buscable</strong> - Cada conversación de cada terminal se guarda y es buscable, incluso entre agentes distintos',
             '<strong>Diffs de archivos en vivo por terminal</strong> - Mira qué está cambiando cada agente en tiempo real, así las ediciones que se solapan nunca te pillan por sorpresa',
             '<strong>Turbo Mode más permisos granulares</strong> - Deja a los agentes en full-auto para las operaciones seguras mientras controlas las peligrosas',
@@ -410,7 +410,7 @@ En esta guía los comparo por capacidad y flujo de trabajo en lugar de perseguir
     },
     {
       question: '¿Puedo ejecutar varios agentes de Codex CLI a la vez?',
-      answer: 'Sí. Cada sesión de Codex CLI es su propio proceso, así que puedes ejecutar varias en terminales separados al mismo tiempo, cada una con una tarea distinta. CodeAgentSwarm lo hace práctico al darte hasta 6 terminales organizados con notificaciones de escritorio, historial buscable y diffs de archivos en vivo para cada agente.',
+      answer: 'Sí. Cada sesión de Codex CLI es su propio proceso, así que puedes ejecutar varias en terminales separados al mismo tiempo, cada una con una tarea distinta. CodeAgentSwarm lo hace práctico al darte varios terminales organizados con notificaciones de escritorio, historial buscable y diffs de archivos en vivo para cada agente.',
     },
     {
       question: '¿Cuál es mejor para principiantes, Codex CLI o Cursor?',

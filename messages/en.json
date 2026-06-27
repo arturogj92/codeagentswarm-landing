@@ -21,8 +21,8 @@
     "badgeNew": "NEW",
     "titleLine1": "Stop switching windows.",
     "titleLine2": "Orchestrate multiple AI CLI terminals.",
-    "titleLine3": "6 AI CLI Terminals. One Workspace. Full Control.",
-    "subtitle": "Run up to 6 AI CLI terminals in parallel - Claude Code, Codex, Gemini CLI - with real time visibility, live notifications, full conversation history and multi project control.",
+    "titleLine3": "Multiple AI CLI Terminals. One Workspace. Full Control.",
+    "subtitle": "Run multiple AI CLI terminals in parallel - Claude Code, Codex, Gemini CLI - with real time visibility, live notifications, full conversation history and multi project control.",
     "powerStatement": "",
     "authorityLine": "",
     "requirements": "Works with Claude Code, Codex or Gemini CLI. Requires macOS 12 or later.",
@@ -30,7 +30,7 @@
     "securityBadge": "Turbo Mode with built-in guardrails. You set the limits.",
     "stats": {
       "terminals": "Parallel Terminals",
-      "terminalsDesc": "6 AI CLI agents working together",
+      "terminalsDesc": "Multiple AI CLI agents working together",
       "searchableChats": "Search Everything",
       "searchableChatsDesc": "Full conversation history, never lose context",
       "codePreview": "Real-Time Visibility",
@@ -90,16 +90,16 @@
       "oldWay": "Without CodeAgentSwarm",
       "oldWayDesc": "Constant window switching, lost context, repeated prompts",
       "newWay": "With CodeAgentSwarm",
-      "newWayDesc": "6 terminals, one view, zero context loss",
+      "newWayDesc": "Multiple terminals, one view, zero context loss",
       "switchingFatigue": "Window switching",
       "costingHours": "is wasting your time",
       "allVisible": "All visible at once",
-      "sixTerminals": "6 terminals, 1 view",
+      "sixTerminals": "Multiple terminals, 1 view",
       "appPlaceholder": "Your screenshot here",
       "pain1": "Constant Alt+Tab between windows",
       "pain2": "Claude changes code without you seeing",
       "pain3": "Lost context, repeated prompts",
-      "benefit1": "6 terminals visible at once",
+      "benefit1": "Multiple terminals visible at once",
       "benefit2": "Real-time diffs of every change",
       "benefit3": "Agents that create and complete tasks autonomously",
       "chaosLabel": "Constant frustration",
@@ -110,9 +110,9 @@
     "badge": "The Solution",
     "titleLine1": "The multi-terminal AI CLI workflow",
     "titleLine2": "you always wanted",
-    "description": "CodeAgentSwarm is an AI coding workspace where up to six AI CLI terminals (Claude Code, Codex, Gemini CLI) work in parallel with real-time visibility, live notifications, full conversation history and seamless multiproject management. You never lose context.",
+    "description": "CodeAgentSwarm is an AI coding workspace where multiple AI CLI terminals (Claude Code, Codex, Gemini CLI) work in parallel with real-time visibility, live notifications, full conversation history and seamless multiproject management. You never lose context.",
     "points": {
-      "terminals": "Six AI CLI terminals running simultaneously.",
+      "terminals": "Multiple AI CLI terminals running simultaneously.",
       "notifications": "Real-time notifications when agents finish or need input.",
       "git": "Integrated Git panel with live diffs and commit context.",
       "kanban": "MCP-powered Kanban your agents can read and update.",
@@ -164,10 +164,10 @@
     "stats": {
       "workflow": {
         "title": "Orchestrate in Parallel",
-        "subtitle": "2 to 6 tasks progressing at once without losing control."
+        "subtitle": "Multiple tasks progressing at once without losing control."
       },
       "agents": {
-        "title": "6 Agents, 0 Wait",
+        "title": "Multiple Agents, 0 Wait",
         "subtitle": "Frontend, backend, tests. Each one doing its thing."
       },
       "insight": {
@@ -280,12 +280,12 @@
       "subtitle": "During Beta",
       "strikethrough": "After Beta: €6.99/mo",
       "bullets": {
-        "terminals": "6 Terminals",
+        "terminals": "Multiple Terminals",
         "projects": "Unlimited Projects",
         "mcp": "Full MCP Access"
       },
       "features": {
-        "terminals": "6 AI CLI terminals in parallel",
+        "terminals": "Multiple AI CLI terminals in parallel",
         "projects": "Unlimited projects with no restrictions",
         "notifications": "Real-time notifications",
         "mcp": "Full access to MCP marketplace"
@@ -307,14 +307,14 @@
       },
       "pro": {
         "name": "Pro",
-        "description": "For heavy AI CLI users: 6 terminals, real-time notifications, multi-project workflows and full MCP integration",
+        "description": "For heavy AI CLI users: multiple terminals, real-time notifications, multi-project workflows and full MCP integration",
         "cta": "Subscribe in App"
       }
     },
     "features": {
       "terminals2": "2 terminals",
       "terminals4": "4 terminals",
-      "terminals6": "6 terminals",
+      "terminals6": "12 terminals",
       "projects2": "2 projects",
       "projects4": "4 projects",
       "unlimitedProjects": "Unlimited projects",
@@ -351,7 +351,7 @@
     "trustBadge": "30-day money-back guarantee | Cancel anytime | Secure payment via Stripe",
     "whyUpgrade": {
       "title": "Why upgrade to Pro?",
-      "description": "Pro is built for heavy AI CLI users who need 6 terminals, unlimited projects and full MCP integration. Parallel terminals reduce waiting time and context switching, while keyboard shortcuts, advanced layouts and permissions help you keep all your agents in sync. Many workflows that used to take multiple steps can now be handled in a single focused session."
+      "description": "Pro is built for heavy AI CLI users who need multiple terminals, unlimited projects and full MCP integration. Parallel terminals reduce waiting time and context switching, while keyboard shortcuts, advanced layouts and permissions help you keep all your agents in sync. Many workflows that used to take multiple steps can now be handled in a single focused session."
     }
   },
   "roadmap": {
@@ -412,7 +412,7 @@
     "titleHighlight": "Questions",
     "items": {
       "q1": "How do I use multiple AI CLI terminals (Claude Code, Codex, Gemini CLI) with CodeAgentSwarm?",
-      "a1": "CodeAgentSwarm makes multi-terminal AI CLI setup simple. Just open the app and you can run up to 6 AI CLI terminals (Claude Code, Codex, or Gemini CLI) simultaneously. Each terminal operates independently, letting you work on different tasks or projects in parallel with full real-time visibility.",
+      "a1": "CodeAgentSwarm makes multi-terminal AI CLI setup simple. Just open the app and you can run multiple AI CLI terminals (Claude Code, Codex, or Gemini CLI) simultaneously. Each terminal operates independently, letting you work on different tasks or projects in parallel with full real-time visibility.",
       "q2": "How does CodeAgentSwarm handle project-level organization?",
       "a2": "CodeAgentSwarm lets you manage multiple AI CLI projects seamlessly - whether you use Claude Code, Codex, or Gemini CLI. Switch between projects without losing context. Each project maintains its own terminal configurations, task boards, and conversation history. It's an AI multiproject workspace designed for developers juggling multiple codebases.",
       "q3": "Do I get real-time visibility and live change tracking?",
@@ -430,7 +430,7 @@
       "q9": "Why not just use tmux?",
       "a9": "tmux manages windows. CodeAgentSwarm manages agents: task state, notifications when they finish, live diffs, per-project history and configurable permissions. If you just need to split your screen, tmux works fine. If you want to know what each agent is doing and never miss a thing, you need CodeAgentSwarm.",
       "q10": "Can I run Claude Code and Codex CLI at the same time?",
-      "a10": "Yes. Each terminal in CodeAgentSwarm is an independent process, so you can run Claude Code in one and Codex CLI in another at the same time. You pick the agent per terminal (claude-code, codex cli or gemini cli) and run up to 6 of them in parallel.",
+      "a10": "Yes. Each terminal in CodeAgentSwarm is an independent process, so you can run Claude Code in one and Codex CLI in another at the same time. You pick the agent per terminal (claude-code, codex cli or gemini cli) and run several of them in parallel.",
       "q11": "Does CodeAgentSwarm work with Gemini CLI?",
       "a11": "Yes. CodeAgentSwarm runs Gemini CLI alongside Claude Code and Codex CLI in the same workspace, with shared notifications, searchable history and per-terminal live diffs. You can run a whole swarm of Gemini agents or mix Gemini with the other CLIs.",
       "q12": "Can I mix different AI CLI agents in one swarm?",
@@ -512,7 +512,7 @@
   "beta": {
     "hero": {
       "headline": "Join the Open Beta",
-      "subheadline": "Join the Open Beta and unlock the full Pro experience while we refine CodeAgentSwarm. Try 6 synchronized AI CLI terminals (Claude Code, Codex, Gemini CLI) with real time visibility, notifications and full conversation history.",
+      "subheadline": "Join the Open Beta and unlock the full Pro experience while we refine CodeAgentSwarm. Try multiple synchronized AI CLI terminals (Claude Code, Codex, Gemini CLI) with real time visibility, notifications and full conversation history.",
       "microcopy": "Works on macOS (Apple Silicon). Requires Claude Code, Codex or Gemini CLI.",
       "primaryCta": "Join Beta Now",
       "primaryCtaHint": "(Step 1)",
@@ -537,7 +537,7 @@
       "titleHighlight": "Need",
       "point1": {
         "title": "Multiple AI CLI Terminals in Parallel",
-        "description": "Run up to 6 AI CLI agents (Claude Code, Codex, Gemini CLI) simultaneously. Each terminal works independently on different tasks across multiple projects."
+        "description": "Run multiple AI CLI agents (Claude Code, Codex, Gemini CLI) simultaneously. Each terminal works independently on different tasks across multiple projects."
       },
       "point2": {
         "title": "AI-Powered Task Management",

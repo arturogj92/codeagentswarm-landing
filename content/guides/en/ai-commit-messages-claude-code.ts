@@ -100,7 +100,7 @@ CodeAgentSwarm has a built-in Git Manager for exactly this. It reads your staged
       content: [
         {
           type: 'paragraph',
-          text: 'This feature earns its keep when you are running things in parallel. With one terminal, writing a commit by hand is not a big deal. With four or six agents, each one having touched a different module, the diff at the end can be large and spread across the repo.',
+          text: 'This feature earns its keep when you are running things in parallel. With one terminal, writing a commit by hand is not a big deal. With several agents, each one having touched a different module, the diff at the end can be large and spread across the repo.',
         },
         {
           type: 'paragraph',

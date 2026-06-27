@@ -126,7 +126,7 @@ The part I like most: when you install a skill, you choose where it goes. You ca
       content: [
         {
           type: 'paragraph',
-          text: 'This is the reason the marketplace matters more inside CodeAgentSwarm than it would as a standalone catalogue. CodeAgentSwarm is built to run several CLI agents in parallel, up to six terminals across Claude Code, the Codex CLI and the Gemini CLI at the same time.',
+          text: 'This is the reason the marketplace matters more inside CodeAgentSwarm than it would as a standalone catalogue. CodeAgentSwarm is built to run several CLI agents in parallel, many terminals across Claude Code, the Codex CLI and the Gemini CLI at the same time.',
         },
         {
           type: 'paragraph',

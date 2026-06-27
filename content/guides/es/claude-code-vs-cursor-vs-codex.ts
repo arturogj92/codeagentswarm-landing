@@ -10,7 +10,7 @@ export const guide: Guide = {
     intro: `El ecosistema de herramientas de IA para programar ha crecido muchísimo. Claude Code, Cursor y Codex CLI son tres de las opciones más populares, pero son herramientas fundamentalmente distintas diseñadas para flujos de trabajo diferentes.
 
 En esta guía te cuento qué hace cada una, dónde destaca y dónde se queda corta. Sin hype ni marketing - solo una comparativa honesta para que elijas lo que mejor encaje con tu forma de trabajar, o decidas usar más de una.`,
-    ctaText: '¿Usas Claude Code, Codex CLI o Gemini CLI? Ejecútalos todos en paralelo con CodeAgentSwarm. Seis terminales, un solo workspace.',
+    ctaText: '¿Usas Claude Code, Codex CLI o Gemini CLI? Ejecútalos todos en paralelo con CodeAgentSwarm. Varios terminales, un solo workspace.',
     highlightedWords: ['Claude Code', 'Cursor', 'Codex CLI'],
     publishedAt: '2026-04-15',
     updatedAt: '2026-04-15',
@@ -342,7 +342,7 @@ En esta guía te cuento qué hace cada una, dónde destaca y dónde se queda cor
         {
           type: 'list',
           items: [
-            '<strong>Claude Code</strong> - Sí, ejecuta múltiples instancias. Hasta 6 terminales organizados con CodeAgentSwarm',
+            '<strong>Claude Code</strong> - Sí, ejecuta múltiples instancias. Varios terminales organizados con CodeAgentSwarm',
             '<strong>Cursor</strong> - Limitado. Los agentes en segundo plano ayudan, pero básicamente trabajas en un solo editor',
             '<strong>Codex CLI</strong> - Sí, ejecuta múltiples instancias en terminales separados',
           ],
@@ -431,7 +431,7 @@ En esta guía te cuento qué hace cada una, dónde destaca y dónde se queda cor
         },
         {
           type: 'paragraph',
-          text: '<a href="/" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a> resuelve esto dándote un workspace unificado donde puedes ejecutar hasta 6 terminales de agentes de IA simultáneamente, organizados en un diseño visual limpio.',
+          text: '<a href="/" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a> resuelve esto dándote un workspace unificado donde puedes ejecutar varios terminales de agentes de IA simultáneamente, organizados en un diseño visual limpio.',
         },
         {
           type: 'list',
@@ -478,7 +478,7 @@ En esta guía te cuento qué hace cada una, dónde destaca y dónde se queda cor
     },
     {
       question: '¿Puedo ejecutar Claude Code y Codex CLI al mismo tiempo?',
-      answer: 'Sí. Puedes ejecutarlos en ventanas de terminal separadas. CodeAgentSwarm lo hace aún más fácil, permitiéndote ejecutar Claude Code, Codex CLI y Gemini CLI uno al lado del otro en hasta 6 terminales organizados con notificaciones, historial y seguimiento de cambios de archivos para cada uno.',
+      answer: 'Sí. Puedes ejecutarlos en ventanas de terminal separadas. CodeAgentSwarm lo hace aún más fácil, permitiéndote ejecutar Claude Code, Codex CLI y Gemini CLI uno al lado del otro en varios terminales organizados con notificaciones, historial y seguimiento de cambios de archivos para cada uno.',
     },
     {
       question: '¿Cursor soporta MCP?',

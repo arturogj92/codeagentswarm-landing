@@ -25,9 +25,9 @@ And once Codex is running, we will also show you how to go from a single Codex t
       content: [
         {
           type: 'image',
-          alt: 'Six OpenAI Codex CLI terminals running in parallel in a single CodeAgentSwarm workspace on a desktop',
+          alt: 'Multiple OpenAI Codex CLI terminals running in parallel in a single CodeAgentSwarm workspace on a desktop',
           src: '/images/guides/codex-agent-swarm.png',
-          caption: 'OpenAI Codex CLI running on the desktop: six independent Codex sessions side by side in one CodeAgentSwarm window.',
+          caption: 'OpenAI Codex CLI running on the desktop: multiple independent Codex sessions side by side in one CodeAgentSwarm window.',
         },
         {
           type: 'callout',
@@ -207,7 +207,7 @@ codex`,
         },
         {
           type: 'paragraph',
-          text: 'That is the problem <a href="/en" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a> solves, and it is a native desktop app for both Windows and macOS. It runs your Codex CLI inside a visual workspace, so Windows developers get a real GUI plus up to six Codex terminals side by side, with desktop notifications when an agent finishes or needs input, searchable history across every session, and a live diff of what each terminal changed.',
+          text: 'That is the problem <a href="/en" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a> solves, and it is a native desktop app for both Windows and macOS. It runs your Codex CLI inside a visual workspace, so Windows developers get a real GUI plus multiple Codex terminals side by side, with desktop notifications when an agent finishes or needs input, searchable history across every session, and a live diff of what each terminal changed.',
         },
         {
           type: 'image',
@@ -251,7 +251,7 @@ codex`,
     },
     {
       question: 'Can I run multiple Codex sessions at once on Windows?',
-      answer: 'Yes. Each Codex CLI session is its own process, so you can open several terminals and run codex in each one on the same project. CodeAgentSwarm is a native Windows desktop app that supervises up to six Codex terminals in one visual workspace, with notifications, searchable history and live diffs.',
+      answer: 'Yes. Each Codex CLI session is its own process, so you can open several terminals and run codex in each one on the same project. CodeAgentSwarm is a native Windows desktop app that supervises multiple Codex terminals in one visual workspace, with notifications, searchable history and live diffs.',
     },
     {
       question: 'Does CodeAgentSwarm work on Windows?',

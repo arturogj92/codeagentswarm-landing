@@ -201,7 +201,7 @@ claude --version`,
         },
         {
           type: 'paragraph',
-          text: 'Ese es el problema que resuelve <a href="/es" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a>, y ya funciona en Windows. Te da hasta 6 terminales de Claude Code en paralelo con notificaciones de escritorio cuando un agente termina o necesita tu input, historial buscable de todas las sesiones y un diff en vivo de lo que cambió cada terminal.',
+          text: 'Ese es el problema que resuelve <a href="/es" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a>, y ya funciona en Windows. Te da varios terminales de Claude Code en paralelo con notificaciones de escritorio cuando un agente termina o necesita tu input, historial buscable de todas las sesiones y un diff en vivo de lo que cambió cada terminal.',
         },
         {
           type: 'paragraph',

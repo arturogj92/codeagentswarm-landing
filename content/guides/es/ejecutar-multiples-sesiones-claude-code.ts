@@ -12,7 +12,7 @@ export const guide: Guide = {
 La verdadera pregunta no es si se puede, sino cómo deberías hacerlo. Hay varios enfoques distintos y cada uno tiene sus ventajas y desventajas. Algunos son gratuitos y minimalistas, otros te dan visibilidad y control real.
 
 En esta guía te explico los tres métodos principales, los comparo de forma honesta y te ayudo a elegir el que mejor se adapte a tu forma de trabajar.`,
-    ctaText: 'Prueba a ejecutar varias sesiones de Claude Code con CodeAgentSwarm. Seis terminales, un solo espacio de trabajo, cero cambios de contexto.',
+    ctaText: 'Prueba a ejecutar varias sesiones de Claude Code con CodeAgentSwarm. Varios terminales, un solo espacio de trabajo, cero cambios de contexto.',
     highlightedWords: ['varias sesiones', 'Claude Code'],
     publishedAt: '2026-04-15',
     updatedAt: '2026-04-15',
@@ -162,13 +162,13 @@ En esta guía te explico los tres métodos principales, los comparo de forma hon
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm se construyó específicamente para este problema: ejecutar varias sesiones de IA en paralelo con visibilidad y control reales. Es una app de escritorio que te da hasta seis terminales en un solo espacio de trabajo, con funcionalidades diseñadas en torno a cómo se comportan realmente los agentes de IA en paralelo.',
+          text: 'CodeAgentSwarm se construyó específicamente para este problema: ejecutar varias sesiones de IA en paralelo con visibilidad y control reales. Es una app de escritorio que te da varios terminales en un solo espacio de trabajo, con funcionalidades diseñadas en torno a cómo se comportan realmente los agentes de IA en paralelo.',
         },
         {
           type: 'image',
-          alt: 'Seis terminales de Claude Code ejecutándose en paralelo en el espacio de trabajo de CodeAgentSwarm',
+          alt: 'Varios terminales de Claude Code ejecutándose en paralelo en el espacio de trabajo de CodeAgentSwarm',
           src: '/images/guides/multi-terminal.png',
-          caption: 'Seis terminales de IA funcionando simultáneamente, cada uno con su propio contexto, título dinámico y estado en tiempo real.',
+          caption: 'Varios terminales de IA funcionando simultáneamente, cada uno con su propio contexto, título dinámico y estado en tiempo real.',
         },
         {
           type: 'paragraph',
@@ -177,7 +177,7 @@ En esta guía te explico los tres métodos principales, los comparo de forma hon
         {
           type: 'heading',
           level: 3,
-          text: 'Hasta 6 terminales de IA en paralelo',
+          text: 'Varios terminales de IA en paralelo',
           id: 'seis-terminales',
         },
         {
@@ -192,7 +192,7 @@ En esta guía te explico los tres métodos principales, los comparo de forma hon
         },
         {
           type: 'paragraph',
-          text: 'Cada terminal actualiza automáticamente su título según lo que el agente está haciendo en ese momento. En vez de seis pestañas idénticas con "claude", ves títulos como "Refactorizando Auth", "Escribiendo Tests API", "Arreglando CSS Layout". De un vistazo, sabes exactamente en qué está trabajando cada sesión.',
+          text: 'Cada terminal actualiza automáticamente su título según lo que el agente está haciendo en ese momento. En vez de varias pestañas idénticas con "claude", ves títulos como "Refactorizando Auth", "Escribiendo Tests API", "Arreglando CSS Layout". De un vistazo, sabes exactamente en qué está trabajando cada sesión.',
         },
         {
           type: 'heading',
@@ -376,7 +376,7 @@ En esta guía te explico los tres métodos principales, los comparo de forma hon
     },
     {
       question: '¿Cuántas sesiones de Claude Code puedo ejecutar a la vez?',
-      answer: 'No hay un límite estricto por parte de Claude Code, cada sesión es simplemente un proceso. En la práctica, los recursos de tu máquina y el espacio en pantalla son las restricciones. CodeAgentSwarm soporta hasta 6 terminales simultáneos con un diseño visual que mantiene todo manejable.',
+      answer: 'No hay un límite estricto por parte de Claude Code, cada sesión es simplemente un proceso. En la práctica, los recursos de tu máquina y el espacio en pantalla son las restricciones. CodeAgentSwarm soporta varios terminales simultáneos con un diseño visual que mantiene todo manejable.',
     },
     {
       question: '¿Es tmux mejor que CodeAgentSwarm para múltiples terminales?',

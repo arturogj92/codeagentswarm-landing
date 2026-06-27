@@ -83,7 +83,7 @@ This guide lays out what each one is, when to reach for which, and why you do no
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm is a desktop workspace, for macOS and Windows, that runs up to six independent CLI terminals in parallel. Each terminal is its own process and its own conversation, and you pick the agent per terminal: Claude Code in one, Codex CLI in another, Gemini CLI in a third. They do not share context with each other, and you supervise them directly.',
+          text: 'CodeAgentSwarm is a desktop workspace, for macOS and Windows, that runs multiple independent CLI terminals in parallel. Each terminal is its own process and its own conversation, and you pick the agent per terminal: Claude Code in one, Codex CLI in another, Gemini CLI in a third. They do not share context with each other, and you supervise them directly.',
         },
         {
           type: 'paragraph',
@@ -263,7 +263,7 @@ This guide lays out what each one is, when to reach for which, and why you do no
     },
     {
       question: 'Are Claude Code subagents the same as running multiple Claude Code sessions?',
-      answer: 'No. Subagents (agent teams) live inside a single Claude Code session and are managed by the main agent, sharing its context and usage. Running multiple Claude Code sessions means launching several independent Claude processes, each with its own context and conversation, which you supervise yourself. CodeAgentSwarm is built for the second case, letting you run up to six independent terminals side by side.',
+      answer: 'No. Subagents (agent teams) live inside a single Claude Code session and are managed by the main agent, sharing its context and usage. Running multiple Claude Code sessions means launching several independent Claude processes, each with its own context and conversation, which you supervise yourself. CodeAgentSwarm is built for the second case, letting you run multiple independent terminals side by side.',
     },
   ],
 }

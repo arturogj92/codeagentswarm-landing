@@ -360,7 +360,7 @@ This guide compares them on capability and workflow rather than chasing benchmar
         },
         {
           type: 'paragraph',
-          text: '<a href="/" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a> is a desktop app for running and supervising a swarm of AI CLI agents in one workspace. You get up to six terminals at once, and you choose the agent per terminal. Set them all to Codex CLI for a pure Codex swarm, or mix in Claude Code and Gemini CLI where they fit better.',
+          text: '<a href="/" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a> is a desktop app for running and supervising a swarm of AI CLI agents in one workspace. You get multiple terminals at once, and you choose the agent per terminal. Set them all to Codex CLI for a pure Codex swarm, or mix in Claude Code and Gemini CLI where they fit better.',
         },
         {
           type: 'image',
@@ -371,9 +371,9 @@ This guide compares them on capability and workflow rather than chasing benchmar
         {
           type: 'list',
           items: [
-            '<strong>Up to 6 agents in parallel</strong> - Run several Codex CLI sessions side by side, each an independent process with its own task and context',
+            '<strong>Multiple agents in parallel</strong> - Run several Codex CLI sessions side by side, each an independent process with its own task and context',
             '<strong>Desktop notifications</strong> - Get pinged when an agent finishes or stops for an approval, so you stop babysitting terminals',
-            '<strong>Dynamic terminal titles</strong> - Each terminal shows what its agent is doing right now, so you read "Migrating User Schema" instead of six tabs all labelled "codex"',
+            '<strong>Dynamic terminal titles</strong> - Each terminal shows what its agent is doing right now, so you read "Migrating User Schema" instead of several tabs all labelled "codex"',
             '<strong>Searchable conversation history</strong> - Every conversation across every terminal is saved and searchable, even across different agents',
             '<strong>Per-terminal live file diffs</strong> - Watch what each agent is changing in real time, so overlapping edits never surprise you',
             '<strong>Turbo Mode plus granular permissions</strong> - Let agents run full auto on safe operations while gating the dangerous ones',
@@ -410,7 +410,7 @@ This guide compares them on capability and workflow rather than chasing benchmar
     },
     {
       question: 'Can I run multiple Codex CLI agents at once?',
-      answer: 'Yes. Each Codex CLI session is its own process, so you can run several in separate terminals at the same time, each on a different task. CodeAgentSwarm makes this practical by giving you up to 6 organized terminals with desktop notifications, searchable history, and live file diffs for each agent.',
+      answer: 'Yes. Each Codex CLI session is its own process, so you can run several in separate terminals at the same time, each on a different task. CodeAgentSwarm makes this practical by giving you multiple organized terminals with desktop notifications, searchable history, and live file diffs for each agent.',
     },
     {
       question: 'Which is better for beginners, Codex CLI or Cursor?',

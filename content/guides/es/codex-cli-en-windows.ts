@@ -25,9 +25,9 @@ Y cuando tengas Codex funcionando, también te enseñamos cómo pasar de un solo
       content: [
         {
           type: 'image',
-          alt: 'Seis terminales de OpenAI Codex CLI ejecutándose en paralelo en un único espacio de trabajo de CodeAgentSwarm en el escritorio',
+          alt: 'Varios terminales de OpenAI Codex CLI ejecutándose en paralelo en un único espacio de trabajo de CodeAgentSwarm en el escritorio',
           src: '/images/guides/codex-agent-swarm.png',
-          caption: 'OpenAI Codex CLI en el escritorio: seis sesiones de Codex independientes, una al lado de otra, en una sola ventana de CodeAgentSwarm.',
+          caption: 'OpenAI Codex CLI en el escritorio: varias sesiones de Codex independientes, una al lado de otra, en una sola ventana de CodeAgentSwarm.',
         },
         {
           type: 'callout',
@@ -207,7 +207,7 @@ codex`,
         },
         {
           type: 'paragraph',
-          text: 'Ese es el problema que resuelve <a href="/es" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a>, y es una app de escritorio nativa tanto para Windows como para macOS. Ejecuta tu Codex CLI dentro de un espacio de trabajo visual, así que los desarrolladores en Windows tienen una GUI de verdad más hasta seis terminales de Codex en paralelo, con notificaciones de escritorio cuando un agente termina o necesita tu input, historial buscable de todas las sesiones y un diff en vivo de lo que cambió cada terminal.',
+          text: 'Ese es el problema que resuelve <a href="/es" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a>, y es una app de escritorio nativa tanto para Windows como para macOS. Ejecuta tu Codex CLI dentro de un espacio de trabajo visual, así que los desarrolladores en Windows tienen una GUI de verdad más varios terminales de Codex en paralelo, con notificaciones de escritorio cuando un agente termina o necesita tu input, historial buscable de todas las sesiones y un diff en vivo de lo que cambió cada terminal.',
         },
         {
           type: 'image',
@@ -251,7 +251,7 @@ codex`,
     },
     {
       question: '¿Puedo ejecutar varias sesiones de Codex a la vez en Windows?',
-      answer: 'Sí. Cada sesión de Codex CLI es su propio proceso, así que puedes abrir varios terminales y ejecutar codex en cada uno sobre el mismo proyecto. CodeAgentSwarm es una app de escritorio nativa para Windows que supervisa hasta seis terminales de Codex en un único espacio de trabajo visual, con notificaciones, historial buscable y diffs en vivo.',
+      answer: 'Sí. Cada sesión de Codex CLI es su propio proceso, así que puedes abrir varios terminales y ejecutar codex en cada uno sobre el mismo proyecto. CodeAgentSwarm es una app de escritorio nativa para Windows que supervisa varios terminales de Codex en un único espacio de trabajo visual, con notificaciones, historial buscable y diffs en vivo.',
     },
     {
       question: '¿CodeAgentSwarm funciona en Windows?',

@@ -12,7 +12,7 @@ export const guide: Guide = {
 The part that takes a bit of thought is not starting the processes, it is keeping track of them once several Codex agents are editing files, pausing for approvals, and finishing at different moments.
 
 This guide walks through the three practical ways to run several Codex CLI sessions side by side: plain terminal tabs, tmux, and CodeAgentSwarm. I compare them honestly and show where each one starts to slow you down.`,
-    ctaText: 'Run several Codex CLI sessions at once in CodeAgentSwarm. Up to six terminals in one window, with desktop notifications and full-auto kept in check by per-terminal permissions.',
+    ctaText: 'Run several Codex CLI sessions at once in CodeAgentSwarm. Multiple terminals in one window, with desktop notifications and full-auto kept in check by per-terminal permissions.',
     highlightedWords: ['multiple Codex CLI sessions', 'at once'],
     publishedAt: '2026-06-07',
     updatedAt: '2026-06-07',
@@ -25,9 +25,9 @@ This guide walks through the three practical ways to run several Codex CLI sessi
       content: [
         {
           type: 'image',
-          alt: 'Six OpenAI Codex CLI terminals running in parallel in a single CodeAgentSwarm workspace, each an independent Codex session',
+          alt: 'Multiple OpenAI Codex CLI terminals running in parallel in a single CodeAgentSwarm workspace, each an independent Codex session',
           src: '/images/guides/codex-agent-swarm.png',
-          caption: 'Six independent Codex CLI sessions running at once in one CodeAgentSwarm window, each on its own task.',
+          caption: 'Multiple independent Codex CLI sessions running at once in one CodeAgentSwarm window, each on its own task.',
         },
         {
           type: 'paragraph',
@@ -168,7 +168,7 @@ This guide walks through the three practical ways to run several Codex CLI sessi
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm is a desktop app built for exactly this: running and supervising several AI CLI sessions in one place. It runs on macOS and Windows, gives you up to six terminals in a single workspace, and lets you choose the agent per terminal. To run Codex CLI in parallel you just pick "codex cli" in the SELECT AI AGENT picker in each terminal you want running Codex.',
+          text: 'CodeAgentSwarm is a desktop app built for exactly this: running and supervising several AI CLI sessions in one place. It runs on macOS and Windows, gives you multiple terminals in a single workspace, and lets you choose the agent per terminal. To run Codex CLI in parallel you just pick "codex cli" in the SELECT AI AGENT picker in each terminal you want running Codex.',
         },
         {
           type: 'image',
@@ -183,12 +183,12 @@ This guide walks through the three practical ways to run several Codex CLI sessi
         {
           type: 'heading',
           level: 3,
-          text: 'Up to 6 Codex sessions in parallel',
+          text: 'Multiple Codex sessions in parallel',
           id: 'six-terminals',
         },
         {
           type: 'paragraph',
-          text: 'Set every terminal to "codex cli" to run six Codex sessions at once, or mix in Claude Code and Gemini CLI where they fit better. Each terminal is a fully independent Codex process with its own conversation and project context. CodeAgentSwarm runs on top of your existing subscriptions, so it is not a model provider, it just orchestrates the agents you already pay for. If Claude Code is your main agent, the same setup is covered in the <a href="/en/guides/run-multiple-claude-code-sessions" class="text-neon-cyan hover:text-neon-purple transition-colors">running multiple Claude Code sessions</a> guide.',
+          text: 'Set every terminal to "codex cli" to run several Codex sessions at once, or mix in Claude Code and Gemini CLI where they fit better. Each terminal is a fully independent Codex process with its own conversation and project context. CodeAgentSwarm runs on top of your existing subscriptions, so it is not a model provider, it just orchestrates the agents you already pay for. If Claude Code is your main agent, the same setup is covered in the <a href="/en/guides/run-multiple-claude-code-sessions" class="text-neon-cyan hover:text-neon-purple transition-colors">running multiple Claude Code sessions</a> guide.',
         },
         {
           type: 'heading',
@@ -198,7 +198,7 @@ This guide walks through the three practical ways to run several Codex CLI sessi
         },
         {
           type: 'paragraph',
-          text: 'Every terminal updates its own title to reflect what its Codex session is doing right now. Instead of six tabs all labelled "codex", you read titles like "Migrating User Schema", "Writing API Tests", "Refactoring Auth". You can tell which session is on which task without clicking into any of them.',
+          text: 'Every terminal updates its own title to reflect what its Codex session is doing right now. Instead of several tabs all labelled "codex", you read titles like "Migrating User Schema", "Writing API Tests", "Refactoring Auth". You can tell which session is on which task without clicking into any of them.',
         },
         {
           type: 'heading',
@@ -362,7 +362,7 @@ This guide walks through the three practical ways to run several Codex CLI sessi
   faq: [
     {
       question: 'Can you run multiple Codex CLI sessions at once?',
-      answer: 'Yes. Each time you run the codex command you get an independent session with its own conversation and context, so you can open several terminals and run Codex CLI in each one. They do not share state or step on each other unless they edit the same files. CodeAgentSwarm supports up to 6 terminals so you can supervise several Codex sessions in one window.',
+      answer: 'Yes. Each time you run the codex command you get an independent session with its own conversation and context, so you can open several terminals and run Codex CLI in each one. They do not share state or step on each other unless they edit the same files. CodeAgentSwarm supports multiple terminals so you can supervise several Codex sessions in one window.',
     },
     {
       question: 'How do I run two Codex sessions at the same time?',
@@ -382,7 +382,7 @@ This guide walks through the three practical ways to run several Codex CLI sessi
     },
     {
       question: 'How many Codex sessions can I run at once?',
-      answer: 'There is no hard limit from Codex CLI itself, since each session is just a process. In practice your machine resources and screen space are the constraints. CodeAgentSwarm supports up to 6 simultaneous terminals with a layout that keeps several Codex sessions manageable in one window.',
+      answer: 'There is no hard limit from Codex CLI itself, since each session is just a process. In practice your machine resources and screen space are the constraints. CodeAgentSwarm supports multiple simultaneous terminals with a layout that keeps several Codex sessions manageable in one window.',
     },
     {
       question: 'Running multiple Codex sessions vs tmux, which is better?',

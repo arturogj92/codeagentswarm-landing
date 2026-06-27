@@ -83,7 +83,7 @@ Esta guía explica qué es cada cosa, cuándo recurrir a una o a otra, y por qu�
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm es un espacio de trabajo de escritorio, para macOS y Windows, que ejecuta hasta seis terminales CLI independientes en paralelo. Cada terminal es su propio proceso y su propia conversación, y eliges el agente por terminal: Claude Code en una, Codex CLI en otra, Gemini CLI en una tercera. No comparten contexto entre ellas y tú las supervisas directamente.',
+          text: 'CodeAgentSwarm es un espacio de trabajo de escritorio, para macOS y Windows, que ejecuta varios terminales CLI independientes en paralelo. Cada terminal es su propio proceso y su propia conversación, y eliges el agente por terminal: Claude Code en una, Codex CLI en otra, Gemini CLI en una tercera. No comparten contexto entre ellas y tú las supervisas directamente.',
         },
         {
           type: 'paragraph',
@@ -263,7 +263,7 @@ Esta guía explica qué es cada cosa, cuándo recurrir a una o a otra, y por qu�
     },
     {
       question: '¿Los subagentes de Claude Code son lo mismo que ejecutar varias sesiones de Claude Code?',
-      answer: 'No. Los subagentes (agent teams) viven dentro de una sola sesión de Claude Code y los gestiona el agente principal, compartiendo su contexto y su consumo. Ejecutar varias sesiones de Claude Code significa lanzar varios procesos de Claude independientes, cada uno con su propio contexto y conversación, que tú mismo supervisas. CodeAgentSwarm está pensado para el segundo caso, permitiéndote ejecutar hasta seis terminales independientes lado a lado.',
+      answer: 'No. Los subagentes (agent teams) viven dentro de una sola sesión de Claude Code y los gestiona el agente principal, compartiendo su contexto y su consumo. Ejecutar varias sesiones de Claude Code significa lanzar varios procesos de Claude independientes, cada uno con su propio contexto y conversación, que tú mismo supervisas. CodeAgentSwarm está pensado para el segundo caso, permitiéndote ejecutar varios terminales independientes lado a lado.',
     },
   ],
 }

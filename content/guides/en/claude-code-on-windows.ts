@@ -201,7 +201,7 @@ claude --version`,
         },
         {
           type: 'paragraph',
-          text: 'That is the problem <a href="/en" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a> solves, and it now runs on Windows. It gives you up to 6 Claude Code terminals side by side with desktop notifications when an agent finishes or needs input, searchable history across every session, and a live diff of what each terminal changed.',
+          text: 'That is the problem <a href="/en" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a> solves, and it now runs on Windows. It gives you multiple Claude Code terminals side by side with desktop notifications when an agent finishes or needs input, searchable history across every session, and a live diff of what each terminal changed.',
         },
         {
           type: 'paragraph',

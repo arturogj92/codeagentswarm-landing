@@ -100,7 +100,7 @@ CodeAgentSwarm tiene un Git Manager integrado justo para esto. Lee tus archivos 
       content: [
         {
           type: 'paragraph',
-          text: 'Esta función se gana su sitio cuando trabajas en paralelo. Con un terminal, escribir un commit a mano no es para tanto. Con cuatro o seis agentes, cada uno habiendo tocado un módulo distinto, el diff del final puede ser grande y estar repartido por todo el repo.',
+          text: 'Esta función se gana su sitio cuando trabajas en paralelo. Con un terminal, escribir un commit a mano no es para tanto. Con varios agentes, cada uno habiendo tocado un módulo distinto, el diff del final puede ser grande y estar repartido por todo el repo.',
         },
         {
           type: 'paragraph',

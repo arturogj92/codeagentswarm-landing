@@ -126,7 +126,7 @@ Lo que más me gusta: cuando instalas una skill, eliges dónde va. Puedes instal
       content: [
         {
           type: 'paragraph',
-          text: 'Esta es la razón por la que el marketplace importa más dentro de CodeAgentSwarm que como un catálogo independiente. CodeAgentSwarm está hecho para ejecutar varios agentes CLI en paralelo, hasta seis terminales entre Claude Code, el CLI de Codex y el CLI de Gemini al mismo tiempo.',
+          text: 'Esta es la razón por la que el marketplace importa más dentro de CodeAgentSwarm que como un catálogo independiente. CodeAgentSwarm está hecho para ejecutar varios agentes CLI en paralelo, múltiples terminales entre Claude Code, el CLI de Codex y el CLI de Gemini al mismo tiempo.',
         },
         {
           type: 'paragraph',

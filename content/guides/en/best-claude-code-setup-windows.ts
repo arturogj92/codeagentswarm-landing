@@ -12,7 +12,7 @@ export const guide: Guide = {
 This guide goes through each piece of that setup and why it matters: terminal choice, shell configuration, update channels, when WSL 2 earns its place, and what to do when one Claude Code session is no longer enough.
 
 It assumes you already have Claude Code installed. If not, start with our guide on <a href="/en/guides/claude-code-on-windows" class="text-neon-cyan hover:text-neon-purple transition-colors">how to install Claude Code on Windows</a> and come back.`,
-    ctaText: 'Ready to scale past one terminal? Download CodeAgentSwarm for Windows free and run up to 6 supervised Claude Code sessions in parallel.',
+    ctaText: 'Ready to scale past one terminal? Download CodeAgentSwarm for Windows free and run multiple supervised Claude Code sessions in parallel.',
     highlightedWords: ['Claude Code', 'Windows'],
     publishedAt: '2026-06-12',
     updatedAt: '2026-06-12',
@@ -160,7 +160,7 @@ It assumes you already have Claude Code installed. If not, start with our guide 
         },
         {
           type: 'paragraph',
-          text: '<a href="/en" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a> is a Windows (and macOS) desktop app built exactly for this: up to 6 Claude Code terminals side by side, desktop notifications when an agent finishes or needs input, searchable history across all sessions, live per-terminal diffs and a kanban board the agents themselves keep updated. It runs on top of your existing Claude Code install, so everything in this guide still applies.',
+          text: '<a href="/en" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a> is a Windows (and macOS) desktop app built exactly for this: multiple Claude Code terminals side by side, desktop notifications when an agent finishes or needs input, searchable history across all sessions, live per-terminal diffs and a kanban board the agents themselves keep updated. It runs on top of your existing Claude Code install, so everything in this guide still applies.',
         },
         {
           type: 'paragraph',
@@ -194,7 +194,7 @@ It assumes you already have Claude Code installed. If not, start with our guide 
     },
     {
       question: 'Can I run several Claude Code sessions at once on Windows?',
-      answer: 'Yes. Each terminal runs its own independent session. Plain terminal tabs work but offer no supervision; CodeAgentSwarm for Windows gives you up to 6 sessions with notifications, history and live diffs.',
+      answer: 'Yes. Each terminal runs its own independent session. Plain terminal tabs work but offer no supervision; CodeAgentSwarm for Windows gives you multiple sessions with notifications, history and live diffs.',
     },
     {
       question: 'Does this setup need admin rights?',

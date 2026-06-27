@@ -12,7 +12,7 @@ export const guide: Guide = {
 La idea suena caótica, y mal hecha lo es. El objetivo de esta guía es enseñarte a hacerlo bien: cómo ejecutar de verdad varios agentes de código en paralelo, cómo decidir qué agente se encarga de qué, y cómo no perder la visibilidad de un workspace donde tres o cuatro agentes editan archivos a la vez.
 
 Yo trabajo con enjambres mixtos casi todos los días. Aquí te cuento qué es realmente un enjambre de agentes CLI de IA, los compromisos honestos de cada forma de montarlo, y dónde un workspace hecho a propósito se gana su sitio frente a las pestañas del terminal o tmux.`,
-    ctaText: 'Ejecuta Claude Code, Codex y Gemini en paralelo en un solo workspace de CodeAgentSwarm. Hasta seis agentes, visibilidad compartida y un único sitio desde el que vigilarlos.',
+    ctaText: 'Ejecuta Claude Code, Codex y Gemini en paralelo en un solo workspace de CodeAgentSwarm. Varios agentes, visibilidad compartida y un único sitio desde el que vigilarlos.',
     highlightedWords: ['enjambre de agentes CLI de IA', 'en paralelo'],
     publishedAt: '2026-06-07',
     updatedAt: '2026-06-07',
@@ -247,7 +247,7 @@ Yo trabajo con enjambres mixtos casi todos los días. Aquí te cuento qué es re
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm es una app de escritorio hecha justo para esto: ejecutar un enjambre de agentes CLI de IA con visibilidad y control de verdad. Funciona en macOS y Windows, te da hasta seis terminales en un solo workspace y te deja elegir el agente por terminal. Funciona sobre tus suscripciones, no es un proveedor de modelos, así que tus planes de Claude, OpenAI y Google siguen funcionando tal cual.',
+          text: 'CodeAgentSwarm es una app de escritorio hecha justo para esto: ejecutar un enjambre de agentes CLI de IA con visibilidad y control de verdad. Funciona en macOS y Windows, te da varios terminales en un solo workspace y te deja elegir el agente por terminal. Funciona sobre tus suscripciones, no es un proveedor de modelos, así que tus planes de Claude, OpenAI y Google siguen funcionando tal cual.',
         },
         {
           type: 'image',
@@ -262,7 +262,7 @@ Yo trabajo con enjambres mixtos casi todos los días. Aquí te cuento qué es re
         {
           type: 'heading',
           level: 3,
-          text: 'Hasta 6 agentes en paralelo, tú eliges por terminal',
+          text: 'Varios agentes en paralelo, tú eliges por terminal',
           id: 'six-agents',
         },
         {
@@ -445,7 +445,7 @@ Yo trabajo con enjambres mixtos casi todos los días. Aquí te cuento qué es re
     },
     {
       question: '¿Puedo ejecutar Claude Code, Codex y Gemini a la vez?',
-      answer: 'Sí. Cada agente se ejecuta como un proceso CLI independiente, así que puedes tener Claude Code, Codex CLI y Gemini CLI a la vez sobre el mismo proyecto. CodeAgentSwarm te deja elegir el agente por terminal y ejecutar hasta seis a la vez en un solo workspace, así que mezclas proveedores con total libertad.',
+      answer: 'Sí. Cada agente se ejecuta como un proceso CLI independiente, así que puedes tener Claude Code, Codex CLI y Gemini CLI a la vez sobre el mismo proyecto. CodeAgentSwarm te deja elegir el agente por terminal y ejecutar varios a la vez en un solo workspace, así que mezclas proveedores con total libertad.',
     },
     {
       question: '¿Qué CLI de código uso para cada cosa?',

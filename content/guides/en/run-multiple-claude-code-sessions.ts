@@ -12,7 +12,7 @@ export const guide: Guide = {
 The real question is not whether you can do it, but how you should do it. There are a few different approaches, and each one has tradeoffs. Some are free and minimal, others give you real visibility and control.
 
 In this guide I will walk you through the three main methods, compare them honestly, and help you pick the right one depending on how you work.`,
-    ctaText: 'Try running multiple Claude Code sessions with CodeAgentSwarm. Six terminals, one workspace, zero context switching.',
+    ctaText: 'Try running multiple Claude Code sessions with CodeAgentSwarm. Multiple terminals, one workspace, zero context switching.',
     highlightedWords: ['multiple sessions', 'Claude Code'],
     publishedAt: '2026-04-15',
     updatedAt: '2026-04-15',
@@ -162,13 +162,13 @@ In this guide I will walk you through the three main methods, compare them hones
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm was built specifically for this problem: running multiple AI coding sessions in parallel with real visibility and control. It is a desktop app that gives you up to six terminals in a single workspace, with features designed around how parallel AI agents actually behave.',
+          text: 'CodeAgentSwarm was built specifically for this problem: running multiple AI coding sessions in parallel with real visibility and control. It is a desktop app that gives you multiple terminals in a single workspace, with features designed around how parallel AI agents actually behave.',
         },
         {
           type: 'image',
-          alt: 'Six Claude Code terminals running in parallel in CodeAgentSwarm workspace',
+          alt: 'Multiple Claude Code terminals running in parallel in CodeAgentSwarm workspace',
           src: '/images/guides/multi-terminal.png',
-          caption: 'Six AI terminals running simultaneously, each with its own context, dynamic title, and real-time status.',
+          caption: 'Multiple AI terminals running simultaneously, each with its own context, dynamic title, and real-time status.',
         },
         {
           type: 'paragraph',
@@ -177,7 +177,7 @@ In this guide I will walk you through the three main methods, compare them hones
         {
           type: 'heading',
           level: 3,
-          text: 'Up to 6 AI terminals in parallel',
+          text: 'Multiple AI terminals in parallel',
           id: 'six-terminals',
         },
         {
@@ -192,7 +192,7 @@ In this guide I will walk you through the three main methods, compare them hones
         },
         {
           type: 'paragraph',
-          text: 'Each terminal automatically updates its title based on what the agent is currently doing. Instead of six identical "claude" tabs, you see titles like "Refactoring Auth", "Writing API Tests", "Fixing CSS Layout". At a glance, you know exactly what each session is working on.',
+          text: 'Each terminal automatically updates its title based on what the agent is currently doing. Instead of several identical "claude" tabs, you see titles like "Refactoring Auth", "Writing API Tests", "Fixing CSS Layout". At a glance, you know exactly what each session is working on.',
         },
         {
           type: 'heading',
@@ -376,7 +376,7 @@ In this guide I will walk you through the three main methods, compare them hones
     },
     {
       question: 'How many Claude Code sessions can I run at once?',
-      answer: 'There is no hard limit from Claude Code itself - each session is just a process. Practically, your machine resources and screen space are the constraints. CodeAgentSwarm supports up to 6 simultaneous terminals with a visual layout that keeps everything manageable.',
+      answer: 'There is no hard limit from Claude Code itself - each session is just a process. Practically, your machine resources and screen space are the constraints. CodeAgentSwarm supports multiple simultaneous terminals with a visual layout that keeps everything manageable.',
     },
     {
       question: 'Is tmux better than CodeAgentSwarm for multiple terminals?',

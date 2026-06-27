@@ -12,7 +12,7 @@ export const guide: Guide = {
 Son dos preguntas distintas que comparten la misma búsqueda, así que esta guía responde a las dos. La parte de la app web es corta porque la respuesta es sencilla: abre más pestañas. La parte del terminal entra en más detalle, porque ejecutar varias sesiones de Claude Code en paralelo es donde la cosa se vuelve de verdad útil, y donde una herramienta como CodeAgentSwarm marca la diferencia.
 
 Elige el camino que encaja con lo que intentas hacer. Si chateas en el navegador, lee la siguiente sección. Si programas en el terminal, salta a la sección para desarrolladores más abajo.`,
-    ctaText: 'Ejecuta hasta seis sesiones de Claude Code en paralelo en un solo workspace de CodeAgentSwarm, con notificaciones, historial buscable y diffs en vivo para que no se pierda nada.',
+    ctaText: 'Ejecuta varias sesiones de Claude Code en paralelo en un solo workspace de CodeAgentSwarm, con notificaciones, historial buscable y diffs en vivo para que no se pierda nada.',
     highlightedWords: ['varios chats de Claude', 'a la vez'],
     publishedAt: '2026-06-07',
     updatedAt: '2026-06-07',
@@ -119,13 +119,13 @@ Elige el camino que encaja con lo que intentas hacer. Si chateas en el navegador
         },
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm es una app de escritorio hecha específicamente para ejecutar sesiones de código con IA en paralelo y con visibilidad real. Te da hasta seis terminales en un solo workspace, y funciona sobre tu suscripción existente, así que no es un proveedor de modelos. Esto es lo que añade frente a un montón de pestañas de terminal.',
+          text: 'CodeAgentSwarm es una app de escritorio hecha específicamente para ejecutar sesiones de código con IA en paralelo y con visibilidad real. Te da varios terminales en un solo workspace, y funciona sobre tu suscripción existente, así que no es un proveedor de modelos. Esto es lo que añade frente a un montón de pestañas de terminal.',
         },
         {
           type: 'list',
           items: [
-            '<strong>Hasta 6 terminales en paralelo:</strong> ejecuta varias sesiones de Claude Code a la vez, y elige un agente distinto por terminal si quieres mezclar Codex CLI o Gemini CLI.',
-            '<strong>Títulos dinámicos:</strong> cada terminal muestra lo que está haciendo su sesión en ese momento, como "Refactorizando autenticación" o "Escribiendo pruebas de API", en vez de seis pestañas idénticas.',
+            '<strong>Varios terminales en paralelo:</strong> ejecuta varias sesiones de Claude Code a la vez, y elige un agente distinto por terminal si quieres mezclar Codex CLI o Gemini CLI.',
+            '<strong>Títulos dinámicos:</strong> cada terminal muestra lo que está haciendo su sesión en ese momento, como "Refactorizando autenticación" o "Escribiendo pruebas de API", en vez de varias pestañas idénticas.',
             '<strong>Notificaciones de escritorio:</strong> cuando una sesión termina o se para a preguntarte algo, recibes una notificación nativa, así puedes centrarte en un terminal y dejar que el resto te avise.',
             '<strong>Historial buscable:</strong> cada conversación de todos los terminales se guarda y se puede buscar, así puedes rastrear qué hizo una sesión ayer o retomarla después.',
             '<strong>Diffs de archivos en vivo:</strong> observa los cambios que hace cada sesión en tiempo real, por terminal y a nivel de proyecto, así las ediciones que se solapan se ven antes de convertirse en un problema de merge.',
@@ -158,7 +158,7 @@ Elige el camino que encaja con lo que intentas hacer. Si chateas en el navegador
     },
     {
       question: '¿Cómo ejecuto Claude en paralelo para programar?',
-      answer: 'Abre más de un terminal y ejecuta claude en cada uno. Cada sesión de Claude Code es su propio proceso con su propio contexto, así que funcionan en paralelo sin interferir. CodeAgentSwarm lo hace más fácil al darte hasta seis terminales en un solo workspace, con notificaciones, historial buscable y diffs de archivos en vivo.',
+      answer: 'Abre más de un terminal y ejecuta claude en cada uno. Cada sesión de Claude Code es su propio proceso con su propio contexto, así que funcionan en paralelo sin interferir. CodeAgentSwarm lo hace más fácil al darte varios terminales en un solo workspace, con notificaciones, historial buscable y diffs de archivos en vivo.',
     },
     {
       question: '¿Puede Claude ejecutar varios chats al mismo tiempo?',

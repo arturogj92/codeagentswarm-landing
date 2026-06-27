@@ -25,9 +25,9 @@ In this guide I walk through the three practical ways to run a Codex swarm, comp
       content: [
         {
           type: 'image',
-          alt: 'Six OpenAI Codex CLI terminals running in parallel in a single CodeAgentSwarm workspace, each an independent Codex session',
+          alt: 'Multiple OpenAI Codex CLI terminals running in parallel in a single CodeAgentSwarm workspace, each an independent Codex session',
           src: '/images/guides/codex-agent-swarm.png',
-          caption: 'A Codex agent swarm: six independent Codex CLI sessions running side by side in one CodeAgentSwarm window.',
+          caption: 'A Codex agent swarm: several independent Codex CLI sessions running side by side in one CodeAgentSwarm window.',
         },
         {
           type: 'paragraph',
@@ -168,7 +168,7 @@ In this guide I walk through the three practical ways to run a Codex swarm, comp
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm is a desktop app built for exactly this: running and supervising a swarm of AI CLI agents in one place. It runs on macOS and Windows, gives you up to six terminals in a single workspace, and lets you choose the agent per terminal. For a Codex swarm you just pick "codex cli" in the SELECT AI AGENT picker in each terminal you want running Codex.',
+          text: 'CodeAgentSwarm is a desktop app built for exactly this: running and supervising a swarm of AI CLI agents in one place. It runs on macOS and Windows, gives you multiple terminals in a single workspace, and lets you choose the agent per terminal. For a Codex swarm you just pick "codex cli" in the SELECT AI AGENT picker in each terminal you want running Codex.',
         },
         {
           type: 'image',
@@ -183,7 +183,7 @@ In this guide I walk through the three practical ways to run a Codex swarm, comp
         {
           type: 'heading',
           level: 3,
-          text: 'Up to 6 Codex agents in parallel',
+          text: 'Multiple Codex agents in parallel',
           id: 'six-terminals',
         },
         {
@@ -198,7 +198,7 @@ In this guide I walk through the three practical ways to run a Codex swarm, comp
         },
         {
           type: 'paragraph',
-          text: 'Every terminal updates its own title to reflect what its Codex agent is doing right now. Instead of six tabs all labelled "codex", you read titles like "Migrating User Schema", "Writing API Tests", "Refactoring Auth". You can tell which agent is on which task without clicking into any of them.',
+          text: 'Every terminal updates its own title to reflect what its Codex agent is doing right now. Instead of several tabs all labelled "codex", you read titles like "Migrating User Schema", "Writing API Tests", "Refactoring Auth". You can tell which agent is on which task without clicking into any of them.',
         },
         {
           type: 'heading',
@@ -366,7 +366,7 @@ In this guide I walk through the three practical ways to run a Codex swarm, comp
     },
     {
       question: 'Can you run multiple Codex CLI sessions at once?',
-      answer: 'Yes. Each time you run the codex command you get an independent session, so you can open several terminals and run Codex CLI in each one. They do not share context or step on each other unless they edit the same files. CodeAgentSwarm supports up to 6 terminals so you can supervise the whole swarm in one window.',
+      answer: 'Yes. Each time you run the codex command you get an independent session, so you can open several terminals and run Codex CLI in each one. They do not share context or step on each other unless they edit the same files. CodeAgentSwarm supports multiple terminals so you can supervise the whole swarm in one window.',
     },
     {
       question: 'Can I mix Codex CLI and Claude Code in one swarm?',

@@ -9,7 +9,7 @@ export const guide: Guide = {
     metaDescription: 'Yes, you can run a Gemini agent swarm. Run multiple Gemini CLI agents in parallel with three methods: terminal tabs, tmux, and CodeAgentSwarm. Honest comparison.',
     intro: `A "Gemini agent swarm" sounds fancier than it is. At its core it just means several Gemini CLI agents running in parallel, each working on its own slice of your codebase while you supervise. Google ships the <code>gemini</code> command, you sign in with a Google account, and you get a generous free tier and a large context window. Nothing stops you from opening that command more than once.
 
-So the question is not whether you can run a swarm of Gemini agents. You can. The question is how you keep track of them once you have three, four, or six running at the same time, each chewing through a different task.
+So the question is not whether you can run a swarm of Gemini agents. You can. The question is how you keep track of them once you have three, four, or more running at the same time, each chewing through a different task.
 
 In this guide I will go through the three practical ways to run multiple Gemini CLI agents together, compare them honestly, and explain why a workspace built for this (where you also pick "gemini cli" per terminal) usually beats juggling raw terminals once the swarm grows.`,
     ctaText: 'Run your Gemini agent swarm in CodeAgentSwarm. Pick gemini cli per terminal, watch all of them at once, and get notified when each one finishes.',
@@ -25,9 +25,9 @@ In this guide I will go through the three practical ways to run multiple Gemini 
       content: [
         {
           type: 'image',
-          alt: 'Six Google Gemini CLI terminals running in parallel in a single CodeAgentSwarm workspace, each an independent Gemini session',
+          alt: 'Multiple Google Gemini CLI terminals running in parallel in a single CodeAgentSwarm workspace, each an independent Gemini session',
           src: '/images/guides/gemini-agent-swarm.png',
-          caption: 'A Gemini agent swarm: six independent Gemini CLI sessions running side by side in one CodeAgentSwarm window.',
+          caption: 'A Gemini agent swarm: several independent Gemini CLI sessions running side by side in one CodeAgentSwarm window.',
         },
         {
           type: 'paragraph',
@@ -168,7 +168,7 @@ In this guide I will go through the three practical ways to run multiple Gemini 
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm is a desktop app built for exactly this problem: running several AI CLI agents in parallel with real visibility and control. It runs on macOS and Windows, gives you up to six terminals in one workspace, and lets you choose the agent per terminal. For a Gemini swarm you just pick "gemini cli" in each terminal you want, and you can mix in Claude Code or Codex CLI alongside it.',
+          text: 'CodeAgentSwarm is a desktop app built for exactly this problem: running several AI CLI agents in parallel with real visibility and control. It runs on macOS and Windows, gives you multiple terminals in one workspace, and lets you choose the agent per terminal. For a Gemini swarm you just pick "gemini cli" in each terminal you want, and you can mix in Claude Code or Codex CLI alongside it.',
         },
         {
           type: 'image',
@@ -183,12 +183,12 @@ In this guide I will go through the three practical ways to run multiple Gemini 
         {
           type: 'heading',
           level: 3,
-          text: 'Up to 6 Gemini agents in parallel',
+          text: 'Multiple Gemini agents in parallel',
           id: 'six-terminals',
         },
         {
           type: 'paragraph',
-          text: 'Run up to six terminals at once and set each one to gemini cli through the SELECT AI AGENT picker. Each agent is independent, with its own conversation and project context. If a task fits a different model better, you can point that one terminal at Claude Code or Codex CLI instead, all in the same window.',
+          text: 'Run multiple terminals at once and set each one to gemini cli through the SELECT AI AGENT picker. Each agent is independent, with its own conversation and project context. If a task fits a different model better, you can point that one terminal at Claude Code or Codex CLI instead, all in the same window.',
         },
         {
           type: 'heading',
@@ -198,7 +198,7 @@ In this guide I will go through the three practical ways to run multiple Gemini 
         },
         {
           type: 'paragraph',
-          text: 'Each terminal updates its own title based on what the agent is doing right now. Instead of six identical "gemini" tabs you see titles like "Migrating DB Layer", "Writing API Tests", "Refactoring Router". One glance tells you what every agent in the swarm is up to.',
+          text: 'Each terminal updates its own title based on what the agent is doing right now. Instead of several identical "gemini" tabs you see titles like "Migrating DB Layer", "Writing API Tests", "Refactoring Router". One glance tells you what every agent in the swarm is up to.',
         },
         {
           type: 'heading',
@@ -366,11 +366,11 @@ In this guide I will go through the three practical ways to run multiple Gemini 
     },
     {
       question: 'Can you run multiple Gemini CLI sessions at once?',
-      answer: 'Yes. Each Gemini CLI session is an independent process, so you can run as many as your machine handles. They do not share memory and will only collide if they edit the same files. CodeAgentSwarm runs up to six terminals at once and lets you set each one to gemini cli.',
+      answer: 'Yes. Each Gemini CLI session is an independent process, so you can run as many as your machine handles. They do not share memory and will only collide if they edit the same files. CodeAgentSwarm runs multiple terminals at once and lets you set each one to gemini cli.',
     },
     {
       question: 'How do I run a Gemini agent swarm?',
-      answer: 'Pick one of three ways. Open several terminal tabs and run gemini in each. Use tmux to split panes and keep persistent sessions. Or use CodeAgentSwarm, where you open up to six terminals, choose gemini cli per terminal in the SELECT AI AGENT picker, and get shared visibility, notifications, and searchable history across the whole swarm.',
+      answer: 'Pick one of three ways. Open several terminal tabs and run gemini in each. Use tmux to split panes and keep persistent sessions. Or use CodeAgentSwarm, where you open multiple terminals, choose gemini cli per terminal in the SELECT AI AGENT picker, and get shared visibility, notifications, and searchable history across the whole swarm.',
     },
     {
       question: 'Can I run Gemini CLI and Claude Code at the same time?',

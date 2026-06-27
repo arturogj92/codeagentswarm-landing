@@ -51,7 +51,7 @@ En esta guía te explico, tal cual se lo contaría a un amigo, cómo usar varios
         },
         {
           type: 'paragraph',
-          text: 'Cuando le pillas el punto, se nota muchísimo la diferencia. Además de que es muy satisfactorio conseguir resolver 6 tareas en one shot.',
+          text: 'Cuando le pillas el punto, se nota muchísimo la diferencia. Además de que es muy satisfactorio conseguir resolver varias tareas en one shot.',
         },
       ],
     },
@@ -99,7 +99,7 @@ En esta guía te explico, tal cual se lo contaría a un amigo, cómo usar varios
         {
           type: 'list',
           items: [
-            'Hasta 6 terminales de Claude Code en paralelo',
+            'Varios terminales de Claude Code en paralelo',
             'Historial completo de conversaciones con buscador integrado para recuperar conversaciones antiguas',
             'Notificaciones cuando un terminal termina o necesita tu atención',
             'Vista en cuadrícula para ver todo lo que pasa a la vez o modo pestañas',
@@ -136,7 +136,7 @@ En esta guía te explico, tal cual se lo contaría a un amigo, cómo usar varios
         },
         {
           type: 'paragraph',
-          text: 'Abres la app y creas hasta 6 terminales pulsando en el siguiente botón:',
+          text: 'Abres la app y creas varios terminales pulsando en el siguiente botón:',
         },
         {
           type: 'image',
@@ -192,7 +192,7 @@ En esta guía te explico, tal cual se lo contaría a un amigo, cómo usar varios
         {
           type: 'list',
           items: [
-            'No hace falta usar los 6 terminales siempre, usa los que necesites',
+            'No hace falta usar todos los terminales siempre, usa los que necesites',
             'Si una tarea es grande, divídela en subtareas y dale cada una a un terminal',
             'Cierra los terminales que ya terminaron para mantener el workspace limpio',
           ],
@@ -211,7 +211,7 @@ En esta guía te explico, tal cual se lo contaría a un amigo, cómo usar varios
     },
     {
       question: '¿Cuántos terminales puedo usar a la vez?',
-      answer: 'Hasta 6 en paralelo. Pero no hace falta usar todos, usa los que necesites para tu tarea.',
+      answer: 'Varios en paralelo. Pero no hace falta usar todos, usa los que necesites para tu tarea.',
     },
     {
       question: '¿Necesito una suscripción especial de Claude?',

@@ -12,7 +12,7 @@ export const guide: Guide = {
 The idea sounds chaotic, and done badly it is. The point of this guide is to show you how to do it well: how to actually run multiple AI coding agents in parallel, how to decide which agent handles what, and how to keep visibility over a workspace where three or four agents are editing files at the same time.
 
 I run mixed swarms most days. Below I cover what an AI CLI agent swarm really is, the honest tradeoffs of each setup method, and where a purpose-built workspace earns its place over plain terminal tabs or tmux.`,
-    ctaText: 'Run Claude Code, Codex and Gemini side by side in one CodeAgentSwarm workspace. Up to six agents, shared visibility, one place to watch them all.',
+    ctaText: 'Run Claude Code, Codex and Gemini side by side in one CodeAgentSwarm workspace. Multiple agents, shared visibility, one place to watch them all.',
     highlightedWords: ['AI CLI agent swarm', 'in parallel'],
     publishedAt: '2026-06-07',
     updatedAt: '2026-06-07',
@@ -247,7 +247,7 @@ I run mixed swarms most days. Below I cover what an AI CLI agent swarm really is
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm is a desktop app built for exactly this: running an AI CLI agent swarm with real visibility and control. It runs on macOS and Windows, gives you up to six terminals in one workspace, and lets you pick the agent per terminal. It runs on top of your existing subscriptions, it is not a model provider, so your Claude, OpenAI, and Google plans keep working as they are.',
+          text: 'CodeAgentSwarm is a desktop app built for exactly this: running an AI CLI agent swarm with real visibility and control. It runs on macOS and Windows, gives you multiple terminals in one workspace, and lets you pick the agent per terminal. It runs on top of your existing subscriptions, it is not a model provider, so your Claude, OpenAI, and Google plans keep working as they are.',
         },
         {
           type: 'image',
@@ -262,7 +262,7 @@ I run mixed swarms most days. Below I cover what an AI CLI agent swarm really is
         {
           type: 'heading',
           level: 3,
-          text: 'Up to 6 agents in parallel, your choice per terminal',
+          text: 'Multiple agents in parallel, your choice per terminal',
           id: 'six-agents',
         },
         {
@@ -445,7 +445,7 @@ I run mixed swarms most days. Below I cover what an AI CLI agent swarm really is
     },
     {
       question: 'Can I run Claude Code, Codex and Gemini at the same time?',
-      answer: 'Yes. Each agent runs as an independent CLI process, so you can run Claude Code, Codex CLI, and Gemini CLI side by side on the same project. CodeAgentSwarm lets you pick the agent per terminal and run up to six at once in one workspace, so you can mix vendors freely.',
+      answer: 'Yes. Each agent runs as an independent CLI process, so you can run Claude Code, Codex CLI, and Gemini CLI side by side on the same project. CodeAgentSwarm lets you pick the agent per terminal and run multiple at once in one workspace, so you can mix vendors freely.',
     },
     {
       question: 'Which AI coding CLI should I use for what?',

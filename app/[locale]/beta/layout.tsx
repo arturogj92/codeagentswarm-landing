@@ -14,11 +14,11 @@ export async function generateMetadata({
 
   const title = isSpanish
     ? 'CodeAgentSwarm Open Beta – Acceso Pro Gratis para Terminales AI CLI'
-    : 'CodeAgentSwarm Open Beta – Free Pro Access with 6 AI CLI Terminals'
+    : 'CodeAgentSwarm Open Beta – Free Pro Access with Multiple AI CLI Terminals'
 
   const description = isSpanish
-    ? 'Unete a la open beta y accede gratis al plan Pro completo. 6 terminales AI CLI (Claude Code, Codex, Gemini CLI) en paralelo, visibilidad en tiempo real, notificaciones, historial de conversaciones y gestion de multiples proyectos.'
-    : 'Join the open beta and get full Pro tier access for free. 6 AI CLI terminals (Claude Code, Codex, Gemini CLI) in parallel, real-time visibility, notifications, conversation history and multi-project management.'
+    ? 'Unete a la open beta y accede gratis al plan Pro completo. Multiples terminales AI CLI (Claude Code, Codex, Gemini CLI) en paralelo, visibilidad en tiempo real, notificaciones, historial de conversaciones y gestion de multiples proyectos.'
+    : 'Join the open beta and get full Pro tier access for free. Multiple AI CLI terminals (Claude Code, Codex, Gemini CLI) in parallel, real-time visibility, notifications, conversation history and multi-project management.'
 
   return {
     title,
@@ -53,8 +53,8 @@ export async function generateMetadata({
         ? 'CodeAgentSwarm Open Beta – Acceso Pro Gratis para AI CLI'
         : 'CodeAgentSwarm Open Beta – Free Pro Access for AI CLI',
       description: isSpanish
-        ? 'Unete a la open beta y accede gratis al plan Pro. 6 terminales AI CLI (Claude Code, Codex, Gemini CLI) con visibilidad en tiempo real.'
-        : 'Join the open beta and get free Pro tier access. 6 AI CLI terminals (Claude Code, Codex, Gemini CLI) with real-time visibility.',
+        ? 'Unete a la open beta y accede gratis al plan Pro. Multiples terminales AI CLI (Claude Code, Codex, Gemini CLI) con visibilidad en tiempo real.'
+        : 'Join the open beta and get free Pro tier access. Multiple AI CLI terminals (Claude Code, Codex, Gemini CLI) with real-time visibility.',
       type: 'website',
       siteName: 'CodeAgentSwarm',
       url: canonicalUrl,
@@ -76,8 +76,8 @@ export async function generateMetadata({
         ? 'CodeAgentSwarm Open Beta – Pro Gratis para AI CLI'
         : 'CodeAgentSwarm Open Beta – Free Pro for AI CLI',
       description: isSpanish
-        ? 'Unete a la beta y accede gratis a 6 terminales AI CLI (Claude Code, Codex, Gemini CLI) en paralelo.'
-        : 'Join the open beta and get free Pro tier access to 6 parallel AI CLI terminals (Claude Code, Codex, Gemini CLI).',
+        ? 'Unete a la beta y accede gratis a multiples terminales AI CLI (Claude Code, Codex, Gemini CLI) en paralelo.'
+        : 'Join the open beta and get free Pro tier access to multiple parallel AI CLI terminals (Claude Code, Codex, Gemini CLI).',
       images: ['/og.png'],
     },
   }

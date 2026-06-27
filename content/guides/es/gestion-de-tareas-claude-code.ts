@@ -140,7 +140,7 @@ En esta guía te explico qué es el tablero de tareas, cómo lo mantienen al dí
       content: [
         {
           type: 'paragraph',
-          text: 'Un solo agente trabajando en una sola tarea no necesita realmente un tablero. El tablero se gana el sueldo en el momento en que tienes varios agentes a la vez, que es exactamente para lo que está hecho CodeAgentSwarm. Ejecuta hasta seis terminales de CLI de IA (Claude Code, Codex CLI, Gemini CLI) en paralelo, y en cuanto tienes cuatro o cinco trabajando, "qué hace cada uno" deja de ser una pregunta que puedas responder de memoria.',
+          text: 'Un solo agente trabajando en una sola tarea no necesita realmente un tablero. El tablero se gana el sueldo en el momento en que tienes varios agentes a la vez, que es exactamente para lo que está hecho CodeAgentSwarm. Ejecuta varios terminales de CLI de IA (Claude Code, Codex CLI, Gemini CLI) en paralelo, y en cuanto tienes cuatro o cinco trabajando, "qué hace cada uno" deja de ser una pregunta que puedas responder de memoria.',
         },
         {
           type: 'paragraph',

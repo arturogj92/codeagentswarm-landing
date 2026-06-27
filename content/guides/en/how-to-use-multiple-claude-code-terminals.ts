@@ -99,7 +99,7 @@ In this guide I'll explain, just like I'd tell a friend, how to use multiple ter
         {
           type: 'list',
           items: [
-            'Up to 6 Claude Code terminals in parallel',
+            'Multiple Claude Code terminals in parallel',
             'Complete conversation history with built-in search to recover old conversations',
             'Notifications when a terminal finishes or needs your attention',
             'Grid view to see everything at once or tab mode',
@@ -136,7 +136,7 @@ In this guide I'll explain, just like I'd tell a friend, how to use multiple ter
         },
         {
           type: 'paragraph',
-          text: 'Open the app and create up to 6 terminals by clicking on the following button:',
+          text: 'Open the app and create multiple terminals by clicking on the following button:',
         },
         {
           type: 'image',
@@ -192,7 +192,7 @@ In this guide I'll explain, just like I'd tell a friend, how to use multiple ter
         {
           type: 'list',
           items: [
-            'You don\'t have to use all 6 terminals always - use what you need',
+            'You don\'t have to use all the terminals always - use what you need',
             'If a task is big, break it into subtasks and give each one to a terminal',
             'Close terminals that are done to keep the workspace clean',
           ],
@@ -211,7 +211,7 @@ In this guide I'll explain, just like I'd tell a friend, how to use multiple ter
     },
     {
       question: 'How many terminals can I use at once?',
-      answer: 'Up to 6 in parallel. But you don\'t have to use them all - use what you need for your task.',
+      answer: 'Multiple in parallel. But you don\'t have to use them all - use what you need for your task.',
     },
     {
       question: 'Do I need a special Claude subscription?',

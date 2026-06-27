@@ -42,8 +42,8 @@ export async function generateMetadata({
     : 'CodeAgentSwarm – AI coding workspace for Claude Code, Codex and Gemini CLI terminals with MCP tools'
 
   const description = isSpanish
-    ? 'Orquesta hasta 6 terminales AI CLI (Claude Code, Codex, Gemini CLI) en un espacio de trabajo para desarrolladores con visibilidad en tiempo real, notificaciones instantaneas, historial completo de conversaciones, control de permisos, gestion de multiples proyectos e integraciones MCP.'
-    : 'Orchestrate up to 6 AI CLI terminals (Claude Code, Codex, Gemini CLI) in a single developer workspace with real-time visibility, live notifications, full conversation history, permissions control, multi-project management and MCP integrations.'
+    ? 'Orquesta multiples terminales AI CLI (Claude Code, Codex, Gemini CLI) en un espacio de trabajo para desarrolladores con visibilidad en tiempo real, notificaciones instantaneas, historial completo de conversaciones, control de permisos, gestion de multiples proyectos e integraciones MCP.'
+    : 'Orchestrate multiple AI CLI terminals (Claude Code, Codex, Gemini CLI) in a single developer workspace with real-time visibility, live notifications, full conversation history, permissions control, multi-project management and MCP integrations.'
 
   return {
     metadataBase: new URL(baseUrl),
@@ -119,11 +119,11 @@ export async function generateMetadata({
       site: '@CodeAgentSwarm',
       creator: '@CodeAgentSwarm',
       title: isSpanish
-        ? 'CodeAgentSwarm – 6 terminales AI CLI en paralelo'
-        : 'CodeAgentSwarm – 6 Parallel AI CLI Terminals',
+        ? 'CodeAgentSwarm – Terminales AI CLI en paralelo'
+        : 'CodeAgentSwarm – Parallel AI CLI Terminals',
       description: isSpanish
-        ? 'Orquesta 6 terminales AI CLI (Claude Code, Codex, Gemini CLI) en un workspace con visibilidad en tiempo real.'
-        : 'Orchestrate 6 AI CLI terminals (Claude Code, Codex, Gemini CLI) in one workspace with real-time visibility.',
+        ? 'Orquesta multiples terminales AI CLI (Claude Code, Codex, Gemini CLI) en un workspace con visibilidad en tiempo real.'
+        : 'Orchestrate multiple AI CLI terminals (Claude Code, Codex, Gemini CLI) in one workspace with real-time visibility.',
       images: ['/og.png'],
     },
     robots: {

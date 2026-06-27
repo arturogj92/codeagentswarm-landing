@@ -25,9 +25,9 @@ En esta guía te explico las tres formas reales de ejecutar un enjambre de Codex
       content: [
         {
           type: 'image',
-          alt: 'Seis terminales de OpenAI Codex CLI ejecutándose en paralelo en un único espacio de trabajo de CodeAgentSwarm, cada uno una sesión de Codex independiente',
+          alt: 'Varios terminales de OpenAI Codex CLI ejecutándose en paralelo en un único espacio de trabajo de CodeAgentSwarm, cada uno una sesión de Codex independiente',
           src: '/images/guides/codex-agent-swarm.png',
-          caption: 'Un enjambre de agentes Codex: seis sesiones de Codex CLI independientes ejecutándose a la vez en una sola ventana de CodeAgentSwarm.',
+          caption: 'Un enjambre de agentes Codex: varias sesiones de Codex CLI independientes ejecutándose a la vez en una sola ventana de CodeAgentSwarm.',
         },
         {
           type: 'paragraph',
@@ -168,7 +168,7 @@ En esta guía te explico las tres formas reales de ejecutar un enjambre de Codex
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm es una app de escritorio hecha justo para esto: ejecutar y supervisar un enjambre de agentes CLI de IA en un solo sitio. Funciona en macOS y en Windows, te da hasta seis terminales en un mismo espacio de trabajo y te deja elegir el agente por terminal. Para un enjambre de Codex solo tienes que elegir "codex cli" en el selector SELECT AI AGENT de cada terminal que quieras con Codex.',
+          text: 'CodeAgentSwarm es una app de escritorio hecha justo para esto: ejecutar y supervisar un enjambre de agentes CLI de IA en un solo sitio. Funciona en macOS y en Windows, te da varios terminales en un mismo espacio de trabajo y te deja elegir el agente por terminal. Para un enjambre de Codex solo tienes que elegir "codex cli" en el selector SELECT AI AGENT de cada terminal que quieras con Codex.',
         },
         {
           type: 'image',
@@ -183,7 +183,7 @@ En esta guía te explico las tres formas reales de ejecutar un enjambre de Codex
         {
           type: 'heading',
           level: 3,
-          text: 'Hasta 6 agentes de Codex en paralelo',
+          text: 'Varios agentes de Codex en paralelo',
           id: 'seis-terminales',
         },
         {
@@ -198,7 +198,7 @@ En esta guía te explico las tres formas reales de ejecutar un enjambre de Codex
         },
         {
           type: 'paragraph',
-          text: 'Cada terminal actualiza su propio título para reflejar lo que está haciendo su agente de Codex en ese momento. En lugar de seis pestañas etiquetadas todas como "codex", lees títulos como "Migrando esquema de usuarios", "Escribiendo tests de API" o "Refactorizando auth". Sabes qué agente lleva qué tarea sin entrar en ninguno.',
+          text: 'Cada terminal actualiza su propio título para reflejar lo que está haciendo su agente de Codex en ese momento. En lugar de varias pestañas etiquetadas todas como "codex", lees títulos como "Migrando esquema de usuarios", "Escribiendo tests de API" o "Refactorizando auth". Sabes qué agente lleva qué tarea sin entrar en ninguno.',
         },
         {
           type: 'heading',
@@ -366,7 +366,7 @@ En esta guía te explico las tres formas reales de ejecutar un enjambre de Codex
     },
     {
       question: '¿Se pueden ejecutar varias sesiones de Codex CLI a la vez?',
-      answer: 'Sí. Cada vez que ejecutas el comando codex obtienes una sesión independiente, así que puedes abrir varios terminales y ejecutar Codex CLI en cada uno. No comparten contexto ni se pisan entre sí salvo que editen los mismos archivos. CodeAgentSwarm admite hasta 6 terminales para que supervises todo el enjambre en una sola ventana.',
+      answer: 'Sí. Cada vez que ejecutas el comando codex obtienes una sesión independiente, así que puedes abrir varios terminales y ejecutar Codex CLI en cada uno. No comparten contexto ni se pisan entre sí salvo que editen los mismos archivos. CodeAgentSwarm admite varios terminales para que supervises todo el enjambre en una sola ventana.',
     },
     {
       question: '¿Puedo mezclar Codex CLI y Claude Code en un mismo enjambre?',

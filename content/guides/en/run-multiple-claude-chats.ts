@@ -12,7 +12,7 @@ export const guide: Guide = {
 These are two separate questions that share the same search, so this guide answers both. The web app section is short because the answer is simple: open more tabs. The terminal section goes deeper, because running several Claude Code sessions in parallel is where it gets genuinely useful, and where a tool like CodeAgentSwarm makes the difference.
 
 Pick the path that matches what you are trying to do. If you are chatting in the browser, read the next section. If you are coding in the terminal, jump to the developer section below.`,
-    ctaText: 'Run up to six Claude Code sessions in parallel in one CodeAgentSwarm workspace, with notifications, searchable history and live diffs so nothing gets lost.',
+    ctaText: 'Run multiple Claude Code sessions in parallel in one CodeAgentSwarm workspace, with notifications, searchable history and live diffs so nothing gets lost.',
     highlightedWords: ['multiple Claude chats', 'at once'],
     publishedAt: '2026-06-07',
     updatedAt: '2026-06-07',
@@ -119,13 +119,13 @@ Pick the path that matches what you are trying to do. If you are chatting in the
         },
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm is a desktop app built specifically for running parallel AI coding sessions with real visibility. It gives you up to six terminals in one workspace, and it runs on top of your existing subscription, so it is not a model provider. Here is what it adds over a pile of terminal tabs.',
+          text: 'CodeAgentSwarm is a desktop app built specifically for running parallel AI coding sessions with real visibility. It gives you multiple terminals in one workspace, and it runs on top of your existing subscription, so it is not a model provider. Here is what it adds over a pile of terminal tabs.',
         },
         {
           type: 'list',
           items: [
-            '<strong>Up to 6 terminals in parallel:</strong> run several Claude Code sessions at once, and pick a different agent per terminal if you want to mix in Codex CLI or Gemini CLI.',
-            '<strong>Dynamic titles:</strong> each terminal shows what its session is doing right now, like "Refactoring Auth" or "Writing API Tests", instead of six identical tabs.',
+            '<strong>Multiple terminals in parallel:</strong> run several Claude Code sessions at once, and pick a different agent per terminal if you want to mix in Codex CLI or Gemini CLI.',
+            '<strong>Dynamic titles:</strong> each terminal shows what its session is doing right now, like "Refactoring Auth" or "Writing API Tests", instead of several identical tabs.',
             '<strong>Desktop notifications:</strong> when a session finishes or stops to ask you something, you get a native notification, so you can focus on one terminal and let the rest call you.',
             '<strong>Searchable history:</strong> every conversation across all terminals is saved and searchable, so you can trace what a session did yesterday or resume it later.',
             '<strong>Live file diffs:</strong> watch the changes each session is making in real time, per terminal and at project level, so overlapping edits are visible before they become a merge problem.',
@@ -158,7 +158,7 @@ Pick the path that matches what you are trying to do. If you are chatting in the
     },
     {
       question: 'How do I run Claude in parallel for coding?',
-      answer: 'Open more than one terminal and run claude in each. Each Claude Code session is its own process with its own context, so they run in parallel without interfering. CodeAgentSwarm makes this easier by giving you up to six terminals in one workspace, with notifications, searchable history and live file diffs.',
+      answer: 'Open more than one terminal and run claude in each. Each Claude Code session is its own process with its own context, so they run in parallel without interfering. CodeAgentSwarm makes this easier by giving you multiple terminals in one workspace, with notifications, searchable history and live file diffs.',
     },
     {
       question: 'Can Claude run multiple chats at the same time?',

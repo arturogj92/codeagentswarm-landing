@@ -9,7 +9,7 @@ export const guide: Guide = {
     metaDescription: 'Sí, puedes montar un enjambre de agentes Gemini. Ejecuta varios agentes de Gemini CLI en paralelo con tres métodos: pestañas, tmux y CodeAgentSwarm.',
     intro: `Un "enjambre de agentes Gemini" suena más sofisticado de lo que es. En el fondo solo significa varios agentes de Gemini CLI corriendo en paralelo, cada uno trabajando en su parte del código mientras tú supervisas. Google trae el comando <code>gemini</code>, inicias sesión con tu cuenta de Google y obtienes un plan gratuito generoso y una ventana de contexto grande. Nada te impide abrir ese comando más de una vez.
 
-Así que la pregunta no es si puedes montar un enjambre de agentes Gemini. Puedes. La pregunta es cómo los controlas cuando ya tienes tres, cuatro o seis corriendo al mismo tiempo, cada uno masticando una tarea distinta.
+Así que la pregunta no es si puedes montar un enjambre de agentes Gemini. Puedes. La pregunta es cómo los controlas cuando ya tienes tres, cuatro o más corriendo al mismo tiempo, cada uno masticando una tarea distinta.
 
 En esta guía repaso las tres formas prácticas de ejecutar varios agentes de Gemini CLI juntos, las comparo con honestidad y explico por qué un espacio de trabajo pensado para esto (donde además eliges "gemini cli" por terminal) suele ganarle a hacer malabares con terminales sueltos cuando el enjambre crece.`,
     ctaText: 'Ejecuta tu enjambre de agentes Gemini en CodeAgentSwarm. Elige gemini cli por terminal, míralos todos a la vez y recibe un aviso cuando cada uno termina.',
@@ -25,9 +25,9 @@ En esta guía repaso las tres formas prácticas de ejecutar varios agentes de Ge
       content: [
         {
           type: 'image',
-          alt: 'Seis terminales de Google Gemini CLI ejecutándose en paralelo en un único espacio de trabajo de CodeAgentSwarm, cada uno una sesión de Gemini independiente',
+          alt: 'Varios terminales de Google Gemini CLI ejecutándose en paralelo en un único espacio de trabajo de CodeAgentSwarm, cada uno una sesión de Gemini independiente',
           src: '/images/guides/gemini-agent-swarm.png',
-          caption: 'Un enjambre de agentes Gemini: seis sesiones de Gemini CLI independientes ejecutándose a la vez en una sola ventana de CodeAgentSwarm.',
+          caption: 'Un enjambre de agentes Gemini: varias sesiones de Gemini CLI independientes ejecutándose a la vez en una sola ventana de CodeAgentSwarm.',
         },
         {
           type: 'paragraph',
@@ -168,7 +168,7 @@ En esta guía repaso las tres formas prácticas de ejecutar varios agentes de Ge
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm es una aplicación de escritorio creada justo para este problema: ejecutar varios agentes de CLI de IA en paralelo con visibilidad y control reales. Funciona en macOS y Windows, te da hasta seis terminales en un mismo espacio de trabajo y te deja elegir el agente por terminal. Para un enjambre de Gemini solo eliges "gemini cli" en cada terminal que quieras, y puedes mezclar Claude Code o Codex CLI junto a él.',
+          text: 'CodeAgentSwarm es una aplicación de escritorio creada justo para este problema: ejecutar varios agentes de CLI de IA en paralelo con visibilidad y control reales. Funciona en macOS y Windows, te da varios terminales en un mismo espacio de trabajo y te deja elegir el agente por terminal. Para un enjambre de Gemini solo eliges "gemini cli" en cada terminal que quieras, y puedes mezclar Claude Code o Codex CLI junto a él.',
         },
         {
           type: 'image',
@@ -183,12 +183,12 @@ En esta guía repaso las tres formas prácticas de ejecutar varios agentes de Ge
         {
           type: 'heading',
           level: 3,
-          text: 'Hasta 6 agentes Gemini en paralelo',
+          text: 'Varios agentes Gemini en paralelo',
           id: 'six-terminals',
         },
         {
           type: 'paragraph',
-          text: 'Ejecuta hasta seis terminales a la vez y pon cada uno en gemini cli desde el selector SELECT AI AGENT. Cada agente es independiente, con su propia conversación y su contexto de proyecto. Si una tarea encaja mejor con otro modelo, apuntas ese terminal a Claude Code o Codex CLI, todo en la misma ventana.',
+          text: 'Ejecuta varios terminales a la vez y pon cada uno en gemini cli desde el selector SELECT AI AGENT. Cada agente es independiente, con su propia conversación y su contexto de proyecto. Si una tarea encaja mejor con otro modelo, apuntas ese terminal a Claude Code o Codex CLI, todo en la misma ventana.',
         },
         {
           type: 'heading',
@@ -198,7 +198,7 @@ En esta guía repaso las tres formas prácticas de ejecutar varios agentes de Ge
         },
         {
           type: 'paragraph',
-          text: 'Cada terminal actualiza su propio título según lo que el agente está haciendo en ese momento. En vez de seis pestañas "gemini" idénticas, ves títulos como "Migrando capa de BD", "Escribiendo tests de API" o "Refactorizando router". De un vistazo sabes qué hace cada agente del enjambre.',
+          text: 'Cada terminal actualiza su propio título según lo que el agente está haciendo en ese momento. En vez de varias pestañas "gemini" idénticas, ves títulos como "Migrando capa de BD", "Escribiendo tests de API" o "Refactorizando router". De un vistazo sabes qué hace cada agente del enjambre.',
         },
         {
           type: 'heading',
@@ -366,11 +366,11 @@ En esta guía repaso las tres formas prácticas de ejecutar varios agentes de Ge
     },
     {
       question: '¿Se pueden ejecutar varias sesiones de Gemini CLI a la vez?',
-      answer: 'Sí. Cada sesión de Gemini CLI es un proceso independiente, así que puedes ejecutar tantas como aguante tu máquina. No comparten memoria y solo chocan si editan los mismos archivos. CodeAgentSwarm ejecuta hasta seis terminales a la vez y te deja poner cada uno en gemini cli.',
+      answer: 'Sí. Cada sesión de Gemini CLI es un proceso independiente, así que puedes ejecutar tantas como aguante tu máquina. No comparten memoria y solo chocan si editan los mismos archivos. CodeAgentSwarm ejecuta varios terminales a la vez y te deja poner cada uno en gemini cli.',
     },
     {
       question: '¿Cómo ejecuto un enjambre de agentes Gemini?',
-      answer: 'Elige una de tres formas. Abre varias pestañas de terminal y ejecuta gemini en cada una. Usa tmux para dividir paneles y mantener sesiones persistentes. O usa CodeAgentSwarm, donde abres hasta seis terminales, eliges gemini cli por terminal en el selector SELECT AI AGENT y obtienes visibilidad compartida, notificaciones e historial buscable en todo el enjambre.',
+      answer: 'Elige una de tres formas. Abre varias pestañas de terminal y ejecuta gemini en cada una. Usa tmux para dividir paneles y mantener sesiones persistentes. O usa CodeAgentSwarm, donde abres varios terminales, eliges gemini cli por terminal en el selector SELECT AI AGENT y obtienes visibilidad compartida, notificaciones e historial buscable en todo el enjambre.',
     },
     {
       question: '¿Puedo ejecutar Gemini CLI y Claude Code al mismo tiempo?',
