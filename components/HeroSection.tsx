@@ -426,7 +426,7 @@ export default function HeroSection() {
 
           {/* AI CLI badges + requirements on a single line (wraps on very narrow screens) */}
           <div className="flex items-center justify-center gap-3 flex-wrap">
-            <div className="flex items-center -space-x-2" aria-label="Works with Claude Code, Codex and Gemini CLI">
+            <div className="flex items-center -space-x-2" aria-label="Works with Claude Code, Codex and Antigravity CLI">
               <span className="w-8 h-8 rounded-full flex items-center justify-center bg-white border-2 border-[#0e0e12] shadow-lg">
                 <img src="/icons/apps/claude-icon.svg" alt="Claude Code" className="w-5 h-5 object-contain" />
               </span>
@@ -434,7 +434,7 @@ export default function HeroSection() {
                 <img src="/icons/apps/codex-icon.svg" alt="Codex CLI" className="w-5 h-5 object-contain" />
               </span>
               <span className="w-8 h-8 rounded-full flex items-center justify-center bg-white border-2 border-[#0e0e12] shadow-lg">
-                <img src="/icons/apps/gemini-icon.svg" alt="Gemini CLI" className="w-5 h-5 object-contain" />
+                <img src="/icons/apps/antigravity-icon.png" alt="Antigravity CLI" className="w-5 h-5 object-contain" />
               </span>
             </div>
             <p className="text-sm text-white/40">

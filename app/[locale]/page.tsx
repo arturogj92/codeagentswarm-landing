@@ -31,8 +31,8 @@ export default function Home() {
     '@type': 'SoftwareApplication',
     name: 'CodeAgentSwarm',
     description: locale === 'es'
-      ? 'Espacio de trabajo con IA para terminales Claude Code, Codex y Gemini CLI con herramientas MCP'
-      : 'AI coding workspace for Claude Code, Codex and Gemini CLI terminals with MCP tools',
+      ? 'Espacio de trabajo con IA para terminales Claude Code, Codex y Antigravity CLI con herramientas MCP'
+      : 'AI coding workspace for Claude Code, Codex and Antigravity CLI terminals with MCP tools',
     url: baseUrl,
     applicationCategory: 'DeveloperApplication',
     operatingSystem: 'macOS, Windows',

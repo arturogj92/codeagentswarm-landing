@@ -36,13 +36,13 @@ export default function WorksWithSection() {
       icon: '/icons/apps/codex-icon.svg',
     },
     {
-      name: 'Gemini CLI',
+      name: 'Antigravity CLI',
       desc: g(
-        'Run a Gemini agent swarm with its large context window, in parallel.',
-        'Ejecuta un enjambre de agentes Gemini con su gran contexto, en paralelo.'
+        'Run an Antigravity agent swarm with its large context window, in parallel.',
+        'Ejecuta un enjambre de agentes Antigravity con su gran contexto, en paralelo.'
       ),
       href: guidePath('gemini-agent-swarm', 'enjambre-de-agentes-gemini'),
-      icon: '/icons/apps/gemini-icon.svg',
+      icon: '/icons/apps/antigravity-icon.png',
     },
   ]
 
@@ -66,8 +66,8 @@ export default function WorksWithSection() {
           </h2>
           <p className="text-white/70 text-lg max-w-2xl mx-auto">
             {g(
-              'One workspace for Claude Code, Codex CLI and Gemini CLI. Run them in parallel, mix vendors, and watch all of them from one place.',
-              'Un espacio de trabajo para Claude Code, Codex CLI y Gemini CLI. Ejecútalos en paralelo, mezcla proveedores y vigílalos todos desde un sitio.'
+              'One workspace for Claude Code, Codex CLI and Antigravity CLI. Run them in parallel, mix vendors, and watch all of them from one place.',
+              'Un espacio de trabajo para Claude Code, Codex CLI y Antigravity CLI. Ejecútalos en paralelo, mezcla proveedores y vigílalos todos desde un sitio.'
             )}
           </p>
         </motion.div>
