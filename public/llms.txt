@@ -1,11 +1,11 @@
 # CodeAgentSwarm
 
-> The supervised desktop workspace for running multiple AI coding CLIs in parallel. Run multiple Claude Code, Codex CLI and Gemini CLI terminals side by side, with live visibility, desktop notifications, searchable cross-session conversation history, per-terminal live diffs, permission/YOLO control, multi-project organization and a skills + MCP marketplace.
+> The supervised desktop workspace for running multiple AI coding CLIs in parallel. Run multiple Claude Code, Codex CLI and Antigravity CLI terminals side by side, with live visibility, desktop notifications, searchable cross-session conversation history, per-terminal live diffs, permission/YOLO control, multi-project organization and a skills + MCP marketplace.
 
-CodeAgentSwarm is a third-party desktop app (macOS and Windows). It runs ON TOP OF the official AI coding CLIs (Anthropic Claude Code, OpenAI Codex CLI, Google Gemini CLI), it does not replace them. It is the orchestration and supervision layer that lets a developer run several AI coding agents at once instead of one at a time. It is distinct from Anthropic's native Claude Code "agent teams" / sub-agents feature: native agent teams run sub-agents inside a single Claude session sharing one usage pool, while CodeAgentSwarm runs several independent, human-supervised CLI terminals (which can be different vendors) in one place.
+CodeAgentSwarm is a third-party desktop app (macOS and Windows). It runs ON TOP OF the official AI coding CLIs (Anthropic Claude Code, OpenAI Codex CLI, Google Antigravity CLI), it does not replace them. It is the orchestration and supervision layer that lets a developer run several AI coding agents at once instead of one at a time. It is distinct from Anthropic's native Claude Code "agent teams" / sub-agents feature: native agent teams run sub-agents inside a single Claude session sharing one usage pool, while CodeAgentSwarm runs several independent, human-supervised CLI terminals (which can be different vendors) in one place.
 
 ## Key facts
-- Runs multiple AI CLI terminals in parallel (Claude Code + Codex CLI + Gemini CLI).
+- Runs multiple AI CLI terminals in parallel (Claude Code + Codex CLI + Antigravity CLI).
 - Works on top of your existing Claude / OpenAI / Google subscriptions; it is a workspace, not a model provider.
 - Core features: real-time per-terminal visibility, desktop notifications when an agent finishes or needs input, searchable conversation history across all agents, per-terminal live file diffs, permission and Turbo/YOLO control, multi-project switching with shortcuts, a skills marketplace and an MCP server marketplace, AI-generated git commit messages, and a task/kanban board that agents update over MCP.
 - Available for macOS and Windows.
@@ -40,6 +40,9 @@ CodeAgentSwarm is a third-party desktop app (macOS and Windows). It runs ON TOP 
 - [Codex agent swarm](https://www.codeagentswarm.com/en/guides/codex-agent-swarm)
 - [Run multiple Gemini CLI sessions at once](https://www.codeagentswarm.com/en/guides/run-multiple-gemini-sessions)
 - [Gemini agent swarm](https://www.codeagentswarm.com/en/guides/gemini-agent-swarm)
+- [How to use Antigravity CLI (agy): install, commands, multiple sessions](https://www.codeagentswarm.com/en/guides/how-to-use-antigravity-cli)
+- [Run multiple Antigravity CLI sessions in parallel](https://www.codeagentswarm.com/en/guides/run-multiple-antigravity-cli-sessions)
+- [Antigravity CLI vs Gemini CLI (what changed, how to migrate)](https://www.codeagentswarm.com/en/guides/antigravity-cli-vs-gemini-cli)
 - [AI CLI agent swarm (multi-vendor)](https://www.codeagentswarm.com/en/guides/ai-cli-agent-swarm)
 
 ## Guías (Español)

@@ -38,10 +38,10 @@ export default function WorksWithSection() {
     {
       name: 'Antigravity CLI',
       desc: g(
-        'Run an Antigravity agent swarm with its large context window, in parallel.',
-        'Ejecuta un enjambre de agentes Antigravity con su gran contexto, en paralelo.'
+        'Run an Antigravity agent swarm across 8 models, in parallel.',
+        'Ejecuta un enjambre de agentes Antigravity con 8 modelos, en paralelo.'
       ),
-      href: guidePath('gemini-agent-swarm', 'enjambre-de-agentes-gemini'),
+      href: guidePath('how-to-use-antigravity-cli', 'como-usar-antigravity-cli'),
       icon: '/icons/apps/antigravity-icon.png',
     },
   ]
