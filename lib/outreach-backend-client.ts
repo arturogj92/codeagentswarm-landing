@@ -37,6 +37,13 @@ export interface FunnelStats {
   stats: Record<string, { sent: number; replied: number; dry_run: number }>
 }
 
+export interface NextAction {
+  kind: 'excluded' | 'eligible' | 'scheduled' | 'cooldown' | 'waiting' | 'done' | 'none'
+  label: string
+  template: string | null
+  date: string | null
+}
+
 export interface UserStatus {
   user_id: string
   email: string
@@ -46,6 +53,12 @@ export interface UserStatus {
   e1_quick_question: { template_slug: string; sent_at: string; responded_at: string | null; is_dry_run: boolean } | null
   e2_we_miss_you: { template_slug: string; sent_at: string; responded_at: string | null; is_dry_run: boolean } | null
   e3_follow_up: { template_slug: string; sent_at: string; responded_at: string | null; is_dry_run: boolean } | null
+  // Enriched by the backend (usersWithNextAction):
+  active_days_14?: number
+  active_days_30?: number
+  last_active?: string | null
+  last_email_sent_at?: string | null
+  next_action?: NextAction
 }
 
 export interface SimulateResult {
