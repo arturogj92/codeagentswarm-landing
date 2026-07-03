@@ -49,10 +49,13 @@ export default function TableOfContents({ items, locale }: TableOfContentsProps)
       <ul className="space-y-2 border-l border-white/10 pl-4">
         {items.map((item) => (
           <li key={item.id}>
-            <a
-              href={`#${item.id}`}
+            {/* Botón en vez de <a href="#..."> a propósito: Google indexaba los
+                fragmentos (#section) como resultados separados con 0% CTR. El
+                scroll ya era 100% JS (preventDefault), así que la UX no cambia. */}
+            <button
+              type="button"
               className={`
-                block text-sm transition-all duration-200
+                block w-full text-left text-sm transition-all duration-200
                 ${item.level === 3 ? 'ml-3 text-xs' : ''}
                 ${
                   activeId === item.id
@@ -60,8 +63,7 @@ export default function TableOfContents({ items, locale }: TableOfContentsProps)
                     : 'text-white/60 hover:text-white'
                 }
               `}
-              onClick={(e) => {
-                e.preventDefault()
+              onClick={() => {
                 const element = document.getElementById(item.id)
                 if (element) {
                   element.scrollIntoView({ behavior: 'smooth' })
@@ -70,7 +72,7 @@ export default function TableOfContents({ items, locale }: TableOfContentsProps)
               }}
             >
               {item.title}
-            </a>
+            </button>
           </li>
         ))}
       </ul>

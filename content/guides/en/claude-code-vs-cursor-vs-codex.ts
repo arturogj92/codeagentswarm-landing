@@ -5,8 +5,8 @@ export const guide: Guide = {
     slug: 'claude-code-vs-cursor-vs-codex',
     locale: 'en',
     title: 'Claude Code vs Cursor vs Codex CLI: AI Coding Tools Compared',
-    metaTitle: 'Claude Code vs Cursor vs Codex CLI: Honest Comparison for Developers (2026)',
-    metaDescription: 'Detailed comparison of Claude Code, Cursor, and Codex CLI for developers. Features, pricing, performance, and when to use each AI coding tool. Updated for 2026.',
+    metaTitle: 'Claude Code vs Cursor vs Codex CLI: Which One to Use in 2026?',
+    metaDescription: 'One is an IDE, two are terminal agents, and the price gap is real. What each tool does best, where each one falls short, and how to pick the right one in 2026.',
     intro: `The AI coding tools landscape has exploded. Claude Code, Cursor, and Codex CLI are three of the most popular options, but they are fundamentally different tools designed for different workflows.
 
 This guide breaks down what each one actually does, where it shines, and where it falls short. No hype, no marketing fluff - just an honest comparison so you can pick what works for your workflow, or decide to use more than one.`,
