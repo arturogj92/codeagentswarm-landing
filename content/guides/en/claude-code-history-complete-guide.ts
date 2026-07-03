@@ -5,8 +5,8 @@ export const guide: Guide = {
     slug: 'claude-code-history-complete-guide',
     locale: 'en',
     title: 'Claude Code History: Where It Is Stored and How to Find, Back Up & Resume It',
-    metaTitle: 'Where Is Claude Code History Stored? Find, Back Up & Resume Past Sessions (2026)',
-    metaDescription: 'Everything about Claude Code conversation history: where it is stored, how to find past sessions, search old chats, resume conversations, and manage your history effectively. Updated for 2026.',
+    metaTitle: 'Where Is Claude Code History Stored? Find and Restore It (2026)',
+    metaDescription: 'The exact folder where Claude Code saves every session, what the JSONL files contain, how to back them up, and how to resume or recover old conversations.',
     intro: `If you have been using Claude Code for a while, at some point you have probably wondered: where did that conversation go?
 
 Maybe you solved a tricky bug last week, made an architecture decision three days ago, or spent 20 minutes explaining a module to Claude and now you need to pick up where you left off.

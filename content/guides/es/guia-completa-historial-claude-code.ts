@@ -5,8 +5,8 @@ export const guide: Guide = {
     slug: 'guia-completa-historial-claude-code',
     locale: 'es',
     title: 'Historial de Claude Code: dónde se guarda y cómo encontrarlo, respaldarlo y retomarlo',
-    metaTitle: '¿Dónde se guarda el historial de Claude Code? Encontrar, respaldar y retomar sesiones (2026)',
-    metaDescription: 'Todo sobre el historial de conversaciones de Claude Code: dónde se guardan, cómo encontrar sesiones anteriores, buscar chats antiguos, retomar conversaciones y gestionar tu historial. Actualizado para 2026.',
+    metaTitle: '¿Dónde se guarda el historial de Claude Code? (2026)',
+    metaDescription: 'La carpeta exacta donde Claude Code guarda cada sesión, qué contienen los archivos JSONL, cómo hacer copia de seguridad y cómo retomar o recuperar conversaciones antiguas.',
     intro: `Si llevas un tiempo usando Claude Code, seguro que en algún momento te has preguntado: ¿dónde fue a parar esa conversación?
 
 Puede que resolvieras un bug complicado la semana pasada, tomaras una decisión de arquitectura hace tres días, o pasaras 20 minutos explicándole un módulo a Claude y ahora necesitas retomar donde lo dejaste.

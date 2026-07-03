@@ -16,7 +16,7 @@ export default function GuidesSection() {
   const guides = [
     {
       icon: Users,
-      slug: locale === 'es' ? 'como-usar-varios-terminales-claude-code' : 'how-to-use-multiple-claude-code-terminals',
+      slug: locale === 'es' ? 'varios-chats-de-claude-a-la-vez' : 'run-multiple-claude-chats',
     },
     {
       icon: Eye,

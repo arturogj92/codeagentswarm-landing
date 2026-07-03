@@ -5,8 +5,8 @@ export const guide: Guide = {
     slug: 'ejecutar-multiples-sesiones-claude-code',
     locale: 'es',
     title: '¿Se pueden ejecutar varias sesiones de Claude Code a la vez? Sí, y así se hace',
-    metaTitle: '¿Se pueden ejecutar varias sesiones de Claude Code a la vez? 3 métodos comparados (2026)',
-    metaDescription: 'Sí, puedes ejecutar varias sesiones de Claude Code en paralelo. Aprende 3 métodos: pestañas de terminal, tmux/screen y CodeAgentSwarm. Pros, contras y paso a paso de cada uno.',
+    metaTitle: '¿Varias sesiones de Claude Code a la vez? Sí: 3 métodos (2026)',
+    metaDescription: 'Sí se puede. Tres formas de hacerlo: pestañas de terminal, tmux o un workspace multi-terminal supervisado. Qué falla con cada método y el setup que escala más allá de 3 agentes.',
     intro: `Si alguna vez te has preguntado si puedes tener más de una sesión de Claude Code funcionando al mismo tiempo, la respuesta es sí. Cada sesión es un proceso independiente con su propia conversación y contexto.
 
 La verdadera pregunta no es si se puede, sino cómo deberías hacerlo. Hay varios enfoques distintos y cada uno tiene sus ventajas y desventajas. Algunos son gratuitos y minimalistas, otros te dan visibilidad y control real.

@@ -5,8 +5,8 @@ export const guide: Guide = {
     slug: 'run-multiple-claude-code-sessions',
     locale: 'en',
     title: 'Can You Run Multiple Claude Code Sessions at Once? Yes, Here\'s How',
-    metaTitle: 'Can You Run Multiple Claude Code Sessions at Once? 3 Methods Compared (2026)',
-    metaDescription: 'Yes, you can run multiple Claude Code chats simultaneously. Learn 3 methods: native terminal tabs, tmux/screen, and CodeAgentSwarm. Pros, cons, and step-by-step for each approach.',
+    metaTitle: 'Can You Run Multiple Claude Code Sessions at Once? (2026)',
+    metaDescription: 'Yes. Three ways to do it: terminal tabs, tmux, or a supervised multi-terminal workspace. What breaks with each method and the setup that scales past 3 agents.',
     intro: `If you have ever wondered whether you can run more than one Claude Code session at the same time, the answer is yes. Each session is its own independent process with its own conversation and context.
 
 The real question is not whether you can do it, but how you should do it. There are a few different approaches, and each one has tradeoffs. Some are free and minimal, others give you real visibility and control.

@@ -645,8 +645,8 @@
     "readGuide": "Read guide",
     "featured": {
       "0": {
-        "title": "Multiple Terminals at Once",
-        "description": "Learn how to work with multiple Claude Code terminals in parallel without losing your head"
+        "title": "Run Multiple Claude Chats at Once",
+        "description": "Yes, you can: several Claude conversations working in parallel, each in its own terminal, all supervised from one window"
       },
       "1": {
         "title": "See Changes in Real Time",

@@ -5,8 +5,8 @@ export const guide: Guide = {
     slug: 'claude-code-yolo-turbo-mode',
     locale: 'en',
     title: 'Claude Code YOLO Mode: Enable --dangerously-skip-permissions Safely',
-    metaTitle: 'Claude Code YOLO Mode (--dangerously-skip-permissions): Enable It Safely (2026)',
-    metaDescription: 'Enable Claude Code YOLO mode (--dangerously-skip-permissions) without risking your codebase. Set up safe auto-approve with granular permissions, Git guardrails, and MCP tool controls. Step-by-step guide.',
+    metaTitle: 'How to Enable Claude Code YOLO Mode Safely (2026)',
+    metaDescription: 'Turn on --dangerously-skip-permissions without wrecking your repo: granular auto-approve, Git guardrails and per-terminal permissions that keep YOLO speed safe.',
     intro: `If you use Claude Code daily, you know that confirmations slow you down, and often you approve changes without really knowing what it's doing.
 
 That's why people talk about "Claude Code YOLO mode", usually tied to the \`--dangerously-skip-permissions\` flag. The idea is simple: skip permission prompts so Claude can keep moving.

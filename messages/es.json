@@ -645,8 +645,8 @@
     "readGuide": "Leer guía",
     "featured": {
       "0": {
-        "title": "Múltiples Terminales Simultáneos",
-        "description": "Aprende a trabajar con varios terminales de Claude Code en paralelo sin complicarte la vida"
+        "title": "Varios Chats de Claude a la Vez",
+        "description": "Sí se puede: varias conversaciones de Claude trabajando en paralelo, cada una en su terminal y supervisadas desde una sola ventana"
       },
       "1": {
         "title": "Ver Cambios en Tiempo Real",

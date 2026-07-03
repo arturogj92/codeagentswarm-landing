@@ -6,8 +6,8 @@ export const guide: Guide = {
     slug: 'codeagentswarm-notifications',
     locale: 'en',
     title: 'Claude Code Notifications: Know When AI Finishes Without Watching the Terminal',
-    metaTitle: 'Claude Code Notifications: Know When AI Finishes Without Watching the Terminal (2026)',
-    metaDescription: 'Get desktop notifications when Claude Code finishes a task or needs your input. Stop wasting time watching the terminal - set up smart alerts for your AI coding sessions in minutes.',
+    metaTitle: 'Claude Code Notifications: Get Alerted When It Finishes (2026)',
+    metaDescription: 'Desktop alerts the moment Claude Code finishes or needs your input. Stop staring at the terminal: set it up in minutes and get your focus back.',
     publishedAt: '2026-02-20',
     updatedAt: '2026-04-15',
     intro: `If you use Claude Code while you're working on other things, this will sound familiar:

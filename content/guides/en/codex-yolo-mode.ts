@@ -5,8 +5,8 @@ export const guide: Guide = {
     slug: 'codex-yolo-mode',
     locale: 'en',
     title: 'Codex CLI YOLO Mode: Full-Auto Approvals Explained, and How to Run It Safely',
-    metaTitle: 'Codex CLI YOLO Mode: Full-Auto Approvals Explained (and Safer Ways to Run It) (2026)',
-    metaDescription: 'What "YOLO mode" means for OpenAI Codex CLI: full-auto approvals, the --full-auto flag, the sandbox, the real risks of running with approvals off, and how to keep a Codex swarm fast and safe.',
+    metaTitle: 'Codex CLI YOLO Mode (--full-auto): How to Run It Safely (2026)',
+    metaDescription: 'What YOLO mode means in OpenAI Codex CLI: the approval modes, the --full-auto flag, the sandbox, and how to keep full-auto runs from wrecking your repo.',
     intro: `If you use OpenAI Codex CLI for more than a few minutes, the approval prompts get old fast. Every file write, every shell command, every network call stops and waits for you to say yes. So people reach for full auto and turn the approvals off, and the community started calling that "YOLO mode".
 
 Codex never officially ships a button labelled YOLO. The term just describes a state: Codex running with approvals bypassed so it can read, write, and run commands unattended. The speed is real, and for well-scoped work it feels great. The risk is also real, because once approvals are off there is nothing between Codex and a destructive command.
