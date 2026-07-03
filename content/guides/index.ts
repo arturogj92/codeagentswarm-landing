@@ -23,6 +23,9 @@ import enProjectSwitcher from './en/claude-code-project-switcher'
 import enAiCommits from './en/ai-commit-messages-claude-code'
 import enRunMultipleCodex from './en/run-multiple-codex-sessions'
 import enRunMultipleGemini from './en/run-multiple-gemini-sessions'
+import enHowToUseAntigravity from './en/how-to-use-antigravity-cli'
+import enRunMultipleAntigravity from './en/run-multiple-antigravity-cli-sessions'
+import enAntigravityVsGemini from './en/antigravity-cli-vs-gemini-cli'
 import enCodexYolo from './en/codex-yolo-mode'
 import enAgentTeams from './en/claude-code-agent-teams-vs-codeagentswarm'
 import enClaudeGui from './en/claude-code-gui'
@@ -54,6 +57,9 @@ import esProjectSwitcher from './es/cambio-rapido-de-proyecto-claude-code'
 import esAiCommits from './es/mensajes-de-commit-con-ia-claude-code'
 import esRunMultipleCodex from './es/ejecutar-multiples-sesiones-codex'
 import esRunMultipleGemini from './es/ejecutar-multiples-sesiones-gemini'
+import esComoUsarAntigravity from './es/como-usar-antigravity-cli'
+import esEjecutarMultiplesAntigravity from './es/ejecutar-multiples-sesiones-antigravity-cli'
+import esAntigravityVsGemini from './es/antigravity-cli-vs-gemini-cli'
 import esCodexYolo from './es/modo-yolo-codex'
 import esAgentTeams from './es/agent-teams-de-claude-code-vs-codeagentswarm'
 import esClaudeGui from './es/interfaz-grafica-claude-code'
@@ -87,6 +93,9 @@ export const guides: Record<string, Record<string, Guide>> = {
     'ai-commit-messages-claude-code': enAiCommits,
     'run-multiple-codex-sessions': enRunMultipleCodex,
     'run-multiple-gemini-sessions': enRunMultipleGemini,
+    'how-to-use-antigravity-cli': enHowToUseAntigravity,
+    'run-multiple-antigravity-cli-sessions': enRunMultipleAntigravity,
+    'antigravity-cli-vs-gemini-cli': enAntigravityVsGemini,
     'codex-yolo-mode': enCodexYolo,
     'claude-code-agent-teams-vs-codeagentswarm': enAgentTeams,
     'claude-code-gui': enClaudeGui,
@@ -118,6 +127,9 @@ export const guides: Record<string, Record<string, Guide>> = {
     'mensajes-de-commit-con-ia-claude-code': esAiCommits,
     'ejecutar-multiples-sesiones-codex': esRunMultipleCodex,
     'ejecutar-multiples-sesiones-gemini': esRunMultipleGemini,
+    'como-usar-antigravity-cli': esComoUsarAntigravity,
+    'ejecutar-multiples-sesiones-antigravity-cli': esEjecutarMultiplesAntigravity,
+    'antigravity-cli-vs-gemini-cli': esAntigravityVsGemini,
     'modo-yolo-codex': esCodexYolo,
     'agent-teams-de-claude-code-vs-codeagentswarm': esAgentTeams,
     'interfaz-grafica-claude-code': esClaudeGui,

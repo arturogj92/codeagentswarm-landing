@@ -38,12 +38,12 @@ export async function generateMetadata({
   const isSpanish = locale === 'es'
 
   const title = isSpanish
-    ? 'CodeAgentSwarm – Espacio de trabajo con IA para terminales Claude Code, Codex y Gemini CLI'
-    : 'CodeAgentSwarm – AI coding workspace for Claude Code, Codex and Gemini CLI terminals with MCP tools'
+    ? 'CodeAgentSwarm – Espacio de trabajo con IA para terminales Claude Code, Codex y Antigravity CLI'
+    : 'CodeAgentSwarm – AI coding workspace for Claude Code, Codex and Antigravity CLI terminals with MCP tools'
 
   const description = isSpanish
-    ? 'Orquesta multiples terminales AI CLI (Claude Code, Codex, Gemini CLI) en un espacio de trabajo para desarrolladores con visibilidad en tiempo real, notificaciones instantaneas, historial completo de conversaciones, control de permisos, gestion de multiples proyectos e integraciones MCP.'
-    : 'Orchestrate multiple AI CLI terminals (Claude Code, Codex, Gemini CLI) in a single developer workspace with real-time visibility, live notifications, full conversation history, permissions control, multi-project management and MCP integrations.'
+    ? 'Orquesta multiples terminales AI CLI (Claude Code, Codex, Antigravity CLI) en un espacio de trabajo para desarrolladores con visibilidad en tiempo real, notificaciones instantaneas, historial completo de conversaciones, control de permisos, gestion de multiples proyectos e integraciones MCP.'
+    : 'Orchestrate multiple AI CLI terminals (Claude Code, Codex, Antigravity CLI) in a single developer workspace with real-time visibility, live notifications, full conversation history, permissions control, multi-project management and MCP integrations.'
 
   return {
     metadataBase: new URL(baseUrl),
@@ -52,14 +52,14 @@ export async function generateMetadata({
     keywords: [
       'Claude Code',
       'Codex CLI',
-      'Gemini CLI',
+      'Antigravity CLI',
       'AI coding workspace',
       'AI developer workspace',
       'AI CLI workspace',
       'multi terminal coding workspace',
       'multiple Claude Code terminals',
       'multiple Codex terminals',
-      'multiple Gemini CLI terminals',
+      'multiple Antigravity CLI terminals',
       'Claude Code multi terminal setup',
       'real time visibility',
       'AI CLI notifications',
@@ -94,11 +94,11 @@ export async function generateMetadata({
     },
     openGraph: {
       title: isSpanish
-        ? 'CodeAgentSwarm – Terminales AI CLI en paralelo (Claude Code, Codex, Gemini)'
-        : 'CodeAgentSwarm – Multiple AI CLI terminals in parallel (Claude Code, Codex, Gemini)',
+        ? 'CodeAgentSwarm – Terminales AI CLI en paralelo (Claude Code, Codex, Antigravity)'
+        : 'CodeAgentSwarm – Multiple AI CLI terminals in parallel (Claude Code, Codex, Antigravity)',
       description: isSpanish
-        ? 'Desarrolla mas rapido con terminales AI CLI (Claude Code, Codex, Gemini CLI), integracion Git, seguimiento de cambios en tiempo real e historial completo.'
-        : 'Work faster with multiple AI CLI terminals (Claude Code, Codex, Gemini CLI), Git integration, real-time change tracking and full conversation history.',
+        ? 'Desarrolla mas rapido con terminales AI CLI (Claude Code, Codex, Antigravity CLI), integracion Git, seguimiento de cambios en tiempo real e historial completo.'
+        : 'Work faster with multiple AI CLI terminals (Claude Code, Codex, Antigravity CLI), Git integration, real-time change tracking and full conversation history.',
       type: 'website',
       siteName: 'CodeAgentSwarm',
       url: canonicalUrl,
@@ -122,8 +122,8 @@ export async function generateMetadata({
         ? 'CodeAgentSwarm – Terminales AI CLI en paralelo'
         : 'CodeAgentSwarm – Parallel AI CLI Terminals',
       description: isSpanish
-        ? 'Orquesta multiples terminales AI CLI (Claude Code, Codex, Gemini CLI) en un workspace con visibilidad en tiempo real.'
-        : 'Orchestrate multiple AI CLI terminals (Claude Code, Codex, Gemini CLI) in one workspace with real-time visibility.',
+        ? 'Orquesta multiples terminales AI CLI (Claude Code, Codex, Antigravity CLI) en un workspace con visibilidad en tiempo real.'
+        : 'Orchestrate multiple AI CLI terminals (Claude Code, Codex, Antigravity CLI) in one workspace with real-time visibility.',
       images: ['/og.png'],
     },
     robots: {

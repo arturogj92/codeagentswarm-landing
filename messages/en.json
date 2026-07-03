@@ -22,10 +22,10 @@
     "titleLine1": "Stop switching windows.",
     "titleLine2": "Orchestrate multiple AI CLI terminals.",
     "titleLine3": "Multiple AI CLI Terminals. One Workspace. Full Control.",
-    "subtitle": "Run multiple AI CLI terminals in parallel - Claude Code, Codex, Gemini CLI - with real time visibility, live notifications, full conversation history and multi project control.",
+    "subtitle": "Run multiple AI CLI terminals in parallel - Claude Code, Codex, Antigravity CLI - with real time visibility, live notifications, full conversation history and multi project control.",
     "powerStatement": "",
     "authorityLine": "",
-    "requirements": "Works with Claude Code, Codex or Gemini CLI. Requires macOS 12 or later.",
+    "requirements": "Works with Claude Code, Codex or Antigravity CLI. Requires macOS 12 or later.",
     "claimAccess": "Download Free – Pro Included",
     "securityBadge": "Turbo Mode with built-in guardrails. You set the limits.",
     "stats": {
@@ -110,7 +110,7 @@
     "badge": "The Solution",
     "titleLine1": "The multi-terminal AI CLI workflow",
     "titleLine2": "you always wanted",
-    "description": "CodeAgentSwarm is an AI coding workspace where multiple AI CLI terminals (Claude Code, Codex, Gemini CLI) work in parallel with real-time visibility, live notifications, full conversation history and seamless multiproject management. You never lose context.",
+    "description": "CodeAgentSwarm is an AI coding workspace where multiple AI CLI terminals (Claude Code, Codex, Antigravity CLI) work in parallel with real-time visibility, live notifications, full conversation history and seamless multiproject management. You never lose context.",
     "points": {
       "terminals": "Multiple AI CLI terminals running simultaneously.",
       "notifications": "Real-time notifications when agents finish or need input.",
@@ -370,7 +370,7 @@
         "features": {
           "codex": "Codex CLI integration",
           "deepseek": "DeepSeek CLI support",
-          "gemini": "Gemini CLI compatibility",
+          "gemini": "Antigravity CLI compatibility",
           "orchestration": "Unified agent orchestration"
         }
       },
@@ -411,32 +411,32 @@
     "titlePre": "Frequently Asked",
     "titleHighlight": "Questions",
     "items": {
-      "q1": "How do I use multiple AI CLI terminals (Claude Code, Codex, Gemini CLI) with CodeAgentSwarm?",
-      "a1": "CodeAgentSwarm makes multi-terminal AI CLI setup simple. Just open the app and you can run multiple AI CLI terminals (Claude Code, Codex, or Gemini CLI) simultaneously. Each terminal operates independently, letting you work on different tasks or projects in parallel with full real-time visibility.",
+      "q1": "How do I use multiple AI CLI terminals (Claude Code, Codex, Antigravity CLI) with CodeAgentSwarm?",
+      "a1": "CodeAgentSwarm makes multi-terminal AI CLI setup simple. Just open the app and you can run multiple AI CLI terminals (Claude Code, Codex, or Antigravity CLI) simultaneously. Each terminal operates independently, letting you work on different tasks or projects in parallel with full real-time visibility.",
       "q2": "How does CodeAgentSwarm handle project-level organization?",
-      "a2": "CodeAgentSwarm lets you manage multiple AI CLI projects seamlessly - whether you use Claude Code, Codex, or Gemini CLI. Switch between projects without losing context. Each project maintains its own terminal configurations, task boards, and conversation history. It's an AI multiproject workspace designed for developers juggling multiple codebases.",
+      "a2": "CodeAgentSwarm lets you manage multiple AI CLI projects seamlessly - whether you use Claude Code, Codex, or Antigravity CLI. Switch between projects without losing context. Each project maintains its own terminal configurations, task boards, and conversation history. It's an AI multiproject workspace designed for developers juggling multiple codebases.",
       "q3": "Do I get real-time visibility and live change tracking?",
-      "a3": "Yes! CodeAgentSwarm provides real-time coding visibility with live diffs so you can see AI code changes in real-time. Dynamic terminal titles show what each AI CLI agent (Claude Code, Codex, or Gemini CLI) is working on, and the file tracking system highlights exactly what changed and when.",
-      "q4": "Does CodeAgentSwarm support AI CLI notifications (Claude Code, Codex, Gemini CLI)?",
-      "a4": "Absolutely. You get real-time notifications for AI coding events. When any AI CLI terminal (Claude Code, Codex, or Gemini CLI) finishes a task, needs your input, or encounters an error, you'll know instantly. Never miss an update with instant desktop notifications.",
+      "a3": "Yes! CodeAgentSwarm provides real-time coding visibility with live diffs so you can see AI code changes in real-time. Dynamic terminal titles show what each AI CLI agent (Claude Code, Codex, or Antigravity CLI) is working on, and the file tracking system highlights exactly what changed and when.",
+      "q4": "Does CodeAgentSwarm support AI CLI notifications (Claude Code, Codex, Antigravity CLI)?",
+      "a4": "Absolutely. You get real-time notifications for AI coding events. When any AI CLI terminal (Claude Code, Codex, or Antigravity CLI) finishes a task, needs your input, or encounters an error, you'll know instantly. Never miss an update with instant desktop notifications.",
       "q5": "How does conversation history work?",
-      "a5": "CodeAgentSwarm saves your complete AI CLI conversation history across all sessions - whether you use Claude Code, Codex, or Gemini CLI. Search any past chat, decision, or code snippet instantly. Session history is fully searchable, so you never lose context or have to repeat explanations.",
+      "a5": "CodeAgentSwarm saves your complete AI CLI conversation history across all sessions - whether you use Claude Code, Codex, or Antigravity CLI. Search any past chat, decision, or code snippet instantly. Session history is fully searchable, so you never lose context or have to repeat explanations.",
       "q6": "Can I control what my AI CLI agents have access to?",
-      "a6": "Yes. CodeAgentSwarm provides visual permission settings for Claude Code, Codex, and Gemini CLI to manage file access and actions. You can configure what each terminal can access, approve sensitive operations, and maintain a secure AI coding environment while using Turbo Mode for safe actions.",
+      "a6": "Yes. CodeAgentSwarm provides visual permission settings for Claude Code, Codex, and Antigravity CLI to manage file access and actions. You can configure what each terminal can access, approve sensitive operations, and maintain a secure AI coding environment while using Turbo Mode for safe actions.",
       "q7": "Does CodeAgentSwarm support MCP tools and the MCP marketplace?",
-      "a7": "Yes! CodeAgentSwarm includes full MCP integration with a built-in MCP marketplace. Connect your AI CLI agents (Claude Code, Codex, Gemini CLI) to GitHub, Notion, Slack, Supabase, Brave Search, Playwright, PostgreSQL and more. MCP tools extend what your agents can do.",
+      "a7": "Yes! CodeAgentSwarm includes full MCP integration with a built-in MCP marketplace. Connect your AI CLI agents (Claude Code, Codex, Antigravity CLI) to GitHub, Notion, Slack, Supabase, Brave Search, Playwright, PostgreSQL and more. MCP tools extend what your agents can do.",
       "q8": "Does CodeAgentSwarm help prevent context loss in AI CLI agents?",
-      "a8": "Yes. CodeAgentSwarm keeps a synchronized conversation history across terminals, shows real time changes from each agent and links project structure with terminal context. This prevents your AI CLI agents (Claude Code, Codex, Gemini CLI) from forgetting past actions or losing track during multi step work.",
+      "a8": "Yes. CodeAgentSwarm keeps a synchronized conversation history across terminals, shows real time changes from each agent and links project structure with terminal context. This prevents your AI CLI agents (Claude Code, Codex, Antigravity CLI) from forgetting past actions or losing track during multi step work.",
       "q9": "Why not just use tmux?",
       "a9": "tmux manages windows. CodeAgentSwarm manages agents: task state, notifications when they finish, live diffs, per-project history and configurable permissions. If you just need to split your screen, tmux works fine. If you want to know what each agent is doing and never miss a thing, you need CodeAgentSwarm.",
       "q10": "Can I run Claude Code and Codex CLI at the same time?",
-      "a10": "Yes. Each terminal in CodeAgentSwarm is an independent process, so you can run Claude Code in one and Codex CLI in another at the same time. You pick the agent per terminal (claude-code, codex cli or gemini cli) and run several of them in parallel.",
-      "q11": "Does CodeAgentSwarm work with Gemini CLI?",
-      "a11": "Yes. CodeAgentSwarm runs Gemini CLI alongside Claude Code and Codex CLI in the same workspace, with shared notifications, searchable history and per-terminal live diffs. You can run a whole swarm of Gemini agents or mix Gemini with the other CLIs.",
+      "a10": "Yes. Each terminal in CodeAgentSwarm is an independent process, so you can run Claude Code in one and Codex CLI in another at the same time. You pick the agent per terminal (claude-code, codex cli or antigravity cli) and run several of them in parallel.",
+      "q11": "Does CodeAgentSwarm work with Antigravity CLI?",
+      "a11": "Yes. CodeAgentSwarm runs Antigravity CLI (agy), Google's official successor to the retired Gemini CLI, alongside Claude Code and Codex CLI in the same workspace, with shared notifications, searchable history and per-terminal live diffs. You can run a whole swarm of Antigravity agents or mix it with the other CLIs.",
       "q12": "Can I mix different AI CLI agents in one swarm?",
-      "a12": "Yes, and that is the point. A single CodeAgentSwarm workspace can run Claude Code, Codex CLI and Gemini CLI side by side, each in its own terminal. Use whichever agent fits each task and watch all of them from one place.",
+      "a12": "Yes, and that is the point. A single CodeAgentSwarm workspace can run Claude Code, Codex CLI and Antigravity CLI side by side, each in its own terminal. Use whichever agent fits each task and watch all of them from one place.",
       "q13": "What is an AI CLI agent swarm?",
-      "a13": "An AI CLI agent swarm is several independent AI coding CLI agents (such as Claude Code, Codex and Gemini CLI) running in parallel in one place, with shared visibility, notifications and history. CodeAgentSwarm is the desktop workspace built to run and supervise that swarm."
+      "a13": "An AI CLI agent swarm is several independent AI coding CLI agents (such as Claude Code, Codex and Antigravity CLI) running in parallel in one place, with shared visibility, notifications and history. CodeAgentSwarm is the desktop workspace built to run and supervise that swarm."
     }
   },
   "cta": {
@@ -444,7 +444,7 @@
     "titleHighlight": "Transform",
     "titleLine2": "Your Development?",
     "subtitle": "Join developers who want to orchestrate multiple AI CLI terminals with real time visibility, notifications and full conversation history.",
-    "instantSetup": "Already using Claude Code, Codex or Gemini CLI? It just works. Install and open.",
+    "instantSetup": "Already using Claude Code, Codex or Antigravity CLI? It just works. Install and open.",
     "version": "Version",
     "released": "Released",
     "loading": "Loading releases...",
@@ -479,12 +479,12 @@
       "memory": "4GB RAM minimum",
       "storageLabel": "Storage",
       "storage": "500MB available",
-      "claudeCode": "Claude Code, Codex or Gemini CLI",
+      "claudeCode": "Claude Code, Codex or Antigravity CLI",
       "gatekeeper": "First time installing? You might need to right-click and select \"Open\" to bypass Gatekeeper."
     }
   },
   "footer": {
-    "description": "AI coding workspace for multiple AI CLI terminals (Claude Code, Codex, Gemini CLI), real-time visibility, conversation history and integrated task management.",
+    "description": "AI coding workspace for multiple AI CLI terminals (Claude Code, Codex, Antigravity CLI), real-time visibility, conversation history and integrated task management.",
     "product": "Product",
     "company": "Company",
     "links": {
@@ -512,8 +512,8 @@
   "beta": {
     "hero": {
       "headline": "Join the Open Beta",
-      "subheadline": "Join the Open Beta and unlock the full Pro experience while we refine CodeAgentSwarm. Try multiple synchronized AI CLI terminals (Claude Code, Codex, Gemini CLI) with real time visibility, notifications and full conversation history.",
-      "microcopy": "Works on macOS (Apple Silicon). Requires Claude Code, Codex or Gemini CLI.",
+      "subheadline": "Join the Open Beta and unlock the full Pro experience while we refine CodeAgentSwarm. Try multiple synchronized AI CLI terminals (Claude Code, Codex, Antigravity CLI) with real time visibility, notifications and full conversation history.",
+      "microcopy": "Works on macOS (Apple Silicon). Requires Claude Code, Codex or Antigravity CLI.",
       "primaryCta": "Join Beta Now",
       "primaryCtaHint": "(Step 1)",
       "secondaryCta": "See Features"
@@ -537,7 +537,7 @@
       "titleHighlight": "Need",
       "point1": {
         "title": "Multiple AI CLI Terminals in Parallel",
-        "description": "Run multiple AI CLI agents (Claude Code, Codex, Gemini CLI) simultaneously. Each terminal works independently on different tasks across multiple projects."
+        "description": "Run multiple AI CLI agents (Claude Code, Codex, Antigravity CLI) simultaneously. Each terminal works independently on different tasks across multiple projects."
       },
       "point2": {
         "title": "AI-Powered Task Management",

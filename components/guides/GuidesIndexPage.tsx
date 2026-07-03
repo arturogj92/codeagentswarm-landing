@@ -14,27 +14,31 @@ interface GuidesIndexPageProps {
 // Tool family for each guide, keyed by its canonical English slug so the
 // grouping works the same in both locales. Anything not listed falls back to
 // the Claude Code family.
-type Family = 'cross' | 'claude' | 'codex' | 'gemini'
+type Family = 'cross' | 'claude' | 'codex' | 'antigravity' | 'gemini'
 
 const FAMILY_BY_EN_SLUG: Record<string, Family> = {
   'ai-cli-agent-swarm': 'cross',
   'codex-agent-swarm': 'codex',
   'run-multiple-codex-sessions': 'codex',
   'codex-yolo-mode': 'codex',
+  'how-to-use-antigravity-cli': 'antigravity',
+  'run-multiple-antigravity-cli-sessions': 'antigravity',
+  'antigravity-cli-vs-gemini-cli': 'antigravity',
   'gemini-agent-swarm': 'gemini',
   'run-multiple-gemini-sessions': 'gemini',
 }
 
-const FAMILY_ORDER: Family[] = ['cross', 'claude', 'codex', 'gemini']
+const FAMILY_ORDER: Family[] = ['cross', 'claude', 'codex', 'antigravity', 'gemini']
 
 const FAMILY_META: Record<Family, { en: string; es: string; icons: string[] }> = {
   cross: {
     en: 'Cross-CLI & Agent Swarm',
     es: 'Cross-CLI y enjambre de agentes',
-    icons: ['/icons/apps/claude-icon.svg', '/icons/apps/codex-icon.svg', '/icons/apps/gemini-icon.svg'],
+    icons: ['/icons/apps/claude-icon.svg', '/icons/apps/codex-icon.svg', '/icons/apps/antigravity-icon.png'],
   },
   claude: { en: 'Claude Code', es: 'Claude Code', icons: ['/icons/apps/claude-icon.svg'] },
   codex: { en: 'Codex CLI', es: 'Codex CLI', icons: ['/icons/apps/codex-icon.svg'] },
+  antigravity: { en: 'Antigravity CLI', es: 'Antigravity CLI', icons: ['/icons/apps/antigravity-icon.png'] },
   gemini: { en: 'Gemini CLI', es: 'Gemini CLI', icons: ['/icons/apps/gemini-icon.svg'] },
 }
 

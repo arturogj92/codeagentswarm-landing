@@ -29,16 +29,21 @@ const WINDOW_DAYS = 180 // ~6 months
 const AGENT_LABELS: Record<string, string> = {
   'claude-code': 'Claude Code',
   'codex cli': 'Codex',
+  'antigravity cli': 'Antigravity',
+  // Legacy: historical telemetry still contains "gemini cli" events (Gemini CLI was
+  // retired 2026-06-18 and replaced by Antigravity). Kept so old data renders correctly.
   'gemini cli': 'Gemini',
 }
 const AGENT_BADGE: Record<string, string> = {
   'claude-code': 'bg-orange-400/10 text-orange-300 border-orange-400/25',
   'codex cli': 'bg-sky-400/10 text-sky-300 border-sky-400/25',
+  'antigravity cli': 'bg-emerald-400/10 text-emerald-300 border-emerald-400/25',
   'gemini cli': 'bg-violet-400/10 text-violet-300 border-violet-400/25',
 }
 const AGENT_BAR: Record<string, string> = {
   'claude-code': 'bg-orange-400',
   'codex cli': 'bg-sky-400',
+  'antigravity cli': 'bg-emerald-400',
   'gemini cli': 'bg-violet-400',
 }
 
