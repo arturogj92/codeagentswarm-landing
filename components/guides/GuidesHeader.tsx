@@ -2,17 +2,15 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Sparkles } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import Image from 'next/image'
-import { useTranslations, useLocale } from 'next-intl'
+import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 import LocaleSwitcher from '../LocaleSwitcher'
 import LogoText from '../LogoText'
 
 export default function GuidesHeader() {
   const tCommon = useTranslations('common')
-  const tBeta = useTranslations('beta.banner')
-  const locale = useLocale()
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   return (
@@ -46,15 +44,6 @@ export default function GuidesHeader() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          {/* Join Beta Button */}
-          <a
-            href={`/${locale}/beta`}
-            className="flex items-center gap-1.5 px-4 py-2 rounded-full border border-white/20 bg-white/5 hover:bg-white/10 transition-all duration-300"
-          >
-            <Sparkles className="w-4 h-4 text-neutral-400" />
-            <span className="text-sm font-medium text-white">{tBeta('cta')}</span>
-          </a>
-
           {/* Contact */}
           <a
             href="mailto:hello@codeagentswarm.com"
@@ -115,16 +104,6 @@ export default function GuidesHeader() {
             className="lg:hidden bg-black border-t border-white/5"
           >
             <nav className="flex flex-col p-6 gap-4">
-              {/* Join Beta */}
-              <a
-                href={`/${locale}/beta`}
-                className="flex items-center gap-2 text-lg font-medium py-2 text-white"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                <Sparkles className="w-5 h-5 text-neutral-400" />
-                {tBeta('cta')}
-              </a>
-
               {/* Contact */}
               <a
                 href="mailto:hello@codeagentswarm.com"

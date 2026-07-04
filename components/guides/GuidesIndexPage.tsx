@@ -14,7 +14,7 @@ interface GuidesIndexPageProps {
 // Tool family for each guide, keyed by its canonical English slug so the
 // grouping works the same in both locales. Anything not listed falls back to
 // the Claude Code family.
-type Family = 'cross' | 'claude' | 'codex' | 'antigravity' | 'gemini'
+type Family = 'cross' | 'claude' | 'codex' | 'antigravity' | 'opencode' | 'gemini'
 
 const FAMILY_BY_EN_SLUG: Record<string, Family> = {
   'ai-cli-agent-swarm': 'cross',
@@ -24,11 +24,17 @@ const FAMILY_BY_EN_SLUG: Record<string, Family> = {
   'how-to-use-antigravity-cli': 'antigravity',
   'run-multiple-antigravity-cli-sessions': 'antigravity',
   'antigravity-cli-vs-gemini-cli': 'antigravity',
+  'opencode-agent-swarm': 'opencode',
+  'run-multiple-opencode-sessions': 'opencode',
+  'opencode-vs-cursor': 'opencode',
+  'opencode-on-windows': 'opencode',
+  'opencode-yolo-mode': 'opencode',
+  'opencode-conversation-history': 'opencode',
   'gemini-agent-swarm': 'gemini',
   'run-multiple-gemini-sessions': 'gemini',
 }
 
-const FAMILY_ORDER: Family[] = ['cross', 'claude', 'codex', 'antigravity', 'gemini']
+const FAMILY_ORDER: Family[] = ['cross', 'claude', 'codex', 'antigravity', 'opencode', 'gemini']
 
 const FAMILY_META: Record<Family, { en: string; es: string; icons: string[] }> = {
   cross: {
@@ -39,6 +45,7 @@ const FAMILY_META: Record<Family, { en: string; es: string; icons: string[] }> =
   claude: { en: 'Claude Code', es: 'Claude Code', icons: ['/icons/apps/claude-icon.svg'] },
   codex: { en: 'Codex CLI', es: 'Codex CLI', icons: ['/icons/apps/codex-icon.svg'] },
   antigravity: { en: 'Antigravity CLI', es: 'Antigravity CLI', icons: ['/icons/apps/antigravity-icon.png'] },
+  opencode: { en: 'OpenCode', es: 'OpenCode', icons: ['/icons/apps/opencode-icon.svg'] },
   gemini: { en: 'Gemini CLI', es: 'Gemini CLI', icons: ['/icons/apps/gemini-icon.svg'] },
 }
 
