@@ -436,7 +436,9 @@
       "q12": "Can I mix different AI CLI agents in one swarm?",
       "a12": "Yes, and that is the point. A single CodeAgentSwarm workspace can run Claude Code, Codex CLI and Antigravity CLI side by side, each in its own terminal. Use whichever agent fits each task and watch all of them from one place.",
       "q13": "What is an AI CLI agent swarm?",
-      "a13": "An AI CLI agent swarm is several independent AI coding CLI agents (such as Claude Code, Codex and Antigravity CLI) running in parallel in one place, with shared visibility, notifications and history. CodeAgentSwarm is the desktop workspace built to run and supervise that swarm."
+      "a13": "An AI CLI agent swarm is several independent AI coding CLI agents (such as Claude Code, Codex and Antigravity CLI) running in parallel in one place, with shared visibility, notifications and history. CodeAgentSwarm is the desktop workspace built to run and supervise that swarm.",
+      "q14": "Does CodeAgentSwarm work with OpenCode?",
+      "a14": "Not yet, but OpenCode support is coming soon. Today CodeAgentSwarm runs Claude Code, Codex CLI and Antigravity CLI in parallel in one workspace, and OpenCode is on the roadmap so you will be able to add it to your swarm too."
     }
   },
   "cta": {

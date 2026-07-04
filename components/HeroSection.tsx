@@ -426,7 +426,7 @@ export default function HeroSection() {
 
           {/* AI CLI badges + requirements on a single line (wraps on very narrow screens) */}
           <div className="flex items-center justify-center gap-3 flex-wrap">
-            <div className="flex items-center -space-x-2" aria-label="Works with Claude Code, Codex and Antigravity CLI">
+            <div className="flex items-center -space-x-2" aria-label="Works with Claude Code, Codex and Antigravity CLI. OpenCode coming soon">
               <span className="w-8 h-8 rounded-full flex items-center justify-center bg-white border-2 border-[#0e0e12] shadow-lg">
                 <img src="/icons/apps/claude-icon.svg" alt="Claude Code" className="w-5 h-5 object-contain" />
               </span>
@@ -435,6 +435,12 @@ export default function HeroSection() {
               </span>
               <span className="w-8 h-8 rounded-full flex items-center justify-center bg-white border-2 border-[#0e0e12] shadow-lg">
                 <img src="/icons/apps/antigravity-icon.png" alt="Antigravity CLI" className="w-5 h-5 object-contain" />
+              </span>
+              <span
+                className="w-8 h-8 rounded-full flex items-center justify-center bg-[#0d0d0d] border-2 border-[#0e0e12] shadow-lg opacity-60"
+                title="OpenCode support coming soon"
+              >
+                <img src="/icons/apps/opencode-icon.svg" alt="OpenCode (coming soon)" className="w-6 h-6 object-contain" />
               </span>
             </div>
             <p className="text-sm text-white/40">

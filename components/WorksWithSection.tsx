@@ -16,7 +16,8 @@ export default function WorksWithSection() {
   const guidePath = (enSlug: string, esSlug: string) =>
     es ? `/es/guias/${esSlug}` : `/en/guides/${enSlug}`
 
-  const tools = [
+  type Tool = { name: string; desc: string; href: string; icon: string; comingSoon?: boolean }
+  const tools: Tool[] = [
     {
       name: 'Claude Code',
       desc: g(
@@ -44,6 +45,16 @@ export default function WorksWithSection() {
       href: guidePath('how-to-use-antigravity-cli', 'como-usar-antigravity-cli'),
       icon: '/icons/apps/antigravity-icon.png',
     },
+    {
+      name: 'OpenCode',
+      desc: g(
+        'OpenCode support is on the way. Run OpenCode agents alongside the rest of your swarm.',
+        'El soporte de OpenCode está en camino. Ejecuta agentes de OpenCode junto al resto de tu enjambre.'
+      ),
+      href: '',
+      icon: '/icons/apps/opencode-icon.svg',
+      comingSoon: true,
+    },
   ]
 
   const umbrellaHref = guidePath('ai-cli-agent-swarm', 'enjambre-de-agentes-cli-ia')
@@ -66,38 +77,65 @@ export default function WorksWithSection() {
           </h2>
           <p className="text-white/70 text-lg max-w-2xl mx-auto">
             {g(
-              'One workspace for Claude Code, Codex CLI and Antigravity CLI. Run them in parallel, mix vendors, and watch all of them from one place.',
-              'Un espacio de trabajo para Claude Code, Codex CLI y Antigravity CLI. Ejecútalos en paralelo, mezcla proveedores y vigílalos todos desde un sitio.'
+              'One workspace for Claude Code, Codex CLI and Antigravity CLI. Run them in parallel, mix vendors, and watch all of them from one place. OpenCode support is coming soon.',
+              'Un espacio de trabajo para Claude Code, Codex CLI y Antigravity CLI. Ejecútalos en paralelo, mezcla proveedores y vigílalos todos desde un sitio. El soporte de OpenCode llegará pronto.'
             )}
           </p>
         </motion.div>
 
-        <div className="grid gap-5 md:grid-cols-3">
-          {tools.map((tool, i) => (
-            <motion.div
-              key={tool.name}
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.5, delay: 0.1 * i }}
-            >
-              <Link
-                href={tool.href}
-                className="group block h-full rounded-2xl glass border border-white/10 p-6 transition-colors hover:border-neon-cyan/40"
-              >
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          {tools.map((tool, i) => {
+            const inner = (
+              <>
                 <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-4">
-                  <img src={tool.icon} alt="" aria-hidden="true" className="w-7 h-7" />
+                  <img
+                    src={tool.icon}
+                    alt=""
+                    aria-hidden="true"
+                    className={tool.comingSoon ? 'w-8 h-8' : 'w-7 h-7'}
+                  />
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-neon-cyan transition-colors">
-                  {tool.name}
-                </h3>
+                <div className="flex items-center gap-2 mb-2 flex-wrap">
+                  <h3 className="text-xl font-semibold text-white group-hover:text-neon-cyan transition-colors">
+                    {tool.name}
+                  </h3>
+                  {tool.comingSoon && (
+                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-white/10 text-neutral-400 font-medium">
+                      {g('Soon', 'Próximamente')}
+                    </span>
+                  )}
+                </div>
                 <p className="text-white/70 leading-relaxed mb-4">{tool.desc}</p>
-                <span className="inline-flex items-center gap-1 text-sm text-neon-cyan">
-                  {g('Read the guide', 'Ver la guía')}
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </span>
-              </Link>
-            </motion.div>
-          ))}
+                {!tool.comingSoon && (
+                  <span className="inline-flex items-center gap-1 text-sm text-neon-cyan">
+                    {g('Read the guide', 'Ver la guía')}
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </span>
+                )}
+              </>
+            )
+            return (
+              <motion.div
+                key={tool.name}
+                initial={{ opacity: 0, y: 20 }}
+                animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                transition={{ duration: 0.5, delay: 0.1 * i }}
+              >
+                {tool.comingSoon ? (
+                  <div className="block h-full rounded-2xl glass border border-dashed border-white/15 p-6 opacity-70 cursor-default">
+                    {inner}
+                  </div>
+                ) : (
+                  <Link
+                    href={tool.href}
+                    className="group block h-full rounded-2xl glass border border-white/10 p-6 transition-colors hover:border-neon-cyan/40"
+                  >
+                    {inner}
+                  </Link>
+                )}
+              </motion.div>
+            )
+          })}
         </div>
 
         <motion.div

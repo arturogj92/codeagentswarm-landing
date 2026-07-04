@@ -436,7 +436,9 @@
       "q12": "¿Puedo mezclar distintos agentes AI CLI en un mismo enjambre?",
       "a12": "Sí, y esa es la idea. Un mismo espacio de trabajo de CodeAgentSwarm puede ejecutar Claude Code, Codex CLI y Antigravity CLI a la vez, cada uno en su terminal. Usa el agente que mejor encaje en cada tarea y vigílalos todos desde un solo sitio.",
       "q13": "¿Qué es un enjambre de agentes AI CLI?",
-      "a13": "Un enjambre de agentes AI CLI son varios agentes de código por línea de comandos (como Claude Code, Codex y Antigravity CLI) ejecutándose en paralelo en un solo sitio, con visibilidad, notificaciones e historial compartidos. CodeAgentSwarm es el espacio de trabajo de escritorio hecho para ejecutar y supervisar ese enjambre."
+      "a13": "Un enjambre de agentes AI CLI son varios agentes de código por línea de comandos (como Claude Code, Codex y Antigravity CLI) ejecutándose en paralelo en un solo sitio, con visibilidad, notificaciones e historial compartidos. CodeAgentSwarm es el espacio de trabajo de escritorio hecho para ejecutar y supervisar ese enjambre.",
+      "q14": "¿CodeAgentSwarm funciona con OpenCode?",
+      "a14": "Todavía no, pero el soporte de OpenCode llegará pronto. Hoy CodeAgentSwarm ejecuta Claude Code, Codex CLI y Antigravity CLI en paralelo en un mismo espacio de trabajo, y OpenCode está en la hoja de ruta para que también puedas añadirlo a tu enjambre."
     }
   },
   "cta": {

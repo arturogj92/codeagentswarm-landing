@@ -58,6 +58,7 @@ export default function FAQSection() {
     { q: t('items.q11'), a: t('items.a11') },
     { q: t('items.q12'), a: t('items.a12') },
     { q: t('items.q13'), a: t('items.a13') },
+    { q: t('items.q14'), a: t('items.a14') },
   ]
 
   return (
