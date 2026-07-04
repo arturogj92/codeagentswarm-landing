@@ -438,7 +438,7 @@
       "q13": "What is an AI CLI agent swarm?",
       "a13": "An AI CLI agent swarm is several independent AI coding CLI agents (such as Claude Code, Codex and Antigravity CLI) running in parallel in one place, with shared visibility, notifications and history. CodeAgentSwarm is the desktop workspace built to run and supervise that swarm.",
       "q14": "Does CodeAgentSwarm work with OpenCode?",
-      "a14": "Not yet, but OpenCode support is coming soon. Today CodeAgentSwarm runs Claude Code, Codex CLI and Antigravity CLI in parallel in one workspace, and OpenCode is on the roadmap so you will be able to add it to your swarm too."
+      "a14": "Yes. CodeAgentSwarm runs Claude Code, Codex CLI, Antigravity CLI and OpenCode in parallel in one workspace. You pick the agent per terminal, so you can add OpenCode sessions to your swarm right next to the other agents."
     }
   },
   "cta": {

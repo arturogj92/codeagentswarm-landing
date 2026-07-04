@@ -438,7 +438,7 @@
       "q13": "¿Qué es un enjambre de agentes AI CLI?",
       "a13": "Un enjambre de agentes AI CLI son varios agentes de código por línea de comandos (como Claude Code, Codex y Antigravity CLI) ejecutándose en paralelo en un solo sitio, con visibilidad, notificaciones e historial compartidos. CodeAgentSwarm es el espacio de trabajo de escritorio hecho para ejecutar y supervisar ese enjambre.",
       "q14": "¿CodeAgentSwarm funciona con OpenCode?",
-      "a14": "Todavía no, pero el soporte de OpenCode llegará pronto. Hoy CodeAgentSwarm ejecuta Claude Code, Codex CLI y Antigravity CLI en paralelo en un mismo espacio de trabajo, y OpenCode está en la hoja de ruta para que también puedas añadirlo a tu enjambre."
+      "a14": "Sí. CodeAgentSwarm ejecuta Claude Code, Codex CLI, Antigravity CLI y OpenCode en paralelo en un mismo espacio de trabajo. Eliges el agente en cada terminal, así que puedes añadir sesiones de OpenCode a tu enjambre junto al resto de agentes."
     }
   },
   "cta": {
