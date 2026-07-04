@@ -42,6 +42,8 @@ import enOpenCodeWindows from './en/opencode-on-windows'
 import enOpenCodeYolo from './en/opencode-yolo-mode'
 import enOpenCodeHistory from './en/opencode-conversation-history'
 import enShareSkills from './en/share-skills-between-claude-code-codex-antigravity'
+import enGitWorktrees from './en/git-worktrees-for-ai-coding-agents'
+import enGitWorktreeVsBranch from './en/git-worktree-vs-branch-parallel-ai-agents'
 
 // Spanish guides
 import esMultipleTerminals from './es/como-usar-varios-terminales-claude-code'
@@ -83,6 +85,8 @@ import esOpenCodeWindows from './es/opencode-en-windows'
 import esOpenCodeYolo from './es/modo-yolo-opencode'
 import esOpenCodeHistory from './es/historial-conversaciones-opencode'
 import esShareSkills from './es/compartir-skills-entre-claude-code-codex-antigravity'
+import esGitWorktrees from './es/git-worktrees-para-agentes-de-ia'
+import esGitWorktreeVsBranch from './es/git-worktree-vs-rama-agentes-ia-en-paralelo'
 
 // Registry of all guides by locale and slug
 export const guides: Record<string, Record<string, Guide>> = {
@@ -126,6 +130,8 @@ export const guides: Record<string, Record<string, Guide>> = {
     'opencode-yolo-mode': enOpenCodeYolo,
     'opencode-conversation-history': enOpenCodeHistory,
     'share-skills-between-claude-code-codex-antigravity': enShareSkills,
+    'git-worktrees-for-ai-coding-agents': enGitWorktrees,
+    'git-worktree-vs-branch-parallel-ai-agents': enGitWorktreeVsBranch,
   },
   es: {
     'como-usar-varios-terminales-claude-code': esMultipleTerminals,
@@ -167,6 +173,8 @@ export const guides: Record<string, Record<string, Guide>> = {
     'modo-yolo-opencode': esOpenCodeYolo,
     'historial-conversaciones-opencode': esOpenCodeHistory,
     'compartir-skills-entre-claude-code-codex-antigravity': esShareSkills,
+    'git-worktrees-para-agentes-de-ia': esGitWorktrees,
+    'git-worktree-vs-rama-agentes-ia-en-paralelo': esGitWorktreeVsBranch,
   },
 }
 
