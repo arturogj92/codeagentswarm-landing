@@ -18,6 +18,8 @@ type Family = 'cross' | 'claude' | 'codex' | 'antigravity' | 'opencode' | 'gemin
 
 const FAMILY_BY_EN_SLUG: Record<string, Family> = {
   'ai-cli-agent-swarm': 'cross',
+  'git-worktrees-for-ai-coding-agents': 'cross',
+  'git-worktree-vs-branch-parallel-ai-agents': 'cross',
   'codex-agent-swarm': 'codex',
   'run-multiple-codex-sessions': 'codex',
   'codex-yolo-mode': 'codex',
