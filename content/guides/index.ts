@@ -35,6 +35,12 @@ import enBestSetupWindows from './en/best-claude-code-setup-windows'
 import enCodexVsCursor from './en/codex-cli-vs-cursor'
 import enCodexHistory from './en/codex-cli-conversation-history'
 import enCodexWindows from './en/codex-cli-on-windows'
+import enOpenCodeAgentSwarm from './en/opencode-agent-swarm'
+import enRunMultipleOpenCode from './en/run-multiple-opencode-sessions'
+import enOpenCodeVsCursor from './en/opencode-vs-cursor'
+import enOpenCodeWindows from './en/opencode-on-windows'
+import enOpenCodeYolo from './en/opencode-yolo-mode'
+import enOpenCodeHistory from './en/opencode-conversation-history'
 
 // Spanish guides
 import esMultipleTerminals from './es/como-usar-varios-terminales-claude-code'
@@ -69,6 +75,12 @@ import esMejorSetupWindows from './es/mejor-setup-claude-code-windows'
 import esCodexVsCursor from './es/codex-cli-vs-cursor'
 import esCodexHistory from './es/historial-conversaciones-codex'
 import esCodexWindows from './es/codex-cli-en-windows'
+import esOpenCodeAgentSwarm from './es/enjambre-de-agentes-opencode'
+import esRunMultipleOpenCode from './es/ejecutar-multiples-sesiones-opencode'
+import esOpenCodeVsCursor from './es/opencode-vs-cursor'
+import esOpenCodeWindows from './es/opencode-en-windows'
+import esOpenCodeYolo from './es/modo-yolo-opencode'
+import esOpenCodeHistory from './es/historial-conversaciones-opencode'
 
 // Registry of all guides by locale and slug
 export const guides: Record<string, Record<string, Guide>> = {
@@ -105,6 +117,12 @@ export const guides: Record<string, Record<string, Guide>> = {
     'codex-cli-vs-cursor': enCodexVsCursor,
     'codex-cli-conversation-history': enCodexHistory,
     'codex-cli-on-windows': enCodexWindows,
+    'opencode-agent-swarm': enOpenCodeAgentSwarm,
+    'run-multiple-opencode-sessions': enRunMultipleOpenCode,
+    'opencode-vs-cursor': enOpenCodeVsCursor,
+    'opencode-on-windows': enOpenCodeWindows,
+    'opencode-yolo-mode': enOpenCodeYolo,
+    'opencode-conversation-history': enOpenCodeHistory,
   },
   es: {
     'como-usar-varios-terminales-claude-code': esMultipleTerminals,
@@ -139,6 +157,12 @@ export const guides: Record<string, Record<string, Guide>> = {
     'codex-cli-vs-cursor': esCodexVsCursor,
     'historial-conversaciones-codex': esCodexHistory,
     'codex-cli-en-windows': esCodexWindows,
+    'enjambre-de-agentes-opencode': esOpenCodeAgentSwarm,
+    'ejecutar-multiples-sesiones-opencode': esRunMultipleOpenCode,
+    'opencode-vs-cursor': esOpenCodeVsCursor,
+    'opencode-en-windows': esOpenCodeWindows,
+    'modo-yolo-opencode': esOpenCodeYolo,
+    'historial-conversaciones-opencode': esOpenCodeHistory,
   },
 }
 

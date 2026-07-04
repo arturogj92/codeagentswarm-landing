@@ -48,12 +48,11 @@ export default function WorksWithSection() {
     {
       name: 'OpenCode',
       desc: g(
-        'OpenCode support is on the way. Run OpenCode agents alongside the rest of your swarm.',
-        'El soporte de OpenCode está en camino. Ejecuta agentes de OpenCode junto al resto de tu enjambre.'
+        'Run an OpenCode agent swarm across any model provider, supervised from one place.',
+        'Ejecuta un enjambre de agentes OpenCode con cualquier proveedor de modelos, supervisado desde un solo sitio.'
       ),
-      href: '',
+      href: guidePath('opencode-agent-swarm', 'enjambre-de-agentes-opencode'),
       icon: '/icons/apps/opencode-icon.svg',
-      comingSoon: true,
     },
   ]
 
@@ -77,8 +76,8 @@ export default function WorksWithSection() {
           </h2>
           <p className="text-white/70 text-lg max-w-2xl mx-auto">
             {g(
-              'One workspace for Claude Code, Codex CLI and Antigravity CLI. Run them in parallel, mix vendors, and watch all of them from one place. OpenCode support is coming soon.',
-              'Un espacio de trabajo para Claude Code, Codex CLI y Antigravity CLI. Ejecútalos en paralelo, mezcla proveedores y vigílalos todos desde un sitio. El soporte de OpenCode llegará pronto.'
+              'One workspace for Claude Code, Codex CLI, Antigravity CLI and OpenCode. Run them in parallel, mix vendors, and watch all of them from one place.',
+              'Un espacio de trabajo para Claude Code, Codex CLI, Antigravity CLI y OpenCode. Ejecútalos en paralelo, mezcla proveedores y vigílalos todos desde un sitio.'
             )}
           </p>
         </motion.div>
