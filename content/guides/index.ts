@@ -41,6 +41,7 @@ import enOpenCodeVsCursor from './en/opencode-vs-cursor'
 import enOpenCodeWindows from './en/opencode-on-windows'
 import enOpenCodeYolo from './en/opencode-yolo-mode'
 import enOpenCodeHistory from './en/opencode-conversation-history'
+import enShareSkills from './en/share-skills-between-claude-code-codex-antigravity'
 
 // Spanish guides
 import esMultipleTerminals from './es/como-usar-varios-terminales-claude-code'
@@ -81,6 +82,7 @@ import esOpenCodeVsCursor from './es/opencode-vs-cursor'
 import esOpenCodeWindows from './es/opencode-en-windows'
 import esOpenCodeYolo from './es/modo-yolo-opencode'
 import esOpenCodeHistory from './es/historial-conversaciones-opencode'
+import esShareSkills from './es/compartir-skills-entre-claude-code-codex-antigravity'
 
 // Registry of all guides by locale and slug
 export const guides: Record<string, Record<string, Guide>> = {
@@ -123,6 +125,7 @@ export const guides: Record<string, Record<string, Guide>> = {
     'opencode-on-windows': enOpenCodeWindows,
     'opencode-yolo-mode': enOpenCodeYolo,
     'opencode-conversation-history': enOpenCodeHistory,
+    'share-skills-between-claude-code-codex-antigravity': enShareSkills,
   },
   es: {
     'como-usar-varios-terminales-claude-code': esMultipleTerminals,
@@ -163,6 +166,7 @@ export const guides: Record<string, Record<string, Guide>> = {
     'opencode-en-windows': esOpenCodeWindows,
     'modo-yolo-opencode': esOpenCodeYolo,
     'historial-conversaciones-opencode': esOpenCodeHistory,
+    'compartir-skills-entre-claude-code-codex-antigravity': esShareSkills,
   },
 }
 
