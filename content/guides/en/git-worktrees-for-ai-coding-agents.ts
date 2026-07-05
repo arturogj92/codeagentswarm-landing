@@ -179,6 +179,12 @@ In this guide I explain the problem in concrete terms, what a git worktree actua
           type: 'paragraph',
           text: 'So the whole lifecycle, create a branch, check out an isolated folder, keep it out of git status, merge or remove at the end, is handled in the app. The manual approach is still there under the hood; CodeAgentSwarm just runs it for you per terminal.',
         },
+        {
+          type: 'image',
+          alt: 'The Git Projects panel in CodeAgentSwarm grouping each repository and listing its git worktrees, each on its own cas/ branch with a WORKTREE badge and an Open button',
+          src: '/images/guides/git-worktrees-panel.png',
+          caption: 'The Git Projects panel groups every repo and lists its worktrees, each on its own cas/ branch. Open, review changes, or merge and remove them from one place.',
+        },
       ],
     },
     {

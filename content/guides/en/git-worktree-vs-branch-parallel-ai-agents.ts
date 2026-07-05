@@ -232,6 +232,12 @@ For the ground-up explanation of what a worktree is and why isolation matters, r
           type: 'paragraph',
           text: 'It keeps the mess out of your way too. CodeAgentSwarm adds <code>.codeagentswarm/</code> to your <code>.gitignore</code> so the worktrees never show up in git status, and it is fail-safe: if the folder is not a git repo, the terminal just opens normally. A global setting can turn worktrees on for every terminal, and you can merge or remove a worktree from Settings when the work is done. You get the parallelism of worktrees without the branch juggling or the cleanup.',
         },
+        {
+          type: 'image',
+          alt: 'The Git Projects panel in CodeAgentSwarm grouping each repository and listing its git worktrees, each on its own cas/ branch with a WORKTREE badge and an Open button',
+          src: '/images/guides/git-worktrees-panel.png',
+          caption: 'CodeAgentSwarm keeps every worktree visible: the Git Projects panel groups them by repo, each on its own cas/ branch, ready to open or merge.',
+        },
       ],
     },
   ],

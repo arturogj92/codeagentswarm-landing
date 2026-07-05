@@ -232,6 +232,12 @@ Para la explicación desde cero de qué es un worktree y por qué importa el ais
           type: 'paragraph',
           text: 'También te quita el desorden de en medio. CodeAgentSwarm añade <code>.codeagentswarm/</code> a tu <code>.gitignore</code> para que los worktrees nunca aparezcan en git status, y es a prueba de fallos: si la carpeta no es un repo de git, el terminal se abre con normalidad. Un ajuste global puede activar los worktrees en todos los terminales, y puedes fusionar o eliminar un worktree desde Ajustes cuando el trabajo esté hecho. Consigues el paralelismo de los worktrees sin los malabares con las ramas ni la limpieza.',
         },
+        {
+          type: 'image',
+          alt: 'El panel Git Projects de CodeAgentSwarm agrupando cada repositorio y listando sus git worktrees, cada uno en su propia rama cas/ con una etiqueta WORKTREE y un botón Open',
+          src: '/images/guides/git-worktrees-panel.png',
+          caption: 'CodeAgentSwarm mantiene cada worktree a la vista: el panel Git Projects los agrupa por repo, cada uno en su rama cas/, listos para abrir o fusionar.',
+        },
       ],
     },
   ],
