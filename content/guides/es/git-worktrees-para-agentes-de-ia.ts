@@ -179,6 +179,12 @@ En esta guía explico el problema en concreto, qué es de verdad un git worktree
           type: 'paragraph',
           text: 'Así todo el ciclo de vida, crear una rama, checkoutear una carpeta aislada, mantenerla fuera de git status, fusionar o eliminar al final, se gestiona en la app. El método manual sigue estando debajo; CodeAgentSwarm solo lo ejecuta por ti en cada terminal.',
         },
+        {
+          type: 'image',
+          alt: 'El panel Git Projects de CodeAgentSwarm agrupando cada repositorio y listando sus git worktrees, cada uno en su propia rama cas/ con una etiqueta WORKTREE y un botón Open',
+          src: '/images/guides/git-worktrees-panel.png',
+          caption: 'El panel Git Projects agrupa cada repo y lista sus worktrees, cada uno en su rama cas/. Ábrelos, revisa los cambios o fusiónalos y elimínalos desde un solo sitio.',
+        },
       ],
     },
     {
