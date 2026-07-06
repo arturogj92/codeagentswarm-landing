@@ -17,6 +17,7 @@ interface UserActivityRow {
   current_streak: number
   longest_streak: number
   preferred_agent: string | null
+  last7: boolean[]
 }
 
 interface UserActivityDetail {
@@ -237,13 +238,14 @@ export default function UsersActivityClient() {
           </div>
         ) : (
           <div className="bg-[#111111] border border-white/10 rounded-xl overflow-x-auto">
-            <table className="w-full min-w-[760px]">
+            <table className="w-full min-w-[900px]">
               <thead>
                 <tr className="border-b border-white/10">
                   <Th label="User" col="name" sortKey={sortKey} sortDir={sortDir} onSort={toggleSort} align="left" />
                   <Th label="Status" col="status" sortKey={sortKey} sortDir={sortDir} onSort={toggleSort} align="left" />
                   <Th label="Streak" col="current_streak" sortKey={sortKey} sortDir={sortDir} onSort={toggleSort} align="right" />
                   <Th label="Active days" col="active_days" sortKey={sortKey} sortDir={sortDir} onSort={toggleSort} align="right" />
+                  <th className="px-4 py-3 text-center text-xs font-medium text-white/40 uppercase tracking-wider select-none">Last 7 days</th>
                   <Th label="Last active" col="last_active" sortKey={sortKey} sortDir={sortDir} onSort={toggleSort} align="right" />
                   <Th label="Clicks" col="total_clicks" sortKey={sortKey} sortDir={sortDir} onSort={toggleSort} align="right" />
                   <Th label="Joined" col="created_at" sortKey={sortKey} sortDir={sortDir} onSort={toggleSort} align="right" />
@@ -274,7 +276,8 @@ export default function UsersActivityClient() {
                           <span className="text-white/30">—</span>
                         )}
                       </td>
-                      <td className="px-4 py-3 text-right text-sm tabular-nums text-white/80">{u.active_days}</td>
+                      <td className="px-4 py-3"><ActiveDaysCell activeDays={u.active_days} createdAt={u.created_at} /></td>
+                      <td className="px-4 py-3"><Last7Cell flags={u.last7} /></td>
                       <td className="px-4 py-3 text-right text-sm tabular-nums text-white/60">{lastActiveLabel(u.days_since_last)}</td>
                       <td className="px-4 py-3 text-right text-sm tabular-nums text-white/80">{u.total_clicks.toLocaleString('en-US')}</td>
                       <td className="px-4 py-3 text-right text-xs text-white/50">{formatDate(u.created_at)}</td>
@@ -286,6 +289,54 @@ export default function UsersActivityClient() {
           </div>
         )}
       </div>
+    </div>
+  )
+}
+
+// "Active days" shown as a ratio: distinct days with activity vs total days since
+// the user joined, so a high number on a fresh account reads differently than on
+// an old one. Percentage + mini bar make the engagement obvious at a glance.
+function ActiveDaysCell({ activeDays, createdAt }: { activeDays: number; createdAt: string }) {
+  const created = parseDate(createdAt)
+  const totalDays = created
+    ? Math.max(activeDays, Math.floor((Date.now() - created.getTime()) / 86_400_000) + 1)
+    : Math.max(activeDays, 1)
+  const pct = Math.min(100, Math.round((activeDays / totalDays) * 100))
+  return (
+    <div className="flex flex-col items-end gap-1">
+      <div className="text-sm tabular-nums text-white/80">
+        {activeDays}
+        <span className="text-white/30"> / {totalDays}</span>
+      </div>
+      <div className="flex items-center gap-1.5 justify-end">
+        <div className="h-1 w-16 rounded-full bg-white/10 overflow-hidden">
+          <div className="h-full bg-amber-400/80" style={{ width: `${pct}%` }} />
+        </div>
+        <span className="text-[10px] text-white/40 tabular-nums w-8 text-right">{pct}%</span>
+      </div>
+    </div>
+  )
+}
+
+// Seven squares, oldest (6 days ago) on the left, today on the right. A lit amber
+// square means the user had in-app activity that day; today gets a subtle ring.
+function Last7Cell({ flags }: { flags: boolean[] }) {
+  const days = Array.isArray(flags) && flags.length === 7 ? flags : new Array(7).fill(false)
+  return (
+    <div className="flex items-center gap-1 justify-center">
+      {days.map((active, i) => {
+        const daysAgo = 6 - i
+        const label = daysAgo === 0 ? 'Today' : daysAgo === 1 ? 'Yesterday' : `${daysAgo}d ago`
+        return (
+          <span
+            key={i}
+            title={`${label}: ${active ? 'active' : 'no activity'}`}
+            className={`h-4 w-4 rounded-sm border ${
+              active ? 'bg-amber-400 border-amber-400' : 'bg-white/5 border-white/10'
+            } ${daysAgo === 0 ? 'ring-1 ring-amber-300/50 ring-offset-1 ring-offset-[#111111]' : ''}`}
+          />
+        )
+      })}
     </div>
   )
 }
@@ -333,6 +384,11 @@ function UserDetail({
 }) {
   const status = statusOf(user.days_since_last)
   const totalAgent = (detail?.agents || []).reduce((s, a) => s + a.n, 0)
+  const joined = parseDate(user.created_at)
+  const daysSinceJoin = joined
+    ? Math.max(user.active_days, Math.floor((Date.now() - joined.getTime()) / 86_400_000) + 1)
+    : Math.max(user.active_days, 1)
+  const activePct = Math.min(100, Math.round((user.active_days / daysSinceJoin) * 100))
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -358,7 +414,7 @@ function UserDetail({
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 mb-6">
           <Stat label="Current streak" value={user.current_streak > 0 ? `🔥 ${user.current_streak}` : '—'} />
           <Stat label="Longest streak" value={`${user.longest_streak}d`} />
-          <Stat label="Active days" value={String(user.active_days)} />
+          <Stat label="Active days" value={`${user.active_days} / ${daysSinceJoin}`} sub={`${activePct}% of days since joining`} />
           <Stat label="Total clicks" value={user.total_clicks.toLocaleString('en-US')} />
           <Stat label="First seen" value={formatDate(user.first_active)} small />
           <Stat label="Last active" value={lastActiveLabel(user.days_since_last)} small />
@@ -407,11 +463,12 @@ function UserDetail({
   )
 }
 
-function Stat({ label, value, small }: { label: string; value: string; small?: boolean }) {
+function Stat({ label, value, small, sub }: { label: string; value: string; small?: boolean; sub?: string }) {
   return (
     <div className="bg-[#111111] border border-white/10 rounded-xl px-4 py-3">
       <div className="text-[10px] uppercase tracking-widest text-white/40">{label}</div>
       <div className={`font-bold mt-0.5 ${small ? 'text-sm' : 'text-xl'} text-white/90`}>{value}</div>
+      {sub && <div className="text-[10px] text-white/40 mt-0.5">{sub}</div>}
     </div>
   )
 }

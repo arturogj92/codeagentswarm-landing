@@ -20,6 +20,9 @@ export interface UserActivityRow {
   current_streak: number
   longest_streak: number
   preferred_agent: string | null
+  // Activity flags for the last 7 days, oldest first (index 0 = 6 days ago,
+  // index 6 = today). true = the user had in-app activity that day.
+  last7: boolean[]
 }
 
 export async function GET(request: NextRequest) {
