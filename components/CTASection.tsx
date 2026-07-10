@@ -2,9 +2,9 @@
 
 import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { useRef, useState, useEffect } from 'react'
-import { Download, ChevronDown, Calendar, X, Mail, Rocket, Bell } from 'lucide-react'
+import { Download, ChevronDown, Calendar, X, Mail, Rocket, Bell, Smartphone } from 'lucide-react'
 import Image from 'next/image'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 
 // FOMO Popup Component for Windows/Linux users
 function FOMOPopup({
@@ -169,6 +169,142 @@ function FOMOPopup({
   )
 }
 
+// Shown only on mobile viewports (max-width 767px): visitors on a phone can't
+// install a desktop app, so we offer to email them the download link instead.
+function MobileEmailPanel() {
+  const t = useTranslations('cta.mobileEmail')
+  const locale = useLocale()
+  const panelRef = useRef<HTMLDivElement>(null)
+  const viewTracked = useRef(false)
+  const [email, setEmail] = useState('')
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error' | 'rateLimited'>('idle')
+
+  // Track mobile_link_offer_view once, when the panel enters the viewport.
+  useEffect(() => {
+    const el = panelRef.current
+    if (!el || typeof IntersectionObserver === 'undefined') return
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting) && !viewTracked.current) {
+          viewTracked.current = true
+          window.umami?.track('mobile_link_offer_view')
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.3 }
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!email || status === 'sending') return
+
+    setStatus('sending')
+    try {
+      const response = await fetch('/api/download-link', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, locale }),
+      })
+
+      if (response.ok) {
+        setStatus('success')
+        window.umami?.track('mobile_link_submit', { domain: email.split('@')[1] || '' })
+      } else if (response.status === 429) {
+        setStatus('rateLimited')
+        window.umami?.track('mobile_link_error', { reason: 'rate_limited' })
+      } else {
+        setStatus('error')
+        window.umami?.track('mobile_link_error', { reason: `http_${response.status}` })
+      }
+    } catch {
+      setStatus('error')
+      window.umami?.track('mobile_link_error', { reason: 'network' })
+    }
+  }
+
+  return (
+    <div
+      ref={panelRef}
+      className="mb-8 rounded-2xl bg-neutral-950 border border-neon-cyan/30 p-5"
+    >
+      <div className="flex items-start gap-3 mb-4">
+        <div className="w-10 h-10 shrink-0 rounded-xl bg-neon-cyan/10 border border-neon-cyan/30 flex items-center justify-center">
+          <Smartphone className="w-5 h-5 text-neon-cyan" aria-hidden="true" />
+        </div>
+        <div>
+          <h3 className="text-white font-display font-semibold text-base leading-snug">
+            {t('title')}
+          </h3>
+          <p className="text-neutral-400 text-sm mt-1">{t('description')}</p>
+        </div>
+      </div>
+
+      {status !== 'success' ? (
+        <>
+          <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+            <label htmlFor="mobile-email-input" className="sr-only">
+              {t('placeholder')}
+            </label>
+            <div className="relative">
+              <Mail
+                className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30"
+                aria-hidden="true"
+              />
+              <input
+                id="mobile-email-input"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder={t('placeholder')}
+                required
+                autoComplete="email"
+                inputMode="email"
+                className="w-full pl-11 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-neutral-600 focus:outline-none focus:border-neon-cyan/50 transition-colors"
+              />
+            </div>
+            <button
+              type="submit"
+              disabled={status === 'sending'}
+              className="w-full py-3 rounded-xl bg-neon-cyan text-black font-semibold hover:bg-amber-300 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {status === 'sending' ? t('sending') : t('button')}
+            </button>
+          </form>
+
+          <div role="status" aria-live="polite">
+            {status === 'error' && (
+              <p className="text-red-400 text-sm mt-3">{t('error')}</p>
+            )}
+            {status === 'rateLimited' && (
+              <p className="text-amber-400 text-sm mt-3">{t('rateLimited')}</p>
+            )}
+          </div>
+
+          <p className="text-neutral-600 text-xs mt-3">{t('privacy')}</p>
+        </>
+      ) : (
+        <div role="status" aria-live="polite" className="flex items-center gap-3 py-2">
+          <div className="w-8 h-8 shrink-0 rounded-full bg-green-500/20 flex items-center justify-center">
+            <svg
+              className="w-4 h-4 text-green-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <p className="text-white font-medium">{t('success')}</p>
+        </div>
+      )}
+    </div>
+  )
+}
+
 interface DownloadAsset {
   fileName: string
   fileUrl: string
@@ -195,9 +331,20 @@ export default function CTASection() {
   const [showOlderVersions, setShowOlderVersions] = useState(false)
   const [loading, setLoading] = useState(true)
   const [fomoPopup, setFomoPopup] = useState<{ open: boolean; platform: 'windows' | 'linux' }>({ open: false, platform: 'windows' })
+  // Viewport-based (matchMedia), NOT user-agent sniffing: the email panel only
+  // makes sense when the visitor is on a phone-sized screen.
+  const [isMobileViewport, setIsMobileViewport] = useState(false)
 
   useEffect(() => {
     fetchLatestRelease()
+  }, [])
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 767px)')
+    const update = () => setIsMobileViewport(mediaQuery.matches)
+    update()
+    mediaQuery.addEventListener('change', update)
+    return () => mediaQuery.removeEventListener('change', update)
   }, [])
 
   const fetchLatestRelease = async () => {
@@ -328,6 +475,9 @@ export default function CTASection() {
             {t('noReleases')}
           </div>
         )}
+
+        {/* Mobile-only: email me the download link (not rendered on desktop) */}
+        {isMobileViewport && <MobileEmailPanel />}
 
         {/* Download Options */}
         {!loading && latestRelease && (

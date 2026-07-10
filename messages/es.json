@@ -455,6 +455,17 @@
     "downloadDmg": "Descargar DMG",
     "downloadExe": "Descargar instalador",
     "windowsSmartScreen": "Build sin firmar - si Windows SmartScreen avisa, pulsa Mas informacion y luego Ejecutar de todas formas.",
+    "mobileEmail": {
+      "title": "¿Estás en el móvil?",
+      "description": "Te enviamos el enlace de descarga para tu ordenador.",
+      "placeholder": "tu@email.com",
+      "button": "Enviármelo",
+      "sending": "Enviando...",
+      "success": "Hecho, revisa tu correo",
+      "error": "Algo ha fallado. Inténtalo de nuevo en un momento.",
+      "rateLimited": "Ya lo has pedido varias veces hoy. Revisa tu bandeja (y el spam).",
+      "privacy": "Solo usamos tu email para enviarte este enlace."
+    },
     "platforms": {
       "appleSilicon": "Apple Silicon",
       "appleSiliconChips": "M1, M2, M3, M4",
@@ -658,6 +669,19 @@
         "title": "Turbo Mode Seguro",
         "description": "Acelera tu flujo de trabajo saltando confirmaciones sin perder el control"
       }
+    },
+    "productBlock": {
+      "overline": "La forma de 30 segundos",
+      "title": "Sáltate el montaje manual: así se ve en CodeAgentSwarm",
+      "copy": "Varios terminales de Claude Code, Codex y Gemini en un espacio de trabajo supervisado. Sin tmux, sin malabares con ventanas, cero cambios de contexto.",
+      "button": "Descárgalo gratis",
+      "sub": "macOS y Windows · Gratis"
+    },
+    "stickyBar": {
+      "text": "ejecuta tus sesiones de Claude Code en paralelo.",
+      "textShort": "Gratis para macOS y Windows",
+      "button": "Descárgalo gratis",
+      "close": "Cerrar"
     }
   },
   "survey": {
