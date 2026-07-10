@@ -135,7 +135,8 @@ async function markEmailSent(id: string): Promise<void> {
  * Links ALWAYS go through the tracked backend route so downloads are counted.
  */
 async function resolveDownloadLinks(
-  locale: DownloadLinkLocale
+  locale: DownloadLinkLocale,
+  requestId: string | null
 ): Promise<{ version: string; links: DownloadLinkEntry[] } | null> {
   const response = await fetch(`${BACKEND_URL}/api/releases/latest?limit=5`, {
     cache: 'no-store',
@@ -153,8 +154,11 @@ async function resolveDownloadLinks(
     (r) => r.downloads?.['win32-x64'] || r.downloads?.['win32-arm64']
   )
 
+  // source/rid attribute the download to this email so the backend can close
+  // the mobile funnel (mark the request as downloaded + Telegram notification)
+  const attribution = `?source=mobile_email${requestId ? `&rid=${requestId}` : ''}`
   const trackedUrl = (version: string, platform: string) =>
-    `${BACKEND_URL}/api/releases/download/${version}/${platform}`
+    `${BACKEND_URL}/api/releases/download/${version}/${platform}${attribution}`
 
   const es = locale === 'es'
   const links: DownloadLinkEntry[] = []
@@ -261,7 +265,7 @@ export async function POST(request: Request) {
     }
 
     // Resolve the latest version + tracked download links at send time.
-    const resolved = await resolveDownloadLinks(locale)
+    const resolved = await resolveDownloadLinks(locale, requestId)
     if (!resolved) {
       console.error('download-link: could not resolve latest release downloads')
       return NextResponse.json(
