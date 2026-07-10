@@ -13,11 +13,10 @@ import {
 // Supabase because in-memory counters do not survive serverless invocations),
 // store the request in download_link_requests, and send the email via Resend.
 //
-// ⛔ APPROVAL GATE: the REAL Resend send is behind the env flag
-// DOWNLOAD_LINK_EMAIL_ENABLED. Unless it is exactly 'true', this route does
-// everything (validate, rate limit, store the row, notify Telegram) but does
-// NOT call Resend and responds { queued: true, emailSent: false }.
-// Arturo must approve the email template before flipping the flag on Vercel.
+// Sending is ON by default (template approved by Arturo on 2026-07-10).
+// Kill switch: set DOWNLOAD_LINK_EMAIL_DISABLED='true' to stop the Resend
+// send while keeping validation, rate limit, stored row and Telegram ping
+// (the route then responds { queued: true, emailSent: false }).
 //
 // Vercel serverless rule: NEVER fire-and-forget. Every external call that
 // must happen (Resend send, Supabase writes) is awaited before responding.
@@ -257,10 +256,9 @@ export async function POST(request: Request) {
     // Telegram visibility (awaited with timeout; failure is non-fatal).
     await notifyLandingEvent(rawEmail, locale)
 
-    // ⛔ APPROVAL GATE (see header comment): no real email unless the flag is
-    // exactly 'true'. Everything above (validation, rate limit, stored row,
-    // Telegram ping) already happened.
-    if (process.env.DOWNLOAD_LINK_EMAIL_ENABLED !== 'true') {
+    // Kill switch (see header comment): everything above (validation, rate
+    // limit, stored row, Telegram ping) already happened.
+    if (process.env.DOWNLOAD_LINK_EMAIL_DISABLED === 'true') {
       return NextResponse.json({ queued: true, emailSent: false }, { status: 200 })
     }
 
