@@ -11,7 +11,8 @@ import Breadcrumbs from './Breadcrumbs'
 import TableOfContents from './TableOfContents'
 import ContentRenderer from './ContentRenderer'
 import FAQAccordion from './FAQAccordion'
-import GuideInlineCTA from './GuideInlineCTA'
+import GuideProductBlock, { pickGuideVideo } from './GuideProductBlock'
+import StickyDownloadBar from './StickyDownloadBar'
 
 interface GuideLayoutProps {
   guide: Guide
@@ -60,11 +61,6 @@ export default function GuideLayout({ guide }: GuideLayoutProps) {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [meta.slug])
-
-  // Split sections to place an inline CTA mid-content (only for guides with enough content)
-  const inlineCTAIndex = sections.length >= 3 ? Math.ceil(sections.length / 2) : 0
-  const sectionsBeforeCTA = inlineCTAIndex > 0 ? sections.slice(0, inlineCTAIndex) : sections
-  const sectionsAfterCTA = inlineCTAIndex > 0 ? sections.slice(inlineCTAIndex) : []
 
   // Deterministic related-guide recommendation (stable, crawlable link graph; no Math.random)
   const allGuides = getAllGuides(locale)
@@ -131,17 +127,19 @@ export default function GuideLayout({ guide }: GuideLayoutProps) {
               )}
             </motion.header>
 
+            {/* Product showcase block: between the intro and the first section */}
+            <GuideProductBlock
+              locale={locale}
+              slug={meta.slug}
+              videoKey={pickGuideVideo(meta.slug)}
+              ctaText={meta.ctaText}
+            />
+
             {/* Divider */}
             <hr className="border-t border-white/10 mb-10" />
 
-            {/* Content sections, with an inline CTA mid-content */}
-            <ContentRenderer sections={sectionsBeforeCTA} />
-            {sectionsAfterCTA.length > 0 && (
-              <>
-                <GuideInlineCTA locale={locale} slug={meta.slug} />
-                <ContentRenderer sections={sectionsAfterCTA} />
-              </>
-            )}
+            {/* Content sections */}
+            <ContentRenderer sections={sections} />
 
             {/* FAQ section */}
             {faq && faq.length > 0 && <FAQAccordion items={faq} locale={locale} />}
@@ -222,6 +220,9 @@ export default function GuideLayout({ guide }: GuideLayoutProps) {
           </aside>
         </div>
       </div>
+
+      {/* Bottom download bar (appears past 25% scroll, dismissible per session) */}
+      <StickyDownloadBar locale={locale} slug={meta.slug} />
     </div>
   )
 }
