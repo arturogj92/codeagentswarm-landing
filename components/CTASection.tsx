@@ -237,6 +237,12 @@ export default function CTASection() {
     return `https://codeagentswarm-backend-production.up.railway.app/api/releases/download-dmg/${version}/${arch}`
   }
 
+  // Routes the download through the backend so it is counted server-side
+  // (app_downloads); platform must be silicon | intel | windows-x64 | windows-arm64
+  const getTrackedDownloadUrl = (version: string, platform: string) => {
+    return `https://codeagentswarm-backend-production.up.railway.app/api/releases/download/${version}/${platform}`
+  }
+
   const notifyLandingEvent = (event: string, data: Record<string, string>) => {
     fetch('https://codeagentswarm-backend-production.up.railway.app/api/notifications/landing-event', {
       method: 'POST',
@@ -467,7 +473,7 @@ export default function CTASection() {
                   {/* Windows x64 */}
                   {winX64 && (
                     <motion.a
-                      href={winX64.fileUrl}
+                      href={winRelease?.version ? getTrackedDownloadUrl(winRelease.version, 'windows-x64') : winX64.fileUrl}
                       onClick={() => {
                         if (typeof window !== 'undefined') {
                           window.umami?.track('download_app_home_windows_x64')
@@ -513,7 +519,7 @@ export default function CTASection() {
                   {/* Windows ARM64 */}
                   {winArm && (
                     <motion.a
-                      href={winArm.fileUrl}
+                      href={winRelease?.version ? getTrackedDownloadUrl(winRelease.version, 'windows-arm64') : winArm.fileUrl}
                       onClick={() => {
                         if (typeof window !== 'undefined') {
                           window.umami?.track('download_app_home_windows_arm64')

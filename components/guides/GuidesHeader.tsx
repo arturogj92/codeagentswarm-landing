@@ -73,6 +73,11 @@ export default function GuidesHeader() {
           {/* Download Free */}
           <Link
             href="/#download"
+            onClick={() => {
+              if (typeof window !== 'undefined') {
+                window.umami?.track('nav_download_guides', { position: 'header' })
+              }
+            }}
             className="relative group px-5 py-2 rounded-full bg-white hover:bg-neutral-200 transition-all duration-300"
           >
             <span className="relative text-sm font-semibold text-black">
@@ -125,7 +130,12 @@ export default function GuidesHeader() {
               <Link
                 href="/#download"
                 className="mt-4 py-3 px-6 text-center text-black font-semibold rounded-full bg-white hover:bg-neutral-200 transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={() => {
+                  setIsMobileMenuOpen(false)
+                  if (typeof window !== 'undefined') {
+                    window.umami?.track('nav_download_guides', { position: 'mobile_menu' })
+                  }
+                }}
               >
                 {tCommon('downloadFree')}
               </Link>
