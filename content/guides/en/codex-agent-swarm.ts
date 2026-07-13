@@ -228,7 +228,7 @@ In this guide I walk through the three practical ways to run a Codex swarm, comp
         },
         {
           type: 'paragraph',
-          text: 'A kanban task board sits next to your terminals, and the agents update it themselves over MCP. You create tasks, hand them to terminals, and watch cards move as each Codex agent picks up, works, and finishes. When several agents are chipping away at related features, the board keeps the plan visible instead of living in your head.',
+          text: 'A kanban task board sits next to your terminals, and the agents update it themselves over MCP. You create tasks, hand them to terminals, and watch cards move as each Codex agent picks up, works, and finishes. When several agents are chipping away at related features, the board keeps the plan visible instead of living in your head. The visual layer itself, capability by capability, is covered in the <a href="/en/guides/codex-gui" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex GUI guide</a>.',
         },
         {
           type: 'heading',

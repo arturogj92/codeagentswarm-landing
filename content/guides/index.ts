@@ -44,6 +44,8 @@ import enOpenCodeHistory from './en/opencode-conversation-history'
 import enShareSkills from './en/share-skills-between-claude-code-codex-antigravity'
 import enGitWorktrees from './en/git-worktrees-for-ai-coding-agents'
 import enGitWorktreeVsBranch from './en/git-worktree-vs-branch-parallel-ai-agents'
+import enClaudeDashboard from './en/claude-code-dashboard'
+import enCodexGui from './en/codex-gui'
 
 // Spanish guides
 import esMultipleTerminals from './es/como-usar-varios-terminales-claude-code'
@@ -87,6 +89,8 @@ import esOpenCodeHistory from './es/historial-conversaciones-opencode'
 import esShareSkills from './es/compartir-skills-entre-claude-code-codex-antigravity'
 import esGitWorktrees from './es/git-worktrees-para-agentes-de-ia'
 import esGitWorktreeVsBranch from './es/git-worktree-vs-rama-agentes-ia-en-paralelo'
+import esClaudeDashboard from './es/panel-de-control-claude-code'
+import esCodexGui from './es/interfaz-grafica-codex'
 
 // Registry of all guides by locale and slug
 export const guides: Record<string, Record<string, Guide>> = {
@@ -132,6 +136,8 @@ export const guides: Record<string, Record<string, Guide>> = {
     'share-skills-between-claude-code-codex-antigravity': enShareSkills,
     'git-worktrees-for-ai-coding-agents': enGitWorktrees,
     'git-worktree-vs-branch-parallel-ai-agents': enGitWorktreeVsBranch,
+    'claude-code-dashboard': enClaudeDashboard,
+    'codex-gui': enCodexGui,
   },
   es: {
     'como-usar-varios-terminales-claude-code': esMultipleTerminals,
@@ -175,6 +181,8 @@ export const guides: Record<string, Record<string, Guide>> = {
     'compartir-skills-entre-claude-code-codex-antigravity': esShareSkills,
     'git-worktrees-para-agentes-de-ia': esGitWorktrees,
     'git-worktree-vs-rama-agentes-ia-en-paralelo': esGitWorktreeVsBranch,
+    'panel-de-control-claude-code': esClaudeDashboard,
+    'interfaz-grafica-codex': esCodexGui,
   },
 }
 

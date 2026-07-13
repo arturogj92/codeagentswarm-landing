@@ -35,7 +35,7 @@ CodeAgentSwarm es justo ese tipo de interfaz. Funciona en macOS y Windows, no re
         },
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm es una interfaz gráfica de Claude Code en este sentido. Es una app de escritorio para macOS y Windows que le da al CLI un workspace de verdad: varios terminales en paralelo, un tablero de tareas, historial buscable, diffs de archivos en vivo, notificaciones nativas, controles de permisos, accesos directos a proyectos y un marketplace de skills y de MCP. Nada de eso reemplaza al agente. Es un panel y un gestor de Claude Code construido alrededor de la herramienta que ya usas.',
+          text: 'CodeAgentSwarm es una interfaz gráfica de Claude Code en este sentido. Es una app de escritorio para macOS y Windows que le da al CLI un workspace de verdad: varios terminales en paralelo, un tablero de tareas, historial buscable, diffs de archivos en vivo, notificaciones nativas, controles de permisos, accesos directos a proyectos y un marketplace de skills y de MCP. Nada de eso reemplaza al agente. Es un <a href="/es/guias/panel-de-control-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">panel y un gestor de Claude Code</a> construido alrededor de la herramienta que ya usas. Y si tu CLI principal es Codex, la misma capa visual existe para él en la <a href="/es/guias/interfaz-grafica-codex" class="text-neon-cyan hover:text-neon-purple transition-colors">guía de la interfaz gráfica de Codex</a>.',
         },
         {
           type: 'callout',

@@ -35,7 +35,7 @@ CodeAgentSwarm is exactly that kind of GUI. It runs on macOS and Windows, it doe
         },
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm is a Claude Code GUI in this sense. It is a desktop app for macOS and Windows that gives the CLI a real workspace: multiple terminals side by side, a task board, searchable history, live file diffs, native notifications, permission controls, project shortcuts, and a skills and MCP marketplace. None of that replaces the agent. It is a Claude Code dashboard and manager built around the tool you already use.',
+          text: 'CodeAgentSwarm is a Claude Code GUI in this sense. It is a desktop app for macOS and Windows that gives the CLI a real workspace: multiple terminals side by side, a task board, searchable history, live file diffs, native notifications, permission controls, project shortcuts, and a skills and MCP marketplace. None of that replaces the agent. It is a <a href="/en/guides/claude-code-dashboard" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code dashboard and manager</a> built around the tool you already use. If Codex is your main CLI, the same visual layer exists for it in the <a href="/en/guides/codex-gui" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex GUI guide</a>.',
         },
         {
           type: 'callout',

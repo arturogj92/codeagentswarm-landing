@@ -40,7 +40,7 @@ En esta guía te explico qué es el tablero de tareas, cómo lo mantienen al dí
         },
         {
           type: 'paragraph',
-          text: 'Si todavía no conoces <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, es la herramienta de programación agéntica de Anthropic que corre en tu terminal y edita tu código directamente. CodeAgentSwarm te deja ejecutar varios de esos agentes en paralelo, y el tablero de tareas es lo que evita que se conviertan en un caos imposible de seguir.',
+          text: 'Si todavía no conoces <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, es la herramienta de programación agéntica de Anthropic que corre en tu terminal y edita tu código directamente. CodeAgentSwarm te deja ejecutar varios de esos agentes en paralelo, y el tablero de tareas es lo que evita que se conviertan en un caos imposible de seguir. El tablero es una pieza de una capa de supervisión más amplia, explicada en la <a href="/es/guias/panel-de-control-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">guía del panel de control de Claude Code</a>.',
         },
       ],
     },

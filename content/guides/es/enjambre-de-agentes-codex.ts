@@ -228,7 +228,7 @@ En esta guía te explico las tres formas reales de ejecutar un enjambre de Codex
         },
         {
           type: 'paragraph',
-          text: 'Un tablero kanban de tareas vive junto a tus terminales, y los propios agentes lo actualizan por MCP. Creas tareas, se las pasas a los terminales y ves moverse las tarjetas a medida que cada agente de Codex coge, trabaja y termina. Cuando varios agentes avanzan sobre funcionalidades relacionadas, el tablero mantiene el plan a la vista en lugar de solo en tu cabeza.',
+          text: 'Un tablero kanban de tareas vive junto a tus terminales, y los propios agentes lo actualizan por MCP. Creas tareas, se las pasas a los terminales y ves moverse las tarjetas a medida que cada agente de Codex coge, trabaja y termina. Cuando varios agentes avanzan sobre funcionalidades relacionadas, el tablero mantiene el plan a la vista en lugar de solo en tu cabeza. La capa visual completa, función a función, está en la <a href="/es/guias/interfaz-grafica-codex" class="text-neon-cyan hover:text-neon-purple transition-colors">guía de la interfaz gráfica de Codex</a>.',
         },
         {
           type: 'heading',

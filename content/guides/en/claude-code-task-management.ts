@@ -40,7 +40,7 @@ In this guide I will walk through what the task board is, how the agents keep it
         },
         {
           type: 'paragraph',
-          text: 'If you are new to <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, it is Anthropic\'s agentic coding tool that runs in your terminal and edits your codebase directly. CodeAgentSwarm lets you run several of those agents side by side, and the task board is what stops them from becoming an untrackable mess.',
+          text: 'If you are new to <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, it is Anthropic\'s agentic coding tool that runs in your terminal and edits your codebase directly. CodeAgentSwarm lets you run several of those agents side by side, and the task board is what stops them from becoming an untrackable mess. The board is one piece of a wider oversight layer, covered in the <a href="/en/guides/claude-code-dashboard" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code dashboard guide</a>.',
         },
       ],
     },
