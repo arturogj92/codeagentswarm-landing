@@ -175,6 +175,15 @@ async function sendTelegram(text) {
 }
 
 const report = await buildReport()
-console.log(report)
+
+// The repo is public, so the Actions log is public too. Never print the report
+// itself there: it carries traffic and download numbers. Set SEO_REPORT_STDOUT=1
+// when running locally if you want to see it.
+if (process.env.SEO_REPORT_STDOUT === '1') {
+  console.log(report)
+} else {
+  console.log(`Report built: ${report.length} chars, ${report.split('\n').length} lines`)
+}
+
 const messageId = await sendTelegram(report)
-console.log(`\nSent to Telegram, message_id ${messageId}`)
+console.log(`Sent to Telegram, message_id ${messageId}`)
