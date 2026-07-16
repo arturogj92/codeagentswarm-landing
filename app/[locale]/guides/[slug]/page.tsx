@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import { notFound, permanentRedirect } from 'next/navigation'
+import { setRequestLocale } from 'next-intl/server'
 import { getGuide, getGuideSlugs } from '@/content/guides'
 import { GuideLayout } from '@/components/guides'
 
@@ -80,6 +81,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function GuidePage({ params }: PageProps) {
   const { locale, slug } = await params
+  setRequestLocale(locale)
 
   // Redirect Spanish locale to the correct path
   if (locale === 'es') {

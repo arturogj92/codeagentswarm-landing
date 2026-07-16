@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import LegalPage from '@/components/legal/LegalPage'
+import { setRequestLocale } from 'next-intl/server'
 import { getLegalDoc } from '@/content/legal'
 
 const baseUrl = 'https://www.codeagentswarm.com'
@@ -43,6 +44,7 @@ export default async function PrivacyPage({
   params: Promise<{ locale: string }>
 }) {
   const { locale } = await params
+  setRequestLocale(locale)
   const doc = getLegalDoc(slug, locale)
   if (!doc) notFound()
   return <LegalPage doc={doc} />

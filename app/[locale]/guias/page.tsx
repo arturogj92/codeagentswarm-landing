@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import { permanentRedirect } from 'next/navigation'
+import { setRequestLocale } from 'next-intl/server'
 import { getAllGuides } from '@/content/guides'
 import GuidesIndexPage from '@/components/guides/GuidesIndexPage'
 
@@ -19,6 +20,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function GuiasPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
+  setRequestLocale(locale)
 
   // /guias/ is the Spanish listing only; send other locales to their canonical path
   if (locale !== 'es') {

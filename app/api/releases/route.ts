@@ -18,8 +18,9 @@ export async function GET(request: Request) {
       headers: {
         'Content-Type': 'application/json',
       },
-      // Add cache control to prevent stale data
-      cache: 'no-store',
+      // Release info only changes when a version ships; a short cache keeps
+      // the home from invoking this proxy (and Railway) on every pageview.
+      next: { revalidate: 300 },
     })
 
     if (!response.ok) {
@@ -32,12 +33,15 @@ export async function GET(request: Request) {
 
     const data = await response.json()
 
-    // Return the data with CORS headers enabled for the frontend
+    // Return the data with CORS headers enabled for the frontend.
+    // s-maxage lets Vercel's CDN serve this for 5 min without invoking
+    // the function; worst case a new release shows up 5 min late.
     return NextResponse.json(data, {
       headers: {
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Methods': 'GET, OPTIONS',
         'Access-Control-Allow-Headers': 'Content-Type',
+        'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=600',
       },
     })
   } catch (error) {

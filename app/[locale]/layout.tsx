@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { Inter, Manrope } from 'next/font/google'
 import localFont from 'next/font/local'
 import { NextIntlClientProvider } from 'next-intl'
-import { getMessages } from 'next-intl/server'
+import { getMessages, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import Script from 'next/script'
 import { routing } from '@/i18n/routing'
@@ -152,6 +152,11 @@ export default async function LocaleLayout({
   if (!routing.locales.includes(locale as any)) {
     notFound()
   }
+
+  // Enable static rendering: without this, next-intl reads the incoming
+  // request to resolve the locale and every page under [locale] becomes
+  // dynamic (SSR per visit), burning Vercel Fluid CPU on each pageview.
+  setRequestLocale(locale)
 
   // Providing all messages to the client
   const messages = await getMessages()
