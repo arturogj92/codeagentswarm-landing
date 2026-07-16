@@ -4,9 +4,9 @@ export const guide: Guide = {
   meta: {
     slug: 'modo-yolo-claude-code-explicado',
     locale: 'es',
-    title: '¿Qué es el modo YOLO de Claude Code? Definición, Auto mode y alternativas más seguras',
-    metaTitle: '¿Qué es el modo YOLO de Claude Code y es seguro? (2026)',
-    metaDescription: 'Qué hace realmente --dangerously-skip-permissions, los riesgos reales, cómo se compara con Auto mode y cuándo compensa ejecutar Claude Code sin confirmaciones.',
+    title: 'Modo YOLO de Claude Code: qué es, los riesgos y cómo activarlo de forma segura',
+    metaTitle: 'Modo YOLO de Claude Code: qué es y cómo activarlo seguro (2026)',
+    metaDescription: 'Qué hace realmente --dangerously-skip-permissions, los riesgos reales, cómo se compara con Auto mode y la configuración paso a paso de Turbo Mode para ir rápido y seguro.',
     intro: `Si llevas más de un día trabajando con Claude Code, seguro que ya te has encontrado con la misma frustración: los prompts de confirmación constantes. Cada edición de archivo, cada comando de terminal, cada llamada a una herramienta MCP - Claude pide confirmación, y tú le das a "yes" sin ni siquiera leer lo que dice.
 
 Ahí es donde entra el "modo YOLO". La comunidad empezó a llamarlo así por el flag \`--dangerously-skip-permissions\`, que hace exactamente lo que suena: salta todos los prompts de permisos para que Claude trabaje sin interrupciones.
@@ -15,7 +15,7 @@ La ganancia de velocidad es real. Pero los riesgos también. Esta guía cubre qu
     ctaText: 'Salta confirmaciones de forma segura con CodeAgentSwarm Turbo Mode. Permisos granulares, protecciones Git y controles MCP incluidos.',
     highlightedWords: ['YOLO mode', 'Claude Code'],
     publishedAt: '2026-04-15',
-    updatedAt: '2026-04-15',
+    updatedAt: '2026-07-16',
     alternateSlug: 'claude-code-yolo-mode-explained',
   },
   sections: [
@@ -211,7 +211,105 @@ La ganancia de velocidad es real. Pero los riesgos también. Esta guía cubre qu
         },
         {
           type: 'paragraph',
-          text: 'Para un tutorial paso a paso de cómo configurar Turbo Mode, incluyendo capturas de cada pantalla de configuración, consulta la guía dedicada: <a href="/es/guias/claude-code-yolo-turbo-mode" class="text-neon-cyan hover:text-neon-purple transition-colors">Guía de configuración de Claude Code YOLO Turbo Mode</a>.',
+          text: 'En la siguiente sección tienes la configuración exacta, pantalla a pantalla.',
+        },
+      ],
+    },
+    {
+      id: 'configurar-turbo-mode',
+      title: 'Configurar Turbo Mode paso a paso',
+      content: [
+        {
+          type: 'paragraph',
+          text: 'Activarlo es un clic: en la pantalla de inicio del proyecto, marca "Enable Turbo Mode (skip confirmations)".',
+        },
+        {
+          type: 'image',
+          alt: 'Activar Turbo Mode (skip confirmations) al iniciar una sesión en CodeAgentSwarm',
+          src: '/images/guides/turbo-mode-enable.png',
+          caption: 'Activar Turbo Mode al empezar una sesión o al reanudar un proyecto.',
+          size: 'medium',
+        },
+        {
+          type: 'heading',
+          level: 3,
+          text: 'Presets rápidos de seguridad',
+          id: 'presets-seguridad',
+        },
+        {
+          type: 'paragraph',
+          text: 'Antes de dejar que nada corra sin supervisión, aplica un preset en el Global Permissions Manager:',
+        },
+        {
+          type: 'list',
+          items: [
+            'Allow All Tools',
+            'Block Dangerous Git (merge, branch, push)',
+            'Block Delete Commands (rm, del, etc.)',
+          ],
+        },
+        {
+          type: 'paragraph',
+          text: 'Un clic aplica la política, y normalmente tendrás que reiniciar la sesión de Claude para que el cambio aplique del todo. Si solo eliges uno, que sea "Block Dangerous Git": un push o un merge en el momento equivocado es el accidente YOLO más caro y el más fácil de pasar por alto.',
+        },
+        {
+          type: 'heading',
+          level: 3,
+          text: 'Permisos de herramientas: Allow, Ask, Deny',
+          id: 'permisos-herramientas',
+        },
+        {
+          type: 'paragraph',
+          text: 'Puedes afinar los permisos por categoría y por herramienta individual. Allow ejecuta la acción automáticamente, Ask pide confirmación y Deny la bloquea por completo. Un matiz importante: con "skip confirmations" activo, Ask se comporta como Allow en la práctica, así que usa Deny para todo lo que nunca quieras que pase sin que tú lo veas.',
+        },
+        {
+          type: 'image',
+          alt: 'Categorías de permisos por herramientas: System, Network, Development, Search, Web',
+          src: '/images/guides/tool-permissions-categories.png',
+          caption: 'Los permisos se agrupan por categorías: System, Network, Development, Search, Web.',
+          size: 'medium',
+        },
+        {
+          type: 'heading',
+          level: 3,
+          text: 'Permisos de MCP',
+          id: 'permisos-mcp',
+        },
+        {
+          type: 'paragraph',
+          text: 'Con servidores MCP conectados, Claude puede tocar fuentes de datos reales, así que aquí el control de permisos importa todavía más. CodeAgentSwarm aplica el mismo modelo Allow/Ask/Deny por servidor MCP y por herramienta. Regla simple: listar y leer en Allow, acciones destructivas (escribir, migrar, borrar) en Deny.',
+        },
+        {
+          type: 'image',
+          alt: 'Panel de permisos MCP con lista de servidores (Supabase, Playwright, Brave Search, PostgreSQL, Notion)',
+          src: '/images/guides/mcp-permissions-modal.png',
+          caption: 'Los permisos MCP se configuran por servidor, y por tool dentro de cada servidor.',
+          size: 'medium',
+        },
+        {
+          type: 'heading',
+          level: 3,
+          text: 'Una política recomendada, rápida y segura',
+          id: 'configuracion-recomendada',
+        },
+        {
+          type: 'list',
+          items: [
+            '<strong>Git</strong> - status, diff y log en Allow; commit, push, merge y branch en Deny',
+            '<strong>Operaciones de archivos</strong> - leer, editar y escribir en Allow; borrar en Deny',
+            '<strong>Red</strong> - casi todo en Deny',
+            '<strong>MCP</strong> - listar y leer en Allow; escribir, migrar y borrar en Deny',
+          ],
+        },
+        {
+          type: 'heading',
+          level: 3,
+          text: 'Varios terminales en paralelo',
+          id: 'trabajar-en-paralelo',
+        },
+        {
+          type: 'paragraph',
+          text: 'Turbo Mode se aprovecha todavía más cuando trabajas con varios terminales a la vez. El problema es la visibilidad: es facilísimo perder de vista qué terminal ha terminado o cuál necesita algo de ti. Las notificaciones resuelven eso - actívalas y deja que la app te avise cuando algo termina o se queda bloqueado. Puedes configurarlas siguiendo la <a href="/es/guias/notificaciones-codeagentswarm" class="text-neon-cyan hover:text-neon-purple transition-colors">guía de notificaciones de CodeAgentSwarm</a>.',
         },
       ],
     },
@@ -274,6 +372,22 @@ La ganancia de velocidad es real. Pero los riesgos también. Esta guía cubre qu
     {
       question: '¿Cuál es la forma más segura de saltar confirmaciones en Claude Code?',
       answer: 'Usa CodeAgentSwarm Turbo Mode con el preset "Block Dangerous Git". Esto auto-aprueba ediciones y lecturas de archivos mientras bloquea push, force-push, merge y borrado de ramas. Combinado con trabajar en una feature branch, esto te da iteración rápida con riesgo mínimo.',
+    },
+    {
+      question: '¿Es lo mismo Turbo Mode que el modo YOLO de Claude Code?',
+      answer: 'Sí, conceptualmente. YOLO mode y --dangerously-skip-permissions se refieren a saltar confirmaciones. Turbo Mode en CodeAgentSwarm añade un sistema de permisos granular para que puedas ir rápido sin sacrificar seguridad.',
+    },
+    {
+      question: '¿Cómo evito que Claude haga git push o merge por accidente?',
+      answer: 'Usa el preset "Block Dangerous Git" en Global Permissions Manager. Esto bloquea automáticamente push, merge, y creación/eliminación de ramas. Puedes seguir permitiendo status, diff y log para ver cambios sin riesgo.',
+    },
+    {
+      question: '¿Cómo funcionan los permisos de Claude Code (Allow, Ask, Deny)?',
+      answer: 'Allow: la acción se ejecuta automáticamente. Ask: pide confirmación (pero en Turbo Mode actúa como Allow). Deny: bloquea la acción completamente. Puedes configurar estos permisos por categoría y por herramienta individual.',
+    },
+    {
+      question: '¿Cómo funcionan los permisos de MCP en CodeAgentSwarm?',
+      answer: 'Los permisos de MCP funcionan igual que los permisos de herramientas (Allow/Ask/Deny), pero se configuran por servidor MCP y por tool individual. Esto te permite, por ejemplo, permitir lectura en Supabase pero bloquear escrituras o migraciones.',
     },
   ],
 }

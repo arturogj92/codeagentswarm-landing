@@ -238,7 +238,7 @@ En esta guía repaso las tres formas prácticas de ejecutar varios agentes de Ge
         },
         {
           type: 'paragraph',
-          text: 'Ejecutar un enjambre significa más acciones a la vez, y eso hace que los permisos importen más. Turbo Mode aprueba en automático las operaciones seguras y mantiene bajo control las arriesgadas, así un agente Gemini avanza rápido sin que tengas que dar luz verde a todo a ciegas. Tú pones la línea entre lo automático y lo que aún necesita un sí. La <a href="/es/guias/claude-code-yolo-turbo-mode" class="text-neon-cyan hover:text-neon-purple transition-colors">guía de Turbo Mode</a> cubre la configuración completa.',
+          text: 'Ejecutar un enjambre significa más acciones a la vez, y eso hace que los permisos importen más. Turbo Mode aprueba en automático las operaciones seguras y mantiene bajo control las arriesgadas, así un agente Gemini avanza rápido sin que tengas que dar luz verde a todo a ciegas. Tú pones la línea entre lo automático y lo que aún necesita un sí. La <a href="/es/guias/modo-yolo-claude-code-explicado" class="text-neon-cyan hover:text-neon-purple transition-colors">guía de Turbo Mode</a> cubre la configuración completa.',
         },
         {
           type: 'heading',

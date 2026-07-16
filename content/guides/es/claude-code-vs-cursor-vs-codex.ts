@@ -13,7 +13,7 @@ En esta guía te cuento qué hace cada una, dónde destaca y dónde se queda cor
     ctaText: '¿Usas Claude Code, Codex CLI o Gemini CLI? Ejecútalos todos en paralelo con CodeAgentSwarm. Varios terminales, un solo workspace.',
     highlightedWords: ['Claude Code', 'Cursor', 'Codex CLI'],
     publishedAt: '2026-04-15',
-    updatedAt: '2026-04-15',
+    updatedAt: '2026-07-16',
     alternateSlug: 'claude-code-vs-cursor-vs-codex',
   },
   sections: [
@@ -86,7 +86,7 @@ En esta guía te cuento qué hace cada una, dónde destaca y dónde se queda cor
         },
         {
           type: 'paragraph',
-          text: 'Claude Code requiere una suscripción a Claude Pro ($20/mes) o Claude Max ($100/mes o $200/mes para límites más altos). El plan Pro te da un uso más que suficiente para el desarrollo del día a día. Max es para sesiones intensivas de programación durante todo el día donde necesitas límites de uso más altos.',
+          text: 'Claude Code requiere una suscripción a Claude Pro ($20/mes, o $17/mes con facturación anual) o Claude Max ($100/mes con 5x el uso de Pro, $200/mes con 20x). El plan Pro te da un uso más que suficiente para el desarrollo del día a día. Max es para sesiones intensivas de programación durante todo el día donde necesitas límites de uso más altos.',
         },
         {
           type: 'heading',
@@ -143,7 +143,7 @@ En esta guía te cuento qué hace cada una, dónde destaca y dónde se queda cor
         },
         {
           type: 'paragraph',
-          text: 'Cursor ofrece un plan gratuito (2000 completados y 50 peticiones premium lentas). Cursor Pro cuesta $20/mes e incluye 500 peticiones premium rápidas más peticiones lentas ilimitadas. Business cuesta $40/mes con funciones de administración. Desde 2025, Cursor usa un sistema de créditos donde diferentes modelos y acciones consumen cantidades distintas de créditos.',
+          text: 'Cursor tiene un plan Hobby gratuito para evaluar. Los planes de pago en 2026: Pro a $20/mes, Pro+ a $60/mes con aproximadamente 3x los créditos de uso, Ultra a $200/mes con 20x, y Teams a $40 por usuario/mes. El antiguo modelo de "peticiones premium rápidas" ya no existe: el uso se cobra en créditos ligados al coste en tokens de cada modelo, el modo Auto da uso prácticamente ilimitado en los planes de pago, y puedes poner un límite de gasto en Settings para las sobras.',
         },
         {
           type: 'heading',
@@ -199,7 +199,7 @@ En esta guía te cuento qué hace cada una, dónde destaca y dónde se queda cor
         },
         {
           type: 'paragraph',
-          text: 'Codex CLI viene incluido con ChatGPT Plus ($20/mes) y ChatGPT Pro ($200/mes). Si ya pagas ChatGPT por otros motivos, Codex CLI es efectivamente gratis. También puedes usarlo con una API key de OpenAI si prefieres pago por uso.',
+          text: 'Codex CLI viene incluido con ChatGPT Plus ($20/mes) y ChatGPT Pro, que desde abril de 2026 tiene dos niveles: $100/mes (5x) y $200/mes (20x). El uso incluido ahora se mide en créditos basados en tokens compartidos entre las funciones agénticas de OpenAI. Si ya pagas ChatGPT por otros motivos, Codex CLI es efectivamente gratis. También puedes usarlo con una API key de OpenAI si prefieres pago por uso.',
         },
         {
           type: 'heading',
@@ -244,9 +244,9 @@ En esta guía te cuento qué hace cada una, dónde destaca y dónde se queda cor
         {
           type: 'list',
           items: [
-            '<strong>Claude Code</strong> - Claude Pro $20/mes, Max $100-200/mes',
-            '<strong>Cursor</strong> - Plan gratuito disponible, Pro $20/mes, Business $40/mes',
-            '<strong>Codex CLI</strong> - Incluido con ChatGPT Plus $20/mes',
+            '<strong>Claude Code</strong> - Claude Pro $20/mes, Max $100/mes (5x) o $200/mes (20x)',
+            '<strong>Cursor</strong> - Plan Hobby gratuito, Pro $20/mes, Pro+ $60/mes, Ultra $200/mes, Teams $40/usuario',
+            '<strong>Codex CLI</strong> - Incluido con ChatGPT Plus $20/mes; Pro $100/mes (5x) o $200/mes (20x)',
           ],
         },
         {

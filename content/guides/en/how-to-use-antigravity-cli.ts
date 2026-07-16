@@ -257,7 +257,7 @@ By the end you will be comfortable using Antigravity CLI on its own, and you wil
             'Desktop notifications the moment a session finishes or stops to ask you something, so you stop babysitting tabs (more in the <a href="/en/guides/codeagentswarm-notifications" class="text-neon-cyan hover:text-neon-purple transition-colors">notifications guide</a>)',
             'Searchable conversation history across every session, so you can trace what any agy session did and resume it later (see the <a href="/en/guides/claude-code-history" class="text-neon-cyan hover:text-neon-purple transition-colors">conversation history guide</a>)',
             'A kanban board your sessions update themselves over MCP, keeping the big picture in one view',
-            'Turbo Mode with granular permissions, so a session moves fast on safe operations while risky ones stay gated (see the <a href="/en/guides/claude-code-yolo-turbo-mode" class="text-neon-cyan hover:text-neon-purple transition-colors">Turbo Mode guide</a>)',
+            'Turbo Mode with granular permissions, so a session moves fast on safe operations while risky ones stay gated (see the <a href="/en/guides/claude-code-yolo-mode-explained" class="text-neon-cyan hover:text-neon-purple transition-colors">Turbo Mode guide</a>)',
             'Per-terminal live file diffs, so overlapping edits between sessions never surprise you (see the <a href="/en/guides/view-claude-code-changes-real-time" class="text-neon-cyan hover:text-neon-purple transition-colors">real-time changes guide</a>)',
           ],
         },

@@ -389,7 +389,7 @@ Esta guía cubre los 10 servidores MCP más importantes para el desarrollo del d
         {
           type: 'callout',
           variant: 'tip',
-          content: 'Combina los controles de permisos MCP con el <a href="/es/guias/claude-code-yolo-turbo-mode" class="text-neon-cyan hover:text-neon-purple transition-colors">Turbo Mode</a> para máxima velocidad. Configura las operaciones de lectura como Allow y las de escritura como Ask, luego activa Turbo Mode para un flujo de desarrollo sin interrupciones.',
+          content: 'Combina los controles de permisos MCP con el <a href="/es/guias/modo-yolo-claude-code-explicado" class="text-neon-cyan hover:text-neon-purple transition-colors">Turbo Mode</a> para máxima velocidad. Configura las operaciones de lectura como Allow y las de escritura como Ask, luego activa Turbo Mode para un flujo de desarrollo sin interrupciones.',
         },
       ],
     },

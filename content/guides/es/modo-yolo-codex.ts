@@ -170,7 +170,7 @@ Esta guía explica qué ofrece Codex de verdad, desde solo-sugerir hasta full au
         },
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm se coloca por encima de Codex CLI y añade la capa que les falta a los flags en crudo. Ejecutas Codex en cada terminal, activas Turbo Mode para la velocidad del full auto y luego usas los permisos por terminal para decidir exactamente qué operaciones se autoaprueban y cuáles se paran siempre. Es la diferencia entre un interruptor tosco y una política de verdad. Eliges codex cli en el selector SELECT AI AGENT que aparece al principio de esta guía, y el interruptor Enable Turbo Mode justo al lado es lo que activa ese full auto rápido pero con guardarraíles.',
+          text: 'CodeAgentSwarm se coloca por encima de Codex CLI y añade la capa que les falta a los flags en crudo. Ejecutas Codex en cada terminal, activas Turbo Mode para la velocidad del full auto y luego usas los permisos por terminal para decidir exactamente qué operaciones se autoaprueban y cuáles se paran siempre. Es la diferencia entre un interruptor tosco y una política de verdad. Eliges codex cli en el selector SELECT AI AGENT que aparece al principio de esta guía, y el interruptor Enable Turbo Mode justo al lado es lo que activa ese full auto rápido pero con guardarraíles. Si quieres esa capa visual para todo lo que hace Codex, no solo las aprobaciones, la <a href="/es/guias/interfaz-grafica-codex" class="text-neon-cyan hover:text-neon-purple transition-colors">guía de la interfaz gráfica para Codex</a> cubre la experiencia de escritorio completa.',
         },
         {
           type: 'paragraph',
@@ -187,7 +187,7 @@ Esta guía explica qué ofrece Codex de verdad, desde solo-sugerir hasta full au
         },
         {
           type: 'paragraph',
-          text: 'El efecto práctico es que consigues la velocidad de ejecutar Codex sin aprobaciones, sin la parte en la que una instrucción malinterpretada te vuela la rama. Configuras la política una vez y Codex pasa de largo por el trabajo seguro mientras los comandos peligrosos siguen parándose para ti. Para un recorrido paso a paso del mismo sistema de permisos del lado de Claude Code, la <a href="/es/guias/claude-code-yolo-turbo-mode" class="text-neon-cyan hover:text-neon-purple transition-colors">guía de Turbo Mode YOLO de Claude Code</a> cubre cada pantalla de configuración, y funciona igual tanto si el agente es Codex como Claude Code.',
+          text: 'El efecto práctico es que consigues la velocidad de ejecutar Codex sin aprobaciones, sin la parte en la que una instrucción malinterpretada te vuela la rama. Configuras la política una vez y Codex pasa de largo por el trabajo seguro mientras los comandos peligrosos siguen parándose para ti. Para un recorrido paso a paso del mismo sistema de permisos del lado de Claude Code, la <a href="/es/guias/modo-yolo-claude-code-explicado" class="text-neon-cyan hover:text-neon-purple transition-colors">guía de Turbo Mode YOLO de Claude Code</a> cubre cada pantalla de configuración, y funciona igual tanto si el agente es Codex como Claude Code.',
         },
         {
           type: 'callout',

@@ -33,7 +33,7 @@ In this guide I will walk you through the three main methods, compare them hones
         },
         {
           type: 'paragraph',
-          text: 'This is not limited to Claude Code either. The same principle applies to <a href="/en/guides/codex-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex CLI</a> and <a href="/en/guides/gemini-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Gemini CLI</a>. You can even mix different agents in parallel: the <a href="/en/guides/ai-cli-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">AI CLI agent swarm</a> guide covers running them together.',
+          text: 'This is not limited to Claude Code either. The same principle applies to <a href="/en/guides/codex-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex CLI</a> and <a href="/en/guides/gemini-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Gemini CLI</a>. You can even mix different agents in parallel: the <a href="/en/guides/ai-cli-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">AI CLI agent swarm</a> guide covers running them together. If you are still deciding which agent to make your main one, the <a href="/en/guides/claude-code-vs-cursor-vs-codex" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code vs Cursor vs Codex comparison</a> breaks down pricing and strengths. And everything here works the same on Windows - see the <a href="/en/guides/claude-code-on-windows" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code on Windows guide</a> for the platform setup.',
         },
         {
           type: 'callout',
@@ -232,7 +232,7 @@ In this guide I will walk you through the three main methods, compare them hones
         },
         {
           type: 'paragraph',
-          text: 'Running multiple sessions means more actions happening in parallel, which makes permission management more important. Turbo Mode lets you auto-approve safe operations while keeping dangerous ones gated. You decide what gets approved automatically and what still needs your confirmation. See the <a href="/en/guides/claude-code-yolo-turbo-mode" class="text-neon-cyan hover:text-neon-purple transition-colors">Turbo Mode guide</a> for the full setup.',
+          text: 'Running multiple sessions means more actions happening in parallel, which makes permission management more important. Turbo Mode lets you auto-approve safe operations while keeping dangerous ones gated. You decide what gets approved automatically and what still needs your confirmation. See the <a href="/en/guides/claude-code-yolo-mode-explained" class="text-neon-cyan hover:text-neon-purple transition-colors">Turbo Mode guide</a> for the full setup.',
         },
         {
           type: 'heading',

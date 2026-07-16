@@ -98,7 +98,7 @@ CodeAgentSwarm has navbar project shortcuts for exactly this. You save a shortcu
         },
         {
           type: 'paragraph',
-          text: 'For repos where you trust the AI to move fast, you can preset the shortcut to launch directly in Turbo mode, so Claude can run commands and edit files without stopping to ask for permission on every step. If you want the full picture on what that mode does and how to keep it safe, read the <a href="/en/guides/claude-code-yolo-turbo-mode" class="text-neon-cyan hover:text-neon-purple transition-colors">Turbo Mode guide</a> before turning it on for a project.',
+          text: 'For repos where you trust the AI to move fast, you can preset the shortcut to launch directly in Turbo mode, so Claude can run commands and edit files without stopping to ask for permission on every step. If you want the full picture on what that mode does and how to keep it safe, read the <a href="/en/guides/claude-code-yolo-mode-explained" class="text-neon-cyan hover:text-neon-purple transition-colors">Turbo Mode guide</a> before turning it on for a project.',
         },
         {
           type: 'callout',

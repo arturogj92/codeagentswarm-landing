@@ -85,7 +85,7 @@ Esta guía explica cómo es de verdad ese modelo por configuración, qué se rom
         },
         {
           type: 'paragraph',
-          text: 'Claude Code y Codex exponen un bypass de un solo flag. Claude Code tiene <code>--dangerously-skip-permissions</code>, Codex tiene <code>--full-auto</code>. Tecleas el flag y las aprobaciones se apagan para esa tirada. La <a href="/es/guias/claude-code-yolo-turbo-mode" class="text-neon-cyan hover:text-neon-purple transition-colors">guía de Turbo Mode YOLO de Claude Code</a> de CodeAgentSwarm recorre ese modelo en detalle.',
+          text: 'Claude Code y Codex exponen un bypass de un solo flag. Claude Code tiene <code>--dangerously-skip-permissions</code>, Codex tiene <code>--full-auto</code>. Tecleas el flag y las aprobaciones se apagan para esa tirada. La <a href="/es/guias/modo-yolo-claude-code-explicado" class="text-neon-cyan hover:text-neon-purple transition-colors">guía de Turbo Mode YOLO de Claude Code</a> de CodeAgentSwarm recorre ese modelo en detalle.',
         },
         {
           type: 'paragraph',

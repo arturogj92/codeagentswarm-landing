@@ -317,7 +317,7 @@ I run mixed swarms most days. Below I cover what an AI CLI agent swarm really is
         },
         {
           type: 'paragraph',
-          text: 'More agents means more actions happening at once, so permission control matters more, not less. Turbo Mode auto-approves the safe operations while keeping the dangerous ones gated, with granular control over exactly what each terminal can do unattended. The <a href="/en/guides/claude-code-yolo-turbo-mode" class="text-neon-cyan hover:text-neon-purple transition-colors">Turbo Mode guide</a> has the full setup.',
+          text: 'More agents means more actions happening at once, so permission control matters more, not less. Turbo Mode auto-approves the safe operations while keeping the dangerous ones gated, with granular control over exactly what each terminal can do unattended. The <a href="/en/guides/claude-code-yolo-mode-explained" class="text-neon-cyan hover:text-neon-purple transition-colors">Turbo Mode guide</a> has the full setup.',
         },
         {
           type: 'heading',

@@ -238,7 +238,7 @@ In this guide I walk through the three practical ways to run a Codex swarm, comp
         },
         {
           type: 'paragraph',
-          text: 'Codex has its own approval modes, from suggest-only up to full auto with <code>--full-auto</code>, plus a sandbox. CodeAgentSwarm sits above that with Turbo Mode and per-terminal permissions, so you can let agents run in full auto on the safe operations while still gating the dangerous ones. That is the practical way to keep a Codex swarm fast without leaving it unsupervised. The <a href="/en/guides/claude-code-yolo-turbo-mode" class="text-neon-cyan hover:text-neon-purple transition-colors">Turbo Mode guide</a> covers the setup.',
+          text: 'Codex has its own approval modes, from suggest-only up to full auto with <code>--full-auto</code>, plus a sandbox. CodeAgentSwarm sits above that with Turbo Mode and per-terminal permissions, so you can let agents run in full auto on the safe operations while still gating the dangerous ones. That is the practical way to keep a Codex swarm fast without leaving it unsupervised. The <a href="/en/guides/claude-code-yolo-mode-explained" class="text-neon-cyan hover:text-neon-purple transition-colors">Turbo Mode guide</a> covers the setup.',
         },
         {
           type: 'heading',

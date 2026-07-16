@@ -238,7 +238,7 @@ En esta guía te explico las tres formas reales de ejecutar un enjambre de Codex
         },
         {
           type: 'paragraph',
-          text: 'Codex tiene sus propios modos de aprobación, desde solo-sugerir hasta full auto con <code>--full-auto</code>, además de un sandbox. CodeAgentSwarm se coloca por encima con Turbo Mode y permisos por terminal, así que puedes dejar que los agentes corran en full auto en las operaciones seguras mientras frenas las peligrosas. Esa es la forma práctica de tener un enjambre de Codex rápido sin dejarlo sin supervisión. La <a href="/es/guias/claude-code-yolo-turbo-mode" class="text-neon-cyan hover:text-neon-purple transition-colors">guía de Turbo Mode</a> cubre la configuración.',
+          text: 'Codex tiene sus propios modos de aprobación, desde solo-sugerir hasta full auto con <code>--full-auto</code>, además de un sandbox. CodeAgentSwarm se coloca por encima con Turbo Mode y permisos por terminal, así que puedes dejar que los agentes corran en full auto en las operaciones seguras mientras frenas las peligrosas. Esa es la forma práctica de tener un enjambre de Codex rápido sin dejarlo sin supervisión. La <a href="/es/guias/modo-yolo-claude-code-explicado" class="text-neon-cyan hover:text-neon-purple transition-colors">guía de Turbo Mode</a> cubre la configuración.',
         },
         {
           type: 'heading',

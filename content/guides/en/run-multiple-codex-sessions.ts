@@ -168,7 +168,7 @@ This guide walks through the three practical ways to run several Codex CLI sessi
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm is a desktop app built for exactly this: running and supervising several AI CLI sessions in one place. It runs on macOS and Windows, gives you multiple terminals in a single workspace, and lets you choose the agent per terminal. To run Codex CLI in parallel you just pick "codex cli" in the SELECT AI AGENT picker in each terminal you want running Codex.',
+          text: 'CodeAgentSwarm is a desktop app built for exactly this: running and supervising several AI CLI sessions in one place. It runs on macOS and Windows, gives you multiple terminals in a single workspace, and lets you choose the agent per terminal. To run Codex CLI in parallel you just pick "codex cli" in the SELECT AI AGENT picker in each terminal you want running Codex. It is effectively a <a href="/en/guides/codex-gui" class="text-neon-cyan hover:text-neon-purple transition-colors">GUI for Codex CLI</a>, so you get the terminal agent with a visual layer on top.',
         },
         {
           type: 'image',
@@ -238,7 +238,7 @@ This guide walks through the three practical ways to run several Codex CLI sessi
         },
         {
           type: 'paragraph',
-          text: 'Codex has its own approval modes, from suggest-only up to full auto with <code>--full-auto</code>, plus a sandbox. CodeAgentSwarm sits above that with Turbo Mode and per-terminal permissions, so you can let sessions run in full auto on the safe operations while still gating the dangerous ones. That is the practical way to keep several Codex sessions fast without leaving them unsupervised. The <a href="/en/guides/claude-code-yolo-turbo-mode" class="text-neon-cyan hover:text-neon-purple transition-colors">Turbo Mode guide</a> covers the setup.',
+          text: 'Codex has its own approval modes, from suggest-only up to full auto with <code>--full-auto</code>, plus a sandbox. CodeAgentSwarm sits above that with Turbo Mode and per-terminal permissions, so you can let sessions run in full auto on the safe operations while still gating the dangerous ones. That is the practical way to keep several Codex sessions fast without leaving them unsupervised. The <a href="/en/guides/claude-code-yolo-mode-explained" class="text-neon-cyan hover:text-neon-purple transition-colors">Turbo Mode guide</a> covers the setup.',
         },
         {
           type: 'heading',

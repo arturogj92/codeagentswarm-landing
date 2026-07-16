@@ -98,7 +98,7 @@ CodeAgentSwarm tiene accesos directos de proyecto en la barra de navegación jus
         },
         {
           type: 'paragraph',
-          text: 'Para los repos en los que confías en que la IA vaya rápido, puedes preconfigurar el acceso directo para que arranque directamente en modo Turbo, de modo que Claude pueda ejecutar comandos y editar archivos sin pararse a pedir permiso en cada paso. Si quieres la foto completa de lo que hace ese modo y cómo mantenerlo seguro, lee la <a href="/es/guias/claude-code-yolo-turbo-mode" class="text-neon-cyan hover:text-neon-purple transition-colors">guía del modo Turbo</a> antes de activarlo para un proyecto.',
+          text: 'Para los repos en los que confías en que la IA vaya rápido, puedes preconfigurar el acceso directo para que arranque directamente en modo Turbo, de modo que Claude pueda ejecutar comandos y editar archivos sin pararse a pedir permiso en cada paso. Si quieres la foto completa de lo que hace ese modo y cómo mantenerlo seguro, lee la <a href="/es/guias/modo-yolo-claude-code-explicado" class="text-neon-cyan hover:text-neon-purple transition-colors">guía del modo Turbo</a> antes de activarlo para un proyecto.',
         },
         {
           type: 'callout',

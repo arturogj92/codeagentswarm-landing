@@ -243,7 +243,7 @@ By the end you will know which approach fits the way you work, whether you want 
         },
         {
           type: 'paragraph',
-          text: 'Running several sessions means more actions happening at once, which makes permissions matter more. Turbo Mode auto-approves safe operations while keeping risky ones gated, so an Antigravity session can move fast without you waving through everything blindly. You set the line between what is automatic and what still needs a yes. The <a href="/en/guides/claude-code-yolo-turbo-mode" class="text-neon-cyan hover:text-neon-purple transition-colors">Turbo Mode guide</a> covers the full setup.',
+          text: 'Running several sessions means more actions happening at once, which makes permissions matter more. Turbo Mode auto-approves safe operations while keeping risky ones gated, so an Antigravity session can move fast without you waving through everything blindly. You set the line between what is automatic and what still needs a yes. The <a href="/en/guides/claude-code-yolo-mode-explained" class="text-neon-cyan hover:text-neon-purple transition-colors">Turbo Mode guide</a> covers the full setup.',
         },
         {
           type: 'heading',

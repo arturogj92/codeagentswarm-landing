@@ -48,7 +48,7 @@ export default function FeaturesSection() {
       icon: Zap,
       title: t('items.turboMode.title'),
       description: t('items.turboMode.description'),
-      guideSlug: 'claude-code-yolo-turbo-mode'
+      guideSlug: locale === 'es' ? 'modo-yolo-claude-code-explicado' : 'claude-code-yolo-mode-explained'
     },
   ]
 

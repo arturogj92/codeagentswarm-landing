@@ -85,7 +85,7 @@ This guide explains what that config-driven model actually looks like, what genu
         },
         {
           type: 'paragraph',
-          text: 'Claude Code and Codex both expose a one-flag bypass. Claude Code has <code>--dangerously-skip-permissions</code>, Codex has <code>--full-auto</code>. You type the flag and approvals go off for that run. The CodeAgentSwarm <a href="/en/guides/claude-code-yolo-turbo-mode" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code YOLO Turbo Mode guide</a> walks through that model in detail.',
+          text: 'Claude Code and Codex both expose a one-flag bypass. Claude Code has <code>--dangerously-skip-permissions</code>, Codex has <code>--full-auto</code>. You type the flag and approvals go off for that run. The CodeAgentSwarm <a href="/en/guides/claude-code-yolo-mode-explained" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code YOLO Turbo Mode guide</a> walks through that model in detail.',
         },
         {
           type: 'paragraph',

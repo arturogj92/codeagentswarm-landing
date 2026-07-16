@@ -13,7 +13,7 @@ This guide breaks down what each one actually does, where it shines, and where i
     ctaText: 'Use Claude Code, Codex CLI, or Gemini CLI? Run them all in parallel with CodeAgentSwarm. Multiple terminals, one workspace.',
     highlightedWords: ['Claude Code', 'Cursor', 'Codex CLI'],
     publishedAt: '2026-04-15',
-    updatedAt: '2026-04-15',
+    updatedAt: '2026-07-16',
     alternateSlug: 'claude-code-vs-cursor-vs-codex',
   },
   sections: [
@@ -86,7 +86,7 @@ This guide breaks down what each one actually does, where it shines, and where i
         },
         {
           type: 'paragraph',
-          text: 'Claude Code requires a Claude Pro subscription ($20/month) or Claude Max ($100/month or $200/month for higher limits). The Pro tier gives you a solid amount of usage for everyday development. Max is for heavy, all-day coding sessions where you need higher rate limits.',
+          text: 'Claude Code requires a Claude Pro subscription ($20/month, or $17/month billed annually) or Claude Max ($100/month for 5x Pro usage, $200/month for 20x). The Pro tier gives you a solid amount of usage for everyday development. Max is for heavy, all-day coding sessions where you need higher rate limits.',
         },
         {
           type: 'heading',
@@ -143,7 +143,7 @@ This guide breaks down what each one actually does, where it shines, and where i
         },
         {
           type: 'paragraph',
-          text: 'Cursor offers a free tier (2000 completions and 50 slow premium requests). Cursor Pro is $20/month and includes 500 fast premium requests plus unlimited slow requests. Business is $40/month with admin features. Since 2025, Cursor uses a credit-based system where different models and actions consume different amounts of credits.',
+          text: 'Cursor has a free Hobby tier for evaluation. Paid plans as of 2026: Pro at $20/month, Pro+ at $60/month with roughly 3x the usage credits, Ultra at $200/month with 20x usage, and Teams at $40 per user/month. The old "fast premium requests" model is gone: usage is now priced in credits that map to model token costs, the Auto model mode gives effectively unlimited usage on paid plans, and you can cap overages with a spend limit in Settings.',
         },
         {
           type: 'heading',
@@ -199,7 +199,7 @@ This guide breaks down what each one actually does, where it shines, and where i
         },
         {
           type: 'paragraph',
-          text: 'Codex CLI is included with ChatGPT Plus ($20/month) and ChatGPT Pro ($200/month). If you are already paying for ChatGPT for other reasons, Codex CLI is effectively free. You can also use it with an OpenAI API key if you prefer pay-per-use.',
+          text: 'Codex CLI is included with ChatGPT Plus ($20/month) and ChatGPT Pro, which since April 2026 comes in two tiers: $100/month (5x) and $200/month (20x). Included usage is now measured in token-based credits shared across OpenAI\'s agentic features. If you are already paying for ChatGPT for other reasons, Codex CLI is effectively free. You can also use it with an OpenAI API key if you prefer pay-per-use.',
         },
         {
           type: 'heading',
@@ -244,9 +244,9 @@ This guide breaks down what each one actually does, where it shines, and where i
         {
           type: 'list',
           items: [
-            '<strong>Claude Code</strong> - Claude Pro $20/month, Max $100-200/month',
-            '<strong>Cursor</strong> - Free tier available, Pro $20/month, Business $40/month',
-            '<strong>Codex CLI</strong> - Included with ChatGPT Plus $20/month',
+            '<strong>Claude Code</strong> - Claude Pro $20/month, Max $100/month (5x) or $200/month (20x)',
+            '<strong>Cursor</strong> - Free Hobby tier, Pro $20/month, Pro+ $60/month, Ultra $200/month, Teams $40/user',
+            '<strong>Codex CLI</strong> - Included with ChatGPT Plus $20/month; Pro $100/month (5x) or $200/month (20x)',
           ],
         },
         {

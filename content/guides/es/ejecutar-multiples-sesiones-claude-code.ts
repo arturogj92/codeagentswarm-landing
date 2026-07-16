@@ -33,7 +33,7 @@ En esta guía te explico los tres métodos principales, los comparo de forma hon
         },
         {
           type: 'paragraph',
-          text: 'Esto no se limita a Claude Code. El mismo principio aplica a <a href="/es/guias/enjambre-de-agentes-codex" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex CLI</a> y <a href="/es/guias/enjambre-de-agentes-gemini" class="text-neon-cyan hover:text-neon-purple transition-colors">Gemini CLI</a>. Incluso puedes mezclar distintos agentes en paralelo: la guía del <a href="/es/guias/enjambre-de-agentes-cli-ia" class="text-neon-cyan hover:text-neon-purple transition-colors">enjambre de agentes CLI de IA</a> explica cómo ejecutarlos juntos.',
+          text: 'Esto no se limita a Claude Code. El mismo principio aplica a <a href="/es/guias/enjambre-de-agentes-codex" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex CLI</a> y <a href="/es/guias/enjambre-de-agentes-gemini" class="text-neon-cyan hover:text-neon-purple transition-colors">Gemini CLI</a>. Incluso puedes mezclar distintos agentes en paralelo: la guía del <a href="/es/guias/enjambre-de-agentes-cli-ia" class="text-neon-cyan hover:text-neon-purple transition-colors">enjambre de agentes CLI de IA</a> explica cómo ejecutarlos juntos. Si todavía estás decidiendo qué agente usar como principal, la <a href="/es/guias/claude-code-vs-cursor-vs-codex" class="text-neon-cyan hover:text-neon-purple transition-colors">comparativa Claude Code vs Cursor vs Codex</a> desgrana precios y puntos fuertes. Y todo lo de esta guía funciona igual en Windows - mira la <a href="/es/guias/claude-code-en-windows" class="text-neon-cyan hover:text-neon-purple transition-colors">guía de Claude Code en Windows</a> para la configuración de la plataforma.',
         },
         {
           type: 'callout',
@@ -232,7 +232,7 @@ En esta guía te explico los tres métodos principales, los comparo de forma hon
         },
         {
           type: 'paragraph',
-          text: 'Ejecutar varias sesiones implica más acciones en paralelo, lo que hace más importante la gestión de permisos. Turbo Mode te permite aprobar automáticamente las operaciones seguras mientras las peligrosas siguen requiriendo confirmación. Tú decides qué se aprueba automáticamente y qué necesita tu visto bueno. Consulta la <a href="/es/guias/claude-code-yolo-turbo-mode" class="text-neon-cyan hover:text-neon-purple transition-colors">guía de Turbo Mode</a> para la configuración completa.',
+          text: 'Ejecutar varias sesiones implica más acciones en paralelo, lo que hace más importante la gestión de permisos. Turbo Mode te permite aprobar automáticamente las operaciones seguras mientras las peligrosas siguen requiriendo confirmación. Tú decides qué se aprueba automáticamente y qué necesita tu visto bueno. Consulta la <a href="/es/guias/modo-yolo-claude-code-explicado" class="text-neon-cyan hover:text-neon-purple transition-colors">guía de Turbo Mode</a> para la configuración completa.',
         },
         {
           type: 'heading',

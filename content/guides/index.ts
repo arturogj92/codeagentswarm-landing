@@ -7,7 +7,6 @@ import enMultipleTerminals from './en/how-to-use-multiple-claude-code-terminals'
 import enClaudeCodeHistory from './en/claude-code-history'
 import enNotifications from './en/codeagentswarm-notifications'
 import enRealTimeChanges from './en/view-claude-code-changes-real-time'
-import enTurboMode from './en/claude-code-yolo-turbo-mode'
 import enHistoryCompleteGuide from './en/claude-code-history-complete-guide'
 import enRunMultipleSessions from './en/run-multiple-claude-code-sessions'
 import enTipsAndTricks from './en/claude-code-tips-and-tricks'
@@ -52,7 +51,6 @@ import esMultipleTerminals from './es/como-usar-varios-terminales-claude-code'
 import esHistorialClaudeCode from './es/historial-claude-code'
 import esNotificaciones from './es/notificaciones-codeagentswarm'
 import esRealTimeChanges from './es/ver-cambios-claude-code-tiempo-real'
-import esTurboMode from './es/claude-code-yolo-turbo-mode'
 import esHistorialCompleteGuide from './es/guia-completa-historial-claude-code'
 import esRunMultipleSessions from './es/ejecutar-multiples-sesiones-claude-code'
 import esTipsAndTricks from './es/trucos-y-consejos-claude-code'
@@ -99,7 +97,6 @@ export const guides: Record<string, Record<string, Guide>> = {
     'claude-code-history': enClaudeCodeHistory,
     'codeagentswarm-notifications': enNotifications,
     'view-claude-code-changes-real-time': enRealTimeChanges,
-    'claude-code-yolo-turbo-mode': enTurboMode,
     'claude-code-history-complete-guide': enHistoryCompleteGuide,
     'run-multiple-claude-code-sessions': enRunMultipleSessions,
     'claude-code-tips-and-tricks': enTipsAndTricks,
@@ -144,7 +141,6 @@ export const guides: Record<string, Record<string, Guide>> = {
     'historial-claude-code': esHistorialClaudeCode,
     'notificaciones-codeagentswarm': esNotificaciones,
     'ver-cambios-claude-code-tiempo-real': esRealTimeChanges,
-    'claude-code-yolo-turbo-mode': esTurboMode,
     'guia-completa-historial-claude-code': esHistorialCompleteGuide,
     'ejecutar-multiples-sesiones-claude-code': esRunMultipleSessions,
     'trucos-y-consejos-claude-code': esTipsAndTricks,

@@ -168,7 +168,7 @@ En esta guía te explico las tres formas reales de ejecutar varias sesiones de C
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm es una app de escritorio hecha exactamente para esto: ejecutar y supervisar varias sesiones de CLI de IA en un solo sitio. Funciona en macOS y Windows, te da varios terminales en un único espacio de trabajo y te deja elegir el agente por terminal. Para ejecutar Codex CLI en paralelo solo tienes que elegir "codex cli" en el selector SELECT AI AGENT de cada terminal donde quieras correr Codex.',
+          text: 'CodeAgentSwarm es una app de escritorio hecha exactamente para esto: ejecutar y supervisar varias sesiones de CLI de IA en un solo sitio. Funciona en macOS y Windows, te da varios terminales en un único espacio de trabajo y te deja elegir el agente por terminal. Para ejecutar Codex CLI en paralelo solo tienes que elegir "codex cli" en el selector SELECT AI AGENT de cada terminal donde quieras correr Codex. En la práctica es una <a href="/es/guias/interfaz-grafica-codex" class="text-neon-cyan hover:text-neon-purple transition-colors">interfaz gráfica para Codex CLI</a>: el agente de terminal con una capa visual encima.',
         },
         {
           type: 'image',
@@ -238,7 +238,7 @@ En esta guía te explico las tres formas reales de ejecutar varias sesiones de C
         },
         {
           type: 'paragraph',
-          text: 'Codex tiene sus propios modos de aprobación, desde solo sugerir hasta full auto con <code>--full-auto</code>, además de un sandbox. CodeAgentSwarm se sitúa por encima con Turbo Mode y permisos por terminal, así que puedes dejar que las sesiones corran en full auto en las operaciones seguras mientras sigues controlando las peligrosas. Esa es la forma práctica de mantener varias sesiones de Codex rápidas sin dejarlas sin supervisión. La <a href="/es/guias/claude-code-yolo-turbo-mode" class="text-neon-cyan hover:text-neon-purple transition-colors">guía de Turbo Mode</a> cubre la configuración.',
+          text: 'Codex tiene sus propios modos de aprobación, desde solo sugerir hasta full auto con <code>--full-auto</code>, además de un sandbox. CodeAgentSwarm se sitúa por encima con Turbo Mode y permisos por terminal, así que puedes dejar que las sesiones corran en full auto en las operaciones seguras mientras sigues controlando las peligrosas. Esa es la forma práctica de mantener varias sesiones de Codex rápidas sin dejarlas sin supervisión. La <a href="/es/guias/modo-yolo-claude-code-explicado" class="text-neon-cyan hover:text-neon-purple transition-colors">guía de Turbo Mode</a> cubre la configuración.',
         },
         {
           type: 'heading',

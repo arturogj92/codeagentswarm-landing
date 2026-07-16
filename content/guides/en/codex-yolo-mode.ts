@@ -170,7 +170,7 @@ This guide explains what Codex actually offers, from suggest-only up to full aut
         },
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm sits above Codex CLI and adds the layer the raw flags are missing. You run Codex in each terminal, flip on Turbo Mode for full-auto speed, and then use per-terminal permissions to decide exactly which operations auto-approve and which always stop. It is the difference between one blunt switch and a real policy. You pick codex cli in the SELECT AI AGENT picker shown at the top of this guide, and the Enable Turbo Mode toggle right beside it is what turns on that fast-but-guarded full auto.',
+          text: 'CodeAgentSwarm sits above Codex CLI and adds the layer the raw flags are missing. You run Codex in each terminal, flip on Turbo Mode for full-auto speed, and then use per-terminal permissions to decide exactly which operations auto-approve and which always stop. It is the difference between one blunt switch and a real policy. You pick codex cli in the SELECT AI AGENT picker shown at the top of this guide, and the Enable Turbo Mode toggle right beside it is what turns on that fast-but-guarded full auto. If you want that visual layer for everything Codex does, not just approvals, the <a href="/en/guides/codex-gui" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex GUI guide</a> covers the full desktop experience.',
         },
         {
           type: 'paragraph',
@@ -187,7 +187,7 @@ This guide explains what Codex actually offers, from suggest-only up to full aut
         },
         {
           type: 'paragraph',
-          text: 'The practical effect is that you get the speed of running Codex with approvals off, without the part where one misread instruction nukes your branch. You configure the policy once, and Codex flies through the safe work while the dangerous commands still stop for you. For a step-by-step walkthrough of the same permission system on the Claude Code side, the <a href="/en/guides/claude-code-yolo-turbo-mode" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code YOLO Turbo Mode guide</a> covers every configuration screen, and it works the same way whether the agent is Codex or Claude Code.',
+          text: 'The practical effect is that you get the speed of running Codex with approvals off, without the part where one misread instruction nukes your branch. You configure the policy once, and Codex flies through the safe work while the dangerous commands still stop for you. For a step-by-step walkthrough of the same permission system on the Claude Code side, the <a href="/en/guides/claude-code-yolo-mode-explained" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code YOLO Turbo Mode guide</a> covers every configuration screen, and it works the same way whether the agent is Codex or Claude Code.',
         },
         {
           type: 'callout',

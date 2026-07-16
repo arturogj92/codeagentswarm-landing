@@ -6,7 +6,7 @@ export const guide: Guide = {
     locale: 'es',
     title: 'Historial de Claude Code: dónde se guarda y cómo encontrarlo, respaldarlo y retomarlo',
     metaTitle: '¿Dónde se guarda el historial de Claude Code? (2026)',
-    metaDescription: 'La carpeta exacta donde Claude Code guarda cada sesión, qué contienen los archivos JSONL, cómo hacer copia de seguridad y cómo retomar o recuperar conversaciones antiguas.',
+    metaDescription: 'La carpeta exacta donde Claude Code guarda cada sesión, por qué el historial desaparece a los 30 días (cleanupPeriodDays) y cómo respaldar o recuperar conversaciones.',
     intro: `Si llevas un tiempo usando Claude Code, seguro que en algún momento te has preguntado: ¿dónde fue a parar esa conversación?
 
 Puede que resolvieras un bug complicado la semana pasada, tomaras una decisión de arquitectura hace tres días, o pasaras 20 minutos explicándole un módulo a Claude y ahora necesitas retomar donde lo dejaste.
@@ -15,7 +15,7 @@ La respuesta corta: Claude Code guarda cada sesión en local en ~/.claude/projec
     ctaText: 'Prueba a gestionar tu historial de Claude Code con CodeAgentSwarm. Busca cualquier conversación, filtra por proyecto y retoma con un clic.',
     highlightedWords: ['historial', 'Claude Code', 'conversaciones'],
     publishedAt: '2026-04-15',
-    updatedAt: '2026-04-15',
+    updatedAt: '2026-07-16',
     alternateSlug: 'claude-code-history-complete-guide',
   },
   sections: [
@@ -25,7 +25,7 @@ La respuesta corta: Claude Code guarda cada sesión en local en ~/.claude/projec
       content: [
         {
           type: 'paragraph',
-          text: 'Claude Code guarda todo el historial de conversaciones en local, en tu máquina, en <code>~/.claude/projects/</code>. Cada proyecto tiene su propio subdirectorio (basado en la ruta absoluta), y cada conversación se guarda como un archivo JSONL con un ID de sesión único.',
+          text: 'Claude Code guarda todo el historial de conversaciones en local, en tu máquina, en <code>~/.claude/projects/</code>. Cada proyecto tiene su propio subdirectorio (basado en la ruta absoluta), y cada conversación se guarda como un archivo JSONL con un ID de sesión único. En Windows la misma carpeta vive bajo tu perfil de usuario (<code>C:\\Users\\tu-usuario\\.claude\\projects\\</code>) - si trabajas ahí, la <a href="/es/guias/claude-code-en-windows" class="text-neon-cyan hover:text-neon-purple transition-colors">guía de Claude Code en Windows</a> cubre la configuración específica de la plataforma.',
         },
         {
           type: 'paragraph',
@@ -42,6 +42,30 @@ La respuesta corta: Claude Code guarda cada sesión en local en ~/.claude/projec
         {
           type: 'paragraph',
           text: 'Puedes encontrar todos los detalles sobre estos comandos en la <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">documentación oficial de Claude Code</a>. Estos comandos funcionan, pero tienen limitaciones reales en cuanto empiezas a usar Claude Code en serio con múltiples proyectos.',
+        },
+      ],
+    },
+    {
+      id: 'historial-borrado-30-dias',
+      title: '¿Por qué desaparece el historial de Claude Code a los 30 días?',
+      content: [
+        {
+          type: 'paragraph',
+          text: 'Claude Code borra por defecto las transcripciones con más de 30 días. Si una sesión que jurarías que existía no aparece por ningún lado, esta limpieza automática es la causa más probable: el archivo JSONL se eliminó de <code>~/.claude/projects/</code> sin avisar.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Puedes cambiar el periodo de retención con el ajuste <code>cleanupPeriodDays</code> en <code>~/.claude/settings.json</code>. Ponle un número grande para conservarlo prácticamente todo:',
+        },
+        {
+          type: 'code',
+          language: 'json',
+          code: '{\n  "cleanupPeriodDays": 3650\n}',
+        },
+        {
+          type: 'callout',
+          variant: 'tip',
+          content: 'Cambia este ajuste antes de necesitarlo. Controla las limpiezas futuras, pero no puede recuperar transcripciones ya borradas - para esas, tus únicas opciones son una copia de seguridad de ~/.claude/projects/ o una herramienta que las archivara mientras aún existían.',
         },
       ],
     },
@@ -252,6 +276,14 @@ La respuesta corta: Claude Code guarda cada sesión en local en ~/.claude/projec
     {
       question: '¿Cuál es la diferencia entre /history y claude -c?',
       answer: '/history lista sesiones recientes y sus IDs dentro de una sesión activa. "claude -c" inicia Claude Code retomando automáticamente la conversación más reciente del proyecto actual.',
+    },
+    {
+      question: '¿Por qué ha desaparecido mi historial de Claude Code?',
+      answer: 'Claude Code borra por defecto las transcripciones con más de 30 días. Añade "cleanupPeriodDays" con un valor más alto en ~/.claude/settings.json para conservar las sesiones más tiempo. Las transcripciones ya borradas solo se recuperan desde una copia de seguridad de ~/.claude/projects/.',
+    },
+    {
+      question: '¿Cómo evito que Claude Code borre conversaciones antiguas?',
+      answer: 'Configura "cleanupPeriodDays" en ~/.claude/settings.json con un número grande, por ejemplo 3650. Esto amplía la ventana de retención de las limpiezas futuras y tus transcripciones se quedan en disco.',
     },
   ],
 }

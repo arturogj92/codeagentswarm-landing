@@ -389,7 +389,7 @@ This guide covers the 10 MCP servers that matter most for everyday development, 
         {
           type: 'callout',
           variant: 'tip',
-          content: 'Combine MCP permission controls with <a href="/en/guides/claude-code-yolo-turbo-mode" class="text-neon-cyan hover:text-neon-purple transition-colors">Turbo Mode</a> for maximum speed. Set read operations to Allow and write operations to Ask, then enable Turbo Mode for uninterrupted development flow.',
+          content: 'Combine MCP permission controls with <a href="/en/guides/claude-code-yolo-mode-explained" class="text-neon-cyan hover:text-neon-purple transition-colors">Turbo Mode</a> for maximum speed. Set read operations to Allow and write operations to Ask, then enable Turbo Mode for uninterrupted development flow.',
         },
       ],
     },

@@ -317,7 +317,7 @@ Yo trabajo con enjambres mixtos casi todos los días. Aquí te cuento qué es re
         },
         {
           type: 'paragraph',
-          text: 'Más agentes significa más acciones ocurriendo a la vez, así que el control de permisos importa más, no menos. El Modo Turbo aprueba automáticamente las operaciones seguras y mantiene bajo control las peligrosas, con control granular sobre qué puede hacer cada terminal sin supervisión. La <a href="/es/guias/claude-code-yolo-turbo-mode" class="text-neon-cyan hover:text-neon-purple transition-colors">guía del Modo Turbo</a> tiene la configuración completa.',
+          text: 'Más agentes significa más acciones ocurriendo a la vez, así que el control de permisos importa más, no menos. El Modo Turbo aprueba automáticamente las operaciones seguras y mantiene bajo control las peligrosas, con control granular sobre qué puede hacer cada terminal sin supervisión. La <a href="/es/guias/modo-yolo-claude-code-explicado" class="text-neon-cyan hover:text-neon-purple transition-colors">guía del Modo Turbo</a> tiene la configuración completa.',
         },
         {
           type: 'heading',

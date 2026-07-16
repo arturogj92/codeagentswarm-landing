@@ -238,7 +238,7 @@ In this guide I will go through the three practical ways to run multiple Gemini 
         },
         {
           type: 'paragraph',
-          text: 'Running a swarm means more actions happening at once, which makes permissions matter more. Turbo Mode auto-approves safe operations while keeping risky ones gated, so a Gemini agent can move fast without you waving through everything blindly. You set the line between what is automatic and what still needs a yes. The <a href="/en/guides/claude-code-yolo-turbo-mode" class="text-neon-cyan hover:text-neon-purple transition-colors">Turbo Mode guide</a> covers the full setup.',
+          text: 'Running a swarm means more actions happening at once, which makes permissions matter more. Turbo Mode auto-approves safe operations while keeping risky ones gated, so a Gemini agent can move fast without you waving through everything blindly. You set the line between what is automatic and what still needs a yes. The <a href="/en/guides/claude-code-yolo-mode-explained" class="text-neon-cyan hover:text-neon-purple transition-colors">Turbo Mode guide</a> covers the full setup.',
         },
         {
           type: 'heading',

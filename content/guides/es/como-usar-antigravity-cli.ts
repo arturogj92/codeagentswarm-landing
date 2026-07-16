@@ -257,7 +257,7 @@ Al terminar te manejarás con Antigravity CLI por tu cuenta, y sabrás cómo eje
             'Avisos de escritorio en cuanto una sesión termina o se para a preguntarte algo, para que dejes de estar pendiente de las pestañas (más en la <a href="/es/guias/notificaciones-codeagentswarm" class="text-neon-cyan hover:text-neon-purple transition-colors">guía de notificaciones</a>)',
             'Historial de conversaciones buscable entre todas las sesiones, para rastrear qué hizo cualquier sesión de agy y retomarla más tarde (mira la <a href="/es/guias/historial-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">guía de historial de conversaciones</a>)',
             'Un tablero kanban que tus propias sesiones actualizan por MCP, manteniendo la foto general en una sola vista',
-            'Turbo Mode con permisos granulares, para que una sesión vaya rápida en operaciones seguras mientras las arriesgadas quedan controladas (mira la <a href="/es/guias/claude-code-yolo-turbo-mode" class="text-neon-cyan hover:text-neon-purple transition-colors">guía de Turbo Mode</a>)',
+            'Turbo Mode con permisos granulares, para que una sesión vaya rápida en operaciones seguras mientras las arriesgadas quedan controladas (mira la <a href="/es/guias/modo-yolo-claude-code-explicado" class="text-neon-cyan hover:text-neon-purple transition-colors">guía de Turbo Mode</a>)',
             'Diffs de archivos en vivo por terminal, para que las ediciones que se solapan entre sesiones nunca te pillen por sorpresa (mira la <a href="/es/guias/ver-cambios-claude-code-tiempo-real" class="text-neon-cyan hover:text-neon-purple transition-colors">guía de cambios en tiempo real</a>)',
           ],
         },

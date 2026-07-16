@@ -141,7 +141,7 @@ It assumes you already have Claude Code installed. If not, start with our guide 
           type: 'list',
           items: [
             '<strong>Keep a CLAUDE.md in your repo.</strong> Run <code>/init</code> once in a project and Claude generates one: build commands, conventions, structure. Every future session starts with that context for free.',
-            '<strong>Tune permissions instead of approving everything by hand.</strong> Allow the safe, repetitive commands (your test runner, your linter) and keep confirmation for the destructive ones. If you are tempted to just turn everything off, read our guide on <a href="/en/guides/claude-code-yolo-turbo-mode" class="text-neon-cyan hover:text-neon-purple transition-colors">using YOLO / Turbo mode safely</a> first.',
+            '<strong>Tune permissions instead of approving everything by hand.</strong> Allow the safe, repetitive commands (your test runner, your linter) and keep confirmation for the destructive ones. If you are tempted to just turn everything off, read our guide on <a href="/en/guides/claude-code-yolo-mode-explained" class="text-neon-cyan hover:text-neon-purple transition-colors">using YOLO / Turbo mode safely</a> first.',
           ],
         },
       ],

@@ -24,7 +24,7 @@ export default function GuidesSection() {
     },
     {
       icon: Zap,
-      slug: locale === 'es' ? 'claude-code-yolo-turbo-mode' : 'claude-code-yolo-turbo-mode',
+      slug: locale === 'es' ? 'modo-yolo-claude-code-explicado' : 'claude-code-yolo-mode-explained',
     },
   ]
 
