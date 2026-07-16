@@ -29,6 +29,7 @@
     "claimAccess": "Download Free – Pro Included",
     "securityBadge": "Turbo Mode with built-in guardrails. You set the limits.",
     "stats": {
+      "eyebrow": "Core capabilities",
       "terminals": "Parallel Terminals",
       "terminalsDesc": "Multiple AI CLI agents working together",
       "searchableChats": "Search Everything",

@@ -5,7 +5,7 @@ import { Play, Download, Zap, Grid3X3, Bell, Terminal, Monitor, Layout, GitBranc
 import { useState, useRef } from 'react'
 import { useTranslations, useLocale } from 'next-intl'
 import VideoWithProgress from './VideoWithProgress'
-import Image from 'next/image'
+import CapabilitiesGrid from './CapabilitiesGrid'
 import { useShouldReduceMotion } from '@/hooks/useIsMobile'
 import { cdnVideo } from '@/lib/cdn'
 
@@ -276,58 +276,6 @@ export function VideoShowcase() {
   )
 }
 
-// Modern Feature Cards with custom neon icons
-function Stats() {
-  const t = useTranslations('hero.stats')
-
-  const stats = [
-    { title: t('terminals'), description: t('terminalsDesc'), iconSrc: '/images/icons/icon-terminals.png', color: '#22d3ee', size: 64 },
-    { title: t('searchableChats'), description: t('searchableChatsDesc'), iconSrc: '/images/icons/icon-history.png', color: '#22d3ee', size: 64 },
-    { title: t('codePreview'), description: t('codePreviewDesc'), iconSrc: '/images/icons/icon-diff.png', color: '#22d3ee', size: 64 },
-    { title: t('kanban'), description: t('kanbanDesc'), iconSrc: '/images/icons/icon-kanban.png', color: '#22d3ee', size: 96 },
-  ]
-
-  return (
-    <div className="flex flex-wrap justify-center gap-x-12 gap-y-8 max-w-4xl mx-auto">
-      {stats.map((stat, index) => (
-        <motion.div
-          key={stat.title}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 + index * 0.08, duration: 0.5 }}
-          className="group flex flex-col items-center text-center w-40 cursor-pointer"
-        >
-          {/* Custom neon icon - fixed height container for alignment */}
-          <div className="flex items-center justify-center mb-4" style={{ height: 96 }}>
-            <motion.div
-              className="relative"
-              style={{ width: stat.size, height: stat.size }}
-              whileHover={{ scale: 1.08 }}
-              transition={{ type: 'spring', stiffness: 400 }}
-            >
-              {/* Glow effect on hover - hidden on mobile for performance */}
-              <div
-                className="hidden md:block absolute inset-0 rounded-xl opacity-0 group-hover:opacity-40 transition-opacity duration-300 blur-lg"
-                style={{ backgroundColor: stat.color }}
-              />
-              <Image
-                src={stat.iconSrc}
-                alt={stat.title}
-                width={stat.size}
-                height={stat.size}
-                className="relative z-10 w-full h-full object-contain transition-transform duration-300"
-              />
-            </motion.div>
-          </div>
-          <h3 className="text-base font-semibold text-white mb-1">{stat.title}</h3>
-          <p className="text-sm text-neutral-500 leading-relaxed">{stat.description}</p>
-        </motion.div>
-      ))}
-    </div>
-  )
-}
-
-
 export default function HeroSection() {
   const t = useTranslations('hero')
   const tCommon = useTranslations('common')
@@ -456,7 +404,7 @@ export default function HeroSection() {
           transition={{ delay: 0.6, duration: 0.8 }}
           className="mb-16"
         >
-          <Stats />
+          <CapabilitiesGrid />
         </motion.div>
 
         {/* Hero promo video (the 6 feature videos moved to FeatureVideosSection below) */}
