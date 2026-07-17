@@ -9,7 +9,7 @@ export const guide: Guide = {
     metaDescription: 'Run Moonshot Kimi K3 inside Claude Code through the Anthropic-compatible endpoint. Both setups, the env vars that matter, and the limits nobody tells you about.',
     intro: `Moonshot shipped Kimi K3 on July 16, 2026, and the first question everyone asked was whether they could point Claude Code at it. The answer is yes. Moonshot ships an Anthropic-compatible endpoint, so Claude Code talks to Kimi K3 with a few environment variables and no new tool to learn. You keep the CLI you already know, your hooks, your MCP servers and your muscle memory, and you swap the model underneath.
 
-This guide covers both ways to do it, because there are two different endpoints with two different auth variables and two different model ids, and mixing them up is the most common reason people end up staring at a 401. It also covers the part most posts skip: what stops working once you switch. Tool Search has to be off, WebFetch is gone, and on one of the two endpoints images stop working entirely. Those are real trade-offs and you should know them before you move a real project onto this.
+This guide covers both ways to do it, because there are two different endpoints with two different auth variables and two different model ids, and mixing them up is the most common reason people end up staring at a 401. It also covers the part most posts skip: what changes once you switch. Tool Search needs to stay off, WebFetch errors out, and image support gets murky depending on which endpoint you pick. Those are real trade-offs and you should know them before you move a real project onto this.
 
 Everything below was checked against Moonshot's official docs. Their CLI ships roughly one release a day right now, so treat their docs as the source of truth if something drifts.`,
     ctaText: 'Running Kimi K3 in one terminal and Claude in another is the fastest way to find out which model suits which job. CodeAgentSwarm runs both side by side, each in its own terminal, with live diffs, desktop notifications and searchable history across all of them.',
@@ -143,22 +143,22 @@ Everything below was checked against Moonshot's official docs. Their CLI ships r
         {
           type: 'heading',
           level: 3,
-          text: 'Tool Search has to be off, and it is not optional',
+          text: 'Keep Tool Search off',
           id: 'tool-search-off',
         },
         {
           type: 'paragraph',
-          text: 'Moonshot\'s docs say the endpoint does not support Tool Search yet and that it must be set to <code>false</code>. That reads like a nice-to-have until you see what happens if you ignore it: there is an open report where <code>tool_reference</code> messages poison the session on the subscription endpoint and every follow-up request fails with a persistent HTTP 400. The session never recovers. Your only way out is starting a new one. Set <code>ENABLE_TOOL_SEARCH=false</code> and leave it.',
+          text: 'Moonshot\'s docs for the platform endpoint literally say the Kimi endpoint does not support this feature yet and that <code>ENABLE_TOOL_SEARCH</code> must be set to <code>false</code>, otherwise tool calls misbehave. In practice you usually do not need to touch anything: Claude Code already disables Tool Search by default when <code>ANTHROPIC_BASE_URL</code> points to a non-Anthropic host. The real danger is forcing <code>ENABLE_TOOL_SEARCH=true</code> by hand: there is an open, unanswered report on Moonshot\'s tracker claiming that on the subscription endpoint <code>tool_reference</code> blocks leave the session returning HTTP 400 on every following request, with starting a new session as the only practical way out. It is a single unconfirmed user report, but there is no reason to gamble. The explicit <code>false</code> in the setup above is belt and braces.',
         },
         {
           type: 'heading',
           level: 3,
-          text: 'WebFetch is gone',
+          text: 'WebFetch errors out',
           id: 'no-webfetch',
         },
         {
           type: 'paragraph',
-          text: 'WebFetch is not currently available on the Kimi endpoint. If your workflow leans on the agent reading docs pages on its own, it will quietly lose that tool. Nothing errors loudly, the capability just is not there.',
+          text: 'WebFetch does not work on Kimi\'s endpoint right now. When called, it either returns a "temporarily unavailable" error or comes back with no content. Moonshot admits this in their FAQ: it is a platform limitation, not your configuration, and it will work once they add support. In the meantime the official workaround is pasting the page content into the chat, or using an MCP scraping tool. Do not confuse it with WebSearch, which does work with <code>kimi-k3</code>.',
         },
         {
           type: 'heading',
@@ -168,16 +168,16 @@ Everything below was checked against Moonshot's official docs. Their CLI ships r
         },
         {
           type: 'paragraph',
-          text: 'This one is a real fork in the road. The subscription endpoint at api.kimi.com/coding does not accept image input at all. There is an open request about it, and Claude Code, Roo Code and Cursor are all named as unable to pass images through. So if you paste a screenshot into your agent as part of your normal loop, that stops working on Option A.',
+          text: 'This one is murkier than most posts make it sound. There is an open request asking Moonshot to support image input on the subscription endpoint from third-party tools, and it names Claude Code, Roo Code and Cursor as affected. But that is a single user request with no official reply, and the real-world evidence cuts against a total block: there are documented sessions of that same endpoint decoding base64 PNG and JPEG just fine, with only webp and gif rejected. When a third-party client cannot get images through, the culprit tends to be on the client side, not the endpoint refusing images outright.',
         },
         {
           type: 'paragraph',
-          text: 'The pay-per-token platform endpoint does support vision, because K3 is natively multimodal. But it only accepts base64 or <code>ms://</code> file ids, never public image URLs. So images survive on Option B, with a caveat.',
+          text: 'The pay-per-token platform endpoint does document vision, because K3 is natively multimodal. But for now it only accepts base64 images or files uploaded by file id (<code>ms://</code> ids), not public image URLs.',
         },
         {
           type: 'callout',
           variant: 'tip',
-          content: 'If screenshots are part of how you work, that alone decides your endpoint. Pay per token keeps your images, the subscription does not.',
+          content: 'If screenshots are part of how you work, test image paste with your own client on your chosen endpoint before committing. The platform endpoint has documented vision support; the subscription endpoint is where third-party image reports get murky.',
         },
         {
           type: 'heading',
@@ -228,7 +228,7 @@ Everything below was checked against Moonshot's official docs. Their CLI ships r
           items: [
             '<strong>401 Unauthorized</strong>: you are almost certainly using a key from the wrong platform. Keys from platform.kimi.ai and platform.kimi.com are completely independent, and a key from one returns 401 on the other. Same story if you mix a Kimi Code Console key with the platform endpoint.',
             '<strong>/status still shows the Anthropic base URL</strong>: your exports did not reach the process. Export them in the same shell that launches the CLI, or put them in your shell profile and open a new terminal.',
-            '<strong>Persistent HTTP 400 that never recovers</strong>: this is the Tool Search bug. Set ENABLE_TOOL_SEARCH=false and start a fresh session, because a poisoned session stays poisoned.',
+            '<strong>Persistent HTTP 400 that never recovers</strong>: check whether something in your setup forced ENABLE_TOOL_SEARCH=true (Claude Code disables it by default on non-Anthropic hosts). There is an unconfirmed report of tool_reference blocks leaving subscription-endpoint sessions permanently on 400. Set it to false and start a fresh session.',
             '<strong>Context gets compacted way too early</strong>: your context setting does not match what your plan grants. On Moderato use 262144, not 1048576.',
             '<strong>Both an API key and an auth token set</strong>: on the platform endpoint, unset ANTHROPIC_API_KEY. Moonshot documents the conflict explicitly.',
           ],
@@ -251,7 +251,7 @@ Everything below was checked against Moonshot's official docs. Their CLI ships r
     },
     {
       question: 'What does not work when running Kimi K3 in Claude Code?',
-      answer: 'Tool Search must be disabled with ENABLE_TOOL_SEARCH=false, and ignoring that can poison a session into permanent HTTP 400 errors. WebFetch is not available on the Kimi endpoint. Images are not supported at all on the subscription endpoint, and on the pay-per-token endpoint they work only as base64 or ms:// file ids, never as public URLs.',
+      answer: 'Tool Search must stay off — Claude Code already disables it by default on non-Anthropic hosts, and Moonshot documents that the endpoint does not support it yet. WebFetch is not available on the Kimi endpoint and returns a visible "temporarily unavailable" error (WebSearch does work). Image support from third-party clients on the subscription endpoint is inconsistent, and on the pay-per-token endpoint vision works only as base64 or ms:// file ids, not public URLs.',
     },
     {
       question: 'Is Kimi K3 cheaper than Claude for coding?',

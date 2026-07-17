@@ -9,7 +9,7 @@ export const guide: Guide = {
     metaDescription: 'Ejecuta Kimi K3 de Moonshot dentro de Claude Code con el endpoint compatible con Anthropic. Las dos configuraciones, las variables que importan y los límites que nadie cuenta.',
     intro: `Moonshot sacó Kimi K3 el 16 de julio de 2026 y la primera pregunta de todo el mundo fue si se podía apuntar Claude Code hacia él. La respuesta es sí. Moonshot publica un endpoint compatible con Anthropic, así que Claude Code habla con Kimi K3 con un par de variables de entorno y sin aprender una herramienta nueva. Mantienes la CLI que ya conoces, tus hooks, tus servidores MCP y tu memoria muscular, y cambias el modelo de debajo.
 
-Esta guía cubre las dos formas de hacerlo, porque hay dos endpoints distintos con dos variables de autenticación distintas y dos ids de modelo distintos, y confundirlos es el motivo más común por el que la gente acaba mirando un 401. También cubre la parte que casi todos los posts se saltan: qué deja de funcionar cuando cambias. Tool Search tiene que estar apagado, WebFetch desaparece y en uno de los dos endpoints las imágenes dejan de funcionar del todo. Son renuncias reales y conviene saberlas antes de mover un proyecto de verdad a esto.
+Esta guía cubre las dos formas de hacerlo, porque hay dos endpoints distintos con dos variables de autenticación distintas y dos ids de modelo distintos, y confundirlos es el motivo más común por el que la gente acaba mirando un 401. También cubre la parte que casi todos los posts se saltan: qué cambia cuando te pasas. Tool Search tiene que quedarse apagado, WebFetch da error y el soporte de imágenes se vuelve turbio según el endpoint que elijas. Son renuncias reales y conviene saberlas antes de mover un proyecto de verdad a esto.
 
 Todo lo de abajo está contrastado con la documentación oficial de Moonshot. Su CLI saca ahora mismo casi una versión al día, así que si algo baila, su documentación manda.`,
     ctaText: 'Tener Kimi K3 en un terminal y Claude en otro es la forma más rápida de descubrir qué modelo encaja en cada trabajo. CodeAgentSwarm ejecuta los dos a la vez, cada uno en su terminal, con diffs en vivo, notificaciones de escritorio e historial buscable en todos.',
@@ -143,22 +143,22 @@ Todo lo de abajo está contrastado con la documentación oficial de Moonshot. Su
         {
           type: 'heading',
           level: 3,
-          text: 'Tool Search tiene que ir apagado, y no es opcional',
+          text: 'Tool Search, mejor apagado',
           id: 'tool-search-off',
         },
         {
           type: 'paragraph',
-          text: 'La documentación de Moonshot dice que el endpoint todavía no soporta Tool Search y que hay que ponerlo en <code>false</code>. Eso suena a recomendación hasta que ves qué pasa si lo ignoras: hay un reporte abierto donde los mensajes <code>tool_reference</code> envenenan la sesión en el endpoint de suscripción y todas las peticiones siguientes fallan con un HTTP 400 permanente. La sesión no se recupera. La única salida es empezar una nueva. Pon <code>ENABLE_TOOL_SEARCH=false</code> y déjalo así.',
+          text: 'La documentación de Moonshot del endpoint de plataforma dice literalmente que el endpoint de Kimi todavía no soporta esta función y que hay que poner <code>ENABLE_TOOL_SEARCH=false</code> porque, si no, las tool calls se comportan mal. En la práctica no suele hacer falta tocar nada: Claude Code ya desactiva Tool Search por defecto cuando <code>ANTHROPIC_BASE_URL</code> apunta a un host que no es de Anthropic. El peligro real es forzar <code>ENABLE_TOOL_SEARCH=true</code> a mano: hay un reporte abierto y sin respuesta en el tracker de Moonshot según el cual, en el endpoint de suscripción, los bloques <code>tool_reference</code> dejan la sesión devolviendo HTTP 400 en todas las peticiones siguientes, y la única salida práctica es abrir una sesión nueva. Es un reporte de un solo usuario sin confirmar, pero no hay motivo para jugársela. El <code>false</code> explícito de la configuración de arriba es cinturón y tirantes.',
         },
         {
           type: 'heading',
           level: 3,
-          text: 'WebFetch desaparece',
+          text: 'WebFetch da error',
           id: 'sin-webfetch',
         },
         {
           type: 'paragraph',
-          text: 'WebFetch no está disponible ahora mismo en el endpoint de Kimi. Si tu forma de trabajar depende de que el agente se lea páginas de documentación por su cuenta, va a perder esa herramienta en silencio. No salta ningún error, simplemente la capacidad no está.',
+          text: 'WebFetch no funciona ahora mismo en el endpoint de Kimi. Al llamarlo, o devuelve un error de "temporarily unavailable" o vuelve sin contenido. Moonshot lo reconoce en su FAQ: es una limitación de su plataforma, no de tu configuración, y funcionará cuando añadan soporte. Mientras tanto, el workaround oficial es pegar el contenido de la página en el chat o usar un MCP de scraping. Ojo, no lo confundas con WebSearch, que sí funciona con <code>kimi-k3</code>.',
         },
         {
           type: 'heading',
@@ -168,16 +168,16 @@ Todo lo de abajo está contrastado con la documentación oficial de Moonshot. Su
         },
         {
           type: 'paragraph',
-          text: 'Esta es una bifurcación de verdad. El endpoint de suscripción en api.kimi.com/coding no acepta imágenes de entrada en absoluto. Hay una petición abierta sobre ello, y se menciona que ni Claude Code ni Roo Code ni Cursor pueden pasarle imágenes. Así que si pegas una captura a tu agente como parte de tu rutina, eso deja de funcionar en la Opción A.',
+          text: 'Esto es más turbio de lo que la mayoría de posts da a entender. Hay una petición abierta pidiendo que el endpoint de suscripción soporte imágenes desde herramientas de terceros, y menciona a Claude Code, Roo Code y Cursor como afectados. Pero es la petición de un solo usuario, sin respuesta oficial, y la evidencia real desmiente que haya un bloqueo total: hay sesiones documentadas de ese mismo endpoint decodificando PNG y JPEG en base64 sin problema, y solo rechaza webp y gif. Cuando un cliente de terceros no consigue pasarle imágenes, el problema suele estar en el lado del cliente, no en que el endpoint rechace imágenes sin más.',
         },
         {
           type: 'paragraph',
-          text: 'El endpoint de plataforma de pago por token sí soporta visión, porque K3 es multimodal de forma nativa. Pero solo acepta base64 o ids de fichero <code>ms://</code>, nunca URLs públicas de imagen. Así que las imágenes sobreviven en la Opción B, con matiz.',
+          text: 'El endpoint de plataforma de pago por token sí documenta visión, porque K3 es multimodal de forma nativa. Pero de momento solo acepta imágenes en base64 o ficheros subidos por file id (ids <code>ms://</code>), no URLs públicas de imagen.',
         },
         {
           type: 'callout',
           variant: 'tip',
-          content: 'Si las capturas son parte de cómo trabajas, eso solo ya te decide el endpoint. El pago por token mantiene tus imágenes, la suscripción no.',
+          content: 'Si las capturas son parte de cómo trabajas, prueba el pegado de imágenes con tu propio cliente en el endpoint que elijas antes de comprometerte. El de plataforma tiene la visión documentada; el de suscripción es donde los reportes de terceros se vuelven turbios.',
         },
         {
           type: 'heading',
@@ -228,7 +228,7 @@ Todo lo de abajo está contrastado con la documentación oficial de Moonshot. Su
           items: [
             '<strong>401 Unauthorized</strong>: casi seguro estás usando una clave de la plataforma equivocada. Las claves de platform.kimi.ai y platform.kimi.com son completamente independientes, y una clave de una devuelve 401 en la otra. Lo mismo si mezclas una clave de la consola de Kimi Code con el endpoint de plataforma.',
             '<strong>/status sigue mostrando la base URL de Anthropic</strong>: tus exports no llegaron al proceso. Expórtalos en el mismo shell que lanza la CLI, o ponlos en tu perfil de shell y abre un terminal nuevo.',
-            '<strong>HTTP 400 permanente que no se recupera</strong>: es el bug de Tool Search. Pon ENABLE_TOOL_SEARCH=false y empieza una sesión nueva, porque una sesión envenenada sigue envenenada.',
+            '<strong>HTTP 400 permanente que no se recupera</strong>: mira si algo en tu configuración forzó ENABLE_TOOL_SEARCH=true (Claude Code lo desactiva por defecto en hosts que no son de Anthropic). Hay un reporte sin confirmar de bloques tool_reference dejando sesiones del endpoint de suscripción clavadas en 400. Ponlo en false y empieza una sesión nueva.',
             '<strong>El contexto se compacta demasiado pronto</strong>: tu ajuste de contexto no cuadra con lo que te da tu plan. En Moderato usa 262144, no 1048576.',
             '<strong>Tienes puestas a la vez una API key y un auth token</strong>: en el endpoint de plataforma, quita ANTHROPIC_API_KEY. Moonshot documenta el conflicto de forma explícita.',
           ],
@@ -251,7 +251,7 @@ Todo lo de abajo está contrastado con la documentación oficial de Moonshot. Su
     },
     {
       question: '¿Qué deja de funcionar al ejecutar Kimi K3 en Claude Code?',
-      answer: 'Tool Search tiene que estar desactivado con ENABLE_TOOL_SEARCH=false, e ignorarlo puede envenenar una sesión hasta dejarla con errores HTTP 400 permanentes. WebFetch no está disponible en el endpoint de Kimi. Las imágenes no están soportadas en absoluto en el endpoint de suscripción, y en el de pago por token funcionan solo como base64 o ids de fichero ms://, nunca como URLs públicas.',
+      answer: 'Tool Search tiene que quedarse apagado: Claude Code ya lo desactiva por defecto en hosts que no son de Anthropic, y Moonshot documenta que el endpoint todavía no lo soporta. WebFetch no está disponible en el endpoint de Kimi y devuelve un error visible de "temporarily unavailable" (WebSearch sí funciona). El soporte de imágenes desde clientes de terceros en el endpoint de suscripción es inconsistente, y en el de pago por token la visión funciona solo como base64 o ids de fichero ms://, no URLs públicas.',
     },
     {
       question: '¿Kimi K3 es más barato que Claude para programar?',
