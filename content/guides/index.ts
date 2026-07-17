@@ -45,6 +45,7 @@ import enGitWorktrees from './en/git-worktrees-for-ai-coding-agents'
 import enGitWorktreeVsBranch from './en/git-worktree-vs-branch-parallel-ai-agents'
 import enClaudeDashboard from './en/claude-code-dashboard'
 import enCodexGui from './en/codex-gui'
+import enKimiK3WithClaudeCode from './en/kimi-k3-with-claude-code'
 
 // Spanish guides
 import esMultipleTerminals from './es/como-usar-varios-terminales-claude-code'
@@ -89,6 +90,7 @@ import esGitWorktrees from './es/git-worktrees-para-agentes-de-ia'
 import esGitWorktreeVsBranch from './es/git-worktree-vs-rama-agentes-ia-en-paralelo'
 import esClaudeDashboard from './es/panel-de-control-claude-code'
 import esCodexGui from './es/interfaz-grafica-codex'
+import esKimiK3ConClaudeCode from './es/kimi-k3-con-claude-code'
 
 // Registry of all guides by locale and slug
 export const guides: Record<string, Record<string, Guide>> = {
@@ -135,6 +137,7 @@ export const guides: Record<string, Record<string, Guide>> = {
     'git-worktree-vs-branch-parallel-ai-agents': enGitWorktreeVsBranch,
     'claude-code-dashboard': enClaudeDashboard,
     'codex-gui': enCodexGui,
+    'kimi-k3-with-claude-code': enKimiK3WithClaudeCode,
   },
   es: {
     'como-usar-varios-terminales-claude-code': esMultipleTerminals,
@@ -179,6 +182,7 @@ export const guides: Record<string, Record<string, Guide>> = {
     'git-worktree-vs-rama-agentes-ia-en-paralelo': esGitWorktreeVsBranch,
     'panel-de-control-claude-code': esClaudeDashboard,
     'interfaz-grafica-codex': esCodexGui,
+    'kimi-k3-con-claude-code': esKimiK3ConClaudeCode,
   },
 }
 
