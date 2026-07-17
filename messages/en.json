@@ -423,6 +423,32 @@
       }
     }
   },
+  "community": {
+    "eyebrow": "Community",
+    "title": "Join the people",
+    "titleHighlight": "shaping CodeAgentSwarm.",
+    "subtitle": "See what's coming, report what's broken, vote on what's next, and trade real workflows with other builders.",
+    "items": {
+      "peeks": {
+        "title": "Sneak peeks",
+        "description": "See new features while they're still taking shape."
+      },
+      "bugs": {
+        "title": "Direct bug reports",
+        "description": "Put issues in front of the team, with the context we need to fix them."
+      },
+      "votes": {
+        "title": "Roadmap votes",
+        "description": "Upvote what matters and influence what we build next."
+      },
+      "workflows": {
+        "title": "Real workflows",
+        "description": "See how other builders run their agents, then share what works for you."
+      }
+    },
+    "cta": "Join the CodeAgentSwarm Discord",
+    "fine": "Free to join · Lurk, ask, share, or vote."
+  },
   "faq": {
     "badge": "Got Questions?",
     "titlePre": "Frequently Asked",

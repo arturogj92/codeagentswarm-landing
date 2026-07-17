@@ -21,6 +21,13 @@ const nextConfig = {
         destination: '/es/guias/modo-yolo-claude-code-explicado',
         permanent: true,
       },
+      // Short community link used in posts/emails/app; non-permanent so the
+      // invite can be rotated without clients caching the old target
+      {
+        source: '/discord',
+        destination: 'https://discord.gg/a9ZqmW9UfQ',
+        permanent: false,
+      },
     ]
   },
 }

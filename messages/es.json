@@ -423,6 +423,32 @@
       }
     }
   },
+  "community": {
+    "eyebrow": "Comunidad",
+    "title": "Únete a quienes están",
+    "titleHighlight": "dando forma a CodeAgentSwarm.",
+    "subtitle": "Mira lo que viene, cuenta lo que falla, vota lo siguiente e intercambia flujos de trabajo reales con otros desarrolladores.",
+    "items": {
+      "peeks": {
+        "title": "Adelantos",
+        "description": "Ve las nuevas funciones mientras todavía se están cocinando."
+      },
+      "bugs": {
+        "title": "Bugs directos al equipo",
+        "description": "Pon los fallos delante del equipo, con el contexto que necesitamos para arreglarlos."
+      },
+      "votes": {
+        "title": "Vota el roadmap",
+        "description": "Vota lo que te importa e influye en lo que construimos después."
+      },
+      "workflows": {
+        "title": "Flujos reales",
+        "description": "Mira cómo otros manejan sus agentes y comparte lo que a ti te funciona."
+      }
+    },
+    "cta": "Entra al Discord de CodeAgentSwarm",
+    "fine": "Gratis · Cotillea, pregunta, comparte o vota."
+  },
   "faq": {
     "badge": "¿Tienes Preguntas?",
     "titlePre": "Preguntas",

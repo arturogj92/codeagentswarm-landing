@@ -15,6 +15,7 @@ import SocialProofSection from '@/components/SocialProofSection'
 // import SwarmiSection from '@/components/SwarmiSection'
 import PricingSection from '@/components/PricingSection'
 import RoadmapSection from '@/components/RoadmapSection'
+import CommunitySection from '@/components/CommunitySection'
 import FAQSection from '@/components/FAQSection'
 import GuidesSection from '@/components/GuidesSection'
 import CTASection from '@/components/CTASection'
@@ -153,6 +154,7 @@ export default function Home() {
         {/* <SwarmiSection /> */}
         <PricingSection />
         <RoadmapSection />
+        <CommunitySection />
         <FAQSection />
         <GuidesSection />
         <CTASection />
