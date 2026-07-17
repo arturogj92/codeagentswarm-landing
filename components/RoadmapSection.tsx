@@ -1,77 +1,114 @@
 'use client'
 
 import { motion, useInView } from 'framer-motion'
-import { useRef, useState } from 'react'
-import {
-  Code2,
-  Brain,
-  Lightbulb,
-  Monitor,
-  ChevronRight,
-} from 'lucide-react'
+import { useRef } from 'react'
 import { useTranslations } from 'next-intl'
+
+type Status = 'shipped' | 'in-progress' | 'planned'
+
+interface RoadmapItem {
+  quarter: string
+  year: string
+  key: string
+  status: Status
+  featureKeys: string[]
+}
+
+const roadmapItems: RoadmapItem[] = [
+  {
+    quarter: 'Q1',
+    year: '2026',
+    key: 'multiAgent',
+    status: 'shipped',
+    featureKeys: ['codex', 'antigravity', 'opencode', 'orchestration'],
+  },
+  {
+    quarter: 'Q2',
+    year: '2026',
+    key: 'windows',
+    status: 'shipped',
+    featureKeys: ['win', 'installer', 'arm'],
+  },
+  {
+    quarter: 'Q3',
+    year: '2026',
+    key: 'linux',
+    status: 'in-progress',
+    featureKeys: ['distros', 'packages', 'parity'],
+  },
+  {
+    quarter: 'Q4',
+    year: '2026',
+    key: 'autonomous',
+    status: 'planned',
+    featureKeys: ['decomposition', 'prioritization', 'execution', 'collaboration'],
+  },
+]
+
+const shippedCount = roadmapItems.filter((i) => i.status === 'shipped').length
+
+// Rail fill reaches the middle of the in-progress node: each of the 4 node
+// slots is 25% wide, so node N sits at (N * 25) + 12.5 percent.
+const inProgressIndex = roadmapItems.findIndex((i) => i.status === 'in-progress')
+const railFillPercent = inProgressIndex * 25 + 12.5
+
+function StatusChip({ status, t }: { status: Status; t: ReturnType<typeof useTranslations> }) {
+  if (status === 'shipped') {
+    return (
+      <span className="text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full bg-green-500/15 text-green-400 border border-green-500/25 whitespace-nowrap">
+        ✓ {t('status.shipped')}
+      </span>
+    )
+  }
+  if (status === 'in-progress') {
+    return (
+      <span className="text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full bg-amber-400/15 text-amber-400 border border-amber-400/40 whitespace-nowrap">
+        ● {t('status.inProgress')}
+      </span>
+    )
+  }
+  return (
+    <span className="text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full bg-white/5 text-white/40 border border-white/10 whitespace-nowrap">
+      {t('status.planned')}
+    </span>
+  )
+}
+
+function RailNode({ status, size = 'lg' }: { status: Status; size?: 'lg' | 'sm' }) {
+  const dim = size === 'lg' ? 'w-[22px] h-[22px]' : 'w-5 h-5'
+  if (status === 'shipped') {
+    return (
+      <div className={`${dim} rounded-full border-[1.5px] border-green-400/70 bg-[#0c1510] text-green-400 flex items-center justify-center text-[11px] z-10`}>
+        ✓
+      </div>
+    )
+  }
+  if (status === 'in-progress') {
+    return (
+      <motion.div
+        animate={{ boxShadow: [
+          '0 0 0 4px rgba(251,191,36,0.10), 0 0 18px rgba(251,191,36,0.45)',
+          '0 0 0 7px rgba(251,191,36,0.16), 0 0 30px rgba(251,191,36,0.65)',
+          '0 0 0 4px rgba(251,191,36,0.10), 0 0 18px rgba(251,191,36,0.45)',
+        ] }}
+        transition={{ duration: 2, repeat: Infinity }}
+        className={`${dim} rounded-full border-[1.5px] border-amber-400 bg-[#1a1508] flex items-center justify-center z-10`}
+      >
+        <div className="w-2 h-2 rounded-full bg-amber-400" />
+      </motion.div>
+    )
+  }
+  return (
+    <div className={`${dim} rounded-full border-[1.5px] border-dashed border-white/25 bg-dark-900 flex items-center justify-center z-10`}>
+      <div className="w-1.5 h-1.5 rounded-full bg-white/20" />
+    </div>
+  )
+}
 
 export default function RoadmapSection() {
   const t = useTranslations('roadmap')
   const sectionRef = useRef(null)
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' })
-  const [expandedItem, setExpandedItem] = useState<number | null>(0)
-
-  const roadmapItems = [
-    {
-      quarter: 'Q1',
-      year: '2026',
-      title: t('items.multiAgent.title'),
-      description: t('items.multiAgent.description'),
-      features: [
-        t('items.multiAgent.features.codex'),
-        t('items.multiAgent.features.gemini'),
-        t('items.multiAgent.features.orchestration'),
-      ],
-      icon: Code2,
-      status: 'completed',
-      current: true,
-    },
-    {
-      quarter: 'Q2',
-      year: '2026',
-      title: t('items.crossPlatform.title'),
-      description: t('items.crossPlatform.description'),
-      features: [
-        t('items.crossPlatform.features.linux'),
-      ],
-      icon: Monitor,
-      status: 'in-progress',
-    },
-    {
-      quarter: 'Q3',
-      year: '2026',
-      title: t('items.agenticTask.title'),
-      description: t('items.agenticTask.description'),
-      features: [
-        t('items.agenticTask.features.decomposition'),
-        t('items.agenticTask.features.prioritization'),
-        t('items.agenticTask.features.autonomous'),
-        t('items.agenticTask.features.collaboration'),
-      ],
-      icon: Brain,
-      status: 'upcoming',
-    },
-    {
-      quarter: 'Q4',
-      year: '2026',
-      title: t('items.knowledge.title'),
-      description: t('items.knowledge.description'),
-      features: [
-        t('items.knowledge.features.patterns'),
-        t('items.knowledge.features.library'),
-        t('items.knowledge.features.reuse'),
-        t('items.knowledge.features.recommendations'),
-      ],
-      icon: Lightbulb,
-      status: 'upcoming',
-    },
-  ]
 
   return (
     <section
@@ -81,8 +118,7 @@ export default function RoadmapSection() {
     >
       {/* Background */}
       <div className="absolute inset-0 grid-bg opacity-30" />
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-neutral-700/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-neon-cyan/10 rounded-full blur-3xl" />
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-amber-400/5 rounded-full blur-3xl" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Header */}
@@ -90,7 +126,7 @@ export default function RoadmapSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-10 md:mb-20"
+          className="text-center mb-12 md:mb-16"
         >
           <h2 className="heading-lg mb-6">
             <span className="text-white">{t('title')}</span>{' '}
@@ -99,207 +135,147 @@ export default function RoadmapSection() {
           <p className="text-lg text-white/50 max-w-2xl mx-auto">
             {t('subtitle')}
           </p>
+          <div className="mt-5 inline-flex items-center gap-2 font-mono text-xs text-white/30 border border-white/10 bg-white/[0.03] px-4 py-1.5 rounded-full">
+            <span className="text-green-400 font-semibold">
+              {t('progress.shipped', { count: shippedCount, total: roadmapItems.length })}
+            </span>
+            <span>·</span>
+            <span>{t('progress.onTrack')}</span>
+          </div>
         </motion.div>
 
-        {/* Timeline */}
-        <div className="relative">
-          {/* Timeline Line - Desktop */}
-          <div className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent hidden lg:block" />
+        {/* ===== Desktop: progress rail + card grid ===== */}
+        <div className="hidden lg:block">
+          {/* Rail */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative mx-2 mb-10"
+          >
+            <div className="relative h-0.5 bg-white/10 rounded-full">
+              <motion.div
+                initial={{ width: 0 }}
+                animate={isInView ? { width: `${railFillPercent}%` } : { width: 0 }}
+                transition={{ duration: 1.2, delay: 0.4, ease: 'easeOut' }}
+                className="absolute left-0 top-0 bottom-0 rounded-full bg-gradient-to-r from-green-400/90 to-amber-400 shadow-[0_0_12px_rgba(251,191,36,0.5)]"
+              />
+            </div>
+            <div className="absolute -inset-y-2.5 inset-x-0 grid grid-cols-4">
+              {roadmapItems.map((item) => (
+                <div key={item.key} className="flex items-center justify-center">
+                  <RailNode status={item.status} />
+                </div>
+              ))}
+            </div>
+          </motion.div>
 
-          {/* Timeline Line - Mobile */}
-          <div className="absolute top-0 bottom-0 left-4 w-0.5 bg-gradient-to-b from-amber-400/50 via-white/20 to-amber-400/50 lg:hidden" />
-
-          {/* Timeline Items */}
-          <div className="space-y-6 lg:space-y-16">
+          {/* Cards */}
+          <div className="grid grid-cols-4 gap-4">
             {roadmapItems.map((item, index) => (
               <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 50 }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-                transition={{ duration: 0.6, delay: index * 0.15 }}
-                className={`relative flex flex-col lg:flex-row items-center gap-8 ${
-                  index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
-                }`}
+                key={item.key}
+                initial={{ opacity: 0, y: 40 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+                transition={{ duration: 0.6, delay: 0.3 + index * 0.12 }}
               >
-                {/* Timeline Node - Mobile */}
-                <div className="absolute left-4 -translate-x-1/2 lg:hidden flex items-center justify-center z-10">
-                  <motion.div
-                    animate={
-                      item.status === 'in-progress'
-                        ? { scale: [1, 1.3, 1], boxShadow: ['0 0 0 0px rgba(0, 255, 255, 0.4)', '0 0 0 8px rgba(0, 255, 255, 0)'] }
-                        : {}
-                    }
-                    transition={{ duration: 2, repeat: Infinity }}
-                    className={`w-4 h-4 rounded-full border-2 ${
-                      item.status === 'in-progress'
-                        ? 'bg-neon-cyan border-neon-cyan shadow-lg shadow-neon-cyan/50'
-                        : 'bg-dark-900 border-white/30'
-                    }`}
-                  />
-                </div>
-
-                {/* Timeline Node - Desktop */}
-                <div className="absolute left-1/2 -translate-x-1/2 hidden lg:flex items-center justify-center">
-                  <motion.div
-                    animate={
-                      item.status === 'in-progress'
-                        ? { scale: [1, 1.2, 1], opacity: [1, 0.8, 1] }
-                        : {}
-                    }
-                    transition={{ duration: 2, repeat: Infinity }}
-                    className={`w-4 h-4 rounded-full ${
-                      item.status === 'in-progress'
-                        ? 'bg-neon-cyan shadow-neon-cyan'
-                        : 'bg-white/20'
-                    }`}
-                  />
-                </div>
-
-                {/* Content Card */}
                 <div
-                  className={`w-full pl-10 lg:pl-0 lg:w-[calc(50%-2rem)] ${
-                    index % 2 === 0 ? 'lg:pr-8' : 'lg:pl-8'
+                  className={`h-full flex flex-col gap-3.5 rounded-2xl p-6 glass backdrop-blur-md border transition-all duration-300 ${
+                    item.status === 'shipped'
+                      ? 'border-green-500/15'
+                      : item.status === 'in-progress'
+                      ? 'border-amber-400/50 bg-gradient-to-b from-amber-400/[0.07] to-white/[0.02] shadow-[0_0_40px_rgba(251,191,36,0.12)] -translate-y-1.5'
+                      : 'border-dashed border-white/10'
                   }`}
                 >
-                  <motion.div
-                    className="relative group cursor-pointer"
-                    onClick={() =>
-                      setExpandedItem(expandedItem === index ? null : index)
-                    }
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    {/* Card */}
-                    <div className={`relative rounded-2xl overflow-hidden glass border transition-all duration-500 ${'current' in item && item.current ? 'border-green-500/40 shadow-[0_0_30px_rgba(34,197,94,0.2)] hover:shadow-[0_0_40px_rgba(34,197,94,0.3)] hover:border-green-400/50' : 'border-white/5 hover:border-white/10'}`}>
-                      {/* Top accent bar - visible on mobile */}
-                      <div className={`h-1 bg-gradient-to-r ${item.status === 'completed' ? 'from-green-500 to-green-400' : item.status === 'in-progress' ? 'from-neon-cyan to-neon-purple' : 'from-white/20 to-white/5'}`} />
+                  <div className="flex items-center justify-between">
+                    <span className="font-mono text-xs tracking-wider text-white/30">
+                      <b className="text-white/80 font-semibold">{item.quarter}</b> · {item.year}
+                    </span>
+                    <StatusChip status={item.status} t={t} />
+                  </div>
+                  <h3 className={`text-lg font-display font-semibold ${item.status === 'shipped' ? 'text-white/85' : 'text-white'}`}>
+                    {t(`items.${item.key}.title`)}
+                  </h3>
+                  <p className="text-white/50 text-sm leading-relaxed">
+                    {t(`items.${item.key}.description`)}
+                  </p>
+                  <ul className="mt-auto pt-3.5 border-t border-white/[0.08] space-y-2">
+                    {item.featureKeys.map((fk) => (
+                      <li key={fk} className={`flex items-start gap-2.5 text-[13px] leading-snug ${item.status === 'shipped' ? 'text-white/40' : 'text-white/50'}`}>
+                        {item.status === 'shipped' ? (
+                          <span className="text-green-400 text-xs mt-px">✓</span>
+                        ) : (
+                          <span className={`w-[5px] h-[5px] rounded-full mt-1.5 flex-shrink-0 ${item.status === 'in-progress' ? 'bg-amber-400' : 'bg-white/25'}`} />
+                        )}
+                        {t(`items.${item.key}.features.${fk}`)}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className={`font-mono text-[11px] ${
+                    item.status === 'shipped' ? 'text-green-400/60' : item.status === 'in-progress' ? 'text-amber-400/75' : 'text-white/30'
+                  }`}>
+                    {t(`eta.${item.status === 'shipped' ? 'shipped' : item.status === 'in-progress' ? 'inDevelopment' : 'planned'}`)} · {item.quarter} {item.year}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
 
-                      {/* Gradient overlay */}
-                      <div
-                        className="absolute inset-0 bg-gradient-to-br from-neon-cyan/5 via-transparent to-neon-purple/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                      />
+        {/* ===== Mobile: compact release log ===== */}
+        <div className="lg:hidden relative">
+          {/* Vertical rail */}
+          <div className="absolute left-[52px] top-3 bottom-3 w-0.5 bg-gradient-to-b from-green-400/60 via-amber-400 to-white/10" />
 
-                      <div className="relative p-4 sm:p-6">
-                        {/* Header */}
-                        <div className="flex items-start justify-between mb-4">
-                          <div className="flex items-center gap-4">
-                            <div
-                              className={`relative w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br from-neon-purple/20 to-neon-cyan/10 border border-white/10 flex items-center justify-center flex-shrink-0 group-hover:border-neon-cyan/30 transition-all duration-300 ${
-                                item.status === 'completed' ? 'shadow-[0_0_20px_rgba(34,197,94,0.3)]' : item.status === 'in-progress' ? 'shadow-[0_0_20px_rgba(0,245,255,0.3)]' : ''
-                              }`}
-                            >
-                              {/* Icon glow on hover */}
-                              <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-neon-cyan/20 to-neon-purple/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                              <item.icon className={`relative z-10 w-6 h-6 ${item.status === 'completed' ? 'text-green-400' : item.status === 'in-progress' ? 'text-neon-cyan' : 'text-white/70'} group-hover:text-neon-cyan transition-colors duration-300`} />
-                            </div>
-                            <div className="min-w-0">
-                              <div className="flex items-center gap-2 mb-0.5">
-                                <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${
-                                  item.status === 'completed'
-                                    ? 'bg-green-500/20 text-green-400'
-                                    : item.status === 'in-progress'
-                                    ? 'bg-neon-cyan/20 text-neon-cyan'
-                                    : 'bg-white/10 text-white/50'
-                                }`}>
-                                  {item.quarter}
-                                </span>
-                                <span className="text-xs text-white/30">{item.year}</span>
-                                {'current' in item && item.current && (
-                                  <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-green-500/30 text-green-300 border border-green-400/50 animate-pulse">
-                                    ✓ NOW
-                                  </span>
-                                )}
-                              </div>
-                              <h3 className="text-base sm:text-xl font-display font-semibold text-white truncate">
-                                {item.title}
-                              </h3>
-                            </div>
-                          </div>
-
-                          {/* Status Badge */}
-                          <span
-                            className={`hidden sm:inline-block text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap ${
-                              item.status === 'completed'
-                                ? 'bg-green-500/20 text-green-400 border border-green-500/30'
-                                : item.status === 'in-progress'
-                                ? 'bg-neon-cyan/20 text-neon-cyan border border-neon-cyan/30'
-                                : 'bg-white/10 text-white/50'
-                            }`}
-                          >
-                            {item.status === 'completed' ? `✓ ${t('status.completed')}` : item.status === 'in-progress' ? `● ${t('status.inProgress')}` : t('status.upcoming')}
-                          </span>
-                        </div>
-
-                        {/* Description */}
-                        <p className="text-white/50 text-sm sm:text-base mb-4">{item.description}</p>
-
-                        {/* Features Preview - Mobile only */}
-                        <div className="lg:hidden mb-3 pt-3 border-t border-white/5">
-                          <div className="flex flex-wrap gap-2">
-                            {item.features.slice(0, 2).map((feature) => (
-                              <span key={feature} className="text-xs px-2 py-1 rounded-full bg-white/5 border border-white/10 text-white/60">
-                                {feature}
-                              </span>
-                            ))}
-                            {item.features.length > 2 && (
-                              <span className="text-xs px-2 py-1 rounded-full bg-white/5 text-white/40">
-                                +{item.features.length - 2}
-                              </span>
-                            )}
-                          </div>
-                        </div>
-
-                        {/* Expandable Features */}
-                        <motion.div
-                          initial={false}
-                          animate={{
-                            height: expandedItem === index ? 'auto' : 0,
-                            opacity: expandedItem === index ? 1 : 0,
-                          }}
-                          transition={{ duration: 0.3 }}
-                          className="overflow-hidden"
-                        >
-                          <div className="pt-4 border-t border-white/5 space-y-2">
-                            {item.features.map((feature, featureIndex) => (
-                              <motion.div
-                                key={feature}
-                                initial={{ opacity: 0, x: -10 }}
-                                animate={
-                                  expandedItem === index
-                                    ? { opacity: 1, x: 0 }
-                                    : { opacity: 0, x: -10 }
-                                }
-                                transition={{ delay: featureIndex * 0.05 }}
-                                className="flex items-center gap-2"
-                              >
-                                <div
-                                  className={`w-1.5 h-1.5 rounded-full ${item.status === 'completed' ? 'bg-green-400' : item.status === 'in-progress' ? 'bg-neon-cyan' : 'bg-white/40'}`}
-                                />
-                                <span className="text-sm text-white/60">
-                                  {feature}
-                                </span>
-                              </motion.div>
-                            ))}
-                          </div>
-                        </motion.div>
-
-                        {/* Expand Indicator */}
-                        <div className="flex items-center justify-center mt-4">
-                          <motion.div
-                            animate={{ rotate: expandedItem === index ? 90 : 0 }}
-                            transition={{ duration: 0.2 }}
-                          >
-                            <ChevronRight className="w-5 h-5 text-white/30 group-hover:text-white/50 transition-colors" />
-                          </motion.div>
-                        </div>
-                      </div>
-
-                      {/* Corner glow */}
-                      <div
-                        className="absolute -top-20 -right-20 w-40 h-40 bg-gradient-to-br from-neon-cyan to-neon-purple rounded-full blur-3xl opacity-0 group-hover:opacity-20 transition-opacity duration-500"
-                      />
-                    </div>
-                  </motion.div>
+          <div className="space-y-3.5">
+            {roadmapItems.map((item, index) => (
+              <motion.div
+                key={item.key}
+                initial={{ opacity: 0, y: 30 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                transition={{ duration: 0.5, delay: index * 0.12 }}
+                className="grid grid-cols-[36px_32px_1fr] items-start"
+              >
+                <div className="text-right pt-5">
+                  <span className="font-mono text-sm font-bold text-white/80 block">{item.quarter}</span>
+                  <span className="font-mono text-[10px] text-white/30 block mt-0.5">{item.year}</span>
+                </div>
+                <div className="flex justify-center pt-[22px]">
+                  <RailNode status={item.status} size="sm" />
+                </div>
+                <div
+                  className={`rounded-xl px-4 py-4 glass backdrop-blur-md border ${
+                    item.status === 'shipped'
+                      ? 'border-white/[0.08] opacity-80'
+                      : item.status === 'in-progress'
+                      ? 'border-amber-400/50 bg-gradient-to-b from-amber-400/[0.07] to-white/[0.02] shadow-[0_0_30px_rgba(251,191,36,0.1)]'
+                      : 'border-dashed border-white/10'
+                  }`}
+                >
+                  <div className="flex items-center flex-wrap gap-2 mb-1.5">
+                    <h3 className="text-base font-display font-semibold text-white">
+                      {t(`items.${item.key}.title`)}
+                    </h3>
+                    <StatusChip status={item.status} t={t} />
+                  </div>
+                  <p className="text-white/50 text-[13px] leading-relaxed">
+                    {t(`items.${item.key}.description`)}
+                  </p>
+                  <div className="flex flex-wrap gap-1.5 mt-3">
+                    {item.featureKeys.map((fk) => (
+                      <span
+                        key={fk}
+                        className={`text-[11px] px-2.5 py-1 rounded-full border ${
+                          item.status === 'in-progress'
+                            ? 'border-amber-400/35 text-amber-400 bg-amber-400/10'
+                            : 'border-white/10 text-white/50 bg-white/5'
+                        }`}
+                      >
+                        {t(`items.${item.key}.features.${fk}`)}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </motion.div>
             ))}

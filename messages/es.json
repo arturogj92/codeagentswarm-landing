@@ -368,50 +368,57 @@
     "title": "Product",
     "titleHighlight": "Roadmap",
     "subtitle": "El futuro del desarrollo con IA",
+    "progress": {
+      "shipped": "{count} de {total} completados",
+      "onTrack": "en camino para 2026"
+    },
     "status": {
-      "completed": "COMPLETADO",
-      "inProgress": "EN PROGRESO",
-      "upcoming": "PROXIMAMENTE"
+      "shipped": "Completado",
+      "inProgress": "En progreso",
+      "planned": "Planeado"
+    },
+    "eta": {
+      "shipped": "completado",
+      "inDevelopment": "en desarrollo",
+      "planned": "planeado"
     },
     "items": {
       "multiAgent": {
         "title": "Integracion Multi-Agente",
-        "description": "Mas alla de Claude: soporte para multiples AI CLI agents",
+        "description": "Mas alla de Claude: soporte para multiples AI CLI agents.",
         "features": {
           "codex": "Integracion Codex CLI",
-          "deepseek": "Soporte DeepSeek CLI",
-          "gemini": "Compatibilidad Antigravity CLI",
-          "orchestration": "Orquestacion unificada"
+          "antigravity": "Compatibilidad Antigravity CLI",
+          "opencode": "Soporte opencode",
+          "orchestration": "Orquestacion unificada de agentes"
         }
       },
-      "crossPlatform": {
-        "title": "Soporte Linux",
-        "description": "CodeAgentSwarm llega a Linux (Windows ya esta disponible!)",
+      "windows": {
+        "title": "Soporte Windows",
+        "description": "CodeAgentSwarm funciona de forma nativa en Windows.",
         "features": {
-          "windows": "Soporte completo Windows 10/11",
-          "linux": "Compatibilidad Ubuntu, Debian, Fedora",
-          "sync": "Sincronizacion de settings entre plataformas",
-          "native": "Rendimiento nativo en todos los sistemas"
+          "win": "Soporte completo Windows 10/11",
+          "installer": "Instalador nativo con auto-updates",
+          "arm": "Builds para Windows on ARM"
         }
       },
-      "agenticTask": {
+      "linux": {
+        "title": "Soporte Linux",
+        "description": "CodeAgentSwarm llega al escritorio de todos los desarrolladores.",
+        "features": {
+          "distros": "Builds para Ubuntu, Debian y Fedora",
+          "packages": "Paquetes AppImage y .deb",
+          "parity": "Paridad total de features con macOS"
+        }
+      },
+      "autonomous": {
         "title": "Modo Autonomo",
-        "description": "El agente crea sus propias tareas y las completa sin intervencion. Tu defines el objetivo, el hace el resto.",
+        "description": "Tu defines el objetivo: el swarm planifica, construye y entrega.",
         "features": {
           "decomposition": "Descomposicion de tareas con IA",
-          "prioritization": "Priorizacion inteligente",
-          "autonomous": "Ejecucion autonoma de workflows",
+          "prioritization": "Priorizacion inteligente de tareas",
+          "execution": "Ejecucion autonoma de workflows",
           "collaboration": "Colaboracion entre agentes"
-        }
-      },
-      "knowledge": {
-        "title": "Inteligencia de Conocimiento",
-        "description": "Aprender de tasks completadas para mejorar",
-        "features": {
-          "patterns": "Reconocimiento de patrones",
-          "library": "Biblioteca de soluciones",
-          "reuse": "Sistema de reutilizacion de contexto",
-          "recommendations": "Recomendaciones inteligentes"
         }
       }
     }

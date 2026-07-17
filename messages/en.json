@@ -368,50 +368,57 @@
     "title": "Product",
     "titleHighlight": "Roadmap",
     "subtitle": "Our vision for the future of AI-powered development",
+    "progress": {
+      "shipped": "{count} of {total} shipped",
+      "onTrack": "on track for 2026"
+    },
     "status": {
-      "completed": "COMPLETED",
-      "inProgress": "IN PROGRESS",
-      "upcoming": "UPCOMING"
+      "shipped": "Shipped",
+      "inProgress": "In progress",
+      "planned": "Planned"
+    },
+    "eta": {
+      "shipped": "shipped",
+      "inDevelopment": "in development",
+      "planned": "planned"
     },
     "items": {
       "multiAgent": {
         "title": "Multi-Agent Integration",
-        "description": "Expand beyond Claude to support multiple AI CLI agents",
+        "description": "Expand beyond Claude to support multiple AI CLI agents.",
         "features": {
           "codex": "Codex CLI integration",
-          "deepseek": "DeepSeek CLI support",
-          "gemini": "Antigravity CLI compatibility",
+          "antigravity": "Antigravity CLI compatibility",
+          "opencode": "opencode support",
           "orchestration": "Unified agent orchestration"
         }
       },
-      "crossPlatform": {
-        "title": "Linux Support",
-        "description": "Bringing CodeAgentSwarm to Linux (Windows is already here!)",
+      "windows": {
+        "title": "Windows Support",
+        "description": "CodeAgentSwarm runs natively on Windows.",
         "features": {
-          "windows": "Full Windows 10/11 support",
-          "linux": "Ubuntu, Debian, Fedora compatibility",
-          "sync": "Settings sync across platforms",
-          "native": "Native performance on all systems"
+          "win": "Full Windows 10/11 support",
+          "installer": "Native installer with auto-updates",
+          "arm": "Windows on ARM builds"
         }
       },
-      "agenticTask": {
+      "linux": {
+        "title": "Linux Support",
+        "description": "Bringing CodeAgentSwarm to every developer's desktop.",
+        "features": {
+          "distros": "Ubuntu, Debian & Fedora builds",
+          "packages": "AppImage & .deb packages",
+          "parity": "Full feature parity with macOS"
+        }
+      },
+      "autonomous": {
         "title": "Autonomous Mode",
-        "description": "The agent creates its own tasks and completes them without intervention. You define the goal, it does the rest.",
+        "description": "You define the goal: the swarm plans, builds and ships it.",
         "features": {
           "decomposition": "AI-powered task decomposition",
           "prioritization": "Smart task prioritization",
-          "autonomous": "Autonomous workflow execution",
+          "execution": "Autonomous workflow execution",
           "collaboration": "Cross-agent collaboration"
-        }
-      },
-      "knowledge": {
-        "title": "Knowledge Intelligence",
-        "description": "Learn and leverage knowledge from completed tasks",
-        "features": {
-          "patterns": "Task pattern recognition",
-          "library": "Solution library building",
-          "reuse": "Context reuse system",
-          "recommendations": "Smart recommendations"
         }
       }
     }
