@@ -5,6 +5,11 @@ import styles from './CapabilitiesGrid.module.css'
 
 type IconName = 'terminals' | 'search' | 'visibility' | 'board'
 
+// Each illustration carries a single amber segment marking the payoff: the live
+// prompt, the match you found, the change approved, the task completed. Same
+// rule as the Community section's illustrations, so the page reads as one.
+const AMBER = '#fbbf24'
+
 function CapabilityIcon({ name }: { name: IconName }) {
   const commonProps = {
     fill: 'none',
@@ -23,7 +28,8 @@ function CapabilityIcon({ name }: { name: IconName }) {
           <rect className={styles.softStroke} x="25" y="27" width="44" height="34" rx="5" />
           <rect x="32" y="35" width="46" height="36" rx="5" />
           <path className={styles.mutedStroke} d="M32 44h46" />
-          <path d="m43 48 6 5-6 5M54 59h11" />
+          {/* the agent running right now */}
+          <path stroke={AMBER} d="m43 48 6 5-6 5M54 59h11" />
         </g>
         <circle cx="38" cy="40" r="1.4" fill="currentColor" />
         <circle cx="43" cy="40" r="1.4" fill="currentColor" opacity="0.35" />
@@ -40,7 +46,9 @@ function CapabilityIcon({ name }: { name: IconName }) {
           <path className={styles.softStroke} d="M35 37h15M35 44h20M35 51h13" />
           <circle cx="56" cy="57" r="14" />
           <circle className={styles.mutedStroke} cx="56" cy="57" r="7" />
-          <path d="m66 67 9 9M52 57h8M56 53v8" />
+          <path d="m66 67 9 9" />
+          {/* what you were looking for, found */}
+          <path stroke={AMBER} d="M52 57h8M56 53v8" />
         </g>
       </svg>
     )
@@ -53,7 +61,9 @@ function CapabilityIcon({ name }: { name: IconName }) {
           <path className={styles.mutedStroke} d="M12 17h72M12 79h72" />
           <rect x="22" y="20" width="52" height="56" rx="6" />
           <path className={styles.softStroke} d="M33 32h13M33 40h24M33 58h11M33 66h20" />
-          <path d="M62 31v11M57 36.5h10M58 57l4 4 7-8" />
+          <path d="M62 31v11M57 36.5h10" />
+          {/* the change, reviewed */}
+          <path stroke={AMBER} d="M58 57l4 4 7-8" />
           <path className={`${styles.signal} ${styles.mutedStroke}`} d="M22 49h52" />
         </g>
         <circle cx="22" cy="49" r="2.2" fill="currentColor" />
@@ -80,8 +90,9 @@ function CapabilityIcon({ name }: { name: IconName }) {
       <circle cx="20" cy="25" r="1.3" fill="currentColor" opacity="0.35" />
       <circle cx="25" cy="25" r="1.3" fill="currentColor" opacity="0.55" />
       <circle cx="30" cy="25" r="1.3" fill="currentColor" />
-      <circle cx="74" cy="65" r="10" fill="#0a0a09" stroke="currentColor" strokeWidth="1.5" />
-      <path d="m69 65 3 3 6-7" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
+      {/* the task your agents finished */}
+      <circle cx="74" cy="65" r="10" fill="#0a0a09" stroke={AMBER} strokeWidth="1.5" />
+      <path d="m69 65 3 3 6-7" fill="none" stroke={AMBER} strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
     </svg>
   )
 }
