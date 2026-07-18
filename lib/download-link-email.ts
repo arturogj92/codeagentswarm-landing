@@ -39,6 +39,8 @@ const COPY = {
       'You asked for the download link from your phone. Open this email on your computer and pick your platform:',
     versionLabel: 'Version',
     farewell: 'See you in the app!',
+    discordLine:
+      'By the way, I post every update and collect feedback in our Discord community. Come say hi:',
     signatureRole: 'Founder, CodeAgentSwarm',
     footerLine: "You're getting this because you requested the download link on codeagentswarm.com.",
   },
@@ -50,6 +52,8 @@ const COPY = {
       'Nos pediste el enlace de descarga desde el móvil. Abre este correo en tu ordenador y elige tu plataforma:',
     versionLabel: 'Versión',
     farewell: '¡Nos vemos dentro de la app!',
+    discordLine:
+      'Por cierto, publico las novedades y recojo feedback en nuestro Discord. Pásate a saludar:',
     signatureRole: 'Founder, CodeAgentSwarm',
     footerLine: 'Recibes este correo porque pediste el enlace de descarga en codeagentswarm.com.',
   },
@@ -65,6 +69,10 @@ function escapeHtml(value: string): string {
 
 const FONT_STACK =
   "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+
+// Branded redirect to the community Discord (next.config.js rewrites /discord
+// to the real invite, so the invite can rotate without touching sent emails).
+const DISCORD_URL = 'https://www.codeagentswarm.com/discord'
 
 function renderButton(link: DownloadLinkEntry): string {
   return `
@@ -99,6 +107,9 @@ export function renderDownloadLinkEmail(
     `${copy.versionLabel} ${version}`,
     '',
     copy.farewell,
+    '',
+    `${copy.discordLine} ${DISCORD_URL}`,
+    '',
     'Arturo',
     copy.signatureRole,
   ].join('\n')
@@ -188,6 +199,11 @@ ${buttonsHtml}
 
                     <p class="body-txt" style="margin: 22px 0 0 0; font-size: 16px; line-height: 26px; color: #d4d4d4; font-family: ${FONT_STACK};">
                       ${escapeHtml(copy.farewell)}
+                    </p>
+
+                    <p style="margin: 18px 0 0 0; font-size: 14px; line-height: 22px; color: #999999; font-family: ${FONT_STACK};">
+                      ${escapeHtml(copy.discordLine)}
+                      <a href="${DISCORD_URL}" target="_blank" style="color: #fbbf24; text-decoration: underline;">codeagentswarm.com/discord</a>
                     </p>
 
                   </td>
