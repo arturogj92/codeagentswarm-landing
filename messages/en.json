@@ -135,6 +135,7 @@
     "badge": "Core Features",
     "titlePre": "Everything",
     "titleHighlight": "You Need",
+    "subtitle": "One command center for all your AI agents. Run them in parallel, track their work, and never lose context again.",
     "viewGuide": "View guide",
     "items": {
       "multiTerminal": {
