@@ -15,7 +15,7 @@ Todo lo de abajo está contrastado con la documentación oficial de Moonshot. Su
     ctaText: 'Tener Kimi K3 en un terminal y Claude en otro es la forma más rápida de descubrir qué modelo encaja en cada trabajo. CodeAgentSwarm ejecuta los dos a la vez, cada uno en su terminal, con diffs en vivo, notificaciones de escritorio e historial buscable en todos.',
     highlightedWords: ['Kimi K3', 'Claude Code'],
     publishedAt: '2026-07-17',
-    updatedAt: '2026-07-17',
+    updatedAt: '2026-07-18',
     alternateSlug: 'kimi-k3-with-claude-code',
   },
   sections: [
@@ -43,6 +43,10 @@ Todo lo de abajo está contrastado con la documentación oficial de Moonshot. Su
           type: 'callout',
           variant: 'info',
           content: 'No confundas el modelo con la CLI. Kimi K3 es el modelo. Kimi Code CLI es el agente de terminal propio de Moonshot, un producto aparte que compite con Claude Code. Esta guía va de ejecutar el modelo K3 dentro de Claude Code, que no necesita ninguna CLI nueva.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Si lo que quieres es probar la CLI propia de Moonshot, la cubrimos aparte: <a href="/es/guias/como-usar-kimi-code" class="text-neon-cyan hover:text-neon-purple transition-colors">cómo instalar y usar Kimi Code</a>, <a href="/es/guias/planes-y-precios-de-kimi-code" class="text-neon-cyan hover:text-neon-purple transition-colors">qué incluye de verdad cada plan de Kimi</a> y el cara a cara <a href="/es/guias/kimi-code-vs-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi Code vs Claude Code</a>. Tampoco tienes que elegir una sola herramienta: CodeAgentSwarm ejecuta Kimi Code como agente de primera junto a Claude Code, un terminal en cada uno, sobre el mismo proyecto.',
         },
       ],
     },

@@ -15,7 +15,7 @@ I run mixed swarms most days. Below I cover what an AI CLI agent swarm really is
     ctaText: 'Run Claude Code, Codex and Gemini side by side in one CodeAgentSwarm workspace. Multiple agents, shared visibility, one place to watch them all.',
     highlightedWords: ['AI CLI agent swarm', 'in parallel'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-06-07',
+    updatedAt: '2026-07-18',
     alternateSlug: 'enjambre-de-agentes-cli-ia',
   },
   sections: [
@@ -48,7 +48,7 @@ I run mixed swarms most days. Below I cover what an AI CLI agent swarm really is
         },
         {
           type: 'paragraph',
-          text: 'If you only care about one vendor, the per-tool guides go deeper: <a href="/en/guides/run-multiple-claude-code-sessions" class="text-neon-cyan hover:text-neon-purple transition-colors">running multiple Claude Code sessions</a>, the <a href="/en/guides/codex-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex agent swarm</a>, and the <a href="/en/guides/gemini-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Gemini agent swarm</a>. This page is the cross-vendor view, where you mix them.',
+          text: 'If you only care about one vendor, the per-tool guides go deeper: <a href="/en/guides/run-multiple-claude-code-sessions" class="text-neon-cyan hover:text-neon-purple transition-colors">running multiple Claude Code sessions</a>, the <a href="/en/guides/codex-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex agent swarm</a>, the <a href="/en/guides/gemini-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Gemini agent swarm</a>, the <a href="/en/guides/opencode-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">OpenCode agent swarm</a>, and the <a href="/en/guides/kimi-code-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi Code agent swarm</a>. This page is the cross-vendor view, where you mix them.',
         },
       ],
     },

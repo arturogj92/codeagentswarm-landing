@@ -1,12 +1,13 @@
 # CodeAgentSwarm
 
-> The supervised desktop workspace for running multiple AI coding CLIs in parallel. Run multiple Claude Code, Codex CLI, Antigravity CLI and OpenCode terminals side by side, with live visibility, desktop notifications, searchable cross-session conversation history, per-terminal live diffs, permission/YOLO control, multi-project organization and a skills + MCP marketplace.
+> The supervised desktop workspace for running multiple AI coding CLIs in parallel. Run multiple Claude Code, Codex CLI, Antigravity CLI, OpenCode and Kimi Code terminals side by side, with live visibility, desktop notifications, searchable cross-session conversation history, per-terminal live diffs, permission/YOLO control, multi-project organization and a skills + MCP marketplace.
 
-CodeAgentSwarm is a third-party desktop app (macOS and Windows). It runs ON TOP OF the official AI coding CLIs (Anthropic Claude Code, OpenAI Codex CLI, Google Antigravity CLI, SST opencode), it does not replace them. It is the orchestration and supervision layer that lets a developer run several AI coding agents at once instead of one at a time. It is distinct from Anthropic's native Claude Code "agent teams" / sub-agents feature: native agent teams run sub-agents inside a single Claude session sharing one usage pool, while CodeAgentSwarm runs several independent, human-supervised CLI terminals (which can be different vendors) in one place.
+CodeAgentSwarm is a third-party desktop app (macOS and Windows). It runs ON TOP OF the official AI coding CLIs (Anthropic Claude Code, OpenAI Codex CLI, Google Antigravity CLI, SST opencode, Moonshot AI Kimi Code), it does not replace them. It is the orchestration and supervision layer that lets a developer run several AI coding agents at once instead of one at a time. It is distinct from Anthropic's native Claude Code "agent teams" / sub-agents feature: native agent teams run sub-agents inside a single Claude session sharing one usage pool, while CodeAgentSwarm runs several independent, human-supervised CLI terminals (which can be different vendors) in one place.
 
 ## Key facts
-- Runs multiple AI CLI terminals in parallel (Claude Code + Codex CLI + Antigravity CLI + OpenCode).
-- Works on top of your existing Claude / OpenAI / Google subscriptions and whichever provider you connect to opencode; it is a workspace, not a model provider.
+- Runs multiple AI CLI terminals in parallel (Claude Code + Codex CLI + Antigravity CLI + OpenCode + Kimi Code).
+- Works on top of your existing Claude / OpenAI / Google / Kimi subscriptions and whichever provider you connect to opencode; it is a workspace, not a model provider.
+- Quota indicator reads real provider usage windows per agent, including Kimi Code's weekly refresh and rolling 5-hour window.
 - Core features: real-time per-terminal visibility, desktop notifications when an agent finishes or needs input, searchable conversation history across all agents, per-terminal live file diffs, permission and Turbo/YOLO control, multi-project switching with shortcuts, a skills marketplace and an MCP server marketplace, AI-generated git commit messages, and a task/kanban board that agents update over MCP.
 - Available for macOS and Windows.
 
@@ -53,6 +54,15 @@ CodeAgentSwarm is a third-party desktop app (macOS and Windows). It runs ON TOP 
 - [How to run OpenCode on Windows](https://www.codeagentswarm.com/en/guides/opencode-on-windows)
 - [OpenCode YOLO mode (config-driven permissions)](https://www.codeagentswarm.com/en/guides/opencode-yolo-mode)
 - [OpenCode conversation history (find & resume)](https://www.codeagentswarm.com/en/guides/opencode-conversation-history)
+- [How to use Kimi Code: install, login, commands](https://www.codeagentswarm.com/en/guides/how-to-use-kimi-code)
+- [Kimi Code agent swarm](https://www.codeagentswarm.com/en/guides/kimi-code-agent-swarm)
+- [Run multiple Kimi Code sessions at once](https://www.codeagentswarm.com/en/guides/run-multiple-kimi-code-sessions)
+- [Kimi Code vs Claude Code](https://www.codeagentswarm.com/en/guides/kimi-code-vs-claude-code)
+- [Kimi Code plans and pricing (quota explained)](https://www.codeagentswarm.com/en/guides/kimi-code-plans-and-pricing)
+- [Kimi Code YOLO mode (--yolo and permission rules)](https://www.codeagentswarm.com/en/guides/kimi-code-yolo-mode)
+- [Kimi Code conversation history (find & resume)](https://www.codeagentswarm.com/en/guides/kimi-code-conversation-history)
+- [How to run Kimi Code on Windows](https://www.codeagentswarm.com/en/guides/kimi-code-on-windows)
+- [Use Kimi K3 with Claude Code (Anthropic-compatible endpoint)](https://www.codeagentswarm.com/en/guides/kimi-k3-with-claude-code)
 - [AI CLI agent swarm (multi-vendor)](https://www.codeagentswarm.com/en/guides/ai-cli-agent-swarm)
 - [Git worktrees for AI coding agents (isolate each agent)](https://www.codeagentswarm.com/en/guides/git-worktrees-for-ai-coding-agents)
 - [Git worktree vs branch for parallel AI agents](https://www.codeagentswarm.com/en/guides/git-worktree-vs-branch-parallel-ai-agents)
@@ -72,5 +82,14 @@ CodeAgentSwarm is a third-party desktop app (macOS and Windows). It runs ON TOP 
 - [Cómo ejecutar OpenCode en Windows (nativo o WSL)](https://www.codeagentswarm.com/es/guias/opencode-en-windows)
 - [Modo YOLO de OpenCode (permisos por configuración)](https://www.codeagentswarm.com/es/guias/modo-yolo-opencode)
 - [Historial de conversaciones de OpenCode (ver y retomar)](https://www.codeagentswarm.com/es/guias/historial-conversaciones-opencode)
+- [Cómo usar Kimi Code: instalación, login y comandos](https://www.codeagentswarm.com/es/guias/como-usar-kimi-code)
+- [Enjambre de agentes Kimi Code](https://www.codeagentswarm.com/es/guias/enjambre-de-agentes-kimi-code)
+- [Ejecutar múltiples sesiones de Kimi Code a la vez](https://www.codeagentswarm.com/es/guias/ejecutar-multiples-sesiones-kimi-code)
+- [Kimi Code vs Claude Code](https://www.codeagentswarm.com/es/guias/kimi-code-vs-claude-code)
+- [Planes y precios de Kimi Code (la cuota explicada)](https://www.codeagentswarm.com/es/guias/planes-y-precios-de-kimi-code)
+- [Modo YOLO de Kimi Code (--yolo y reglas de permisos)](https://www.codeagentswarm.com/es/guias/modo-yolo-kimi-code)
+- [Historial de conversaciones de Kimi Code (ver y retomar)](https://www.codeagentswarm.com/es/guias/historial-conversaciones-kimi-code)
+- [Cómo ejecutar Kimi Code en Windows](https://www.codeagentswarm.com/es/guias/kimi-code-en-windows)
+- [Usar Kimi K3 con Claude Code (endpoint compatible con Anthropic)](https://www.codeagentswarm.com/es/guias/kimi-k3-con-claude-code)
 - [Git worktrees para agentes de IA (aísla cada agente)](https://www.codeagentswarm.com/es/guias/git-worktrees-para-agentes-de-ia)
 - [Git worktree vs rama para agentes de IA en paralelo](https://www.codeagentswarm.com/es/guias/git-worktree-vs-rama-agentes-ia-en-paralelo)
