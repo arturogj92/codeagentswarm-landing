@@ -352,7 +352,7 @@ export default function CTASection() {
       console.log('🔍 Fetching releases...')
       // Use the Next.js API route instead of direct backend call to avoid CORS
       const response = await fetch(
-        '/api/releases?limit=3&preferDmg=true'
+        '/api/releases?limit=5&preferDmg=true'
       )
       if (!response.ok) throw new Error('Failed to fetch release')
       const data = await response.json()
@@ -409,9 +409,9 @@ export default function CTASection() {
   ) || null
   const winX64 = winRelease?.downloads?.['win32-x64'] || null
   const winArm = winRelease?.downloads?.['win32-arm64'] || null
-  // "Older versions" lists macOS DMG downloads, so only show macOS releases
-  // (excluding the one already featured above) to avoid empty Windows-only cards.
-  const olderMacReleases = allReleases.filter(
+  // Keep the historical cards anchored to macOS releases (excluding the one
+  // featured above); Windows is added to each card only when its build exists.
+  const olderReleasesWithMac = allReleases.filter(
     (r) =>
       (r.formattedDownloads?.macArm || r.formattedDownloads?.macIntel) &&
       r.version !== macRelease?.version
@@ -720,7 +720,7 @@ export default function CTASection() {
                 )}
 
                 {/* Older Versions Toggle */}
-                {olderMacReleases.length > 0 && (
+                {olderReleasesWithMac.length > 0 && (
                   <div className="mt-8 text-center">
                     <button
                       onClick={() => setShowOlderVersions(!showOlderVersions)}
@@ -746,7 +746,7 @@ export default function CTASection() {
                       className="overflow-hidden"
                     >
                       <div className="pt-6 mt-6 border-t border-white/10 space-y-4">
-                        {olderMacReleases.map((release) => (
+                        {olderReleasesWithMac.map((release) => (
                           <div
                             key={release.version}
                             className="p-4 rounded-xl bg-neutral-900 border border-white/10"
@@ -762,7 +762,7 @@ export default function CTASection() {
                               </div>
                             </div>
 
-                            <div className="grid grid-cols-2 gap-3">
+                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                               {release.formattedDownloads.macArm && (
                                 <a
                                   href={getDirectDownloadUrl(release.version, 'arm64')}
@@ -792,6 +792,22 @@ export default function CTASection() {
                                     className="opacity-70 invert"
                                   />
                                   <span className="text-neutral-400">{t('platforms.intel')}</span>
+                                  <Download className="w-3 h-3 text-neutral-500" />
+                                </a>
+                              )}
+                              {release.downloads?.['win32-x64'] && (
+                                <a
+                                  href={getTrackedDownloadUrl(release.version, 'windows-x64')}
+                                  className="flex items-center justify-center gap-2 px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg transition-colors text-sm"
+                                >
+                                  <Image
+                                    src="/icons/windows-logo.png"
+                                    alt="Windows"
+                                    width={14}
+                                    height={14}
+                                    className="opacity-70"
+                                  />
+                                  <span className="text-neutral-400">{t('platforms.windows')}</span>
                                   <Download className="w-3 h-3 text-neutral-500" />
                                 </a>
                               )}
