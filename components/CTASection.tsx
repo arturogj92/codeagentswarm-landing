@@ -762,7 +762,7 @@ export default function CTASection() {
                               </div>
                             </div>
 
-                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
                               {release.formattedDownloads.macArm && (
                                 <a
                                   href={getDirectDownloadUrl(release.version, 'arm64')}
@@ -802,12 +802,28 @@ export default function CTASection() {
                                 >
                                   <Image
                                     src="/icons/windows-logo.png"
-                                    alt="Windows"
+                                    alt="Windows x64"
                                     width={14}
                                     height={14}
                                     className="opacity-70"
                                   />
-                                  <span className="text-neutral-400">{t('platforms.windows')}</span>
+                                  <span className="text-neutral-400">{t('platforms.windows')} {t('platforms.windowsX64')}</span>
+                                  <Download className="w-3 h-3 text-neutral-500" />
+                                </a>
+                              )}
+                              {release.downloads?.['win32-arm64'] && (
+                                <a
+                                  href={getTrackedDownloadUrl(release.version, 'windows-arm64')}
+                                  className="flex items-center justify-center gap-2 px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg transition-colors text-sm"
+                                >
+                                  <Image
+                                    src="/icons/windows-logo.png"
+                                    alt="Windows ARM64"
+                                    width={14}
+                                    height={14}
+                                    className="opacity-70"
+                                  />
+                                  <span className="text-neutral-400">{t('platforms.windows')} {t('platforms.windowsArm')}</span>
                                   <Download className="w-3 h-3 text-neutral-500" />
                                 </a>
                               )}
