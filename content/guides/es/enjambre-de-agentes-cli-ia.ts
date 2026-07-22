@@ -15,7 +15,7 @@ Yo trabajo con enjambres mixtos casi todos los días. Aquí te cuento qué es re
     ctaText: 'Ejecuta Claude Code, Codex y Gemini en paralelo en un solo workspace de CodeAgentSwarm. Varios agentes, visibilidad compartida y un único sitio desde el que vigilarlos.',
     highlightedWords: ['enjambre de agentes CLI de IA', 'en paralelo'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-06-07',
+    updatedAt: '2026-07-18',
     alternateSlug: 'ai-cli-agent-swarm',
   },
   sections: [
@@ -48,7 +48,7 @@ Yo trabajo con enjambres mixtos casi todos los días. Aquí te cuento qué es re
         },
         {
           type: 'paragraph',
-          text: 'Si solo te interesa un proveedor, las guías por herramienta entran en más detalle: <a href="/es/guias/ejecutar-multiples-sesiones-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">ejecutar varias sesiones de Claude Code</a>, el <a href="/es/guias/enjambre-de-agentes-codex" class="text-neon-cyan hover:text-neon-purple transition-colors">enjambre de agentes Codex</a> y el <a href="/es/guias/enjambre-de-agentes-gemini" class="text-neon-cyan hover:text-neon-purple transition-colors">enjambre de agentes Gemini</a>. Esta página es la vista entre proveedores, donde los mezclas.',
+          text: 'Si solo te interesa un proveedor, las guías por herramienta entran en más detalle: <a href="/es/guias/ejecutar-multiples-sesiones-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">ejecutar varias sesiones de Claude Code</a>, el <a href="/es/guias/enjambre-de-agentes-codex" class="text-neon-cyan hover:text-neon-purple transition-colors">enjambre de agentes Codex</a>, el <a href="/es/guias/enjambre-de-agentes-gemini" class="text-neon-cyan hover:text-neon-purple transition-colors">enjambre de agentes Gemini</a>, el <a href="/es/guias/enjambre-de-agentes-opencode" class="text-neon-cyan hover:text-neon-purple transition-colors">enjambre de agentes OpenCode</a> y el <a href="/es/guias/enjambre-de-agentes-kimi-code" class="text-neon-cyan hover:text-neon-purple transition-colors">enjambre de agentes Kimi Code</a>. Esta página es la vista entre proveedores, donde los mezclas.',
         },
       ],
     },

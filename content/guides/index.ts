@@ -46,6 +46,14 @@ import enGitWorktreeVsBranch from './en/git-worktree-vs-branch-parallel-ai-agent
 import enClaudeDashboard from './en/claude-code-dashboard'
 import enCodexGui from './en/codex-gui'
 import enKimiK3WithClaudeCode from './en/kimi-k3-with-claude-code'
+import enHowToUseKimiCode from './en/how-to-use-kimi-code'
+import enKimiCodeAgentSwarm from './en/kimi-code-agent-swarm'
+import enRunMultipleKimiCode from './en/run-multiple-kimi-code-sessions'
+import enKimiCodeVsClaudeCode from './en/kimi-code-vs-claude-code'
+import enKimiCodePlans from './en/kimi-code-plans-and-pricing'
+import enKimiCodeYolo from './en/kimi-code-yolo-mode'
+import enKimiCodeHistory from './en/kimi-code-conversation-history'
+import enKimiCodeWindows from './en/kimi-code-on-windows'
 
 // Spanish guides
 import esMultipleTerminals from './es/como-usar-varios-terminales-claude-code'
@@ -91,6 +99,14 @@ import esGitWorktreeVsBranch from './es/git-worktree-vs-rama-agentes-ia-en-paral
 import esClaudeDashboard from './es/panel-de-control-claude-code'
 import esCodexGui from './es/interfaz-grafica-codex'
 import esKimiK3ConClaudeCode from './es/kimi-k3-con-claude-code'
+import esComoUsarKimiCode from './es/como-usar-kimi-code'
+import esKimiCodeAgentSwarm from './es/enjambre-de-agentes-kimi-code'
+import esRunMultipleKimiCode from './es/ejecutar-multiples-sesiones-kimi-code'
+import esKimiCodeVsClaudeCode from './es/kimi-code-vs-claude-code'
+import esKimiCodePlans from './es/planes-y-precios-de-kimi-code'
+import esKimiCodeYolo from './es/modo-yolo-kimi-code'
+import esKimiCodeHistory from './es/historial-conversaciones-kimi-code'
+import esKimiCodeWindows from './es/kimi-code-en-windows'
 
 // Registry of all guides by locale and slug
 export const guides: Record<string, Record<string, Guide>> = {
@@ -138,6 +154,14 @@ export const guides: Record<string, Record<string, Guide>> = {
     'claude-code-dashboard': enClaudeDashboard,
     'codex-gui': enCodexGui,
     'kimi-k3-with-claude-code': enKimiK3WithClaudeCode,
+    'how-to-use-kimi-code': enHowToUseKimiCode,
+    'kimi-code-agent-swarm': enKimiCodeAgentSwarm,
+    'run-multiple-kimi-code-sessions': enRunMultipleKimiCode,
+    'kimi-code-vs-claude-code': enKimiCodeVsClaudeCode,
+    'kimi-code-plans-and-pricing': enKimiCodePlans,
+    'kimi-code-yolo-mode': enKimiCodeYolo,
+    'kimi-code-conversation-history': enKimiCodeHistory,
+    'kimi-code-on-windows': enKimiCodeWindows,
   },
   es: {
     'como-usar-varios-terminales-claude-code': esMultipleTerminals,
@@ -183,6 +207,14 @@ export const guides: Record<string, Record<string, Guide>> = {
     'panel-de-control-claude-code': esClaudeDashboard,
     'interfaz-grafica-codex': esCodexGui,
     'kimi-k3-con-claude-code': esKimiK3ConClaudeCode,
+    'como-usar-kimi-code': esComoUsarKimiCode,
+    'enjambre-de-agentes-kimi-code': esKimiCodeAgentSwarm,
+    'ejecutar-multiples-sesiones-kimi-code': esRunMultipleKimiCode,
+    'kimi-code-vs-claude-code': esKimiCodeVsClaudeCode,
+    'planes-y-precios-de-kimi-code': esKimiCodePlans,
+    'modo-yolo-kimi-code': esKimiCodeYolo,
+    'historial-conversaciones-kimi-code': esKimiCodeHistory,
+    'kimi-code-en-windows': esKimiCodeWindows,
   },
 }
 

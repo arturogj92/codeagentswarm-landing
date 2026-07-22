@@ -253,7 +253,7 @@ En esta guía repaso las tres formas prácticas de ejecutar varios agentes de Ge
         {
           type: 'callout',
           variant: 'tip',
-          content: 'Un enjambre de agentes Gemini es una variante de una idea más amplia. Para la foto completa entre proveedores, empieza por <a href="/es/guias/ai-cli-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">el hub del enjambre de agentes de CLI de IA</a>, y luego compáralo con <a href="/es/guias/codex-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">el enjambre de agentes Codex</a> y con <a href="/es/guias/ejecutar-multiples-sesiones-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">ejecutar varias sesiones de Claude Code</a>.',
+          content: 'Un enjambre de agentes Gemini es una variante de una idea más amplia. Para la foto completa entre proveedores, empieza por <a href="/es/guias/enjambre-de-agentes-cli-ia" class="text-neon-cyan hover:text-neon-purple transition-colors">el hub del enjambre de agentes de CLI de IA</a>, y luego compáralo con <a href="/es/guias/enjambre-de-agentes-codex" class="text-neon-cyan hover:text-neon-purple transition-colors">el enjambre de agentes Codex</a> y con <a href="/es/guias/ejecutar-multiples-sesiones-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">ejecutar varias sesiones de Claude Code</a>.',
         },
       ],
     },
