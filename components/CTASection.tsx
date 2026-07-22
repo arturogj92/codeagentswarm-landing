@@ -928,7 +928,7 @@ export default function CTASection() {
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-neutral-500 mb-4">
             <div>
-              <span className="text-neutral-400 font-medium">macOS:</span> {t('requirements.macos')}
+              <span className="text-neutral-400 font-medium">{t('requirements.osLabel')}:</span> {t('requirements.os')}
             </div>
             <div>
               <span className="text-neutral-400 font-medium">{t('requirements.memoryLabel')}:</span> {t('requirements.memory')}
@@ -937,7 +937,7 @@ export default function CTASection() {
               <span className="text-neutral-400 font-medium">{t('requirements.storageLabel')}:</span> {t('requirements.storage')}
             </div>
             <div>
-              <span className="text-neutral-400 font-medium">Claude Code:</span> {t('requirements.claudeCode')}
+              <span className="text-neutral-400 font-medium">{t('requirements.agentLabel')}:</span> {t('requirements.claudeCode')}
             </div>
           </div>
           <p className="text-neutral-600 text-xs pt-4 border-t border-white/10">

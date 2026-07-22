@@ -17,8 +17,8 @@ export async function generateMetadata({
     : 'CodeAgentSwarm Open Beta – Free Pro Access with Multiple AI CLI Terminals'
 
   const description = isSpanish
-    ? 'Unete a la open beta y accede gratis al plan Pro completo. Multiples terminales AI CLI (Claude Code, Codex, Antigravity CLI, OpenCode) en paralelo, visibilidad en tiempo real, notificaciones, historial de conversaciones y gestion de multiples proyectos.'
-    : 'Join the open beta and get full Pro tier access for free. Multiple AI CLI terminals (Claude Code, Codex, Antigravity CLI, OpenCode) in parallel, real-time visibility, notifications, conversation history and multi-project management.'
+    ? 'Unete a la open beta y accede gratis al plan Pro completo. Multiples terminales AI CLI (Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code) en paralelo, visibilidad en tiempo real, notificaciones, historial de conversaciones y gestion de multiples proyectos.'
+    : 'Join the open beta and get full Pro tier access for free. Multiple AI CLI terminals (Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code) in parallel, real-time visibility, notifications, conversation history and multi-project management.'
 
   return {
     title,
@@ -29,6 +29,7 @@ export async function generateMetadata({
       'Codex CLI beta',
       'Antigravity CLI beta',
       'OpenCode beta',
+      'Kimi Code beta',
       'AI coding workspace beta',
       'AI CLI workspace',
       'free pro access',
@@ -36,6 +37,7 @@ export async function generateMetadata({
       'multiple Codex terminals',
       'multiple Antigravity CLI terminals',
       'multiple OpenCode terminals',
+      'multiple Kimi Code terminals',
       'real time visibility',
       'AI CLI notifications',
       'Claude Code notifications',
@@ -55,8 +57,8 @@ export async function generateMetadata({
         ? 'CodeAgentSwarm Open Beta – Acceso Pro Gratis para AI CLI'
         : 'CodeAgentSwarm Open Beta – Free Pro Access for AI CLI',
       description: isSpanish
-        ? 'Unete a la open beta y accede gratis al plan Pro. Multiples terminales AI CLI (Claude Code, Codex, Antigravity CLI, OpenCode) con visibilidad en tiempo real.'
-        : 'Join the open beta and get free Pro tier access. Multiple AI CLI terminals (Claude Code, Codex, Antigravity CLI, OpenCode) with real-time visibility.',
+        ? 'Unete a la open beta y accede gratis al plan Pro. Multiples terminales AI CLI (Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code) con visibilidad en tiempo real.'
+        : 'Join the open beta and get free Pro tier access. Multiple AI CLI terminals (Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code) with real-time visibility.',
       type: 'website',
       siteName: 'CodeAgentSwarm',
       url: canonicalUrl,
@@ -78,8 +80,8 @@ export async function generateMetadata({
         ? 'CodeAgentSwarm Open Beta – Pro Gratis para AI CLI'
         : 'CodeAgentSwarm Open Beta – Free Pro for AI CLI',
       description: isSpanish
-        ? 'Unete a la beta y accede gratis a multiples terminales AI CLI (Claude Code, Codex, Antigravity CLI, OpenCode) en paralelo.'
-        : 'Join the open beta and get free Pro tier access to multiple parallel AI CLI terminals (Claude Code, Codex, Antigravity CLI, OpenCode).',
+        ? 'Unete a la beta y accede gratis a multiples terminales AI CLI (Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code) en paralelo.'
+        : 'Join the open beta and get free Pro tier access to multiple parallel AI CLI terminals (Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code).',
       images: ['/og.png'],
     },
   }

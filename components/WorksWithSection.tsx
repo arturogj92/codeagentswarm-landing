@@ -16,7 +16,7 @@ export default function WorksWithSection() {
   const guidePath = (enSlug: string, esSlug: string) =>
     es ? `/es/guias/${esSlug}` : `/en/guides/${enSlug}`
 
-  type Tool = { name: string; desc: string; href: string; icon: string; comingSoon?: boolean }
+  type Tool = { name: string; desc: string; href: string; icon: string; comingSoon?: boolean; isNew?: boolean }
   const tools: Tool[] = [
     {
       name: 'Claude Code',
@@ -54,13 +54,23 @@ export default function WorksWithSection() {
       href: guidePath('opencode-agent-swarm', 'enjambre-de-agentes-opencode'),
       icon: '/icons/apps/opencode-icon.svg',
     },
+    {
+      name: 'Kimi Code',
+      desc: g(
+        'Run a Kimi Code swarm on Moonshot K3, side by side with the rest.',
+        'Monta un enjambre de Kimi Code con K3 de Moonshot, junto al resto.'
+      ),
+      href: guidePath('kimi-code-agent-swarm', 'enjambre-de-agentes-kimi-code'),
+      icon: '/icons/apps/kimi-icon.png',
+      isNew: true,
+    },
   ]
 
   const umbrellaHref = guidePath('ai-cli-agent-swarm', 'enjambre-de-agentes-cli-ia')
 
   return (
     <section ref={ref} className="relative py-20 md:py-28 px-6 overflow-hidden">
-      <div className="max-w-5xl mx-auto relative z-10">
+      <div className="max-w-6xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
@@ -76,26 +86,26 @@ export default function WorksWithSection() {
           </h2>
           <p className="text-white/70 text-lg max-w-2xl mx-auto">
             {g(
-              'One workspace for Claude Code, Codex CLI, Antigravity CLI and OpenCode. Run them in parallel, mix vendors, and watch all of them from one place.',
-              'Un espacio de trabajo para Claude Code, Codex CLI, Antigravity CLI y OpenCode. Ejecútalos en paralelo, mezcla proveedores y vigílalos todos desde un sitio.'
+              'One workspace for Claude Code, Codex CLI, Antigravity CLI, OpenCode and Kimi Code. Run them in parallel, mix vendors, and watch all of them from one place.',
+              'Un espacio de trabajo para Claude Code, Codex CLI, Antigravity CLI, OpenCode y Kimi Code. Ejecútalos en paralelo, mezcla proveedores y vigílalos todos desde un sitio.'
             )}
           </p>
         </motion.div>
 
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-5">
           {tools.map((tool, i) => {
             const inner = (
               <>
-                <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-4">
+                <div className="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-3">
                   <img
                     src={tool.icon}
                     alt=""
                     aria-hidden="true"
-                    className={tool.comingSoon ? 'w-8 h-8' : 'w-7 h-7'}
+                    className={tool.comingSoon ? 'w-7 h-7' : 'w-6 h-6'}
                   />
                 </div>
                 <div className="flex items-center gap-2 mb-2 flex-wrap">
-                  <h3 className="text-xl font-semibold text-white group-hover:text-neon-cyan transition-colors">
+                  <h3 className="text-lg font-semibold text-white group-hover:text-neon-cyan transition-colors">
                     {tool.name}
                   </h3>
                   {tool.comingSoon && (
@@ -103,10 +113,15 @@ export default function WorksWithSection() {
                       {g('Soon', 'Próximamente')}
                     </span>
                   )}
+                  {tool.isNew && (
+                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-neon-cyan/15 text-neon-cyan font-medium">
+                      {g('New', 'Nuevo')}
+                    </span>
+                  )}
                 </div>
-                <p className="text-white/70 leading-relaxed mb-4">{tool.desc}</p>
+                <p className="text-white/70 text-sm leading-relaxed mb-4">{tool.desc}</p>
                 {!tool.comingSoon && (
-                  <span className="inline-flex items-center gap-1 text-sm text-neon-cyan">
+                  <span className="mt-auto inline-flex items-center gap-1 text-sm text-neon-cyan">
                     {g('Read the guide', 'Ver la guía')}
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </span>
@@ -121,13 +136,13 @@ export default function WorksWithSection() {
                 transition={{ duration: 0.5, delay: 0.1 * i }}
               >
                 {tool.comingSoon ? (
-                  <div className="block h-full rounded-2xl glass border border-dashed border-white/15 p-6 opacity-70 cursor-default">
+                  <div className="flex flex-col h-full rounded-2xl glass border border-dashed border-white/15 p-5 opacity-70 cursor-default">
                     {inner}
                   </div>
                 ) : (
                   <Link
                     href={tool.href}
-                    className="group block h-full rounded-2xl glass border border-white/10 p-6 transition-colors hover:border-neon-cyan/40"
+                    className="group flex flex-col h-full rounded-2xl glass border border-white/10 p-5 transition-colors hover:border-neon-cyan/40"
                   >
                     {inner}
                   </Link>

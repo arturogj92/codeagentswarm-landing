@@ -4,6 +4,7 @@ import { motion, useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
 import { ChevronDown } from 'lucide-react'
 import { useTranslations } from 'next-intl'
+import { buildFaqItems } from '@/lib/faq-items'
 
 function FAQItem({ question, answer, index }: { question: string; answer: string; index: number }) {
   const [isOpen, setIsOpen] = useState(false)
@@ -44,22 +45,7 @@ export default function FAQSection() {
   const sectionRef = useRef(null)
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' })
 
-  const faqs = [
-    { q: t('items.q1'), a: t('items.a1') },
-    { q: t('items.q2'), a: t('items.a2') },
-    { q: t('items.q3'), a: t('items.a3') },
-    { q: t('items.q4'), a: t('items.a4') },
-    { q: t('items.q5'), a: t('items.a5') },
-    { q: t('items.q6'), a: t('items.a6') },
-    { q: t('items.q7'), a: t('items.a7') },
-    { q: t('items.q8'), a: t('items.a8') },
-    { q: t('items.q9'), a: t('items.a9') },
-    { q: t('items.q10'), a: t('items.a10') },
-    { q: t('items.q11'), a: t('items.a11') },
-    { q: t('items.q12'), a: t('items.a12') },
-    { q: t('items.q13'), a: t('items.a13') },
-    { q: t('items.q14'), a: t('items.a14') },
-  ]
+  const faqs = buildFaqItems(t)
 
   return (
     <section

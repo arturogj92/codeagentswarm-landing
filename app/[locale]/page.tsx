@@ -20,6 +20,7 @@ import FAQSection from '@/components/FAQSection'
 import GuidesSection from '@/components/GuidesSection'
 import CTASection from '@/components/CTASection'
 import Footer from '@/components/Footer'
+import { buildFaqItems } from '@/lib/faq-items'
 
 export default function Home() {
   const locale = useLocale()
@@ -32,8 +33,8 @@ export default function Home() {
     '@type': 'SoftwareApplication',
     name: 'CodeAgentSwarm',
     description: locale === 'es'
-      ? 'Espacio de trabajo con IA para terminales Claude Code, Codex, Antigravity CLI y OpenCode con herramientas MCP'
-      : 'AI coding workspace for Claude Code, Codex, Antigravity CLI and OpenCode terminals with MCP tools',
+      ? 'Espacio de trabajo con IA para terminales Claude Code, Codex, Antigravity CLI, OpenCode y Kimi Code con herramientas MCP'
+      : 'AI coding workspace for Claude Code, Codex, Antigravity CLI, OpenCode and Kimi Code terminals with MCP tools',
     url: baseUrl,
     applicationCategory: 'DeveloperApplication',
     operatingSystem: 'macOS, Windows',
@@ -50,23 +51,9 @@ export default function Home() {
     },
   }
 
-  // FAQPage schema from actual visible FAQ section
-  const faqItems = [
-    { q: t('items.q1'), a: t('items.a1') },
-    { q: t('items.q2'), a: t('items.a2') },
-    { q: t('items.q3'), a: t('items.a3') },
-    { q: t('items.q4'), a: t('items.a4') },
-    { q: t('items.q5'), a: t('items.a5') },
-    { q: t('items.q6'), a: t('items.a6') },
-    { q: t('items.q7'), a: t('items.a7') },
-    { q: t('items.q8'), a: t('items.a8') },
-    { q: t('items.q9'), a: t('items.a9') },
-    { q: t('items.q10'), a: t('items.a10') },
-    { q: t('items.q11'), a: t('items.a11') },
-    { q: t('items.q12'), a: t('items.a12') },
-    { q: t('items.q13'), a: t('items.a13') },
-    { q: t('items.q14'), a: t('items.a14') },
-  ]
+  // FAQPage schema. Comparte la lista con el acordeón visible (FAQSection) para
+  // que el schema no se quede corto cuando se añade una pregunta.
+  const faqItems = buildFaqItems(t)
 
   const jsonLdFaq = {
     '@context': 'https://schema.org',
