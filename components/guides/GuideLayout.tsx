@@ -12,7 +12,6 @@ import TableOfContents from './TableOfContents'
 import ContentRenderer from './ContentRenderer'
 import FAQAccordion from './FAQAccordion'
 import GuideProductBlock, { pickGuideVideo } from './GuideProductBlock'
-import StickyDownloadBar from './StickyDownloadBar'
 
 interface GuideLayoutProps {
   guide: Guide
@@ -220,9 +219,6 @@ export default function GuideLayout({ guide }: GuideLayoutProps) {
           </aside>
         </div>
       </div>
-
-      {/* Bottom download bar (appears past 25% scroll, dismissible per session) */}
-      <StickyDownloadBar locale={locale} slug={meta.slug} />
     </div>
   )
 }
