@@ -11,7 +11,7 @@ import FeaturesSection from '@/components/FeaturesSection'
 import WorksWithSection from '@/components/WorksWithSection'
 // import DemoSection from '@/components/DemoSection'
 import MCPSection from '@/components/MCPSection'
-import SocialProofSection from '@/components/SocialProofSection'
+// import SocialProofSection from '@/components/SocialProofSection'
 // import SwarmiSection from '@/components/SwarmiSection'
 import BringYourOwnSubSection from '@/components/BringYourOwnSubSection'
 import PricingSection from '@/components/PricingSection'
@@ -165,7 +165,7 @@ export default function Home() {
         <WorksWithSection />
         {/* <DemoSection /> */}
         <MCPSection />
-        <SocialProofSection />
+        {/* <SocialProofSection /> */}
         {/* <SwarmiSection /> */}
         <BringYourOwnSubSection />
         <PricingSection />

@@ -6,6 +6,11 @@ import { Star, Quote, Code, Zap, TrendingUp } from 'lucide-react'
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 
+// NOT MOUNTED on the home page since 2026-07-27: the only visible part left was the
+// 4-card stats grid, which repeated FeaturesSection with low-contrast copy that still
+// talked about Claude only. Kept here (and its socialProof keys in messages/) so the
+// testimonials can come back once we have real ones. Re-add it in app/[locale]/page.tsx.
+
 // Feature flag: Set to true when real testimonials are available
 // Currently disabled because testimonials are placeholder content
 const SHOW_TESTIMONIALS = false
