@@ -47,6 +47,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       languages: {
         en: alternateUrl,
         es: canonicalUrl,
+        // English is the fallback for any language we don't publish.
+        'x-default': alternateUrl,
       },
     },
     openGraph: {
