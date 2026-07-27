@@ -13,6 +13,7 @@ Full disclosure: we build CodeAgentSwarm. That is exactly why this page says out
 
 Short version: if you want to start a job at your desk and check on it from a train, or you need software you can host and audit yourself, Paseo fits better. If you work on a Mac or a Windows machine and want five agent CLIs, a shared task board and one searchable history across all of them, that is where CodeAgentSwarm earns its place.`,
     ctaText: 'If your work happens at a desk on macOS or Windows and you want five agent CLIs, live diffs and a shared task board in one window, download CodeAgentSwarm and run your next batch of agents in parallel.',
+    ctaAgent: 'comparison',
     highlightedWords: ['Paseo', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
     updatedAt: '2026-07-26',

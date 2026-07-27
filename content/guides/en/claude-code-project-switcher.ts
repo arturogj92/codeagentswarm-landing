@@ -17,6 +17,7 @@ CodeAgentSwarm has navbar project shortcuts for exactly this. You save a shortcu
     updatedAt: '2026-06-07',
     alternateSlug: 'cambio-rapido-de-proyecto-claude-code',
     ctaText: 'Save a shortcut for each repo you work in and switch between Claude Code projects with a single click, already in the mode you want.',
+    ctaAgent: 'claude-code',
   },
   sections: [
     {

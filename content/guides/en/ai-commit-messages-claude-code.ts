@@ -17,6 +17,7 @@ CodeAgentSwarm has a built-in Git Manager for exactly this. It reads your staged
     updatedAt: '2026-06-07',
     alternateSlug: 'mensajes-de-commit-con-ia-claude-code',
     ctaText: 'Next time your agents leave a pile of changes, open the Git Manager, generate the commit message with AI, and commit without leaving CodeAgentSwarm.',
+    ctaAgent: 'claude-code',
   },
   sections: [
     {

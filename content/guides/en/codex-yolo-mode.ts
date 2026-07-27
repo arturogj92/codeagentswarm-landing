@@ -13,6 +13,7 @@ Codex never officially ships a button labelled YOLO. The term just describes a s
 
 This guide explains what Codex actually offers, from suggest-only up to full auto and the sandbox, what genuinely goes wrong when you run with approvals off, and how to get full-auto speed without losing control. That last part is where CodeAgentSwarm's per-terminal permissions and Turbo Mode come in, so you can run a whole Codex swarm in full auto and still keep guardrails on the dangerous operations.`,
     ctaText: 'Run Codex CLI in full auto without the gamble. Turbo Mode plus per-terminal permissions let you auto-approve the safe work and block the dangerous commands, across every Codex terminal at once.',
+    ctaAgent: 'codex',
     highlightedWords: ['Codex CLI', 'YOLO mode'],
     publishedAt: '2026-06-07',
     updatedAt: '2026-06-07',

@@ -13,6 +13,7 @@ Transparencia por delante: CodeAgentSwarm lo hacemos nosotros. Por eso esta pág
 
 Resumen rápido: elige Superset si quieres un entorno con forma de editor, soporte de Linux y código que puedas leer. Elige CodeAgentSwarm si trabajas con Claude Code, Codex CLI, Antigravity CLI, OpenCode y Kimi Code y necesitas notificaciones, historial y un tablero para no perderles el hilo.`,
     ctaText: 'Las dos se empiezan gratis, así que pruébalas una semana sobre el mismo repositorio. CodeAgentSwarm es gratis durante la beta, con Pro incluido, para macOS y Windows.',
+    ctaAgent: 'comparison',
     highlightedWords: ['Superset', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
     updatedAt: '2026-07-26',

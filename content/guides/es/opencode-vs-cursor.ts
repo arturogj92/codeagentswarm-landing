@@ -13,6 +13,7 @@ Esa diferencia lo cambia todo: cómo das las instrucciones, a qué modelos puede
 
 En esta guía los comparo por capacidad y flujo de trabajo en lugar de perseguir números de benchmarks, y luego te muestro cómo CodeAgentSwarm te deja ejecutar opencode junto a Claude Code y Codex CLI en paralelo.`,
     ctaText: '¿Te gusta opencode pero quieres más de un terminal? Ejecuta varios agentes de opencode en paralelo con CodeAgentSwarm, junto a Claude Code y Codex CLI, todo en un solo workspace.',
+    ctaAgent: 'opencode',
     highlightedWords: ['OpenCode', 'Cursor'],
     publishedAt: '2026-07-05',
     updatedAt: '2026-07-05',

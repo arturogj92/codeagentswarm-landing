@@ -721,9 +721,27 @@
     "productBlock": {
       "overline": "The 30-second way",
       "title": "Skip the manual setup: this is what it looks like in CodeAgentSwarm",
-      "copy": "Multiple Claude Code, Codex and Gemini terminals in one supervised workspace. No tmux, no window juggling, zero context switching.",
-      "button": "Download free",
-      "sub": "macOS & Windows · Free"
+      "copy": "Claude Code, Codex, opencode, Kimi Code and Antigravity in one supervised workspace. No tmux, no window juggling, zero context switching."
+    },
+    "downloadCta": {
+      "button": "Download it free",
+      "otherPlatforms": "Other platforms",
+      "context": {
+        "claudeCode": "CodeAgentSwarm does all of this for you: multiple Claude Code terminals, searchable history and real-time change tracking, in a single app.",
+        "codex": "CodeAgentSwarm does all of this for you: multiple Codex CLI terminals, searchable history and real-time change tracking, in a single app.",
+        "opencode": "CodeAgentSwarm does all of this for you: multiple opencode terminals, searchable history and real-time change tracking, in a single app.",
+        "kimiCode": "CodeAgentSwarm does all of this for you: multiple Kimi Code terminals, searchable history and real-time change tracking, in a single app.",
+        "antigravity": "CodeAgentSwarm does all of this for you: multiple Antigravity CLI terminals, searchable history and real-time change tracking, in a single app.",
+        "multi": "CodeAgentSwarm runs your AI coding agents side by side: Claude Code, Codex, opencode, Kimi Code and Antigravity, with searchable history and real-time change tracking, in a single app.",
+        "comparison": "The fastest way to decide is to try it yourself: CodeAgentSwarm is free, installs in a minute and runs Claude Code, Codex, opencode, Kimi Code and Antigravity side by side."
+      },
+      "platform": {
+        "silicon": "macOS · Apple Silicon",
+        "intel": "macOS · Intel",
+        "windowsX64": "Windows · x64",
+        "windowsArm64": "Windows · ARM64",
+        "generic": "macOS & Windows"
+      }
     },
     "stickyBar": {
       "text": "runs your Claude Code sessions in parallel.",

@@ -13,6 +13,7 @@ Esta guía recorre la versión honesta del setup: qué instalar y en qué orden,
 
 Si estás montando otros agentes en la misma máquina, nuestras guías de <a href="/es/guias/claude-code-en-windows" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code en Windows</a> y de <a href="/es/guias/opencode-en-windows" class="text-neon-cyan hover:text-neon-purple transition-colors">OpenCode en Windows</a> siguen el mismo esquema.`,
     ctaText: 'CodeAgentSwarm es una app de escritorio nativa para Windows que ejecuta tus agentes de código en terminales en paralelo, y Kimi Code es un agente soportado. Notificaciones, historial buscable y diffs en vivo, todo en un mismo espacio de trabajo.',
+    ctaAgent: 'kimi-code',
     highlightedWords: ['Kimi Code', 'Windows'],
     publishedAt: '2026-07-18',
     updatedAt: '2026-07-18',

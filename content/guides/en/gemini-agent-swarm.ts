@@ -13,6 +13,7 @@ So the question is not whether you can run a swarm of Gemini agents. You can. Th
 
 In this guide I will go through the three practical ways to run multiple Gemini CLI agents together, compare them honestly, and explain why a workspace built for this (where you also pick "gemini cli" per terminal) usually beats juggling raw terminals once the swarm grows.`,
     ctaText: 'Run your Gemini agent swarm in CodeAgentSwarm. Pick gemini cli per terminal, watch all of them at once, and get notified when each one finishes.',
+    ctaAgent: 'multi',
     highlightedWords: ['Gemini agent swarm', 'Gemini CLI'],
     publishedAt: '2026-06-07',
     updatedAt: '2026-06-07',

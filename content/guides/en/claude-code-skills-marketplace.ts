@@ -17,6 +17,7 @@ The part I like most: when you install a skill, you choose where it goes. You ca
     updatedAt: '2026-06-07',
     alternateSlug: 'marketplace-de-skills-claude-code',
     ctaText: 'Open the Skills Marketplace in CodeAgentSwarm, find a skill you actually want, and install it to Claude, Gemini or Codex in one click.',
+    ctaAgent: 'claude-code',
   },
   sections: [
     {

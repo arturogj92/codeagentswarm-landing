@@ -13,6 +13,7 @@ Antes de seguir, transparencia total: CodeAgentSwarm lo hacemos nosotros. Justo 
 
 Resumen rápido: si vives en la terminal, trabajas por SSH en máquinas remotas y quieres código abierto AGPL, Claude Squad te encaja mejor. Si prefieres una ventana de escritorio con notificaciones, historial entre agentes, diffs en vivo y cinco proveedores en el mismo sitio, eso es lo que construimos nosotros.`,
     ctaText: 'Si quieres los mismos agentes en paralelo pero con ventana de escritorio, notificaciones e historial buscable de todos los agentes, descarga CodeAgentSwarm y pruébalo junto a Claude Squad.',
+    ctaAgent: 'comparison',
     highlightedWords: ['Claude Squad', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
     updatedAt: '2026-07-26',

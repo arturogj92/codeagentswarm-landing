@@ -13,6 +13,7 @@ Esto es una guía práctica, no una pieza de concepto. Te enseño las tres forma
 
 Al terminar sabrás qué enfoque encaja con tu forma de trabajar, ya quieras dos sesiones rápidas, una configuración de terminal persistente o un espacio de trabajo visual que además te deja ejecutar Antigravity y Claude Code juntos.`,
     ctaText: 'Ejecuta varias sesiones de Antigravity CLI en paralelo con CodeAgentSwarm. Varios terminales, un mismo espacio de trabajo y una notificación de escritorio en cuanto cada sesión agy termina.',
+    ctaAgent: 'antigravity',
     highlightedWords: ['varias sesiones de Antigravity CLI', 'paralelo'],
     publishedAt: '2026-06-29',
     updatedAt: '2026-06-29',

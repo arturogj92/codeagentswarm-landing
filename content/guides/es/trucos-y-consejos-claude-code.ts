@@ -13,6 +13,7 @@ Después de meses de uso diario en decenas de proyectos, estos son los 20 trucos
 
 Tanto si acabas de empezar como si ya usas Claude Code a diario, aquí hay algo para ti. Vamos a ello.`,
     ctaText: 'Lleva tu flujo de trabajo con Claude Code al siguiente nivel con CodeAgentSwarm. Múltiples terminales, notificaciones, historial y mucho más.',
+    ctaAgent: 'claude-code',
     highlightedWords: ['trucos', 'Claude Code'],
     publishedAt: '2026-04-15',
     updatedAt: '2026-04-15',

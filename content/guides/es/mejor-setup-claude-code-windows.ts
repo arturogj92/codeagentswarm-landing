@@ -13,6 +13,7 @@ Esta guía repasa cada pieza de ese setup y por qué importa: la elección de te
 
 Da por hecho que ya tienes Claude Code instalado. Si no, empieza por nuestra guía de <a href="/es/guias/claude-code-en-windows" class="text-neon-cyan hover:text-neon-purple transition-colors">cómo instalar Claude Code en Windows</a> y vuelve.`,
     ctaText: '¿Listo para pasar de un terminal? Descarga CodeAgentSwarm para Windows gratis y ejecuta varias sesiones supervisadas de Claude Code en paralelo.',
+    ctaAgent: 'claude-code',
     highlightedWords: ['Claude Code', 'Windows'],
     publishedAt: '2026-06-12',
     updatedAt: '2026-06-12',

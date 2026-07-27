@@ -13,6 +13,7 @@ Antes de nada, transparencia: nosotros hacemos CodeAgentSwarm, así que somos un
 
 Hay un hallazgo que conviene poner por delante, porque cambia cómo se lee cualquier ranking de estrellas de esta categoría. Los dos repos con más estrellas son los dos con menos actividad reciente: opcode no tiene ningún commit público desde el 16 de octubre de 2025 y Vibe Kanban ninguno desde el 24 de abril de 2026. Cuatro herramientas publicaron código el mismo día en que hicimos la comprobación. Popular y vivo no se miden igual.`,
     ctaText: 'Si quieres sesiones en paralelo supervisadas con Claude Code, Codex CLI, Antigravity CLI, OpenCode y Kimi Code en macOS o Windows, con notificaciones, historial compartido y un kanban que actualizan los propios agentes, CodeAgentSwarm es gratis durante la beta. Descárgalo y júzgalo con la tabla de arriba delante.',
+    ctaAgent: 'comparison',
     highlightedWords: ['agentes de IA', 'paralelo'],
     publishedAt: '2026-07-26',
     updatedAt: '2026-07-26',

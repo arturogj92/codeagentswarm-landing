@@ -3,8 +3,10 @@
 import { motion } from 'framer-motion'
 import { ArrowRight, BookOpen } from 'lucide-react'
 import Link from 'next/link'
+import { useTranslations } from 'next-intl'
 import { useEffect } from 'react'
 import type { Guide } from '@/content/guides/types'
+import { CTA_AGENT_MESSAGE_KEY } from '@/content/guides/types'
 import { extractTOC, getAllGuides } from '@/content/guides'
 import GuidesHeader from './GuidesHeader'
 import Breadcrumbs from './Breadcrumbs'
@@ -12,6 +14,8 @@ import TableOfContents from './TableOfContents'
 import ContentRenderer from './ContentRenderer'
 import FAQAccordion from './FAQAccordion'
 import GuideProductBlock, { pickGuideVideo } from './GuideProductBlock'
+import GuideInlineCTA from './GuideInlineCTA'
+import GuideDownloadButton from './GuideDownloadButton'
 
 interface GuideLayoutProps {
   guide: Guide
@@ -21,12 +25,11 @@ export default function GuideLayout({ guide }: GuideLayoutProps) {
   const { meta, sections, faq } = guide
   const locale = meta.locale
   const toc = extractTOC(sections)
+  const t = useTranslations('guides.downloadCta')
 
   // Breadcrumb configuration
   const guidesLabel = locale === 'es' ? 'Guías' : 'Guides'
   const guidesHref = locale === 'es' ? '/es/guias' : '/en/guides'
-  const ctaText = locale === 'es' ? 'Probar CodeAgentSwarm' : 'Try CodeAgentSwarm'
-  const ctaHref = `/${locale}#download`
 
   // Scroll depth tracking per guide (25%, 50%, 75%, 100%) - mirrors home tracking
   useEffect(() => {
@@ -146,8 +149,18 @@ export default function GuideLayout({ guide }: GuideLayoutProps) {
             {/* Divider */}
             <hr className="border-t border-white/10 mb-10" />
 
-            {/* Content sections */}
-            <ContentRenderer sections={sections} />
+            {/* Content sections, with the inline CTA after the first section:
+                the reader has just gotten the core answer and 25%-scroll data
+                shows ~half of visitors reach this point. */}
+            {sections.length >= 3 ? (
+              <>
+                <ContentRenderer sections={sections.slice(0, 1)} />
+                <GuideInlineCTA locale={locale} slug={meta.slug} ctaAgent={meta.ctaAgent} />
+                <ContentRenderer sections={sections.slice(1)} />
+              </>
+            ) : (
+              <ContentRenderer sections={sections} />
+            )}
 
             {/* FAQ section */}
             {faq && faq.length > 0 && <FAQAccordion items={faq} locale={locale} />}
@@ -161,20 +174,11 @@ export default function GuideLayout({ guide }: GuideLayoutProps) {
             >
               <div className="text-center">
                 <p className="text-neutral-400 mb-6">
-                  {meta.ctaText ?? (locale === 'es'
-                    ? 'Usa el historial de conversaciones la próxima vez que retomes un proyecto. Vas a notar enseguida lo cómodo que es no tener que explicar todo desde cero a Claude.'
-                    : 'Use conversation history next time you resume a project. You\'ll instantly notice how comfortable it is not having to explain everything from scratch to Claude.')}
+                  {meta.ctaText ?? t(`context.${CTA_AGENT_MESSAGE_KEY[meta.ctaAgent]}`)}
                 </p>
-                <Link
-                  href={ctaHref}
-                  onClick={() => {
-                    window.umami?.track('guide_cta_click', { guide: meta.slug, position: 'final' })
-                  }}
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-neon-cyan text-black font-semibold rounded-full hover:bg-amber-400 transition-colors"
-                >
-                  {ctaText}
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
+                <div className="flex justify-center">
+                  <GuideDownloadButton locale={locale} slug={meta.slug} position="final" align="center" />
+                </div>
               </div>
             </motion.div>
 

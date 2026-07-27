@@ -13,6 +13,7 @@ These are two separate questions that share the same search, so this guide answe
 
 Pick the path that matches what you are trying to do. If you are chatting in the browser, read the next section. If you are coding in the terminal, jump to the developer section below.`,
     ctaText: 'Run multiple Claude Code sessions in parallel in one CodeAgentSwarm workspace, with notifications, searchable history and live diffs so nothing gets lost.',
+    ctaAgent: 'claude-code',
     highlightedWords: ['multiple Claude chats', 'at once'],
     publishedAt: '2026-06-07',
     updatedAt: '2026-06-07',

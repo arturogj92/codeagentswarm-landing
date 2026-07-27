@@ -13,6 +13,7 @@ The limitation shows up once you have dozens of Codex sessions across several pr
 
 The short version: your Codex CLI history is already on your machine and you can resume from it. CodeAgentSwarm turns that history into a searchable, cross-project memory you can resume from any terminal, even when the conversation belongs to a different Codex session, a different project, or a different agent entirely.`,
     ctaText: 'Stop scrolling through old Codex sessions one by one. Search your full Codex CLI history by keyword and resume the right conversation from any terminal in CodeAgentSwarm.',
+    ctaAgent: 'codex',
     highlightedWords: ['history', 'Codex CLI', 'resume'],
     publishedAt: '2026-06-24',
     updatedAt: '2026-06-24',

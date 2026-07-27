@@ -13,6 +13,7 @@ We make CodeAgentSwarm, so this is an interested comparison and you should check
 
 Pick Nimbalyst if the work you care about is the artefact: markdown, mockups, diagrams, documents you want to edit alongside the agent. Pick CodeAgentSwarm if the work you care about is the sessions: several agent CLIs running at once and you needing to know what each one is doing.`,
     ctaText: 'If you want to supervise five different agent CLIs at once, with notifications, live per-terminal diffs and one searchable history, download CodeAgentSwarm and see how it feels next to Nimbalyst.',
+    ctaAgent: 'comparison',
     highlightedWords: ['Nimbalyst', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
     updatedAt: '2026-07-26',

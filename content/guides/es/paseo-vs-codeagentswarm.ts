@@ -13,6 +13,7 @@ Aviso: CodeAgentSwarm lo hacemos nosotros. Precisamente por eso esta página dic
 
 Resumen rápido: si quieres lanzar una tarea en el escritorio y revisarla desde el tren, o necesitas software que puedas alojar y auditar tú, Paseo encaja mejor. Si trabajas en un Mac o en un Windows y quieres cinco CLIs de agentes, un tablero compartido y un historial buscable de todas ellas, ahí es donde CodeAgentSwarm tiene sentido.`,
     ctaText: 'Si tu trabajo pasa delante del ordenador, en macOS o Windows, y quieres cinco CLIs de agentes, diffs en vivo y un tablero compartido en una sola ventana, descarga CodeAgentSwarm y lanza tu próxima tanda de agentes en paralelo.',
+    ctaAgent: 'comparison',
     highlightedWords: ['Paseo', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
     updatedAt: '2026-07-26',

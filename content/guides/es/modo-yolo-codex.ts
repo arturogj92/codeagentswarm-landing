@@ -13,6 +13,7 @@ Codex nunca trae un botón oficial llamado YOLO. El término solo describe un es
 
 Esta guía explica qué ofrece Codex de verdad, desde solo-sugerir hasta full auto y el sandbox, qué se rompe en serio cuando ejecutas sin aprobaciones y cómo conseguir la velocidad del full-auto sin perder el control. Esa última parte es donde entran los permisos por terminal y el Turbo Mode de CodeAgentSwarm, para que puedas ejecutar todo un enjambre de Codex en full auto y aun así mantener guardarraíles en las operaciones peligrosas.`,
     ctaText: 'Ejecuta Codex CLI en full auto sin jugártela. Turbo Mode más permisos por terminal te dejan autoaprobar el trabajo seguro y bloquear los comandos peligrosos, en todos los terminales de Codex a la vez.',
+    ctaAgent: 'codex',
     highlightedWords: ['Codex CLI', 'modo YOLO'],
     publishedAt: '2026-06-07',
     updatedAt: '2026-06-07',

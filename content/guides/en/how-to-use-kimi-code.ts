@@ -13,6 +13,7 @@ There is one thing you should know before you type a single install command: Moo
 
 Kimi Code moves fast, with new releases landing almost daily, so where something is likely to drift I will say so and point you at the official docs.`,
     ctaText: 'Run Kimi Code as a first-class agent in CodeAgentSwarm, next to Claude Code, Codex and the rest. Parallel terminals, desktop notifications, searchable history and live diffs, with Kimi\'s weekly and 5-hour quota visible at a glance.',
+    ctaAgent: 'kimi-code',
     highlightedWords: ['Kimi Code'],
     publishedAt: '2026-07-18',
     updatedAt: '2026-07-18',

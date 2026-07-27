@@ -13,6 +13,7 @@ After months of daily use across dozens of projects, these are the 20 tips that 
 
 Whether you are just getting started or already running Claude Code daily, there is something here for you. Let's go.`,
     ctaText: 'Take your Claude Code workflow to the next level with CodeAgentSwarm. Multiple terminals, notifications, history, and more.',
+    ctaAgent: 'claude-code',
     highlightedWords: ['tips', 'Claude Code'],
     publishedAt: '2026-04-15',
     updatedAt: '2026-04-15',

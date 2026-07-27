@@ -12,6 +12,30 @@ export type ContentBlock =
   | { type: 'table'; headers: string[]; rows: string[][]; caption?: string }
   | { type: 'divider' }
 
+// Which agent (or reader intent) the guide's CTAs should speak to.
+// 'multi' covers cross-agent guides (worktrees, MCP, skills) and guides about
+// retired agents (Gemini). 'comparison' covers "X vs CodeAgentSwarm" pages and
+// tool listicles, where the reader is choosing a tool rather than learning one.
+export type GuideCtaAgent =
+  | 'claude-code'
+  | 'codex'
+  | 'opencode'
+  | 'kimi-code'
+  | 'antigravity'
+  | 'multi'
+  | 'comparison'
+
+// next-intl message key (under guides.downloadCta.context) for each agent.
+export const CTA_AGENT_MESSAGE_KEY: Record<GuideCtaAgent, string> = {
+  'claude-code': 'claudeCode',
+  codex: 'codex',
+  opencode: 'opencode',
+  'kimi-code': 'kimiCode',
+  antigravity: 'antigravity',
+  multi: 'multi',
+  comparison: 'comparison',
+}
+
 export interface FAQItem {
   question: string
   answer: string
@@ -32,6 +56,7 @@ export interface GuideMeta {
   intro: string
   introVideo?: string // Optional video URL to show after intro
   ctaText?: string // Optional custom CTA text for the final section
+  ctaAgent: GuideCtaAgent // Drives agent-aware CTA copy; see GuideCtaAgent
   highlightedWords?: string[] // Optional keywords to highlight in title (for guide index page)
   publishedAt?: string
   updatedAt?: string

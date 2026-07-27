@@ -13,6 +13,7 @@ Disclosure before anything else: we build CodeAgentSwarm, so we are one of the t
 
 One finding is worth putting up front, because it changes how you read every star count in this category. The two repos with the most stars are the two with the least recent activity: opcode has no public commit since October 16, 2025 and Vibe Kanban none since April 24, 2026. Four tools committed code on the day we checked. Popular and alive are not the same measurement.`,
     ctaText: 'If you want supervised parallel sessions across Claude Code, Codex CLI, Antigravity CLI, OpenCode and Kimi Code on macOS or Windows, with notifications, shared history and a kanban the agents update themselves, CodeAgentSwarm is free during the beta. Download it and judge it against the table above.',
+    ctaAgent: 'comparison',
     highlightedWords: ['AI Coding Agents', 'Parallel'],
     publishedAt: '2026-07-26',
     updatedAt: '2026-07-26',

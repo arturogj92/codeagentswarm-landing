@@ -13,6 +13,7 @@ Full disclosure before you read another line: we build CodeAgentSwarm. That is e
 
 Short version: if you live in the terminal, work over SSH on remote machines and want AGPL open source, Claude Squad fits you better. If you want a desktop window with notifications, cross-agent history, live diffs and five agent vendors in one place, that is what we built.`,
     ctaText: 'If you want the same parallel agents but with a desktop window, notifications and a searchable history across every agent, download CodeAgentSwarm and try it next to Claude Squad.',
+    ctaAgent: 'comparison',
     highlightedWords: ['Claude Squad', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
     updatedAt: '2026-07-26',

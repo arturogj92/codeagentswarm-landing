@@ -13,6 +13,7 @@ The catch is not whether you can start the processes. It is how you keep track o
 
 In this guide I walk through the three practical ways to run an opencode swarm, compare them honestly, and show where each one starts to hurt. If you want the broader picture across every CLI, start with the <a href="/en/guides/ai-cli-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">AI CLI agent swarm</a> overview, and if you want the mechanics of parallel sessions specifically see <a href="/en/guides/run-multiple-opencode-sessions" class="text-neon-cyan hover:text-neon-purple transition-colors">running multiple opencode sessions</a>.`,
     ctaText: 'Run your opencode agent swarm in CodeAgentSwarm. Several opencode terminals in parallel, on any model provider, with live diffs and desktop notifications keeping every agent honest.',
+    ctaAgent: 'opencode',
     highlightedWords: ['OpenCode Agent Swarm', 'opencode'],
     publishedAt: '2026-07-05',
     updatedAt: '2026-07-05',

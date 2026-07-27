@@ -13,6 +13,7 @@ Maybe you solved a tricky bug last week, made an architecture decision three day
 
 The short answer: Claude Code stores every session locally in ~/.claude/projects/, and you can resume the most recent one with "claude -c" or a specific one with "claude -r". The longer answer, how to actually find, search, back up and resume any past conversation, is what this guide covers.`,
     ctaText: 'Try managing your Claude Code history with CodeAgentSwarm. Search any conversation, filter by project, and resume in one click.',
+    ctaAgent: 'claude-code',
     highlightedWords: ['history', 'Claude Code', 'conversations'],
     publishedAt: '2026-04-15',
     updatedAt: '2026-07-16',

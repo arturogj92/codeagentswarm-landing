@@ -5,6 +5,14 @@ import { useRef, useState, useEffect } from 'react'
 import { Download, ChevronDown, Calendar, X, Mail, Rocket, Bell, Smartphone } from 'lucide-react'
 import Image from 'next/image'
 import { useLocale, useTranslations } from 'next-intl'
+import {
+  getDirectDownloadUrl,
+  getTrackedDownloadUrl,
+  notifyLandingEvent,
+  pickMacRelease,
+  pickWinRelease,
+  type Release,
+} from '@/lib/releases'
 
 // FOMO Popup Component for Windows/Linux users
 function FOMOPopup({
@@ -305,23 +313,6 @@ function MobileEmailPanel() {
   )
 }
 
-interface DownloadAsset {
-  fileName: string
-  fileUrl: string
-  fileSize: number
-}
-
-interface Release {
-  version: string
-  releaseDate: string
-  formattedDownloads: {
-    macArm: DownloadAsset | null
-    macIntel: DownloadAsset | null
-  }
-  // Raw per-(platform-arch) map from the backend, e.g. 'win32-x64', 'win32-arm64'
-  downloads?: Record<string, DownloadAsset>
-}
-
 export default function CTASection() {
   const t = useTranslations('cta')
   const sectionRef = useRef(null)
@@ -380,33 +371,11 @@ export default function CTASection() {
     return `${mb.toFixed(1)} MB`
   }
 
-  const getDirectDownloadUrl = (version: string, arch: string) => {
-    return `https://codeagentswarm-backend-production.up.railway.app/api/releases/download-dmg/${version}/${arch}`
-  }
-
-  // Routes the download through the backend so it is counted server-side
-  // (app_downloads); platform must be silicon | intel | windows-x64 | windows-arm64
-  const getTrackedDownloadUrl = (version: string, platform: string) => {
-    return `https://codeagentswarm-backend-production.up.railway.app/api/releases/download/${version}/${platform}`
-  }
-
-  const notifyLandingEvent = (event: string, data: Record<string, string>) => {
-    fetch('https://codeagentswarm-backend-production.up.railway.app/api/notifications/landing-event', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ event, data })
-    }).catch(() => {})
-  }
-
   // The newest version may be platform-specific (e.g. a Windows-only patch), so
   // pick the latest release that actually has builds for each platform.
   const allReleases = latestRelease ? [latestRelease, ...olderReleases] : []
-  const macRelease = allReleases.find(
-    (r) => r.formattedDownloads?.macArm || r.formattedDownloads?.macIntel
-  ) || null
-  const winRelease = allReleases.find(
-    (r) => r.downloads?.['win32-x64'] || r.downloads?.['win32-arm64']
-  ) || null
+  const macRelease = pickMacRelease(allReleases)
+  const winRelease = pickWinRelease(allReleases)
   const winX64 = winRelease?.downloads?.['win32-x64'] || null
   const winArm = winRelease?.downloads?.['win32-arm64'] || null
   // Keep the historical cards anchored to macOS releases (excluding the one

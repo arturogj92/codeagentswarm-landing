@@ -13,6 +13,7 @@ The idea sounds chaotic, and done badly it is. The point of this guide is to sho
 
 I run mixed swarms most days. Below I cover what an AI CLI agent swarm really is, the honest tradeoffs of each setup method, and where a purpose-built workspace earns its place over plain terminal tabs or tmux.`,
     ctaText: 'Run Claude Code, Codex and Gemini side by side in one CodeAgentSwarm workspace. Multiple agents, shared visibility, one place to watch them all.',
+    ctaAgent: 'multi',
     highlightedWords: ['AI CLI agent swarm', 'in parallel'],
     publishedAt: '2026-06-07',
     updatedAt: '2026-07-18',

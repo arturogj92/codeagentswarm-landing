@@ -13,6 +13,7 @@ CodeAgentSwarm lo hacemos nosotros, así que esta comparativa tiene parte intere
 
 Elige Nimbalyst si lo que te importa es el artefacto: markdown, mockups, diagramas, documentos que quieres editar junto al agente. Elige CodeAgentSwarm si lo que te importa son las sesiones: varias CLI de agentes a la vez y tú necesitando saber qué hace cada una.`,
     ctaText: 'Si quieres supervisar cinco CLI de agentes distintas a la vez, con notificaciones, diffs en vivo por terminal y un único historial buscable, descarga CodeAgentSwarm y compáralo con Nimbalyst en tu día a día.',
+    ctaAgent: 'comparison',
     highlightedWords: ['Nimbalyst', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
     updatedAt: '2026-07-26',

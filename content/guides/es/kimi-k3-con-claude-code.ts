@@ -13,6 +13,7 @@ Esta guía cubre las dos formas de hacerlo, porque hay dos endpoints distintos c
 
 Todo lo de abajo está contrastado con la documentación oficial de Moonshot. Su CLI saca ahora mismo casi una versión al día, así que si algo baila, su documentación manda.`,
     ctaText: 'Tener Kimi K3 en un terminal y Claude en otro es la forma más rápida de descubrir qué modelo encaja en cada trabajo. CodeAgentSwarm ejecuta los dos a la vez, cada uno en su terminal, con diffs en vivo, notificaciones de escritorio e historial buscable en todos.',
+    ctaAgent: 'claude-code',
     highlightedWords: ['Kimi K3', 'Claude Code'],
     publishedAt: '2026-07-17',
     updatedAt: '2026-07-18',

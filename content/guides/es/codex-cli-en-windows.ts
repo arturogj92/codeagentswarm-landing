@@ -13,6 +13,7 @@ En esta guía cubrimos los dos caminos: la instalación nativa en Windows con No
 
 Y cuando tengas Codex funcionando, también te enseñamos cómo pasar de un solo terminal de Codex a varios agentes trabajando en paralelo en Windows, sin perder la pista de qué está haciendo cada uno.`,
     ctaText: 'CodeAgentSwarm es una app de escritorio nativa para Windows. Descárgala gratis y ejecuta varios terminales de Codex CLI en paralelo en un espacio de trabajo visual, con notificaciones, historial buscable y diffs en tiempo real.',
+    ctaAgent: 'codex',
     highlightedWords: ['Codex CLI', 'Windows'],
     publishedAt: '2026-06-24',
     updatedAt: '2026-06-24',

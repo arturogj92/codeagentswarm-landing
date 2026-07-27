@@ -13,6 +13,7 @@ A Claude Code GUI is a graphical desktop app that sits on top of that CLI. You s
 
 CodeAgentSwarm is exactly that kind of GUI. It runs on macOS and Windows, it does not replace Claude Code, and it does not change how the agent works. It gives the same CLI a dashboard so you can see and steer it without living inside a wall of terminal text.`,
     ctaText: 'Give Claude Code a real desktop app: a visual workspace with multiple terminals, a task board, live diffs and notifications, all on top of the CLI you already use.',
+    ctaAgent: 'claude-code',
     highlightedWords: ['Claude Code GUI', 'desktop app'],
     publishedAt: '2026-06-07',
     updatedAt: '2026-06-07',

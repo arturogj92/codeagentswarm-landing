@@ -13,6 +13,7 @@ Y eso importa porque Claude Code por sí solo no te da nada de esto. Anthropic l
 
 CodeAgentSwarm es ese panel. Es una app de escritorio gratuita para macOS y Windows que ejecuta tus sesiones en un solo workspace y añade la capa de supervisión encima: estado por terminal, un tablero kanban de tareas que los propios agentes actualizan, notificaciones de escritorio, historial buscable, cambios de archivos en vivo y cambio de proyecto con un clic. Esta guía va de usarlo como gestor de Claude Code: verlo todo, pillar al vuelo el terminal que te necesita y mantener bajo control un enjambre de agentes.`,
     ctaText: 'Pon todas tus sesiones de Claude Code en un solo panel: ve de un vistazo el estado de cada terminal, sus tareas y sus cambios, y deja que las sesiones te avisen cuando te necesiten.',
+    ctaAgent: 'claude-code',
     highlightedWords: ['Panel de control de Claude Code', 'todas tus sesiones'],
     publishedAt: '2026-07-13',
     updatedAt: '2026-07-13',

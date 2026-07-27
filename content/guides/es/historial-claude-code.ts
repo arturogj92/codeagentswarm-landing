@@ -13,6 +13,7 @@ Eso es exactamente lo que resuelve la vista de historial de CodeAgentSwarm. Cada
 
 La idea es simple: tu historial de Claude Code ya está en tu máquina. CodeAgentSwarm lo convierte en una memoria larga que puedes buscar, filtrar y retomar desde cualquier terminal.`,
     ctaText: 'Usa el historial de conversaciones la próxima vez que retomes un proyecto. Vas a notar enseguida lo cómodo que es no tener que explicar todo desde cero a Claude.',
+    ctaAgent: 'claude-code',
     highlightedWords: ['historial', 'Claude Code'],
     publishedAt: '2026-02-10',
     updatedAt: '2026-04-15',

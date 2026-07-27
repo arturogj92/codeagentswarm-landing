@@ -13,6 +13,7 @@ Esto es una guía práctica, no una pieza de concepto. Te enseño las tres forma
 
 Al terminar sabrás qué enfoque encaja con tu forma de trabajar, ya quieras dos sesiones rápidas, una configuración de terminal persistente o un espacio de trabajo visual que además te deja ejecutar Gemini y Claude Code juntos.`,
     ctaText: 'Ejecuta varias sesiones de Gemini CLI en paralelo con CodeAgentSwarm. Varios terminales, un mismo espacio de trabajo y un aviso en cuanto cada sesión termina.',
+    ctaAgent: 'multi',
     highlightedWords: ['varias sesiones de Gemini CLI', 'paralelo'],
     publishedAt: '2026-06-07',
     updatedAt: '2026-06-07',

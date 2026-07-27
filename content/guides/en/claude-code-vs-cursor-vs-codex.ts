@@ -11,6 +11,7 @@ export const guide: Guide = {
 
 This guide breaks down what each one actually does, where it shines, and where it falls short. No hype, no marketing fluff - just an honest comparison so you can pick what works for your workflow, or decide to use more than one.`,
     ctaText: 'Use Claude Code, Codex CLI, or Gemini CLI? Run them all in parallel with CodeAgentSwarm. Multiple terminals, one workspace.',
+    ctaAgent: 'multi',
     highlightedWords: ['Claude Code', 'Cursor', 'Codex CLI'],
     publishedAt: '2026-04-15',
     updatedAt: '2026-07-16',

@@ -13,6 +13,7 @@ Git worktrees are the clean fix. One repository can have several working trees a
 
 In this guide I explain the problem in concrete terms, what a git worktree actually is, how to create one by hand, and how CodeAgentSwarm sets one up per terminal automatically so a parallel agent swarm just works. If you want the broader picture of running several agents at once, start with the <a href="/en/guides/ai-cli-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">AI CLI agent swarm</a> overview.`,
     ctaText: 'Flip on Git Worktree per terminal in CodeAgentSwarm and every agent gets its own isolated checkout, on its own branch, with no setup and nothing left in your git status.',
+    ctaAgent: 'multi',
     highlightedWords: ['Git Worktrees', 'AI Coding Agents'],
     publishedAt: '2026-07-05',
     updatedAt: '2026-07-05',

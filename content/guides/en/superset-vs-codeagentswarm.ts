@@ -13,6 +13,7 @@ Disclosure up front: we build CodeAgentSwarm. That is the reason this page state
 
 Short version: pick Superset if you want an editor-shaped environment, Linux support and source you can inspect. Pick CodeAgentSwarm if you run Claude Code, Codex CLI, Antigravity CLI, OpenCode and Kimi Code and need notifications, history and a task board to stay on top of them.`,
     ctaText: 'Both are free to start, so run them on the same repository for a week. CodeAgentSwarm is free during beta, with Pro included, for macOS and Windows.',
+    ctaAgent: 'comparison',
     highlightedWords: ['Superset', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
     updatedAt: '2026-07-26',

@@ -13,6 +13,7 @@ WSL is still a valid option, and in some cases the better one. In this guide we 
 
 And once you have it running, we will also show you how to go from one Claude Code terminal to several working in parallel on Windows.`,
     ctaText: 'CodeAgentSwarm is now available for Windows. Download it free and run several Claude Code terminals side by side, with notifications, searchable history and live diffs.',
+    ctaAgent: 'claude-code',
     highlightedWords: ['Claude Code', 'Windows'],
     publishedAt: '2026-06-12',
     updatedAt: '2026-06-12',

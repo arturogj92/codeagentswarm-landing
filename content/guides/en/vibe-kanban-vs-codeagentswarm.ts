@@ -13,6 +13,7 @@ We build CodeAgentSwarm, and you should read this page knowing that. It is why w
 
 If your bottleneck is planning and reviewing work as a team, a kanban-first tool is the right shape. If your bottleneck is keeping up with several agent sessions running at once, a supervision workspace is.`,
     ctaText: 'If you want to see what each agent is doing right now, get notified the moment one needs you, and keep a task board that the agents update themselves, download CodeAgentSwarm and try it on your next parallel session.',
+    ctaAgent: 'comparison',
     highlightedWords: ['Vibe Kanban', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
     updatedAt: '2026-07-26',

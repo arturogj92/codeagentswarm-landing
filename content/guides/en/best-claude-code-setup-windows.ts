@@ -13,6 +13,7 @@ This guide goes through each piece of that setup and why it matters: terminal ch
 
 It assumes you already have Claude Code installed. If not, start with our guide on <a href="/en/guides/claude-code-on-windows" class="text-neon-cyan hover:text-neon-purple transition-colors">how to install Claude Code on Windows</a> and come back.`,
     ctaText: 'Ready to scale past one terminal? Download CodeAgentSwarm for Windows free and run multiple supervised Claude Code sessions in parallel.',
+    ctaAgent: 'claude-code',
     highlightedWords: ['Claude Code', 'Windows'],
     publishedAt: '2026-06-12',
     updatedAt: '2026-06-12',

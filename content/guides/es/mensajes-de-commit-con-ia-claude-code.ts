@@ -17,6 +17,7 @@ CodeAgentSwarm tiene un Git Manager integrado justo para esto. Lee tus archivos 
     updatedAt: '2026-06-07',
     alternateSlug: 'ai-commit-messages-claude-code',
     ctaText: 'La próxima vez que tus agentes dejen un montón de cambios, abre el Git Manager, genera el mensaje de commit con IA y haz commit sin salir de CodeAgentSwarm.',
+    ctaAgent: 'claude-code',
   },
   sections: [
     {

@@ -13,6 +13,7 @@ Una interfaz gráfica de Claude Code es una app de escritorio que se sitúa enci
 
 CodeAgentSwarm es justo ese tipo de interfaz. Funciona en macOS y Windows, no reemplaza a Claude Code y no cambia cómo trabaja el agente. Le da al mismo CLI un panel para que puedas verlo y dirigirlo sin vivir dentro de un muro de texto de terminal.`,
     ctaText: 'Dale a Claude Code una app de escritorio de verdad: un workspace visual con varios terminales, un tablero de tareas, diffs en vivo y notificaciones, todo sobre el CLI que ya usas.',
+    ctaAgent: 'claude-code',
     highlightedWords: ['interfaz gráfica de Claude Code', 'app de escritorio'],
     publishedAt: '2026-06-07',
     updatedAt: '2026-06-07',

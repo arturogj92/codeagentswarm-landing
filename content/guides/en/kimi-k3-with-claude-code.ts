@@ -13,6 +13,7 @@ This guide covers both ways to do it, because there are two different endpoints 
 
 Everything below was checked against Moonshot's official docs. Their CLI ships roughly one release a day right now, so treat their docs as the source of truth if something drifts.`,
     ctaText: 'Running Kimi K3 in one terminal and Claude in another is the fastest way to find out which model suits which job. CodeAgentSwarm runs both side by side, each in its own terminal, with live diffs, desktop notifications and searchable history across all of them.',
+    ctaAgent: 'claude-code',
     highlightedWords: ['Kimi K3', 'Claude Code'],
     publishedAt: '2026-07-17',
     updatedAt: '2026-07-18',

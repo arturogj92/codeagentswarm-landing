@@ -13,6 +13,7 @@ The native tooling is solid for the simple case: get back into your last convers
 
 This guide maps out exactly where Kimi Code history lives on disk (it is more inspectable than most agents), the resume flags and their gotchas, and how CodeAgentSwarm turns that same history into a searchable, cross-project, cross-agent memory you can reopen from any terminal.`,
     ctaText: 'Stop hunting for session ids. CodeAgentSwarm searches your full Kimi Code history by keyword, alongside your Claude Code, Codex and opencode conversations, and resumes the right one from any terminal.',
+    ctaAgent: 'kimi-code',
     highlightedWords: ['Kimi Code', 'history', 'resume'],
     publishedAt: '2026-07-18',
     updatedAt: '2026-07-18',

@@ -17,6 +17,7 @@ CodeAgentSwarm tiene accesos directos de proyecto en la barra de navegación jus
     updatedAt: '2026-06-07',
     alternateSlug: 'claude-code-project-switcher',
     ctaText: 'Guarda un acceso directo para cada repo en el que trabajas y cambia entre proyectos de Claude Code con un solo clic, ya en el modo que quieras.',
+    ctaAgent: 'claude-code',
   },
   sections: [
     {

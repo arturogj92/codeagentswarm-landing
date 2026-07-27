@@ -13,6 +13,7 @@ El truco no está en arrancar los procesos. Está en no perderles la pista cuand
 
 En esta guía te explico las tres formas reales de montar un enjambre de Kimi Code, cómo se comporta la cuota compartida cuando vas en paralelo y dónde empieza a doler cada método. Para la foto completa de todas las CLI, empieza por la visión general del <a href="/es/guias/enjambre-de-agentes-cli-ia" class="text-neon-cyan hover:text-neon-purple transition-colors">enjambre de agentes CLI de IA</a>, y para la mecánica de sesiones en concreto mira cómo <a href="/es/guias/ejecutar-multiples-sesiones-kimi-code" class="text-neon-cyan hover:text-neon-purple transition-colors">ejecutar varias sesiones de Kimi Code</a>.`,
     ctaText: 'Ejecuta tu enjambre de agentes Kimi Code en CodeAgentSwarm. Varios terminales de kimi en paralelo, con diffs en vivo, notificaciones de escritorio y un indicador de cuota que muestra cuánto lleva gastado el enjambre de tus ventanas semanal y de 5 horas.',
+    ctaAgent: 'kimi-code',
     highlightedWords: ['Enjambre de agentes Kimi Code', 'Kimi'],
     publishedAt: '2026-07-18',
     updatedAt: '2026-07-18',

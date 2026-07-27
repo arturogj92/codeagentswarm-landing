@@ -13,6 +13,7 @@ La parte que requiere pensar un poco no es arrancar los procesos, es no perderle
 
 En esta guía te explico las tres formas reales de ejecutar varias sesiones de Codex CLI en paralelo: pestañas de terminal, tmux y CodeAgentSwarm. Las comparo de forma honesta y te muestro dónde empieza a frenarte cada una.`,
     ctaText: 'Ejecuta varias sesiones de Codex CLI a la vez en CodeAgentSwarm. Varios terminales en una ventana, con notificaciones de escritorio y full-auto controlado por permisos por terminal.',
+    ctaAgent: 'codex',
     highlightedWords: ['varias sesiones de Codex CLI', 'a la vez'],
     publishedAt: '2026-06-07',
     updatedAt: '2026-06-07',

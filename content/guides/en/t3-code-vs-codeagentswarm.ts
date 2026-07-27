@@ -13,6 +13,7 @@ Disclosure before anything else: we build CodeAgentSwarm. That is exactly why th
 
 Short version: pick T3 Code if open source, Linux support and a fast path from diff to pull request matter most. Pick CodeAgentSwarm if you run agents from five different vendors and need notifications, history and a task board to keep track of them.`,
     ctaText: 'Try both on the same repository and keep the one that fits your week. CodeAgentSwarm is free during beta, with Pro included, for macOS and Windows.',
+    ctaAgent: 'comparison',
     highlightedWords: ['T3 Code', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
     updatedAt: '2026-07-26',

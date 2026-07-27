@@ -13,6 +13,7 @@ The confusion is understandable. Both involve "multiple agents". The difference 
 
 This guide lays out what each one is, when to reach for which, and why you do not have to choose. You can run native agent teams inside a terminal that CodeAgentSwarm is hosting and get the best of both.`,
     ctaText: 'Use Claude Code agent teams for delegation inside one session, and CodeAgentSwarm to run several independent agents in parallel. Download CodeAgentSwarm and supervise the whole workspace from one place.',
+    ctaAgent: 'comparison',
     highlightedWords: ['Claude Code Agent Teams', 'CodeAgentSwarm'],
     publishedAt: '2026-06-07',
     updatedAt: '2026-06-07',

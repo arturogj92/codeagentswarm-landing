@@ -13,6 +13,7 @@ CodeAgentSwarm lo hacemos nosotros, y conviene que leas esta página sabiéndolo
 
 Si tu cuello de botella es planificar y revisar el trabajo en equipo, una herramienta que arranca por el kanban tiene la forma correcta. Si tu cuello de botella es seguir el ritmo de varias sesiones de agentes a la vez, la forma correcta es un espacio de supervisión.`,
     ctaText: 'Si quieres ver qué está haciendo cada agente ahora mismo, enterarte en el momento en que uno te necesita y tener un tablero que los agentes actualizan solos, descarga CodeAgentSwarm y pruébalo en tu próxima sesión en paralelo.',
+    ctaAgent: 'comparison',
     highlightedWords: ['Vibe Kanban', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
     updatedAt: '2026-07-26',

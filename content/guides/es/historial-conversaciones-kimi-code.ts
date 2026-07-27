@@ -13,6 +13,7 @@ Las herramientas nativas resuelven bien el caso simple: volver a tu última conv
 
 Esta guía explica dónde vive exactamente el historial de Kimi Code en disco (es más inspeccionable que el de la mayoría de agentes), los flags de reanudación y sus trampas, y cómo CodeAgentSwarm convierte ese mismo historial en una memoria buscable, entre proyectos y entre agentes, que puedes reabrir desde cualquier terminal.`,
     ctaText: 'Deja de cazar ids de sesión. CodeAgentSwarm busca en todo tu historial de Kimi Code por palabra clave, junto a tus conversaciones de Claude Code, Codex y opencode, y reanuda la correcta desde cualquier terminal.',
+    ctaAgent: 'kimi-code',
     highlightedWords: ['Kimi Code', 'historial', 'reanudar'],
     publishedAt: '2026-07-18',
     updatedAt: '2026-07-18',

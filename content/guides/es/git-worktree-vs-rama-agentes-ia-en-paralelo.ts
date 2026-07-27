@@ -13,6 +13,7 @@ Solo una de ellas deja de verdad que N agentes se ejecuten a la vez de forma lim
 
 Para la explicación desde cero de qué es un worktree y por qué importa el aislamiento, lee primero la guía de <a href="/es/guias/git-worktrees-para-agentes-de-ia" class="text-neon-cyan hover:text-neon-purple transition-colors">git worktrees para agentes de IA</a>. Esta página es la comparativa.`,
     ctaText: 'Deja de hacer malabares con las ramas. CodeAgentSwarm da a cada terminal su propio worktree en su propia rama con un solo interruptor, así tus agentes van en paralelo sin pisarse.',
+    ctaAgent: 'multi',
     highlightedWords: ['Git worktree vs rama', 'agentes de IA en paralelo'],
     publishedAt: '2026-07-05',
     updatedAt: '2026-07-05',

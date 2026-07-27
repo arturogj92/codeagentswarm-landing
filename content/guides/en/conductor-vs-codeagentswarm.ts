@@ -13,6 +13,7 @@ Full disclosure: we build CodeAgentSwarm. This page still gives Conductor its du
 
 Short version: if you and your team are all on Macs and you want a native app built around reviewing and merging agent work, Conductor is a focused, credible choice. If anyone touches Windows, or you want more than three agent CLIs, CodeAgentSwarm covers ground Conductor does not.`,
     ctaText: 'Need a parallel agent workspace that also runs on Windows, with five agent CLIs instead of three? Download CodeAgentSwarm and set up your first batch of parallel terminals.',
+    ctaAgent: 'comparison',
     highlightedWords: ['Conductor', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
     updatedAt: '2026-07-26',
