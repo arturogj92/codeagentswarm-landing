@@ -105,6 +105,15 @@ export default function GuideLayout({ guide }: GuideLayoutProps) {
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
                 {meta.title}
               </h1>
+              {(meta.updatedAt || meta.publishedAt) && (
+                <p className="text-sm text-white/40 mb-4">
+                  {locale === 'es' ? 'Actualizado el ' : 'Updated '}
+                  {new Date((meta.updatedAt ?? meta.publishedAt) + 'T00:00:00Z').toLocaleDateString(
+                    locale === 'es' ? 'es-ES' : 'en-US',
+                    { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' }
+                  )}
+                </p>
+              )}
               <div
                 className="text-lg text-white/70 leading-relaxed whitespace-pre-line"
                 dangerouslySetInnerHTML={{ __html: meta.intro }}

@@ -9,6 +9,7 @@ export type ContentBlock =
   | { type: 'image'; alt: string; src: string; caption?: string; size?: 'inline' | 'small' | 'medium' | 'full' }
   | { type: 'video'; src: string; caption?: string; poster?: string }
   | { type: 'callout'; variant: 'tip' | 'warning' | 'info'; content: string }
+  | { type: 'table'; headers: string[]; rows: string[][]; caption?: string }
   | { type: 'divider' }
 
 export interface FAQItem {

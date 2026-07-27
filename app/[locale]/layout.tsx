@@ -42,8 +42,8 @@ export async function generateMetadata({
     : 'CodeAgentSwarm – AI coding workspace for Claude Code, Codex, Antigravity CLI, OpenCode and Kimi Code terminals with MCP tools'
 
   const description = isSpanish
-    ? 'Orquesta multiples terminales AI CLI (Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code) en un espacio de trabajo para desarrolladores con visibilidad en tiempo real, notificaciones instantaneas, historial completo de conversaciones, control de permisos, gestion de multiples proyectos e integraciones MCP.'
-    : 'Orchestrate multiple AI CLI terminals (Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code) in a single developer workspace with real-time visibility, live notifications, full conversation history, permissions control, multi-project management and MCP integrations.'
+    ? 'CodeAgentSwarm es una app de escritorio para ejecutar y supervisar varios agentes de programación con IA en paralelo: Claude Code, Codex, Antigravity CLI, OpenCode y Kimi Code, con visibilidad en tiempo real, notificaciones, historial completo de conversaciones, control de permisos, gestión multiproyecto e integraciones MCP.'
+    : 'CodeAgentSwarm is a desktop workspace to run and supervise multiple AI coding agents in parallel: Claude Code, Codex, Antigravity CLI, OpenCode and Kimi Code, with real-time visibility, live notifications, full conversation history, permission control, multi-project management and MCP integrations.'
 
   return {
     metadataBase: new URL(baseUrl),
@@ -76,6 +76,8 @@ export async function generateMetadata({
       'real time change tracking',
       'live diffs',
       'CodeAgentSwarm',
+      'run multiple AI coding agents',
+      'AI coding agent supervision',
     ],
     authors: [{ name: 'CodeAgentSwarm Team' }],
     creator: 'CodeAgentSwarm',

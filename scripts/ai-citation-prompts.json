@@ -1,0 +1,20 @@
+{
+  "frozen_at": "2026-07-26",
+  "note": "Frozen decision prompts. Do not reword them between scans or the trend data breaks. Add new prompts with a new id instead.",
+  "engines": ["perplexity", "chatgpt", "google-ai"],
+  "prompts": [
+    { "id": "niche-desktop-parallel", "category": "niche", "text": "best desktop app to run multiple Claude Code and Codex CLI agents in parallel" },
+    { "id": "category-manage-agents-2026", "category": "category", "text": "best tools for managing multiple AI coding agents in 2026" },
+    { "id": "category-run-supervise", "category": "category", "text": "best tools to run and supervise multiple AI coding agents in parallel" },
+    { "id": "category-supervise-several", "category": "category", "text": "how can I supervise several AI coding agents working at the same time" },
+    { "id": "niche-gui-multiple-claude", "category": "niche", "text": "GUI to run multiple Claude Code sessions at once" },
+    { "id": "alt-conductor-windows", "category": "alternatives", "text": "Conductor app alternatives for Windows" },
+    { "id": "alt-vibe-kanban", "category": "alternatives", "text": "Vibe Kanban alternatives for running AI coding agents" },
+    { "id": "brand-three-way", "category": "brand", "text": "Claude Squad vs Conductor vs CodeAgentSwarm which one should I use" },
+    { "id": "brand-cas-review", "category": "brand", "text": "is CodeAgentSwarm good, honest review" },
+    { "id": "feature-notify-finish", "category": "feature", "text": "app that notifies me when Claude Code finishes a task" },
+    { "id": "feature-side-by-side", "category": "feature", "text": "run Claude Code and Codex side by side on the same project" },
+    { "id": "entity-crystal-alt", "category": "alternatives", "text": "Crystal AI coding app alternatives" },
+    { "id": "alt-t3code", "category": "alternatives", "text": "T3 Code alternatives" }
+  ]
+}
