@@ -13,6 +13,7 @@ opencode takes a different route. There is no <code>--yolo</code>, no <code>--fu
 
 This guide explains what that config-driven model actually looks like, what genuinely goes wrong when you allow everything, and how to get full-auto speed without losing control. That last part is where CodeAgentSwarm comes in: it does not add a Turbo Mode toggle for opencode, because opencode\'s own config is the control plane, but it does keep a permissive opencode config supervised with live diffs, desktop notifications and searchable history.`,
     ctaText: 'Run opencode with a permissive config without flying blind. CodeAgentSwarm gives every opencode terminal live diffs, desktop notifications and searchable history, so full-auto work never turns into a black box.',
+    ctaAgent: 'opencode',
     highlightedWords: ['OpenCode', 'YOLO mode'],
     publishedAt: '2026-07-05',
     updatedAt: '2026-07-05',

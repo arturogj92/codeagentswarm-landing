@@ -61,6 +61,7 @@ const guide: Guide = {
     metaDescription: 'SEO description for search results',
     intro: 'Introductory paragraph(s)',
     ctaText: 'MANDATORY: Specific CTA text for this guide', // Must be specific to the guide, not generic
+    ctaAgent: 'claude-code', // MANDATORY: which agent the CTAs speak to (see below)
     alternateSlug: 'mi-guia-slug', // Spanish equivalent
   },
   sections: [
@@ -138,6 +139,19 @@ meta: {
 **Bad examples:**
 - ❌ Generic text about conversation history (default fallback - means you forgot to add ctaText)
 - ❌ Empty or missing ctaText field
+
+### 🚨 MANDATORY: ctaAgent Field
+
+Every guide MUST set `ctaAgent` in the metadata. It drives the agent-aware copy of the inline and final CTAs (type `GuideCtaAgent` in `content/guides/types.ts`; the build fails if it is missing).
+
+Allowed values and how to choose:
+- `claude-code`, `codex`, `opencode`, `kimi-code`, `antigravity`: the guide teaches THAT agent.
+- `multi`: cross-agent guides (worktrees, MCP, skills, notifications), guides comparing two supported agents, and guides about retired agents (Gemini). The CTA then names all five supported agents.
+- `comparison`: "X vs CodeAgentSwarm" pages and tool listicles. The reader is choosing a tool, so the CTA invites them to try it instead of pitching features.
+
+Both language versions of a guide MUST use the same value.
+
+Guide CTAs download the app directly when the platform can be detected (see `hooks/useGuideDownload.ts`); downloads born in guides are tracked as `download_app_guide_{silicon|intel|windows_x64|windows_arm64}` with `{ guide, position }`, separate from the home's `download_app_home_*` events.
 
 ### Writing Style
 

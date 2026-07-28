@@ -13,6 +13,7 @@ Grok Build es la CLI de código de xAI (comando <code>grok</code>), no el chatbo
 
 Esta comparación es práctica: instalación y auth, fortalezas, huecos y cómo CodeAgentSwarm te deja supervisar ambas en un solo workspace.`,
     ctaText: 'Ejecuta Grok Build y Claude Code a la vez en CodeAgentSwarm. Un workspace, dos vendors, notificaciones e historial compartidos.',
+    ctaAgent: 'multi',
     highlightedWords: ['Grok Build', 'Claude Code'],
     publishedAt: '2026-07-28',
     updatedAt: '2026-07-28',

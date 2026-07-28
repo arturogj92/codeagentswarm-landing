@@ -13,6 +13,7 @@ Hay una cosa que debes saber antes de escribir ni un solo comando de instalació
 
 Kimi Code se mueve rápido, con versiones nuevas casi a diario, así que donde algo tenga pinta de poder cambiar te lo diré y te apuntaré a la documentación oficial.`,
     ctaText: 'Ejecuta Kimi Code como agente de primera en CodeAgentSwarm, junto a Claude Code, Codex y los demás. Terminales en paralelo, notificaciones de escritorio, historial buscable y diffs en vivo, con la cuota semanal y de 5 horas de Kimi siempre a la vista.',
+    ctaAgent: 'kimi-code',
     highlightedWords: ['Kimi Code'],
     publishedAt: '2026-07-18',
     updatedAt: '2026-07-18',

@@ -13,6 +13,7 @@ Si tu stack depende de herramientas de Linux, puedes ejecutar exactamente el mis
 
 Y cuando tengas opencode funcionando, también te enseñamos cómo pasar de un solo terminal de opencode a varios agentes trabajando en paralelo en Windows, sin perder la pista de qué está haciendo cada uno.`,
     ctaText: 'CodeAgentSwarm es una app de escritorio nativa para Windows. Descárgala gratis y ejecuta varios terminales de opencode en paralelo en un espacio de trabajo visual, con notificaciones, historial buscable y diffs en tiempo real.',
+    ctaAgent: 'opencode',
     highlightedWords: ['OpenCode', 'Windows'],
     publishedAt: '2026-07-05',
     updatedAt: '2026-07-05',

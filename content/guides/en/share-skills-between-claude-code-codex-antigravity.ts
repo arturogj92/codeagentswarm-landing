@@ -13,6 +13,7 @@ I hit this myself while using several agents in the same day, so I added a way t
 
 In this guide I'll explain, plain and simple, why your skills get stuck in one agent and how to share them across Claude Code, Codex and Antigravity without copying folders by hand.`,
     ctaText: 'Set up your skills once in Claude Code, then export them to Codex and Antigravity in one click so every agent works with the same toolkit.',
+    ctaAgent: 'multi',
     highlightedWords: ['skills', 'Codex', 'Antigravity'],
     publishedAt: '2026-07-04',
     updatedAt: '2026-07-04',

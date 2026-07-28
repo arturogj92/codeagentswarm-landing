@@ -13,6 +13,7 @@ export async function generateMetadata(): Promise<Metadata> {
       languages: {
         en: '/en/guides',
         es: '/es/guias',
+        'x-default': '/en/guides',
       },
     },
   }

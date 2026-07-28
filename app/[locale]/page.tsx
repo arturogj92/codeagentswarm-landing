@@ -11,8 +11,9 @@ import FeaturesSection from '@/components/FeaturesSection'
 import WorksWithSection from '@/components/WorksWithSection'
 // import DemoSection from '@/components/DemoSection'
 import MCPSection from '@/components/MCPSection'
-import SocialProofSection from '@/components/SocialProofSection'
+// import SocialProofSection from '@/components/SocialProofSection'
 // import SwarmiSection from '@/components/SwarmiSection'
+import BringYourOwnSubSection from '@/components/BringYourOwnSubSection'
 import PricingSection from '@/components/PricingSection'
 import RoadmapSection from '@/components/RoadmapSection'
 import CommunitySection from '@/components/CommunitySection'
@@ -33,11 +34,32 @@ export default function Home() {
     '@type': 'SoftwareApplication',
     name: 'CodeAgentSwarm',
     description: locale === 'es'
-      ? 'Espacio de trabajo con IA para terminales Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code y Grok Build con herramientas MCP'
-      : 'AI coding workspace for Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code and Grok Build terminals with MCP tools',
+      ? 'CodeAgentSwarm es una app de escritorio para ejecutar y supervisar varios agentes de programación con IA en paralelo: Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code y Grok Build.'
+      : 'CodeAgentSwarm is a desktop workspace to run and supervise multiple AI coding agents in parallel: Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code and Grok Build.',
     url: baseUrl,
     applicationCategory: 'DeveloperApplication',
     operatingSystem: 'macOS, Windows',
+    featureList: locale === 'es'
+      ? [
+          'Ejecuta varios terminales de IA en paralelo',
+          'Notificaciones de escritorio cuando un agente termina o necesita ayuda',
+          'Historial de conversaciones buscable de todos los agentes',
+          'Diffs de archivos en vivo por terminal',
+          'Control de permisos y modo YOLO',
+          'Tablero kanban que los agentes actualizan por MCP',
+          'Git worktrees por sesión',
+          'Marketplace de skills y de servidores MCP',
+        ]
+      : [
+          'Run multiple AI CLI terminals in parallel',
+          'Desktop notifications when an agent finishes or needs input',
+          'Searchable conversation history across all agents',
+          'Per-terminal live file diffs',
+          'Permission and YOLO mode control',
+          'Kanban task board that agents update over MCP',
+          'Git worktrees per session',
+          'Skills marketplace and MCP server marketplace',
+        ],
     offers: {
       '@type': 'Offer',
       price: '0',
@@ -48,6 +70,12 @@ export default function Home() {
       '@type': 'Organization',
       name: 'CodeAgentSwarm',
       url: baseUrl,
+      // Solo perfiles que existen de verdad: un sameAs roto debilita la señal de
+      // entidad en vez de reforzarla. x.com/CodeAgentSwarm daba 404 el 2026-07-27.
+      sameAs: [
+        'https://discord.gg/a9ZqmW9UfQ',
+        'https://github.com/arturogj92/codeagentswarm-site',
+      ],
     },
   }
 
@@ -137,8 +165,9 @@ export default function Home() {
         <WorksWithSection />
         {/* <DemoSection /> */}
         <MCPSection />
-        <SocialProofSection />
+        {/* <SocialProofSection /> */}
         {/* <SwarmiSection /> */}
+        <BringYourOwnSubSection />
         <PricingSection />
         <RoadmapSection />
         <CommunitySection />

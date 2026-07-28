@@ -13,6 +13,7 @@ That switch is genuinely useful and genuinely dangerous, in the same proportions
 
 It also covers the part that matters once the prompts are off: how to keep a full-auto run supervised. Kimi Code is a first-class agent in CodeAgentSwarm, so a YOLO run gets live per-terminal diffs, desktop notifications and searchable history instead of running as a black box.`,
     ctaText: 'Run kimi --yolo without flying blind. CodeAgentSwarm runs Kimi Code as a first-class agent, with live per-terminal diffs, desktop notifications and searchable history keeping every full-auto run honest.',
+    ctaAgent: 'kimi-code',
     highlightedWords: ['Kimi Code', 'YOLO mode'],
     publishedAt: '2026-07-18',
     updatedAt: '2026-07-18',

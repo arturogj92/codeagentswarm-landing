@@ -13,6 +13,7 @@ Grok Build es la CLI de código de xAI (<code>grok</code>), no el chat Grok de c
 
 Esta guía cubre permisos orientados a plan, cuándo desactivar plan mode, cómo encaja <code>--always-approve</code> y cómo CodeAgentSwarm avisa cuando el plan espera por ti.`,
     ctaText: 'Ejecuta sesiones de Grok Build en Modo Plan dentro de CodeAgentSwarm y recibe un aviso de escritorio cuando el plan espera aprobación.',
+    ctaAgent: 'grok-build',
     highlightedWords: ['Modo Plan', 'Grok Build'],
     publishedAt: '2026-07-28',
     updatedAt: '2026-07-28',

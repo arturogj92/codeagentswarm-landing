@@ -13,6 +13,7 @@ The catch is not starting the processes. It is keeping track of them once severa
 
 In this guide I walk through the three practical ways to run a Kimi Code swarm, how the shared quota behaves when you go parallel, and where each method starts to hurt. For the broader picture across every CLI, start with the <a href="/en/guides/ai-cli-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">AI CLI agent swarm</a> overview, and for the session mechanics specifically see <a href="/en/guides/run-multiple-kimi-code-sessions" class="text-neon-cyan hover:text-neon-purple transition-colors">running multiple Kimi Code sessions</a>.`,
     ctaText: 'Run your Kimi Code agent swarm in CodeAgentSwarm. Several kimi terminals in parallel with live diffs, desktop notifications and a quota indicator that shows how much of your weekly and 5 hour windows the swarm has used.',
+    ctaAgent: 'kimi-code',
     highlightedWords: ['Kimi Code Agent Swarm', 'Kimi'],
     publishedAt: '2026-07-18',
     updatedAt: '2026-07-18',

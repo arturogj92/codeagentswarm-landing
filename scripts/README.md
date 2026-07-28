@@ -190,3 +190,72 @@ Running both scripts will:
 - [WebP Documentation](https://developers.google.com/speed/webp)
 - [Next.js Image Optimization](https://nextjs.org/docs/app/building-your-application/optimizing/images)
 - [Video Optimization Guide](https://web.dev/fast/#optimize-your-videos)
+
+---
+
+## ai-citation-scan.mjs
+
+Measures whether AI answer engines (Perplexity, ChatGPT search, Google AI Mode) recommend
+CodeAgentSwarm and cite codeagentswarm.com when someone asks a real decision question about
+running several AI coding agents at once.
+
+### Usage
+
+```bash
+# Scan every prompt in Perplexity (the default engine)
+node scripts/ai-citation-scan.mjs
+
+# Same prompts, different engine
+node scripts/ai-citation-scan.mjs --engine chatgpt
+node scripts/ai-citation-scan.mjs --engine google-ai
+
+# Only one prompt
+node scripts/ai-citation-scan.mjs --prompt category-manage-agents-2026
+
+# Print the latest status per prompt and engine, with the trend vs the previous scan
+node scripts/ai-citation-scan.mjs --report
+```
+
+### How it works
+
+For each prompt the script opens the engine in your browser, you read the answer, and it asks
+you three quick questions: is CodeAgentSwarm cited, mentioned but not cited, or absent; which
+tools the answer recommended; which domains it cited. Each answer is appended as one JSON line
+to `docs/seo/ai-citation-log.jsonl`.
+
+### Rules
+
+- The prompts in `scripts/ai-citation-prompts.json` are frozen. Do not reword them between
+  scans or the trend data becomes meaningless. To track something new, add a new prompt id.
+- Results only ever get appended, never rewritten, so `--report` can compare scans over time.
+- It costs nothing. There are no paid APIs involved: the script just opens the engines and you
+  record what you see.
+
+---
+
+## competitor-refresh.mjs
+
+Checks the competitor numbers quoted in the comparison guides against the public GitHub API.
+
+`scripts/competitor-facts.json` holds the canonical verified facts (stars, last public commit,
+licence, site, repo) for every tool in the category comparison. The script reads that file, asks
+GitHub for the current values, and prints one row per tool with the recorded value, the current
+value and any flags: `DATA-STALE` when the last push date has moved, `STARS-DRIFT` when stars
+changed more than 10 percent, and `NOW-STALLED` when a repo has been quiet for over 60 days.
+
+### Usage
+
+```bash
+node scripts/competitor-refresh.mjs
+node scripts/competitor-refresh.mjs --help
+```
+
+### When to run it
+
+Before every citation scan, and monthly at the very least. The comparison guides print visible
+verification dates, so a stale number is a credibility problem, not a cosmetic one. When something
+changed, update the guide tables (EN and ES), the visible dates and `competitor-facts.json`
+together in the same commit.
+
+The API is called unauthenticated, so a run can hit the GitHub rate limit. If it does, wait an
+hour and run it again.

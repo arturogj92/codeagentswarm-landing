@@ -13,6 +13,7 @@ opencode toma un camino distinto. No hay <code>--yolo</code>, no hay <code>--ful
 
 Esta guía explica cómo es de verdad ese modelo por configuración, qué se rompe en serio cuando permites todo y cómo conseguir la velocidad del full-auto sin perder el control. Esa última parte es donde entra CodeAgentSwarm: no añade un interruptor de Turbo Mode para opencode, porque la propia config de opencode es el plano de control, pero sí mantiene supervisada una config permisiva de opencode con diffs en vivo, notificaciones de escritorio e historial buscable.`,
     ctaText: 'Ejecuta opencode con una config permisiva sin ir a ciegas. CodeAgentSwarm le da a cada terminal de opencode diffs en vivo, notificaciones de escritorio e historial buscable, para que el trabajo en full auto nunca se convierta en una caja negra.',
+    ctaAgent: 'opencode',
     highlightedWords: ['OpenCode', 'modo YOLO'],
     publishedAt: '2026-07-05',
     updatedAt: '2026-07-05',

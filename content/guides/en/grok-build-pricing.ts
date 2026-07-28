@@ -11,6 +11,7 @@ export const guide: Guide = {
 
 Grok Build is xAI's coding CLI (<code>grok</code>), not the consumer Grok chat app.`,
     ctaText: 'CodeAgentSwarm is a workspace on top of your xAI access. You bring SuperGrok or X Premium+ (or an API key); we add multi-terminal supervision.',
+    ctaAgent: 'grok-build',
     highlightedWords: ['pricing', 'Grok Build'],
     publishedAt: '2026-07-28',
     updatedAt: '2026-07-28',

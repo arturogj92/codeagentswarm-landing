@@ -13,6 +13,7 @@ Ese interruptor es tan útil como peligroso, en la misma proporción que el flag
 
 También cubre lo que importa una vez apagadas las preguntas: cómo mantener vigilada una ejecución en full auto. Kimi Code es un agente de primera clase en CodeAgentSwarm, así que una sesión YOLO corre con diffs en vivo por terminal, notificaciones de escritorio e historial buscable en vez de ser una caja negra.`,
     ctaText: 'Ejecuta kimi --yolo sin ir a ciegas. CodeAgentSwarm corre Kimi Code como agente de primera clase, con diffs en vivo por terminal, notificaciones de escritorio e historial buscable vigilando cada ejecución en full auto.',
+    ctaAgent: 'kimi-code',
     highlightedWords: ['Kimi Code', 'modo YOLO'],
     publishedAt: '2026-07-18',
     updatedAt: '2026-07-18',

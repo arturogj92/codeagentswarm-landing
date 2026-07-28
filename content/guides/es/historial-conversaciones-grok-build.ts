@@ -11,6 +11,7 @@ export const guide: Guide = {
 
 Grok Build es la CLI de código de xAI (<code>grok</code>), no el chatbot Grok. Resume verificado con <code>grok --help</code> (<code>-c/--continue</code>, <code>-r/--resume</code>).`,
     ctaText: 'Reanuda Grok Build en la CLI, o navega los chats de todos los agentes desde el historial de CodeAgentSwarm.',
+    ctaAgent: 'grok-build',
     highlightedWords: ['historial', 'Grok Build'],
     publishedAt: '2026-07-28',
     updatedAt: '2026-07-28',

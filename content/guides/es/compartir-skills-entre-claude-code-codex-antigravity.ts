@@ -13,6 +13,7 @@ Me pasó a mí usando varios agentes el mismo día, así que le añadí una solu
 
 En esta guía te explico, claro y sencillo, por qué tus skills se quedan atrapadas en un agente y cómo compartirlas entre Claude Code, Codex y Antigravity sin copiar carpetas a mano.`,
     ctaText: 'Monta tus skills una vez en Claude Code y expórtalas a Codex y Antigravity en un clic para que todos los agentes trabajen con el mismo set de herramientas.',
+    ctaAgent: 'multi',
     highlightedWords: ['skills', 'Codex', 'Antigravity'],
     publishedAt: '2026-07-04',
     updatedAt: '2026-07-04',

@@ -11,6 +11,7 @@ export const guide: Guide = {
 
 Grok Build is xAI's coding CLI (<code>grok</code>), not the consumer Grok chat app.`,
     ctaText: 'CodeAgentSwarm supports Windows 10/11: install Grok Build, pick it in the agent launcher, supervise it next to your other CLIs.',
+    ctaAgent: 'grok-build',
     highlightedWords: ['Windows', 'Grok Build'],
     publishedAt: '2026-07-28',
     updatedAt: '2026-07-28',

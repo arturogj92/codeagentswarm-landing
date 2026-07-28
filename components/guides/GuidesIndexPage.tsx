@@ -17,9 +17,17 @@ interface GuidesIndexPageProps {
 type Family = 'cross' | 'claude' | 'codex' | 'antigravity' | 'opencode' | 'kimi' | 'grok' | 'gemini'
 
 const FAMILY_BY_EN_SLUG: Record<string, Family> = {
+  'best-tools-to-run-multiple-ai-coding-agents': 'cross',
   'ai-cli-agent-swarm': 'cross',
   'git-worktrees-for-ai-coding-agents': 'cross',
   'git-worktree-vs-branch-parallel-ai-agents': 'cross',
+  't3-code-vs-codeagentswarm': 'cross',
+  'superset-vs-codeagentswarm': 'cross',
+  'paseo-vs-codeagentswarm': 'cross',
+  'conductor-vs-codeagentswarm': 'cross',
+  'claude-squad-vs-codeagentswarm': 'cross',
+  'vibe-kanban-vs-codeagentswarm': 'cross',
+  'nimbalyst-vs-codeagentswarm': 'cross',
   'codex-agent-swarm': 'codex',
   'run-multiple-codex-sessions': 'codex',
   'codex-yolo-mode': 'codex',

@@ -13,6 +13,7 @@ La limitación aparece cuando acumulas decenas de sesiones de Codex repartidas e
 
 En resumen: tu historial de Codex CLI ya está en tu máquina y puedes retomarlo. CodeAgentSwarm convierte ese historial en una memoria buscable y multiproyecto que puedes retomar desde cualquier terminal, aunque la conversación pertenezca a otra sesión de Codex, a otro proyecto o incluso a otro agente.`,
     ctaText: 'Deja de revisar tus sesiones de Codex una por una. Busca todo tu historial de Codex CLI por palabra clave y retoma la conversación correcta desde cualquier terminal en CodeAgentSwarm.',
+    ctaAgent: 'codex',
     highlightedWords: ['historial', 'Codex CLI', 'retomar'],
     publishedAt: '2026-06-24',
     updatedAt: '2026-06-24',

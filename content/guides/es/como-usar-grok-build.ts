@@ -13,6 +13,7 @@ Tres productos distintos se llaman Grok: el chatbot de consumo Grok, la CLI ofic
 
 Esta guía cubre instalación, primer login, los flags que usarás de verdad, reanudar sesiones y cómo CodeAgentSwarm ejecuta Grok Build como agente de primera clase junto al resto del enjambre.`,
     ctaText: 'Elige Grok Build en cualquier terminal de CodeAgentSwarm y ejecútalo junto a Claude Code, Codex, OpenCode o Kimi Code. Notificaciones, historial buscable y diffs en vivo incluidos.',
+    ctaAgent: 'grok-build',
     highlightedWords: ['Grok Build'],
     publishedAt: '2026-07-28',
     updatedAt: '2026-07-28',

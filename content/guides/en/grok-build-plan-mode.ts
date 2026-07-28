@@ -13,6 +13,7 @@ Grok Build is xAI's coding CLI (<code>grok</code>), not the consumer Grok chat a
 
 This guide covers how to enable plan-oriented permissions, when to disable plan mode, how <code>--always-approve</code> fits (and when it is reckless), and how CodeAgentSwarm still helps when plan mode pauses for you.`,
     ctaText: 'Run Grok Build Plan Mode sessions in CodeAgentSwarm so you get a desktop ping when a plan is waiting on approval, not a quiet tab you forgot.',
+    ctaAgent: 'grok-build',
     highlightedWords: ['Plan Mode', 'Grok Build'],
     publishedAt: '2026-07-28',
     updatedAt: '2026-07-28',

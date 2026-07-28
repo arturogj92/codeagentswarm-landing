@@ -13,6 +13,7 @@ La parte que requiere pensar un poco no es arrancar los procesos, es no perderle
 
 En esta guía te explico las tres formas reales de ejecutar varias sesiones de opencode en paralelo: pestañas de terminal, tmux y CodeAgentSwarm. Las comparo de forma honesta y te muestro dónde empieza a frenarte cada una.`,
     ctaText: 'Ejecuta varias sesiones de opencode a la vez en CodeAgentSwarm. Varios terminales en una ventana, notificaciones de escritorio cuando una sesión termina e historial con búsqueda en todas ellas.',
+    ctaAgent: 'opencode',
     highlightedWords: ['múltiples sesiones de OpenCode', 'a la vez'],
     publishedAt: '2026-07-05',
     updatedAt: '2026-07-05',

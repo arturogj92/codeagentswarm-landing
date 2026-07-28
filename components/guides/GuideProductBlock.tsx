@@ -1,9 +1,8 @@
 'use client'
 
-import { Download } from 'lucide-react'
-import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 import { useEffect, useRef, useState } from 'react'
+import GuideDownloadButton from './GuideDownloadButton'
 
 const VIDEO_CDN_BASE =
   'https://fqamfucosytcyueqadog.supabase.co/storage/v1/object/public/landing-assets/videos'
@@ -110,18 +109,8 @@ export default function GuideProductBlock({ locale, slug, videoKey, ctaText }: G
         )}
       </div>
 
-      <div className="flex flex-wrap items-center gap-4 px-4 pt-4 pb-5 sm:px-[26px] sm:pt-[18px] sm:pb-6">
-        <Link
-          href={`/${locale}#download`}
-          onClick={() => {
-            window.umami?.track('guide_product_block_click', { guide: slug })
-          }}
-          className="inline-flex items-center gap-2 bg-neon-cyan text-black font-semibold text-[15px] px-[26px] py-3 rounded-full hover:bg-amber-500 transition-colors shadow-[0_0_20px_rgba(251,191,36,0.25)]"
-        >
-          {t('button')}
-          <Download className="w-[15px] h-[15px]" strokeWidth={2.4} />
-        </Link>
-        <span className="text-[13px] text-white/45">{t('sub')}</span>
+      <div className="px-4 pt-4 pb-5 sm:px-[26px] sm:pt-[18px] sm:pb-6">
+        <GuideDownloadButton locale={locale} slug={slug} position="product_block" size="lg" align="left" />
       </div>
     </aside>
   )

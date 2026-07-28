@@ -13,6 +13,7 @@ The catch is not whether you can start the processes. It is how you keep track o
 
 In this guide I walk through the three practical ways to run a Codex swarm, compare them honestly, and show where each one starts to hurt. If you want the broader picture across every CLI, start with the <a href="/en/guides/ai-cli-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">AI CLI agent swarm</a> overview, and if Claude Code is your main agent see <a href="/en/guides/run-multiple-claude-code-sessions" class="text-neon-cyan hover:text-neon-purple transition-colors">running multiple Claude Code sessions</a>.`,
     ctaText: 'Run your Codex agent swarm in CodeAgentSwarm. Several Codex CLI terminals in full-auto, with Turbo Mode and per-terminal permissions keeping them honest.',
+    ctaAgent: 'codex',
     highlightedWords: ['Codex agent swarm', 'Codex CLI'],
     publishedAt: '2026-06-07',
     updatedAt: '2026-06-07',

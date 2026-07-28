@@ -13,6 +13,7 @@ La limitación aparece cuando acumulas decenas de sesiones de opencode repartida
 
 En resumen: tu historial de opencode ya está en tu máquina y puedes retomarlo. CodeAgentSwarm convierte ese historial en una memoria buscable y multiproyecto que puedes retomar desde cualquier terminal, aunque la conversación pertenezca a otra sesión de opencode, a otro proyecto o incluso a otro agente.`,
     ctaText: 'Deja de revisar tus sesiones de opencode una por una. Busca todo tu historial de opencode por palabra clave y retoma la conversación correcta desde cualquier terminal en CodeAgentSwarm.',
+    ctaAgent: 'opencode',
     highlightedWords: ['historial', 'OpenCode', 'retomar'],
     publishedAt: '2026-07-05',
     updatedAt: '2026-07-05',

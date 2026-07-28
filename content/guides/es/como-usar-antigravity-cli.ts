@@ -13,6 +13,7 @@ Antigravity CLI es un único binario compilado, sin runtime de Node ni de Python
 
 Al terminar te manejarás con Antigravity CLI por tu cuenta, y sabrás cómo ejecutar varias sesiones de agy independientes en paralelo cuando un solo terminal se te quede corto.`,
     ctaText: 'Ejecuta varias sesiones de Antigravity CLI en un mismo espacio de trabajo de CodeAgentSwarm, cada una en su propio proyecto, con avisos de escritorio en cuanto una sesión termina e historial buscable entre todas.',
+    ctaAgent: 'antigravity',
     highlightedWords: ['Antigravity CLI', 'agy'],
     publishedAt: '2026-06-29',
     updatedAt: '2026-06-29',

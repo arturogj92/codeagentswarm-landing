@@ -42,8 +42,8 @@ export async function generateMetadata({
     : 'CodeAgentSwarm – Run Multiple AI CLI Terminals in One Workspace'
 
   const description = isSpanish
-    ? 'Orquesta múltiples terminales AI CLI (Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code, Grok Build) en un espacio de trabajo para desarrolladores con visibilidad en tiempo real, notificaciones instantáneas, historial completo de conversaciones, control de permisos, gestión de múltiples proyectos e integraciones MCP.'
-    : 'Orchestrate multiple AI CLI terminals (Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code, Grok Build) in a single developer workspace with real-time visibility, live notifications, full conversation history, permissions control, multi-project management and MCP integrations.'
+    ? 'CodeAgentSwarm es una app de escritorio para ejecutar y supervisar varios agentes de programación con IA en paralelo: Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code y Grok Build, con visibilidad en tiempo real, notificaciones, historial completo de conversaciones, control de permisos, gestión multiproyecto e integraciones MCP.'
+    : 'CodeAgentSwarm is a desktop workspace to run and supervise multiple AI coding agents in parallel: Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code and Grok Build, with real-time visibility, live notifications, full conversation history, permission control, multi-project management and MCP integrations.'
 
   return {
     metadataBase: new URL(baseUrl),
@@ -78,6 +78,8 @@ export async function generateMetadata({
       'real time change tracking',
       'live diffs',
       'CodeAgentSwarm',
+      'run multiple AI coding agents',
+      'AI coding agent supervision',
     ],
     authors: [{ name: 'CodeAgentSwarm Team' }],
     creator: 'CodeAgentSwarm',
@@ -96,6 +98,8 @@ export async function generateMetadata({
       languages: {
         en: `${baseUrl}/en`,
         es: `${baseUrl}/es`,
+        // English is the fallback for any language we don't publish.
+        'x-default': `${baseUrl}/en`,
       },
     },
     openGraph: {

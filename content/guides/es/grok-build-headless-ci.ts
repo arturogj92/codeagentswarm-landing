@@ -11,6 +11,7 @@ export const guide: Guide = {
 
 Grok Build es la CLI de código de xAI (<code>grok</code>), no el chatbot Grok.`,
     ctaText: 'Usa Grok Build headless en CI; usa CodeAgentSwarm cuando humanos supervisan sesiones interactivas largas.',
+    ctaAgent: 'grok-build',
     highlightedWords: ['headless', 'Grok Build'],
     publishedAt: '2026-07-28',
     updatedAt: '2026-07-28',

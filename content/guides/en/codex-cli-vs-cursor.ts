@@ -13,6 +13,7 @@ That difference changes everything: how you give instructions, how much runs aut
 
 This guide compares them on capability and workflow rather than chasing benchmark numbers, then shows how CodeAgentSwarm lets you skip the choice at the swarm level by running Codex CLI alongside Claude Code and Gemini CLI in parallel.`,
     ctaText: 'Like Codex CLI but want more than one terminal? Run several Codex CLI agents in parallel with CodeAgentSwarm, alongside Claude Code and Gemini CLI, all in one workspace.',
+    ctaAgent: 'codex',
     highlightedWords: ['Codex CLI', 'Cursor'],
     publishedAt: '2026-06-24',
     updatedAt: '2026-06-24',

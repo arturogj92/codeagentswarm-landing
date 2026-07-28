@@ -13,6 +13,7 @@ Grok Build is xAI's coding CLI (the <code>grok</code> command), not the consumer
 
 This guide is the pillar for parallel Grok Build: plain tabs, tmux, and CodeAgentSwarm, plus when to lean on native subagents instead.`,
     ctaText: 'Run a full Grok Build swarm in CodeAgentSwarm: multiple grok terminals, desktop notifications when one finishes, searchable history across all of them.',
+    ctaAgent: 'grok-build',
     highlightedWords: ['Grok Build', 'agent swarm'],
     publishedAt: '2026-07-28',
     updatedAt: '2026-07-28',

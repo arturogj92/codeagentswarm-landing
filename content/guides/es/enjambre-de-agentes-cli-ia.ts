@@ -13,6 +13,7 @@ La idea suena caótica, y mal hecha lo es. El objetivo de esta guía es enseñar
 
 Yo trabajo con enjambres mixtos casi todos los días. Aquí te cuento qué es realmente un enjambre de agentes CLI de IA, los compromisos honestos de cada forma de montarlo, y dónde un workspace hecho a propósito se gana su sitio frente a las pestañas del terminal o tmux.`,
     ctaText: 'Ejecuta Claude Code, Codex, Antigravity, OpenCode, Kimi Code y Grok Build en paralelo en un solo workspace de CodeAgentSwarm. Varios agentes, visibilidad compartida y un único sitio desde el que vigilarlos.',
+    ctaAgent: 'multi',
     highlightedWords: ['enjambre de agentes CLI de IA', 'en paralelo'],
     publishedAt: '2026-06-07',
     updatedAt: '2026-07-28',

@@ -13,6 +13,7 @@ Grok Build es la CLI de código de xAI (comando <code>grok</code>), no el chatbo
 
 Esta guía es el pilar del paralelismo con Grok Build: pestañas, tmux y CodeAgentSwarm, y cuándo bastan los subagentes nativos.`,
     ctaText: 'Monta un enjambre entero de Grok Build en CodeAgentSwarm: varios terminales grok, notificaciones al terminar e historial buscable entre todos.',
+    ctaAgent: 'grok-build',
     highlightedWords: ['Grok Build', 'enjambre'],
     publishedAt: '2026-07-28',
     updatedAt: '2026-07-28',

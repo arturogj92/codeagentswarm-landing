@@ -13,6 +13,7 @@ That is the one-paragraph answer. The details are where people get surprised: qu
 
 This guide lays out what is known, dates every number, and flags the parts you should re-check on the official pricing page before paying, because Moonshot is iterating on this fast.`,
     ctaText: 'Running Kimi Code agents against a weekly quota is a lot less stressful when you can see it. CodeAgentSwarm tracks Kimi\'s real weekly and 5 hour windows per terminal, alongside every other agent you run.',
+    ctaAgent: 'kimi-code',
     highlightedWords: ['Kimi Code', 'Plans', 'Pricing'],
     publishedAt: '2026-07-18',
     updatedAt: '2026-07-18',

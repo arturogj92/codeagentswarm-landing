@@ -13,6 +13,7 @@ El truco no está en arrancar los procesos. Está en no perderles la pista cuand
 
 En esta guía te explico las tres formas reales de ejecutar un enjambre de Codex, las comparo de forma honesta y te muestro dónde empieza a doler cada una. Si quieres la foto completa de todas las CLI, empieza por la visión general del <a href="/es/guias/enjambre-de-agentes-cli-ia" class="text-neon-cyan hover:text-neon-purple transition-colors">enjambre de agentes CLI de IA</a>, y si tu agente principal es Claude Code mira cómo <a href="/es/guias/ejecutar-multiples-sesiones-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">ejecutar varias sesiones de Claude Code</a>.`,
     ctaText: 'Ejecuta tu enjambre de agentes Codex en CodeAgentSwarm. Varios terminales de Codex CLI en full-auto, con Turbo Mode y permisos por terminal para mantenerlos a raya.',
+    ctaAgent: 'codex',
     highlightedWords: ['enjambre de agentes Codex', 'Codex CLI'],
     publishedAt: '2026-06-07',
     updatedAt: '2026-06-07',

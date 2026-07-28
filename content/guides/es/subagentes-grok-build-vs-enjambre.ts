@@ -11,6 +11,7 @@ export const guide: Guide = {
 
 Grok Build es la CLI de código de xAI (<code>grok</code>), no el chat Grok de consumo.`,
     ctaText: 'Usa subagentes nativos para trabajo que Grok puede coordinar solo; usa CodeAgentSwarm cuando necesitas varios trabajadores visibles o multi-vendor.',
+    ctaAgent: 'multi',
     highlightedWords: ['subagentes', 'enjambre'],
     publishedAt: '2026-07-28',
     updatedAt: '2026-07-28',

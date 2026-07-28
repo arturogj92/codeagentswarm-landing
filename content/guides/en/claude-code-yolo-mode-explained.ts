@@ -13,6 +13,7 @@ That is where "YOLO mode" comes in. The community started calling it that becaus
 
 The speed gain is real. But so are the risks. This guide covers what YOLO mode actually does under the hood, what can go wrong, and how to get the same speed safely - whether through Anthropic's newer Auto mode or CodeAgentSwarm's Turbo Mode with granular permission controls.`,
     ctaText: 'Skip confirmations safely with CodeAgentSwarm Turbo Mode. Granular permissions, Git guardrails, and MCP controls built in.',
+    ctaAgent: 'claude-code',
     highlightedWords: ['YOLO mode', 'Claude Code'],
     publishedAt: '2026-04-15',
     updatedAt: '2026-07-16',

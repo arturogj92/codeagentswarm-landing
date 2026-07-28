@@ -13,6 +13,7 @@ Así que la pregunta no es si puedes montar un enjambre de agentes Gemini. Puede
 
 En esta guía repaso las tres formas prácticas de ejecutar varios agentes de Gemini CLI juntos, las comparo con honestidad y explico por qué un espacio de trabajo pensado para esto (donde además eliges "gemini cli" por terminal) suele ganarle a hacer malabares con terminales sueltos cuando el enjambre crece.`,
     ctaText: 'Ejecuta tu enjambre de agentes Gemini en CodeAgentSwarm. Elige gemini cli por terminal, míralos todos a la vez y recibe un aviso cuando cada uno termina.',
+    ctaAgent: 'multi',
     highlightedWords: ['enjambre de agentes Gemini', 'Gemini CLI'],
     publishedAt: '2026-06-07',
     updatedAt: '2026-06-07',

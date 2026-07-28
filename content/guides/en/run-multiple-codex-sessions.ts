@@ -13,6 +13,7 @@ The part that takes a bit of thought is not starting the processes, it is keepin
 
 This guide walks through the three practical ways to run several Codex CLI sessions side by side: plain terminal tabs, tmux, and CodeAgentSwarm. I compare them honestly and show where each one starts to slow you down.`,
     ctaText: 'Run several Codex CLI sessions at once in CodeAgentSwarm. Multiple terminals in one window, with desktop notifications and full-auto kept in check by per-terminal permissions.',
+    ctaAgent: 'codex',
     highlightedWords: ['multiple Codex CLI sessions', 'at once'],
     publishedAt: '2026-06-07',
     updatedAt: '2026-06-07',

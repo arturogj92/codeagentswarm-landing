@@ -54,6 +54,14 @@ import enKimiCodePlans from './en/kimi-code-plans-and-pricing'
 import enKimiCodeYolo from './en/kimi-code-yolo-mode'
 import enKimiCodeHistory from './en/kimi-code-conversation-history'
 import enKimiCodeWindows from './en/kimi-code-on-windows'
+import enBestTools from './en/best-tools-to-run-multiple-ai-coding-agents'
+import enT3Code from './en/t3-code-vs-codeagentswarm'
+import enSuperset from './en/superset-vs-codeagentswarm'
+import enPaseo from './en/paseo-vs-codeagentswarm'
+import enConductor from './en/conductor-vs-codeagentswarm'
+import enClaudeSquad from './en/claude-squad-vs-codeagentswarm'
+import enVibeKanban from './en/vibe-kanban-vs-codeagentswarm'
+import enNimbalyst from './en/nimbalyst-vs-codeagentswarm'
 
 import enHowToUseGrokBuild from './en/how-to-use-grok-build'
 import enGrokBuildVsClaude from './en/grok-build-vs-claude-code'
@@ -119,6 +127,14 @@ import esKimiCodePlans from './es/planes-y-precios-de-kimi-code'
 import esKimiCodeYolo from './es/modo-yolo-kimi-code'
 import esKimiCodeHistory from './es/historial-conversaciones-kimi-code'
 import esKimiCodeWindows from './es/kimi-code-en-windows'
+import esBestTools from './es/mejores-herramientas-agentes-ia-en-paralelo'
+import esT3Code from './es/t3-code-vs-codeagentswarm'
+import esSuperset from './es/superset-vs-codeagentswarm'
+import esPaseo from './es/paseo-vs-codeagentswarm'
+import esConductor from './es/conductor-vs-codeagentswarm'
+import esClaudeSquad from './es/claude-squad-vs-codeagentswarm'
+import esVibeKanban from './es/vibe-kanban-vs-codeagentswarm'
+import esNimbalyst from './es/nimbalyst-vs-codeagentswarm'
 
 import esComoUsarGrokBuild from './es/como-usar-grok-build'
 import esGrokBuildVsClaude from './es/grok-build-vs-claude-code'
@@ -186,6 +202,14 @@ export const guides: Record<string, Record<string, Guide>> = {
     'kimi-code-yolo-mode': enKimiCodeYolo,
     'kimi-code-conversation-history': enKimiCodeHistory,
     'kimi-code-on-windows': enKimiCodeWindows,
+    'best-tools-to-run-multiple-ai-coding-agents': enBestTools,
+    't3-code-vs-codeagentswarm': enT3Code,
+    'superset-vs-codeagentswarm': enSuperset,
+    'paseo-vs-codeagentswarm': enPaseo,
+    'conductor-vs-codeagentswarm': enConductor,
+    'claude-squad-vs-codeagentswarm': enClaudeSquad,
+    'vibe-kanban-vs-codeagentswarm': enVibeKanban,
+    'nimbalyst-vs-codeagentswarm': enNimbalyst,
     'how-to-use-grok-build': enHowToUseGrokBuild,
     'grok-build-vs-claude-code': enGrokBuildVsClaude,
     'grok-build-agent-swarm': enGrokBuildAgentSwarm,
@@ -250,6 +274,14 @@ export const guides: Record<string, Record<string, Guide>> = {
     'modo-yolo-kimi-code': esKimiCodeYolo,
     'historial-conversaciones-kimi-code': esKimiCodeHistory,
     'kimi-code-en-windows': esKimiCodeWindows,
+    'mejores-herramientas-agentes-ia-en-paralelo': esBestTools,
+    't3-code-vs-codeagentswarm': esT3Code,
+    'superset-vs-codeagentswarm': esSuperset,
+    'paseo-vs-codeagentswarm': esPaseo,
+    'conductor-vs-codeagentswarm': esConductor,
+    'claude-squad-vs-codeagentswarm': esClaudeSquad,
+    'vibe-kanban-vs-codeagentswarm': esVibeKanban,
+    'nimbalyst-vs-codeagentswarm': esNimbalyst,
     'como-usar-grok-build': esComoUsarGrokBuild,
     'grok-build-vs-claude-code': esGrokBuildVsClaude,
     'enjambre-de-agentes-grok-build': esGrokBuildAgentSwarm,

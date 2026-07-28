@@ -17,6 +17,7 @@ Lo que más me gusta: cuando instalas una skill, eliges dónde va. Puedes instal
     updatedAt: '2026-06-07',
     alternateSlug: 'claude-code-skills-marketplace',
     ctaText: 'Abre el Marketplace de Skills en CodeAgentSwarm, encuentra una skill que realmente quieras e instálala en Claude, Gemini o Codex con un clic.',
+    ctaAgent: 'claude-code',
   },
   sections: [
     {

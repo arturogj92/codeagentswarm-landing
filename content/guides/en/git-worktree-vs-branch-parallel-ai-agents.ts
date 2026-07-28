@@ -13,6 +13,7 @@ Only one of them actually lets N agents run at once cleanly, and it is not the o
 
 For the ground-up explanation of what a worktree is and why isolation matters, read the <a href="/en/guides/git-worktrees-for-ai-coding-agents" class="text-neon-cyan hover:text-neon-purple transition-colors">git worktrees for AI coding agents</a> guide first. This page is the comparison.`,
     ctaText: 'Skip the branch juggling. CodeAgentSwarm gives each terminal its own worktree on its own branch with one toggle, so your agents run in parallel without stepping on each other.',
+    ctaAgent: 'multi',
     highlightedWords: ['Git Worktree vs Branch', 'Parallel AI Agents'],
     publishedAt: '2026-07-05',
     updatedAt: '2026-07-05',

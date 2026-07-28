@@ -13,6 +13,7 @@ That is exactly what the history view in CodeAgentSwarm solves. Every time you w
 
 The bottom line: your Claude Code history is already on your machine. CodeAgentSwarm turns it into a long term memory you can search, filter and resume from any terminal.`,
     ctaText: 'Use conversation history next time you resume a project. You\'ll instantly notice how comfortable it is not having to explain everything from scratch to Claude.',
+    ctaAgent: 'claude-code',
     highlightedWords: ['history', 'Claude Code'],
     publishedAt: '2026-02-10',
     updatedAt: '2026-04-15',

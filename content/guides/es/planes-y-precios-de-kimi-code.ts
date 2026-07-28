@@ -13,6 +13,7 @@ Esa es la respuesta en un párrafo. Los detalles son donde la gente se lleva sor
 
 Esta guía ordena lo que se sabe, le pone fecha a cada número y marca las partes que deberías reconfirmar en la página oficial de precios antes de pagar, porque Moonshot está iterando esto muy deprisa.`,
     ctaText: 'Ejecutar agentes de Kimi Code contra una cuota semanal estresa mucho menos cuando la ves. CodeAgentSwarm sigue las ventanas reales semanales y de 5 horas de Kimi por terminal, junto a las del resto de agentes que uses.',
+    ctaAgent: 'kimi-code',
     highlightedWords: ['Kimi Code', 'Planes', 'Precios'],
     publishedAt: '2026-07-18',
     updatedAt: '2026-07-18',

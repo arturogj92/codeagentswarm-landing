@@ -16,6 +16,7 @@ In this guide I will walk through what the task board is, how the agents keep it
     publishedAt: '2026-06-07',
     updatedAt: '2026-06-07',
     ctaText: 'Open the Agent Task Board, assign a task to a terminal, and watch the AI move its own card from Pending to Completed.',
+    ctaAgent: 'claude-code',
     alternateSlug: 'gestion-de-tareas-claude-code',
   },
   sections: [

@@ -13,6 +13,7 @@ If your stack leans on Linux tooling, you can run the exact same opencode inside
 
 And once opencode is running, we will also show you how to go from a single opencode terminal to several agents working in parallel on Windows, without losing track of which one is doing what.`,
     ctaText: 'CodeAgentSwarm is a native Windows desktop app. Download it free and run several opencode terminals side by side in a visual workspace, with notifications, searchable history and live diffs.',
+    ctaAgent: 'opencode',
     highlightedWords: ['OpenCode', 'Windows'],
     publishedAt: '2026-07-05',
     updatedAt: '2026-07-05',

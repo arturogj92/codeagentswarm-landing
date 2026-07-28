@@ -28,6 +28,22 @@ const nextConfig = {
         destination: 'https://discord.gg/a9ZqmW9UfQ',
         permanent: false,
       },
+      // 2026-07: locale-less URLs used to 404. They are not in the sitemap and
+      // nothing links to them, but the middleware spent months advertising
+      // them to Google as the hreflang x-default, so crawlers have seen them.
+      // Sending them to the right page is free here: next.config redirects are
+      // resolved by Vercel's routing layer, they never invoke a function.
+      // /guias and /guides carry the language in the path itself; the rest fall
+      // back to `defaultLocale` ('en').
+      { source: '/guias', destination: '/es/guias', permanent: true },
+      { source: '/guias/:slug+', destination: '/es/guias/:slug+', permanent: true },
+      { source: '/guides', destination: '/en/guides', permanent: true },
+      { source: '/guides/:slug+', destination: '/en/guides/:slug+', permanent: true },
+      { source: '/privacy', destination: '/en/privacy', permanent: true },
+      { source: '/terms', destination: '/en/terms', permanent: true },
+      { source: '/cookies', destination: '/en/cookies', permanent: true },
+      { source: '/beta', destination: '/en/beta', permanent: true },
+      { source: '/survey', destination: '/en/survey', permanent: true },
     ]
   },
 }

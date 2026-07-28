@@ -13,6 +13,7 @@ Las diferencias existen, eso sí, y cortan en ambas direcciones. Kimi Code ejecu
 
 En esta comparativa repaso qué hace mejor cada uno, qué se transfiere entre ellos y la configuración a la que mucha gente acaba llegando: no elegir, y ejecutar los dos a la vez.`,
     ctaText: 'La forma más rápida de zanjar el Kimi Code vs Claude Code es ejecutar los dos a la vez. CodeAgentSwarm le da a cada agente su propio terminal, con diffs en vivo, notificaciones de escritorio e historial buscable en todas las sesiones.',
+    ctaAgent: 'multi',
     highlightedWords: ['Kimi Code', 'Claude Code'],
     publishedAt: '2026-07-18',
     updatedAt: '2026-07-18',

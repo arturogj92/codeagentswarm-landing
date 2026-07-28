@@ -13,6 +13,7 @@ Esta guía es una comparación directa más un recorrido de migración. Primero 
 
 Gemini CLI fue una buena herramienta y se ganó a su público, así que esto no es una pieza de hype sobre un reemplazo. Como Gemini CLI está apagado, migrar a Antigravity CLI es simplemente el camino hacia delante, y como verás, ese camino es corto.`,
     ctaText: 'Pasar de Gemini CLI a Antigravity CLI no significa perder tu flujo de varias sesiones. Ejecuta varios terminales de Antigravity CLI a la vez en CodeAgentSwarm, junto a Claude Code y Codex CLI, en un mismo espacio de trabajo.',
+    ctaAgent: 'antigravity',
     highlightedWords: ['Antigravity CLI', 'Gemini CLI', 'migrar'],
     publishedAt: '2026-06-29',
     updatedAt: '2026-06-29',

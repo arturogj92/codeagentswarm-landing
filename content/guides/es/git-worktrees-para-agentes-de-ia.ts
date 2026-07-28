@@ -13,6 +13,7 @@ Los git worktrees son la solución limpia. Un mismo repositorio puede tener vari
 
 En esta guía explico el problema en concreto, qué es de verdad un git worktree, cómo crear uno a mano y cómo CodeAgentSwarm monta uno por terminal de forma automática, para que un enjambre de agentes en paralelo funcione sin más. Si quieres la vista general de ejecutar varios agentes a la vez, empieza por la introducción al <a href="/es/guias/enjambre-de-agentes-cli-ia" class="text-neon-cyan hover:text-neon-purple transition-colors">enjambre de agentes CLI de IA</a>.`,
     ctaText: 'Activa Git Worktree por terminal en CodeAgentSwarm y cada agente tendrá su propio checkout aislado, en su propia rama, sin configuración y sin dejar nada en tu git status.',
+    ctaAgent: 'multi',
     highlightedWords: ['Git worktrees', 'agentes de IA'],
     publishedAt: '2026-07-05',
     updatedAt: '2026-07-05',

@@ -13,6 +13,7 @@ El truco no está en arrancar los procesos. Está en no perderles la pista cuand
 
 En esta guía te explico las tres formas reales de ejecutar un enjambre de opencode, las comparo de forma honesta y te muestro dónde empieza a doler cada una. Si quieres la foto completa de todas las CLI, empieza por la visión general del <a href="/es/guias/enjambre-de-agentes-cli-ia" class="text-neon-cyan hover:text-neon-purple transition-colors">enjambre de agentes CLI de IA</a>, y si quieres la mecánica de las sesiones en paralelo en concreto mira cómo <a href="/es/guias/ejecutar-multiples-sesiones-opencode" class="text-neon-cyan hover:text-neon-purple transition-colors">ejecutar varias sesiones de opencode</a>.`,
     ctaText: 'Ejecuta tu enjambre de agentes opencode en CodeAgentSwarm. Varios terminales de opencode en paralelo, en el proveedor de modelos que quieras, con diffs en vivo y notificaciones de escritorio para mantener a raya a cada agente.',
+    ctaAgent: 'opencode',
     highlightedWords: ['Enjambre de agentes OpenCode', 'opencode'],
     publishedAt: '2026-07-05',
     updatedAt: '2026-07-05',

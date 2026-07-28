@@ -13,6 +13,7 @@ Three different products share the word Grok: the consumer Grok chatbot, xAI's o
 
 This guide covers install, first login, the flags you will actually use, session resume, and how CodeAgentSwarm runs Grok Build as a first-class agent next to the rest of your swarm.`,
     ctaText: 'Pick Grok Build in any CodeAgentSwarm terminal and run it next to Claude Code, Codex, OpenCode or Kimi Code. Desktop notifications, searchable history and live diffs come free.',
+    ctaAgent: 'grok-build',
     highlightedWords: ['Grok Build'],
     publishedAt: '2026-07-28',
     updatedAt: '2026-07-28',

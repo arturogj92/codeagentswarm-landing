@@ -13,6 +13,7 @@ La confusión es comprensible. Ambos hablan de "varios agentes". La diferencia e
 
 Esta guía explica qué es cada cosa, cuándo recurrir a una o a otra, y por qué no tienes que elegir. Puedes ejecutar los agent teams nativos dentro de una terminal que aloja CodeAgentSwarm y quedarte con lo mejor de ambos.`,
     ctaText: 'Usa los agent teams de Claude Code para delegar dentro de una sesión, y CodeAgentSwarm para ejecutar varios agentes independientes en paralelo. Descarga CodeAgentSwarm y supervisa todo el espacio de trabajo desde un único sitio.',
+    ctaAgent: 'comparison',
     highlightedWords: ['Agent Teams de Claude Code', 'CodeAgentSwarm'],
     publishedAt: '2026-06-07',
     updatedAt: '2026-06-07',

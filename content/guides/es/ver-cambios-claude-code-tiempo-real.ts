@@ -21,6 +21,7 @@ En CodeAgentSwarm la idea es justo evitar esa sensación de caja negra. La app c
     alternateSlug: 'view-claude-code-changes-real-time',
     introVideo: cdnVideo('see-claude-code-changes-real-time.mp4'),
     ctaText: 'La próxima vez que ejecutes Claude Code en un proyecto, vas a saber exactamente qué ha cambiado. Sin sensación de caja negra.',
+    ctaAgent: 'claude-code',
   },
   sections: [
     {

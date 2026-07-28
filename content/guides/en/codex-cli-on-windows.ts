@@ -13,6 +13,7 @@ In this guide we cover both paths: the native Windows install with Node.js and n
 
 And once Codex is running, we will also show you how to go from a single Codex terminal to several agents working in parallel on Windows, without losing track of which one is doing what.`,
     ctaText: 'CodeAgentSwarm is a native Windows desktop app. Download it free and run several Codex CLI terminals side by side in a visual workspace, with notifications, searchable history and live diffs.',
+    ctaAgent: 'codex',
     highlightedWords: ['Codex CLI', 'Windows'],
     publishedAt: '2026-06-24',
     updatedAt: '2026-06-24',

@@ -23,6 +23,7 @@ With CodeAgentSwarm the idea is the opposite: You keep doing your thing and the 
 In this guide I'll show you how CodeAgentSwarm notifications work and how to use them so you don't lose focus while working with Claude Code.`,
     introVideo: cdnVideo('terminal-notifications.mp4'),
     ctaText: 'Enable CodeAgentSwarm notifications and stop watching the terminal. The app will let you know when Claude finishes or needs your attention.',
+    ctaAgent: 'multi',
     alternateSlug: 'notificaciones-codeagentswarm',
   },
   sections: [

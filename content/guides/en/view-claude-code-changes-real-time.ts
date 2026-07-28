@@ -21,6 +21,7 @@ In CodeAgentSwarm the idea is precisely to avoid that black box feeling. The app
     alternateSlug: 'ver-cambios-claude-code-tiempo-real',
     introVideo: cdnVideo('see-claude-code-changes-real-time.mp4'),
     ctaText: 'Next time you run Claude Code on a project, you\'ll know exactly what it changed. No more black box feeling.',
+    ctaAgent: 'claude-code',
   },
   sections: [
     {

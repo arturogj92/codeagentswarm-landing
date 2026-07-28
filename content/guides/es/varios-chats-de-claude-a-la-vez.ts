@@ -13,6 +13,7 @@ Son dos preguntas distintas que comparten la misma búsqueda, así que esta guí
 
 Elige el camino que encaja con lo que intentas hacer. Si chateas en el navegador, lee la siguiente sección. Si programas en el terminal, salta a la sección para desarrolladores más abajo.`,
     ctaText: 'Ejecuta varias sesiones de Claude Code en paralelo en un solo workspace de CodeAgentSwarm, con notificaciones, historial buscable y diffs en vivo para que no se pierda nada.',
+    ctaAgent: 'claude-code',
     highlightedWords: ['varios chats de Claude', 'a la vez'],
     publishedAt: '2026-06-07',
     updatedAt: '2026-06-07',

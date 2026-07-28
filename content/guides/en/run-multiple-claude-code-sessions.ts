@@ -13,6 +13,7 @@ The real question is not whether you can do it, but how you should do it. There 
 
 In this guide I will walk you through the three main methods, compare them honestly, and help you pick the right one depending on how you work.`,
     ctaText: 'Try running multiple Claude Code sessions with CodeAgentSwarm. Multiple terminals, one workspace, zero context switching.',
+    ctaAgent: 'claude-code',
     highlightedWords: ['multiple sessions', 'Claude Code'],
     publishedAt: '2026-04-15',
     updatedAt: '2026-04-15',

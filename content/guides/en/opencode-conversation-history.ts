@@ -13,6 +13,7 @@ The limitation shows up once you have dozens of opencode sessions across several
 
 The short version: your opencode history is already on your machine and you can resume from it. CodeAgentSwarm turns that history into a searchable, cross-project memory you can resume from any terminal, even when the conversation belongs to a different opencode session, a different project, or a different agent entirely.`,
     ctaText: 'Stop scrolling through old opencode sessions one by one. Search your full opencode history by keyword and resume the right conversation from any terminal in CodeAgentSwarm.',
+    ctaAgent: 'opencode',
     highlightedWords: ['history', 'OpenCode', 'resume'],
     publishedAt: '2026-07-05',
     updatedAt: '2026-07-05',

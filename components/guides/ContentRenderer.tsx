@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Info, AlertTriangle, Lightbulb, ImageIcon } from 'lucide-react'
 import type { ContentBlock, GuideSection } from '@/content/guides/types'
@@ -114,6 +115,24 @@ function CodeBlock({ code, language }: { code: string; language?: string }) {
   )
 }
 
+// Brand cells: when a table header or a row's first cell is exactly our
+// product name, show the isotype next to it. The name stays real text in
+// the DOM (never replaced by the image), so crawlers and AI readers still
+// see the brand as text. alt is empty because the adjacent text carries it.
+const BRAND_NAME = 'CodeAgentSwarm'
+
+const isBrandCell = (html: string): boolean =>
+  html.replace(/<[^>]*>/g, '').trim() === BRAND_NAME
+
+function BrandCell({ html }: { html: string }) {
+  return (
+    <span className="inline-flex items-center gap-2">
+      <Image src="/isotipo.png" alt="" width={20} height={20} className="shrink-0" />
+      <span dangerouslySetInnerHTML={{ __html: html }} />
+    </span>
+  )
+}
+
 // Render a single content block
 function renderBlock(block: ContentBlock, index: number) {
   switch (block.type) {
@@ -213,6 +232,63 @@ function renderBlock(block: ContentBlock, index: number) {
           key={index}
           className="my-8 border-t border-white/10"
         />
+      )
+
+    case 'table':
+      return (
+        <figure key={index} className="my-8">
+          <div className="overflow-x-auto rounded-xl border border-white/10">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="bg-white/5">
+                  {block.headers.map((h, i) =>
+                    isBrandCell(h) ? (
+                      <th
+                        key={i}
+                        className="px-4 py-3 text-left font-semibold text-white whitespace-nowrap"
+                      >
+                        <BrandCell html={h} />
+                      </th>
+                    ) : (
+                      <th
+                        key={i}
+                        className="px-4 py-3 text-left font-semibold text-white whitespace-nowrap"
+                        dangerouslySetInnerHTML={{ __html: h }}
+                      />
+                    )
+                  )}
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-white/10">
+                {block.rows.map((row, ri) => (
+                  <tr key={ri}>
+                    {row.map((cell, ci) =>
+                      ci === 0 && isBrandCell(cell) ? (
+                        <td
+                          key={ci}
+                          className={`px-4 py-3 align-top leading-relaxed ${ci === 0 ? 'font-medium text-white' : 'text-white/70'}`}
+                        >
+                          <BrandCell html={cell} />
+                        </td>
+                      ) : (
+                        <td
+                          key={ci}
+                          className={`px-4 py-3 align-top leading-relaxed ${ci === 0 ? 'font-medium text-white' : 'text-white/70'}`}
+                          dangerouslySetInnerHTML={{ __html: cell }}
+                        />
+                      )
+                    )}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          {block.caption && (
+            <figcaption className="mt-3 text-center text-sm text-white/50">
+              {block.caption}
+            </figcaption>
+          )}
+        </figure>
       )
 
     default:

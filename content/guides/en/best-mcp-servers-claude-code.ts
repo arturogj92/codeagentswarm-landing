@@ -13,6 +13,7 @@ The problem is knowing which MCP servers are worth installing. There are dozens 
 
 This guide covers the 10 MCP servers that matter most for everyday development, what each one does, and the easiest way to manage them all.`,
     ctaText: 'Configure MCP servers visually with CodeAgentSwarm MCP Marketplace. Enable integrations per project with one click.',
+    ctaAgent: 'claude-code',
     highlightedWords: ['MCP servers', 'Claude Code'],
     publishedAt: '2026-04-15',
     updatedAt: '2026-04-15',

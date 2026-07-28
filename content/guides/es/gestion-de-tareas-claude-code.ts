@@ -16,6 +16,7 @@ En esta guía te explico qué es el tablero de tareas, cómo lo mantienen al dí
     publishedAt: '2026-06-07',
     updatedAt: '2026-06-07',
     ctaText: 'Abre el Agent Task Board, asigna una tarea a un terminal y observa cómo la IA mueve su propia tarjeta de Pendiente a Completada.',
+    ctaAgent: 'claude-code',
     alternateSlug: 'claude-code-task-management',
   },
   sections: [

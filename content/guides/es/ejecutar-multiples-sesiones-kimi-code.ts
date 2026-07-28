@@ -13,6 +13,7 @@ Lo que pide un poco de cabeza no es arrancar los procesos, es mantener las sesio
 
 Esta guía cubre cómo funcionan de verdad las sesiones de Kimi Code, las tres formas prácticas de ejecutar varias en paralelo y qué le hace el paralelismo a tu cuota. Para la foto completa de un enjambre, mira la guía del <a href="/es/guias/enjambre-de-agentes-kimi-code" class="text-neon-cyan hover:text-neon-purple transition-colors">enjambre de agentes Kimi Code</a>.`,
     ctaText: 'Ejecuta varias sesiones de Kimi Code a la vez en CodeAgentSwarm. Varios terminales en una ventana, notificaciones de escritorio cuando una sesión termina, historial buscable y una vista en vivo de tu cuota compartida de Kimi.',
+    ctaAgent: 'kimi-code',
     highlightedWords: ['varias sesiones de Kimi Code', 'a la vez'],
     publishedAt: '2026-07-18',
     updatedAt: '2026-07-18',

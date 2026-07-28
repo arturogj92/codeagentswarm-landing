@@ -13,6 +13,7 @@ Grok Build is xAI's coding CLI (the <code>grok</code> command), not the consumer
 
 This comparison stays practical: install and auth, strengths, gaps, and how CodeAgentSwarm lets you supervise both in one workspace.`,
     ctaText: 'Run Grok Build and Claude Code side by side in CodeAgentSwarm. One workspace, two vendors, shared notifications and history.',
+    ctaAgent: 'multi',
     highlightedWords: ['Grok Build', 'Claude Code'],
     publishedAt: '2026-07-28',
     updatedAt: '2026-07-28',

@@ -13,6 +13,7 @@ That matters because Claude Code itself gives you none of this. Anthropic ships 
 
 CodeAgentSwarm is that dashboard. It is a free desktop app for macOS and Windows that runs your sessions in one workspace and adds the oversight layer on top: per-terminal status, a kanban task board the agents update themselves, desktop notifications, searchable history, live file changes and one-click project switching. This guide is about using it as a Claude Code manager: seeing everything, catching the terminal that needs you, and keeping a swarm of agents under control.`,
     ctaText: 'Put every Claude Code session on one dashboard: see each terminal\'s status, its tasks and its changes at a glance, and let the sessions tell you when they need you.',
+    ctaAgent: 'claude-code',
     highlightedWords: ['Claude Code Dashboard', 'Every Session'],
     publishedAt: '2026-07-13',
     updatedAt: '2026-07-13',

@@ -13,6 +13,7 @@ La verdadera pregunta no es si se puede, sino cómo deberías hacerlo. Hay vario
 
 En esta guía te explico los tres métodos principales, los comparo de forma honesta y te ayudo a elegir el que mejor se adapte a tu forma de trabajar.`,
     ctaText: 'Prueba a ejecutar varias sesiones de Claude Code con CodeAgentSwarm. Varios terminales, un solo espacio de trabajo, cero cambios de contexto.',
+    ctaAgent: 'claude-code',
     highlightedWords: ['varias sesiones', 'Claude Code'],
     publishedAt: '2026-04-15',
     updatedAt: '2026-04-15',

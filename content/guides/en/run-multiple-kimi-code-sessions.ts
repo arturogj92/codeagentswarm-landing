@@ -13,6 +13,7 @@ The part that takes a bit of thought is not starting the processes. It is keepin
 
 This guide covers how Kimi Code sessions actually work, the three practical ways to run several side by side, and what going parallel does to your quota. For the bigger picture of a full swarm, see the <a href="/en/guides/kimi-code-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi Code agent swarm</a> guide.`,
     ctaText: 'Run several Kimi Code sessions at once in CodeAgentSwarm. Multiple terminals in one window, desktop notifications when a session finishes, searchable history and a live view of your shared Kimi quota.',
+    ctaAgent: 'kimi-code',
     highlightedWords: ['multiple Kimi Code sessions', 'at once'],
     publishedAt: '2026-07-18',
     updatedAt: '2026-07-18',

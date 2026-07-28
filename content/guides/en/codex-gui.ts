@@ -13,6 +13,7 @@ That layer is what the terminal cannot give you. Codex CLI is text scrolling pas
 
 CodeAgentSwarm is that kind of Codex GUI app. It runs on macOS and Windows, gives Codex multiple terminals side by side, a task board, searchable history, live diffs, desktop notifications and clickable permission controls. It does not replace Codex CLI and it does not change how the agent works. It gives the same CLI a dashboard.`,
     ctaText: 'Give OpenAI Codex a real desktop app: a visual workspace with several Codex terminals, a task board, live diffs and notifications, all on top of the CLI and the OpenAI account you already use.',
+    ctaAgent: 'codex',
     highlightedWords: ['Codex GUI', 'desktop app'],
     publishedAt: '2026-07-13',
     updatedAt: '2026-07-13',

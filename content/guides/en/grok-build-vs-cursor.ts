@@ -11,6 +11,7 @@ export const guide: Guide = {
 
 Grok Build is xAI's coding CLI (<code>grok</code>), not the Grok chatbot.`,
     ctaText: 'Keep Cursor if you love the IDE. Add Grok Build terminals in CodeAgentSwarm when you want supervised CLI agents in parallel.',
+    ctaAgent: 'multi',
     highlightedWords: ['Grok Build', 'Cursor'],
     publishedAt: '2026-07-28',
     updatedAt: '2026-07-28',
