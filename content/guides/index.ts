@@ -55,6 +55,18 @@ import enKimiCodeYolo from './en/kimi-code-yolo-mode'
 import enKimiCodeHistory from './en/kimi-code-conversation-history'
 import enKimiCodeWindows from './en/kimi-code-on-windows'
 
+import enHowToUseGrokBuild from './en/how-to-use-grok-build'
+import enGrokBuildVsClaude from './en/grok-build-vs-claude-code'
+import enGrokBuildAgentSwarm from './en/grok-build-agent-swarm'
+import enGrokBuildPlanMode from './en/grok-build-plan-mode'
+import enGrokBuildSubagents from './en/grok-build-subagents-vs-agent-swarm'
+import enGrokBuildPricing from './en/grok-build-pricing'
+import enGrokBuildWindows from './en/grok-build-on-windows'
+import enGrokBuildFromClaude from './en/grok-build-from-claude-code'
+import enGrokBuildVsCursor from './en/grok-build-vs-cursor'
+import enGrokBuildHeadless from './en/grok-build-headless-ci'
+import enGrokBuildHistory from './en/grok-build-conversation-history'
+
 // Spanish guides
 import esMultipleTerminals from './es/como-usar-varios-terminales-claude-code'
 import esHistorialClaudeCode from './es/historial-claude-code'
@@ -107,6 +119,18 @@ import esKimiCodePlans from './es/planes-y-precios-de-kimi-code'
 import esKimiCodeYolo from './es/modo-yolo-kimi-code'
 import esKimiCodeHistory from './es/historial-conversaciones-kimi-code'
 import esKimiCodeWindows from './es/kimi-code-en-windows'
+
+import esComoUsarGrokBuild from './es/como-usar-grok-build'
+import esGrokBuildVsClaude from './es/grok-build-vs-claude-code'
+import esGrokBuildAgentSwarm from './es/enjambre-de-agentes-grok-build'
+import esGrokBuildPlanMode from './es/modo-plan-grok-build'
+import esGrokBuildSubagents from './es/subagentes-grok-build-vs-enjambre'
+import esGrokBuildPricing from './es/precios-y-acceso-grok-build'
+import esGrokBuildWindows from './es/grok-build-en-windows'
+import esGrokBuildFromClaude from './es/grok-build-desde-claude-code'
+import esGrokBuildVsCursor from './es/grok-build-vs-cursor'
+import esGrokBuildHeadless from './es/grok-build-headless-ci'
+import esGrokBuildHistory from './es/historial-conversaciones-grok-build'
 
 // Registry of all guides by locale and slug
 export const guides: Record<string, Record<string, Guide>> = {
@@ -162,6 +186,17 @@ export const guides: Record<string, Record<string, Guide>> = {
     'kimi-code-yolo-mode': enKimiCodeYolo,
     'kimi-code-conversation-history': enKimiCodeHistory,
     'kimi-code-on-windows': enKimiCodeWindows,
+    'how-to-use-grok-build': enHowToUseGrokBuild,
+    'grok-build-vs-claude-code': enGrokBuildVsClaude,
+    'grok-build-agent-swarm': enGrokBuildAgentSwarm,
+    'grok-build-plan-mode': enGrokBuildPlanMode,
+    'grok-build-subagents-vs-agent-swarm': enGrokBuildSubagents,
+    'grok-build-pricing': enGrokBuildPricing,
+    'grok-build-on-windows': enGrokBuildWindows,
+    'grok-build-from-claude-code': enGrokBuildFromClaude,
+    'grok-build-vs-cursor': enGrokBuildVsCursor,
+    'grok-build-headless-ci': enGrokBuildHeadless,
+    'grok-build-conversation-history': enGrokBuildHistory,
   },
   es: {
     'como-usar-varios-terminales-claude-code': esMultipleTerminals,
@@ -215,6 +250,17 @@ export const guides: Record<string, Record<string, Guide>> = {
     'modo-yolo-kimi-code': esKimiCodeYolo,
     'historial-conversaciones-kimi-code': esKimiCodeHistory,
     'kimi-code-en-windows': esKimiCodeWindows,
+    'como-usar-grok-build': esComoUsarGrokBuild,
+    'grok-build-vs-claude-code': esGrokBuildVsClaude,
+    'enjambre-de-agentes-grok-build': esGrokBuildAgentSwarm,
+    'modo-plan-grok-build': esGrokBuildPlanMode,
+    'subagentes-grok-build-vs-enjambre': esGrokBuildSubagents,
+    'precios-y-acceso-grok-build': esGrokBuildPricing,
+    'grok-build-en-windows': esGrokBuildWindows,
+    'grok-build-desde-claude-code': esGrokBuildFromClaude,
+    'grok-build-vs-cursor': esGrokBuildVsCursor,
+    'grok-build-headless-ci': esGrokBuildHeadless,
+    'historial-conversaciones-grok-build': esGrokBuildHistory,
   },
 }
 

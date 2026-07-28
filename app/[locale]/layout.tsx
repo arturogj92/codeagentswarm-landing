@@ -38,12 +38,12 @@ export async function generateMetadata({
   const isSpanish = locale === 'es'
 
   const title = isSpanish
-    ? 'CodeAgentSwarm – Espacio de trabajo con IA para terminales Claude Code, Codex, Antigravity CLI, OpenCode y Kimi Code'
-    : 'CodeAgentSwarm – AI coding workspace for Claude Code, Codex, Antigravity CLI, OpenCode and Kimi Code terminals with MCP tools'
+    ? 'CodeAgentSwarm – Varios terminales AI CLI en un solo workspace'
+    : 'CodeAgentSwarm – Run Multiple AI CLI Terminals in One Workspace'
 
   const description = isSpanish
-    ? 'Orquesta multiples terminales AI CLI (Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code) en un espacio de trabajo para desarrolladores con visibilidad en tiempo real, notificaciones instantaneas, historial completo de conversaciones, control de permisos, gestion de multiples proyectos e integraciones MCP.'
-    : 'Orchestrate multiple AI CLI terminals (Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code) in a single developer workspace with real-time visibility, live notifications, full conversation history, permissions control, multi-project management and MCP integrations.'
+    ? 'Orquesta múltiples terminales AI CLI (Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code, Grok Build) en un espacio de trabajo para desarrolladores con visibilidad en tiempo real, notificaciones instantáneas, historial completo de conversaciones, control de permisos, gestión de múltiples proyectos e integraciones MCP.'
+    : 'Orchestrate multiple AI CLI terminals (Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code, Grok Build) in a single developer workspace with real-time visibility, live notifications, full conversation history, permissions control, multi-project management and MCP integrations.'
 
   return {
     metadataBase: new URL(baseUrl),
@@ -55,6 +55,7 @@ export async function generateMetadata({
       'Antigravity CLI',
       'OpenCode',
       'Kimi Code',
+      'Grok Build',
       'AI coding workspace',
       'AI developer workspace',
       'AI CLI workspace',
@@ -64,6 +65,7 @@ export async function generateMetadata({
       'multiple Antigravity CLI terminals',
       'multiple OpenCode terminals',
       'multiple Kimi Code terminals',
+      'multiple Grok Build terminals',
       'Claude Code multi terminal setup',
       'real time visibility',
       'AI CLI notifications',
@@ -98,11 +100,11 @@ export async function generateMetadata({
     },
     openGraph: {
       title: isSpanish
-        ? 'CodeAgentSwarm – Terminales AI CLI en paralelo (Claude Code, Codex, Antigravity, OpenCode, Kimi Code)'
-        : 'CodeAgentSwarm – Multiple AI CLI terminals in parallel (Claude Code, Codex, Antigravity, OpenCode, Kimi Code)',
+        ? 'CodeAgentSwarm – Terminales AI CLI en paralelo'
+        : 'CodeAgentSwarm – Multiple AI CLI Terminals in Parallel',
       description: isSpanish
-        ? 'Desarrolla mas rapido con terminales AI CLI (Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code), integracion Git, seguimiento de cambios en tiempo real e historial completo.'
-        : 'Work faster with multiple AI CLI terminals (Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code), Git integration, real-time change tracking and full conversation history.',
+        ? 'Desarrolla más rápido con terminales AI CLI (Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code, Grok Build), integración Git, seguimiento de cambios en tiempo real e historial completo.'
+        : 'Work faster with multiple AI CLI terminals (Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code, Grok Build), Git integration, real-time change tracking and full conversation history.',
       type: 'website',
       siteName: 'CodeAgentSwarm',
       url: canonicalUrl,
@@ -126,8 +128,8 @@ export async function generateMetadata({
         ? 'CodeAgentSwarm – Terminales AI CLI en paralelo'
         : 'CodeAgentSwarm – Parallel AI CLI Terminals',
       description: isSpanish
-        ? 'Orquesta multiples terminales AI CLI (Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code) en un workspace con visibilidad en tiempo real.'
-        : 'Orchestrate multiple AI CLI terminals (Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code) in one workspace with real-time visibility.',
+        ? 'Orquesta múltiples terminales AI CLI (Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code, Grok Build) en un workspace con visibilidad en tiempo real.'
+        : 'Orchestrate multiple AI CLI terminals (Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code, Grok Build) in one workspace with real-time visibility.',
       images: ['/og.png'],
     },
     robots: {

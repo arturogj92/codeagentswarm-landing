@@ -14,7 +14,7 @@ interface GuidesIndexPageProps {
 // Tool family for each guide, keyed by its canonical English slug so the
 // grouping works the same in both locales. Anything not listed falls back to
 // the Claude Code family.
-type Family = 'cross' | 'claude' | 'codex' | 'antigravity' | 'opencode' | 'kimi' | 'gemini'
+type Family = 'cross' | 'claude' | 'codex' | 'antigravity' | 'opencode' | 'kimi' | 'grok' | 'gemini'
 
 const FAMILY_BY_EN_SLUG: Record<string, Family> = {
   'ai-cli-agent-swarm': 'cross',
@@ -45,11 +45,23 @@ const FAMILY_BY_EN_SLUG: Record<string, Family> = {
   'kimi-code-conversation-history': 'kimi',
   'kimi-code-on-windows': 'kimi',
   'kimi-k3-with-claude-code': 'kimi',
+  // Grok Build cluster (see docs/plans/2026-07-28-seo-grok-build.md — Opus-revised inventory)
+  'how-to-use-grok-build': 'grok',
+  'grok-build-vs-claude-code': 'grok',
+  'grok-build-agent-swarm': 'grok',
+  'grok-build-plan-mode': 'grok',
+  'grok-build-subagents-vs-agent-swarm': 'grok',
+  'grok-build-pricing': 'grok',
+  'grok-build-on-windows': 'grok',
+  'grok-build-from-claude-code': 'grok',
+  'grok-build-vs-cursor': 'grok',
+  'grok-build-headless-ci': 'grok',
+  'grok-build-conversation-history': 'grok',
   'gemini-agent-swarm': 'gemini',
   'run-multiple-gemini-sessions': 'gemini',
 }
 
-const FAMILY_ORDER: Family[] = ['cross', 'claude', 'codex', 'antigravity', 'opencode', 'kimi', 'gemini']
+const FAMILY_ORDER: Family[] = ['cross', 'claude', 'codex', 'antigravity', 'opencode', 'kimi', 'grok', 'gemini']
 
 const FAMILY_META: Record<Family, { en: string; es: string; icons: string[] }> = {
   cross: {
@@ -62,6 +74,7 @@ const FAMILY_META: Record<Family, { en: string; es: string; icons: string[] }> =
   antigravity: { en: 'Antigravity CLI', es: 'Antigravity CLI', icons: ['/icons/apps/antigravity-icon.png'] },
   opencode: { en: 'OpenCode', es: 'OpenCode', icons: ['/icons/apps/opencode-icon.svg'] },
   kimi: { en: 'Kimi Code', es: 'Kimi Code', icons: ['/icons/apps/kimi-icon.png'] },
+  grok: { en: 'Grok Build', es: 'Grok Build', icons: ['/icons/apps/grok-icon.svg'] },
   gemini: { en: 'Gemini CLI', es: 'Gemini CLI', icons: ['/icons/apps/gemini-icon.svg'] },
 }
 

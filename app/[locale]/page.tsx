@@ -33,8 +33,8 @@ export default function Home() {
     '@type': 'SoftwareApplication',
     name: 'CodeAgentSwarm',
     description: locale === 'es'
-      ? 'Espacio de trabajo con IA para terminales Claude Code, Codex, Antigravity CLI, OpenCode y Kimi Code con herramientas MCP'
-      : 'AI coding workspace for Claude Code, Codex, Antigravity CLI, OpenCode and Kimi Code terminals with MCP tools',
+      ? 'Espacio de trabajo con IA para terminales Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code y Grok Build con herramientas MCP'
+      : 'AI coding workspace for Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code and Grok Build terminals with MCP tools',
     url: baseUrl,
     applicationCategory: 'DeveloperApplication',
     operatingSystem: 'macOS, Windows',

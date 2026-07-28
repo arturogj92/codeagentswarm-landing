@@ -32,7 +32,7 @@ export function pickGuideVideo(slug: string): string {
   if (has('changes', 'cambios', 'git')) {
     return 'gitmanager.mp4'
   }
-  if (/(^|-)vs(-|$)/.test(s) || has('yolo', 'codex', 'gemini', 'opencode', 'kimi')) {
+  if (/(^|-)vs(-|$)/.test(s) || has('yolo', 'codex', 'gemini', 'opencode', 'kimi', 'grok')) {
     return 'multi-model.mp4'
   }
   return 'terminals.mp4'
