@@ -351,7 +351,7 @@ The second thing is that starting the processes is trivial and supervising them 
     },
     {
       question: 'How many Claude Code agents can I run at once?',
-      answer: 'There is no hard limit in Claude Code itself, so the practical ceilings are your machine\'s memory and your Anthropic rate limit, which several parallel agents consume noticeably faster than one. Most people find three to six agents is the point where throughput stops improving because supervision becomes the bottleneck rather than compute.',
+      answer: 'There is no hard limit in Claude Code itself, so the technical ceilings are your machine\'s memory and your Anthropic rate limit, which several parallel agents consume noticeably faster than one. In practice you hit a different ceiling first: past three or four agents the bottleneck tends to be your own attention, because every agent that stops for a permission prompt is waiting on you. That is exactly the limit that notifications and per-terminal permissions push back.',
     },
     {
       question: 'Does running a Claude swarm cost more?',

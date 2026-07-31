@@ -347,7 +347,7 @@ Lo segundo es que arrancar los procesos es trivial y supervisarlos no. Tres agen
     },
     {
       question: '¿Cuántos agentes de Claude Code puedo ejecutar a la vez?',
-      answer: 'Claude Code no impone un límite, así que los topes reales son la memoria de tu máquina y tu límite de uso de Anthropic, que varios agentes en paralelo consumen bastante más rápido que uno solo. La mayoría encuentra que entre tres y seis agentes es el punto en el que dejas de ganar, porque el cuello de botella pasa a ser la supervisión y no la potencia.',
+      answer: 'Claude Code no impone un límite, así que los topes técnicos son la memoria de tu máquina y tu límite de uso de Anthropic, que varios agentes en paralelo consumen bastante más rápido que uno solo. En la práctica te topas antes con otro techo: a partir de tres o cuatro agentes el cuello de botella suele ser tu propia atención, porque cada agente que se para a pedir permiso está esperándote a ti. Ese es justo el límite que empujan las notificaciones y los permisos por terminal.',
     },
     {
       question: '¿Ejecutar un enjambre de Claude cuesta más?',
