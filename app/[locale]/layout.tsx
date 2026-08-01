@@ -170,10 +170,20 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className="dark">
       <head>
+        {/*
+          data-domains is what keeps localhost out of the real numbers.
+          Without it Umami reports from wherever the script runs, so every
+          `npm run dev` session lands in production analytics: a single
+          afternoon of building the interactive demo put 81 demo_seen, 5
+          demo_answered and a download_app_demo_silicon in there, for a feature
+          that had not shipped. Which quietly poisons exactly the conversion
+          rates we look at to decide anything.
+        */}
         <Script
           defer
           src="https://umami-codeagentswarm-production.up.railway.app/script.js"
           data-website-id="a6cf83f7-4ba1-47af-87b3-4fdbd2d537d9"
+          data-domains="codeagentswarm.com"
           strategy="afterInteractive"
         />
       </head>

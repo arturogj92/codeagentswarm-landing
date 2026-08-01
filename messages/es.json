@@ -802,5 +802,32 @@
       "backHome": "Volver al Inicio"
     },
     "error": "Algo salio mal. Intentalo de nuevo."
+  },
+  "interactiveDemo": {
+    "badge": "Pruébala sin instalar nada",
+    "title": "Trabajan sin que estés encima.",
+    "subtitle": "{count} agentes a la vez, cada uno con su tarea. El que necesita algo te avisa y se pone el primero de la lista; los demás siguen a lo suyo.",
+    "download": "Descárgala gratis",
+    "hintAnswer": "Contéstale: haz clic en una opción o pulsa {options, plural, =2 {1 o 2} other {del 1 al #}}",
+    "resize": "Arrastra para ensanchar la lista",
+    "launcher": {
+      "title": "Abrir un terminal nuevo",
+      "project": "Proyecto",
+      "agent": "Agente",
+      "search": "Buscar proyectos...",
+      "count": "{count} proyectos",
+      "empty": "Ningun proyecto coincide.",
+      "newProject": "Nuevo proyecto",
+      "importProject": "Importar proyecto",
+      "noProject": "Sin proyecto",
+      "close": "Cerrar"
+    },
+    "loading": "Cargando terminal...",
+    "loadingWorktree": "Creando worktree...",
+    "toastNow": "ahora",
+    "toast": {
+      "confirmation": "Un terminal necesita confirmación",
+      "finished": "Terminal terminado"
+    }
   }
 }

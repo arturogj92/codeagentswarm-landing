@@ -21,43 +21,72 @@ export default function BringYourOwnSubSection() {
     { name: 'Kimi Code', command: 'kimi', icon: '/icons/apps/kimi-icon.png' },
   ]
 
+  /**
+   * Three claims, one line, on purpose.
+   *
+   * They used to carry a second sentence each and came to 1163px inside a
+   * 1152px row, so the third one dropped to a line of its own and sat there
+   * looking abandoned. Cutting the second sentences fixed the wrap and read
+   * better anyway: "your plan's limits" already says we add none, and "runs
+   * local" already says the code stays put.
+   */
   const claims = [
-    g('No keys resold. No quota caps.', 'Sin claves revendidas. Sin límites nuestros.'),
+    // Positive form of the same fact: the old "no keys resold" made the reader
+    // stop to picture a company that does resell keys.
+    g("Your plan's limits, not ours.", 'Tus límites son los de tu plan.'),
     g('Mix vendors in the same swarm.', 'Mezcla proveedores en el mismo enjambre.'),
-    g('Runs local. Your code never leaves your machine.', 'Todo local. Tu código no sale de tu máquina.'),
+    g('Your code never leaves your machine.', 'Tu código no sale de tu máquina.'),
   ]
 
   return (
     <section ref={ref} className="relative py-20 md:py-28 px-6 overflow-hidden">
       <div className="max-w-6xl mx-auto relative z-10">
+        {/* Centred, like every other section header on the page. This one was
+            the only left-aligned block on the home, which is what made it read
+            as pasted in from somewhere else: the badge, the heading and the
+            paragraph all started on a margin nothing else uses. */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.7 }}
+          className="text-center mb-12"
         >
           <span className="inline-block px-4 py-1.5 rounded-full text-sm font-medium bg-neon-cyan/10 text-neon-cyan border border-neon-cyan/20 mb-6">
             {g('Bring your own sub', 'Trae tu propia suscripción')}
           </span>
-          <h2 className="heading-lg mb-5 max-w-3xl">
-            <span className="text-white">{g("We don't resell tokens. ", 'No revendemos tokens. ')}</span>
-            <span className="gradient-text">{g('You keep your plan.', 'Tu plan sigue siendo tuyo.')}</span>
+          {/* Says the thing plainly. The headline used to open with "we don't
+              resell tokens", which plants a suspicion the visitor did not
+              arrive with and then denies it - the reader has to work out what
+              reselling tokens even means before the sentence pays off. */}
+          <h2 className="heading-lg mb-4">
+            <span className="text-white">{g('Works with ', 'Funciona con ')}</span>
+            <span className="gradient-text">
+              {g('the subscription you already have.', 'la suscripción que ya tienes.')}
+            </span>
           </h2>
-          <p className="text-white/70 text-lg max-w-2xl leading-relaxed">
+          <p className="text-white/70 text-lg max-w-2xl mx-auto">
             {g(
-              'Plug in the agents you already pay for. CodeAgentSwarm runs them on your machine, with your credentials, and orchestrates the whole swarm from one window.',
-              'Conecta los agentes que ya pagas. CodeAgentSwarm los ejecuta en tu máquina, con tus credenciales, y orquesta todo el enjambre desde una sola ventana.'
+              'The agents you already pay for, running on your machine with your credentials. We just put them in one window.',
+              // "Corriendo en tu máquina" era un calco de "running": en español
+              // un programa se ejecuta, no corre. Y sobraba: basta con decir
+              // dónde está.
+              'Los agentes que ya pagas, en tu máquina y con tus credenciales. Nosotros solo los juntamos en una ventana.'
             )}
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 mt-11">
+        {/* Same grid, gutters and card shell as the "Works with" section right
+            below, which lists these exact five agents. Two cards of the same
+            thing at different sizes is the kind of seam you feel before you can
+            name it. */}
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-5">
           {agents.map((agent, i) => (
             <motion.div
               key={agent.name}
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.5, delay: 0.1 * i }}
-              className="flex items-center gap-3 rounded-2xl glass border border-white/10 p-4 transition-colors hover:border-neon-cyan/40"
+              className="flex items-center gap-3 rounded-2xl glass border border-white/10 p-5 transition-colors hover:border-neon-cyan/40"
             >
               <img src={agent.icon} alt="" aria-hidden="true" className="w-7 h-7 shrink-0 object-contain" />
               <div className="min-w-0">
@@ -73,8 +102,11 @@ export default function BringYourOwnSubSection() {
           animate={inView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <div className="mt-7 h-px bg-gradient-to-r from-neon-cyan/35 via-white/[0.06] to-transparent" />
-          <div className="flex flex-wrap gap-x-10 gap-y-3 mt-6">
+          {/* Fades out at BOTH ends now. A rule that starts solid on the left
+              and dies on the right anchors the eye to a left margin, which is
+              exactly the pull this section had to lose. */}
+          <div className="mt-10 h-px bg-gradient-to-r from-transparent via-white/[0.09] to-transparent" />
+          <div className="flex flex-wrap justify-center gap-x-10 gap-y-3 mt-8">
             {claims.map(claim => (
               <div key={claim} className="flex items-center gap-2.5 text-white/70">
                 <Check className="w-4 h-4 text-neon-cyan shrink-0" />

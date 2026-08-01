@@ -39,6 +39,43 @@ function HeroPromo() {
     if (!next && typeof window !== 'undefined') window.umami?.track('hero_promo_unmute')
   }
 
+  /**
+   * On a phone, tapping the video opens it fullscreen instead of toggling sound.
+   *
+   * A muted promo playing at 90mm wide asks the viewer to squint at a terminal
+   * grid, which is the one thing this video is trying to show. Fullscreen is
+   * what a phone is for. Sound comes on with it: the tap is a user gesture, so
+   * unmuting is allowed here, and someone who just went fullscreen has said
+   * they want to watch it.
+   *
+   * iOS Safari never implemented requestFullscreen on elements; the video
+   * element carries its own webkitEnterFullscreen instead, so both are tried.
+   */
+  const openFullscreen = () => {
+    const v = videoRef.current as (HTMLVideoElement & {
+      webkitEnterFullscreen?: () => void
+    }) | null
+    if (!v) return
+    v.muted = false
+    setIsMuted(false)
+    if (typeof window !== 'undefined') window.umami?.track('hero_promo_fullscreen')
+    if (v.requestFullscreen) v.requestFullscreen().catch(() => v.webkitEnterFullscreen?.())
+    else v.webkitEnterFullscreen?.()
+  }
+
+  /**
+   * Decided at tap time, not at render: reading it during render would need a
+   * client-only value in markup the server also produces, and this is one
+   * boolean read on a click.
+   */
+  const handleVideoTap = () => {
+    const phone =
+      typeof window !== 'undefined' &&
+      window.matchMedia('(max-width: 768px), (pointer: coarse)').matches
+    if (phone) openFullscreen()
+    else toggleMute()
+  }
+
   return (
     <div className="relative w-full max-w-5xl mx-auto">
       {/* Glow Background - hidden on mobile for performance */}
@@ -55,7 +92,7 @@ function HeroPromo() {
               muted
               playsInline
               preload="metadata"
-              onClick={toggleMute}
+              onClick={handleVideoTap}
               onPlay={() => { if (typeof window !== 'undefined') window.umami?.track('hero_promo_play') }}
               onTimeUpdate={handleTimeUpdate}
               className="absolute inset-0 w-full h-full object-cover cursor-pointer"
@@ -413,15 +450,43 @@ export default function HeroSection() {
           <CapabilitiesGrid />
         </motion.div>
 
-        {/* Hero promo video (the 6 feature videos moved to FeatureVideosSection below) */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7, duration: 0.8 }}
-        >
-          <HeroPromo />
-        </motion.div>
       </div>
+    </section>
+  )
+}
+
+/**
+ * The promo video, in its own section under the interactive demo.
+ *
+ * It used to close the hero, which meant the first thing a visitor could DO was
+ * watch. Now the demo comes first and this follows, for the ones who would
+ * rather be shown than click. The order is also why this sits after the demo in
+ * the page and not before: on a phone the demo does not mount at all, so the
+ * video slides up on its own to become the first thing under the headline,
+ * without either section knowing about the other.
+ */
+export function HeroPromoSection() {
+  const locale = useLocale()
+  return (
+    <section id="promo" className="relative py-16 md:py-20 px-6 scroll-mt-32">
+      <div className="max-w-5xl mx-auto text-center mb-8">
+        <h2 className="heading-lg text-white mb-3">
+          {locale === 'es' ? 'Un minuto y lo entiendes' : 'One minute and you get it'}
+        </h2>
+        <p className="text-lg text-white/50 max-w-2xl mx-auto">
+          {locale === 'es'
+            ? 'Lo mismo que acabas de tocar, contado de principio a fin.'
+            : 'The same thing you just played with, told start to finish.'}
+        </p>
+      </div>
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-100px' }}
+        transition={{ duration: 0.7 }}
+      >
+        <HeroPromo />
+      </motion.div>
     </section>
   )
 }

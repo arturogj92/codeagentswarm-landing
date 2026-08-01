@@ -1,0 +1,4513 @@
+/*
+ * GENERATED FILE — do not edit by hand.
+ * Run `node scripts/sync-demo-css.mjs` from the landing after the app's terminal
+ * list changes, so the demo keeps looking like the product.
+ *
+ * Source: ../codeagentswarm-app/styles/{themes,styles}.css
+ * Everything is scoped under .cas-demo; only the dark palette is carried over.
+ */
+
+/* ===== Derived header tokens — from app themes.css ===== */
+.cas-demo{
+  --header-bg: rgb(from var(--header-tint) r g b / var(--header-alpha));
+  --header-solid-bg: color-mix(in srgb, var(--header-tint) var(--header-alpha), var(--background));
+}
+
+
+
+/* ===== Dark theme tokens — from app themes.css ===== */
+.cas-demo[data-theme="dark"]{
+  color-scheme: dark;
+
+  /* Core colors */
+  --primary: #7f5af0;
+  --secondary: #2cb67d;
+  --accent: #ff8906;
+  --background: #0a0a0a;
+  --surface: rgba(255, 255, 255, 0.03);
+  --surface-hover: rgba(255, 255, 255, 0.06);
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #1a1a1a;
+  --bg-tertiary: #2a2a2a;
+
+  /* Brand colors - Yellow from logo */
+  --brand: #fbbf24;
+  --brand-hover: #f59e0b;
+  --brand-muted: #d97706;
+  --brand-text: #fbbf24;            /* amber used as TEXT on neutral surfaces */
+  --brand-contrast: #000000;        /* text/icons on amber-filled buttons */
+  --brand-glow: 0 0 20px rgba(251, 191, 36, 0.4);
+  --brand-shadow: 0 4px 16px rgba(251, 191, 36, 0.3);
+
+  /* Text colors */
+  --text-primary: #ffffff;
+  --text-body: #e0e0e0;
+  --text-secondary: #b4b4b4;
+  --text-muted: #666666;
+  --text-dim: #888888;
+  --text-faint: #999999;
+  --text-tertiary: #888888;
+  --text-bright: #ffffff;
+  --text-on-accent: #ffffff;        /* text on colored (purple/green/red) fills */
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-secondary: linear-gradient(135deg, #2cb67d 0%, #10b981 100%);
+  --gradient-accent: linear-gradient(135deg, #ff8906 0%, #f59e0b 100%);
+  --gradient-brand: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  --gradient-dark: linear-gradient(180deg, #1a1a2e 0%, #0f0f23 100%);
+
+  /* Borders and effects */
+  --border: rgba(255, 255, 255, 0.1);
+  --border-subtle: rgba(255, 255, 255, 0.05);
+  --border-strong: rgba(255, 255, 255, 0.2);
+  --border-solid: #333333;
+  --border-hover: rgba(251, 191, 36, 0.5);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --shadow-glow: 0 0 30px rgba(251, 191, 36, 0.3);
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.5);
+
+  /* Generic white-alpha overlays (flip to black-alpha on light themes) */
+  --overlay-faint: rgba(255, 255, 255, 0.02);
+  --overlay-subtle: rgba(255, 255, 255, 0.04);
+  --overlay-hover: rgba(255, 255, 255, 0.08);
+  --overlay-active: rgba(255, 255, 255, 0.12);
+  --overlay-strong: rgba(255, 255, 255, 0.16);
+
+  /* Inputs */
+  --input-bg: #2a2a2a;
+  --input-border: #444444;
+
+  /* Scrollbars */
+  --scrollbar: rgba(255, 255, 255, 0.2);
+  --scrollbar-hover: rgba(255, 255, 255, 0.3);
+
+  /* Kanban */
+  --column-bg: rgba(255, 255, 255, 0.02);
+  --card-bg: rgba(255, 255, 255, 0.05);
+
+  /* Navbar icon tokens */
+  --nav-icon-border-idle: 1px solid rgba(255, 255, 255, 0.10);
+  --nav-icon-border-hover: 1px solid rgba(255, 255, 255, 0.20);
+  --nav-icon-bg-idle: rgba(255, 255, 255, 0.05);
+  --nav-icon-bg-hover: rgba(255, 255, 255, 0.12);
+  --nav-icon-glyph: rgba(255, 255, 255, 0.7);
+  --nav-icon-glyph-hover: rgba(255, 255, 255, 0.95);
+
+  /* Surfaces with their own token (modals, popovers, terminal chrome) */
+  --bg-hover: var(--surface-hover);
+  --modal-bg: #0a0a0a;
+  --popover-bg: #1a1a1f;
+  /* Legacy dark value — dark must render pixel-identical to the pre-theme app. */
+  --header-tint: #141414;
+  --header-alpha: 80%;
+  --terminal-card-bg: rgba(20, 20, 20, 0.6);
+  --terminal-card-hover-bg: rgba(0, 0, 0, 0.72);
+  --terminal-cell-bg: #0a0a0a;
+}
+
+/* ================================ MIDNIGHT ================================
+   Dark with a deep-blue cast; amber brand pops nicely on blue. */
+
+
+/* ===== Status bar chip (the colored bar that fronts every row) — from app styles.css ===== */
+.cas-demo .terminal-status-pill[data-status-key="idle"]::before,
+.cas-demo .terminal-tab[data-status-key="idle"] .tab-status-bar{
+  box-shadow: none;
+}.cas-demo .terminal-status-pill[data-status-key="idle"]:hover::before{
+  box-shadow: 0 0 5px color-mix(in srgb, var(--status-color, #6b7280) 55%, transparent);
+}
+
+/* The label/chevron/dot markup stays in the DOM (the dropdown, the e2e and the
+   tooltip read it) but is never painted: the bar IS the badge. */
+.cas-demo .terminal-status-pill .status-pill-dot,
+.cas-demo .terminal-status-pill .status-label,
+.cas-demo .terminal-status-pill .status-pill-chevron{
+  display: none;
+}
+
+/* Status dot in the terminal tab (tabbed mode). Sits after the spinner slot;
+   glows softly in the status color (color is set inline = currentColor). */
+.cas-demo /* Work-phase status chip on a tab: the SAME vertical bar the terminal header uses
+   (.terminal-status-pill::before),
+.cas-demo at the start of the tab. `color` mirrors the bar
+   colour so the notification pulse (currentColor glow) tints correctly. */
+.tab-status-bar{
+  width: 3px;
+  height: 15px;
+  border-radius: 2px;
+  background: var(--status-color, #787882);
+  color: var(--status-color, var(--text-dim));
+  box-shadow: 0 0 5px color-mix(in srgb, var(--status-color, #787882) 55%, transparent);
+  flex-shrink: 0;
+  pointer-events: auto;
+}
+
+/* The chip is a manual picker too (on the ACTIVE tab only — see the capture-phase
+   click handler): a 3px bar is an impossible click target, so a transparent ::after
+   pads the hit area without changing the visuals. The bar is position:relative
+   already (dim-protection rule below). */
+.cas-demo .terminal-tab .tab-status-bar::after{
+  content: '';
+  position: absolute;
+  inset: -8px -6px;
+}.cas-demo .terminal-tab.active .tab-status-bar{
+  cursor: pointer;
+}
+
+/* ONLY the Working badge is alive: a slow BARBER POLE — diagonal stripes scrolling
+   up the accent bar in a continuous loop (Arturo's pick over the one-shot shimmer:
+   the whole bar moves all the time, so it reads at a glance even at 3px wide). The
+   same background technique works on a real bar (tab) and on a ::before bar (header
+   pill), so both animate identically. Nothing else animates; layout never moves.
+   SEAMLESS LOOP MATH: 135deg stripes of 4px+4px have a vertical period of
+   8px/cos(45°) = 11.3137px. The pattern tile is EXACTLY 2 periods tall (22.6274px)
+   and the keyframe travels exactly one tile — any other tile height leaves a visible
+   seam where the box-sized gradient repeats (the "restarts from zero" artifact). */
+@keyframes statusWorkingBarber {
+  0%   { background-position: 0 0; }
+  100% { background-position: 0 -22.6274px; }
+}.cas-demo .tab-status-bar.is-working,
+.cas-demo .terminal-status-pill.is-working::before{
+  background-image: repeating-linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--status-color, var(--brand)) 80%, var(--background) 14%) 0 4px,
+    color-mix(in srgb, #ffffff 70%, var(--status-color, var(--brand))) 4px 8px
+  );
+  background-size: 100% 22.6274px;
+  background-repeat: repeat;
+  animation: statusWorkingBarber 2s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {.cas-demo .tab-status-bar.is-working,
+.cas-demo .terminal-status-pill.is-working::before{
+    animation: none;
+    background-image: none;
+  }
+}
+
+
+
+/* ===== Project badge — from app styles.css ===== */
+.cas-demo .project-badge{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--nav-icon-radius);
+  font-weight: 600;
+  font-size: 10px;
+  color: white;
+  overflow: hidden;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}.cas-demo .project-badge.badge-small{
+  width: var(--nav-icon-size);
+  height: var(--nav-icon-size);
+}.cas-demo .project-badge.badge-medium{
+  width: var(--nav-icon-size);
+  height: var(--nav-icon-size);
+}
+/* Initials fallback (no icon set): single letter in a circular avatar.
+   Matches the screenshot-overlay project-indicator convention and avoids the
+   cramped/placeholder look of 2-3 letters in a rounded square. */
+.cas-demo .project-badge.badge-initials{
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1;
+}
+/* Custom icon badges: no background, no padding - image fills the badge */
+.cas-demo .project-badge.badge-custom-icon{
+  background: transparent !important;
+  padding: 0;
+}
+/* Lucide icon badges: icon size is smaller than badge, creating implicit padding */
+.cas-demo .project-badge img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--nav-icon-radius);
+}.cas-demo .project-badge svg,
+.cas-demo .project-badge .project-badge-lucide-icon{
+  width: var(--nav-icon-glyph-size);
+  height: var(--nav-icon-glyph-size);
+  color: white;
+  stroke: white;
+}.cas-demo .project-badge.badge-medium svg,
+.cas-demo .project-badge.badge-medium .project-badge-lucide-icon{
+  width: var(--nav-icon-glyph-size);
+  height: var(--nav-icon-glyph-size);
+}
+
+
+/* ===== Terminal tabs: base strip + sidebar list mode — from app styles.css ===== */
+.cas-demo .terminal-tabs-bar{
+  display: flex;
+  align-items: center;
+  background: var(--bg-secondary);
+  /* Divider handled by the panel's accent border-top below */
+  border-bottom: 1px solid transparent;
+  /* Tighter on the LEFT so the (boxless) sort control tucks into the corner and
+     reads as a gutter; the right keeps its 10px for the framed "+" button. */
+  padding: 0 10px 0 6px;
+  height: 40px;
+  /* The bar itself never scrolls: only the inner .terminal-tabs list scrolls,
+     so the "+" new-tab button stays pinned at the right edge and never scrolls
+     out of view when there are many terminals. */
+  overflow: hidden;
+}
+
+/* Scrollbar lives on the inner tab list now (it is the actual scroll container). */
+.cas-demo .terminal-tabs::-webkit-scrollbar{
+  height: 4px;
+}.cas-demo .terminal-tabs::-webkit-scrollbar-thumb{
+  background: var(--overlay-strong);
+  border-radius: 2px;
+}
+
+/* Tabs container */
+.cas-demo .terminal-tabs{
+  display: flex;
+  gap: 2px;
+  flex: 1;
+  /* min-width:0 lets this flex child shrink below its content width so the
+     horizontal scroll actually engages here instead of overflowing the bar and
+     pushing the "+" button off-screen. */
+  min-width: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  /* Do NOT set scrollbar-width here: in Chrome 121+ it disables the
+     ::-webkit-scrollbar styling above and Chromium paints its default light
+     (white) classic scrollbar instead of the 4px translucent thumb. */
+  align-items: center;
+  position: relative;
+  isolation: isolate;
+  /* Ensure tabs don't shift when notification classes are added */
+  contain: layout;
+}
+
+/* Individual tab styling - Chrome-like appearance */
+.cas-demo .terminal-tab{
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 28px 8px 12px;
+  /* Per-terminal accent colour; set inline in JS via applyTabAccentColor().
+     Fallback grey keeps project-less tabs neutral. */
+  --tab-accent: #787882;
+  /* Inactive tabs stay dark with only a hint of colour and sit dimmed, so the
+     active tab pops by brightness even when every terminal shares one project. */
+  background: color-mix(in srgb, var(--tab-accent) 7%, var(--popover-bg));
+  border: 1px solid transparent;
+  border-left: 3px solid color-mix(in srgb, var(--tab-accent) 38%, transparent);
+  border-radius: 8px 8px 0 0;
+  color: var(--text-muted);
+  font-size: 13px;
+  cursor: pointer;
+  /* FIXED tab width that does NOT change with the number of tabs: no grow, no shrink.
+     Every tab is the same readable width regardless of how many there are; when there
+     are too many to fit, the bar scrolls horizontally (overflow-x:auto on .terminal-tabs)
+     instead of squeezing titles down to "r...". */
+  flex: 0 0 220px;
+  width: 220px;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  user-select: none;
+  white-space: nowrap;
+  overflow: hidden;
+  opacity: 1;
+}
+
+/* Unselected tabs read as "dimmed", but the dimming must NOT reach the status BAR:
+   a badge you cannot see at a glance is useless, and that is precisely when you need
+   it (scanning the OTHER terminals). So the CONTENT is dimmed, not the tab, and the
+   .tab-status-bar is excluded so it always keeps its full colour. */
+.cas-demo /* The minimize (☾) button is NOT dimmed here: its base opacity is 0 (hover-only,
+.cas-demo see .tab-minimize-btn) and this higher-specificity rule would force it visible. */
+.terminal-tab:not(.active) .terminal-tab-content > *:not(.tab-status-bar):not(.tab-copy),
+.cas-demo .terminal-tab:not(.active) .tab-copy > *,
+.cas-demo .terminal-tab:not(.active) .tab-close-btn{
+  opacity: 0.56;
+  transition: opacity 0.2s ease;
+}
+
+/* Belt-and-braces: never let any inherited dimming touch the bar, and lift it above
+   the tab's own darkening so it truly is the brightest thing on a resting tab. */
+.cas-demo .terminal-tab .tab-status-bar{
+  opacity: 1 !important;
+  position: relative;
+  z-index: 2;
+}.cas-demo .terminal-tab:hover{
+  background: color-mix(in srgb, var(--tab-accent) 14%, var(--popover-bg));
+  color: var(--text-body);
+}.cas-demo .terminal-tab:not(.active):hover .terminal-tab-content > *:not(.tab-status-bar):not(.tab-copy),
+.cas-demo .terminal-tab:not(.active):hover .tab-copy > *,
+.cas-demo .terminal-tab:not(.active):hover .tab-minimize-btn,
+.cas-demo .terminal-tab:not(.active):hover .tab-close-btn{
+  opacity: 0.88;
+}
+
+/* Active tab — neon glow in the terminal's own accent colour (--tab-accent) */
+.cas-demo .terminal-tab.active{
+  background: linear-gradient(180deg,
+    color-mix(in srgb, var(--tab-accent) 42%, transparent) 0%,
+    color-mix(in srgb, var(--tab-accent) 20%, transparent) 100%);
+  color: var(--text-primary);
+  z-index: 2;
+  border: 1px solid color-mix(in srgb, var(--tab-accent) 85%, transparent);
+  border-left: 3px solid var(--tab-accent);
+  /* Contained indicators only (no outer bloom): a top accent bar is the clear
+     "this tab is active" marker, an inset glow gives the neon vibe. Nothing
+     extends past the tab box, so the bar's overflow-y:hidden can't clip it. */
+  box-shadow:
+    inset 0 3px 0 0 var(--tab-accent),
+    inset 0 0 22px color-mix(in srgb, var(--tab-accent) 24%, transparent),
+    0 0 8px color-mix(in srgb, var(--tab-accent) 22%, transparent);
+  opacity: 1;
+}.cas-demo .terminal-tab.active .tab-title{
+  font-weight: 600;
+}
+
+/* Tab content */
+.cas-demo .terminal-tab-content{
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+  /* min-width:0 (NOT overflow:hidden) is what lets this shrink inside the tab so the
+     title can ellipsize — .tab-title clips its own text. The old overflow:hidden did
+     the same job but also CLIPPED to this 16px-tall box, silently swallowing the
+     status chip's enlarged hit area: the 3px bar was then almost unclickable and only
+     answered a few pixels to its right (measured with elementFromPoint). The tab
+     itself still clips, so nothing escapes it. */
+  min-width: 0;
+}
+
+/* Project initials badge in tab */
+.cas-demo .tab-project-initials{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 5px;
+  margin: 0 4px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  opacity: 0.9;
+  min-width: 20px;
+}
+
+/* Project badge within terminal tabs */
+.cas-demo .terminal-tab-content .project-badge{
+  margin: 0 4px;
+}
+
+/* Tab title */
+.cas-demo .tab-title{
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Close button */
+.cas-demo .tab-close-btn{
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.2s ease, opacity 0.2s ease; will-change: transform, opacity;
+  opacity: 0;
+  font-size: 16px;
+  line-height: 1;
+}.cas-demo .terminal-tab:hover .tab-close-btn{
+  opacity: 1;
+}.cas-demo .tab-close-btn:hover{
+  background: rgba(255, 0, 0, 0.2);
+  color: #ff4444;
+}
+
+/* Tab notification - a GREEN TOP BAR drawn as a real ::after element, NOT an
+   inset box-shadow and NOT a full-tab tint (both tried and rejected by Arturo:
+   the inset shadow ran straight inside the rounded 1px border and "se cortaba"
+   into a seam at the corners; the full tint was too loud). The ::after starts
+   AFTER the corner radius on each side, so it never touches the curves — the
+   same pattern as Chrome's tab attention bar. Persists until the user visits
+   the tab. */
+.cas-demo .terminal-tab.tab-has-notification{
+  position: relative !important;
+}.cas-demo .terminal-tab.tab-has-notification::after{
+  content: '';
+  position: absolute;
+  /* Full-width: the tab's own rounded overflow clip shaves the bar's top corners
+     along the tab silhouette, so it spans the whole top edge with no seam. (An
+     inset box-shadow could NOT do this: its rounded-rect difference wraps down
+     the sides as a hairline; a clipped solid rectangle just gets rounded tips.) */
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: #22c55e;
+  box-shadow: 0 0 8px rgba(34, 197, 94, 0.8),
+              0 2px 6px rgba(34, 197, 94, 0.45);
+  pointer-events: none;
+  z-index: 3;
+  /* NO pulse. A finite 8-cycle pulse (tabBorderPulsate) lived here and was removed
+     on Arturo's call — "keep the green but no flicker": the steady bar already
+     carries the signal, and an animated box-shadow costs main-thread work for
+     every unread tab. Nothing here animates, so no app-idle pause rule is needed. */
+}
+
+/* New tab button */
+.cas-demo .btn-new-tab{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease; will-change: transform, opacity;
+  margin-left: 8px;
+  /* Stay outside the scrollable tab list: never shrink, always pinned/visible. */
+  flex-shrink: 0;
+}.cas-demo .btn-new-tab:hover{
+  background: var(--overlay-subtle);
+  border-color: var(--border-strong);
+  color: white;
+}
+
+/* "Sort tabs by status" toggle button — sits at the LEFT of the tab strip, never
+   scrolls (outside .terminal-tabs). Lights amber when active. (#12083) */
+.cas-demo /* GHOST GUTTER CONTROL: no box at all,
+.cas-demo tucked against the left edge and split from
+   the tab list by a hairline. The tabs are the content; this is chrome,
+.cas-demo so it must
+   not read as one more bordered chip competing with them. And since sort-by-status
+   is ON by default,
+.cas-demo the old amber FILL + glow was lit permanently — an accent that
+   never turns off stops informing and just adds noise. The amber now lives only in
+   the icon: off = muted,
+.cas-demo on = amber,
+.cas-demo nothing else moves. */
+.sort-tabs-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 28px;
+  height: 28px;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  color: var(--text-muted);
+  cursor: pointer;
+  /* Room for the hairline (at +11px) plus breathing space before the first tab. */
+  margin-right: 21px;
+  flex-shrink: 0;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+/* The hairline that says "control | content". Rendered by the button so the tab
+   strip's DOM stays untouched; pointer-events:none because an overlay near a click
+   target must never eat the click (same lesson as the status tooltip). */
+.cas-demo .sort-tabs-btn::after{
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -11px;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 20px;
+  background: var(--overlay-active);
+  pointer-events: none;
+}.cas-demo .sort-tabs-btn:hover{
+  background: var(--overlay-hover);
+  color: white;
+}.cas-demo .sort-tabs-btn i,
+.cas-demo .sort-tabs-btn svg{
+  width: 15px;
+  height: 15px;
+}.cas-demo .sort-tabs-btn.on{
+  color: var(--brand-text);
+}.cas-demo .sort-tabs-btn.on:hover{
+  background: rgba(251, 191, 36, 0.1);
+  color: var(--brand-text);
+}
+
+/* Dropdown opened from the sort button (appended to body, fixed) */
+.cas-demo .sort-tabs-menu{
+  position: fixed;
+  z-index: 10000;
+  width: 298px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.62);
+  padding: 14px 15px 15px;
+}.cas-demo .sort-tabs-menu-head{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 9px;
+}.cas-demo .sort-tabs-menu-title{
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-bright);
+}.cas-demo .sort-tabs-menu-title i,
+.cas-demo .sort-tabs-menu-title svg{
+  width: 14px;
+  height: 14px;
+  color: var(--brand-text);
+}
+
+/* On/off switch inside the dropdown */
+.cas-demo .sort-tabs-switch{
+  width: 38px;
+  height: 22px;
+  border-radius: 11px;
+  border: none;
+  background: var(--overlay-strong);
+  position: relative;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}.cas-demo .sort-tabs-switch::after{
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  transition: left 0.15s ease;
+}.cas-demo .sort-tabs-switch.on{
+  background: rgba(251, 191, 36, 0.9);
+}.cas-demo .sort-tabs-switch.on::after{
+  left: 18px;
+}.cas-demo .sort-tabs-menu-desc{
+  margin: 0 0 12px;
+  font-size: 11.5px;
+  line-height: 1.55;
+  color: var(--text-dim);
+}.cas-demo .sort-tabs-menu-order-label{
+  margin: 0 0 7px;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}.cas-demo .sort-tabs-order{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}.cas-demo .sort-tabs-order-item{
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 3.5px 0;
+  font-size: 11.5px;
+  color: var(--text-primary);
+}.cas-demo .sort-tabs-order-bar{
+  width: 3px;
+  height: 13px;
+  border-radius: 2px;
+  flex-shrink: 0;
+  background: var(--status-color, #787882);
+}.cas-demo .sort-tabs-menu-foot{
+  margin-top: 11px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+  font-size: 10.5px;
+  line-height: 1.5;
+  color: var(--text-dim);
+}.cas-demo .sort-tabs-menu-link{
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--brand-text);
+  cursor: pointer;
+  font-size: 10.5px;
+}.cas-demo .sort-tabs-menu-link:hover{
+  text-decoration: underline;
+}
+
+/* Tabbed terminal content area */
+.cas-demo .tabbed-terminal-content{
+  flex: 1;
+  position: relative;
+  background: var(--surface);
+  overflow: hidden;
+  /* Accent line matching the active terminal; --tab-accent set in JS (syncActivePanelAccent) */
+  --tab-accent: var(--brand);
+  border-top: 2px solid color-mix(in srgb, var(--tab-accent) 65%, transparent);
+  box-shadow: inset 0 8px 16px -12px color-mix(in srgb, var(--tab-accent) 30%, transparent);
+}.cas-demo .tabbed-terminal-content .terminal-quadrant{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  border: none;
+  border-radius: 0;
+  margin: 0;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* PERFORMANCE: display:none fully stops xterm DOM render work for hidden tabs —
+   visibility:hidden alone does not, and xterm's IntersectionObserver render-pause
+   is purely geometric. switchToTab() refreshes + fits the terminal on activation. */
+.cas-demo .tabbed-terminal-content .terminal-quadrant:not(.active){
+  display: none;
+}.cas-demo .tabbed-terminal-content .terminal-quadrant.active{
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Fullscreen terminal adjustments */
+.cas-demo .tabbed-terminal-content .terminal-wrapper{
+  flex: 1;
+  position: relative;
+}.cas-demo .tabbed-terminal-content .terminal{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* Fix terminal loader in tabbed mode */
+.cas-demo .tabbed-terminal-content .terminal-loader{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--terminal-cell-bg);
+  border-radius: 0;
+}
+
+/* Ensure loader elements are visible in tabbed mode */
+.cas-demo .tabbed-terminal-content .terminal-loader .loader-spinner{
+  margin-bottom: 55px;
+}.cas-demo .tabbed-terminal-content .terminal-loader .loader-text,
+.cas-demo .tabbed-terminal-content .terminal-loader .loader-status{
+  display: block;
+  text-align: center;
+}.cas-demo .tabbed-terminal-content .terminal-loader .loader-text{
+  margin-top: 15px;
+}
+
+/* Hide grid layout controls in tabbed mode */
+.cas-demo .tabbed-layout-active .layout-selector{
+  display: none !important;
+}
+
+/* Hide the fullscreen button in tabbed mode */
+.cas-demo .tabbed-layout-active .terminal-control-btn[data-action="fullscreen"]{
+  display: none !important;
+}.cas-demo .tabbed-layout-active .terminal-control-btn[data-action="close"]{
+  display: none !important;
+}
+
+/* Tabbed mode button specific styles */
+.cas-demo .btn-tabbed-mode{
+  overflow: visible !important;  /* Ensure badge can extend outside */
+  position: relative;
+  height: 32px;
+  width: 32px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: var(--overlay-hover);
+  border: 1px solid var(--border);
+}.cas-demo .btn-tabbed-mode:hover{
+  background: var(--overlay-active);
+  border-color: var(--border-strong);
+}.cas-demo .btn-tabbed-mode svg{
+  width: 18px;
+  height: 18px;
+}
+
+/* Highlight tabbed mode button when active */
+.cas-demo .btn-tabbed-mode.active{
+  background: var(--brand, var(--brand));
+  color: #000;
+}
+
+/* Workspace view selector. The established tabbed-mode button remains the large
+   click target; this adjoining disclosure is intentionally quiet so the pair reads
+   as one native header control instead of a second competing action. */
+.cas-demo .workspace-view-control{
+  position: relative;
+  display: inline-flex;
+  align-items: stretch;
+  height: 32px;
+  overflow: visible;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--overlay-hover);
+  -webkit-app-region: no-drag;
+  transition: background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}.cas-demo .workspace-view-control:hover{
+  background: var(--overlay-active);
+  border-color: var(--border-strong);
+}.cas-demo .workspace-view-control.workspace-view-active{
+  background: var(--overlay-hover);
+  border-color: var(--border) !important;
+  color: var(--text-primary) !important;
+}.cas-demo .workspace-view-control.workspace-view-active:hover{
+  background: var(--overlay-active);
+  border-color: var(--border-strong) !important;
+}.cas-demo .workspace-view-control:has(button:focus-visible){
+  outline: 2px solid color-mix(in srgb, var(--brand, var(--brand)) 72%, #fff);
+  outline-offset: 2px;
+}.cas-demo .workspace-view-control .btn-tabbed-mode,
+.cas-demo .workspace-view-control .btn-tabbed-mode:hover,
+.cas-demo .workspace-view-control .btn-tabbed-mode.active{
+  width: 39px;
+  height: 30px;
+  border: 0 !important;
+  border-radius: 7px 0 0 7px;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: inherit;
+}.cas-demo .workspace-view-control.workspace-view-active .btn-tabbed-mode{
+  color: var(--brand, var(--brand-text)) !important;
+}.cas-demo .workspace-layout-menu-btn{
+  width: 19px;
+  min-width: 19px;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  border-radius: 0 8px 8px 0;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+}.cas-demo .workspace-layout-menu-btn:hover,
+.cas-demo .workspace-layout-menu-btn[aria-expanded="true"]{
+  color: inherit;
+  background: transparent;
+}.cas-demo .workspace-view-control:has(.btn-tabbed-mode.active) .workspace-layout-menu-btn{
+  background: transparent;
+  border-color: transparent;
+  color: var(--text-muted);
+}.cas-demo .workspace-layout-menu-btn svg{
+  width: 11px;
+  height: 11px;
+}.cas-demo .workspace-layout-menu{
+  position: absolute;
+  display: none;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 10020;
+  width: 254px;
+  padding: 6px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.62);
+}.cas-demo .workspace-layout-menu.open{
+  display: block;
+}.cas-demo .workspace-layout-option{
+  width: 100%;
+  min-height: 48px;
+  display: grid;
+  grid-template-columns: 20px 1fr 16px;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 9px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-secondary);
+  text-align: left;
+  cursor: pointer;
+}.cas-demo .workspace-layout-option:hover{
+  background: var(--overlay-hover);
+  color: var(--text-bright);
+}.cas-demo .workspace-layout-option.active{
+  background: rgba(251, 191, 36, 0.09);
+  color: var(--text-bright);
+}.cas-demo .workspace-layout-option > svg:first-child{
+  width: 17px;
+  height: 17px;
+  color: var(--text-muted);
+}.cas-demo .workspace-layout-option.active > svg:first-child,
+.cas-demo .workspace-layout-option.active .workspace-layout-check{
+  color: var(--brand, var(--brand-text));
+}.cas-demo .workspace-layout-option span{
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}.cas-demo .workspace-layout-option strong{
+  font-size: 12px;
+  font-weight: 600;
+}.cas-demo .workspace-layout-option small{
+  color: var(--text-muted);
+  font-size: 10px;
+  line-height: 1.25;
+}.cas-demo .workspace-layout-check{
+  width: 14px;
+  height: 14px;
+  opacity: 0;
+}.cas-demo .workspace-layout-option.active .workspace-layout-check{
+  opacity: 1;
+}
+
+/* The toolbar wrapper is transparent to the established horizontal layout. In
+   List view it becomes the sidebar header without duplicating any controls. */
+.cas-demo .terminal-tabs-toolbar{
+  display: contents;
+}.cas-demo .terminal-tabs-sidebar-heading,
+.cas-demo .list-density-btn,
+.cas-demo .tab-sidebar-collapse-btn,
+.cas-demo .tab-sidebar-footer,
+.cas-demo .tab-sidebar-resize-handle,
+.cas-demo .tab-collapsed-label,
+.cas-demo .tab-meta,
+.cas-demo .tab-activity,
+.cas-demo .tab-elapsed{
+  display: none;
+}.cas-demo .tab-copy{
+  min-width: 0;
+  display: flex;
+  flex: 1;
+}.cas-demo .terminal-tabs-bar > .terminal-tabs{
+  order: 1;
+}.cas-demo .terminal-tabs-toolbar > .sort-tabs-btn{
+  order: 0;
+}.cas-demo .terminal-tabs-toolbar > .btn-new-tab{
+  order: 2;
+}
+
+/* List navigation is a presentation of tabbed mode, not a third terminal engine. */
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar{
+  --tab-sidebar-width: 304px;
+  flex-direction: row;
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar .terminal-tabs-bar{
+  position: relative;
+  z-index: 2;
+  width: var(--tab-sidebar-width);
+  min-width: var(--tab-sidebar-width);
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 0;
+  overflow: visible;
+  background: var(--background);
+  border: 0;
+  border-right: 1px solid var(--border);
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar .terminal-tabs-toolbar{
+  order: 0;
+  height: 48px;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0 9px 0 13px;
+  border-bottom: 1px solid var(--border-subtle);
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar .terminal-tabs-sidebar-heading{
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex: 1;
+  color: var(--text-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.72px;
+  text-transform: uppercase;
+}.cas-demo .terminal-tabs-count{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  box-sizing: border-box;
+  border-radius: 9px;
+  background: var(--overlay-hover);
+  color: var(--text-muted);
+  font-size: 9px;
+  letter-spacing: 0;
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar .sort-tabs-btn,
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar .list-density-btn,
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar .tab-sidebar-collapse-btn,
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar .btn-new-tab{
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  flex: 0 0 28px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar .sort-tabs-btn{
+  order: initial;
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar .sort-tabs-btn::after{
+  display: none;
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar .sort-tabs-btn:hover,
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar .list-density-btn:hover,
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar .tab-sidebar-collapse-btn:hover,
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar .btn-new-tab:hover{
+  background: var(--overlay-hover);
+  color: var(--text-bright);
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar .sort-tabs-btn.on{
+  color: var(--brand, var(--brand-text));
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar .list-density-btn.on{
+  color: var(--brand, var(--brand-text));
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar .tab-sidebar-collapse-btn svg,
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar .list-density-btn svg,
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar .btn-new-tab svg{
+  width: 15px;
+  height: 15px;
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar .terminal-tabs{
+  order: 1;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 4px;
+  padding: 8px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: auto;
+  contain: layout paint;
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar .terminal-tabs::-webkit-scrollbar{
+  width: 4px;
+  height: 4px;
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar .terminal-tab{
+  width: 100%;
+  min-height: 46px;
+  flex: 0 0 46px;
+  box-sizing: border-box;
+  padding: 6px 32px 6px 9px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  border-left: 3px solid color-mix(in srgb, var(--tab-accent) 38%, transparent);
+  background: color-mix(in srgb, var(--tab-accent) 5%, var(--popover-bg));
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar .terminal-tab:hover{
+  padding-right: 49px;
+  background: color-mix(in srgb, var(--tab-accent) 12%, var(--popover-bg));
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar .terminal-tab.active{
+  background: linear-gradient(90deg,
+    color-mix(in srgb, var(--tab-accent) 27%, var(--popover-bg)) 0%,
+    color-mix(in srgb, var(--tab-accent) 9%, var(--popover-bg)) 100%);
+  border-color: color-mix(in srgb, var(--tab-accent) 58%, transparent);
+  border-left-color: var(--tab-accent);
+  box-shadow:
+    inset 3px 0 0 var(--tab-accent),
+    inset 0 0 20px color-mix(in srgb, var(--tab-accent) 13%, transparent);
+}
+
+/* Horizontal tabs can afford stronger dimming because their active content sits
+   directly beneath them. In List the rows are the only overview, so secondary
+   titles and metadata stay comfortably readable while the active row continues
+   to lead through its white type, brighter fill, full border and inset accent. */
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar .terminal-tab:not(.active){
+  color: rgba(255, 255, 255, 0.62);
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar .terminal-tab:not(.active) .terminal-tab-content > *:not(.tab-status-bar):not(.tab-copy),
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar .terminal-tab:not(.active) .tab-copy > *,
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar .terminal-tab:not(.active) .tab-close-btn{
+  opacity: 0.82;
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar .terminal-tab:not(.active):hover .terminal-tab-content > *:not(.tab-status-bar):not(.tab-copy),
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar .terminal-tab:not(.active):hover .tab-copy > *,
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar .terminal-tab:not(.active):hover .tab-minimize-btn,
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar .terminal-tab:not(.active):hover .tab-close-btn{
+  opacity: 0.96;
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar .terminal-tab-content{
+  min-width: 0;
+  align-items: center;
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar .tab-status-bar{
+  height: 26px;
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar .tab-elapsed:not(:empty){
+  position: absolute;
+  right: 9px;
+  top: 9px;
+  display: block;
+  color: rgba(255, 255, 255, 0.46);
+  font-size: 9px;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar .terminal-tab:hover .tab-elapsed{
+  opacity: 0;
+}
+
+/* Sidebar/List mode: the Chrome-style full-width TOP BAR reads ambiguously between
+   stacked rows and its glow bleeds onto neighbours, so hide it here. Instead the
+   card's thick LEFT EDGE ignites notification-green (user-picked design): the
+   accent border is overridden and a contained leftward glow makes the row read as
+   "lit up" at a glance. */
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar .terminal-tab.tab-has-notification::after{
+  display: none;
+}
+
+/* ONE bar only: the green lives in the row's existing 3px border-left. An extra
+   `inset 3px 0 0` shadow was tried and REJECTED — the border box and the padding
+   box round with different radii, so the two 3px bars misaligned at the corners
+   and read as a DOUBLED green edge. The glow is the only other layer, and it
+   points leftward/outward so it never stacks on top of the bar.
+   NO pulse: a steady edge is the indicator (Arturo, "keep the green but no
+   flicker"); an unread row must not animate while it waits to be read. */
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar .terminal-tab.tab-has-notification{
+  border-left-color: #22c55e;
+  box-shadow: -4px 0 10px -2px rgba(34, 197, 94, 0.55);
+}
+
+/* The row keeps only the two DISMISS gestures (minimize, close): those are done in a
+   chain down the list, so needing to select a terminal first would be worse than the
+   hover buttons. Everything that OPERATES on a terminal moved to the docked toolbar,
+   which is a fixed target instead of icons that appear on hover and shift position. */
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar .terminal-tab:not(:hover) .tab-close-btn,
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar .terminal-tab:not(:hover) .tab-minimize-btn{
+  opacity: 0;
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar .tab-copy .terminal-title-inline-edit{
+  min-width: 0;
+  max-width: 100%;
+  height: 24px;
+  box-sizing: border-box;
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar .tab-copy{
+  min-width: 0;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar .tab-title{
+  width: 100%;
+  color: inherit;
+  text-align: left;
+  line-height: 1.25;
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar .tab-meta{
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  color: rgba(255, 255, 255, 0.46);
+  font-size: 10px;
+  line-height: 1.2;
+  text-align: left;
+  text-overflow: ellipsis;
+}
+
+/* The activity line is the reason the List view exists: it answers "what is this
+   agent doing right now?". It used to inherit --text-muted, the dimmest token in
+   the palette, which left it less readable than the project/branch metadata above
+   it — an inverted hierarchy. It now sits one step under the title and clearly
+   above --tab-meta. Do not send it back to --text-muted. */
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar .tab-activity{
+  display: none;
+  width: 100%;
+  overflow: hidden;
+  color: var(--text-secondary);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.3;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* The active row is the one the user is looking at — its activity leads. */
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar .terminal-tab.active .tab-activity{
+  color: var(--text-body);
+}
+
+/* Inactive rows are dimmed with opacity, which stacks on top of an already
+   secondary color and pushed this line under the readability floor — worst on
+   light themes, where 0.7 over cream measured 2.57:1. An inactive row stays
+   subordinate through its COLOR (--text-secondary vs the active --text-body),
+   so the activity text opts out of the transparency instead. */
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar .terminal-tab:not(.active) .tab-copy > .tab-activity{
+  opacity: 1;
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar .tab-activity:empty{
+  display: none !important;
+}
+
+/* The live activity owns the second line at ANY list width — the project
+   subtitle hands its line over (.tab-meta becomes a fallback a few rules below).
+
+   ⚠️ Two invariants were lifted here, both deliberately, both by Arturo:
+   - 2026-07-27 (#12215): "rows are two lines, never three". A row now carries
+     the terminal's GOAL between the title and the activity, so it answers what
+     it is FOR as well as what it is doing. Rows WITHOUT a goal still collapse
+     back to two lines.
+   - 2026-07-27 (#12244): "the activity only appears once the list is widened
+     past 480px". Below that the row fell back to the project name, which the
+     badge and the accent already carry, so narrowing the list traded the only
+     unique information for a duplicate. Goal and activity are now always
+     rendered and simply TRUNCATE — a cut sentence beats a hidden one.
+   COMPACT density is untouched by both: that mode exists precisely to trade
+   detail for rows on screen, so it stays at one line (and is excluded from
+   every rule below, including the taller row). */
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar:not(.tab-list-compact) .tab-activity{
+  display: block;
+}
+
+/* The GOAL line: what this terminal is FOR (#12215). Quieter than the title,
+   distinct from the activity below it through the brand-tinted icon + tag, and
+   absent entirely when the agent never set a goal. */
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar:not(.tab-list-compact) .tab-goal{
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+  width: 100%;
+  min-width: 0;
+  font-size: 10.5px;
+  line-height: 1.3;
+  color: var(--text-secondary);
+  text-align: left;
+}
+
+/* A List row is pinned to `flex: 0 0 46px`, which is exactly two lines — a third
+   line would simply overflow it. Only the rows that actually carry a goal grow, so
+   a terminal whose agent never set one keeps the original height and the list only
+   pays for what it shows. :has() is what lets the ROW react to its child being
+   non-empty (Chromium 132 in Electron 34).
+   ⚠️ The `:not(.tab-list-compact)` is load-bearing: `:has()` inherits the
+   specificity of its argument, so without it this rule OUTWEIGHS compact's own
+   32px row and a single goal would silently un-compact the list. */
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar:not(.tab-list-compact) .terminal-tab:has(.tab-goal:not([data-empty])){
+  min-height: 62px;
+  flex: 0 0 62px;
+}
+
+/* Hidden everywhere else: compact density and horizontal tabs keep the goal on
+   hover only. */
+.cas-demo .tabbed-layout-container .tab-goal{
+  display: none;
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar .tab-goal[data-empty],
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar.tab-list-compact .tab-goal{
+  display: none !important;
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar .tab-goal-icon{
+  width: 10px;
+  height: 10px;
+  flex: 0 0 10px;
+  margin-top: 2px;
+  color: var(--brand-text);
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar .tab-goal-tag{
+  flex: 0 0 auto;
+  margin-top: 1px;
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--brand-text);
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar .tab-goal-text{
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* Same reasoning as the activity line above: an inactive row stays subordinate
+   through COLOR, not through an opacity that would stack under the floor. */
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar .terminal-tab.active .tab-goal-text{
+  color: var(--text-body);
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar .terminal-tab:not(.active) .tab-copy > .tab-goal{
+  opacity: 1;
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar:not(.tab-list-compact) .tab-activity::before{
+  content: '';
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  margin: 0 6px 1px 0;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--tab-accent) 72%, #fff);
+  box-shadow: 0 0 6px color-mix(in srgb, var(--tab-accent) 55%, transparent);
+}
+
+/* The project · branch subtitle is now a FALLBACK, not a line of its own: the
+   project already reaches the row through the badge and the accent colour, so it
+   only earns pixels when the row has nothing live to say. A row that carries a
+   goal or an activity gives the line to them at every width (#12244). */
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar .tab-copy:has(.tab-activity:not(:empty)) .tab-meta,
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar .tab-copy:has(.tab-goal:not([data-empty])) .tab-meta{
+  display: none;
+}
+
+/* ===== Compact density (one-line rows) — .tab-list-compact ===== */
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar.tab-list-compact .terminal-tab{
+  min-height: 32px;
+  flex-basis: 32px;
+  padding-top: 0;
+  padding-bottom: 0;
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar.tab-list-compact .tab-status-bar{
+  height: 16px;
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar.tab-list-compact .terminal-tab .project-badge{
+  width: 18px;
+  height: 18px;
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar.tab-list-compact .terminal-tab .project-badge svg,
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar.tab-list-compact .terminal-tab .project-badge .project-badge-lucide-icon{
+  width: 12px;
+  height: 12px;
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar.tab-list-compact .tab-copy{
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Title first: natural width, ellipsis only once the activity is at its floor. */
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar.tab-list-compact .tab-title{
+  width: auto;
+  flex: 0 1 auto;
+  min-width: 0;
+  font-size: 12px;
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar.tab-list-compact .tab-meta{
+  display: none;
+}
+
+/* Compact keeps the activity too, on the TITLE's line — one line costs no height.
+   The 96px basis IS the floor: with free space the activity only GROWS from it,
+   so the title never loses a subpixel to proportional shrinking; once space runs
+   out the activity is already at its floor and every further pixel comes off the
+   title. (A huge flex-shrink instead of a basis still robbed the title ~0.14px,
+   which Chromium rounds into a spurious ellipsis on a title that fits.) */
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar.tab-list-compact .tab-activity{
+  display: block;
+  width: auto;
+  flex: 1 1 96px;
+  min-width: 96px;
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar.tab-list-compact .tab-activity::before{
+  content: '';
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  margin: 0 6px 1px 0;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--tab-accent) 72%, #fff);
+  box-shadow: 0 0 6px color-mix(in srgb, var(--tab-accent) 55%, transparent);
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar.tab-list-compact .tab-elapsed:not(:empty){
+  top: 50%;
+  transform: translateY(-50%);
+}.cas-demo .tab-status-group-label{
+  display: none;
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar .tab-status-group-label{
+  min-height: 22px;
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  padding: 4px 4px 2px;
+  box-sizing: border-box;
+  color: rgba(255, 255, 255, 0.36);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.72px;
+  line-height: 12px;
+  text-transform: uppercase;
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar .tab-status-group-label::after{
+  content: '';
+  height: 1px;
+  flex: 1;
+  margin-bottom: 5px;
+  background: var(--overlay-hover);
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar .tabbed-terminal-content{
+  min-width: 0;
+  border-top: 0;
+  border-left: 2px solid color-mix(in srgb, var(--tab-accent) 65%, transparent);
+  box-shadow: inset 8px 0 16px -12px color-mix(in srgb, var(--tab-accent) 30%, transparent);
+}
+
+/* List already carries the active terminal's identity and controls. Remove the
+   duplicated terminal header so the terminal itself becomes the full content pane. */
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar .tabbed-terminal-content .terminal-header{
+  display: none;
+}
+
+/* In List view the row owns the controls while navigating. Once that terminal
+   goes fullscreen the list is no longer available, so restore the terminal
+   header as the compact exit surface and let the quadrant cover the viewport.
+   This selector deliberately comes after the tabbed absolute-position rule. */
+.cas-demo.tab-sidebar-fullscreen-active .tabbed-layout-container.tab-navigation-sidebar .terminal-tabs-bar{
+  display: none;
+}.cas-demo.tab-sidebar-fullscreen-active .tabbed-layout-container.tab-navigation-sidebar .tabbed-terminal-content{
+  position: fixed;
+  inset: 0;
+  z-index: 2147483646;
+  border: 0;
+  box-shadow: none;
+}.cas-demo.tab-sidebar-fullscreen-active .tabbed-layout-container.tab-navigation-sidebar .tabbed-terminal-content .terminal-quadrant.fullscreen{
+  position: fixed;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+}.cas-demo.tab-sidebar-fullscreen-active .tabbed-layout-container.tab-navigation-sidebar .tabbed-terminal-content .terminal-quadrant.fullscreen .terminal-header{
+  display: flex;
+}.cas-demo.windows-platform.tab-sidebar-fullscreen-active .tabbed-layout-container.tab-navigation-sidebar .tabbed-terminal-content,
+.cas-demo.windows-platform.tab-sidebar-fullscreen-active .tabbed-layout-container.tab-navigation-sidebar .tabbed-terminal-content .terminal-quadrant.fullscreen{
+  top: 32px !important;
+  height: calc(100vh - 32px) !important;
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar .tabbed-terminal-content .terminal-wrapper{
+  height: 100%;
+  border-radius: 0;
+}.cas-demo .terminal-dropdown-menu.sidebar-terminal-dropdown{
+  z-index: 10030 !important;
+}
+
+/* Footer of the list = the docked toolbar and nothing else. It is CHROME, so it goes
+   full-bleed with no side padding and no radius: a card with margins and a rounded
+   outline reads as one more row of the list, which is exactly the confusion this
+   layout produced when the actions were first drafted as a card. */
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar .tab-sidebar-footer{
+  order: 2;
+  display: block;
+  padding: 0;
+  border-top: 1px solid var(--border-subtle);
+}.cas-demo .terminal-dock{
+  position: relative;
+  background: var(--background);
+}
+
+/* The accent is a 2px hairline along the TOP, never a 3px bar on the left: the left bar
+   is the "active row" marker, and borrowing it is what made the toolbar read as a row.
+   Its colour is the selected terminal's own accent, set from syncTerminalDock(). */
+.cas-demo .terminal-dock-accent{
+  height: 2px;
+  background: var(--dock-accent, var(--brand));
+  opacity: 0.85;
+}.cas-demo .terminal-dock-actions{
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  height: 34px;
+  padding: 0 7px;
+}
+
+/* Flat glyphs, fill only on hover. Bordered chips turned eight buttons into a panel
+   inside a panel; the only accent in the bar is the ⚡ trigger. */
+.cas-demo .terminal-dock .terminal-action-btn,
+.cas-demo .terminal-dock .terminal-control-btn{
+  width: 26px;
+  height: 26px;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text-dim);
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}.cas-demo .terminal-dock .terminal-action-btn:hover,
+.cas-demo .terminal-dock .terminal-control-btn:hover{
+  background: var(--overlay-hover);
+  border: 0;
+  color: var(--text-bright);
+  transform: none;
+  box-shadow: none;
+}.cas-demo .terminal-dock .terminal-action-btn i,
+.cas-demo .terminal-dock .terminal-action-btn svg{
+  width: 14px;
+  height: 14px;
+}
+
+/* The header version of this button is an amber filled chip. In the toolbar that would be
+   a SECOND amber block competing with the ⚡, so here it flattens like its neighbours and
+   the amber survives only in the numeral, which is the part that carries information. */
+.cas-demo .terminal-dock .terminal-action-btn.file-changes-btn{
+  width: auto;
+  height: 26px;
+  gap: 4px;
+  padding: 0 7px;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}.cas-demo .terminal-dock .terminal-action-btn.file-changes-btn:hover{
+  background: var(--overlay-hover);
+  border: 0;
+  box-shadow: none;
+}
+
+/* The ⚡ quick-actions trigger is deliberately NOT in this toolbar: it is `display: none`
+   globally, so it does not exist in Grid or Tabs either and its menu is reached from the
+   command palette. Reviving it in one view only would be a control that exists nowhere
+   else in the app. */
+
+.cas-demo /* Fullscreen and ⋯ sit apart from the conversation actions,
+.cas-demo pushed to the far end. */
+.terminal-dock-tail{
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}.cas-demo .terminal-dock-sep{
+  width: 1px;
+  height: 14px;
+  flex: none;
+  margin: 0 4px;
+  background: var(--border);
+}
+
+/* Actions that do not apply to this agent stay in place, dimmed, so the bar never
+   changes width when you switch between terminals running different agents. */
+.cas-demo .terminal-dock .terminal-action-btn.dock-unavailable{
+  opacity: 0.26;
+  pointer-events: none;
+}.cas-demo .terminal-dock-overflow{
+  display: none;
+  width: 30px;
+  height: 30px;
+  margin: 6px auto;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  background: var(--overlay-hover);
+  color: var(--brand-text);
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+}.cas-demo .terminal-dock-overflow:hover{
+  background: var(--overlay-active);
+}
+
+/* Collapsed to 56px there is no room for a row of glyphs: the toolbar becomes a single
+   overflow button that opens the very same actions upward, so nothing goes unreachable. */
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar.tab-sidebar-collapsed .terminal-dock-actions{
+  display: none;
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar.tab-sidebar-collapsed .terminal-dock-overflow{
+  display: flex;
+}.cas-demo #terminal-dock-menu{
+  position: fixed;
+  z-index: 10030;
+  min-width: 210px;
+  padding: 5px;
+  border: 1px solid var(--border-strong, var(--border));
+  border-radius: 9px;
+  background: var(--popover-bg);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.55);
+}.cas-demo #terminal-dock-menu .terminal-dock-menu-label{
+  padding: 5px 8px 3px;
+  color: var(--text-muted);
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+}.cas-demo #terminal-dock-menu button{
+  width: 100%;
+  height: 27px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 8px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text-body, var(--text-primary));
+  font-size: 12px;
+  text-align: left;
+  cursor: pointer;
+}.cas-demo #terminal-dock-menu button:hover{
+  background: var(--overlay-hover);
+}.cas-demo #terminal-dock-menu button[disabled]{
+  opacity: 0.35;
+  cursor: default;
+}.cas-demo #terminal-dock-menu button i,
+.cas-demo #terminal-dock-menu button svg{
+  width: 13px;
+  height: 13px;
+  flex: none;
+}.cas-demo #terminal-dock-menu .dock-menu-count{
+  margin-left: auto;
+  color: var(--brand-text);
+  font-weight: 700;
+  font-size: 11px;
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar .tab-sidebar-resize-handle{
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 10px;
+  display: block;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: col-resize;
+  touch-action: none;
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar .tab-sidebar-resize-handle:hover,
+.cas-demo.tab-sidebar-resizing .tab-sidebar-resize-handle{
+  background: color-mix(in srgb, var(--brand, var(--brand)) 38%, transparent);
+}
+
+/* The magnetic resize anchor that lit this divider at 480px was REMOVED with the
+   width gate it marked (#12244) — there is no layout boundary left to confirm,
+   so the drag is now free the whole way. */
+
+.cas-demo.tab-sidebar-resizing{
+  cursor: col-resize !important;
+  user-select: none;
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar.tab-sidebar-collapsed{
+  --tab-sidebar-width: 56px !important;
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar.tab-sidebar-collapsed .terminal-tabs-toolbar{
+  height: auto;
+  min-height: 94px;
+  flex-direction: column;
+  justify-content: center;
+  padding: 7px 0;
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar.tab-sidebar-collapsed .terminal-tabs-sidebar-heading,
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar.tab-sidebar-collapsed .sort-tabs-btn,
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar.tab-sidebar-collapsed .list-density-btn,
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar.tab-sidebar-collapsed .tab-meta,
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar.tab-sidebar-collapsed .tab-copy,
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar.tab-sidebar-collapsed .terminal-tab-agent-icon,
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar.tab-sidebar-collapsed .tab-minimize-btn,
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar.tab-sidebar-collapsed .tab-close-btn,
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar.tab-sidebar-collapsed .tab-elapsed{
+  display: none !important;
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar.tab-sidebar-collapsed .tab-sidebar-collapse-btn svg{
+  transform: rotate(180deg);
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar.tab-sidebar-collapsed .terminal-tabs{
+  padding: 7px;
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar.tab-sidebar-collapsed .terminal-tab,
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar.tab-sidebar-collapsed .terminal-tab:hover{
+  width: 42px;
+  min-height: 42px;
+  flex-basis: 42px;
+  justify-content: center;
+  padding: 0;
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar.tab-sidebar-collapsed .terminal-tab-content{
+  flex: 0 0 auto;
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar.tab-sidebar-collapsed .tab-collapsed-label{
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--tab-accent) 18%, var(--overlay-subtle));
+  color: color-mix(in srgb, var(--tab-accent) 78%, var(--text-bright));
+  font-size: 9px;
+  font-weight: 750;
+  letter-spacing: 0.2px;
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar.tab-sidebar-collapsed .terminal-tab .project-badge{
+  display: none;
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar.tab-sidebar-collapsed .tab-status-group-label{
+  display: none;
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar.tab-sidebar-collapsed .tab-sidebar-footer{
+  padding: 0;
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar.tab-sidebar-collapsed .tab-sidebar-resize-handle{
+  display: block;
+}
+
+/* Drag and drop styles for tab reordering */
+.cas-demo .terminal-tab.tab-dragging{
+  opacity: 0.4;
+  cursor: grabbing !important;
+  z-index: 1;
+}.cas-demo .terminal-tabs.is-dragging .terminal-tab:not(.tab-dragging){
+  cursor: grabbing;
+}.cas-demo .tab-drag-ghost{
+  position: fixed;
+  pointer-events: none;
+  z-index: 10000;
+  opacity: 0.85;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(127, 90, 240, 0.4);
+  border-radius: 8px 8px 0 0;
+  transform: scale(1.03);
+  transition: none;
+}
+
+/* Prevent native image dragging inside tabs.
+   <img>/<svg> icons (agent icon, project badge) are natively draggable in
+   Chromium; grabbing one fires a native image-drag that hijacks the pointer
+   and corrupts the custom mousedown-based tab reorder above. */
+.cas-demo .terminal-tab img,
+.cas-demo .terminal-tab svg,
+.cas-demo .terminal-tab .project-badge{
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+
+
+/* ===== App header: logo, action buttons, layout controls, Run button — from app styles.css ===== */
+.cas-demo .app-container{
+  height: calc(100vh - 32px);
+}.cas-demo.windows-platform .modal{
+  top: 32px;
+  height: calc(100% - 32px);
+}.cas-demo.windows-platform .auth-modal{
+  top: 32px;
+}
+
+/* Windows: start the fullscreen terminal BELOW the custom title bar. The bar is a
+   body-level fixed element (z-index 99999) while the fullscreen quadrant is trapped
+   inside .app-container's stacking context (z-index: 1), so the bar always paints on
+   top; at top: 0 it covered the 32px terminal header — including the ⛶ exit-fullscreen
+   control, leaving Escape as the only way out (task #12068). Offsetting keeps the
+   window controls and drag region usable, same pattern as .modal above. */
+.cas-demo.windows-platform .terminal-quadrant.fullscreen{
+  top: 32px !important;
+  height: calc(100vh - 32px) !important;
+}
+
+/* Base rule sizes fullscreen content as 100vh minus the terminal header; on Windows
+   the title bar eats another 32px. */
+.cas-demo.windows-platform .terminal-quadrant.fullscreen .terminal-content{
+  height: calc(100vh - 64px);
+}
+
+/* Windows: Remove macOS traffic light padding from header */
+.cas-demo.windows-platform .header{
+  padding-left: 16px; /* Reset to standard padding - Windows has separate title bar */
+  width: 100%;
+  box-sizing: border-box;
+}.cas-demo.windows-platform .app-container{
+  width: 100%;
+}
+/* ============= END WINDOWS TITLE BAR ============= */
+
+
+
+.cas-demo /* Global scrollbar optimization for better performance */
+/* COMMENTED OUT: These properties disable webkit scrollbar customization in Chrome 121+
+*{
+  scrollbar-width: thin;
+  scrollbar-color: var(--overlay-strong) transparent;
+}
+*/
+
+.cas-demo /* Reset any scroll snapping or stepping */
+html{
+  scroll-behavior: auto !important;
+  /* Electron app: body doesn't scroll, internal containers do */
+  overflow: hidden;
+}.cas-demo{
+  scroll-behavior: auto !important;
+  /* Electron app: body doesn't scroll, internal containers (terminals, modals) do */
+  overflow: hidden;
+}
+
+/* When modal is open, prevent body scrolling */
+.cas-demo.modal-open{
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+
+/* Optimize scrollable elements without forcing GPU */
+.cas-demo .modal-body,
+.cas-demo .version-history-list,
+.cas-demo .recent-projects-list,
+.cas-demo .git-files-list,
+.cas-demo .commits-list,
+.cas-demo .branches,
+.cas-demo .settings-tabs .tab-content{
+  /* Remove ALL GPU acceleration for better performance */
+  transform: none !important;
+  -webkit-transform: none !important;
+  will-change: auto !important;
+  backface-visibility: visible !important;
+  -webkit-backface-visibility: visible !important;
+  /* Disable smooth scrolling */
+  scroll-behavior: auto !important;
+  -webkit-overflow-scrolling: auto !important;
+  /* Layout optimization */
+  min-height: 0;
+  /* Force pixel-perfect scrolling */
+  scroll-behavior: auto !important;
+  /* Disable scroll anchoring that can cause jumps */
+  overflow-anchor: none;
+  /* Smooth scrolling on touch devices */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Additional optimization for modal content children */
+.cas-demo .modal-body > *,
+.cas-demo .version-history-list > *{
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
+/* Optimize version history items specifically */
+.cas-demo .version-history-item{
+  will-change: auto; /* Don't pre-optimize unless needed */
+  contain: layout style paint; /* CSS containment for better performance */
+}
+
+/* Reduce repaints during scroll */
+.cas-demo .modal-body::-webkit-scrollbar,
+.cas-demo .version-history-list::-webkit-scrollbar{
+  width: 12px;
+  height: 12px;
+}.cas-demo .modal-body::-webkit-scrollbar-track,
+.cas-demo .version-history-list::-webkit-scrollbar-track{
+  background: transparent;
+}.cas-demo .modal-body::-webkit-scrollbar-thumb,
+.cas-demo .version-history-list::-webkit-scrollbar-thumb{
+  background-color: var(--overlay-strong);
+  border-radius: 6px;
+  border: 3px solid transparent;
+  background-clip: padding-box;
+}.cas-demo .modal-body::-webkit-scrollbar-thumb:hover,
+.cas-demo .version-history-list::-webkit-scrollbar-thumb:hover{
+  background-color: var(--overlay-strong);
+}.cas-demo{
+  /* Core colors */
+  --primary: #7f5af0;
+  --secondary: #2cb67d;
+  --accent: #ff8906;
+  --background: #0a0a0a;
+  --surface: rgba(255, 255, 255, 0.03);
+  --surface-hover: rgba(255, 255, 255, 0.06);
+
+  /* Brand colors - Yellow from logo */
+  --brand: #fbbf24;
+  --brand-hover: #f59e0b;
+  --brand-muted: #d97706;
+  --brand-glow: 0 0 20px rgba(251, 191, 36, 0.4);
+  --brand-shadow: 0 4px 16px rgba(251, 191, 36, 0.3);
+
+  /* Text colors */
+  --text-primary: #ffffff;
+  --text-secondary: #b4b4b4;
+  --text-muted: #666666;
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-secondary: linear-gradient(135deg, #2cb67d 0%, #10b981 100%);
+  --gradient-accent: linear-gradient(135deg, #ff8906 0%, #f59e0b 100%);
+  --gradient-brand: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  --gradient-dark: linear-gradient(180deg, #1a1a2e 0%, #0f0f23 100%);
+  
+  /* Borders and effects */
+  --border: rgba(255, 255, 255, 0.1);
+  --border-hover: rgba(127, 90, 240, 0.5);
+  --shadow-glow: 0 0 30px rgba(127, 90, 240, 0.3);
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.5);
+
+  /* Optimized shadow and filter variables */
+
+/* ===== OPTIMIZED SHADOW VARIABLES ===== */
+
+  /* Consolidated shadow variables */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
+  --shadow-xl: 0 12px 48px rgba(0, 0, 0, 0.25);
+  
+  /* Theme-specific shadows */
+  --shadow-primary: 0 4px 16px rgba(127, 90, 240, 0.3);
+  --shadow-secondary: 0 4px 16px rgba(255, 137, 6, 0.3);
+  --shadow-success: 0 4px 16px rgba(44, 182, 125, 0.3);
+  
+  /* Glow effects (use sparingly) */
+  --glow-primary: 0 0 20px rgba(127, 90, 240, 0.3);
+  --glow-secondary: 0 0 20px rgba(255, 137, 6, 0.3);
+  
+  /* Consolidated filters */
+  --filter-blur-sm: blur(2px);
+  --filter-blur-md: blur(4px);
+  --filter-blur-lg: blur(8px);
+
+  /* Navbar icon tokens — unified design system for terminal header icons/badges/buttons */
+  --nav-icon-size: 24px;
+  --nav-icon-radius: 6px;
+  --nav-icon-border-idle: 1px solid rgba(255, 255, 255, 0.10);
+  --nav-icon-border-hover: 1px solid rgba(255, 255, 255, 0.20);
+  --nav-icon-bg-idle: rgba(255, 255, 255, 0.05);
+  --nav-icon-bg-hover: rgba(255, 255, 255, 0.12);
+  --nav-icon-glyph: rgba(255, 255, 255, 0.7);
+  --nav-icon-glyph-hover: rgba(255, 255, 255, 0.95);
+  --nav-icon-padding-x: 8px;
+  --nav-icon-glyph-size: 14px;
+
+}.cas-demo *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}.cas-demo{
+  font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--background);
+  color: var(--text-primary);
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Use SF Pro Display for all headings and UI elements */
+.cas-demo h1,
+.cas-demo h2,
+.cas-demo h3,
+.cas-demo h4,
+.cas-demo h5,
+.cas-demo h6,
+.cas-demo .btn,
+.cas-demo button,
+.cas-demo .modal-header,
+.cas-demo .header,
+.cas-demo .nav-item,
+.cas-demo .tab,
+.cas-demo .task-title,
+.cas-demo .column-title,
+.cas-demo .settings-title,
+.cas-demo .section-title,
+.cas-demo label,
+.cas-demo .dropdown-item,
+.cas-demo .menu-item{
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif !important;
+}
+
+/* Spin animation for loading */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}.cas-demo .spin{
+  animation: spin 1s linear infinite;
+}.cas-demo::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(127, 90, 240, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(118, 75, 162, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 50% 100%, rgba(44, 182, 125, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}.cas-demo .app-container{
+  height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}.cas-demo .header{
+  height: 60px;
+  width: 100%;
+  box-sizing: border-box;
+  background: var(--header-bg, rgba(0, 0, 0, 0.75));
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  padding-left: 80px; /* Space for macOS traffic lights */
+  z-index: 1000;
+  box-shadow: var(--shadow-lg);
+  -webkit-app-region: drag;
+  -webkit-user-select: none;
+  user-select: none;
+}.cas-demo .header-left{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Make interactive elements in header non-draggable */
+.cas-demo .header button,
+.cas-demo .header .btn,
+.cas-demo .header .btn-layout,
+.cas-demo .header .btn-add-terminal,
+.cas-demo .header .action-buttons,
+.cas-demo .header .terminal-management,
+.cas-demo .header .layout-selector,
+.cas-demo .header .quota-cluster,
+.cas-demo .header .quota-cluster *,
+.cas-demo .header img{
+  -webkit-app-region: no-drag;
+  -webkit-user-select: auto;
+  user-select: auto;
+}
+
+/* Hooks Status Indicator */
+.cas-demo .hooks-status-indicator{
+  display: none; /* Hidden as requested */
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: var(--overlay-subtle);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  will-change: transform, opacity;
+}.cas-demo .hooks-status-indicator:hover{
+  background: var(--overlay-hover);
+  border-color: var(--border-strong);
+}.cas-demo .hooks-status-indicator i{
+  width: 14px;
+  height: 14px;
+}.cas-demo .hooks-status-indicator .status-dot{
+  width: 16px; /* Increased for better detection */
+  height: 8px;
+  border-radius: 50%;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  will-change: transform, opacity;
+}.cas-demo .hooks-status-indicator .status-dot.status-active{
+  background: var(--secondary);
+  box-shadow: 0 0 8px var(--secondary);
+}.cas-demo .hooks-status-indicator .status-dot.status-warning{
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent);
+  animation: pulse 2s infinite;
+}.cas-demo .hooks-status-indicator .status-dot.status-inactive{
+  background: var(--text-tertiary);
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}.cas-demo .logo-container{
+  display: flex;
+  align-items: center;
+  margin-right: 8px;
+}.cas-demo .app-logo{
+  height: 36px;
+  width: 36px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 20px rgba(127, 90, 240, 0.4));
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  will-change: transform, opacity;
+}.cas-demo .app-logo:hover{
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 30px rgba(251, 191, 36, 0.6));
+}.cas-demo .git-branch-display{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--nav-icon-bg-idle);
+  border: var(--nav-icon-border-idle);
+  border-radius: var(--nav-icon-radius);
+  padding: 0;
+  color: var(--secondary);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  will-change: transform;
+  margin-left: 6px;
+  width: var(--nav-icon-size);
+  height: var(--nav-icon-size);
+  cursor: pointer;
+  user-select: none;
+  flex-shrink: 0;
+}.cas-demo .git-branch-display .current-branch-name{
+  display: none;
+}.cas-demo .git-branch-display:hover{
+  background: var(--nav-icon-bg-hover);
+  border-color: var(--nav-icon-border-hover);
+  transform: translateY(-1px);
+}.cas-demo .git-branch-display i,
+.cas-demo .git-branch-display svg,
+.cas-demo .git-branch-display .lucide{
+  font-size: var(--nav-icon-glyph-size);
+  width: var(--nav-icon-glyph-size);
+  height: var(--nav-icon-glyph-size);
+  flex-shrink: 0;
+  stroke-width: 1.75;
+}.cas-demo .branch-switch-btn{
+  display: none;
+}.cas-demo .branch-switch-btn:hover{
+  display: none;
+}.cas-demo .branch-switch-btn i{
+  display: none;
+}.cas-demo .header-controls{
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  overflow: visible; /* Ensure badges are not clipped */
+}.cas-demo .git-button{
+  /* margin removed - now uses gap from action-buttons container */
+}
+
+/* File Changes Button - Inline design (icon + count) */
+.cas-demo /* Hidden by default,
+.cas-demo shown only when has-changes class is present */
+.file-changes-btn{
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 4px 6px;
+  min-width: auto;
+  background: transparent;
+  border: 1px solid var(--border-strong);
+  color: var(--text-secondary);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  height: 28px;
+}.cas-demo .file-changes-btn:hover{
+  background: var(--surface-hover);
+  border-color: var(--border-hover);
+  color: var(--text-primary);
+}
+
+/* Only show when has changes */
+.cas-demo .file-changes-btn.has-changes{
+  display: flex !important;
+  border-color: var(--primary, #7f5af0);
+  color: var(--primary, #7f5af0);
+}.cas-demo .file-changes-btn i{
+  flex-shrink: 0;
+}.cas-demo .file-changes-count{
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--primary, #7f5af0);
+  min-width: 12px;
+  text-align: center;
+}.cas-demo .file-changes-btn:hover .file-changes-count{
+  color: #9d7df5;
+}.cas-demo .action-buttons{
+  display: flex;
+  gap: 6px;
+  margin-left: 8px;
+}.cas-demo .btn-layout.with-text{
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 12px;
+  height: 32px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  background: var(--overlay-hover);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}.cas-demo .btn-layout.with-text:hover{
+  background: var(--overlay-active);
+  border-color: var(--border-strong);
+}.cas-demo .btn-layout.with-text svg{
+  width: 16px;
+  height: 16px;
+}.cas-demo .btn-layout.with-text span{
+  font-size: 0.8125rem;
+  letter-spacing: 0.02em;
+}
+
+/* Special styling for git button when there are changes */
+.cas-demo #git-status-btn.has-changes{
+  color: var(--accent);
+}.cas-demo #git-status-btn.has-changes:hover{
+  background: rgba(255, 137, 6, 0.15);
+  color: var(--accent);
+}
+
+/* Active state for kanban button */
+.cas-demo #kanban-btn.active{
+  background: rgba(127, 90, 240, 0.15);
+  color: var(--primary);
+}.cas-demo #git-status-btn{
+  display: none; /* Hidden by default, shown only when terminals are active */
+}.cas-demo .btn{
+  padding: 10px 20px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1); will-change: transform, opacity;
+  background: var(--surface);
+  color: var(--text-primary);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  position: relative;
+  overflow: hidden;
+}.cas-demo .btn:hover{
+  background: var(--surface-hover);
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), inset 0 0 20px rgba(251, 191, 36, 0.1);
+}
+
+/* Ripple effect removed - was causing bubble on button hold */
+
+.cas-demo .btn-primary{
+  background: var(--brand, var(--brand));  /* Flat yellow, no gradient */
+  color: #000;
+  border: none;
+  box-shadow: var(--shadow-md);
+}.cas-demo .btn-primary:hover{
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: var(--brand-shadow);
+}
+
+/* Highlighted button for pending pushes */
+.cas-demo .btn-pulse{
+  position: relative;
+  overflow: visible;
+  border: 2px solid var(--accent) !important;
+  box-shadow: var(--shadow-lg);
+}
+
+
+/* Badge for commit count */
+.cas-demo .btn .badge{
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: var(--accent);
+  color: white;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 10px;
+  min-width: 18px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  animation: badge-bounce 0.3s ease-out;
+}
+
+@keyframes badge-bounce {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Push button wrapper and reminder */
+.cas-demo .push-button-wrapper{
+  position: relative;
+  display: inline-block;
+  overflow: visible;
+}.cas-demo .push-reminder{
+  position: absolute; 
+  bottom: calc(100% + 15px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: var(--shadow-md);
+  animation: float 2s ease-in-out infinite;
+  z-index: 10000;
+  pointer-events: none;
+}.cas-demo .push-reminder::after{
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid var(--accent);
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-4px);
+  }
+}
+
+/* Estilo específico para el botón Use Last en el modal */
+.cas-demo .directory-selector-buttons .btn-primary{
+  background: var(--brand);
+  color: #000;
+  font-weight: 600;
+}.cas-demo .btn-primary::before{
+  background: var(--overlay-strong);
+}.cas-demo .btn-success{
+  background: var(--gradient-secondary);
+  color: white;
+  border: none;
+  box-shadow: var(--shadow-md);
+}.cas-demo .btn-success:hover{
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: var(--shadow-lg);
+}.cas-demo .btn-danger{
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: white;
+  border: none;
+  box-shadow: var(--shadow-md);
+}.cas-demo .btn-danger:hover{
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: var(--shadow-lg);
+}.cas-demo .btn-add-terminal{
+  background: rgba(251, 191, 36, 0.1);
+  color: var(--brand-text, var(--brand));
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  box-shadow: none;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+  overflow: visible;
+}
+
+/* Visible "Start Agent" label so it's clear where new terminals are created.
+   Uppercase + tracked to echo the empty-terminal "INITIALIZE AGENT" placeholder. */
+.cas-demo .add-terminal-label{
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  line-height: 1;
+  padding-right: 4px;
+  color: var(--brand-text, var(--brand));
+}
+
+/* Terminal icon SVG styling */
+.cas-demo .btn-add-terminal svg{
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* Ensure terminal icon is visible */
+.cas-demo .btn-add-terminal svg[data-lucide="terminal"]{
+  display: inline-block !important;
+  opacity: 1 !important;
+  z-index: 1;
+}
+
+/* Plus icon on top right */
+.cas-demo .btn-add-terminal svg[data-lucide="plus"]{
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 14px;
+  height: 14px;
+  background: var(--brand);
+  color: var(--background);
+  border-radius: 50%;
+  padding: 2px;
+  box-shadow: var(--shadow-sm);
+}.cas-demo .btn-add-terminal:hover{
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: var(--brand-shadow);
+  background: rgba(251, 191, 36, 0.2);
+  border-color: var(--brand);
+}
+
+/* Hover effect for plus icon */
+.cas-demo .btn-add-terminal:hover svg[data-lucide="plus"]{
+  transform: scale(1.1);
+  box-shadow: var(--brand-glow);
+}
+
+/* Agents Workspace Button - TEMPORARILY DISABLED */
+.cas-demo #agents-workspace-btn{
+  display: none !important; /* TEMP: Remove this line to re-enable */
+}.cas-demo .btn-agents-workspace{
+  position: relative;
+  background: #fff;
+  color: rgba(139, 92, 246, 0.8);
+  border: 2px solid transparent;
+  padding: 8px 12px;
+  font-weight: 500;
+  border-radius: var(--radius-md);
+  transition: all 0.3s ease;
+  overflow: visible;
+}.cas-demo .btn-agents-workspace::before{
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: var(--radius-md);
+  padding: 2px;
+  background: linear-gradient(
+    45deg,
+    rgba(139, 92, 246, 0.6),
+    rgba(167, 139, 250, 0.8),
+    rgba(139, 92, 246, 0.6),
+    rgba(236, 72, 153, 0.6),
+    rgba(139, 92, 246, 0.6)
+  );
+  background-size: 300% 300%;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: rotate-gradient 4s linear infinite;
+  z-index: -1;
+}
+
+@keyframes rotate-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}.cas-demo .btn-agents-workspace svg{
+  width: 18px;
+  height: 18px;
+  stroke: rgba(139, 92, 246, 0.7);
+  transition: stroke 0.2s ease;
+}.cas-demo .btn-agents-workspace:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(139, 92, 246, 0.25);
+  color: rgba(139, 92, 246, 1);
+}.cas-demo .btn-agents-workspace:hover::before{
+  background: linear-gradient(
+    45deg,
+    rgba(139, 92, 246, 0.8),
+    rgba(167, 139, 250, 1),
+    rgba(139, 92, 246, 0.8),
+    rgba(236, 72, 153, 0.8),
+    rgba(139, 92, 246, 0.8)
+  );
+  background-size: 300% 300%;
+  animation: rotate-gradient 2s linear infinite;
+}.cas-demo .btn-agents-workspace:hover svg{
+  stroke: rgba(139, 92, 246, 1);
+}
+
+/* Agents Workspace - Notification Badge */
+.cas-demo /* Force overflow visible on all parent containers to prevent badge clipping */
+.header,
+.cas-demo .header-controls,
+.cas-demo .terminal-management,
+.cas-demo .btn.btn-agents-workspace,
+.cas-demo /* Counter the stray `.btn{ overflow: hidden !important }` in directory-selector-complete.css:
+   it clips the [data-tooltip]::after bubble (painted below the button) on these header buttons. */
+.cas-demo .btn.btn-parked-toggle,
+.cas-demo .btn.btn-add-terminal{
+  overflow: visible !important;
+  clip-path: none !important;
+}.cas-demo .btn-agents-workspace{
+  position: relative !important;
+  overflow: visible !important;
+  clip-path: none !important;
+  contain: none !important;
+}.cas-demo .agents-workspace-badge{
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  background: #ef4444;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 0.2s ease, transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  pointer-events: none;
+  z-index: 99999;
+  isolation: isolate;
+}.cas-demo .agents-workspace-badge.show{
+  opacity: 1;
+  transform: scale(1);
+}.cas-demo .agents-workspace-badge.pulse{
+  /* Animation removed per user request */
+  animation: none;
+}
+
+@keyframes badge-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* Button glow effect when has notification */
+.cas-demo .btn-agents-workspace.has-notification{
+  /* Pulsating animation removed per user request */
+  animation: none;
+  box-shadow: none;
+}
+
+@keyframes notification-glow {
+  0%, 100% {
+    box-shadow: 0 0 4px rgba(239, 68, 68, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 12px rgba(239, 68, 68, 0.6), 0 0 20px rgba(239, 68, 68, 0.3);
+  }
+}.cas-demo .btn-info{
+  background: rgba(251, 191, 36, 0.15);
+  color: var(--brand-text);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  box-shadow: none;
+  font-weight: 500;
+  position: relative;
+  padding: 6px 10px;
+  font-size: 0.75rem;
+}.cas-demo .btn-info:hover{
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+  background: rgba(251, 191, 36, 0.25);
+  border-color: rgba(251, 191, 36, 0.5);
+}.cas-demo .btn-info i{
+  font-size: 0.875rem;
+}.cas-demo .terminal-management{
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}.cas-demo #mcp-info-btn{
+  margin-left: 4px;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}.cas-demo #mcp-info-btn:hover{
+  opacity: 1;
+}.cas-demo .layout-selector{
+  display: flex;
+  gap: 4px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2px;
+  background: var(--overlay-subtle);
+}.cas-demo .layout-group{
+  display: flex;
+  gap: 4px;
+}.cas-demo .btn-layout{
+  padding: 6px 8px;
+  font-size: 0.75rem;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  border-radius: 6px;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
+  will-change: transform, opacity;
+  cursor: pointer;
+  overflow: visible; /* Allow badges to show outside button bounds */
+}.cas-demo .btn-layout svg,
+.cas-demo .btn-layout i{
+  width: 22px;
+  height: 22px;
+}
+
+/* Icon rotation classes for creating left/right panel effects */
+.cas-demo .icon-rotate-90{
+  transform: rotate(90deg);
+  display: inline-block;
+}.cas-demo .icon-rotate-neg90{
+  transform: rotate(-90deg);
+  display: inline-block;
+}.cas-demo .btn-layout:hover{
+  background: rgba(251, 191, 36, 0.1);
+  color: var(--brand-text);
+}.cas-demo .btn-layout.active{
+  background: var(--brand, var(--brand));
+  color: #000;
+}
+
+/* Screenshot button */
+.cas-demo #screenshot-btn{
+  color: var(--brand-text);
+  background: rgba(251, 191, 36, 0.08);
+}.cas-demo #screenshot-btn:hover{
+  color: var(--brand-hover, #fde68a);
+  background: rgba(251, 191, 36, 0.16);
+}.cas-demo #screenshot-btn.screenshot-armed{
+  background: rgba(251, 191, 36, 0.18);
+  color: var(--brand-text);
+  box-shadow:
+    0 0 0 1px rgba(251, 191, 36, 0.35),
+    0 0 14px rgba(251, 191, 36, 0.3);
+  animation: screenshot-arm-pulse 1.1s ease-in-out infinite;
+}.cas-demo #screenshot-btn .screenshot-countdown-badge{
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  min-width: 26px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: var(--brand);
+  color: #111;
+  border: 1px solid var(--border-strong);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+  pointer-events: none;
+  z-index: 2;
+}.cas-demo #screenshot-btn.screenshot-discovery-nudge{
+  animation: screenshot-discovery-nudge 1.6s ease-in-out 3;
+}
+
+
+
+/* ===== Minimized-terminals counter — from app styles.css ===== */
+.cas-demo .btn-parked-toggle{
+    align-items: center;
+    gap: 5px;
+    color: #5cc8ff;
+    font-weight: 700;
+    font-size: 13px;
+}
+/* The ☾N label is plain text and the header's no-drag rule (`.header button`) re-enables
+   user-select on every header button, so dragging across the bar selected "☾ 3". */
+.cas-demo .header .btn-parked-toggle{
+    -webkit-user-select: none;
+    user-select: none;
+}.cas-demo .btn-parked-toggle .parked-toggle-moon{
+    font-size: 14px;
+    line-height: 1;
+}.cas-demo .btn-parked-toggle .parked-count{
+    color: var(--text-primary);
+}.cas-demo .btn-parked-toggle:hover{
+    background: rgba(92, 200, 255, 0.12);
+}
+
+/* One-time discovery glow: pulses a few times the FIRST time a terminal is ever minimized, then
+   stops (finite iteration count keeps the main-thread box-shadow animation from running forever). */
+.cas-demo .btn-parked-toggle.parked-toggle-pulse{
+    animation: parkedTogglePulse 1.2s ease-in-out 3;
+}
+@keyframes parkedTogglePulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(92, 200, 255, 0);
+        background: rgba(92, 200, 255, 0.1);
+    }
+    50% {
+        box-shadow: 0 0 0 2px rgba(92, 200, 255, 0.2), 0 0 9px 0 rgba(92, 200, 255, 0.28);
+        background: rgba(92, 200, 255, 0.16);
+    }
+}
+
+
+
+/* ===== Quota rings and the per-provider popover — from app styles.css ===== */
+.cas-demo .quota-cluster{
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    position: relative;
+}
+/* The cluster is never empty (a placeholder ring renders when there is no data),
+   but keep this guard for the brief pre-first-render moment. */
+.cas-demo .quota-cluster:empty{
+    display: none;
+}
+
+/* Neutral, brandless placeholder ring shown when no agent has quota data yet. */
+.cas-demo .quota-ring--placeholder .quota-tile--placeholder{
+    color: var(--text-muted);
+}.cas-demo .quota-ring--placeholder .quota-tile--placeholder svg{
+    width: 15px;
+    height: 15px;
+    display: block;
+}
+
+/* ----- ring ----- */
+.cas-demo .quota-ring{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9px;
+}.cas-demo .quota-ring:hover{
+    background: var(--overlay-subtle);
+}.cas-demo .quota-ring svg{
+    position: absolute;
+    inset: 0;
+    transform: rotate(-90deg);
+}.cas-demo .quota-tile{
+    width: 20px;
+    height: 20px;
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+}.cas-demo .quota-tile img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}.cas-demo .quota-tile.pad{
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-subtle);
+}.cas-demo .quota-tile.pad img{
+    width: 78%;
+    height: 78%;
+    object-fit: contain;
+}
+
+/* ----- detail popover ----- */
+.cas-demo .quota-popover{
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 0;
+    width: 312px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.6);
+    z-index: 2000;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4px);
+    transition: opacity 0.12s ease, transform 0.12s ease, visibility 0.12s;
+}.cas-demo .quota-popover::before{
+    content: "";
+    position: absolute;
+    top: -6px;
+    right: 44px;
+    width: 11px;
+    height: 11px;
+    background: var(--bg-secondary);
+    border-left: 1px solid var(--border);
+    border-top: 1px solid var(--border);
+    transform: rotate(45deg);
+}
+/* Invisible bridge covering the gap between the rings and the popover, so moving
+   the pointer down into the popover never leaves the cluster (no flicker-close). */
+.cas-demo .quota-popover::after{
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 0;
+    right: 0;
+    height: 10px;
+}.cas-demo .quota-cluster--open .quota-popover{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {.cas-demo .quota-popover{
+        transition: none;
+        transform: none;
+    }
+}.cas-demo .quota-pop-head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 11px 14px 10px;
+    border-bottom: 1px solid var(--border-subtle);
+}.cas-demo .quota-pop-title{
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}.cas-demo .quota-pop-head-right{
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}.cas-demo .quota-config-btn,
+.cas-demo .quota-hide-btn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: 5px;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: color 0.15s, background 0.15s;
+}.cas-demo .quota-config-btn:hover,
+.cas-demo .quota-hide-btn:hover{
+    color: var(--text-secondary);
+    background: var(--overlay-hover);
+}.cas-demo .quota-config-btn svg,
+.cas-demo .quota-hide-btn svg{
+    width: 14px;
+    height: 14px;
+    display: block;
+}.cas-demo .quota-pop-live{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: 'SF Mono', 'Monaco', 'JetBrains Mono', monospace;
+    font-size: 9.5px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}.cas-demo .quota-live-dot{
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #2cb67d;
+    box-shadow: 0 0 6px rgba(44, 182, 125, 0.8);
+}.cas-demo .quota-pop-live--stale .quota-live-dot{
+    background: #666;
+    box-shadow: none;
+}.cas-demo .quota-prov{
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--border-subtle);
+}.cas-demo .quota-prov:last-child{
+    border-bottom: none;
+}.cas-demo .quota-prov-top{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 9px;
+}.cas-demo .quota-prov-name{
+    font-size: 12.5px;
+    font-weight: 600;
+    flex: 1;
+    color: var(--text-bright);
+}.cas-demo .quota-prov--nq .quota-prov-name{
+    color: var(--text-secondary);
+}.cas-demo .quota-plan{
+    font-family: 'SF Mono', 'Monaco', 'JetBrains Mono', monospace;
+    font-size: 9.5px;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1px 5px;
+    letter-spacing: 0.04em;
+}.cas-demo .quota-win{
+    margin-bottom: 8px;
+}.cas-demo .quota-win:last-child{
+    margin-bottom: 0;
+}.cas-demo .quota-win-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 4px;
+}.cas-demo .quota-win-name{
+    font-size: 11px;
+    color: var(--text-secondary);
+}.cas-demo .quota-win-val{
+    font-family: 'SF Mono', 'Monaco', 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-bright);
+    font-variant-numeric: tabular-nums;
+}.cas-demo .quota-win-track{
+    height: 5px;
+    border-radius: 3px;
+    background: var(--overlay-hover);
+}.cas-demo .quota-win-fill{
+    height: 100%;
+    border-radius: 3px;
+    background: var(--brand);
+}.cas-demo .quota-win--crit .quota-win-fill{
+    background: var(--brand-muted);
+}.cas-demo .quota-win-reset{
+    font-family: 'SF Mono', 'Monaco', 'JetBrains Mono', monospace;
+    font-size: 9.5px;
+    color: var(--text-muted);
+    margin-top: 3px;
+}.cas-demo .quota-critline{
+    font-family: 'SF Mono', 'Monaco', 'JetBrains Mono', monospace;
+    font-size: 9.5px;
+    color: var(--brand-muted);
+    margin-top: 3px;
+}.cas-demo .quota-nqline{
+    font-size: 11px;
+    color: var(--text-muted);
+    line-height: 1.45;
+}.cas-demo .quota-nqline b{
+    color: var(--text-secondary);
+    font-family: 'SF Mono', 'Monaco', 'JetBrains Mono', monospace;
+    font-weight: 400;
+}.cas-demo .quota-lastseen{
+    font-family: 'SF Mono', 'Monaco', 'JetBrains Mono', monospace;
+    font-size: 9.5px;
+    color: var(--text-dim);
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}.cas-demo .quota-lastseen::before{
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #6b6b6b;
+    flex: none;
+}
+
+
+
+/* ===== Terminal loader — from app styles.css ===== */
+.cas-demo .terminal-loader{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--terminal-cell-bg);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999; /* Maximum priority for proper detection */
+  border-radius: 8px;
+  /* Adjust content position slightly up */
+  padding-bottom: 40px;
+}.cas-demo .loader-spinner{
+  position: relative;
+  width: 72px;
+  height: 72px;
+  margin: 30px auto 0;
+}.cas-demo .loader-spinner-icon{
+  width: 72px;
+  height: 72px;
+  animation: pulseLoader 2s ease-in-out infinite;
+  filter: drop-shadow(0 0 16px rgba(251, 191, 36, 0.4));
+}
+
+@keyframes pulseLoader {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 16px rgba(251, 191, 36, 0.4));
+  }
+  50% {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 24px rgba(251, 191, 36, 0.6));
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}.cas-demo .spinning{
+  animation: spin 1s linear infinite;
+  display: inline-block;
+}.cas-demo .loader-text{
+  color: var(--text-dim);
+  font-size: 14px;
+  margin-top: 20px;
+  animation: fadeInOut 2s infinite;
+}.cas-demo .loader-status{
+  color: var(--text-muted);
+  font-size: 13px;
+  opacity: 0.8;
+  margin-top: 6px;
+  min-height: 16px; /* reserve the line so the spinner doesn't jump when the text changes */
+}
+
+/* Terminal loader title (splash screen style) */
+.cas-demo .terminal-loader-title{
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}.cas-demo .terminal-loader-title.logo-text{
+  -webkit-text-fill-color: initial;
+  background: none;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+
+
+/* ===== Brand wordmark — from app global-fonts.css ===== */
+.cas-demo .logo-text{
+  font-family: 'Handel Gothic', sans-serif !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}.cas-demo .logo-text-code,
+.cas-demo .logo-text-swarm{
+  color: var(--text-bright);
+}.cas-demo .logo-text-agent{
+  color: var(--brand-text);
+}
+
+
+
+/* ===== Project shortcut chips — from app navbar-shortcuts.css ===== */
+/* Navbar Shortcuts Styles */
+
+.cas-demo /* Shortcuts container */
+.navbar-shortcuts{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-right: 12px;
+    padding-right: 12px;
+    border-right: 1px solid var(--border);
+    animation: fadeIn 0.15s ease;
+}
+
+/* Smooth fade in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0.7;
+        transform: scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Shortcut button */
+.cas-demo .shortcut-btn{
+    position: relative;
+    background: var(--overlay-hover);
+    /* Every chip carries the amber outline, always. It is no longer a state signal:
+       the notched glyphs on the bottom edge say which flags are on, and the outline is
+       just what a shortcut looks like (and what gives the glyphs an edge to sit on). */
+    border: 1px solid rgba(251, 191, 36, 0.55);
+    border-radius: 8px;
+    padding: 6px 12px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-primary);
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 120px;
+    max-width: 180px;
+    margin: 0 2px; /* Base spacing */
+}
+
+/* Icon-only shortcut (no label) - adaptive minimal width */
+.cas-demo .shortcut-btn.icon-only{
+    min-width: auto;
+    max-width: none;
+    width: fit-content;
+    padding: 6px 8px;
+}.cas-demo .shortcut-btn:hover{
+    background: var(--overlay-active);
+    border-color: rgba(251, 191, 36, 0.85);
+    transform: translateY(-1px);
+}.cas-demo .shortcut-btn:active{
+    transform: translateY(0);
+    background: var(--overlay-active);
+}
+
+/* Reordering is LIVE: the chip really moves between its neighbours while you drag, so the
+   strip you see mid-drag is the strip you will get. The chip left behind reads as a hollow
+   slot (dashed, hollow) — that is the "you are moving THIS one" signal, and it is also the
+   landing spot, so there is nothing else to decode. */
+.cas-demo .shortcut-btn.dragging{
+    opacity: 0.55;
+    background: transparent;
+    border-style: dashed;
+    box-shadow: none;
+    transform: none;
+}.cas-demo .shortcut-btn.dragging *{
+    opacity: 0.35;
+}
+
+/* No hover lift on the chip you are dragging: it would fight the drag ghost. */
+.cas-demo .shortcut-btn.dragging:hover{
+    transform: none;
+    background: transparent;
+}
+
+/* While reordering, the chips you sweep past must not pop their delete "×" (a red button
+   appearing under the cursor mid-drag reads as "you are about to delete this"). */
+.cas-demo .navbar-shortcuts.reordering .shortcut-btn:hover .shortcut-delete-btn{
+    display: none;
+}.cas-demo .navbar-shortcuts.reordering .shortcut-btn:hover{
+    transform: none;
+}
+
+/* ...and no tooltips either. Dragging sweeps the cursor across every chip, so the tooltip
+   bubbles fire one after another and cover the very strip you are trying to arrange.
+   The shortcut tooltip is now a .shortcut-tooltip child (not the global [data-tooltip]
+   bubble), so it is killed here on :hover.
+
+   `suppress-tooltips` covers the moment AFTER the drop: the repaint puts a fresh chip under
+   a cursor that never moved, so :hover fires by itself and a tooltip pops up unasked, right
+   where you released. It is lifted as soon as the pointer leaves the strip. */
+.cas-demo .navbar-shortcuts.reordering .shortcut-btn:hover .shortcut-tooltip,
+.cas-demo .navbar-shortcuts.suppress-tooltips .shortcut-btn:hover .shortcut-tooltip{
+    opacity: 0;
+    visibility: hidden;
+    transition-delay: 0s;
+}
+
+/* ── Structured shortcut tooltip (multi-row) ─────────────────────────────────────────────
+   A child of the chip, positioned like the old [data-tooltip] ::after bubble was, so it
+   escapes the strip and points up at the chip. Three optional rows: what it opens + its key,
+   the active flags, and the Shift+Click hint. Same dark + amber system as the rest of the UI. */
+.cas-demo .shortcut-tooltip{
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%) scale(0.9);
+    transform-origin: top center;
+    min-width: 190px;
+    background: var(--popover-bg);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    box-shadow: var(--shadow-card, 0 12px 32px rgba(0, 0, 0, 0.55));
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 9999;
+    transition: opacity 0.1s ease, transform 0.1s ease, visibility 0s;
+    transition-delay: 0s;
+    -webkit-font-smoothing: antialiased;
+    text-align: left;
+    cursor: default;
+}
+
+/* The little diamond pointing up at the chip — matches the bubble surface + top/left border. */
+.cas-demo .shortcut-tooltip::before{
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 8px;
+    height: 8px;
+    background: var(--popover-bg);
+    border-left: 1px solid var(--border);
+    border-top: 1px solid var(--border);
+}.cas-demo .shortcut-btn:hover .shortcut-tooltip{
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) scale(1);
+    transition-delay: 0.1s;
+}
+
+/* Row 1: title + keyboard shortcut */
+.cas-demo .shortcut-tooltip-head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 7px 10px;
+    white-space: nowrap;
+}.cas-demo .shortcut-tooltip-title{
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-bright);
+    letter-spacing: 0.2px;
+}.cas-demo .shortcut-tooltip-key{
+    flex-shrink: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.5px;
+    color: var(--text-secondary);
+    background: var(--overlay-hover);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1px 5px;
+    line-height: 15px;
+}
+
+/* Row 2: active flags, amber glyphs matching the chip notch */
+.cas-demo .shortcut-tooltip-meta{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 6px 10px;
+    border-top: 1px solid var(--border-subtle);
+    white-space: nowrap;
+}.cas-demo .shortcut-tooltip-flag{
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-dim);
+}.cas-demo .shortcut-tooltip-flag svg{
+    width: 10px;
+    height: 10px;
+    color: var(--brand-text);
+    flex-shrink: 0;
+}
+
+/* Row 3: the Shift+Click hint */
+.cas-demo .shortcut-tooltip-hint{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    border-top: 1px solid var(--border-subtle);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 10.5px;
+    color: var(--text-muted);
+    white-space: nowrap;
+}.cas-demo .shortcut-tooltip-hint .shortcut-tooltip-key{
+    padding: 0 5px;
+    line-height: 14px;
+}
+
+/* The flag glyphs notch the outline by painting an OPAQUE patch over the border stroke, so
+   --chip-notch-bg must equal the colour actually behind the chip. In the navbar that is the
+   header composited over the app background — which is exactly what --header-solid-bg is
+   (derived per theme in themes.css, so it follows the header instead of going stale). The
+   form preview sits on a different panel and overrides the var. Get this wrong and the patch
+   shows as a mismatched smudge across the border. */
+.cas-demo .navbar-shortcuts{
+    --chip-notch-bg: var(--header-solid-bg);
+}
+
+/* One notch on the BOTTOM edge, centred, holding the active glyphs. Centring the GROUP
+   (rather than pinning each glyph to a corner) keeps a one-flag chip balanced too, and
+   keeps the top-right corner free for the delete "×" that appears on hover. */
+.cas-demo .shortcut-legends{
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    padding: 0 3px;
+    line-height: 0;
+    color: var(--brand-text);
+    background: var(--chip-notch-bg, var(--header-solid-bg));
+    pointer-events: none;
+}.cas-demo .shortcut-legend-icon{
+    display: block;
+    line-height: 0;
+}.cas-demo .shortcut-legend-icon svg{
+    width: 9px;
+    height: 9px;
+    display: block;
+}
+
+/* Project color indicator */
+.cas-demo .shortcut-project-indicator{
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    background-color: var(--project-color, var(--brand));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    position: relative;
+}
+
+/* Icon content inside shortcut indicator — rendered directly, no .project-badge wrapper */
+.cas-demo .shortcut-project-indicator .shortcut-indicator-icon{
+    width: 11px;
+    height: 11px;
+    color: white;
+    stroke: white;
+    flex-shrink: 0;
+}.cas-demo .shortcut-project-indicator .shortcut-indicator-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Custom icon: rounded square like terminal header badges, no colored background */
+.cas-demo .shortcut-project-indicator.has-custom-icon{
+    background: transparent;
+    border-radius: 4px;
+    width: 22px;
+    height: 22px;
+}.cas-demo .shortcut-project-indicator.has-custom-icon .shortcut-indicator-img{
+    border-radius: 4px;
+}
+
+/* Shortcut label */
+.cas-demo .shortcut-label{
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Mode indicators */
+.cas-demo .shortcut-mode-indicators{
+    display: flex;
+    gap: 2px;
+    flex-shrink: 0;
+}.cas-demo .mode-indicator{
+    width: 14px;
+    height: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: 600;
+}.cas-demo .mode-indicator.resume{
+    background: rgba(34, 197, 94, 0.2);
+    color: #22c55e;
+    position: relative;
+}.cas-demo .mode-indicator.resume::before{
+    content: '▶';
+    font-size: 8px;
+}
+
+/* No .mode-indicator.turbo: Turbo rides the chip's outline as a notched bolt (.legend-turbo),
+   not as a glyph inside the chip, which used to eat width in a bar that must fit many. */
+
+.cas-demo /* Agent type indicator */
+.agent-indicator{
+    width: 14px;
+    height: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    overflow: hidden;
+}.cas-demo .agent-indicator img{
+    width: 12px;
+    height: 12px;
+    object-fit: contain;
+    opacity: 0.9;
+}.cas-demo .agent-indicator.claude{
+    background: rgba(205, 117, 70, 0.15);
+}.cas-demo .agent-indicator.gemini{
+    background: rgba(66, 133, 244, 0.15);
+}.cas-demo .agent-indicator.opencode{
+    background: rgba(156, 163, 175, 0.15);
+}.cas-demo .agent-indicator.kimi{
+    background: rgba(251, 191, 36, 0.15);
+}
+
+/* Add shortcut button — frosted glass, matching .shortcut-btn */
+.cas-demo .add-shortcut-btn{
+    background: var(--overlay-hover);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: var(--text-muted);
+}.cas-demo .add-shortcut-btn:hover{
+    background: var(--overlay-active);
+    border-color: var(--border-strong);
+    color: var(--text-body);
+}.cas-demo .add-shortcut-btn i{
+    width: 13px;
+    height: 13px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SHORTCUT CONFIG MODAL — Settings-consistent design
+   ═══════════════════════════════════════════════════════════ */
+
+.cas-demo /* Resume hint in config modal */
+.shortcut-resume-hint{
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 10px 14px;
+    background: rgba(34, 197, 94, 0.06);
+    border: 1px solid rgba(34, 197, 94, 0.12);
+    border-radius: 6px;
+    font-size: 11.5px;
+    line-height: 1.5;
+    color: var(--text-secondary, var(--text-dim));
+}.cas-demo .shortcut-resume-hint svg{
+    flex-shrink: 0;
+    margin-top: 1px;
+    color: #22c55e;
+    opacity: 0.7;
+}.cas-demo .shortcut-resume-hint kbd{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    padding: 3px 8px;
+    font-size: 12px;
+    font-family: 'SF Pro Text', -apple-system, system-ui, sans-serif;
+    background: linear-gradient(180deg, var(--overlay-active) 0%, var(--overlay-hover) 100%);
+    border: 1px solid var(--border-strong);
+    border-bottom: 2px solid var(--border);
+    border-radius: 5px;
+    color: var(--text-body);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    vertical-align: middle;
+    line-height: 1;
+    letter-spacing: 0.5px;
+}.cas-demo .shortcut-resume-hint strong{
+    color: #22c55e;
+    font-weight: 600;
+}
+
+/* Live chip preview in the shortcut form: shows the REAL chip the toolbar will paint,
+   so every accent is tied back to the toggle that produced it. */
+.cas-demo .sc-preview{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 10px;
+    padding: 11px 13px;
+    /* SOLID on purpose: the chip's legend labels notch the outline by painting a patch of
+       whatever is behind them, so the surface under the preview chip must be a known
+       colour. A translucent panel would leave the patch visibly off. */
+    background: var(--popover-bg);
+    --chip-notch-bg: var(--popover-bg);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+}.cas-demo .sc-preview-label{
+    flex-shrink: 0;
+    font-size: 10.5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+}.cas-demo .sc-preview-stage{
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+}
+
+/* A picture of a shortcut, not a shortcut: no hover lift, no clicks. */
+.cas-demo .sc-preview-chip{
+    pointer-events: none;
+    margin: 0;
+}.cas-demo .sc-preview-caption{
+    font-size: 11px;
+    line-height: 1.45;
+    color: var(--text-secondary, var(--text-muted));
+}.cas-demo .sc-preview-caption .sc-cap-turbo{
+    color: var(--brand-text);
+    font-weight: 600;
+}.cas-demo .sc-preview-caption .sc-cap-worktree{
+    color: var(--brand-text);
+    font-weight: 600;
+}.cas-demo .sc-preview-caption .sc-cap-plain{
+    color: var(--text-muted);
+}
+
+/* Delete shortcut button */
+.cas-demo .shortcut-delete-btn{
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #ef4444;
+    color: white;
+    border: 2px solid var(--border-solid);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 10px;
+    font-weight: bold;
+    z-index: 10;
+}.cas-demo .shortcut-btn:hover .shortcut-delete-btn{
+    display: flex;
+}.cas-demo .shortcut-delete-btn:hover{
+    background: #dc2626;
+    transform: scale(1.1);
+}
+
+/* Overlay z-index override — needs to appear above other UI */
+.cas-demo .sc-modal-overlay{
+    z-index: 9999;
+    background: var(--popover-bg);
+}
+
+/* Modal container — uses :root CSS vars for palette consistency with Settings */
+.cas-demo .shortcut-config-modal{
+    background: var(--background, var(--background));
+    border: 1px solid var(--border, var(--border));
+    border-radius: 12px;
+    width: 640px;
+    max-width: 90vw;
+    max-height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: var(--shadow-card, 0 8px 32px rgba(0, 0, 0, 0.5));
+    animation: scModalIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes scModalIn {
+    from { opacity: 0; transform: scale(0.96) translateY(8px); }
+    to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* Header — app logo + title + close */
+.cas-demo .shortcut-config-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border, var(--border));
+    flex-shrink: 0;
+}.cas-demo .shortcut-config-header h3{
+    margin: 0;
+    color: var(--text-primary, var(--text-bright));
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}.cas-demo .shortcut-config-header .sc-header-logo{
+    width: 22px;
+    height: 22px;
+    filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.3));
+}.cas-demo .shortcut-config-header .sc-close-btn{
+    background: none;
+    border: none;
+    color: var(--text-muted, var(--text-muted));
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    transition: all 0.2s;
+}.cas-demo .shortcut-config-header .sc-close-btn:hover{
+    background: var(--surface-hover, var(--overlay-hover));
+    color: var(--text-primary, var(--text-bright));
+}.cas-demo .shortcut-config-header .sc-close-btn svg{
+    width: 14px;
+    height: 14px;
+    pointer-events: none;
+}
+
+/* Body */
+.cas-demo .shortcut-config-body{
+    padding: 14px 16px;
+    overflow-y: auto;
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* Section labels — small, muted */
+.cas-demo .sc-section-label{
+    display: block;
+    margin-bottom: 6px;
+    color: var(--text-secondary, var(--text-secondary));
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+/* ─── Mode & Agent card toggles (horizontal, compact) ─── */
+.cas-demo .sc-card-group{
+    /* Grid instead of flex-wrap: every card in a row gets the SAME width, and a
+       wrapped card keeps that width instead of stretching across the whole row
+       (which is what happened when the 5th agent joined). auto-fit collapses to a
+       single row whenever the modal is wide enough. */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    gap: 6px;
+}.cas-demo .sc-card-option{
+    position: relative;
+    cursor: pointer;
+    min-width: 0;
+}
+
+/* ─── AI Agent icon RAIL (same design as the launcher picker, 2026-07-17) ───
+   One row always, 48px icon-only cells, floating amber check on the selected
+   cell, BETA tag hanging under kimi. The label stays in DOM for a11y. */
+.cas-demo .sc-agent-rail{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 9px;
+}.cas-demo .sc-agent-rail .sc-card-option{
+    flex: 0 0 48px;
+}.cas-demo .sc-agent-rail .sc-card-btn{
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    justify-content: center;
+    border-radius: 12px;
+    position: relative;
+}.cas-demo .sc-agent-rail .sc-card-label{
+    position: absolute;
+    width: 1px; height: 1px; overflow: hidden;
+    clip: rect(0 0 0 0); white-space: nowrap;
+}.cas-demo .sc-agent-rail .sc-card-icon,
+.cas-demo .sc-agent-rail .sc-card-icon img{
+    width: 24px;
+    height: 24px;
+    border-radius: 5px;
+}.cas-demo .sc-agent-rail .sc-agent-check{
+    display: none;
+    position: absolute;
+    top: -5px; right: -5px;
+    width: 15px; height: 15px;
+    border-radius: 50%;
+    background: var(--brand); color: #1a1a1a;
+    font-size: 9px; font-weight: 800;
+    align-items: center; justify-content: center;
+    box-shadow: 0 0 0 2px var(--modal-bg, #141416);
+}.cas-demo .sc-agent-rail .sc-card-option input[type="radio"]:checked ~ .sc-card-btn .sc-agent-check{
+    display: flex;
+}
+/* Rail selection is UNIFORM amber (like the launcher) — this selector outweighs
+   the legacy per-agent tint rules further down. */
+.cas-demo .sc-agent-rail .sc-card-option input[type="radio"]:checked ~ .sc-card-btn{
+    border-color: var(--brand) !important;
+    background: rgba(251, 191, 36, 0.09) !important;
+    box-shadow: 0 0 0 1px var(--brand);
+}.cas-demo .sc-agent-rail .sc-agent-beta{
+    position: absolute;
+    bottom: -6px; left: 50%; transform: translateX(-50%);
+    font-size: 7.5px; font-weight: 800; letter-spacing: .08em;
+    color: #1a1a1a; background: var(--brand);
+    border-radius: 4px; padding: 1px 4px;
+    box-shadow: 0 0 0 2px var(--modal-bg, #141416);
+    pointer-events: none;
+}.cas-demo .sc-card-option input[type="radio"]{
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}.cas-demo .sc-card-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: var(--surface, var(--overlay-subtle));
+    border: 1px solid var(--border, var(--border));
+}.cas-demo .sc-card-btn:hover{
+    background: var(--surface-hover, var(--overlay-hover));
+    border-color: var(--border-strong);
+}.cas-demo .sc-card-btn .sc-card-icon{
+    width: 18px;
+    height: 18px;
+    opacity: 0.4;
+    transition: opacity 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}.cas-demo .sc-card-btn .sc-card-icon svg{
+    width: 18px;
+    height: 18px;
+}.cas-demo .sc-card-btn .sc-card-icon img{
+    width: 18px;
+    height: 18px;
+}.cas-demo .sc-card-btn .sc-card-label{
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-secondary, var(--text-secondary));
+    transition: color 0.2s ease;
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* ─── Active states — subtle tint + border highlight ─── */
+
+.cas-demo /* Project (blue) */
+.sc-card-option input:checked ~ .sc-card-btn.sc-mode-project{
+    background: rgba(59, 130, 246, 0.06);
+    border-color: rgba(59, 130, 246, 0.35);
+}.cas-demo .sc-card-option input:checked ~ .sc-card-btn.sc-mode-project .sc-card-icon{
+    opacity: 1;
+    color: #60A5FA;
+}.cas-demo .sc-card-option input:checked ~ .sc-card-btn.sc-mode-project .sc-card-label{
+    color: var(--text-primary, var(--text-bright));
+}
+
+/* Sandbox (gray) */
+.cas-demo .sc-card-option input:checked ~ .sc-card-btn.sc-mode-sandbox{
+    background: rgba(107, 114, 128, 0.08);
+    border-color: rgba(107, 114, 128, 0.35);
+}.cas-demo .sc-card-option input:checked ~ .sc-card-btn.sc-mode-sandbox .sc-card-icon{
+    opacity: 1;
+    color: var(--text-dim);
+}.cas-demo .sc-card-option input:checked ~ .sc-card-btn.sc-mode-sandbox .sc-card-label{
+    color: var(--text-primary, var(--text-bright));
+}
+
+/* Claude (warm orange) */
+.cas-demo .sc-card-option input:checked ~ .sc-card-btn.sc-agent-claude{
+    background: rgba(205, 117, 70, 0.06);
+    border-color: rgba(205, 117, 70, 0.35);
+}.cas-demo .sc-card-option input:checked ~ .sc-card-btn.sc-agent-claude .sc-card-icon{
+    opacity: 1;
+}.cas-demo .sc-card-option input:checked ~ .sc-card-btn.sc-agent-claude .sc-card-label{
+    color: var(--text-primary, var(--text-bright));
+}
+
+/* Gemini (blue) */
+.cas-demo .sc-card-option input:checked ~ .sc-card-btn.sc-agent-gemini{
+    background: rgba(66, 133, 244, 0.06);
+    border-color: rgba(66, 133, 244, 0.35);
+}.cas-demo .sc-card-option input:checked ~ .sc-card-btn.sc-agent-gemini .sc-card-icon{
+    opacity: 1;
+}.cas-demo .sc-card-option input:checked ~ .sc-card-btn.sc-agent-gemini .sc-card-label{
+    color: var(--text-primary, var(--text-bright));
+}
+
+/* Codex (green) */
+.cas-demo .sc-card-option input:checked ~ .sc-card-btn.sc-agent-codex{
+    background: rgba(16, 163, 127, 0.06);
+    border-color: rgba(16, 163, 127, 0.35);
+}.cas-demo .sc-card-option input:checked ~ .sc-card-btn.sc-agent-codex .sc-card-icon{
+    opacity: 1;
+}.cas-demo .sc-card-option input:checked ~ .sc-card-btn.sc-agent-codex .sc-card-label{
+    color: var(--text-primary, var(--text-bright));
+}
+
+/* opencode (gray) */
+.cas-demo .sc-card-option input:checked ~ .sc-card-btn.sc-agent-opencode{
+    background: rgba(156, 163, 175, 0.06);
+    border-color: rgba(156, 163, 175, 0.35);
+}.cas-demo .sc-card-option input:checked ~ .sc-card-btn.sc-agent-opencode .sc-card-icon{
+    opacity: 1;
+}.cas-demo .sc-card-option input:checked ~ .sc-card-btn.sc-agent-opencode .sc-card-label{
+    color: var(--text-primary, var(--text-bright));
+}
+
+/* Kimi Code (amber) */
+.cas-demo .sc-card-option input:checked ~ .sc-card-btn.sc-agent-kimi{
+    background: rgba(251, 191, 36, 0.06);
+    border-color: rgba(251, 191, 36, 0.35);
+}.cas-demo .sc-card-option input:checked ~ .sc-card-btn.sc-agent-kimi .sc-card-icon{
+    opacity: 1;
+}.cas-demo .sc-card-option input:checked ~ .sc-card-btn.sc-agent-kimi .sc-card-label{
+    color: var(--text-primary, var(--text-bright));
+}
+
+/* ─── Form controls (select) ─── */
+.cas-demo .sc-form-group{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}.cas-demo .sc-form-group select{
+    width: 100%;
+    padding: 8px 12px;
+    background: var(--surface, var(--overlay-subtle));
+    border: 1px solid var(--border, var(--border));
+    border-radius: 8px;
+    color: var(--text-primary, var(--text-bright));
+    font-size: 13px;
+    font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    transition: border-color 0.2s ease;
+    outline: none;
+}.cas-demo .sc-form-group select:hover{
+    border-color: var(--border-strong);
+}.cas-demo .sc-form-group select:focus{
+    border-color: var(--primary, #7f5af0);
+    box-shadow: 0 0 0 2px rgba(127, 90, 240, 0.12);
+}
+
+/* Project select + its icon. A native <select> can't render HTML in its options (the OS
+   draws that popup, see the note below), so the selected project's icon sits beside it. */
+.cas-demo .sc-select-with-icon{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+}.cas-demo .sc-select-with-icon select{
+    flex: 1;
+    min-width: 0;
+}
+
+/* Native <select> dropdown popup options.
+   On Windows the OS draws the option list with a white background, while the
+   options inherit color:#fff from the <select> → white-on-white (invisible).
+   The closed control is styled above; here we give the popup options a SOLID
+   opaque dark background (the near-transparent --surface won't cover the OS
+   white) so they stay readable. macOS already themes the popup correctly. */
+.cas-demo .sc-form-group select option{
+    background: var(--bg-secondary);
+    color: var(--text-primary, var(--text-bright));
+}.cas-demo .sc-form-group select option:checked{
+    background: var(--primary, #7f5af0);
+    color: #fff;
+}
+
+/* ─── Sandbox info box ─── */
+.cas-demo .sc-sandbox-info{
+    padding: 10px 12px;
+    background: rgba(107, 114, 128, 0.05);
+    border: 1px solid rgba(107, 114, 128, 0.12);
+    border-radius: 8px;
+}.cas-demo .sc-sandbox-info-header{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}.cas-demo .sc-sandbox-info-header svg{
+    width: 16px;
+    height: 16px;
+    color: var(--text-dim);
+    flex-shrink: 0;
+}.cas-demo .sc-sandbox-info-title{
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-primary, var(--text-bright));
+}.cas-demo .sc-sandbox-info-desc{
+    font-size: 11px;
+    color: var(--text-muted, var(--text-muted));
+    margin-top: 2px;
+}.cas-demo .sc-sandbox-info code{
+    display: block;
+    padding: 5px 8px;
+    background: var(--overlay-subtle);
+    border: 1px solid var(--border-subtle);
+    border-radius: 5px;
+    font-family: 'SF Mono', Monaco, monospace;
+    font-size: 11px;
+    color: var(--text-secondary);
+}
+
+/* ─── Turbo + Git Worktree toggle pills ─── */
+.cas-demo /* Both options sit side by side as compact pills under the "Options" label. */
+.sc-options-pills{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+}.cas-demo .sc-turbo-option{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}.cas-demo .sc-turbo-option input[type="checkbox"]{
+    display: none;
+}.cas-demo .sc-turbo-label{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    /* OFF state is OUTLINED (not transparent), so it clearly reads as a clickable
+       toggle pill instead of greyed-out / disabled text. */
+    color: var(--text-dim);
+    background: var(--overlay-subtle);
+    border: 1px solid var(--border-strong);
+    transition: all 0.2s ease;
+}.cas-demo .sc-turbo-label:hover{
+    background: var(--overlay-subtle);
+    border-color: var(--border-strong);
+    color: var(--text-body);
+}.cas-demo .sc-turbo-label svg,
+.cas-demo .sc-turbo-label i{
+    width: 13px;
+    height: 13px;
+    flex-shrink: 0;
+}
+
+/* ON state — amber filled */
+.cas-demo .sc-turbo-option input[type="checkbox"]:checked ~ .sc-turbo-label{
+    color: var(--brand, var(--brand-text));
+    background: rgba(251, 191, 36, 0.14);
+    border-color: rgba(251, 191, 36, 0.45);
+}
+
+/* DISABLED state — e.g. the Git Worktree pill when the selected project is not a
+   git repo (or has no commits) and a worktree can't be created. Dimmed + no-pointer
+   so it reads as unavailable; the reason is shown via the option's title tooltip. */
+.cas-demo .sc-turbo-option.sc-opt-disabled{
+    cursor: not-allowed;
+    /* NOTE: the dimming opacity lives on the LABEL, never here. This element owns the
+       [data-tooltip] that explains WHY the pill is disabled, and an opacity < 1 makes it
+       a stacking context: that traps the tooltip's z-index inside it, so the bubble ends
+       up half-transparent AND painted under any later sibling (e.g. the preview block). */
+}.cas-demo .sc-turbo-option.sc-opt-disabled .sc-turbo-label{
+    cursor: not-allowed;
+    opacity: 0.5;
+    /* Freeze the OFF look (never the amber ON / hover state). */
+    color: var(--text-muted);
+    background: var(--overlay-subtle);
+    border-color: var(--border);
+}.cas-demo .sc-turbo-option.sc-opt-disabled .sc-turbo-label:hover{
+    background: var(--overlay-subtle);
+    border-color: var(--border);
+    color: var(--text-muted);
+}
+
+/* ─── Footer ─── */
+.cas-demo .shortcut-config-footer{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    padding: 10px 16px;
+    border-top: 1px solid var(--border, var(--border));
+    flex-shrink: 0;
+}.cas-demo .shortcut-config-footer .btn-cancel{
+    padding: 7px 14px;
+    background: var(--surface, var(--overlay-subtle));
+    border: 1px solid var(--border, var(--border));
+    border-radius: 8px;
+    color: var(--text-secondary, var(--text-secondary));
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    cursor: pointer;
+    transition: all 0.2s;
+}.cas-demo .shortcut-config-footer .btn-cancel:hover{
+    background: var(--surface-hover, var(--overlay-hover));
+    border-color: var(--border-strong);
+    color: var(--text-primary, var(--text-bright));
+}.cas-demo .shortcut-config-footer .btn-save{
+    padding: 7px 18px;
+    background: var(--brand, var(--brand));
+    border: none;
+    border-radius: 8px;
+    color: #000;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+}.cas-demo .shortcut-config-footer .btn-save:hover{
+    background: var(--brand-hover, var(--brand-hover));
+    box-shadow: var(--brand-shadow, 0 4px 16px rgba(251, 191, 36, 0.3));
+}
+
+/* PRO badge for shortcuts */
+.cas-demo .shortcuts-pro-badge{
+    background: var(--brand, var(--brand));
+    color: #000;
+    font-size: 9px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-left: 4px;
+}
+
+/* Disabled state for non-PRO users */
+.cas-demo .navbar-shortcuts.disabled{
+    position: relative;
+}.cas-demo .navbar-shortcuts.disabled .shortcut-btn{
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Content wrapper for shortcuts */
+.cas-demo .shortcuts-content-wrapper{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: nowrap; /* Prevent wrapping to enable horizontal scroll */
+    min-width: min-content; /* Allow container to grow beyond parent */
+}
+
+/* Container-level lock overlay for FREE users */
+.cas-demo .navbar-shortcuts.disabled .container-lock-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 8px;
+    pointer-events: none;
+    z-index: 10;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+/* Pseudo-element for background and blur effect */
+.cas-demo .navbar-shortcuts.disabled .container-lock-overlay::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--popover-bg);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+/* Content (icon and text) transition */
+.cas-demo .navbar-shortcuts.disabled .container-lock-overlay svg,
+.cas-demo .navbar-shortcuts.disabled .container-lock-overlay .upgrade-text-hover{
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Show container overlay on hover */
+.cas-demo .navbar-shortcuts.disabled:hover .container-lock-overlay{
+    pointer-events: auto;
+}.cas-demo .navbar-shortcuts.disabled:hover .container-lock-overlay::before{
+    opacity: 1;
+}.cas-demo .navbar-shortcuts.disabled:hover .container-lock-overlay svg,
+.cas-demo .navbar-shortcuts.disabled:hover .container-lock-overlay .upgrade-text-hover{
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Style the lock icon in container overlay - base styles */
+.cas-demo .navbar-shortcuts.disabled .container-lock-overlay svg{
+    width: 20px;
+    height: 20px;
+    color: var(--brand-text);
+    filter: drop-shadow(0 0 4px rgba(251, 191, 36, 0.3));
+    position: relative;
+    z-index: 1;
+}
+
+/* Style the upgrade text in container overlay - base styles */
+.cas-demo .navbar-shortcuts.disabled .container-lock-overlay .upgrade-text-hover{
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--brand-text);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+}
+
+/* Disabled example buttons */
+.cas-demo .shortcut-btn.disabled-example{
+    opacity: 0.6;
+    cursor: not-allowed;
+    position: relative;
+}
+
+/* Lock overlay for disabled shortcuts */
+.cas-demo .shortcut-lock-overlay{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+/* Locked add button - using same feature-locked class as terminal button */
+.cas-demo .add-shortcut-btn.feature-locked{
+    position: relative;
+    cursor: not-allowed;
+}
+
+/* Lock overlay - reuse same styles as terminal button */
+.cas-demo .add-shortcut-btn.feature-locked .lock-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    border-radius: 8px;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* Pseudo-element for button overlay background */
+.cas-demo .add-shortcut-btn.feature-locked .lock-overlay::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--popover-bg);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    z-index: -1;
+}
+
+/* Button overlay content transition */
+.cas-demo .add-shortcut-btn.feature-locked .lock-overlay svg{
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    position: relative;
+    z-index: 1;
+}.cas-demo .add-shortcut-btn.feature-locked .lock-overlay .upgrade-text-hover{
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    position: relative;
+    z-index: 1;
+}
+
+/* When showing icon only (no text) */
+.cas-demo .add-shortcut-btn.feature-locked .lock-overlay.lock-overlay-icon-only{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Show lock overlay on hover */
+.cas-demo .add-shortcut-btn.feature-locked:hover .lock-overlay{
+    pointer-events: auto;
+}.cas-demo .add-shortcut-btn.feature-locked:hover .lock-overlay::before{
+    opacity: 1;
+}.cas-demo .add-shortcut-btn.feature-locked:hover .lock-overlay svg,
+.cas-demo .add-shortcut-btn.feature-locked:hover .lock-overlay .upgrade-text-hover{
+    opacity: 1;
+}
+
+/* Hide the base icon when hovering over locked button */
+.cas-demo .add-shortcut-btn.feature-locked:hover > i,
+.cas-demo .add-shortcut-btn.feature-locked:hover > svg{
+    opacity: 0 !important;
+    transition: opacity 0.2s ease;
+}
+
+/* Style the lock icon */
+.cas-demo .add-shortcut-btn.feature-locked .lock-overlay svg{
+    width: 14px;
+    height: 14px;
+    color: var(--brand-text);
+    filter: drop-shadow(0 0 4px rgba(251, 191, 36, 0.3));
+}
+
+/* Style the upgrade text */
+.cas-demo .add-shortcut-btn.feature-locked .lock-overlay .upgrade-text-hover{
+    font-size: 9px;
+    font-weight: 600;
+    color: var(--brand-text);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 2px;
+}.cas-demo .navbar-shortcuts.disabled .add-shortcut-btn{
+    cursor: not-allowed;
+}
+
+/* Tooltip for non-PRO users */
+.cas-demo .shortcuts-upgrade-tooltip{
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bg-secondary);
+    border: 1px solid rgba(251, 191, 36, 0.3);
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    color: var(--text-body);
+    white-space: nowrap;
+    z-index: 1000;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}.cas-demo .navbar-shortcuts.disabled:hover .shortcuts-upgrade-tooltip{
+    opacity: 1;
+}
+
+/* Hidden shortcuts indicator - uses same base styles as add-shortcut-btn.feature-locked */
+.cas-demo /* Additional styling to show it contains hidden shortcuts */
+#hidden-shortcuts-indicator{
+    border-color: rgba(245, 158, 11, 0.4) !important;
+}.cas-demo #hidden-shortcuts-indicator > svg,
+.cas-demo #hidden-shortcuts-indicator > i svg{
+    color: var(--brand-text) !important;
+    opacity: 0.7 !important;
+}
+
+/* Animation for adding shortcuts */
+@keyframes shortcutSlideIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}.cas-demo .shortcut-btn.new{
+    animation: shortcutSlideIn 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1600px) {
+    /* Make navbar shortcuts more compact when space is limited */
+    .cas-demo .navbar-shortcuts{
+        gap: 4px;
+        margin-right: 8px;
+        padding-right: 8px;
+    }
+
+    /* Make shortcut buttons more compact */
+    .cas-demo .shortcut-btn{
+        padding: 4px 8px;
+        height: 28px;
+        min-width: 100px;
+        max-width: 140px;
+        font-size: 11px;
+        margin: 0 2px;
+    }
+
+    /* Icon-only stays adaptive in compact mode too */
+    .cas-demo .shortcut-btn.icon-only{
+        min-width: auto;
+        max-width: none;
+        width: fit-content;
+        padding: 4px 6px;
+    }
+
+    /* Smaller project indicator */
+    .cas-demo .shortcut-project-indicator{
+        width: 16px;
+        height: 16px;
+        font-size: 10px;
+    }.cas-demo .shortcut-project-indicator.has-custom-icon{
+        width: 20px;
+        height: 20px;
+    }
+
+    /* Smaller mode indicators */
+    .cas-demo .mode-indicator{
+        width: 12px;
+        height: 12px;
+        font-size: 8px;
+    }
+
+    /* Compact add button */
+    .cas-demo .add-shortcut-btn{
+        width: 24px;
+        height: 24px;
+    }.cas-demo .add-shortcut-btn i{
+        width: 11px;
+        height: 11px;
+    }
+
+    /* Keep arrow controls visible even in compact mode */
+
+    .cas-demo /* Adjust delete button position */
+    .shortcut-delete-btn{
+        top: -4px;
+        right: -4px;
+        width: 14px;
+        height: 14px;
+        font-size: 9px;
+    }
+}
+
+/* Project selection dropdown in config */
+.cas-demo .project-selector{
+    position: relative;
+}.cas-demo .project-dropdown{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    margin-top: 4px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 100;
+    display: none;
+}.cas-demo .project-dropdown.open{
+    display: block;
+}.cas-demo .project-option{
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}.cas-demo .project-option:hover{
+    background: var(--overlay-subtle);
+}.cas-demo .project-option.selected{
+    background: rgba(251, 191, 36, 0.1);
+}.cas-demo .project-option-indicator{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--project-color);
+}.cas-demo .project-option-name{
+    flex: 1;
+    color: var(--text-primary);
+    font-size: 13px;
+}
+
+/* Loading state */
+.cas-demo .shortcut-btn.loading{
+    opacity: 0.6;
+    pointer-events: none;
+}.cas-demo .shortcut-btn.loading .shortcut-label::after{
+    content: '...';
+    animation: loadingDots 1.5s infinite;
+}
+
+@keyframes loadingDots {
+    0%, 20% { content: '.'; }
+    40% { content: '..'; }
+    60%, 100% { content: '...'; }
+}
+
+
+
+/* Rail tooltips open UPWARD: the rail sits near the bottom of a scrollable body,
+   so the default below-the-element bubble clipped against the footer. */
+.cas-demo .sc-agent-rail [data-tooltip]::after{
+    top: auto;
+    bottom: calc(100% + 10px);
+}.cas-demo .sc-agent-rail [data-tooltip]::before{
+    top: auto;
+    bottom: calc(100% + 5px);
+    border-left: none;
+    border-top: none;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+/* ============================================================================
+   SHORTCUTS OVERFLOW — the chips that do not fit
+   The app header is one flex row, and this strip is the only part of it that grows without a
+   bound: 10 chips measure ~550px while the window can be dragged down to its 800px minimum.
+   Past a point no amount of tightening saves the row, so the TAIL of the strip folds into a
+   menu (see setOverflowCount + updateAppHeaderDensity). The control only takes up space while
+   something is folded — at a comfortable width it is not laid out at all.
+   ============================================================================ */
+
+.cas-demo /* A folded chip. It stays in the DOM on purpose: drag-reorder commits the painted strip as a
+   permutation of the WHOLE list,
+.cas-demo and commitVisualOrder refuses a partial one — a fold that
+   really removed the tail would silently turn reordering into a no-op. */
+.navbar-shortcuts .shortcut-btn.is-overflowed{
+    display: none;
+}.cas-demo .shortcuts-overflow{
+    position: relative;
+    display: none;
+    flex: none;
+}.cas-demo .shortcuts-overflow.is-visible{
+    display: block;
+}
+
+/* Amber like the chips it stands for, but filled rather than outlined: it is a lid over them,
+   not one more of them. */
+.cas-demo .shortcuts-overflow-btn{
+    height: 32px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 0 8px;
+    border: 1px solid rgba(251, 191, 36, 0.35);
+    border-radius: 8px;
+    background: rgba(251, 191, 36, 0.08);
+    color: var(--brand-text, #fbbf24);
+    font-family: inherit;
+    font-size: 11.5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+/* The count is a real element, NOT a ::after: the global tooltip system already owns
+   [data-tooltip]::after at the same specificity, so a pseudo-element count loses the cascade and
+   the button paints as a bare chevron with no number. */
+.cas-demo .shortcuts-overflow-count{
+    font-variant-numeric: tabular-nums;
+    line-height: 1;
+}.cas-demo .shortcuts-overflow-btn svg{
+    width: 13px;
+    height: 13px;
+    flex: none;
+    transition: transform 0.2s ease;
+}.cas-demo .shortcuts-overflow-btn:hover{
+    background: rgba(251, 191, 36, 0.14);
+    border-color: rgba(251, 191, 36, 0.55);
+}.cas-demo .shortcuts-overflow.open .shortcuts-overflow-btn{
+    background: rgba(251, 191, 36, 0.16);
+    border-color: rgba(251, 191, 36, 0.6);
+}.cas-demo .shortcuts-overflow.open .shortcuts-overflow-btn svg{
+    transform: rotate(180deg);
+}.cas-demo .shortcuts-overflow-menu{
+    position: absolute;
+    display: none;
+    top: calc(100% + 8px);
+    right: 0;
+    z-index: 10020;
+    width: 268px;
+    max-height: 60vh;
+    overflow-y: auto;
+    padding: 6px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.62);
+}.cas-demo .shortcuts-overflow.open .shortcuts-overflow-menu{
+    display: block;
+}.cas-demo .shortcuts-overflow-section{
+    padding: 6px 9px 5px;
+    color: var(--text-muted);
+    font-size: 10px;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+}.cas-demo .shortcuts-overflow-item{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 22px 1fr auto;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 9px;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--text-secondary);
+    font-family: inherit;
+    text-align: left;
+    cursor: pointer;
+}.cas-demo .shortcuts-overflow-item + .shortcuts-overflow-item{
+    margin-top: 1px;
+}.cas-demo .shortcuts-overflow-item:hover,
+.cas-demo .shortcuts-overflow-item:focus-visible{
+    background: var(--overlay-hover);
+    color: var(--text-bright);
+    outline: none;
+}.cas-demo .shortcuts-overflow-item:focus-visible{
+    box-shadow: inset 0 0 0 1px rgba(251, 191, 36, 0.55);
+}.cas-demo .shortcuts-overflow-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}.cas-demo .shortcuts-overflow-icon svg{
+    width: 15px;
+    height: 15px;
+    color: var(--text-muted);
+}.cas-demo .shortcuts-overflow-name{
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: var(--text-bright);
+    font-size: 12px;
+    font-weight: 600;
+}.cas-demo .shortcuts-overflow-meta{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* The flag glyphs are cloned straight off the chip, where they are a notch pinned to its bottom
+   edge. In a flat menu row they are just inline marks, so undo the notch. */
+.cas-demo .shortcuts-overflow-meta .shortcut-legends{
+    position: static;
+    transform: none;
+    padding: 0;
+    background: transparent;
+}.cas-demo .shortcuts-overflow-key{
+    color: var(--text-muted);
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 10px;
+    white-space: nowrap;
+}
+
+/* "New shortcut" — only present at the tightest tier, where the inline "+" gives up its place. */
+.cas-demo .shortcuts-overflow-add{
+    grid-template-columns: 22px 1fr;
+    margin-top: 5px;
+    border-top: 1px solid var(--border);
+    border-radius: 0 0 8px 8px;
+    padding-top: 11px;
+}.cas-demo .shortcuts-overflow-add .shortcuts-overflow-name{
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+

@@ -4,12 +4,13 @@ import { useEffect } from 'react'
 import { useLocale, useTranslations } from 'next-intl'
 import Header from '@/components/Header'
 import BetaBanner from '@/components/BetaBanner'
-import HeroSection from '@/components/HeroSection'
+import HeroSection, { HeroPromoSection } from '@/components/HeroSection'
 import FeatureVideosSection from '@/components/FeatureVideosSection'
 import ProblemSection from '@/components/ProblemSection'
 import FeaturesSection from '@/components/FeaturesSection'
 import WorksWithSection from '@/components/WorksWithSection'
 // import DemoSection from '@/components/DemoSection'
+import InteractiveDemoSection from '@/components/InteractiveDemoSection'
 import MCPSection from '@/components/MCPSection'
 // import SocialProofSection from '@/components/SocialProofSection'
 // import SwarmiSection from '@/components/SwarmiSection'
@@ -159,6 +160,15 @@ export default function Home() {
 
       <main>
         <HeroSection />
+        <InteractiveDemoSection />
+        {/* After the demo, so that on a phone - where the demo renders nothing -
+            the video takes its place as the first thing under the headline. */}
+        <HeroPromoSection />
+        {/* Right after the demo on purpose. Watching five agents work raises one
+            question before any other - "with what, and does it cost me again?" -
+            and this is the section that answers it. Buried under Pricing it was
+            only read by people who had already decided. */}
+        <BringYourOwnSubSection />
         <ProblemSection />
         <FeaturesSection />
         <FeatureVideosSection />
@@ -167,7 +177,6 @@ export default function Home() {
         <MCPSection />
         {/* <SocialProofSection /> */}
         {/* <SwarmiSection /> */}
-        <BringYourOwnSubSection />
         <PricingSection />
         <RoadmapSection />
         <CommunitySection />
