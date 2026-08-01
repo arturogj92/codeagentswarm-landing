@@ -1,6 +1,7 @@
 'use client'
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import type { MutableRefObject } from 'react'
 import type {
   AgentKey,
   ChatRow,
@@ -20,8 +21,6 @@ const HANDOVER_MS = 15_000
  * picture. This is the gap between arrivals.
  */
 const BOOT_STAGGER_MS = 260
-/** How often the progress hairline is allowed to re-render the demo. */
-const PROGRESS_INTERVAL_MS = 100
 
 interface Options {
   /** False while the demo is off-screen, so an unseen page costs nothing. */
@@ -41,8 +40,11 @@ interface Simulation extends SimulationState {
   close: (id: number) => void
   /** Flip one terminal between the chat view and the raw CLI. */
   setMode: (id: number, mode: PaneMode) => void
-  /** 0..1 through the current loop, for the progress hairline. */
-  progress: number
+  /**
+   * Ref for the progress hairline's element. The loop writes its transform
+   * directly instead of going through state — see the tick for why.
+   */
+  progressEl: MutableRefObject<HTMLDivElement | null>
 }
 
 function initialState(script: DemoScript): SimulationState {
@@ -62,7 +64,6 @@ function initialState(script: DemoScript): SimulationState {
  */
 export function useSimulation(script: DemoScript, { active }: Options): Simulation {
   const [state, setState] = useState<SimulationState>(() => initialState(script))
-  const [progress, setProgress] = useState(0)
   const [autoplay, setAutoplay] = useState(true)
 
   /** Index of the next event to apply. */
@@ -70,8 +71,20 @@ export function useSimulation(script: DemoScript, { active }: Options): Simulati
   /** Script time already consumed, kept across pauses so scrolling away does not skip ahead. */
   const elapsed = useRef(0)
   const lastFrame = useRef<number | null>(null)
-  /** Timestamp of the last progress re-render, so it can be throttled. */
-  const lastProgress = useRef(0)
+  /**
+   * The hairline's DOM node. Written to directly by the loop.
+   *
+   * It used to be React state. That made a three-pixel bar the most expensive
+   * thing on the page: every update re-rendered the whole demo — nine terminal
+   * rows, the pane, the composer — and it updated on every frame. Throttling it
+   * to 10/s helped; writing a transform straight to the node removes the
+   * re-render entirely, and a transform is composited on the GPU without
+   * touching layout.
+   */
+  const progressEl = useRef<HTMLDivElement | null>(null)
+  const paintProgress = (value: number) => {
+    if (progressEl.current) progressEl.current.style.transform = `scaleX(${value})`
+  }
   /** Wall-clock deadline after which the script takes the wheel back. */
   const handoverUntil = useRef(0)
   /**
@@ -180,7 +193,7 @@ export function useSimulation(script: DemoScript, { active }: Options): Simulati
         elapsed.current = 0
         cursor.current = 0
         setState(initialState(script))
-        setProgress(0)
+        paintProgress(0)
         // The workspace assembles again on every loop, so a visitor who arrives
         // mid-cycle still gets to see it happen.
         bootedRef.current = 1
@@ -188,15 +201,7 @@ export function useSimulation(script: DemoScript, { active }: Options): Simulati
         return
       }
 
-      // The hairline moved on EVERY frame, and because `progress` is state, that
-      // was a full re-render of the demo — nine terminal rows, the pane and the
-      // composer — sixty times a second, for a bar three pixels tall. On a
-      // loaded machine those re-renders are what make the whole section stutter.
-      // Ten a second is indistinguishable on a 78-second sweep.
-      if (now - lastProgress.current >= PROGRESS_INTERVAL_MS) {
-        lastProgress.current = now
-        setProgress(elapsed.current / script.duration)
-      }
+      paintProgress(elapsed.current / script.duration)
 
       // Reveal one more terminal every BOOT_STAGGER_MS until they are all in.
       const shouldShow = Math.min(
@@ -365,5 +370,5 @@ export function useSimulation(script: DemoScript, { active }: Options): Simulati
     (terminal, index) => !scripted.has(terminal.id) || index < booted
   )
 
-  return { ...state, terminals, autoplay, select, answer, open, close, setMode, progress }
+  return { ...state, terminals, autoplay, select, answer, open, close, setMode, progressEl }
 }

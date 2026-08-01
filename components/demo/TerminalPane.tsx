@@ -313,15 +313,37 @@ export default function TerminalPane({
     const term = termRef.current
     if (!term) return
 
-    const id = window.setInterval(() => {
+    // Driven by rAF rather than by setInterval, which matters on a busy machine.
+    // An interval insists every 22ms whether or not the last write has been
+    // painted, so when the CPU is loaded its callbacks pile up and fight the
+    // renderer — that is the stutter. This writes at most once per frame, and
+    // when frames come late it carries the backlog into the next one, so the
+    // text lands at the same speed with a fraction of the writes.
+    let raf = 0
+    let last = performance.now()
+    let owed = 0
+
+    const step = (now: number) => {
+      raf = requestAnimationFrame(step)
+      owed += now - last
+      last = now
+      if (owed < TYPE_TICK_MS) return
+
+      // Cap the catch-up: after a long stall, dumping the whole backlog at once
+      // would undo the typing effect entirely.
+      const ticks = Math.min(Math.floor(owed / TYPE_TICK_MS), 4)
+      owed = 0
+
       if (queue.current.length === 0) {
         setTyping(false)
         return
       }
-      term.write(queue.current.splice(0, UNITS_PER_TICK).join(''))
+      term.write(queue.current.splice(0, UNITS_PER_TICK * ticks).join(''))
       term.scrollToBottom()
-    }, TYPE_TICK_MS)
-    return () => window.clearInterval(id)
+    }
+
+    raf = requestAnimationFrame(step)
+    return () => cancelAnimationFrame(raf)
   }, [typing])
 
   /**

@@ -1,5 +1,6 @@
 'use client'
 
+import { memo } from 'react'
 import { motion } from 'framer-motion'
 import { STATUSES } from './statuses'
 import type { AgentKey, DemoTerminal } from './types'
@@ -35,7 +36,16 @@ function compactLabel(projectName: string) {
   return projectName.slice(0, 3).toUpperCase()
 }
 
-export default function TerminalRow({ terminal, animate, active, onSelect, onClose }: Props) {
+/**
+ * One row of the terminal list.
+ *
+ * Memoised because the list is nine of these, each wrapped in a layout-animated
+ * motion element: without it, any state change anywhere in the demo re-rendered
+ * all nine. Its props are the terminal object (replaced only when that terminal
+ * actually changes) and two handlers DemoApp keeps stable with useCallback — if
+ * either becomes an inline lambda again, this memo silently stops working.
+ */
+function TerminalRow({ terminal, animate, active, onSelect, onClose }: Props) {
   const status = STATUSES[terminal.status]
   const agent = AGENT_ICON[terminal.agent]
 
@@ -131,3 +141,5 @@ export default function TerminalRow({ terminal, animate, active, onSelect, onClo
     </motion.div>
   )
 }
+
+export default memo(TerminalRow)

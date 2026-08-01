@@ -1,7 +1,7 @@
 'use client'
 
 import { ArrowDownWideNarrow, PanelLeftClose, PanelLeftOpen, Plus, Rows4 } from 'lucide-react'
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import { useEffect, useMemo, useRef } from 'react'
 import TerminalRow from './TerminalRow'
 import { STATUSES, statusOrder } from './statuses'
@@ -40,6 +40,13 @@ type ListItem =
  * would read as noise instead of progress.
  */
 export default function TerminalList({ view, terminals, selectedId, onSelect, onClose, onNew, compact, onCompact, collapsed, onCollapse }: Props) {
+  /*
+   * Rows slide between status groups via layout animation, which is the most
+   * expensive thing in the list — every reorder measures and tweens nine
+   * elements. Honour the OS setting: someone who asked for less motion gets
+   * instant reordering, and on a loaded machine that is also the cheapest path.
+   */
+  const reduced = useReducedMotion()
   const items = useMemo<ListItem[]>(() => {
     const sorted = [...terminals].sort((a, b) => {
       const byStatus = statusOrder(a.status) - statusOrder(b.status)
@@ -176,7 +183,7 @@ export default function TerminalList({ view, terminals, selectedId, onSelect, on
             <TerminalRow
               key={item.terminal.id}
               terminal={item.terminal}
-              animate={view === 'sidebar'}
+              animate={view === 'sidebar' && !reduced}
               active={item.terminal.id === selectedId}
               onSelect={onSelect}
               onClose={onClose}

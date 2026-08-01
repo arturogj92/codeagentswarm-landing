@@ -141,6 +141,19 @@ export default function DemoApp({ variant = 'embedded' }: Props) {
     return () => window.removeEventListener('keydown', onKey)
   }, [hovered, answering, sim])
 
+  /**
+   * Stable identity, because TerminalRow is memoised: an inline lambda here
+   * would be a new prop on every render and would re-render all nine rows,
+   * layout animations and all, on every tick of the script.
+   */
+  const selectTerminal = useCallback(
+    (id: number) => {
+      trackTouch('select')
+      sim.select(id)
+    },
+    [sim.select, trackTouch]
+  )
+
   const answer = useCallback(
     (index: number) => {
       if (!selected) return
@@ -219,10 +232,7 @@ export default function DemoApp({ variant = 'embedded' }: Props) {
               view={view === 'tabs' ? 'tabs' : 'sidebar'}
               terminals={sim.terminals}
               selectedId={sim.selectedId}
-              onSelect={(id) => {
-                trackTouch('select')
-                sim.select(id)
-              }}
+              onSelect={selectTerminal}
               onClose={sim.close}
               onNew={() => {
                 trackTouch('new')
@@ -322,7 +332,9 @@ export default function DemoApp({ variant = 'embedded' }: Props) {
 
       <DemoNotifications terminals={sim.terminals} onOpen={sim.select} />
 
-      <div className="demo-progress" style={{ transform: `scaleX(${sim.progress})` }} />
+      {/* No style prop: the loop writes this node's transform itself, so the
+          sweep costs a GPU composite instead of a render of the whole demo. */}
+      <div className="demo-progress" ref={sim.progressEl} />
 
 
       {launcherOpen && (
