@@ -1113,3 +1113,25 @@
   width: 15px;
   height: 15px;
 }
+
+/* ---- Tighter chrome, more transcript ------------------------------------ */
+
+/* The app's header is 60px tall because in a real window there is room to
+   spare. Inside the laptop the whole workspace is 488px, so every row of chrome
+   is a row the conversation does not get. Its tallest child is the 40px Run
+   button, so 46px is as low as it goes without shrinking anything inside. */
+.demo-root .header {
+  height: 46px;
+}
+
+.demo-root .app-logo {
+  width: 30px;
+  height: 30px;
+}
+
+/* Same trade in the panel's own title row: it carries one line of text and a
+   26px button, so the 8px block padding was pure air. */
+.demo-terminal-header {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
