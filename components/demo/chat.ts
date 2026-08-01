@@ -106,8 +106,8 @@ export const AGENT_CHAT: Record<AgentKey, AgentChatConfig> = {
   },
   kimi: {
     models: [
-      { id: 'kimi-k2-turbo', name: 'kimi-k2-turbo', description: 'Moonshot AI' },
-      { id: 'kimi-k2', name: 'kimi-k2', description: 'Moonshot AI' },
+      { id: 'kimi-k3', name: 'kimi-k3', description: 'Moonshot AI' },
+      { id: 'kimi-k3-turbo', name: 'kimi-k3-turbo', description: 'Moonshot AI · faster' },
     ],
     permissions: GENERIC_PERMISSIONS,
   },

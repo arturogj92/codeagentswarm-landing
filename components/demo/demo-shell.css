@@ -1065,10 +1065,23 @@
 }
 
 /* The terminal pane pins its own input row and footer under the transcript; the
-   chat brings its composer with it, so the panel must not reserve that space. */
+   chat brings its composer with it, so the panel must not reserve that space.
+
+   No `overflow: hidden` here, however tempting for the bottom corners: the
+   composer's model and permission menus open UPWARDS and OUTWARDS from a
+   trigger near the bottom edge, and clipping the stack sliced the left half off
+   both of them. The rounded corner is not worth a cut-off menu. */
 .demo-terminal-panel.is-chat .demo-pane-stack {
   border-radius: 0 0 10px 10px;
-  overflow: hidden;
+}
+
+/* The menus size themselves against the viewport in the app, where the panel is
+   most of the window. Inside the demo's laptop the pane is a fraction of it, so
+   they are re-sized against the chat container instead — `.cas-chat` already
+   declares `container-type: inline-size`, so `cqw` is the pane's own width. */
+.demo-root .cas-model-menu,
+.demo-root .cas-permission-menu {
+  width: min(340px, calc(100cqw - 32px));
 }
 
 .demo-mode-switch {

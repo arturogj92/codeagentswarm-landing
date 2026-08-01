@@ -19,6 +19,8 @@ const HANDOVER_MS = 15_000
  * picture. This is the gap between arrivals.
  */
 const BOOT_STAGGER_MS = 260
+/** How often the progress hairline is allowed to re-render the demo. */
+const PROGRESS_INTERVAL_MS = 100
 
 interface Options {
   /** False while the demo is off-screen, so an unseen page costs nothing. */
@@ -67,6 +69,8 @@ export function useSimulation(script: DemoScript, { active }: Options): Simulati
   /** Script time already consumed, kept across pauses so scrolling away does not skip ahead. */
   const elapsed = useRef(0)
   const lastFrame = useRef<number | null>(null)
+  /** Timestamp of the last progress re-render, so it can be throttled. */
+  const lastProgress = useRef(0)
   /** Wall-clock deadline after which the script takes the wheel back. */
   const handoverUntil = useRef(0)
   /**
@@ -183,7 +187,15 @@ export function useSimulation(script: DemoScript, { active }: Options): Simulati
         return
       }
 
-      setProgress(elapsed.current / script.duration)
+      // The hairline moved on EVERY frame, and because `progress` is state, that
+      // was a full re-render of the demo — nine terminal rows, the pane and the
+      // composer — sixty times a second, for a bar three pixels tall. On a
+      // loaded machine those re-renders are what make the whole section stutter.
+      // Ten a second is indistinguishable on a 78-second sweep.
+      if (now - lastProgress.current >= PROGRESS_INTERVAL_MS) {
+        lastProgress.current = now
+        setProgress(elapsed.current / script.duration)
+      }
 
       // Reveal one more terminal every BOOT_STAGGER_MS until they are all in.
       const shouldShow = Math.min(

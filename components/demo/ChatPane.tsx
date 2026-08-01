@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { AGENT_CHAT, defaultChatConfig } from './chat'
+import { AGENT_ICON } from './TerminalRow'
 import type { AgentKey, ChatTool, ChatWork, DemoPrompt, DemoTerminal } from './types'
 
 /**
@@ -141,6 +142,8 @@ function useDismiss(open: boolean, close: () => void) {
 
 interface PickerProps {
   className: string
+  /** The app's trigger class is NOT `${className}-trigger` — it drops "-picker". */
+  triggerClass: string
   trigger: React.ReactNode
   title: string
   options: { id: string; label: string; description?: string }[]
@@ -154,6 +157,7 @@ interface PickerProps {
 /** The shared body of the model and permission dropdowns. */
 function Picker({
   className,
+  triggerClass,
   trigger,
   title,
   options,
@@ -168,7 +172,7 @@ function Picker({
 
   return (
     <div className={className} ref={ref} data-disabled="false">
-      <button type="button" className={`${className}-trigger`} aria-expanded={open} onClick={() => setOpen((v) => !v)}>
+      <button type="button" className={triggerClass} aria-expanded={open} onClick={() => setOpen((v) => !v)}>
         {trigger}
         <span className="cas-model-caret" aria-hidden="true">
           ⌄
@@ -409,14 +413,6 @@ function QuestionCard({ prompt, agentLabel, onAnswer }: { prompt: DemoPrompt; ag
   )
 }
 
-const AGENT_LABEL: Record<AgentKey, string> = {
-  claude: 'Claude',
-  codex: 'Codex',
-  antigravity: 'Antigravity',
-  opencode: 'opencode',
-  kimi: 'Kimi',
-}
-
 export default function ChatPane({ terminal, onAnswer }: Props) {
   const config = AGENT_CHAT[terminal.agent]
   const [settings, setSettings] = useState(() => defaultChatConfig(terminal.agent))
@@ -447,6 +443,47 @@ export default function ChatPane({ terminal, onAnswer }: Props) {
     <div className="cas-chat">
       <div className="cas-chat-scroll" ref={scroller}>
         <div className="cas-chat-col">
+          {/*
+            Before the first message, the same welcome the app shows: brand
+            seal, eyebrow, the question, and the identity pill naming which
+            agent is about to work in which project. A terminal you just opened
+            is a real state of the product, not a gap in the demo.
+          */}
+          {rows.length === 0 && (
+            <div className="cas-empty">
+              <span className="cas-empty-brand" aria-hidden="true">
+                <img className="cas-empty-brand-flat" src="/isotipo.png" alt="" />
+              </span>
+              <div className="cas-empty-eyebrow">Chat Mode</div>
+              <h1 className="cas-empty-title">What should we work on?</h1>
+              <div className="cas-empty-sub">
+                Bring an idea, a problem, or a task. Your agent is ready to build alongside you.
+              </div>
+              <div
+                className="cas-empty-identity"
+                role="img"
+                aria-label={`${AGENT_ICON[terminal.agent].label} in ${terminal.project.name}`}
+              >
+                <span
+                  className="cas-empty-context-part cas-empty-context-agent"
+                  title={`Agent: ${AGENT_ICON[terminal.agent].label}`}
+                >
+                  <span className="cas-empty-agent-mark">
+                    <img src={AGENT_ICON[terminal.agent].src} alt="" />
+                  </span>
+                </span>
+                <span className="cas-empty-context-link" aria-hidden="true">
+                  in
+                </span>
+                <span className="cas-empty-context-part" title={`Project: ${terminal.project.name}`}>
+                  <span className="cas-empty-project-mark">
+                    <img src={terminal.project.icon} alt="" />
+                  </span>
+                </span>
+              </div>
+            </div>
+          )}
+
           {rows.map((row) => {
             if (row.kind === 'user') {
               return (
@@ -474,7 +511,7 @@ export default function ChatPane({ terminal, onAnswer }: Props) {
           {terminal.prompt && (
             <QuestionCard
               prompt={terminal.prompt}
-              agentLabel={AGENT_LABEL[terminal.agent]}
+              agentLabel={AGENT_ICON[terminal.agent].label}
               onAnswer={onAnswer}
             />
           )}
@@ -508,7 +545,7 @@ export default function ChatPane({ terminal, onAnswer }: Props) {
           <textarea
             className="cas-chat-input"
             rows={1}
-            placeholder={`Message ${AGENT_LABEL[terminal.agent]}…`}
+            placeholder={`Message ${AGENT_ICON[terminal.agent].label}…`}
             readOnly
           />
           <div className="cas-chat-cfoot">
@@ -518,6 +555,7 @@ export default function ChatPane({ terminal, onAnswer }: Props) {
 
             <Picker
               className="cas-model-picker"
+              triggerClass="cas-model-trigger"
               menuClass="cas-model-menu"
               optionClass="cas-model-option"
               title="Model"
@@ -568,6 +606,7 @@ export default function ChatPane({ terminal, onAnswer }: Props) {
             <span className="cas-vsep" />
             <Picker
               className="cas-permission-picker"
+              triggerClass="cas-permission-trigger"
               menuClass="cas-permission-menu"
               optionClass="cas-permission-option"
               title="Permissions for this conversation"

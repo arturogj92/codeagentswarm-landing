@@ -12,7 +12,8 @@ import type { AgentKey, DemoTerminal } from './types'
  * in step with createTerminalTab() in the app's renderer.js when the row changes.
  */
 
-const AGENT_ICON: Record<AgentKey, { src: string; label: string }> = {
+/** Exported so the chat's welcome screen names the agent exactly as the row does. */
+export const AGENT_ICON: Record<AgentKey, { src: string; label: string }> = {
   claude: { src: '/icons/apps/claude-icon.svg', label: 'Claude Code' },
   codex: { src: '/icons/apps/codex-icon.svg', label: 'Codex CLI' },
   antigravity: { src: '/icons/apps/antigravity-icon.png', label: 'Antigravity CLI' },
@@ -91,6 +92,9 @@ export default function TerminalRow({ terminal, animate, active, onSelect, onClo
         <span className="tab-copy">
           <span className="tab-title">{terminal.title}</span>
           <span className="tab-meta">{terminal.project.name}</span>
+          {/* A terminal nobody has given work to has no goal yet, and a bare
+              "Goal" label with nothing after it reads as a missing string. */}
+          {terminal.goal ? (
           <span className="tab-goal">
             <svg
               className="tab-goal-icon"
@@ -109,6 +113,7 @@ export default function TerminalRow({ terminal, animate, active, onSelect, onClo
             <span className="tab-goal-tag">Goal</span>
             <span className="tab-goal-text">{terminal.goal}</span>
           </span>
+          ) : null}
           <span className="tab-activity">{terminal.activity}</span>
         </span>
       </div>

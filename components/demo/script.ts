@@ -396,6 +396,25 @@ const TERMINALS: DemoTerminal[] = [
         '',
       ),
     ],
+    chat: [
+      {
+        id: 'c7-u',
+        kind: 'user',
+        text: 'Walking between rooms shows a loading screen every time. Stream them in instead.',
+      },
+      {
+        id: 'c7-a',
+        kind: 'assistant',
+        text: 'Neighbouring rooms load in the background as you approach, so the screen never goes black between them. Pushed to develop.',
+      },
+      {
+        id: 'c7-w',
+        kind: 'work',
+        rows: [
+          { tool: 'command', verb: 'Ran', target: 'git push', status: 'ok', output: 'develop → origin/develop' },
+        ],
+      },
+    ],
   },
   {
     id: 8,
@@ -413,6 +432,31 @@ const TERMINALS: DemoTerminal[] = [
         '',
       ),
     ],
+    chat: [
+      {
+        id: 'c8-u',
+        kind: 'user',
+        text: 'The main menu only really works with a mouse. Make pad, keyboard and mouse all behave.',
+      },
+      {
+        id: 'c8-a',
+        kind: 'assistant',
+        text: 'One focus model for all three inputs, so the pad no longer fights the mouse for the highlight. Pushed.',
+      },
+    ],
+  },
+  {
+    // The one nobody has given work to yet. It is here for the same reason the
+    // app has an empty state at all: opening a terminal and looking at it before
+    // you have typed anything is the first thing anyone does.
+    id: 9,
+    title: 'New terminal',
+    goal: '',
+    activity: 'Waiting for your first instruction',
+    project: PROJECTS.diskito,
+    agent: 'claude',
+    status: 'idle',
+    elapsed: 'now',
   },
 ]
 

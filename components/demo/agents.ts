@@ -113,7 +113,7 @@ export const AGENTS: Record<AgentKey, AgentSkin> = {
     banner: (cwd) =>
       [
         `${bold(white('Kimi Code'))} ${dim('v1.4')}`,
-        `${grey('kimi-k2-turbo')} ${dim('·')} ${grey('Moonshot AI')}`,
+        `${grey('kimi-k3')} ${dim('·')} ${grey('Moonshot AI')}`,
         `${dim(cwd)}`,
       ].join('\r\n'),
     bullet: green('◈'),
