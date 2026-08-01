@@ -235,6 +235,7 @@ const TERMINALS: DemoTerminal[] = [
             claude.result('+74 −11'),
             '',
           ),
+          chatReply: 'Freezing it is. Nothing is deleted, Pro just switches off, and a single successful charge restores everything. Writing that now.',
           activity: 'Freezing the account instead of downgrading',
         },
         {
@@ -248,6 +249,7 @@ const TERMINALS: DemoTerminal[] = [
             claude.result('+58 −4'),
             '',
           ),
+          chatReply: 'Downgrading, then. I will keep the Pro data for 30 days so an upgrade restores it instead of starting from scratch.',
           activity: 'Downgrading the plan after the third failure',
         },
         {
@@ -261,6 +263,7 @@ const TERMINALS: DemoTerminal[] = [
             claude.result('+61 −9'),
             '',
           ),
+          chatReply: 'Nothing changes for 72 hours then. I will send the retry link and only act if it goes unanswered.',
           activity: 'Emailing a retry link before touching the plan',
         },
       ],
@@ -359,6 +362,7 @@ const TERMINALS: DemoTerminal[] = [
             agy.result('+96 −12'),
             '',
           ),
+          chatReply: 'Full world state then. Saves get heavier, so I will compress them and write on a background thread to keep the frame time flat.',
           activity: 'Saving the whole world and compressing it',
         },
         {
@@ -372,6 +376,7 @@ const TERMINALS: DemoTerminal[] = [
             agy.result('+41 −12'),
             '',
           ),
+          chatReply: 'Checkpoints it is. Room, inventory and flags, so a save stays under a kilobyte and loads instantly.',
           activity: 'Saving checkpoints instead of the whole world',
         },
       ],
@@ -475,10 +480,36 @@ const TERMINALS: DemoTerminal[] = [
 export const TERMINAL_COUNT = TERMINALS.length
 export const PROJECT_COUNT = new Set(TERMINALS.map((t) => t.project.name)).size
 
+/**
+ * Echo the chat's opening message into the terminal's transcript.
+ *
+ * The two views are one conversation, and the proof of that is the words: the
+ * CLI has to show, at the top of its scrollback, the same sentence the chat
+ * shows in its first bubble. Without it, switching views looked like switching
+ * to a different session that happened to be doing similar work.
+ *
+ * Derived rather than authored twice, so the two can never drift: the chat row
+ * is the single source, and the terminal line is generated from it in the
+ * agent's own prompt style.
+ */
+function echoOpeningMessage(terminal: DemoTerminal): DemoTerminal {
+  const first = terminal.chat?.[0]
+  if (!first || first.kind !== 'user') return terminal
+  const backlog = terminal.backlog ?? []
+  // Codex's authored backlog already opens with its prompt line; re-adding it
+  // would print the request twice.
+  if (backlog[0]?.includes(first.text)) return terminal
+  const skin = AGENTS[terminal.agent]
+  return {
+    ...terminal,
+    backlog: [lines(`${skin.prompt} ${white(first.text)}`, ''), ...backlog],
+  }
+}
+
 const script: DemoScript = {
   duration: 78_000,
   initialSelection: 1,
-  terminals: TERMINALS,
+  terminals: TERMINALS.map(echoOpeningMessage),
   events: [
     // Los objetivos se leen en todas las filas desde el principio, así que
 
@@ -559,7 +590,8 @@ const script: DemoScript = {
               kimi.result('118 lines'),
               '',
             ),
-            activity: 'Matching recordings by their audio, not their name',
+            chatReply: 'Content hash then. Same audio is the same note no matter which device recorded it or what the file ended up called.',
+          activity: 'Matching recordings by their audio, not their name',
           },
           {
             label: 'An id stamped on save',
@@ -572,6 +604,7 @@ const script: DemoScript = {
               kimi.result('96 lines'),
               '',
             ),
+            chatReply: 'Ids on save, then. New recordings get one the moment they are made, and I will backfill the old ones on first sync.',
             activity: 'Stamping every recording with an id on save',
           },
         ],

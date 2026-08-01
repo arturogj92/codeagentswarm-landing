@@ -52,6 +52,15 @@ export interface DemoPromptOption {
   description: string
   /** Written to the screen once picked. */
   reply: string
+  /**
+   * The same answer as the chat says it: one paragraph, no ANSI.
+   *
+   * Kept next to `reply` rather than derived from it because the terminal's
+   * version carries tool calls and diff counts the chat renders as its own rows.
+   * Both must say the same thing — this is the one place in the demo where the
+   * two views are written twice.
+   */
+  chatReply?: string
   /** Activity line the terminal takes on. */
   activity: string
 }

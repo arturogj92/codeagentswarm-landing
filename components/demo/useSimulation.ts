@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import type {
   AgentKey,
+  ChatRow,
   DemoEvent,
   DemoProject,
   DemoScript,
@@ -250,12 +251,22 @@ export function useSimulation(script: DemoScript, { active }: Options): Simulati
         const terminal = prev.terminals.find((t) => t.id === id)
         const option = terminal?.prompt?.options[optionIndex]
         if (!option) return prev
+        // The chat has to record the exchange too: which option was picked, and
+        // what the agent said back. Otherwise answering from the chat made the
+        // card vanish and left no trace of the decision in the transcript.
+        const answered: ChatRow[] = [
+          { id: `ans-${id}-${optionIndex}`, kind: 'user', text: option.label },
+          ...(option.chatReply
+            ? [{ id: `rep-${id}-${optionIndex}`, kind: 'assistant' as const, text: option.chatReply }]
+            : []),
+        ]
         return {
           ...prev,
           terminals: prev.terminals.map((t) =>
             t.id === id
               ? {
                   ...t,
+                  chat: [...(t.chat ?? []), ...answered],
                   prompt: undefined,
                   status: 'working',
                   notified: false,
