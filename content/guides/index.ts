@@ -13,6 +13,7 @@ import enTipsAndTricks from './en/claude-code-tips-and-tricks'
 import enYoloModeExplained from './en/claude-code-yolo-mode-explained'
 import enClaudeCodeVsCursorVsCodex from './en/claude-code-vs-cursor-vs-codex'
 import enBestMcpServers from './en/best-mcp-servers-claude-code'
+import enClaudeCodeAgentSwarm from './en/claude-code-agent-swarm'
 import enCodexAgentSwarm from './en/codex-agent-swarm'
 import enGeminiAgentSwarm from './en/gemini-agent-swarm'
 import enAiCliAgentSwarm from './en/ai-cli-agent-swarm'
@@ -74,6 +75,7 @@ import esTipsAndTricks from './es/trucos-y-consejos-claude-code'
 import esYoloModeExplained from './es/modo-yolo-claude-code-explicado'
 import esClaudeCodeVsCursorVsCodex from './es/claude-code-vs-cursor-vs-codex'
 import esBestMcpServers from './es/mejores-servidores-mcp-claude-code'
+import esClaudeCodeAgentSwarm from './es/enjambre-de-agentes-claude-code'
 import esCodexAgentSwarm from './es/enjambre-de-agentes-codex'
 import esGeminiAgentSwarm from './es/enjambre-de-agentes-gemini'
 import esAiCliAgentSwarm from './es/enjambre-de-agentes-cli-ia'
@@ -137,6 +139,7 @@ export const guides: Record<string, Record<string, Guide>> = {
     'claude-code-yolo-mode-explained': enYoloModeExplained,
     'claude-code-vs-cursor-vs-codex': enClaudeCodeVsCursorVsCodex,
     'best-mcp-servers-claude-code': enBestMcpServers,
+    'claude-code-agent-swarm': enClaudeCodeAgentSwarm,
     'codex-agent-swarm': enCodexAgentSwarm,
     'gemini-agent-swarm': enGeminiAgentSwarm,
     'ai-cli-agent-swarm': enAiCliAgentSwarm,
@@ -198,6 +201,7 @@ export const guides: Record<string, Record<string, Guide>> = {
     'modo-yolo-claude-code-explicado': esYoloModeExplained,
     'claude-code-vs-cursor-vs-codex': esClaudeCodeVsCursorVsCodex,
     'mejores-servidores-mcp-claude-code': esBestMcpServers,
+    'enjambre-de-agentes-claude-code': esClaudeCodeAgentSwarm,
     'enjambre-de-agentes-codex': esCodexAgentSwarm,
     'enjambre-de-agentes-gemini': esGeminiAgentSwarm,
     'enjambre-de-agentes-cli-ia': esAiCliAgentSwarm,
