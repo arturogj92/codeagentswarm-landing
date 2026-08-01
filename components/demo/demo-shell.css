@@ -1050,3 +1050,53 @@
 
 
 /* On a narrow frame the hint goes first; the CTA is the one thing that stays. */
+
+/* ---- Chat view ---------------------------------------------------------- */
+
+/* The chat panel is the app's own markup and the app's own stylesheet (see
+   demo-app.css). These four rules only fit it into the demo's frame: fill the
+   pane, keep the transcript scrolling inside its own box rather than the page,
+   and hang the switch-to-terminal button off the corner. */
+.demo-pane-stack .cas-chat {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  background: transparent;
+}
+
+/* The terminal pane pins its own input row and footer under the transcript; the
+   chat brings its composer with it, so the panel must not reserve that space. */
+.demo-terminal-panel.is-chat .demo-pane-stack {
+  border-radius: 0 0 10px 10px;
+  overflow: hidden;
+}
+
+.demo-mode-switch {
+  /* First in the header, not last: the demo's notification toasts land in the
+     top-right corner of the panel and were eating the click. */
+  order: -1;
+  flex-shrink: 0;
+  align-self: center;
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.45);
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+.demo-mode-switch:hover {
+  color: var(--brand, #F5A623);
+  border-color: rgba(245, 166, 35, 0.45);
+  background: rgba(30, 26, 18, 0.9);
+}
+
+.demo-mode-switch svg {
+  width: 15px;
+  height: 15px;
+}

@@ -190,6 +190,1101 @@
 
 /* ===== Project badge — from app styles.css ===== */
 .cas-demo .project-badge{
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  border-radius: 5px;
+}.cas-demo #session-restore-modal .session-restore-project-mark .project-badge.badge-initials{
+  border-radius: 5px;
+  font-size: 8px;
+}.cas-demo #session-restore-modal .session-restore-project-mark .project-badge svg,
+.cas-demo #session-restore-modal .session-restore-project-mark .project-badge .project-badge-lucide-icon{
+  width: 11px;
+  height: 11px;
+}.cas-demo #session-restore-modal .session-restore-project-mark .project-icon-emoji{
+  font-size: 10px !important;
+}.cas-demo #session-restore-modal .session-restore-session-title{
+  overflow: hidden;
+  color: var(--text-primary);
+  font-size: 12.5px;
+  font-weight: 680;
+  letter-spacing: -0.01em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}.cas-demo #session-restore-modal .session-restore-goal{
+  display: block;
+  overflow: hidden;
+  margin-top: 4px;
+  color: var(--text-secondary);
+  font-size: 10.5px;
+  line-height: 1.35;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}.cas-demo #session-restore-modal .session-restore-project{
+  color: var(--text-muted);
+}.cas-demo #session-restore-modal .session-restore-state-wrap{
+  min-width: 78px;
+  display: flex;
+  justify-content: flex-end;
+}.cas-demo #session-restore-modal .session-restore-state{
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--session-status-color, var(--text-secondary));
+  font-size: 9.5px;
+  font-weight: 640;
+  white-space: nowrap;
+}.cas-demo #session-restore-modal .session-restore-state svg{
+  width: 12px;
+  height: 12px;
+}.cas-demo #session-restore-modal .session-restore-state.is-working{
+  color: var(--session-status-color, #72b7ff);
+}.cas-demo #session-restore-modal .session-restore-state.is-minimized{
+  color: #78c8f1;
+}.cas-demo #session-restore-modal .session-restore-state.is-ready{
+  color: #65d694;
+}.cas-demo #session-restore-modal .session-restore-state.is-restoring{
+  color: var(--brand);
+}.cas-demo #session-restore-modal .session-restore-state.is-restoring i{
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  animation: session-restore-pulse 900ms ease-in-out infinite;
+}.cas-demo #session-restore-modal .session-restore-state.is-failed{
+  color: #f47b7b;
+}.cas-demo #session-restore-modal .session-restore-state.is-blocked{
+  color: var(--text-muted);
+}.cas-demo #session-restore-modal .conv-parked-badge{
+  display: none;
+}.cas-demo #session-restore-modal .session-restore-footer{
+  position: relative;
+  flex: 0 0 auto;
+  padding: 14px 18px 16px;
+  border-top: 1px solid var(--border);
+  background: var(--modal-bg);
+}.cas-demo #session-restore-modal .session-restore-progress{
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 2px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+}.cas-demo #session-restore-modal #session-restore-progress-fill{
+  width: 0;
+  height: 100%;
+  display: block;
+  background: var(--brand);
+  transition: width 260ms cubic-bezier(0.16, 1, 0.3, 1);
+}.cas-demo #session-restore-modal .session-restore-footer-row{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}.cas-demo #session-restore-modal .session-restore-footer-copy{
+  min-width: 0;
+}.cas-demo #session-restore-modal .session-restore-selection-tools{
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
+  margin-bottom: 4px;
+}.cas-demo #session-restore-modal .session-restore-counter{
+  display: inline-block;
+  color: var(--text-muted);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+}.cas-demo #session-restore-modal .session-restore-select-all{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: var(--brand-text);
+  background: transparent;
+  font: inherit;
+  font-size: 10.5px;
+  font-weight: 680;
+  cursor: pointer;
+}.cas-demo #session-restore-modal .session-restore-select-all:hover:not(:disabled){
+  color: var(--brand-hover);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}.cas-demo #session-restore-modal .session-restore-select-all:disabled{
+  color: var(--text-muted);
+  cursor: default;
+  opacity: 0.6;
+}.cas-demo #session-restore-modal .session-restore-counter strong,
+.cas-demo #session-restore-modal .session-restore-note strong{
+  color: var(--text-secondary);
+  font-weight: 680;
+}.cas-demo #session-restore-modal .session-restore-note{
+  max-width: 300px;
+  display: block;
+  color: var(--text-muted);
+  font-size: 10.5px;
+  line-height: 1.45;
+}.cas-demo #session-restore-modal .session-restore-actions,
+.cas-demo #session-restore-modal .session-restore-confirm-actions{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 auto;
+}.cas-demo #session-restore-modal .session-restore-button{
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 14px;
+  border-radius: 8px;
+  font-size: 11.5px;
+  font-weight: 680;
+  white-space: nowrap;
+  box-shadow: none !important;
+  transition: border-color 130ms ease, background-color 130ms ease, transform 90ms ease;
+}.cas-demo #session-restore-modal .session-restore-button:hover:not(:disabled){
+  transform: none;
+}.cas-demo #session-restore-modal .session-restore-button:active:not(:disabled){
+  transform: scale(0.98);
+}.cas-demo #session-restore-modal .session-restore-button.is-primary{
+  min-width: 142px;
+  color: var(--brand-contrast);
+}.cas-demo #session-restore-modal .session-restore-button:disabled{
+  color: var(--text-muted);
+  border-color: var(--border);
+  background: var(--surface);
+  box-shadow: none;
+  cursor: not-allowed;
+  opacity: 0.62;
+}.cas-demo #session-restore-modal .session-restore-confirm{
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: none;
+  place-items: center;
+  padding: 24px;
+  background: color-mix(in srgb, var(--modal-bg) 96%, transparent);
+}.cas-demo #session-restore-modal .session-restore-confirm.is-visible{
+  display: grid;
+}.cas-demo #session-restore-modal .session-restore-confirm-card{
+  width: min(390px, 100%);
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  background: var(--bg-secondary);
+  box-shadow: none;
+  text-align: center;
+}.cas-demo #session-restore-modal .session-restore-confirm-icon{
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 14px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  color: var(--text-secondary);
+  background: var(--surface);
+}.cas-demo #session-restore-modal .session-restore-confirm-icon svg{
+  width: 18px;
+  height: 18px;
+}.cas-demo #session-restore-modal .session-restore-confirm-card h4{
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 16px;
+  letter-spacing: -0.02em;
+}.cas-demo #session-restore-modal .session-restore-confirm-card p{
+  margin: 7px 0 19px;
+  color: var(--text-secondary);
+  font-size: 12px;
+  line-height: 1.55;
+}.cas-demo #session-restore-modal .session-restore-confirm-actions{
+  justify-content: center;
+}
+
+@keyframes session-restore-modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes session-restore-pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 680px) {.cas-demo #session-restore-modal{
+    align-items: flex-end;
+    padding: 12px;
+  }.cas-demo #session-restore-modal .session-restore-dialog{
+    width: 100%;
+    max-height: calc(100dvh - 24px);
+  }.cas-demo #session-restore-modal .session-restore-header{
+    grid-template-columns: 34px minmax(0, 1fr);
+    padding: 18px 17px 15px;
+  }.cas-demo #session-restore-modal .session-restore-history-icon{
+    width: 34px;
+    height: 34px;
+  }.cas-demo #session-restore-modal .session-restore-row{
+    grid-template-columns: 20px 28px minmax(0, 1fr);
+  }.cas-demo #session-restore-modal .session-restore-state-wrap{
+    grid-column: 3;
+    justify-content: flex-start;
+    min-width: 0;
+    margin-top: -4px;
+  }.cas-demo #session-restore-modal .session-restore-footer-row{
+    align-items: stretch;
+    flex-direction: column;
+    gap: 10px;
+  }.cas-demo #session-restore-modal .session-restore-note{
+    max-width: none;
+  }.cas-demo #session-restore-modal .session-restore-actions{
+    display: grid;
+    grid-template-columns: 1fr 1.35fr;
+  }.cas-demo #session-restore-modal .session-restore-button{
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {.cas-demo #session-restore-modal .session-restore-dialog,
+.cas-demo #session-restore-modal .session-restore-state.is-restoring i{
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}.cas-demo .terminal-list{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}.cas-demo .terminal-option{
+  padding: 12px 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease; will-change: transform, opacity;
+}.cas-demo .terminal-option:hover{
+  background: var(--surface-hover);
+  border-color: var(--border-hover);
+}.cas-demo .modal-actions{
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* Notification styles */
+.cas-demo .notification{
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: none;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  min-width: 300px;
+  box-shadow: var(--shadow-card);
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 3000;
+}.cas-demo .notification.show{
+  transform: translateX(0);
+}.cas-demo .notification-success{
+  border-color: var(--secondary);
+}.cas-demo .notification-error{
+  border-color: #ef4444;
+}.cas-demo .notification-info{
+  border-color: var(--primary);
+}.cas-demo .notification-content strong{
+  display: block;
+  margin-bottom: 4px;
+  color: var(--text-primary);
+}.cas-demo .notification-content p{
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+/* Resizers for dynamic layout - positioned absolutely */
+.cas-demo .resizer{
+  position: absolute;
+  background: transparent;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  will-change: transform, opacity;
+  z-index: 99999; /* Maximum priority to ensure detection */
+  pointer-events: auto !important;
+  -webkit-app-region: no-drag !important; /* Prevent drag region interference */
+  isolation: isolate; /* Create new stacking context */
+}
+
+/* Ensure all resizers and their children maintain cursor style */
+.cas-demo .resizer *,
+.cas-demo .vertical-resizer *,
+.cas-demo .horizontal-resizer *{
+  cursor: inherit !important;
+  pointer-events: none !important;
+}.cas-demo .resizer::before{
+  content: '';
+  position: absolute;
+  background: var(--border);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  will-change: transform, opacity;
+  opacity: 0;
+}.cas-demo .resizer:hover::before,
+.cas-demo .resizer.dragging::before{
+  background: transparent;
+  box-shadow: none;
+  opacity: 0;
+}.cas-demo .vertical-resizer{
+  cursor: col-resize !important; /* Force cursor style to prevent flickering */
+  width: 16px; /* Increased from 8px for better cursor detection */
+  height: 100%;
+  left: calc(var(--left-width, 50%) - 0px); /* Positioned at exact location */
+  top: 0;
+  /* transform: translateX(-50%) removed - causes cursor detection issues */
+  position: relative; /* Ensure proper positioning context */
+  z-index: 99999 !important; /* Maximum z-index to override any conflicts */
+  isolation: isolate; /* Create isolated stacking context */
+}.cas-demo .vertical-resizer::before{
+  top: 0;
+  bottom: 0;
+  left: calc(50% - 1px); /* Center the 2px line without transform */
+  width: 2px;
+  /* transform removed - interferes with cursor detection */
+  cursor: col-resize !important; /* Maintain cursor on pseudo-element */
+  pointer-events: none; /* Let parent handle events */
+}.cas-demo .vertical-resizer:hover::before{
+  width: 4px;
+  background: hsla(var(--primary), 0.5) !important; /* Visual feedback on hover */
+  opacity: 1 !important;
+}.cas-demo .horizontal-resizer{
+  cursor: row-resize;
+  height: 8px;
+  width: 100%;
+  left: 0;
+  top: var(--top-height, 50%);
+  transform: translateY(-50%);
+}.cas-demo .horizontal-resizer::before{
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 2px;
+  transform: translateY(-50%);
+}.cas-demo .horizontal-resizer:hover::before{
+  height: 4px;
+}
+
+/* Row-specific vertical resizers for 4-terminal layout */
+.cas-demo .vertical-resizer.row-1{
+  cursor: col-resize !important;
+  width: 16px; /* Increased for better detection */
+  height: 100%;
+  left: calc(var(--row1-left-width, 50%) - 8px); /* Centered without transform */
+  top: 0;
+  /* transform removed - causes cursor detection issues */
+  position: absolute;
+  z-index: 99999; /* Maximum priority for proper detection */
+}.cas-demo .vertical-resizer.row-1::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  /* transform removed - interferes with parent cursor detection */
+  background: var(--border);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  will-change: transform, opacity;
+  opacity: 0;
+}.cas-demo .vertical-resizer.row-1:hover::before{
+  width: 4px;
+  background: var(--primary);
+  opacity: 1;
+}.cas-demo .vertical-resizer.row-2{
+  cursor: col-resize !important;
+  width: 16px; /* Increased for better detection */
+  height: 100%;
+  left: calc(var(--row2-left-width, 50%) - 8px); /* Centered without transform */
+  top: 0;
+  /* transform removed - causes cursor detection issues */
+  position: absolute;
+  z-index: 99999; /* Maximum priority for proper detection */
+}.cas-demo .vertical-resizer.row-2::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  /* transform removed - interferes with parent cursor detection */
+  background: var(--border);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  will-change: transform, opacity;
+  opacity: 0;
+}.cas-demo .vertical-resizer.row-2:hover::before{
+  width: 4px;
+  background: var(--primary);
+  opacity: 1;
+}
+
+/* Vertical resizer for 3-terminal layout bottom row */
+.cas-demo .vertical-resizer.bottom-row{
+  cursor: col-resize !important;
+  width: 16px; /* Increased for better detection */
+  height: 100%;
+  left: calc(var(--left-width, 50%) - 8px); /* Centered without transform */
+  top: 0;
+  /* transform removed - causes cursor detection issues */
+  position: absolute;
+  z-index: 99999; /* Maximum priority */
+}
+
+/* Independent row resizers for 4-terminal layout */
+
+.cas-demo /* Vertical resizer for row 1 (between Terminal 1-2) */
+.terminals-container.count-4 .terminal-row-1 .vertical-resizer.row-1{
+  cursor: col-resize !important;
+  width: 16px; /* Increased for better detection */
+  height: 100%;
+  left: calc(var(--row1-left-width) - 8px); /* Centered without transform */
+  top: 0;
+  /* transform removed - causes cursor detection issues */
+  position: absolute;
+  z-index: 99999; /* Maximum priority */
+}
+
+/* Vertical resizer for row 2 (between Terminal 3-4) */
+.cas-demo .terminals-container.count-4 .terminal-row-2 .vertical-resizer.row-2{
+  cursor: col-resize !important;
+  width: 16px; /* Increased for better detection */
+  height: 100%;
+  left: calc(var(--row2-left-width) - 8px); /* Centered without transform */
+  top: 0;
+  /* transform removed - causes cursor detection issues */
+  position: absolute;
+  z-index: 99999; /* Maximum priority */
+}.cas-demo .horizontal-resizer.row-divider::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 2px;
+  transform: translateY(-50%);
+  background: var(--border);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  will-change: transform, opacity;
+  opacity: 0;
+}.cas-demo .horizontal-resizer.row-divider:hover::before{
+  height: 4px;
+  background: var(--primary);
+  opacity: 1;
+}
+
+/* Make sure terminal rows are positioned relative for their resizers */
+.cas-demo .terminals-container.count-4 .terminal-row{
+  position: relative;
+}
+
+/* Make sure terminals container is positioned relative for absolute resizers */
+.cas-demo .terminals-container{
+  position: relative;
+}.cas-demo .terminal-quadrant{
+  background: var(--terminal-card-bg);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1); will-change: transform, opacity;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}
+
+/* Terminal positioning now handled by CSS Grid auto-placement */
+
+
+.cas-demo .terminal-quadrant:hover{
+  background: var(--terminal-card-hover-bg);
+  border-color: rgba(251, 191, 36, 0.3);
+  box-shadow: 0 0 0 1px rgba(251, 191, 36, 0.2);
+}.cas-demo .terminal-quadrant.fullscreen{
+  position: fixed;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 2147483647 !important; /* Maximum z-index value to ensure it's above everything */
+  border-radius: 0;
+  margin: 0;
+  max-width: none;
+  max-height: none;
+}
+
+/* Center terminal title in fullscreen mode */
+.cas-demo .terminal-quadrant.fullscreen .terminal-header{
+  position: relative;
+}
+
+/* macOS: Add padding for traffic light buttons in fullscreen terminal */
+.cas-demo:not(.windows-platform) .terminal-quadrant.fullscreen .terminal-header{
+  padding-left: 80px; /* Same as main .header padding for traffic lights */
+}.cas-demo .terminal-quadrant.fullscreen .terminal-title{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+/* The absolutely-centered fullscreen title lands exactly where the tabbed
+   header activity sits, so the activity must never render in fullscreen
+   (belt-and-braces for the JS check in _headerActivityVisibleFor). */
+.cas-demo .terminal-quadrant.fullscreen .terminal-header-activity{
+  display: none;
+}
+
+/* Hide main header when terminal is in fullscreen */
+.cas-demo /* PERFORMANCE FIX: Removed redundant CSS - JS already handles this in toggleFullscreen() */
+/* The renderer.js manually sets header.style.display = 'none' when entering fullscreen */
+/* body:has(.terminal-quadrant.fullscreen) .header{
+  display: none !important;
+} */
+
+.cas-demo /* Ensure terminal content fills the fullscreen properly */
+.terminal-quadrant.fullscreen .terminal-content{
+  height: calc(100vh - 32px); /* Subtract terminal header height */
+}.cas-demo .terminal-quadrant.fullscreen .xterm{
+  height: 100%;
+  width: 100%;
+}
+
+/* Allow dragging the window from the fullscreen terminal header.
+   In fullscreen the main `.header` (the normal drag region) is hidden by
+   toggleFullscreen() in renderer.js, so without this the frameless window
+   (titleBarStyle: 'hiddenInset') has no draggable surface and cannot be moved. */
+.cas-demo .terminal-quadrant.fullscreen .terminal-header{
+  -webkit-app-region: drag;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Keep every interactive element in the fullscreen header clickable.
+   `-webkit-app-region` is not inherited and a child stays part of the parent's
+   drag region unless it explicitly opts out, so we re-assert no-drag here
+   (same pattern as `.header button` etc. above). */
+.cas-demo .terminal-quadrant.fullscreen .terminal-header button,
+.cas-demo .terminal-quadrant.fullscreen .terminal-header .terminal-title,
+.cas-demo .terminal-quadrant.fullscreen .terminal-header .task-id-badge,
+.cas-demo .terminal-quadrant.fullscreen .terminal-header .git-branch-display,
+.cas-demo .terminal-quadrant.fullscreen .terminal-header .current-task,
+.cas-demo .terminal-quadrant.fullscreen .terminal-header .terminal-controls,
+.cas-demo .terminal-quadrant.fullscreen .terminal-header .terminal-quick-actions-dropdown,
+.cas-demo .terminal-quadrant.fullscreen .terminal-header .terminal-quick-actions-menu,
+.cas-demo .terminal-quadrant.fullscreen .terminal-header .terminal-dropdown-menu{
+  -webkit-app-region: no-drag;
+  -webkit-user-select: auto;
+  user-select: auto;
+}.cas-demo .terminal-header{
+  height: 32px;
+  background: var(--overlay-subtle);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 0 12px;
+  border-radius: 16px 16px 0 0;
+  gap: 8px;
+  z-index: 50; /* Keep below resizers to prevent cursor interference */
+  overflow: visible;
+}
+
+/* Let the activity truncate: a flex child only shrinks if its flex-item ancestors
+   allow it, so the left title/actions cluster needs min-width:0 (flexbox gotcha).
+   Without this the activity overflows the header instead of ellipsizing. */
+.cas-demo .terminal-header > div[style*="flex: 1"]{
+  min-width: 0;
+}
+
+/* Current product activity shown in the REMAINING header space (focused/wide
+   terminal): a flex item that sits between the left title/actions cluster and the
+   right window controls, so it never overlaps the icons. Complements the sticky
+   title; never intercepts clicks. */
+.cas-demo .terminal-header-activity{
+  flex: 1 1 auto;
+  min-width: 0;
+  /* Left-aligned: it reads as a continuation of the title/actions cluster instead
+     of floating in the middle of the bar, and long activities truncate at the end
+     (nearest the window controls) rather than drifting. */
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 10px;
+  font-size: 11.5px;
+  font-weight: 500;
+  /* Same rule as the List row's .tab-activity: this is live information, not
+     chrome, so it stays one step under the title instead of fading into it. */
+  color: var(--text-secondary);
+  letter-spacing: 0.2px;
+  pointer-events: none;
+}.cas-demo .terminal-header-activity::before{
+  content: '';
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--brand);
+  margin-right: 6px;
+  vertical-align: middle;
+  opacity: 0.85;
+}
+
+/* ============================================================================
+   TERMINAL WORK-PHASE STATUS — header pill + dropdown + tab dot
+   The status colors come from the terminal_statuses catalog (SQLite) and are
+   applied inline / via --status-color, so custom statuses need no CSS changes.
+   ============================================================================ */
+
+.cas-demo /* The badge is a discreet vertical ACCENT BAR at the very start of the header
+   (before the agent icon): the color alone says the phase,
+.cas-demo so no chip,
+.cas-demo no label,
+.cas-demo no uppercase text competing with the terminal title. The button keeps a
+   comfortable click target around the 3px bar; hover shows the status name
+   (native title) and click opens the same dropdown. */
+.terminal-status-pill{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 11px;
+  height: var(--nav-icon-size);
+  padding: 0;
+  margin: 0 6px 0 0;
+  border: none;
+  border-radius: 3px;
+  background: transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.15s ease;
+}.cas-demo .terminal-status-pill::before{
+  content: '';
+  width: 3px;
+  height: 15px;
+  border-radius: 2px;
+  background: var(--status-color, #787882);
+  box-shadow: 0 0 5px color-mix(in srgb, var(--status-color, #787882) 55%, transparent);
+  transition: height 0.15s ease, box-shadow 0.15s ease;
+}.cas-demo .terminal-status-pill:hover{
+  background: var(--overlay-hover);
+}.cas-demo .terminal-status-pill:hover::before{
+  height: 17px;
+  box-shadow: 0 0 8px color-mix(in srgb, var(--status-color, #787882) 75%, transparent);
+}
+
+/* No status yet: a faint dashed stub, so setting one by hand is always one click
+   away (an agent that never sets a status would otherwise leave no entry point).
+   Barely there until hovered. */
+.cas-demo .terminal-status-pill.is-empty::before{
+  background: transparent;
+  border-left: 2px dashed var(--border-strong);
+  border-radius: 0;
+  box-shadow: none;
+  width: 2px;
+  height: 13px;
+}.cas-demo .terminal-status-pill.is-empty:hover::before{
+  border-left-color: var(--border-strong);
+  height: 15px;
+}
+
+/* IDLE — a terminal that is open but has not been given any work yet. It is the
+   only badge with NO glow: a free terminal must be legible when you scan a full
+   grid, without ever pulling the eye the way the four working phases do. */
+.cas-demo .terminal-status-pill[data-status-key="idle"]::before,
+.cas-demo .terminal-tab[data-status-key="idle"] .tab-status-bar{
+  box-shadow: none;
+}.cas-demo .terminal-status-pill[data-status-key="idle"]:hover::before{
+  box-shadow: 0 0 5px color-mix(in srgb, var(--status-color, #6b7280) 55%, transparent);
+}
+
+/* The label/chevron/dot markup stays in the DOM (the dropdown, the e2e and the
+   tooltip read it) but is never painted: the bar IS the badge. */
+.cas-demo .terminal-status-pill .status-pill-dot,
+.cas-demo .terminal-status-pill .status-label,
+.cas-demo .terminal-status-pill .status-pill-chevron{
+  display: none;
+}
+
+/* Status dot in the terminal tab (tabbed mode). Sits after the spinner slot;
+   glows softly in the status color (color is set inline = currentColor). */
+.cas-demo /* Work-phase status chip on a tab: the SAME vertical bar the terminal header uses
+   (.terminal-status-pill::before),
+.cas-demo at the start of the tab. `color` mirrors the bar
+   colour so the notification pulse (currentColor glow) tints correctly. */
+.tab-status-bar{
+  width: 3px;
+  height: 15px;
+  border-radius: 2px;
+  background: var(--status-color, #787882);
+  color: var(--status-color, var(--text-dim));
+  box-shadow: 0 0 5px color-mix(in srgb, var(--status-color, #787882) 55%, transparent);
+  flex-shrink: 0;
+  pointer-events: auto;
+}
+
+/* The chip is a manual picker too (on the ACTIVE tab only — see the capture-phase
+   click handler): a 3px bar is an impossible click target, so a transparent ::after
+   pads the hit area without changing the visuals. The bar is position:relative
+   already (dim-protection rule below). */
+.cas-demo .terminal-tab .tab-status-bar::after{
+  content: '';
+  position: absolute;
+  inset: -8px -6px;
+}.cas-demo .terminal-tab.active .tab-status-bar{
+  cursor: pointer;
+}
+
+/* ONLY the Working badge is alive: a slow BARBER POLE — diagonal stripes scrolling
+   up the accent bar in a continuous loop (Arturo's pick over the one-shot shimmer:
+   the whole bar moves all the time, so it reads at a glance even at 3px wide). The
+   same background technique works on a real bar (tab) and on a ::before bar (header
+   pill), so both animate identically. Nothing else animates; layout never moves.
+   SEAMLESS LOOP MATH: 135deg stripes of 4px+4px have a vertical period of
+   8px/cos(45°) = 11.3137px. The pattern tile is EXACTLY 2 periods tall (22.6274px)
+   and the keyframe travels exactly one tile — any other tile height leaves a visible
+   seam where the box-sized gradient repeats (the "restarts from zero" artifact). */
+@keyframes statusWorkingBarber {
+  0%   { background-position: 0 0; }
+  100% { background-position: 0 -22.6274px; }
+}.cas-demo .tab-status-bar.is-working,
+.cas-demo .terminal-status-pill.is-working::before{
+  background-image: repeating-linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--status-color, var(--brand)) 80%, var(--background) 14%) 0 4px,
+    color-mix(in srgb, #ffffff 70%, var(--status-color, var(--brand))) 4px 8px
+  );
+  background-size: 100% 22.6274px;
+  background-repeat: repeat;
+  animation: statusWorkingBarber 2s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {.cas-demo .tab-status-bar.is-working,
+.cas-demo .terminal-status-pill.is-working::before{
+    animation: none;
+    background-image: none;
+  }
+}
+
+/* Dropdown to set the status manually (appended to body, fixed) */
+.cas-demo .terminal-status-menu{
+  position: fixed;
+  z-index: 10000;
+  min-width: 210px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
+  padding: 6px;
+}.cas-demo .terminal-status-menu-title{
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 6px 10px;
+}.cas-demo .terminal-status-menu-item{
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+  padding: 7px 10px;
+  border: none;
+  background: transparent;
+  border-radius: 7px;
+  font-size: 12px;
+  color: var(--text-body);
+  cursor: pointer;
+  text-align: left;
+}.cas-demo .terminal-status-menu-item:hover{
+  background: var(--overlay-hover);
+}.cas-demo .terminal-status-menu-item.selected{
+  background: var(--overlay-hover);
+}
+
+/* Instant hover label for the badge (the native title waits ~1.5s; a color-only
+   badge needs its name NOW). Fixed, body-level, never intercepts the mouse. */
+.cas-demo .terminal-status-tooltip{
+  position: fixed;
+  z-index: 10001;
+  /* A tooltip must NEVER eat pointer input: it floats right under the cursor, so
+     without this, clicking the tab chip hit the tooltip instead of the chip and
+     the status picker only opened when aiming slightly OFF the bar (live bug). */
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  font-size: 12px;
+  white-space: nowrap;
+  pointer-events: none;
+}.cas-demo .terminal-status-tooltip .status-tooltip-bar{
+  width: 3px;
+  height: 14px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}.cas-demo .terminal-status-tooltip .status-tooltip-label{
+  font-weight: 600;
+  color: var(--text-primary);
+}.cas-demo .terminal-status-tooltip .status-tooltip-hint{
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* Same language as the header badge: a vertical color bar, not a dot. */
+.cas-demo .terminal-status-menu-item .status-menu-dot{
+  width: 4px;
+  height: 15px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}.cas-demo .terminal-status-menu-item .status-menu-check{
+  width: 12px;
+  height: 12px;
+  margin-left: auto;
+  color: var(--brand-text);
+}
+
+/* Marks a status the APP owns (agent_settable = 0): you can still pick it by hand,
+   but no agent can ask for it. Pushed to the right; the check mark, when present,
+   follows it. */
+.cas-demo .terminal-status-menu-item .status-menu-tag{
+  margin-left: auto;
+  font-size: 9.5px;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.38);
+  white-space: nowrap;
+}.cas-demo .terminal-status-menu-item .status-menu-tag + .status-menu-check{
+  margin-left: 6px;
+}.cas-demo .terminal-status-menu-item svg{
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+}.cas-demo .terminal-status-menu-footer{
+  border-top: 1px solid var(--border-subtle);
+  margin-top: 4px;
+  padding-top: 4px;
+}.cas-demo .terminal-status-menu-footer .terminal-status-menu-item{
+  color: var(--text-muted);
+}
+
+/* Footer hint: says WHERE the badges come from and links to their catalog. */
+.cas-demo .terminal-status-menu-hint{
+  border-top: 1px solid var(--border-subtle);
+  margin-top: 4px;
+  padding: 8px 10px 4px;
+  font-size: 10.5px;
+  line-height: 1.45;
+  color: var(--text-muted);
+}.cas-demo .terminal-status-menu-link{
+  display: block;
+  margin-top: 3px;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--brand-text);
+  font-size: 10.5px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+}.cas-demo .terminal-status-menu-link:hover{
+  text-decoration: underline;
+}
+
+/* Status chip inside the hover tooltip */
+.cas-demo .activity-tooltip-status{
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 7px;
+  border-radius: 9px;
+  border: 1px solid color-mix(in srgb, var(--status-color, #787882) 40%, transparent);
+  background: color-mix(in srgb, var(--status-color, #787882) 14%, transparent);
+  color: var(--status-color, var(--text-dim));
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  line-height: 1.4;
+  flex-shrink: 0;
+}.cas-demo .activity-tooltip-status::before{
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+/* ============================================================================
+   APP HEADER — progressive disclosure (see updateAppHeaderDensity in renderer)
+   The app header is ONE flex row with no overflow handling: shortcuts (up to 10
+   chips), the layout controls and Run to their right, then the quota ring, account
+   and settings. Every feature added to it eats the shared margin, and it had run
+   out: at 1280px with a full bar of 10 chips the row needed 1373px, so the controls
+   on the right (settings included) were pushed off-screen — unreachable, with no
+   scrollbar to get them back. The strip cannot simply scroll: each chip's tooltip is
+   an absolutely positioned CHILD, and any overflow value other than visible clips it.
+   So we fold the least essential pixels away, and only while the row does not fit
+   (the renderer measures the REAL overflow and adds one tier at a time).
+   ============================================================================ */
+
+.cas-demo /* Tier 1 — tight: the Run button drops its LABEL (it keeps its icon and its
+   "Run a new terminal" tooltip,
+.cas-demo so nothing is lost) and the strip tightens the air
+   around it. This is the cheapest ~55px in the row.
+   The min-width override must out-specify `#add-terminal-btn{ min-width: 90px }`
+   (an ID selector further down this file), or the button keeps its full width and
+   folding the label buys exactly nothing. */
+.cas-demo .header.hdr-tight .add-terminal-label{ display: none; }.cas-demo .header.hdr-tight #add-terminal-btn{ min-width: 0; padding: 6px 10px; }.cas-demo .header.hdr-tight .navbar-shortcuts{ gap: 3px; margin-right: 6px; padding-right: 6px; }
+
+/* Tier 2 — dense: only now do the chips themselves give up breathing room. They are
+   icon-only already, so this is padding/gap only — the project badge and the agent
+   icon (the chip's whole identity) stay untouched, and so does the amber outline.
+   The rest of the row tightens with them: Run keeps its icon + its UPGRADE badge, the
+   icon buttons keep their hit area (only the air between them shrinks). Nothing is
+   hidden at this tier, so every control is still exactly where the user left it. */
+.cas-demo .header.hdr-dense .navbar-shortcuts{ gap: 2px; }.cas-demo .header.hdr-dense .shortcut-btn.icon-only{ padding: 0; gap: 0; }.cas-demo .header.hdr-dense .action-buttons{ gap: 4px; margin-left: 6px; }.cas-demo .header.hdr-dense .header-controls{ gap: 6px; }
+
+/* Tier 3 lives in JS + navbar-shortcuts.css: the shortcut chips fold, from the end, into the
+   overflow menu until the row fits (see updateAppHeaderDensity / setOverflowCount). It is the
+   only tier that can free real width — the strip is the one part of this row without a bound.
+
+   Tier 4 — min: reached only when even an EMPTY strip does not fit, i.e. the 800px window
+   minimum with the quota rings and the parked-terminals toggle both showing. The logo goes
+   (decoration, not a control), the inline "+" moves into the overflow menu as a "New shortcut"
+   row, and the remaining air is squeezed. Every control is still on screen and still clickable;
+   this tier hides no button. */
+.cas-demo .header.hdr-min{ padding-left: 74px; padding-right: 8px; }.cas-demo .header.hdr-min .logo-container{ display: none; }.cas-demo .header.hdr-min .header-left{ gap: 8px; }.cas-demo .header.hdr-min .action-buttons{ gap: 2px; margin-left: 0; }.cas-demo .header.hdr-min .btn-layout{ padding: 6px 4px; }.cas-demo .header.hdr-min .btn-layout svg,
+.cas-demo .header.hdr-min .btn-layout i{ width: 19px; height: 19px; }.cas-demo .header.hdr-min .add-shortcut-btn{ display: none; }.cas-demo .header.hdr-min .navbar-shortcuts{ margin-right: 6px; padding-right: 6px; }.cas-demo .header.hdr-min .header-controls{ gap: 5px; }.cas-demo .header.hdr-min .terminal-management{ gap: 5px; }
+
+/* ============================================================================
+   GRID-MODE RESPONSIVE HEADER — progressive disclosure (grid-n only)
+   In the flat grid layout (5+ terminals) each cell can shrink to ~300px, and the
+   product TITLE was being crushed to a few px because the branch icon + reorder
+   arrows + window controls take fixed space. A ResizeObserver tags each header by
+   its OWN width (see renderer: updateGridHeaderDensity), so we fold the least
+   essential controls away and give the title room to breathe. These classes are
+   ONLY ever added to headers inside .grid-n; the 1-4 dedicated layouts and tabbed
+   mode keep the full header untouched.
+   ============================================================================ */
+
+.cas-demo /* Compact (roughly <= 400px cell): tighten spacing to give the title back most of
+   its width. Reordering is drag-and-drop from the header,
+.cas-demo so nothing is lost. */
+.terminal-header.hdr-compact{ gap: 6px; }.cas-demo .terminal-header.hdr-compact .terminal-controls{ gap: 6px; }
+
+/* Narrow (roughly <= 330px cell — dense 7-12 grids at the minimum window size): shrink
+   the window controls and tighten the remaining gaps a touch more, squeezing a few extra
+   px out for the title. The branch icon stays (it is small, useful, and shows which repo
+   each terminal is on); only the redundant reorder arrows are dropped. */
+.cas-demo .terminal-header.hdr-narrow .terminal-controls{ gap: 5px; }.cas-demo .terminal-header.hdr-narrow .terminal-control-btn{ width: 18px; height: 18px; }.cas-demo .terminal-header.hdr-narrow .terminal-quick-actions-dropdown{ margin-left: 4px; }.cas-demo .terminal-header.hdr-narrow .git-branch-display{ margin-left: 4px; }
+
+/* Essentials-only (columns layout, very narrow cells): the full header can't fit in a
+   thin vertical column, so we keep only what identifies the terminal (the LLM/agent
+   icon + the project badge) plus the window controls (fullscreen / sleep / close).
+   Everything else — the title, task badge, git branch, quick actions (zap) and the
+   more-options (⋯) menu — is hidden. The status color bar stays (it's the phase signal),
+   and identity is not lost: the agent icon keeps its tooltip and the project badge keeps
+   showing the project. Toggled by JS (updateGridHeaderDensity) only in the columns layout. */
+.cas-demo .terminal-header.hdr-essential{ padding: 0 8px; gap: 4px; }.cas-demo .terminal-header.hdr-essential .terminal-title,
+.cas-demo .terminal-header.hdr-essential .task-id-badge,
+.cas-demo .terminal-header.hdr-essential .git-branch-display,
+.cas-demo .terminal-header.hdr-essential .terminal-quick-actions-dropdown,
+.cas-demo .terminal-header.hdr-essential .terminal-more-options-container,
+.cas-demo .terminal-header.hdr-essential .terminal-header-activity{
+  display: none !important;
+}.cas-demo .terminal-header.hdr-essential .terminal-controls{ gap: 5px; }.cas-demo .terminal-header.hdr-essential .terminal-control-btn{ width: 18px; height: 18px; }.cas-demo .terminal-header.hdr-essential .terminal-agent-icon{ margin-right: 4px; }.cas-demo .terminal-header.hdr-essential .terminal-project-badge-wrapper{ margin: 0 4px; }.cas-demo .terminal-title{
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: transform 0.2s ease, opacity 0.2s ease; will-change: transform, opacity;
+  padding: 2px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  user-select: none;
+}.cas-demo .terminal-title:hover{
+  background: var(--overlay-subtle);
+  color: var(--text-primary);
+  transform: translateX(2px);
+}.cas-demo .current-task{
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  font-size: 0.65rem;
+  color: var(--text-secondary);
+  max-width: 300px;
+  overflow: hidden;
+  margin-left: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease; will-change: transform, opacity;
+}.cas-demo .current-task i{
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+}.cas-demo .current-task .task-text{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1;
+  font-weight: 500;
+}.cas-demo .current-task:hover{
+  color: var(--text-primary);
+  transform: translateY(-1px);
+}
+
+/* Project initials badge in terminal header */
+.cas-demo .terminal-project-initials{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 6px;
+  margin: 0 6px;
+  border-radius: 4px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+/* Project badge (icon, custom image, or initials) */
+.cas-demo .project-badge{
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -898,6 +1993,7 @@
 .cas-demo .terminal-tabs-toolbar{
   display: contents;
 }.cas-demo .terminal-tabs-sidebar-heading,
+.cas-demo .terminal-grouping-btn,
 .cas-demo .list-density-btn,
 .cas-demo .tab-sidebar-collapse-btn,
 .cas-demo .tab-sidebar-footer,
@@ -972,6 +2068,7 @@
   font-size: 9px;
   letter-spacing: 0;
 }.cas-demo .tabbed-layout-container.tab-navigation-sidebar .sort-tabs-btn,
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar .terminal-grouping-btn,
 .cas-demo .tabbed-layout-container.tab-navigation-sidebar .list-density-btn,
 .cas-demo .tabbed-layout-container.tab-navigation-sidebar .tab-sidebar-collapse-btn,
 .cas-demo .tabbed-layout-container.tab-navigation-sidebar .btn-new-tab{
@@ -994,16 +2091,18 @@
 }.cas-demo .tabbed-layout-container.tab-navigation-sidebar .sort-tabs-btn::after{
   display: none;
 }.cas-demo .tabbed-layout-container.tab-navigation-sidebar .sort-tabs-btn:hover,
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar .terminal-grouping-btn:hover,
 .cas-demo .tabbed-layout-container.tab-navigation-sidebar .list-density-btn:hover,
 .cas-demo .tabbed-layout-container.tab-navigation-sidebar .tab-sidebar-collapse-btn:hover,
 .cas-demo .tabbed-layout-container.tab-navigation-sidebar .btn-new-tab:hover{
   background: var(--overlay-hover);
   color: var(--text-bright);
-}.cas-demo .tabbed-layout-container.tab-navigation-sidebar .sort-tabs-btn.on{
-  color: var(--brand, var(--brand-text));
-}.cas-demo .tabbed-layout-container.tab-navigation-sidebar .list-density-btn.on{
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar .sort-tabs-btn.on,
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar .terminal-grouping-btn.on,
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar .list-density-btn.on{
   color: var(--brand, var(--brand-text));
 }.cas-demo .tabbed-layout-container.tab-navigation-sidebar .tab-sidebar-collapse-btn svg,
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar .terminal-grouping-btn svg,
 .cas-demo .tabbed-layout-container.tab-navigation-sidebar .list-density-btn svg,
 .cas-demo .tabbed-layout-container.tab-navigation-sidebar .btn-new-tab svg{
   width: 15px;
@@ -1148,12 +2247,20 @@
 .cas-demo .tabbed-layout-container.tab-navigation-sidebar .tab-activity{
   display: none;
   width: 100%;
-  overflow: hidden;
+  min-width: 0;
   color: var(--text-secondary);
   font-size: 11px;
   font-weight: 500;
   line-height: 1.3;
   text-align: left;
+}
+
+/* The row is a flex container now (icon gutter + text), so the ellipsis lives on
+   the TEXT, not on the row — a flex container never overflows its own children. */
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar .tab-activity-text{
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -1170,7 +2277,11 @@
    so the activity text opts out of the transparency instead. */
 .cas-demo .tabbed-layout-container.tab-navigation-sidebar .terminal-tab:not(.active) .tab-copy > .tab-activity{
   opacity: 1;
-}.cas-demo .tabbed-layout-container.tab-navigation-sidebar .tab-activity:empty{
+}
+
+/* [data-empty], not :empty — the row always holds its pulse icon, so it is never
+   an empty element even when the agent has said nothing yet. */
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar .tab-activity[data-empty]{
   display: none !important;
 }
 
@@ -1190,23 +2301,32 @@
    COMPACT density is untouched by both: that mode exists precisely to trade
    detail for rows on screen, so it stays at one line (and is excluded from
    every rule below, including the taller row). */
+.cas-demo /* The GOAL and the ACTIVITY are a PAIR,
+.cas-demo so they are laid out by one rule: same
+   font size,
+.cas-demo same icon gutter,
+.cas-demo same gap. That shared gutter is the whole point —
+   the goal used to lead with the word "GOAL" and the activity with a bare dot,
+.cas-demo so
+   their texts began at different x positions and the block read as ragged. Now a
+   fixed 12px icon column starts both lines,
+.cas-demo and what distinguishes them is the
+   glyph: target = what this terminal is FOR,
+.cas-demo pulse = what it is doing now. Those
+   are the same two glyphs the hover card uses,
+.cas-demo so row and hover agree (#12215). */
+.tabbed-layout-container.tab-navigation-sidebar:not(.tab-list-compact) .tab-goal,
 .cas-demo .tabbed-layout-container.tab-navigation-sidebar:not(.tab-list-compact) .tab-activity{
-  display: block;
-}
-
-/* The GOAL line: what this terminal is FOR (#12215). Quieter than the title,
-   distinct from the activity below it through the brand-tinted icon + tag, and
-   absent entirely when the agent never set a goal. */
-.cas-demo .tabbed-layout-container.tab-navigation-sidebar:not(.tab-list-compact) .tab-goal{
   display: flex;
   align-items: flex-start;
-  gap: 5px;
+  gap: 6px;
   width: 100%;
   min-width: 0;
-  font-size: 10.5px;
+  font-size: 11px;
   line-height: 1.3;
-  color: var(--text-secondary);
   text-align: left;
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar:not(.tab-list-compact) .tab-goal{
+  color: var(--text-secondary);
 }
 
 /* A List row is pinned to `flex: 0 0 46px`, which is exactly two lines — a third
@@ -1229,21 +2349,31 @@
 }.cas-demo .tabbed-layout-container.tab-navigation-sidebar .tab-goal[data-empty],
 .cas-demo .tabbed-layout-container.tab-navigation-sidebar.tab-list-compact .tab-goal{
   display: none !important;
-}.cas-demo .tabbed-layout-container.tab-navigation-sidebar .tab-goal-icon{
-  width: 10px;
-  height: 10px;
-  flex: 0 0 10px;
-  margin-top: 2px;
-  color: var(--brand-text);
-}.cas-demo .tabbed-layout-container.tab-navigation-sidebar .tab-goal-tag{
-  flex: 0 0 auto;
+}
+
+/* One gutter, one icon size, one optical offset — the two glyphs must sit on the
+   exact same column or the alignment this redesign buys is lost again. */
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar .tab-goal-icon,
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar .tab-activity-icon{
+  width: 12px;
+  height: 12px;
+  flex: 0 0 12px;
   margin-top: 1px;
-  font-size: 8.5px;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
+}
+
+/* GOAL is the stable context, so it keeps the brand amber — the same token the
+   hover card's goal row uses. --brand-text, never literal amber: raw #fbbf24 is
+   built for dark surfaces and collapses on the light theme's cream. */
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar .tab-goal-icon{
   color: var(--brand-text);
+}
+
+/* The pulse carries the terminal's own accent, which is what the old dot did —
+   that is the colour Arturo chose to keep on the live line. */
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar .tab-activity-icon{
+  color: color-mix(in srgb, var(--tab-accent) 72%, #fff);
 }.cas-demo .tabbed-layout-container.tab-navigation-sidebar .tab-goal-text{
+  flex: 1 1 auto;
   min-width: 0;
   overflow: hidden;
   white-space: nowrap;
@@ -1256,22 +2386,20 @@
   color: var(--text-body);
 }.cas-demo .tabbed-layout-container.tab-navigation-sidebar .terminal-tab:not(.active) .tab-copy > .tab-goal{
   opacity: 1;
-}.cas-demo .tabbed-layout-container.tab-navigation-sidebar:not(.tab-list-compact) .tab-activity::before{
-  content: '';
-  display: inline-block;
-  width: 5px;
-  height: 5px;
-  margin: 0 6px 1px 0;
-  border-radius: 50%;
-  background: color-mix(in srgb, var(--tab-accent) 72%, #fff);
-  box-shadow: 0 0 6px color-mix(in srgb, var(--tab-accent) 55%, transparent);
+}
+
+/* No dot in the comfortable density: the pulse icon replaced it, and keeping both
+   would put two marks in front of one line. COMPACT still uses the dot — it has no
+   icon gutter to spare, so its rule lives on untouched further down. */
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar:not(.tab-list-compact) .tab-activity::before{
+  content: none;
 }
 
 /* The project · branch subtitle is now a FALLBACK, not a line of its own: the
    project already reaches the row through the badge and the accent colour, so it
    only earns pixels when the row has nothing live to say. A row that carries a
    goal or an activity gives the line to them at every width (#12244). */
-.cas-demo .tabbed-layout-container.tab-navigation-sidebar .tab-copy:has(.tab-activity:not(:empty)) .tab-meta,
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar .tab-copy:has(.tab-activity:not([data-empty])) .tab-meta,
 .cas-demo .tabbed-layout-container.tab-navigation-sidebar .tab-copy:has(.tab-goal:not([data-empty])) .tab-meta{
   display: none;
 }
@@ -1314,16 +2442,24 @@
    title. (A huge flex-shrink instead of a basis still robbed the title ~0.14px,
    which Chromium rounds into a spurious ellipsis on a title that fits.) */
 .cas-demo .tabbed-layout-container.tab-navigation-sidebar.tab-list-compact .tab-activity{
-  display: block;
+  display: flex;
+  align-items: center;
   width: auto;
   flex: 1 1 96px;
   min-width: 96px;
+}
+
+/* Compact trades detail for rows on screen, so it keeps the 5px dot instead of the
+   pulse glyph: one line has no room for a 12px icon gutter, and there is no goal
+   line here for the icon to pair with anyway. */
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar.tab-list-compact .tab-activity-icon{
+  display: none;
 }.cas-demo .tabbed-layout-container.tab-navigation-sidebar.tab-list-compact .tab-activity::before{
   content: '';
-  display: inline-block;
   width: 5px;
   height: 5px;
-  margin: 0 6px 1px 0;
+  flex: 0 0 5px;
+  margin-right: 6px;
   border-radius: 50%;
   background: color-mix(in srgb, var(--tab-accent) 72%, #fff);
   box-shadow: 0 0 6px color-mix(in srgb, var(--tab-accent) 55%, transparent);
@@ -1345,6 +2481,41 @@
   letter-spacing: 0.72px;
   line-height: 12px;
   text-transform: uppercase;
+  cursor: pointer;
+  user-select: none;
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar .tab-status-group-label:hover{
+  color: rgba(255, 255, 255, 0.6);
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar .tab-status-group-label::before{
+  content: '';
+  flex: 0 0 auto;
+  width: 0;
+  height: 0;
+  margin-bottom: 4px;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  border-left: 4px solid currentColor;
+  transition: transform 0.12s ease;
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar .tab-status-group-label[aria-expanded="true"]::before{
+  transform: rotate(90deg);
+}
+
+/* Nested under a project section: indented and tighter so it reads as the
+   project's sub-heading, not a sibling of the project header. */
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar .tab-status-group-label.nested-in-project{
+  min-height: 18px;
+  padding-left: 18px;
+}
+
+/* Rows whose group is collapsed stay mounted (terminal keeps running), just hidden. */
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar .terminal-tab.tab-row-hidden-by-group{
+  display: none;
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar .tab-status-group-caption{
+  flex: none;
+  white-space: nowrap;
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar .tab-status-group-count{
+  color: color-mix(in srgb, currentColor 78%, var(--text-primary));
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.2px;
 }.cas-demo .tabbed-layout-container.tab-navigation-sidebar .tab-status-group-label::after{
   content: '';
   height: 1px;
@@ -1602,6 +2773,7 @@
   padding: 7px 0;
 }.cas-demo .tabbed-layout-container.tab-navigation-sidebar.tab-sidebar-collapsed .terminal-tabs-sidebar-heading,
 .cas-demo .tabbed-layout-container.tab-navigation-sidebar.tab-sidebar-collapsed .sort-tabs-btn,
+.cas-demo .tabbed-layout-container.tab-navigation-sidebar.tab-sidebar-collapsed .terminal-grouping-btn,
 .cas-demo .tabbed-layout-container.tab-navigation-sidebar.tab-sidebar-collapsed .list-density-btn,
 .cas-demo .tabbed-layout-container.tab-navigation-sidebar.tab-sidebar-collapsed .tab-meta,
 .cas-demo .tabbed-layout-container.tab-navigation-sidebar.tab-sidebar-collapsed .tab-copy,
@@ -1638,6 +2810,8 @@
 }.cas-demo .tabbed-layout-container.tab-navigation-sidebar.tab-sidebar-collapsed .terminal-tab .project-badge{
   display: none;
 }.cas-demo .tabbed-layout-container.tab-navigation-sidebar.tab-sidebar-collapsed .tab-status-group-label{
+  display: none;
+}.cas-demo .tabbed-layout-container.tab-navigation-sidebar.tab-sidebar-collapsed .tab-project-group-header{
   display: none;
 }.cas-demo .tabbed-layout-container.tab-navigation-sidebar.tab-sidebar-collapsed .tab-sidebar-footer{
   padding: 0;
@@ -3029,11 +4203,11 @@ html{
        just what a shortcut looks like (and what gives the glyphs an edge to sit on). */
     border: 1px solid rgba(251, 191, 36, 0.55);
     border-radius: 8px;
-    padding: 6px 12px;
+    padding: 0;
     height: 32px;
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 0;
     color: var(--text-primary);
     font-size: 12px;
     font-weight: 500;
@@ -3049,14 +4223,37 @@ html{
     min-width: auto;
     max-width: none;
     width: fit-content;
-    padding: 6px 8px;
-}.cas-demo .shortcut-btn:hover{
+    padding: 0;
+}.cas-demo .shortcut-btn:hover,
+.cas-demo .shortcut-btn:has(.shortcut-primary-action:focus-visible),
+.cas-demo .shortcut-btn:has(.shortcut-agent-trigger:focus-visible){
     background: var(--overlay-active);
     border-color: rgba(251, 191, 36, 0.85);
     transform: translateY(-1px);
-}.cas-demo .shortcut-btn:active{
+}.cas-demo .shortcut-btn:has(.shortcut-primary-action:active),
+.cas-demo .shortcut-btn:has(.shortcut-agent-trigger:active){
     transform: translateY(0);
     background: var(--overlay-active);
+}.cas-demo .shortcut-primary-action{
+    box-sizing: border-box;
+    align-self: stretch;
+    min-width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 5px;
+    border: 0;
+    border-radius: 7px 0 0 7px;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    outline: none;
+}.cas-demo .shortcut-primary-action:hover,
+.cas-demo .shortcut-primary-action:focus-visible{
+    background: var(--overlay-hover);
+}.cas-demo .shortcut-primary-action:focus-visible{
+    box-shadow: inset 0 0 0 1px rgba(251, 191, 36, 0.55);
 }
 
 /* Reordering is LIVE: the chip really moves between its neighbours while you drag, so the
@@ -3096,7 +4293,9 @@ html{
    a cursor that never moved, so :hover fires by itself and a tooltip pops up unasked, right
    where you released. It is lifted as soon as the pointer leaves the strip. */
 .cas-demo .navbar-shortcuts.reordering .shortcut-btn:hover .shortcut-tooltip,
-.cas-demo .navbar-shortcuts.suppress-tooltips .shortcut-btn:hover .shortcut-tooltip{
+.cas-demo .navbar-shortcuts.suppress-tooltips .shortcut-btn:hover .shortcut-tooltip,
+.cas-demo .navbar-shortcuts .shortcut-btn.agent-target-hovered .shortcut-tooltip,
+.cas-demo .navbar-shortcuts .shortcut-btn.agent-menu-open .shortcut-tooltip{
     opacity: 0;
     visibility: hidden;
     transition-delay: 0s;
@@ -3353,6 +4552,291 @@ html{
     background: rgba(251, 191, 36, 0.15);
 }
 
+/* The saved agent is a deliberately separate target inside the shortcut. The project
+   badge keeps the instant-open action; this compact split surface opens a one-launch picker. */
+.cas-demo .agent-indicator.shortcut-agent-trigger{
+    box-sizing: border-box;
+    position: relative;
+    align-self: stretch;
+    width: 22px;
+    height: auto;
+    margin: 0;
+    padding: 0 1px 0 2px;
+    gap: 1px;
+    border: 0;
+    border-left: 1px solid var(--border-subtle);
+    border-radius: 0 6px 6px 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    overflow: visible;
+    cursor: pointer;
+    outline: none;
+    transition: background 0.12s ease, color 0.12s ease;
+}.cas-demo .agent-indicator.shortcut-agent-trigger:hover,
+.cas-demo .agent-indicator.shortcut-agent-trigger:focus-visible,
+.cas-demo .agent-indicator.shortcut-agent-trigger[aria-expanded="true"]{
+    background: rgba(251, 191, 36, 0.12);
+}.cas-demo .agent-indicator.shortcut-agent-trigger:focus-visible{
+    box-shadow: none;
+    background: rgba(251, 191, 36, 0.18);
+}.cas-demo .agent-indicator.shortcut-agent-trigger.locked{
+    width: 20px;
+    padding: 0 3px;
+    cursor: help;
+}.cas-demo .shortcut-agent-chevron{
+    color: var(--text-muted);
+    font-size: 7px;
+    line-height: 1;
+    transform: translateY(1px);
+    transition: color 0.12s ease, transform 0.12s ease;
+}.cas-demo .shortcut-agent-trigger:hover .shortcut-agent-chevron,
+.cas-demo .shortcut-agent-trigger[aria-expanded="true"] .shortcut-agent-chevron{
+    color: var(--brand-text);
+}.cas-demo .shortcut-agent-trigger[aria-expanded="true"] .shortcut-agent-chevron{
+    transform: translateY(1px) rotate(180deg);
+}.cas-demo .shortcuts-overflow-meta .shortcut-agent-trigger{
+    align-self: center;
+    width: 24px;
+    height: 24px;
+    padding: 0 3px;
+    border: 0;
+    border-radius: 6px;
+}
+
+/* Finite discovery only: four calm rings, then the badge becomes completely still. */
+.cas-demo .shortcut-agent-trigger.discovery::after{
+    content: '';
+    position: absolute;
+    inset: 2px;
+    border: 1px solid rgba(251, 191, 36, 0.78);
+    border-radius: 5px;
+    pointer-events: none;
+    animation: shortcut-agent-discovery 1.35s ease-out 4;
+}
+
+@keyframes shortcut-agent-discovery {
+    0% { opacity: 0; transform: scale(0.86); }
+    30% { opacity: 1; }
+    100% { opacity: 0; transform: scale(1.34); }
+}
+
+/* Permanent explanation on the badge itself. It replaces the larger chip tooltip while
+   this narrow secondary target is hovered, so the user never sees two bubbles at once. */
+.cas-demo .shortcut-agent-tooltip{
+    position: absolute;
+    z-index: 10000;
+    top: calc(100% + 10px);
+    left: 50%;
+    width: 214px;
+    padding: 8px 9px;
+    border: 1px solid var(--border-strong);
+    border-radius: 8px;
+    background: var(--popover-bg);
+    box-shadow: var(--shadow-card, 0 12px 32px rgba(0, 0, 0, 0.5));
+    color: var(--text-muted);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 10px;
+    font-weight: 450;
+    line-height: 1.45;
+    text-align: left;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateX(-50%) translateY(-4px);
+    transition: opacity 0.1s ease, transform 0.1s ease, visibility 0s linear 0.1s;
+}.cas-demo .shortcut-agent-tooltip strong{
+    display: block;
+    margin-bottom: 2px;
+    color: var(--text-bright);
+    font-size: 10.5px;
+    font-weight: 680;
+}.cas-demo .shortcut-agent-trigger:hover .shortcut-agent-tooltip,
+.cas-demo .shortcut-agent-trigger:focus-visible .shortcut-agent-tooltip{
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+    transition-delay: 0.16s;
+}.cas-demo .shortcut-agent-trigger[aria-expanded="true"] .shortcut-agent-tooltip{
+    opacity: 0;
+    visibility: hidden;
+    transition-delay: 0s;
+}
+
+/* The header's blank space is normally an Electron window-drag surface, which means
+   macOS consumes its clicks before the renderer can dismiss a popover. While this picker
+   is open, make the header clickable; closing restores the normal draggable titlebar. */
+.cas-demo .header.shortcut-agent-picker-open{
+    -webkit-app-region: no-drag;
+}
+
+/* Temporary agent picker — ported from the approved proposal into the real theme system. */
+.cas-demo .shortcut-agent-popover{
+    position: fixed;
+    z-index: 12050;
+    width: 356px;
+    padding: 8px;
+    border: 1px solid var(--border-strong);
+    border-radius: 12px;
+    background: var(--popover-bg);
+    box-shadow: var(--shadow-card, 0 18px 48px rgba(0, 0, 0, 0.58));
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-5px) scale(0.98);
+    transform-origin: top left;
+    transition: opacity 0.1s ease, transform 0.1s ease, visibility 0s linear 0.1s;
+    -webkit-font-smoothing: antialiased;
+}.cas-demo .shortcut-agent-popover.open{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+    transition-delay: 0s;
+}.cas-demo .shortcut-agent-popover.above{
+    transform-origin: bottom left;
+}.cas-demo .shortcut-agent-popover-header{
+    padding: 8px 9px 9px;
+}.cas-demo .shortcut-agent-popover-header h3{
+    margin: 0;
+    color: var(--text-bright);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}.cas-demo .shortcut-agent-popover-header p{
+    margin: 4px 0 0;
+    color: var(--text-muted);
+    font-size: 11px;
+    line-height: 1.45;
+}.cas-demo .shortcut-agent-first-use{
+    display: grid;
+    grid-template-columns: 26px minmax(0, 1fr);
+    align-items: start;
+    gap: 8px;
+    margin: 0 0 7px;
+    padding: 9px;
+    border: 1px solid rgba(251, 191, 36, 0.28);
+    border-radius: 8px;
+    background: rgba(251, 191, 36, 0.08);
+}.cas-demo .shortcut-agent-first-use-icon{
+    width: 26px;
+    height: 26px;
+    display: grid;
+    place-items: center;
+    border-radius: 7px;
+    background: rgba(251, 191, 36, 0.16);
+    color: var(--brand-text);
+}.cas-demo .shortcut-agent-first-use-icon svg{
+    width: 14px;
+    height: 14px;
+    display: block;
+}.cas-demo .shortcut-agent-first-use strong,
+.cas-demo .shortcut-agent-first-use small{
+    display: block;
+}.cas-demo .shortcut-agent-first-use strong{
+    margin-bottom: 2px;
+    color: var(--text-bright);
+    font-size: 10.5px;
+    font-weight: 680;
+}.cas-demo .shortcut-agent-first-use small{
+    color: var(--text-secondary);
+    font-size: 10px;
+    line-height: 1.45;
+}.cas-demo .shortcut-agent-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+}.cas-demo .shortcut-agent-option{
+    min-width: 0;
+    display: grid;
+    grid-template-columns: 30px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--text-body);
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.1s ease, border-color 0.1s ease;
+}.cas-demo .shortcut-agent-option:hover,
+.cas-demo .shortcut-agent-option:focus-visible{
+    border-color: rgba(251, 191, 36, 0.28);
+    background: rgba(251, 191, 36, 0.09);
+    outline: none;
+}.cas-demo .shortcut-agent-option[data-default="true"]{
+    background: var(--overlay-hover);
+}.cas-demo .shortcut-agent-option-icon{
+    width: 30px;
+    height: 30px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    background: var(--background);
+}.cas-demo .shortcut-agent-option-icon img{
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}.cas-demo .shortcut-agent-option-name{
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--text-bright);
+    font-size: 11px;
+    font-weight: 630;
+    white-space: nowrap;
+}.cas-demo .shortcut-agent-default-tag{
+    color: var(--brand-text);
+    font-size: 9px;
+    font-weight: 700;
+}.cas-demo .shortcut-agent-popover-footer{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 7px;
+    padding: 8px 9px 2px;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 10px;
+}.cas-demo .shortcut-agent-popover-footer span{
+    color: var(--brand-text);
+    font-size: 12px;
+}.cas-demo .shortcut-agent-popover.locked{
+    width: 286px;
+    padding: 14px;
+}.cas-demo .shortcut-agent-locked-title{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-bright);
+    font-size: 12px;
+    font-weight: 700;
+}.cas-demo .shortcut-agent-locked-title img{
+    width: 17px;
+    height: 17px;
+    object-fit: contain;
+}.cas-demo .shortcut-agent-locked-copy{
+    margin: 8px 0 12px;
+    color: var(--text-secondary);
+    font-size: 10.5px;
+    line-height: 1.5;
+}.cas-demo .shortcut-agent-fresh-action{
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid rgba(251, 191, 36, 0.34);
+    border-radius: 7px;
+    background: rgba(251, 191, 36, 0.1);
+    color: var(--brand-text);
+    cursor: pointer;
+    font-size: 10.5px;
+    font-weight: 650;
+}.cas-demo .shortcut-agent-fresh-action:hover,
+.cas-demo .shortcut-agent-fresh-action:focus-visible{
+    border-color: rgba(251, 191, 36, 0.68);
+    background: rgba(251, 191, 36, 0.16);
+    outline: none;
+}
+
 /* Add shortcut button — frosted glass, matching .shortcut-btn */
 .cas-demo .add-shortcut-btn{
     background: var(--overlay-hover);
@@ -3574,6 +5058,51 @@ html{
     font-size: 11px;
     font-weight: 500;
     letter-spacing: 0.3px;
+}.cas-demo .sc-view-mode{
+    display: inline-flex;
+    padding: 3px;
+    border: 1px solid var(--border-strong);
+    border-radius: 10px;
+    background: var(--overlay-subtle);
+}.cas-demo .sc-view-mode label{
+    position: relative;
+    cursor: pointer;
+}.cas-demo .sc-view-mode input{
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}.cas-demo .sc-view-mode span{
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-height: 30px;
+    padding: 0 12px;
+    border-radius: 7px;
+    color: var(--text-dim);
+    font-size: 12px;
+    font-weight: 600;
+    transition: color 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+}.cas-demo .sc-view-mode span:hover{
+    color: var(--text-body);
+    background: var(--overlay-hover);
+}.cas-demo .sc-view-mode input:checked + span{
+    color: var(--text-bright);
+    background: var(--surface-elevated, var(--bg-secondary));
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.24);
+}.cas-demo .sc-view-mode svg{
+    width: 14px;
+    height: 14px;
+}.cas-demo .mode-indicator.chat-view{
+    color: var(--brand, var(--brand-text));
+}.cas-demo .mode-indicator.chat-view svg{
+    width: 9px;
+    height: 9px;
+}.cas-demo .sc-cap-chat{
+    color: var(--brand, var(--brand-text));
+    font-weight: 650;
+}.cas-demo .sc-cap-terminal{
+    color: var(--text-secondary);
+    font-weight: 650;
 }
 
 /* ─── Mode & Agent card toggles (horizontal, compact) ─── */
@@ -3593,7 +5122,7 @@ html{
 
 /* ─── AI Agent icon RAIL (same design as the launcher picker, 2026-07-17) ───
    One row always, 48px icon-only cells, floating amber check on the selected
-   cell, BETA tag hanging under kimi. The label stays in DOM for a11y. */
+   cell, BETA tag hanging under grok. The label stays in DOM for a11y. */
 .cas-demo .sc-agent-rail{
     display: flex;
     flex-wrap: nowrap;
@@ -3759,53 +5288,21 @@ html{
     color: var(--text-primary, var(--text-bright));
 }
 
-/* ─── Form controls (select) ─── */
+/* Grok Build (neutral/white brand mark) */
+.cas-demo .sc-card-option input:checked ~ .sc-card-btn.sc-agent-grok{
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.35);
+}.cas-demo .sc-card-option input:checked ~ .sc-card-btn.sc-agent-grok .sc-card-icon{
+    opacity: 1;
+}.cas-demo .sc-card-option input:checked ~ .sc-card-btn.sc-agent-grok .sc-card-label{
+    color: var(--text-primary, var(--text-bright));
+}
+
+/* ─── Form controls ─── */
 .cas-demo .sc-form-group{
     display: flex;
     flex-direction: column;
     gap: 6px;
-}.cas-demo .sc-form-group select{
-    width: 100%;
-    padding: 8px 12px;
-    background: var(--surface, var(--overlay-subtle));
-    border: 1px solid var(--border, var(--border));
-    border-radius: 8px;
-    color: var(--text-primary, var(--text-bright));
-    font-size: 13px;
-    font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    transition: border-color 0.2s ease;
-    outline: none;
-}.cas-demo .sc-form-group select:hover{
-    border-color: var(--border-strong);
-}.cas-demo .sc-form-group select:focus{
-    border-color: var(--primary, #7f5af0);
-    box-shadow: 0 0 0 2px rgba(127, 90, 240, 0.12);
-}
-
-/* Project select + its icon. A native <select> can't render HTML in its options (the OS
-   draws that popup, see the note below), so the selected project's icon sits beside it. */
-.cas-demo .sc-select-with-icon{
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    width: 100%;
-}.cas-demo .sc-select-with-icon select{
-    flex: 1;
-    min-width: 0;
-}
-
-/* Native <select> dropdown popup options.
-   On Windows the OS draws the option list with a white background, while the
-   options inherit color:#fff from the <select> → white-on-white (invisible).
-   The closed control is styled above; here we give the popup options a SOLID
-   opaque dark background (the near-transparent --surface won't cover the OS
-   white) so they stay readable. macOS already themes the popup correctly. */
-.cas-demo .sc-form-group select option{
-    background: var(--bg-secondary);
-    color: var(--text-primary, var(--text-bright));
-}.cas-demo .sc-form-group select option:checked{
-    background: var(--primary, #7f5af0);
-    color: #fff;
 }
 
 /* ─── Sandbox info box ─── */
@@ -4245,7 +5742,7 @@ html{
         min-width: auto;
         max-width: none;
         width: fit-content;
-        padding: 4px 6px;
+        padding: 0;
     }
 
     /* Smaller project indicator */
@@ -4509,5 +6006,2248 @@ html{
 }.cas-demo .shortcuts-overflow-add .shortcuts-overflow-name{
     color: var(--text-secondary);
     font-weight: 500;
+}
+
+
+/* ===== Chat view: timeline, work rows, todos, questions, composer — from app chat-panel.css ===== */
+/* ============================================================================
+   chat-panel.css — the React chat view (slice 1)
+   ----------------------------------------------------------------------------
+   Every selector is scoped under `.cas-chat` so the panel can be mounted next
+   to the existing terminal UI without leaking a single rule.
+
+   Colors come from the app theme tokens (styles/themes.css). The only literals
+   are the amber ink on the send button, the status green, the failure red and
+   the diff tints — brand/status colors that themes.css deliberately leaves
+   literal too.
+   ========================================================================== */
+
+.cas-demo .cas-chat{
+  --cas-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', monospace;
+  --cas-col: 1040px;
+  --cas-add-gutter: #6A9955;
+  --cas-add-bg: rgba(80, 161, 79, .13);
+  --cas-del-gutter: #C74E5A;
+  --cas-del-bg: rgba(224, 108, 117, .13);
+  --cas-ok: #4ade80;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  container-type: inline-size;
+  font-family: inherit;
+  font-size: 15px;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  -webkit-font-smoothing: antialiased;
+}.cas-demo .cas-chat *,
+.cas-demo .cas-chat *::before,
+.cas-demo .cas-chat *::after{
+  box-sizing: border-box;
+}
+
+/* ------------------------------ Timeline -------------------------------- */
+
+.cas-demo .cas-chat-scroll{
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 18px 20px 12px;
+}.cas-demo .cas-chat-col{
+  max-width: var(--cas-col);
+  margin: 0 auto;
+}.cas-demo .cas-empty{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  padding: clamp(48px, 8vh, 92px) 0 clamp(54px, 10vh, 112px);
+  text-align: center;
+}.cas-demo .cas-empty:has(.cas-provider-status){
+  padding: 22px 0 24px;
+}.cas-demo .cas-empty-brand{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  margin-bottom: 16px;
+}
+
+/* The sign-in variant has to fit a small pane whole, so the seal steps aside
+   there — same reason the padding above collapses in that state. */
+.cas-demo .cas-empty:has(.cas-provider-status) .cas-empty-brand{
+  display: none;
+}
+
+/* No display here: it would out-rank the .cas-empty-brand-app hide below
+   (0,1,1 vs 0,1,0) and show both seals at once. Flex children are already
+   blockified. */
+.cas-demo .cas-empty-brand img{
+  object-fit: contain;
+}
+
+/* Per-theme seal, driven by html[data-theme] (never prefers-color-scheme):
+   dark, midnight, espresso and neon show the flat amber isotipo; light (and
+   its hidden legacy alias "sepia") shows the dock icon instead, because the
+   flat amber mark washes out on the warm light surfaces. */
+.cas-demo .cas-empty-brand-flat{
+  width: 34px;
+  height: 34px;
+}.cas-demo .cas-empty-brand-app{
+  display: none;
+  width: 36px;
+  height: 36px;
+}.cas-demo .cas-empty-identity{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  max-width: 100%;
+  margin-top: 26px;
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--bg-secondary) 82%, transparent);
+  color: var(--text-muted);
+  font-size: 11.5px;
+  line-height: 1;
+}.cas-demo .cas-empty-context-part{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}.cas-demo .cas-empty-context-agent{
+  flex: 0 0 auto;
+}.cas-demo .cas-empty-context-link{
+  flex: 0 0 auto;
+  padding: 0 1px;
+  color: var(--text-dim);
+}.cas-demo .cas-empty-agent-mark,
+.cas-demo .cas-empty-project-mark{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  flex: 0 0 auto;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 700;
+}.cas-demo .cas-empty-agent-mark img{
+  width: 21px;
+  height: 21px;
+  object-fit: contain;
+}.cas-demo .cas-empty-project-mark .project-badge{
+  width: 22px;
+  height: 22px;
+  border-radius: 7px;
+  font-size: 11px;
+}.cas-demo .cas-empty-project-mark:empty::before{
+  content: "P";
+}.cas-demo .cas-empty-title{
+  margin: 0;
+  color: var(--text-primary);
+  font-size: clamp(34px, 5cqw, 58px);
+  font-weight: 540;
+  letter-spacing: -.048em;
+  line-height: 1.06;
+}.cas-demo .cas-empty-eyebrow{
+  margin-bottom: 18px;
+  color: var(--brand-text);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}.cas-demo .cas-empty-sub{
+  max-width: 430px;
+  margin-top: 17px;
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+@container (max-width: 1100px) {.cas-demo .cas-empty-title{
+    max-width: 860px;
+    font-size: clamp(34px, 5cqw, 52px);
+  }
+}
+
+@container (max-width: 540px) {.cas-demo .cas-empty{
+    justify-content: flex-start;
+    padding-top: 52px;
+  }.cas-demo .cas-empty-identity{
+    gap: 6px;
+    max-width: 100%;
+  }
+}.cas-demo .cas-provider-status{
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  margin: -36px auto 28px;
+  padding: 13px 14px;
+  border: 1px solid color-mix(in srgb, #C74E5A 42%, var(--border));
+  border-radius: 12px;
+  background: color-mix(in srgb, #C74E5A 7%, var(--bg-secondary));
+}.cas-demo .cas-empty .cas-provider-status{
+  width: min(100%, 680px);
+  margin: 16px auto 0;
+  text-align: left;
+}.cas-demo .cas-provider-status-icon{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+  background: color-mix(in srgb, #C74E5A 13%, transparent);
+  color: #C74E5A;
+}.cas-demo .cas-provider-status-icon svg{
+  width: 16px;
+  height: 16px;
+}.cas-demo .cas-provider-status-copy{
+  min-width: 0;
+}.cas-demo .cas-provider-status-title{
+  font-size: 12.5px;
+  font-weight: 680;
+  color: var(--text-primary);
+}.cas-demo .cas-provider-status-message{
+  margin-top: 3px;
+  font-size: 11.5px;
+  line-height: 1.45;
+  color: var(--text-secondary);
+}.cas-demo .cas-provider-status-command{
+  display: inline-block;
+  margin-top: 7px;
+  padding: 3px 6px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+  font-family: var(--cas-mono);
+  font-size: 10.5px;
+}.cas-demo .cas-provider-status-action{
+  min-height: 32px;
+  padding: 6px 10px;
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font: inherit;
+  font-size: 11.5px;
+  font-weight: 640;
+  cursor: pointer;
+}.cas-demo .cas-provider-status-action:hover{
+  border-color: var(--accent);
+}
+
+/* Sign-in card opened by /login. Neutral by default; it only takes on a
+   success/failure tint once the flow actually settles. */
+.cas-demo .cas-login{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 9px;
+  margin: 4px 0 12px;
+  padding: 13px 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg-secondary);
+}.cas-demo .cas-login.is-done{
+  border-color: color-mix(in srgb, #4E9A6B 42%, var(--border));
+  background: color-mix(in srgb, #4E9A6B 7%, var(--bg-secondary));
+}.cas-demo .cas-login.is-failed{
+  border-color: color-mix(in srgb, #C74E5A 42%, var(--border));
+  background: color-mix(in srgb, #C74E5A 7%, var(--bg-secondary));
+}.cas-demo .cas-login-head{
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}.cas-demo .cas-login-title{
+  font-size: 12.5px;
+  font-weight: 680;
+  color: var(--text-primary);
+}.cas-demo .cas-login-detail,
+.cas-demo .cas-login-reason,
+.cas-demo .cas-login-message{
+  margin: 0;
+  font-size: 11.5px;
+  line-height: 1.45;
+  color: var(--text-secondary);
+}.cas-demo .cas-login-output{
+  width: 100%;
+  max-height: 180px;
+  margin: 0;
+  padding: 8px 10px;
+  overflow: auto;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+  font-family: var(--cas-mono);
+  font-size: 10.5px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-word;
+}.cas-demo .cas-login-code{
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}.cas-demo .cas-login-input{
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 32px;
+  padding: 6px 10px;
+  border: 1px solid var(--input-border);
+  border-radius: 8px;
+  background: var(--input-bg);
+  color: var(--text-primary);
+  font: inherit;
+  font-size: 11.5px;
+}.cas-demo .cas-login-input:focus{
+  outline: none;
+  border-color: var(--accent);
+}.cas-demo .cas-login-action{
+  min-height: 32px;
+  padding: 6px 10px;
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font: inherit;
+  font-size: 11.5px;
+  font-weight: 640;
+  cursor: pointer;
+}.cas-demo .cas-login-action:hover{
+  border-color: var(--accent);
+}.cas-demo .cas-login-action.is-quiet{
+  border-color: transparent;
+  background: transparent;
+  color: var(--text-secondary);
+  font-weight: 560;
+}.cas-demo .cas-login-action svg{
+  width: 13px;
+  height: 13px;
+  margin-right: 6px;
+  vertical-align: -2px;
+}
+
+/* The path for agents that can only finish their sign-in in the TUI. */
+.cas-demo .cas-login-manual{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 9px;
+  width: 100%;
+}
+
+/* Mirrors the real toolbar button so the instruction and the control the user
+   must find read as the same object. */
+.cas-demo .cas-login-inline-btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 1px 6px 2px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 11px;
+  font-weight: 650;
+  vertical-align: -3px;
+}.cas-demo .cas-login-inline-btn svg{
+  width: 12px;
+  height: 12px;
+}.cas-demo .cas-login-inline-code{
+  padding: 1px 5px 2px;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--cas-mono);
+  font-size: 11px;
+}.cas-demo .cas-login-command{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 8px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+  font: inherit;
+  cursor: pointer;
+}.cas-demo .cas-login-command:hover{
+  border-color: var(--accent);
+}.cas-demo .cas-login-command code{
+  font-family: var(--cas-mono);
+  font-size: 11px;
+}.cas-demo .cas-login-command svg{
+  width: 12px;
+  height: 12px;
+  opacity: 0.75;
+}.cas-demo .cas-login-copied{
+  font-size: 10.5px;
+  font-weight: 640;
+  color: var(--text-primary);
+}
+
+@media (max-width: 640px) {.cas-demo .cas-provider-status{
+    grid-template-columns: auto minmax(0, 1fr);
+  }.cas-demo .cas-provider-status-action{
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+}
+
+@container (max-width: 620px) {.cas-demo .cas-provider-status{
+    grid-template-columns: auto minmax(0, 1fr);
+  }.cas-demo .cas-provider-status-action{
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+}
+
+/* User bubble */
+
+.cas-demo .cas-user{
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 0 22px;
+}.cas-demo .cas-user-bubble{
+  max-width: 80%;
+  padding: 10px 14px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px 16px 5px 16px;
+  background: var(--bg-secondary);
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text-primary);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}.cas-demo .cas-message-attachments{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 8px;
+}.cas-demo .cas-message-attachment{
+  display: inline-flex;
+  max-width: 220px;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 8px 5px 5px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  font-size: 11px;
+}.cas-demo .cas-message-attachment img,
+.cas-demo .cas-message-file-icon{
+  display: inline-flex;
+  width: 26px;
+  height: 26px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  object-fit: cover;
+}.cas-demo .cas-message-image.is-editable{
+  position: relative;
+  display: inline-flex;
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  background: none;
+  cursor: pointer;
+}.cas-demo .cas-message-image.is-editable .cas-attachment-edit-hint{
+  border-radius: 6px;
+}.cas-demo .cas-message-image.is-editable:hover .cas-attachment-edit-hint,
+.cas-demo .cas-message-image.is-editable:focus-visible .cas-attachment-edit-hint{
+  opacity: 1;
+}.cas-demo .cas-message-file-icon svg{
+  width: 14px;
+  height: 14px;
+}
+
+/* Assistant prose */
+
+.cas-demo .cas-assist{
+  margin: 0 0 22px;
+}.cas-demo .cas-chat-prose{
+  font-size: 15px;
+  line-height: 1.72;
+  color: var(--text-body);
+  overflow-wrap: anywhere;
+}.cas-demo .cas-chat-prose p{
+  margin: 0 0 .55em;
+}.cas-demo .cas-chat-prose p:last-child{
+  margin: 0;
+}.cas-demo .cas-chat-prose strong{
+  font-weight: 640;
+  color: var(--text-primary);
+}.cas-demo .cas-chat-prose code{
+  padding: 1px 5px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  background: var(--bg-secondary);
+  font-family: var(--cas-mono);
+  font-size: 12.5px;
+}.cas-demo .cas-chat-prose pre{
+  margin: 0 0 .6em;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-tertiary);
+  overflow-x: auto;
+}.cas-demo .cas-chat-prose pre code{
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: none;
+  font-size: 12px;
+  line-height: 1.55;
+}.cas-demo .cas-chat-prose ul,
+.cas-demo .cas-chat-prose ol{
+  margin: 0 0 .6em;
+  padding-left: 1.35em;
+}.cas-demo .cas-chat-prose li{
+  margin: 0 0 .2em;
+}.cas-demo .cas-chat-prose h1,
+.cas-demo .cas-chat-prose h2,
+.cas-demo .cas-chat-prose h3,
+.cas-demo .cas-chat-prose h4{
+  margin: .4em 0 .35em;
+  font-weight: 640;
+  line-height: 1.35;
+  color: var(--text-primary);
+}.cas-demo .cas-chat-prose h1{ font-size: 18px; }.cas-demo .cas-chat-prose h2{ font-size: 16.5px; }.cas-demo .cas-chat-prose h3{ font-size: 15px; }.cas-demo .cas-chat-prose h4{ font-size: 14px; }.cas-demo .cas-markdown-table-wrap{
+  max-width: 100%;
+  margin: 12px 0 14px;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg-secondary);
+}.cas-demo .cas-markdown-table-wrap table{
+  width: 100%;
+  min-width: 520px;
+  border-collapse: collapse;
+}.cas-demo .cas-markdown-table-wrap th,
+.cas-demo .cas-markdown-table-wrap td{
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-body);
+  font-size: 12.5px;
+  line-height: 1.45;
+  vertical-align: top;
+}.cas-demo .cas-markdown-table-wrap th{
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  font-weight: 650;
+}.cas-demo .cas-markdown-table-wrap tr:last-child td{
+  border-bottom: 0;
+}
+
+/* Work rows */
+
+.cas-demo .cas-work-group{
+  margin: 4px 0 16px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  background: color-mix(in srgb, var(--bg-secondary) 72%, transparent);
+}.cas-demo .cas-work-group-summary{
+  display: grid;
+  grid-template-columns: 18px 14px auto auto minmax(0, 1fr);
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 38px;
+  padding: 8px 11px;
+  border: 0;
+  background: transparent;
+  color: var(--text-secondary);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}.cas-demo .cas-work-group-summary:hover,
+.cas-demo .cas-work-group-summary:focus-visible{
+  background: var(--surface-hover);
+}.cas-demo .cas-work-group-summary:focus-visible{
+  outline: 1px solid color-mix(in srgb, var(--accent) 70%, transparent);
+  outline-offset: -1px;
+}.cas-demo .cas-work-group-chevron{
+  color: var(--text-muted);
+  font-size: 17px;
+  line-height: 1;
+  transition: transform .16s ease;
+}.cas-demo .cas-work-group-summary[aria-expanded="true"] .cas-work-group-chevron{
+  transform: rotate(90deg);
+}.cas-demo .cas-work-group-state{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+}.cas-demo .cas-work-group-running{
+  flex: none;
+  width: 13px;
+  height: 13px;
+  border: 1.5px solid color-mix(in srgb, var(--accent) 24%, transparent);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: cas-work-spin .75s linear infinite;
+}.cas-demo .cas-work-group-title{
+  color: var(--text-primary);
+  font-size: 11.5px;
+  font-weight: 660;
+}.cas-demo .cas-work-group-count,
+.cas-demo .cas-work-group-stats{
+  font-size: 10.5px;
+  white-space: nowrap;
+}.cas-demo .cas-work-group-stats{
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}.cas-demo .cas-work-group-stats .has-failures{
+  color: #C74E5A;
+}.cas-demo .cas-work-group-details{
+  padding: 4px 6px 7px;
+  border-top: 1px solid var(--border);
+}.cas-demo .cas-work{
+  margin: 0 0 4px;
+}.cas-demo .cas-wrow{
+  appearance: none;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+  padding: 5px 8px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  font: inherit;
+  transition: background .12s;
+}.cas-demo .cas-wrow.is-clickable{
+  cursor: pointer;
+}.cas-demo .cas-wrow.is-clickable:hover{
+  background: var(--surface-hover);
+}.cas-demo .cas-wrow.is-clickable:focus-visible{
+  outline: 1px solid color-mix(in srgb, var(--accent) 72%, transparent);
+  outline-offset: 1px;
+  background: var(--surface-hover);
+}.cas-demo .cas-wico{
+  flex: none;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  color: var(--text-secondary);
+}.cas-demo .cas-wico svg{
+  width: 14px;
+  height: 14px;
+  stroke-width: 1.7;
+}.cas-demo .cas-wico.is-running::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1.5px solid color-mix(in srgb, var(--accent) 24%, transparent);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: cas-work-spin .75s linear infinite;
+}
+
+@keyframes cas-work-spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {.cas-demo .cas-work-group-running,
+.cas-demo .cas-wico.is-running::after,
+.cas-demo .cas-todo-spin,
+.cas-demo .cas-subagent-spin{
+    animation: none;
+    border-color: color-mix(in srgb, var(--accent) 55%, transparent);
+  }.cas-demo .cas-subagent-pill{
+    animation: none;
+  }
+}
+
+/* Todo list card */
+
+.cas-demo .cas-todos{
+  margin: 4px 0 16px;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--accent) 26%, var(--border));
+  border-radius: 11px;
+  background: color-mix(in srgb, var(--bg-secondary) 72%, transparent);
+}.cas-demo .cas-todos.is-complete{
+  border-color: var(--border);
+}
+
+/*
+ * The same card, pinned above the composer so progress stays readable without
+ * scrolling back to its place in the timeline. It shares the composer's column
+ * so the two read as one block.
+ *
+ * The step list is capped and scrolls on its own: a fifteen-step checklist must
+ * never push the input off the panel. `.cas-todos-body` is the scroller rather
+ * than the section, which keeps the header pinned while the steps move.
+ */
+.cas-demo .cas-todos.is-pinned{
+  position: relative;
+  max-width: var(--cas-col);
+  margin: 0 auto 8px;
+  background: color-mix(in srgb, var(--bg-secondary) 92%, transparent);
+  backdrop-filter: blur(6px);
+}
+
+/* Room for the dismiss control, which overlays the header's trailing edge. */
+.cas-demo .cas-todos.is-pinned .cas-todos-head{
+  padding-right: 38px;
+}
+
+/*
+ * Dismissing an abandoned checklist. It is deliberately quiet until hover:
+ * this sits right above the input, so a loud X would pull the eye away from
+ * the step the card exists to show.
+ */
+.cas-demo .cas-todos-dismiss{
+  position: absolute;
+  top: 9px;
+  right: 9px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text-faint);
+  cursor: pointer;
+  transition: background .12s, color .12s;
+}.cas-demo .cas-todos-dismiss svg{
+  width: 13px;
+  height: 13px;
+}.cas-demo .cas-todos-dismiss:hover{
+  background: var(--surface-hover);
+  color: var(--text-primary);
+}.cas-demo .cas-todos-dismiss:focus-visible{
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}.cas-demo .cas-todos.is-pinned .cas-todos-body{
+  max-height: 176px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}.cas-demo .cas-todos-head{
+  appearance: none;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+  min-height: 38px;
+  padding: 8px 11px;
+  border: 0;
+  background: transparent;
+  color: var(--text-secondary);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background .12s;
+}.cas-demo .cas-todos-head:hover{
+  background: var(--surface-hover);
+}.cas-demo .cas-todos-head:focus-visible{
+  outline: 1px solid color-mix(in srgb, var(--accent) 70%, transparent);
+  outline-offset: -1px;
+  background: var(--surface-hover);
+}.cas-demo .cas-todos-ico{
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  color: var(--accent);
+}.cas-demo .cas-todos-ico svg{
+  width: 14px;
+  height: 14px;
+}.cas-demo .cas-todos.is-complete .cas-todos-ico{
+  color: var(--text-secondary);
+}.cas-demo .cas-todos-title{
+  flex: none;
+  color: var(--text-primary);
+  font-size: 11.5px;
+  font-weight: 660;
+}.cas-demo .cas-todos-bar{
+  flex: none;
+  width: 58px;
+  height: 3px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--text-muted) 34%, transparent);
+  overflow: hidden;
+}.cas-demo .cas-todos-bar i{
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: var(--accent);
+  transition: width .25s ease;
+}.cas-demo .cas-todos-count{
+  flex: none;
+  font-size: 10.5px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}.cas-demo .cas-todos-now{
+  min-width: 0;
+  font-size: 11px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}.cas-demo .cas-todos-trail{
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  color: var(--text-muted);
+}.cas-demo .cas-todos-chevron{
+  font-size: 17px;
+  line-height: 1;
+  transition: transform .16s ease;
+}.cas-demo .cas-todos-head[aria-expanded="true"] .cas-todos-chevron{
+  transform: rotate(90deg);
+}.cas-demo .cas-todos-body{
+  margin: 0;
+  padding: 4px 6px 7px;
+  border-top: 1px solid var(--border);
+  list-style: none;
+}.cas-demo .cas-todo{
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  padding: 4px 7px;
+  border-radius: 7px;
+  font-size: 12.5px;
+  line-height: 1.5;
+}.cas-demo .cas-todo-mark{
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  margin-top: 2px;
+}.cas-demo .cas-todo-mark svg{
+  width: 14px;
+  height: 14px;
+}.cas-demo .cas-todo-text{
+  min-width: 0;
+  overflow-wrap: anywhere;
+}.cas-demo .cas-todo.is-pending,
+.cas-demo .cas-todo.is-pending .cas-todo-mark{
+  color: var(--text-secondary);
+}.cas-demo .cas-todo.is-active{
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+  color: var(--text-primary);
+  font-weight: 600;
+}.cas-demo .cas-todo.is-active .cas-todo-mark{
+  color: var(--accent);
+}.cas-demo .cas-todo.is-done{
+  color: var(--text-secondary);
+}.cas-demo .cas-todo.is-done .cas-todo-text{
+  text-decoration: line-through;
+  text-decoration-color: color-mix(in srgb, var(--text-muted) 70%, transparent);
+}.cas-demo .cas-todo.is-done .cas-todo-mark{
+  color: color-mix(in srgb, var(--accent) 76%, var(--text-secondary));
+}.cas-demo .cas-todo-spin{
+  width: 12px;
+  height: 12px;
+  border: 1.5px solid color-mix(in srgb, var(--accent) 26%, transparent);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: cas-work-spin .75s linear infinite;
+}.cas-demo .cas-wlabel{
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+  flex: 1;
+  min-width: 0;
+  font-size: 12.5px;
+  line-height: 1.4;
+}.cas-demo .cas-wverb{
+  flex: none;
+  font-weight: 600;
+  color: var(--text-body);
+}.cas-demo .cas-wtarget{
+  font-family: var(--cas-mono);
+  font-size: 12px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}.cas-demo .cas-wtrail{
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-muted);
+}.cas-demo .cas-chev{
+  font-size: 9px;
+}.cas-demo .cas-st-run{
+  font-size: 11px;
+  color: var(--text-secondary);
+}.cas-demo .cas-st-ok{
+  display: flex;
+  color: var(--cas-ok);
+}.cas-demo .cas-st-ok svg{
+  width: 14px;
+  height: 14px;
+  stroke-width: 2.2;
+}.cas-demo .cas-st-fail{
+  font-size: 12px;
+  color: #C74E5A;
+}.cas-demo .cas-st-declined{
+  font-size: 11px;
+  color: var(--text-secondary);
+}.cas-demo .cas-st-stopped{
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+/* Every tool expands into the same quiet, inspectable details rail. */
+
+.cas-demo .cas-wdetails{
+  margin: 2px 0 8px 30px;
+  padding: 5px 0 5px 12px;
+  border-left: 1px solid var(--border);
+}.cas-demo .cas-wsection + .cas-wsection{
+  margin-top: 9px;
+}.cas-demo .cas-wsection-label{
+  margin-bottom: 3px;
+  color: var(--text-muted);
+  font-family: var(--cas-mono);
+  font-size: 9.5px;
+  font-weight: 650;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}.cas-demo .cas-wsection pre{
+  margin: 0;
+  font-family: var(--cas-mono);
+  font-size: 11.5px;
+  line-height: 1.55;
+  color: var(--text-secondary);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}.cas-demo .cas-wempty{
+  color: var(--text-muted);
+  font-size: 11.5px;
+  font-style: italic;
+}.cas-demo .cas-wdetails .cas-diff{
+  margin: 5px 0 3px;
+}
+
+/* Diff card */
+
+.cas-demo .cas-diff{
+  margin: 4px 0 10px 30px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--bg-tertiary);
+}.cas-demo .cas-diff-head{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 32px;
+  padding: 0 12px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  font-family: var(--cas-mono);
+  font-size: 11.5px;
+  color: var(--text-secondary);
+}.cas-demo .cas-diff-toggle,
+.cas-demo .cas-diff-open{
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: inherit;
+}.cas-demo .cas-diff-toggle{
+  min-width: 0;
+  display: inline-flex;
+  flex: 1;
+  align-items: center;
+  gap: 7px;
+  height: 100%;
+  padding: 0;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}.cas-demo .cas-diff-toggle:focus-visible,
+.cas-demo .cas-diff-open:focus-visible{
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}.cas-demo .cas-diff-chevron{
+  flex: none;
+  color: var(--text-muted);
+  transform: rotate(0deg);
+  transition: transform 140ms ease, color 140ms ease;
+}.cas-demo .cas-diff.is-expanded .cas-diff-chevron{
+  transform: rotate(90deg);
+}.cas-demo .cas-diff-toggle:hover .cas-diff-chevron{
+  color: var(--text-primary);
+}.cas-demo .cas-diff-name{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}.cas-demo .cas-diff-count{
+  margin-left: auto;
+  flex: none;
+  font-variant-numeric: tabular-nums;
+}.cas-demo .cas-diff-open{
+  width: 24px;
+  height: 24px;
+  padding: 4px;
+  border-radius: 5px;
+  cursor: pointer;
+}.cas-demo .cas-diff-open:hover{
+  background: color-mix(in srgb, var(--text-primary) 9%, transparent);
+  color: var(--text-primary);
+}.cas-demo .cas-diff-open svg{
+  display: block;
+  width: 16px;
+  height: 16px;
+}.cas-demo .cas-diff-plus{ color: var(--cas-add-gutter); }.cas-demo .cas-diff-minus{ color: var(--cas-del-gutter); }.cas-demo .cas-diff-line{
+  display: flex;
+  font-family: var(--cas-mono);
+  font-size: 12px;
+  line-height: 1.5;
+}.cas-demo .cas-diff-gut{
+  flex: none;
+  width: 38px;
+  padding: 1px 8px 1px 0;
+  text-align: right;
+  color: var(--text-muted);
+  user-select: none;
+}.cas-demo .cas-diff-tx{
+  flex: 1;
+  padding: 1px 12px 1px 0;
+  white-space: pre;
+  color: var(--text-secondary);
+}.cas-demo .cas-diff-line.is-add{ background: var(--cas-add-bg); }.cas-demo .cas-diff-line.is-add .cas-diff-gut{ color: var(--cas-add-gutter); }.cas-demo .cas-diff-line.is-add .cas-diff-tx{ color: var(--text-body); }.cas-demo .cas-diff-line.is-add .cas-diff-tx::before{ content: "+ "; color: var(--cas-add-gutter); }.cas-demo .cas-diff-line.is-del{ background: var(--cas-del-bg); }.cas-demo .cas-diff-line.is-del .cas-diff-gut{ color: var(--cas-del-gutter); }.cas-demo .cas-diff-line.is-del .cas-diff-tx{ color: var(--text-body); }.cas-demo .cas-diff-line.is-del .cas-diff-tx::before{ content: "- "; color: var(--cas-del-gutter); }.cas-demo .cas-diff-line.is-context .cas-diff-tx::before{ content: "  "; }.cas-demo .cas-diff-more{
+  padding: 3px 12px;
+  font-family: var(--cas-mono);
+  font-size: 11.5px;
+  color: var(--text-muted);
+}
+
+/* Error row */
+
+.cas-demo .cas-error{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 10px;
+  padding: 5px 8px;
+  font-size: 12.5px;
+  color: #C74E5A;
+}.cas-demo .cas-error svg{
+  flex: none;
+  width: 14px;
+  height: 14px;
+  stroke-width: 1.7;
+}
+
+/* Successful turns that end after tools without an assistant prose block. */
+
+.cas-demo .cas-turn-end{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin: 2px 0 12px;
+  font-size: 11.5px;
+  color: var(--text-muted);
+}.cas-demo .cas-turn-end-mark{
+  color: #46d384;
+  font-size: 12px;
+  line-height: 1;
+}
+
+/* Interactive permission request */
+
+.cas-demo .cas-request{
+  margin: 8px 0 14px;
+  padding: 12px 14px;
+  border: 1px solid color-mix(in srgb, var(--accent) 52%, var(--border));
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--accent) 8%, var(--bg-secondary));
+}.cas-demo .cas-request.is-resolved{
+  border-color: var(--border);
+  background: var(--bg-secondary);
+  opacity: .78;
+}.cas-demo .cas-request-title{
+  margin-bottom: 5px;
+  font-size: 12px;
+  font-weight: 680;
+  color: var(--text-primary);
+}.cas-demo .cas-request-detail{
+  font-family: var(--cas-mono);
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}.cas-demo .cas-request-actions{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 10px;
+}.cas-demo .cas-request-btn{
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-primary);
+  font: inherit;
+  font-size: 11.5px;
+  font-weight: 620;
+  color: var(--text-secondary);
+  cursor: pointer;
+}.cas-demo .cas-request-btn:hover{
+  border-color: var(--border-strong);
+  color: var(--text-primary);
+}.cas-demo .cas-request-btn.is-allow{
+  border-color: color-mix(in srgb, var(--accent) 60%, var(--border));
+  color: var(--text-primary);
+}.cas-demo .cas-request-result{
+  font-size: 11.5px;
+  color: var(--text-muted);
+}
+
+/* Structured question card — never a permission row */
+
+.cas-demo .cas-question{
+  margin: 8px 0 14px;
+  padding: 14px 16px;
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, var(--border));
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--accent) 6%, var(--bg-secondary));
+}.cas-demo .cas-question.is-resolved{
+  border-color: var(--border);
+  background: var(--bg-secondary);
+  opacity: .78;
+}.cas-demo .cas-q-head{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}.cas-demo .cas-q-chip{
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--accent) 18%, transparent);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--accent);
+}.cas-demo .cas-q-chip.is-muted{
+  background: var(--bg-tertiary);
+  color: var(--text-muted);
+}.cas-demo .cas-q-title{
+  font-size: 13px;
+  font-weight: 680;
+  color: var(--text-primary);
+}.cas-demo .cas-q-header-chip{
+  padding: 2px 7px;
+  border: 1px solid color-mix(in srgb, var(--accent) 40%, var(--border));
+  border-radius: 999px;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--accent);
+}.cas-demo .cas-q-status{
+  margin-left: auto;
+  padding: 2px 8px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 10.5px;
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--text-muted);
+}.cas-demo .cas-q-status.is-answered{
+  border-color: color-mix(in srgb, #46d384 40%, var(--border));
+  color: #46d384;
+}.cas-demo .cas-q-text{
+  /* Capped measure: the card is as wide as the chat column, and a 150-character
+     line is skimmed, not read. Only bites when there is room to spare. */
+  max-width: 76ch;
+  margin: 8px 0 12px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--text-primary);
+}.cas-demo .cas-q-block-chip{
+  margin-bottom: 8px;
+}.cas-demo .cas-q-option{
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  width: 100%;
+  margin-bottom: 8px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg-primary);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}.cas-demo .cas-q-option:hover{
+  border-color: var(--border-strong);
+}.cas-demo .cas-q-option:focus-visible,
+.cas-demo .cas-q-other-input:focus-visible,
+.cas-demo .cas-q-comment:focus-visible{
+  outline: 2px solid color-mix(in srgb, var(--accent) 60%, transparent);
+  outline-offset: 1px;
+}.cas-demo .cas-q-option.is-selected{
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 10%, var(--bg-primary));
+}.cas-demo .cas-q-num{
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--border-strong);
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--text-secondary);
+}.cas-demo .cas-q-check{
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  margin-top: 1px;
+  border: 1px solid var(--border-strong);
+  border-radius: 4px;
+  font-size: 10.5px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--text-secondary);
+}.cas-demo .cas-q-option.is-selected .cas-q-num,
+.cas-demo .cas-q-option.is-selected .cas-q-check{
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #000;
+}.cas-demo .cas-q-option-body{
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+}.cas-demo .cas-q-option-label{
+  margin-bottom: 3px;
+  font-size: 13px;
+  font-weight: 660;
+  line-height: 1.35;
+  color: var(--text-primary);
+}
+
+/* Option rationales run long. --text-muted (#666 on near-black in dark) fails
+   contrast for a paragraph; --text-secondary is the readable neutral in every
+   theme, including light, where it is the DARKER of the two. */
+.cas-demo .cas-q-option-desc{
+  max-width: 76ch;
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}.cas-demo .cas-q-other-input{
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: transparent;
+  font: inherit;
+  font-size: 13px;
+  color: var(--text-primary);
+  outline: none;
+}.cas-demo .cas-q-other-input::placeholder,
+.cas-demo .cas-q-comment::placeholder{
+  color: var(--text-muted);
+}.cas-demo .cas-q-comment-wrap{
+  margin-top: 10px;
+}.cas-demo .cas-q-comment-label{
+  margin-bottom: 5px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}.cas-demo .cas-q-comment{
+  width: 100%;
+  padding: 8px 11px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-primary);
+  font: inherit;
+  font-size: 13px;
+  color: var(--text-primary);
+  outline: none;
+}.cas-demo .cas-q-hint{
+  margin-top: 10px;
+  font-size: 11px;
+  font-style: italic;
+  color: var(--text-muted);
+}.cas-demo .cas-q-actions{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+/* Paged card: Dismiss stays left, the pager sits with the primary action. */
+.cas-demo .cas-q-actions.has-nav{
+  justify-content: flex-start;
+}.cas-demo .cas-q-actions.has-nav .cas-q-step{
+  margin-left: auto;
+}.cas-demo .cas-q-step{
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 620;
+  white-space: nowrap;
+  color: var(--text-muted);
+}.cas-demo .cas-q-btn{
+  padding: 6px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: transparent;
+  font: inherit;
+  font-size: 11.5px;
+  font-weight: 620;
+  color: var(--text-secondary);
+  cursor: pointer;
+}.cas-demo .cas-q-btn:hover:not(:disabled){
+  border-color: var(--border-strong);
+  color: var(--text-primary);
+}.cas-demo .cas-q-btn.is-primary{
+  border-color: var(--accent);
+  background: var(--accent);
+  font-weight: 700;
+  color: #000;
+}.cas-demo .cas-q-btn:disabled{
+  opacity: .45;
+  cursor: default;
+}.cas-demo .cas-q-resolved-line{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+}.cas-demo .cas-q-value{
+  padding: 2px 8px;
+  border-radius: 6px;
+  background: var(--bg-tertiary);
+  font-family: var(--cas-mono);
+  font-size: 11.5px;
+  color: var(--text-primary);
+}.cas-demo .cas-q-note{
+  margin-top: 8px;
+  font-size: 11.5px;
+  font-style: italic;
+  color: var(--text-secondary);
+}.cas-demo .cas-scroll-latest{
+  position: absolute;
+  z-index: 12;
+  right: max(26px, calc((100% - var(--cas-col)) / 2 + 8px));
+  bottom: 108px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 32px;
+  padding: 6px 10px;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--bg-secondary) 94%, transparent);
+  color: var(--text-secondary);
+  font: inherit;
+  font-size: 11px;
+  font-weight: 620;
+  box-shadow: 0 10px 30px -15px rgba(0, 0, 0, .8);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  cursor: pointer;
+}.cas-demo .cas-scroll-latest:hover{
+  border-color: color-mix(in srgb, var(--accent) 55%, var(--border));
+  color: var(--text-primary);
+}.cas-demo .cas-scroll-latest svg{
+  width: 14px;
+  height: 14px;
+}
+
+/* Working indicator */
+
+.cas-demo .cas-working{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  font-size: 11.5px;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-secondary);
+}.cas-demo .cas-dots{
+  display: inline-flex;
+  gap: 3px;
+}.cas-demo .cas-dots i{
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: .4;
+  animation: cas-pulse 1.2s infinite;
+}.cas-demo .cas-dots i:nth-child(2){ animation-delay: .2s; }.cas-demo .cas-dots i:nth-child(3){ animation-delay: .4s; }
+
+@keyframes cas-pulse {
+  0%, 100% { opacity: .25; }
+  50% { opacity: .85; }
+}
+
+/* ------------------------------ Composer -------------------------------- */
+
+.cas-demo .cas-chat-cwrap{
+  flex: none;
+  padding: 8px 20px 14px;
+  background: linear-gradient(180deg, transparent, var(--bg-primary) 40%);
+}
+
+/* Subagents anchored over the composer */
+
+.cas-demo .cas-subagents{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px;
+  max-width: var(--cas-col);
+  margin: 0 auto 9px;
+}.cas-demo .cas-subagents-title{
+  margin-right: 2px;
+  font-size: 10.5px;
+  letter-spacing: .6px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}.cas-demo .cas-subagent-pill{
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+  padding: 5px 10px 5px 8px;
+  border: 1px solid color-mix(in srgb, var(--accent) 34%, transparent);
+  border-radius: 999px;
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--accent) 13%, transparent),
+    color-mix(in srgb, var(--accent) 5%, transparent)
+  );
+  font-size: 11.5px;
+  color: var(--text-primary);
+  animation: cas-subagent-breathe 2.4s ease-in-out infinite;
+}
+
+/* The label is the first child, so the pills start at the second. */
+.cas-demo .cas-subagent-pill:nth-child(3){ animation-delay: .5s; }.cas-demo .cas-subagent-pill:nth-child(4){ animation-delay: 1s; }.cas-demo .cas-subagent-pill:nth-child(n+5){ animation-delay: 1.5s; }
+
+@keyframes cas-subagent-breathe {
+  0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 0%, transparent); }
+  50% { box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 9%, transparent); }
+}.cas-demo .cas-subagent-pill b{
+  flex: none;
+  font-weight: 640;
+}.cas-demo .cas-subagent-who{
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--text-secondary);
+}.cas-demo .cas-subagent-pill.is-done{
+  border-color: color-mix(in srgb, #22c55e 40%, transparent);
+  background: color-mix(in srgb, #22c55e 12%, transparent);
+  color: var(--text-secondary);
+  animation: none;
+}.cas-demo .cas-subagent-spin{
+  flex: none;
+  width: 12px;
+  height: 12px;
+  border: 1.6px solid color-mix(in srgb, var(--accent) 28%, transparent);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: cas-work-spin .8s linear infinite;
+}.cas-demo .cas-subagent-tick{
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #22c55e;
+  font-size: 8px;
+  font-weight: 900;
+  color: #04210f;
+}.cas-demo .cas-chat-composer{
+  position: relative;
+  max-width: var(--cas-col);
+  margin: 0 auto;
+  border: 1px solid var(--border-strong);
+  border-radius: 20px;
+  background: color-mix(in srgb, var(--bg-secondary) 78%, transparent);
+  -webkit-backdrop-filter: blur(14px) saturate(1.1);
+  backdrop-filter: blur(14px) saturate(1.1);
+  box-shadow: 0 12px 30px -18px rgba(0, 0, 0, .6), inset 0 1px 0 rgba(255, 255, 255, .04);
+}.cas-demo .cas-command-menu{
+  position: absolute;
+  z-index: 20;
+  right: 0;
+  bottom: calc(100% + 8px);
+  left: 0;
+  max-height: min(320px, 55cqh);
+  padding: 7px;
+  overflow-y: auto;
+  border: 1px solid var(--border-strong);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--bg-secondary) 96%, transparent);
+  box-shadow: 0 18px 50px -20px rgba(0, 0, 0, .8);
+  -webkit-backdrop-filter: blur(18px) saturate(1.12);
+  backdrop-filter: blur(18px) saturate(1.12);
+}.cas-demo .cas-command-menu-title{
+  padding: 5px 9px 7px;
+  color: var(--text-muted);
+  font-family: var(--cas-mono);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}.cas-demo .cas-command-option{
+  display: grid;
+  grid-template-columns: minmax(120px, auto) minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 40px;
+  padding: 7px 9px;
+  border: 0;
+  border-radius: 9px;
+  background: transparent;
+  color: var(--text-primary);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}.cas-demo .cas-command-option:hover,
+.cas-demo .cas-command-option.is-selected{
+  background: var(--surface-hover);
+}.cas-demo .cas-command-name{
+  font-family: var(--cas-mono);
+  font-size: 12px;
+  font-weight: 650;
+  color: var(--text-primary);
+}.cas-demo .cas-command-name em{
+  color: var(--text-muted);
+  font-style: normal;
+  font-weight: 450;
+}.cas-demo .cas-command-description{
+  min-width: 0;
+  overflow: hidden;
+  color: var(--text-secondary);
+  font-size: 11.5px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}.cas-demo .cas-command-source{
+  padding: 2px 6px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text-muted);
+  font-family: var(--cas-mono);
+  font-size: 9px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 560px) {.cas-demo .cas-command-option{
+    grid-template-columns: minmax(0, 1fr) auto;
+  }.cas-demo .cas-command-description{
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+}.cas-demo .cas-chat-composer.is-drop-target{
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 7%, var(--bg-secondary));
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 10%, transparent);
+}.cas-demo .cas-attachment-strip{
+  display: flex;
+  gap: 8px;
+  padding: 10px 12px 3px;
+  overflow-x: auto;
+}.cas-demo .cas-attachment-chip{
+  position: relative;
+  display: grid;
+  flex: none;
+  grid-template-columns: 30px minmax(0, 118px) 20px;
+  align-items: center;
+  gap: 7px;
+  min-height: 38px;
+  padding: 4px 5px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg-tertiary);
+}.cas-demo .cas-attachment-preview{
+  display: flex;
+  width: 30px;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 7px;
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+}.cas-demo .cas-attachment-preview img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}.cas-demo .cas-attachment-preview svg{
+  width: 15px;
+  height: 15px;
+}.cas-demo .cas-attachment-name{
+  overflow: hidden;
+  color: var(--text-secondary);
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}.cas-demo .cas-attachment-remove{
+  display: inline-flex;
+  width: 20px;
+  height: 20px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+}.cas-demo .cas-attachment-remove:hover{
+  background: var(--surface-hover);
+  color: var(--text-primary);
+}.cas-demo .cas-attachment-remove svg{
+  width: 12px;
+  height: 12px;
+}.cas-demo .cas-attachment-error{
+  padding: 6px 14px 0;
+  color: #C74E5A;
+  font-size: 11px;
+}.cas-demo .cas-chat-input{
+  display: block;
+  width: 100%;
+  max-height: 180px;
+  padding: 13px 16px 6px;
+  border: none;
+  outline: none;
+  background: transparent;
+  resize: none;
+  overflow-y: auto;
+  font-family: inherit;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--text-primary);
+}.cas-demo .cas-chat-input::placeholder{
+  color: var(--text-muted);
+}.cas-demo .cas-chat-input:disabled{
+  cursor: not-allowed;
+  opacity: .55;
+}.cas-demo .cas-chat-startup{
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  text-align: center;
+  background: var(--bg-primary);
+}.cas-demo .cas-chat-startup-inner{
+  transform: translateY(-20px);
+}.cas-demo .cas-chat-startup .loader-status{
+  min-height: 1.45em;
+}.cas-demo .cas-chat-cfoot{
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px 10px 12px;
+  overflow: visible;
+}.cas-demo .cas-file-input{
+  display: none;
+}.cas-demo .cas-attach{
+  display: inline-flex;
+  flex: none;
+  width: 30px;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+}.cas-demo .cas-attach:hover{
+  border-color: var(--border);
+  background: var(--surface-hover);
+  color: var(--text-primary);
+}.cas-demo .cas-attach:disabled,
+.cas-demo .cas-send:disabled,
+.cas-demo .cas-gbtn:disabled{
+  cursor: not-allowed;
+  opacity: .42;
+}.cas-demo .cas-attach:disabled:hover,
+.cas-demo .cas-gbtn:disabled:hover{
+  border-color: transparent;
+  background: transparent;
+  color: var(--text-secondary);
+}.cas-demo .cas-attach svg{
+  width: 15px;
+  height: 15px;
+}.cas-demo .cas-chat-cfoot::-webkit-scrollbar{
+  display: none;
+}.cas-demo .cas-gbtn{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 9px;
+  border: none;
+  border-radius: 9px;
+  background: transparent;
+  font: inherit;
+  font-size: 12.5px;
+  font-weight: 560;
+  color: var(--text-secondary);
+  cursor: pointer;
+}.cas-demo .cas-gbtn:hover{
+  background: var(--surface-hover);
+  color: var(--text-primary);
+}.cas-demo .cas-interaction-mode{
+  min-width: 58px;
+  justify-content: center;
+}.cas-demo .cas-interaction-mode.is-plan{
+  color: #75c9d2;
+  background: color-mix(in srgb, #52b8c5 13%, transparent);
+}.cas-demo .cas-interaction-mode.is-plan:hover{
+  color: #9be0e7;
+  background: color-mix(in srgb, #52b8c5 19%, transparent);
+}.cas-demo .cas-gbtn-caret{
+  font-size: 9px;
+  color: var(--text-muted);
+}.cas-demo .cas-model-picker{
+  position: relative;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  flex: none;
+}.cas-demo .cas-permission-picker{
+  position: relative;
+  z-index: 3;
+  display: inline-flex;
+  flex: none;
+}.cas-demo .cas-permission-trigger{
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 30px;
+  max-width: 190px;
+  padding: 5px 9px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 580;
+  cursor: pointer;
+}.cas-demo .cas-permission-trigger:hover,
+.cas-demo .cas-permission-trigger[aria-expanded="true"]{
+  border-color: var(--border-strong);
+  color: var(--text-primary);
+}.cas-demo .cas-permission-trigger:disabled{
+  cursor: not-allowed;
+  opacity: .55;
+}.cas-demo .cas-permission-trigger > span:nth-child(2){
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}.cas-demo .cas-permission-dot{
+  flex: none;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--text-muted);
+}.cas-demo .cas-permission-dot.is-auto-accept-edits{
+  background: var(--accent);
+}.cas-demo .cas-permission-dot.is-full-access{
+  background: var(--cas-ok);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--cas-ok) 14%, transparent);
+}.cas-demo .cas-permission-menu{
+  position: absolute;
+  z-index: 20;
+  right: 0;
+  bottom: calc(100% + 8px);
+  width: min(340px, calc(100vw - 40px));
+  padding: 6px;
+  overflow-y: auto;
+  border: 1px solid var(--border-strong);
+  border-radius: 13px;
+  background: var(--popover-bg);
+  box-shadow: var(--shadow-card), 0 18px 46px rgba(0, 0, 0, .28);
+}.cas-demo .cas-permission-option{
+  display: grid;
+  grid-template-columns: 12px minmax(0, 1fr) 18px;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 54px;
+  padding: 8px 9px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  background: transparent;
+  color: var(--text-primary);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}.cas-demo .cas-permission-option:hover{
+  background: var(--surface-hover);
+}.cas-demo .cas-permission-option.is-selected{
+  border-color: color-mix(in srgb, var(--accent) 32%, var(--border));
+  background: color-mix(in srgb, var(--accent) 8%, var(--bg-secondary));
+}.cas-demo .cas-permission-option:disabled{
+  cursor: not-allowed;
+}.cas-demo .cas-model-trigger{
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  max-width: 220px;
+  min-height: 30px;
+  padding: 5px 9px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  background: transparent;
+  color: var(--text-secondary);
+  font: inherit;
+  font-size: 12.5px;
+  font-weight: 580;
+  cursor: pointer;
+}.cas-demo .cas-model-trigger:hover,
+.cas-demo .cas-model-trigger[aria-expanded="true"]{
+  border-color: var(--border);
+  background: var(--surface-hover);
+  color: var(--text-primary);
+}.cas-demo .cas-model-trigger:disabled{
+  cursor: not-allowed;
+  opacity: .62;
+}.cas-demo .cas-model-dot{
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 3px;
+  background: var(--accent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 16%, transparent);
+}.cas-demo .cas-model-agent-icon{
+  display: inline-flex;
+  flex: none;
+  width: 18px;
+  height: 18px;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--border) 82%, transparent);
+  border-radius: 5px;
+  background: #15131b;
+}.cas-demo .cas-model-agent-icon img{
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}.cas-demo .cas-model-trigger-label{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}.cas-demo .cas-model-caret{
+  flex: none;
+  color: var(--text-muted);
+  font-size: 11px;
+  transform: translateY(-1px);
+}.cas-demo .cas-model-menu{
+  position: absolute;
+  z-index: 20;
+  left: 0;
+  bottom: calc(100% + 8px);
+  width: min(360px, calc(100vw - 40px));
+  max-height: min(380px, 55vh);
+  padding: 6px;
+  border: 1px solid var(--border-strong);
+  border-radius: 13px;
+  background: var(--popover-bg);
+  box-shadow: var(--shadow-card), 0 18px 46px rgba(0, 0, 0, .28);
+  overflow-y: auto;
+}.cas-demo .cas-model-menu-title{
+  padding: 7px 9px 6px;
+  color: var(--text-muted);
+  font-size: 10.5px;
+  font-weight: 680;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}.cas-demo .cas-model-option{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 52px;
+  padding: 8px 9px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  background: transparent;
+  color: var(--text-primary);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}.cas-demo .cas-model-option:hover{
+  background: var(--surface-hover);
+}.cas-demo .cas-model-option.is-selected{
+  border-color: color-mix(in srgb, var(--accent) 32%, var(--border));
+  background: color-mix(in srgb, var(--accent) 8%, var(--bg-secondary));
+}.cas-demo .cas-model-option:disabled{
+  cursor: not-allowed;
+}.cas-demo .cas-model-option-copy{
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  flex-direction: column;
+  gap: 2px;
+}.cas-demo .cas-model-option-name{
+  font-size: 12.5px;
+  font-weight: 630;
+  line-height: 1.35;
+}.cas-demo .cas-model-option-desc{
+  color: var(--text-secondary);
+  font-size: 11.5px;
+  line-height: 1.4;
+}.cas-demo .cas-model-option-state{
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  color: var(--accent);
+}.cas-demo .cas-model-option-state svg{
+  width: 14px;
+  height: 14px;
+}.cas-demo .cas-config-feedback{
+  margin-left: 5px;
+  color: var(--cas-ok);
+  font-size: 10.5px;
+  white-space: nowrap;
+}.cas-demo .cas-config-feedback.is-error{
+  color: #C74E5A;
+}.cas-demo .cas-gselect-wrap{
+  position: relative;
+  display: inline-flex;
+}.cas-demo .cas-gselect{
+  max-width: 190px;
+  padding: 5px 24px 5px 9px;
+  border: none;
+  border-radius: 9px;
+  outline: none;
+  background: transparent;
+  font: inherit;
+  font-size: 12.5px;
+  font-weight: 560;
+  color: var(--text-secondary);
+  cursor: pointer;
+}.cas-demo .cas-gselect:hover{
+  background: var(--surface-hover);
+  color: var(--text-primary);
+}.cas-demo .cas-gselect:disabled{
+  cursor: not-allowed;
+  opacity: .62;
+}.cas-demo .cas-model-picker[data-disabled="true"],
+.cas-demo .cas-gselect-wrap.is-disabled,
+.cas-demo .cas-option-toggle.is-disabled{
+  cursor: not-allowed;
+}.cas-demo .cas-provider-select .cas-gselect{
+  max-width: 190px;
+}.cas-demo .cas-option-toggle{
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  flex: none;
+  gap: 6px;
+  padding: 5px 9px;
+  border-radius: 9px;
+  color: var(--text-secondary);
+  font-size: 12.5px;
+  font-weight: 560;
+  cursor: pointer;
+  white-space: nowrap;
+}.cas-demo .cas-option-toggle:hover{
+  background: var(--surface-hover);
+  color: var(--text-primary);
+}.cas-demo .cas-option-toggle input{
+  width: 13px;
+  height: 13px;
+  margin: 0;
+  accent-color: var(--accent);
+}.cas-demo .cas-sr-only{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}.cas-demo .cas-vsep{
+  flex: none;
+  width: 1px;
+  height: 16px;
+  background: var(--border);
+}.cas-demo .cas-send{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  margin-left: auto;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #140c02;
+  cursor: pointer;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, .18) inset, 0 4px 12px -4px rgba(255, 137, 6, .5);
+}.cas-demo .cas-send:hover{
+  filter: brightness(1.06);
+}.cas-demo .cas-send.is-stop{
+  background: #D84A5F;
+  color: #fff;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, .16) inset, 0 5px 16px -5px rgba(216, 74, 95, .72);
+}.cas-demo .cas-send.is-stop:hover{
+  filter: brightness(1.1);
+  transform: scale(1.04);
+}.cas-demo .cas-send svg{
+  width: 15px;
+  height: 15px;
+  stroke-width: 2.1;
+}
+
+@container (max-width: 720px) {.cas-demo .cas-chat-scroll{
+    padding-inline: 14px;
+  }.cas-demo .cas-chat-cwrap{
+    padding-inline: 14px;
+  }.cas-demo .cas-scroll-latest{
+    right: 16px;
+  }.cas-demo .cas-work-group-summary{
+    grid-template-columns: 16px 14px auto auto minmax(0, 1fr);
+    gap: 6px;
+  }.cas-demo .cas-permission-trigger{
+    max-width: 150px;
+  }
+}
+
+@container (max-width: 520px) {.cas-demo .cas-chat-scroll{
+    padding: 14px 10px 8px;
+  }.cas-demo .cas-chat-cwrap{
+    padding: 7px 10px 10px;
+  }.cas-demo .cas-chat-cfoot{
+    gap: 5px;
+    padding-inline: 8px;
+  }.cas-demo .cas-vsep{
+    display: none;
+  }.cas-demo .cas-permission-trigger{
+    max-width: 132px;
+  }.cas-demo .cas-work-group-stats span:first-child{
+    display: none;
+  }.cas-demo .cas-scroll-latest span{
+    display: none;
+  }.cas-demo .cas-scroll-latest{
+    width: 34px;
+    justify-content: center;
+    padding-inline: 0;
+  }
+}
+
+/* --------------------------- Image annotator --------------------------- */
+
+.cas-demo .cas-attachment-preview.is-editable{
+  position: relative;
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+}.cas-demo .cas-attachment-edit-hint{
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 7px;
+  background: rgba(0, 0, 0, .55);
+  color: #fff;
+  opacity: 0;
+  transition: opacity .12s ease;
+}.cas-demo .cas-attachment-edit-hint svg{
+  width: 14px;
+  height: 14px;
+}.cas-demo .cas-attachment-preview.is-editable:hover .cas-attachment-edit-hint,
+.cas-demo .cas-attachment-preview.is-editable:focus-visible .cas-attachment-edit-hint{
+  opacity: 1;
+}.cas-demo .cas-annotator{
+  position: absolute;
+  inset: 0;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  background: var(--bg-primary);
+}.cas-demo .cas-annotator-toolbar{
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-secondary);
+}.cas-demo .cas-annotator-tool{
+  display: inline-flex;
+  width: 30px;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+}.cas-demo .cas-annotator-tool:hover:not(:disabled){
+  background: var(--surface-hover);
+  color: var(--text-primary);
+}.cas-demo .cas-annotator-tool.is-active{
+  border-color: var(--border);
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+}.cas-demo .cas-annotator-tool:disabled{
+  cursor: default;
+  opacity: .4;
+}.cas-demo .cas-annotator-tool svg{
+  width: 16px;
+  height: 16px;
+}.cas-demo .cas-annotator-spacer{
+  flex: 1;
+}.cas-demo .cas-annotator-cancel,
+.cas-demo .cas-annotator-save{
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+}.cas-demo .cas-annotator-cancel{
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-secondary);
+}.cas-demo .cas-annotator-cancel:hover{
+  background: var(--surface-hover);
+  color: var(--text-primary);
+}.cas-demo .cas-annotator-save{
+  border: 1px solid transparent;
+  background: var(--accent, #4f8cff);
+  color: #fff;
+}.cas-demo .cas-annotator-save:disabled{
+  cursor: default;
+  opacity: .5;
+}.cas-demo .cas-annotator-stage{
+  position: relative;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  padding: 14px;
+  /* The canvas is capped to the stage, so nothing should ever scroll here;
+     `auto` only produced a one-frame scrollbar flash while the inline text
+     input grows. */
+  overflow: hidden;
+}.cas-demo .cas-annotator-canvas-wrap{
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+  max-height: 100%;
+}.cas-demo .cas-annotator-canvas{
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: crosshair;
+  touch-action: none;
+}.cas-demo .cas-annotator-live-input{
+  position: absolute;
+  z-index: 2;
+  min-width: 48px;
+  padding: 0 5px;
+  border: 1px dashed rgba(255, 255, 255, .8);
+  border-radius: 4px;
+  outline: none;
+  background: rgba(0, 0, 0, .35);
+  color: #FF3B30;
+  font-weight: 700;
+  font-family: -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.25;
+  text-shadow: 0 0 3px rgba(0, 0, 0, .9), 0 0 3px rgba(0, 0, 0, .9);
+}.cas-demo .cas-annotator-live-input::placeholder{
+  color: rgba(255, 59, 48, .65);
+}.cas-demo .cas-annotator-hint{
+  overflow: hidden;
+  max-width: 300px;
+  color: var(--text-muted);
+  font-size: 11.5px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}.cas-demo .cas-annotator-loading{
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 13px;
+}.cas-demo .cas-annotator-canvas.is-text-tool{
+  cursor: text;
+}.cas-demo .cas-annotator-size{
+  width: 90px;
+  accent-color: var(--accent, #4f8cff);
+  cursor: pointer;
 }
 

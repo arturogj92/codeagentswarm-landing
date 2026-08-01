@@ -52,6 +52,32 @@ const TERMINALS: DemoTerminal[] = [
         '',
       ),
     ],
+    chat: [
+      {
+        id: 'c1-u',
+        kind: 'user',
+        text: 'The badge on the terminal tabs drifts — it counts terminals I have already read. Find every place the count is written and make one of them own it.',
+      },
+      {
+        id: 'c1-a',
+        kind: 'assistant',
+        text: 'The count is written from three different places, which is why it drifts. I am reading all three before touching any of them.',
+      },
+      {
+        id: 'c1-w',
+        kind: 'work',
+        rows: [
+          {
+            tool: 'search',
+            verb: 'Searched',
+            target: 'setBadgeCount',
+            status: 'ok',
+            output: '3 files, 7 matches',
+          },
+          { tool: 'file_read', verb: 'Read', target: 'src/notifications/badge.js', status: 'ok' },
+        ],
+      },
+    ],
   },
   {
     id: 2,
@@ -78,6 +104,31 @@ const TERMINALS: DemoTerminal[] = [
         kimi.result('11 matches across 4 files'),
         '',
       ),
+    ],
+    chat: [
+      {
+        id: 'c2-u',
+        kind: 'user',
+        text: 'Recording the same note on two devices leaves me with it twice after a sync. Work out why and fix it.',
+      },
+      {
+        id: 'c2-a',
+        kind: 'assistant',
+        text: 'Recordings are keyed by filename, so the same note saved on two devices lands twice. That is the whole bug.',
+      },
+      {
+        id: 'c2-w',
+        kind: 'work',
+        rows: [
+          {
+            tool: 'command',
+            verb: 'Ran',
+            target: 'rg -n "recordingId|filename" src/sync',
+            status: 'ok',
+            output: '11 matches across 4 files',
+          },
+        ],
+      },
     ],
   },
   {
@@ -106,6 +157,26 @@ const TERMINALS: DemoTerminal[] = [
         '',
       ),
     ],
+    chat: [
+      {
+        id: 'c3-u',
+        kind: 'user',
+        text: 'add a cancel button to the scan, and keep whatever it already found',
+      },
+      {
+        id: 'c3-a',
+        kind: 'assistant',
+        text: 'The scan walks the tree in one uninterruptible pass, so cancelling means giving it something to check between directories.',
+      },
+      {
+        id: 'c3-w',
+        kind: 'work',
+        rows: [
+          { tool: 'file_read', verb: 'Read', target: 'src/scanner/walk.ts', status: 'ok' },
+          { tool: 'reasoning', verb: 'Thought', target: 'for 8s', status: 'ok' },
+        ],
+      },
+    ],
   },
   {
     id: 4,
@@ -129,6 +200,26 @@ const TERMINALS: DemoTerminal[] = [
         claude.result('24 passed'),
         '',
       ),
+    ],
+    chat: [
+      {
+        id: 'c4-u',
+        kind: 'user',
+        text: 'Stripe retries a failed charge three times. Make our webhook handle that without ever losing someone their subscription.',
+      },
+      {
+        id: 'c4-a',
+        kind: 'assistant',
+        text: 'Retries are handled and the webhook is idempotent now, so a replayed event cannot double-charge anyone.\n\nWhat happens after the third failure is a product decision, not a technical one — so I have stopped to ask rather than pick for you.',
+      },
+      {
+        id: 'c4-w',
+        kind: 'work',
+        rows: [
+          { tool: 'file_change', verb: 'Edited', target: 'src/billing/webhooks.js', status: 'ok', output: '+96 −12' },
+          { tool: 'command', verb: 'Ran', target: 'npm test -- billing', status: 'ok', output: '24 passed' },
+        ],
+      },
     ],
     prompt: {
       question: 'Retries are done. What should happen after the third failed charge?',
@@ -194,6 +285,26 @@ const TERMINALS: DemoTerminal[] = [
         '',
       ),
     ],
+    chat: [
+      {
+        id: 'c5-u',
+        kind: 'user',
+        text: 'Enemies walk straight at the player in a line. Make them flank instead.',
+      },
+      {
+        id: 'c5-a',
+        kind: 'assistant',
+        text: 'They break formation at range now and come round the side instead of queueing up in front of you. Worth playing a round to feel it.',
+      },
+      {
+        id: 'c5-w',
+        kind: 'work',
+        rows: [
+          { tool: 'file_change', verb: 'Edited', target: 'scripts/ai/squad.gd', status: 'ok', output: '+118 −26' },
+          { tool: 'command', verb: 'Ran', target: 'godot --headless --run-tests ai', status: 'ok', output: '34 passed' },
+        ],
+      },
+    ],
   },
   {
     id: 6,
@@ -214,6 +325,25 @@ const TERMINALS: DemoTerminal[] = [
         agy.result('+142 −38'),
         '',
       ),
+    ],
+    chat: [
+      {
+        id: 'c6-u',
+        kind: 'user',
+        text: 'I want to be able to save anywhere and come back to exactly the same state.',
+      },
+      {
+        id: 'c6-a',
+        kind: 'assistant',
+        text: 'Every entity can serialise itself now, so a save is one walk of the scene tree instead of a hand-written list that goes stale.',
+      },
+      {
+        id: 'c6-w',
+        kind: 'work',
+        rows: [
+          { tool: 'file_change', verb: 'Edited', target: 'src/save/Serializable.cs', status: 'ok', output: '+142 −38' },
+        ],
+      },
     ],
     prompt: {
       question: 'Serialisation is in. How much should a save actually keep?',
@@ -332,6 +462,35 @@ const script: DemoScript = {
       kind: 'write',
       id: 1,
       text: lines(claude.tool('Edit', 'src/presentation/renderer/renderer.js'), claude.result('+12 −41'), ''),
+    },
+    // The chat moves with the terminal: the same step, said the way Chat says it.
+    {
+      at: 3_400,
+      kind: 'chat',
+      id: 1,
+      row: {
+        id: 'c1-a2',
+        kind: 'assistant',
+        text: 'Two of the three writers set the count from the terminal list and one from the notification itself. That last one is the drift.',
+      },
+    },
+    {
+      at: 5_800,
+      kind: 'chat',
+      id: 1,
+      row: {
+        id: 'c1-w2',
+        kind: 'work',
+        rows: [
+          { tool: 'file_change', verb: 'Edited', target: 'src/notifications/badge.js', status: 'ok', output: '+28 −34' },
+          {
+            tool: 'file_change',
+            verb: 'Editing',
+            target: 'src/presentation/renderer/renderer.js',
+            status: 'running',
+          },
+        ],
+      },
     },
 
     // --- An agent hits a decision only a human can make. ---

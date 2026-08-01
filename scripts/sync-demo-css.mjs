@@ -24,7 +24,10 @@ import { fileURLToPath } from 'node:url'
 
 const HERE = dirname(fileURLToPath(import.meta.url))
 const LANDING = resolve(HERE, '..')
-const APP_STYLES = resolve(LANDING, '..', 'codeagentswarm-app', 'styles')
+const APP = resolve(LANDING, '..', 'codeagentswarm-app')
+const APP_STYLES = resolve(APP, 'styles')
+/** The chat view keeps its stylesheet next to its component, not in styles/. */
+const APP_CHAT = resolve(APP, 'src', 'presentation', 'chat')
 
 const SCOPE = '.cas-demo'
 const OUT = join(LANDING, 'components', 'demo', 'demo-app.css')
@@ -101,6 +104,16 @@ const RANGES = [
   {
     file: 'navbar-shortcuts.css',
     label: 'Project shortcut chips',
+    from: null,
+    to: null,
+  },
+  {
+    // Taken whole: the app already scopes every rule under `.cas-chat`, so there
+    // is no range to carve out and nothing here can leak. It ends up as
+    // `.cas-demo .cas-chat ...`, which is what the demo mounts.
+    dir: APP_CHAT,
+    file: 'chat-panel.css',
+    label: 'Chat view: timeline, work rows, todos, questions, composer',
     from: null,
     to: null,
   },
@@ -247,10 +260,11 @@ function main() {
   const chunks = []
 
   for (const range of RANGES) {
-    if (!sources.has(range.file)) {
-      sources.set(range.file, readFileSync(join(APP_STYLES, range.file), 'utf8'))
+    const path = join(range.dir ?? APP_STYLES, range.file)
+    if (!sources.has(path)) {
+      sources.set(path, readFileSync(path, 'utf8'))
     }
-    const raw = sliceRange(sources.get(range.file), range)
+    const raw = sliceRange(sources.get(path), range)
     chunks.push(`/* ===== ${range.label} — from app ${range.file} ===== */\n${scopeCss(raw)}`)
   }
 

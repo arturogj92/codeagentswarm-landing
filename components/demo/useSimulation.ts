@@ -1,7 +1,15 @@
 'use client'
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import type { AgentKey, DemoEvent, DemoProject, DemoScript, DemoTerminal, SimulationState } from './types'
+import type {
+  AgentKey,
+  DemoEvent,
+  DemoProject,
+  DemoScript,
+  DemoTerminal,
+  PaneMode,
+  SimulationState,
+} from './types'
 
 /** How long the visitor keeps the wheel after touching something. */
 const HANDOVER_MS = 15_000
@@ -28,6 +36,8 @@ interface Simulation extends SimulationState {
   open: (agent: AgentKey, project: DemoProject) => number
   /** Close a terminal, as the × on its row does. */
   close: (id: number) => void
+  /** Flip one terminal between the chat view and the raw CLI. */
+  setMode: (id: number, mode: PaneMode) => void
   /** 0..1 through the current loop, for the progress hairline. */
   progress: number
 }
@@ -116,6 +126,13 @@ export function useSimulation(script: DemoScript, { active }: Options): Simulati
         return {
           ...prev,
           screens: { ...prev.screens, [event.id]: [...(prev.screens[event.id] ?? []), event.text] },
+        }
+      case 'chat':
+        return {
+          ...prev,
+          terminals: prev.terminals.map((t) =>
+            t.id === event.id ? { ...t, chat: [...(t.chat ?? []), event.row] } : t
+          ),
         }
       case 'select':
         // The one event the visitor can veto: while they are steering, the script
@@ -282,6 +299,22 @@ export function useSimulation(script: DemoScript, { active }: Options): Simulati
     [takeOver]
   )
 
+  /**
+   * Chat ⇄ Terminal, per terminal rather than globally: the two views are the
+   * same session seen two ways, and which one you want depends on what that
+   * agent is doing right now.
+   */
+  const setMode = useCallback(
+    (id: number, mode: PaneMode) => {
+      takeOver()
+      setState((prev) => ({
+        ...prev,
+        terminals: prev.terminals.map((t) => (t.id === id ? { ...t, mode } : t)),
+      }))
+    },
+    [takeOver]
+  )
+
   const close = useCallback(
     (id: number) => {
       takeOver()
@@ -309,5 +342,5 @@ export function useSimulation(script: DemoScript, { active }: Options): Simulati
     (terminal, index) => !scripted.has(terminal.id) || index < booted
   )
 
-  return { ...state, terminals, autoplay, select, answer, open, close, progress }
+  return { ...state, terminals, autoplay, select, answer, open, close, setMode, progress }
 }

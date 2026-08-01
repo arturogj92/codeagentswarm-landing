@@ -260,6 +260,10 @@ export default function DemoApp({ variant = 'embedded' }: Props) {
                 // answer never lands in two terminals at once.
                 keyboardActive={hovered && terminal.id === sim.selectedId}
                 onAnswer={(index) => sim.answer(terminal.id, index)}
+                onMode={(mode) => {
+                  trackTouch('mode')
+                  sim.setMode(terminal.id, mode)
+                }}
                 focused={terminal.id === sim.selectedId}
                 onFocus={() => sim.select(terminal.id)}
               />
@@ -272,6 +276,10 @@ export default function DemoApp({ variant = 'embedded' }: Props) {
             booting={booting === selected.id}
             keyboardActive={hovered}
             onAnswer={answer}
+            onMode={(mode) => {
+              trackTouch('mode')
+              sim.setMode(selected.id, mode)
+            }}
           />
         )}
       </div>
@@ -296,7 +304,12 @@ export default function DemoApp({ variant = 'embedded' }: Props) {
           {/* From the prompt on screen, not from the script: the three
               selectors do not all offer the same number of options, and this
               line used to promise "1, 2 or 3" in front of a two-option one. */}
-          {answering ? t('hintAnswer', { options: selected.prompt?.options.length ?? 0 }) : ''}
+          {/* Only in the terminal view: the chat answers with a click on the
+              option and a press of Answer, so promising a number key there
+              would be telling the visitor to press something inert. */}
+          {answering && (selected.mode ?? 'chat') === 'terminal'
+            ? t('hintAnswer', { options: selected.prompt?.options.length ?? 0 })
+            : ''}
         </span>
         {/* No download button in here any more. There is one immediately under
             the machine, and a second copy of it INSIDE the screen was both a

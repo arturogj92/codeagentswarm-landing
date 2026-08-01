@@ -16,6 +16,13 @@ export type AgentKey = 'claude' | 'codex' | 'antigravity' | 'opencode' | 'kimi'
 /** The app's three workspace layouts. */
 export type ViewMode = 'grid' | 'tabs' | 'sidebar'
 
+/**
+ * How a conversation is shown. The app can drive the same session either as a
+ * raw CLI in a pty or as a structured chat; Chat is the default here because it
+ * is the one a visitor who has never used a coding CLI can read.
+ */
+export type PaneMode = 'chat' | 'terminal'
+
 export interface StatusDef {
   key: StatusKey
   label: string
@@ -58,6 +65,63 @@ export interface DemoPrompt {
   options: DemoPromptOption[]
 }
 
+/** One option in a composer dropdown (model, reasoning, permissions). */
+export interface ChatChoice {
+  id: string
+  label: string
+  description?: string
+}
+
+/**
+ * What each CLI lets you change mid-conversation. They genuinely differ — only
+ * some expose a reasoning level, and only some have a Plan mode — and pretending
+ * otherwise would be the kind of detail that makes a demo read as a mock-up.
+ */
+export interface AgentChatConfig {
+  /** `name` rather than `label`, matching the app's own model objects. */
+  models: (Omit<ChatChoice, 'label'> & { name: string })[]
+  /** Reasoning / effort levels. Absent when the CLI has none. */
+  efforts?: ChatChoice[]
+  permissions: ChatChoice[]
+  /** Whether the Build ⇄ Plan toggle is offered. */
+  plan?: boolean
+}
+
+/** Tool categories, mirroring the glyphs the chat picks per work row. */
+export type ChatTool =
+  | 'reasoning'
+  | 'command'
+  | 'file_read'
+  | 'file_change'
+  | 'search'
+  | 'plan'
+
+/** One line in the work log: what the agent did, and how it went. */
+export interface ChatWork {
+  tool: ChatTool
+  /** "Read", "Searched", "Ran" — what it did. */
+  verb: string
+  /** The thing it did it to. Dimmed next to the verb. */
+  target: string
+  status?: 'running' | 'ok' | 'failed'
+  /** Shown when the row is expanded. */
+  input?: string
+  output?: string
+}
+
+/**
+ * A row of the chat transcript.
+ *
+ * Deliberately short: the agent's task list and its pending question are NOT
+ * rows here. They live on the terminal itself (`todos`, `prompt`) so the chat
+ * and the terminal show the same state, and answering in one is answering in
+ * both.
+ */
+export type ChatRow =
+  | { id: string; kind: 'user'; text: string }
+  | { id: string; kind: 'assistant'; text: string }
+  | { id: string; kind: 'work'; rows: ChatWork[] }
+
 export interface DemoTerminal {
   id: number
   /** Sticky tab label: the feature this terminal is for. */
@@ -83,6 +147,10 @@ export interface DemoTerminal {
    */
   todos?: string[]
   todoIndex?: number
+  /** Chat or terminal. Chat unless the script or the visitor says otherwise. */
+  mode?: PaneMode
+  /** The chat transcript, in order. */
+  chat?: ChatRow[]
 }
 
 export type DemoEvent =
@@ -100,6 +168,8 @@ export type DemoEvent =
   | { at: number; kind: 'todo'; id: number; index: number }
   /** Append output to a terminal's screen (ANSI allowed). */
   | { at: number; kind: 'write'; id: number; text: string }
+  /** Append a row to a terminal's chat transcript. */
+  | { at: number; kind: 'chat'; id: number; row: ChatRow }
   /** Focus a terminal, as if the visitor clicked its row. */
   | { at: number; kind: 'select'; id: number }
   /**
