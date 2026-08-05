@@ -266,7 +266,7 @@ Gemini CLI fue una buena herramienta y se ganó a su público, así que esto no 
         },
         {
           type: 'paragraph',
-          text: 'Si vienes de las guías antiguas de Gemini, las de <a href="/es/guias/ejecutar-multiples-sesiones-gemini" class="text-neon-cyan hover:text-neon-purple transition-colors">ejecutar varias sesiones de Gemini CLI</a> y <a href="/es/guias/enjambre-de-agentes-gemini" class="text-neon-cyan hover:text-neon-purple transition-colors">enjambre de agentes Gemini</a> describen el mismo flujo que ahora puedes trasladar a Antigravity CLI.',
+          text: 'Si vienes del antiguo flujo de Gemini CLI, se traslada directamente: <a href="/es/guias/ejecutar-multiples-sesiones-antigravity-cli" class="text-neon-cyan hover:text-neon-purple transition-colors">ejecutar varias sesiones de Antigravity CLI</a> y la <a href="/es/guias/enjambre-de-agentes-antigravity" class="text-neon-cyan hover:text-neon-purple transition-colors">guía del enjambre de agentes de Antigravity</a> describen el mismo patrón sobre agy.',
         },
       ],
     },

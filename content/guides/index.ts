@@ -15,14 +15,12 @@ import enClaudeCodeVsCursorVsCodex from './en/claude-code-vs-cursor-vs-codex'
 import enBestMcpServers from './en/best-mcp-servers-claude-code'
 import enClaudeCodeAgentSwarm from './en/claude-code-agent-swarm'
 import enCodexAgentSwarm from './en/codex-agent-swarm'
-import enGeminiAgentSwarm from './en/gemini-agent-swarm'
 import enAiCliAgentSwarm from './en/ai-cli-agent-swarm'
 import enSkillsMarketplace from './en/claude-code-skills-marketplace'
 import enTaskManagement from './en/claude-code-task-management'
 import enProjectSwitcher from './en/claude-code-project-switcher'
 import enAiCommits from './en/ai-commit-messages-claude-code'
 import enRunMultipleCodex from './en/run-multiple-codex-sessions'
-import enRunMultipleGemini from './en/run-multiple-gemini-sessions'
 import enHowToUseAntigravity from './en/how-to-use-antigravity-cli'
 import enRunMultipleAntigravity from './en/run-multiple-antigravity-cli-sessions'
 import enAntigravityVsGemini from './en/antigravity-cli-vs-gemini-cli'
@@ -77,14 +75,12 @@ import esClaudeCodeVsCursorVsCodex from './es/claude-code-vs-cursor-vs-codex'
 import esBestMcpServers from './es/mejores-servidores-mcp-claude-code'
 import esClaudeCodeAgentSwarm from './es/enjambre-de-agentes-claude-code'
 import esCodexAgentSwarm from './es/enjambre-de-agentes-codex'
-import esGeminiAgentSwarm from './es/enjambre-de-agentes-gemini'
 import esAiCliAgentSwarm from './es/enjambre-de-agentes-cli-ia'
 import esSkillsMarketplace from './es/marketplace-de-skills-claude-code'
 import esTaskManagement from './es/gestion-de-tareas-claude-code'
 import esProjectSwitcher from './es/cambio-rapido-de-proyecto-claude-code'
 import esAiCommits from './es/mensajes-de-commit-con-ia-claude-code'
 import esRunMultipleCodex from './es/ejecutar-multiples-sesiones-codex'
-import esRunMultipleGemini from './es/ejecutar-multiples-sesiones-gemini'
 import esComoUsarAntigravity from './es/como-usar-antigravity-cli'
 import esEjecutarMultiplesAntigravity from './es/ejecutar-multiples-sesiones-antigravity-cli'
 import esAntigravityVsGemini from './es/antigravity-cli-vs-gemini-cli'
@@ -125,6 +121,22 @@ import esConductor from './es/conductor-vs-codeagentswarm'
 import esClaudeSquad from './es/claude-squad-vs-codeagentswarm'
 import esVibeKanban from './es/vibe-kanban-vs-codeagentswarm'
 import esNimbalyst from './es/nimbalyst-vs-codeagentswarm'
+import enClaudeCodePlans from './en/claude-code-plans-and-pricing'
+import esClaudeCodePlans from './es/planes-y-precios-de-claude-code'
+import enCodexPlans from './en/codex-plans-and-pricing'
+import esCodexPlans from './es/planes-y-precios-de-codex'
+import enOpenCodePlans from './en/opencode-plans-and-pricing'
+import esOpenCodePlans from './es/planes-y-precios-de-opencode'
+import enAntigravityPlans from './en/antigravity-plans-and-pricing'
+import esAntigravityPlans from './es/planes-y-precios-de-antigravity'
+import enAntigravityYolo from './en/antigravity-yolo-mode'
+import esAntigravityYolo from './es/modo-yolo-antigravity'
+import enAntigravityHistory from './en/antigravity-cli-conversation-history'
+import esAntigravityHistory from './es/historial-conversaciones-antigravity'
+import enAntigravityWindows from './en/antigravity-cli-on-windows'
+import esAntigravityWindows from './es/antigravity-cli-en-windows'
+import enAntigravitySwarm from './en/antigravity-agent-swarm'
+import esAntigravitySwarm from './es/enjambre-de-agentes-antigravity'
 
 // Registry of all guides by locale and slug
 export const guides: Record<string, Record<string, Guide>> = {
@@ -141,14 +153,12 @@ export const guides: Record<string, Record<string, Guide>> = {
     'best-mcp-servers-claude-code': enBestMcpServers,
     'claude-code-agent-swarm': enClaudeCodeAgentSwarm,
     'codex-agent-swarm': enCodexAgentSwarm,
-    'gemini-agent-swarm': enGeminiAgentSwarm,
     'ai-cli-agent-swarm': enAiCliAgentSwarm,
     'claude-code-skills-marketplace': enSkillsMarketplace,
     'claude-code-task-management': enTaskManagement,
     'claude-code-project-switcher': enProjectSwitcher,
     'ai-commit-messages-claude-code': enAiCommits,
     'run-multiple-codex-sessions': enRunMultipleCodex,
-    'run-multiple-gemini-sessions': enRunMultipleGemini,
     'how-to-use-antigravity-cli': enHowToUseAntigravity,
     'run-multiple-antigravity-cli-sessions': enRunMultipleAntigravity,
     'antigravity-cli-vs-gemini-cli': enAntigravityVsGemini,
@@ -189,6 +199,14 @@ export const guides: Record<string, Record<string, Guide>> = {
     'claude-squad-vs-codeagentswarm': enClaudeSquad,
     'vibe-kanban-vs-codeagentswarm': enVibeKanban,
     'nimbalyst-vs-codeagentswarm': enNimbalyst,
+    'claude-code-plans-and-pricing': enClaudeCodePlans,
+    'codex-plans-and-pricing': enCodexPlans,
+    'opencode-plans-and-pricing': enOpenCodePlans,
+    'antigravity-plans-and-pricing': enAntigravityPlans,
+    'antigravity-yolo-mode': enAntigravityYolo,
+    'antigravity-cli-conversation-history': enAntigravityHistory,
+    'antigravity-cli-on-windows': enAntigravityWindows,
+    'antigravity-agent-swarm': enAntigravitySwarm,
   },
   es: {
     'como-usar-varios-terminales-claude-code': esMultipleTerminals,
@@ -203,14 +221,12 @@ export const guides: Record<string, Record<string, Guide>> = {
     'mejores-servidores-mcp-claude-code': esBestMcpServers,
     'enjambre-de-agentes-claude-code': esClaudeCodeAgentSwarm,
     'enjambre-de-agentes-codex': esCodexAgentSwarm,
-    'enjambre-de-agentes-gemini': esGeminiAgentSwarm,
     'enjambre-de-agentes-cli-ia': esAiCliAgentSwarm,
     'marketplace-de-skills-claude-code': esSkillsMarketplace,
     'gestion-de-tareas-claude-code': esTaskManagement,
     'cambio-rapido-de-proyecto-claude-code': esProjectSwitcher,
     'mensajes-de-commit-con-ia-claude-code': esAiCommits,
     'ejecutar-multiples-sesiones-codex': esRunMultipleCodex,
-    'ejecutar-multiples-sesiones-gemini': esRunMultipleGemini,
     'como-usar-antigravity-cli': esComoUsarAntigravity,
     'ejecutar-multiples-sesiones-antigravity-cli': esEjecutarMultiplesAntigravity,
     'antigravity-cli-vs-gemini-cli': esAntigravityVsGemini,
@@ -251,6 +267,14 @@ export const guides: Record<string, Record<string, Guide>> = {
     'claude-squad-vs-codeagentswarm': esClaudeSquad,
     'vibe-kanban-vs-codeagentswarm': esVibeKanban,
     'nimbalyst-vs-codeagentswarm': esNimbalyst,
+    'planes-y-precios-de-claude-code': esClaudeCodePlans,
+    'planes-y-precios-de-codex': esCodexPlans,
+    'planes-y-precios-de-opencode': esOpenCodePlans,
+    'planes-y-precios-de-antigravity': esAntigravityPlans,
+    'modo-yolo-antigravity': esAntigravityYolo,
+    'historial-conversaciones-antigravity': esAntigravityHistory,
+    'antigravity-cli-en-windows': esAntigravityWindows,
+    'enjambre-de-agentes-antigravity': esAntigravitySwarm,
   },
 }
 

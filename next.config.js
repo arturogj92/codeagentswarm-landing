@@ -9,6 +9,30 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      // 2026-08: Gemini CLI is retired, so its two guides were removed rather
+      // than left promising an agent the app no longer supports. Both still
+      // pulled organic traffic, so they 301 to their Antigravity equivalents
+      // (agy is the successor and the workflow carries over unchanged).
+      {
+        source: '/en/guides/gemini-agent-swarm',
+        destination: '/en/guides/antigravity-agent-swarm',
+        permanent: true,
+      },
+      {
+        source: '/es/guias/enjambre-de-agentes-gemini',
+        destination: '/es/guias/enjambre-de-agentes-antigravity',
+        permanent: true,
+      },
+      {
+        source: '/en/guides/run-multiple-gemini-sessions',
+        destination: '/en/guides/run-multiple-antigravity-cli-sessions',
+        permanent: true,
+      },
+      {
+        source: '/es/guias/ejecutar-multiples-sesiones-gemini',
+        destination: '/es/guias/ejecutar-multiples-sesiones-antigravity-cli',
+        permanent: true,
+      },
       // 2026-07: YOLO pair consolidation - both pages were stuck pos 11-12
       // splitting the same query cluster, merged into -explained/-explicado
       {

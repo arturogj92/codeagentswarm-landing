@@ -266,7 +266,7 @@ Gemini CLI was a good tool and it earned its audience, so this is not a hype pie
         },
         {
           type: 'paragraph',
-          text: 'If you are coming from the old Gemini guides, the <a href="/en/guides/run-multiple-gemini-sessions" class="text-neon-cyan hover:text-neon-purple transition-colors">running multiple Gemini CLI sessions</a> and <a href="/en/guides/gemini-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Gemini agent swarm</a> guides describe the same workflow you can now carry over to Antigravity CLI.',
+          text: 'If you are coming from the old Gemini CLI workflow, it carries over directly: <a href="/en/guides/run-multiple-antigravity-cli-sessions" class="text-neon-cyan hover:text-neon-purple transition-colors">running multiple Antigravity CLI sessions</a> and the <a href="/en/guides/antigravity-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Antigravity agent swarm guide</a> describe the same pattern on agy.',
         },
       ],
     },

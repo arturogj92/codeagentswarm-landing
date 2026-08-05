@@ -269,7 +269,7 @@ Al terminar te manejarás con Antigravity CLI por tu cuenta, y sabrás cómo eje
         {
           type: 'callout',
           variant: 'tip',
-          content: 'Empieza con una sola sesión de agy para coger el punto al comportamiento multiagente. Cuando te descubras queriendo una segunda y una tercera a la vez, ábrelas como terminales separados en CodeAgentSwarm y deja que los títulos dinámicos y los avisos te mantengan orientado. La <a href="/es/guias/enjambre-de-agentes-gemini" class="text-neon-cyan hover:text-neon-purple transition-colors">guía del concepto de enjambre de agentes</a> cubre el flujo que nació con el antiguo Gemini CLI y se aplica igual de bien a agy.',
+          content: 'Empieza con una sola sesión de agy para coger el punto al comportamiento multiagente. Cuando te descubras queriendo una segunda y una tercera a la vez, ábrelas como terminales separados en CodeAgentSwarm y deja que los títulos dinámicos y los avisos te mantengan orientado. La <a href="/es/guias/enjambre-de-agentes-antigravity" class="text-neon-cyan hover:text-neon-purple transition-colors">guía del enjambre de agentes de Antigravity</a> cubre ese flujo de principio a fin: aislamiento con worktrees, por qué el modo de aprobación no escala más allá de un agente y cómo mantener supervisable cada sesión.',
         },
       ],
     },
