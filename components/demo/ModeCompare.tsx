@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react'
 import ChatPane from './ChatPane'
-import { chatMoment, cliFooter, cliMoment, type CompareAgent } from './compare-moment'
+import { chatMoment, cliBanner, cliFooter, cliMoment, type CompareAgent } from './compare-moment'
 import { AGENT_ICON } from './TerminalRow'
 import './demo-app.css'
 import './mode-compare.css'
@@ -21,8 +21,11 @@ import './mode-compare.css'
  * and a composer that swallowed the drag would be a trap.
  */
 
-/** Where the divider sits on arrival: enough chat to read, enough CLI to notice. */
+/** Where the divider comes to rest: enough chat to read, enough CLI to notice. */
 const INITIAL_SPLIT = 52
+/** Where the opening sweep starts, far enough left to show the CLI's banner. */
+const SWEEP_FROM = 12
+const SWEEP_MS = 1100
 const KEY_STEP = 4
 
 interface Props {
@@ -48,6 +51,49 @@ export default function ModeCompare({ chatLabel, terminalLabel, hint, ariaLabel 
    */
   const [agent, setAgent] = useState<CompareAgent>('claude')
   const frame = useRef<HTMLDivElement>(null)
+
+  /**
+   * One sweep on arrival, from the terminal side to the resting split.
+   *
+   * Without it the divider sits at 52% and the terminal's opening banner — the
+   * mascot, the model line, the working directory — is behind the chat, so the
+   * one thing that identifies which CLI this is never gets seen. The sweep
+   * shows the whole terminal for a moment, and doubles as the hint that the
+   * divider moves at all.
+   */
+  useEffect(() => {
+    const node = frame.current
+    if (!node) return
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+
+    let raf = 0
+    let start = 0
+    const step = (now: number) => {
+      if (!start) start = now
+      const t = Math.min((now - start) / SWEEP_MS, 1)
+      // Ease-out: quick off the mark, settling gently into the resting split.
+      const eased = 1 - Math.pow(1 - t, 3)
+      setSplit(SWEEP_FROM + (INITIAL_SPLIT - SWEEP_FROM) * eased)
+      if (t < 1) raf = requestAnimationFrame(step)
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return
+        // Once only: a wipe that replays every time the section scrolls back
+        // into view stops reading as an invitation and starts reading as a loop.
+        observer.disconnect()
+        setSplit(SWEEP_FROM)
+        raf = requestAnimationFrame(step)
+      },
+      { threshold: 0.35 }
+    )
+    observer.observe(node)
+    return () => {
+      observer.disconnect()
+      cancelAnimationFrame(raf)
+    }
+  }, [])
 
   const setFromClientX = useCallback((clientX: number) => {
     const box = frame.current?.getBoundingClientRect()
@@ -114,14 +160,32 @@ export default function ModeCompare({ chatLabel, terminalLabel, hint, ariaLabel 
           and the right half of the frame was empty black.
         */}
         <pre className="compare-cli-screen">
+          <span className="compare-cli-stack">
+            <code className="compare-cli-banner">
+              {cliBanner(agent).map((line, index) => (
+                <div key={index} className={`cli-line${line.tone ? ` is-${line.tone}` : ''}`}>
+                  {line.text}
+                  {line.trail ? (
+                    <span className={`cli-trail${line.trailTone ? ` is-${line.trailTone}` : ''}`}>
+                      {line.trail}
+                    </span>
+                  ) : null}
+                </div>
+              ))}
+            </code>
           <code className="compare-cli-col">
             {cliMoment(agent).map((line, index) => (
               <div key={index} className={`cli-line${line.tone ? ` is-${line.tone}` : ''}`}>
                 {line.text}
-                {line.trail ? <span className="cli-trail">{line.trail}</span> : null}
+                {line.trail ? (
+                  <span className={`cli-trail${line.trailTone ? ` is-${line.trailTone}` : ''}`}>
+                    {line.trail}
+                  </span>
+                ) : null}
               </div>
             ))}
           </code>
+          </span>
         </pre>
         {/*
           The CLI's own floor: the input box and the permissions line every

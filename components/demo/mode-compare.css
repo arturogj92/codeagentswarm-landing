@@ -117,21 +117,56 @@
   background: #0d0d12;
   font-family: 'SF Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: 12px;
-  line-height: 1.7;
+  line-height: 1.45;
   white-space: pre;
 }
 
-/* Its own width, centred in the frame — see the note in ModeCompare.tsx. */
+/* Banner at the top, transcript at the bottom, both sharing one left margin so
+   the screen reads as one terminal rather than two stacked blocks. */
+.compare-cli-stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: fit-content;
+  height: 100%;
+}
+
+.compare-cli-banner {
+  display: block;
+  padding-bottom: 8px;
+}
+
 .compare-cli-col {
   width: fit-content;
 }
 
 .cli-line {
-  min-height: 1.7em;
+  min-height: 1.45em;
 }
 
 .cli-trail {
   color: #7a7a84;
+}
+
+/* The banner's own text is not dim — only the two lines under the mascot are. */
+.cli-line.is-mark .cli-trail {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.cli-line.is-mark .cli-trail.is-dim {
+  color: #7a7a84;
+  font-weight: 400;
+}
+
+/* The mascot itself, in each CLI's own colour. */
+.compare-cli[data-agent='claude'] .cli-line.is-mark {
+  color: #d67757;
+}
+
+.compare-cli[data-agent='codex'] .cli-line.is-mark {
+  color: #4ac27a;
+  font-weight: 600;
 }
 
 /* Same palette the demo's xterm is themed with, so switching between this

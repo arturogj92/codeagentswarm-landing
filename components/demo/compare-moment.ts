@@ -87,9 +87,11 @@ export const CHAT_MOMENT: DemoTerminal = {
 /** One line of the terminal transcript, with the role that decides its colour. */
 export interface CliLine {
   text: string
-  tone?: 'bullet' | 'prompt' | 'tool' | 'result' | 'dim' | 'option' | 'selected' | 'rule'
-  /** Rendered dimmed and inline after `text`. */
+  tone?: 'bullet' | 'prompt' | 'tool' | 'result' | 'dim' | 'option' | 'selected' | 'rule' | 'mark'
+  /** Rendered inline after `text`. */
   trail?: string
+  /** Tone for the trail, when it differs from the default dimmed one. */
+  trailTone?: CliLine['tone']
 }
 
 /** Which agents the comparison can be shown with. */
@@ -104,6 +106,16 @@ export type CompareAgent = 'claude' | 'codex'
  * two different demos.
  */
 const SKIN: Record<CompareAgent, {
+  /**
+   * The opening banner, mascot and all.
+   *
+   * Claude Code's block mark is the single most recognisable thing about it —
+   * the first thing anyone who has run it recognises — and the terminal half
+   * read as "a terminal" rather than "Claude Code" without it. Copied
+   * character for character from the CLI, padded to a fixed width so the text
+   * beside it lines up (the three rows are 8, 9 and 7 cells in the source).
+   */
+  banner: { mark: string; text: string; tone?: CliLine['tone'] }[]
   bullet: string
   tool: (name: string, detail: string) => { text: string; trail: string }
   result: (text: string) => string
@@ -111,6 +123,11 @@ const SKIN: Record<CompareAgent, {
   footer: string
 }> = {
   claude: {
+    banner: [
+      { mark: ' ▐▛███▜▌ ', text: 'Claude Code  v2.1.220' },
+      { mark: '▝▜█████▛▘', text: 'Opus 5 (1M context) with high effort · Claude Max', tone: 'dim' },
+      { mark: '  ▘▘ ▝▝  ', text: '~/code/codeagentswarm', tone: 'dim' },
+    ],
     bullet: '●',
     tool: (name, detail) => ({ text: `  ${name}`, trail: `(${detail})` }),
     result: (text) => `  ⎿  ${text}`,
@@ -118,6 +135,11 @@ const SKIN: Record<CompareAgent, {
     footer: 'bypass permissions on',
   },
   codex: {
+    banner: [
+      { mark: ' >_ ', text: 'OpenAI Codex  (v0.144.6)' },
+      { mark: '    ', text: 'gpt-5.6-sol high · full-auto', tone: 'dim' },
+      { mark: '    ', text: '~/code/codeagentswarm', tone: 'dim' },
+    ],
     bullet: '•',
     tool: (name, detail) => ({ text: `  ${name} `, trail: detail }),
     result: (text) => `  ${text}`,
@@ -148,18 +170,16 @@ export function cliMoment(agent: CompareAgent): CliLine[] {
     { text: '' },
     { text: edit.text, trail: edit.trail, tone: 'tool' },
     { text: skin.result('+96 −12'), tone: 'result' },
-    { text: '' },
     { text: test.text, trail: test.trail, tone: 'tool' },
     { text: skin.result('24 passed'), tone: 'result' },
     { text: '' },
     { text: '────────────────────────────────────────────────────────', tone: 'rule' },
-    { text: '' },
     { text: `${skin.bullet} Retries are done. What should happen after the third failed charge?`, tone: 'bullet' },
+    { text: '' },
     { text: '' },
     { text: '  ❯ 1. Freeze the account', tone: 'selected' },
     { text: '       Keep every task and conversation. One good charge puts it', tone: 'dim' },
     { text: '       all back.', tone: 'dim' },
-    { text: '' },
     { text: '    2. Downgrade to free', tone: 'option' },
     { text: '       Straight to the free tier. Simpler to reason about, harder', tone: 'dim' },
     { text: '       to undo.', tone: 'dim' },
@@ -172,6 +192,18 @@ export function cliMoment(agent: CompareAgent): CliLine[] {
     { text: '' },
     { text: '    4. Type something.', tone: 'dim' },
   ]
+}
+
+/** The opening banner, rendered at the top of the screen rather than in the
+ *  transcript: anchored with the rest it was clipped off the top of the frame,
+ *  and the mascot is the whole reason it is there. */
+export function cliBanner(agent: CompareAgent): CliLine[] {
+  return SKIN[agent].banner.map((row) => ({
+    text: row.mark,
+    trail: row.text,
+    tone: 'mark' as const,
+    trailTone: row.tone,
+  }))
 }
 
 /** The CLI's own floor, which differs per agent. */
