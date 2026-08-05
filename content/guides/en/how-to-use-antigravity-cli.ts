@@ -269,7 +269,7 @@ By the end you will be comfortable using Antigravity CLI on its own, and you wil
         {
           type: 'callout',
           variant: 'tip',
-          content: 'Start with one agy session to get a feel for the multi-agent behavior. When you find yourself wanting a second and a third going at once, open them as separate terminals in CodeAgentSwarm and let the dynamic titles and notifications keep you oriented. The <a href="/en/guides/gemini-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">agent swarm concept guide</a> covers the workflow that grew out of the old Gemini CLI and applies just as well to agy.',
+          content: 'Start with one agy session to get a feel for the multi-agent behavior. When you find yourself wanting a second and a third going at once, open them as separate terminals in CodeAgentSwarm and let the dynamic titles and notifications keep you oriented. The <a href="/en/guides/antigravity-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Antigravity agent swarm guide</a> covers that workflow end to end: worktree isolation, why approval mode does not scale past one agent, and how to keep every session supervisable.',
         },
       ],
     },

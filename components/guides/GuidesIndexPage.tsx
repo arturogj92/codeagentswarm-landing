@@ -14,7 +14,7 @@ interface GuidesIndexPageProps {
 // Tool family for each guide, keyed by its canonical English slug so the
 // grouping works the same in both locales. Anything not listed falls back to
 // the Claude Code family.
-type Family = 'cross' | 'claude' | 'codex' | 'antigravity' | 'opencode' | 'kimi' | 'grok' | 'gemini'
+type Family = 'cross' | 'claude' | 'codex' | 'antigravity' | 'opencode' | 'kimi' | 'grok'
 
 const FAMILY_BY_EN_SLUG: Record<string, Family> = {
   'best-tools-to-run-multiple-ai-coding-agents': 'cross',
@@ -53,6 +53,14 @@ const FAMILY_BY_EN_SLUG: Record<string, Family> = {
   'kimi-code-conversation-history': 'kimi',
   'kimi-code-on-windows': 'kimi',
   'kimi-k3-with-claude-code': 'kimi',
+  'claude-code-plans-and-pricing': 'claude',
+  'codex-plans-and-pricing': 'codex',
+  'opencode-plans-and-pricing': 'opencode',
+  'antigravity-plans-and-pricing': 'antigravity',
+  'antigravity-yolo-mode': 'antigravity',
+  'antigravity-cli-conversation-history': 'antigravity',
+  'antigravity-cli-on-windows': 'antigravity',
+  'antigravity-agent-swarm': 'antigravity',
   // Grok Build cluster (see docs/plans/2026-07-28-seo-grok-build.md — Opus-revised inventory)
   'how-to-use-grok-build': 'grok',
   'grok-build-vs-claude-code': 'grok',
@@ -65,11 +73,9 @@ const FAMILY_BY_EN_SLUG: Record<string, Family> = {
   'grok-build-vs-cursor': 'grok',
   'grok-build-headless-ci': 'grok',
   'grok-build-conversation-history': 'grok',
-  'gemini-agent-swarm': 'gemini',
-  'run-multiple-gemini-sessions': 'gemini',
 }
 
-const FAMILY_ORDER: Family[] = ['cross', 'claude', 'codex', 'antigravity', 'opencode', 'kimi', 'grok', 'gemini']
+const FAMILY_ORDER: Family[] = ['cross', 'claude', 'codex', 'antigravity', 'opencode', 'kimi', 'grok']
 
 const FAMILY_META: Record<Family, { en: string; es: string; icons: string[] }> = {
   cross: {
@@ -83,7 +89,6 @@ const FAMILY_META: Record<Family, { en: string; es: string; icons: string[] }> =
   opencode: { en: 'OpenCode', es: 'OpenCode', icons: ['/icons/apps/opencode-icon.svg'] },
   kimi: { en: 'Kimi Code', es: 'Kimi Code', icons: ['/icons/apps/kimi-icon.png'] },
   grok: { en: 'Grok Build', es: 'Grok Build', icons: ['/icons/apps/grok-icon.svg'] },
-  gemini: { en: 'Gemini CLI', es: 'Gemini CLI', icons: ['/icons/apps/gemini-icon.svg'] },
 }
 
 // Helper function to highlight keywords in title

@@ -21,7 +21,7 @@
 | CLI binary | `grok` | Verified (`grok --help`) |
 | Vendor | xAI | Canonical |
 | Install | Official xAI CLI installer (see x.ai/cli / current docs) | Confirm URL at publish time |
-| Access | SuperGrok or X Premium+ (beta-era public framing) | Confirm before pricing guide ships |
+| Access | SuperGrok $30/mo, X Premium+ $40/mo, SuperGrok Heavy $300/mo; xAI API ~$0.20/$1.50 per 1M in/out | **Confirmed 2026-08-05.** Launched 2026-05-14 Heavy-only, opened to SuperGrok + X Premium+ on 2026-05-24. No published request quota at any tier — do not invent one; metering is weekly. |
 | Data root | `~/.grok` (relocatable via `GROK_HOME`) | Verified in app integration |
 | Global rules | markdown under `~/.grok/rules/` | App writes `codeagentswarm.md` there |
 | MCP config | `~/.grok/config.toml` → `[mcp_servers.<name>]` | Verified in app |
@@ -60,7 +60,7 @@ CodeAgentSwarm ejecuta varios terminales de Grok Build en paralelo (y junto a Cl
 | **B – SEO guide cluster** | Inventory below (Opus-revised); register; wire Works with to pillar | **Done in worktree (11 EN + 11 ES, registered, Works with → pillar)** |
 | **C – Visuals** | Real Grok Build multi-terminal + picker screenshots | Planned |
 | **D – Internal linking** | From swarm pillar, skills guide, other agents into Grok guides | After B |
-| **E – Publish** | Commit/push only when Arturo says so | Blocked on review |
+| **E – Publish** | Commit/push only when Arturo says so | Branch merged with master 2026-08-05 and pricing guide filled in with confirmed figures; still parked until the app release that ships Grok |
 
 ---
 

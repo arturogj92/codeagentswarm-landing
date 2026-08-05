@@ -11,7 +11,7 @@ export const guide: Guide = {
 
 This guide walks the honest version of the setup: what to install and in which order, what the Git Bash dependency means, what the rendering bug looks like when it bites, and when running Kimi Code inside WSL is simply the calmer choice. None of this is a reason to skip the tool, but going in with eyes open saves you an evening of confusion.
 
-If you are setting up other agents on the same machine, our <a href="/en/guides/claude-code-on-windows" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code on Windows</a> and <a href="/en/guides/opencode-on-windows" class="text-neon-cyan hover:text-neon-purple transition-colors">OpenCode on Windows</a> guides follow the same shape.`,
+If you are setting up other agents on the same machine, our <a href="/en/guides/claude-code-on-windows" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code on Windows</a>, <a href="/en/guides/opencode-on-windows" class="text-neon-cyan hover:text-neon-purple transition-colors">OpenCode on Windows</a> and <a href="/en/guides/antigravity-cli-on-windows" class="text-neon-cyan hover:text-neon-purple transition-colors">Antigravity CLI on Windows</a> guides follow the same shape.`,
     ctaText: 'CodeAgentSwarm is a native Windows desktop app that runs your AI coding agents in parallel terminals, and Kimi Code is a supported agent. Notifications, searchable history and live diffs, all in one workspace.',
     ctaAgent: 'kimi-code',
     highlightedWords: ['Kimi Code', 'Windows'],
