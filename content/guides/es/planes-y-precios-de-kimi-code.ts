@@ -159,6 +159,10 @@ Esta guía ordena lo que se sabe, le pone fecha a cada número y marca las parte
           type: 'paragraph',
           text: 'Eso casa de forma natural con el patrón multiagente de <a href="/es/guias/enjambre-de-agentes-kimi-code" class="text-neon-cyan hover:text-neon-purple transition-colors">la guía del enjambre de Kimi Code</a>: pon a Kimi donde su precio brilla, deja <a href="/es/guias/kimi-code-vs-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a> u otro agente en el resto, y que el indicador de cuota te diga cuándo reequilibrar.',
         },
+        {
+          type: 'paragraph',
+          text: 'Si estás calculando el precio de un montaje mixto, existe el mismo desglose para los demás agentes: <a href="/es/guias/planes-y-precios-de-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">planes y precios de Claude Code</a>, <a href="/es/guias/planes-y-precios-de-codex" class="text-neon-cyan hover:text-neon-purple transition-colors">planes y precios de Codex</a>, <a href="/es/guias/planes-y-precios-de-opencode" class="text-neon-cyan hover:text-neon-purple transition-colors">planes y precios de OpenCode</a> y <a href="/es/guias/planes-y-precios-de-antigravity" class="text-neon-cyan hover:text-neon-purple transition-colors">planes y precios de Antigravity</a>. En corto: Antigravity es el único con un nivel gratuito realmente utilizable, Codex el de entrada de pago más barata, OpenCode la única vía sin cuota mensual, y Claude Code no tiene nivel gratuito en absoluto.',
+        },
       ],
     },
   ],

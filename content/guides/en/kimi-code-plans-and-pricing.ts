@@ -159,6 +159,10 @@ This guide lays out what is known, dates every number, and flags the parts you s
           type: 'paragraph',
           text: 'That pairs naturally with the multi-agent pattern from <a href="/en/guides/kimi-code-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">the Kimi Code agent swarm guide</a>: run Kimi where its pricing shines, keep <a href="/en/guides/kimi-code-vs-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a> or another agent on the rest, and let the quota display tell you when to rebalance.',
         },
+        {
+          type: 'paragraph',
+          text: 'If you are pricing up a mixed setup, the same breakdown exists for the other agents: <a href="/en/guides/claude-code-plans-and-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code plans and pricing</a>, <a href="/en/guides/codex-plans-and-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex plans and pricing</a>, <a href="/en/guides/opencode-plans-and-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">OpenCode plans and pricing</a> and <a href="/en/guides/antigravity-plans-and-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">Antigravity plans and pricing</a>. The short version: Antigravity has the only genuinely usable free tier, Codex the cheapest paid entry, OpenCode the only route with no monthly fee at all, and Claude Code no free tier whatsoever.',
+        },
       ],
     },
   ],
