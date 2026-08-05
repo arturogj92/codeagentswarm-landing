@@ -49,6 +49,47 @@
   background: var(--bg-primary, #0d0d12);
 }
 
+/* ---- Agent switcher ----------------------------------------------------- */
+
+.compare-agents {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.compare-agent {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px 7px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+.compare-agent img {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+}
+
+.compare-agent:hover {
+  color: rgba(255, 255, 255, 0.85);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.compare-agent.is-active {
+  border-color: rgba(251, 191, 36, 0.5);
+  background: rgba(251, 191, 36, 0.1);
+  color: #fbbf24;
+}
+
 /* ---- Terminal half ------------------------------------------------------ */
 
 .compare-wrap {
@@ -96,8 +137,17 @@
 /* Same palette the demo's xterm is themed with, so switching between this
    section and the simulator does not switch terminal skins. */
 .cli-line.is-bullet {
-  color: #ffffff;
-  font-weight: 600;
+  color: #e4e4eb;
+}
+
+/* Each CLI marks its own turns: Claude's bullet is amber, Codex's is green.
+   It is a small thing and it is the first one a user of either recognises. */
+.compare-cli[data-agent='claude'] .cli-line.is-bullet::first-letter {
+  color: #fbbf24;
+}
+
+.compare-cli[data-agent='codex'] .cli-line.is-bullet::first-letter {
+  color: #4ac27a;
 }
 
 .cli-line.is-prompt {
@@ -217,6 +267,9 @@
 /* ---- Labels ------------------------------------------------------------- */
 
 .compare-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   position: absolute;
   top: 12px;
   z-index: 2;
@@ -231,6 +284,12 @@
   text-transform: uppercase;
   backdrop-filter: blur(6px);
   pointer-events: none;
+}
+
+.compare-tag img {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
 }
 
 .compare-tag-chat {

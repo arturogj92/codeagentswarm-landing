@@ -92,44 +92,94 @@ export interface CliLine {
   trail?: string
 }
 
+/** Which agents the comparison can be shown with. */
+export type CompareAgent = 'claude' | 'codex'
+
 /**
- * The same moment as Claude Code prints it.
+ * The per-CLI chrome around the same words.
+ *
+ * Only the skin differs — bullet, prompt glyph, how a tool call is announced,
+ * how its result is indented. The sentences are identical because the point of
+ * the toggle is that this is the same product with a different agent in it, not
+ * two different demos.
+ */
+const SKIN: Record<CompareAgent, {
+  bullet: string
+  tool: (name: string, detail: string) => { text: string; trail: string }
+  result: (text: string) => string
+  cursor: string
+  footer: string
+}> = {
+  claude: {
+    bullet: '●',
+    tool: (name, detail) => ({ text: `  ${name}`, trail: `(${detail})` }),
+    result: (text) => `  ⎿  ${text}`,
+    cursor: '›',
+    footer: 'bypass permissions on',
+  },
+  codex: {
+    bullet: '•',
+    tool: (name, detail) => ({ text: `  ${name} `, trail: detail }),
+    result: (text) => `  ${text}`,
+    cursor: '›',
+    footer: 'full-auto',
+  },
+}
+
+/**
+ * The same moment as the chosen CLI prints it.
  *
  * Written as data rather than as ANSI on purpose: this is one static screen, and
  * a real xterm here would mean a second terminal emulator on the page for
  * something nobody types into.
  */
-export const CLI_MOMENT: CliLine[] = [
-  // Opens on the agent's answer, exactly where the chat's visible transcript
-  // opens. The request sits one line above on both sides; showing it on the
-  // terminal only would have made the halves look like different sessions.
-  { text: '● Retries are handled and the webhook is idempotent now, so a replayed' },
-  { text: '  event cannot double-charge anyone. What happens next is a product' },
-  { text: '  decision, not a technical one — so I have stopped to ask.' },
-  { text: '' },
-  { text: '  Edit', trail: '(src/billing/webhooks.js)', tone: 'tool' },
-  { text: '  ⎿  +96 −12', tone: 'result' },
-  { text: '' },
-  { text: '  Bash', trail: '(npm test -- billing)', tone: 'tool' },
-  { text: '  ⎿  24 passed', tone: 'result' },
-  { text: '' },
-  { text: '────────────────────────────────────────────────────────', tone: 'rule' },
-  { text: '' },
-  { text: '● Retries are done. What should happen after the third failed charge?' },
-  { text: '' },
-  { text: '  ❯ 1. Freeze the account', tone: 'selected' },
-  { text: '       Keep every task and conversation. One good charge puts it', tone: 'dim' },
-  { text: '       all back.', tone: 'dim' },
-  { text: '' },
-  { text: '    2. Downgrade to free', tone: 'option' },
-  { text: '       Straight to the free tier. Simpler to reason about, harder', tone: 'dim' },
-  { text: '       to undo.', tone: 'dim' },
-  { text: '' },
-  { text: '    3. Ask them first', tone: 'option' },
-  {
-    text: '       Email a retry link and wait 72 hours before touching the plan.',
-    tone: 'dim',
-  },
-  { text: '' },
-  { text: '    4. Type something.', tone: 'dim' },
-]
+export function cliMoment(agent: CompareAgent): CliLine[] {
+  const skin = SKIN[agent]
+  const edit = skin.tool('Edit', 'src/billing/webhooks.js')
+  const test = skin.tool(agent === 'codex' ? 'Shell' : 'Bash', 'npm test -- billing')
+
+  return [
+    // Opens on the agent's answer, exactly where the chat's visible transcript
+    // opens. The request sits one line above on both sides; showing it on the
+    // terminal only would have made the halves look like different sessions.
+    { text: `${skin.bullet} Retries are handled and the webhook is idempotent now, so a replayed`, tone: 'bullet' },
+    { text: '  event cannot double-charge anyone. What happens next is a product' },
+    { text: '  decision, not a technical one — so I have stopped to ask.' },
+    { text: '' },
+    { text: edit.text, trail: edit.trail, tone: 'tool' },
+    { text: skin.result('+96 −12'), tone: 'result' },
+    { text: '' },
+    { text: test.text, trail: test.trail, tone: 'tool' },
+    { text: skin.result('24 passed'), tone: 'result' },
+    { text: '' },
+    { text: '────────────────────────────────────────────────────────', tone: 'rule' },
+    { text: '' },
+    { text: `${skin.bullet} Retries are done. What should happen after the third failed charge?`, tone: 'bullet' },
+    { text: '' },
+    { text: '  ❯ 1. Freeze the account', tone: 'selected' },
+    { text: '       Keep every task and conversation. One good charge puts it', tone: 'dim' },
+    { text: '       all back.', tone: 'dim' },
+    { text: '' },
+    { text: '    2. Downgrade to free', tone: 'option' },
+    { text: '       Straight to the free tier. Simpler to reason about, harder', tone: 'dim' },
+    { text: '       to undo.', tone: 'dim' },
+    { text: '' },
+    { text: '    3. Ask them first', tone: 'option' },
+    {
+      text: '       Email a retry link and wait 72 hours before touching the plan.',
+      tone: 'dim',
+    },
+    { text: '' },
+    { text: '    4. Type something.', tone: 'dim' },
+  ]
+}
+
+/** The CLI's own floor, which differs per agent. */
+export function cliFooter(agent: CompareAgent) {
+  return SKIN[agent].footer
+}
+
+/** The chat side, with the agent swapped in. */
+export function chatMoment(agent: CompareAgent): DemoTerminal {
+  return { ...CHAT_MOMENT, agent }
+}

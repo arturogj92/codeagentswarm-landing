@@ -559,7 +559,18 @@ export default function ChatPane({ terminal, onAnswer }: Props) {
               menuClass="cas-model-menu"
               optionClass="cas-model-option"
               title="Model"
-              trigger={<span className="cas-model-trigger-label">{modelLabel}</span>}
+              trigger={
+                <>
+                  {/* The agent's own mark, exactly as the app's ModelPicker
+                      shows it. It is the one place in the composer that says
+                      WHOSE conversation this is, and leaving it out made every
+                      agent's chat look identical. */}
+                  <span className="cas-model-agent-icon" aria-hidden="true">
+                    <img src={AGENT_ICON[terminal.agent].src} alt="" />
+                  </span>
+                  <span className="cas-model-trigger-label">{modelLabel}</span>
+                </>
+              }
               options={config.models.map((model) => ({
                 id: model.id,
                 label: model.name,

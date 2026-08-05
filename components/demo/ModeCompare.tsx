@@ -2,7 +2,8 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react'
 import ChatPane from './ChatPane'
-import { CHAT_MOMENT, CLI_MOMENT } from './compare-moment'
+import { chatMoment, cliFooter, cliMoment, type CompareAgent } from './compare-moment'
+import { AGENT_ICON } from './TerminalRow'
 import './demo-app.css'
 import './mode-compare.css'
 
@@ -31,9 +32,21 @@ interface Props {
   ariaLabel: string
 }
 
+/** Two of the five, because two is enough to show it is not one agent's feature. */
+const AGENTS: CompareAgent[] = ['claude', 'codex']
+
 export default function ModeCompare({ chatLabel, terminalLabel, hint, ariaLabel }: Props) {
   const [split, setSplit] = useState(INITIAL_SPLIT)
   const [dragging, setDragging] = useState(false)
+  /**
+   * Which agent is running this conversation.
+   *
+   * Same words on both settings: what changes is whose CLI it is — the mark in
+   * the composer, the model, the bullet, how a tool call is printed and what the
+   * status line says. That is the honest difference, and it is the point: the
+   * chat view is not a Claude feature.
+   */
+  const [agent, setAgent] = useState<CompareAgent>('claude')
   const frame = useRef<HTMLDivElement>(null)
 
   const setFromClientX = useCallback((clientX: number) => {
@@ -61,8 +74,26 @@ export default function ModeCompare({ chatLabel, terminalLabel, hint, ariaLabel 
     }
   }, [dragging, setFromClientX])
 
+  const terminal = chatMoment(agent)
+
   return (
     <div className="compare-wrap">
+      <div className="compare-agents" role="tablist" aria-label={ariaLabel}>
+        {AGENTS.map((key) => (
+          <button
+            key={key}
+            type="button"
+            role="tab"
+            aria-selected={agent === key}
+            className={`compare-agent${agent === key ? ' is-active' : ''}`}
+            onClick={() => setAgent(key)}
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={AGENT_ICON[key].src} alt="" aria-hidden="true" />
+            {AGENT_ICON[key].label}
+          </button>
+        ))}
+      </div>
     <div
       className={`compare cas-demo${dragging ? ' is-dragging' : ''}`}
       data-theme="dark"
@@ -75,7 +106,7 @@ export default function ModeCompare({ chatLabel, terminalLabel, hint, ariaLabel 
       }}
     >
       {/* Terminal underneath, full width. */}
-      <div className="compare-layer compare-cli">
+      <div className="compare-layer compare-cli" data-agent={agent}>
         {/*
           The transcript is centred, not flush left. The chat's own column is
           centred too, so this is what puts the same sentence under the divider
@@ -84,7 +115,7 @@ export default function ModeCompare({ chatLabel, terminalLabel, hint, ariaLabel 
         */}
         <pre className="compare-cli-screen">
           <code className="compare-cli-col">
-            {CLI_MOMENT.map((line, index) => (
+            {cliMoment(agent).map((line, index) => (
               <div key={index} className={`cli-line${line.tone ? ` is-${line.tone}` : ''}`}>
                 {line.text}
                 {line.trail ? <span className="cli-trail">{line.trail}</span> : null}
@@ -103,18 +134,28 @@ export default function ModeCompare({ chatLabel, terminalLabel, hint, ariaLabel 
           <span className="compare-cli-cursor" />
         </div>
         <div className="compare-cli-footer">
-          <span className="is-selected">▸▸</span> bypass permissions on{' '}
+          <span className="is-selected">▸▸</span> {cliFooter(agent)}{' '}
           <span className="cli-trail">(shift+tab to cycle)</span>
         </div>
       </div>
 
       {/* Chat on top, revealed from the left up to the divider. */}
       <div className="compare-layer compare-chat" style={{ clipPath: `inset(0 ${100 - split}% 0 0)` }}>
-        <ChatPane terminal={CHAT_MOMENT} onAnswer={() => {}} />
+        <ChatPane terminal={terminal} onAnswer={() => {}} />
       </div>
 
-      <span className="compare-tag compare-tag-chat">{chatLabel}</span>
-      <span className="compare-tag compare-tag-cli">{terminalLabel}</span>
+      {/* Both tags name the agent, so it reads the same whichever half you are
+          looking at when the divider is near an edge. */}
+      <span className="compare-tag compare-tag-chat">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={AGENT_ICON[agent].src} alt="" aria-hidden="true" />
+        {chatLabel} · {AGENT_ICON[agent].label}
+      </span>
+      <span className="compare-tag compare-tag-cli">
+        {terminalLabel} · {AGENT_ICON[agent].label}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={AGENT_ICON[agent].src} alt="" aria-hidden="true" />
+      </span>
 
       <div
         className="compare-divider"
