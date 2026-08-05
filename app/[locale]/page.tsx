@@ -11,6 +11,7 @@ import FeaturesSection from '@/components/FeaturesSection'
 import WorksWithSection from '@/components/WorksWithSection'
 // import DemoSection from '@/components/DemoSection'
 import InteractiveDemoSection from '@/components/InteractiveDemoSection'
+import ModeCompareSection from '@/components/ModeCompareSection'
 import MCPSection from '@/components/MCPSection'
 // import SocialProofSection from '@/components/SocialProofSection'
 // import SwarmiSection from '@/components/SwarmiSection'
@@ -161,6 +162,10 @@ export default function Home() {
       <main>
         <HeroSection />
         <InteractiveDemoSection />
+
+        {/* Right after the simulator: it has just shown Chat mode running, and
+            this answers the question that raises — what happened to my CLI? */}
+        <ModeCompareSection />
         {/* After the demo, so that on a phone - where the demo renders nothing -
             the video takes its place as the first thing under the headline. */}
         <HeroPromoSection />

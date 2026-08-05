@@ -829,5 +829,15 @@
       "confirmation": "Terminal needs confirmation",
       "finished": "Terminal finished"
     }
+  },
+  "modeCompare": {
+    "badge": "Chat or terminal",
+    "title": "The same session, two ways to read it",
+    "subtitle": "Chat mode makes an agent legible: its tools, its task list and its questions become things you can read and click. The raw CLI is still one keystroke away — same conversation, same second.",
+    "chatLabel": "Chat",
+    "terminalLabel": "Terminal",
+    "hint": "Drag to compare",
+    "ariaLabel": "Compare the chat view with the terminal view",
+    "footnote": "Every agent runs in its own real CLI underneath. Chat mode is a view of it, not a replacement for it."
   }
 }

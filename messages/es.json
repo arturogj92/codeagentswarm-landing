@@ -829,5 +829,15 @@
       "confirmation": "Un terminal necesita confirmación",
       "finished": "Terminal terminado"
     }
+  },
+  "modeCompare": {
+    "badge": "Chat o terminal",
+    "title": "La misma sesión, dos formas de leerla",
+    "subtitle": "El modo chat hace legible al agente: sus herramientas, su lista de tareas y sus preguntas pasan a ser cosas que puedes leer y pulsar. El CLI en crudo sigue a una tecla — la misma conversación, el mismo segundo.",
+    "chatLabel": "Chat",
+    "terminalLabel": "Terminal",
+    "hint": "Arrastra para comparar",
+    "ariaLabel": "Comparar la vista de chat con la del terminal",
+    "footnote": "Cada agente corre en su CLI real por debajo. El modo chat es una vista de eso, no un sustituto."
   }
 }
