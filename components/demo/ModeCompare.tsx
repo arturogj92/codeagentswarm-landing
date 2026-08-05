@@ -23,9 +23,25 @@ import './mode-compare.css'
 
 /** Where the divider comes to rest: enough chat to read, enough CLI to notice. */
 const INITIAL_SPLIT = 52
-/** Where the opening sweep starts, far enough left to show the CLI's banner. */
-const SWEEP_FROM = 12
-const SWEEP_MS = 1100
+/**
+ * The opening sweep, in order.
+ *
+ * It arrives as chat and nothing else — that is the view being argued for, and
+ * it is what the section's own heading has just promised. Then the divider pulls
+ * left and the terminal comes out from under it, banner and mascot first,
+ * before settling back to the resting split.
+ *
+ * Reversing this was not cosmetic. Starting on the terminal made the first thing
+ * a visitor saw a wall of monospace, which is precisely the thing chat mode
+ * exists to soften.
+ */
+const SWEEP_START = 94
+/** How far left it pulls: enough of the terminal to read its banner. */
+const SWEEP_REVEAL = 32
+/** A beat of stillness first, so the chat registers before anything moves. */
+const SWEEP_HOLD_MS = 420
+const SWEEP_OUT_MS = 900
+const SWEEP_BACK_MS = 620
 const KEY_STEP = 4
 
 interface Props {
@@ -39,7 +55,10 @@ interface Props {
 const AGENTS: CompareAgent[] = ['claude', 'codex']
 
 export default function ModeCompare({ chatLabel, terminalLabel, hint, ariaLabel }: Props) {
-  const [split, setSplit] = useState(INITIAL_SPLIT)
+  // Starts where the sweep starts — all chat. Mounting at the resting split and
+  // then jumping to 94% to begin would show the terminal for one frame before
+  // hiding it again.
+  const [split, setSplit] = useState(SWEEP_START)
   const [dragging, setDragging] = useState(false)
   /**
    * Which agent is running this conversation.
@@ -51,30 +70,51 @@ export default function ModeCompare({ chatLabel, terminalLabel, hint, ariaLabel 
    */
   const [agent, setAgent] = useState<CompareAgent>('claude')
   const frame = useRef<HTMLDivElement>(null)
+  /** The opening sweep's frame handle, so a touch can cut it short. */
+  const sweep = useRef(0)
 
   /**
-   * One sweep on arrival, from the terminal side to the resting split.
+   * The opening sweep: hold on chat, pull left to uncover the terminal, settle.
    *
-   * Without it the divider sits at 52% and the terminal's opening banner — the
-   * mascot, the model line, the working directory — is behind the chat, so the
-   * one thing that identifies which CLI this is never gets seen. The sweep
-   * shows the whole terminal for a moment, and doubles as the hint that the
-   * divider moves at all.
+   * Three beats rather than one straight slide, because a single move from chat
+   * to the resting split never uncovers the terminal's banner — the mascot and
+   * the model line live on the left of the screen, behind the chat at 52%. The
+   * pull-and-return shows them, then gives back the reading position.
    */
   useEffect(() => {
     const node = frame.current
     if (!node) return
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    // Someone who asked for less motion gets the resting split and no wipe.
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setSplit(INITIAL_SPLIT)
+      return
+    }
 
-    let raf = 0
     let start = 0
+
     const step = (now: number) => {
       if (!start) start = now
-      const t = Math.min((now - start) / SWEEP_MS, 1)
-      // Ease-out: quick off the mark, settling gently into the resting split.
-      const eased = 1 - Math.pow(1 - t, 3)
-      setSplit(SWEEP_FROM + (INITIAL_SPLIT - SWEEP_FROM) * eased)
-      if (t < 1) raf = requestAnimationFrame(step)
+      const elapsed = now - start
+
+      if (elapsed < SWEEP_HOLD_MS) {
+        sweep.current = requestAnimationFrame(step)
+        return
+      }
+
+      const t = elapsed - SWEEP_HOLD_MS
+      if (t < SWEEP_OUT_MS) {
+        // Out: quick off the mark, easing as the terminal comes into view.
+        const p = 1 - Math.pow(1 - t / SWEEP_OUT_MS, 3)
+        setSplit(SWEEP_START + (SWEEP_REVEAL - SWEEP_START) * p)
+        sweep.current = requestAnimationFrame(step)
+        return
+      }
+
+      const back = Math.min((t - SWEEP_OUT_MS) / SWEEP_BACK_MS, 1)
+      // Back: eased at both ends, so it reads as settling rather than snapping.
+      const p = back < 0.5 ? 2 * back * back : 1 - Math.pow(-2 * back + 2, 2) / 2
+      setSplit(SWEEP_REVEAL + (INITIAL_SPLIT - SWEEP_REVEAL) * p)
+      if (back < 1) sweep.current = requestAnimationFrame(step)
     }
 
     const observer = new IntersectionObserver(
@@ -83,19 +123,22 @@ export default function ModeCompare({ chatLabel, terminalLabel, hint, ariaLabel 
         // Once only: a wipe that replays every time the section scrolls back
         // into view stops reading as an invitation and starts reading as a loop.
         observer.disconnect()
-        setSplit(SWEEP_FROM)
-        raf = requestAnimationFrame(step)
+        setSplit(SWEEP_START)
+        sweep.current = requestAnimationFrame(step)
       },
       { threshold: 0.35 }
     )
     observer.observe(node)
     return () => {
       observer.disconnect()
-      cancelAnimationFrame(raf)
+      cancelAnimationFrame(sweep.current)
     }
   }, [])
 
   const setFromClientX = useCallback((clientX: number) => {
+    // The hand wins over the animation: without this, a visitor who grabs the
+    // divider mid-sweep is fighting a rAF loop that keeps overwriting them.
+    cancelAnimationFrame(sweep.current)
     const box = frame.current?.getBoundingClientRect()
     if (!box || box.width === 0) return
     const pct = ((clientX - box.left) / box.width) * 100
