@@ -24,24 +24,22 @@ import './mode-compare.css'
 /** Where the divider comes to rest: enough chat to read, enough CLI to notice. */
 const INITIAL_SPLIT = 52
 /**
- * The opening sweep, in order.
+ * The opening sweep: left to right, once, slowly.
  *
- * It arrives as chat and nothing else — that is the view being argued for, and
- * it is what the section's own heading has just promised. Then the divider pulls
- * left and the terminal comes out from under it, banner and mascot first,
- * before settling back to the resting split.
+ * It opens on the terminal — banner, mascot, model line — held still long
+ * enough to be read, and then the divider travels right and the chat comes out
+ * from under it. Left to right because that is the direction the mascot needs:
+ * it lives at the left edge of the terminal's screen, so a sweep that ends up
+ * there covers the one thing that identifies the CLI, and a sweep that starts
+ * there shows it for the whole first beat.
  *
- * Reversing this was not cosmetic. Starting on the terminal made the first thing
- * a visitor saw a wall of monospace, which is precisely the thing chat mode
- * exists to soften.
+ * Slow on purpose. Under a second it reads as a glitch; at this pace it reads
+ * as a reveal, and it teaches that the divider is draggable without a word.
  */
-const SWEEP_START = 94
-/** How far left it pulls: enough of the terminal to read its banner. */
-const SWEEP_REVEAL = 32
-/** A beat of stillness first, so the chat registers before anything moves. */
-const SWEEP_HOLD_MS = 420
-const SWEEP_OUT_MS = 900
-const SWEEP_BACK_MS = 620
+const SWEEP_START = 10
+/** Held on the terminal before anything moves, so the mascot registers. */
+const SWEEP_HOLD_MS = 900
+const SWEEP_MS = 2200
 const KEY_STEP = 4
 
 interface Props {
@@ -74,12 +72,7 @@ export default function ModeCompare({ chatLabel, terminalLabel, hint, ariaLabel 
   const sweep = useRef(0)
 
   /**
-   * The opening sweep: hold on chat, pull left to uncover the terminal, settle.
-   *
-   * Three beats rather than one straight slide, because a single move from chat
-   * to the resting split never uncovers the terminal's banner — the mascot and
-   * the model line live on the left of the screen, behind the chat at 52%. The
-   * pull-and-return shows them, then gives back the reading position.
+   * The opening sweep: hold on the terminal, then travel right into the chat.
    */
   useEffect(() => {
     const node = frame.current
@@ -101,20 +94,12 @@ export default function ModeCompare({ chatLabel, terminalLabel, hint, ariaLabel 
         return
       }
 
-      const t = elapsed - SWEEP_HOLD_MS
-      if (t < SWEEP_OUT_MS) {
-        // Out: quick off the mark, easing as the terminal comes into view.
-        const p = 1 - Math.pow(1 - t / SWEEP_OUT_MS, 3)
-        setSplit(SWEEP_START + (SWEEP_REVEAL - SWEEP_START) * p)
-        sweep.current = requestAnimationFrame(step)
-        return
-      }
-
-      const back = Math.min((t - SWEEP_OUT_MS) / SWEEP_BACK_MS, 1)
-      // Back: eased at both ends, so it reads as settling rather than snapping.
-      const p = back < 0.5 ? 2 * back * back : 1 - Math.pow(-2 * back + 2, 2) / 2
-      setSplit(SWEEP_REVEAL + (INITIAL_SPLIT - SWEEP_REVEAL) * p)
-      if (back < 1) sweep.current = requestAnimationFrame(step)
+      const t = Math.min((elapsed - SWEEP_HOLD_MS) / SWEEP_MS, 1)
+      // Eased at both ends: it leaves the terminal gently and settles into the
+      // resting split rather than stopping dead on it.
+      const p = t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2
+      setSplit(SWEEP_START + (INITIAL_SPLIT - SWEEP_START) * p)
+      if (t < 1) sweep.current = requestAnimationFrame(step)
     }
 
     const observer = new IntersectionObserver(
