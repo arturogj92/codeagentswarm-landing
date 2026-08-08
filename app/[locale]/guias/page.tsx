@@ -28,7 +28,7 @@ export default async function GuiasPage({ params }: { params: Promise<{ locale: 
     permanentRedirect('/en/guides')
   }
 
-  const guides = getAllGuides('es')
+  const guides = getAllGuides('es').map(({ meta }) => ({ meta }))
 
   return <GuidesIndexPage guides={guides} locale="es" />
 }

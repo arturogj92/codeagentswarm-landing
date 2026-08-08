@@ -6,8 +6,10 @@ import Link from 'next/link'
 import type { Guide } from '@/content/guides/types'
 import GuidesHeader from './GuidesHeader'
 
+type GuideSummary = Pick<Guide, 'meta'>
+
 interface GuidesIndexPageProps {
-  guides: Guide[]
+  guides: GuideSummary[]
   locale: 'en' | 'es'
 }
 
@@ -121,7 +123,7 @@ export default function GuidesIndexPage({ guides, locale }: GuidesIndexPageProps
   const guidesBasePath = isSpanish ? '/es/guias' : '/en/guides'
 
   // Group guides by tool family (using the canonical EN slug as the key)
-  const familyOf = (guide: Guide): Family => {
+  const familyOf = (guide: GuideSummary): Family => {
     const enSlug = locale === 'en' ? guide.meta.slug : guide.meta.alternateSlug
     return FAMILY_BY_EN_SLUG[enSlug] ?? 'claude'
   }
@@ -134,7 +136,7 @@ export default function GuidesIndexPage({ guides, locale }: GuidesIndexPageProps
   })).filter(group => group.items.length > 0)
 
   let cardIndex = 0
-  const renderCard = (guide: Guide) => {
+  const renderCard = (guide: GuideSummary) => {
     const delay = Math.min(cardIndex * 0.05, 0.4)
     cardIndex += 1
     return (

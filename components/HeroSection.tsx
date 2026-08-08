@@ -292,12 +292,7 @@ export default function HeroSection() {
 
       <div className="relative z-10 max-w-7xl mx-auto w-full">
         {/* Main Heading - God Mode */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1 }}
-          className="text-center mb-8"
-        >
+        <div className="text-center mb-8">
           <h1 className="heading-xl mb-6">
             <span className="text-white">{t('titleLine1')}</span>
             <br />
@@ -318,7 +313,7 @@ export default function HeroSection() {
               highlight: (chunks) => <span className="text-white font-medium">{chunks}</span>
             })}
           </p>
-        </motion.div>
+        </div>
 
         {/* Power Statement */}
         <motion.p
