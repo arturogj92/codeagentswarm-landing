@@ -49,6 +49,7 @@ export interface UserGlobalMetrics {
   excluded_users: number
   events: number
   top_actions: UserGlobalAction[]
+  actions: UserGlobalAction[]
   avg_terminal_slots: number | null
   max_terminal_slots: number | null
   terminal_metric_source: 'launches' | 'tab_slots' | 'mixed' | null

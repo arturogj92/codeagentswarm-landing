@@ -60,6 +60,14 @@ const LIFECYCLE_META: Record<Lifecycle, { label: string; dot: string; badge: str
 
 const ACTION_LABELS: Record<string, string> = {
   terminal_tab_switch: 'Terminal switching',
+  terminal_minimize: 'Minimize terminal',
+  terminal_focus_shortcut: 'Focus terminal shortcut',
+  terminal_shortcut: 'Terminal shortcut',
+  navbar_shortcut_open: 'Open project shortcut',
+  navbar_shortcut_keyboard: 'Open project shortcut by keyboard',
+  navbar_add_shortcut: 'Add project shortcut',
+  quick_switcher_shortcut: 'Search terminals shortcut',
+  command_palette_shortcut: 'Command palette shortcut',
   terminal_sessions: 'Agent sessions',
   terminal_controls: 'Terminal controls',
   project_switcher: 'Projects and shortcuts',
@@ -634,11 +642,18 @@ function GlobalInsights({ metrics, loading, error, excludedUsers, onToggleUser, 
   onToggleUser: (userId: string) => void
   onRetry: () => void
 }) {
+  const [actionQuery, setActionQuery] = useState('')
   const sourceNote = metrics?.terminal_metric_source === 'launches'
     ? 'Exact snapshots at agent launch'
     : metrics?.terminal_metric_source === 'mixed'
       ? 'Launch snapshots where available; tab estimate otherwise'
       : 'Estimated from the highest terminal tab reached per active day'
+  const normalizedActionQuery = actionQuery.trim().toLowerCase()
+  const actionResults = normalizedActionQuery
+    ? (metrics?.actions || []).filter((action) => (
+        `${action.action} ${actionLabel(action.action)}`.toLowerCase().includes(normalizedActionQuery)
+      )).slice(0, 20)
+    : []
 
   return (
     <section aria-label="Global usage overview" className="mt-5 grid gap-4 xl:grid-cols-[minmax(0,1.35fr)_minmax(340px,0.65fr)]">
@@ -679,6 +694,57 @@ function GlobalInsights({ metrics, loading, error, excludedUsers, onToggleUser, 
             ))}
           </ol>
         )}
+
+        {metrics && (
+          <div className="mt-5 border-t border-white/[0.07] pt-4">
+            <div className="flex items-center justify-between gap-3">
+              <label htmlFor="action-search" className="text-xs font-semibold uppercase tracking-[0.13em] text-white/55">
+                Explore every action
+              </label>
+              <span className="text-[10px] text-white/35">{metrics.actions.length} tracked</span>
+            </div>
+            <div className="relative mt-2">
+              <input
+                id="action-search"
+                type="search"
+                value={actionQuery}
+                onChange={(event) => setActionQuery(event.target.value)}
+                placeholder="Search minimize, shortcut, fork…"
+                className="h-10 w-full rounded-lg border border-white/10 bg-black/30 px-3 text-sm text-white/80 outline-none placeholder:text-white/30 focus:border-amber-400/55 focus:ring-2 focus:ring-amber-400/15"
+              />
+            </div>
+            {normalizedActionQuery ? (
+              actionResults.length > 0 ? (
+                <ul className="mt-3 max-h-72 space-y-1 overflow-y-auto pr-1">
+                  {actionResults.map((action) => (
+                    <li key={action.action} className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3 rounded-lg px-2.5 py-2 hover:bg-white/[0.035]">
+                      <div className="min-w-0">
+                        <p className="truncate text-sm text-white/80">{actionLabel(action.action)}</p>
+                        <p className="truncate font-mono text-[9px] text-white/35">{action.action} · {action.users.toLocaleString('en-US')} users</p>
+                      </div>
+                      <span className="font-mono text-sm text-white/55">{action.events.toLocaleString('en-US')}</span>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="mt-3 text-xs text-white/45">No tracked action matches “{actionQuery.trim()}”.</p>
+              )
+            ) : (
+              <div className="mt-3 flex flex-wrap gap-2">
+                {['minimize', 'shortcut', 'fork', 'screenshot'].map((example) => (
+                  <button
+                    key={example}
+                    type="button"
+                    onClick={() => setActionQuery(example)}
+                    className="rounded-md border border-white/10 px-2 py-1 text-[10px] text-white/45 transition hover:border-amber-400/30 hover:text-amber-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
+                  >
+                    {example}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
       </article>
 
       <article className="rounded-xl border border-white/[0.09] bg-[#111111] p-4 sm:p-5">
@@ -692,10 +758,13 @@ function GlobalInsights({ metrics, loading, error, excludedUsers, onToggleUser, 
         <dl className="mt-5 grid grid-cols-2 gap-2.5">
           <GlobalMetric label="Avg terminals" value={metrics?.avg_terminal_slots ?? '—'} note="Equal weight per user" />
           <GlobalMetric label="Highest slot" value={metrics?.max_terminal_slots ?? '—'} note="Observed in 180d" />
-          <GlobalMetric label="Top user share" value={metrics ? `${metrics.top_user_share}%` : '—'} note="Of tracked events" />
-          <GlobalMetric label="Top 2 share" value={metrics ? `${metrics.top_two_share}%` : '—'} note="Concentration check" />
+          <GlobalMetric label="Largest user" value={metrics ? `${metrics.top_user_share}%` : '—'} note="of all tracked actions" />
+          <GlobalMetric label="Two largest users" value={metrics ? `${metrics.top_two_share}%` : '—'} note="of all tracked actions" />
         </dl>
         <p className="mt-3 text-[10px] leading-4 text-white/45">{sourceNote}</p>
+        <p className="mt-2 rounded-lg border border-white/[0.07] bg-white/[0.025] p-2.5 text-[10px] leading-4 text-white/50">
+          These percentages show whether a few heavy users skew the totals. Exclude them below to compare everyone else.
+        </p>
 
         <div className="mt-5 border-t border-white/[0.07] pt-4">
           <div className="flex items-center justify-between gap-3">
@@ -802,10 +871,10 @@ function UsersTable({ users, sortKey, sortDirection, onSort, onOpen }: {
         <thead>
           <tr className="border-b border-white/[0.08] bg-white/[0.018]">
             <SortHeader label="User" sort="user" active={sortKey} direction={sortDirection} onSort={onSort} />
+            <SortHeader label="Avg terminals" sort="terminals" active={sortKey} direction={sortDirection} onSort={onSort} />
             <SortHeader label="Activity" sort="activity" active={sortKey} direction={sortDirection} onSort={onSort} />
             <SortHeader label="Last 7 days" sort="last7" active={sortKey} direction={sortDirection} onSort={onSort} />
             <SortHeader label="Work periods" sort="periods" active={sortKey} direction={sortDirection} onSort={onSort} />
-            <SortHeader label="Terminals" sort="terminals" active={sortKey} direction={sortDirection} onSort={onSort} />
             <SortHeader label="Agent signal" sort="agent" active={sortKey} direction={sortDirection} onSort={onSort} />
             <SortHeader label="Joined" sort="joined" active={sortKey} direction={sortDirection} onSort={onSort} />
             <th className="w-20 px-4 py-3 text-right text-[10px] font-semibold uppercase tracking-[0.14em] text-white/55">Details</th>
@@ -832,6 +901,10 @@ function UsersTable({ users, sortKey, sortDirection, onSort, onOpen }: {
                   </div>
                 </td>
                 <td className="px-4 py-3.5">
+                  <div className="font-mono text-sm text-white/80"><span className="text-amber-300">{user.avg_terminal_slots?.toFixed(1) || '—'}</span> average</div>
+                  <p className="mt-1 text-[10px] text-white/55">{user.max_terminal_slots || '—'} max · {user.terminal_metric_source === 'launches' ? 'measured' : user.terminal_metric_source === 'tab_slots' ? 'estimated' : 'no data'}</p>
+                </td>
+                <td className="px-4 py-3.5">
                   <LifecycleBadge user={user} />
                   <p className="mt-1.5 text-[11px] text-white/55" title={formatDateTime(user.last_active)}>{relativeDate(user.last_active)}</p>
                 </td>
@@ -841,10 +914,6 @@ function UsersTable({ users, sortKey, sortDirection, onSort, onOpen }: {
                 <td className="px-4 py-3.5">
                   <div className="font-mono text-sm text-white/80"><span className="text-amber-300">{user.work_periods_7d}</span> / {user.work_periods_30d}</div>
                   <p className="mt-1 text-[10px] text-white/55">7d / 30d · {user.last_app_version || 'version unknown'}</p>
-                </td>
-                <td className="px-4 py-3.5">
-                  <div className="font-mono text-sm text-white/80"><span className="text-amber-300">{user.avg_terminal_slots?.toFixed(1) || '—'}</span> / {user.max_terminal_slots || '—'}</div>
-                  <p className="mt-1 text-[10px] text-white/55">Average / max · {user.terminal_metric_source === 'launches' ? 'measured' : user.terminal_metric_source === 'tab_slots' ? 'estimated' : 'no data'}</p>
                 </td>
                 <td className="px-4 py-3.5 text-xs text-white/65">
                   <span>{agentSignal.agent ? agentLabel(agentSignal.agent) : 'Not available'}</span>
