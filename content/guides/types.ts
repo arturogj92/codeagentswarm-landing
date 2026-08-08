@@ -22,6 +22,7 @@ export type GuideCtaAgent =
   | 'opencode'
   | 'kimi-code'
   | 'antigravity'
+  | 'grok-build'
   | 'multi'
   | 'comparison'
 
@@ -32,6 +33,7 @@ export const CTA_AGENT_MESSAGE_KEY: Record<GuideCtaAgent, string> = {
   opencode: 'opencode',
   'kimi-code': 'kimiCode',
   antigravity: 'antigravity',
+  'grok-build': 'grokBuild',
   multi: 'multi',
   comparison: 'comparison',
 }

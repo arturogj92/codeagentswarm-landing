@@ -34,8 +34,8 @@ export default function Home() {
     '@type': 'SoftwareApplication',
     name: 'CodeAgentSwarm',
     description: locale === 'es'
-      ? 'CodeAgentSwarm es una app de escritorio para ejecutar y supervisar varios agentes de programación con IA en paralelo: Claude Code, Codex CLI, Antigravity CLI, OpenCode y Kimi Code.'
-      : 'CodeAgentSwarm is a desktop workspace to run and supervise multiple AI coding agents in parallel: Claude Code, Codex CLI, Antigravity CLI, OpenCode and Kimi Code.',
+      ? 'CodeAgentSwarm es una app de escritorio para ejecutar y supervisar varios agentes de programación con IA en paralelo: Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code y Grok Build.'
+      : 'CodeAgentSwarm is a desktop workspace to run and supervise multiple AI coding agents in parallel: Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code and Grok Build.',
     url: baseUrl,
     applicationCategory: 'DeveloperApplication',
     operatingSystem: 'macOS, Windows',
