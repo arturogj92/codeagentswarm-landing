@@ -6,7 +6,8 @@
     "dev": "next dev --port 3002",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test:users": "node --experimental-strip-types --test \"app/(dashboard)/dashboard/users/users-activity.test.ts\""
   },
   "dependencies": {
     "clsx": "^2.1.1",
