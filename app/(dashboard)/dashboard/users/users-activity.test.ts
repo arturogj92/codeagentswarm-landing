@@ -7,6 +7,7 @@ import {
   getLifecycle,
   normalizeAgent,
   parseExcludedUserIds,
+  parseGlobalWindowDays,
   primaryAgentSignal,
   summarizeUsers,
   type UserActivityRow,
@@ -149,4 +150,14 @@ test('global exclusions accept only a bounded, deduplicated UUID list', () => {
   assert.deepEqual(parseExcludedUserIds([id, id]), [id])
   assert.equal(parseExcludedUserIds(['not-a-user']), null)
   assert.equal(parseExcludedUserIds(new Array(251).fill(id)), null)
+})
+
+test('global windows accept only the four dashboard periods', () => {
+  assert.equal(parseGlobalWindowDays(undefined), 180)
+  assert.equal(parseGlobalWindowDays(1), 1)
+  assert.equal(parseGlobalWindowDays(7), 7)
+  assert.equal(parseGlobalWindowDays(30), 30)
+  assert.equal(parseGlobalWindowDays(180), 180)
+  assert.equal(parseGlobalWindowDays(0), null)
+  assert.equal(parseGlobalWindowDays('7'), null)
 })

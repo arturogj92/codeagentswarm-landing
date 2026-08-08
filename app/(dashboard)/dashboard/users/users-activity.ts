@@ -41,6 +41,8 @@ export interface UserGlobalAction {
   users: number
 }
 
+export type GlobalWindowDays = 1 | 7 | 30 | 180
+
 export interface UserGlobalMetrics {
   generated_at: string
   window_days: number
@@ -197,6 +199,11 @@ export function parseExcludedUserIds(value: unknown): string[] | null {
   if (!Array.isArray(value) || value.length > 250) return null
   if (!value.every((entry) => typeof entry === 'string' && UUID_PATTERN.test(entry))) return null
   return [...new Set(value)]
+}
+
+export function parseGlobalWindowDays(value: unknown): GlobalWindowDays | null {
+  if (value === undefined) return 180
+  return value === 1 || value === 7 || value === 30 || value === 180 ? value : null
 }
 
 export function getLifecycle(daysSinceLast: number | null): Lifecycle {

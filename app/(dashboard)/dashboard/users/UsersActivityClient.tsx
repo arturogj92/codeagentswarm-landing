@@ -19,6 +19,7 @@ import {
   primaryAgentSignal,
   summarizeUsers,
   type Lifecycle,
+  type GlobalWindowDays,
   type UserActivityDetail,
   type UserActivityOverview,
   type UserActivityRow,
@@ -30,6 +31,12 @@ const PAGE_SIZE = 25
 const DETAIL_DAYS = 180
 const DAY_MS = 86_400_000
 const GLOBAL_EXCLUSIONS_KEY = 'dashboard:user-global-exclusions:v1'
+const GLOBAL_WINDOWS: Array<{ days: GlobalWindowDays; label: string }> = [
+  { days: 1, label: '24h' },
+  { days: 7, label: '7d' },
+  { days: 30, label: '30d' },
+  { days: 180, label: '180d' },
+]
 
 type SortKey = 'user' | 'activity' | 'last7' | 'periods' | 'terminals' | 'agent' | 'joined'
 type SortDirection = 'asc' | 'desc'
@@ -164,6 +171,7 @@ export default function UsersActivityClient() {
   const [globalMetrics, setGlobalMetrics] = useState<UserGlobalMetrics | null>(null)
   const [globalLoading, setGlobalLoading] = useState(true)
   const [globalError, setGlobalError] = useState<string | null>(null)
+  const [globalWindowDays, setGlobalWindowDays] = useState<GlobalWindowDays>(180)
   const [excludedUserIds, setExcludedUserIds] = useState<string[]>([])
   const [exclusionsReady, setExclusionsReady] = useState(false)
   const [filters, setFilters] = useState<UserFilters>(EMPTY_USER_FILTERS)
@@ -204,14 +212,14 @@ export default function UsersActivityClient() {
 
   useEffect(() => { void loadUsers() }, [loadUsers])
 
-  const loadGlobalMetrics = useCallback(async (excluded: string[]) => {
+  const loadGlobalMetrics = useCallback(async (excluded: string[], windowDays: GlobalWindowDays) => {
     setGlobalLoading(true)
     setGlobalError(null)
     try {
       const response = await fetch('/api/dashboard/users/global', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ excluded_user_ids: excluded }),
+        body: JSON.stringify({ excluded_user_ids: excluded, window_days: windowDays }),
       })
       const payload = await response.json()
       if (!response.ok) throw new Error(payload?.error || 'Failed to load global metrics')
@@ -237,8 +245,8 @@ export default function UsersActivityClient() {
   useEffect(() => {
     if (!exclusionsReady) return
     localStorage.setItem(GLOBAL_EXCLUSIONS_KEY, JSON.stringify(excludedUserIds))
-    void loadGlobalMetrics(excludedUserIds)
-  }, [excludedUserIds, exclusionsReady, loadGlobalMetrics])
+    void loadGlobalMetrics(excludedUserIds, globalWindowDays)
+  }, [excludedUserIds, exclusionsReady, globalWindowDays, loadGlobalMetrics])
 
   useEffect(() => {
     const onShortcut = (event: KeyboardEvent) => {
@@ -437,7 +445,7 @@ export default function UsersActivityClient() {
 
   function refreshDashboard() {
     void loadUsers()
-    if (exclusionsReady) void loadGlobalMetrics(excludedUserIds)
+    if (exclusionsReady) void loadGlobalMetrics(excludedUserIds, globalWindowDays)
   }
 
   async function copyValue(value: string, key: string) {
@@ -501,8 +509,10 @@ export default function UsersActivityClient() {
           loading={globalLoading}
           error={globalError}
           excludedUsers={excludedUsers}
+          windowDays={globalWindowDays}
           onToggleUser={toggleGlobalUser}
-          onRetry={() => void loadGlobalMetrics(excludedUserIds)}
+          onWindowDays={setGlobalWindowDays}
+          onRetry={() => void loadGlobalMetrics(excludedUserIds, globalWindowDays)}
         />
 
         <section aria-label="User filters" className="mt-5 rounded-xl border border-white/[0.09] bg-[#111111] p-3.5">
@@ -634,12 +644,14 @@ export default function UsersActivityClient() {
   )
 }
 
-function GlobalInsights({ metrics, loading, error, excludedUsers, onToggleUser, onRetry }: {
+function GlobalInsights({ metrics, loading, error, excludedUsers, windowDays, onToggleUser, onWindowDays, onRetry }: {
   metrics: UserGlobalMetrics | null
   loading: boolean
   error: string | null
   excludedUsers: UserActivityRow[]
+  windowDays: GlobalWindowDays
   onToggleUser: (userId: string) => void
+  onWindowDays: (days: GlobalWindowDays) => void
   onRetry: () => void
 }) {
   const [actionQuery, setActionQuery] = useState('')
@@ -654,6 +666,7 @@ function GlobalInsights({ metrics, loading, error, excludedUsers, onToggleUser, 
         `${action.action} ${actionLabel(action.action)}`.toLowerCase().includes(normalizedActionQuery)
       )).slice(0, 20)
     : []
+  const windowLabel = windowDays === 1 ? 'Last 24 hours' : `Last ${windowDays} days`
 
   return (
     <section aria-label="Global usage overview" className="mt-5 grid gap-4 xl:grid-cols-[minmax(0,1.35fr)_minmax(340px,0.65fr)]">
@@ -662,14 +675,29 @@ function GlobalInsights({ metrics, loading, error, excludedUsers, onToggleUser, 
           <div>
             <h2 className="text-lg font-semibold tracking-[-0.02em] text-white">Top tracked actions</h2>
             <p className="mt-1 text-sm text-white/55">
-              Last {metrics?.window_days || 180} days · grouped for privacy · identified users
+              {windowLabel} · grouped for privacy · identified users
             </p>
           </div>
-          {metrics && (
-            <span className="rounded-md border border-white/10 px-2 py-1 text-[10px] font-medium text-white/55">
-              {metrics.events.toLocaleString('en-US')} events
-            </span>
-          )}
+          <div className="flex flex-wrap items-center justify-end gap-2">
+            <div className="flex rounded-lg border border-white/10 bg-black/25 p-0.5" aria-label="Global activity period">
+              {GLOBAL_WINDOWS.map((window) => (
+                <button
+                  key={window.days}
+                  type="button"
+                  onClick={() => onWindowDays(window.days)}
+                  aria-pressed={windowDays === window.days}
+                  className={`rounded-md px-2 py-1 text-[10px] font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 ${windowDays === window.days ? 'bg-amber-400/15 text-amber-200' : 'text-white/40 hover:text-white/70'}`}
+                >
+                  {window.label}
+                </button>
+              ))}
+            </div>
+            {metrics && (
+              <span className="rounded-md border border-white/10 px-2 py-1 text-[10px] font-medium text-white/55">
+                {metrics.events.toLocaleString('en-US')} events
+              </span>
+            )}
+          </div>
         </div>
 
         {loading && !metrics ? (
@@ -751,12 +779,12 @@ function GlobalInsights({ metrics, loading, error, excludedUsers, onToggleUser, 
         <div>
           <h2 className="text-lg font-semibold tracking-[-0.02em] text-white">Global cohort</h2>
           <p className="mt-1 text-sm text-white/55">
-            {metrics ? `${metrics.registered_users} included · ${metrics.excluded_users} excluded` : 'Preparing cohort metrics'}
+            {metrics ? `${metrics.active_users} active · ${metrics.registered_users} included · ${metrics.excluded_users} excluded` : 'Preparing cohort metrics'}
           </p>
         </div>
 
         <dl className="mt-5 grid grid-cols-2 gap-2.5">
-          <GlobalMetric label="Avg terminals" value={metrics?.avg_terminal_slots ?? '—'} note="Equal weight per user" />
+          <GlobalMetric label="Avg terminals · 180d" value={metrics?.avg_terminal_slots ?? '—'} note="Equal weight per user" />
           <GlobalMetric label="Highest slot" value={metrics?.max_terminal_slots ?? '—'} note="Observed in 180d" />
           <GlobalMetric label="Largest user" value={metrics ? `${metrics.top_user_share}%` : '—'} note="of all tracked actions" />
           <GlobalMetric label="Two largest users" value={metrics ? `${metrics.top_two_share}%` : '—'} note="of all tracked actions" />
