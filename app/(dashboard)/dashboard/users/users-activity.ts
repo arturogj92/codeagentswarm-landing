@@ -16,6 +16,11 @@ export interface UserActivityRow {
   current_streak: number
   longest_streak: number
   most_used_agent: string | null
+  most_launched_agent: string | null
+  agent_launches: number
+  avg_terminal_slots: number | null
+  max_terminal_slots: number | null
+  terminal_metric_source: 'launches' | 'tab_slots' | null
   last7: boolean[]
   work_periods_7d: number
   work_periods_30d: number
@@ -28,6 +33,27 @@ export interface UserActivityRow {
 export interface UserActivityOverview {
   users: UserActivityRow[]
   generated_at: string
+}
+
+export interface UserGlobalAction {
+  action: string
+  events: number
+  users: number
+}
+
+export interface UserGlobalMetrics {
+  generated_at: string
+  window_days: number
+  registered_users: number
+  active_users: number
+  excluded_users: number
+  events: number
+  top_actions: UserGlobalAction[]
+  avg_terminal_slots: number | null
+  max_terminal_slots: number | null
+  terminal_metric_source: 'launches' | 'tab_slots' | 'mixed' | null
+  top_user_share: number
+  top_two_share: number
 }
 
 export interface UserActivityDetail {
@@ -153,6 +179,25 @@ export function agentLabel(value: string | null): string {
   return AGENT_LABELS[normalized] ?? normalized.replace(/\b\w/g, (character) => character.toUpperCase())
 }
 
+export function primaryAgentSignal(user: UserActivityRow): {
+  agent: string
+  source: 'launches' | 'selections' | 'none'
+} {
+  const launched = normalizeAgent(user.most_launched_agent)
+  if (launched) return { agent: launched, source: 'launches' }
+  const selected = normalizeAgent(user.most_used_agent)
+  if (selected) return { agent: selected, source: 'selections' }
+  return { agent: '', source: 'none' }
+}
+
+const UUID_PATTERN = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i
+
+export function parseExcludedUserIds(value: unknown): string[] | null {
+  if (!Array.isArray(value) || value.length > 250) return null
+  if (!value.every((entry) => typeof entry === 'string' && UUID_PATTERN.test(entry))) return null
+  return [...new Set(value)]
+}
+
 export function getLifecycle(daysSinceLast: number | null): Lifecycle {
   if (daysSinceLast === null) return 'no-tracked'
   if (daysSinceLast < 7) return 'active'
@@ -217,7 +262,7 @@ export function filterUsers(users: UserActivityRow[], filters: UserFilters): Use
     ) return false
 
     if (filters.lifecycle !== 'all' && getLifecycle(user.days_since_last) !== filters.lifecycle) return false
-    if (filters.agent !== 'all' && normalizeAgent(user.most_used_agent) !== filters.agent) return false
+    if (filters.agent !== 'all' && primaryAgentSignal(user).agent !== filters.agent) return false
     if (filters.activation === 'activated' && !user.activation_at) return false
     if (filters.activation === 'not-activated' && user.activation_at) return false
     if (filters.version === 'unknown' && user.last_app_version !== null) return false

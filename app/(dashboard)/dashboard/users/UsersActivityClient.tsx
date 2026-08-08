@@ -15,20 +15,23 @@ import {
   agentLabel,
   filterUsers,
   getLifecycle,
-  normalizeAgent,
+  parseExcludedUserIds,
+  primaryAgentSignal,
   summarizeUsers,
   type Lifecycle,
   type UserActivityDetail,
   type UserActivityOverview,
   type UserActivityRow,
   type UserFilters,
+  type UserGlobalMetrics,
 } from './users-activity'
 
 const PAGE_SIZE = 25
 const DETAIL_DAYS = 180
 const DAY_MS = 86_400_000
+const GLOBAL_EXCLUSIONS_KEY = 'dashboard:user-global-exclusions:v1'
 
-type SortKey = 'user' | 'activity' | 'last7' | 'periods' | 'agent' | 'joined'
+type SortKey = 'user' | 'activity' | 'last7' | 'periods' | 'terminals' | 'agent' | 'joined'
 type SortDirection = 'asc' | 'desc'
 type Segment = 'all' | 'active' | 'active30' | 'activated' | 'inactive' | 'dormant' | 'no-tracked'
 
@@ -150,6 +153,11 @@ export default function UsersActivityClient() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [generatedAt, setGeneratedAt] = useState<string | null>(null)
+  const [globalMetrics, setGlobalMetrics] = useState<UserGlobalMetrics | null>(null)
+  const [globalLoading, setGlobalLoading] = useState(true)
+  const [globalError, setGlobalError] = useState<string | null>(null)
+  const [excludedUserIds, setExcludedUserIds] = useState<string[]>([])
+  const [exclusionsReady, setExclusionsReady] = useState(false)
   const [filters, setFilters] = useState<UserFilters>(EMPTY_USER_FILTERS)
   const [segment, setSegment] = useState<Segment>('all')
   const [advancedOpen, setAdvancedOpen] = useState(false)
@@ -187,6 +195,42 @@ export default function UsersActivityClient() {
   }, [])
 
   useEffect(() => { void loadUsers() }, [loadUsers])
+
+  const loadGlobalMetrics = useCallback(async (excluded: string[]) => {
+    setGlobalLoading(true)
+    setGlobalError(null)
+    try {
+      const response = await fetch('/api/dashboard/users/global', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ excluded_user_ids: excluded }),
+      })
+      const payload = await response.json()
+      if (!response.ok) throw new Error(payload?.error || 'Failed to load global metrics')
+      setGlobalMetrics(payload as UserGlobalMetrics)
+    } catch (caught) {
+      setGlobalError(caught instanceof Error ? caught.message : 'Failed to load global metrics')
+    } finally {
+      setGlobalLoading(false)
+    }
+  }, [])
+
+  useEffect(() => {
+    try {
+      const stored = parseExcludedUserIds(JSON.parse(localStorage.getItem(GLOBAL_EXCLUSIONS_KEY) || '[]'))
+      setExcludedUserIds(stored || [])
+    } catch {
+      setExcludedUserIds([])
+    } finally {
+      setExclusionsReady(true)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (!exclusionsReady) return
+    localStorage.setItem(GLOBAL_EXCLUSIONS_KEY, JSON.stringify(excludedUserIds))
+    void loadGlobalMetrics(excludedUserIds)
+  }, [excludedUserIds, exclusionsReady, loadGlobalMetrics])
 
   useEffect(() => {
     const onShortcut = (event: KeyboardEvent) => {
@@ -311,9 +355,13 @@ export default function UsersActivityClient() {
           a = left.work_periods_30d
           b = right.work_periods_30d
           break
+        case 'terminals':
+          a = left.avg_terminal_slots ?? 0
+          b = right.avg_terminal_slots ?? 0
+          break
         case 'agent':
-          a = agentLabel(left.most_used_agent)
-          b = agentLabel(right.most_used_agent)
+          a = agentLabel(primaryAgentSignal(left).agent)
+          b = agentLabel(primaryAgentSignal(right).agent)
           break
         case 'joined':
           a = parseDate(left.created_at)?.getTime() ?? 0
@@ -329,9 +377,13 @@ export default function UsersActivityClient() {
   const safePage = Math.min(page, pageCount)
   const visibleUsers = filteredUsers.slice((safePage - 1) * PAGE_SIZE, safePage * PAGE_SIZE)
   const agentOptions = useMemo(
-    () => unique(users.map((user) => normalizeAgent(user.most_used_agent))).filter(Boolean),
+    () => unique(users.map((user) => primaryAgentSignal(user).agent)).filter(Boolean),
     [users],
   )
+  const excludedUsers = useMemo(() => {
+    const excluded = new Set(excludedUserIds)
+    return users.filter((user) => excluded.has(user.user_id))
+  }, [users, excludedUserIds])
   const versionOptions = useMemo(() => unique(users.map((user) => user.last_app_version)), [users])
   const providerOptions = useMemo(() => unique(users.map((user) => user.provider)), [users])
   const planOptions = useMemo(() => unique(users.map((user) => user.subscription_tier)), [users])
@@ -364,7 +416,20 @@ export default function UsersActivityClient() {
       return
     }
     setSortKey(next)
-    setSortDirection(next === 'joined' || next === 'last7' || next === 'periods' ? 'desc' : 'asc')
+    setSortDirection(next === 'joined' || next === 'last7' || next === 'periods' || next === 'terminals' ? 'desc' : 'asc')
+  }
+
+  function toggleGlobalUser(userId: string) {
+    setExcludedUserIds((current) => (
+      current.includes(userId)
+        ? current.filter((id) => id !== userId)
+        : [...current, userId]
+    ))
+  }
+
+  function refreshDashboard() {
+    void loadUsers()
+    if (exclusionsReady) void loadGlobalMetrics(excludedUserIds)
   }
 
   async function copyValue(value: string, key: string) {
@@ -394,11 +459,11 @@ export default function UsersActivityClient() {
             </span>
             <button
               type="button"
-              onClick={() => void loadUsers()}
-              disabled={loading}
+              onClick={refreshDashboard}
+              disabled={loading || globalLoading}
               className="rounded-lg border border-white/15 bg-white/[0.03] px-3.5 py-2 text-xs font-medium text-white/70 transition hover:border-amber-400/40 hover:bg-amber-400/[0.07] hover:text-amber-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 disabled:cursor-wait disabled:opacity-50"
             >
-              {loading ? 'Refreshing…' : 'Refresh'}
+              {loading || globalLoading ? 'Refreshing…' : 'Refresh'}
             </button>
           </div>
         </header>
@@ -422,6 +487,15 @@ export default function UsersActivityClient() {
           </div>
           <p className="text-[11px] text-white/55">Exclusive lifecycle groups · based on last recorded event</p>
         </div>
+
+        <GlobalInsights
+          metrics={globalMetrics}
+          loading={globalLoading}
+          error={globalError}
+          excludedUsers={excludedUsers}
+          onToggleUser={toggleGlobalUser}
+          onRetry={() => void loadGlobalMetrics(excludedUserIds)}
+        />
 
         <section aria-label="User filters" className="mt-5 rounded-xl border border-white/[0.09] bg-[#111111] p-3.5">
           <div className="grid gap-2.5 md:grid-cols-[minmax(220px,1fr)_190px_180px_auto]">
@@ -538,14 +612,125 @@ export default function UsersActivityClient() {
           error={detailError}
           days={heatmapDays}
           copied={copied}
+          excludedFromGlobal={excludedUserIds.includes(selected.user_id)}
           drawerRef={drawerRef}
           closeButtonRef={closeButtonRef}
           onDays={setHeatmapDays}
           onClose={closeDetail}
           onRetry={() => void loadDetail(selected.user_id)}
           onCopy={(value, key) => void copyValue(value, key)}
+          onToggleGlobal={() => toggleGlobalUser(selected.user_id)}
         />
       )}
+    </div>
+  )
+}
+
+function GlobalInsights({ metrics, loading, error, excludedUsers, onToggleUser, onRetry }: {
+  metrics: UserGlobalMetrics | null
+  loading: boolean
+  error: string | null
+  excludedUsers: UserActivityRow[]
+  onToggleUser: (userId: string) => void
+  onRetry: () => void
+}) {
+  const sourceNote = metrics?.terminal_metric_source === 'launches'
+    ? 'Exact snapshots at agent launch'
+    : metrics?.terminal_metric_source === 'mixed'
+      ? 'Launch snapshots where available; tab estimate otherwise'
+      : 'Estimated from the highest terminal tab reached per active day'
+
+  return (
+    <section aria-label="Global usage overview" className="mt-5 grid gap-4 xl:grid-cols-[minmax(0,1.35fr)_minmax(340px,0.65fr)]">
+      <article className="rounded-xl border border-white/[0.09] bg-[#111111] p-4 sm:p-5">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <h2 className="text-lg font-semibold tracking-[-0.02em] text-white">Top tracked actions</h2>
+            <p className="mt-1 text-sm text-white/55">
+              Last {metrics?.window_days || 180} days · grouped for privacy · identified users
+            </p>
+          </div>
+          {metrics && (
+            <span className="rounded-md border border-white/10 px-2 py-1 text-[10px] font-medium text-white/55">
+              {metrics.events.toLocaleString('en-US')} events
+            </span>
+          )}
+        </div>
+
+        {loading && !metrics ? (
+          <div className="mt-5 space-y-3" aria-label="Loading global actions">
+            {Array.from({ length: 6 }, (_, index) => <div key={index} className="h-7 animate-pulse rounded bg-white/[0.045]" />)}
+          </div>
+        ) : error && !metrics ? (
+          <div role="alert" className="mt-5 rounded-lg border border-rose-400/20 bg-rose-400/[0.06] p-3 text-sm text-rose-200">
+            Global metrics could not load. <button type="button" onClick={onRetry} className="font-semibold underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-300">Retry</button>
+          </div>
+        ) : (
+          <ol className="mt-5 space-y-3">
+            {(metrics?.top_actions || []).slice(0, 8).map((action, index) => (
+              <li key={action.action} className="grid grid-cols-[30px_minmax(0,1fr)_auto] items-center gap-3">
+                <span className="font-mono text-sm text-white/45">{String(index + 1).padStart(2, '0')}</span>
+                <div className="min-w-0">
+                  <p className="truncate text-sm font-medium text-white/85 sm:text-base">{actionLabel(action.action)}</p>
+                  <p className="text-[10px] text-white/45">{action.users.toLocaleString('en-US')} users reached</p>
+                </div>
+                <span className="font-mono text-sm text-white/55 sm:text-base">{action.events.toLocaleString('en-US')}</span>
+              </li>
+            ))}
+          </ol>
+        )}
+      </article>
+
+      <article className="rounded-xl border border-white/[0.09] bg-[#111111] p-4 sm:p-5">
+        <div>
+          <h2 className="text-lg font-semibold tracking-[-0.02em] text-white">Global cohort</h2>
+          <p className="mt-1 text-sm text-white/55">
+            {metrics ? `${metrics.registered_users} included · ${metrics.excluded_users} excluded` : 'Preparing cohort metrics'}
+          </p>
+        </div>
+
+        <dl className="mt-5 grid grid-cols-2 gap-2.5">
+          <GlobalMetric label="Avg terminals" value={metrics?.avg_terminal_slots ?? '—'} note="Equal weight per user" />
+          <GlobalMetric label="Highest slot" value={metrics?.max_terminal_slots ?? '—'} note="Observed in 180d" />
+          <GlobalMetric label="Top user share" value={metrics ? `${metrics.top_user_share}%` : '—'} note="Of tracked events" />
+          <GlobalMetric label="Top 2 share" value={metrics ? `${metrics.top_two_share}%` : '—'} note="Concentration check" />
+        </dl>
+        <p className="mt-3 text-[10px] leading-4 text-white/45">{sourceNote}</p>
+
+        <div className="mt-5 border-t border-white/[0.07] pt-4">
+          <div className="flex items-center justify-between gap-3">
+            <p className="text-xs font-semibold uppercase tracking-[0.13em] text-white/55">Excluded heavy users</p>
+            <span className="text-[10px] text-white/40">Change from any user detail</span>
+          </div>
+          {excludedUsers.length > 0 ? (
+            <div className="mt-3 flex flex-wrap gap-2">
+              {excludedUsers.map((user) => (
+                <button
+                  key={user.user_id}
+                  type="button"
+                  onClick={() => onToggleUser(user.user_id)}
+                  className="rounded-full border border-amber-400/25 bg-amber-400/[0.07] px-2.5 py-1 text-[11px] text-amber-200/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
+                  aria-label={`Include ${user.name || user.email} in global statistics`}
+                >
+                  {user.name || user.email} <span aria-hidden="true">×</span>
+                </button>
+              ))}
+            </div>
+          ) : (
+            <p className="mt-3 text-xs leading-5 text-white/45">No exclusions. Open Arturo, Víctor or any other user and remove them from the global rollup.</p>
+          )}
+        </div>
+      </article>
+    </section>
+  )
+}
+
+function GlobalMetric({ label, value, note }: { label: string; value: string | number; note: string }) {
+  return (
+    <div className="rounded-lg border border-white/[0.08] bg-black/20 p-3">
+      <dt className="text-[10px] uppercase tracking-[0.11em] text-white/45">{label}</dt>
+      <dd className="mt-1 font-mono text-xl font-semibold text-amber-300">{value}</dd>
+      <p className="mt-1 text-[9px] text-white/40">{note}</p>
     </div>
   )
 }
@@ -612,7 +797,7 @@ function UsersTable({ users, sortKey, sortDirection, onSort, onOpen }: {
 }) {
   return (
     <div className="hidden overflow-x-auto rounded-xl border border-white/[0.09] bg-[#111111] md:block">
-      <table className="w-full min-w-[980px] border-collapse">
+      <table className="w-full min-w-[1120px] border-collapse">
         <caption className="sr-only">Registered users and recorded product activity</caption>
         <thead>
           <tr className="border-b border-white/[0.08] bg-white/[0.018]">
@@ -620,7 +805,8 @@ function UsersTable({ users, sortKey, sortDirection, onSort, onOpen }: {
             <SortHeader label="Activity" sort="activity" active={sortKey} direction={sortDirection} onSort={onSort} />
             <SortHeader label="Last 7 days" sort="last7" active={sortKey} direction={sortDirection} onSort={onSort} />
             <SortHeader label="Work periods" sort="periods" active={sortKey} direction={sortDirection} onSort={onSort} />
-            <SortHeader label="Most-used agent" sort="agent" active={sortKey} direction={sortDirection} onSort={onSort} />
+            <SortHeader label="Terminals" sort="terminals" active={sortKey} direction={sortDirection} onSort={onSort} />
+            <SortHeader label="Agent signal" sort="agent" active={sortKey} direction={sortDirection} onSort={onSort} />
             <SortHeader label="Joined" sort="joined" active={sortKey} direction={sortDirection} onSort={onSort} />
             <th className="w-20 px-4 py-3 text-right text-[10px] font-semibold uppercase tracking-[0.14em] text-white/55">Details</th>
           </tr>
@@ -628,6 +814,7 @@ function UsersTable({ users, sortKey, sortDirection, onSort, onOpen }: {
         <tbody>
           {users.map((user) => {
             const lifecycle = LIFECYCLE_META[getLifecycle(user.days_since_last)]
+            const agentSignal = primaryAgentSignal(user)
             return (
               <tr key={user.user_id} className="border-b border-white/[0.055] last:border-0 hover:bg-white/[0.025]">
                 <td className="px-4 py-3.5">
@@ -655,7 +842,18 @@ function UsersTable({ users, sortKey, sortDirection, onSort, onOpen }: {
                   <div className="font-mono text-sm text-white/80"><span className="text-amber-300">{user.work_periods_7d}</span> / {user.work_periods_30d}</div>
                   <p className="mt-1 text-[10px] text-white/55">7d / 30d · {user.last_app_version || 'version unknown'}</p>
                 </td>
-                <td className="px-4 py-3.5 text-xs text-white/65">{user.most_used_agent ? agentLabel(user.most_used_agent) : 'Not available'}</td>
+                <td className="px-4 py-3.5">
+                  <div className="font-mono text-sm text-white/80"><span className="text-amber-300">{user.avg_terminal_slots?.toFixed(1) || '—'}</span> / {user.max_terminal_slots || '—'}</div>
+                  <p className="mt-1 text-[10px] text-white/55">Average / max · {user.terminal_metric_source === 'launches' ? 'measured' : user.terminal_metric_source === 'tab_slots' ? 'estimated' : 'no data'}</p>
+                </td>
+                <td className="px-4 py-3.5 text-xs text-white/65">
+                  <span>{agentSignal.agent ? agentLabel(agentSignal.agent) : 'Not available'}</span>
+                  {agentSignal.source !== 'none' && (
+                    <p className="mt-1 text-[9px] uppercase tracking-wide text-white/40">
+                      {agentSignal.source === 'launches' ? 'Launched' : 'Selected only'}
+                    </p>
+                  )}
+                </td>
                 <td className="px-4 py-3.5 text-xs text-white/55">{formatDate(user.created_at)}</td>
                 <td className="px-4 py-3.5 text-right">
                   <button
@@ -694,8 +892,9 @@ function SortHeader({ label, sort, active, direction, onSort }: { label: string;
 function UsersMobileList({ users, onOpen }: { users: UserActivityRow[]; onOpen: (user: UserActivityRow, trigger: HTMLElement) => void }) {
   return (
     <ul className="space-y-2.5 md:hidden">
-      {users.map((user) => (
-        <li key={user.user_id} className="rounded-xl border border-white/[0.09] bg-[#111111] p-4">
+      {users.map((user) => {
+        const agentSignal = primaryAgentSignal(user)
+        return <li key={user.user_id} className="rounded-xl border border-white/[0.09] bg-[#111111] p-4">
           <div className="flex items-start gap-3">
             <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/[0.045] font-mono text-xs font-semibold text-white/65">{initials(user)}</span>
             <div className="min-w-0 flex-1">
@@ -716,11 +915,12 @@ function UsersMobileList({ users, onOpen }: { users: UserActivityRow[]; onOpen: 
           <dl className="mt-3 grid grid-cols-2 gap-x-3 gap-y-2 border-t border-white/[0.07] pt-3 text-[11px]">
             <div><dt className="text-white/55">Last 7 days</dt><dd className="mt-1 text-white/70">{last7Count(user.last7)}/7 active</dd></div>
             <div><dt className="text-white/55">Work periods</dt><dd className="mt-1 text-white/70">{user.work_periods_7d} / {user.work_periods_30d}</dd></div>
-            <div><dt className="text-white/55">Most-used agent</dt><dd className="mt-1 truncate text-white/70">{user.most_used_agent ? agentLabel(user.most_used_agent) : 'Not available'}</dd></div>
+            <div><dt className="text-white/55">Terminals</dt><dd className="mt-1 text-white/70">{user.avg_terminal_slots?.toFixed(1) || '—'} avg · {user.max_terminal_slots || '—'} max</dd></div>
+            <div><dt className="text-white/55">Agent signal</dt><dd className="mt-1 truncate text-white/70">{agentSignal.agent ? agentLabel(agentSignal.agent) : 'Not available'}</dd></div>
             <div><dt className="text-white/55">Version</dt><dd className="mt-1 text-white/70">{user.last_app_version || 'Unknown'}</dd></div>
           </dl>
         </li>
-      ))}
+      })}
     </ul>
   )
 }
@@ -786,24 +986,27 @@ function EmptyState({ title, copy, action }: { title: string; copy: string; acti
   )
 }
 
-function UserDrawer({ user, detail, loading, error, days, copied, drawerRef, closeButtonRef, onDays, onClose, onRetry, onCopy }: {
+function UserDrawer({ user, detail, loading, error, days, copied, excludedFromGlobal, drawerRef, closeButtonRef, onDays, onClose, onRetry, onCopy, onToggleGlobal }: {
   user: UserActivityRow
   detail: UserActivityDetail | null
   loading: boolean
   error: string | null
   days: number
   copied: string | null
+  excludedFromGlobal: boolean
   drawerRef: RefObject<HTMLElement | null>
   closeButtonRef: RefObject<HTMLButtonElement | null>
   onDays: (days: number) => void
   onClose: () => void
   onRetry: () => void
   onCopy: (value: string, key: string) => void
+  onToggleGlobal: () => void
 }) {
   const activeStart = parseDate(user.first_active)
   const observedDays = activeStart ? Math.max(user.active_days, Math.floor((Date.now() - activeStart.getTime()) / DAY_MS) + 1) : Math.max(user.active_days, 0)
   const activeRate = observedDays > 0 ? Math.min(100, Math.round((user.active_days / observedDays) * 100)) : 0
   const totalAgentSelections = detail?.agents.reduce((sum, agent) => sum + agent.n, 0) || 0
+  const agentSignal = primaryAgentSignal(user)
 
   return (
     <div
@@ -834,6 +1037,14 @@ function UserDrawer({ user, detail, loading, error, days, copied, drawerRef, clo
                 <span className="rounded border border-white/10 px-1.5 py-1">{titleCase(user.provider, 'Unknown provider')}</span>
                 <span className="rounded border border-white/10 px-1.5 py-1">{titleCase(user.subscription_tier, 'No plan')}</span>
                 {user.last_app_version && <span className="rounded border border-white/10 px-1.5 py-1">v{user.last_app_version}</span>}
+                <button
+                  type="button"
+                  onClick={onToggleGlobal}
+                  aria-pressed={excludedFromGlobal}
+                  className={`rounded border px-1.5 py-1 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 ${excludedFromGlobal ? 'border-amber-400/35 bg-amber-400/[0.08] text-amber-200' : 'border-white/10 hover:border-amber-400/30 hover:text-amber-200'}`}
+                >
+                  {excludedFromGlobal ? 'Excluded globally · include' : 'Exclude from global stats'}
+                </button>
               </div>
             </div>
             <button
@@ -853,7 +1064,18 @@ function UserDrawer({ user, detail, loading, error, days, copied, drawerRef, clo
               <Info label="Activation signal" value={user.activation_at ? formatDate(user.activation_at) : 'Not reached'} />
               <Info label="Last tracked activity" value={relativeDate(user.last_active)} title={formatDateTime(user.last_active)} />
               <Info label="Last sign-in" value={formatDate(user.last_login)} title={formatDateTime(user.last_login)} />
-              <Info label="Most-used agent" value={user.most_used_agent ? agentLabel(user.most_used_agent) : 'Not available'} />
+              <Info
+                label={agentSignal.source === 'launches' ? 'Most-launched agent' : 'Most-selected agent'}
+                value={agentSignal.agent ? agentLabel(agentSignal.agent) : 'Not available'}
+                note={agentSignal.source === 'launches' ? `${user.agent_launches} measured launches` : 'Selector clicks only · not proof of usage'}
+              />
+              <Info
+                label="Avg terminals"
+                value={user.avg_terminal_slots?.toFixed(1) || 'Not available'}
+                note={user.terminal_metric_source === 'launches' ? 'Open at launch' : 'Estimated daily peak'}
+                mono
+              />
+              <Info label="Highest terminal slot" value={user.max_terminal_slots?.toLocaleString('en-US') || 'Not available'} note="Observed in 180d" mono />
               <Info label="Tracked events" value={user.total_events.toLocaleString('en-US')} mono />
               <Info label="Active days" value={`${user.active_days} / ${observedDays || '—'}`} note={observedDays ? `${activeRate}% since first tracked activity` : 'No activity window'} mono />
               <Info label="Work periods" value={`${user.work_periods_7d} / ${user.work_periods_30d}`} note="7d / 30d · 30m gap" mono />

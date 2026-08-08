@@ -6,6 +6,8 @@ import {
   filterUsers,
   getLifecycle,
   normalizeAgent,
+  parseExcludedUserIds,
+  primaryAgentSignal,
   summarizeUsers,
   type UserActivityRow,
 } from './users-activity.ts'
@@ -29,6 +31,11 @@ function user(overrides: Partial<UserActivityRow> = {}): UserActivityRow {
     current_streak: 2,
     longest_streak: 4,
     most_used_agent: 'claude-code',
+    most_launched_agent: null,
+    agent_launches: 0,
+    avg_terminal_slots: 2.4,
+    max_terminal_slots: 4,
+    terminal_metric_source: 'tab_slots',
     last7: [false, false, true, false, true, true, true],
     work_periods_7d: 4,
     work_periods_30d: 9,
@@ -123,4 +130,23 @@ test('none integration and unknown version have explicit filter semantics', () =
     filterUsers(users, { ...EMPTY_USER_FILTERS, version: 'unknown' }).map((entry) => entry.user_id),
     ['unknown'],
   )
+})
+
+test('real launches outrank the historical selector signal', () => {
+  const historical = user({ most_used_agent: 'codex cli' })
+  const measured = user({ most_used_agent: 'codex cli', most_launched_agent: 'claude', agent_launches: 7 })
+
+  assert.deepEqual(primaryAgentSignal(historical), { agent: 'codex', source: 'selections' })
+  assert.deepEqual(primaryAgentSignal(measured), { agent: 'claude', source: 'launches' })
+  assert.deepEqual(
+    filterUsers([historical, measured], { ...EMPTY_USER_FILTERS, agent: 'claude' }).map((entry) => entry.user_id),
+    ['user-1'],
+  )
+})
+
+test('global exclusions accept only a bounded, deduplicated UUID list', () => {
+  const id = '00000000-0000-4000-8000-000000000001'
+  assert.deepEqual(parseExcludedUserIds([id, id]), [id])
+  assert.equal(parseExcludedUserIds(['not-a-user']), null)
+  assert.equal(parseExcludedUserIds(new Array(251).fill(id)), null)
 })
