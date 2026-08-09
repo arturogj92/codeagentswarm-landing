@@ -8,7 +8,7 @@
 // que no puedan volver a desincronizarse.
 // Al añadir Grok Build (q16) se sube el contador aquí y en messages en/es.
 
-export const FAQ_ITEM_COUNT = 16
+export const FAQ_ITEM_COUNT = 17
 
 export type FaqItem = { q: string; a: string }
 

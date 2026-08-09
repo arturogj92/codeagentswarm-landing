@@ -19,15 +19,14 @@
   "hero": {
     "badge": "Open Beta – Pro activates automatically on signup",
     "badgeNew": "NEW",
-    "titleLine1": "Stop switching windows.",
-    "titleLine2": "Orchestrate multiple AI CLI terminals.",
-    "titleLine3": "Multiple AI CLI Terminals. One Workspace. Full Control.",
-    "subtitle": "Run multiple AI CLI terminals in parallel - Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code, Grok Build - with real time visibility, live notifications, full conversation history and multi project control.",
-    "powerStatement": "",
-    "authorityLine": "",
-    "requirements": "Works with Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code or Grok Build. Runs on macOS 12+ and Windows 10/11.",
-    "claimAccess": "Download Free – Pro Included",
-    "securityBadge": "Turbo Mode with built-in guardrails. You set the limits.",
+    "eyebrow": "One workspace · Your coding agents",
+    "titleLine1": "Parallel coding agents.",
+    "titleLine2": "Zero window chaos.",
+    "subtitle": "Run Claude Code, Codex CLI and other coding agents in parallel inside CodeAgentSwarm, an Agentic Development Environment (ADE) built for supervision.",
+    "claimAccess": "Download free",
+    "microcopy": "Pro included during beta · macOS 12+ · Windows 10/11",
+    "worksWith": "Works with",
+    "existingAccounts": "Uses your existing CLI accounts",
     "stats": {
       "eyebrow": "Core capabilities",
       "terminals": "Parallel Terminals",
@@ -486,8 +485,10 @@
       "a14": "Yes. CodeAgentSwarm runs Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code and Grok Build in parallel in one workspace. You pick the agent per terminal, so you can add OpenCode sessions to your swarm right next to the other agents.",
       "q15": "Does CodeAgentSwarm work with Kimi Code?",
       "a15": "Yes. Kimi Code CLI by Moonshot is a first-class agent in CodeAgentSwarm, alongside Claude Code, Codex CLI, Antigravity CLI, OpenCode and Grok Build. Pick Kimi Code from the launcher like any other agent and it gets the same notifications, searchable conversation history and live diffs. You can run a full swarm of Kimi Code sessions or mix it with the other CLIs.",
-      "q16": "Does CodeAgentSwarm work with Grok Build?",
-      "a16": "Yes. CodeAgentSwarm runs xAI's Grok Build CLI (the grok command) as a first-class agent, so you can supervise several Grok Build terminals at once next to Claude Code, Codex or any of the other CLIs. You install and log into Grok Build yourself (it needs a SuperGrok or X Premium+ account) and CodeAgentSwarm adds what the terminal does not: desktop notifications when a session finishes, live per-terminal diffs, searchable history across every agent and per-project switching."
+      "q16": "What is an Agentic Development Environment (ADE), and is CodeAgentSwarm one?",
+      "a16": "An Agentic Development Environment is a workspace built around delegating software tasks to AI coding agents, running them in isolated or parallel sessions and reviewing their results. CodeAgentSwarm is an ADE: it lets you direct Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code and Grok Build from one place while keeping tasks, notifications, history, permissions and live diffs visible.",
+      "q17": "Does CodeAgentSwarm work with Grok Build?",
+      "a17": "Yes. CodeAgentSwarm runs xAI's Grok Build CLI (the grok command) as a first-class agent, so you can supervise several Grok Build terminals at once next to Claude Code, Codex or any of the other CLIs. You install and log into Grok Build yourself (it needs a SuperGrok or X Premium+ account) and CodeAgentSwarm adds what the terminal does not: desktop notifications when a session finishes, live per-terminal diffs, searchable history across every agent and per-project switching."
     }
   },
   "cta": {

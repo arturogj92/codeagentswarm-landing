@@ -19,6 +19,7 @@ export default function BringYourOwnSubSection() {
     { name: 'Antigravity CLI', command: 'agy', icon: '/icons/apps/antigravity-icon.png' },
     { name: 'opencode', command: 'opencode', icon: '/icons/apps/opencode-icon.svg' },
     { name: 'Kimi Code', command: 'kimi', icon: '/icons/apps/kimi-icon.png' },
+    { name: 'Grok Build', command: 'grok', icon: '/icons/apps/grok-icon.svg' },
   ]
 
   const claims = [
@@ -50,7 +51,7 @@ export default function BringYourOwnSubSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 mt-11">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-3 mt-11">
           {agents.map((agent, i) => (
             <motion.div
               key={agent.name}
