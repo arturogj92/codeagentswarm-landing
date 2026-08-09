@@ -24,7 +24,7 @@
     "titleLine3": "Varios Terminales AI CLI. Un workspace. Todo bajo control.",
     "subtitle": "Ejecuta varios terminales AI CLI en paralelo - Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code - con visibilidad en tiempo real, notificaciones instantáneas, historial completo y control total sobre múltiples proyectos.",
     "powerStatement": "",
-    "authorityLine": "",
+    "authorityLine": "CodeAgentSwarm es un entorno de desarrollo agéntico (Agentic Development Environment, ADE) para dirigir varios agentes de programación desde un solo lugar.",
     "requirements": "Compatible con Claude Code, Codex, Antigravity CLI, OpenCode o Kimi Code. macOS 12+ y Windows 10/11",
     "claimAccess": "Descargar Gratis – Pro Incluido",
     "securityBadge": "Modo Turbo con protección integrada. Tú defines los límites.",
@@ -484,7 +484,9 @@
       "q14": "¿CodeAgentSwarm funciona con OpenCode?",
       "a14": "Sí. CodeAgentSwarm ejecuta Claude Code, Codex CLI, Antigravity CLI, OpenCode y Kimi Code en paralelo en un mismo espacio de trabajo. Eliges el agente en cada terminal, así que puedes añadir sesiones de OpenCode a tu enjambre junto al resto de agentes.",
       "q15": "¿CodeAgentSwarm funciona con Kimi Code?",
-      "a15": "Sí. Kimi Code CLI de Moonshot es el quinto agente compatible con CodeAgentSwarm, junto a Claude Code, Codex CLI, Antigravity CLI y OpenCode. Eliges Kimi Code en el lanzador como cualquier otro agente y tiene las mismas notificaciones, historial de conversaciones buscable y diffs en vivo. Puedes montar un enjambre entero de sesiones de Kimi Code o mezclarlo con las otras CLIs."
+      "a15": "Sí. Kimi Code CLI de Moonshot es el quinto agente compatible con CodeAgentSwarm, junto a Claude Code, Codex CLI, Antigravity CLI y OpenCode. Eliges Kimi Code en el lanzador como cualquier otro agente y tiene las mismas notificaciones, historial de conversaciones buscable y diffs en vivo. Puedes montar un enjambre entero de sesiones de Kimi Code o mezclarlo con las otras CLIs.",
+      "q16": "¿Qué es un entorno de desarrollo agéntico (ADE) y por qué CodeAgentSwarm es uno?",
+      "a16": "Un entorno de desarrollo agéntico (Agentic Development Environment, ADE) está pensado para delegar tareas de software a agentes de programación con IA, ejecutarlos en sesiones aisladas o en paralelo y revisar sus resultados. CodeAgentSwarm es un ADE: permite dirigir Claude Code, Codex CLI, Antigravity CLI, OpenCode y Kimi Code desde un solo lugar, con tareas, notificaciones, historial, permisos y diffs en vivo siempre visibles."
     }
   },
   "cta": {

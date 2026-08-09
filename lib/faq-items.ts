@@ -7,7 +7,7 @@
 // estructurados que lee Google. Importa `buildFaqItems` en los dos sitios para
 // que no puedan volver a desincronizarse.
 
-export const FAQ_ITEM_COUNT = 15
+export const FAQ_ITEM_COUNT = 16
 
 export type FaqItem = { q: string; a: string }
 

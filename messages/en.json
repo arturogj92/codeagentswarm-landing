@@ -24,7 +24,7 @@
     "titleLine3": "Multiple AI CLI Terminals. One Workspace. Full Control.",
     "subtitle": "Run multiple AI CLI terminals in parallel - Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code - with real time visibility, live notifications, full conversation history and multi project control.",
     "powerStatement": "",
-    "authorityLine": "",
+    "authorityLine": "CodeAgentSwarm is an Agentic Development Environment (ADE) for directing multiple coding agents from one place.",
     "requirements": "Works with Claude Code, Codex, Antigravity CLI, OpenCode or Kimi Code. Runs on macOS 12+ and Windows 10/11.",
     "claimAccess": "Download Free – Pro Included",
     "securityBadge": "Turbo Mode with built-in guardrails. You set the limits.",
@@ -484,7 +484,9 @@
       "q14": "Does CodeAgentSwarm work with OpenCode?",
       "a14": "Yes. CodeAgentSwarm runs Claude Code, Codex CLI, Antigravity CLI, OpenCode and Kimi Code in parallel in one workspace. You pick the agent per terminal, so you can add OpenCode sessions to your swarm right next to the other agents.",
       "q15": "Does CodeAgentSwarm work with Kimi Code?",
-      "a15": "Yes. Kimi Code CLI by Moonshot is the fifth agent supported by CodeAgentSwarm, alongside Claude Code, Codex CLI, Antigravity CLI and OpenCode. Pick Kimi Code from the launcher like any other agent and it gets the same notifications, searchable conversation history and live diffs. You can run a full swarm of Kimi Code sessions or mix it with the other CLIs."
+      "a15": "Yes. Kimi Code CLI by Moonshot is the fifth agent supported by CodeAgentSwarm, alongside Claude Code, Codex CLI, Antigravity CLI and OpenCode. Pick Kimi Code from the launcher like any other agent and it gets the same notifications, searchable conversation history and live diffs. You can run a full swarm of Kimi Code sessions or mix it with the other CLIs.",
+      "q16": "What is an Agentic Development Environment (ADE), and is CodeAgentSwarm one?",
+      "a16": "An Agentic Development Environment is a workspace built around delegating software tasks to AI coding agents, running them in isolated or parallel sessions and reviewing their results. CodeAgentSwarm is an ADE: it lets you direct Claude Code, Codex CLI, Antigravity CLI, OpenCode and Kimi Code from one place while keeping tasks, notifications, history, permissions and live diffs visible."
     }
   },
   "cta": {
