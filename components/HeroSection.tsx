@@ -1,12 +1,11 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Play, Download, Zap, Grid3X3, Bell, Terminal, Monitor, Layout, GitBranch, Pause, History, Shield, Layers, Volume2, VolumeX } from 'lucide-react'
+import { Play, Download, Zap, Grid3X3, Bell, Terminal, Monitor, Layout, GitBranch, Pause, History, Layers, Volume2, VolumeX } from 'lucide-react'
 import { useState, useRef } from 'react'
 import { useTranslations, useLocale } from 'next-intl'
 import VideoWithProgress from './VideoWithProgress'
 import CapabilitiesGrid from './CapabilitiesGrid'
-import { useShouldReduceMotion } from '@/hooks/useIsMobile'
 import { cdnVideo } from '@/lib/cdn'
 
 // Hero promo video (single, autoplay-loop muted) per locale. Click to unmute.
@@ -278,8 +277,6 @@ export function VideoShowcase() {
 
 export default function HeroSection() {
   const t = useTranslations('hero')
-  const tCommon = useTranslations('common')
-  const shouldReduceMotion = useShouldReduceMotion()
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-24 pb-16 px-6">
@@ -291,112 +288,77 @@ export default function HeroSection() {
       <div className="hidden md:block absolute bottom-0 left-0 w-[600px] h-[400px] bg-gradient-radial from-neon-cyan/5 via-transparent to-transparent blur-2xl pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto w-full">
-        {/* Main Heading - God Mode */}
-        <div className="text-center mb-8">
-          <h1 className="heading-xl mb-6">
-            <span className="text-white">{t('titleLine1')}</span>
-            <br />
-            <motion.span
-              className="gradient-text inline-block"
-              animate={shouldReduceMotion ? {} : { textShadow: ['0 0 20px rgba(251, 191, 36, 0.3)', '0 0 40px rgba(251, 191, 36, 0.5)', '0 0 20px rgba(251, 191, 36, 0.3)'] }}
-              transition={shouldReduceMotion ? {} : { duration: 3, repeat: Infinity, ease: "easeInOut" }}
-            >{t('titleLine2')}</motion.span>
-          </h1>
+        <div className="min-h-[calc(100vh-18rem)] flex flex-col justify-center">
+          <div className="text-center mb-10">
+            <p className="mb-8 text-xs font-semibold uppercase tracking-[0.22em] text-amber-400">
+              {t('eyebrow')}
+            </p>
 
-          {/* Third line - the power statement */}
-          <p className="text-2xl md:text-3xl lg:text-4xl font-display font-bold text-white/90 mb-6">
-            {t('titleLine3')}
-          </p>
+            <h1 className="heading-xl mb-8">
+              <span className="text-white">{t('titleLine1')}</span>
+              <br />
+              <span className="gradient-text inline-block">{t('titleLine2')}</span>
+            </h1>
 
-          <p className="text-lg md:text-xl text-white/50 max-w-3xl mx-auto leading-relaxed">
-            {t.rich('subtitle', {
-              highlight: (chunks) => <span className="text-white font-medium">{chunks}</span>
-            })}
-          </p>
-        </div>
-
-        {/* Power Statement */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.4, duration: 0.6 }}
-          className={`text-center text-lg md:text-xl text-white/40 italic max-w-xl mx-auto ${t('authorityLine') ? 'mb-4' : 'mb-12'}`}
-        >
-          {t('powerStatement')}
-        </motion.p>
-
-        {/* Authority Line - only render if not empty */}
-        {t('authorityLine') && (
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.45, duration: 0.6 }}
-            className="text-center text-base text-white/50 mb-12 max-w-2xl mx-auto"
-          >
-            {t('authorityLine')}
-          </motion.p>
-        )}
-
-        {/* CTA Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.6 }}
-          className="flex flex-col items-center gap-4 mb-16"
-        >
-          {/* Single Primary CTA */}
-          <a
-            href="#download"
-            className="group relative"
-            onClick={() => {
-              if (typeof window !== 'undefined') {
-                window.umami?.track('hero_claim_access_click')
-              }
-            }}
-          >
-            <div className="absolute -inset-0.5 rounded-full blur-sm opacity-30 group-hover:opacity-70 transition-opacity bg-neon-cyan" />
-            <button className="relative flex items-center gap-3 px-10 py-5 text-black font-bold text-lg rounded-full transition-all bg-neon-cyan hover:bg-amber-400 hover:scale-105">
-              <Zap className="w-6 h-6" />
-              {t('claimAccess')}
-            </button>
-          </a>
-
-          {/* Security Badge */}
-          <div className="flex items-center gap-2 px-4 py-2 rounded-full glass border border-green-500/30">
-            <Shield className="w-4 h-4 text-green-400" />
-            <span className="text-sm text-green-400/90">{t('securityBadge')}</span>
-          </div>
-
-          {/* AI CLI badges + requirements on a single line (wraps on very narrow screens) */}
-          <div className="flex items-center justify-center gap-3 flex-wrap">
-            <div className="flex items-center -space-x-2" aria-label="Works with Claude Code, Codex, Antigravity CLI, OpenCode and Kimi Code">
-              <span className="w-8 h-8 rounded-full flex items-center justify-center bg-white border-2 border-[#0e0e12] shadow-lg">
-                <img src="/icons/apps/claude-icon.svg" alt="Claude Code" className="w-5 h-5 object-contain" />
-              </span>
-              <span className="w-8 h-8 rounded-full flex items-center justify-center bg-[#0d0d0d] border-2 border-[#0e0e12] shadow-lg">
-                <img src="/icons/apps/codex-icon.svg" alt="Codex CLI" className="w-5 h-5 object-contain" />
-              </span>
-              <span className="w-8 h-8 rounded-full flex items-center justify-center bg-white border-2 border-[#0e0e12] shadow-lg">
-                <img src="/icons/apps/antigravity-icon.png" alt="Antigravity CLI" className="w-5 h-5 object-contain" />
-              </span>
-              <span
-                className="w-8 h-8 rounded-full flex items-center justify-center bg-[#0d0d0d] border-2 border-[#0e0e12] shadow-lg"
-                title="OpenCode"
-              >
-                <img src="/icons/apps/opencode-icon.svg" alt="OpenCode" className="w-6 h-6 object-contain" />
-              </span>
-              <span
-                className="w-8 h-8 rounded-full flex items-center justify-center bg-[#0d0d0d] border-2 border-[#0e0e12] shadow-lg"
-                title="Kimi Code"
-              >
-                <img src="/icons/apps/kimi-icon.png" alt="Kimi Code" className="w-6 h-6 object-contain" />
-              </span>
-            </div>
-            <p className="text-sm text-white/40">
-              {t('requirements')}
+            <p className="max-w-3xl mx-auto text-base md:text-xl leading-relaxed text-white/50">
+              {t('subtitle')}
             </p>
           </div>
-        </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.6 }}
+            className="flex flex-col items-center gap-4 mb-16"
+          >
+            <a
+              href="#download"
+              className="group relative inline-flex rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300 focus-visible:ring-offset-4 focus-visible:ring-offset-black"
+              onClick={() => {
+                if (typeof window !== 'undefined') {
+                  window.umami?.track('hero_claim_access_click')
+                }
+              }}
+            >
+              <span className="absolute -inset-0.5 rounded-full blur-sm opacity-30 group-hover:opacity-70 transition-opacity bg-neon-cyan" />
+              <span className="relative flex items-center gap-3 px-10 py-5 text-black font-bold text-lg rounded-full transition-all bg-neon-cyan group-hover:bg-amber-400 group-hover:scale-105">
+                <Zap className="w-6 h-6" />
+                {t('claimAccess')}
+              </span>
+            </a>
+
+            <p className="text-xs text-white/30">{t('microcopy')}</p>
+
+            <div className="flex items-center justify-center gap-3 flex-wrap text-xs text-white/35">
+              <span>{t('worksWith')}</span>
+              <div className="flex items-center -space-x-2">
+                <span className="w-7 h-7 rounded-full flex items-center justify-center bg-white border-2 border-[#0e0e12] shadow-lg">
+                  <img src="/icons/apps/claude-icon.svg" alt="Claude Code" className="w-4 h-4 object-contain" />
+                </span>
+                <span className="w-7 h-7 rounded-full flex items-center justify-center bg-[#0d0d0d] border-2 border-[#0e0e12] shadow-lg">
+                  <img src="/icons/apps/codex-icon.svg" alt="Codex CLI" className="w-4 h-4 object-contain" />
+                </span>
+                <span className="w-7 h-7 rounded-full flex items-center justify-center bg-white border-2 border-[#0e0e12] shadow-lg">
+                  <img src="/icons/apps/antigravity-icon.png" alt="Antigravity CLI" className="w-4 h-4 object-contain" />
+                </span>
+                <span
+                  className="w-7 h-7 rounded-full flex items-center justify-center bg-[#0d0d0d] border-2 border-[#0e0e12] shadow-lg"
+                  title="OpenCode"
+                >
+                  <img src="/icons/apps/opencode-icon.svg" alt="OpenCode" className="w-5 h-5 object-contain" />
+                </span>
+                <span
+                  className="w-7 h-7 rounded-full flex items-center justify-center bg-[#0d0d0d] border-2 border-[#0e0e12] shadow-lg"
+                  title="Kimi Code"
+                >
+                  <img src="/icons/apps/kimi-icon.png" alt="Kimi Code" className="w-5 h-5 object-contain" />
+                </span>
+              </div>
+              <span className="hidden sm:block h-4 w-px bg-white/10" aria-hidden="true" />
+              <span>{t('existingAccounts')}</span>
+            </div>
+          </motion.div>
+        </div>
 
         {/* Stats */}
         <motion.div
