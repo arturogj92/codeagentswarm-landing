@@ -22,21 +22,27 @@ import './mode-compare.css'
  */
 
 /** Where the divider comes to rest: enough chat to read, enough CLI to notice. */
-const INITIAL_SPLIT = 52
+const INITIAL_SPLIT = 44
+/**
+ * The chat column sits in the right half of the frame (see mode-compare.css),
+ * so left of this there is nothing to reveal — only empty background. Stopping
+ * the divider here keeps every position of the control meaningful.
+ */
+const MIN_SPLIT = 40
 /**
  * The opening sweep: the section arrives as the FULL terminal, holds there long
  * enough to read the banner — mascot, model line, working directory — and then
- * the divider travels right, revealing the chat from under it.
+ * the divider travels right-to-left, revealing the chat from the right edge.
  *
  * This order is the story told in one gesture: "this is the CLI you already
- * know; watch what it becomes." It also solves the mascot for free — it lives
- * at the left edge of the terminal's screen, so opening on the full terminal
- * puts it on show for the whole first beat, no dwell choreography needed.
+ * know; watch what it becomes." The CLI owns the LEFT half precisely so the
+ * mascot — which lives at the left edge of the terminal's screen — stays on
+ * show not just during the hold but after the divider settles.
  *
  * Slow on purpose. Under a second it reads as a glitch; at this pace it reads
  * as a reveal, and it teaches that the divider is draggable without a word.
  */
-const SWEEP_START = 6
+const SWEEP_START = 94
 /** Held on the terminal before anything moves, so the banner registers. */
 const SWEEP_HOLD_MS = 1000
 /** The reveal itself: the chat wipes in from the left. */
@@ -57,8 +63,8 @@ interface Props {
 const AGENTS: CompareAgent[] = ['claude', 'codex']
 
 export default function ModeCompare({ chatLabel, terminalLabel, hint, ariaLabel }: Props) {
-  // Starts where the sweep starts — all chat. Mounting anywhere else and then
-  // jumping to the sweep's start would flash the other layout for one frame.
+  // Starts where the sweep starts — all terminal. Mounting anywhere else and
+  // then jumping to the sweep's start would flash the other layout for a frame.
   const [split, setSplit] = useState(SWEEP_START)
   const [dragging, setDragging] = useState(false)
   /**
@@ -95,7 +101,7 @@ export default function ModeCompare({ chatLabel, terminalLabel, hint, ariaLabel 
       if (t < 0) {
         // Still holding on the full terminal.
       } else if (t < SWEEP_MS) {
-        // The chat wipes in from the left, easing at both ends.
+        // The chat wipes in from the right, easing at both ends.
         setSplit(SWEEP_START + (INITIAL_SPLIT - SWEEP_START) * easeInOut(t / SWEEP_MS))
       } else {
         setSplit(INITIAL_SPLIT)
@@ -129,9 +135,9 @@ export default function ModeCompare({ chatLabel, terminalLabel, hint, ariaLabel 
     const box = frame.current?.getBoundingClientRect()
     if (!box || box.width === 0) return
     const pct = ((clientX - box.left) / box.width) * 100
-    // Never let a side vanish completely: at 0 or 100 the control looks broken
-    // rather than finished.
-    setSplit(Math.min(94, Math.max(6, pct)))
+    // Never let a side vanish completely: at the extremes the control looks
+    // broken rather than finished.
+    setSplit(Math.min(94, Math.max(MIN_SPLIT, pct)))
   }, [])
 
   useEffect(() => {
@@ -233,8 +239,9 @@ export default function ModeCompare({ chatLabel, terminalLabel, hint, ariaLabel 
         </div>
       </div>
 
-      {/* Chat on top, revealed from the left up to the divider. */}
-      <div className="compare-layer compare-chat" style={{ clipPath: `inset(0 ${100 - split}% 0 0)` }}>
+      {/* Chat on top, revealed from the divider to the RIGHT edge — the CLI
+          keeps the left half, mascot and all. */}
+      <div className="compare-layer compare-chat" style={{ clipPath: `inset(0 0 0 ${split}%)` }}>
         <ChatPane terminal={terminal} onAnswer={() => {}} />
       </div>
 
@@ -259,12 +266,12 @@ export default function ModeCompare({ chatLabel, terminalLabel, hint, ariaLabel 
         aria-label={ariaLabel}
         aria-valuemin={0}
         aria-valuemax={100}
-        aria-valuenow={Math.round(split)}
-        aria-valuetext={`${Math.round(split)}% ${chatLabel}`}
+        aria-valuenow={Math.round(100 - split)}
+        aria-valuetext={`${Math.round(100 - split)}% ${chatLabel}`}
         onKeyDown={(event) => {
-          if (event.key === 'ArrowLeft') setSplit((v) => Math.max(6, v - KEY_STEP))
+          if (event.key === 'ArrowLeft') setSplit((v) => Math.max(MIN_SPLIT, v - KEY_STEP))
           else if (event.key === 'ArrowRight') setSplit((v) => Math.min(94, v + KEY_STEP))
-          else if (event.key === 'Home') setSplit(6)
+          else if (event.key === 'Home') setSplit(MIN_SPLIT)
           else if (event.key === 'End') setSplit(94)
           else return
           event.preventDefault()

@@ -39,6 +39,18 @@
    which would have made the comparison start midway through the conversation. */
 .compare .cas-chat {
   font-size: 13.5px;
+  /* The chat lives in the RIGHT half of the frame. Its cards are full-width
+     boxes with left-aligned text, so a centre wipe over a full-width chat
+     revealed mostly their empty right halves. Confined to the right half, the
+     resting state shows whole cards next to the terminal's opening lines. */
+  padding-left: 46%;
+}
+
+/* The chat is bottom-anchored, so on a short window the top of the exchange is
+   cut mid-sentence and slammed into the corner tag. Fading the first lines out
+   makes the cut read as "the conversation continues above", not as a bug. */
+.compare .cas-chat-scroll {
+  mask-image: linear-gradient(to bottom, transparent 10px, #000 64px);
 }
 
 .compare-chat {
@@ -327,12 +339,14 @@
   border-radius: 3px;
 }
 
+/* Mirrored to match the halves: CLI keeps the left, chat is revealed on the
+   right, so each tag sits over its own side. */
 .compare-tag-chat {
-  left: 12px;
+  right: 12px;
 }
 
 .compare-tag-cli {
-  right: 12px;
+  left: 12px;
 }
 
 /* Below the frame rather than inside it: floating over the transcript it landed
