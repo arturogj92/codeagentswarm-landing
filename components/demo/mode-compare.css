@@ -39,11 +39,6 @@
    which would have made the comparison start midway through the conversation. */
 .compare .cas-chat {
   font-size: 13.5px;
-  /* The pane reflows to the divider's position, but below this width the chat
-     layout stops being readable — so the sliver states (the opening hold, a
-     hard drag right) show the chat's left edge at a sane width instead of a
-     crushed layout, clipped by the pane. */
-  min-width: 360px;
 }
 
 /* The chat is bottom-anchored, so on a short window the top of the exchange is
@@ -54,11 +49,10 @@
 }
 
 .compare-chat {
-  /* `left` is set inline from the divider's position: the pane IS the reveal,
-     a live layout that resizes with the divider rather than a clipped
-     screenshot. Reflowing on every pointer move is the price of showing the
-     whole chat at every width, and the pane is small enough to afford it. */
-  overflow: hidden;
+  /* The clip is set inline from the divider's position. `will-change` keeps the
+     wipe on the compositor instead of repainting the chat on every pointer
+     move. */
+  will-change: clip-path;
   background: var(--bg-primary, #0d0d12);
 }
 

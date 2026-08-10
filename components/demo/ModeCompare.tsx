@@ -233,12 +233,10 @@ export default function ModeCompare({ chatLabel, terminalLabel, hint, ariaLabel 
         </div>
       </div>
 
-      {/* Chat on top, its LEFT edge riding the divider. Not a clipped
-          screenshot: the pane is a live layout that reflows to whatever width
-          the divider gives it, the way a real split view resizes — so the WHOLE
-          chat mode is on show at every divider position, and dragging fully
-          left yields the entire chat filling the frame. */}
-      <div className="compare-layer compare-chat" style={{ left: `${split}%` }}>
+      {/* Chat on top, the classic before/after reveal: the FULL chat layout is
+          always there at frame width, and the divider wipes it into view over
+          the terminal. Dragging is uncovering, not resizing. */}
+      <div className="compare-layer compare-chat" style={{ clipPath: `inset(0 0 0 ${split}%)` }}>
         <ChatPane terminal={terminal} onAnswer={() => {}} />
       </div>
 
