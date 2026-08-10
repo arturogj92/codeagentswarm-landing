@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Play, Download, Zap, Grid3X3, Bell, Terminal, Monitor, Layout, GitBranch, Pause, History, Layers, Volume2, VolumeX } from 'lucide-react'
-import { useState, useRef } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { useTranslations, useLocale } from 'next-intl'
 import VideoWithProgress from './VideoWithProgress'
 import CapabilitiesGrid from './CapabilitiesGrid'
@@ -167,6 +167,32 @@ export function VideoShowcase() {
   const [isPlaying, setIsPlaying] = useState(true)
   const [isAutoAdvance, setIsAutoAdvance] = useState(true)
 
+  /**
+   * Whether the showcase is actually on screen.
+   *
+   * Without this the carousel decodes video for the entire visit: it autoplays,
+   * advances itself on every ended event, and nothing ever told it the reader
+   * scrolled on to Pricing twenty seconds ago. Measured on the live page, the
+   * active clip was still playing at four out of five scroll positions — all of
+   * them off screen. Under a loaded CPU that decode competes with the
+   * compositor, which is felt as the page flickering.
+   *
+   * The rootMargin keeps it playing slightly past the edge so scrolling by
+   * never shows a frozen frame mid-viewport.
+   */
+  const wrapRef = useRef<HTMLDivElement>(null)
+  const [inView, setInView] = useState(false)
+  useEffect(() => {
+    const node = wrapRef.current
+    if (!node) return
+    const observer = new IntersectionObserver(
+      ([entry]) => setInView(entry.isIntersecting),
+      { rootMargin: '120px 0px', threshold: 0.05 }
+    )
+    observer.observe(node)
+    return () => observer.disconnect()
+  }, [])
+
   const handleVideoEnd = () => {
     if (isAutoAdvance && isPlaying) {
       setCurrentVideo((prev) => (prev + 1) % videos.length)
@@ -174,7 +200,7 @@ export function VideoShowcase() {
   }
 
   return (
-    <div className="relative w-full max-w-5xl mx-auto">
+    <div className="relative w-full max-w-5xl mx-auto" ref={wrapRef}>
       {/* Glow Background - hidden on mobile for performance */}
       <div className="hidden md:block absolute -inset-4 bg-gradient-to-r from-neon-cyan/20 via-neon-purple/20 to-neon-magenta/20 blur-2xl opacity-50 rounded-3xl" />
 
@@ -209,7 +235,11 @@ export function VideoShowcase() {
                 progressBarColor="rgba(0, 255, 255, 0.8)"
                 progressBarBackground="rgba(255, 255, 255, 0.1)"
                 onVideoEnd={handleVideoEnd}
-                isPlaying={isPlaying}
+                // Off screen, the video is paused — decode stops, and so does
+                // the self-advance (a paused video never fires ended). The
+                // user's own play/pause choice is preserved for when it
+                // scrolls back in.
+                isPlaying={isPlaying && inView}
               />
             </div>
           </div>
