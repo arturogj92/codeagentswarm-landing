@@ -56,7 +56,7 @@ interface Props {
 /** Two of the five, because two is enough to show it is not one agent's feature. */
 const AGENTS: CompareAgent[] = ['claude', 'codex']
 
-export default function ModeCompare({ chatLabel, terminalLabel, hint, ariaLabel }: Props) {
+export default function ModeCompare({ chatLabel, hint, ariaLabel }: Props) {
   // Starts where the sweep starts — all terminal. Mounting anywhere else and
   // then jumping to the sweep's start would flash the other layout for a frame.
   const [split, setSplit] = useState(SWEEP_START)
@@ -240,19 +240,6 @@ export default function ModeCompare({ chatLabel, terminalLabel, hint, ariaLabel 
       <div className="compare-layer compare-chat" style={{ clipPath: `inset(0 0 0 ${split}%)` }}>
         <ChatPane terminal={terminal} onAnswer={() => {}} />
       </div>
-
-      {/* Both tags name the agent, so it reads the same whichever half you are
-          looking at when the divider is near an edge. */}
-      <span className="compare-tag compare-tag-chat">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={AGENT_ICON[agent].src} alt="" aria-hidden="true" />
-        {chatLabel} · {AGENT_ICON[agent].label}
-      </span>
-      <span className="compare-tag compare-tag-cli">
-        {terminalLabel} · {AGENT_ICON[agent].label}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={AGENT_ICON[agent].src} alt="" aria-hidden="true" />
-      </span>
 
       <div
         className="compare-divider"
