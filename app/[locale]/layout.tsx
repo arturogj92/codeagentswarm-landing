@@ -183,7 +183,7 @@ export default async function LocaleLayout({
           defer
           src="https://umami-codeagentswarm-production.up.railway.app/script.js"
           data-website-id="a6cf83f7-4ba1-47af-87b3-4fdbd2d537d9"
-          data-domains="codeagentswarm.com"
+          data-domains="codeagentswarm.com,www.codeagentswarm.com"
           strategy="afterInteractive"
         />
       </head>
