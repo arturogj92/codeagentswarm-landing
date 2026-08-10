@@ -129,9 +129,10 @@ export default function ModeCompare({ chatLabel, terminalLabel, hint, ariaLabel 
     const box = frame.current?.getBoundingClientRect()
     if (!box || box.width === 0) return
     const pct = ((clientX - box.left) / box.width) * 100
-    // Never let a side vanish completely: at the extremes the control looks
-    // broken rather than finished.
-    setSplit(Math.min(94, Math.max(6, pct)))
+    // The left stop is almost at the edge — the chat's own content starts a few
+    // percent in, and stopping any sooner leaves a CLI strip cutting its first
+    // words. The divider stays just inside so the control still reads as one.
+    setSplit(Math.min(94, Math.max(2, pct)))
   }, [])
 
   useEffect(() => {
@@ -264,9 +265,9 @@ export default function ModeCompare({ chatLabel, terminalLabel, hint, ariaLabel 
         aria-valuenow={Math.round(100 - split)}
         aria-valuetext={`${Math.round(100 - split)}% ${chatLabel}`}
         onKeyDown={(event) => {
-          if (event.key === 'ArrowLeft') setSplit((v) => Math.max(6, v - KEY_STEP))
+          if (event.key === 'ArrowLeft') setSplit((v) => Math.max(2, v - KEY_STEP))
           else if (event.key === 'ArrowRight') setSplit((v) => Math.min(94, v + KEY_STEP))
-          else if (event.key === 'Home') setSplit(6)
+          else if (event.key === 'Home') setSplit(2)
           else if (event.key === 'End') setSplit(94)
           else return
           event.preventDefault()
