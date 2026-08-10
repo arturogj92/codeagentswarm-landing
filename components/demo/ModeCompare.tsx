@@ -24,29 +24,23 @@ import './mode-compare.css'
 /** Where the divider comes to rest: enough chat to read, enough CLI to notice. */
 const INITIAL_SPLIT = 52
 /**
- * The opening sweep: right to left, once, slowly, with a dwell at the far end.
+ * The opening sweep: the section arrives as the FULL terminal, holds there long
+ * enough to read the banner — mascot, model line, working directory — and then
+ * the divider travels right, revealing the chat from under it.
  *
- * It arrives as chat — the view the section argues for — and the divider then
- * travels LEFT, wiping the terminal in from the right. The wrinkle is the
- * mascot: it lives at the left edge of the terminal's screen, so a sweep that
- * stops at the resting split never uncovers it. Hence the dwell: the divider
- * travels all the way to the left edge, holds there with the banner and mascot
- * fully on show, and only then settles back to the middle.
+ * This order is the story told in one gesture: "this is the CLI you already
+ * know; watch what it becomes." It also solves the mascot for free — it lives
+ * at the left edge of the terminal's screen, so opening on the full terminal
+ * puts it on show for the whole first beat, no dwell choreography needed.
  *
  * Slow on purpose. Under a second it reads as a glitch; at this pace it reads
  * as a reveal, and it teaches that the divider is draggable without a word.
  */
-const SWEEP_START = 94
-/** The far end of the sweep: terminal almost full-frame, mascot in the open. */
-const SWEEP_FAR = 10
-/** Held on the chat before anything moves, so the first view registers. */
-const SWEEP_HOLD_MS = 700
-/** The right-to-left reveal. */
-const SWEEP_OUT_MS = 1600
-/** Dwell at the far end — the mascot's moment. */
-const SWEEP_DWELL_MS = 700
-/** The settle back to the resting split. */
-const SWEEP_BACK_MS = 900
+const SWEEP_START = 6
+/** Held on the terminal before anything moves, so the banner registers. */
+const SWEEP_HOLD_MS = 1000
+/** The reveal itself: the chat wipes in from the left. */
+const SWEEP_MS = 1800
 const KEY_STEP = 4
 
 /** Eased at both ends, so each leg leaves gently and arrives gently. */
@@ -81,8 +75,7 @@ export default function ModeCompare({ chatLabel, terminalLabel, hint, ariaLabel 
   const sweep = useRef(0)
 
   /**
-   * The opening sweep: hold on the chat, wipe left to the terminal's edge,
-   * dwell on the mascot, settle back to the middle.
+   * The opening sweep: hold on the full terminal, then reveal the chat.
    */
   useEffect(() => {
     const node = frame.current
@@ -97,19 +90,13 @@ export default function ModeCompare({ chatLabel, terminalLabel, hint, ariaLabel 
 
     const step = (now: number) => {
       if (!start) start = now
-      let t = now - start - SWEEP_HOLD_MS
+      const t = now - start - SWEEP_HOLD_MS
 
       if (t < 0) {
-        // Still holding on the chat.
-      } else if (t < SWEEP_OUT_MS) {
-        // Right to left: the terminal wipes in from the right.
-        setSplit(SWEEP_START + (SWEEP_FAR - SWEEP_START) * easeInOut(t / SWEEP_OUT_MS))
-      } else if ((t -= SWEEP_OUT_MS) < SWEEP_DWELL_MS) {
-        // Dwell at the far end: banner and mascot fully on show.
-        setSplit(SWEEP_FAR)
-      } else if ((t -= SWEEP_DWELL_MS) < SWEEP_BACK_MS) {
-        // Settle back to the reading position.
-        setSplit(SWEEP_FAR + (INITIAL_SPLIT - SWEEP_FAR) * easeInOut(t / SWEEP_BACK_MS))
+        // Still holding on the full terminal.
+      } else if (t < SWEEP_MS) {
+        // The chat wipes in from the left, easing at both ends.
+        setSplit(SWEEP_START + (INITIAL_SPLIT - SWEEP_START) * easeInOut(t / SWEEP_MS))
       } else {
         setSplit(INITIAL_SPLIT)
         return
