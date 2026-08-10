@@ -128,7 +128,7 @@ export function VideoShowcase() {
     },
     {
       id: 2,
-      src: cdnVideo('multi-model.mp4'),
+      src: cdnVideo('multi-model-v2.mp4'),
       title: t('multiModel.title'),
       icon: Layers,
       description: t('multiModel.description')
