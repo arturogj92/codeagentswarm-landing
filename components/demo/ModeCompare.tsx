@@ -24,12 +24,6 @@ import './mode-compare.css'
 /** Where the divider comes to rest: enough chat to read, enough CLI to notice. */
 const INITIAL_SPLIT = 44
 /**
- * The chat column sits in the right half of the frame (see mode-compare.css),
- * so left of this there is nothing to reveal — only empty background. Stopping
- * the divider here keeps every position of the control meaningful.
- */
-const MIN_SPLIT = 40
-/**
  * The opening sweep: the section arrives as the FULL terminal, holds there long
  * enough to read the banner — mascot, model line, working directory — and then
  * the divider travels right-to-left, revealing the chat from the right edge.
@@ -137,7 +131,7 @@ export default function ModeCompare({ chatLabel, terminalLabel, hint, ariaLabel 
     const pct = ((clientX - box.left) / box.width) * 100
     // Never let a side vanish completely: at the extremes the control looks
     // broken rather than finished.
-    setSplit(Math.min(94, Math.max(MIN_SPLIT, pct)))
+    setSplit(Math.min(94, Math.max(6, pct)))
   }, [])
 
   useEffect(() => {
@@ -239,9 +233,12 @@ export default function ModeCompare({ chatLabel, terminalLabel, hint, ariaLabel 
         </div>
       </div>
 
-      {/* Chat on top, revealed from the divider to the RIGHT edge — the CLI
-          keeps the left half, mascot and all. */}
-      <div className="compare-layer compare-chat" style={{ clipPath: `inset(0 0 0 ${split}%)` }}>
+      {/* Chat on top, its LEFT edge riding the divider. Not a clipped
+          screenshot: the pane is a live layout that reflows to whatever width
+          the divider gives it, the way a real split view resizes — so the WHOLE
+          chat mode is on show at every divider position, and dragging fully
+          left yields the entire chat filling the frame. */}
+      <div className="compare-layer compare-chat" style={{ left: `${split}%` }}>
         <ChatPane terminal={terminal} onAnswer={() => {}} />
       </div>
 
@@ -269,9 +266,9 @@ export default function ModeCompare({ chatLabel, terminalLabel, hint, ariaLabel 
         aria-valuenow={Math.round(100 - split)}
         aria-valuetext={`${Math.round(100 - split)}% ${chatLabel}`}
         onKeyDown={(event) => {
-          if (event.key === 'ArrowLeft') setSplit((v) => Math.max(MIN_SPLIT, v - KEY_STEP))
+          if (event.key === 'ArrowLeft') setSplit((v) => Math.max(6, v - KEY_STEP))
           else if (event.key === 'ArrowRight') setSplit((v) => Math.min(94, v + KEY_STEP))
-          else if (event.key === 'Home') setSplit(MIN_SPLIT)
+          else if (event.key === 'Home') setSplit(6)
           else if (event.key === 'End') setSplit(94)
           else return
           event.preventDefault()
