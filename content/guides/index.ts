@@ -15,14 +15,12 @@ import enClaudeCodeVsCursorVsCodex from './en/claude-code-vs-cursor-vs-codex'
 import enBestMcpServers from './en/best-mcp-servers-claude-code'
 import enClaudeCodeAgentSwarm from './en/claude-code-agent-swarm'
 import enCodexAgentSwarm from './en/codex-agent-swarm'
-import enGeminiAgentSwarm from './en/gemini-agent-swarm'
 import enAiCliAgentSwarm from './en/ai-cli-agent-swarm'
 import enSkillsMarketplace from './en/claude-code-skills-marketplace'
 import enTaskManagement from './en/claude-code-task-management'
 import enProjectSwitcher from './en/claude-code-project-switcher'
 import enAiCommits from './en/ai-commit-messages-claude-code'
 import enRunMultipleCodex from './en/run-multiple-codex-sessions'
-import enRunMultipleGemini from './en/run-multiple-gemini-sessions'
 import enHowToUseAntigravity from './en/how-to-use-antigravity-cli'
 import enRunMultipleAntigravity from './en/run-multiple-antigravity-cli-sessions'
 import enAntigravityVsGemini from './en/antigravity-cli-vs-gemini-cli'
@@ -64,6 +62,18 @@ import enClaudeSquad from './en/claude-squad-vs-codeagentswarm'
 import enVibeKanban from './en/vibe-kanban-vs-codeagentswarm'
 import enNimbalyst from './en/nimbalyst-vs-codeagentswarm'
 
+import enHowToUseGrokBuild from './en/how-to-use-grok-build'
+import enGrokBuildVsClaude from './en/grok-build-vs-claude-code'
+import enGrokBuildAgentSwarm from './en/grok-build-agent-swarm'
+import enGrokBuildPlanMode from './en/grok-build-plan-mode'
+import enGrokBuildSubagents from './en/grok-build-subagents-vs-agent-swarm'
+import enGrokBuildPricing from './en/grok-build-pricing'
+import enGrokBuildWindows from './en/grok-build-on-windows'
+import enGrokBuildFromClaude from './en/grok-build-from-claude-code'
+import enGrokBuildVsCursor from './en/grok-build-vs-cursor'
+import enGrokBuildHeadless from './en/grok-build-headless-ci'
+import enGrokBuildHistory from './en/grok-build-conversation-history'
+
 // Spanish guides
 import esMultipleTerminals from './es/como-usar-varios-terminales-claude-code'
 import esHistorialClaudeCode from './es/historial-claude-code'
@@ -77,14 +87,12 @@ import esClaudeCodeVsCursorVsCodex from './es/claude-code-vs-cursor-vs-codex'
 import esBestMcpServers from './es/mejores-servidores-mcp-claude-code'
 import esClaudeCodeAgentSwarm from './es/enjambre-de-agentes-claude-code'
 import esCodexAgentSwarm from './es/enjambre-de-agentes-codex'
-import esGeminiAgentSwarm from './es/enjambre-de-agentes-gemini'
 import esAiCliAgentSwarm from './es/enjambre-de-agentes-cli-ia'
 import esSkillsMarketplace from './es/marketplace-de-skills-claude-code'
 import esTaskManagement from './es/gestion-de-tareas-claude-code'
 import esProjectSwitcher from './es/cambio-rapido-de-proyecto-claude-code'
 import esAiCommits from './es/mensajes-de-commit-con-ia-claude-code'
 import esRunMultipleCodex from './es/ejecutar-multiples-sesiones-codex'
-import esRunMultipleGemini from './es/ejecutar-multiples-sesiones-gemini'
 import esComoUsarAntigravity from './es/como-usar-antigravity-cli'
 import esEjecutarMultiplesAntigravity from './es/ejecutar-multiples-sesiones-antigravity-cli'
 import esAntigravityVsGemini from './es/antigravity-cli-vs-gemini-cli'
@@ -125,6 +133,34 @@ import esConductor from './es/conductor-vs-codeagentswarm'
 import esClaudeSquad from './es/claude-squad-vs-codeagentswarm'
 import esVibeKanban from './es/vibe-kanban-vs-codeagentswarm'
 import esNimbalyst from './es/nimbalyst-vs-codeagentswarm'
+import enClaudeCodePlans from './en/claude-code-plans-and-pricing'
+import esClaudeCodePlans from './es/planes-y-precios-de-claude-code'
+import enCodexPlans from './en/codex-plans-and-pricing'
+import esCodexPlans from './es/planes-y-precios-de-codex'
+import enOpenCodePlans from './en/opencode-plans-and-pricing'
+import esOpenCodePlans from './es/planes-y-precios-de-opencode'
+import enAntigravityPlans from './en/antigravity-plans-and-pricing'
+import esAntigravityPlans from './es/planes-y-precios-de-antigravity'
+import enAntigravityYolo from './en/antigravity-yolo-mode'
+import esAntigravityYolo from './es/modo-yolo-antigravity'
+import enAntigravityHistory from './en/antigravity-cli-conversation-history'
+import esAntigravityHistory from './es/historial-conversaciones-antigravity'
+import enAntigravityWindows from './en/antigravity-cli-on-windows'
+import esAntigravityWindows from './es/antigravity-cli-en-windows'
+import enAntigravitySwarm from './en/antigravity-agent-swarm'
+import esAntigravitySwarm from './es/enjambre-de-agentes-antigravity'
+
+import esComoUsarGrokBuild from './es/como-usar-grok-build'
+import esGrokBuildVsClaude from './es/grok-build-vs-claude-code'
+import esGrokBuildAgentSwarm from './es/enjambre-de-agentes-grok-build'
+import esGrokBuildPlanMode from './es/modo-plan-grok-build'
+import esGrokBuildSubagents from './es/subagentes-grok-build-vs-enjambre'
+import esGrokBuildPricing from './es/precios-y-acceso-grok-build'
+import esGrokBuildWindows from './es/grok-build-en-windows'
+import esGrokBuildFromClaude from './es/grok-build-desde-claude-code'
+import esGrokBuildVsCursor from './es/grok-build-vs-cursor'
+import esGrokBuildHeadless from './es/grok-build-headless-ci'
+import esGrokBuildHistory from './es/historial-conversaciones-grok-build'
 
 // Registry of all guides by locale and slug
 export const guides: Record<string, Record<string, Guide>> = {
@@ -141,14 +177,12 @@ export const guides: Record<string, Record<string, Guide>> = {
     'best-mcp-servers-claude-code': enBestMcpServers,
     'claude-code-agent-swarm': enClaudeCodeAgentSwarm,
     'codex-agent-swarm': enCodexAgentSwarm,
-    'gemini-agent-swarm': enGeminiAgentSwarm,
     'ai-cli-agent-swarm': enAiCliAgentSwarm,
     'claude-code-skills-marketplace': enSkillsMarketplace,
     'claude-code-task-management': enTaskManagement,
     'claude-code-project-switcher': enProjectSwitcher,
     'ai-commit-messages-claude-code': enAiCommits,
     'run-multiple-codex-sessions': enRunMultipleCodex,
-    'run-multiple-gemini-sessions': enRunMultipleGemini,
     'how-to-use-antigravity-cli': enHowToUseAntigravity,
     'run-multiple-antigravity-cli-sessions': enRunMultipleAntigravity,
     'antigravity-cli-vs-gemini-cli': enAntigravityVsGemini,
@@ -189,6 +223,25 @@ export const guides: Record<string, Record<string, Guide>> = {
     'claude-squad-vs-codeagentswarm': enClaudeSquad,
     'vibe-kanban-vs-codeagentswarm': enVibeKanban,
     'nimbalyst-vs-codeagentswarm': enNimbalyst,
+    'claude-code-plans-and-pricing': enClaudeCodePlans,
+    'codex-plans-and-pricing': enCodexPlans,
+    'opencode-plans-and-pricing': enOpenCodePlans,
+    'antigravity-plans-and-pricing': enAntigravityPlans,
+    'antigravity-yolo-mode': enAntigravityYolo,
+    'antigravity-cli-conversation-history': enAntigravityHistory,
+    'antigravity-cli-on-windows': enAntigravityWindows,
+    'antigravity-agent-swarm': enAntigravitySwarm,
+    'how-to-use-grok-build': enHowToUseGrokBuild,
+    'grok-build-vs-claude-code': enGrokBuildVsClaude,
+    'grok-build-agent-swarm': enGrokBuildAgentSwarm,
+    'grok-build-plan-mode': enGrokBuildPlanMode,
+    'grok-build-subagents-vs-agent-swarm': enGrokBuildSubagents,
+    'grok-build-pricing': enGrokBuildPricing,
+    'grok-build-on-windows': enGrokBuildWindows,
+    'grok-build-from-claude-code': enGrokBuildFromClaude,
+    'grok-build-vs-cursor': enGrokBuildVsCursor,
+    'grok-build-headless-ci': enGrokBuildHeadless,
+    'grok-build-conversation-history': enGrokBuildHistory,
   },
   es: {
     'como-usar-varios-terminales-claude-code': esMultipleTerminals,
@@ -203,14 +256,12 @@ export const guides: Record<string, Record<string, Guide>> = {
     'mejores-servidores-mcp-claude-code': esBestMcpServers,
     'enjambre-de-agentes-claude-code': esClaudeCodeAgentSwarm,
     'enjambre-de-agentes-codex': esCodexAgentSwarm,
-    'enjambre-de-agentes-gemini': esGeminiAgentSwarm,
     'enjambre-de-agentes-cli-ia': esAiCliAgentSwarm,
     'marketplace-de-skills-claude-code': esSkillsMarketplace,
     'gestion-de-tareas-claude-code': esTaskManagement,
     'cambio-rapido-de-proyecto-claude-code': esProjectSwitcher,
     'mensajes-de-commit-con-ia-claude-code': esAiCommits,
     'ejecutar-multiples-sesiones-codex': esRunMultipleCodex,
-    'ejecutar-multiples-sesiones-gemini': esRunMultipleGemini,
     'como-usar-antigravity-cli': esComoUsarAntigravity,
     'ejecutar-multiples-sesiones-antigravity-cli': esEjecutarMultiplesAntigravity,
     'antigravity-cli-vs-gemini-cli': esAntigravityVsGemini,
@@ -251,6 +302,25 @@ export const guides: Record<string, Record<string, Guide>> = {
     'claude-squad-vs-codeagentswarm': esClaudeSquad,
     'vibe-kanban-vs-codeagentswarm': esVibeKanban,
     'nimbalyst-vs-codeagentswarm': esNimbalyst,
+    'planes-y-precios-de-claude-code': esClaudeCodePlans,
+    'planes-y-precios-de-codex': esCodexPlans,
+    'planes-y-precios-de-opencode': esOpenCodePlans,
+    'planes-y-precios-de-antigravity': esAntigravityPlans,
+    'modo-yolo-antigravity': esAntigravityYolo,
+    'historial-conversaciones-antigravity': esAntigravityHistory,
+    'antigravity-cli-en-windows': esAntigravityWindows,
+    'enjambre-de-agentes-antigravity': esAntigravitySwarm,
+    'como-usar-grok-build': esComoUsarGrokBuild,
+    'grok-build-vs-claude-code': esGrokBuildVsClaude,
+    'enjambre-de-agentes-grok-build': esGrokBuildAgentSwarm,
+    'modo-plan-grok-build': esGrokBuildPlanMode,
+    'subagentes-grok-build-vs-enjambre': esGrokBuildSubagents,
+    'precios-y-acceso-grok-build': esGrokBuildPricing,
+    'grok-build-en-windows': esGrokBuildWindows,
+    'grok-build-desde-claude-code': esGrokBuildFromClaude,
+    'grok-build-vs-cursor': esGrokBuildVsCursor,
+    'grok-build-headless-ci': esGrokBuildHeadless,
+    'historial-conversaciones-grok-build': esGrokBuildHistory,
   },
 }
 

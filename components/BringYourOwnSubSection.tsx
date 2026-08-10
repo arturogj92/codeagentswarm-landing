@@ -19,6 +19,7 @@ export default function BringYourOwnSubSection() {
     { name: 'Antigravity CLI', command: 'agy', icon: '/icons/apps/antigravity-icon.png' },
     { name: 'opencode', command: 'opencode', icon: '/icons/apps/opencode-icon.svg' },
     { name: 'Kimi Code', command: 'kimi', icon: '/icons/apps/kimi-icon.png' },
+    { name: 'Grok Build', command: 'grok', icon: '/icons/apps/grok-icon.svg' },
   ]
 
   /**
@@ -75,11 +76,8 @@ export default function BringYourOwnSubSection() {
           </p>
         </motion.div>
 
-        {/* Same grid, gutters and card shell as the "Works with" section right
-            below, which lists these exact five agents. Two cards of the same
-            thing at different sizes is the kind of seam you feel before you can
-            name it. */}
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-5">
+        {/* Six columns since Grok Build joined the roster on master. */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-3 mt-11">
           {agents.map((agent, i) => (
             <motion.div
               key={agent.name}
