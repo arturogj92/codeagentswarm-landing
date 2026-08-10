@@ -142,7 +142,7 @@ export default function GuideLayout({ guide }: GuideLayoutProps) {
             <GuideProductBlock
               locale={locale}
               slug={meta.slug}
-              videoKey={pickGuideVideo(meta.slug)}
+              videoKey={pickGuideVideo()}
               ctaText={meta.ctaText}
             />
 
