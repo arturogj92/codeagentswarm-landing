@@ -4,7 +4,9 @@ import { useEffect } from 'react'
 import { useLocale, useTranslations } from 'next-intl'
 import Header from '@/components/Header'
 import BetaBanner from '@/components/BetaBanner'
-import HeroSection, { HeroPromoSection } from '@/components/HeroSection'
+// HeroPromoSection is gone from the flow: master moved its six videos into
+// FeatureVideosSection, so rendering both would show the same reel twice.
+import HeroSection from '@/components/HeroSection'
 import FeatureVideosSection from '@/components/FeatureVideosSection'
 import ProblemSection from '@/components/ProblemSection'
 import FeaturesSection from '@/components/FeaturesSection'
@@ -161,27 +163,25 @@ export default function Home() {
 
       <main>
         <HeroSection />
+        {/* The proof of the headline it sits under: "Parallel coding agents.
+            Zero window chaos." is a claim until you watch a swarm of them work
+            in one window. Desktop only - on a phone this renders nothing and
+            the page flows straight into Problem. */}
         <InteractiveDemoSection />
-
-        {/* Right after the simulator: it has just shown Chat mode running, and
-            this answers the question that raises — what happened to my CLI? */}
-        <ModeCompareSection />
-        {/* After the demo, so that on a phone - where the demo renders nothing -
-            the video takes its place as the first thing under the headline. */}
-        <HeroPromoSection />
-        {/* Right after the demo on purpose. Watching five agents work raises one
-            question before any other - "with what, and does it cost me again?" -
-            and this is the section that answers it. Buried under Pricing it was
-            only read by people who had already decided. */}
-        <BringYourOwnSubSection />
         <ProblemSection />
         <FeaturesSection />
         <FeatureVideosSection />
         <WorksWithSection />
+        {/* After the agent roster on purpose: you have just read WHICH CLIs it
+            runs, and this answers how you read them - same session as chat or
+            as the raw terminal. Kept three sections away from the simulator so
+            the page never stacks two interactive demos. */}
+        <ModeCompareSection />
         {/* <DemoSection /> */}
         <MCPSection />
         {/* <SocialProofSection /> */}
         {/* <SwarmiSection /> */}
+        <BringYourOwnSubSection />
         <PricingSection />
         <RoadmapSection />
         <CommunitySection />
