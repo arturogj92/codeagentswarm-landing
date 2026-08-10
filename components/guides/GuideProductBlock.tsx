@@ -22,6 +22,12 @@ const VIDEO_ASPECT: Record<string, number> = {
   'agent-opencode.mp4': 1660 / 1080,
   'agent-kimi.mp4': 1660 / 1080,
   'agent-grok.mp4': 1660 / 1080,
+  'agent-chat-claude.mp4': 1660 / 1080,
+  'agent-chat-codex.mp4': 1660 / 1080,
+  'agent-chat-antigravity.mp4': 1660 / 1080,
+  'agent-chat-opencode.mp4': 1660 / 1080,
+  'agent-chat-kimi.mp4': 1660 / 1080,
+  'agent-chat-grok.mp4': 1660 / 1080,
   'conversation_history.mp4': 1800 / 1080,
   'gitmanager.mp4': 972 / 720,
 }
