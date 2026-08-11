@@ -41,20 +41,20 @@ export default function Home() {
     operatingSystem: 'macOS, Windows',
     featureList: locale === 'es'
       ? [
-          'Ejecuta varios terminales de IA en paralelo',
+          'Ejecuta varios agentes de programación con IA en paralelo',
           'Notificaciones de escritorio cuando un agente termina o necesita ayuda',
           'Historial de conversaciones buscable de todos los agentes',
-          'Diffs de archivos en vivo por terminal',
+          'Diffs de archivos en vivo para cada agente',
           'Control de permisos y modo YOLO',
           'Tablero kanban que los agentes actualizan por MCP',
           'Git worktrees por sesión',
           'Marketplace de skills y de servidores MCP',
         ]
       : [
-          'Run multiple AI CLI terminals in parallel',
+          'Run multiple AI coding agents in parallel',
           'Desktop notifications when an agent finishes or needs input',
           'Searchable conversation history across all agents',
-          'Per-terminal live file diffs',
+          'Live file diffs for every agent',
           'Permission and YOLO mode control',
           'Kanban task board that agents update over MCP',
           'Git worktrees per session',

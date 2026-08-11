@@ -3,7 +3,7 @@
 import { useLocale } from 'next-intl'
 import { VideoShowcase } from './HeroSection'
 
-// The 6 feature videos (multi-terminal, multi-model, history, kanban, Git, notifications),
+// The 6 feature videos (multi-agent, multi-model, history, kanban, Git, notifications),
 // moved out of the hero to a detail section below it.
 export default function FeatureVideosSection() {
   const locale = useLocale()
@@ -15,8 +15,8 @@ export default function FeatureVideosSection() {
         </h2>
         <p className="text-lg text-white/50 max-w-2xl mx-auto">
           {locale === 'es'
-            ? 'Multiterminal, multimodelo, historial de conversaciones, kanban, Git y notificaciones.'
-            : 'Multi-terminal, multi-model, conversation history, kanban, Git and notifications.'}
+            ? 'Control multiagente, varios modelos, historial de conversaciones, kanban, Git y notificaciones.'
+            : 'Multi-agent control, multiple models, conversation history, kanban, Git and notifications.'}
         </p>
       </div>
       <VideoShowcase />

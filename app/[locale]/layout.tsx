@@ -38,8 +38,8 @@ export async function generateMetadata({
   const isSpanish = locale === 'es'
 
   const title = isSpanish
-    ? 'CodeAgentSwarm – Espacio de trabajo con IA para terminales Claude Code, Codex, Antigravity CLI, OpenCode y Kimi Code'
-    : 'CodeAgentSwarm – AI coding workspace for Claude Code, Codex, Antigravity CLI, OpenCode and Kimi Code terminals with MCP tools'
+    ? 'CodeAgentSwarm – Centro de mando para agentes de programación con IA'
+    : 'CodeAgentSwarm – Visual command center for AI coding agents'
 
   const description = isSpanish
     ? 'CodeAgentSwarm es una app de escritorio para ejecutar y supervisar varios agentes de programación con IA en paralelo: Claude Code, Codex, Antigravity CLI, OpenCode y Kimi Code, con visibilidad en tiempo real, notificaciones, historial completo de conversaciones, control de permisos, gestión multiproyecto e integraciones MCP.'
@@ -102,11 +102,11 @@ export async function generateMetadata({
     },
     openGraph: {
       title: isSpanish
-        ? 'CodeAgentSwarm – Terminales AI CLI en paralelo (Claude Code, Codex, Antigravity, OpenCode, Kimi Code)'
-        : 'CodeAgentSwarm – Multiple AI CLI terminals in parallel (Claude Code, Codex, Antigravity, OpenCode, Kimi Code)',
+        ? 'CodeAgentSwarm – Varios agentes de IA en paralelo'
+        : 'CodeAgentSwarm – Run multiple AI coding agents in parallel',
       description: isSpanish
-        ? 'Desarrolla mas rapido con terminales AI CLI (Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code), integracion Git, seguimiento de cambios en tiempo real e historial completo.'
-        : 'Work faster with multiple AI CLI terminals (Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code), Git integration, real-time change tracking and full conversation history.',
+        ? 'Supervisa Claude Code, Codex, Antigravity CLI, OpenCode y Kimi Code desde un centro de mando visual con diffs en vivo, notificaciones e historial completo.'
+        : 'Supervise Claude Code, Codex, Antigravity CLI, OpenCode and Kimi Code from one visual command center with live diffs, notifications and full history.',
       type: 'website',
       siteName: 'CodeAgentSwarm',
       url: canonicalUrl,
@@ -117,8 +117,8 @@ export async function generateMetadata({
           width: 1200,
           height: 630,
           alt: isSpanish
-            ? 'CodeAgentSwarm - Espacio de trabajo multi-terminal para AI CLI'
-            : 'CodeAgentSwarm - AI coding workspace for multiple AI CLI terminals',
+            ? 'CodeAgentSwarm - Centro de mando visual para agentes de IA'
+            : 'CodeAgentSwarm - Visual command center for AI coding agents',
         },
       ],
     },
@@ -127,11 +127,11 @@ export async function generateMetadata({
       site: '@CodeAgentSwarm',
       creator: '@CodeAgentSwarm',
       title: isSpanish
-        ? 'CodeAgentSwarm – Terminales AI CLI en paralelo'
-        : 'CodeAgentSwarm – Parallel AI CLI Terminals',
+        ? 'CodeAgentSwarm – Agentes de IA en paralelo'
+        : 'CodeAgentSwarm – AI coding agents in parallel',
       description: isSpanish
-        ? 'Orquesta multiples terminales AI CLI (Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code) en un workspace con visibilidad en tiempo real.'
-        : 'Orchestrate multiple AI CLI terminals (Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code) in one workspace with real-time visibility.',
+        ? 'Orquesta Claude Code, Codex, Antigravity CLI, OpenCode y Kimi Code desde un centro de mando con visibilidad en tiempo real.'
+        : 'Orchestrate Claude Code, Codex, Antigravity CLI, OpenCode and Kimi Code from one command center with real-time visibility.',
       images: ['/og.png'],
     },
     robots: {
