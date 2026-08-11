@@ -1,0 +1,290 @@
+export interface UserActivityRow {
+  user_id: string
+  name: string | null
+  email: string
+  avatar_url: string | null
+  provider: string | null
+  subscription_tier: string | null
+  subscription_status: string | null
+  created_at: string | null
+  last_login: string | null
+  total_events: number
+  active_days: number
+  first_active: string | null
+  last_active: string | null
+  days_since_last: number | null
+  current_streak: number
+  longest_streak: number
+  most_used_agent: string | null
+  most_launched_agent: string | null
+  agent_launches: number
+  avg_terminal_slots: number | null
+  max_terminal_slots: number | null
+  terminal_metric_source: 'launches' | 'tab_slots' | null
+  last7: boolean[]
+  work_periods_7d: number
+  work_periods_30d: number
+  last_app_version: string | null
+  activation_at: string | null
+  integration_providers: string[]
+  outreach_status: 'eligible' | 'contacted' | 'replied' | 'excluded'
+}
+
+export interface UserActivityOverview {
+  users: UserActivityRow[]
+  generated_at: string
+}
+
+export interface UserGlobalAction {
+  action: string
+  events: number
+  users: number
+}
+
+export type GlobalWindowDays = 1 | 7 | 30 | 180
+
+export interface UserGlobalMetrics {
+  generated_at: string
+  window_days: number
+  registered_users: number
+  active_users: number
+  excluded_users: number
+  events: number
+  top_actions: UserGlobalAction[]
+  actions: UserGlobalAction[]
+  avg_terminal_slots: number | null
+  max_terminal_slots: number | null
+  terminal_metric_source: 'launches' | 'tab_slots' | 'mixed' | null
+  top_user_share: number
+  top_two_share: number
+}
+
+export interface UserActivityDetail {
+  calendar: { d: string; events: number }[]
+  agents: { agent: string; n: number }[]
+  top_actions: { action: string; n: number }[]
+  recent_activity: { action: string; occurred_at: string; app_version: string | null }[]
+  account: {
+    username: string | null
+    provider: string | null
+    created_at: string | null
+    updated_at: string | null
+    last_login: string | null
+    session_count: number
+    last_session_at: string | null
+  }
+  integrations: {
+    provider: string
+    provider_url: string | null
+    account_name: string | null
+    account_email: string | null
+    created_at: string | null
+    last_synced_at: string | null
+    credential_state: 'valid' | 'expired' | 'unknown'
+  }[]
+  outreach: {
+    is_excluded: boolean
+    exclusion_reason: string | null
+    events: {
+      template_slug: string
+      sent_at: string
+      responded_at: string | null
+      is_dry_run: boolean
+    }[]
+  }
+  billing: {
+    tier: string | null
+    status: string | null
+    cancel_at_period_end: boolean
+    cancel_at: string | null
+    end_date: string | null
+    last_payment_at: string | null
+    updated_at: string | null
+  }
+  cloud_tasks: {
+    total: number
+    owned: number
+    assigned: number
+    synced: number
+    conflicts: number
+    recently_completed: number
+    by_status: Record<string, number>
+  }
+}
+
+export type Lifecycle = 'active' | 'inactive' | 'dormant' | 'no-tracked'
+export type LifecycleFilter = 'all' | Lifecycle
+
+export interface UserFilters {
+  query: string
+  lifecycle: LifecycleFilter
+  agent: string
+  activation: 'all' | 'activated' | 'not-activated'
+  version: string
+  provider: string
+  plan: string
+  integration: string
+  outreach: 'all' | UserActivityRow['outreach_status']
+}
+
+export const EMPTY_USER_FILTERS: UserFilters = {
+  query: '',
+  lifecycle: 'all',
+  agent: 'all',
+  activation: 'all',
+  version: 'all',
+  provider: 'all',
+  plan: 'all',
+  integration: 'all',
+  outreach: 'all',
+}
+
+const AGENT_ALIASES: Record<string, string> = {
+  claude: 'claude',
+  'claude code': 'claude',
+  'claude cli': 'claude',
+  codex: 'codex',
+  'codex cli': 'codex',
+  'openai codex': 'codex',
+  antigravity: 'antigravity',
+  'antigravity cli': 'antigravity',
+  opencode: 'opencode',
+  'open code': 'opencode',
+  'open code cli': 'opencode',
+  'opencode cli': 'opencode',
+  kimi: 'kimi',
+  'kimi cli': 'kimi',
+  grok: 'grok',
+  'grok cli': 'grok',
+  gemini: 'gemini',
+  'gemini cli': 'gemini',
+}
+
+const AGENT_LABELS: Record<string, string> = {
+  claude: 'Claude Code',
+  codex: 'Codex',
+  antigravity: 'Antigravity',
+  opencode: 'opencode',
+  kimi: 'Kimi Code',
+  grok: 'Grok Build',
+  gemini: 'Gemini (legacy)',
+}
+
+export function normalizeAgent(value: string | null): string {
+  if (!value) return ''
+  const normalized = value.trim().toLowerCase().replace(/[_-]+/g, ' ').replace(/\s+/g, ' ')
+  return AGENT_ALIASES[normalized] ?? normalized
+}
+
+export function agentLabel(value: string | null): string {
+  const normalized = normalizeAgent(value)
+  if (!normalized) return 'Unknown'
+  return AGENT_LABELS[normalized] ?? normalized.replace(/\b\w/g, (character) => character.toUpperCase())
+}
+
+export function primaryAgentSignal(user: UserActivityRow): {
+  agent: string
+  source: 'launches' | 'selections' | 'none'
+} {
+  const launched = normalizeAgent(user.most_launched_agent)
+  if (launched) return { agent: launched, source: 'launches' }
+  const selected = normalizeAgent(user.most_used_agent)
+  if (selected) return { agent: selected, source: 'selections' }
+  return { agent: '', source: 'none' }
+}
+
+const UUID_PATTERN = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i
+
+export function parseExcludedUserIds(value: unknown): string[] | null {
+  if (!Array.isArray(value) || value.length > 250) return null
+  if (!value.every((entry) => typeof entry === 'string' && UUID_PATTERN.test(entry))) return null
+  return [...new Set(value)]
+}
+
+export function parseGlobalWindowDays(value: unknown): GlobalWindowDays | null {
+  if (value === undefined) return 180
+  return value === 1 || value === 7 || value === 30 || value === 180 ? value : null
+}
+
+export function getLifecycle(daysSinceLast: number | null): Lifecycle {
+  if (daysSinceLast === null) return 'no-tracked'
+  if (daysSinceLast < 7) return 'active'
+  if (daysSinceLast <= 30) return 'inactive'
+  return 'dormant'
+}
+
+export function summarizeUsers(users: UserActivityRow[], now = new Date()) {
+  const cutoff = now.getTime() - 30 * 86_400_000
+  let new30 = 0
+  let active7 = 0
+  let active30 = 0
+  let activated = 0
+  let inactive = 0
+  let dormant = 0
+  let noTracked = 0
+
+  for (const user of users) {
+    const createdAt = Date.parse(user.created_at || '')
+    if (Number.isFinite(createdAt) && createdAt >= cutoff && createdAt <= now.getTime()) new30 += 1
+    if (user.activation_at) activated += 1
+
+    switch (getLifecycle(user.days_since_last)) {
+      case 'active':
+        active7 += 1
+        active30 += 1
+        break
+      case 'inactive':
+        inactive += 1
+        active30 += 1
+        break
+      case 'dormant':
+        dormant += 1
+        break
+      case 'no-tracked':
+        noTracked += 1
+        break
+    }
+  }
+
+  return {
+    total: users.length,
+    new30,
+    active7,
+    active30,
+    activated,
+    inactive,
+    dormant,
+    noTracked,
+  }
+}
+
+export function filterUsers(users: UserActivityRow[], filters: UserFilters): UserActivityRow[] {
+  const query = filters.query.trim().toLowerCase()
+
+  return users.filter((user) => {
+    if (
+      query &&
+      ![user.name, user.email, user.user_id]
+        .filter(Boolean)
+        .some((value) => String(value).toLowerCase().includes(query))
+    ) return false
+
+    if (filters.lifecycle !== 'all' && getLifecycle(user.days_since_last) !== filters.lifecycle) return false
+    if (filters.agent !== 'all' && primaryAgentSignal(user).agent !== filters.agent) return false
+    if (filters.activation === 'activated' && !user.activation_at) return false
+    if (filters.activation === 'not-activated' && user.activation_at) return false
+    if (filters.version === 'unknown' && user.last_app_version !== null) return false
+    if (filters.version !== 'all' && filters.version !== 'unknown' && user.last_app_version !== filters.version) return false
+    if (filters.provider !== 'all' && user.provider !== filters.provider) return false
+    if (filters.plan !== 'all' && user.subscription_tier !== filters.plan) return false
+    if (filters.integration === 'none' && user.integration_providers.length > 0) return false
+    if (
+      filters.integration !== 'all' &&
+      filters.integration !== 'none' &&
+      !user.integration_providers.includes(filters.integration)
+    ) return false
+    if (filters.outreach !== 'all' && user.outreach_status !== filters.outreach) return false
+
+    return true
+  })
+}

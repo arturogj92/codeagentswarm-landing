@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect, useRef } from 'react'
 import { useTranslations } from 'next-intl'
 import styles from './CapabilitiesGrid.module.css'
 
@@ -106,8 +107,26 @@ export default function CapabilitiesGrid() {
     { icon: 'board', title: t('kanban'), description: t('kanbanDesc') },
   ]
 
+  /**
+   * The dashed "signal" line animates stroke-dashoffset, which no browser can
+   * run on the compositor — every frame is a style recalc plus a repaint, and a
+   * CSS animation never stops on its own, visible or not. The area is one small
+   * icon, but it is the one piece of the page that works at 60fps for the whole
+   * session. Paused whenever the rail is off screen; identical when on it.
+   */
+  const railRef = useRef<HTMLElement>(null)
+  useEffect(() => {
+    const rail = railRef.current
+    if (!rail) return
+    const observer = new IntersectionObserver(([entry]) => {
+      rail.style.setProperty('--signal-play', entry.isIntersecting ? 'running' : 'paused')
+    })
+    observer.observe(rail)
+    return () => observer.disconnect()
+  }, [])
+
   return (
-    <section className={styles.rail} aria-label={t('eyebrow')}>
+    <section className={styles.rail} aria-label={t('eyebrow')} ref={railRef}>
       {capabilities.map((capability) => (
         <article className={styles.feature} key={capability.icon}>
           <div className={styles.featureIconWrap}>

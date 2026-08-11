@@ -6,15 +6,17 @@ import Link from 'next/link'
 import type { Guide } from '@/content/guides/types'
 import GuidesHeader from './GuidesHeader'
 
+type GuideSummary = Pick<Guide, 'meta'>
+
 interface GuidesIndexPageProps {
-  guides: Guide[]
+  guides: GuideSummary[]
   locale: 'en' | 'es'
 }
 
 // Tool family for each guide, keyed by its canonical English slug so the
 // grouping works the same in both locales. Anything not listed falls back to
 // the Claude Code family.
-type Family = 'cross' | 'claude' | 'codex' | 'antigravity' | 'opencode' | 'kimi'
+type Family = 'cross' | 'claude' | 'codex' | 'antigravity' | 'opencode' | 'kimi' | 'grok'
 
 const FAMILY_BY_EN_SLUG: Record<string, Family> = {
   'best-tools-to-run-multiple-ai-coding-agents': 'cross',
@@ -61,9 +63,21 @@ const FAMILY_BY_EN_SLUG: Record<string, Family> = {
   'antigravity-cli-conversation-history': 'antigravity',
   'antigravity-cli-on-windows': 'antigravity',
   'antigravity-agent-swarm': 'antigravity',
+  // Grok Build cluster (see docs/plans/2026-07-28-seo-grok-build.md — Opus-revised inventory)
+  'how-to-use-grok-build': 'grok',
+  'grok-build-vs-claude-code': 'grok',
+  'grok-build-agent-swarm': 'grok',
+  'grok-build-plan-mode': 'grok',
+  'grok-build-subagents-vs-agent-swarm': 'grok',
+  'grok-build-pricing': 'grok',
+  'grok-build-on-windows': 'grok',
+  'grok-build-from-claude-code': 'grok',
+  'grok-build-vs-cursor': 'grok',
+  'grok-build-headless-ci': 'grok',
+  'grok-build-conversation-history': 'grok',
 }
 
-const FAMILY_ORDER: Family[] = ['cross', 'claude', 'codex', 'antigravity', 'opencode', 'kimi']
+const FAMILY_ORDER: Family[] = ['cross', 'claude', 'codex', 'antigravity', 'opencode', 'kimi', 'grok']
 
 const FAMILY_META: Record<Family, { en: string; es: string; icons: string[] }> = {
   cross: {
@@ -76,6 +90,7 @@ const FAMILY_META: Record<Family, { en: string; es: string; icons: string[] }> =
   antigravity: { en: 'Antigravity CLI', es: 'Antigravity CLI', icons: ['/icons/apps/antigravity-icon.png'] },
   opencode: { en: 'OpenCode', es: 'OpenCode', icons: ['/icons/apps/opencode-icon.svg'] },
   kimi: { en: 'Kimi Code', es: 'Kimi Code', icons: ['/icons/apps/kimi-icon.png'] },
+  grok: { en: 'Grok Build', es: 'Grok Build', icons: ['/icons/apps/grok-icon.svg'] },
 }
 
 // Helper function to highlight keywords in title
@@ -121,7 +136,7 @@ export default function GuidesIndexPage({ guides, locale }: GuidesIndexPageProps
   const guidesBasePath = isSpanish ? '/es/guias' : '/en/guides'
 
   // Group guides by tool family (using the canonical EN slug as the key)
-  const familyOf = (guide: Guide): Family => {
+  const familyOf = (guide: GuideSummary): Family => {
     const enSlug = locale === 'en' ? guide.meta.slug : guide.meta.alternateSlug
     return FAMILY_BY_EN_SLUG[enSlug] ?? 'claude'
   }
@@ -134,7 +149,7 @@ export default function GuidesIndexPage({ guides, locale }: GuidesIndexPageProps
   })).filter(group => group.items.length > 0)
 
   let cardIndex = 0
-  const renderCard = (guide: Guide) => {
+  const renderCard = (guide: GuideSummary) => {
     const delay = Math.min(cardIndex * 0.05, 0.4)
     cardIndex += 1
     return (

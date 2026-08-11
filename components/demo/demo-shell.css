@@ -1,0 +1,1137 @@
+/*
+ * Everything the demo needs that does NOT come from the app: the fake window
+ * chrome, the two-pane layout and the narration strip. Kept separate from the
+ * generated demo-app.css so a re-sync never clobbers it.
+ */
+
+.demo-root {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #0d0d12;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.55);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  /* The app is a desktop app: below this the two-pane layout stops making sense
+     and the list alone tells the story better. See the mobile block at the end. */
+  container-type: inline-size;
+}
+
+.demo-embedded {
+  height: 520px;
+}
+
+.demo-full {
+  height: min(78vh, 760px);
+}
+
+/* ---- Window chrome ---- */
+
+.demo-traffic {
+  display: inline-flex;
+  gap: 6px;
+  flex-shrink: 0;
+  margin-right: 4px;
+}
+
+.demo-traffic i {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+
+.demo-mode {
+  flex-shrink: 0;
+  margin-left: 4px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+/* The badge only lights up while the VISITOR is steering, so the change of
+   colour is a reward for touching something rather than constant decoration. */
+.demo-mode.is-live {
+  border-color: rgba(251, 191, 36, 0.45);
+  background: rgba(251, 191, 36, 0.12);
+  color: #fbbf24;
+}
+
+/* ---- App header ---- */
+
+/* The header's own rules come from the app. These three undo the desktop-only
+   bits: it is absolutely positioned there, drag-regions mean nothing in a page,
+   and its buttons must not answer the pointer in a demo. */
+.demo-root .header {
+  position: relative;
+  flex-shrink: 0;
+  width: 100%;
+  min-width: 0;
+  -webkit-app-region: no-drag;
+  /* The app reserves 80px on the left for the OS window buttons, which it does
+     not draw itself. Here the traffic lights ARE drawn inside the bar, so that
+     reservation would be counted twice. */
+  padding-left: 12px;
+}
+
+/* The header is one flex row, and everything in it has the default shrink of 1.
+   In the app there is a whole window of room; inside a page the row is tighter,
+   and the first casualty was the logo, squashed from 36px to 21px. Only the
+   shortcut strip is allowed to give, because it is the only part that already
+   knows how to disappear. */
+.demo-root .header-left,
+.demo-root .header-controls,
+.demo-root .logo-container,
+.demo-root .app-logo,
+.demo-root .action-buttons,
+.demo-root .terminal-management,
+.demo-root .quota-cluster {
+  flex-shrink: 0;
+}
+
+/* Most of the header is scenery. The shortcut chips and Run do work, so only
+   everything else loses its pointer affordance rather than its hover state:
+   a bar where nothing lights up reads as a screenshot. */
+.demo-root .header button:not(.shortcut-btn):not(.btn-add-terminal) {
+  cursor: default;
+}
+
+.demo-root .navbar-shortcuts {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  /* NOT overflow:hidden. Each chip's tooltip is an absolutely positioned CHILD,
+     so any overflow value other than visible clips it — the app's own code
+     carries this exact warning, and clipping is what cut the hover in half. */
+  overflow: visible;
+}
+
+/* The app renders emoji project icons through lucide's own picker; this is the
+   one rule from icon-picker.css the demo needs. */
+.demo-root .project-icon-emoji {
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---- Layout ---- */
+
+.demo-body {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+.demo-root .tabbed-layout-container.tab-navigation-sidebar {
+  /* flex-basis comes from the resize handle; the shorthand only sets the rest. */
+  flex-grow: 0;
+  flex-shrink: 0;
+  min-width: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Drag to resize the list, as in the app. Wider than it looks so it is grabbable
+   without hunting for a 1px line.
+   Scoped under BOTH root classes on purpose: the app hides
+   .tab-sidebar-resize-handle in a shared `display:none` rule, and that selector
+   (.cas-demo .x) out-specifies a bare class. The drag worked all along; there
+   was simply nothing on screen to grab. */
+.cas-demo.demo-root .demo-resize-handle {
+  display: block;
+  position: relative;
+  flex: 0 0 5px;
+  margin: 0 -2px;
+  z-index: 5;
+  cursor: col-resize;
+  background: transparent;
+  transition: background 120ms ease;
+}
+
+.cas-demo.demo-root .demo-resize-handle:hover,
+.demo-body.is-resizing .demo-resize-handle {
+  background: rgba(251, 191, 36, 0.5);
+}
+
+/* xterm re-fits on every frame of a drag; suppressing its transitions keeps the
+   resize from looking laggy. */
+.demo-body.is-resizing * {
+  transition: none !important;
+}
+
+/* The app sizes this strip against a full window. Inside a page it needs to be
+   told to take the pane's height and scroll its rows, or the list simply runs
+   off the bottom of the frame. */
+.demo-root .terminal-tabs-bar {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}
+
+.demo-root .terminal-tabs {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.demo-root .terminal-tabs::-webkit-scrollbar {
+  width: 6px;
+}
+
+.demo-root .terminal-tabs::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.demo-terminal-panel {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  /* In Tabs view the body is a COLUMN, so the pane has to be allowed to shrink
+     vertically as well; without this it pushes the input box and the status line
+     out of the frame. */
+  min-height: 0;
+  border-left: 1px solid rgba(255, 255, 255, 0.07);
+  background: #0d0d12;
+}
+
+.demo-terminal-header {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-shrink: 0;
+  padding: 8px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.demo-terminal-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.demo-terminal-path {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.demo-terminal-host {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  padding: 10px 6px 10px 12px;
+}
+
+/* Click targets laid over the selector rows. The options are characters in the
+   terminal buffer, so they cannot be clicked directly; these sit on top at the
+   exact rows the block reported. Invisible on purpose: the highlight the
+   terminal draws is the real feedback. */
+.demo-prompt-hit {
+  position: absolute;
+  left: 12px;
+  right: 6px;
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.demo-prompt-hit:focus-visible {
+  outline: 2px solid rgba(251, 191, 36, 0.6);
+  outline-offset: 1px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* The boxed input line every CLI draws under its transcript. */
+.demo-terminal-input {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  margin: 0 12px;
+  padding: 7px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.02);
+  font-family: 'SF Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+}
+
+.demo-input-cursor {
+  width: 7px;
+  height: 15px;
+  background: #fbbf24;
+  animation: demoCaret 1.06s steps(1) infinite;
+}
+
+@keyframes demoCaret {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .demo-input-cursor {
+    animation: none;
+  }
+}
+
+/* Every CLI pins a status line to the bottom of its pane. */
+.demo-terminal-footer {
+  flex-shrink: 0;
+  padding: 6px 14px 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  font-family: 'SF Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* xterm sizes itself against the host; without this its canvas can overflow the
+   rounded corners of the window frame during a resize. */
+.demo-terminal-host .xterm {
+  height: 100%;
+}
+
+.demo-terminal-host .xterm-viewport::-webkit-scrollbar {
+  width: 6px;
+}
+
+.demo-terminal-host .xterm-viewport::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* The quota panel is taller than the demo frame, which clips its overflow. In the
+   app it has a whole window to drop into; here it has to scroll.
+   An absolute height, not a percentage: percentages resolve against the ring
+   cluster (28px tall), which collapsed the panel to nothing. */
+.demo-root .quota-popover {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.demo-embedded .quota-popover {
+  max-height: 380px;
+}
+
+.demo-root .quota-popover::-webkit-scrollbar {
+  width: 6px;
+}
+
+.demo-root .quota-popover::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ---- Terminal launcher (what Run opens) ---- */
+
+.demo-launcher-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  background: rgba(6, 6, 10, 0.74);
+  backdrop-filter: blur(3px);
+  animation: demoFadeIn 160ms ease both;
+}
+
+.demo-launcher {
+  display: flex;
+  flex-direction: column;
+  width: min(620px, 100%);
+  max-height: 100%;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #12121a;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.62);
+  overflow: hidden;
+  animation: demoPickerIn 200ms cubic-bezier(0.2, 0.9, 0.3, 1) both;
+}
+
+@keyframes demoFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes demoPickerIn {
+  from { opacity: 0; transform: translateY(8px) scale(0.985); }
+  to { opacity: 1; transform: none; }
+}
+
+/* ---- Breadcrumb head ---- */
+
+.demo-launcher-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  padding: 14px 16px 10px;
+}
+
+.demo-launcher-logo {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.demo-crumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.demo-crumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 0;
+  background: none;
+  padding: 0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.32);
+  cursor: pointer;
+}
+
+.demo-crumb.is-active {
+  color: #fbbf24;
+}
+
+/* The step number is a ring, so the trail reads as 1 then 2 rather than as two
+   equally weighted words. */
+.demo-crumb-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid currentColor;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.demo-crumb-sep {
+  color: rgba(255, 255, 255, 0.22);
+}
+
+.demo-launcher-count {
+  margin-left: auto;
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.36);
+  white-space: nowrap;
+}
+
+/* ---- Search ---- */
+
+.demo-launcher-search {
+  flex-shrink: 0;
+  margin: 4px 16px 10px;
+  padding: 10px 13px;
+  border-radius: 9px;
+  border: 1px solid rgba(251, 191, 36, 0.55);
+  background: rgba(255, 255, 255, 0.02);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 13px;
+  outline: none;
+}
+
+.demo-launcher-search::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* ---- Rows ---- */
+
+.demo-launcher-list {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 0 10px 8px;
+}
+
+.demo-launcher-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.demo-launcher-list::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.demo-launcher-row {
+  display: grid;
+  grid-template-columns: 34px 1fr auto;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 9px 10px;
+  border: 0;
+  border-radius: 9px;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  transition: background 110ms ease;
+}
+
+.demo-launcher-row:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.demo-launcher-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+}
+
+/* Agent marks are logos on their own backgrounds, so they get a plate instead
+   of the project icon's edge-to-edge tile. */
+.demo-launcher-icon.is-agent {
+  width: 28px;
+  height: 28px;
+  margin: 0 3px;
+  border-radius: 7px;
+}
+
+.demo-launcher-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.demo-launcher-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.demo-launcher-path {
+  font-family: 'SF Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.34);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.demo-launcher-age {
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.3);
+  white-space: nowrap;
+}
+
+.demo-launcher-empty {
+  padding: 22px 12px;
+  text-align: center;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+/* ---- Actions ---- */
+
+.demo-launcher-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  padding: 12px 16px 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.demo-launcher-primary,
+.demo-launcher-secondary,
+.demo-launcher-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 9px 14px;
+  border-radius: 9px;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.demo-launcher-primary {
+  flex: 1;
+  border: 0;
+  background: #fbbf24;
+  color: #101014;
+}
+
+.demo-launcher-secondary {
+  flex: 1;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.02);
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* These three do nothing in a demo. Dimming them and killing the pointer says so
+   without needing a label that explains it. */
+.demo-launcher-primary:disabled,
+.demo-launcher-secondary:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.demo-launcher-close {
+  flex-shrink: 0;
+  padding: 9px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.02);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.demo-launcher-close:hover {
+  color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* ---- Narration ---- */
+
+.demo-footer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+  padding: 9px 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  background: #15151c;
+}
+
+.demo-hint {
+  /* Grows now that it is alone on the left: it is the only thing in the strip
+     besides the button, and it is empty most of the time. */
+  flex: 1;
+  min-width: 0;
+  font-size: 10.5px;
+  color: rgba(255, 255, 255, 0.32);
+  white-space: nowrap;
+}
+
+.demo-progress {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(251, 191, 36, 0.5), #fbbf24);
+  transform-origin: left center;
+  will-change: transform;
+}
+
+/* ---- Narrow layouts ---- */
+
+/* A container query, not a media query: the same component is embedded in a
+   section and shown full-bleed on /demo, so what matters is how wide THIS box
+   is, not the viewport. */
+@container (max-width: 720px) {
+  .demo-terminal-panel {
+    display: none;
+  }
+
+  .demo-root .tabbed-layout-container.tab-navigation-sidebar {
+    flex: 1;
+  }
+
+  .demo-hint {
+    display: none;
+  }
+
+  /* The app's header is a single desktop-width flex row: below this it cannot
+     wrap, only overflow. The list alone still tells the story, so the chrome
+     steps aside instead of being crammed in. */
+  .demo-root .header {
+    display: none;
+  }
+
+  .demo-root {
+    border-radius: 12px;
+  }
+}
+
+/* Between the two, the header survives but the shortcut strip is the first
+   thing to go: it is the only part that grows without a bound. */
+@container (min-width: 721px) and (max-width: 1040px) {
+  .demo-root .navbar-shortcuts {
+    display: none;
+  }
+}
+
+/* ---- Terminal loader ---- */
+
+/* The loader itself is the app's (.terminal-loader, pulled in by the CSS sync).
+   These two lines only place it inside the demo frame, where the app has a
+   whole quadrant. */
+.demo-loader {
+  z-index: 6;
+  border-radius: 0;
+}
+
+/* The pane and its boot loader share a stacking context so the loader can cover
+   the terminal without the terminal being unmounted and losing its buffer.
+   min-width:0 is load-bearing, not tidiness: a flex item defaults to
+   min-width:auto and refuses to shrink below its content. xterm sizes itself
+   from the box it is given, so without this its measurement and the fit() it
+   triggers feed each other and the terminal runs away, 86,000px wide in the
+   case that found this. */
+.demo-pane-stack {
+  position: relative;
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+}
+
+.demo-pane-stack .demo-terminal-host {
+  min-width: 0;
+}
+
+/* ---- Tabs view ---- */
+
+/* The strip goes above the terminal instead of beside it. The app has a whole
+   block for tab-navigation-tabs; these rules only fit it into the demo frame. */
+.demo-body.demo-view-tabs {
+  flex-direction: column;
+}
+
+.demo-root .tabbed-layout-container.tab-navigation-tabs {
+  flex: 0 0 auto;
+  width: 100%;
+  min-width: 0;
+  overflow: visible;
+}
+
+.demo-root .tab-navigation-tabs .terminal-tabs-bar {
+  height: auto;
+}
+
+/* In Tabs view the notification bar runs along the TOP edge of a tab rather than
+   down its left side, so it needs to be a thin rule instead of the list's wide
+   marker. */
+.demo-root .tab-navigation-tabs .terminal-tab.tab-has-notification::after {
+  top: 0;
+  bottom: auto;
+  left: 8px;
+  right: 8px;
+  width: auto;
+  height: 2px;
+}
+
+/* Horizontal strip: tabs sit in a row, scroll sideways, and shrink to a label
+   plus its marks. The goal and activity lines belong to the list view. */
+/* The bar centres its children, and the app's base rule leaves this strip sized
+   by its content. Together they made it 1510px wide inside a 1278px parent,
+   centred, so it hung off BOTH edges and clipped the first tab. Pinning it to
+   the parent's width is what makes it scroll instead of overflow. */
+.demo-root .tab-navigation-tabs .terminal-tabs {
+  display: flex;
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 100%;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 4px;
+  padding: 6px 8px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.demo-root .tab-navigation-tabs .terminal-tabs::-webkit-scrollbar {
+  height: 5px;
+}
+
+.demo-root .tab-navigation-tabs .terminal-tabs::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.demo-root .tab-navigation-tabs .terminal-tab {
+  flex: 0 0 auto;
+  width: auto;
+  max-width: 230px;
+  margin: 0;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+.demo-root .tab-navigation-tabs .tab-goal,
+.demo-root .tab-navigation-tabs .tab-activity,
+.demo-root .tab-navigation-tabs .tab-meta,
+.demo-root .tab-navigation-tabs .tab-elapsed {
+  display: none;
+}
+
+.demo-root .tab-navigation-tabs .tab-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ---- View menu ---- */
+
+/* The app hides .workspace-layout-menu by default and opens it from JS. This
+   selector has to out-specify that rule, so it names both classes under the
+   demo root rather than sitting on .demo-view-menu alone. */
+.demo-root .workspace-layout-menu.demo-view-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 250px;
+  padding: 6px;
+  border-radius: 11px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #16161d;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.6);
+  animation: demoPickerIn 150ms ease both;
+}
+
+.demo-root .demo-view-menu .workspace-layout-option {
+  display: grid;
+  grid-template-columns: 18px 1fr 16px;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 9px;
+  border: 0;
+  border-radius: 8px;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.demo-root .demo-view-menu .workspace-layout-option:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* Grid is shown but not offered: several live terminals is not something a
+   landing page should run. Saying so beats pretending the view does not exist. */
+.demo-root .demo-view-menu .workspace-layout-option:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.demo-view-menu .workspace-layout-option svg {
+  width: 16px;
+  height: 16px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.demo-view-menu .workspace-layout-option span {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.demo-view-menu .workspace-layout-option strong {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.demo-view-menu .workspace-layout-option small {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.demo-view-menu .workspace-layout-check {
+  color: #fbbf24 !important;
+}
+
+/* ---- Collapsed list ---- */
+
+/* The app's collapsed width comes from a rule that also assumes a full window;
+   inside the demo the rail just needs a fixed, narrow basis. */
+.demo-root .tabbed-layout-container.tab-sidebar-collapsed {
+  flex-basis: 62px !important;
+}
+
+/* Stacked, centred controls: at this width a row of five buttons cannot fit. */
+.demo-root .tab-sidebar-collapsed .terminal-tabs-toolbar {
+  flex-direction: column;
+  gap: 6px;
+  padding: 8px 0;
+}
+
+.demo-root .tab-sidebar-collapsed .terminal-tabs {
+  align-items: center;
+  padding: 4px;
+}
+
+/* ---- System notifications ---- */
+
+/* Anchored to the top-right of the frame. The app's own notifications leave the
+   window entirely, which a page cannot do; inside the frame is the closest
+   honest equivalent. */
+.demo-toasts {
+  position: absolute;
+  top: 62px;
+  right: 12px;
+  z-index: 25;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  pointer-events: none;
+}
+
+.demo-toast {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  width: 320px;
+  padding: 11px 13px;
+  border-radius: 13px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(38, 38, 46, 0.92);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.5);
+  text-align: left;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.demo-toast:hover {
+  border-color: rgba(255, 255, 255, 0.26);
+}
+
+.demo-toast-icon {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+}
+
+.demo-toast-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.demo-toast-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.demo-toast-app {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.demo-toast-now {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.demo-toast-title {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.demo-toast-body {
+  font-size: 12px;
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.62);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@container (max-width: 720px) {
+  .demo-toasts {
+    display: none;
+  }
+}
+
+/* ---- Grid view ---- */
+
+/* Four live terminals at once. This is the product's whole promise made visible,
+   and also the most expensive thing the demo does: every tile owns its own xterm
+   instance and its own typing loop. Four is the ceiling on purpose. */
+.demo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1px;
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.demo-grid .demo-terminal-panel {
+  min-width: 0;
+  min-height: 0;
+  border-left: 0;
+}
+
+/* Only the focused tile gets a full-strength header; the rest stay quiet so the
+   grid does not read as four things shouting at once. */
+.demo-grid .demo-terminal-panel:not(.is-focused) .demo-terminal-header,
+.demo-grid .demo-terminal-panel:not(.is-focused) .demo-terminal-footer {
+  opacity: 0.5;
+}
+
+.demo-grid .demo-terminal-panel.is-focused {
+  box-shadow: inset 0 0 0 1px rgba(251, 191, 36, 0.45);
+}
+
+/* At four tiles there is no room for the boxed input in each one; the focused
+   tile keeps it because that is where you would actually type. */
+.demo-grid .demo-terminal-panel:not(.is-focused) .demo-terminal-input {
+  display: none;
+}
+
+.demo-grid .demo-terminal-host {
+  padding: 8px 4px 8px 10px;
+}
+
+/* Below this the tiles are too small to read, so Grid falls back to one column.
+   Two stacked terminals still make the parallel point. */
+@container (max-width: 900px) {
+  .demo-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .demo-grid .demo-terminal-panel:nth-child(n + 3) {
+    display: none;
+  }
+}
+
+/* Keep the browser's own chaining out of it: an event that crosses the end of a
+   list would otherwise move the list AND the page, which is the shudder. The
+   handoff to the page is done by hand instead, per event, in
+   useScrollOwnership.ts, so nothing is lost by switching the automatic one off. */
+.demo-root .terminal-tabs,
+.demo-root .quota-popover,
+.demo-launcher-list {
+  overscroll-behavior: contain;
+}
+
+
+/* On a narrow frame the hint goes first; the CTA is the one thing that stays. */
+
+/* ---- Chat view ---------------------------------------------------------- */
+
+/* The chat panel is the app's own markup and the app's own stylesheet (see
+   demo-app.css). These four rules only fit it into the demo's frame: fill the
+   pane, keep the transcript scrolling inside its own box rather than the page,
+   and hang the switch-to-terminal button off the corner. */
+.demo-pane-stack .cas-chat {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  background: transparent;
+}
+
+/* The terminal pane pins its own input row and footer under the transcript; the
+   chat brings its composer with it, so the panel must not reserve that space.
+
+   No `overflow: hidden` here, however tempting for the bottom corners: the
+   composer's model and permission menus open UPWARDS and OUTWARDS from a
+   trigger near the bottom edge, and clipping the stack sliced the left half off
+   both of them. The rounded corner is not worth a cut-off menu. */
+.demo-terminal-panel.is-chat .demo-pane-stack {
+  border-radius: 0 0 10px 10px;
+}
+
+/* The menus size themselves against the viewport in the app, where the panel is
+   most of the window. Inside the demo's laptop the pane is a fraction of it, so
+   they are re-sized against the chat container instead — `.cas-chat` already
+   declares `container-type: inline-size`, so `cqw` is the pane's own width. */
+.demo-root .cas-model-menu,
+.demo-root .cas-permission-menu {
+  width: min(340px, calc(100cqw - 32px));
+}
+
+.demo-mode-switch {
+  /* First in the header, not last: the demo's notification toasts land in the
+     top-right corner of the panel and were eating the click. */
+  order: -1;
+  flex-shrink: 0;
+  align-self: center;
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.45);
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+.demo-mode-switch:hover {
+  color: var(--brand, #F5A623);
+  border-color: rgba(245, 166, 35, 0.45);
+  background: rgba(30, 26, 18, 0.9);
+}
+
+.demo-mode-switch svg {
+  width: 15px;
+  height: 15px;
+}
+
+/* ---- Tighter chrome, more transcript ------------------------------------ */
+
+/* The app's header is 60px tall because in a real window there is room to
+   spare. Inside the laptop the whole workspace is 488px, so every row of chrome
+   is a row the conversation does not get. Its tallest child is the 40px Run
+   button, so 46px is as low as it goes without shrinking anything inside. */
+.demo-root .header {
+  height: 46px;
+}
+
+.demo-root .app-logo {
+  width: 30px;
+  height: 30px;
+}
+
+/* Same trade in the panel's own title row: it carries one line of text and a
+   26px button, so the 8px block padding was pure air. */
+.demo-terminal-header {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}

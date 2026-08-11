@@ -1,11 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { verifyToken, COOKIE_NAME } from '@/lib/auth'
 import { supabaseRpc } from '@/lib/supabase-client'
+import type { UserActivityDetail } from '@/app/(dashboard)/dashboard/users/users-activity'
 
-/** Per-user activity detail: daily click counts (heatmap) + agent breakdown. */
-export interface UserActivityDetail {
-  calendar: { d: string; clicks: number }[]
-  agents: { agent: string; n: number }[]
+const UUID_PATTERN = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i
+type UserActivityDetailRpc = Omit<UserActivityDetail, 'account'> & {
+  account: UserActivityDetail['account'] | null
 }
 
 export async function GET(
@@ -18,17 +18,35 @@ export async function GET(
   }
   try {
     const { id } = await params
-    const daysParam = Number(new URL(request.url).searchParams.get('days'))
-    const days = Number.isFinite(daysParam) && daysParam > 0 ? Math.min(daysParam, 365) : 180
+    if (!UUID_PATTERN.test(id)) {
+      return NextResponse.json({ error: 'Invalid user id' }, { status: 400 })
+    }
 
-    const detail = await supabaseRpc<UserActivityDetail>({
-      fn: 'user_activity_detail',
+    const rawDays = new URL(request.url).searchParams.get('days')
+    let days = 180
+    if (rawDays !== null) {
+      const parsedDays = Number(rawDays)
+      if (!Number.isInteger(parsedDays) || parsedDays < 1 || parsedDays > 365) {
+        return NextResponse.json(
+          { error: 'days must be an integer between 1 and 365' },
+          { status: 400 }
+        )
+      }
+      days = parsedDays
+    }
+
+    const detail = await supabaseRpc<UserActivityDetailRpc | null>({
+      fn: 'user_activity_detail_v2',
       args: { p_user_id: id, p_days: days },
     })
+    if (!detail?.account) {
+      return NextResponse.json({ error: 'User not found' }, { status: 404 })
+    }
     return NextResponse.json(detail)
   } catch (err) {
+    console.error('Failed to load user activity detail:', err)
     return NextResponse.json(
-      { error: err instanceof Error ? err.message : 'Failed' },
+      { error: 'Failed to load user details' },
       { status: 500 }
     )
   }

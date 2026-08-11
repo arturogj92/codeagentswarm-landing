@@ -19,15 +19,14 @@
   "hero": {
     "badge": "Open Beta – Pro se activa automáticamente al registrarte",
     "badgeNew": "NUEVO",
-    "titleLine1": "Deja de cambiar de ventana.",
-    "titleLine2": "Orquesta varios agentes de IA en paralelo.",
-    "titleLine3": "Un centro de mando visual. Todo bajo control.",
-    "subtitle": "Ejecuta Claude Code, Codex, Antigravity CLI, OpenCode y Kimi Code en paralelo, con estado en vivo, notificaciones instantáneas, historial buscable y control sobre todos tus proyectos.",
-    "powerStatement": "",
-    "authorityLine": "",
-    "requirements": "Compatible con Claude Code, Codex, Antigravity CLI, OpenCode o Kimi Code. macOS 12+ y Windows 10/11",
-    "claimAccess": "Descargar Gratis – Pro Incluido",
-    "securityBadge": "Modo Turbo con protección integrada. Tú defines los límites.",
+    "eyebrow": "Un workspace · Tus agentes de programación",
+    "titleLine1": "Agentes en paralelo.",
+    "titleLine2": "Un centro de mando visual.",
+    "subtitle": "Ejecuta Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code y Grok Build en paralelo dentro de un entorno de desarrollo agéntico pensado para supervisarlos.",
+    "claimAccess": "Descargar gratis",
+    "microcopy": "Pro incluido durante la beta · macOS 12+ · Windows 10/11",
+    "worksWith": "Compatible con",
+    "existingAccounts": "Usa tus cuentas CLI actuales",
     "stats": {
       "eyebrow": "Capacidades clave",
       "terminals": "Agentes de IA en Paralelo",
@@ -120,7 +119,7 @@
     "badge": "La Solución",
     "titleLine1": "El workspace multiagente",
     "titleLine2": "que necesitas",
-    "description": "CodeAgentSwarm es un centro de mando visual donde Claude Code, Codex, Antigravity CLI, OpenCode y Kimi Code trabajan en paralelo, con estado en vivo, notificaciones, historial buscable y control multiproyecto.",
+    "description": "CodeAgentSwarm es un centro de mando visual donde Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code y Grok Build trabajan en paralelo, con estado en vivo, notificaciones, historial buscable y control multiproyecto.",
     "points": {
       "terminals": "Varios agentes de programación con IA trabajando simultáneamente.",
       "notifications": "Notificaciones instantáneas cuando un agente termina o requiere input.",
@@ -389,6 +388,7 @@
         "description": "Mas alla de Claude: soporte para multiples AI CLI agents.",
         "features": {
           "codex": "Integracion Codex CLI",
+          "grokBuild": "Ejecuta varios agentes de Grok Build con historial buscable y cambios en tiempo real en una sola app.",
           "antigravity": "Compatibilidad Antigravity CLI",
           "opencode": "Soporte opencode",
           "orchestration": "Orquestacion unificada de agentes"
@@ -456,19 +456,19 @@
     "titleHighlight": "Frecuentes",
     "items": {
       "q1": "¿Cómo ejecuto varios agentes de programación con IA en CodeAgentSwarm?",
-      "a1": "Abre CodeAgentSwarm y ejecuta Claude Code, Codex, Antigravity CLI, OpenCode o Kimi Code en paralelo. Cada agente funciona de forma independiente para trabajar en distintas tareas o proyectos, con todos sus estados visibles en un solo sitio.",
+      "a1": "Abre CodeAgentSwarm y ejecuta Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code o Grok Build en paralelo. Cada agente funciona de forma independiente para trabajar en distintas tareas o proyectos, con todos sus estados visibles en un solo sitio.",
       "q2": "¿Cómo maneja CodeAgentSwarm la organización por proyectos?",
       "a2": "CodeAgentSwarm mantiene juntos los agentes, el tablero de tareas y el historial de cada proyecto. Puedes cambiar de código base sin perder contexto ni reconstruir tu configuración.",
       "q3": "¿Tengo visibilidad en tiempo real y seguimiento de cambios en vivo?",
-      "a3": "Sí. Los diffs en vivo muestran los cambios de cada agente mientras ocurren. Los títulos dinámicos indican en qué trabaja Claude Code, Codex, Antigravity CLI, OpenCode o Kimi Code, y el seguimiento de archivos registra qué cambió y cuándo.",
-      "q4": "¿Soporta CodeAgentSwarm notificaciones AI CLI (Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code)?",
+      "a3": "Sí. Los diffs en vivo muestran los cambios de cada agente mientras ocurren. Los títulos dinámicos indican en qué trabaja Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code o Grok Build, y el seguimiento de archivos registra qué cambió y cuándo.",
+      "q4": "¿CodeAgentSwarm envía notificaciones para todos los agentes de IA?",
       "a4": "Sí. CodeAgentSwarm envía una notificación de escritorio cuando cualquier agente termina una tarea, necesita tu input o encuentra un error.",
       "q5": "¿Cómo funciona el historial de conversaciones?",
-      "a5": "CodeAgentSwarm guarda tu historial completo de conversaciones AI CLI en todas las sesiones - ya uses Claude Code, Codex, Antigravity CLI, OpenCode o Kimi Code. Busca cualquier chat, decisión o fragmento de código pasado al instante. El historial de sesiones es completamente buscable, para que nunca pierdas contexto ni tengas que repetir explicaciones.",
+      "a5": "CodeAgentSwarm guarda el historial completo de conversaciones de todas las CLIs soportadas entre sesiones. Busca cualquier chat, decisión o fragmento de código al instante. El historial es buscable, así que no pierdes contexto ni repites explicaciones.",
       "q6": "¿Puedo controlar a qué tienen acceso mis agentes AI CLI?",
       "a6": "Sí. Los permisos visuales controlan los archivos y acciones disponibles para cada agente. Puedes aprobar operaciones sensibles mientras el Modo Turbo gestiona las rutinarias dentro de los límites que definas.",
       "q7": "¿Soporta CodeAgentSwarm herramientas MCP y el marketplace MCP?",
-      "a7": "¡Sí! CodeAgentSwarm incluye integración MCP completa con un marketplace MCP integrado. Conecta tus agentes AI CLI (Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code) a GitHub, Notion, Slack, Supabase, Brave Search, Playwright, PostgreSQL y más. Las herramientas MCP extienden lo que tus agentes pueden hacer.",
+      "a7": "Sí. CodeAgentSwarm incluye integración MCP completa con un marketplace MCP integrado. Conecta cualquiera de los seis agentes AI CLI soportados a GitHub, Notion, Slack, Supabase, Brave Search, Playwright, PostgreSQL y más. Las herramientas MCP amplían lo que pueden hacer tus agentes.",
       "q8": "¿Ayuda CodeAgentSwarm a evitar la pérdida de contexto en agentes AI CLI?",
       "a8": "Sí. CodeAgentSwarm mantiene un historial buscable entre sesiones, muestra los cambios de cada agente en tiempo real y vincula cada sesión con su proyecto. El trabajo anterior queda fácil de encontrar y retomar.",
       "q9": "¿Por qué no usar tmux?",
@@ -476,15 +476,19 @@
       "q10": "¿Puedo ejecutar Claude Code y Codex CLI a la vez?",
       "a10": "Sí. Cada sesión de agente es un proceso independiente, así que Claude Code y Codex CLI pueden ejecutarse al mismo tiempo. Elige el agente de cada sesión y abre tantas como permita tu plan.",
       "q11": "¿Funciona CodeAgentSwarm con Antigravity CLI?",
-      "a11": "Sí. CodeAgentSwarm ejecuta Antigravity CLI (agy), el sucesor oficial de Google del ya retirado Gemini CLI, junto a Claude Code, Codex CLI, OpenCode y Kimi Code, con notificaciones compartidas, historial buscable y diffs en vivo para cada agente.",
+      "a11": "Sí. CodeAgentSwarm ejecuta Antigravity CLI (agy), el sucesor oficial de Google del ya retirado Gemini CLI, junto a Claude Code, Codex CLI, OpenCode, Kimi Code y Grok Build, con notificaciones compartidas, historial buscable y diffs en vivo para cada agente.",
       "q12": "¿Puedo mezclar distintos agentes AI CLI en un mismo enjambre?",
-      "a12": "Sí. Un mismo espacio de trabajo puede ejecutar Claude Code, Codex CLI, Antigravity CLI, OpenCode y Kimi Code a la vez. Usa el agente que mejor encaje en cada tarea y supervisa todos desde un solo sitio.",
+      "a12": "Sí. Un mismo espacio de trabajo puede ejecutar Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code y Grok Build a la vez. Usa el agente que mejor encaje en cada tarea y supervisa todos desde un solo sitio.",
       "q13": "¿Qué es un enjambre de agentes AI CLI?",
-      "a13": "Un enjambre de agentes AI CLI son varios agentes de código por línea de comandos (como Claude Code, Codex, Antigravity CLI, OpenCode y Kimi Code) ejecutándose en paralelo en un solo sitio, con visibilidad, notificaciones e historial compartidos. CodeAgentSwarm es el espacio de trabajo de escritorio hecho para ejecutar y supervisar ese enjambre.",
+      "a13": "Un enjambre de agentes AI CLI son varios agentes de código por línea de comandos (como Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code y Grok Build) ejecutándose en paralelo en un solo sitio, con visibilidad, notificaciones e historial compartidos. CodeAgentSwarm es el espacio de trabajo de escritorio hecho para ejecutar y supervisar ese enjambre.",
       "q14": "¿CodeAgentSwarm funciona con OpenCode?",
-      "a14": "Sí. CodeAgentSwarm ejecuta OpenCode junto a Claude Code, Codex CLI, Antigravity CLI y Kimi Code. Añade una o varias sesiones de OpenCode al mismo enjambre.",
+      "a14": "Sí. CodeAgentSwarm ejecuta OpenCode junto a Claude Code, Codex CLI, Antigravity CLI, Kimi Code y Grok Build. Añade una o varias sesiones de OpenCode al mismo enjambre.",
       "q15": "¿CodeAgentSwarm funciona con Kimi Code?",
-      "a15": "Sí. Kimi Code CLI de Moonshot es el quinto agente compatible con CodeAgentSwarm, junto a Claude Code, Codex CLI, Antigravity CLI y OpenCode. Eliges Kimi Code en el lanzador como cualquier otro agente y tiene las mismas notificaciones, historial de conversaciones buscable y diffs en vivo. Puedes montar un enjambre entero de sesiones de Kimi Code o mezclarlo con las otras CLIs."
+      "a15": "Sí. Kimi Code CLI de Moonshot es un agente de primera clase en CodeAgentSwarm, junto a Claude Code, Codex CLI, Antigravity CLI, OpenCode y Grok Build. Eliges Kimi Code en el lanzador como cualquier otro agente y tiene las mismas notificaciones, historial de conversaciones buscable y diffs en vivo. Puedes montar un enjambre entero de sesiones de Kimi Code o mezclarlo con las otras CLIs.",
+      "q16": "¿Qué es un entorno de desarrollo agéntico (ADE) y por qué CodeAgentSwarm es uno?",
+      "a16": "Un entorno de desarrollo agéntico (Agentic Development Environment, ADE) está pensado para delegar tareas de software a agentes de programación con IA, ejecutarlos en sesiones aisladas o en paralelo y revisar sus resultados. CodeAgentSwarm es un ADE: permite dirigir Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code y Grok Build desde un solo lugar, con tareas, notificaciones, historial, permisos y diffs en vivo siempre visibles.",
+      "q17": "¿CodeAgentSwarm funciona con Grok Build?",
+      "a17": "Sí. CodeAgentSwarm ejecuta la CLI Grok Build de xAI (el comando grok) como agente de primera clase, así que puedes supervisar varios agentes de Grok Build junto a Claude Code, Codex o cualquier otra CLI compatible. Tú instalas e inicias sesión en Grok Build, y CodeAgentSwarm añade notificaciones, diffs en vivo para cada agente, historial buscable y cambio de proyecto."
     }
   },
   "cta": {
@@ -492,7 +496,7 @@
     "titleHighlight": "Transformar",
     "titleLine2": "Tu Desarrollo?",
     "subtitle": "Ejecuta todos tus agentes de programación con IA desde un centro de mando visual, con estado en vivo, notificaciones e historial buscable.",
-    "instantSetup": "Si ya usas Claude Code, Codex, Antigravity CLI, OpenCode o Kimi Code, funciona al instante. Solo instala y abre.",
+    "instantSetup": "Si ya usas Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code o Grok Build, funciona al instante. Solo instala y abre.",
     "version": "Version",
     "released": "Released",
     "loading": "Cargando releases...",
@@ -540,12 +544,12 @@
       "memory": "4GB minimo",
       "storageLabel": "Disco",
       "storage": "500MB",
-      "claudeCode": "Claude Code, Codex, Antigravity CLI, OpenCode o Kimi Code",
+      "claudeCode": "Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code o Grok Build",
       "gatekeeper": "Primera vez? Haz clic derecho - \"Abrir\" para bypass Gatekeeper."
     }
   },
   "footer": {
-    "description": "Centro de mando visual para ejecutar Claude Code, Codex, Antigravity CLI, OpenCode y Kimi Code en paralelo, con estado en vivo, historial de conversaciones y gestión integrada de tareas.",
+    "description": "Centro de mando visual para ejecutar Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code y Grok Build en paralelo, con estado en vivo, historial de conversaciones y gestión integrada de tareas.",
     "product": "Producto",
     "company": "Empresa",
     "links": {
@@ -573,8 +577,8 @@
   "beta": {
     "hero": {
       "headline": "Únete a la Open Beta",
-      "subheadline": "Ejecuta Claude Code, Codex, Antigravity CLI, OpenCode y Kimi Code en paralelo, con estado en vivo, notificaciones e historial completo. Pro está incluido durante la beta.",
-      "microcopy": "Funciona en macOS 12+ y Windows 10/11. Requiere Claude Code, Codex, Antigravity CLI, OpenCode o Kimi Code.",
+      "subheadline": "Ejecuta Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code y Grok Build en paralelo, con estado en vivo, notificaciones e historial completo. Pro está incluido durante la beta.",
+      "microcopy": "Funciona en macOS 12+ y Windows 10/11. Requiere Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code o Grok Build.",
       "primaryCta": "Unirse a la Beta",
       "primaryCtaHint": "(Paso 1)",
       "secondaryCta": "Ver Características"
@@ -598,7 +602,7 @@
       "titleHighlight": "Necesitas",
       "point1": {
         "title": "Varios Agentes de IA en Paralelo",
-        "description": "Ejecuta Claude Code, Codex, Antigravity CLI, OpenCode y Kimi Code simultáneamente. Cada agente trabaja de forma independiente en una tarea o proyecto."
+        "description": "Ejecuta Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code y Grok Build simultáneamente. Cada agente trabaja de forma independiente en una tarea o proyecto."
       },
       "point2": {
         "title": "Gestión de Tareas con IA",
@@ -727,13 +731,14 @@
       "button": "Descárgalo gratis",
       "otherPlatforms": "Otras plataformas",
       "context": {
-        "claudeCode": "CodeAgentSwarm hace todo esto por ti: varios terminales de Claude Code, historial buscable y vista de cambios en tiempo real, en una sola app.",
-        "codex": "CodeAgentSwarm hace todo esto por ti: varios terminales de Codex CLI, historial buscable y vista de cambios en tiempo real, en una sola app.",
-        "opencode": "CodeAgentSwarm hace todo esto por ti: varios terminales de opencode, historial buscable y vista de cambios en tiempo real, en una sola app.",
-        "kimiCode": "CodeAgentSwarm hace todo esto por ti: varios terminales de Kimi Code, historial buscable y vista de cambios en tiempo real, en una sola app.",
-        "antigravity": "CodeAgentSwarm hace todo esto por ti: varios terminales de Antigravity CLI, historial buscable y vista de cambios en tiempo real, en una sola app.",
-        "multi": "CodeAgentSwarm ejecuta tus agentes de código en paralelo: Claude Code, Codex, opencode, Kimi Code y Antigravity, con historial buscable y vista de cambios en tiempo real, en una sola app.",
-        "comparison": "La forma más rápida de decidir es probarlo: CodeAgentSwarm es gratis, se instala en un minuto y ejecuta Claude Code, Codex, opencode, Kimi Code y Antigravity en paralelo."
+        "claudeCode": "Ejecuta varios agentes de Claude Code con historial buscable y cambios en tiempo real en una sola app.",
+        "codex": "Ejecuta varios agentes de Codex CLI con historial buscable y cambios en tiempo real en una sola app.",
+        "opencode": "Ejecuta varios agentes de opencode con historial buscable y cambios en tiempo real en una sola app.",
+        "kimiCode": "Ejecuta varios agentes de Kimi Code con historial buscable y cambios en tiempo real en una sola app.",
+        "grokBuild": "Ejecuta varios agentes de Grok Build con historial buscable y cambios en tiempo real en una sola app.",
+        "antigravity": "Ejecuta varios agentes de Antigravity CLI con historial buscable y cambios en tiempo real en una sola app.",
+        "multi": "CodeAgentSwarm ejecuta tus agentes de código en paralelo: Claude Code, Codex, opencode, Kimi Code, Antigravity y Grok Build, con historial buscable y vista de cambios en tiempo real, en una sola app.",
+        "comparison": "La forma más rápida de decidir es probarlo: CodeAgentSwarm es gratis, se instala en un minuto y ejecuta Claude Code, Codex, opencode, Kimi Code, Antigravity y Grok Build en paralelo."
       },
       "platform": {
         "silicon": "macOS · Apple Silicon",
@@ -802,5 +807,42 @@
       "backHome": "Volver al Inicio"
     },
     "error": "Algo salio mal. Intentalo de nuevo."
+  },
+  "interactiveDemo": {
+    "badge": "Pruébala sin instalar nada",
+    "title": "Trabajan sin que estés encima.",
+    "subtitle": "{count} agentes a la vez, cada uno con su tarea. El que necesita algo te avisa y se pone el primero de la lista; los demás siguen a lo suyo.",
+    "download": "Descárgala gratis",
+    "hintAnswer": "Contéstale: haz clic en una opción o pulsa {options, plural, =2 {1 o 2} other {del 1 al #}}",
+    "resize": "Arrastra para ensanchar la lista",
+    "launcher": {
+      "title": "Abrir un terminal nuevo",
+      "project": "Proyecto",
+      "agent": "Agente",
+      "search": "Buscar proyectos...",
+      "count": "{count} proyectos",
+      "empty": "Ningun proyecto coincide.",
+      "newProject": "Nuevo proyecto",
+      "importProject": "Importar proyecto",
+      "noProject": "Sin proyecto",
+      "close": "Cerrar"
+    },
+    "loading": "Cargando terminal...",
+    "loadingWorktree": "Creando worktree...",
+    "toastNow": "ahora",
+    "toast": {
+      "confirmation": "Un terminal necesita confirmación",
+      "finished": "Terminal terminado"
+    }
+  },
+  "modeCompare": {
+    "badge": "Chat o terminal",
+    "title": "La misma sesión, dos formas de leerla",
+    "subtitle": "El modo chat hace legible al agente: sus herramientas, su lista de tareas y sus preguntas pasan a ser cosas que puedes leer y pulsar. El CLI en crudo sigue a una tecla — la misma conversación, el mismo segundo.",
+    "chatLabel": "Chat",
+    "terminalLabel": "Terminal",
+    "hint": "Arrastra para comparar",
+    "ariaLabel": "Comparar la vista de chat con la del terminal",
+    "footnote": "Cada agente corre en su CLI real por debajo. El modo chat es una vista de eso, no un sustituto."
   }
 }

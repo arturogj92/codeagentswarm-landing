@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Outreach safety dashboard proposal</title>
+  <style>
+    :root { color-scheme: dark; --bg:#050505; --surface:#0c0c0c; --surface2:#111; --text:#f4f4f5; --muted:#858585; --border:#282828; --amber:#fbbf24; --green:#6ee7b7; --rose:#fda4af; --sky:#7dd3fc; --violet:#c4b5fd; }
+    [data-theme="light"] { color-scheme: light; --bg:#f5f5f3; --surface:#fff; --surface2:#f0f0ed; --text:#171717; --muted:#676767; --border:#d7d7d2; }
+    [data-theme="midnight"] { --bg:#050914; --surface:#09111f; --surface2:#0d1728; --border:#20304a; }
+    [data-theme="espresso"] { --bg:#130e0b; --surface:#1c1510; --surface2:#261b14; --border:#493426; }
+    [data-theme="neon"] { --bg:#050507; --surface:#0b0b11; --surface2:#10101a; --border:#39305c; --amber:#f9f871; --green:#4dffb8; --sky:#5de4ff; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--text); font:14px/1.45 Inter,ui-sans-serif,system-ui,-apple-system,sans-serif; }
+    button,select { font:inherit; }
+    button:focus-visible,select:focus-visible { outline:2px solid var(--amber); outline-offset:2px; }
+    .demo { position:sticky; top:0; z-index:5; display:flex; justify-content:space-between; align-items:center; padding:8px 20px; border-bottom:1px dashed var(--border); background:var(--surface2); color:var(--muted); font-size:11px; }
+    .demo strong { color:var(--amber); letter-spacing:.12em; text-transform:uppercase; }
+    select { color:var(--text); background:var(--surface); border:1px solid var(--border); border-radius:7px; padding:5px 8px; }
+    header { height:58px; display:flex; align-items:center; justify-content:space-between; padding:0 28px; border-bottom:1px solid var(--border); background:var(--surface); }
+    .brand { display:flex; gap:8px; align-items:center; font-weight:650; }
+    .brand b { color:var(--amber); }
+    nav { display:flex; gap:22px; color:var(--muted); font-size:13px; }
+    nav span:last-child { color:var(--text); }
+    main { max-width:1220px; margin:auto; padding:30px 28px 60px; }
+    .heading { display:flex; justify-content:space-between; align-items:flex-start; gap:20px; }
+    h1 { margin:4px 0 5px; font-size:25px; letter-spacing:-.03em; }
+    h2 { margin:0; font-size:14px; }
+    p { margin:0; color:var(--muted); }
+    .safe-button { border:1px solid color-mix(in srgb,var(--green) 35%,transparent); color:var(--green); background:color-mix(in srgb,var(--green) 7%,transparent); border-radius:8px; padding:9px 12px; cursor:pointer; }
+    .safe-button::before { content:'◉'; margin-right:7px; }
+    .notice { margin:22px 0 14px; display:flex; justify-content:space-between; gap:18px; align-items:center; padding:14px 16px; border:1px solid color-mix(in srgb,var(--green) 28%,var(--border)); border-radius:11px; background:color-mix(in srgb,var(--green) 5%,var(--surface)); }
+    .notice strong { display:block; color:var(--green); margin-bottom:2px; }
+    .notice small { color:var(--muted); }
+    .chips { display:flex; flex-wrap:wrap; gap:8px; justify-content:flex-end; }
+    .chip { padding:5px 8px; border:1px solid var(--border); border-radius:99px; background:var(--surface); color:var(--muted); font-size:11px; white-space:nowrap; }
+    .metrics { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin:14px 0 22px; }
+    .metric,.card,.panel { border:1px solid var(--border); border-radius:11px; background:var(--surface); }
+    .metric { padding:15px; }
+    .label { text-transform:uppercase; letter-spacing:.12em; color:var(--muted); font-size:10px; }
+    .value { margin-top:6px; font-size:27px; font-weight:720; letter-spacing:-.03em; }
+    .sub { color:var(--muted); font-size:11px; margin-top:2px; }
+    .tabs { display:flex; gap:3px; border-bottom:1px solid var(--border); margin-bottom:18px; }
+    .tab { padding:9px 13px; border:0; border-bottom:2px solid transparent; background:none; color:var(--muted); cursor:pointer; }
+    .tab.active { color:var(--text); border-color:var(--amber); }
+    .view { display:none; }
+    .view.active { display:block; }
+    .cards { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+    .card { padding:17px; }
+    .card-head { display:flex; align-items:center; justify-content:space-between; margin-bottom:13px; }
+    .status { border-radius:99px; padding:3px 7px; font-size:10px; border:1px solid var(--border); color:var(--muted); }
+    .status.live { color:var(--green); border-color:color-mix(in srgb,var(--green) 35%,transparent); }
+    .status.paused { color:var(--rose); border-color:color-mix(in srgb,var(--rose) 35%,transparent); }
+    .rows { display:grid; grid-template-columns:1fr auto; gap:8px; padding-top:11px; border-top:1px solid var(--border); color:var(--muted); font-size:12px; }
+    .rows b { color:var(--text); font-variant-numeric:tabular-nums; }
+    .insight { margin-top:12px; padding:10px; border-radius:8px; background:var(--surface2); color:var(--muted); font-size:11px; }
+    .insight strong { color:var(--text); }
+    .lower { display:grid; grid-template-columns:1.25fr .75fr; gap:12px; margin-top:12px; }
+    .panel { padding:16px; }
+    .panel h2 { margin-bottom:12px; }
+    .health { display:grid; gap:10px; }
+    .health-row { display:flex; justify-content:space-between; gap:12px; align-items:center; padding-bottom:9px; border-bottom:1px solid var(--border); }
+    .health-row:last-child { border:0; padding:0; }
+    .health-row span { color:var(--muted); font-size:12px; }
+    .ok { color:var(--green)!important; }
+    .warn { color:var(--amber)!important; }
+    table { width:100%; border-collapse:collapse; }
+    th,td { padding:11px 10px; border-bottom:1px solid var(--border); text-align:left; }
+    th { color:var(--muted); font-size:10px; text-transform:uppercase; letter-spacing:.1em; }
+    td { font-size:12px; }
+    .empty { padding:45px 20px; text-align:center; color:var(--muted); }
+    @media(max-width:800px){ .metrics,.cards,.lower{grid-template-columns:1fr 1fr}.heading{display:block}.heading button{margin-top:12px} }
+    @media(max-width:560px){ main{padding:22px 15px}.metrics,.cards,.lower{grid-template-columns:1fr}.notice{align-items:flex-start;flex-direction:column}.chips{justify-content:flex-start}nav{display:none} }
+  </style>
+</head>
+<body>
+  <div class="demo"><strong>Design proposal · no API calls</strong><label>Theme <select id="theme"><option>dark</option><option>light</option><option>midnight</option><option>espresso</option><option>neon</option></select></label></div>
+  <header><div class="brand"><b>@</b> CodeAgentSwarm / Operations</div><nav><span>Users</span><span>Emails</span><span>Automation</span></nav></header>
+  <main>
+    <div class="heading">
+      <div><p>← Emails</p><h1>Outreach automation</h1><p>Reliable delivery, thread-verified replies and safe daily execution.</p></div>
+      <button class="safe-button" id="preview">Preview next run</button>
+    </div>
+    <section class="notice">
+      <div><strong>Automation healthy · next run 03:00 UTC</strong><small>Only E1 and E2 are enabled. E3 is paused after 28 sends with no verified replies.</small></div>
+      <div class="chips"><span class="chip">Dry-run never writes</span><span class="chip">Thread matching on</span><span class="chip">Manual live send removed</span></div>
+    </section>
+    <section class="metrics">
+      <div class="metric"><div class="label">Next run</div><div class="value">4</div><div class="sub">2 feedback · 2 reactivation</div></div>
+      <div class="metric"><div class="label">Delivered · 30d</div><div class="value" style="color:var(--green)">52/52</div><div class="sub">100% · 0 bounced</div></div>
+      <div class="metric"><div class="label">Verified replies · 30d</div><div class="value">1</div><div class="sub">1.9% of all outreach</div></div>
+      <div class="metric"><div class="label">Excluded</div><div class="value">24</div><div class="sub">never auto-mailed</div></div>
+    </section>
+    <div class="tabs" role="tablist">
+      <button class="tab active" data-view="performance">Performance</button><button class="tab" data-view="runs">Run history</button><button class="tab" data-view="users">Users</button><button class="tab" data-view="exclusions">Exclusions</button>
+    </div>
+    <section id="performance" class="view active">
+      <div class="cards">
+        <article class="card"><div class="card-head"><h2>E1 · Quick question</h2><span class="status live">Live</span></div><div class="rows"><span>Sent</span><b>25</b><span>Delivered</span><b>25</b><span>Verified replies</span><b>1 · 4%</b><span>Active after 7 days</span><b>71%</b></div><div class="insight"><strong>Keep.</strong> Best-performing message. Replies are now counted only when they belong to this thread.</div></article>
+        <article class="card"><div class="card-head"><h2>E2 · We miss you</h2><span class="status live">Live</span></div><div class="rows"><span>Sent</span><b>9</b><span>Delivered</span><b>9</b><span>Verified replies</span><b>0</b><span>Returned within 7 days</span><b>2 · 29%</b></div><div class="insight"><strong>Measure.</strong> Possible reactivation signal; comparison cohort still needed.</div></article>
+        <article class="card"><div class="card-head"><h2>E3 · Follow-up</h2><span class="status paused">Paused</span></div><div class="rows"><span>Sent lifetime</span><b>28</b><span>Delivered · 30d</span><b>18</b><span>Verified replies</span><b>0</b><span>Active after 7 days</span><b>48%</b></div><div class="insight"><strong>Paused automatically.</strong> Existing history remains visible; no new follow-ups are selected.</div></article>
+      </div>
+      <div class="lower">
+        <article class="panel"><h2>Measurement health</h2><div class="health"><div class="health-row"><span>Delivery events</span><b class="ok">Connected</b></div><div class="health-row"><span>Reply attribution</span><b class="ok">Original thread only</b></div><div class="health-row"><span>Last daily run</span><b class="ok">Completed · 3 sent · 0 failed</b></div><div class="health-row"><span>Reactivation attribution</span><b class="warn">No control cohort yet</b></div></div></article>
+        <article class="panel"><h2>Safety rules</h2><div class="health"><div class="health-row"><span>Duplicate protection</span><b class="ok">Reserved before send</b></div><div class="health-row"><span>Dry-run</span><b class="ok">Read-only</b></div><div class="health-row"><span>Manual live run</span><b class="ok">Unavailable</b></div><div class="health-row"><span>Reply via Discord</span><b class="warn">Manual attribution</b></div></div></article>
+      </div>
+    </section>
+    <section id="runs" class="view"><div class="panel"><table><thead><tr><th>Run</th><th>Status</th><th>Candidates</th><th>Sent</th><th>Failed</th></tr></thead><tbody><tr><td>8 Aug · 03:00 UTC</td><td class="ok">Completed</td><td>3</td><td>3</td><td>0</td></tr><tr><td>7 Aug · 03:00 UTC</td><td class="ok">Completed</td><td>2</td><td>2</td><td>0</td></tr><tr><td>6 Aug · 03:00 UTC</td><td class="ok">Completed</td><td>1</td><td>1</td><td>0</td></tr></tbody></table></div></section>
+    <section id="users" class="view"><div class="panel"><table><thead><tr><th>User</th><th>Last activity</th><th>Last email</th><th>Verified response</th><th>Next</th></tr></thead><tbody><tr><td>Example active user</td><td>Yesterday</td><td>Never</td><td>—</td><td class="ok">E1 · next run</td></tr><tr><td>Example cooling user</td><td>8 days ago</td><td>Never</td><td>—</td><td class="ok">E2 · next run</td></tr><tr><td>Example completed user</td><td>3 days ago</td><td>E1 · 16 Jul</td><td class="ok">Thread verified</td><td>Complete</td></tr></tbody></table></div></section>
+    <section id="exclusions" class="view"><div class="panel"><div class="empty">24 exclusions remain unchanged. Search and removal use the existing controls.</div></div></section>
+  </main>
+  <script>
+    const theme = document.querySelector('#theme');
+    theme.value = localStorage.outreachProposalTheme || 'dark';
+    document.documentElement.dataset.theme = theme.value;
+    theme.onchange = () => { document.documentElement.dataset.theme = theme.value; localStorage.outreachProposalTheme = theme.value; };
+    document.querySelectorAll('.tab').forEach(button => button.onclick = () => {
+      document.querySelectorAll('.tab,.view').forEach(el => el.classList.remove('active'));
+      button.classList.add('active'); document.querySelector('#' + button.dataset.view).classList.add('active');
+    });
+    document.querySelector('#preview').onclick = () => { document.querySelector('[data-view="users"]').click(); };
+  </script>
+</body>
+</html>

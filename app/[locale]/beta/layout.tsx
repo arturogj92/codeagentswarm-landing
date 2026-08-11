@@ -17,8 +17,8 @@ export async function generateMetadata({
     : 'CodeAgentSwarm Open Beta – Free Pro Access for AI Coding Agents'
 
   const description = isSpanish
-    ? 'Únete a la open beta y ejecuta Claude Code, Codex, Antigravity CLI, OpenCode y Kimi Code en paralelo, con visibilidad en tiempo real, notificaciones, historial y Pro gratis.'
-    : 'Join the open beta and run Claude Code, Codex, Antigravity CLI, OpenCode and Kimi Code in parallel with live status, notifications, history and free Pro access.'
+    ? 'Únete a la open beta y ejecuta Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code y Grok Build en paralelo, con visibilidad en tiempo real, notificaciones, historial y Pro gratis.'
+    : 'Join the open beta and run Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code and Grok Build in parallel with live status, notifications, history and free Pro access.'
 
   return {
     title,
@@ -30,6 +30,7 @@ export async function generateMetadata({
       'Antigravity CLI beta',
       'OpenCode beta',
       'Kimi Code beta',
+      'Grok Build beta',
       'AI coding workspace beta',
       'AI CLI workspace',
       'free pro access',
@@ -38,6 +39,7 @@ export async function generateMetadata({
       'multiple Antigravity CLI terminals',
       'multiple OpenCode terminals',
       'multiple Kimi Code terminals',
+      'multiple Grok Build terminals',
       'real time visibility',
       'AI CLI notifications',
       'Claude Code notifications',

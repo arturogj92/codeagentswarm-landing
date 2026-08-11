@@ -7,7 +7,7 @@ import GuidesIndexPage from '@/components/guides/GuidesIndexPage'
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: 'Guías | CodeAgentSwarm',
-    description: 'Aprende a usar CodeAgentSwarm con nuestras guías prácticas. Consejos, tutoriales y mejores prácticas para trabajar con varios terminales de Claude Code.',
+    description: 'Guías prácticas de CodeAgentSwarm: ejecuta Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code y Grok Build en paralelo con visibilidad, historial y control multiproyecto.',
     alternates: {
       canonical: '/es/guias',
       languages: {
@@ -28,7 +28,7 @@ export default async function GuiasPage({ params }: { params: Promise<{ locale: 
     permanentRedirect('/en/guides')
   }
 
-  const guides = getAllGuides('es')
+  const guides = getAllGuides('es').map(({ meta }) => ({ meta }))
 
   return <GuidesIndexPage guides={guides} locale="es" />
 }

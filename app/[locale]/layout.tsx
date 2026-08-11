@@ -38,12 +38,12 @@ export async function generateMetadata({
   const isSpanish = locale === 'es'
 
   const title = isSpanish
-    ? 'CodeAgentSwarm – Centro de mando para agentes de programación con IA'
-    : 'CodeAgentSwarm – Visual command center for AI coding agents'
+    ? 'CodeAgentSwarm | Entorno de Desarrollo Agéntico (ADE)'
+    : 'CodeAgentSwarm | Agentic Development Environment (ADE)'
 
   const description = isSpanish
-    ? 'CodeAgentSwarm es una app de escritorio para ejecutar y supervisar varios agentes de programación con IA en paralelo: Claude Code, Codex, Antigravity CLI, OpenCode y Kimi Code, con visibilidad en tiempo real, notificaciones, historial completo de conversaciones, control de permisos, gestión multiproyecto e integraciones MCP.'
-    : 'CodeAgentSwarm is a desktop workspace to run and supervise multiple AI coding agents in parallel: Claude Code, Codex, Antigravity CLI, OpenCode and Kimi Code, with real-time visibility, live notifications, full conversation history, permission control, multi-project management and MCP integrations.'
+    ? 'CodeAgentSwarm es un entorno de desarrollo agéntico (ADE) para orquestar Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code y Grok Build en paralelo.'
+    : 'CodeAgentSwarm is an Agentic Development Environment (ADE) for orchestrating Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code and Grok Build in parallel.'
 
   return {
     metadataBase: new URL(baseUrl),
@@ -55,15 +55,19 @@ export async function generateMetadata({
       'Antigravity CLI',
       'OpenCode',
       'Kimi Code',
+      'Grok Build',
       'AI coding workspace',
       'AI developer workspace',
       'AI CLI workspace',
+      'Agentic Development Environment',
+      'ADE',
       'multi terminal coding workspace',
       'multiple Claude Code terminals',
       'multiple Codex terminals',
       'multiple Antigravity CLI terminals',
       'multiple OpenCode terminals',
       'multiple Kimi Code terminals',
+      'multiple Grok Build terminals',
       'Claude Code multi terminal setup',
       'real time visibility',
       'AI CLI notifications',
@@ -101,12 +105,10 @@ export async function generateMetadata({
       },
     },
     openGraph: {
-      title: isSpanish
-        ? 'CodeAgentSwarm – Varios agentes de IA en paralelo'
-        : 'CodeAgentSwarm – Run multiple AI coding agents in parallel',
+      title,
       description: isSpanish
-        ? 'Supervisa Claude Code, Codex, Antigravity CLI, OpenCode y Kimi Code desde un centro de mando visual con diffs en vivo, notificaciones e historial completo.'
-        : 'Supervise Claude Code, Codex, Antigravity CLI, OpenCode and Kimi Code from one visual command center with live diffs, notifications and full history.',
+        ? 'Un ADE para dirigir varios agentes de programación con tareas, notificaciones, historial, permisos y diffs en vivo desde un solo lugar.'
+        : 'An ADE for directing multiple coding agents with tasks, notifications, history, permissions and live diffs in one place.',
       type: 'website',
       siteName: 'CodeAgentSwarm',
       url: canonicalUrl,
@@ -126,12 +128,10 @@ export async function generateMetadata({
       card: 'summary_large_image',
       site: '@CodeAgentSwarm',
       creator: '@CodeAgentSwarm',
-      title: isSpanish
-        ? 'CodeAgentSwarm – Agentes de IA en paralelo'
-        : 'CodeAgentSwarm – AI coding agents in parallel',
+      title,
       description: isSpanish
-        ? 'Orquesta Claude Code, Codex, Antigravity CLI, OpenCode y Kimi Code desde un centro de mando con visibilidad en tiempo real.'
-        : 'Orchestrate Claude Code, Codex, Antigravity CLI, OpenCode and Kimi Code from one command center with real-time visibility.',
+        ? 'Entorno de desarrollo agéntico para orquestar Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code y Grok Build en paralelo.'
+        : 'Agentic Development Environment for orchestrating Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code and Grok Build in parallel.',
       images: ['/og.png'],
     },
     robots: {
@@ -170,10 +170,20 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className="dark">
       <head>
+        {/*
+          data-domains is what keeps localhost out of the real numbers.
+          Without it Umami reports from wherever the script runs, so every
+          `npm run dev` session lands in production analytics: a single
+          afternoon of building the interactive demo put 81 demo_seen, 5
+          demo_answered and a download_app_demo_silicon in there, for a feature
+          that had not shipped. Which quietly poisons exactly the conversion
+          rates we look at to decide anything.
+        */}
         <Script
           defer
           src="https://umami-codeagentswarm-production.up.railway.app/script.js"
           data-website-id="a6cf83f7-4ba1-47af-87b3-4fdbd2d537d9"
+          data-domains="codeagentswarm.com,www.codeagentswarm.com"
           strategy="afterInteractive"
         />
       </head>
