@@ -16,7 +16,7 @@ En resumen: tu historial de Codex CLI ya está en tu máquina y puedes retomarlo
     ctaAgent: 'codex',
     highlightedWords: ['historial', 'Codex CLI', 'retomar'],
     publishedAt: '2026-06-24',
-    updatedAt: '2026-06-24',
+    updatedAt: '2026-08-11',
     alternateSlug: 'codex-cli-conversation-history',
   },
   sections: [
@@ -92,7 +92,7 @@ En resumen: tu historial de Codex CLI ya está en tu máquina y puedes retomarlo
             '<strong>Sin vista previa del contenido.</strong> Una lista de sesiones dice poco de lo que contenía cada una, así que abres la equivocada y vuelves atrás más de una vez.',
             '<strong>Sin vista multiproyecto.</strong> El historial queda anclado a donde corrió la sesión. Encontrar trabajo de otro proyecto implica ir allí primero.',
             '<strong>Sin filtros.</strong> No puedes acotar por proyecto, por fecha ni por el tema de la conversación.',
-            '<strong>Sin vista entre agentes.</strong> Si además usas Claude Code o Gemini CLI, cada agente guarda su propio historial en su propio sitio, así que no hay un único lugar donde mirar.',
+            '<strong>Sin vista entre agentes.</strong> Si además usas Claude Code o Antigravity CLI, cada agente guarda su propio historial en su propio sitio, así que no hay un único lugar donde mirar.',
           ],
         },
         {
@@ -107,7 +107,7 @@ En resumen: tu historial de Codex CLI ya está en tu máquina y puedes retomarlo
       content: [
         {
           type: 'paragraph',
-          text: '<a href="/" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a> ejecuta tus agentes de Codex CLI en un escritorio y guarda cada conversación de forma automática: lo que escribiste, lo que hizo Codex, en qué proyecto estabas y cuándo ocurrió. Ese registro se convierte en un historial buscable que funciona en todos los proyectos y, lo importante, entre todos los agentes. La misma vista reúne tus conversaciones de Codex, Claude Code y Gemini CLI.',
+          text: '<a href="/" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a> ejecuta tus agentes de Codex CLI en un escritorio y guarda cada conversación de forma automática: lo que escribiste, lo que hizo Codex, en qué proyecto estabas y cuándo ocurrió. Ese registro se convierte en un historial buscable que funciona en todos los proyectos y, lo importante, entre todos los agentes. La misma vista reúne tus conversaciones de Codex, Claude Code y Antigravity CLI.',
         },
         {
           type: 'heading',
@@ -282,7 +282,7 @@ En resumen: tu historial de Codex CLI ya está en tu máquina y puedes retomarlo
     },
     {
       question: '¿Puedo ver juntos el historial de Codex y de Claude Code?',
-      answer: 'Sí, en CodeAgentSwarm. Como eliges el agente por terminal, el historial no queda aislado por herramienta. La misma vista buscable reúne tus conversaciones de Codex, Claude Code y Gemini CLI, así que puedes rastrear y retomar el trabajo sin importar qué agente lo hizo.',
+      answer: 'Sí, en CodeAgentSwarm. Como eliges el agente por terminal, el historial no queda aislado por herramienta. La misma vista buscable reúne tus conversaciones de Codex, Claude Code y Antigravity CLI, así que puedes rastrear y retomar el trabajo sin importar qué agente lo hizo.',
     },
   ],
 }

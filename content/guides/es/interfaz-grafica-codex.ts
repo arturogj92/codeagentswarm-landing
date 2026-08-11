@@ -16,7 +16,7 @@ CodeAgentSwarm es justo ese tipo de interfaz para Codex. Funciona en macOS y Win
     ctaAgent: 'codex',
     highlightedWords: ['interfaz gráfica para Codex', 'app de escritorio'],
     publishedAt: '2026-07-13',
-    updatedAt: '2026-07-13',
+    updatedAt: '2026-08-11',
     alternateSlug: 'codex-gui',
   },
   sections: [
@@ -41,7 +41,7 @@ CodeAgentSwarm es justo ese tipo de interfaz para Codex. Funciona en macOS y Win
         {
           type: 'callout',
           variant: 'info',
-          content: 'Una interfaz no es un modelo distinto ni un plan distinto. CodeAgentSwarm funciona sobre tu cuenta de OpenAI, y el mismo workspace puede manejar Claude Code, Gemini CLI y opencode junto a Codex. Conservas toda la potencia del CLI, solo ganas una capa visual a su alrededor.',
+          content: 'Una interfaz no es un modelo distinto ni un plan distinto. CodeAgentSwarm funciona sobre tu cuenta de OpenAI, y el mismo workspace puede manejar Claude Code, Antigravity CLI y opencode junto a Codex. Conservas toda la potencia del CLI, solo ganas una capa visual a su alrededor.',
         },
         {
           type: 'paragraph',
@@ -253,7 +253,7 @@ CodeAgentSwarm es justo ese tipo de interfaz para Codex. Funciona en macOS y Win
     },
     {
       question: '¿La misma interfaz puede ejecutar Claude Code y Gemini también?',
-      answer: 'Sí. CodeAgentSwarm no está atado a un solo proveedor. Cada terminal tiene un selector de agente, así que puedes poner uno en Codex CLI, otro en Claude Code, otro en Gemini CLI o en opencode, todo en el mismo workspace visual. Un montaje mixto es lo normal, no un apaño, y la guía del enjambre de agentes Codex cubre cómo ejecutar varios agentes en paralelo.',
+      answer: 'Sí. CodeAgentSwarm no está atado a un solo proveedor. Cada terminal tiene un selector de agente, así que puedes poner uno en Codex CLI, otro en Claude Code, otro en Antigravity CLI o en opencode, todo en el mismo workspace visual. Un montaje mixto es lo normal, no un apaño, y la guía del enjambre de agentes Codex cubre cómo ejecutar varios agentes en paralelo.',
     },
   ],
 }

@@ -16,7 +16,7 @@ En esta guía te explico las tres formas reales de ejecutar un enjambre de openc
     ctaAgent: 'opencode',
     highlightedWords: ['Enjambre de agentes OpenCode', 'opencode'],
     publishedAt: '2026-07-05',
-    updatedAt: '2026-07-05',
+    updatedAt: '2026-08-11',
     alternateSlug: 'opencode-agent-swarm',
   },
   sections: [
@@ -169,7 +169,7 @@ En esta guía te explico las tres formas reales de ejecutar un enjambre de openc
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm es una app de escritorio hecha justo para esto: ejecutar y supervisar un enjambre de agentes CLI de IA en un solo sitio. Funciona en macOS, Linux y Windows, te da varios terminales en un mismo espacio de trabajo y te deja elegir el agente por terminal. Para un enjambre de opencode solo tienes que elegir "opencode" en el selector SELECT AI AGENT de cada terminal que quieras con opencode.',
+          text: 'CodeAgentSwarm es una app de escritorio hecha justo para esto: ejecutar y supervisar un enjambre de agentes CLI de IA en un solo sitio. Funciona en macOS y Windows, te da varios terminales en un mismo espacio de trabajo y te deja elegir el agente por terminal. Para un enjambre de opencode solo tienes que elegir "opencode" en el selector SELECT AI AGENT de cada terminal que quieras con opencode.',
         },
         {
           type: 'image',

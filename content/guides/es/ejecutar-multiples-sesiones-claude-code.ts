@@ -5,8 +5,8 @@ export const guide: Guide = {
     slug: 'ejecutar-multiples-sesiones-claude-code',
     locale: 'es',
     title: '¿Se pueden ejecutar varias sesiones de Claude Code a la vez? Sí, y así se hace',
-    metaTitle: '¿Varias sesiones de Claude Code a la vez? Sí: 3 métodos (2026)',
-    metaDescription: 'Sí se puede. Tres formas de hacerlo: pestañas de terminal, tmux o un workspace multi-terminal supervisado. Qué falla con cada método y el setup que escala más allá de 3 agentes.',
+    metaTitle: 'Varias sesiones de Claude Code en paralelo: 3 métodos (2026)',
+    metaDescription: 'Ejecuta varias sesiones de Claude Code en paralelo con pestañas, tmux o CodeAgentSwarm. Compara aislamiento, visibilidad, conflictos y el setup más seguro.',
     intro: `Si alguna vez te has preguntado si puedes tener más de una sesión de Claude Code funcionando al mismo tiempo, la respuesta es sí. Cada sesión es un proceso independiente con su propia conversación y contexto.
 
 La verdadera pregunta no es si se puede, sino cómo deberías hacerlo. Hay varios enfoques distintos y cada uno tiene sus ventajas y desventajas. Algunos son gratuitos y minimalistas, otros te dan visibilidad y control real.
@@ -16,7 +16,7 @@ En esta guía te explico los tres métodos principales, los comparo de forma hon
     ctaAgent: 'claude-code',
     highlightedWords: ['varias sesiones', 'Claude Code'],
     publishedAt: '2026-04-15',
-    updatedAt: '2026-04-15',
+    updatedAt: '2026-08-11',
     alternateSlug: 'run-multiple-claude-code-sessions',
   },
   sections: [
@@ -183,7 +183,7 @@ En esta guía te explico los tres métodos principales, los comparo de forma hon
         },
         {
           type: 'paragraph',
-          text: 'Ejecuta Claude Code, Codex CLI o Gemini CLI en cualquier combinación. Cada terminal es independiente, con su propia conversación y contexto de proyecto. Puedes mezclar y combinar agentes según la tarea.',
+          text: 'Ejecuta Claude Code, Codex CLI o Antigravity CLI en cualquier combinación. Cada terminal es independiente, con su propia conversación y contexto de proyecto. Puedes mezclar y combinar agentes según la tarea.',
         },
         {
           type: 'heading',
@@ -372,8 +372,8 @@ En esta guía te explico los tres métodos principales, los comparo de forma hon
       answer: 'La segunda sesión en guardar encontrará un conflicto de Git. Claude Code es bastante bueno detectando y resolviendo estos conflictos automáticamente. En la práctica, lo gestiona de forma fiable sin intervención manual.',
     },
     {
-      question: '¿Puedo combinar Claude Code con Codex CLI o Gemini CLI?',
-      answer: 'Sí. Como cada terminal es independiente, puedes ejecutar distintos agentes de IA en distintos terminales. CodeAgentSwarm soporta Claude Code, Codex CLI y Gemini CLI en el mismo espacio de trabajo, así que puedes usar el agente que mejor se adapte a cada tarea.',
+      question: '¿Puedo combinar Claude Code con Codex CLI o Antigravity CLI?',
+      answer: 'Sí. Como cada terminal es independiente, puedes ejecutar distintos agentes de IA en distintos terminales. CodeAgentSwarm soporta Claude Code, Codex CLI y Antigravity CLI en el mismo espacio de trabajo, así que puedes usar el agente que mejor se adapte a cada tarea.',
     },
     {
       question: '¿Cuántas sesiones de Claude Code puedo ejecutar a la vez?',

@@ -10,11 +10,11 @@ export const guide: Guide = {
     intro: `The AI coding tools landscape has exploded. Claude Code, Cursor, and Codex CLI are three of the most popular options, but they are fundamentally different tools designed for different workflows.
 
 This guide breaks down what each one actually does, where it shines, and where it falls short. No hype, no marketing fluff - just an honest comparison so you can pick what works for your workflow, or decide to use more than one.`,
-    ctaText: 'Use Claude Code, Codex CLI, or Gemini CLI? Run them all in parallel with CodeAgentSwarm. Multiple terminals, one workspace.',
+    ctaText: 'Use Claude Code, Codex CLI, or Antigravity CLI? Run them all in parallel with CodeAgentSwarm. Multiple terminals, one workspace.',
     ctaAgent: 'multi',
     highlightedWords: ['Claude Code', 'Cursor', 'Codex CLI'],
     publishedAt: '2026-04-15',
-    updatedAt: '2026-07-16',
+    updatedAt: '2026-08-11',
     alternateSlug: 'claude-code-vs-cursor-vs-codex',
   },
   sections: [
@@ -428,7 +428,7 @@ This guide breaks down what each one actually does, where it shines, and where i
       content: [
         {
           type: 'paragraph',
-          text: 'If you use CLI agents like Claude Code, Codex CLI, or Gemini CLI, there is a practical problem: managing multiple terminal sessions gets messy fast. You lose track of which terminal is doing what, you miss when an agent finishes, and switching between sessions is a constant context switch.',
+          text: 'If you use CLI agents like Claude Code, Codex CLI, or Antigravity CLI, there is a practical problem: managing multiple terminal sessions gets messy fast. You lose track of which terminal is doing what, you miss when an agent finishes, and switching between sessions is a constant context switch.',
         },
         {
           type: 'paragraph',
@@ -437,7 +437,7 @@ This guide breaks down what each one actually does, where it shines, and where i
         {
           type: 'list',
           items: [
-            '<strong>Mix different CLI tools in the same workspace</strong> - Run Claude Code in terminal 1, Codex CLI in terminal 2, Gemini CLI in terminal 3, and plain bash in terminal 4. All visible at once',
+            '<strong>Mix different CLI tools in the same workspace</strong> - Run Claude Code in terminal 1, Codex CLI in terminal 2, Antigravity CLI in terminal 3, and plain bash in terminal 4. All visible at once',
             '<strong>Real-time notifications</strong> - Get notified when any agent finishes its task or needs your input, so you never miss a completion',
             '<strong>Conversation history across all sessions</strong> - Search and resume any past conversation, organized by project and date',
             '<strong>See what each agent is changing</strong> - Track file changes in real time for each terminal independently',
@@ -479,7 +479,7 @@ This guide breaks down what each one actually does, where it shines, and where i
     },
     {
       question: 'Can I run Claude Code and Codex CLI at the same time?',
-      answer: 'Yes. You can run them in separate terminal windows. CodeAgentSwarm makes this even easier by letting you run Claude Code, Codex CLI, and Gemini CLI side by side in multiple organized terminals with notifications, history, and file change tracking for each one.',
+      answer: 'Yes. You can run them in separate terminal windows. CodeAgentSwarm makes this even easier by letting you run Claude Code, Codex CLI, and Antigravity CLI side by side in multiple organized terminals with notifications, history, and file change tracking for each one.',
     },
     {
       question: 'Does Cursor support MCP?',

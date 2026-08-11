@@ -16,7 +16,7 @@ There is a catch worth knowing before you build a workflow around it, and it is 
     ctaAgent: 'antigravity',
     highlightedWords: ['Antigravity', 'Plans', 'Pricing'],
     publishedAt: '2026-08-05',
-    updatedAt: '2026-08-05',
+    updatedAt: '2026-08-11',
     alternateSlug: 'planes-y-precios-de-antigravity',
   },
   sections: [
@@ -159,7 +159,7 @@ There is a catch worth knowing before you build a workflow around it, and it is 
         },
         {
           type: 'paragraph',
-          text: '<a href="/" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a>, the desktop workspace for running several AI CLI agents in parallel, reads Antigravity\'s real quota from its local endpoint and shows it alongside your other agents\' usage, with the platform-specific discovery handled for you on macOS, Linux and Windows. You see the wall approaching while the agents work.',
+          text: '<a href="/" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a>, the desktop workspace for running several AI CLI agents in parallel, reads Antigravity\'s real quota from its local endpoint and shows it alongside your other agents\' usage, with the platform-specific discovery handled for you on macOS and Windows. You see the wall approaching while the agents work.',
         },
         {
           type: 'paragraph',

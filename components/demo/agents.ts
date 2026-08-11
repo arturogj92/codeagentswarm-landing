@@ -15,7 +15,7 @@ const CLAUDE_MARK = [' ▐▛███▜▌', '▝▜█████▛▘', ' 
 /**
  * Per-CLI presentation.
  *
- * Each of the five agents CodeAgentSwarm drives has its own banner, its own
+ * Each of the five agents shown in this demo has its own banner, its own
  * bullet, its own way of announcing a tool call and its own footer. Painting
  * them all as generic "terminal text" is what made the first pass read as a
  * mockup: half of what makes a session recognisable is the chrome around the
@@ -113,7 +113,7 @@ export const AGENTS: Record<AgentKey, AgentSkin> = {
     banner: (cwd) =>
       [
         `${bold(white('Kimi Code'))} ${dim('v1.4')}`,
-        `${grey('kimi-k3')} ${dim('·')} ${grey('Moonshot AI')}`,
+        `${grey('kimi-k2.7-code')} ${dim('·')} ${grey('Moonshot AI')}`,
         `${dim(cwd)}`,
       ].join('\r\n'),
     bullet: green('◈'),

@@ -32,7 +32,7 @@ const privacyEs: LegalDoc = {
         {
           type: 'callout',
           variant: 'tip',
-          text: 'CodeAgentSwarm es una aplicación de escritorio que ejecuta herramientas de IA de terceros (Claude Code, OpenAI Codex, Gemini CLI y similares) en terminales dentro de tu propio ordenador. El código, los archivos, las instrucciones y las respuestas de IA que ocurren en esas terminales viajan directamente desde la CLI de tu máquina al proveedor de IA que elijas, usando tu propia cuenta o clave de API. Nosotros no estamos en medio de esa comunicación y no recibimos ni almacenamos ese contenido.',
+          text: 'CodeAgentSwarm es una aplicación de escritorio que ejecuta herramientas de IA de terceros (Claude Code, OpenAI Codex, Antigravity CLI y similares) en terminales dentro de tu propio ordenador. El código, los archivos, las instrucciones y las respuestas de IA que ocurren en esas terminales viajan directamente desde la CLI de tu máquina al proveedor de IA que elijas, usando tu propia cuenta o clave de API. Nosotros no estamos en medio de esa comunicación y no recibimos ni almacenamos ese contenido.',
         },
         {
           type: 'paragraph',
@@ -52,7 +52,7 @@ const privacyEs: LegalDoc = {
           type: 'list',
           items: [
             'El contenido de tus terminales, tu código fuente, tus archivos ni los datos de tus proyectos.',
-            'Las instrucciones que envías ni las respuestas que recibes de las CLIs de IA que ejecutas (Claude Code, Codex, Gemini CLI, etc.). Eso se rige por la política de privacidad del proveedor que uses (Anthropic, OpenAI, Google).',
+            'Las instrucciones que envías ni las respuestas que recibes de las CLIs de IA que ejecutas (Claude Code, Codex, Antigravity CLI, etc.). Eso se rige por la política de privacidad del proveedor que uses (Anthropic, OpenAI, Google).',
             'Tus claves de API o credenciales de los proveedores de IA. Se quedan en tu máquina.',
             'Cuando la app genera un mensaje de commit de git, ejecuta la CLI de Claude que ya tienes instalada en tu ordenador y le pasa el diff local de git. Eso ocurre en tu máquina; nosotros nunca vemos el diff.',
           ],

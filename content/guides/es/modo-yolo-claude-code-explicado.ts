@@ -5,8 +5,8 @@ export const guide: Guide = {
     slug: 'modo-yolo-claude-code-explicado',
     locale: 'es',
     title: 'Modo YOLO de Claude Code: qué es, los riesgos y cómo activarlo de forma segura',
-    metaTitle: 'Modo YOLO de Claude Code: qué es y cómo activarlo seguro (2026)',
-    metaDescription: 'Qué hace realmente --dangerously-skip-permissions, los riesgos reales, cómo se compara con Auto mode y la configuración paso a paso de Turbo Mode para ir rápido y seguro.',
+    metaTitle: 'Modo YOLO de Claude Code: riesgos y uso seguro (2026)',
+    metaDescription: 'Qué hace --dangerously-skip-permissions, los riesgos del modo YOLO de Claude Code y configuraciones más seguras con Auto Mode, Turbo Mode y controles.',
     intro: `Si llevas más de un día trabajando con Claude Code, seguro que ya te has encontrado con la misma frustración: los prompts de confirmación constantes. Cada edición de archivo, cada comando de terminal, cada llamada a una herramienta MCP - Claude pide confirmación, y tú le das a "yes" sin ni siquiera leer lo que dice.
 
 Ahí es donde entra el "modo YOLO". La comunidad empezó a llamarlo así por el flag \`--dangerously-skip-permissions\`, que hace exactamente lo que suena: salta todos los prompts de permisos para que Claude trabaje sin interrupciones.
@@ -16,7 +16,7 @@ La ganancia de velocidad es real. Pero los riesgos también. Esta guía cubre qu
     ctaAgent: 'claude-code',
     highlightedWords: ['YOLO mode', 'Claude Code'],
     publishedAt: '2026-04-15',
-    updatedAt: '2026-07-16',
+    updatedAt: '2026-08-11',
     alternateSlug: 'claude-code-yolo-mode-explained',
   },
   sections: [

@@ -5,9 +5,12 @@ import { getAllGuides } from '@/content/guides'
 import GuidesIndexPage from '@/components/guides/GuidesIndexPage'
 
 export async function generateMetadata(): Promise<Metadata> {
+  const title = 'Guides | CodeAgentSwarm'
+  const description = 'Practical guides for CodeAgentSwarm: run Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code and Grok Build in parallel with visibility, history and multi-project control.'
+
   return {
-    title: 'Guides | CodeAgentSwarm',
-    description: 'Practical guides for CodeAgentSwarm: run Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code and Grok Build in parallel with visibility, history and multi-project control.',
+    title,
+    description,
     alternates: {
       canonical: '/en/guides',
       languages: {
@@ -15,6 +18,19 @@ export async function generateMetadata(): Promise<Metadata> {
         es: '/es/guias',
         'x-default': '/en/guides',
       },
+    },
+    openGraph: {
+      type: 'website',
+      url: '/en/guides',
+      title,
+      description,
+      images: ['/og.png'],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: ['/og.png'],
     },
   }
 }

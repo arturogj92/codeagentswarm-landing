@@ -10,11 +10,11 @@ export const guide: Guide = {
     intro: `El ecosistema de herramientas de IA para programar ha crecido muchísimo. Claude Code, Cursor y Codex CLI son tres de las opciones más populares, pero son herramientas fundamentalmente distintas diseñadas para flujos de trabajo diferentes.
 
 En esta guía te cuento qué hace cada una, dónde destaca y dónde se queda corta. Sin hype ni marketing - solo una comparativa honesta para que elijas lo que mejor encaje con tu forma de trabajar, o decidas usar más de una.`,
-    ctaText: '¿Usas Claude Code, Codex CLI o Gemini CLI? Ejecútalos todos en paralelo con CodeAgentSwarm. Varios terminales, un solo workspace.',
+    ctaText: '¿Usas Claude Code, Codex CLI o Antigravity CLI? Ejecútalos todos en paralelo con CodeAgentSwarm. Varios terminales, un solo workspace.',
     ctaAgent: 'multi',
     highlightedWords: ['Claude Code', 'Cursor', 'Codex CLI'],
     publishedAt: '2026-04-15',
-    updatedAt: '2026-07-16',
+    updatedAt: '2026-08-11',
     alternateSlug: 'claude-code-vs-cursor-vs-codex',
   },
   sections: [
@@ -428,7 +428,7 @@ En esta guía te cuento qué hace cada una, dónde destaca y dónde se queda cor
       content: [
         {
           type: 'paragraph',
-          text: 'Si usas agentes CLI como Claude Code, Codex CLI o Gemini CLI, hay un problema práctico: gestionar múltiples sesiones de terminal se vuelve un caos rápidamente. Pierdes la pista de qué terminal está haciendo qué, no te enteras de cuándo un agente termina, y cambiar entre sesiones es un cambio de contexto constante.',
+          text: 'Si usas agentes CLI como Claude Code, Codex CLI o Antigravity CLI, hay un problema práctico: gestionar múltiples sesiones de terminal se vuelve un caos rápidamente. Pierdes la pista de qué terminal está haciendo qué, no te enteras de cuándo un agente termina, y cambiar entre sesiones es un cambio de contexto constante.',
         },
         {
           type: 'paragraph',
@@ -437,7 +437,7 @@ En esta guía te cuento qué hace cada una, dónde destaca y dónde se queda cor
         {
           type: 'list',
           items: [
-            '<strong>Mezcla diferentes herramientas CLI en el mismo workspace</strong> - Ejecuta Claude Code en el terminal 1, Codex CLI en el terminal 2, Gemini CLI en el terminal 3 y bash normal en el terminal 4. Todo visible a la vez',
+            '<strong>Mezcla diferentes herramientas CLI en el mismo workspace</strong> - Ejecuta Claude Code en el terminal 1, Codex CLI en el terminal 2, Antigravity CLI en el terminal 3 y bash normal en el terminal 4. Todo visible a la vez',
             '<strong>Notificaciones en tiempo real</strong> - Recibe una notificación cuando cualquier agente termina su tarea o necesita tu input, para que nunca te pierdas nada',
             '<strong>Historial de conversaciones de todas las sesiones</strong> - Busca y retoma cualquier conversación pasada, organizada por proyecto y fecha',
             '<strong>Ve lo que cada agente está cambiando</strong> - Rastrea los cambios de archivos en tiempo real para cada terminal de forma independiente',
@@ -479,7 +479,7 @@ En esta guía te cuento qué hace cada una, dónde destaca y dónde se queda cor
     },
     {
       question: '¿Puedo ejecutar Claude Code y Codex CLI al mismo tiempo?',
-      answer: 'Sí. Puedes ejecutarlos en ventanas de terminal separadas. CodeAgentSwarm lo hace aún más fácil, permitiéndote ejecutar Claude Code, Codex CLI y Gemini CLI uno al lado del otro en varios terminales organizados con notificaciones, historial y seguimiento de cambios de archivos para cada uno.',
+      answer: 'Sí. Puedes ejecutarlos en ventanas de terminal separadas. CodeAgentSwarm lo hace aún más fácil, permitiéndote ejecutar Claude Code, Codex CLI y Antigravity CLI uno al lado del otro en varios terminales organizados con notificaciones, historial y seguimiento de cambios de archivos para cada uno.',
     },
     {
       question: '¿Cursor soporta MCP?',

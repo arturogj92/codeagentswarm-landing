@@ -5,7 +5,7 @@ export const guide: Guide = {
     slug: 'interfaz-grafica-claude-code',
     locale: 'es',
     title: 'Interfaz gráfica de Claude Code: una app de escritorio visual para tus CLIs de IA',
-    metaTitle: 'Interfaz gráfica de Claude Code: app de escritorio para Claude Code, Codex y Gemini CLI (2026)',
+    metaTitle: 'Interfaz gráfica de Claude Code: app, tareas y diffs (2026)',
     metaDescription: 'Una interfaz gráfica de Claude Code es una app de escritorio sobre el CLI. CodeAgentSwarm le da a Claude Code un workspace visual, tablero, diffs y avisos.',
     intro: `Claude Code es una herramienta de terminal. Escribes en un prompt, lee y edita archivos, y todo lo que ves es texto pasando por una sola ventana. Eso está muy bien para la potencia, y no tan bien cuando ejecutas varias sesiones, intentas recordar qué hace cada una y subes a buscar qué cambió.
 
@@ -16,7 +16,7 @@ CodeAgentSwarm es justo ese tipo de interfaz. Funciona en macOS y Windows, no re
     ctaAgent: 'claude-code',
     highlightedWords: ['interfaz gráfica de Claude Code', 'app de escritorio'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-06-07',
+    updatedAt: '2026-08-11',
     alternateSlug: 'claude-code-gui',
   },
   sections: [
@@ -41,7 +41,7 @@ CodeAgentSwarm es justo ese tipo de interfaz. Funciona en macOS y Windows, no re
         {
           type: 'callout',
           variant: 'info',
-          content: 'Una interfaz no es un modelo distinto ni un plan distinto. CodeAgentSwarm funciona sobre tu suscripción de Claude, y también puede manejar Codex CLI y Gemini CLI en el mismo workspace. Conservas toda la potencia del CLI, solo ganas una capa visual a su alrededor.',
+          content: 'Una interfaz no es un modelo distinto ni un plan distinto. CodeAgentSwarm funciona sobre tu suscripción de Claude, y también puede manejar Codex CLI y Antigravity CLI en el mismo workspace. Conservas toda la potencia del CLI, solo ganas una capa visual a su alrededor.',
         },
         {
           type: 'paragraph',
@@ -211,8 +211,8 @@ CodeAgentSwarm es justo ese tipo de interfaz. Funciona en macOS y Windows, no re
       answer: 'Sí. CodeAgentSwarm es una app de escritorio para macOS y Windows. Se instala en local, ejecuta el CLI de Claude Code en tu máquina y usa tu propia suscripción de Claude. No hay ningún modelo ni plan aparte.',
     },
     {
-      question: '¿La misma interfaz puede ejecutar Codex y Gemini también?',
-      answer: 'Sí. CodeAgentSwarm no está atado a un solo proveedor. Cada terminal tiene un selector de agente, así que puedes poner uno en Claude Code, otro en Codex CLI y otro en Gemini CLI, todo en el mismo workspace visual. El montaje entre proveedores se cubre en la guía del enjambre de agentes CLI de IA.',
+      question: '¿La misma interfaz puede ejecutar Codex y Antigravity también?',
+      answer: 'Sí. CodeAgentSwarm no está atado a un solo proveedor. Cada terminal tiene un selector de agente, así que puedes poner uno en Claude Code, otro en Codex CLI y otro en Antigravity CLI, todo en el mismo workspace visual. El montaje entre proveedores se cubre en la guía del enjambre de agentes CLI de IA.',
     },
     {
       question: '¿Necesito una interfaz gráfica de Claude Code si solo ejecuto una sesión?',

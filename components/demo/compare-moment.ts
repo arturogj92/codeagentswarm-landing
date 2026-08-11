@@ -34,7 +34,7 @@ export const CHAT_MOMENT: DemoTerminal = {
     {
       id: 'cmp-a',
       kind: 'assistant',
-      text: 'Retries are handled and the webhook is idempotent now, so a replayed event cannot double-charge anyone. What happens next is a product decision, not a technical one — so I have stopped to ask.',
+      text: 'Retries are handled and the webhook is idempotent now, so a replayed event cannot double-charge anyone. What happens next is a product decision, not a technical one, so I have stopped to ask.',
     },
     {
       id: 'cmp-w',
@@ -166,7 +166,7 @@ export function cliMoment(agent: CompareAgent): CliLine[] {
     // terminal only would have made the halves look like different sessions.
     { text: `${skin.bullet} Retries are handled and the webhook is idempotent now, so a replayed`, tone: 'bullet' },
     { text: '  event cannot double-charge anyone. What happens next is a product' },
-    { text: '  decision, not a technical one — so I have stopped to ask.' },
+    { text: '  decision, not a technical one, so I have stopped to ask.' },
     { text: '' },
     { text: edit.text, trail: edit.trail, tone: 'tool' },
     { text: skin.result('+96 −12'), tone: 'result' },

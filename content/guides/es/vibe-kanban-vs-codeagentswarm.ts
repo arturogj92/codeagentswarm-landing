@@ -16,7 +16,7 @@ Si tu cuello de botella es planificar y revisar el trabajo en equipo, una herram
     ctaAgent: 'comparison',
     highlightedWords: ['Vibe Kanban', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
-    updatedAt: '2026-07-26',
+    updatedAt: '2026-08-11',
     alternateSlug: 'vibe-kanban-vs-codeagentswarm',
   },
   sections: [
@@ -79,7 +79,7 @@ Si tu cuello de botella es planificar y revisar el trabajo en equipo, una herram
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm es una app de escritorio para ejecutar y supervisar varios agentes de programación con IA en paralelo. Funciona en macOS y Windows, cada terminal es un proceso de agente real y eliges el agente por terminal entre Claude Code, Codex CLI, Antigravity CLI, OpenCode y Kimi Code.',
+          text: 'CodeAgentSwarm es una app de escritorio para ejecutar y supervisar varios agentes de programación con IA en paralelo. Funciona en macOS y Windows, cada terminal es un proceso de agente real y eliges el agente por terminal entre Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code y Grok Build.',
         },
         {
           type: 'image',
@@ -89,7 +89,7 @@ Si tu cuello de botella es planificar y revisar el trabajo en equipo, una herram
         },
         {
           type: 'paragraph',
-          text: 'El tablero existe, pero no es el eje. El eje es la supervisión: notificaciones de escritorio cuando un agente termina o necesita respuesta, historial de conversaciones buscable de los cinco agentes con reanudación, diffs de archivos en vivo por terminal, control de permisos con modo Turbo, git worktrees por sesión, cambio entre proyectos, mensajes de commit con IA, indicador de cuota del proveedor y marketplaces de skills y de MCP compartidos entre agentes.',
+          text: 'El tablero existe, pero no es el eje. El eje es la supervisión: notificaciones de escritorio cuando un agente termina o necesita respuesta, historial de conversaciones buscable de los seis agentes con reanudación, diffs de archivos en vivo por terminal, control de permisos con modo Turbo, git worktrees por sesión, cambio entre proyectos, mensajes de commit con IA, indicador de cuota del proveedor y marketplaces de skills y de MCP compartidos entre agentes.',
         },
         {
           type: 'paragraph',
@@ -107,10 +107,10 @@ Si tu cuello de botella es planificar y revisar el trabajo en equipo, una herram
           rows: [
             ['Plataformas', 'Se ejecuta en local con npx vibe-kanban y se usa desde el navegador; autohospedaje documentado con Docker Compose', 'App de escritorio para macOS y Windows'],
             ['Interfaz', 'Tablero kanban e interfaz de workspaces en el navegador, con previsualización integrada de la app', 'Espacio de trabajo de escritorio con paneles de terminal en vivo'],
-            ['Agentes soportados', 'Claude Code, Codex, Gemini CLI, GitHub Copilot, Amp, Cursor, OpenCode, Droid, CCR y Qwen Code según su README', 'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code'],
+            ['Agentes soportados', 'Claude Code, Codex, Gemini CLI, GitHub Copilot, Amp, Cursor, OpenCode, Droid, CCR y Qwen Code según su README', 'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code y Grok Build'],
             ['Modelo de aislamiento', 'Un workspace por issue, cada uno con su rama, su terminal y su servidor de desarrollo', 'Un proceso separado por terminal, con git worktrees opcionales por sesión'],
             ['Notificaciones', 'No documentado en su web a 26 de julio de 2026', 'Notificaciones de escritorio cuando un agente termina o necesita respuesta'],
-            ['Historial de conversaciones', 'Sesiones por workspace con interfaz de chat y panel de cambios, documentadas por workspace', 'Historial buscable de los cinco agentes, con reanudación'],
+            ['Historial de conversaciones', 'Sesiones por workspace con interfaz de chat y panel de cambios, documentadas por workspace', 'Historial buscable de los seis agentes, con reanudación'],
             ['Gestión de tareas', 'Es el producto entero: issues de kanban, filtros, personalización del tablero, asignación en equipo', 'Una función más del espacio de trabajo: un kanban que los agentes actualizan por MCP'],
             ['Código abierto', 'Sí, Apache-2.0, unas 27.500 estrellas', 'No, código cerrado y sin repositorio público de la app'],
             ['Precio', 'Código abierto y autohospedable; las suscripciones de pago en la nube se cancelaron según su anuncio del 10 de abril de 2026', 'Gratis durante la beta con Pro incluido, y tú pones tus suscripciones de agentes'],
@@ -130,7 +130,7 @@ Si tu cuello de botella es planificar y revisar el trabajo en equipo, una herram
             '<strong>Tu unidad de trabajo es una issue, no una sesión.</strong> Si el trabajo consiste en planificar y repartir tickets y los agentes son la forma de completarlos, una herramienta que arranca por el kanban encaja mejor que un espacio de terminales.',
             '<strong>Quieres código abierto que puedas hospedar.</strong> Apache-2.0, unas 27.500 estrellas y autohospedaje documentado con Docker Compose. Nuestra app es de código cerrado y no hay nada que hospedar.',
             '<strong>Revisas en el navegador.</strong> Los comentarios en línea sobre un diff que vuelven directos al agente, más una previsualización integrada con devtools y emulación de dispositivos, están muy bien y nosotros no tenemos equivalente.',
-            '<strong>Quieres más agentes donde elegir.</strong> Su README lista más de diez, incluidos Cursor, Amp, Droid y Qwen Code. Nuestra lista es de cinco.',
+            '<strong>Quieres más agentes donde elegir.</strong> Su README lista más de diez, incluidos Cursor, Amp, Droid y Qwen Code. Nuestra lista es de seis.',
             '<strong>Quieres gestionar las pull requests dentro de la herramienta.</strong> Abrir una PR con descripción escrita por IA y hacer merge desde la misma interfaz forma parte de su flujo.',
             '<strong>No estás en macOS ni en Windows.</strong> Se lanza con npx allí donde haya Node, así que una máquina Linux vale. CodeAgentSwarm no está disponible ahí.',
           ],

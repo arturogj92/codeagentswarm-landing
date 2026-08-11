@@ -32,7 +32,7 @@ const privacyEn: LegalDoc = {
         {
           type: 'callout',
           variant: 'tip',
-          text: 'CodeAgentSwarm is a desktop app that runs third-party AI coding tools (Claude Code, OpenAI Codex, Gemini CLI and similar) in terminals on your own computer. The code, files, prompts and AI responses inside those terminals travel directly from the CLI on your machine to the AI provider you chose, using your own account or API key. We do not sit in the middle of that and we do not receive or store that content.',
+          text: 'CodeAgentSwarm is a desktop app that runs third-party AI coding tools (Claude Code, OpenAI Codex, Antigravity CLI and similar) in terminals on your own computer. The code, files, prompts and AI responses inside those terminals travel directly from the CLI on your machine to the AI provider you chose, using your own account or API key. We do not sit in the middle of that and we do not receive or store that content.',
         },
         {
           type: 'paragraph',
@@ -52,7 +52,7 @@ const privacyEn: LegalDoc = {
           type: 'list',
           items: [
             'The contents of your terminals, your source code, your files or your project data.',
-            'The prompts you send to, or the responses you receive from, the AI CLIs you run (Claude Code, Codex, Gemini CLI, etc.). Those are governed by the privacy policy of the provider you use (Anthropic, OpenAI, Google).',
+            'The prompts you send to, or the responses you receive from, the AI CLIs you run (Claude Code, Codex, Antigravity CLI, etc.). Those are governed by the privacy policy of the provider you use (Anthropic, OpenAI, Google).',
             'Your AI provider API keys or credentials. They stay on your machine.',
             'When the app generates a git commit message, it runs the Claude CLI that is already installed on your computer and passes it your local git diff. That happens on your machine; we never see the diff.',
           ],

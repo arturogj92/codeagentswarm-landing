@@ -606,7 +606,7 @@ export default function ChatPane({ terminal, onAnswer }: Props) {
                 <button
                   type="button"
                   className={`cas-gbtn cas-interaction-mode${settings.plan ? ' is-plan' : ''}`}
-                  title={settings.plan ? 'Plan mode — switch back to Build' : 'Build mode — switch to Plan'}
+                  title={settings.plan ? 'Plan mode: switch back to Build' : 'Build mode: switch to Plan'}
                   onClick={() => setSettings((s) => ({ ...s, plan: !s.plan }))}
                 >
                   {settings.plan ? 'Plan' : 'Build'}

@@ -11,12 +11,12 @@ export const guide: Guide = {
 
 Esa diferencia lo cambia todo: cómo das las instrucciones, cuánto se ejecuta de forma automática y dónde encaja cada uno en tu día a día. Elegir al "ganador" depende por completo de cómo te guste trabajar, y muchos desarrolladores acaban usando los dos.
 
-En esta guía los comparo por capacidad y flujo de trabajo en lugar de perseguir números de benchmarks, y luego te muestro cómo CodeAgentSwarm te deja saltarte la elección a nivel de enjambre ejecutando Codex CLI junto a Claude Code y Gemini CLI en paralelo.`,
-    ctaText: '¿Te gusta Codex CLI pero quieres más de un terminal? Ejecuta varios agentes de Codex CLI en paralelo con CodeAgentSwarm, junto a Claude Code y Gemini CLI, todo en un solo workspace.',
+En esta guía los comparo por capacidad y flujo de trabajo en lugar de perseguir números de benchmarks, y luego te muestro cómo CodeAgentSwarm te deja saltarte la elección a nivel de enjambre ejecutando Codex CLI junto a Claude Code y Antigravity CLI en paralelo.`,
+    ctaText: '¿Te gusta Codex CLI pero quieres más de un terminal? Ejecuta varios agentes de Codex CLI en paralelo con CodeAgentSwarm, junto a Claude Code y Antigravity CLI, todo en un solo workspace.',
     ctaAgent: 'codex',
     highlightedWords: ['Codex CLI', 'Cursor'],
     publishedAt: '2026-06-24',
-    updatedAt: '2026-06-24',
+    updatedAt: '2026-08-11',
     alternateSlug: 'codex-cli-vs-cursor',
   },
   sections: [
@@ -361,7 +361,7 @@ En esta guía los comparo por capacidad y flujo de trabajo en lugar de perseguir
         },
         {
           type: 'paragraph',
-          text: '<a href="/" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a> es una app de escritorio para ejecutar y supervisar un enjambre de agentes CLI de IA en un solo workspace. Tienes varios terminales a la vez y eliges el agente por terminal. Ponlos todos en Codex CLI para un enjambre puro de Codex, o mezcla Claude Code y Gemini CLI donde encajen mejor.',
+          text: '<a href="/" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a> es una app de escritorio para ejecutar y supervisar un enjambre de agentes CLI de IA en un solo workspace. Tienes varios terminales a la vez y eliges el agente por terminal. Ponlos todos en Codex CLI para un enjambre puro de Codex, o mezcla Claude Code y Antigravity CLI donde encajen mejor.',
         },
         {
           type: 'image',

@@ -56,7 +56,7 @@ const TERMINALS: DemoTerminal[] = [
       {
         id: 'c1-u',
         kind: 'user',
-        text: 'The badge on the terminal tabs drifts — it counts terminals I have already read. Find every place the count is written and make one of them own it.',
+        text: 'The badge on the terminal tabs drifts because it counts terminals I have already read. Find every place the count is written and make one of them own it.',
       },
       {
         id: 'c1-a',
@@ -210,7 +210,7 @@ const TERMINALS: DemoTerminal[] = [
       {
         id: 'c4-a',
         kind: 'assistant',
-        text: 'Retries are handled and the webhook is idempotent now, so a replayed event cannot double-charge anyone.\n\nWhat happens after the third failure is a product decision, not a technical one — so I have stopped to ask rather than pick for you.',
+        text: 'Retries are handled and the webhook is idempotent now, so a replayed event cannot double-charge anyone.\n\nWhat happens after the third failure is a product decision, not a technical one, so I have stopped to ask rather than pick for you.',
       },
       {
         id: 'c4-w',

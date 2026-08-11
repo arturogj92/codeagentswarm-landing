@@ -6,17 +6,17 @@ export const guide: Guide = {
     locale: 'en',
     title: 'Paseo vs CodeAgentSwarm: An Honest Comparison (2026)',
     metaTitle: 'Paseo vs CodeAgentSwarm: An Honest Comparison (2026)',
-    metaDescription: 'Paseo is a self-hosted, open source agent orchestrator you can drive from your phone. CodeAgentSwarm is a macOS and Windows desktop workspace for five agent CLIs.',
-    intro: `Paseo is a self-hosted, open source orchestrator you can supervise from your phone, while CodeAgentSwarm is a macOS and Windows desktop workspace that runs five agent CLIs in parallel terminals. That is the difference in one line, and most of the decision follows from it.
+    metaDescription: 'Paseo is a self-hosted, open source agent orchestrator you can drive from your phone. CodeAgentSwarm is a macOS and Windows desktop workspace for six agent CLIs.',
+    intro: `Paseo is a self-hosted, open source orchestrator you can supervise from your phone, while CodeAgentSwarm is a macOS and Windows desktop workspace that runs six agent CLIs in parallel terminals. That is the difference in one line, and most of the decision follows from it.
 
 Full disclosure: we build CodeAgentSwarm. That is exactly why this page says out loud where Paseo is the better tool instead of pretending we win every row. Both products are judged on the same criteria, our limitations sit next to our features, and every third-party fact below was checked on July 26, 2026 against paseo.sh, the public getpaseo/paseo repository and public GitHub data.
 
-Short version: if you want to start a job at your desk and check on it from a train, or you need software you can host and audit yourself, Paseo fits better. If you work on a Mac or a Windows machine and want five agent CLIs, a shared task board and one searchable history across all of them, that is where CodeAgentSwarm earns its place.`,
-    ctaText: 'If your work happens at a desk on macOS or Windows and you want five agent CLIs, live diffs and a shared task board in one window, download CodeAgentSwarm and run your next batch of agents in parallel.',
+Short version: if you want to start a job at your desk and check on it from a train, or you need software you can host and audit yourself, Paseo fits better. If you work on a Mac or a Windows machine and want six agent CLIs, a shared task board and one searchable history across all of them, that is where CodeAgentSwarm earns its place.`,
+    ctaText: 'If your work happens at a desk on macOS or Windows and you want six agent CLIs, live diffs and a shared task board in one window, download CodeAgentSwarm and run your next batch of agents in parallel.',
     ctaAgent: 'comparison',
     highlightedWords: ['Paseo', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
-    updatedAt: '2026-07-26',
+    updatedAt: '2026-08-11',
     alternateSlug: 'paseo-vs-codeagentswarm',
   },
   sections: [
@@ -26,7 +26,7 @@ Short version: if you want to start a job at your desk and check on it from a tr
       content: [
         {
           type: 'paragraph',
-          text: 'Paseo is a self-hosted, open source orchestrator with desktop, mobile, web and CLI clients talking to a daemon on your own machine, while CodeAgentSwarm is a closed source desktop app for macOS and Windows that runs five agent CLIs side by side in parallel terminals.',
+          text: 'Paseo is a self-hosted, open source orchestrator with desktop, mobile, web and CLI clients talking to a daemon on your own machine, while CodeAgentSwarm is a closed source desktop app for macOS and Windows that runs six agent CLIs side by side in parallel terminals.',
         },
         {
           type: 'paragraph',
@@ -74,7 +74,7 @@ Short version: if you want to start a job at your desk and check on it from a tr
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm is a desktop workspace to run and supervise multiple AI coding agents in parallel. It runs on macOS and Windows, it is not a model provider, and it drives the agent CLIs you already have installed: Claude Code, Codex CLI, Antigravity CLI, OpenCode and Kimi Code.',
+          text: 'CodeAgentSwarm is a desktop workspace to run and supervise multiple AI coding agents in parallel. It runs on macOS and Windows, it is not a model provider, and it drives the agent CLIs you already have installed: Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code and Grok Build.',
         },
         {
           type: 'image',
@@ -87,7 +87,7 @@ Short version: if you want to start a job at your desk and check on it from a tr
           items: [
             'Parallel terminals, each with its own agent, project and conversation',
             'Desktop notifications when an agent finishes or stops to ask you something',
-            'Searchable conversation history across all five agents, with resume back into a terminal',
+            'Searchable conversation history across all six agents, with resume back into a terminal',
             'Per-terminal live file diffs while the agent is still working',
             'Permission control, including a Turbo mode when you want to stop approving every step',
             'A kanban task board the agents update themselves over MCP',
@@ -122,7 +122,7 @@ Short version: if you want to start a job at your desk and check on it from a tr
             [
               '<strong>Supported agents</strong>',
               'Claude Code, Codex, Cursor, OpenCode and Pi per their FAQ, plus GitHub Copilot in the README',
-              'Claude Code, Codex CLI, Antigravity CLI, OpenCode and Kimi Code',
+              'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code and Grok Build',
             ],
             [
               '<strong>Isolation model</strong>',
@@ -137,7 +137,7 @@ Short version: if you want to start a job at your desk and check on it from a tr
             [
               '<strong>Conversation history</strong>',
               'Not documented on their site as of July 26, 2026',
-              'Searchable across all five agents, with resume',
+              'Searchable across all six agents, with resume',
             ],
             [
               '<strong>Task management</strong>',
@@ -179,7 +179,7 @@ Short version: if you want to start a job at your desk and check on it from a tr
             '<strong>You need to self-host.</strong> Paseo is a daemon you run on your own laptop, VM or dev server. That is the architecture, not an add-on.',
             '<strong>Open source is a requirement.</strong> The code is public under AGPLv3, so you can read it and keep running it whatever happens to the company. With us you take our word for things.',
             '<strong>You care about telemetry and forced logins.</strong> Paseo states it has neither, which is an easy answer if procurement asks.',
-            '<strong>You use GitHub Copilot or Pi.</strong> Both are listed by Paseo and neither is among the five CLIs we drive.',
+            '<strong>You use GitHub Copilot or Pi.</strong> Both are listed by Paseo and neither is among the six CLIs we drive.',
             '<strong>You are on Linux.</strong> Paseo ships a Linux build. We do not.',
           ],
         },

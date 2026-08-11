@@ -5,8 +5,8 @@ export const guide: Guide = {
     slug: 'varios-chats-de-claude-a-la-vez',
     locale: 'es',
     title: '¿Puedes tener varios chats de Claude a la vez?',
-    metaTitle: '¿Puedes tener varios chats de Claude a la vez? Sí, así se hace (2026)',
-    metaDescription: 'Sí, puedes tener varios chats de Claude a la vez. En claude.ai usa pestañas del navegador o Proyectos. Con Claude Code en el terminal, cada sesión es su propio proceso que puedes ejecutar en paralelo.',
+    metaTitle: 'Varios chats de Claude a la vez: web y CLI (2026)',
+    metaDescription: 'Sí. Abre varios chats de Claude en pestañas o ejecuta sesiones de Claude Code en paralelo. Compara web, terminal, Proyectos y riesgos con archivos compartidos.',
     intro: `Sí, puedes tener varios chats de Claude a la vez, y hay dos formas distintas según lo que quieras hacer. Si te refieres a la app web claude.ai, puedes abrir varias conversaciones al mismo tiempo en pestañas separadas del navegador, y los Proyectos te permiten organizar cada chat alrededor de sus propios archivos y contexto. Si te refieres a Claude Code en tu terminal, cada sesión es un proceso independiente, así que puedes ejecutar varias en paralelo en la misma máquina, sin necesidad de ningún plan especial.
 
 Son dos preguntas distintas que comparten la misma búsqueda, así que esta guía responde a las dos. La parte de la app web es corta porque la respuesta es sencilla: abre más pestañas. La parte del terminal entra en más detalle, porque ejecutar varias sesiones de Claude Code en paralelo es donde la cosa se vuelve de verdad útil, y donde una herramienta como CodeAgentSwarm marca la diferencia.
@@ -16,7 +16,7 @@ Elige el camino que encaja con lo que intentas hacer. Si chateas en el navegador
     ctaAgent: 'claude-code',
     highlightedWords: ['varios chats de Claude', 'a la vez'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-06-07',
+    updatedAt: '2026-08-11',
     alternateSlug: 'run-multiple-claude-chats',
   },
   sections: [
@@ -125,7 +125,7 @@ Elige el camino que encaja con lo que intentas hacer. Si chateas en el navegador
         {
           type: 'list',
           items: [
-            '<strong>Varios terminales en paralelo:</strong> ejecuta varias sesiones de Claude Code a la vez, y elige un agente distinto por terminal si quieres mezclar Codex CLI o Gemini CLI.',
+            '<strong>Varios terminales en paralelo:</strong> ejecuta varias sesiones de Claude Code a la vez, y elige un agente distinto por terminal si quieres mezclar Codex CLI o Antigravity CLI.',
             '<strong>Títulos dinámicos:</strong> cada terminal muestra lo que está haciendo su sesión en ese momento, como "Refactorizando autenticación" o "Escribiendo pruebas de API", en vez de varias pestañas idénticas.',
             '<strong>Notificaciones de escritorio:</strong> cuando una sesión termina o se para a preguntarte algo, recibes una notificación nativa, así puedes centrarte en un terminal y dejar que el resto te avise.',
             '<strong>Historial buscable:</strong> cada conversación de todos los terminales se guarda y se puede buscar, así puedes rastrear qué hizo una sesión ayer o retomarla después.',

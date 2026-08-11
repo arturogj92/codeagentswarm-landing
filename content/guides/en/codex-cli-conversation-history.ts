@@ -16,7 +16,7 @@ The short version: your Codex CLI history is already on your machine and you can
     ctaAgent: 'codex',
     highlightedWords: ['history', 'Codex CLI', 'resume'],
     publishedAt: '2026-06-24',
-    updatedAt: '2026-06-24',
+    updatedAt: '2026-08-11',
     alternateSlug: 'historial-conversaciones-codex',
   },
   sections: [
@@ -92,7 +92,7 @@ The short version: your Codex CLI history is already on your machine and you can
             '<strong>No content preview.</strong> A list of sessions tells you little about what each one actually contained, so you open the wrong one and back out more than once.',
             '<strong>No cross-project view.</strong> History is anchored to where the session ran. Finding work from another project means going there first.',
             '<strong>No filtering.</strong> You cannot narrow down by project, by date, or by what the conversation was about.',
-            '<strong>No view across agents.</strong> If you also run Claude Code or Gemini CLI, each agent keeps its own history in its own place, so there is no single place to look.',
+            '<strong>No view across agents.</strong> If you also run Claude Code or Antigravity CLI, each agent keeps its own history in its own place, so there is no single place to look.',
           ],
         },
         {
@@ -107,7 +107,7 @@ The short version: your Codex CLI history is already on your machine and you can
       content: [
         {
           type: 'paragraph',
-          text: '<a href="/" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a> runs your Codex CLI agents in a desktop workspace and records every conversation automatically: what you wrote, what Codex did, which project you were in, and when it happened. That record becomes a searchable history that works across every project and, crucially, across every agent. The same view holds your Codex, Claude Code, and Gemini CLI conversations together.',
+          text: '<a href="/" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a> runs your Codex CLI agents in a desktop workspace and records every conversation automatically: what you wrote, what Codex did, which project you were in, and when it happened. That record becomes a searchable history that works across every project and, crucially, across every agent. The same view holds your Codex, Claude Code, and Antigravity CLI conversations together.',
         },
         {
           type: 'heading',
@@ -282,7 +282,7 @@ The short version: your Codex CLI history is already on your machine and you can
     },
     {
       question: 'Can I see my Codex and Claude Code history together?',
-      answer: 'Yes, in CodeAgentSwarm. Because you pick the agent per terminal, history is not siloed by tool. The same searchable view holds your Codex, Claude Code and Gemini CLI conversations, so you can trace and resume work no matter which agent did it.',
+      answer: 'Yes, in CodeAgentSwarm. Because you pick the agent per terminal, history is not siloed by tool. The same searchable view holds your Codex, Claude Code and Antigravity CLI conversations, so you can trace and resume work no matter which agent did it.',
     },
   ],
 }

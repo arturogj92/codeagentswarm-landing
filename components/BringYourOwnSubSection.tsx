@@ -28,15 +28,17 @@ export default function BringYourOwnSubSection() {
    * They used to carry a second sentence each and came to 1163px inside a
    * 1152px row, so the third one dropped to a line of its own and sat there
    * looking abandoned. Cutting the second sentences fixed the wrap and read
-   * better anyway: "your plan's limits" already says we add none, and "runs
-   * local" already says the code stays put.
+   * better anyway: "your plan's limits" already says we add none.
    */
   const claims = [
     // Positive form of the same fact: the old "no keys resold" made the reader
     // stop to picture a company that does resell keys.
     g("Your plan's limits, not ours.", 'Tus límites son los de tu plan.'),
     g('Mix vendors in the same swarm.', 'Mezcla proveedores en el mismo enjambre.'),
-    g('Your code never leaves your machine.', 'Tu código no sale de tu máquina.'),
+    g(
+      'CodeAgentSwarm never receives or stores your code.',
+      'CodeAgentSwarm no recibe ni almacena tu código.'
+    ),
   ]
 
   return (

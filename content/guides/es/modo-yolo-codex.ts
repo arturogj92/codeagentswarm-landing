@@ -5,8 +5,8 @@ export const guide: Guide = {
     slug: 'modo-yolo-codex',
     locale: 'es',
     title: 'Modo YOLO de Codex CLI: aprobaciones full-auto explicadas y cómo ejecutarlo con seguridad',
-    metaTitle: 'Modo YOLO de Codex CLI (--full-auto): úsalo con seguridad (2026)',
-    metaDescription: 'Qué significa el modo YOLO en OpenAI Codex CLI: los modos de aprobación, el flag --full-auto, el sandbox y cómo evitar que el full-auto destroce tu repo.',
+    metaTitle: 'Modo automático y YOLO de Codex CLI: uso seguro (2026)',
+    metaDescription: 'Usa --full-auto y el modo automático de Codex CLI con seguridad. Entiende aprobaciones, sandbox, riesgos reales y controles contra comandos destructivos.',
     intro: `Si usas OpenAI Codex CLI más de unos minutos, las peticiones de aprobación cansan rápido. Cada escritura de archivo, cada comando de shell, cada llamada de red se para a esperar que digas que sí. Así que la gente tira de full auto y apaga las aprobaciones, y la comunidad empezó a llamar a eso "modo YOLO".
 
 Codex nunca trae un botón oficial llamado YOLO. El término solo describe un estado: Codex funcionando con las aprobaciones desactivadas para que pueda leer, escribir y ejecutar comandos sin supervisión. La velocidad es real, y para trabajo bien acotado se siente genial. El riesgo también es real, porque una vez apagadas las aprobaciones no hay nada entre Codex y un comando destructivo.
@@ -16,7 +16,7 @@ Esta guía explica qué ofrece Codex de verdad, desde solo-sugerir hasta full au
     ctaAgent: 'codex',
     highlightedWords: ['Codex CLI', 'modo YOLO'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-06-07',
+    updatedAt: '2026-08-11',
     alternateSlug: 'codex-yolo-mode',
   },
   sections: [

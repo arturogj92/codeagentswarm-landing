@@ -9,14 +9,14 @@ export const guide: Guide = {
     metaDescription: 'Kimi Code vs Claude Code: modelo, precios, configuración, hooks, MCP y madurez. Dónde gana cada uno, qué se aprovecha del otro y por qué quizá quieras los dos.',
     intro: `Kimi Code es el agente de programación en terminal de Moonshot AI, y es el competidor más directo de Claude Code que ha salido hasta ahora. Y no en plan vago de "otro CLI con IA": Kimi Code clona los nombres de las herramientas de Claude Code tal cual (Bash, Write, Edit, Read, incluso el prefijo mcp__ para las herramientas MCP), lee la misma carpeta compartida de skills y acepta el mismo .mcp.json a nivel de proyecto. Si sabes usar Claude Code, ya sabes usar casi todo Kimi Code.
 
-Las diferencias existen, eso sí, y cortan en ambas direcciones. Kimi Code ejecuta Kimi K3, un modelo de 2,8 billones de parámetros con una ventana de contexto de hasta un millón de tokens y precios muy agresivos. Claude Code ejecuta la familia Claude de Anthropic con un arnés mucho más maduro alrededor. Una de estas herramientas lleva años de rodaje en producción; la otra lanzó su modelo estrella el 16 de julio de 2026 y ahora mismo publica una release casi cada día.
+Las diferencias existen, eso sí, y cortan en ambas direcciones. Kimi Code ejecuta ahora Kimi K2.7 Code por defecto, un modelo de un billón de parámetros con contexto de 256K y tarifas bajas de API. Claude Code ejecuta la familia Claude de Anthropic con un arnés mucho más maduro. Una herramienta lleva años de rodaje en producción; la otra sigue en versión pre-1.0 y cambia deprisa.
 
 En esta comparativa repaso qué hace mejor cada uno, qué se transfiere entre ellos y la configuración a la que mucha gente acaba llegando: no elegir, y ejecutar los dos a la vez.`,
     ctaText: 'La forma más rápida de zanjar el Kimi Code vs Claude Code es ejecutar los dos a la vez. CodeAgentSwarm le da a cada agente su propio terminal, con diffs en vivo, notificaciones de escritorio e historial buscable en todas las sesiones.',
     ctaAgent: 'multi',
     highlightedWords: ['Kimi Code', 'Claude Code'],
     publishedAt: '2026-07-18',
-    updatedAt: '2026-07-18',
+    updatedAt: '2026-08-11',
     alternateSlug: 'kimi-code-vs-claude-code',
   },
   sections: [
@@ -30,7 +30,7 @@ En esta comparativa repaso qué hace mejor cada uno, qué se transfiere entre el
         },
         {
           type: 'paragraph',
-          text: '<strong><a href="https://www.kimi.com/code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi Code</a></strong> es la respuesta de Moonshot AI. Misma forma: un agente TUI que arrancas con el comando <code>kimi</code> dentro de un proyecto, y que planifica, edita, ejecuta y repite. Es open source (MIT, TypeScript), se mueve rapidísimo (decenas de releases en sus dos primeros meses) y está pensado para lucir a Kimi K3, el modelo que Moonshot lanzó el 16 de julio de 2026.',
+          text: '<strong><a href="https://www.kimi.com/code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi Code</a></strong> es la respuesta de Moonshot AI. Misma forma: un agente TUI que arrancas con el comando <code>kimi</code> dentro de un proyecto, y que planifica, edita, ejecuta y repite. Es open source (MIT, TypeScript), cambia deprisa y usa actualmente Kimi K2.7 Code como modelo de programación predeterminado.',
         },
         {
           type: 'paragraph',
@@ -55,7 +55,7 @@ En esta comparativa repaso qué hace mejor cada uno, qué se transfiere entre el
         },
         {
           type: 'paragraph',
-          text: 'Kimi Code es un agente de terminal impulsado por Kimi K3: un modelo Mixture of Experts de 2,8 billones de parámetros con una ventana de contexto de 1.048.576 tokens y visión nativa. K3 siempre razona. A julio de 2026, <code>reasoning_effort</code> solo acepta <code>max</code>, así que cada petición piensa a máxima profundidad. Eso lo hace fuerte en problemas realmente difíciles y más lento de lo necesario en los triviales.',
+          text: 'Kimi Code usa ahora por defecto <a href="https://www.kimi.com/es-419/resources/kimi-k2-7-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi K2.7 Code</a>: un Mixture of Experts con un billón de parámetros totales, 32.000 millones activos, visión nativa y una ventana de contexto de 262.144 tokens. K2.7 Code siempre razona; si desactivas el razonamiento, Kimi Code envía la petición a K2.6.',
         },
         {
           type: 'paragraph',
@@ -70,8 +70,8 @@ En esta comparativa repaso qué hace mejor cada uno, qué se transfiere entre el
         {
           type: 'list',
           items: [
-            '<strong>El precio de Kimi K3 es agresivo</strong>: en la plataforma de pago por token, 0,30 $ por millón de tokens en aciertos de caché, 3,00 $ en fallos y 15,00 $ la salida, plano en toda la ventana de 1M',
-            '<strong>Hasta 1M de tokens de contexto</strong>, con la nota honesta de que la ventana completa depende del plan de suscripción (256k en el plan más barato)',
+            '<strong>Tarifas bajas de K2.7 Code por API</strong>: 0,19 $ por millón de tokens de entrada en caché, 0,95 $ sin caché y 4,00 $ por millón de tokens de salida',
+            '<strong>Ventana de contexto de 256K</strong> para el modelo predeterminado K2.7 Code, sin un nivel de contexto largo oculto tras un plan superior',
             '<strong>Familiar por diseño</strong>: nombres de herramientas al estilo Claude, soporte del .mcp.json de proyecto y lectura nativa de la carpeta compartida ~/.agents/skills/',
             '<strong>Más superficie de hooks que Claude Code</strong>: 16 eventos de ciclo de vida configurados en TOML, validables con kimi doctor',
             '<strong>Open source y en movimiento constante</strong>: licencia MIT, repo público y releases casi diarias',
@@ -89,7 +89,7 @@ En esta comparativa repaso qué hace mejor cada uno, qué se transfiere entre el
             '<strong>Madurez</strong>: es pre-1.0 y se nota. Hay usuarios que reportan sesiones que se cuelgan en silencio tras un rate limit o un stream parado, algo doloroso cuando no estás mirando el terminal',
             '<strong>Windows está verde</strong>: exige Git for Windows como shell y hay un issue abierto conocido en el que la TUI imprime códigos ANSI en crudo en algunos terminales de Windows. En <a href="/es/guias/kimi-code-en-windows" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi Code en Windows</a> están los rodeos',
             '<strong>Sin subagentes personalizados</strong>: tienes tres integrados (coder, explore, plan) y nada más',
-            '<strong>El razonamiento siempre activo</strong> no tiene aún modo de esfuerzo bajo, así que las ediciones rápidas queman más tiempo y cuota del que deberían',
+            '<strong>El razonamiento de K2.7 siempre está activo</strong>; desactivarlo cambia la petición a K2.6 en vez de ofrecer un esfuerzo bajo',
           ],
         },
         {
@@ -100,7 +100,7 @@ En esta comparativa repaso qué hace mejor cada uno, qué se transfiere entre el
         },
         {
           type: 'paragraph',
-          text: 'Kimi Code funciona con una suscripción Kimi (planes desde gratis hasta 199 $/mes, compartiendo un único pozo de créditos con el resto de la membresía Kimi) o con API keys de pago por token. La cuota se refresca cada semana con una ventana rodante de 5 horas por encima. El desglose completo, incluido qué plan desbloquea qué, está en <a href="/es/guias/planes-y-precios-de-kimi-code" class="text-neon-cyan hover:text-neon-purple transition-colors">planes y precios de Kimi Code</a>.',
+          text: 'Kimi Code funciona con una membresía Kimi de pago o con una API key facturada por token. Las membresías mensuales van de 19 a 199 dólares, o de 15 a 159 dólares mensuales con pago anual. Las funciones comparten un pozo de créditos y Kimi Code tiene además una asignación semanal y un límite de 5 horas. El desglose fechado está en <a href="/es/guias/planes-y-precios-de-kimi-code" class="text-neon-cyan hover:text-neon-purple transition-colors">planes y precios de Kimi Code</a>.',
         },
       ],
     },
@@ -142,8 +142,7 @@ En esta comparativa repaso qué hace mejor cada uno, qué se transfiere entre el
         {
           type: 'list',
           items: [
-            '<strong>Precio por unidad de trabajo</strong>: el uso de Claude es premium comparado con las tarifas por token de K3, sobre todo en trabajo de contexto largo',
-            '<strong>Ventana de contexto</strong>: Claude Code no alcanza el techo de 1M de tokens de K3',
+            '<strong>Precio por token de API</strong>: las tarifas de los modelos principales de Anthropic son superiores a las publicadas para K2.7 Code, aunque el valor de las suscripciones depende de tu carga real',
             '<strong>Un solo proveedor</strong>: ejecuta modelos Claude. Si quieres probar otro modelo frontera, necesitas otro arnés (o el truco del endpoint de más abajo)',
           ],
         },
@@ -298,11 +297,11 @@ En esta comparativa repaso qué hace mejor cada uno, qué se transfiere entre el
         },
         {
           type: 'paragraph',
-          text: '<strong>Kimi Code es el aspirante más creíble hasta la fecha</strong>, y no ha terminado de crecer. Publica releases casi a diario, el precio de K3 recorta muchísimo el coste por token frente a Claude, el techo de 1M de contexto es real (en el plan adecuado) y, como imita deliberadamente las convenciones de Claude Code, probarlo te cuesta casi cero tiempo de aprendizaje.',
+          text: '<strong>Kimi Code es un aspirante creíble</strong>, y no ha terminado de crecer. K2.7 Code tiene tarifas de API publicadas bajas y una ventana de contexto de 256K, mientras el arnés imita suficientes convenciones de Claude Code como para que probarlo cueste poco tiempo de aprendizaje.',
         },
         {
           type: 'paragraph',
-          text: 'La respuesta práctica para muchos desarrolladores es dejar de tratarlo como una elección binaria. Los dos agentes ya comparten tu .mcp.json y tu carpeta de skills. Deja a Claude Code el trabajo que no puedes permitirte vigilar, dale a Kimi Code las tareas de contexto largo o alto volumen donde el precio de K3 brilla, y compara resultados en tu propio repositorio en vez de en benchmarks.',
+          text: 'La respuesta práctica para muchos desarrolladores es dejar de tratarlo como una elección binaria. Los dos agentes ya comparten tu .mcp.json y tu carpeta de skills. Deja a Claude Code el trabajo que no puedes permitirte vigilar, prueba Kimi Code en tareas de volumen alto donde encajen las tarifas de K2.7 Code y compara resultados en tu propio repositorio en vez de en benchmarks.',
         },
       ],
     },
@@ -312,7 +311,7 @@ En esta comparativa repaso qué hace mejor cada uno, qué se transfiere entre el
       content: [
         {
           type: 'paragraph',
-          text: 'Justo para esto existe <a href="/" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a>. Es un workspace de escritorio (macOS y Windows) que ejecuta varios terminales de CLIs de IA en paralelo, y Kimi Code es un agente de primera clase dentro de él, junto a Claude Code, Codex CLI, Antigravity CLI y opencode.',
+          text: 'Justo para esto existe <a href="/" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a>. Es un workspace de escritorio (macOS y Windows) que ejecuta varios terminales de CLIs de IA en paralelo, y Kimi Code es un agente de primera clase dentro de él, junto a Claude Code, Codex CLI, Antigravity CLI, opencode y Grok Build.',
         },
         {
           type: 'list',
@@ -334,7 +333,7 @@ En esta comparativa repaso qué hace mejor cada uno, qué se transfiere entre el
   faq: [
     {
       question: '¿Kimi Code es una copia de Claude Code?',
-      answer: 'Está fuertemente inspirado en él, hasta el punto de usar los mismos nombres de herramientas internas (Bash, Write, Edit, Read) y el mismo naming mcp__ para las herramientas MCP. Pero no es un fork: es su propio código open source en TypeScript, con su propio sistema de hooks (16 eventos configurados en TOML), su propio formato de sesiones y Kimi K3 de Moonshot como modelo.',
+      answer: 'Está fuertemente inspirado en él, hasta el punto de usar los mismos nombres de herramientas internas (Bash, Write, Edit, Read) y el mismo naming mcp__ para las herramientas MCP. Pero no es un fork: es su propio código open source en TypeScript, con su sistema de hooks, su formato de sesiones y Kimi K2.7 Code como modelo predeterminado actual.',
     },
     {
       question: '¿Kimi Code lee CLAUDE.md?',
@@ -346,7 +345,7 @@ En esta comparativa repaso qué hace mejor cada uno, qué se transfiere entre el
     },
     {
       question: '¿Kimi Code es más barato que Claude Code?',
-      answer: 'En precio por token, sí, y por bastante a julio de 2026: Kimi K3 cuesta 0,30 $ por millón de tokens en aciertos de caché, 3,00 $ en fallos y 15,00 $ la salida. Las suscripciones son más difíciles de comparar directamente porque los planes de Kimi comparten un único pozo de créditos con toda la membresía Kimi, con refresco semanal más una ventana rodante de 5 horas. En la guía de planes y precios de Kimi Code está el cuadro completo.',
+      answer: 'En tarifas publicadas de API, Kimi K2.7 Code es más barato que los modelos principales de Anthropic a 11 de agosto de 2026: 0,19 $ por millón de tokens de entrada en caché, 0,95 $ sin caché y 4 $ de salida. Las suscripciones no son directamente comparables porque sus cuotas y límites difieren. La guía de precios de Kimi Code contiene el desglose fechado.',
     },
     {
       question: '¿Puedo ejecutar Kimi Code y Claude Code a la vez?',
@@ -354,7 +353,7 @@ En esta comparativa repaso qué hace mejor cada uno, qué se transfiere entre el
     },
     {
       question: '¿Debería cambiarme de Claude Code a Kimi Code?',
-      answer: 'Cambiarte del todo, probablemente todavía no: Kimi Code es pre-1.0, se mueve muy rápido y tiene aristas conocidas en Windows y con cuelgues silenciosos. Añadirlo junto a Claude Code, muy posiblemente sí: el coste de aprenderlo es mínimo, el precio de K3 es agresivo y tus servidores MCP y skills se aprovechan casi enteros.',
+      answer: 'Cambiarte del todo, probablemente todavía no: Kimi Code es pre-1.0, se mueve muy rápido y tiene aristas en Windows y con cuelgues silenciosos. Añadirlo junto a Claude Code puede tener sentido: el coste de aprenderlo es bajo, las tarifas de K2.7 Code son competitivas y tus servidores MCP y skills se aprovechan casi enteros.',
     },
   ],
 }

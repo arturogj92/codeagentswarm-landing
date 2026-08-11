@@ -16,7 +16,7 @@ It also covers the part that matters once the prompts are off: how to keep a ful
     ctaAgent: 'kimi-code',
     highlightedWords: ['Kimi Code', 'YOLO mode'],
     publishedAt: '2026-07-18',
-    updatedAt: '2026-07-18',
+    updatedAt: '2026-08-11',
     alternateSlug: 'modo-yolo-kimi-code',
   },
   sections: [
@@ -35,7 +35,7 @@ It also covers the part that matters once the prompts are off: how to keep a ful
         },
         {
           type: 'paragraph',
-          text: 'Kimi Code is the terminal coding agent from <a href="https://www.kimi.com/code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Moonshot AI</a>, running the Kimi K3 model. If you have not set it up yet, the <a href="/en/guides/how-to-use-kimi-code" class="text-neon-cyan hover:text-neon-purple transition-colors">how to use Kimi Code</a> guide covers install and login. This guide assumes you have it running and want to know how far to open it up.',
+          text: 'Kimi Code is the terminal coding agent from <a href="https://www.kimi.com/code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Moonshot AI</a>, with Kimi K2.7 Code as its current default model. If you have not set it up yet, the <a href="/en/guides/how-to-use-kimi-code" class="text-neon-cyan hover:text-neon-purple transition-colors">how to use Kimi Code</a> guide covers install and login. This guide assumes you have it running and want to know how far to open it up.',
         },
         {
           type: 'paragraph',

@@ -13,8 +13,8 @@ export async function generateMetadata({
   const isSpanish = locale === 'es'
 
   const title = isSpanish
-    ? 'CodeAgentSwarm Open Beta – Pro Gratis para Agentes de IA'
-    : 'CodeAgentSwarm Open Beta – Free Pro Access for AI Coding Agents'
+    ? 'CodeAgentSwarm Open Beta: Pro Gratis para Agentes de IA'
+    : 'CodeAgentSwarm Open Beta: Free Pro Access for AI Coding Agents'
 
   const description = isSpanish
     ? 'Únete a la open beta y ejecuta Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code y Grok Build en paralelo, con visibilidad en tiempo real, notificaciones, historial y Pro gratis.'
@@ -23,30 +23,6 @@ export async function generateMetadata({
   return {
     title,
     description,
-    keywords: [
-      'CodeAgentSwarm beta',
-      'Claude Code beta',
-      'Codex CLI beta',
-      'Antigravity CLI beta',
-      'OpenCode beta',
-      'Kimi Code beta',
-      'Grok Build beta',
-      'AI coding workspace beta',
-      'AI CLI workspace',
-      'free pro access',
-      'multiple Claude Code terminals',
-      'multiple Codex terminals',
-      'multiple Antigravity CLI terminals',
-      'multiple OpenCode terminals',
-      'multiple Kimi Code terminals',
-      'multiple Grok Build terminals',
-      'real time visibility',
-      'AI CLI notifications',
-      'Claude Code notifications',
-      'conversation history',
-      'multi-project management',
-      'MCP tools',
-    ],
     alternates: {
       canonical: canonicalUrl,
       languages: {
@@ -57,8 +33,8 @@ export async function generateMetadata({
     },
     openGraph: {
       title: isSpanish
-        ? 'CodeAgentSwarm Open Beta – Acceso Pro Gratis para AI CLI'
-        : 'CodeAgentSwarm Open Beta – Free Pro Access for AI CLI',
+        ? 'CodeAgentSwarm Open Beta: Acceso Pro Gratis para AI CLI'
+        : 'CodeAgentSwarm Open Beta: Free Pro Access for AI CLI',
       description: isSpanish
         ? 'Únete a la open beta y ejecuta varios agentes de IA en paralelo con visibilidad en tiempo real y acceso Pro gratis.'
         : 'Join the open beta and run multiple AI coding agents in parallel with real-time visibility and free Pro access.',
@@ -80,8 +56,8 @@ export async function generateMetadata({
     twitter: {
       card: 'summary_large_image',
       title: isSpanish
-        ? 'CodeAgentSwarm Open Beta – Pro Gratis para AI CLI'
-        : 'CodeAgentSwarm Open Beta – Free Pro for AI CLI',
+        ? 'CodeAgentSwarm Open Beta: Pro Gratis para AI CLI'
+        : 'CodeAgentSwarm Open Beta: Free Pro for AI CLI',
       description: isSpanish
         ? 'Únete a la beta y ejecuta varios agentes de IA en paralelo con Pro gratis.'
         : 'Join the open beta and run multiple AI coding agents in parallel with free Pro access.',

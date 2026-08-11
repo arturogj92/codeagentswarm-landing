@@ -6,17 +6,17 @@ export const guide: Guide = {
     locale: 'en',
     title: 'Nimbalyst vs CodeAgentSwarm: An Honest Comparison (2026)',
     metaTitle: 'Nimbalyst (formerly Crystal) vs CodeAgentSwarm: An Honest Comparison (2026)',
-    metaDescription: 'Nimbalyst, formerly Crystal, is a visual editor for what Claude Code and Codex produce. CodeAgentSwarm supervises five agent CLIs. Honest comparison, verified July 2026.',
-    intro: `Nimbalyst, the project formerly known as Crystal, is a visual editor for what Claude Code and Codex produce. CodeAgentSwarm is a supervision workspace for five agent CLIs, built around the terminals rather than around the documents.
+    metaDescription: 'Nimbalyst, formerly Crystal, is a visual editor for what Claude Code and Codex produce. CodeAgentSwarm supervises six agent CLIs. Honest comparison, verified in 2026.',
+    intro: `Nimbalyst, the project formerly known as Crystal, is a visual editor for what Claude Code and Codex produce. CodeAgentSwarm is a supervision workspace for six agent CLIs, built around the terminals rather than around the documents.
 
 We make CodeAgentSwarm, so this is an interested comparison and you should check it. That is also why this page is generous where Nimbalyst deserves it (it is open source, it runs on Linux, it has a mobile app and it was being actively committed to on the day we verified) and why our own limits are on the page: closed source, macOS and Windows only, no mobile app, still in beta, and you bring your own agent subscriptions. Every third-party fact here was verified on July 26, 2026 against nimbalyst.com, the public Nimbalyst README and public GitHub data.
 
 Pick Nimbalyst if the work you care about is the artefact: markdown, mockups, diagrams, documents you want to edit alongside the agent. Pick CodeAgentSwarm if the work you care about is the sessions: several agent CLIs running at once and you needing to know what each one is doing.`,
-    ctaText: 'If you want to supervise five different agent CLIs at once, with notifications, live per-terminal diffs and one searchable history, download CodeAgentSwarm and see how it feels next to Nimbalyst.',
+    ctaText: 'If you want to supervise six different agent CLIs at once, with notifications, live per-terminal diffs and one searchable history, download CodeAgentSwarm and see how it feels next to Nimbalyst.',
     ctaAgent: 'comparison',
     highlightedWords: ['Nimbalyst', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
-    updatedAt: '2026-07-26',
+    updatedAt: '2026-08-11',
     alternateSlug: 'nimbalyst-vs-codeagentswarm',
   },
   sections: [
@@ -26,7 +26,7 @@ Pick Nimbalyst if the work you care about is the artefact: markdown, mockups, di
       content: [
         {
           type: 'paragraph',
-          text: 'Nimbalyst, formerly Crystal, is a visual editor for what Claude Code and Codex produce, letting you review and edit the markdown, mockups and diagrams alongside the agent, while CodeAgentSwarm is a supervision workspace for five agent CLIs, built around the running terminals.',
+          text: 'Nimbalyst, formerly Crystal, is a visual editor for what Claude Code and Codex produce, letting you review and edit the markdown, mockups and diagrams alongside the agent, while CodeAgentSwarm is a supervision workspace for six agent CLIs, built around the running terminals.',
         },
         {
           type: 'paragraph',
@@ -74,7 +74,7 @@ Pick Nimbalyst if the work you care about is the artefact: markdown, mockups, di
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm is a desktop workspace to run and supervise multiple AI coding agents in parallel. Each terminal is a real agent process, and you choose per terminal between Claude Code, Codex CLI, Antigravity CLI, OpenCode and Kimi Code.',
+          text: 'CodeAgentSwarm is a desktop workspace to run and supervise multiple AI coding agents in parallel. Each terminal is a real agent process, and you choose per terminal between Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code and Grok Build.',
         },
         {
           type: 'image',
@@ -84,7 +84,7 @@ Pick Nimbalyst if the work you care about is the artefact: markdown, mockups, di
         },
         {
           type: 'paragraph',
-          text: 'The design is terminal-first. You get desktop notifications when an agent finishes or needs input, searchable conversation history across all five agents with resume, per-terminal live file diffs, permission control with a Turbo mode for the operations you trust, a kanban board the agents update over MCP, git worktrees per session, multi-project switching, AI commit messages, a provider quota indicator, and skills and MCP marketplaces shared across agents.',
+          text: 'The design is terminal-first. You get desktop notifications when an agent finishes or needs input, searchable conversation history across all six agents with resume, per-terminal live file diffs, permission control with a Turbo mode for the operations you trust, a kanban board the agents update over MCP, git worktrees per session, multi-project switching, AI commit messages, a provider quota indicator, and skills and MCP marketplaces shared across agents.',
         },
         {
           type: 'paragraph',
@@ -102,10 +102,10 @@ Pick Nimbalyst if the work you care about is the artefact: markdown, mockups, di
           rows: [
             ['Platforms', 'macOS (Apple Silicon and Intel), Windows and Linux, plus a mobile app, per their README', 'macOS and Windows, no Linux and no mobile app'],
             ['Interface', 'Desktop app built around visual editors, with a session kanban and an embedded terminal', 'Desktop workspace built around live agent terminals'],
-            ['Supported agents', 'Codex, Claude Code, Opencode (alpha) and Copilot (alpha), per their README', 'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code'],
+            ['Supported agents', 'Codex, Claude Code, Opencode (alpha) and Copilot (alpha), per their README', 'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code and Grok Build'],
             ['Isolation model', 'Parallel sessions with git worktree support, per their README', 'A separate process per terminal, with optional git worktrees per session'],
             ['Notifications', 'Push notifications in their mobile app, per their README. Desktop notifications are not documented on their site as of July 26, 2026', 'Desktop notifications when an agent finishes or needs input'],
-            ['Conversation history', 'Search and resume sessions, with sessions linked to the files they touched', 'Searchable history across all five agents, with resume'],
+            ['Conversation history', 'Search and resume sessions, with sessions linked to the files they touched', 'Searchable history across all six agents, with resume'],
             ['Task management', 'Task tracking plus a kanban view of sessions, editable by you and by the agent', 'Kanban board that the agents update over MCP'],
             ['Open source', 'Yes, MIT, about 1,300 stars on the current repository', 'No, closed source with no public app repository'],
             ['Price', 'Free for individuals per their site; a paid Teams tier exists per their site navigation (we did not verify any figures)', 'Free during beta with Pro included, and you bring your own agent subscriptions'],
@@ -143,10 +143,10 @@ Pick Nimbalyst if the work you care about is the artefact: markdown, mockups, di
         {
           type: 'list',
           items: [
-            '<strong>You use more than two agent vendors.</strong> Claude Code, Codex CLI, Antigravity CLI, OpenCode and Kimi Code are all first-class here. Antigravity CLI and Kimi Code are not listed among the supported coding agents in the Nimbalyst README as of July 26, 2026.',
+            '<strong>You use more than two agent vendors.</strong> Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code and Grok Build are all first-class here. Antigravity CLI, Kimi Code and Grok Build are not listed among the supported coding agents in the Nimbalyst README as of July 26, 2026.',
             '<strong>You want the terminals, not an abstraction over them.</strong> Every session is a real CLI in a pane you can read, scroll and type into, which matters when an agent does something unexpected.',
             '<strong>You want desktop notifications without reaching for a phone.</strong> Ours fire on the same machine you are working on.',
-            '<strong>You want one history across every vendor.</strong> Search a phrase and find the session, whichever of the five agents ran it, then resume it in place.',
+            '<strong>You want one history across every vendor.</strong> Search a phrase and find the session, whichever of the six agents ran it, then resume it in place.',
             '<strong>You want fine-grained permission control.</strong> Turbo mode auto-approves the operations you trust and keeps the rest gated, instead of approving everything or nothing.',
             '<strong>You keep running into plan limits.</strong> The provider quota indicator tells you how much allowance is left before an agent stops mid-task.',
           ],

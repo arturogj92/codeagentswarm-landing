@@ -10,7 +10,7 @@
 /** Work-phase badge. Mirrors the app's terminal_statuses catalogue. */
 export type StatusKey = 'needs_input' | 'needs_testing' | 'working' | 'pushed' | 'idle'
 
-/** The five CLIs CodeAgentSwarm can drive. */
+/** The five CLIs represented in this landing-page demo. */
 export type AgentKey = 'claude' | 'codex' | 'antigravity' | 'opencode' | 'kimi'
 
 /** The app's three workspace layouts. */

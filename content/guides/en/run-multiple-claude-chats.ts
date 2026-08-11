@@ -5,8 +5,8 @@ export const guide: Guide = {
     slug: 'run-multiple-claude-chats',
     locale: 'en',
     title: 'Can You Run Multiple Claude Chats at Once?',
-    metaTitle: 'Can You Run Multiple Claude Chats at Once? Yes, Here Is How (2026)',
-    metaDescription: 'Yes, you can run multiple Claude chats at the same time. On claude.ai use separate browser tabs or Projects. With Claude Code in the terminal, each session is its own process you can run in parallel.',
+    metaTitle: 'Run Multiple Claude Chats at Once: Web & CLI (2026)',
+    metaDescription: 'Yes. Run several Claude chats in browser tabs or Claude Code sessions in parallel. Compare web chats, terminals, Projects, and shared-file risks.',
     intro: `Yes, you can run multiple Claude chats at once, and there are two different ways depending on what you mean. If you mean the claude.ai web app, you can open several conversations at the same time in separate browser tabs, and Projects let you keep each chat organized around its own files and context. If you mean Claude Code in your terminal, each session is an independent process, so you can run several in parallel on the same machine, with no special plan needed.
 
 These are two separate questions that share the same search, so this guide answers both. The web app section is short because the answer is simple: open more tabs. The terminal section goes deeper, because running several Claude Code sessions in parallel is where it gets genuinely useful, and where a tool like CodeAgentSwarm makes the difference.
@@ -16,7 +16,7 @@ Pick the path that matches what you are trying to do. If you are chatting in the
     ctaAgent: 'claude-code',
     highlightedWords: ['multiple Claude chats', 'at once'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-06-07',
+    updatedAt: '2026-08-11',
     alternateSlug: 'varios-chats-de-claude-a-la-vez',
   },
   sections: [
@@ -125,7 +125,7 @@ Pick the path that matches what you are trying to do. If you are chatting in the
         {
           type: 'list',
           items: [
-            '<strong>Multiple terminals in parallel:</strong> run several Claude Code sessions at once, and pick a different agent per terminal if you want to mix in Codex CLI or Gemini CLI.',
+            '<strong>Multiple terminals in parallel:</strong> run several Claude Code sessions at once, and pick a different agent per terminal if you want to mix in Codex CLI or Antigravity CLI.',
             '<strong>Dynamic titles:</strong> each terminal shows what its session is doing right now, like "Refactoring Auth" or "Writing API Tests", instead of several identical tabs.',
             '<strong>Desktop notifications:</strong> when a session finishes or stops to ask you something, you get a native notification, so you can focus on one terminal and let the rest call you.',
             '<strong>Searchable history:</strong> every conversation across all terminals is saved and searchable, so you can trace what a session did yesterday or resume it later.',

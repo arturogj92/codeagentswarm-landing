@@ -5,7 +5,7 @@ export const guide: Guide = {
     slug: 'claude-code-gui',
     locale: 'en',
     title: 'Claude Code GUI: A Visual Desktop App for Your AI Coding CLIs',
-    metaTitle: 'Claude Code GUI: A Desktop App for Claude Code, Codex and Gemini CLI (2026)',
+    metaTitle: 'Claude Code GUI: Desktop App, Task Board & Live Diffs (2026)',
     metaDescription: 'A Claude Code GUI is a graphical desktop app on top of the CLI. CodeAgentSwarm gives Claude Code a visual workspace, task board, diffs and notifications.',
     intro: `Claude Code is a terminal tool. You type into a prompt, it reads and edits files, and everything you see is text scrolling past in a single window. That is great for power, and not so great when you are running several sessions, trying to remember what each one is doing, and scrolling back to find what changed.
 
@@ -16,7 +16,7 @@ CodeAgentSwarm is exactly that kind of GUI. It runs on macOS and Windows, it doe
     ctaAgent: 'claude-code',
     highlightedWords: ['Claude Code GUI', 'desktop app'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-06-07',
+    updatedAt: '2026-08-11',
     alternateSlug: 'interfaz-grafica-claude-code',
   },
   sections: [
@@ -41,7 +41,7 @@ CodeAgentSwarm is exactly that kind of GUI. It runs on macOS and Windows, it doe
         {
           type: 'callout',
           variant: 'info',
-          content: 'A GUI is not a different model or a different plan. CodeAgentSwarm runs on top of your existing Claude subscription, and it can drive Codex CLI and Gemini CLI in the same workspace too. You keep the full CLI power, you just get a visual layer around it.',
+          content: 'A GUI is not a different model or a different plan. CodeAgentSwarm runs on top of your existing Claude subscription, and it can drive Codex CLI and Antigravity CLI in the same workspace too. You keep the full CLI power, you just get a visual layer around it.',
         },
         {
           type: 'paragraph',
@@ -211,8 +211,8 @@ CodeAgentSwarm is exactly that kind of GUI. It runs on macOS and Windows, it doe
       answer: 'Yes. CodeAgentSwarm is a desktop app for both macOS and Windows. It installs locally, runs the Claude Code CLI on your machine, and uses your own Claude subscription. There is no separate model or plan involved.',
     },
     {
-      question: 'Can the same GUI run Codex and Gemini too?',
-      answer: 'Yes. CodeAgentSwarm is not tied to a single vendor. Each terminal has an agent picker, so you can set one to Claude Code, another to Codex CLI and another to Gemini CLI, all in the same visual workspace. The cross-vendor setup is covered in the AI CLI agent swarm guide.',
+      question: 'Can the same GUI run Codex and Antigravity too?',
+      answer: 'Yes. CodeAgentSwarm is not tied to a single vendor. Each terminal has an agent picker, so you can set one to Claude Code, another to Codex CLI and another to Antigravity CLI, all in the same visual workspace. The cross-vendor setup is covered in the AI CLI agent swarm guide.',
     },
     {
       question: 'Do I need a Claude Code GUI if I only run one session?',

@@ -9,7 +9,7 @@ import type { AgentChatConfig, AgentKey } from './types'
  *
  * The permission wording is the app's own: each provider names these differently
  * (Codex says "Approve for me" where Claude says "Auto"), and flattening them to
- * one vocabulary would misrepresent all five.
+ * one vocabulary would misrepresent all five shown here.
  */
 
 /** The app's default catalogue, used by the agents that have no wording of their own. */
@@ -106,8 +106,8 @@ export const AGENT_CHAT: Record<AgentKey, AgentChatConfig> = {
   },
   kimi: {
     models: [
-      { id: 'kimi-k3', name: 'kimi-k3', description: 'Moonshot AI' },
-      { id: 'kimi-k3-turbo', name: 'kimi-k3-turbo', description: 'Moonshot AI · faster' },
+      { id: 'kimi-k2.7-code', name: 'kimi-k2.7-code', description: 'Moonshot AI' },
+      { id: 'kimi-k2.6', name: 'kimi-k2.6', description: 'Reasoning off' },
     ],
     permissions: GENERIC_PERMISSIONS,
   },

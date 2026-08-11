@@ -16,7 +16,7 @@ CodeAgentSwarm is that dashboard. It is a free desktop app for macOS and Windows
     ctaAgent: 'claude-code',
     highlightedWords: ['Claude Code Dashboard', 'Every Session'],
     publishedAt: '2026-07-13',
-    updatedAt: '2026-07-13',
+    updatedAt: '2026-08-11',
     alternateSlug: 'panel-de-control-claude-code',
   },
   sections: [
@@ -153,7 +153,7 @@ CodeAgentSwarm is that dashboard. It is a free desktop app for macOS and Windows
         {
           type: 'callout',
           variant: 'tip',
-          content: 'The dashboard is not Claude-only. Each terminal has an agent picker, so the same board and the same statuses work when some of your sessions run Codex, Gemini CLI or opencode alongside Claude Code.',
+          content: 'The dashboard is not Claude-only. Each terminal has an agent picker, so the same board and the same statuses work when some of your sessions run Codex, Antigravity CLI or opencode alongside Claude Code.',
         },
       ],
     },
@@ -217,7 +217,7 @@ CodeAgentSwarm is that dashboard. It is a free desktop app for macOS and Windows
         },
         {
           type: 'paragraph',
-          text: 'And because every terminal has an agent picker, the same dashboard manages Codex, Gemini CLI and opencode sessions too. One window, every agent, every status.',
+          text: 'And because every terminal has an agent picker, the same dashboard manages Codex, Antigravity CLI and opencode sessions too. One window, every agent, every status.',
         },
       ],
     },
@@ -241,7 +241,7 @@ CodeAgentSwarm is that dashboard. It is a free desktop app for macOS and Windows
     },
     {
       question: 'Can the same dashboard manage agents other than Claude Code?',
-      answer: 'Yes. Each terminal in CodeAgentSwarm has an agent picker, so the same workspace can run Claude Code, Codex, Gemini CLI and opencode side by side. The task board, statuses, notifications and history work the same regardless of which agent a terminal runs.',
+      answer: 'Yes. Each terminal in CodeAgentSwarm has an agent picker, so the same workspace can run Claude Code, Codex, Antigravity CLI and opencode side by side. The task board, statuses, notifications and history work the same regardless of which agent a terminal runs.',
     },
     {
       question: 'How does the dashboard tell me a session needs my input?',

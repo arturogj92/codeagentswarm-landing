@@ -17,7 +17,7 @@
     "guides": "Guías"
   },
   "hero": {
-    "badge": "Open Beta – Pro se activa automáticamente al registrarte",
+    "badge": "Open Beta: Pro se activa automáticamente al registrarte",
     "badgeNew": "NUEVO",
     "eyebrow": "Un workspace · Tus agentes de programación",
     "titleLine1": "Agentes en paralelo.",
@@ -112,7 +112,7 @@
       "title2": "Ahora <amber>tu workflow</amber> también puede serlo.",
       "text": "Cada agente, cada diff y cada notificación en una sola vista. Nada que buscar, nada que perderse.",
       "cta": "Pruébalo gratis",
-      "hint": "Gratis. Sin tarjeta. macOS, Windows y Linux."
+      "hint": "Gratis. Sin tarjeta. macOS y Windows. Linux próximamente."
     }
   },
   "solution": {
@@ -300,7 +300,7 @@
         "notifications": "Notificaciones en tiempo real",
         "mcp": "Acceso completo al marketplace MCP"
       },
-      "cta": "Descargar – Pro se Activa Automáticamente"
+      "cta": "Descargar: Pro se Activa Automáticamente"
     },
     "showFeatures": "Ver comparativa completa",
     "hideFeatures": "Ocultar comparativa",
@@ -675,7 +675,7 @@
       "cta": "Obtener Pro Gratis"
     },
     "banner": {
-      "text": "Open Beta – Pro se activa solo al registrarte",
+      "text": "Open Beta: Pro se activa solo al registrarte",
       "cta": "Descargar Gratis"
     },
     "faq": {
@@ -695,7 +695,7 @@
         "q6": "¿Qué sistema operativo necesito?",
         "a6": "macOS 12 o superior y Windows 10/11 (x64 y ARM64). Linux más adelante.",
         "q7": "¿CodeAgentSwarm almacena mi código?",
-        "a7": "No. Todo tu código permanece en tu máquina.",
+        "a7": "CodeAgentSwarm nunca recibe ni almacena tu código fuente ni el contenido del terminal. La CLI envía las instrucciones y el código directamente a su proveedor de IA, sujeto a su política de privacidad.",
         "q8": "¿Cómo activo Pro?",
         "a8": "No tienes que hacer nada. Durante la beta, Pro se activa automáticamente al crear tu cuenta. Descarga, inicia sesión y ya eres Pro.",
         "q9": "¿Soporta CodeAgentSwarm flujos multi-proyecto con Claude Code?",
@@ -838,7 +838,7 @@
   "modeCompare": {
     "badge": "Chat o terminal",
     "title": "La misma sesión, dos formas de leerla",
-    "subtitle": "El modo chat hace legible al agente: sus herramientas, su lista de tareas y sus preguntas pasan a ser cosas que puedes leer y pulsar. El CLI en crudo sigue a una tecla — la misma conversación, el mismo segundo.",
+    "subtitle": "El modo chat hace legible al agente: sus herramientas, su lista de tareas y sus preguntas pasan a ser cosas que puedes leer y pulsar. El CLI en crudo sigue a una tecla, con la misma conversación en el mismo segundo.",
     "chatLabel": "Chat",
     "terminalLabel": "Terminal",
     "hint": "Arrastra para comparar",

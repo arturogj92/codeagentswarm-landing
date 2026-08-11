@@ -5,8 +5,8 @@ export const guide: Guide = {
     slug: 'claude-code-history-complete-guide',
     locale: 'en',
     title: 'Claude Code History: Where It Is Stored and How to Find, Back Up & Resume It',
-    metaTitle: "Claude Code History: Where It's Stored & How to Restore It",
-    metaDescription: 'The exact folder where Claude Code saves every session, why history disappears after 30 days (cleanupPeriodDays), and how to back up or restore old conversations.',
+    metaTitle: 'Claude Code History: Find, Resume & Restore Sessions (2026)',
+    metaDescription: 'Find Claude Code session files, search JSONL history, resume previous conversations, and back up or restore chats before automatic cleanup removes them.',
     intro: `If you have been using Claude Code for a while, at some point you have probably wondered: where did that conversation go?
 
 Maybe you solved a tricky bug last week, made an architecture decision three days ago, or spent 20 minutes explaining a module to Claude and now you need to pick up where you left off.
@@ -16,7 +16,7 @@ The short answer: Claude Code stores every session locally in ~/.claude/projects
     ctaAgent: 'claude-code',
     highlightedWords: ['history', 'Claude Code', 'conversations'],
     publishedAt: '2026-04-15',
-    updatedAt: '2026-07-16',
+    updatedAt: '2026-08-11',
     alternateSlug: 'guia-completa-historial-claude-code',
   },
   sections: [

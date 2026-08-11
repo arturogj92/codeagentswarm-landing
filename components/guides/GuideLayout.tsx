@@ -26,6 +26,7 @@ export default function GuideLayout({ guide }: GuideLayoutProps) {
   const locale = meta.locale
   const toc = extractTOC(sections)
   const t = useTranslations('guides.downloadCta')
+  const authorName = meta.author ?? 'CodeAgentSwarm Team'
 
   // Breadcrumb configuration
   const guidesLabel = locale === 'es' ? 'Guías' : 'Guides'
@@ -64,13 +65,13 @@ export default function GuideLayout({ guide }: GuideLayoutProps) {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [meta.slug])
 
-  // Deterministic related-guide recommendation (stable, crawlable link graph; no Math.random)
-  const allGuides = getAllGuides(locale)
-  const otherGuides = allGuides
-    .filter((g) => g.meta.slug !== meta.slug)
+  // Keep the crawlable recommendation inside the same topic instead of
+  // sending readers and search engines to an unrelated guide.
+  const relatedGuides = getAllGuides(locale)
+    .filter((g) => g.meta.slug !== meta.slug && g.meta.ctaAgent === meta.ctaAgent)
     .sort((a, b) => a.meta.slug.localeCompare(b.meta.slug))
   const slugHash = meta.slug.split('').reduce((acc, c) => acc + c.charCodeAt(0), 0)
-  const randomGuide = otherGuides.length > 0 ? otherGuides[slugHash % otherGuides.length] : null
+  const relatedGuide = relatedGuides.length > 0 ? relatedGuides[slugHash % relatedGuides.length] : null
 
   // Localized text
   const recommendedTitle = locale === 'es' ? 'También te puede interesar' : 'You might also like'
@@ -108,15 +109,18 @@ export default function GuideLayout({ guide }: GuideLayoutProps) {
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
                 {meta.title}
               </h1>
-              {(meta.updatedAt || meta.publishedAt) && (
-                <p className="text-sm text-white/40 mb-4">
-                  {locale === 'es' ? 'Actualizado el ' : 'Updated '}
-                  {new Date((meta.updatedAt ?? meta.publishedAt) + 'T00:00:00Z').toLocaleDateString(
-                    locale === 'es' ? 'es-ES' : 'en-US',
-                    { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' }
-                  )}
-                </p>
-              )}
+              <p className="text-sm text-white/40 mb-4">
+                {locale === 'es' ? 'Por ' : 'By '}{authorName}
+                {(meta.updatedAt || meta.publishedAt) && (
+                  <>
+                    {' · '}{locale === 'es' ? 'Actualizado el ' : 'Updated '}
+                    {new Date((meta.updatedAt ?? meta.publishedAt) + 'T00:00:00Z').toLocaleDateString(
+                      locale === 'es' ? 'es-ES' : 'en-US',
+                      { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' }
+                    )}
+                  </>
+                )}
+              </p>
               <div
                 className="text-lg text-white/70 leading-relaxed whitespace-pre-line"
                 dangerouslySetInnerHTML={{ __html: meta.intro }}
@@ -183,7 +187,7 @@ export default function GuideLayout({ guide }: GuideLayoutProps) {
             </motion.div>
 
             {/* Recommended guide section */}
-            {randomGuide && (
+            {relatedGuide && (
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -193,17 +197,17 @@ export default function GuideLayout({ guide }: GuideLayoutProps) {
                 <h3 className="text-xl font-semibold text-white mb-6">{recommendedTitle}</h3>
                 <div className="p-6 rounded-xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent hover:border-neon-cyan/30 transition-all group">
                   <Link
-                    href={`/${locale}/${locale === 'es' ? 'guias' : 'guides'}/${randomGuide.meta.slug}`}
+                    href={`/${locale}/${locale === 'es' ? 'guias' : 'guides'}/${relatedGuide.meta.slug}`}
                     onClick={() => {
-                      window.umami?.track('guide_related_click', { from: meta.slug, to: randomGuide.meta.slug })
+                      window.umami?.track('guide_related_click', { from: meta.slug, to: relatedGuide.meta.slug })
                     }}
                     className="block"
                   >
                     <h4 className="text-lg font-semibold text-white mb-3 group-hover:text-neon-cyan transition-colors">
-                      {randomGuide.meta.title}
+                      {relatedGuide.meta.title}
                     </h4>
                     <p className="text-white/70 leading-relaxed line-clamp-3 mb-4">
-                      {randomGuide.meta.intro.split('\n')[0]}
+                      {relatedGuide.meta.intro.split('\n')[0]}
                     </p>
                     <span className="inline-flex items-center gap-2 text-neon-cyan text-sm font-medium">
                       {locale === 'es' ? 'Leer guía' : 'Read guide'}

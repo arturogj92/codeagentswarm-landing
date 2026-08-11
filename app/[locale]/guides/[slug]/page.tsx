@@ -42,6 +42,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: meta.metaTitle,
     description: meta.metaDescription,
+    authors: [{ name: meta.author ?? 'CodeAgentSwarm Team', url: baseUrl }],
     alternates: {
       canonical: canonicalUrl,
       languages: {
@@ -69,7 +70,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     },
     twitter: {
       card: 'summary_large_image',
-      site: '@CodeAgentSwarm',
       title: meta.metaTitle,
       description: meta.metaDescription,
       images: ['/og.png'],
@@ -111,6 +111,17 @@ export default async function GuidePage({ params }: PageProps) {
     headline: guide.meta.title,
     description: guide.meta.metaDescription,
     url: `${baseUrl}/en/guides/${slug}`,
+    author: {
+      '@type': 'Organization',
+      name: guide.meta.author ?? 'CodeAgentSwarm Team',
+      url: baseUrl,
+    },
+    image: {
+      '@type': 'ImageObject',
+      url: `${baseUrl}/og.png`,
+      width: 1200,
+      height: 630,
+    },
     ...(guide.meta.publishedAt && { datePublished: guide.meta.publishedAt }),
     ...(guide.meta.updatedAt && { dateModified: guide.meta.updatedAt }),
     inLanguage: 'en',

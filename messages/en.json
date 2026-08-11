@@ -17,7 +17,7 @@
     "guides": "Guides"
   },
   "hero": {
-    "badge": "Open Beta – Pro activates automatically on signup",
+    "badge": "Open Beta: Pro activates automatically on signup",
     "badgeNew": "NEW",
     "eyebrow": "One workspace · Your coding agents",
     "titleLine1": "Parallel coding agents.",
@@ -112,7 +112,7 @@
       "title2": "Now <amber>your workflow</amber> can too.",
       "text": "Every agent, every diff, every notification in one view. Nothing to hunt, nothing to miss.",
       "cta": "Try it free",
-      "hint": "Free. No credit card. macOS, Windows and Linux."
+      "hint": "Free. No credit card. macOS and Windows. Linux coming soon."
     }
   },
   "solution": {
@@ -300,7 +300,7 @@
         "notifications": "Real-time notifications",
         "mcp": "Full access to MCP marketplace"
       },
-      "cta": "Download – Pro Activates Automatically"
+      "cta": "Download: Pro Activates Automatically"
     },
     "showFeatures": "View full feature list",
     "hideFeatures": "Hide feature list",
@@ -675,7 +675,7 @@
       "cta": "Get Free Pro Access"
     },
     "banner": {
-      "text": "Open Beta – Pro unlocks automatically when you sign up",
+      "text": "Open Beta: Pro unlocks automatically when you sign up",
       "cta": "Download Free"
     },
     "faq": {
@@ -695,7 +695,7 @@
         "q6": "What OS is required?",
         "a6": "macOS 12 or later and Windows 10/11 (x64 and ARM64). Linux coming later.",
         "q7": "Does CodeAgentSwarm store my code?",
-        "a7": "No. All code stays on your local machine.",
+        "a7": "CodeAgentSwarm never receives or stores your source code or terminal content. The CLI sends prompts and code directly to its AI provider under that provider's privacy policy.",
         "q8": "How do I activate Pro?",
         "a8": "You don't have to do anything. During the beta, Pro activates automatically the moment you create your account. Just download, sign in, and you're Pro.",
         "q9": "Does CodeAgentSwarm support multi-project workflows with Claude Code?",
@@ -838,7 +838,7 @@
   "modeCompare": {
     "badge": "Chat or terminal",
     "title": "The same session, two ways to read it",
-    "subtitle": "Chat mode makes an agent legible: its tools, its task list and its questions become things you can read and click. The raw CLI is still one keystroke away — same conversation, same second.",
+    "subtitle": "Chat mode makes an agent legible: its tools, its task list and its questions become things you can read and click. The raw CLI is still one keystroke away, with the same conversation in the same second.",
     "chatLabel": "Chat",
     "terminalLabel": "Terminal",
     "hint": "Drag to compare",

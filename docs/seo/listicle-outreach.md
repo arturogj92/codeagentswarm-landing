@@ -20,7 +20,7 @@ Two findings from the fact check on 2026-07-26 change how we open these conversa
 
 **Blurb (ready to paste):**
 
-> CodeAgentSwarm is a desktop workspace to run and supervise multiple AI coding agents in parallel. It runs on macOS and Windows and supports five CLIs: Claude Code, Codex CLI, Antigravity CLI, OpenCode and Kimi Code. You get desktop notifications when an agent finishes or needs input, searchable history across every agent, per-terminal live diffs, and a kanban board agents update over MCP. Free during beta. Limitation: it is closed source and there is no Linux build.
+> CodeAgentSwarm is a desktop workspace to run and supervise multiple AI coding agents in parallel. It runs on macOS and Windows and supports six CLIs: Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code and Grok Build. You get desktop notifications when an agent finishes or needs input, searchable history across every agent, per-terminal live diffs, and a kanban board agents update over MCP. Free during beta. Limitation: it is closed source and there is no Linux build.
 
 **Assets:** https://www.codeagentswarm.com/en , https://www.codeagentswarm.com/en/guides
 
@@ -38,13 +38,13 @@ Two findings from the fact check on 2026-07-26 change how we open these conversa
 
 **Blurb (ready to paste):**
 
-> CodeAgentSwarm is a desktop workspace to run and supervise multiple AI coding agents in parallel. Available for macOS and Windows, it drives five CLIs side by side: Claude Code, Codex CLI, Antigravity CLI, OpenCode and Kimi Code. It sends a desktop notification when an agent finishes or needs input, keeps a searchable history across all agents, shows per-terminal file diffs, and exposes a kanban board that agents update over MCP. Free during beta, closed source, no Linux build.
+> CodeAgentSwarm is a desktop workspace to run and supervise multiple AI coding agents in parallel. Available for macOS and Windows, it drives six CLIs side by side: Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code and Grok Build. It sends a desktop notification when an agent finishes or needs input, keeps a searchable history across all agents, shows per-terminal file diffs, and exposes a kanban board that agents update over MCP. Free during beta, closed source, no Linux build.
 
 **Assets:** https://www.codeagentswarm.com/en , https://www.codeagentswarm.com/en/guides
 
 **Pitch draft:**
 
-> Hi, your post on multi-agent orchestrators is one of the few that actually compares how these tools isolate work instead of just listing features, so one correction is worth your time: two of the highest-starred tools in the category are not being maintained. As of July 26, 2026, opcode has no public commit since October 16, 2025 and Vibe Kanban none since April 24, 2026. I re-check the whole category on a schedule and keep a verified fact table we maintain with stars, last public commit and licence per tool, dated. Yours if you want it. The self-interested part: I build CodeAgentSwarm, a desktop app that runs Claude Code, Codex CLI, Antigravity CLI, OpenCode and Kimi Code in parallel with a git worktree per session. I am not asking for a good review, just for you to look at it and decide if it belongs in the list. Happy to send anything you need.
+> Hi, your post on multi-agent orchestrators is one of the few that actually compares how these tools isolate work instead of just listing features, so one correction is worth your time: two of the highest-starred tools in the category are not being maintained. As of July 26, 2026, opcode has no public commit since October 16, 2025 and Vibe Kanban none since April 24, 2026. I re-check the whole category on a schedule and keep a verified fact table we maintain with stars, last public commit and licence per tool, dated. Yours if you want it. The self-interested part: I build CodeAgentSwarm, a desktop app that runs Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code and Grok Build in parallel with a git worktree per session. I am not asking for a good review, just for you to look at it and decide if it belongs in the list. Happy to send anything you need.
 
 ---
 
@@ -56,13 +56,13 @@ Two findings from the fact check on 2026-07-26 change how we open these conversa
 
 **Blurb (ready to paste):**
 
-> CodeAgentSwarm is a desktop workspace to run and supervise multiple AI coding agents in parallel. On macOS and Windows it runs Claude Code, Codex CLI, Antigravity CLI, OpenCode and Kimi Code in separate terminals in one window, notifies you on the desktop when an agent finishes or needs input, keeps conversation history searchable across every agent, shows live file diffs per terminal, and lets agents update a kanban board over MCP. Free during beta. It is closed source with no Linux build.
+> CodeAgentSwarm is a desktop workspace to run and supervise multiple AI coding agents in parallel. On macOS and Windows it runs Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code and Grok Build in separate terminals in one window, notifies you on the desktop when an agent finishes or needs input, keeps conversation history searchable across every agent, shows live file diffs per terminal, and lets agents update a kanban board over MCP. Free during beta. It is closed source with no Linux build.
 
 **Assets:** https://www.codeagentswarm.com/en , https://www.codeagentswarm.com/en/guides
 
 **Pitch draft:**
 
-> Hi, I found your roundup of Claude Code multi-agent tools while researching the space, and there is one thing in it worth updating. Checked on July 26, 2026: opcode has had no public commit since October 16, 2025 and Vibe Kanban none since April 24, 2026, so two of the entries readers will assume are the safest bets are the two that have gone quiet. I keep a verified fact table we maintain for the whole category, dated, with stars, last public commit and licence. Say the word and I will send it. And the disclosure: I build CodeAgentSwarm, which does the same job as a native desktop app on macOS and Windows, and it also drives Codex CLI, Antigravity, OpenCode and Kimi Code, not only Claude. It is missing from your list, so I wanted to put it in front of you. Try it and judge it yourself, that is all I am asking for.
+> Hi, I found your roundup of Claude Code multi-agent tools while researching the space, and there is one thing in it worth updating. Checked on July 26, 2026: opcode has had no public commit since October 16, 2025 and Vibe Kanban none since April 24, 2026, so two of the entries readers will assume are the safest bets are the two that have gone quiet. I keep a verified fact table we maintain for the whole category, dated, with stars, last public commit and licence. Say the word and I will send it. And the disclosure: I build CodeAgentSwarm, which does the same job as a native desktop app on macOS and Windows, and it also drives Codex CLI, Antigravity, OpenCode, Kimi Code and Grok Build, not only Claude. It is missing from your list, so I wanted to put it in front of you. Try it and judge it yourself, that is all I am asking for.
 
 ---
 
@@ -74,13 +74,13 @@ Two findings from the fact check on 2026-07-26 change how we open these conversa
 
 **Blurb (ready to paste):**
 
-> CodeAgentSwarm is a desktop workspace to run and supervise multiple AI coding agents in parallel. It ships for macOS and Windows and supports Claude Code, Codex CLI, Antigravity CLI, OpenCode and Kimi Code. Features include desktop notifications when an agent finishes or needs input, conversation history searchable across all agents, live per-terminal file diffs, and a kanban task board that agents update over MCP. It is free during the beta. It is closed source and has no Linux build.
+> CodeAgentSwarm is a desktop workspace to run and supervise multiple AI coding agents in parallel. It ships for macOS and Windows and supports Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code and Grok Build. Features include desktop notifications when an agent finishes or needs input, conversation history searchable across all agents, live per-terminal file diffs, and a kanban task board that agents update over MCP. It is free during the beta. It is closed source and has no Linux build.
 
 **Assets:** https://www.codeagentswarm.com/en , https://www.codeagentswarm.com/en/guides
 
 **Pitch draft:**
 
-> Hi, your list of multi-agent coding tools covers the terminal-based options well, so here is something that may be worth a line in it. On July 26, 2026 I verified the public GitHub data for the whole category: opcode has no commit since October 16, 2025 and Vibe Kanban none since April 24, 2026, while T3 Code, Superset, Paseo and Nimbalyst all committed that same day. Star counts point the opposite way from maintenance here. I keep a verified fact table we maintain with those dates and can send it over if it saves you the digging. The interested part of the email: I build CodeAgentSwarm, a desktop app for the same problem, aimed at people who want to watch what each agent is doing instead of running them headless. It supports five different CLIs, not just Claude Code. If you are updating the post, I would like it considered. I can answer any question about how it works.
+> Hi, your list of multi-agent coding tools covers the terminal-based options well, so here is something that may be worth a line in it. On July 26, 2026 I verified the public GitHub data for the whole category: opcode has no commit since October 16, 2025 and Vibe Kanban none since April 24, 2026, while T3 Code, Superset, Paseo and Nimbalyst all committed that same day. Star counts point the opposite way from maintenance here. I keep a verified fact table we maintain with those dates and can send it over if it saves you the digging. The interested part of the email: I build CodeAgentSwarm, a desktop app for the same problem, aimed at people who want to watch what each agent is doing instead of running them headless. It supports six different CLIs, not just Claude Code. If you are updating the post, I would like it considered. I can answer any question about how it works.
 
 ---
 
@@ -92,7 +92,7 @@ Two findings from the fact check on 2026-07-26 change how we open these conversa
 
 **Blurb (ready to paste):**
 
-> CodeAgentSwarm is a desktop workspace to run and supervise multiple AI coding agents in parallel. It is a macOS and Windows app that runs five CLIs, Claude Code, Codex CLI, Antigravity CLI, OpenCode and Kimi Code, each in its own terminal. It gives you desktop notifications when an agent finishes or needs input, a searchable history across every agent, per-terminal live diffs, and a kanban board agents update over MCP. Free during beta, closed source, no Linux build yet.
+> CodeAgentSwarm is a desktop workspace to run and supervise multiple AI coding agents in parallel. It is a macOS and Windows app that runs six CLIs—Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code and Grok Build—each in its own terminal. It gives you desktop notifications when an agent finishes or needs input, a searchable history across every agent, per-terminal live diffs, and a kanban board agents update over MCP. Free during beta, closed source, no Linux build yet.
 
 **Assets:** https://www.codeagentswarm.com/en , https://www.codeagentswarm.com/en/guides
 
@@ -107,7 +107,7 @@ Two findings from the fact check on 2026-07-26 change how we open these conversa
 1. **Update the GitHub repo description** with the frozen category phrase:
 
    ```bash
-   gh repo edit arturogj92/codeagentswarm-site --description "CodeAgentSwarm: a desktop workspace to run and supervise multiple AI coding agents in parallel (Claude Code, Codex CLI, Antigravity, OpenCode, Kimi Code). macOS + Windows."
+   gh repo edit arturogj92/codeagentswarm-site --description "CodeAgentSwarm: a desktop workspace to run and supervise multiple AI coding agents in parallel (Claude Code, Codex CLI, Antigravity, OpenCode, Kimi Code, Grok Build). macOS + Windows."
    ```
 
 2. **Create a Wikidata item and a Crunchbase profile** for CodeAgentSwarm. Both are entity signals that answer engines use to decide a product exists as a real thing and not as a random domain.

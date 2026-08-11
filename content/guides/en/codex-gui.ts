@@ -16,7 +16,7 @@ CodeAgentSwarm is that kind of Codex GUI app. It runs on macOS and Windows, give
     ctaAgent: 'codex',
     highlightedWords: ['Codex GUI', 'desktop app'],
     publishedAt: '2026-07-13',
-    updatedAt: '2026-07-13',
+    updatedAt: '2026-08-11',
     alternateSlug: 'interfaz-grafica-codex',
   },
   sections: [
@@ -41,7 +41,7 @@ CodeAgentSwarm is that kind of Codex GUI app. It runs on macOS and Windows, give
         {
           type: 'callout',
           variant: 'info',
-          content: 'A GUI is not a different model or a different plan. CodeAgentSwarm runs on top of your existing OpenAI account, and the same workspace can drive Claude Code, Gemini CLI and opencode alongside Codex. You keep the full CLI power, you just get a visual layer around it.',
+          content: 'A GUI is not a different model or a different plan. CodeAgentSwarm runs on top of your existing OpenAI account, and the same workspace can drive Claude Code, Antigravity CLI and opencode alongside Codex. You keep the full CLI power, you just get a visual layer around it.',
         },
         {
           type: 'paragraph',
@@ -253,7 +253,7 @@ CodeAgentSwarm is that kind of Codex GUI app. It runs on macOS and Windows, give
     },
     {
       question: 'Can the same GUI run Claude Code and Gemini too?',
-      answer: 'Yes. CodeAgentSwarm is not tied to a single vendor. Each terminal has an agent picker, so you can set one to Codex CLI, another to Claude Code, another to Gemini CLI or opencode, all in the same visual workspace. A mixed setup is the default rather than a workaround, and the Codex agent swarm guide covers running several agents in parallel.',
+      answer: 'Yes. CodeAgentSwarm is not tied to a single vendor. Each terminal has an agent picker, so you can set one to Codex CLI, another to Claude Code, another to Antigravity CLI or opencode, all in the same visual workspace. A mixed setup is the default rather than a workaround, and the Codex agent swarm guide covers running several agents in parallel.',
     },
   ],
 }

@@ -5,9 +5,12 @@ import { getAllGuides } from '@/content/guides'
 import GuidesIndexPage from '@/components/guides/GuidesIndexPage'
 
 export async function generateMetadata(): Promise<Metadata> {
+  const title = 'Guías | CodeAgentSwarm'
+  const description = 'Guías prácticas de CodeAgentSwarm: ejecuta Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code y Grok Build en paralelo con visibilidad, historial y control multiproyecto.'
+
   return {
-    title: 'Guías | CodeAgentSwarm',
-    description: 'Guías prácticas de CodeAgentSwarm: ejecuta Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code y Grok Build en paralelo con visibilidad, historial y control multiproyecto.',
+    title,
+    description,
     alternates: {
       canonical: '/es/guias',
       languages: {
@@ -15,6 +18,19 @@ export async function generateMetadata(): Promise<Metadata> {
         es: '/es/guias',
         'x-default': '/en/guides',
       },
+    },
+    openGraph: {
+      type: 'website',
+      url: '/es/guias',
+      title,
+      description,
+      images: ['/og.png'],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: ['/og.png'],
     },
   }
 }

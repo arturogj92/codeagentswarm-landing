@@ -3,7 +3,18 @@ import { getGuideSlugs, getGuide } from '@/content/guides';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.codeagentswarm.com';
-  const now = new Date();
+
+  const guideLastMod = (locale: string, slug: string): Date | undefined => {
+    const guide = getGuide(locale, slug);
+    const stamp = guide?.meta.updatedAt || guide?.meta.publishedAt;
+    return stamp ? new Date(`${stamp}T00:00:00Z`) : undefined;
+  };
+
+  const latestGuideLastMod = (locale: string): Date | undefined =>
+    getGuideSlugs(locale)
+      .map((slug) => guideLastMod(locale, slug))
+      .filter((date): date is Date => date !== undefined)
+      .sort((a, b) => b.getTime() - a.getTime())[0];
 
   // Static pages (no bare root URL to avoid canonical duplication with /en)
   const staticPages: MetadataRoute.Sitemap = [
@@ -19,11 +30,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/en/guides`,
+      lastModified: latestGuideLastMod('en'),
       changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/es/guias`,
+      lastModified: latestGuideLastMod('es'),
       changeFrequency: 'weekly',
       priority: 0.8,
     },
@@ -38,14 +51,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
   ];
-
-  // Use each guide's real updatedAt (falling back to publishedAt) so lastmod is
-  // truthful per URL instead of an identical build-time stamp on every entry.
-  const guideLastMod = (locale: string, slug: string): Date => {
-    const guide = getGuide(locale, slug);
-    const stamp = guide?.meta.updatedAt || guide?.meta.publishedAt;
-    return stamp ? new Date(stamp) : now;
-  };
 
   // Dynamic guide pages - English
   const enGuidePages: MetadataRoute.Sitemap = getGuideSlugs('en').map((slug) => ({

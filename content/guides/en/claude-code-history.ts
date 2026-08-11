@@ -5,8 +5,8 @@ export const guide: Guide = {
     slug: 'claude-code-history',
     locale: 'en',
     title: 'Search and Resume Any Claude Code Conversation with CodeAgentSwarm History',
-    metaTitle: 'Claude Code History: Search and Resume Any Conversation (2026)',
-    metaDescription: 'Where your Claude Code conversations live, how to search them by keyword, and how to resume any past session in one click instead of starting from scratch.',
+    metaTitle: 'Search Claude Code History Across Projects | CodeAgentSwarm',
+    metaDescription: 'Search Claude Code history across every project, preview conversations, and resume a session in one click with CodeAgentSwarm\'s local conversation history.',
     intro: `Claude Code already keeps a history of your conversations. Every session is stored locally in ~/.claude/projects/, and you can resume the most recent one with "claude --continue" or pick an older session with "claude --resume". The catch: there is no search, no content preview, and each project keeps its history separate.
 
 That is exactly what the history view in CodeAgentSwarm solves. Every time you work with a Claude Code terminal, it stores what you write, what Claude replies, which project you were in and when it happened, and makes all of it searchable.
@@ -16,7 +16,7 @@ The bottom line: your Claude Code history is already on your machine. CodeAgentS
     ctaAgent: 'claude-code',
     highlightedWords: ['history', 'Claude Code'],
     publishedAt: '2026-02-10',
-    updatedAt: '2026-04-15',
+    updatedAt: '2026-08-11',
     alternateSlug: 'historial-claude-code',
   },
   sections: [
