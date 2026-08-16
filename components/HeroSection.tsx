@@ -426,6 +426,12 @@ export default function HeroSection() {
                 >
                   <img src="/icons/apps/grok-icon.svg" alt="Grok Build" className="w-4 h-4 object-contain" />
                 </span>
+                <span
+                  className="w-7 h-7 rounded-full flex items-center justify-center bg-[#0d0d0d] border-2 border-[#0e0e12] shadow-lg"
+                  title="Cursor Agent"
+                >
+                  <img src="/icons/apps/cursor-icon.svg" alt="Cursor Agent" className="w-4 h-4 object-contain" />
+                </span>
               </div>
               <span className="hidden sm:block h-4 w-px bg-white/10" aria-hidden="true" />
               <span>{t('existingAccounts')}</span>

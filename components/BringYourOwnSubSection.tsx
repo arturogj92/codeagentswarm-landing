@@ -20,6 +20,7 @@ export default function BringYourOwnSubSection() {
     { name: 'opencode', command: 'opencode', icon: '/icons/apps/opencode-icon.svg' },
     { name: 'Kimi Code', command: 'kimi', icon: '/icons/apps/kimi-icon.png' },
     { name: 'Grok Build', command: 'grok', icon: '/icons/apps/grok-icon.svg' },
+    { name: 'Cursor Agent', command: 'cursor-agent', icon: '/icons/apps/cursor-icon.svg' },
   ]
 
   /**
@@ -78,8 +79,7 @@ export default function BringYourOwnSubSection() {
           </p>
         </motion.div>
 
-        {/* Six columns since Grok Build joined the roster on master. */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-3 mt-11">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-7 gap-3 mt-11">
           {agents.map((agent, i) => (
             <motion.div
               key={agent.name}

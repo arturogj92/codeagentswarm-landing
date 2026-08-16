@@ -142,13 +142,15 @@ export default function GuideLayout({ guide }: GuideLayoutProps) {
               )}
             </motion.header>
 
-            {/* Product showcase block: between the intro and the first section */}
-            <GuideProductBlock
-              locale={locale}
-              slug={meta.slug}
-              videoKey={pickGuideVideo(meta.slug)}
-              ctaText={meta.ctaText}
-            />
+            {/* ponytail: skip stale six-agent footage until a real Cursor capture exists. */}
+            {meta.ctaAgent !== 'cursor-agent' && (
+              <GuideProductBlock
+                locale={locale}
+                slug={meta.slug}
+                videoKey={pickGuideVideo(meta.slug)}
+                ctaText={meta.ctaText}
+              />
+            )}
 
             {/* Divider */}
             <hr className="border-t border-white/10 mb-10" />

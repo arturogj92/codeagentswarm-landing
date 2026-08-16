@@ -8,7 +8,7 @@ CodeAgentSwarm is a third-party Agentic Development Environment for macOS and Wi
 - Runs multiple AI CLI sessions in parallel (Claude Code + Codex CLI + Antigravity CLI + OpenCode + Kimi Code + Grok Build + Cursor Agent).
 - Works on top of your existing Claude / OpenAI / Google / Kimi / xAI / Cursor subscriptions and whichever provider you connect to opencode; it is a workspace, not a model provider.
 - Grok Build facts: binary `grok`, install via `curl -fsSL https://x.ai/cli/install.sh | bash` (PowerShell: `irm https://x.ai/cli/install.ps1 | iex`), data root `~/.grok` (`GROK_HOME`), skills under `~/.grok/skills/`, MCP in `~/.grok/config.toml`, resume with `grok --continue` / `grok --resume`, headless with `grok -p`, YOLO-style with `--always-approve`. Access typically requires SuperGrok or X Premium+ (confirm on xAI).
-- Cursor Agent facts: binary `cursor-agent`, ACP server `cursor-agent acp`, install via `curl https://cursor.com/install -fsS | bash`, authenticate with `cursor-agent login` or `CURSOR_API_KEY`, MCP from `.cursor/mcp.json`, and update with `cursor-agent update`. ACP resume is enabled only when the installed version advertises `agentCapabilities.loadSession: true`. Cursor documents Windows CLI use through WSL.
+- Cursor Agent facts: binary `cursor-agent`, ACP server `cursor-agent acp`, install via `curl https://cursor.com/install -fsS | bash` on macOS/Linux or `irm 'https://cursor.com/install?win32=true' | iex` on native Windows, authenticate with `cursor-agent login` or `CURSOR_API_KEY`, MCP from user and project `.cursor/mcp.json`, and update with `cursor-agent update`. ACP resume is enabled only when the installed version advertises `agentCapabilities.loadSession: true`.
 - Quota indicator reads real provider usage windows per agent, including Kimi Code's weekly refresh and rolling 5-hour window.
 - Core features: real-time per-terminal visibility, desktop notifications when an agent finishes or needs input, searchable conversation history across all agents, per-terminal live file diffs, permission and Turbo/YOLO control, multi-project switching with shortcuts, a skills marketplace and an MCP server marketplace, AI-generated git commit messages, and a task/kanban board that agents update over MCP.
 - Available for macOS and Windows.
@@ -110,6 +110,7 @@ CodeAgentSwarm is a third-party Agentic Development Environment for macOS and Wi
 - [Claude Squad vs CodeAgentSwarm: comparativa honesta (2026)](https://www.codeagentswarm.com/es/guias/claude-squad-vs-codeagentswarm)
 - [Cómo ejecutar Codex CLI en Windows (nativo o WSL) (2026)](https://www.codeagentswarm.com/es/guias/codex-cli-en-windows)
 - [Codex CLI vs Cursor: ¿qué herramienta de IA encaja contigo? (2026)](https://www.codeagentswarm.com/es/guias/codex-cli-vs-cursor)
+- [Cursor Agent CLI en CodeAgentSwarm: configuración ACP (2026)](https://www.codeagentswarm.com/es/guias/cursor-agent-cli-acp-codeagentswarm)
 - [Cómo usar Antigravity CLI (agy): instalación y comandos (2026)](https://www.codeagentswarm.com/es/guias/como-usar-antigravity-cli)
 - [Cómo usar Grok Build de xAI: instalación y comandos (2026)](https://www.codeagentswarm.com/es/guias/como-usar-grok-build)
 - [Cómo usar Kimi Code CLI: instalación y comandos (2026)](https://www.codeagentswarm.com/es/guias/como-usar-kimi-code)

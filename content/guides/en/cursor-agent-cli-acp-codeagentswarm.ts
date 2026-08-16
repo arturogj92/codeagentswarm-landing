@@ -30,17 +30,17 @@ The important command is <code>cursor-agent</code>. CodeAgentSwarm does not use 
       id: 'install',
       title: 'Install and authenticate Cursor Agent CLI',
       content: [
-        { type: 'paragraph', text: 'Cursor publishes one installer for macOS, Linux and Windows through WSL. CodeAgentSwarm detects the resulting <code>cursor-agent</code> binary explicitly.' },
-        { type: 'code', language: 'bash', code: 'curl https://cursor.com/install -fsS | bash\ncursor-agent --version\ncursor-agent login\ncursor-agent status' },
+        { type: 'paragraph', text: 'CodeAgentSwarm detects <code>cursor-agent</code> explicitly and can run Cursor\'s official installer for macOS, Linux or native Windows when the CLI is missing.' },
+        { type: 'code', language: 'bash', code: '# macOS or Linux\ncurl https://cursor.com/install -fsS | bash\n\n# Native Windows PowerShell\nirm \'https://cursor.com/install?win32=true\' | iex\n\ncursor-agent --version\ncursor-agent login\ncursor-agent status' },
         { type: 'paragraph', text: 'For CI or another non-interactive environment, Cursor also accepts <code>CURSOR_API_KEY</code>. In normal desktop use, the browser login uses your existing Cursor account and its subscription or usage.' },
-        { type: 'callout', variant: 'warning', content: 'On native Windows, install and run Cursor CLI inside WSL. Cursor does not currently document a native Windows CLI installation.' },
+        { type: 'callout', variant: 'info', content: 'On Windows, CodeAgentSwarm downloads Cursor\'s official PowerShell installer and verifies the native cursor-agent.cmd before starting Chat. It never falls back to a generic agent command.' },
       ],
     },
     {
       id: 'mcp',
       title: 'MCP, rules, skills and Cursor extensions',
       content: [
-        { type: 'paragraph', text: 'Cursor Agent keeps reading project or user MCP servers from <code>.cursor/mcp.json</code>. It also applies Cursor rules and skills. CodeAgentSwarm does not send a second copy of those servers through ACP, so your existing Cursor setup stays the source of truth.' },
+        { type: 'paragraph', text: 'CodeAgentSwarm reads user and project MCP servers from <code>.cursor/mcp.json</code> without modifying either file. Project entries override same-named user entries, and the merged servers are sent through ACP\'s native <code>mcpServers</code> field. Cursor rules and skills remain owned by Cursor.' },
         { type: 'paragraph', text: 'The ACP adapter also understands Cursor-specific requests for questions, plans, todos, delegated tasks and generated images. They become native CodeAgentSwarm timeline items instead of raw JSON.' },
       ],
     },
@@ -65,9 +65,9 @@ The important command is <code>cursor-agent</code>. CodeAgentSwarm does not use 
   faq: [
     { question: 'Does CodeAgentSwarm use the official Cursor Agent CLI?', answer: 'Yes. It launches the official cursor-agent binary in ACP mode over stdio and JSON-RPC.' },
     { question: 'Does Cursor Agent use my Cursor subscription?', answer: 'Yes. Sign in with cursor-agent login or provide CURSOR_API_KEY. Authentication and usage remain with Cursor.' },
-    { question: 'Does Cursor MCP configuration still work?', answer: 'Yes. Cursor Agent continues to read .cursor/mcp.json at project or user level.' },
+    { question: 'Does Cursor MCP configuration still work?', answer: 'Yes. CodeAgentSwarm reads user and project .cursor/mcp.json files without modifying them and sends the merged servers through ACP.' },
     { question: 'Can CodeAgentSwarm resume every Cursor conversation?', answer: 'Only when the installed Cursor CLI advertises ACP loadSession support. Older versions can start new chats but show an update instruction instead of a broken resume action.' },
-    { question: 'Does Cursor Agent CLI work on Windows?', answer: 'Cursor documents its CLI for Windows through WSL. CodeAgentSwarm reports that limitation instead of attempting a native Windows install.' },
+    { question: 'Does Cursor Agent CLI work on Windows?', answer: 'Yes. CodeAgentSwarm can install and run Cursor Agent natively on Windows with Cursor\'s official PowerShell installer.' },
   ],
 }
 
