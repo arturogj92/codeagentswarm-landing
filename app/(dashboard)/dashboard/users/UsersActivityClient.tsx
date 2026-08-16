@@ -13,12 +13,14 @@ import ActivityHeatmap from './ActivityHeatmap'
 import {
   EMPTY_USER_FILTERS,
   agentLabel,
+  compareAppVersions,
   filterUsers,
   getLifecycle,
   parseExcludedUserIds,
   primaryAgentSignal,
   summarizeUsers,
   type Lifecycle,
+  type FeatureWindowDays,
   type GlobalWindowDays,
   type UserActivityDetail,
   type UserActivityOverview,
@@ -37,8 +39,14 @@ const GLOBAL_WINDOWS: Array<{ days: GlobalWindowDays; label: string }> = [
   { days: 30, label: '30d' },
   { days: 180, label: '180d' },
 ]
+const FEATURE_WINDOWS: Array<{ days: FeatureWindowDays; label: string }> = [
+  { days: 7, label: '7d' },
+  { days: 30, label: '30d' },
+  { days: 90, label: '90d' },
+  { days: 180, label: '180d' },
+]
 
-type SortKey = 'user' | 'activity' | 'last7' | 'periods' | 'terminals' | 'agent' | 'joined'
+type SortKey = 'user' | 'activity' | 'last7' | 'periods' | 'terminals' | 'version' | 'agent' | 'joined'
 type SortDirection = 'asc' | 'desc'
 type Segment = 'all' | 'active' | 'active30' | 'activated' | 'inactive' | 'dormant' | 'no-tracked'
 
@@ -94,6 +102,17 @@ const ACTION_LABELS: Record<string, string> = {
   outreach_replied: 'Outreach reply received',
   cloud_task_completed: 'Cloud task completed',
   cloud_task_updated: 'Cloud task updated',
+  kanban_opened: 'Kanban opened',
+  workspace_toggle: 'Tabs / Grid toggle',
+  workspace_grid: 'Grid selected',
+  workspace_tabs: 'Tabs selected',
+  workspace_list: 'List selected',
+  mcp_settings_opened: 'MCP settings opened',
+  mcp_server_disabled: 'MCP server disabled',
+  terminal_status_menu_used: 'Terminal status menu used',
+  terminal_status_agent_set: 'Status set by agent',
+  terminal_status_created: 'Custom status created',
+  mcp_server_added: 'MCP server added',
 }
 
 function parseDate(value: string | null | undefined): Date | null {
@@ -171,7 +190,8 @@ export default function UsersActivityClient() {
   const [globalMetrics, setGlobalMetrics] = useState<UserGlobalMetrics | null>(null)
   const [globalLoading, setGlobalLoading] = useState(true)
   const [globalError, setGlobalError] = useState<string | null>(null)
-  const [globalWindowDays, setGlobalWindowDays] = useState<GlobalWindowDays>(180)
+  const [globalWindowDays, setGlobalWindowDays] = useState<GlobalWindowDays>(7)
+  const [featureWindowDays, setFeatureWindowDays] = useState<FeatureWindowDays>(30)
   const [excludedUserIds, setExcludedUserIds] = useState<string[]>([])
   const [exclusionsReady, setExclusionsReady] = useState(false)
   const [filters, setFilters] = useState<UserFilters>(EMPTY_USER_FILTERS)
@@ -212,14 +232,22 @@ export default function UsersActivityClient() {
 
   useEffect(() => { void loadUsers() }, [loadUsers])
 
-  const loadGlobalMetrics = useCallback(async (excluded: string[], windowDays: GlobalWindowDays) => {
+  const loadGlobalMetrics = useCallback(async (
+    excluded: string[],
+    windowDays: GlobalWindowDays,
+    adoptionDays: FeatureWindowDays,
+  ) => {
     setGlobalLoading(true)
     setGlobalError(null)
     try {
       const response = await fetch('/api/dashboard/users/global', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ excluded_user_ids: excluded, window_days: windowDays }),
+        body: JSON.stringify({
+          excluded_user_ids: excluded,
+          window_days: windowDays,
+          feature_window_days: adoptionDays,
+        }),
       })
       const payload = await response.json()
       if (!response.ok) throw new Error(payload?.error || 'Failed to load global metrics')
@@ -245,8 +273,8 @@ export default function UsersActivityClient() {
   useEffect(() => {
     if (!exclusionsReady) return
     localStorage.setItem(GLOBAL_EXCLUSIONS_KEY, JSON.stringify(excludedUserIds))
-    void loadGlobalMetrics(excludedUserIds, globalWindowDays)
-  }, [excludedUserIds, exclusionsReady, globalWindowDays, loadGlobalMetrics])
+    void loadGlobalMetrics(excludedUserIds, globalWindowDays, featureWindowDays)
+  }, [excludedUserIds, exclusionsReady, featureWindowDays, globalWindowDays, loadGlobalMetrics])
 
   useEffect(() => {
     const onShortcut = (event: KeyboardEvent) => {
@@ -375,6 +403,8 @@ export default function UsersActivityClient() {
           a = left.avg_terminal_slots ?? 0
           b = right.avg_terminal_slots ?? 0
           break
+        case 'version':
+          return compareAppVersions(left.last_app_version, right.last_app_version, direction)
         case 'agent':
           a = agentLabel(primaryAgentSignal(left).agent)
           b = agentLabel(primaryAgentSignal(right).agent)
@@ -432,7 +462,7 @@ export default function UsersActivityClient() {
       return
     }
     setSortKey(next)
-    setSortDirection(next === 'joined' || next === 'last7' || next === 'periods' || next === 'terminals' ? 'desc' : 'asc')
+    setSortDirection(next === 'joined' || next === 'last7' || next === 'periods' || next === 'terminals' || next === 'version' ? 'desc' : 'asc')
   }
 
   function toggleGlobalUser(userId: string) {
@@ -445,7 +475,7 @@ export default function UsersActivityClient() {
 
   function refreshDashboard() {
     void loadUsers()
-    if (exclusionsReady) void loadGlobalMetrics(excludedUserIds, globalWindowDays)
+    if (exclusionsReady) void loadGlobalMetrics(excludedUserIds, globalWindowDays, featureWindowDays)
   }
 
   async function copyValue(value: string, key: string) {
@@ -510,9 +540,11 @@ export default function UsersActivityClient() {
           error={globalError}
           excludedUsers={excludedUsers}
           windowDays={globalWindowDays}
+          featureWindowDays={featureWindowDays}
           onToggleUser={toggleGlobalUser}
           onWindowDays={setGlobalWindowDays}
-          onRetry={() => void loadGlobalMetrics(excludedUserIds, globalWindowDays)}
+          onFeatureWindowDays={setFeatureWindowDays}
+          onRetry={() => void loadGlobalMetrics(excludedUserIds, globalWindowDays, featureWindowDays)}
         />
 
         <section aria-label="User filters" className="mt-5 rounded-xl border border-white/[0.09] bg-[#111111] p-3.5">
@@ -644,17 +676,20 @@ export default function UsersActivityClient() {
   )
 }
 
-function GlobalInsights({ metrics, loading, error, excludedUsers, windowDays, onToggleUser, onWindowDays, onRetry }: {
+function GlobalInsights({ metrics, loading, error, excludedUsers, windowDays, featureWindowDays, onToggleUser, onWindowDays, onFeatureWindowDays, onRetry }: {
   metrics: UserGlobalMetrics | null
   loading: boolean
   error: string | null
   excludedUsers: UserActivityRow[]
   windowDays: GlobalWindowDays
+  featureWindowDays: FeatureWindowDays
   onToggleUser: (userId: string) => void
   onWindowDays: (days: GlobalWindowDays) => void
+  onFeatureWindowDays: (days: FeatureWindowDays) => void
   onRetry: () => void
 }) {
   const [actionQuery, setActionQuery] = useState('')
+  const [featureFilter, setFeatureFilter] = useState<'all' | 'workspace' | 'automation'>('all')
   const sourceNote = metrics?.terminal_metric_source === 'launches'
     ? 'Exact snapshots at agent launch'
     : metrics?.terminal_metric_source === 'mixed'
@@ -667,6 +702,9 @@ function GlobalInsights({ metrics, loading, error, excludedUsers, windowDays, on
       )).slice(0, 20)
     : []
   const windowLabel = windowDays === 1 ? 'Last 24 hours' : `Last ${windowDays} days`
+  const visibleFeatures = (metrics?.features || []).filter((feature) => (
+    featureFilter === 'all' || feature.category === featureFilter
+  ))
 
   return (
     <section aria-label="Global usage overview" className="mt-5 grid gap-4 xl:grid-cols-[minmax(0,1.35fr)_minmax(340px,0.65fr)]">
@@ -818,6 +856,103 @@ function GlobalInsights({ metrics, loading, error, excludedUsers, windowDays, on
           )}
         </div>
       </article>
+
+      <article className="min-w-0 rounded-xl border border-white/[0.09] bg-[#111111] p-4 sm:p-5 xl:col-span-2">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <h2 className="text-lg font-semibold tracking-[-0.02em] text-white">Feature adoption</h2>
+            <p className="mt-1 text-sm text-white/55">
+              Reach and repeat · last {featureWindowDays} days · identified users
+            </p>
+          </div>
+          <div className="flex rounded-lg border border-white/10 bg-black/25 p-0.5" aria-label="Feature adoption period">
+            {FEATURE_WINDOWS.map((window) => (
+              <button
+                key={window.days}
+                type="button"
+                onClick={() => onFeatureWindowDays(window.days)}
+                aria-pressed={featureWindowDays === window.days}
+                className={`rounded-md px-2 py-1 text-[10px] font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 ${featureWindowDays === window.days ? 'bg-amber-400/15 text-amber-200' : 'text-white/40 hover:text-white/70'}`}
+              >
+                {window.label}
+              </button>
+            ))}
+          </div>
+        </div>
+        <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
+          <div className="flex flex-wrap gap-1.5" aria-label="Feature category">
+            {([
+              ['all', 'All signals'],
+              ['workspace', 'Workspace'],
+              ['automation', 'MCP & status'],
+            ] as const).map(([value, label]) => (
+              <SegmentButton key={value} active={featureFilter === value} onClick={() => setFeatureFilter(value)}>
+                {label}
+              </SegmentButton>
+            ))}
+          </div>
+          <p className="text-[10px] text-white/40"><span className="font-semibold text-sky-300/75">30d return</span> always uses the mature 180d cohort</p>
+        </div>
+        <div className="mt-5 overflow-x-auto">
+          <table className="w-full min-w-[720px] border-collapse">
+            <thead>
+              <tr className="border-b border-white/[0.08] text-left text-[10px] uppercase tracking-[0.13em] text-white/45">
+                <th className="px-3 py-2 font-semibold">Signal</th>
+                <th className="px-3 py-2 font-semibold">Reach</th>
+                <th className="px-3 py-2 font-semibold">Repeat</th>
+                <th className="px-3 py-2 font-semibold">30d return</th>
+                <th className="px-3 py-2 font-semibold">Coverage</th>
+              </tr>
+            </thead>
+            <tbody>
+              {loading && !metrics ? (
+                <tr><td colSpan={5} className="px-3 py-8 text-center text-sm text-white/40">Loading feature signals…</td></tr>
+              ) : error && !metrics ? (
+                <tr><td colSpan={5} className="px-3 py-8 text-center text-sm text-rose-200/70">Feature signals are unavailable.</td></tr>
+              ) : visibleFeatures.length === 0 ? (
+                <tr><td colSpan={5} className="px-3 py-8 text-center text-sm text-white/40">No feature activity in this cohort.</td></tr>
+              ) : visibleFeatures.map((feature) => (
+                <tr key={feature.feature} className="border-b border-white/[0.055] last:border-0">
+                  <td className="px-3 py-3">
+                    <span className="block text-sm font-medium text-white/80">{actionLabel(feature.feature)}</span>
+                    <span className="mt-0.5 block text-[9px] uppercase tracking-[0.1em] text-white/30">{feature.category === 'workspace' ? 'Workspace' : 'MCP & status'}</span>
+                  </td>
+                  <td className="px-3 py-3 font-mono text-sm text-white/70">
+                    {!feature.has_data && feature.coverage === 'starts_this_release' ? (
+                      <><span>—</span><span className="ml-2 text-[10px] text-white/35">collecting</span></>
+                    ) : (
+                      <><span className="text-amber-300">{feature.reach_pct ?? 0}%</span><span className="ml-2 text-[10px] text-white/40">{feature.users} users</span></>
+                    )}
+                  </td>
+                  <td className="px-3 py-3 font-mono text-sm text-white/70">
+                    {feature.repeat_pct === null ? '—' : `${feature.repeat_pct}%`}
+                    {feature.repeat_pct !== null && <span className="ml-2 text-[10px] text-white/40">{feature.repeat_users}/{feature.users}</span>}
+                  </td>
+                  <td className="px-3 py-3 font-mono text-sm text-white/70">
+                    {feature.return_30d_pct === null ? '—' : `${feature.return_30d_pct}%`}
+                    {feature.return_30d_pct !== null && (
+                      <span className="ml-2 text-[10px] text-white/40">{feature.returned_users}/{feature.eligible_users}</span>
+                    )}
+                    {feature.return_lift_pp !== null && (
+                      <span className={`ml-2 text-[10px] ${feature.return_lift_pp >= 0 ? 'text-emerald-300/70' : 'text-rose-300/70'}`}>
+                        {feature.return_lift_pp >= 0 ? '+' : ''}{feature.return_lift_pp}pp vs active
+                      </span>
+                    )}
+                  </td>
+                  <td className="px-3 py-3">
+                    <span className={`inline-flex rounded-full border px-2 py-1 text-[9px] font-semibold ${feature.coverage === 'exact' ? 'border-emerald-400/20 bg-emerald-400/[0.07] text-emerald-300/80' : feature.coverage === 'historical_proxy' ? 'border-sky-400/20 bg-sky-400/[0.07] text-sky-300/80' : 'border-amber-400/20 bg-amber-400/[0.07] text-amber-300/80'}`}>
+                      {feature.coverage === 'exact' ? 'Exact' : feature.coverage === 'historical_proxy' ? 'Historical proxy' : 'Tracking since this release'}
+                    </span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p className="mt-3 text-[10px] leading-4 text-white/40">
+          Reach and repeat follow the selected period. Repeat means use on at least two different UTC days. Return measures any recorded activity 7–30 days after first observed use in the mature 180-day cohort. Correlation does not prove that the feature caused retention.
+        </p>
+      </article>
     </section>
   )
 }
@@ -894,7 +1029,7 @@ function UsersTable({ users, sortKey, sortDirection, onSort, onOpen }: {
 }) {
   return (
     <div className="hidden overflow-x-auto rounded-xl border border-white/[0.09] bg-[#111111] md:block">
-      <table className="w-full min-w-[1120px] border-collapse">
+      <table className="w-full min-w-[1200px] border-collapse">
         <caption className="sr-only">Registered users and recorded product activity</caption>
         <thead>
           <tr className="border-b border-white/[0.08] bg-white/[0.018]">
@@ -903,6 +1038,7 @@ function UsersTable({ users, sortKey, sortDirection, onSort, onOpen }: {
             <SortHeader label="Activity" sort="activity" active={sortKey} direction={sortDirection} onSort={onSort} />
             <SortHeader label="Last 7 days" sort="last7" active={sortKey} direction={sortDirection} onSort={onSort} />
             <SortHeader label="Work periods" sort="periods" active={sortKey} direction={sortDirection} onSort={onSort} />
+            <SortHeader label="Version" sort="version" active={sortKey} direction={sortDirection} onSort={onSort} />
             <SortHeader label="Agent signal" sort="agent" active={sortKey} direction={sortDirection} onSort={onSort} />
             <SortHeader label="Joined" sort="joined" active={sortKey} direction={sortDirection} onSort={onSort} />
             <th className="w-20 px-4 py-3 text-right text-[10px] font-semibold uppercase tracking-[0.14em] text-white/55">Details</th>
@@ -941,7 +1077,11 @@ function UsersTable({ users, sortKey, sortDirection, onSort, onOpen }: {
                 </td>
                 <td className="px-4 py-3.5">
                   <div className="font-mono text-sm text-white/80"><span className="text-amber-300">{user.work_periods_7d}</span> / {user.work_periods_30d}</div>
-                  <p className="mt-1 text-[10px] text-white/55">7d / 30d · {user.last_app_version || 'version unknown'}</p>
+                  <p className="mt-1 text-[10px] text-white/55">7d / 30d</p>
+                </td>
+                <td className="px-4 py-3.5">
+                  <p className="font-mono text-xs font-semibold text-white/75">{user.last_app_version ? `v${user.last_app_version}` : 'Unknown'}</p>
+                  <p className="mt-1 text-[10px] text-white/40">Latest recorded</p>
                 </td>
                 <td className="px-4 py-3.5 text-xs text-white/65">
                   <span>{agentSignal.agent ? agentLabel(agentSignal.agent) : 'Not available'}</span>
