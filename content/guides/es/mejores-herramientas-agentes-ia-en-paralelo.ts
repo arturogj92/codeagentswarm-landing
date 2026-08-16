@@ -12,7 +12,7 @@ export const guide: Guide = {
 Antes de nada, transparencia: nosotros hacemos CodeAgentSwarm, así que somos una de las herramientas de la lista. Justo por eso los criterios son idénticos para todas, nuestras limitaciones están escritas en la misma sección que nuestras ventajas, y cada dato de terceros (estrellas, licencia, último commit público, agentes soportados) se verificó el 26 de julio de 2026 contra las webs de cada proyecto y los datos públicos de GitHub. Nada de lo que leas aquí viene de la página de marketing de un competidor sin decirlo.
 
 Hay un hallazgo que conviene poner por delante, porque cambia cómo se lee cualquier ranking de estrellas de esta categoría. Los dos repos con más estrellas son los dos con menos actividad reciente: opcode no tiene ningún commit público desde el 16 de octubre de 2025 y Vibe Kanban ninguno desde el 24 de abril de 2026. Cuatro herramientas publicaron código el mismo día en que hicimos la comprobación. Popular y vivo no se miden igual.`,
-    ctaText: 'Si quieres sesiones en paralelo supervisadas con Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code y Grok Build en macOS o Windows, con notificaciones, historial compartido y un kanban que actualizan los propios agentes, CodeAgentSwarm es gratis durante la beta. Descárgalo y júzgalo con la tabla de arriba delante.',
+    ctaText: 'Si quieres sesiones en paralelo supervisadas con Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent en macOS o Windows, con notificaciones, historial compartido y un kanban que actualizan los propios agentes, CodeAgentSwarm es gratis durante la beta. Descárgalo y júzgalo con la tabla de arriba delante.',
     ctaAgent: 'comparison',
     highlightedWords: ['agentes de IA', 'paralelo'],
     publishedAt: '2026-07-26',
@@ -32,7 +32,7 @@ Hay un hallazgo que conviene poner por delante, porque cambia cómo se lee cualq
         },
         {
           type: 'paragraph',
-          text: 'Todas las herramientas de esta guía hacen el mismo trabajo. Lanzan CLIs de programación que ya pagas, ejecutan varios a la vez y te dan un sitio desde el que mirarlos, revisarlos y dirigirlos. Unas se llaman orquestadores, otras planos de control, otras espacios de trabajo o editores. La definición práctica no cambia: el agente sigue siendo Claude Code, Codex CLI u OpenCode, y la herramienta es la capa de alrededor que hace que tener seis funcionando a la vez sea algo que una persona pueda seguir.',
+          text: 'Todas las herramientas de esta guía hacen el mismo trabajo. Lanzan CLIs de programación que ya pagas, ejecutan varios a la vez y te dan un sitio desde el que mirarlos, revisarlos y dirigirlos. Unas se llaman orquestadores, otras planos de control, otras espacios de trabajo o editores. La definición práctica no cambia: el agente sigue siendo Claude Code, Codex CLI u OpenCode, y la herramienta es la capa de alrededor que hace que tener siete funcionando a la vez sea algo que una persona pueda seguir.',
         },
         {
           type: 'paragraph',
@@ -66,7 +66,7 @@ Hay un hallazgo que conviene poner por delante, porque cambia cómo se lee cualq
             '<strong>Vives en el terminal y quieres tmux y SSH, no una interfaz gráfica</strong>: Claude Squad. Gestiona los agentes como sesiones de tmux, así que funciona por SSH en una máquina sin escritorio.',
             '<strong>Quieres orquestación tipo kanban para un equipo y aceptas un mantenimiento lento</strong>: Vibe Kanban. Es la que más estrellas tiene de la categoría, y su último commit público es del 24 de abril de 2026.',
             '<strong>Quieres editar visualmente lo que producen los agentes</strong>: Nimbalyst. Se posiciona como editor visual para Claude Code y Codex, tanto para markdown, mockups y diagramas como para código.',
-            '<strong>Quieres un escritorio supervisado con varios proveedores, notificaciones, historial compartido y un kanban que actualizan los propios agentes</strong>: CodeAgentSwarm. Seis CLIs en macOS y Windows, a cambio de ser código cerrado y no tener build de Linux.',
+            '<strong>Quieres un escritorio supervisado con varios proveedores, notificaciones, historial compartido y un kanban que actualizan los propios agentes</strong>: CodeAgentSwarm. Siete CLIs en macOS y Windows, a cambio de ser código cerrado y no tener build de Linux.',
           ],
         },
         {
@@ -92,7 +92,7 @@ Hay un hallazgo que conviene poner por delante, porque cambia cómo se lee cualq
               'Sin repo público',
               'Código cerrado',
               'macOS, Windows',
-              'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code y Grok Build',
+              'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent',
               'No, propietaria',
             ],
             [
@@ -198,7 +198,7 @@ Hay un hallazgo que conviene poner por delante, porque cambia cómo se lee cualq
     },
     {
       id: 'codeagentswarm',
-      title: 'CodeAgentSwarm: sesiones en paralelo supervisadas con seis CLIs',
+      title: 'CodeAgentSwarm: sesiones en paralelo supervisadas con siete CLIs',
       content: [
         {
           type: 'paragraph',
@@ -211,7 +211,7 @@ Hay un hallazgo que conviene poner por delante, porque cambia cómo se lee cualq
         },
         {
           type: 'paragraph',
-          text: 'Los seis CLIs soportados son Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code y Grok Build. Antigravity CLI, Kimi Code y Grok Build, según la documentación de las demás herramientas de esta comparativa, solo están soportados aquí. Es una ventaja estrecha y conviene decirla como tal: importa si usas esos agentes, y da igual si no.',
+          text: 'Las siete CLIs compatibles son Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent. La ventaja está en la profundidad de las integraciones: CodeAgentSwarm entiende las sesiones, permisos y capacidades de cada agente en vez de tratar cada comando como un proceso de terminal intercambiable.',
         },
         {
           type: 'image',
@@ -231,7 +231,7 @@ Hay un hallazgo que conviene poner por delante, porque cambia cómo se lee cualq
         },
         {
           type: 'paragraph',
-          text: 'Dos cosas más que merecen nombre propio. El historial de conversaciones es transversal: las sesiones de los seis CLIs caen en un mismo sitio buscable y se pueden retomar desde ahí, que no es lo mismo que cada CLI guardando su historial en su formato en disco. Y el indicador de cuota lee las ventanas de uso reales de cada proveedor, así que ves qué agente está a punto de quedarse sin presupuesto antes de que se pare a mitad de tarea, y no después.',
+          text: 'Dos cosas más que merecen nombre propio. El historial de conversaciones es transversal: las sesiones de los siete CLIs caen en un mismo sitio buscable y se pueden retomar desde ahí cuando el agente lo permite, que no es lo mismo que cada CLI guardando su historial en su formato en disco. Y el indicador de cuota lee las ventanas de uso reales de cada proveedor, así que ves qué agente está a punto de quedarse sin presupuesto antes de que se pare a mitad de tarea, y no después.',
         },
         {
           type: 'paragraph',
@@ -240,9 +240,9 @@ Hay un hallazgo que conviene poner por delante, porque cambia cómo se lee cualq
         {
           type: 'list',
           items: [
-            'Seis CLIs en un mismo espacio, elegidos terminal a terminal, incluidos Antigravity CLI, Kimi Code y Grok Build',
+            'Siete CLIs en un mismo espacio, elegidas terminal a terminal, incluidas Cursor Agent, Antigravity CLI, Kimi Code y Grok Build',
             'Notificaciones cuando un agente termina o necesita algo, que es lo que de verdad te deja irte de la ventana',
-            'Un solo historial buscable y retomable con todos los agentes, en vez de seis por separado',
+            'Un solo historial buscable y retomable con todos los agentes, en vez de siete por separado',
             'Un tablero kanban que actualizan los propios agentes por MCP',
             'Diffs en vivo por terminal y un git worktree por sesión',
             'Indicador de cuota que lee las ventanas de uso reales de cada agente',
@@ -366,7 +366,7 @@ Hay un hallazgo que conviene poner por delante, porque cambia cómo se lee cualq
         },
         {
           type: 'paragraph',
-          text: 'El repositorio getpaseo/paseo tenía unas 11.400 estrellas el 26 de julio de 2026 con un commit público del mismo día, y su licencia es AGPL-3.0, open source de verdad y con copyleft fuerte. Soporta Claude Code, Codex, OpenCode, Copilot y Pi, una de las listas publicadas más amplias de esta comparativa junto con nuestros seis. Te da git worktrees, streaming en vivo de la salida de los agentes, notificaciones push y entrada por voz, y afirma sin rodeos que no hay telemetría ni login obligatorio.',
+          text: 'El repositorio getpaseo/paseo tenía unas 11.400 estrellas el 26 de julio de 2026 con un commit público del mismo día, y su licencia es AGPL-3.0, open source de verdad y con copyleft fuerte. Soporta Claude Code, Codex, OpenCode, Copilot y Pi, una de las listas publicadas más amplias de esta comparativa junto con nuestros siete. Te da git worktrees, streaming en vivo de la salida de los agentes, notificaciones push y entrada por voz, y afirma sin rodeos que no hay telemetría ni login obligatorio.',
         },
         {
           type: 'paragraph',

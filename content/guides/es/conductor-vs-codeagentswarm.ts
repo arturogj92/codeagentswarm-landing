@@ -6,13 +6,13 @@ export const guide: Guide = {
     locale: 'es',
     title: 'Conductor vs CodeAgentSwarm: comparativa honesta (2026)',
     metaTitle: 'Conductor vs CodeAgentSwarm: comparativa honesta (2026)',
-    metaDescription: 'Conductor es una app solo para Mac con agentes Claude Code, Codex y Cursor en paralelo. CodeAgentSwarm mueve seis CLIs en macOS y Windows. Comparativa honesta.',
-    intro: `Conductor es una app solo para macOS que lanza agentes de Claude Code, Codex y Cursor en paralelo dentro de workspaces aislados; CodeAgentSwarm es una app de escritorio para macOS y Windows que ejecuta seis CLIs de agentes en terminales paralelos. Misma idea, distinto alcance.
+    metaDescription: 'Conductor es una app solo para Mac con agentes Claude Code, Codex y Cursor en paralelo. CodeAgentSwarm mueve siete CLIs en macOS y Windows. Comparativa honesta.',
+    intro: `Conductor es una app solo para macOS que lanza agentes de Claude Code, Codex y Cursor en paralelo dentro de workspaces aislados; CodeAgentSwarm es una app de escritorio para macOS y Windows que ejecuta siete CLIs de agentes en terminales paralelos. Misma idea, distinto alcance.
 
 Aviso: CodeAgentSwarm lo hacemos nosotros. Aun así, aquí se le reconoce a Conductor lo que hace bien, y cuando su web no documenta algo lo decimos como "no documentado" en lugar de afirmar que la función no existe. Todos los datos de terceros se comprobaron el 26 de julio de 2026 en conductor.build, incluidas su FAQ y los datos estructurados que publican en su portada.
 
 Resumen rápido: si tú y tu equipo estáis todos en Mac y queréis una app nativa construida alrededor de revisar y mergear el trabajo de los agentes, Conductor es una elección seria y muy centrada. Si alguien toca Windows, o quieres más de tres CLIs de agentes, CodeAgentSwarm cubre terreno que Conductor no pisa.`,
-    ctaText: '¿Necesitas un workspace de agentes en paralelo que también funcione en Windows y con seis CLIs en vez de tres? Descarga CodeAgentSwarm y monta tu primera tanda de terminales en paralelo.',
+    ctaText: '¿Necesitas un workspace de agentes en paralelo que también funcione en Windows y con siete CLIs en vez de tres? Descarga CodeAgentSwarm y monta tu primera tanda de terminales en paralelo.',
     ctaAgent: 'comparison',
     highlightedWords: ['Conductor', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
@@ -26,11 +26,11 @@ Resumen rápido: si tú y tu equipo estáis todos en Mac y queréis una app nati
       content: [
         {
           type: 'paragraph',
-          text: 'Conductor es una app solo para Mac que crea agentes de Claude Code, Codex y Cursor en paralelo dentro de workspaces aislados para que revises y mergees sus cambios; CodeAgentSwarm es una app de escritorio para macOS y Windows que ejecuta seis CLIs de agentes en terminales paralelos, con notificaciones, diffs en vivo y un tablero de tareas compartido.',
+          text: 'Conductor es una app solo para Mac que crea agentes de Claude Code, Codex y Cursor en paralelo dentro de workspaces aislados para que revises y mergees sus cambios; CodeAgentSwarm es una app de escritorio para macOS y Windows que ejecuta siete CLIs de agentes en terminales paralelos, con notificaciones, diffs en vivo y un tablero de tareas compartido.',
         },
         {
           type: 'paragraph',
-          text: 'Los dos parten de la misma idea: darle a cada agente su espacio aislado y luego hacer que el resultado sea revisable. Se separan en el alcance. Conductor apuesta del todo por el Mac y por tres agentes, y de esa concentración saca un producto nativo muy afinado. CodeAgentSwarm se reparte entre dos sistemas operativos y seis proveedores, lo cual pesa si tus máquinas y tus CLIs son variadas. Para el panorama general, empieza por <a href="/es/guias/mejores-herramientas-agentes-ia-en-paralelo" class="text-neon-cyan hover:text-neon-purple transition-colors">las mejores herramientas para agentes de IA en paralelo</a>.',
+          text: 'Los dos parten de la misma idea: darle a cada agente su espacio aislado y luego hacer que el resultado sea revisable. Se separan en el alcance. Conductor apuesta del todo por el Mac y por tres agentes, y de esa concentración saca un producto nativo muy afinado. CodeAgentSwarm se reparte entre dos sistemas operativos y siete proveedores, lo cual pesa si tus máquinas y tus CLIs son variadas. Para el panorama general, empieza por <a href="/es/guias/mejores-herramientas-agentes-ia-en-paralelo" class="text-neon-cyan hover:text-neon-purple transition-colors">las mejores herramientas para agentes de IA en paralelo</a>.',
         },
         {
           type: 'callout',
@@ -57,7 +57,7 @@ Resumen rápido: si tú y tu equipo estáis todos en Mac y queréis una app nati
             '<strong>Enfoque nativo en Mac:</strong> una sola plataforma, un solo objetivo de diseño, sin concesiones multiplataforma',
             '<strong>Workspaces aislados:</strong> un worktree de git, una rama, un entorno de ejecución y una carpeta de contexto compartido por agente',
             '<strong>Revisar y mergear dentro de la app:</strong> el producto gira alrededor de meter en la rama lo que hizo el agente, no solo de lanzarlo',
-            '<strong>Agentes de Cursor:</strong> uno de sus tres agentes soportados, y no está entre las seis CLIs que movemos nosotros',
+            '<strong>Agentes de Cursor:</strong> uno de sus tres agentes compatibles y también una integración de primera clase en CodeAgentSwarm mediante el servidor ACP oficial de Cursor',
             '<strong>Usa tu sesión actual:</strong> su FAQ dice que Conductor utiliza Claude Code tal y como ya hayas iniciado sesión, sea con API key o con un plan Claude Pro o Max',
           ],
         },
@@ -73,7 +73,7 @@ Resumen rápido: si tú y tu equipo estáis todos en Mac y queréis una app nati
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm es una app de escritorio para ejecutar y supervisar varios agentes de programación con IA en paralelo. Funciona en macOS y Windows, no es un proveedor de modelos, y pilota las CLIs de agentes que instalas tú: Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code y Grok Build.',
+          text: 'CodeAgentSwarm es una app de escritorio para ejecutar y supervisar varios agentes de programación con IA en paralelo. Funciona en macOS y Windows, no es un proveedor de modelos, y pilota las CLIs de agentes que instalas tú: Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent.',
         },
         {
           type: 'image',
@@ -86,7 +86,7 @@ Resumen rápido: si tú y tu equipo estáis todos en Mac y queréis una app nati
           items: [
             'Terminales en paralelo, cada uno con su agente, su proyecto y su conversación',
             'Notificaciones de escritorio cuando un agente termina o se para a preguntarte algo',
-            'Historial buscable de los seis agentes, con opción de retomarlo en un terminal',
+            'Historial buscable de los siete agentes, con reanudación cuando el agente la admite',
             'Diffs de ficheros en vivo por terminal, mientras el agente sigue trabajando',
             'Control de permisos, con un modo Turbo para cuando no quieras aprobar cada paso',
             'Un tablero kanban que los propios agentes actualizan por MCP',
@@ -121,7 +121,7 @@ Resumen rápido: si tú y tu equipo estáis todos en Mac y queréis una app nati
             [
               '<strong>Agentes soportados</strong>',
               'Claude Code, Codex y Cursor, según su FAQ',
-              'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code y Grok Build',
+              'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent',
             ],
             [
               '<strong>Modelo de aislamiento</strong>',
@@ -136,7 +136,7 @@ Resumen rápido: si tú y tu equipo estáis todos en Mac y queréis una app nati
             [
               '<strong>Historial de conversaciones</strong>',
               'No documentado en su web a 26 de julio de 2026',
-              'Buscable en los seis agentes, y se puede retomar cualquiera',
+              'Buscable en los siete agentes, con reanudación cuando cada agente la admite',
             ],
             [
               '<strong>Gestión de tareas</strong>',
@@ -178,7 +178,7 @@ Resumen rápido: si tú y tu equipo estáis todos en Mac y queréis una app nati
             '<strong>Tu cuello de botella es revisar, no lanzar.</strong> Su producto está montado alrededor de ver qué hizo cada agente y mergearlo, la parte que más gente subestima.',
             '<strong>Quieres agentes de Cursor.</strong> Cursor es uno de sus tres agentes soportados. CodeAgentSwarm no mueve Cursor.',
             '<strong>Te convence el workspace aislado como concepto central.</strong> Una rama, un worktree, un entorno de ejecución y una carpeta de contexto compartido por agente es un modelo mental limpio.',
-            '<strong>Quieres menos piezas.</strong> Tres agentes en lugar de seis es menos que configurar y mantener al día, y a algunos equipos les compensa.',
+            '<strong>Quieres menos piezas.</strong> Tres agentes en lugar de siete es menos que configurar y mantener al día, y a algunos equipos les compensa.',
           ],
         },
         {
@@ -200,7 +200,7 @@ Resumen rápido: si tú y tu equipo estáis todos en Mac y queréis una app nati
           type: 'list',
           items: [
             '<strong>Tú o tu equipo usáis Windows.</strong> Conductor es solo macOS según su web. CodeAgentSwarm funciona en macOS y Windows, algo que pesa en cuanto una persona del equipo no está en Mac.',
-            '<strong>Quieres seis CLIs de agentes.</strong> Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code y Grok Build, mezclados entre terminales. Las cuatro últimas no están entre los agentes que documenta Conductor.',
+            '<strong>Quieres siete CLIs de agentes.</strong> Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent, mezclados entre terminales. Antigravity, OpenCode, Kimi y Grok no están entre los agentes que documenta Conductor.',
             '<strong>Quieres un único historial buscable entre proveedores,</strong> con cualquier conversación recuperable en un terminal vivo.',
             '<strong>Quieres que sean los agentes quienes mantengan el tablero.</strong> El kanban lo actualizan ellos por MCP mientras trabajan, no tú después.',
             '<strong>Quieres que te avisen, no estar mirando.</strong> Las notificaciones saltan cuando un agente termina o necesita algo.',
@@ -237,7 +237,7 @@ Resumen rápido: si tú y tu equipo estáis todos en Mac y queréis una app nati
       content: [
         {
           type: 'paragraph',
-          text: 'En Mac, sí. Ninguno es proveedor de modelos y los dos pilotan CLIs instaladas en tu máquina con tus credenciales, así que puedes dejar Conductor para los repositorios donde te interesa su flujo de revisar y mergear, y CodeAgentSwarm para aquellos en los que quieres seis agentes y un tablero compartido.',
+          text: 'En Mac, sí. Ninguno es proveedor de modelos y los dos pilotan CLIs instaladas en tu máquina con tus credenciales, así que puedes dejar Conductor para los repositorios donde te interesa su flujo de revisar y mergear, y CodeAgentSwarm para aquellos en los que quieres siete agentes y un tablero compartido.',
         },
         {
           type: 'paragraph',
@@ -257,7 +257,7 @@ Resumen rápido: si tú y tu equipo estáis todos en Mac y queréis una app nati
     },
     {
       question: '¿Qué agentes soporta cada uno?',
-      answer: 'Conductor soporta Claude Code, Codex y Cursor, según la FAQ de su propia web, donde además invitan a escribirles si echas en falta otro. CodeAgentSwarm soporta seis CLIs: Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code y Grok Build. Así que Conductor es el único de los dos que ejecuta agentes de Cursor, y CodeAgentSwarm es el único que ejecuta Antigravity CLI, OpenCode, Kimi Code y Grok Build.',
+      answer: 'Conductor soporta Claude Code, Codex y Cursor, según la FAQ de su web. CodeAgentSwarm soporta siete CLIs: Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent. Los dos ejecutan Cursor; CodeAgentSwarm también ejecuta Antigravity CLI, OpenCode, Kimi Code y Grok Build.',
     },
     {
       question: '¿Hay forma de probar los dos gratis?',

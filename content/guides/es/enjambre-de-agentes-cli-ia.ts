@@ -6,13 +6,13 @@ export const guide: Guide = {
     locale: 'es',
     title: 'Enjambre de agentes CLI de IA: ejecuta varios agentes de código en paralelo',
     metaTitle: 'Enjambre de agentes CLI de IA: Claude, Codex, OpenCode, Kimi y Grok (2026)',
-    metaDescription: 'Un enjambre de agentes CLI de IA son varios agentes de código (Claude Code, Codex, Antigravity, OpenCode, Kimi Code, Grok Build) en paralelo en un solo sitio. Aquí ves cómo gestionarlos.',
+    metaDescription: 'Ejecuta Claude Code, Codex, Cursor Agent, Antigravity, OpenCode, Kimi Code y Grok Build en paralelo como un enjambre CLI supervisado.',
     intro: `Un enjambre de agentes CLI de IA es lo que tienes cuando dejas de pensar en un solo agente de código en un terminal y empiezas a ejecutar varios a la vez. Claude Code en un terminal, Codex CLI en otro, Grok Build u OpenCode en un tercero, todos trabajando en el mismo proyecto al mismo tiempo.
 
 La idea suena caótica, y mal hecha lo es. El objetivo de esta guía es enseñarte a hacerlo bien: cómo ejecutar de verdad varios agentes de código en paralelo, cómo decidir qué agente se encarga de qué, y cómo no perder la visibilidad de un workspace donde tres o cuatro agentes editan archivos a la vez.
 
 Yo trabajo con enjambres mixtos casi todos los días. Aquí te cuento qué es realmente un enjambre de agentes CLI de IA, los compromisos honestos de cada forma de montarlo, y dónde un workspace hecho a propósito se gana su sitio frente a las pestañas del terminal o tmux.`,
-    ctaText: 'Ejecuta Claude Code, Codex, Antigravity, OpenCode, Kimi Code y Grok Build en paralelo en un solo workspace de CodeAgentSwarm. Varios agentes, visibilidad compartida y un único sitio desde el que vigilarlos.',
+    ctaText: 'Ejecuta Claude Code, Codex, Cursor Agent, Antigravity, OpenCode, Kimi Code y Grok Build en paralelo en un solo workspace de CodeAgentSwarm. Varios agentes, visibilidad compartida y un único sitio desde el que vigilarlos.',
     ctaAgent: 'multi',
     highlightedWords: ['enjambre de agentes CLI de IA', 'en paralelo'],
     publishedAt: '2026-06-07',
@@ -36,7 +36,7 @@ Yo trabajo con enjambres mixtos casi todos los días. Aquí te cuento qué es re
         },
         {
           type: 'paragraph',
-          text: 'Los agentes son herramientas de línea de comandos que seguramente ya usas: <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a> de Anthropic, <a href="https://github.com/openai/codex" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex CLI</a> de OpenAI, <a href="https://opencode.ai" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">OpenCode</a>, <a href="https://www.kimi.com/code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi Code</a> de Moonshot y <a href="https://x.ai" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Grok Build</a> de xAI (el comando <code>grok</code>), más la Antigravity CLI de Google (<code>agy</code>, sucesora del ya retirado Gemini CLI). Cada uno corre en su propio terminal. No saben unos de otros. El enjambre es la capa que pones alrededor para poder ejecutarlos juntos sin perder el hilo.',
+          text: 'Los agentes son herramientas de línea de comandos que seguramente ya usas: <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, <a href="https://github.com/openai/codex" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex CLI</a>, <a href="/es/guias/cursor-agent-cli-acp-codeagentswarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Cursor Agent CLI</a>, <a href="https://opencode.ai" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">OpenCode</a>, <a href="https://www.kimi.com/code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi Code</a>, <a href="https://x.ai" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Grok Build</a> y Antigravity CLI. Cada uno corre de forma independiente. El enjambre es la capa que mantiene visible el trabajo.',
         },
         {
           type: 'paragraph',
@@ -49,7 +49,7 @@ Yo trabajo con enjambres mixtos casi todos los días. Aquí te cuento qué es re
         },
         {
           type: 'paragraph',
-          text: 'Si solo te interesa un proveedor, las guías por herramienta entran en más detalle: el <a href="/es/guias/enjambre-de-agentes-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">enjambre de agentes Claude Code</a> (o la versión paso a paso, <a href="/es/guias/ejecutar-multiples-sesiones-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">ejecutar varias sesiones de Claude Code</a>), el <a href="/es/guias/enjambre-de-agentes-codex" class="text-neon-cyan hover:text-neon-purple transition-colors">enjambre de agentes Codex</a>, el <a href="/es/guias/enjambre-de-agentes-antigravity" class="text-neon-cyan hover:text-neon-purple transition-colors">enjambre de agentes Antigravity</a>, el <a href="/es/guias/enjambre-de-agentes-opencode" class="text-neon-cyan hover:text-neon-purple transition-colors">enjambre de agentes OpenCode</a>, el <a href="/es/guias/enjambre-de-agentes-kimi-code" class="text-neon-cyan hover:text-neon-purple transition-colors">enjambre de agentes Kimi Code</a> y el <a href="/es/guias/enjambre-de-agentes-grok-build" class="text-neon-cyan hover:text-neon-purple transition-colors">enjambre de agentes Grok Build</a>. Esta página es la vista entre proveedores, donde los mezclas.',
+          text: 'Si solo te interesa un proveedor, las guías por herramienta entran en más detalle: <a href="/es/guias/enjambre-de-agentes-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, <a href="/es/guias/enjambre-de-agentes-codex" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex</a>, <a href="/es/guias/enjambre-de-agentes-cursor-cli" class="text-neon-cyan hover:text-neon-purple transition-colors">Cursor Agent</a>, <a href="/es/guias/enjambre-de-agentes-antigravity" class="text-neon-cyan hover:text-neon-purple transition-colors">Antigravity</a>, <a href="/es/guias/enjambre-de-agentes-opencode" class="text-neon-cyan hover:text-neon-purple transition-colors">OpenCode</a>, <a href="/es/guias/enjambre-de-agentes-kimi-code" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi Code</a> y <a href="/es/guias/enjambre-de-agentes-grok-build" class="text-neon-cyan hover:text-neon-purple transition-colors">Grok Build</a>. Esta página es la vista entre proveedores.',
         },
       ],
     },
@@ -264,11 +264,11 @@ Yo trabajo con enjambres mixtos casi todos los días. Aquí te cuento qué es re
           type: 'heading',
           level: 3,
           text: 'Varios agentes en paralelo, tú eliges por terminal',
-          id: 'six-agents',
+          id: 'seven-agents',
         },
         {
           type: 'paragraph',
-          text: 'Cada terminal tiene un selector SELECT AI AGENT que ofrece claude-code, codex cli y Grok Build. Pon un terminal en Claude Code para un refactor, otro en Codex para una tarea acotada y otro en Grok Build u OpenCode para una pista paralela, todo en el mismo workspace y sobre el mismo proyecto. Tú decides la mezcla y puedes cambiarla por terminal cuando quieras.',
+          text: 'Cada terminal tiene un selector SELECT AI AGENT con Claude Code, Codex CLI, Cursor Agent, Antigravity CLI, OpenCode, Kimi Code y Grok Build. Pon uno en Claude para un refactor, otro en Cursor Agent para un cambio planificado y otro en Codex para una tarea acotada. Tú decides la mezcla por terminal.',
         },
         {
           type: 'heading',

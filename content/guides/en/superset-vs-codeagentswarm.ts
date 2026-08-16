@@ -6,12 +6,12 @@ export const guide: Guide = {
     locale: 'en',
     title: 'Superset vs CodeAgentSwarm: An Honest Comparison (2026)',
     metaTitle: 'Superset vs CodeAgentSwarm: An Honest Comparison (2026)',
-    metaDescription: 'Superset is a source available code editor for running 10+ parallel agents. CodeAgentSwarm is a supervision workspace for six agent CLIs. Honest 2026 comparison.',
-    intro: `Superset is a source available code editor built around running ten or more parallel coding agents, each isolated in its own git worktree, while CodeAgentSwarm is a closed source desktop workspace built around supervising agents from six specific CLI vendors, with desktop notifications, searchable cross-agent history and a kanban board the agents update themselves over MCP.
+    metaDescription: 'Superset is a source available code editor for running 10+ parallel agents. CodeAgentSwarm is a supervision workspace for seven agent CLIs. Honest 2026 comparison.',
+    intro: `Superset is a source available code editor built around running ten or more parallel coding agents, each isolated in its own git worktree, while CodeAgentSwarm is a closed source desktop workspace built around supervising agents from seven specific CLI vendors, with desktop notifications, searchable cross-agent history and a kanban board the agents update themselves over MCP.
 
 Disclosure up front: we build CodeAgentSwarm. That is the reason this page states where Superset is better instead of pretending otherwise, and why our own limitations (closed source, no Linux build, no mobile or remote client, still in beta) sit in the same table as everything else. Both tools were judged on the same criteria. Every third-party fact was verified on July 26, 2026 against superset.sh and public GitHub data, and anything we could not verify is labelled rather than guessed.
 
-Short version: pick Superset if you want an editor-shaped environment, Linux support and source you can inspect. Pick CodeAgentSwarm if you run Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code and Grok Build and need notifications, history and a task board to stay on top of them.`,
+Short version: pick Superset if you want an editor-shaped environment, Linux support and source you can inspect. Pick CodeAgentSwarm if you run Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build and Cursor Agent and need notifications, history and a task board to stay on top of them.`,
     ctaText: 'Both are free to start, so run them on the same repository for a week. CodeAgentSwarm is free during beta, with Pro included, for macOS and Windows.',
     ctaAgent: 'comparison',
     highlightedWords: ['Superset', 'CodeAgentSwarm'],
@@ -26,7 +26,7 @@ Short version: pick Superset if you want an editor-shaped environment, Linux sup
       content: [
         {
           type: 'paragraph',
-          text: 'Superset is an editor-shaped environment for running a large number of parallel agents in isolated git worktrees, while CodeAgentSwarm is a supervision workspace for a curated set of six agent CLIs, built around noticing when one of them needs you.',
+          text: 'Superset is an editor-shaped environment for running a large number of parallel agents in isolated git worktrees, while CodeAgentSwarm is a supervision workspace for a curated set of seven agent CLIs, built around noticing when one of them needs you.',
         },
         {
           type: 'paragraph',
@@ -78,13 +78,13 @@ Short version: pick Superset if you want an editor-shaped environment, Linux sup
         },
         {
           type: 'image',
-          alt: 'The CodeAgentSwarm agent selector, showing the six supported CLI agents you can assign to a terminal',
+          alt: 'The CodeAgentSwarm agent selector, showing the seven supported CLI agents you can assign to a terminal',
           src: '/images/guides/multi-cli-agent-selector.png',
-          caption: 'Choosing which CLI agent runs in a terminal. CodeAgentSwarm integrates six specific vendors rather than accepting any command.',
+          caption: 'Choosing which CLI agent runs in a terminal. CodeAgentSwarm integrates seven specific vendors rather than accepting any command.',
         },
         {
           type: 'paragraph',
-          text: 'Instead of accepting any terminal command, CodeAgentSwarm integrates six agents deliberately: Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code and Grok Build. That narrower scope pays for the rest of the feature set: desktop notifications when an agent finishes or needs input, searchable history across all six with resume, per-terminal live diffs, permissions with Turbo and YOLO modes, git worktrees per session, skills and MCP marketplaces, a quota indicator, AI commit messages, multi-project switching, and a kanban board the agents update over MCP. If you run one vendor for now, the <a href="/en/guides/run-multiple-claude-code-sessions" class="text-neon-cyan hover:text-neon-purple transition-colors">guide to running multiple Claude Code sessions</a> is the smaller version of the same idea.',
+          text: 'Instead of accepting any terminal command, CodeAgentSwarm integrates seven agents deliberately: Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build and Cursor Agent. That narrower scope pays for the rest of the feature set: desktop notifications when an agent finishes or needs input, searchable history across all seven and capability-aware resume when the provider supports it, per-terminal live diffs, permissions with Turbo and YOLO modes, git worktrees per session, skills and MCP marketplaces, a quota indicator, AI commit messages, multi-project switching, and a kanban board the agents update over MCP. If you run one vendor for now, the <a href="/en/guides/run-multiple-claude-code-sessions" class="text-neon-cyan hover:text-neon-purple transition-colors">guide to running multiple Claude Code sessions</a> is the smaller version of the same idea.',
         },
         {
           type: 'paragraph',
@@ -107,10 +107,10 @@ Short version: pick Superset if you want an editor-shaped environment, Linux sup
             ['Platforms', 'macOS, Windows and Linux per the structured data on superset.sh. The site download button offers macOS', 'macOS and Windows. No Linux build'],
             ['Install and distribution', 'Desktop download from superset.sh. Self-hosting from source is allowed subject to the Elastic License 2.0 terms', 'Desktop installer for macOS and Windows'],
             ['Interface', 'Editor-shaped app ("Code Editor for the AI Agents Era") with diff and PR review, plus open-in-any-IDE (VS Code, Cursor, Xcode, JetBrains)', 'Multi-terminal workspace with a kanban board, history browser and per-terminal diffs'],
-            ['Supported agents', 'Any CLI-based agent, with Claude Code, OpenCode and OpenAI Codex named in their FAQ. Their homepage picker also shows Gemini, Cursor Agent, Mistral Vibe and Kimi Code', 'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code and Grok Build, integrated individually'],
+            ['Supported agents', 'Any CLI-based agent, with Claude Code, OpenCode and OpenAI Codex named in their FAQ. Their homepage picker also shows Gemini, Cursor Agent, Mistral Vibe and Kimi Code', 'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build and Cursor Agent, integrated individually'],
             ['Isolation model', 'One isolated git worktree per agent, one branch per task', 'Git worktrees per session, one process per terminal'],
             ['Notifications', 'Not documented on their site as of July 26, 2026. Their pitch is switching between tasks as they need your attention', 'Desktop notifications when an agent finishes or needs input'],
-            ['Conversation history', 'Not documented on their site as of July 26, 2026', 'Searchable history across all six agents, with resume'],
+            ['Conversation history', 'Not documented on their site as of July 26, 2026', 'Searchable history across all seven agents and capability-aware resume'],
             ['Task management', 'Parallel task switching, scheduled automations and an MCP server for programmatic control', 'Kanban board the agents update themselves over MCP. No one-click PR button'],
             ['Open source', 'No. Source available (Elastic License 2.0), which is not an OSI approved open source license', 'No. Closed source, no public app repository'],
             ['Price', 'Free tier, with paid and enterprise plans listed on their site', 'Free during beta with Pro included. You bring your own CLI subscriptions'],
@@ -133,7 +133,7 @@ Short version: pick Superset if you want an editor-shaped environment, Linux sup
           items: [
             '<strong>You want an editor, not a terminal grid.</strong> Superset is shaped like a code editor, with file navigation, diff review and a PR view in one window. If you want to read and edit the code your agents touch without leaving the app, that shape fits better than ours.',
             '<strong>You are on Linux.</strong> Their structured data lists Linux as a supported platform. CodeAgentSwarm has no Linux build, so this is a hard stop rather than a trade-off.',
-            '<strong>You want to run any CLI agent, not a curated list.</strong> Their position is that if it runs in a terminal, it runs in Superset. We integrate six vendors: better for those six, worse for everything else.',
+            '<strong>You want to run any CLI agent, not a curated list.</strong> Their position is that if it runs in a terminal, it runs in Superset. We integrate seven vendors: better for those seven, worse for everything else.',
             '<strong>You want to read the source.</strong> Elastic License 2.0 is not open source, but source available still beats a closed binary if you need to audit behaviour or self-host under their terms.',
             '<strong>You want scheduled automations and programmatic control.</strong> Their MCP server and scheduled automations point at unattended workflows that CodeAgentSwarm does not document.',
             '<strong>You want ten or more agents at once.</strong> That is their explicit design target, and they have been shipping against it publicly since October 2025.',
@@ -147,14 +147,14 @@ Short version: pick Superset if you want an editor-shaped environment, Linux sup
       content: [
         {
           type: 'paragraph',
-          text: 'Our advantages come from the narrower scope: six agents we integrate individually, and a workspace designed around the moment an agent stops and waits for you.',
+          text: 'Our advantages come from the narrower scope: seven agents we integrate individually, and a workspace designed around the moment an agent stops and waits for you.',
         },
         {
           type: 'list',
           items: [
             '<strong>You use Antigravity CLI.</strong> It is not named among the agents on superset.sh as of July 26, 2026, and CodeAgentSwarm supports it directly. Kimi Code appears in both, so this row is not a clean sweep.',
             '<strong>You want to be interrupted, not to poll.</strong> Desktop notifications fire when any agent finishes or needs input, which matters more the more parallel tasks you are supposed to watch.',
-            '<strong>You want one searchable history across vendors.</strong> Conversations from all six agents are stored, searchable and resumable in one place instead of six CLI formats on disk.',
+            '<strong>You want one searchable history across vendors.</strong> Conversations from all seven agents are stored and searchable in one place instead of seven CLI formats on disk, with resume when the agent supports it.',
             '<strong>You want the board updated by the agents.</strong> The kanban is exposed over MCP, so agents move their own tasks while they work.',
             '<strong>You watch your quota.</strong> The provider quota indicator tells you how much room each subscription has left before a long parallel run.',
             '<strong>You want graded permissions with live diffs.</strong> Per-terminal diffs show what each agent touches in real time, and Turbo mode auto-approves the safe operations while the risky ones still stop and ask.',

@@ -16,7 +16,7 @@ interface GuidesIndexPageProps {
 // Tool family for each guide, keyed by its canonical English slug so the
 // grouping works the same in both locales. Anything not listed falls back to
 // the Claude Code family.
-type Family = 'cross' | 'claude' | 'codex' | 'antigravity' | 'opencode' | 'kimi' | 'grok'
+type Family = 'cross' | 'claude' | 'codex' | 'antigravity' | 'opencode' | 'kimi' | 'grok' | 'cursor'
 
 const FAMILY_BY_EN_SLUG: Record<string, Family> = {
   'best-tools-to-run-multiple-ai-coding-agents': 'cross',
@@ -75,9 +75,15 @@ const FAMILY_BY_EN_SLUG: Record<string, Family> = {
   'grok-build-vs-cursor': 'grok',
   'grok-build-headless-ci': 'grok',
   'grok-build-conversation-history': 'grok',
+  'cursor-agent-cli-acp-codeagentswarm': 'cursor',
+  'cursor-cli-conversation-history': 'cursor',
+  'cursor-agent-swarm': 'cursor',
+  'cursor-cli-vs-claude-code': 'cursor',
+  'cursor-cli-on-windows': 'cursor',
+  'cursor-cli-pricing': 'cursor',
 }
 
-const FAMILY_ORDER: Family[] = ['cross', 'claude', 'codex', 'antigravity', 'opencode', 'kimi', 'grok']
+const FAMILY_ORDER: Family[] = ['cross', 'claude', 'codex', 'antigravity', 'opencode', 'kimi', 'grok', 'cursor']
 
 const FAMILY_META: Record<Family, { en: string; es: string; icons: string[] }> = {
   cross: {
@@ -91,6 +97,7 @@ const FAMILY_META: Record<Family, { en: string; es: string; icons: string[] }> =
   opencode: { en: 'OpenCode', es: 'OpenCode', icons: ['/icons/apps/opencode-icon.svg'] },
   kimi: { en: 'Kimi Code', es: 'Kimi Code', icons: ['/icons/apps/kimi-icon.png'] },
   grok: { en: 'Grok Build', es: 'Grok Build', icons: ['/icons/apps/grok-icon.svg'] },
+  cursor: { en: 'Cursor Agent', es: 'Cursor Agent', icons: ['/icons/apps/cursor-icon.svg'] },
 }
 
 // Helper function to highlight keywords in title

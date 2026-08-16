@@ -188,7 +188,7 @@ The short answer: Claude Code stores every session locally in ~/.claude/projects
         },
         {
           type: 'paragraph',
-          text: 'For a detailed walkthrough of all these features, see our dedicated guide: <a href="/en/guides/claude-code-history" class="text-neon-cyan hover:text-neon-purple transition-colors">Using conversation history in CodeAgentSwarm</a>.',
+          text: 'For a detailed walkthrough, see <a href="/en/guides/claude-code-history" class="text-neon-cyan hover:text-neon-purple transition-colors">conversation history in CodeAgentSwarm</a>. Cursor users should follow the separate <a href="/en/guides/cursor-cli-conversation-history" class="text-neon-cyan hover:text-neon-purple transition-colors">Cursor CLI history guide</a> because ACP resume depends on the installed version.',
         },
       ],
     },

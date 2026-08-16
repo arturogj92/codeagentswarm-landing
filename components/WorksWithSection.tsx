@@ -71,6 +71,15 @@ export default function WorksWithSection() {
       ),
       href: guidePath('grok-build-agent-swarm', 'enjambre-de-agentes-grok-build'),
       icon: '/icons/apps/grok-icon.svg',
+    },
+    {
+      name: 'Cursor Agent',
+      desc: g(
+        'Run Cursor Agent CLI through ACP with streaming Chat and visible permissions.',
+        'Ejecuta Cursor Agent CLI por ACP con Chat en streaming y permisos visibles.'
+      ),
+      href: guidePath('cursor-agent-cli-acp-codeagentswarm', 'cursor-agent-cli-acp-codeagentswarm'),
+      icon: '/icons/apps/cursor-icon.svg',
       isNew: true,
     },
   ]
@@ -95,13 +104,13 @@ export default function WorksWithSection() {
           </h2>
           <p className="text-white/70 text-lg max-w-2xl mx-auto">
             {g(
-              'One workspace for Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code and Grok Build. Run them in parallel, mix vendors, and watch all of them from one place.',
-              'Un espacio de trabajo para Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code y Grok Build. Ejecútalos en paralelo, mezcla proveedores y vigílalos todos desde un sitio.'
+              'One workspace for Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build and Cursor Agent. Run them in parallel, mix vendors, and watch all of them from one place.',
+              'Un espacio de trabajo para Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent. Ejecútalos en paralelo, mezcla proveedores y vigílalos todos desde un sitio.'
             )}
           </p>
         </motion.div>
 
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-7">
           {tools.map((tool, i) => {
             const inner = (
               <>

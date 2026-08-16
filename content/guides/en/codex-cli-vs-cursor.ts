@@ -16,7 +16,7 @@ This guide compares them on capability and workflow rather than chasing benchmar
     ctaAgent: 'codex',
     highlightedWords: ['Codex CLI', 'Cursor'],
     publishedAt: '2026-06-24',
-    updatedAt: '2026-08-11',
+    updatedAt: '2026-08-16',
     alternateSlug: 'codex-cli-vs-cursor',
   },
   sections: [
@@ -126,7 +126,7 @@ This guide compares them on capability and workflow rather than chasing benchmar
         },
         {
           type: 'paragraph',
-          text: 'Unlike Codex CLI, Cursor is not a terminal tool you run alongside an editor. It is the editor. The AI shows up as inline suggestions, a chat panel, and an agent mode for larger tasks, all inside one graphical app.',
+          text: 'This comparison uses <strong>Cursor</strong> to mean the Cursor IDE: the editor with inline suggestions, Chat and Agent mode. Cursor now also ships a separate <code>cursor-agent</code> CLI. For the terminal-to-terminal comparison, see <a href="/en/guides/cursor-cli-vs-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">Cursor CLI vs Claude Code</a>; for setup, use the <a href="/en/guides/cursor-agent-cli-acp-codeagentswarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Cursor CLI guide</a>.',
         },
         {
           type: 'heading',

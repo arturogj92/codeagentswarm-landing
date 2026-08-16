@@ -137,7 +137,7 @@ Esta guía separa ambos sistemas de facturación y enlaza cada cifra cambiante c
         },
         {
           type: 'paragraph',
-          text: 'Esto encaja con el flujo de la <a href="/es/guias/enjambre-de-agentes-kimi-code" class="text-neon-cyan hover:text-neon-purple transition-colors">guía del enjambre de agentes Kimi Code</a>: usa Kimi donde encaje, conserva otro proveedor para desbordamiento y vigila los límites compartidos en vez de adivinarlos.',
+          text: 'Esto encaja con la <a href="/es/guias/enjambre-de-agentes-kimi-code" class="text-neon-cyan hover:text-neon-purple transition-colors">guía del enjambre de agentes Kimi Code</a>: usa Kimi donde encaje y conserva otro proveedor para desbordamiento. Si Cursor es la alternativa, compara su suscripción en la guía de <a href="/es/guias/precios-y-uso-cursor-cli" class="text-neon-cyan hover:text-neon-purple transition-colors">precios de Cursor CLI</a>.',
         },
       ],
     },

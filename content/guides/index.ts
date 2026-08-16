@@ -73,6 +73,12 @@ import enGrokBuildFromClaude from './en/grok-build-from-claude-code'
 import enGrokBuildVsCursor from './en/grok-build-vs-cursor'
 import enGrokBuildHeadless from './en/grok-build-headless-ci'
 import enGrokBuildHistory from './en/grok-build-conversation-history'
+import enCursorAgentAcp from './en/cursor-agent-cli-acp-codeagentswarm'
+import enCursorHistory from './en/cursor-cli-conversation-history'
+import enCursorSwarm from './en/cursor-agent-swarm'
+import enCursorVsClaude from './en/cursor-cli-vs-claude-code'
+import enCursorWindows from './en/cursor-cli-on-windows'
+import enCursorPricing from './en/cursor-cli-pricing'
 
 // Spanish guides
 import esMultipleTerminals from './es/como-usar-varios-terminales-claude-code'
@@ -161,6 +167,12 @@ import esGrokBuildFromClaude from './es/grok-build-desde-claude-code'
 import esGrokBuildVsCursor from './es/grok-build-vs-cursor'
 import esGrokBuildHeadless from './es/grok-build-headless-ci'
 import esGrokBuildHistory from './es/historial-conversaciones-grok-build'
+import esCursorAgentAcp from './es/cursor-agent-cli-acp-codeagentswarm'
+import esCursorHistory from './es/historial-conversaciones-cursor-cli'
+import esCursorSwarm from './es/enjambre-de-agentes-cursor-cli'
+import esCursorVsClaude from './es/cursor-cli-vs-claude-code'
+import esCursorWindows from './es/cursor-cli-en-windows'
+import esCursorPricing from './es/precios-y-uso-cursor-cli'
 
 // Registry of all guides by locale and slug
 export const guides: Record<string, Record<string, Guide>> = {
@@ -242,6 +254,12 @@ export const guides: Record<string, Record<string, Guide>> = {
     'grok-build-vs-cursor': enGrokBuildVsCursor,
     'grok-build-headless-ci': enGrokBuildHeadless,
     'grok-build-conversation-history': enGrokBuildHistory,
+    'cursor-agent-cli-acp-codeagentswarm': enCursorAgentAcp,
+    'cursor-cli-conversation-history': enCursorHistory,
+    'cursor-agent-swarm': enCursorSwarm,
+    'cursor-cli-vs-claude-code': enCursorVsClaude,
+    'cursor-cli-on-windows': enCursorWindows,
+    'cursor-cli-pricing': enCursorPricing,
   },
   es: {
     'como-usar-varios-terminales-claude-code': esMultipleTerminals,
@@ -321,6 +339,12 @@ export const guides: Record<string, Record<string, Guide>> = {
     'grok-build-vs-cursor': esGrokBuildVsCursor,
     'grok-build-headless-ci': esGrokBuildHeadless,
     'historial-conversaciones-grok-build': esGrokBuildHistory,
+    'cursor-agent-cli-acp-codeagentswarm': esCursorAgentAcp,
+    'historial-conversaciones-cursor-cli': esCursorHistory,
+    'enjambre-de-agentes-cursor-cli': esCursorSwarm,
+    'cursor-cli-vs-claude-code': esCursorVsClaude,
+    'cursor-cli-en-windows': esCursorWindows,
+    'precios-y-uso-cursor-cli': esCursorPricing,
   },
 }
 
