@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, useInView } from 'framer-motion'
+import { motion, useInView, useReducedMotion } from 'framer-motion'
 import { useRef, ReactNode } from 'react'
 import { AlertTriangle, RefreshCw, Brain, X, Check, ArrowRight, Download } from 'lucide-react'
 import { useTranslations } from 'next-intl'
@@ -192,6 +192,7 @@ function ChaosScene() {
 
 function VisualComparison() {
   const t = useTranslations('problem.chaos')
+  const shouldReduceMotion = useReducedMotion()
 
   const painPoints = [
     { icon: RefreshCw, text: t('pain1') },
@@ -351,14 +352,19 @@ function VisualComparison() {
               className="relative"
             >
               <div className="relative aspect-[16/10] rounded-2xl overflow-hidden bg-[#050505] border border-amber-400/35 shadow-[0_0_40px_rgba(251,191,36,0.07)]">
-                <Image
-                  src="/images/codeagentswarm-12terminals.jpg"
-                  alt="CodeAgentSwarm - 12 AI agents working in parallel in one view"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover"
-                  loading="lazy"
-                />
+                <video
+                  data-testid="list-mode-demo"
+                  className="h-full w-full object-cover"
+                  autoPlay={!shouldReduceMotion}
+                  loop
+                  muted
+                  playsInline
+                  preload="metadata"
+                  poster="/images/list-mode-demo-poster.jpg"
+                  aria-hidden="true"
+                >
+                  <source src="/videos/list-mode-demo.mp4" type="video/mp4" />
+                </video>
               </div>
               <div className="absolute -bottom-3 left-1/2 -translate-x-1/2">
                 <motion.div
