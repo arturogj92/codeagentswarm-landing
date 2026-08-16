@@ -8,6 +8,7 @@ import {
   getLifecycle,
   normalizeAgent,
   parseExcludedUserIds,
+  parseFeatureWindowDays,
   parseGlobalWindowDays,
   primaryAgentSignal,
   summarizeUsers,
@@ -154,13 +155,23 @@ test('global exclusions accept only a bounded, deduplicated UUID list', () => {
 })
 
 test('global windows accept only the four dashboard periods', () => {
-  assert.equal(parseGlobalWindowDays(undefined), 180)
+  assert.equal(parseGlobalWindowDays(undefined), 7)
   assert.equal(parseGlobalWindowDays(1), 1)
   assert.equal(parseGlobalWindowDays(7), 7)
   assert.equal(parseGlobalWindowDays(30), 30)
   assert.equal(parseGlobalWindowDays(180), 180)
   assert.equal(parseGlobalWindowDays(0), null)
   assert.equal(parseGlobalWindowDays('7'), null)
+})
+
+test('feature windows default to 30 days and reject unsupported periods', () => {
+  assert.equal(parseFeatureWindowDays(undefined), 30)
+  assert.equal(parseFeatureWindowDays(7), 7)
+  assert.equal(parseFeatureWindowDays(30), 30)
+  assert.equal(parseFeatureWindowDays(90), 90)
+  assert.equal(parseFeatureWindowDays(180), 180)
+  assert.equal(parseFeatureWindowDays(1), null)
+  assert.equal(parseFeatureWindowDays('30'), null)
 })
 
 test('app versions sort numerically and keep unknown values last', () => {

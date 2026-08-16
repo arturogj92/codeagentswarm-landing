@@ -43,10 +43,13 @@ export interface UserGlobalAction {
 
 export interface UserFeatureAdoption {
   feature: string
+  category: 'workspace' | 'automation'
+  coverage: 'exact' | 'historical_proxy' | 'starts_this_release'
+  has_data: boolean
   users: number
-  reach_pct: number
+  reach_pct: number | null
   repeat_users: number
-  repeat_pct: number
+  repeat_pct: number | null
   eligible_users: number
   returned_users: number
   return_30d_pct: number | null
@@ -55,10 +58,12 @@ export interface UserFeatureAdoption {
 }
 
 export type GlobalWindowDays = 1 | 7 | 30 | 180
+export type FeatureWindowDays = 7 | 30 | 90 | 180
 
 export interface UserGlobalMetrics {
   generated_at: string
   window_days: number
+  feature_window_days: number
   registered_users: number
   active_users: number
   excluded_users: number
@@ -216,8 +221,13 @@ export function parseExcludedUserIds(value: unknown): string[] | null {
 }
 
 export function parseGlobalWindowDays(value: unknown): GlobalWindowDays | null {
-  if (value === undefined) return 180
+  if (value === undefined) return 7
   return value === 1 || value === 7 || value === 30 || value === 180 ? value : null
+}
+
+export function parseFeatureWindowDays(value: unknown): FeatureWindowDays | null {
+  if (value === undefined) return 30
+  return value === 7 || value === 30 || value === 90 || value === 180 ? value : null
 }
 
 export function getLifecycle(daysSinceLast: number | null): Lifecycle {
