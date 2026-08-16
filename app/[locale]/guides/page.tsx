@@ -6,7 +6,7 @@ import GuidesIndexPage from '@/components/guides/GuidesIndexPage'
 
 export async function generateMetadata(): Promise<Metadata> {
   const title = 'Guides | CodeAgentSwarm'
-  const description = 'Practical guides for CodeAgentSwarm: run Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code and Grok Build in parallel with visibility, history and multi-project control.'
+  const description = 'Practical guides for CodeAgentSwarm: run Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code, Grok Build and Cursor Agent in parallel with visibility, history and multi-project control.'
 
   return {
     title,

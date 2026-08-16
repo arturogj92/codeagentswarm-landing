@@ -42,8 +42,8 @@ export async function generateMetadata({
     : 'CodeAgentSwarm | Agentic Development Environment (ADE)'
 
   const description = isSpanish
-    ? 'CodeAgentSwarm es un entorno de desarrollo agéntico (ADE) para orquestar Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code y Grok Build en paralelo.'
-    : 'CodeAgentSwarm is an Agentic Development Environment (ADE) for orchestrating Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code and Grok Build in parallel.'
+    ? 'CodeAgentSwarm es un entorno de desarrollo agéntico (ADE) para orquestar Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent en paralelo.'
+    : 'CodeAgentSwarm is an Agentic Development Environment (ADE) for orchestrating Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build and Cursor Agent in parallel.'
 
   return {
     metadataBase: new URL(baseUrl),
@@ -94,8 +94,8 @@ export async function generateMetadata({
       card: 'summary_large_image',
       title,
       description: isSpanish
-        ? 'Entorno de desarrollo agéntico para orquestar Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code y Grok Build en paralelo.'
-        : 'Agentic Development Environment for orchestrating Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code and Grok Build in parallel.',
+        ? 'Entorno de desarrollo agéntico para orquestar Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent en paralelo.'
+        : 'Agentic Development Environment for orchestrating Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build and Cursor Agent in parallel.',
       images: ['/og.png'],
     },
     robots: {
