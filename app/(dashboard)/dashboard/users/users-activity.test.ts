@@ -3,6 +3,7 @@ import test from 'node:test'
 
 import {
   EMPTY_USER_FILTERS,
+  compareAppVersions,
   filterUsers,
   getLifecycle,
   normalizeAgent,
@@ -160,4 +161,10 @@ test('global windows accept only the four dashboard periods', () => {
   assert.equal(parseGlobalWindowDays(180), 180)
   assert.equal(parseGlobalWindowDays(0), null)
   assert.equal(parseGlobalWindowDays('7'), null)
+})
+
+test('app versions sort numerically and keep unknown values last', () => {
+  const versions = ['1.10.0', null, '2.0.0', '1.4.4']
+  assert.deepEqual([...versions].sort((a, b) => compareAppVersions(a, b, 1)), ['1.4.4', '1.10.0', '2.0.0', null])
+  assert.deepEqual([...versions].sort((a, b) => compareAppVersions(a, b, -1)), ['2.0.0', '1.10.0', '1.4.4', null])
 })

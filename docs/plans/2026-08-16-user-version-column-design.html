@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>CodeAgentSwarm · User version column proposal</title>
+  <style>
+    :root,
+    [data-theme="dark"] {
+      color-scheme: dark;
+      --bg: #090909;
+      --panel: #111111;
+      --field: #0a0a0a;
+      --border: rgba(255, 255, 255, .09);
+      --border-soft: rgba(255, 255, 255, .055);
+      --text: rgba(255, 255, 255, .9);
+      --muted: rgba(255, 255, 255, .55);
+      --faint: rgba(255, 255, 255, .38);
+      --accent: #fcd34d;
+      --success: #34d399;
+      --success-bg: rgba(52, 211, 153, .1);
+      --success-border: rgba(52, 211, 153, .25);
+      --hover: rgba(255, 255, 255, .025);
+    }
+    [data-theme="light"] {
+      color-scheme: light;
+      --bg: #f3eee2; --panel: #faf6ea; --field: #fffdf6;
+      --border: rgba(101, 78, 45, .16); --border-soft: rgba(101, 78, 45, .09);
+      --text: #33291a; --muted: #6d5f45; --faint: #8b7b5e; --accent: #96690f;
+      --success: #347c54; --success-bg: rgba(76, 154, 108, .12);
+      --success-border: rgba(76, 154, 108, .24); --hover: rgba(101, 78, 45, .04);
+    }
+    [data-theme="midnight"] {
+      --bg: #0b1120; --panel: #131b31; --field: #0e1628;
+      --border: rgba(146, 170, 255, .13); --border-soft: rgba(146, 170, 255, .07);
+      --text: #eef2ff; --muted: #a3aecb; --faint: #687493; --accent: #fbbf24;
+      --success: #54d49a; --success-bg: rgba(84, 212, 154, .11);
+      --success-border: rgba(84, 212, 154, .24); --hover: rgba(146, 170, 255, .04);
+    }
+    [data-theme="espresso"] {
+      --bg: #161009; --panel: #1f1710; --field: #18110b;
+      --border: rgba(240, 212, 160, .13); --border-soft: rgba(240, 212, 160, .07);
+      --text: #f5eddf; --muted: #bfae93; --faint: #776850; --accent: #fbbf24;
+      --success: #62bd85; --success-bg: rgba(98, 189, 133, .11);
+      --success-border: rgba(98, 189, 133, .24); --hover: rgba(240, 212, 160, .035);
+    }
+    [data-theme="neon"] {
+      --bg: #0e0817; --panel: #160d24; --field: #11091d;
+      --border: rgba(190, 160, 255, .14); --border-soft: rgba(190, 160, 255, .07);
+      --text: #f3edff; --muted: #a795c9; --faint: #665a80; --accent: #fbbf24;
+      --success: #44d6c0; --success-bg: rgba(68, 214, 192, .11);
+      --success-border: rgba(68, 214, 192, .24); --hover: rgba(190, 160, 255, .04);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    button, input, select { font: inherit; }
+    button, select { cursor: pointer; }
+    button:focus-visible, input:focus-visible, select:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+    .demo {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 10px;
+      min-height: 38px;
+      padding: 5px 24px;
+      border-bottom: 1px dashed var(--border);
+      background: color-mix(in srgb, var(--bg) 92%, transparent);
+      color: var(--muted);
+      font-size: 11px;
+    }
+    .demo strong { color: var(--accent); font-size: 9px; letter-spacing: .12em; text-transform: uppercase; }
+    .demo select { border: 1px solid var(--border); border-radius: 6px; background: var(--field); color: var(--text); padding: 5px 8px; }
+    header { border-bottom: 1px solid var(--border); background: var(--panel); }
+    .nav {
+      height: 61px;
+      max-width: 1960px;
+      margin: 0 auto;
+      padding: 0 42px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .mark {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent);
+      border-radius: 10px;
+      background: color-mix(in srgb, var(--accent) 10%, transparent);
+      color: var(--accent);
+      font: 700 18px ui-monospace, monospace;
+    }
+    .brand { font-size: 18px; font-weight: 650; }
+    .brand span { color: var(--muted); font-weight: 450; }
+    nav { margin-left: auto; display: flex; align-items: center; gap: 38px; color: var(--muted); font-size: 15px; }
+    nav .active { color: var(--accent); }
+    main { max-width: 1960px; margin: 0 auto; padding: 18px 42px 60px; }
+    .filters {
+      margin: 10px 0 22px;
+      padding: 18px;
+      display: grid;
+      grid-template-columns: minmax(300px, 1fr) 255px 245px auto;
+      gap: 12px;
+      align-items: start;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: var(--panel);
+    }
+    .filters input, .filters select, .filters button {
+      height: 52px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--field);
+      color: var(--muted);
+      padding: 0 16px;
+      font-size: 15px;
+    }
+    .filters small { grid-column: 1 / -1; color: var(--muted); font-size: 13px; }
+    .table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 15px; background: var(--panel); }
+    table { width: 100%; min-width: 1420px; border-collapse: collapse; }
+    th { padding: 20px 21px; border-bottom: 1px solid var(--border); text-align: left; }
+    th button {
+      border: 0;
+      background: none;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 650;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    th button.active { color: var(--accent); }
+    td { padding: 18px 21px; border-bottom: 1px solid var(--border-soft); vertical-align: middle; color: var(--muted); font-size: 13px; }
+    tr:last-child td { border-bottom: 0; }
+    tbody tr:hover { background: var(--hover); }
+    .user { display: flex; align-items: center; gap: 14px; min-width: 280px; }
+    .avatar { width: 49px; height: 49px; display: grid; place-items: center; border: 1px solid var(--border); border-radius: 11px; background: var(--field); font: 650 13px ui-monospace, monospace; }
+    .user strong { display: block; color: var(--text); font-size: 16px; }
+    .user span { display: block; margin-top: 4px; font-size: 13px; }
+    .meta { margin-top: 7px !important; color: var(--faint); font-size: 10px !important; letter-spacing: .06em; text-transform: uppercase; }
+    .metric { color: var(--text); font: 14px ui-monospace, monospace; white-space: nowrap; }
+    .metric b { color: var(--accent); font-size: 18px; }
+    .hint { margin-top: 6px; color: var(--faint); font-size: 11px; white-space: nowrap; }
+    .status { display: inline-flex; align-items: center; gap: 7px; padding: 8px 12px; border: 1px solid var(--success-border); border-radius: 8px; background: var(--success-bg); color: var(--success); font-size: 12px; font-weight: 600; }
+    .status::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+    .week { display: flex; gap: 5px; }
+    .week i { width: 19px; height: 19px; border: 1px solid var(--border); border-radius: 4px; background: var(--field); }
+    .week i.on { border-color: color-mix(in srgb, var(--accent) 50%, transparent); background: var(--accent); }
+    .version { color: var(--text); font: 650 13px ui-monospace, monospace; white-space: nowrap; }
+    .version.unknown { color: var(--faint); font-weight: 500; }
+    .open { border: 1px solid var(--border); border-radius: 9px; background: transparent; color: var(--muted); padding: 8px 13px; }
+    .version-focus { background: color-mix(in srgb, var(--accent) 3%, transparent); }
+    .note { margin-top: 10px; color: var(--faint); font-size: 11px; text-align: right; }
+    @media (max-width: 760px) {
+      .demo { justify-content: space-between; padding-inline: 14px; }
+      .nav { padding: 0 16px; }
+      nav { display: none; }
+      main { padding: 12px 14px 40px; }
+      .filters { grid-template-columns: 1fr; }
+      .filters small { grid-column: 1; }
+      table { min-width: 1180px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="demo">
+    <strong>Proposal controls</strong>
+    <label>Theme <select id="theme"><option>dark</option><option>light</option><option>midnight</option><option>espresso</option><option>neon</option></select></label>
+  </div>
+  <header>
+    <div class="nav">
+      <div class="mark">@</div>
+      <div class="brand">CodeAgentSwarm <span>/ Operations</span></div>
+      <nav><span class="active">Users</span><span>Emails</span><span>Automation</span><span>Sign out</span></nav>
+    </div>
+  </header>
+  <main>
+    <section class="filters" aria-label="User filters">
+      <input aria-label="Search users" placeholder="Search name, email or user ID...">
+      <select aria-label="Agent"><option>All agents</option></select>
+      <select aria-label="Activity state"><option>All activity states</option></select>
+      <button type="button">More filters</button>
+      <small>172 of 172 users</small>
+    </section>
+    <div class="table-wrap">
+      <table>
+        <thead><tr>
+          <th><button type="button">User</button></th>
+          <th><button type="button">Avg terminals</button></th>
+          <th><button type="button" class="active">Activity ▲</button></th>
+          <th><button type="button">Last 7 days</button></th>
+          <th><button type="button">Work periods</button></th>
+          <th class="version-focus"><button type="button" id="version-sort">Version</button></th>
+          <th><button type="button">Agent signal</button></th>
+          <th><button type="button">Joined</button></th>
+          <th><button type="button">Details</button></th>
+        </tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+    <p class="note">The version is the latest app version recorded for each user. Unknown means no version has been received.</p>
+  </main>
+  <script>
+    const users = [
+      { initials: 'CM', name: 'Clara Mendoza', email: 'clara@example.test', meta: 'GitHub · Pro', avg: '8.9', max: '18 max · measured', active: 'Yesterday', week: '0111110', periods: '14 / 57', version: '2.0.0', agent: 'Claude Code', joined: 'Jul 15, 2026' },
+      { initials: 'MN', name: 'Mateusz Nowak', email: 'mateusz@example.test', meta: 'Google · Pro', avg: '—', max: '— max · no data', active: 'Yesterday', week: '0111110', periods: '24 / 97', version: '1.4.4', agent: 'Not available', joined: 'Jun 23, 2026' },
+      { initials: 'SC', name: 'Sofia Chen', email: 'sofia@example.test', meta: 'GitHub · Pro', avg: '4.2', max: '9 max · measured', active: '2d ago', week: '0011011', periods: '8 / 31', version: '1.10.0', agent: 'Codex', joined: 'Jul 02, 2026' },
+      { initials: 'JR', name: 'Jonas Richter', email: 'jonas@example.test', meta: 'Google · Pro', avg: '2.1', max: '4 max · estimated', active: '5d ago', week: '0100100', periods: '3 / 12', version: null, agent: 'opencode', joined: 'May 19, 2026' }
+    ];
+    const rows = document.getElementById('rows');
+    const versionSort = document.getElementById('version-sort');
+    let descending = true;
+    function render() {
+      rows.innerHTML = users.map(user => `<tr>
+        <td><div class="user"><div class="avatar">${user.initials}</div><div><strong>${user.name}</strong><span>${user.email}</span><span class="meta">${user.meta}</span></div></div></td>
+        <td><div class="metric"><b>${user.avg}</b> average</div><div class="hint">${user.max}</div></td>
+        <td><span class="status">Active</span><div class="hint">${user.active}</div></td>
+        <td><div class="week">${[...user.week].map(flag => `<i class="${flag === '1' ? 'on' : ''}"></i>`).join('')}</div><div class="hint">${[...user.week].filter(flag => flag === '1').length}/7 active days</div></td>
+        <td><div class="metric"><b>${user.periods.split(' / ')[0]}</b> / ${user.periods.split(' / ')[1]}</div><div class="hint">7d / 30d</div></td>
+        <td class="version-focus"><span class="version ${user.version ? '' : 'unknown'}">${user.version ? `v${user.version}` : 'Unknown'}</span><div class="hint">Latest recorded</div></td>
+        <td>${user.agent}<div class="hint">${user.agent === 'Not available' ? '' : 'Launched'}</div></td>
+        <td>${user.joined}</td>
+        <td><button class="open" type="button">Open</button></td>
+      </tr>`).join('');
+    }
+    versionSort.addEventListener('click', () => {
+      descending = !descending;
+      users.sort((a, b) => {
+        if (!a.version) return 1;
+        if (!b.version) return -1;
+        return a.version.localeCompare(b.version, undefined, { numeric: true }) * (descending ? -1 : 1);
+      });
+      versionSort.textContent = `Version ${descending ? '▼' : '▲'}`;
+      document.querySelectorAll('th button').forEach(button => button.classList.toggle('active', button === versionSort));
+      render();
+    });
+    const theme = document.getElementById('theme');
+    theme.value = localStorage.getItem('cas-version-column-theme') || 'dark';
+    document.documentElement.dataset.theme = theme.value;
+    theme.addEventListener('change', () => {
+      document.documentElement.dataset.theme = theme.value;
+      localStorage.setItem('cas-version-column-theme', theme.value);
+    });
+    render();
+  </script>
+</body>
+</html>

@@ -13,6 +13,7 @@ import ActivityHeatmap from './ActivityHeatmap'
 import {
   EMPTY_USER_FILTERS,
   agentLabel,
+  compareAppVersions,
   filterUsers,
   getLifecycle,
   parseExcludedUserIds,
@@ -38,7 +39,7 @@ const GLOBAL_WINDOWS: Array<{ days: GlobalWindowDays; label: string }> = [
   { days: 180, label: '180d' },
 ]
 
-type SortKey = 'user' | 'activity' | 'last7' | 'periods' | 'terminals' | 'agent' | 'joined'
+type SortKey = 'user' | 'activity' | 'last7' | 'periods' | 'terminals' | 'version' | 'agent' | 'joined'
 type SortDirection = 'asc' | 'desc'
 type Segment = 'all' | 'active' | 'active30' | 'activated' | 'inactive' | 'dormant' | 'no-tracked'
 
@@ -375,6 +376,8 @@ export default function UsersActivityClient() {
           a = left.avg_terminal_slots ?? 0
           b = right.avg_terminal_slots ?? 0
           break
+        case 'version':
+          return compareAppVersions(left.last_app_version, right.last_app_version, direction)
         case 'agent':
           a = agentLabel(primaryAgentSignal(left).agent)
           b = agentLabel(primaryAgentSignal(right).agent)
@@ -432,7 +435,7 @@ export default function UsersActivityClient() {
       return
     }
     setSortKey(next)
-    setSortDirection(next === 'joined' || next === 'last7' || next === 'periods' || next === 'terminals' ? 'desc' : 'asc')
+    setSortDirection(next === 'joined' || next === 'last7' || next === 'periods' || next === 'terminals' || next === 'version' ? 'desc' : 'asc')
   }
 
   function toggleGlobalUser(userId: string) {
@@ -818,6 +821,62 @@ function GlobalInsights({ metrics, loading, error, excludedUsers, windowDays, on
           )}
         </div>
       </article>
+
+      <article className="min-w-0 rounded-xl border border-white/[0.09] bg-[#111111] p-4 sm:p-5 xl:col-span-2">
+        <div>
+          <h2 className="text-lg font-semibold tracking-[-0.02em] text-white">Feature adoption · 180d</h2>
+          <p className="mt-1 text-sm text-white/55">
+            Reach, repeat use and return after first observed use · identified users
+          </p>
+        </div>
+        <div className="mt-5 overflow-x-auto">
+          <table className="w-full min-w-[720px] border-collapse">
+            <thead>
+              <tr className="border-b border-white/[0.08] text-left text-[10px] uppercase tracking-[0.13em] text-white/45">
+                <th className="px-3 py-2 font-semibold">Feature</th>
+                <th className="px-3 py-2 font-semibold">Reach</th>
+                <th className="px-3 py-2 font-semibold">Repeat</th>
+                <th className="px-3 py-2 font-semibold">30d return</th>
+              </tr>
+            </thead>
+            <tbody>
+              {loading && !metrics ? (
+                <tr><td colSpan={4} className="px-3 py-8 text-center text-sm text-white/40">Loading feature signals…</td></tr>
+              ) : error && !metrics ? (
+                <tr><td colSpan={4} className="px-3 py-8 text-center text-sm text-rose-200/70">Feature signals are unavailable.</td></tr>
+              ) : (metrics?.features || []).length === 0 ? (
+                <tr><td colSpan={4} className="px-3 py-8 text-center text-sm text-white/40">No feature activity in this cohort.</td></tr>
+              ) : (metrics?.features || []).slice(0, 10).map((feature) => (
+                <tr key={feature.feature} className="border-b border-white/[0.055] last:border-0">
+                  <td className="px-3 py-3 text-sm font-medium text-white/80">{actionLabel(feature.feature)}</td>
+                  <td className="px-3 py-3 font-mono text-sm text-white/70">
+                    <span className="text-amber-300">{feature.reach_pct}%</span>
+                    <span className="ml-2 text-[10px] text-white/40">{feature.users} users</span>
+                  </td>
+                  <td className="px-3 py-3 font-mono text-sm text-white/70">
+                    {feature.repeat_pct}%
+                    <span className="ml-2 text-[10px] text-white/40">{feature.repeat_users}/{feature.users}</span>
+                  </td>
+                  <td className="px-3 py-3 font-mono text-sm text-white/70">
+                    {feature.return_30d_pct === null ? '—' : `${feature.return_30d_pct}%`}
+                    {feature.return_30d_pct !== null && (
+                      <span className="ml-2 text-[10px] text-white/40">{feature.returned_users}/{feature.eligible_users}</span>
+                    )}
+                    {feature.return_lift_pp !== null && (
+                      <span className={`ml-2 text-[10px] ${feature.return_lift_pp >= 0 ? 'text-emerald-300/70' : 'text-rose-300/70'}`}>
+                        {feature.return_lift_pp >= 0 ? '+' : ''}{feature.return_lift_pp}pp vs active
+                      </span>
+                    )}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p className="mt-3 text-[10px] leading-4 text-white/40">
+          Repeat means use on at least two different days. Return measures any recorded activity 7–30 days after first observed use. Correlation does not prove that the feature caused retention.
+        </p>
+      </article>
     </section>
   )
 }
@@ -894,7 +953,7 @@ function UsersTable({ users, sortKey, sortDirection, onSort, onOpen }: {
 }) {
   return (
     <div className="hidden overflow-x-auto rounded-xl border border-white/[0.09] bg-[#111111] md:block">
-      <table className="w-full min-w-[1120px] border-collapse">
+      <table className="w-full min-w-[1200px] border-collapse">
         <caption className="sr-only">Registered users and recorded product activity</caption>
         <thead>
           <tr className="border-b border-white/[0.08] bg-white/[0.018]">
@@ -903,6 +962,7 @@ function UsersTable({ users, sortKey, sortDirection, onSort, onOpen }: {
             <SortHeader label="Activity" sort="activity" active={sortKey} direction={sortDirection} onSort={onSort} />
             <SortHeader label="Last 7 days" sort="last7" active={sortKey} direction={sortDirection} onSort={onSort} />
             <SortHeader label="Work periods" sort="periods" active={sortKey} direction={sortDirection} onSort={onSort} />
+            <SortHeader label="Version" sort="version" active={sortKey} direction={sortDirection} onSort={onSort} />
             <SortHeader label="Agent signal" sort="agent" active={sortKey} direction={sortDirection} onSort={onSort} />
             <SortHeader label="Joined" sort="joined" active={sortKey} direction={sortDirection} onSort={onSort} />
             <th className="w-20 px-4 py-3 text-right text-[10px] font-semibold uppercase tracking-[0.14em] text-white/55">Details</th>
@@ -941,7 +1001,11 @@ function UsersTable({ users, sortKey, sortDirection, onSort, onOpen }: {
                 </td>
                 <td className="px-4 py-3.5">
                   <div className="font-mono text-sm text-white/80"><span className="text-amber-300">{user.work_periods_7d}</span> / {user.work_periods_30d}</div>
-                  <p className="mt-1 text-[10px] text-white/55">7d / 30d · {user.last_app_version || 'version unknown'}</p>
+                  <p className="mt-1 text-[10px] text-white/55">7d / 30d</p>
+                </td>
+                <td className="px-4 py-3.5">
+                  <p className="font-mono text-xs font-semibold text-white/75">{user.last_app_version ? `v${user.last_app_version}` : 'Unknown'}</p>
+                  <p className="mt-1 text-[10px] text-white/40">Latest recorded</p>
                 </td>
                 <td className="px-4 py-3.5 text-xs text-white/65">
                   <span>{agentSignal.agent ? agentLabel(agentSignal.agent) : 'Not available'}</span>

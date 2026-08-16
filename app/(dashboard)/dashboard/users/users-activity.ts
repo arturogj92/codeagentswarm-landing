@@ -41,6 +41,19 @@ export interface UserGlobalAction {
   users: number
 }
 
+export interface UserFeatureAdoption {
+  feature: string
+  users: number
+  reach_pct: number
+  repeat_users: number
+  repeat_pct: number
+  eligible_users: number
+  returned_users: number
+  return_30d_pct: number | null
+  baseline_return_30d_pct: number | null
+  return_lift_pp: number | null
+}
+
 export type GlobalWindowDays = 1 | 7 | 30 | 180
 
 export interface UserGlobalMetrics {
@@ -52,6 +65,7 @@ export interface UserGlobalMetrics {
   events: number
   top_actions: UserGlobalAction[]
   actions: UserGlobalAction[]
+  features: UserFeatureAdoption[]
   avg_terminal_slots: number | null
   max_terminal_slots: number | null
   terminal_metric_source: 'launches' | 'tab_slots' | 'mixed' | null
@@ -211,6 +225,12 @@ export function getLifecycle(daysSinceLast: number | null): Lifecycle {
   if (daysSinceLast < 7) return 'active'
   if (daysSinceLast <= 30) return 'inactive'
   return 'dormant'
+}
+
+export function compareAppVersions(left: string | null, right: string | null, direction: 1 | -1): number {
+  if (!left) return right ? 1 : 0
+  if (!right) return -1
+  return left.localeCompare(right, undefined, { numeric: true, sensitivity: 'base' }) * direction
 }
 
 export function summarizeUsers(users: UserActivityRow[], now = new Date()) {
