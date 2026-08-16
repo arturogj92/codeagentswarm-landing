@@ -5,18 +5,18 @@ export const guide: Guide = {
     slug: 'ai-cli-agent-swarm',
     locale: 'en',
     title: 'AI CLI Agent Swarm: Run Multiple AI Coding Agents in Parallel',
-    metaTitle: 'AI CLI Agent Swarm: Run Claude, Codex, OpenCode, Kimi and Grok (2026)',
+    metaTitle: 'AI CLI Agent Swarm: Run 7 Coding Agents Together (2026)',
     metaDescription: 'Run Claude Code, Codex, Cursor Agent, Antigravity, OpenCode, Kimi Code and Grok Build in parallel as one supervised AI CLI agent swarm.',
     intro: `An AI CLI agent swarm is what you get when you stop thinking of one coding agent in one terminal and start running several of them at once. Claude Code in one terminal, Codex CLI in another, Grok Build or OpenCode in a third, all working on the same project at the same time.
 
 The idea sounds chaotic, and done badly it is. The point of this guide is to show you how to do it well: how to actually run multiple AI coding agents in parallel, how to decide which agent handles what, and how to keep visibility over a workspace where three or four agents are editing files at the same time.
 
-I run mixed swarms most days. Below I cover what an AI CLI agent swarm really is, the honest tradeoffs of each setup method, and where a purpose-built workspace earns its place over plain terminal tabs or tmux.`,
+I run mixed swarms most days. This is AI coding agent orchestration at the process level: independent coding agents, one human supervisor. Below I cover the honest tradeoffs of each setup method and where a purpose-built workspace earns its place over plain terminal tabs or tmux. For the product comparison, see the <a href="/en/guides/best-tools-to-run-multiple-ai-coding-agents" class="text-neon-cyan hover:text-neon-purple transition-colors">best tools for running multiple AI coding agents</a>.`,
     ctaText: 'Run Claude Code, Codex, Cursor Agent, Antigravity, OpenCode, Kimi Code and Grok Build side by side in one CodeAgentSwarm workspace. Multiple agents, shared visibility, one place to watch them all.',
     ctaAgent: 'multi',
     highlightedWords: ['AI CLI agent swarm', 'in parallel'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-07-28',
+    updatedAt: '2026-08-16',
     alternateSlug: 'enjambre-de-agentes-cli-ia',
   },
   sections: [
@@ -24,12 +24,6 @@ I run mixed swarms most days. Below I cover what an AI CLI agent swarm really is
       id: 'what-is-it',
       title: 'What is an AI CLI agent swarm?',
       content: [
-        {
-          type: 'image',
-          alt: 'Multiple AI CLI agents (Claude Code, Codex, OpenCode, Kimi Code, Grok Build) running side by side as separate terminals in one CodeAgentSwarm window',
-          src: '/images/guides/multi-cli-three-agents.png',
-          caption: 'A cross-vendor swarm: Claude Code, Codex, OpenCode, Kimi Code and Grok Build running together in one CodeAgentSwarm workspace, each in its own terminal.',
-        },
         {
           type: 'paragraph',
           text: 'An AI CLI agent swarm is several independent AI coding CLI agents running in parallel in one place, with shared visibility over what each one is doing. Instead of a single agent in a single terminal, you have a handful of them, each its own process, each with its own conversation and context, working on tasks at the same time.',
@@ -248,13 +242,7 @@ I run mixed swarms most days. Below I cover what an AI CLI agent swarm really is
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm is a desktop app built for exactly this: running an AI CLI agent swarm with real visibility and control. It runs on macOS and Windows, gives you multiple terminals in one workspace, and lets you pick the agent per terminal. It runs on top of your existing subscriptions, it is not a model provider, so your Claude, OpenAI, and Google plans keep working as they are.',
-        },
-        {
-          type: 'image',
-          alt: 'A CodeAgentSwarm terminal showing the SELECT AI AGENT picker with multiple AI CLI options including Claude Code, Codex, OpenCode, Kimi Code and Grok Build',
-          src: '/images/guides/multi-cli-agent-selector.png',
-          caption: 'Per-terminal agent choice: set each terminal to Claude Code, Codex, OpenCode, Kimi Code or Grok Build, so a single swarm can mix vendors.',
+          text: 'CodeAgentSwarm is a desktop app built for exactly this: running an AI CLI agent swarm with real visibility and control. It runs on macOS and Windows, gives you multiple terminals in one workspace, and lets you pick the agent per terminal. It is not a model provider: every terminal uses the account and quota of the CLI you selected.',
         },
         {
           type: 'paragraph',

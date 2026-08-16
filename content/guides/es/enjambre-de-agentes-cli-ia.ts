@@ -5,18 +5,18 @@ export const guide: Guide = {
     slug: 'enjambre-de-agentes-cli-ia',
     locale: 'es',
     title: 'Enjambre de agentes CLI de IA: ejecuta varios agentes de código en paralelo',
-    metaTitle: 'Enjambre de agentes CLI de IA: Claude, Codex, OpenCode, Kimi y Grok (2026)',
+    metaTitle: 'Enjambre de agentes CLI IA: 7 agentes en paralelo (2026)',
     metaDescription: 'Ejecuta Claude Code, Codex, Cursor Agent, Antigravity, OpenCode, Kimi Code y Grok Build en paralelo como un enjambre CLI supervisado.',
     intro: `Un enjambre de agentes CLI de IA es lo que tienes cuando dejas de pensar en un solo agente de código en un terminal y empiezas a ejecutar varios a la vez. Claude Code en un terminal, Codex CLI en otro, Grok Build u OpenCode en un tercero, todos trabajando en el mismo proyecto al mismo tiempo.
 
 La idea suena caótica, y mal hecha lo es. El objetivo de esta guía es enseñarte a hacerlo bien: cómo ejecutar de verdad varios agentes de código en paralelo, cómo decidir qué agente se encarga de qué, y cómo no perder la visibilidad de un workspace donde tres o cuatro agentes editan archivos a la vez.
 
-Yo trabajo con enjambres mixtos casi todos los días. Aquí te cuento qué es realmente un enjambre de agentes CLI de IA, los compromisos honestos de cada forma de montarlo, y dónde un workspace hecho a propósito se gana su sitio frente a las pestañas del terminal o tmux.`,
+Yo trabajo con enjambres mixtos casi todos los días. Esto es orquestación de agentes de código con IA a nivel de proceso: agentes independientes y una persona que los supervisa. Aquí te cuento los compromisos honestos de cada forma de montarlo y dónde un workspace hecho a propósito se gana su sitio frente a las pestañas del terminal o tmux. Para comparar productos, consulta las <a href="/es/guias/mejores-herramientas-agentes-ia-en-paralelo" class="text-neon-cyan hover:text-neon-purple transition-colors">mejores herramientas para ejecutar varios agentes de código</a>.`,
     ctaText: 'Ejecuta Claude Code, Codex, Cursor Agent, Antigravity, OpenCode, Kimi Code y Grok Build en paralelo en un solo workspace de CodeAgentSwarm. Varios agentes, visibilidad compartida y un único sitio desde el que vigilarlos.',
     ctaAgent: 'multi',
     highlightedWords: ['enjambre de agentes CLI de IA', 'en paralelo'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-07-28',
+    updatedAt: '2026-08-16',
     alternateSlug: 'ai-cli-agent-swarm',
   },
   sections: [
@@ -24,12 +24,6 @@ Yo trabajo con enjambres mixtos casi todos los días. Aquí te cuento qué es re
       id: 'what-is-it',
       title: '¿Qué es un enjambre de agentes CLI de IA?',
       content: [
-        {
-          type: 'image',
-          alt: 'Varios agentes AI CLI (Claude Code, Codex, OpenCode, Kimi Code, Grok Build) ejecutándose a la vez como terminales separados en una sola ventana de CodeAgentSwarm',
-          src: '/images/guides/multi-cli-three-agents.png',
-          caption: 'Un enjambre multifabricante: Claude Code, Codex, OpenCode, Kimi Code y Grok Build funcionando juntos en un mismo espacio de trabajo de CodeAgentSwarm, cada uno en su propio terminal.',
-        },
         {
           type: 'paragraph',
           text: 'Un enjambre de agentes CLI de IA son varios agentes de código por línea de comandos, independientes, ejecutándose en paralelo en un solo sitio, con visibilidad compartida de lo que hace cada uno. En vez de un único agente en un único terminal, tienes un puñado de ellos, cada uno con su propio proceso, su propia conversación y su propio contexto, trabajando en tareas a la vez.',
@@ -248,13 +242,7 @@ Yo trabajo con enjambres mixtos casi todos los días. Aquí te cuento qué es re
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm es una app de escritorio hecha justo para esto: ejecutar un enjambre de agentes CLI de IA con visibilidad y control de verdad. Funciona en macOS y Windows, te da varios terminales en un solo workspace y te deja elegir el agente por terminal. Funciona sobre tus suscripciones, no es un proveedor de modelos, así que tus planes de Claude, OpenAI y Google siguen funcionando tal cual.',
-        },
-        {
-          type: 'image',
-          alt: 'Un terminal de CodeAgentSwarm mostrando el selector SELECT AI AGENT con claude-code, Grok Build y codex cli, además de un interruptor Enable Turbo Mode',
-          src: '/images/guides/multi-cli-agent-selector.png',
-          caption: 'Elección de agente por terminal: pon cada terminal en claude-code, codex cli o Grok Build, para que un mismo enjambre mezcle los tres fabricantes.',
+          text: 'CodeAgentSwarm es una app de escritorio hecha justo para esto: ejecutar un enjambre de agentes CLI de IA con visibilidad y control de verdad. Funciona en macOS y Windows, te da varios terminales en un solo workspace y te deja elegir el agente por terminal. No es un proveedor de modelos: cada terminal usa la cuenta y la cuota de la CLI que elegiste.',
         },
         {
           type: 'paragraph',
