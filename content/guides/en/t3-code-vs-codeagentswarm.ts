@@ -6,12 +6,12 @@ export const guide: Guide = {
     locale: 'en',
     title: 'T3 Code vs CodeAgentSwarm: An Honest Comparison (2026)',
     metaTitle: 'T3 Code vs CodeAgentSwarm: An Honest Comparison (2026)',
-    metaDescription: 'T3 Code is an open source control plane that ends in a one-click PR. CodeAgentSwarm is a supervision workspace for six agent CLIs. Honest 2026 comparison.',
+    metaDescription: 'T3 Code is an open source control plane that ends in a one-click PR. CodeAgentSwarm is a supervision workspace for seven agent CLIs. Honest 2026 comparison.',
     intro: `T3 Code is an MIT licensed, open source control plane that puts several coding agents behind one polished desktop UI and finishes each thread with a one-click pull request, while CodeAgentSwarm is a closed source desktop workspace built for supervising several agent CLIs at once, with desktop notifications, searchable cross-agent history and a kanban board the agents update themselves over MCP.
 
 Disclosure before anything else: we build CodeAgentSwarm. That is exactly why this page tries harder than most. T3 Code wins several rows below, and our own limitations (closed source, no Linux, no mobile client, still in beta) are printed in the same table as everything else. Every third-party fact here was checked on July 26, 2026 against t3.codes and public GitHub data, and anything we could not verify is labelled as such instead of guessed.
 
-Short version: pick T3 Code if open source, Linux support and a fast path from diff to pull request matter most. Pick CodeAgentSwarm if you run agents from six different vendors and need notifications, history and a task board to keep track of them.`,
+Short version: pick T3 Code if open source, Linux support and a fast path from diff to pull request matter most. Pick CodeAgentSwarm if you run agents from seven different vendors and need notifications, history and a task board to keep track of them.`,
     ctaText: 'Try both on the same repository and keep the one that fits your week. CodeAgentSwarm is free during beta, with Pro included, for macOS and Windows.',
     ctaAgent: 'comparison',
     highlightedWords: ['T3 Code', 'CodeAgentSwarm'],
@@ -26,7 +26,7 @@ Short version: pick T3 Code if open source, Linux support and a fast path from d
       content: [
         {
           type: 'paragraph',
-          text: 'T3 Code is an open source control plane that wraps several coding agents in one desktop UI and optimises the path from a finished diff to a pull request, while CodeAgentSwarm is a closed source desktop workspace optimised for supervising many agent terminals at once across six different CLI vendors.',
+          text: 'T3 Code is an open source control plane that wraps several coding agents in one desktop UI and optimises the path from a finished diff to a pull request, while CodeAgentSwarm is a closed source desktop workspace optimised for supervising many agent terminals at once across seven different CLI vendors.',
         },
         {
           type: 'paragraph',
@@ -84,7 +84,7 @@ Short version: pick T3 Code if open source, Linux support and a fast path from d
         },
         {
           type: 'paragraph',
-          text: 'The design assumption is that past two or three agents, the bottleneck stops being the agents and becomes you. So the features cluster around attention: desktop notifications when an agent finishes or stops to ask something, searchable history across all six agents with resume, per-terminal live diffs, permissions with Turbo and YOLO modes, a quota indicator, AI commit messages, git worktrees per session, skills and MCP marketplaces, and a kanban board the agents update over MCP. If you mostly run one vendor, the <a href="/en/guides/run-multiple-claude-code-sessions" class="text-neon-cyan hover:text-neon-purple transition-colors">guide to running multiple Claude Code sessions</a> is the same idea at a smaller scale.',
+          text: 'The design assumption is that past two or three agents, the bottleneck stops being the agents and becomes you. So the features cluster around attention: desktop notifications when an agent finishes or stops to ask something, searchable history across all seven agents and capability-aware resume, per-terminal live diffs, permissions with Turbo and YOLO modes, a quota indicator, AI commit messages, git worktrees per session, skills and MCP marketplaces, and a kanban board the agents update over MCP. If you mostly run one vendor, the <a href="/en/guides/run-multiple-claude-code-sessions" class="text-neon-cyan hover:text-neon-purple transition-colors">guide to running multiple Claude Code sessions</a> is the same idea at a smaller scale.',
         },
         {
           type: 'paragraph',
@@ -107,10 +107,10 @@ Short version: pick T3 Code if open source, Linux support and a fast path from d
             ['Platforms', 'macOS (Apple Silicon and Intel), Windows 10 and 11, Linux (AppImage)', 'macOS and Windows. No Linux build'],
             ['Install and distribution', '<code>npx t3@latest</code> with nothing installed, desktop app, winget, Homebrew cask, AUR, direct downloads', 'Desktop installer for macOS and Windows'],
             ['Interface', 'Three-panel layout with an integrated terminal, plus remote access', 'Multi-terminal workspace with a kanban board, history browser and per-terminal diffs'],
-            ['Supported agents', 'Claude Code, Codex, OpenCode, Cursor and Grok listed on t3.codes, with more harnesses shipping weekly', 'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code and Grok Build'],
+            ['Supported agents', 'Claude Code, Codex, OpenCode, Cursor and Grok listed on t3.codes, with more harnesses shipping weekly', 'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build and Cursor Agent'],
             ['Isolation model', 'Git worktrees, one branch per agent thread', 'Git worktrees per session, one process per terminal'],
             ['Notifications', 'Not documented on their site as of July 26, 2026', 'Desktop notifications when an agent finishes or needs input'],
-            ['Conversation history', 'Per-turn diff viewer with chat and plan modes. A cross-agent searchable history is not documented on their site as of July 26, 2026', 'Searchable history across all six agents, with resume'],
+            ['Conversation history', 'Per-turn diff viewer with chat and plan modes. A cross-agent searchable history is not documented on their site as of July 26, 2026', 'Searchable history across all seven agents and capability-aware resume'],
             ['Task management', 'Per-project quick actions, plus one-click Commit, Push and Create PR', 'Kanban board the agents update over MCP. No one-click PR button'],
             ['Open source', 'Yes, MIT (pingdotgg/t3code)', 'No. Closed source, no public app repository'],
             ['Price', 'Free, bring your own key, no subscription (their claim)', 'Free during beta with Pro included. You bring your own CLI subscriptions'],
@@ -154,7 +154,7 @@ Short version: pick T3 Code if open source, Linux support and a fast path from d
           items: [
             '<strong>You use Antigravity CLI or Kimi Code.</strong> Neither is named among the agents on t3.codes as of July 26, 2026. CodeAgentSwarm supports both, plus Claude Code, Codex CLI and OpenCode.',
             '<strong>You want to be told, not to check.</strong> Desktop notifications fire when any agent finishes or needs input, so you can leave the window and come back when something happened.',
-            '<strong>You want one searchable history across vendors.</strong> Conversations from all six agents are stored, searchable and resumable in one place instead of six different formats.',
+            '<strong>You want one searchable history across vendors.</strong> Conversations from all seven agents are stored and searchable in one place instead of seven different formats, with resume when the agent supports it.',
             '<strong>You want the agents to keep your board honest.</strong> The kanban is exposed over MCP, so agents move their own tasks as they work.',
             '<strong>You watch quota.</strong> The provider quota indicator shows how much room each subscription has left before you start a long run.',
             '<strong>You want live diffs with graded permissions.</strong> Per-terminal diffs show what each agent touches in real time, and Turbo mode auto-approves the safe operations while the risky ones still stop and ask.',

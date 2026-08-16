@@ -79,7 +79,7 @@ If your bottleneck is planning and reviewing work as a team, a kanban-first tool
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm is a desktop workspace to run and supervise multiple AI coding agents in parallel. It runs on macOS and Windows, each terminal is a real agent process, and you pick the agent per terminal from Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code and Grok Build.',
+          text: 'CodeAgentSwarm is a desktop workspace to run and supervise multiple AI coding agents in parallel. It runs on macOS and Windows, each terminal is a real agent process, and you pick the agent per terminal from Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build and Cursor Agent.',
         },
         {
           type: 'image',
@@ -89,7 +89,7 @@ If your bottleneck is planning and reviewing work as a team, a kanban-first tool
         },
         {
           type: 'paragraph',
-          text: 'The board exists, but it is not the point. The point is supervision: desktop notifications when an agent finishes or needs input, searchable conversation history across all six agents with resume, per-terminal live file diffs, permission control with a Turbo mode, git worktrees per session, multi-project switching, AI commit messages, a provider quota indicator, and skills and MCP marketplaces shared across agents.',
+          text: 'The board exists, but it is not the point. The point is supervision: desktop notifications when an agent finishes or needs input, searchable conversation history across all seven agents and capability-aware resume, per-terminal live file diffs, permission control with a Turbo mode, git worktrees per session, multi-project switching, AI commit messages, a provider quota indicator, and skills and MCP marketplaces shared across agents.',
         },
         {
           type: 'paragraph',
@@ -107,10 +107,10 @@ If your bottleneck is planning and reviewing work as a team, a kanban-first tool
           rows: [
             ['Platforms', 'Runs locally with npx vibe-kanban and is used in the browser; Docker Compose self-hosting documented', 'Desktop app for macOS and Windows'],
             ['Interface', 'Kanban board and workspace UI in the browser, with a built-in app preview', 'Desktop workspace with live terminal panes'],
-            ['Supported agents', 'Claude Code, Codex, Gemini CLI, GitHub Copilot, Amp, Cursor, OpenCode, Droid, CCR and Qwen Code per their README', 'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code and Grok Build'],
+            ['Supported agents', 'Claude Code, Codex, Gemini CLI, GitHub Copilot, Amp, Cursor, OpenCode, Droid, CCR and Qwen Code per their README', 'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build and Cursor Agent'],
             ['Isolation model', 'One workspace per issue, each with its own branch, terminal and dev server', 'A separate process per terminal, with optional git worktrees per session'],
             ['Notifications', 'Not documented on their site as of July 26, 2026', 'Desktop notifications when an agent finishes or needs input'],
-            ['Conversation history', 'Sessions per workspace with a chat interface and a changes panel, documented per workspace', 'Searchable history across all six agents, with resume'],
+            ['Conversation history', 'Sessions per workspace with a chat interface and a changes panel, documented per workspace', 'Searchable history across all seven agents and capability-aware resume'],
             ['Task management', 'The whole product: kanban issues, filtering, board customisation, team assignment', 'One feature of the workspace: a kanban the agents update over MCP'],
             ['Open source', 'Yes, Apache-2.0, roughly 27,500 stars', 'No, closed source with no public app repository'],
             ['Price', 'Open source and self-hostable; the paid cloud subscriptions were terminated per their April 10, 2026 announcement', 'Free during beta with Pro included, and you bring your own agent subscriptions'],
@@ -130,7 +130,7 @@ If your bottleneck is planning and reviewing work as a team, a kanban-first tool
             '<strong>Your unit of work is an issue, not a session.</strong> If planning and assigning tickets is the job and agents are how the tickets get done, a kanban-first tool matches that model better than a terminal workspace.',
             '<strong>You want open source you can host.</strong> Apache-2.0, roughly 27,500 stars, and documented Docker Compose self-hosting. Our app is closed source and there is nothing to self-host.',
             '<strong>You review in the browser.</strong> Inline comments on a diff that go straight back to the agent, plus a built-in preview with devtools and device emulation, are genuinely nice and we do not have an equivalent.',
-            '<strong>You want more agent choices.</strong> Their README lists more than ten agents, including Cursor, Amp, Droid and Qwen Code. Our list is six.',
+            '<strong>You want more agent choices.</strong> Their README lists more than ten agents, including Cursor, Amp, Droid and Qwen Code. Our list is seven.',
             '<strong>You want pull requests handled in the tool.</strong> Opening a PR with an AI-written description and merging from the same UI is part of their flow.',
             '<strong>You are not on macOS or Windows.</strong> It runs from npx wherever Node runs, so a Linux machine is fine. CodeAgentSwarm is not available there.',
           ],
@@ -147,7 +147,7 @@ If your bottleneck is planning and reviewing work as a team, a kanban-first tool
             '<strong>You want to see the agents work.</strong> Live terminal panes, per-terminal file diffs as they happen, and titles that tell you what each session is on right now.',
             '<strong>You want to be interrupted, not to poll.</strong> Desktop notifications tell you the moment an agent finishes or stops to ask a question.',
             '<strong>You use Antigravity CLI or Kimi Code.</strong> Neither is listed among the agents in the Vibe Kanban README as of July 26, 2026. Both are first-class here, alongside Claude Code, Codex CLI and OpenCode.',
-            '<strong>You want one searchable history across vendors.</strong> Every conversation from every agent in one search box, with resume from any point.',
+            '<strong>You want one searchable history across vendors.</strong> Every conversation from every agent in one search box and capability-aware resume from any point.',
             '<strong>You want permission control per operation.</strong> Turbo mode auto-approves what you trust and keeps the rest gated, instead of an all-or-nothing switch.',
             '<strong>You want to know your quota before the agent stalls.</strong> The provider quota indicator shows how much allowance is left.',
             '<strong>You want a maintained desktop app on Windows.</strong> We ship signed builds for macOS and Windows and update them regularly.',

@@ -6,13 +6,13 @@ export const guide: Guide = {
     locale: 'es',
     title: 'Paseo vs CodeAgentSwarm: comparativa honesta (2026)',
     metaTitle: 'Paseo vs CodeAgentSwarm: comparativa honesta (2026)',
-    metaDescription: 'Paseo es un orquestador open source autoalojado que controlas desde el móvil. CodeAgentSwarm es una app de escritorio para macOS y Windows con seis CLIs de agentes.',
-    intro: `Paseo es un orquestador open source que montas tú mismo y que puedes supervisar desde el móvil; CodeAgentSwarm es una app de escritorio para macOS y Windows que ejecuta seis CLIs de agentes en terminales paralelos. Ahí está la diferencia en una frase, y casi toda la decisión sale de ahí.
+    metaDescription: 'Paseo es un orquestador open source autoalojado que controlas desde el móvil. CodeAgentSwarm es una app de escritorio para macOS y Windows con siete CLIs de agentes.',
+    intro: `Paseo es un orquestador open source que montas tú mismo y que puedes supervisar desde el móvil; CodeAgentSwarm es una app de escritorio para macOS y Windows que ejecuta siete CLIs de agentes en terminales paralelos. Ahí está la diferencia en una frase, y casi toda la decisión sale de ahí.
 
 Aviso: CodeAgentSwarm lo hacemos nosotros. Precisamente por eso esta página dice sin rodeos en qué gana Paseo, en vez de fingir que nos llevamos todas las filas. Los dos se miden con los mismos criterios, nuestras limitaciones están junto a nuestras funciones, y todos los datos de terceros se comprobaron el 26 de julio de 2026 en paseo.sh, en el repositorio público getpaseo/paseo y en los datos públicos de GitHub.
 
-Resumen rápido: si quieres lanzar una tarea en el escritorio y revisarla desde el tren, o necesitas software que puedas alojar y auditar tú, Paseo encaja mejor. Si trabajas en un Mac o en un Windows y quieres seis CLIs de agentes, un tablero compartido y un historial buscable de todas ellas, ahí es donde CodeAgentSwarm tiene sentido.`,
-    ctaText: 'Si tu trabajo pasa delante del ordenador, en macOS o Windows, y quieres seis CLIs de agentes, diffs en vivo y un tablero compartido en una sola ventana, descarga CodeAgentSwarm y lanza tu próxima tanda de agentes en paralelo.',
+Resumen rápido: si quieres lanzar una tarea en el escritorio y revisarla desde el tren, o necesitas software que puedas alojar y auditar tú, Paseo encaja mejor. Si trabajas en un Mac o en un Windows y quieres siete CLIs de agentes, un tablero compartido y un historial buscable de todas ellas, ahí es donde CodeAgentSwarm tiene sentido.`,
+    ctaText: 'Si tu trabajo pasa delante del ordenador, en macOS o Windows, y quieres siete CLIs de agentes, diffs en vivo y un tablero compartido en una sola ventana, descarga CodeAgentSwarm y lanza tu próxima tanda de agentes en paralelo.',
     ctaAgent: 'comparison',
     highlightedWords: ['Paseo', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
@@ -26,7 +26,7 @@ Resumen rápido: si quieres lanzar una tarea en el escritorio y revisarla desde 
       content: [
         {
           type: 'paragraph',
-          text: 'Paseo es un orquestador open source y autoalojado, con clientes de escritorio, móvil, web y CLI que hablan con un daemon en tu propia máquina; CodeAgentSwarm es una app de escritorio de código cerrado para macOS y Windows que ejecuta seis CLIs de agentes a la vez en terminales paralelos.',
+          text: 'Paseo es un orquestador open source y autoalojado, con clientes de escritorio, móvil, web y CLI que hablan con un daemon en tu propia máquina; CodeAgentSwarm es una app de escritorio de código cerrado para macOS y Windows que ejecuta siete CLIs de agentes a la vez en terminales paralelos.',
         },
         {
           type: 'paragraph',
@@ -74,7 +74,7 @@ Resumen rápido: si quieres lanzar una tarea en el escritorio y revisarla desde 
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm es una app de escritorio para ejecutar y supervisar varios agentes de programación con IA en paralelo. Funciona en macOS y Windows, no es un proveedor de modelos, y pilota las CLIs de agentes que ya tienes instaladas: Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code y Grok Build.',
+          text: 'CodeAgentSwarm es una app de escritorio para ejecutar y supervisar varios agentes de programación con IA en paralelo. Funciona en macOS y Windows, no es un proveedor de modelos, y pilota las CLIs de agentes que ya tienes instaladas: Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent.',
         },
         {
           type: 'image',
@@ -87,7 +87,7 @@ Resumen rápido: si quieres lanzar una tarea en el escritorio y revisarla desde 
           items: [
             'Terminales en paralelo, cada uno con su agente, su proyecto y su conversación',
             'Notificaciones de escritorio cuando un agente termina o se para a preguntarte algo',
-            'Historial buscable de los seis agentes, con opción de retomar cualquier conversación en un terminal',
+            'Historial buscable de los siete agentes, con reanudación cuando el agente la admite',
             'Diffs de ficheros en vivo por terminal, mientras el agente sigue trabajando',
             'Control de permisos, con un modo Turbo para cuando no quieras aprobar cada paso',
             'Un tablero kanban que los propios agentes actualizan por MCP',
@@ -122,7 +122,7 @@ Resumen rápido: si quieres lanzar una tarea en el escritorio y revisarla desde 
             [
               '<strong>Agentes soportados</strong>',
               'Claude Code, Codex, Cursor, OpenCode y Pi según su FAQ, más GitHub Copilot en el README',
-              'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code y Grok Build',
+              'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent',
             ],
             [
               '<strong>Modelo de aislamiento</strong>',
@@ -137,7 +137,7 @@ Resumen rápido: si quieres lanzar una tarea en el escritorio y revisarla desde 
             [
               '<strong>Historial de conversaciones</strong>',
               'No documentado en su web a 26 de julio de 2026',
-              'Buscable en los seis agentes, y se puede retomar cualquiera',
+              'Buscable en los siete agentes, con reanudación cuando cada agente la admite',
             ],
             [
               '<strong>Gestión de tareas</strong>',
@@ -179,7 +179,7 @@ Resumen rápido: si quieres lanzar una tarea en el escritorio y revisarla desde 
             '<strong>Necesitas autoalojarlo.</strong> Paseo es un daemon que levantas en tu portátil, tu VM o tu servidor. Esa es su arquitectura, no un extra.',
             '<strong>El open source es un requisito.</strong> El código está bajo AGPLv3: lo puedes leer y seguir usando pase lo que pase con la empresa. Con nosotros te toca fiarte.',
             '<strong>Te importan la telemetría y los logins obligatorios.</strong> Paseo declara que no tiene ninguna de las dos cosas, respuesta fácil si te lo pregunta compras.',
-            '<strong>Usas GitHub Copilot o Pi.</strong> Los dos aparecen en su documentación y ninguno está entre las seis CLIs que movemos.',
+            '<strong>Usas GitHub Copilot o Pi.</strong> Los dos aparecen en su documentación y ninguno está entre las siete CLIs que movemos.',
             '<strong>Trabajas en Linux.</strong> Paseo publica build de Linux. Nosotros no.',
           ],
         },

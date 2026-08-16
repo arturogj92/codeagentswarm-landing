@@ -76,6 +76,11 @@ const FAMILY_BY_EN_SLUG: Record<string, Family> = {
   'grok-build-headless-ci': 'grok',
   'grok-build-conversation-history': 'grok',
   'cursor-agent-cli-acp-codeagentswarm': 'cursor',
+  'cursor-cli-conversation-history': 'cursor',
+  'cursor-agent-swarm': 'cursor',
+  'cursor-cli-vs-claude-code': 'cursor',
+  'cursor-cli-on-windows': 'cursor',
+  'cursor-cli-pricing': 'cursor',
 }
 
 const FAMILY_ORDER: Family[] = ['cross', 'claude', 'codex', 'antigravity', 'opencode', 'kimi', 'grok', 'cursor']

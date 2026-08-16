@@ -6,13 +6,13 @@ export const guide: Guide = {
     locale: 'en',
     title: 'AI CLI Agent Swarm: Run Multiple AI Coding Agents in Parallel',
     metaTitle: 'AI CLI Agent Swarm: Run Claude, Codex, OpenCode, Kimi and Grok (2026)',
-    metaDescription: 'An AI CLI agent swarm is several coding agents (Claude Code, Codex, Antigravity, OpenCode, Kimi Code, Grok Build) running in parallel in one place. Here is how to run and manage them.',
+    metaDescription: 'Run Claude Code, Codex, Cursor Agent, Antigravity, OpenCode, Kimi Code and Grok Build in parallel as one supervised AI CLI agent swarm.',
     intro: `An AI CLI agent swarm is what you get when you stop thinking of one coding agent in one terminal and start running several of them at once. Claude Code in one terminal, Codex CLI in another, Grok Build or OpenCode in a third, all working on the same project at the same time.
 
 The idea sounds chaotic, and done badly it is. The point of this guide is to show you how to do it well: how to actually run multiple AI coding agents in parallel, how to decide which agent handles what, and how to keep visibility over a workspace where three or four agents are editing files at the same time.
 
 I run mixed swarms most days. Below I cover what an AI CLI agent swarm really is, the honest tradeoffs of each setup method, and where a purpose-built workspace earns its place over plain terminal tabs or tmux.`,
-    ctaText: 'Run Claude Code, Codex, Antigravity, OpenCode, Kimi Code and Grok Build side by side in one CodeAgentSwarm workspace. Multiple agents, shared visibility, one place to watch them all.',
+    ctaText: 'Run Claude Code, Codex, Cursor Agent, Antigravity, OpenCode, Kimi Code and Grok Build side by side in one CodeAgentSwarm workspace. Multiple agents, shared visibility, one place to watch them all.',
     ctaAgent: 'multi',
     highlightedWords: ['AI CLI agent swarm', 'in parallel'],
     publishedAt: '2026-06-07',
@@ -36,7 +36,7 @@ I run mixed swarms most days. Below I cover what an AI CLI agent swarm really is
         },
         {
           type: 'paragraph',
-          text: 'The agents are command-line tools you probably already use: <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a> from Anthropic, <a href="https://github.com/openai/codex" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex CLI</a> from OpenAI, <a href="https://opencode.ai" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">OpenCode</a>, <a href="https://www.kimi.com/code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi Code</a> from Moonshot, and <a href="https://x.ai" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Grok Build</a> from xAI (the <code>grok</code> command), plus Google\'s Antigravity CLI (<code>agy</code>, successor to the retired Gemini CLI). Each one runs in its own terminal. They do not know about each other. The swarm is the layer you put around them so you can run them together without losing the plot.',
+          text: 'The agents are command-line tools you probably already use: <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, <a href="https://github.com/openai/codex" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex CLI</a>, <a href="/en/guides/cursor-agent-cli-acp-codeagentswarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Cursor Agent CLI</a>, <a href="https://opencode.ai" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">OpenCode</a>, <a href="https://www.kimi.com/code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi Code</a>, <a href="https://x.ai" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Grok Build</a> and Google\'s Antigravity CLI. Each one runs independently. The swarm is the layer around them that keeps the work visible.',
         },
         {
           type: 'paragraph',
@@ -49,7 +49,7 @@ I run mixed swarms most days. Below I cover what an AI CLI agent swarm really is
         },
         {
           type: 'paragraph',
-          text: 'If you only care about one vendor, the per-tool guides go deeper: the <a href="/en/guides/claude-code-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code agent swarm</a> (or the step-by-step version, <a href="/en/guides/run-multiple-claude-code-sessions" class="text-neon-cyan hover:text-neon-purple transition-colors">running multiple Claude Code sessions</a>), the <a href="/en/guides/codex-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex agent swarm</a>, the <a href="/en/guides/antigravity-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Antigravity agent swarm</a>, the <a href="/en/guides/opencode-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">OpenCode agent swarm</a>, the <a href="/en/guides/kimi-code-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi Code agent swarm</a>, and the <a href="/en/guides/grok-build-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Grok Build agent swarm</a>. This page is the cross-vendor view, where you mix them.',
+          text: 'If you only care about one vendor, the per-tool guides go deeper: <a href="/en/guides/claude-code-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, <a href="/en/guides/codex-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex</a>, <a href="/en/guides/cursor-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Cursor Agent</a>, <a href="/en/guides/antigravity-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Antigravity</a>, <a href="/en/guides/opencode-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">OpenCode</a>, <a href="/en/guides/kimi-code-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi Code</a> and <a href="/en/guides/grok-build-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Grok Build</a>. This page is the cross-vendor view.',
         },
       ],
     },
@@ -264,11 +264,11 @@ I run mixed swarms most days. Below I cover what an AI CLI agent swarm really is
           type: 'heading',
           level: 3,
           text: 'Multiple agents in parallel, your choice per terminal',
-          id: 'six-agents',
+          id: 'seven-agents',
         },
         {
           type: 'paragraph',
-          text: 'Each terminal has a SELECT AI AGENT picker offering Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code and Grok Build. Set one terminal to Claude Code for a refactor, another to Codex for a contained task, another to Grok Build or OpenCode for a parallel track, all in the same workspace and on the same project. You decide the mix and you can change it per terminal at any time.',
+          text: 'Each terminal has a SELECT AI AGENT picker offering Claude Code, Codex CLI, Cursor Agent, Antigravity CLI, OpenCode, Kimi Code and Grok Build. Set one terminal to Claude Code for a refactor, another to Cursor Agent for a planned change and another to Codex for a contained task. You decide the mix per terminal.',
         },
         {
           type: 'heading',
@@ -442,7 +442,7 @@ I run mixed swarms most days. Below I cover what an AI CLI agent swarm really is
   faq: [
     {
       question: 'What is an AI CLI agent swarm?',
-      answer: 'It is several independent AI coding CLI agents (such as Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code and Grok Build) running in parallel in one place, with shared visibility over what each one is doing. Each agent is its own process with its own conversation and context, and the swarm is the layer around them that adds notifications, searchable history, file change visibility, and permission control.',
+      answer: 'It is several independent AI coding CLI agents (such as Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build and Cursor Agent) running in parallel in one place, with shared visibility over what each one is doing. Each agent is its own process with its own conversation and context, and the swarm is the layer around them that adds notifications, searchable history, file change visibility, and permission control.',
     },
     {
       question: 'Can I run Claude Code, Codex and Grok Build at the same time?',

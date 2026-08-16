@@ -79,7 +79,7 @@ Si tu cuello de botella es planificar y revisar el trabajo en equipo, una herram
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm es una app de escritorio para ejecutar y supervisar varios agentes de programación con IA en paralelo. Funciona en macOS y Windows, cada terminal es un proceso de agente real y eliges el agente por terminal entre Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code y Grok Build.',
+          text: 'CodeAgentSwarm es una app de escritorio para ejecutar y supervisar varios agentes de programación con IA en paralelo. Funciona en macOS y Windows, cada terminal es un proceso de agente real y eliges el agente por terminal entre Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent.',
         },
         {
           type: 'image',
@@ -89,7 +89,7 @@ Si tu cuello de botella es planificar y revisar el trabajo en equipo, una herram
         },
         {
           type: 'paragraph',
-          text: 'El tablero existe, pero no es el eje. El eje es la supervisión: notificaciones de escritorio cuando un agente termina o necesita respuesta, historial de conversaciones buscable de los seis agentes con reanudación, diffs de archivos en vivo por terminal, control de permisos con modo Turbo, git worktrees por sesión, cambio entre proyectos, mensajes de commit con IA, indicador de cuota del proveedor y marketplaces de skills y de MCP compartidos entre agentes.',
+          text: 'El tablero existe, pero no es el eje. El eje es la supervisión: notificaciones de escritorio cuando un agente termina o necesita respuesta, historial de conversaciones buscable de los siete agentes con reanudación cuando el agente la admite, diffs de archivos en vivo por terminal, control de permisos con modo Turbo, git worktrees por sesión, cambio entre proyectos, mensajes de commit con IA, indicador de cuota del proveedor y marketplaces de skills y de MCP compartidos entre agentes.',
         },
         {
           type: 'paragraph',
@@ -107,10 +107,10 @@ Si tu cuello de botella es planificar y revisar el trabajo en equipo, una herram
           rows: [
             ['Plataformas', 'Se ejecuta en local con npx vibe-kanban y se usa desde el navegador; autohospedaje documentado con Docker Compose', 'App de escritorio para macOS y Windows'],
             ['Interfaz', 'Tablero kanban e interfaz de workspaces en el navegador, con previsualización integrada de la app', 'Espacio de trabajo de escritorio con paneles de terminal en vivo'],
-            ['Agentes soportados', 'Claude Code, Codex, Gemini CLI, GitHub Copilot, Amp, Cursor, OpenCode, Droid, CCR y Qwen Code según su README', 'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code y Grok Build'],
+            ['Agentes soportados', 'Claude Code, Codex, Gemini CLI, GitHub Copilot, Amp, Cursor, OpenCode, Droid, CCR y Qwen Code según su README', 'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent'],
             ['Modelo de aislamiento', 'Un workspace por issue, cada uno con su rama, su terminal y su servidor de desarrollo', 'Un proceso separado por terminal, con git worktrees opcionales por sesión'],
             ['Notificaciones', 'No documentado en su web a 26 de julio de 2026', 'Notificaciones de escritorio cuando un agente termina o necesita respuesta'],
-            ['Historial de conversaciones', 'Sesiones por workspace con interfaz de chat y panel de cambios, documentadas por workspace', 'Historial buscable de los seis agentes, con reanudación'],
+            ['Historial de conversaciones', 'Sesiones por workspace con interfaz de chat y panel de cambios, documentadas por workspace', 'Historial buscable de los siete agentes, con reanudación cuando el agente la admite'],
             ['Gestión de tareas', 'Es el producto entero: issues de kanban, filtros, personalización del tablero, asignación en equipo', 'Una función más del espacio de trabajo: un kanban que los agentes actualizan por MCP'],
             ['Código abierto', 'Sí, Apache-2.0, unas 27.500 estrellas', 'No, código cerrado y sin repositorio público de la app'],
             ['Precio', 'Código abierto y autohospedable; las suscripciones de pago en la nube se cancelaron según su anuncio del 10 de abril de 2026', 'Gratis durante la beta con Pro incluido, y tú pones tus suscripciones de agentes'],
@@ -130,7 +130,7 @@ Si tu cuello de botella es planificar y revisar el trabajo en equipo, una herram
             '<strong>Tu unidad de trabajo es una issue, no una sesión.</strong> Si el trabajo consiste en planificar y repartir tickets y los agentes son la forma de completarlos, una herramienta que arranca por el kanban encaja mejor que un espacio de terminales.',
             '<strong>Quieres código abierto que puedas hospedar.</strong> Apache-2.0, unas 27.500 estrellas y autohospedaje documentado con Docker Compose. Nuestra app es de código cerrado y no hay nada que hospedar.',
             '<strong>Revisas en el navegador.</strong> Los comentarios en línea sobre un diff que vuelven directos al agente, más una previsualización integrada con devtools y emulación de dispositivos, están muy bien y nosotros no tenemos equivalente.',
-            '<strong>Quieres más agentes donde elegir.</strong> Su README lista más de diez, incluidos Cursor, Amp, Droid y Qwen Code. Nuestra lista es de seis.',
+            '<strong>Quieres más agentes donde elegir.</strong> Su README lista más de diez, incluidos Cursor, Amp, Droid y Qwen Code. Nuestra lista es de siete.',
             '<strong>Quieres gestionar las pull requests dentro de la herramienta.</strong> Abrir una PR con descripción escrita por IA y hacer merge desde la misma interfaz forma parte de su flujo.',
             '<strong>No estás en macOS ni en Windows.</strong> Se lanza con npx allí donde haya Node, así que una máquina Linux vale. CodeAgentSwarm no está disponible ahí.',
           ],
@@ -147,7 +147,7 @@ Si tu cuello de botella es planificar y revisar el trabajo en equipo, una herram
             '<strong>Quieres ver trabajar a los agentes.</strong> Paneles de terminal en vivo, diffs de archivos por terminal según ocurren y títulos que te dicen en qué anda cada sesión ahora mismo.',
             '<strong>Prefieres que te interrumpan a estar mirando.</strong> Las notificaciones de escritorio te avisan en cuanto un agente termina o se para a preguntar algo.',
             '<strong>Usas Antigravity CLI o Kimi Code.</strong> Ninguno aparece entre los agentes del README de Vibe Kanban a 26 de julio de 2026. Aquí los dos son ciudadanos de primera, junto a Claude Code, Codex CLI y OpenCode.',
-            '<strong>Quieres un historial buscable entre proveedores.</strong> Todas las conversaciones de todos los agentes en un mismo buscador, con reanudación desde cualquier punto.',
+            '<strong>Quieres un historial buscable entre proveedores.</strong> Todas las conversaciones de todos los agentes en un mismo buscador, con reanudación cuando el agente la admite desde cualquier punto.',
             '<strong>Quieres control de permisos por operación.</strong> El modo Turbo aprueba solo lo que tú confías y deja el resto bajo revisión, en vez de un interruptor de todo o nada.',
             '<strong>Quieres saber tu cuota antes de que el agente se quede a medias.</strong> El indicador de cuota del proveedor te enseña cuánto te queda.',
             '<strong>Quieres una app de escritorio mantenida en Windows.</strong> Publicamos builds firmadas para macOS y Windows y las actualizamos con regularidad.',

@@ -4,12 +4,12 @@ export const guide: Guide = {
   meta: {
     slug: 'cursor-agent-cli-acp-codeagentswarm',
     locale: 'es',
-    title: 'Cursor Agent CLI en CodeAgentSwarm: configuración ACP',
-    metaTitle: 'Cursor Agent CLI en CodeAgentSwarm: configuración ACP (2026)',
-    metaDescription: 'Ejecuta Cursor Agent CLI en CodeAgentSwarm mediante ACP. Instala cursor-agent, inicia sesión, supervisa herramientas y usa Agent, Plan o Ask en una app.',
+    title: 'Guía de Cursor CLI: instalación, modo Agent y ACP',
+    metaTitle: 'Guía de Cursor CLI: instala Cursor Agent y usa ACP',
+    metaDescription: 'Instala Cursor CLI, inicia sesión y ejecuta cursor-agent mediante ACP. Usa Agent, Plan o Ask con streaming, permisos, MCP, Skills e imágenes.',
     intro: `Cursor Agent CLI puede funcionar como agente de primera clase dentro de CodeAgentSwarm mediante el Agent Client Protocol (ACP) oficial. Mantienes tu cuenta de Cursor, modelos, reglas, skills y configuración MCP. CodeAgentSwarm añade una interfaz Chat supervisada para respuestas en streaming, herramientas, permisos y cancelación.
 
-El comando importante es <code>cursor-agent</code>. CodeAgentSwarm no usa el comando genérico <code>agent</code> porque otra CLI instalada puede ser su propietaria.`,
+El comando importante es <code>cursor-agent</code>. CodeAgentSwarm no usa el alias genérico <code>agent</code> porque otra CLI instalada puede ser su propietaria. Cursor IDE y Cursor Agent CLI pertenecen al mismo producto, pero son interfaces distintas: el IDE es el editor y <code>cursor-agent</code> funciona desde un terminal o un cliente ACP.`,
     ctaText: 'Ejecuta Cursor Agent junto al resto de tus agentes con Chat en streaming, permisos visibles, historial por proyecto y un solo sitio para supervisarlo todo.',
     ctaAgent: 'cursor-agent',
     highlightedWords: ['Cursor Agent CLI', 'ACP'],
@@ -38,10 +38,19 @@ El comando importante es <code>cursor-agent</code>. CodeAgentSwarm no usa el com
     },
     {
       id: 'mcp',
+      title: 'Usar los modos Agent, Plan y Ask',
+      content: [
+        { type: 'paragraph', text: 'Elige la interacción antes de enviar el prompt. <strong>Agent</strong> puede inspeccionar y modificar el proyecto, <strong>Plan</strong> prepara el enfoque de implementación antes de editar y <strong>Ask</strong> es la opción de solo lectura para explicaciones e investigación. CodeAgentSwarm conserva la selección al reabrir el Chat o pasar una sesión de la vista terminal a Chat.' },
+        { type: 'paragraph', text: 'El mismo Chat muestra los modelos de Cursor y permite adjuntar imágenes cuando la versión conectada anuncia esas capacidades ACP. Las respuestas, herramientas y solicitudes de permiso aparecen mientras ocurren, y Detener cancela el turno activo.' },
+      ],
+    },
+    {
+      id: 'mcp-configuracion',
       title: 'MCP, reglas, skills y extensiones de Cursor',
       content: [
         { type: 'paragraph', text: 'CodeAgentSwarm lee los servidores MCP de usuario y proyecto desde <code>.cursor/mcp.json</code> sin modificar ninguno de los archivos. Las entradas del proyecto prevalecen sobre las de usuario con el mismo nombre, y los servidores combinados se envían mediante el campo nativo <code>mcpServers</code> de ACP. Las reglas y skills siguen perteneciendo a Cursor.' },
         { type: 'paragraph', text: 'El adaptador ACP también entiende las solicitudes específicas de Cursor para preguntas, planes, todos, tareas delegadas e imágenes generadas. Se convierten en elementos nativos de la conversación en vez de aparecer como JSON sin procesar.' },
+        { type: 'paragraph', text: 'La instalación, los modos, MCP y Skills pertenecen a esta guía. Para flujos concretos, sigue con el <a href="/es/guias/historial-conversaciones-cursor-cli" class="text-neon-cyan hover:text-neon-purple transition-colors">historial de Cursor CLI</a>, el <a href="/es/guias/enjambre-de-agentes-cursor-cli" class="text-neon-cyan hover:text-neon-purple transition-colors">enjambre de Cursor Agent</a> o la guía de <a href="/es/guias/cursor-cli-en-windows" class="text-neon-cyan hover:text-neon-purple transition-colors">Cursor CLI en Windows</a>.' },
       ],
     },
     {
@@ -51,6 +60,7 @@ El comando importante es <code>cursor-agent</code>. CodeAgentSwarm no usa el com
         { type: 'paragraph', text: 'Las versiones de Cursor difieren en su soporte de reanudación por ACP. CodeAgentSwarm habilita <code>session/load</code> solo cuando el handshake informa <code>agentCapabilities.loadSession: true</code>. Así no muestra un botón de reanudar que nunca podría funcionar.' },
         { type: 'code', language: 'bash', code: 'cursor-agent update\n# cursor-agent upgrade también funciona' },
         { type: 'callout', variant: 'info', content: 'Una versión antigua de Cursor CLI aún puede iniciar un Chat nuevo. CodeAgentSwarm muestra cómo actualizar y no guarda ese Chat como reanudable hasta que la capacidad esté disponible.' },
+        { type: 'paragraph', text: 'La guía de <a href="/es/guias/historial-conversaciones-cursor-cli" class="text-neon-cyan hover:text-neon-purple transition-colors">historial y reanudación</a> explica qué cambia cuando una versión ACP antigua informa <code>loadSession: false</code>.' },
       ],
     },
     {
@@ -59,6 +69,7 @@ El comando importante es <code>cursor-agent</code>. CodeAgentSwarm no usa el com
       content: [
         { type: 'paragraph', text: 'Crea un Chat de Cursor para una tarea e inicia Codex, Claude Code u otra CLI compatible para la siguiente. Cada agente tiene su propia sesión y contexto de proyecto, mientras CodeAgentSwarm mantiene visibles el estado, permisos, avance de tareas e historial.' },
         { type: 'paragraph', text: 'Es útil cuando quieres los modelos y reglas de proyecto de Cursor sin mover cada tarea al editor, o cuando un flujo con varios agentes necesita una superficie común de supervisión.' },
+        { type: 'paragraph', text: 'Consulta la guía del <a href="/es/guias/enjambre-de-agentes-cursor-cli" class="text-neon-cyan hover:text-neon-purple transition-colors">enjambre de Cursor Agent</a> para patrones de aislamiento y reparto de tareas, o compara el flujo en <a href="/es/guias/cursor-cli-vs-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">Cursor CLI vs Claude Code</a>.' },
       ],
     },
   ],

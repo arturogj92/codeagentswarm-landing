@@ -137,7 +137,7 @@ This guide separates those two billing systems and links every changing number t
         },
         {
           type: 'paragraph',
-          text: 'That pairs with the workflow in the <a href="/en/guides/kimi-code-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi Code agent swarm guide</a>: use Kimi where it fits, keep another provider available for overflow, and monitor the shared limits instead of guessing.',
+          text: 'That pairs with the <a href="/en/guides/kimi-code-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi Code agent swarm guide</a>: use Kimi where it fits and keep another provider for overflow. If Cursor is the alternative, compare its subscription in the <a href="/en/guides/cursor-cli-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">Cursor CLI pricing guide</a>.',
         },
       ],
     },

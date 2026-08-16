@@ -11,7 +11,7 @@ export const guide: Guide = {
 
 Antes de seguir, transparencia total: CodeAgentSwarm lo hacemos nosotros. Justo por eso esta página dice dónde gana Claude Squad y enumera nuestros límites en voz alta (código cerrado, solo macOS y Windows, sin app móvil, todavía en beta, y tú pones tus propias suscripciones de agentes). Los dos se juzgan con los mismos criterios, y cada dato de terceros se verificó el 26 de julio de 2026 en la web del fabricante, su README público y los datos públicos de GitHub.
 
-Resumen rápido: si vives en la terminal, trabajas por SSH en máquinas remotas y quieres código abierto AGPL, Claude Squad te encaja mejor. Si prefieres una ventana de escritorio con notificaciones, historial entre agentes, diffs en vivo y seis proveedores en el mismo sitio, eso es lo que construimos nosotros.`,
+Resumen rápido: si vives en la terminal, trabajas por SSH en máquinas remotas y quieres código abierto AGPL, Claude Squad te encaja mejor. Si prefieres una ventana de escritorio con notificaciones, historial entre agentes, diffs en vivo y siete proveedores en el mismo sitio, eso es lo que construimos nosotros.`,
     ctaText: 'Si quieres los mismos agentes en paralelo pero con ventana de escritorio, notificaciones e historial buscable de todos los agentes, descarga CodeAgentSwarm y pruébalo junto a Claude Squad.',
     ctaAgent: 'comparison',
     highlightedWords: ['Claude Squad', 'CodeAgentSwarm'],
@@ -74,7 +74,7 @@ Resumen rápido: si vives en la terminal, trabajas por SSH en máquinas remotas 
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm es una app de escritorio para ejecutar y supervisar varios agentes de programación con IA en paralelo. Funciona en macOS y Windows, cada terminal es un proceso de agente real, y eliges el agente por terminal: Claude Code, Codex CLI, Antigravity CLI, OpenCode o Kimi Code.',
+          text: 'CodeAgentSwarm es una app de escritorio para ejecutar y supervisar varios agentes de programación con IA en paralelo. Funciona en macOS y Windows, cada terminal es un proceso de agente real, y eliges el agente por terminal: Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build o Cursor Agent.',
         },
         {
           type: 'image',
@@ -86,7 +86,7 @@ Resumen rápido: si vives en la terminal, trabajas por SSH en máquinas remotas 
           type: 'list',
           items: [
             'Notificaciones de escritorio cuando un agente termina o se para a preguntarte algo',
-            'Historial de conversaciones buscable de los seis agentes, con reanudación desde cualquier entrada',
+            'Historial de conversaciones buscable de los siete agentes, con reanudación cuando el agente la admite desde cualquier entrada',
             'Diffs de archivos en vivo por terminal, para ver qué toca cada agente mientras trabaja',
             'Control de permisos, con un modo Turbo para las operaciones que quieras aprobar automáticamente',
             'Un tablero kanban que los propios agentes actualizan por MCP',
@@ -110,10 +110,10 @@ Resumen rápido: si vives en la terminal, trabajas por SSH en máquinas remotas 
           rows: [
             ['Plataformas', 'Entornos de terminal con tmux y la CLI de GitHub instalados, vía Homebrew o script de shell. Una instalación nativa en Windows no está documentada en su web a 26 de julio de 2026', 'App de escritorio para macOS y Windows'],
             ['Interfaz', 'Interfaz de terminal, guiada por teclado', 'Espacio de trabajo gráfico de escritorio con paneles de terminal'],
-            ['Agentes soportados', 'Claude Code, Codex, Gemini, Amp, OpenCode y otros agentes locales como Aider, elegidos por sesión', 'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code y Grok Build'],
+            ['Agentes soportados', 'Claude Code, Codex, Gemini, Amp, OpenCode y otros agentes locales como Aider, elegidos por sesión', 'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent'],
             ['Modelo de aislamiento', 'Una sesión de tmux y un git worktree por tarea, con una rama para cada una', 'Un proceso separado por terminal, con git worktrees opcionales por sesión'],
             ['Notificaciones', 'No documentado en su web a 26 de julio de 2026', 'Notificaciones de escritorio cuando un agente termina o necesita respuesta'],
-            ['Historial de conversaciones', 'Las sesiones se pueden pausar y reanudar en la app. Un historial buscable entre agentes no está documentado en su web a 26 de julio de 2026', 'Historial buscable de los seis agentes, con reanudación'],
+            ['Historial de conversaciones', 'Las sesiones se pueden pausar y reanudar en la app. Un historial buscable entre agentes no está documentado en su web a 26 de julio de 2026', 'Historial buscable de los siete agentes, con reanudación cuando el agente la admite'],
             ['Gestión de tareas', 'Lista de sesiones con su estado. Un tablero kanban no está documentado en su web a 26 de julio de 2026', 'Tablero kanban que los agentes actualizan por MCP'],
             ['Código abierto', 'Sí, AGPL-3.0', 'No, código cerrado y sin repositorio público de la app'],
             ['Precio', 'Gratis', 'Gratis durante la beta con Pro incluido, y tú pones tus suscripciones de agentes'],
@@ -139,7 +139,7 @@ Resumen rápido: si vives en la terminal, trabajas por SSH en máquinas remotas 
             '<strong>Quieres Linux.</strong> CodeAgentSwarm solo se distribuye para macOS y Windows. Si tu máquina diaria es Linux, Claude Squad está disponible para ti y nosotros no.',
             '<strong>Ya vives en tmux.</strong> Si tu memoria muscular es de teclado y te molesta pasar al ratón, una interfaz de texto con gestión de sesiones a una tecla te va a parecer más rápida que cualquier ventana.',
             '<strong>Quieres cero peso de instalación.</strong> Un binario, sin cuenta, sin actualizador y sin runtime de escritorio empaquetado.',
-            '<strong>Quieres Aider u otro agente local.</strong> Su flag de programa lanza cualquier comando de agente local, algo más amplio que nuestra lista fija de seis.',
+            '<strong>Quieres Aider u otro agente local.</strong> Su flag de programa lanza cualquier comando de agente local, algo más amplio que nuestra lista fija de siete.',
           ],
         },
       ],
@@ -152,7 +152,7 @@ Resumen rápido: si vives en la terminal, trabajas por SSH en máquinas remotas 
           type: 'list',
           items: [
             '<strong>Prefieres que te avisen a estar mirando.</strong> Las notificaciones de escritorio saltan cuando un agente termina o necesita respuesta, así puedes irte a otra cosa en vez de vigilar un panel.',
-            '<strong>Usas seis proveedores.</strong> Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code y Grok Build están soportados directamente, incluidos Antigravity, Kimi y Grok Build, que no aparecen entre los agentes del README de Claude Squad a 26 de julio de 2026.',
+            '<strong>Usas siete proveedores.</strong> Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent están soportados directamente. Antigravity, Kimi y Grok Build no aparecen entre los agentes del README de Claude Squad a 26 de julio de 2026.',
             '<strong>Quieres un historial que se pueda buscar.</strong> Todas las conversaciones de todos los agentes se buscan desde un solo sitio, y puedes reanudar cualquiera donde la dejaste.',
             '<strong>Quieres ver los diffs en vivo.</strong> Los diffs por terminal se actualizan mientras el agente edita, así ves pronto si dos agentes se pisan en vez de descubrirlo al revisar.',
             '<strong>Quieres el trabajo registrado.</strong> El tablero kanban lo actualizan los propios agentes por MCP, así que refleja lo que ha pasado de verdad.',

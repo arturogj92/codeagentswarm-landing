@@ -16,7 +16,7 @@ This guide compares them on capability and workflow rather than chasing benchmar
     ctaAgent: 'opencode',
     highlightedWords: ['OpenCode', 'Cursor'],
     publishedAt: '2026-07-05',
-    updatedAt: '2026-07-05',
+    updatedAt: '2026-08-16',
     alternateSlug: 'opencode-vs-cursor',
   },
   sections: [
@@ -127,7 +127,7 @@ This guide compares them on capability and workflow rather than chasing benchmar
         },
         {
           type: 'paragraph',
-          text: 'Unlike opencode, Cursor is not a terminal tool you run next to an editor. It is the editor. The AI surfaces as inline suggestions, a chat panel, and an agent mode for larger tasks, all inside one graphical app.',
+          text: 'This comparison uses <strong>Cursor</strong> to mean the Cursor IDE: the editor with inline suggestions, Chat and Agent mode. Cursor now also ships a separate <code>cursor-agent</code> CLI. Read the <a href="/en/guides/cursor-agent-cli-acp-codeagentswarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Cursor CLI guide</a> for installation, modes and ACP without changing the IDE comparison on this page.',
         },
         {
           type: 'heading',
