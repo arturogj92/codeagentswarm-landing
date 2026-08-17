@@ -12,11 +12,11 @@ export const guide: Guide = {
 Codex never officially ships a button labelled YOLO. The term just describes a state: Codex running with approvals bypassed so it can read, write, and run commands unattended. The speed is real, and for well-scoped work it feels great. The risk is also real, because once approvals are off there is nothing between Codex and a destructive command.
 
 This guide explains what Codex actually offers, from suggest-only up to full auto and the sandbox, what genuinely goes wrong when you run with approvals off, and how to get full-auto speed without losing control. That last part is where CodeAgentSwarm's per-terminal permissions and Turbo Mode come in, so you can run a whole Codex swarm in full auto and still keep guardrails on the dangerous operations.`,
-    ctaText: 'Run Codex CLI in full auto without the gamble. Turbo Mode plus per-terminal permissions let you auto-approve the safe work and block the dangerous commands, across every Codex terminal at once.',
+    ctaText: 'Run several Codex CLI agents in YOLO mode without losing control. CodeAgentSwarm keeps every terminal visible and lets you block selected commands while the rest runs automatically.',
     ctaAgent: 'codex',
     highlightedWords: ['Codex CLI', 'YOLO mode'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-08-11',
+    updatedAt: '2026-08-17',
     alternateSlug: 'modo-yolo-codex',
   },
   sections: [
@@ -26,9 +26,9 @@ This guide explains what Codex actually offers, from suggest-only up to full aut
       content: [
         {
           type: 'image',
-          alt: 'A CodeAgentSwarm terminal showing the SELECT AI AGENT picker with claude-code, gemini cli and codex cli options plus an Enable Turbo Mode toggle for safe full-auto runs',
-          src: '/images/guides/multi-cli-agent-selector.png',
-          caption: 'In CodeAgentSwarm you set a terminal to codex cli and flip Enable Turbo Mode for full-auto speed, while per-terminal permissions still gate the dangerous operations. That is YOLO-style full auto without losing control.',
+          alt: 'Six OpenAI Codex CLI terminals running in YOLO mode side by side in CodeAgentSwarm',
+          src: '/images/guides/codex-agent-swarm.png',
+          caption: 'Six Codex CLI agents running in YOLO mode at once. CodeAgentSwarm keeps every terminal visible while each agent works on its own task.',
         },
         {
           type: 'paragraph',

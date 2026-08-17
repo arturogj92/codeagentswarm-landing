@@ -100,6 +100,14 @@ The keyword endpoint placed `claude code history` above 100 monthly searches in 
 - Validate the backlink snapshot, then pursue relevant editorial dofollow links. This cannot be fixed safely in source code.
 - Inspect the Search Console query-by-page report before consolidating any similar guide. Separate query and page CSV files cannot prove cannibalization.
 
+## Umami conversion follow-up: August 17
+
+Clean post-CTA Umami data showed that `/en/guides/codex-yolo-mode` generated 1,196 page views but only 3 direct guide downloads, a 0.25% page-view conversion rate. The comparison pages `/en/guides/run-multiple-codex-sessions` and `/en/guides/opencode-yolo-mode` converted at 1.08% and 2.59%. The calculation excludes the August 3 bot window and the August 10 tracking outage.
+
+The Codex YOLO guide already rendered three download CTA positions, so no new component or tracking event was added. The first generic setup image was replaced with an existing screenshot of six Codex terminals running in YOLO mode, and the CTA copy was shortened around the same visible outcome. The indexed URL, title, description, H1, canonical, hreflang and existing Umami events remain unchanged.
+
+Treat this as a conversion hypothesis. Compare direct guide downloads per page view over equal clean windows after deployment; do not infer a lift from traffic volume alone.
+
 ## Measurement plan
 
 1. Annotate the production deployment date.
