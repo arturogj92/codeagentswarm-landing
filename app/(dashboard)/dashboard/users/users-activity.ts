@@ -57,6 +57,55 @@ export interface UserFeatureAdoption {
   return_lift_pp: number | null
 }
 
+export interface UserCohortHealth {
+  mau: number
+  previous_mau: number
+  mau_change: number
+  mau_change_pct: number | null
+  second_terminal_eligible: number
+  second_terminal_users: number
+  second_terminal_pct: number | null
+  previous_second_terminal_pct: number | null
+  second_terminal_delta_pp: number | null
+  repeat_users: number
+  repeat_pct: number | null
+  previous_repeat_pct: number | null
+  repeat_delta_pp: number | null
+  median_active_days: number | null
+  previous_median_active_days: number | null
+  median_active_days_delta: number | null
+  wau: number
+  weekly_stickiness_pct: number | null
+  previous_weekly_stickiness_pct: number | null
+  weekly_stickiness_delta_pp: number | null
+  return_eligible: number
+  return_users: number
+  return_pct: number | null
+  previous_return_pct: number | null
+  return_delta_pp: number | null
+}
+
+export interface UserBehaviorMetric {
+  feature: 'search_terminals' | 'command_palette' | 'conversation_history'
+  coverage: 'exact' | 'historical_proxy'
+  users: number
+  reach_pct: number | null
+  avg_users_per_day: number
+  median_uses: number | null
+  repeat_users: number
+  repeat_pct: number | null
+  outcome_users: number
+  outcome_events: number
+  shortcut_users: number | null
+  outcome_coverage: 'exact' | 'starts_this_release'
+}
+
+export interface WorkspaceModeMetric {
+  mode: 'grid' | 'tabs' | 'list'
+  events: number
+  share_pct: number | null
+}
+
 export type GlobalWindowDays = 1 | 7 | 30 | 180
 export type FeatureWindowDays = 7 | 30 | 90 | 180
 
@@ -71,6 +120,13 @@ export interface UserGlobalMetrics {
   top_actions: UserGlobalAction[]
   actions: UserGlobalAction[]
   features: UserFeatureAdoption[]
+  behavior_window_days: number
+  health: UserCohortHealth
+  behaviors: UserBehaviorMetric[]
+  workspace_mode_coverage: 'exact' | 'selection_only' | 'starts_this_release'
+  workspace_mode_events: number
+  workspace_mode_users: number
+  workspace_modes: WorkspaceModeMetric[]
   avg_terminal_slots: number | null
   max_terminal_slots: number | null
   terminal_metric_source: 'launches' | 'tab_slots' | 'mixed' | null
@@ -128,6 +184,19 @@ export interface UserActivityDetail {
     conflicts: number
     recently_completed: number
     by_status: Record<string, number>
+  }
+  behavior: {
+    window_days: number
+    active_days: number
+    search_opens: number
+    search_switches: number
+    palette_opens: number
+    palette_runs: number
+    history_opens: number
+    history_restores: number
+    workspace_mode: 'grid' | 'tabs' | 'list' | null
+    workspace_mode_launches: number | null
+    workspace_mode_pct: number | null
   }
 }
 
@@ -210,6 +279,40 @@ export function primaryAgentSignal(user: UserActivityRow): {
   const selected = normalizeAgent(user.most_used_agent)
   if (selected) return { agent: selected, source: 'selections' }
   return { agent: '', source: 'none' }
+}
+
+export function summarizeCohortHealth(health: UserCohortHealth): { title: string; copy: string } {
+  const engagementDeltas = [
+    health.second_terminal_delta_pp,
+    health.repeat_delta_pp,
+    health.weekly_stickiness_delta_pp,
+    health.return_delta_pp,
+  ].filter((value): value is number => value !== null)
+  const improving = engagementDeltas.filter((value) => value > 0).length
+  const weakening = engagementDeltas.filter((value) => value < 0).length
+
+  if (health.mau_change > 0 && weakening > improving) {
+    return {
+      title: 'Audience growth is accelerating; engagement needs attention.',
+      copy: 'More people arrived, while most activation and repeat-use signals fell against the previous cohort.',
+    }
+  }
+  if (health.mau_change < 0 && improving > weakening) {
+    return {
+      title: 'The active audience shrank, while engagement improved.',
+      copy: 'Fewer people used the app, but the users who did showed stronger activation or repeat use.',
+    }
+  }
+  if (health.mau_change >= 0 && improving >= weakening) {
+    return {
+      title: 'Audience and engagement are moving in the same direction.',
+      copy: 'Active-user growth is supported by stable or improving activation and repeat-use signals.',
+    }
+  }
+  return {
+    title: 'Audience and engagement both softened.',
+    copy: 'Use the individual signals to separate acquisition, activation and retention problems.',
+  }
 }
 
 const UUID_PATTERN = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i

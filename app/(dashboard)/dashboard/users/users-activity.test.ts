@@ -11,8 +11,10 @@ import {
   parseFeatureWindowDays,
   parseGlobalWindowDays,
   primaryAgentSignal,
+  summarizeCohortHealth,
   summarizeUsers,
   type UserActivityRow,
+  type UserCohortHealth,
 } from './users-activity.ts'
 
 function user(overrides: Partial<UserActivityRow> = {}): UserActivityRow {
@@ -178,4 +180,19 @@ test('app versions sort numerically and keep unknown values last', () => {
   const versions = ['1.10.0', null, '2.0.0', '1.4.4']
   assert.deepEqual([...versions].sort((a, b) => compareAppVersions(a, b, 1)), ['1.4.4', '1.10.0', '2.0.0', null])
   assert.deepEqual([...versions].sort((a, b) => compareAppVersions(a, b, -1)), ['2.0.0', '1.10.0', '1.4.4', null])
+})
+
+test('cohort summary separates audience growth from weakening engagement', () => {
+  const health = {
+    mau_change: 20,
+    second_terminal_delta_pp: -4,
+    repeat_delta_pp: -3,
+    weekly_stickiness_delta_pp: -2,
+    return_delta_pp: 1,
+  } as UserCohortHealth
+
+  assert.equal(
+    summarizeCohortHealth(health).title,
+    'Audience growth is accelerating; engagement needs attention.',
+  )
 })

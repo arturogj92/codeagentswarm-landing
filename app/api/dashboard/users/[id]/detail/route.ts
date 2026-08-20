@@ -36,7 +36,7 @@ export async function GET(
     }
 
     const detail = await supabaseRpc<UserActivityDetailRpc | null>({
-      fn: 'user_activity_detail_v2',
+      fn: 'user_activity_detail_v3',
       args: { p_user_id: id, p_days: days },
     })
     if (!detail?.account) {

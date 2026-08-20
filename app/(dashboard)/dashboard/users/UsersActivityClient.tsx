@@ -18,6 +18,7 @@ import {
   getLifecycle,
   parseExcludedUserIds,
   primaryAgentSignal,
+  summarizeCohortHealth,
   summarizeUsers,
   type Lifecycle,
   type FeatureWindowDays,
@@ -25,6 +26,7 @@ import {
   type UserActivityDetail,
   type UserActivityOverview,
   type UserActivityRow,
+  type UserBehaviorMetric,
   type UserFilters,
   type UserGlobalMetrics,
 } from './users-activity'
@@ -83,6 +85,10 @@ const ACTION_LABELS: Record<string, string> = {
   navbar_add_shortcut: 'Add project shortcut',
   quick_switcher_shortcut: 'Search terminals shortcut',
   command_palette_shortcut: 'Command palette shortcut',
+  command_palette_run: 'Command Palette command run',
+  quick_switcher_switch: 'Terminal switch from search',
+  conversation_history_opened: 'Conversation History opened',
+  conversation_history_restored: 'Conversation restored from History',
   terminal_sessions: 'Agent sessions',
   terminal_controls: 'Terminal controls',
   project_switcher: 'Projects and shortcuts',
@@ -690,11 +696,6 @@ function GlobalInsights({ metrics, loading, error, excludedUsers, windowDays, fe
 }) {
   const [actionQuery, setActionQuery] = useState('')
   const [featureFilter, setFeatureFilter] = useState<'all' | 'workspace' | 'automation'>('all')
-  const sourceNote = metrics?.terminal_metric_source === 'launches'
-    ? 'Exact snapshots at agent launch'
-    : metrics?.terminal_metric_source === 'mixed'
-      ? 'Launch snapshots where available; tab estimate otherwise'
-      : 'Estimated from the highest terminal tab reached per active day'
   const normalizedActionQuery = actionQuery.trim().toLowerCase()
   const actionResults = normalizedActionQuery
     ? (metrics?.actions || []).filter((action) => (
@@ -705,6 +706,7 @@ function GlobalInsights({ metrics, loading, error, excludedUsers, windowDays, fe
   const visibleFeatures = (metrics?.features || []).filter((feature) => (
     featureFilter === 'all' || feature.category === featureFilter
   ))
+  const healthSummary = metrics?.health ? summarizeCohortHealth(metrics.health) : null
 
   return (
     <section aria-label="Global usage overview" className="mt-5 grid gap-4 xl:grid-cols-[minmax(0,1.35fr)_minmax(340px,0.65fr)]">
@@ -815,22 +817,74 @@ function GlobalInsights({ metrics, loading, error, excludedUsers, windowDays, fe
 
       <article className="rounded-xl border border-white/[0.09] bg-[#111111] p-4 sm:p-5">
         <div>
-          <h2 className="text-lg font-semibold tracking-[-0.02em] text-white">Global cohort</h2>
+          <h2 className="text-lg font-semibold tracking-[-0.02em] text-white">Cohort health</h2>
           <p className="mt-1 text-sm text-white/55">
-            {metrics ? `${metrics.active_users} active · ${metrics.registered_users} included · ${metrics.excluded_users} excluded` : 'Preparing cohort metrics'}
+            Last 30 days · compared with the previous 30
           </p>
         </div>
 
-        <dl className="mt-5 grid grid-cols-2 gap-2.5">
-          <GlobalMetric label="Avg terminals · 180d" value={metrics?.avg_terminal_slots ?? '—'} note="Equal weight per user" />
-          <GlobalMetric label="Highest slot" value={metrics?.max_terminal_slots ?? '—'} note="Observed in 180d" />
-          <GlobalMetric label="Largest user" value={metrics ? `${metrics.top_user_share}%` : '—'} note="of all tracked actions" />
-          <GlobalMetric label="Two largest users" value={metrics ? `${metrics.top_two_share}%` : '—'} note="of all tracked actions" />
-        </dl>
-        <p className="mt-3 text-[10px] leading-4 text-white/45">{sourceNote}</p>
-        <p className="mt-2 rounded-lg border border-white/[0.07] bg-white/[0.025] p-2.5 text-[10px] leading-4 text-white/50">
-          These percentages show whether a few heavy users skew the totals. Exclude them below to compare everyone else.
-        </p>
+        {loading && !metrics ? (
+          <div className="mt-5 grid grid-cols-2 gap-2.5" aria-label="Loading cohort health">
+            {Array.from({ length: 6 }, (_, index) => <div key={index} className="h-32 animate-pulse rounded-lg bg-white/[0.045]" />)}
+          </div>
+        ) : error && !metrics ? (
+          <div role="alert" className="mt-5 rounded-lg border border-rose-400/20 bg-rose-400/[0.06] p-3 text-sm text-rose-200">
+            Cohort health could not load. <button type="button" onClick={onRetry} className="font-semibold underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-300">Retry</button>
+          </div>
+        ) : metrics?.health && (
+          <>
+            {healthSummary && (
+              <div className="mt-5 rounded-lg border border-amber-400/15 bg-amber-400/[0.045] p-3">
+                <p className="text-xs font-semibold text-white/80">{healthSummary.title}</p>
+                <p className="mt-1 text-[10px] leading-4 text-white/50">{healthSummary.copy}</p>
+              </div>
+            )}
+            <dl className="mt-3 grid grid-cols-2 gap-2.5">
+              <CohortMetric
+                label="Monthly active users"
+                value={metrics.health.mau.toLocaleString('en-US')}
+                trend={countTrend(metrics.health.mau_change, metrics.health.mau_change_pct)}
+                trendValue={metrics.health.mau_change}
+                note="People who used the app in 30 days. Tracks audience growth."
+              />
+              <CohortMetric
+                label="Second-terminal activation"
+                value={percent(metrics.health.second_terminal_pct)}
+                trend={deltaTrend(metrics.health.second_terminal_delta_pp, ' pp')}
+                trendValue={metrics.health.second_terminal_delta_pp}
+                note={`New users who reached terminal 2 in their first week · ${metrics.health.second_terminal_users}/${metrics.health.second_terminal_eligible}.`}
+              />
+              <CohortMetric
+                label="Returning users"
+                value={percent(metrics.health.repeat_pct)}
+                trend={deltaTrend(metrics.health.repeat_delta_pp, ' pp')}
+                trendValue={metrics.health.repeat_delta_pp}
+                note="Active on at least two different days. Measures repeat use."
+              />
+              <CohortMetric
+                label="Median active days"
+                value={formatNumber(metrics.health.median_active_days)}
+                trend={deltaTrend(metrics.health.median_active_days_delta, ' days')}
+                trendValue={metrics.health.median_active_days_delta}
+                note="Days used by the typical user. Heavy users cannot inflate the median."
+              />
+              <CohortMetric
+                label="Weekly stickiness"
+                value={percent(metrics.health.weekly_stickiness_pct)}
+                trend={deltaTrend(metrics.health.weekly_stickiness_delta_pp, ' pp')}
+                trendValue={metrics.health.weekly_stickiness_delta_pp}
+                note={`${metrics.health.wau}/${metrics.health.mau} monthly users were active this week.`}
+              />
+              <CohortMetric
+                label="30-day return"
+                value={percent(metrics.health.return_pct)}
+                trend={deltaTrend(metrics.health.return_delta_pp, ' pp')}
+                trendValue={metrics.health.return_delta_pp}
+                note={`First seen 30–60 days ago and active again on day 7–30 · ${metrics.health.return_users}/${metrics.health.return_eligible}.`}
+              />
+            </dl>
+          </>
+        )}
 
         <div className="mt-5 border-t border-white/[0.07] pt-4">
           <div className="flex items-center justify-between gap-3">
@@ -852,9 +906,55 @@ function GlobalInsights({ metrics, loading, error, excludedUsers, windowDays, fe
               ))}
             </div>
           ) : (
-            <p className="mt-3 text-xs leading-5 text-white/45">No exclusions. Open Arturo, Víctor or any other user and remove them from the global rollup.</p>
+            <p className="mt-3 text-xs leading-5 text-white/45">No exclusions. Every KPI uses the same identified-user cohort.</p>
           )}
         </div>
+      </article>
+
+      <article className="min-w-0 rounded-xl border border-white/[0.09] bg-[#111111] p-4 sm:p-5 xl:col-span-2">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <h2 className="text-lg font-semibold tracking-[-0.02em] text-white">Feature behavior</h2>
+            <p className="mt-1 text-sm text-white/55">
+              Last {featureWindowDays} days · reach, daily use and typical frequency
+            </p>
+          </div>
+          <div className="flex items-center gap-2">
+            {metrics && <span className="rounded-md border border-white/10 px-2 py-1 text-[10px] font-medium text-white/55">{metrics.health.mau} monthly active</span>}
+            <div className="flex rounded-lg border border-white/10 bg-black/25 p-0.5" aria-label="Feature behavior period">
+              {FEATURE_WINDOWS.map((window) => (
+                <button
+                  key={window.days}
+                  type="button"
+                  onClick={() => onFeatureWindowDays(window.days)}
+                  aria-pressed={featureWindowDays === window.days}
+                  className={`rounded-md px-2 py-1 text-[10px] font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 ${featureWindowDays === window.days ? 'bg-amber-400/15 text-amber-200' : 'text-white/40 hover:text-white/70'}`}
+                >
+                  {window.label}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-5 grid gap-4 xl:grid-cols-[minmax(0,1fr)_310px]">
+          <div role="table" aria-label="Feature behavior" className="min-w-0">
+            <div role="row" className="hidden grid-cols-[minmax(180px,1.4fr)_repeat(5,minmax(90px,0.8fr))] border-b border-white/[0.08] px-3 pb-2 text-[9px] font-semibold uppercase tracking-[0.12em] text-white/40 md:grid">
+              <span role="columnheader">Feature</span><span role="columnheader">Unique users</span><span role="columnheader">Avg users/day</span><span role="columnheader">Typical frequency</span><span role="columnheader">Repeat</span><span role="columnheader">Outcome</span>
+            </div>
+            {loading && !metrics ? (
+              <div className="py-10 text-center text-sm text-white/40">Loading behavior signals…</div>
+            ) : error && !metrics ? (
+              <div role="alert" className="py-10 text-center text-sm text-rose-200/70">Feature behavior is unavailable.</div>
+            ) : (metrics?.behaviors || []).length === 0 ? (
+              <div className="py-10 text-center text-sm text-white/40">No feature behavior in this cohort.</div>
+            ) : (metrics?.behaviors || []).map((behavior) => <BehaviorRow key={behavior.feature} behavior={behavior} />)}
+          </div>
+          <WorkspaceModePanel metrics={metrics} />
+        </div>
+        <p className="mt-3 text-[10px] leading-4 text-white/40">
+          Unique users removes heavy-user distortion. Average users/day counts distinct people on each UTC day; typical frequency is the median number of opens per user; repeat means use on two or more days.
+        </p>
       </article>
 
       <article className="min-w-0 rounded-xl border border-white/[0.09] bg-[#111111] p-4 sm:p-5 xl:col-span-2">
@@ -957,13 +1057,144 @@ function GlobalInsights({ metrics, loading, error, excludedUsers, windowDays, fe
   )
 }
 
-function GlobalMetric({ label, value, note }: { label: string; value: string | number; note: string }) {
+function formatNumber(value: number | null): string {
+  if (value === null) return '—'
+  return value.toLocaleString('en-US', { maximumFractionDigits: 1 })
+}
+
+function percent(value: number | null): string {
+  return value === null ? '—' : `${formatNumber(value)}%`
+}
+
+function deltaTrend(value: number | null, suffix: string): string {
+  if (value === null) return 'No previous cohort'
+  const arrow = value > 0 ? '↑' : value < 0 ? '↓' : '→'
+  return `${arrow} ${formatNumber(Math.abs(value))}${suffix}`
+}
+
+function countTrend(value: number, pct: number | null): string {
+  const arrow = value > 0 ? '↑' : value < 0 ? '↓' : '→'
+  const percentage = pct === null ? '' : ` · ${pct > 0 ? '+' : ''}${formatNumber(pct)}%`
+  return `${arrow} ${Math.abs(value).toLocaleString('en-US')}${percentage}`
+}
+
+function CohortMetric({ label, value, trend, trendValue, note }: {
+  label: string
+  value: string
+  trend: string
+  trendValue: number | null
+  note: string
+}) {
+  const trendTone = trendValue === null || trendValue === 0
+    ? 'text-white/40'
+    : trendValue > 0 ? 'text-emerald-300/75' : 'text-rose-300/75'
   return (
-    <div className="rounded-lg border border-white/[0.08] bg-black/20 p-3">
+    <div className="min-h-32 rounded-lg border border-white/[0.08] bg-black/20 p-3">
       <dt className="text-[10px] uppercase tracking-[0.11em] text-white/45">{label}</dt>
       <dd className="mt-1 font-mono text-xl font-semibold text-amber-300">{value}</dd>
-      <p className="mt-1 text-[9px] text-white/40">{note}</p>
+      <p className={`mt-1 text-[10px] font-medium ${trendTone}`}>{trend}</p>
+      <p className="mt-2 text-[9px] leading-4 text-white/40"><strong className="font-semibold text-white/55">What it means:</strong> {note}</p>
     </div>
+  )
+}
+
+function BehaviorRow({ behavior }: { behavior: UserBehaviorMetric }) {
+  const meta = behavior.feature === 'search_terminals'
+    ? {
+        name: 'Search terminals',
+        why: 'Cmd+Shift+A or the navbar button. Finds and jumps to an open terminal.',
+        uniqueNote: `${behavior.shortcut_users || 0} used the keyboard shortcut`,
+        outcome: `${behavior.outcome_users} users`,
+        outcomeNote: `${behavior.outcome_events} completed terminal switches`,
+      }
+    : behavior.feature === 'command_palette'
+      ? {
+          name: 'Command Palette',
+          why: 'Cmd+P. Searches product actions and runs the selected command.',
+          uniqueNote: 'Opened from the keyboard shortcut',
+          outcome: `${behavior.outcome_users} users`,
+          outcomeNote: `${behavior.outcome_events} commands run`,
+        }
+      : {
+          name: 'Conversation History',
+          why: 'Searches and restores earlier conversations across supported agents.',
+          uniqueNote: behavior.coverage === 'historical_proxy' ? 'Includes historical navbar opens' : 'Successful opens',
+          outcome: behavior.outcome_coverage === 'starts_this_release' && behavior.outcome_events === 0 ? 'Collecting' : `${behavior.outcome_users} users`,
+          outcomeNote: behavior.outcome_coverage === 'starts_this_release' && behavior.outcome_events === 0
+            ? 'Restore outcomes start with this release'
+            : `${behavior.outcome_events} conversations restored`,
+        }
+  const lowerBound = behavior.coverage === 'historical_proxy' ? '≥' : ''
+
+  return (
+    <div role="row" className="grid gap-3 border-b border-white/[0.055] px-3 py-4 last:border-0 md:grid-cols-[minmax(180px,1.4fr)_repeat(5,minmax(90px,0.8fr))] md:gap-2">
+      <div role="cell">
+        <span className="block text-sm font-medium text-white/82">{meta.name}</span>
+        <span className="mt-1 block text-[10px] leading-4 text-white/42">{meta.why}</span>
+      </div>
+      <BehaviorCell label="Unique users" value={`${lowerBound}${behavior.users} · ${lowerBound}${percent(behavior.reach_pct)}`} note={meta.uniqueNote} accent />
+      <BehaviorCell label="Avg users/day" value={`${lowerBound}${formatNumber(behavior.avg_users_per_day)}`} note="Unique people per calendar day" />
+      <BehaviorCell label="Typical frequency" value={`${formatNumber(behavior.median_uses)} opens`} note="Median per user" />
+      <BehaviorCell label="Repeat" value={percent(behavior.repeat_pct)} note={`${behavior.repeat_users} used it on 2+ days`} />
+      <BehaviorCell label="Outcome" value={meta.outcome} note={meta.outcomeNote} />
+    </div>
+  )
+}
+
+function BehaviorCell({ label, value, note, accent = false }: { label: string; value: string; note: string; accent?: boolean }) {
+  return (
+    <div role="cell" className="grid grid-cols-[110px_1fr] gap-2 md:block">
+      <span className="text-[9px] font-semibold uppercase tracking-[0.1em] text-white/32 md:hidden">{label}</span>
+      <span>
+        <span className={`block font-mono text-xs ${accent ? 'text-amber-300' : 'text-white/70'}`}>{value}</span>
+        <span className="mt-1 block text-[9px] leading-4 text-white/38">{note}</span>
+      </span>
+    </div>
+  )
+}
+
+function WorkspaceModePanel({ metrics }: { metrics: UserGlobalMetrics | null }) {
+  const modes = metrics?.workspace_modes || []
+  const hasData = Boolean(metrics && metrics.workspace_mode_events > 0)
+  const winner = hasData
+    ? [...modes].sort((left, right) => (right.share_pct || 0) - (left.share_pct || 0))[0]
+    : null
+  const coverageCopy = metrics?.workspace_mode_coverage === 'exact'
+    ? `${metrics.workspace_mode_events} terminal launches from ${metrics.workspace_mode_users} users. Defaults count.`
+    : metrics?.workspace_mode_coverage === 'selection_only'
+      ? `No reliable winner yet. This is ${metrics.workspace_mode_events} explicit selections from ${metrics.workspace_mode_users} users; launch tracking now counts defaults too.`
+      : 'Collecting mode-at-launch telemetry from this release.'
+
+  return (
+    <section aria-label="Workspace mode share" className="rounded-lg border border-white/[0.08] bg-black/20 p-4">
+      <h3 className="text-xs font-semibold text-white/78">Workspace mode share</h3>
+      <p className="mt-1 text-[10px] leading-4 text-white/42">Grid, Tabs and List add up to 100% of the measured sample.</p>
+      {hasData ? (
+        <>
+          <div className="mt-5 flex h-2 overflow-hidden rounded-full bg-white/[0.05]" aria-label={modes.map((mode) => `${titleCase(mode.mode)} ${percent(mode.share_pct)}`).join(', ')}>
+            {modes.map((mode) => (
+              <span
+                key={mode.mode}
+                className={mode.mode === 'grid' ? 'bg-amber-400' : mode.mode === 'tabs' ? 'bg-violet-400' : 'bg-sky-400'}
+                style={{ width: `${mode.share_pct || 0}%` }}
+              />
+            ))}
+          </div>
+          <dl className="mt-4 grid grid-cols-3 gap-2">
+            {modes.map((mode) => (
+              <div key={mode.mode}>
+                <dt className="text-[9px] text-white/40">{titleCase(mode.mode)}</dt>
+                <dd className="mt-1 font-mono text-sm text-white/75">{percent(mode.share_pct)}</dd>
+              </div>
+            ))}
+          </dl>
+          {winner && <p className="mt-4 text-xs text-white/65"><strong className="text-white/80">Most used:</strong> {titleCase(winner.mode)} · {percent(winner.share_pct)}</p>}
+        </>
+      ) : (
+        <p className="mt-5 font-mono text-xl font-semibold text-amber-300">Collecting</p>
+      )}
+      <p className="mt-4 rounded-md border border-white/[0.07] bg-white/[0.025] p-2.5 text-[10px] leading-4 text-white/45">{coverageCopy}</p>
+    </section>
   )
 }
 
@@ -1329,6 +1560,28 @@ function UserDrawer({ user, detail, loading, error, days, copied, excludedFromGl
 
           {loading && !detail ? <DetailSkeleton /> : detail && (
             <>
+              <section aria-labelledby="behavior-title" className="rounded-xl border border-white/[0.08] bg-[#121212] p-4">
+                <SectionTitle id="behavior-title" title="Product behavior" note={`Last ${detail.behavior.window_days} days · clear actions and outcomes`} />
+                <dl className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
+                  <Info label="Active days" value={detail.behavior.active_days.toLocaleString('en-US')} note="Separate days with any tracked use" mono />
+                  <Info label="Terminal depth" value={user.max_terminal_slots ? `${user.max_terminal_slots} max` : 'Not available'} note="Highest simultaneous slot in 180d" mono />
+                  <Info label="Search terminals" value={`${detail.behavior.search_opens} → ${detail.behavior.search_switches}`} note="Opens → completed switches" mono />
+                  <Info label="Command Palette" value={`${detail.behavior.palette_opens} → ${detail.behavior.palette_runs}`} note="Opens → commands run" mono />
+                  <Info
+                    label="Conversation History"
+                    value={detail.behavior.history_restores > 0 ? `${detail.behavior.history_opens} → ${detail.behavior.history_restores}` : `${detail.behavior.history_opens} opens`}
+                    note={detail.behavior.history_restores > 0 ? 'Opens → conversations restored' : 'Restore tracking starts with this release'}
+                    mono
+                  />
+                  <Info
+                    label="Preferred mode"
+                    value={detail.behavior.workspace_mode ? `${titleCase(detail.behavior.workspace_mode)} · ${percent(detail.behavior.workspace_mode_pct)}` : 'Collecting'}
+                    note={detail.behavior.workspace_mode_launches ? `${detail.behavior.workspace_mode_launches} measured launches in that mode` : 'Mode-at-launch tracking starts with this release'}
+                    mono
+                  />
+                </dl>
+              </section>
+
               <section aria-labelledby="activity-title" className="rounded-xl border border-white/[0.08] bg-[#121212] p-4">
                 <div className="flex flex-wrap items-center justify-between gap-3">
                   <SectionTitle id="activity-title" title="Recorded activity" note="Event volume, not time spent" />

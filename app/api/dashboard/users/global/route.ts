@@ -28,16 +28,20 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    const args = { p_excluded_user_ids: excludedUserIds, p_window_days: windowDays }
+    const args = {
+      p_excluded_user_ids: excludedUserIds,
+      p_window_days: windowDays,
+      p_behavior_window_days: featureWindowDays,
+    }
     // ponytail: serialize the scans to stay under Supabase's statement timeout;
     // merge the rollups into one RPC if dashboard latency becomes a problem.
     const metrics = await supabaseRpc<Omit<UserGlobalMetrics, 'actions' | 'features'>>({
-      fn: 'user_activity_global_v2',
+      fn: 'user_activity_global_v3',
       args,
     })
     const actions = await supabaseRpc<Array<UserGlobalAction & { events: number | string; users: number | string }>>({
       fn: 'user_activity_action_catalog_v2',
-      args,
+      args: { p_excluded_user_ids: excludedUserIds, p_window_days: windowDays },
     })
     const features = await supabaseRpc<Array<UserFeatureAdoption & Record<string, number | string | null>>>({
       fn: 'user_feature_adoption_v2',
