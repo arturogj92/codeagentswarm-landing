@@ -106,6 +106,32 @@ export interface WorkspaceModeMetric {
   share_pct: number | null
 }
 
+export function workspaceModeCopy(
+  coverage: UserGlobalMetrics['workspace_mode_coverage'],
+  events: number,
+  users: number,
+) {
+  const userLabel = `${users} ${users === 1 ? 'user' : 'users'}`
+
+  if (coverage === 'selection_only') {
+    return {
+      title: 'Manual mode changes',
+      description: 'Early preference signal across Grid, Tabs and List.',
+      leaderLabel: 'Most selected',
+      sample: `${events} manual changes from ${userLabel}. Default modes are missing, so this is not usage share yet.`,
+    }
+  }
+
+  return {
+    title: 'Workspace mode use',
+    description: 'Share of tracked terminal launches across Grid, Tabs and List.',
+    leaderLabel: 'Most used',
+    sample: coverage === 'exact'
+      ? `${events} tracked launches from ${userLabel}. Default modes count.`
+      : 'Collecting tracked launches, including default modes, from this release.',
+  }
+}
+
 export type GlobalWindowDays = 1 | 7 | 30 | 180
 export type FeatureWindowDays = 7 | 30 | 90 | 180
 

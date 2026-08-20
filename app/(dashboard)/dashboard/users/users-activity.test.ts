@@ -11,6 +11,7 @@ import {
   parseFeatureWindowDays,
   parseGlobalWindowDays,
   primaryAgentSignal,
+  workspaceModeCopy,
   summarizeCohortHealth,
   summarizeUsers,
   type UserActivityRow,
@@ -195,4 +196,20 @@ test('cohort summary separates audience growth from weakening engagement', () =>
     summarizeCohortHealth(health).title,
     'Audience growth is accelerating; engagement needs attention.',
   )
+})
+
+test('workspace mode copy does not present manual selections as real usage', () => {
+  assert.deepEqual(workspaceModeCopy('selection_only', 12, 2), {
+    title: 'Manual mode changes',
+    description: 'Early preference signal across Grid, Tabs and List.',
+    leaderLabel: 'Most selected',
+    sample: '12 manual changes from 2 users. Default modes are missing, so this is not usage share yet.',
+  })
+
+  assert.deepEqual(workspaceModeCopy('exact', 42, 9), {
+    title: 'Workspace mode use',
+    description: 'Share of tracked terminal launches across Grid, Tabs and List.',
+    leaderLabel: 'Most used',
+    sample: '42 tracked launches from 9 users. Default modes count.',
+  })
 })

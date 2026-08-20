@@ -20,6 +20,7 @@ import {
   primaryAgentSignal,
   summarizeCohortHealth,
   summarizeUsers,
+  workspaceModeCopy,
   type Lifecycle,
   type FeatureWindowDays,
   type GlobalWindowDays,
@@ -1159,16 +1160,16 @@ function WorkspaceModePanel({ metrics }: { metrics: UserGlobalMetrics | null }) 
   const winner = hasData
     ? [...modes].sort((left, right) => (right.share_pct || 0) - (left.share_pct || 0))[0]
     : null
-  const coverageCopy = metrics?.workspace_mode_coverage === 'exact'
-    ? `${metrics.workspace_mode_events} terminal launches from ${metrics.workspace_mode_users} users. Defaults count.`
-    : metrics?.workspace_mode_coverage === 'selection_only'
-      ? `No reliable winner yet. This is ${metrics.workspace_mode_events} explicit selections from ${metrics.workspace_mode_users} users; launch tracking now counts defaults too.`
-      : 'Collecting mode-at-launch telemetry from this release.'
+  const copy = workspaceModeCopy(
+    metrics?.workspace_mode_coverage || 'starts_this_release',
+    metrics?.workspace_mode_events || 0,
+    metrics?.workspace_mode_users || 0,
+  )
 
   return (
     <section aria-label="Workspace mode share" className="rounded-lg border border-white/[0.08] bg-black/20 p-4">
-      <h3 className="text-xs font-semibold text-white/78">Workspace mode share</h3>
-      <p className="mt-1 text-[10px] leading-4 text-white/42">Grid, Tabs and List add up to 100% of the measured sample.</p>
+      <h3 className="text-xs font-semibold text-white/78">{copy.title}</h3>
+      <p className="mt-1 text-[10px] leading-4 text-white/42">{copy.description}</p>
       {hasData ? (
         <>
           <div className="mt-5 flex h-2 overflow-hidden rounded-full bg-white/[0.05]" aria-label={modes.map((mode) => `${titleCase(mode.mode)} ${percent(mode.share_pct)}`).join(', ')}>
@@ -1188,12 +1189,12 @@ function WorkspaceModePanel({ metrics }: { metrics: UserGlobalMetrics | null }) 
               </div>
             ))}
           </dl>
-          {winner && <p className="mt-4 text-xs text-white/65"><strong className="text-white/80">Most used:</strong> {titleCase(winner.mode)} · {percent(winner.share_pct)}</p>}
+          {winner && <p className="mt-4 text-xs text-white/65"><strong className="text-white/80">{copy.leaderLabel}:</strong> {titleCase(winner.mode)} · {percent(winner.share_pct)}</p>}
         </>
       ) : (
         <p className="mt-5 font-mono text-xl font-semibold text-amber-300">Collecting</p>
       )}
-      <p className="mt-4 rounded-md border border-white/[0.07] bg-white/[0.025] p-2.5 text-[10px] leading-4 text-white/45">{coverageCopy}</p>
+      <p className="mt-4 rounded-md border border-white/[0.07] bg-white/[0.025] p-2.5 text-[10px] leading-4 text-white/45">{copy.sample}</p>
     </section>
   )
 }
