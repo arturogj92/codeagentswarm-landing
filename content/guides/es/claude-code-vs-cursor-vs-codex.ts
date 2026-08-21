@@ -14,7 +14,7 @@ En esta guía te cuento qué hace cada una, dónde destaca y dónde se queda cor
     ctaAgent: 'multi',
     highlightedWords: ['Claude Code', 'Cursor', 'Codex CLI'],
     publishedAt: '2026-04-15',
-    updatedAt: '2026-08-16',
+    updatedAt: '2026-08-21',
     alternateSlug: 'claude-code-vs-cursor-vs-codex',
   },
   sections: [
@@ -41,7 +41,7 @@ En esta guía te cuento qué hace cada una, dónde destaca y dónde se queda cor
         {
           type: 'callout',
           variant: 'info',
-          content: 'La distinción clave: Cursor es un IDE (programas dentro de él), mientras que Claude Code y Codex CLI son agentes de terminal (trabajan junto a tu editor). Muchos desarrolladores usan una herramienta basada en IDE y un agente CLI a la vez.',
+          content: 'Una distinción importante: esta página compara el IDE de Cursor con dos agentes de terminal. Cursor también ofrece una CLI independiente llamada <code>cursor-agent</code>. Consulta la <a href="/es/guias/cursor-agent-cli-acp-codeagentswarm" class="text-neon-cyan hover:text-neon-purple transition-colors">guía de Cursor CLI</a> o la comparativa <a href="/es/guias/cursor-cli-vs-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">Cursor CLI vs Claude Code</a>.',
         },
       ],
     },
