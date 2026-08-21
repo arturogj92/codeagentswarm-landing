@@ -10,6 +10,7 @@ import {
   parseExcludedUserIds,
   parseFeatureWindowDays,
   parseGlobalWindowDays,
+  parseRealtimeWindowHours,
   primaryAgentSignal,
   workspaceModeCopy,
   summarizeCohortHealth,
@@ -120,6 +121,7 @@ test('filters combine search, lifecycle, normalized agent and operational dimens
   assert.deepEqual(result.map((entry) => entry.user_id), ['user-2'])
   assert.equal(normalizeAgent('Gemini CLI'), 'gemini')
   assert.equal(normalizeAgent('Codex-CLI'), 'codex')
+  assert.equal(normalizeAgent('Cursor Agent'), 'cursor')
 })
 
 test('none integration and unknown version have explicit filter semantics', () => {
@@ -165,6 +167,14 @@ test('global windows accept only the four dashboard periods', () => {
   assert.equal(parseGlobalWindowDays(180), 180)
   assert.equal(parseGlobalWindowDays(0), null)
   assert.equal(parseGlobalWindowDays('7'), null)
+})
+
+test('real-time windows accept only the five supported hourly ranges', () => {
+  assert.equal(parseRealtimeWindowHours(undefined), 1)
+  assert.equal(parseRealtimeWindowHours('0.5'), 0.5)
+  assert.equal(parseRealtimeWindowHours('24'), 24)
+  assert.equal(parseRealtimeWindowHours('2'), null)
+  assert.equal(parseRealtimeWindowHours('anything'), null)
 })
 
 test('feature windows default to 30 days and reject unsupported periods', () => {

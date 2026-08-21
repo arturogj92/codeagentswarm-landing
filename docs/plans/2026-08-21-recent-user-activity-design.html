@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>CodeAgentSwarm · Real-time activity tab proposal</title>
+  <style>
+    :root, [data-theme="dark"] {
+      color-scheme: dark;
+      --bg: #090909; --panel: #111; --field: #0b0b0b;
+      --border: rgba(255,255,255,.09); --soft: rgba(255,255,255,.055);
+      --text: rgba(255,255,255,.9); --muted: rgba(255,255,255,.55); --faint: rgba(255,255,255,.36);
+      --amber: #fcd34d; --green: #6ee7b7; --red: #fda4af; --blue: #93c5fd;
+    }
+    [data-theme="light"] {
+      color-scheme: light;
+      --bg: #f3eee2; --panel: #faf6ea; --field: #fffdf6;
+      --border: rgba(101,78,45,.16); --soft: rgba(101,78,45,.09);
+      --text: #33291a; --muted: #6d5f45; --faint: #8b7b5e;
+      --amber: #96690f; --green: #347c54; --red: #a33d4d; --blue: #365f9b;
+    }
+    [data-theme="midnight"] {
+      --bg: #0b1120; --panel: #131b31; --field: #0e1628;
+      --border: rgba(146,170,255,.13); --soft: rgba(146,170,255,.07);
+      --text: #eef2ff; --muted: #a3aecb; --faint: #687493;
+      --amber: #fbbf24; --green: #54d49a; --red: #fb8798; --blue: #8bb5ff;
+    }
+    [data-theme="espresso"] {
+      --bg: #161009; --panel: #1f1710; --field: #18110b;
+      --border: rgba(240,212,160,.13); --soft: rgba(240,212,160,.07);
+      --text: #f5eddf; --muted: #bfae93; --faint: #776850;
+      --amber: #fbbf24; --green: #62bd85; --red: #e8838c; --blue: #8eb6dc;
+    }
+    [data-theme="neon"] {
+      --bg: #0e0817; --panel: #160d24; --field: #11091d;
+      --border: rgba(190,160,255,.14); --soft: rgba(190,160,255,.07);
+      --text: #f3edff; --muted: #a795c9; --faint: #665a80;
+      --amber: #fbbf24; --green: #44d6c0; --red: #ff7ca7; --blue: #9eafff;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-width: 320px; background: var(--bg); color: var(--text); font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; }
+    button, select { font: inherit; }
+    button { cursor: pointer; }
+    button:focus-visible, select:focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; }
+    .demo { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; justify-content: flex-end; gap: 12px; min-height: 42px; padding: 6px 28px; border-bottom: 1px dashed var(--border); background: color-mix(in srgb, var(--bg) 94%, transparent); color: var(--muted); font-size: 11px; backdrop-filter: blur(12px); }
+    .demo strong { margin-right: auto; color: var(--amber); font-size: 9px; letter-spacing: .14em; text-transform: uppercase; }
+    .demo select { border: 1px solid var(--border); border-radius: 6px; background: var(--field); color: var(--text); padding: 5px 8px; }
+    header { border-bottom: 1px solid var(--border); background: var(--panel); }
+    .nav { min-height: 58px; max-width: 1600px; margin: 0 auto; padding: 8px 32px; display: flex; align-items: center; gap: 11px; }
+    .mark { width: 29px; height: 29px; display: grid; place-items: center; border: 1px solid color-mix(in srgb, var(--amber) 28%, transparent); border-radius: 8px; background: color-mix(in srgb, var(--amber) 10%, transparent); color: var(--amber); font: 700 14px ui-monospace, monospace; }
+    .brand { font-size: 14px; font-weight: 650; }
+    .brand span { color: var(--muted); font-weight: 450; }
+    nav { margin-left: auto; display: flex; gap: 22px; color: var(--muted); font-size: 12px; }
+    nav .active { color: var(--amber); }
+    main { max-width: 1600px; margin: 0 auto; padding: 28px 32px 64px; }
+    .intro { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; }
+    .kicker { margin: 0 0 8px; color: var(--amber); font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    h1 { margin: 0; font-size: 32px; letter-spacing: -.035em; }
+    .lead { margin: 7px 0 0; color: var(--muted); font-size: 13px; }
+    .refresh-all { border: 1px solid var(--border); border-radius: 8px; background: transparent; color: var(--muted); padding: 9px 13px; font-size: 11px; }
+    .summary { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 18px; }
+    .metric { min-height: 84px; padding: 13px; border: 1px solid var(--border); border-radius: 10px; background: var(--panel); }
+    .metric span { display: block; color: var(--faint); font-size: 8px; letter-spacing: .1em; text-transform: uppercase; }
+    .metric strong { display: block; margin-top: 8px; color: var(--text); font: 650 22px ui-monospace, monospace; }
+    .metric small { display: block; margin-top: 5px; color: var(--muted); font-size: 9px; }
+    .range-row { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-top: 22px; padding-bottom: 13px; border-bottom: 1px solid var(--border); }
+    .range-row p { margin: 0; color: var(--muted); font-size: 11px; }
+    .range { display: inline-flex; padding: 3px; border: 1px solid var(--border); border-radius: 9px; background: var(--field); }
+    .range button { border: 0; border-radius: 6px; background: transparent; color: var(--faint); padding: 6px 10px; font-size: 10px; }
+    .range button.active { background: color-mix(in srgb, var(--amber) 15%, transparent); color: var(--amber); }
+    .recent { margin-top: 14px; overflow: hidden; border: 1px solid var(--border); border-radius: 13px; background: var(--panel); }
+    .recent-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; padding: 17px 18px; border-bottom: 1px solid var(--border); }
+    h2 { margin: 0; font-size: 17px; letter-spacing: -.02em; }
+    .sub { margin: 5px 0 0; color: var(--muted); font-size: 11px; }
+    .recent-actions { display: flex; align-items: center; gap: 10px; }
+    .pulse { display: inline-flex; align-items: center; gap: 7px; color: var(--green); font-size: 10px; white-space: nowrap; }
+    .pulse::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; box-shadow: 0 0 0 4px color-mix(in srgb, currentColor 12%, transparent); }
+    .refresh { border: 1px solid var(--border); border-radius: 7px; background: var(--field); color: var(--muted); padding: 7px 9px; font-size: 10px; }
+    .privacy { margin: 0; padding: 9px 18px; border-bottom: 1px solid var(--soft); background: color-mix(in srgb, var(--amber) 4%, transparent); color: var(--muted); font-size: 9px; line-height: 1.45; }
+    .privacy strong { color: var(--amber); }
+    .timeline { padding: 17px 18px 13px; border-bottom: 1px solid var(--soft); }
+    .timeline-head { display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+    .timeline-head strong { font-size: 11px; }
+    .timeline-head span { color: var(--muted); font: 9px ui-monospace, monospace; }
+    .bars { height: 84px; margin-top: 14px; display: flex; align-items: flex-end; gap: 5px; }
+    .bars i { flex: 1; min-width: 3px; border-radius: 3px 3px 1px 1px; background: color-mix(in srgb, var(--amber) 58%, transparent); }
+    .bars i:last-child { background: var(--green); }
+    .axis { display: flex; justify-content: space-between; margin-top: 7px; color: var(--faint); font: 8px ui-monospace, monospace; }
+    .rows { list-style: none; margin: 0; padding: 0; }
+    .row { display: grid; grid-template-columns: minmax(220px, .9fr) minmax(240px, 1.3fr) minmax(150px, .55fr) 92px; align-items: center; gap: 16px; padding: 13px 18px; border-bottom: 1px solid var(--soft); }
+    .row:last-child { border-bottom: 0; }
+    .person { display: flex; align-items: center; gap: 11px; min-width: 0; }
+    .avatar { width: 35px; height: 35px; flex: 0 0 auto; display: grid; place-items: center; border: 1px solid var(--border); border-radius: 9px; background: var(--field); color: var(--muted); font: 650 10px ui-monospace, monospace; }
+    .person strong, .doing strong { display: block; overflow: hidden; color: var(--text); font-size: 12px; text-overflow: ellipsis; white-space: nowrap; }
+    .person span, .doing span, .signal span { display: block; margin-top: 4px; overflow: hidden; color: var(--muted); font-size: 9px; text-overflow: ellipsis; white-space: nowrap; }
+    .doing { min-width: 0; }
+    .doing strong { font-weight: 560; }
+    .signal strong { color: var(--blue); font: 600 10px ui-monospace, monospace; }
+    .when { justify-self: end; color: var(--muted); font: 600 10px ui-monospace, monospace; white-space: nowrap; }
+    .when.now { color: var(--green); }
+    .insights { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 14px 18px 18px; border-top: 1px solid var(--border); background: var(--field); }
+    .insight { min-width: 0; padding: 13px; border: 1px solid var(--soft); border-radius: 9px; background: var(--panel); }
+    .insight h3 { margin: 0; font-size: 11px; }
+    .ranked { list-style: none; margin: 10px 0 0; padding: 0; }
+    .ranked li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px; padding: 6px 0; color: var(--muted); font-size: 9px; }
+    .ranked strong { overflow: hidden; color: var(--text); font-weight: 550; text-overflow: ellipsis; white-space: nowrap; }
+    .ranked span { font-family: ui-monospace, monospace; }
+    .state { display: none; min-height: 245px; place-items: center; padding: 36px; color: var(--muted); text-align: center; }
+    .state strong { display: block; margin-bottom: 6px; color: var(--text); font-size: 13px; }
+    .skeleton { width: 100%; }
+    .skeleton i { display: block; height: 46px; margin: 8px 0; border-radius: 8px; background: var(--soft); }
+    body[data-state="loading"] .loaded,
+    body[data-state="empty"] .loaded,
+    body[data-state="error"] .loaded { display: none; }
+    body[data-state="loading"] .loading,
+    body[data-state="empty"] .empty,
+    body[data-state="error"] .error { display: grid; }
+    .rest { margin-top: 16px; padding: 24px; border: 1px dashed var(--border); border-radius: 13px; color: var(--faint); text-align: center; font-size: 11px; }
+    @media (max-width: 980px) {
+      .summary { grid-template-columns: repeat(2, 1fr); }
+      .row { grid-template-columns: minmax(190px, .8fr) minmax(220px, 1.2fr) 82px; }
+      .signal { display: none; }
+    }
+    @media (max-width: 640px) {
+      .demo { align-items: flex-end; flex-wrap: wrap; padding: 8px 14px; }
+      .demo strong { width: 100%; }
+      .nav { padding-inline: 16px; }
+      nav { display: none; }
+      main { padding: 20px 14px 44px; }
+      .intro { align-items: flex-start; }
+      h1 { font-size: 26px; }
+      .summary { grid-template-columns: repeat(2, 1fr); }
+      .range-row { align-items: flex-start; flex-direction: column; }
+      .range { width: 100%; overflow-x: auto; }
+      .range button { flex: 1 0 auto; }
+      .recent-head { flex-direction: column; }
+      .row { grid-template-columns: 1fr auto; gap: 10px; }
+      .person { grid-column: 1; }
+      .doing { grid-column: 1 / -1; padding-left: 46px; }
+      .when { grid-column: 2; grid-row: 1; }
+      .privacy { padding-inline: 14px; }
+      .bars { gap: 3px; }
+      .insights { grid-template-columns: 1fr; padding-inline: 14px; }
+    }
+    @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+  </style>
+</head>
+<body data-state="loaded">
+  <div class="demo">
+    <strong>Proposal controls</strong>
+    <label>Theme <select id="theme"><option>dark</option><option>light</option><option>midnight</option><option>espresso</option><option>neon</option></select></label>
+    <label>State <select id="state"><option value="loaded">Loaded</option><option value="loading">Loading</option><option value="empty">Empty</option><option value="error">Error</option></select></label>
+  </div>
+  <header>
+    <div class="nav"><div class="mark">@</div><div class="brand">CodeAgentSwarm <span>/ Operations</span></div><nav><span>Users</span><span class="active">Real-time activity</span><span>Emails</span><span>Automation</span><span>Sign out</span></nav></div>
+  </header>
+  <main>
+    <section class="intro">
+      <div><p class="kicker">User metrics</p><h1>Real-time activity</h1><p class="lead">See who is using CodeAgentSwarm and which product areas they are using.</p></div>
+      <button class="refresh-all" type="button">Refresh dashboard</button>
+    </section>
+    <div class="range-row">
+      <p>Activity window</p>
+      <div class="range" aria-label="Activity window">
+        <button type="button" data-hours="0.5">30 min</button><button type="button" data-hours="1" class="active">1 hour</button><button type="button" data-hours="4">4 hours</button><button type="button" data-hours="12">12 hours</button><button type="button" data-hours="24">24 hours</button>
+      </div>
+    </div>
+    <section class="summary" aria-label="User activity summary">
+      <div class="metric"><span>Active users</span><strong id="active-users">12</strong><small id="active-note">With activity in 1 hour</small></div>
+      <div class="metric"><span>Active now</span><strong id="active-now">3</strong><small>Event in the last 5 min</small></div>
+      <div class="metric"><span>Tracked events</span><strong id="event-count">184</strong><small id="event-note">Across the selected hour</small></div>
+      <div class="metric"><span>Agent sessions</span><strong id="session-count">21</strong><small>Successful launch signals</small></div>
+    </section>
+    <section class="recent" aria-labelledby="recent-title">
+      <div class="recent-head">
+        <div><h2 id="recent-title">Latest user activity</h2><p class="sub"><strong id="count">12 active users</strong> in the selected window · showing the latest 5</p></div>
+        <div class="recent-actions"><span class="pulse" id="poll-status">Auto-refresh · 30s</span><button class="refresh" id="refresh" type="button">Refresh now</button></div>
+      </div>
+      <p class="privacy"><strong>Privacy-safe:</strong> broad product actions only. Prompts, replies, paths, file names and project names are never shown.</p>
+      <div class="timeline loaded" aria-label="Tracked events over time">
+        <div class="timeline-head"><strong>Events over time</strong><span id="bucket-label">5-minute intervals</span></div>
+        <div class="bars" id="bars" aria-hidden="true"></div>
+        <div class="axis"><span id="axis-start">60m ago</span><span>now</span></div>
+      </div>
+      <div class="state loading"><div class="skeleton"><i></i><i></i><i></i><i></i></div></div>
+      <div class="state empty"><div><strong>Nobody active in the last 15 minutes</strong>This panel will fill after the next identified product event.</div></div>
+      <div class="state error"><div><strong>Recent activity could not refresh</strong>The last successful snapshot stays visible; the rest of User Metrics remains usable.</div></div>
+      <ol class="rows loaded">
+        <li class="row"><div class="person"><div class="avatar">CM</div><div><strong>Clara Mendoza</strong><span>clara@example.test</span></div></div><div class="doing"><strong>Started an agent session</strong><span>Terminal session · Grid workspace</span></div><div class="signal"><strong>Claude Code</strong><span>v2.2.1</span></div><time class="when now">12s ago</time></li>
+        <li class="row"><div class="person"><div class="avatar">SC</div><div><strong>Sofia Chen</strong><span>sofia@example.test</span></div></div><div class="doing"><strong>Completed a Chat turn</strong><span>Chat · successful outcome</span></div><div class="signal"><strong>Codex</strong><span>v2.2.1</span></div><time class="when now">48s ago</time></li>
+        <li class="row"><div class="person"><div class="avatar">JR</div><div><strong>Jonas Richter</strong><span>jonas@example.test</span></div></div><div class="doing"><strong>Opened Conversation History</strong><span>Conversation history</span></div><div class="signal"><strong>opencode</strong><span>v2.2.0</span></div><time class="when">4m ago</time></li>
+        <li class="row"><div class="person"><div class="avatar">AN</div><div><strong>Amina Noor</strong><span>amina@example.test</span></div></div><div class="doing"><strong>Changed workspace mode</strong><span>Workspace · List</span></div><div class="signal"><strong>Kimi Code</strong><span>v2.2.1</span></div><time class="when">8m ago</time></li>
+        <li class="row"><div class="person"><div class="avatar">MD</div><div><strong>Marco Díaz</strong><span>marco@example.test</span></div></div><div class="doing"><strong>Used the task board</strong><span>Tasks · privacy-safe group</span></div><div class="signal"><strong>Cursor</strong><span>v2.1.9</span></div><time class="when">13m ago</time></li>
+      </ol>
+      <div class="insights loaded">
+        <section class="insight"><h3>Top product areas</h3><ol class="ranked" id="top-actions"><li><strong>Terminal sessions</strong><span>62</span></li><li><strong>Chat</strong><span>49</span></li><li><strong>Task board</strong><span>31</span></li><li><strong>Conversation History</strong><span>18</span></li></ol></section>
+        <section class="insight"><h3>Active agents</h3><ol class="ranked" id="top-agents"><li><strong>Claude Code</strong><span>7 users</span></li><li><strong>Codex</strong><span>4 users</span></li><li><strong>Kimi Code</strong><span>2 users</span></li><li><strong>Cursor</strong><span>1 user</span></li></ol></section>
+      </div>
+    </section>
+    <div class="rest">Users remains a separate tab for cohort health, product behavior, filters and the complete account list.</div>
+  </main>
+  <script>
+    const root = document.documentElement;
+    const theme = document.getElementById('theme');
+    const state = document.getElementById('state');
+    const refresh = document.getElementById('refresh');
+    const pollStatus = document.getElementById('poll-status');
+    const rangeButtons = [...document.querySelectorAll('[data-hours]')];
+    const rangeData = {
+      '0.5': { users: 8, now: 3, events: 96, sessions: 11, label: '30 minutes', interval: '2-minute intervals', axis: '30m ago', bars: [22,35,28,46,31,54,42,68,49,72,61,82,56,77,91] },
+      '1': { users: 12, now: 3, events: 184, sessions: 21, label: '1 hour', interval: '5-minute intervals', axis: '60m ago', bars: [24,38,31,52,45,63,51,72,57,68,76,91] },
+      '4': { users: 27, now: 3, events: 624, sessions: 58, label: '4 hours', interval: '20-minute intervals', axis: '4h ago', bars: [34,48,41,59,52,69,61,75,65,82,74,90] },
+      '12': { users: 46, now: 3, events: 1487, sessions: 133, label: '12 hours', interval: '1-hour intervals', axis: '12h ago', bars: [29,41,36,53,61,72,68,79,73,86,78,92] },
+      '24': { users: 63, now: 3, events: 2841, sessions: 241, label: '24 hours', interval: '2-hour intervals', axis: '24h ago', bars: [52,38,26,21,33,57,71,83,76,89,81,94] }
+    };
+
+    function selectRange(hours) {
+      const data = rangeData[hours];
+      rangeButtons.forEach(button => {
+        const active = button.dataset.hours === hours;
+        button.classList.toggle('active', active);
+        button.setAttribute('aria-pressed', String(active));
+      });
+      document.getElementById('active-users').textContent = data.users;
+      document.getElementById('active-now').textContent = data.now;
+      document.getElementById('event-count').textContent = data.events.toLocaleString('en-US');
+      document.getElementById('session-count').textContent = data.sessions;
+      document.getElementById('active-note').textContent = `With activity in ${data.label}`;
+      document.getElementById('event-note').textContent = `Across the selected ${data.label}`;
+      document.getElementById('count').textContent = `${data.users} active users`;
+      document.getElementById('bucket-label').textContent = data.interval;
+      document.getElementById('axis-start').textContent = data.axis;
+      document.getElementById('bars').innerHTML = data.bars.map(height => `<i style="height:${height}%"></i>`).join('');
+      [...document.querySelectorAll('#top-actions li span')].forEach((span, index) => {
+        span.textContent = Math.max(1, Math.round(data.events * [0.34, 0.27, 0.17, 0.1][index]));
+      });
+      [...document.querySelectorAll('#top-agents li span')].forEach((span, index) => {
+        const users = Math.max(1, Math.round(data.users * [0.58, 0.33, 0.17, 0.08][index]));
+        span.textContent = `${users} ${users === 1 ? 'user' : 'users'}`;
+      });
+      localStorage.setItem('cas-realtime-range', hours);
+    }
+
+    theme.value = localStorage.getItem('cas-recent-activity-theme') || 'dark';
+    root.dataset.theme = theme.value;
+    theme.addEventListener('change', () => {
+      root.dataset.theme = theme.value;
+      localStorage.setItem('cas-recent-activity-theme', theme.value);
+    });
+    state.addEventListener('change', () => { document.body.dataset.state = state.value; });
+    rangeButtons.forEach(button => button.addEventListener('click', () => selectRange(button.dataset.hours)));
+    refresh.addEventListener('click', () => {
+      refresh.disabled = true;
+      refresh.textContent = 'Refreshing…';
+      pollStatus.textContent = 'Updating snapshot';
+      window.setTimeout(() => {
+        refresh.disabled = false;
+        refresh.textContent = 'Refresh now';
+        pollStatus.textContent = 'Auto-refresh · 30s';
+      }, 700);
+    });
+    selectRange(localStorage.getItem('cas-realtime-range') || '1');
+  </script>
+</body>
+</html>

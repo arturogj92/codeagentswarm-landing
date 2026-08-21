@@ -35,6 +35,36 @@ export interface UserActivityOverview {
   generated_at: string
 }
 
+export type RealtimeWindowHours = 0.5 | 1 | 4 | 12 | 24
+
+export interface RealtimeActivitySnapshot {
+  generated_at: string
+  window_minutes: number
+  active_users: number
+  active_now: number
+  events: number
+  agent_sessions: number
+  buckets: { bucket_start: string; events: number }[]
+  latest_users: {
+    user_id: string
+    name: string | null
+    email: string
+    avatar_url: string | null
+    action: string
+    occurred_at: string
+    app_version: string | null
+    agent: string | null
+    workspace_view: 'grid' | 'tabs' | 'list' | null
+  }[]
+  top_actions: { action: string; events: number }[]
+  agents: { agent: string; users: number; sessions: number }[]
+}
+
+export function parseRealtimeWindowHours(value: unknown): RealtimeWindowHours | null {
+  const hours = Number(value ?? 1)
+  return hours === 0.5 || hours === 1 || hours === 4 || hours === 12 || hours === 24 ? hours : null
+}
+
 export interface UserGlobalAction {
   action: string
   events: number
@@ -270,6 +300,8 @@ const AGENT_ALIASES: Record<string, string> = {
   'kimi cli': 'kimi',
   grok: 'grok',
   'grok cli': 'grok',
+  cursor: 'cursor',
+  'cursor agent': 'cursor',
   gemini: 'gemini',
   'gemini cli': 'gemini',
 }
@@ -281,6 +313,7 @@ const AGENT_LABELS: Record<string, string> = {
   opencode: 'opencode',
   kimi: 'Kimi Code',
   grok: 'Grok Build',
+  cursor: 'Cursor',
   gemini: 'Gemini (legacy)',
 }
 

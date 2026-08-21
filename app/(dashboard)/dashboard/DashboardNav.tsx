@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation'
 
 const ITEMS = [
   { href: '/dashboard/users', label: 'Users' },
+  { href: '/dashboard/realtime', label: 'Real-time activity' },
   { href: '/dashboard/emails', label: 'Emails' },
   { href: '/dashboard/emails/automation', label: 'Automation' },
 ]
@@ -20,7 +21,7 @@ export default function DashboardNav() {
   const pathname = usePathname()
 
   return (
-    <nav aria-label="Operations" className="grid min-w-0 grid-cols-3 gap-1 sm:flex">
+    <nav aria-label="Operations" className="grid min-w-0 grid-cols-2 gap-1 sm:flex">
       {ITEMS.map((item) => {
         const current = isCurrent(pathname, item.href)
         return (
