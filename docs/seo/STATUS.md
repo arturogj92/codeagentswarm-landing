@@ -1,8 +1,8 @@
 # SEO status
 
-Last updated: 2026-08-11
+Last updated: 2026-08-21
 
-Release state: published to the production branch `master` on 2026-08-11.
+Release state: published to the production branch `master` on 2026-08-21.
 
 ## Current state
 
@@ -33,6 +33,8 @@ The detailed baseline, page opportunities, methodology and full change log live 
 - Corrected sitemap dates, guide-hub social URLs and `llms.txt` parity.
 - Crawled all 160 sitemap URLs and checked internal links, local assets, metadata, robots, headings, language alternates and structured data.
 - Updated the Skills Marketplace guide to the six current agent destinations while labelling its older screenshot truthfully.
+- Measured the new Search Generative AI report and the guide CTA release against clean Umami windows.
+- Added bilingual links from the two strongest Claude entry pages to the existing Codex and OpenCode history and parallel-session clusters.
 
 ## Open priorities
 
@@ -41,6 +43,8 @@ The detailed baseline, page opportunities, methodology and full change log live 
 3. **Export Search Console query-by-page data.** Use it before merging or redirecting similar guides; separate query and page exports cannot prove cannibalization.
 4. **Check verified crawler traffic in Vercel firewall logs.** Do not relax the firewall based only on generic command-line challenges.
 5. **Replace transition-era product screenshots when fresh captures are available.** The current captions disclose which images show retired UI, so this is a freshness improvement rather than an indexing blocker.
+
+The August 21 generative report does not justify another broad rewrite. The guide CTA system is already improving conversion, and the highest-visibility snippets changed on August 11. Keep those pages stable until the September 9 review.
 
 ## Guardrails
 

@@ -16,7 +16,7 @@ Elige el camino que encaja con lo que intentas hacer. Si chateas en el navegador
     ctaAgent: 'claude-code',
     highlightedWords: ['varios chats de Claude', 'a la vez'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-08-11',
+    updatedAt: '2026-08-21',
     alternateSlug: 'run-multiple-claude-chats',
   },
   sections: [
@@ -134,7 +134,7 @@ Elige el camino que encaja con lo que intentas hacer. Si chateas en el navegador
         },
         {
           type: 'paragraph',
-          text: 'Como cada conversación se guarda, puedes dejar una sesión y retomarla más tarde, o rebuscar en lo que hizo de verdad un chat anterior. La <a href="/es/guias/historial-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">guía del historial de conversaciones</a> entra más a fondo en cómo funciona ese historial entre sesiones en paralelo. Y si quieres montar un esquema mixto con Claude Code, Codex y Gemini juntos en vez de solo varias sesiones de Claude Code, la <a href="/es/guias/enjambre-de-agentes-cli-ia" class="text-neon-cyan hover:text-neon-purple transition-colors">guía del enjambre de agentes CLI de IA</a> cubre ese flujo entre proveedores en detalle.',
+          text: 'Como cada conversación se guarda, puedes dejar una sesión y retomarla más tarde, o rebuscar en lo que hizo de verdad un chat anterior. La <a href="/es/guias/historial-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">guía del historial de conversaciones</a> entra más a fondo en cómo funciona ese historial entre sesiones en paralelo. Para aplicar el mismo flujo a otra CLI, consulta cómo ejecutar <a href="/es/guias/ejecutar-multiples-sesiones-codex" class="text-neon-cyan hover:text-neon-purple transition-colors">varias sesiones de Codex</a> o <a href="/es/guias/ejecutar-multiples-sesiones-opencode" class="text-neon-cyan hover:text-neon-purple transition-colors">varias sesiones de OpenCode</a>. Para combinar Claude Code, Codex y otros agentes en un mismo entorno, consulta la <a href="/es/guias/enjambre-de-agentes-cli-ia" class="text-neon-cyan hover:text-neon-purple transition-colors">guía del enjambre de agentes CLI de IA</a>.',
         },
         {
           type: 'callout',

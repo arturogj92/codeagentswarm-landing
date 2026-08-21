@@ -16,7 +16,7 @@ Pick the path that matches what you are trying to do. If you are chatting in the
     ctaAgent: 'claude-code',
     highlightedWords: ['multiple Claude chats', 'at once'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-08-11',
+    updatedAt: '2026-08-21',
     alternateSlug: 'varios-chats-de-claude-a-la-vez',
   },
   sections: [
@@ -134,7 +134,7 @@ Pick the path that matches what you are trying to do. If you are chatting in the
         },
         {
           type: 'paragraph',
-          text: 'Because every conversation is saved, you can step away from a session and pick it back up later, or go digging through what an earlier chat actually did. The <a href="/en/guides/claude-code-history" class="text-neon-cyan hover:text-neon-purple transition-colors">conversation history guide</a> goes deeper on how that history works across parallel sessions. And if you want to run a mixed setup with Claude Code, Codex and Gemini together rather than just multiple Claude Code sessions, the <a href="/en/guides/ai-cli-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">AI CLI agent swarm guide</a> covers that cross-vendor workflow in detail.',
+          text: 'Because every conversation is saved, you can step away from a session and pick it back up later, or go digging through what an earlier chat actually did. The <a href="/en/guides/claude-code-history" class="text-neon-cyan hover:text-neon-purple transition-colors">conversation history guide</a> goes deeper on how that history works across parallel sessions. For the same workflow with another CLI, see <a href="/en/guides/run-multiple-codex-sessions" class="text-neon-cyan hover:text-neon-purple transition-colors">multiple Codex sessions</a> or <a href="/en/guides/run-multiple-opencode-sessions" class="text-neon-cyan hover:text-neon-purple transition-colors">multiple OpenCode sessions</a>. To mix Claude Code, Codex and other agents in one setup, see the <a href="/en/guides/ai-cli-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">AI CLI agent swarm guide</a>.',
         },
         {
           type: 'callout',

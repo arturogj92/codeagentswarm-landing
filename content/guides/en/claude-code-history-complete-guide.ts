@@ -16,7 +16,7 @@ The short answer: Claude Code stores every session locally in ~/.claude/projects
     ctaAgent: 'claude-code',
     highlightedWords: ['history', 'Claude Code', 'conversations'],
     publishedAt: '2026-04-15',
-    updatedAt: '2026-08-11',
+    updatedAt: '2026-08-21',
     alternateSlug: 'guia-completa-historial-claude-code',
   },
   sections: [
@@ -188,7 +188,7 @@ The short answer: Claude Code stores every session locally in ~/.claude/projects
         },
         {
           type: 'paragraph',
-          text: 'For a detailed walkthrough, see <a href="/en/guides/claude-code-history" class="text-neon-cyan hover:text-neon-purple transition-colors">conversation history in CodeAgentSwarm</a>. Cursor users should follow the separate <a href="/en/guides/cursor-cli-conversation-history" class="text-neon-cyan hover:text-neon-purple transition-colors">Cursor CLI history guide</a> because ACP resume depends on the installed version.',
+          text: 'For a detailed walkthrough, see <a href="/en/guides/claude-code-history" class="text-neon-cyan hover:text-neon-purple transition-colors">conversation history in CodeAgentSwarm</a>. If you work across several CLIs, the companion guides cover <a href="/en/guides/codex-cli-conversation-history" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex conversation history</a> and <a href="/en/guides/opencode-conversation-history" class="text-neon-cyan hover:text-neon-purple transition-colors">OpenCode conversation history</a>. Cursor users should follow the separate <a href="/en/guides/cursor-cli-conversation-history" class="text-neon-cyan hover:text-neon-purple transition-colors">Cursor CLI history guide</a> because ACP resume depends on the installed version.',
         },
       ],
     },

@@ -107,3 +107,41 @@ The keyword endpoint placed `claude code history` above 100 monthly searches in 
 3. Watch clicks, impressions, CTR and position together; a CTR gain with a large position loss is not a win.
 4. Keep URL changes off the table unless the query-by-page report shows sustained cannibalization.
 5. Reassess ADE and Grok Build after at least four clean post-launch weeks.
+
+## Generative AI follow-up: August 21
+
+The dedicated Search Generative AI export covers May 20 through August 19, 2026. It reports 381,708 property-level impressions from AI Overviews and AI Mode. The latest 28 days produced 198,997 impressions, 72.2 percent more than the previous 28 days.
+
+Visibility is concentrated:
+
+- The top three pages account for 51.1 percent of page-level impressions.
+- Claude pages account for about 71 percent when pages are grouped by slug.
+- English pages account for 93.6 percent.
+- Desktop accounts for 95.4 percent of property-level impressions.
+
+The page table totals 401,900 impressions because it counts each URL separately, while the property chart counts one property impression when several URLs appear in the same generative result.
+
+### Conversion check
+
+Umami was measured over equal July 2 to July 26 and July 27 to August 20 windows. The known bot interval on August 3 and the August 10 tracking outage were excluded from the post-release data.
+
+| Signal | Before guide CTA release | After guide CTA release |
+| --- | ---: | ---: |
+| Guide pageviews | 7,839 | 14,827 |
+| Comparable guide CTA clicks | 145 | 352 |
+| CTA click rate | 1.85% | 2.37% |
+| Direct guide downloads | 0 | 182 |
+
+The comparable CTA rate improved by 28.3 percent. Of 134 product-block clicks inspected, 113 produced a direct installer event. Nineteen of the 21 unmatched clicks came from Linux, Android or iOS, where no direct desktop installer was available. The direct-download resolver is therefore working as designed for supported platforms.
+
+### Intent decisions
+
+| Candidate | Decision | Reason |
+| --- | --- | --- |
+| Claude history and multiple-chat winners | Optimize existing | Add direct bilingual links to the matching Codex and OpenCode clusters without changing the winning URL or search intent. |
+| Codex and OpenCode clusters | Optimize existing | They already have indexed history and parallel-session pages. New URLs would duplicate proven intents. |
+| Similar Claude history and multiple-session pages | Skip consolidation | The exports do not contain query-by-page data, so they cannot prove cannibalization. |
+| High-impression titles and descriptions | Skip for now | They were updated on August 11. Measure a complete 28-day window before changing them again. |
+| New broad guide cluster | Skip | Existing pages cover the supported intents, and the current conversion system is improving. |
+
+The smallest supported change is internal linking from the two highest-visibility Claude entry pages to the existing Codex and OpenCode pages. No canonical, slug, hreflang, title or description changes are warranted by this report.

@@ -16,7 +16,7 @@ La respuesta corta: Claude Code guarda cada sesión en local en ~/.claude/projec
     ctaAgent: 'claude-code',
     highlightedWords: ['historial', 'Claude Code', 'conversaciones'],
     publishedAt: '2026-04-15',
-    updatedAt: '2026-08-11',
+    updatedAt: '2026-08-21',
     alternateSlug: 'claude-code-history-complete-guide',
   },
   sections: [
@@ -188,7 +188,7 @@ La respuesta corta: Claude Code guarda cada sesión en local en ~/.claude/projec
         },
         {
           type: 'paragraph',
-          text: 'Para verlo en detalle, consulta cómo <a href="/es/guias/historial-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">usar el historial en CodeAgentSwarm</a>. Los usuarios de Cursor deben seguir la guía específica del <a href="/es/guias/historial-conversaciones-cursor-cli" class="text-neon-cyan hover:text-neon-purple transition-colors">historial de Cursor CLI</a> porque la reanudación ACP depende de la versión instalada.',
+          text: 'Para verlo en detalle, consulta cómo <a href="/es/guias/historial-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">usar el historial en CodeAgentSwarm</a>. Si trabajas con varias CLI, las guías relacionadas cubren el <a href="/es/guias/historial-conversaciones-codex" class="text-neon-cyan hover:text-neon-purple transition-colors">historial de Codex</a> y el <a href="/es/guias/historial-conversaciones-opencode" class="text-neon-cyan hover:text-neon-purple transition-colors">historial de OpenCode</a>. Los usuarios de Cursor deben seguir la guía específica del <a href="/es/guias/historial-conversaciones-cursor-cli" class="text-neon-cyan hover:text-neon-purple transition-colors">historial de Cursor CLI</a> porque la reanudación ACP depende de la versión instalada.',
         },
       ],
     },
