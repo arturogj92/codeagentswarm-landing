@@ -16,7 +16,7 @@ CodeAgentSwarm es ese panel. Es una app de escritorio gratuita para macOS y Wind
     ctaAgent: 'claude-code',
     highlightedWords: ['Panel de control de Claude Code', 'todas tus sesiones'],
     publishedAt: '2026-07-13',
-    updatedAt: '2026-08-11',
+    updatedAt: '2026-08-23',
     alternateSlug: 'claude-code-dashboard',
   },
   sections: [
@@ -209,7 +209,7 @@ CodeAgentSwarm es ese panel. Es una app de escritorio gratuita para macOS y Wind
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm es una descarga gratuita para macOS y Windows, disponible desde la página principal. Se instala en local, ejecuta el CLI real de Claude Code en terminales de verdad y usa tu suscripción de Claude de siempre. No hay plan aparte ni modelo distinto: el panel es una capa sobre la herramienta que ya usas, no un reemplazo.',
+          text: 'CodeAgentSwarm es gratis durante la beta abierta, con todas las funciones Pro incluidas. Se instala en local en macOS y Windows y ejecuta la CLI oficial de Claude Code en terminales estándar con tu cuenta actual de Anthropic. CodeAgentSwarm añade un panel y una capa de supervisión; Anthropic sigue proporcionando el modelo y definiendo tu plan y tus límites de uso.',
         },
         {
           type: 'paragraph',

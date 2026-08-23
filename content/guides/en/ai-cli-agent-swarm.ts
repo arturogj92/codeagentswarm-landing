@@ -48,6 +48,24 @@ I run mixed swarms most days. This is AI coding agent orchestration at the proce
       ],
     },
     {
+      id: 'agentic-development-environment',
+      title: 'From an agent swarm to an Agentic Development Environment',
+      content: [
+        {
+          type: 'paragraph',
+          text: 'An <strong>Agentic Development Environment (ADE)</strong> is a workspace built around delegating software tasks to AI coding agents, supervising their progress and reviewing their results. The agent swarm is the group of independent processes working in parallel. The ADE is the environment that makes that work manageable.',
+        },
+        {
+          type: 'paragraph',
+          text: 'That is the practical difference from an IDE or terminal multiplexer. An IDE centers the editor and files. tmux arranges terminal processes. An ADE centers delegated tasks, agent status, permissions and review while each coding CLI continues to run as a normal terminal process.',
+        },
+        {
+          type: 'paragraph',
+          text: 'CodeAgentSwarm fits this definition because it combines independent agents from several vendors with a shared task board, notifications when an agent finishes or needs input, searchable conversation history, live diffs and project organization. Each CLI still works as usual, with the ADE providing the supervision layer.',
+        },
+      ],
+    },
+    {
       id: 'which-agent-for-what',
       title: 'Which AI coding CLI should you use for what?',
       content: [
@@ -344,7 +362,7 @@ I run mixed swarms most days. This is AI coding agent orchestration at the proce
           items: [
             '<strong>Terminal tabs:</strong> Free',
             '<strong>tmux/screen:</strong> Free',
-            '<strong>CodeAgentSwarm:</strong> Free tier available, Pro for advanced features, runs on top of your existing agent subscriptions',
+            '<strong>CodeAgentSwarm:</strong> All Pro features are free during the open beta, and it runs on top of your existing agent subscriptions',
           ],
         },
         {
@@ -431,6 +449,10 @@ I run mixed swarms most days. This is AI coding agent orchestration at the proce
     {
       question: 'What is an AI CLI agent swarm?',
       answer: 'It is several independent AI coding CLI agents (such as Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build and Cursor Agent) running in parallel in one place, with shared visibility over what each one is doing. Each agent is its own process with its own conversation and context, and the swarm is the layer around them that adds notifications, searchable history, file change visibility, and permission control.',
+    },
+    {
+      question: 'What is an Agentic Development Environment (ADE)?',
+      answer: 'An ADE is a workspace designed for delegating software tasks to AI coding agents, supervising their progress and reviewing their results. Unlike an IDE, which centers the editor and files, or tmux, which arranges terminal processes, an ADE centers tasks, agents, permissions and review. CodeAgentSwarm applies that model to independent coding CLIs from several vendors.',
     },
     {
       question: 'Can I run Claude Code, Codex and Grok Build at the same time?',

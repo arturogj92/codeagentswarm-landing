@@ -11,7 +11,7 @@
   "header": {
     "features": "Features",
     "demo": "Demo",
-    "pricing": "Pricing",
+    "pricing": "Open Beta",
     "roadmap": "Roadmap",
     "faq": "FAQ",
     "guides": "Guides"
@@ -281,9 +281,9 @@
     "privacy": "We'll only email you about {platform} availability. No spam, ever."
   },
   "pricing": {
-    "title": "Simple",
-    "titleHighlight": "pricing",
-    "subtitle": "Start free and upgrade when you need more power. No hidden fees, no surprises.",
+    "title": "Full access during",
+    "titleHighlight": "Open Beta",
+    "subtitle": "Try the complete product and help us validate it. Every Pro feature is free during the beta. No CodeAgentSwarm subscription or credit card required.",
     "perMonth": "month",
     "betaSpecial": {
       "badge": "BETA SPECIAL",
@@ -362,8 +362,8 @@
     },
     "trustBadge": "30-day money-back guarantee | Cancel anytime | Secure payment via Stripe",
     "whyUpgrade": {
-      "title": "Why upgrade to Pro?",
-      "description": "Pro is built for developers who run many AI agents across multiple projects. Parallel agents reduce waiting and context switching, while advanced layouts, shortcuts, permissions and MCP integrations keep the whole swarm under control."
+      "title": "Everything is unlocked during the beta",
+      "description": "Run up to 25 AI agents across unlimited projects. Every Pro feature is included while we validate the product with beta users."
     }
   },
   "roadmap": {
@@ -558,7 +558,7 @@
     "company": "Company",
     "links": {
       "features": "Features",
-      "pricing": "Pricing",
+      "pricing": "Open Beta",
       "roadmap": "Roadmap",
       "faq": "FAQ",
       "download": "Download",
@@ -672,11 +672,11 @@
       }
     },
     "pricing": {
-      "banner": "During the Open Beta, the Pro tier is 100% free. Create your account and it activates automatically.",
+      "banner": "During the Open Beta, every Pro feature is free. Download the app, create your account and everything unlocks automatically. No credit card.",
       "badge": "FREE DURING BETA",
       "priceStrikethrough": "~$6.99/month~",
       "priceFree": "FREE",
-      "cta": "Get Free Pro Access"
+      "cta": "Download the Free Beta"
     },
     "banner": {
       "text": "Open Beta: Pro unlocks automatically when you sign up",
@@ -732,7 +732,7 @@
       "copy": "Claude Code, Codex, opencode, Kimi Code and Antigravity in one supervised workspace. No tmux, no window juggling, zero context switching."
     },
     "downloadCta": {
-      "button": "Download it free",
+      "button": "Download free beta",
       "otherPlatforms": "Other platforms",
       "context": {
         "claudeCode": "Run multiple Claude Code agents with searchable history and real-time change tracking in a single app.",

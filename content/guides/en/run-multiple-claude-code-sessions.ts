@@ -16,7 +16,7 @@ In this guide I will walk you through the three main methods, compare them hones
     ctaAgent: 'claude-code',
     highlightedWords: ['multiple sessions', 'Claude Code'],
     publishedAt: '2026-04-15',
-    updatedAt: '2026-08-11',
+    updatedAt: '2026-08-23',
     alternateSlug: 'ejecutar-multiples-sesiones-claude-code',
   },
   sections: [
@@ -271,7 +271,7 @@ In this guide I will walk you through the three main methods, compare them hones
           items: [
             '<strong>Terminal tabs:</strong> Free',
             '<strong>tmux/screen:</strong> Free',
-            '<strong>CodeAgentSwarm:</strong> Free tier available, Pro for advanced features',
+            '<strong>CodeAgentSwarm:</strong> All Pro features are free during the open beta',
           ],
         },
         {

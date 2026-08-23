@@ -16,7 +16,7 @@ En esta guía te explico las tres formas reales de ejecutar un enjambre de Codex
     ctaAgent: 'codex',
     highlightedWords: ['enjambre de agentes Codex', 'Codex CLI'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-08-11',
+    updatedAt: '2026-08-23',
     alternateSlug: 'codex-agent-swarm',
   },
   sections: [
@@ -277,7 +277,7 @@ En esta guía te explico las tres formas reales de ejecutar un enjambre de Codex
           items: [
             '<strong>Pestañas de terminal:</strong> Gratis',
             '<strong>tmux/screen:</strong> Gratis',
-            '<strong>CodeAgentSwarm:</strong> Plan gratuito disponible, Pro para funciones avanzadas. Tu uso de Codex lo factura OpenAI como siempre.',
+            '<strong>CodeAgentSwarm:</strong> Todas las funciones Pro son gratis durante la beta abierta. Tu uso de Codex lo factura OpenAI como siempre.',
           ],
         },
         {

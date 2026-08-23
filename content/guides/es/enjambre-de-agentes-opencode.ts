@@ -16,7 +16,7 @@ En esta guía te explico las tres formas reales de ejecutar un enjambre de openc
     ctaAgent: 'opencode',
     highlightedWords: ['Enjambre de agentes OpenCode', 'opencode'],
     publishedAt: '2026-07-05',
-    updatedAt: '2026-08-11',
+    updatedAt: '2026-08-23',
     alternateSlug: 'opencode-agent-swarm',
   },
   sections: [
@@ -277,7 +277,7 @@ En esta guía te explico las tres formas reales de ejecutar un enjambre de openc
           items: [
             '<strong>Pestañas de terminal:</strong> Gratis',
             '<strong>tmux/screen:</strong> Gratis',
-            '<strong>CodeAgentSwarm:</strong> Plan gratuito disponible, Pro para funciones avanzadas. Tu uso de opencode lo facturan los proveedores que conectes.',
+            '<strong>CodeAgentSwarm:</strong> Todas las funciones Pro son gratis durante la beta abierta. Tu uso de opencode lo facturan los proveedores que conectes.',
           ],
         },
         {

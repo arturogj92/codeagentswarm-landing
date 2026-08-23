@@ -16,7 +16,7 @@ By the end you will know which approach fits the way you work, whether you want 
     ctaAgent: 'antigravity',
     highlightedWords: ['multiple Antigravity CLI sessions', 'parallel'],
     publishedAt: '2026-06-29',
-    updatedAt: '2026-06-29',
+    updatedAt: '2026-08-23',
     alternateSlug: 'ejecutar-multiples-sesiones-antigravity-cli',
   },
   sections: [
@@ -282,7 +282,7 @@ By the end you will know which approach fits the way you work, whether you want 
           items: [
             '<strong>Terminal tabs:</strong> Free',
             '<strong>tmux/screen:</strong> Free',
-            '<strong>CodeAgentSwarm:</strong> Free tier available, Pro for advanced features, runs on top of your Antigravity (Google) account',
+            '<strong>CodeAgentSwarm:</strong> All Pro features are free during the open beta, and it runs on top of your Antigravity (Google) account',
           ],
         },
         {

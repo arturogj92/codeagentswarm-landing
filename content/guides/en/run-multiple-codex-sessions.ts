@@ -16,7 +16,7 @@ This guide walks through the three practical ways to run several Codex CLI sessi
     ctaAgent: 'codex',
     highlightedWords: ['multiple Codex CLI sessions', 'at once'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-08-11',
+    updatedAt: '2026-08-23',
     alternateSlug: 'ejecutar-multiples-sesiones-codex',
   },
   sections: [
@@ -277,7 +277,7 @@ This guide walks through the three practical ways to run several Codex CLI sessi
           items: [
             '<strong>Terminal tabs:</strong> Free',
             '<strong>tmux/screen:</strong> Free',
-            '<strong>CodeAgentSwarm:</strong> Free tier available, Pro for advanced features. Your Codex usage is billed by OpenAI as usual.',
+            '<strong>CodeAgentSwarm:</strong> All Pro features are free during the open beta. Your Codex usage is billed by OpenAI as usual.',
           ],
         },
         {
