@@ -242,9 +242,9 @@ ls ~/.claude/projects/   # donde vive el historial en bruto (archivos JSONL)`,
         },
         {
           type: 'image',
-          alt: 'Conversación antigua abierta en un terminal nuevo con mensajes anteriores visibles y el input listo para continuar',
+          alt: 'Historial de conversaciones actual de CodeAgentSwarm con buscador, filtros de agente y proyecto, y sesiones anteriores seleccionables',
           src: '/images/guides/resume-conversation.png',
-          caption: 'Retoma cualquier conversación exactamente donde la dejaste.',
+          caption: 'Busca, filtra y selecciona la conversación que quieras retomar desde el Historial de conversaciones actual.',
           size: 'medium',
         },
         {

@@ -242,9 +242,9 @@ ls ~/.claude/projects/   # where the raw history (JSONL files) lives`,
         },
         {
           type: 'image',
-          alt: 'Old conversation opened in a new terminal with previous messages visible and input ready to continue',
+          alt: 'Current CodeAgentSwarm Conversation History with search, agent and project filters, and selectable past sessions',
           src: '/images/guides/resume-conversation.png',
-          caption: 'Resume any conversation exactly where you left off.',
+          caption: 'Search, filter and select the conversation you want to resume from the current Conversation History.',
           size: 'medium',
         },
         {

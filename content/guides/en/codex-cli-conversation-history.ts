@@ -199,9 +199,9 @@ The short version: your Codex CLI history is already on your machine and you can
         },
         {
           type: 'image',
-          alt: 'A past Codex conversation reopened in a CodeAgentSwarm terminal with previous messages visible and the input ready to continue',
+          alt: 'Current CodeAgentSwarm Conversation History with search, agent and project filters, and selectable past sessions',
           src: '/images/guides/resume-conversation.png',
-          caption: 'Resume any Codex conversation exactly where you left off, with its previous context loaded.',
+          caption: 'Search, filter and select the Codex conversation you want to resume from the current Conversation History.',
           size: 'medium',
         },
         {

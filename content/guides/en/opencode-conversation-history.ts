@@ -208,9 +208,9 @@ opencode --session <session-id>    # short form: -s`,
         },
         {
           type: 'image',
-          alt: 'A past opencode conversation reopened in a CodeAgentSwarm terminal with previous messages visible and the input ready to continue',
+          alt: 'Current CodeAgentSwarm Conversation History with search, agent and project filters, and selectable past sessions',
           src: '/images/guides/resume-conversation.png',
-          caption: 'Resume any opencode conversation exactly where you left off, with its previous context loaded.',
+          caption: 'Search, filter and select the opencode conversation you want to resume from the current Conversation History.',
           size: 'medium',
         },
         {
