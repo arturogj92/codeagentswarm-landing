@@ -325,7 +325,7 @@
     "features": {
       "terminals2": "2 agentes de IA",
       "terminals4": "4 agentes de IA",
-      "terminals6": "25 agentes de IA",
+      "terminals6": "50 agentes de IA",
       "projects2": "2 proyectos",
       "projects4": "4 proyectos",
       "unlimitedProjects": "Proyectos ilimitados",
@@ -356,6 +356,7 @@
       "unlimited": "ILIMITADO",
       "boost2x": "2X BOOST",
       "boost3x": "3X BOOST",
+      "boost25x": "25X BOOST",
       "boost6x": "6X BOOST",
       "modes2x": "2X MODOS"
     },
