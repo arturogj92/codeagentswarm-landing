@@ -12,10 +12,12 @@ import {
   parseGlobalWindowDays,
   parseRealtimeWindowHours,
   primaryAgentSignal,
+  realtimeActionBreakdown,
   workspaceModeCopy,
   summarizeCohortHealth,
   summarizeUsers,
   type UserActivityRow,
+  type RealtimeActivitySnapshot,
   type UserCohortHealth,
 } from './users-activity.ts'
 
@@ -53,6 +55,21 @@ function user(overrides: Partial<UserActivityRow> = {}): UserActivityRow {
     ...overrides,
   }
 }
+
+test('real-time action breakdown stays optional and resolves the matching product area', () => {
+  const snapshot = {
+    action_breakdown: [{
+      action: 'terminal_controls',
+      actions: [{ label: 'Minimize terminal', events: 4 }],
+    }],
+  } as RealtimeActivitySnapshot
+
+  assert.deepEqual(realtimeActionBreakdown(snapshot, 'terminal_controls'), [
+    { label: 'Minimize terminal', events: 4 },
+  ])
+  assert.deepEqual(realtimeActionBreakdown(snapshot, 'chat'), [])
+  assert.deepEqual(realtimeActionBreakdown({} as RealtimeActivitySnapshot, 'terminal_controls'), [])
+})
 
 test('lifecycle boundaries are exact and mutually exclusive', () => {
   assert.equal(getLifecycle(null), 'no-tracked')
