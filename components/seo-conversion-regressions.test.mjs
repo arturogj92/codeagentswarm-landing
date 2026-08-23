@@ -33,6 +33,16 @@ test('beta conversion links point to the real download section', async () => {
   }
 })
 
+test('the home validates the free beta instead of selling future plans', async () => {
+  const home = await readFile(new URL('../app/[locale]/page.tsx', import.meta.url), 'utf8')
+  const betaAccess = await readFile(new URL('./BetaPricingSection.tsx', import.meta.url), 'utf8')
+
+  assert.match(home, /<BetaPricingSection sectionId="pricing" \/>/)
+  assert.doesNotMatch(home, /<PricingSection \/>/)
+  assert.match(betaAccess, /track\('beta_pricing_cta_click', \{ section: sectionId \}\)/)
+  assert.doesNotMatch(betaAccess, /€6\.99\/mo/)
+})
+
 test('shared navigation sends content-page section links to the localized home', async () => {
   const header = await readFile(new URL('./Header.tsx', import.meta.url), 'utf8')
   const footer = await readFile(new URL('./Footer.tsx', import.meta.url), 'utf8')

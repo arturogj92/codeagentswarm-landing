@@ -16,7 +16,7 @@ Al terminar sabrás qué enfoque encaja con tu forma de trabajar, ya quieras dos
     ctaAgent: 'antigravity',
     highlightedWords: ['varias sesiones de Antigravity CLI', 'paralelo'],
     publishedAt: '2026-06-29',
-    updatedAt: '2026-06-29',
+    updatedAt: '2026-08-23',
     alternateSlug: 'run-multiple-antigravity-cli-sessions',
   },
   sections: [
@@ -282,7 +282,7 @@ Al terminar sabrás qué enfoque encaja con tu forma de trabajar, ya quieras dos
           items: [
             '<strong>Pestañas de terminal:</strong> Gratis',
             '<strong>tmux/screen:</strong> Gratis',
-            '<strong>CodeAgentSwarm:</strong> Plan gratuito disponible, Pro para funciones avanzadas, corre sobre tu cuenta de Antigravity (Google)',
+            '<strong>CodeAgentSwarm:</strong> Todas las funciones Pro son gratis durante la beta abierta y funciona sobre tu cuenta de Antigravity (Google)',
           ],
         },
         {

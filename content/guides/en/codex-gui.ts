@@ -16,7 +16,7 @@ CodeAgentSwarm is that kind of Codex GUI app. It runs on macOS and Windows, give
     ctaAgent: 'codex',
     highlightedWords: ['Codex GUI', 'desktop app'],
     publishedAt: '2026-07-13',
-    updatedAt: '2026-08-11',
+    updatedAt: '2026-08-23',
     alternateSlug: 'interfaz-grafica-codex',
   },
   sections: [
@@ -217,7 +217,7 @@ CodeAgentSwarm is that kind of Codex GUI app. It runs on macOS and Windows, give
         },
         {
           type: 'paragraph',
-          text: 'From there, everything in this guide is one click away: open more terminals for more Codex sessions, bring up the task board, search past conversations, and watch diffs as the agent works. There is a free tier, with Pro for advanced features, and your Codex usage is billed by OpenAI as usual.',
+          text: 'From there, everything in this guide is one click away: open more terminals for more Codex sessions, bring up the task board, search past conversations, and watch diffs as the agent works. All Pro features are free during the open beta, and your Codex usage is billed by OpenAI as usual.',
         },
         {
           type: 'paragraph',
@@ -249,7 +249,7 @@ CodeAgentSwarm is that kind of Codex GUI app. It runs on macOS and Windows, give
     },
     {
       question: 'Where do I download a Codex GUI?',
-      answer: 'CodeAgentSwarm is a free download from the codeagentswarm.com home page, for macOS and Windows. Install it, open a terminal in the workspace, pick codex cli in the SELECT AI AGENT picker, and the terminal becomes a Codex session with the full visual layer around it. There is a free tier, with Pro for advanced features.',
+      answer: 'CodeAgentSwarm is a free download from the codeagentswarm.com home page, for macOS and Windows. Install it, open a terminal in the workspace, pick codex cli in the SELECT AI AGENT picker, and the terminal becomes a Codex session with the full visual layer around it. All Pro features are free during the open beta.',
     },
     {
       question: 'Can the same GUI run Claude Code and Gemini too?',

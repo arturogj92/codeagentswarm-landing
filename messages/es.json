@@ -11,7 +11,7 @@
   "header": {
     "features": "Características",
     "demo": "Demo",
-    "pricing": "Precios",
+    "pricing": "Beta abierta",
     "roadmap": "Roadmap",
     "faq": "FAQ",
     "guides": "Guías"
@@ -281,9 +281,9 @@
     "privacy": "Solo recibirás emails sobre la disponibilidad de {platform}. Sin spam."
   },
   "pricing": {
-    "title": "Precios",
-    "titleHighlight": "transparentes",
-    "subtitle": "Comienza gratis. Escala según tus necesidades. Sin costes ocultos.",
+    "title": "Acceso completo durante",
+    "titleHighlight": "la beta abierta",
+    "subtitle": "Prueba el producto completo y ayúdanos a validarlo. Todas las funciones Pro son gratis durante la beta. No necesitas suscripción a CodeAgentSwarm ni tarjeta.",
     "perMonth": "mes",
     "betaSpecial": {
       "badge": "OFERTA BETA",
@@ -361,8 +361,8 @@
     },
     "trustBadge": "30 días de garantía | Cancela cuando quieras | Pago seguro con Stripe",
     "whyUpgrade": {
-      "title": "¿Por qué Pro?",
-      "description": "Pro está pensado para desarrolladores que ejecutan muchos agentes de IA en varios proyectos. Los agentes en paralelo reducen esperas y cambios de contexto, mientras los layouts, atajos, permisos e integraciones MCP mantienen el enjambre bajo control."
+      "title": "Todo está desbloqueado durante la beta",
+      "description": "Ejecuta hasta 25 agentes de IA en proyectos ilimitados. Todas las funciones Pro están incluidas mientras validamos el producto con usuarios de la beta."
     }
   },
   "roadmap": {
@@ -557,7 +557,7 @@
     "company": "Empresa",
     "links": {
       "features": "Caracteristicas",
-      "pricing": "Precios",
+      "pricing": "Beta abierta",
       "roadmap": "Roadmap",
       "faq": "FAQ",
       "download": "Descargar",
@@ -671,11 +671,11 @@
       }
     },
     "pricing": {
-      "banner": "Durante la Open Beta, el plan Pro es 100% gratuito. Crea tu cuenta y se activa automáticamente.",
+      "banner": "Durante la beta abierta, todas las funciones Pro son gratis. Descarga la app, crea tu cuenta y todo se desbloquea automáticamente. Sin tarjeta.",
       "badge": "GRATIS DURANTE LA BETA",
       "priceStrikethrough": "~6,99 EUR/mes~",
       "priceFree": "GRATIS",
-      "cta": "Obtener Pro Gratis"
+      "cta": "Descargar la beta gratis"
     },
     "banner": {
       "text": "Open Beta: Pro se activa solo al registrarte",
@@ -731,7 +731,7 @@
       "copy": "Claude Code, Codex, opencode, Kimi Code y Antigravity en un espacio de trabajo supervisado. Sin tmux, sin malabares con ventanas, cero cambios de contexto."
     },
     "downloadCta": {
-      "button": "Descárgalo gratis",
+      "button": "Descargar beta gratis",
       "otherPlatforms": "Otras plataformas",
       "context": {
         "claudeCode": "Ejecuta varios agentes de Claude Code con historial buscable y cambios en tiempo real en una sola app.",

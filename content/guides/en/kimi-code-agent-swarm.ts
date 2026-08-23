@@ -16,7 +16,7 @@ In this guide I walk through the three practical ways to run a Kimi Code swarm, 
     ctaAgent: 'kimi-code',
     highlightedWords: ['Kimi Code Agent Swarm', 'Kimi'],
     publishedAt: '2026-07-18',
-    updatedAt: '2026-08-11',
+    updatedAt: '2026-08-23',
     alternateSlug: 'enjambre-de-agentes-kimi-code',
   },
   sections: [
@@ -293,7 +293,7 @@ In this guide I walk through the three practical ways to run a Kimi Code swarm, 
           items: [
             '<strong>Terminal tabs:</strong> Free',
             '<strong>tmux/screen:</strong> Free',
-            '<strong>CodeAgentSwarm:</strong> Free tier available, Pro for advanced features. Your Kimi usage is billed through your existing Kimi subscription either way.',
+            '<strong>CodeAgentSwarm:</strong> All Pro features are free during the open beta. Your Kimi usage is billed through your existing Kimi subscription either way.',
           ],
         },
         {
