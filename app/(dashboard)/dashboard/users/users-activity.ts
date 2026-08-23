@@ -173,11 +173,27 @@ export function workspaceModeCopy(
 export type GlobalWindowDays = 1 | 7 | 30 | 180
 export type FeatureWindowDays = 7 | 30 | 90 | 180
 
+export interface MobileRelayAccessRequest {
+  id: string
+  email: string
+  platform: 'web' | 'ios' | 'android'
+  discord_user_id: string
+  discord_username: string
+  user_id: string | null
+  account_name: string | null
+  requested_at: string
+  invited_at: string | null
+  invited_by: string | null
+}
+
 export interface MobileRelayAdoption {
   window_days: number
+  requested_accounts: number
+  invited_accounts: number
   paired_accounts: number
   connected_accounts: number
   active_accounts: number
+  requests: MobileRelayAccessRequest[]
 }
 
 export interface UserGlobalMetrics {

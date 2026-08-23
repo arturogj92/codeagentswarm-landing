@@ -48,8 +48,8 @@ export async function POST(request: NextRequest) {
       fn: 'user_feature_adoption_v2',
       args: { p_excluded_user_ids: excludedUserIds, p_window_days: featureWindowDays },
     })
-    const mobileRelay = await supabaseRpc<MobileRelayAdoption & Record<string, number | string>>({
-      fn: 'mobile_relay_adoption_v1',
+    const mobileRelay = await supabaseRpc<MobileRelayAdoption & Record<string, unknown>>({
+      fn: 'mobile_relay_adoption_v2',
       args: { p_excluded_user_ids: excludedUserIds, p_window_days: featureWindowDays },
     })
     return NextResponse.json({
@@ -57,9 +57,12 @@ export async function POST(request: NextRequest) {
       feature_window_days: featureWindowDays,
       mobile_relay: {
         window_days: Number(mobileRelay.window_days),
+        requested_accounts: Number(mobileRelay.requested_accounts),
+        invited_accounts: Number(mobileRelay.invited_accounts),
         paired_accounts: Number(mobileRelay.paired_accounts),
         connected_accounts: Number(mobileRelay.connected_accounts),
         active_accounts: Number(mobileRelay.active_accounts),
+        requests: Array.isArray(mobileRelay.requests) ? mobileRelay.requests : [],
       },
       actions: actions.map((action) => ({
         ...action,

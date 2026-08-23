@@ -551,7 +551,7 @@ export default function UsersActivityClient() {
           onToggleUser={toggleGlobalUser}
           onWindowDays={setGlobalWindowDays}
           onFeatureWindowDays={setFeatureWindowDays}
-          onRetry={() => void loadGlobalMetrics(excludedUserIds, globalWindowDays, featureWindowDays)}
+          onRetry={() => loadGlobalMetrics(excludedUserIds, globalWindowDays, featureWindowDays)}
         />
 
         <section aria-label="User filters" className="mt-5 rounded-xl border border-white/[0.09] bg-[#111111] p-3.5">
@@ -693,10 +693,12 @@ function GlobalInsights({ metrics, loading, error, excludedUsers, windowDays, fe
   onToggleUser: (userId: string) => void
   onWindowDays: (days: GlobalWindowDays) => void
   onFeatureWindowDays: (days: FeatureWindowDays) => void
-  onRetry: () => void
+  onRetry: () => Promise<void>
 }) {
   const [actionQuery, setActionQuery] = useState('')
   const [featureFilter, setFeatureFilter] = useState<'all' | 'workspace' | 'automation'>('all')
+  const [markingInvitationId, setMarkingInvitationId] = useState<string | null>(null)
+  const [invitationError, setInvitationError] = useState<string | null>(null)
   const normalizedActionQuery = actionQuery.trim().toLowerCase()
   const actionResults = normalizedActionQuery
     ? (metrics?.actions || []).filter((action) => (
@@ -708,6 +710,24 @@ function GlobalInsights({ metrics, loading, error, excludedUsers, windowDays, fe
     featureFilter === 'all' || feature.category === featureFilter
   ))
   const healthSummary = metrics?.health ? summarizeCohortHealth(metrics.health) : null
+  const markInvited = async (requestId: string) => {
+    setMarkingInvitationId(requestId)
+    setInvitationError(null)
+    try {
+      const response = await fetch('/api/dashboard/users/mobile-relay-invitations', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ request_id: requestId }),
+      })
+      const payload = await response.json()
+      if (!response.ok) throw new Error(payload?.error || 'Failed to mark invitation')
+      await onRetry()
+    } catch (caught) {
+      setInvitationError(caught instanceof Error ? caught.message : 'Failed to mark invitation')
+    } finally {
+      setMarkingInvitationId(null)
+    }
+  }
 
   return (
     <section aria-label="Global usage overview" className="mt-5 grid gap-4 xl:grid-cols-[minmax(0,1.35fr)_minmax(340px,0.65fr)]">
@@ -916,8 +936,8 @@ function GlobalInsights({ metrics, loading, error, excludedUsers, windowDays, fe
         <div className="flex flex-wrap items-start justify-between gap-3 p-4 sm:p-5">
           <div>
             <p className="text-[9px] font-bold uppercase tracking-[0.14em] text-amber-200/70">Account funnel</p>
-            <h2 className="mt-1 text-lg font-semibold tracking-[-0.02em] text-white">Mobile Relay adoption</h2>
-            <p className="mt-1 text-sm text-white/55">Distinct accounts · exclusions applied</p>
+            <h2 className="mt-1 text-lg font-semibold tracking-[-0.02em] text-white">Mobile Relay access</h2>
+            <p className="mt-1 text-sm text-white/55">One person, one count — regardless of phones or computers.</p>
           </div>
           <div className="flex rounded-lg border border-white/10 bg-black/25 p-0.5" aria-label="Mobile Relay period">
             {FEATURE_WINDOWS.map((window) => (
@@ -935,34 +955,82 @@ function GlobalInsights({ metrics, loading, error, excludedUsers, windowDays, fe
         </div>
 
         {loading && !metrics ? (
-          <div className="grid gap-px border-y border-white/[0.07] bg-white/[0.07] md:grid-cols-3" aria-label="Loading Mobile Relay adoption">
-            {Array.from({ length: 3 }, (_, index) => <div key={index} className="h-40 animate-pulse bg-[#111111] p-5" />)}
+          <div className="grid gap-px border-y border-white/[0.07] bg-white/[0.07] sm:grid-cols-2 lg:grid-cols-5" aria-label="Loading Mobile Relay access">
+            {Array.from({ length: 5 }, (_, index) => <div key={index} className="h-36 animate-pulse bg-[#111111] p-5" />)}
           </div>
         ) : error && !metrics ? (
           <div role="alert" className="border-y border-rose-400/20 bg-rose-400/[0.06] p-5 text-sm text-rose-200">
-            Mobile Relay adoption could not load. <button type="button" onClick={onRetry} className="font-semibold underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-300">Retry</button>
+            Mobile Relay access could not load. <button type="button" onClick={onRetry} className="font-semibold underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-300">Retry</button>
           </div>
         ) : metrics?.mobile_relay && (
-          <div className="grid gap-px border-y border-white/[0.07] bg-white/[0.07] md:grid-cols-3" aria-live="polite">
-            {([
-              ['Paired accounts', metrics.mobile_relay.paired_accounts, '100% base', 'Created at least one device pairing during the selected period.', 'text-white'],
-              ['Connected accounts', metrics.mobile_relay.connected_accounts, metrics.mobile_relay.paired_accounts ? `${Math.round(100 * metrics.mobile_relay.connected_accounts / metrics.mobile_relay.paired_accounts)}% of paired` : '— of paired', 'Completed a Relay reconnect and received the desktop runtime.', 'text-sky-300'],
-              ['Active use', metrics.mobile_relay.active_accounts, metrics.mobile_relay.paired_accounts ? `${Math.round(100 * metrics.mobile_relay.active_accounts / metrics.mobile_relay.paired_accounts)}% of paired` : '— of paired', 'Ran at least one successful mobile command or tracked mobile action.', 'text-emerald-300'],
-            ] as const).map(([label, value, rate, note, color]) => (
-              <div key={label} className="bg-[#111111] p-4 sm:p-5">
-                <div className="flex items-baseline justify-between gap-3">
-                  <strong className={`font-mono text-4xl font-semibold tracking-[-0.05em] ${color}`}>{value.toLocaleString('en-US')}</strong>
-                  <span className="rounded-full border border-white/10 px-2 py-1 text-[9px] font-semibold text-white/45">{rate}</span>
+          <>
+            <div className="grid gap-px border-y border-white/[0.07] bg-white/[0.07] sm:grid-cols-2 lg:grid-cols-5" aria-live="polite">
+              {([
+                ['Requested', metrics.mobile_relay.requested_accounts, 'base', 'Submitted the private access form.', 'text-white'],
+                ['Invited', metrics.mobile_relay.invited_accounts, metrics.mobile_relay.requested_accounts ? `${Math.round(100 * metrics.mobile_relay.invited_accounts / metrics.mobile_relay.requested_accounts)}%` : '—', 'You sent the beta invitation.', 'text-amber-300'],
+                ['Paired', metrics.mobile_relay.paired_accounts, metrics.mobile_relay.invited_accounts ? `${Math.round(100 * metrics.mobile_relay.paired_accounts / metrics.mobile_relay.invited_accounts)}%` : '—', 'Linked at least one mobile device.', 'text-sky-300'],
+                ['Connected', metrics.mobile_relay.connected_accounts, metrics.mobile_relay.invited_accounts ? `${Math.round(100 * metrics.mobile_relay.connected_accounts / metrics.mobile_relay.invited_accounts)}%` : '—', 'Reached a desktop through Relay.', 'text-sky-300'],
+                ['Active', metrics.mobile_relay.active_accounts, metrics.mobile_relay.invited_accounts ? `${Math.round(100 * metrics.mobile_relay.active_accounts / metrics.mobile_relay.invited_accounts)}%` : '—', 'Ran a successful mobile action.', 'text-emerald-300'],
+              ] as const).map(([label, value, rate, note, color]) => (
+                <div key={label} className="bg-[#111111] p-4 sm:p-5">
+                  <div className="flex items-baseline justify-between gap-2">
+                    <strong className={`font-mono text-4xl font-semibold tracking-[-0.05em] ${color}`}>{value.toLocaleString('en-US')}</strong>
+                    <span className="rounded-full border border-white/10 px-2 py-1 text-[9px] font-semibold text-white/45">{rate}</span>
+                  </div>
+                  <h3 className="mt-4 text-sm font-semibold text-white/85">{label}</h3>
+                  <p className="mt-1 text-xs leading-5 text-white/45">{note}</p>
                 </div>
-                <h3 className="mt-4 text-sm font-semibold text-white/85">{label}</h3>
-                <p className="mt-1 text-xs leading-5 text-white/45">{note}</p>
+              ))}
+            </div>
+
+            <div className="border-b border-white/[0.07] p-4 sm:p-5">
+              <div className="flex flex-wrap items-start justify-between gap-3">
+                <div>
+                  <div className="flex items-center gap-2">
+                    <h3 className="text-base font-semibold text-white">Access requests</h3>
+                    <span className="rounded-full bg-amber-400/10 px-2 py-1 text-[9px] font-semibold text-amber-200">
+                      {metrics.mobile_relay.requests.filter((request) => !request.invited_at).length} pending
+                    </span>
+                  </div>
+                  <p className="mt-1 max-w-xl text-xs leading-5 text-white/45">Requests arrive from the private Discord form. Mark invited only after sending TestFlight or Play access.</p>
+                </div>
               </div>
-            ))}
-          </div>
+
+              {invitationError && <p role="alert" className="mt-3 text-xs text-rose-300">{invitationError}</p>}
+              {metrics.mobile_relay.requests.length === 0 ? (
+                <p className="mt-4 rounded-lg border border-white/[0.07] bg-black/20 px-4 py-8 text-center text-xs text-white/45">No access requests in this period.</p>
+              ) : (
+                <div className="mt-4 overflow-hidden rounded-lg border border-white/[0.07] bg-black/20">
+                  {metrics.mobile_relay.requests.map((request) => (
+                    <div key={request.id} className="grid gap-3 border-b border-white/[0.07] p-3 last:border-b-0 sm:grid-cols-[minmax(180px,1.5fr)_90px_minmax(150px,.8fr)_auto] sm:items-center sm:px-4">
+                      <div className="min-w-0">
+                        <strong className="block truncate text-xs text-white/85">{request.email}</strong>
+                        <span className="mt-1 block truncate text-[10px] text-white/35">{request.account_name ? `Matched to ${request.account_name}` : `${request.discord_username} · Discord`}</span>
+                      </div>
+                      <span className="w-fit rounded-md border border-white/10 px-2 py-1 text-[10px] text-white/45">{titleCase(request.platform)}</span>
+                      <span className="text-[10px] text-white/35">{formatDateTime(request.requested_at)}</span>
+                      {request.invited_at ? (
+                        <span className="text-xs font-semibold text-emerald-300">Invited {relativeDate(request.invited_at)}</span>
+                      ) : (
+                        <button
+                          type="button"
+                          disabled={markingInvitationId === request.id}
+                          onClick={() => void markInvited(request.id)}
+                          className="w-fit rounded-md border border-amber-400/25 bg-amber-400/10 px-3 py-2 text-[10px] font-semibold text-amber-200 transition hover:bg-amber-400/15 disabled:cursor-wait disabled:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
+                        >
+                          {markingInvitationId === request.id ? 'Saving…' : 'Mark invited'}
+                        </button>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </>
         )}
 
         <div className="flex flex-wrap justify-between gap-2 p-4 text-[10px] text-white/40 sm:px-5">
-          <span>Counted by <strong className="font-mono font-semibold text-white/60">user_id</strong>; multiple phones and computers never inflate totals.</span>
+          <span>Email identifies a request until it links to a <strong className="font-mono font-semibold text-white/60">user_id</strong>.</span>
           <span>Last {featureWindowDays} days · exclusions applied</span>
         </div>
       </article>
