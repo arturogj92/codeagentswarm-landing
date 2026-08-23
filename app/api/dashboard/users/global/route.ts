@@ -7,6 +7,7 @@ import {
   parseGlobalWindowDays,
   type UserGlobalAction,
   type UserFeatureAdoption,
+  type MobileRelayAdoption,
   type UserGlobalMetrics,
 } from '@/app/(dashboard)/dashboard/users/users-activity'
 
@@ -35,7 +36,7 @@ export async function POST(request: NextRequest) {
     }
     // ponytail: serialize the scans to stay under Supabase's statement timeout;
     // merge the rollups into one RPC if dashboard latency becomes a problem.
-    const metrics = await supabaseRpc<Omit<UserGlobalMetrics, 'actions' | 'features'>>({
+    const metrics = await supabaseRpc<Omit<UserGlobalMetrics, 'actions' | 'features' | 'mobile_relay'>>({
       fn: 'user_activity_global_v3',
       args,
     })
@@ -47,9 +48,19 @@ export async function POST(request: NextRequest) {
       fn: 'user_feature_adoption_v2',
       args: { p_excluded_user_ids: excludedUserIds, p_window_days: featureWindowDays },
     })
+    const mobileRelay = await supabaseRpc<MobileRelayAdoption & Record<string, number | string>>({
+      fn: 'mobile_relay_adoption_v1',
+      args: { p_excluded_user_ids: excludedUserIds, p_window_days: featureWindowDays },
+    })
     return NextResponse.json({
       ...metrics,
       feature_window_days: featureWindowDays,
+      mobile_relay: {
+        window_days: Number(mobileRelay.window_days),
+        paired_accounts: Number(mobileRelay.paired_accounts),
+        connected_accounts: Number(mobileRelay.connected_accounts),
+        active_accounts: Number(mobileRelay.active_accounts),
+      },
       actions: actions.map((action) => ({
         ...action,
         events: Number(action.events),
