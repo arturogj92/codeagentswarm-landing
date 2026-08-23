@@ -30,6 +30,11 @@ const VIDEO_ASPECT: Record<string, number> = {
   'agent-chat-grok.mp4': 1660 / 1080,
   'conversation_history.mp4': 1800 / 1080,
   'gitmanager.mp4': 972 / 720,
+  'guide-conversation-history.mp4': 16 / 9,
+  'guide-terminals.mp4': 16 / 9,
+  'guide-gitmanager.mp4': 16 / 9,
+  'guide-kanban.mp4': 16 / 9,
+  'guide-terminal-notifications.mp4': 1708 / 1080,
 }
 
 interface GuideProductBlockProps {

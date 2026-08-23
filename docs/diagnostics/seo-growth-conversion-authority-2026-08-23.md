@@ -195,6 +195,21 @@ Next manual batch:
 
 Nothing has been sent to these editors and no new directory form has been submitted.
 
+## Guide product media by intent
+
+The early guide product block accounts for 62.6% of tracked guide download clicks, but it previously selected agent chat footage even when the page intent was conversation history, parallel sessions, Git worktrees, task management, notifications or YOLO mode.
+
+The shared selector now chooses the product surface that matches each intent:
+
+- Conversation history guides show the searchable Conversation History interface.
+- Parallel session and agent swarm guides show the multi-terminal workspace.
+- Git worktree guides show Git Manager.
+- Task management guides show the Kanban board.
+- Notification guides show terminal notifications.
+- YOLO guides show the relevant CLI agent surface.
+
+Five new H.264 clips were cut from existing app captures and uploaded under new CDN names, so the rollout is reversible and does not invalidate older assets. The clips range from 82 KB to 934 KB. A local production check confirmed that the OpenCode history guide loads the 378 KB conversation history clip and the Codex YOLO guide loads the Codex agent clip.
+
 ## Budget
 
 No money was spent.
@@ -204,6 +219,7 @@ The 150 EUR budget should remain untouched until the free editorial batch lands 
 ## Validation
 
 - Thirteen SEO and guide tests plus twelve dashboard tests passed.
+- Thirteen focused guide, conversion and cross-link tests passed after the intent-based media change.
 - The production build completed and type checking passed. The repository still lacks ESLint, so the build reports that linting is unavailable.
 - The production build generated 218 pages and all 180 sitemap URLs returned HTTP 200 locally.
 - English and Spanish Beta CTAs navigated to the real download section in Playwright.
@@ -215,6 +231,8 @@ The 150 EUR budget should remain untouched until the free editorial batch lands 
 - The localized About page rendered without horizontal overflow at 390 and 1440 pixels, exposed the expected structured data and linked from the footer.
 - Desktop and mobile visual checks showed the primary Beta CTA in the first viewport.
 - Final browser checks reported zero console errors on the changed Beta pages.
+- The changed OpenCode history guide loaded its CDN video at ready state 4, rendered the searchable history interface, kept the download CTA visible and reported zero console errors.
+- The existing aggregate app and backend activation checks passed: 47 click tracker tests and the bounded weekly installation funnel migration test.
 
 ## Measurement plan after deployment
 
