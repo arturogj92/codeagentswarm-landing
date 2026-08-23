@@ -912,6 +912,61 @@ function GlobalInsights({ metrics, loading, error, excludedUsers, windowDays, fe
         </div>
       </article>
 
+      <article className="overflow-hidden rounded-xl border border-white/[0.09] border-l-2 border-l-amber-300/70 bg-[#111111] xl:col-span-2">
+        <div className="flex flex-wrap items-start justify-between gap-3 p-4 sm:p-5">
+          <div>
+            <p className="text-[9px] font-bold uppercase tracking-[0.14em] text-amber-200/70">Account funnel</p>
+            <h2 className="mt-1 text-lg font-semibold tracking-[-0.02em] text-white">Mobile Relay adoption</h2>
+            <p className="mt-1 text-sm text-white/55">Distinct accounts · exclusions applied</p>
+          </div>
+          <div className="flex rounded-lg border border-white/10 bg-black/25 p-0.5" aria-label="Mobile Relay period">
+            {FEATURE_WINDOWS.map((window) => (
+              <button
+                key={window.days}
+                type="button"
+                onClick={() => onFeatureWindowDays(window.days)}
+                aria-pressed={featureWindowDays === window.days}
+                className={`rounded-md px-2 py-1 text-[10px] font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 ${featureWindowDays === window.days ? 'bg-amber-400/15 text-amber-200' : 'text-white/40 hover:text-white/70'}`}
+              >
+                {window.label}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {loading && !metrics ? (
+          <div className="grid gap-px border-y border-white/[0.07] bg-white/[0.07] md:grid-cols-3" aria-label="Loading Mobile Relay adoption">
+            {Array.from({ length: 3 }, (_, index) => <div key={index} className="h-40 animate-pulse bg-[#111111] p-5" />)}
+          </div>
+        ) : error && !metrics ? (
+          <div role="alert" className="border-y border-rose-400/20 bg-rose-400/[0.06] p-5 text-sm text-rose-200">
+            Mobile Relay adoption could not load. <button type="button" onClick={onRetry} className="font-semibold underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-300">Retry</button>
+          </div>
+        ) : metrics?.mobile_relay && (
+          <div className="grid gap-px border-y border-white/[0.07] bg-white/[0.07] md:grid-cols-3" aria-live="polite">
+            {([
+              ['Paired accounts', metrics.mobile_relay.paired_accounts, '100% base', 'Created at least one device pairing during the selected period.', 'text-white'],
+              ['Connected accounts', metrics.mobile_relay.connected_accounts, metrics.mobile_relay.paired_accounts ? `${Math.round(100 * metrics.mobile_relay.connected_accounts / metrics.mobile_relay.paired_accounts)}% of paired` : '— of paired', 'Completed a Relay reconnect and received the desktop runtime.', 'text-sky-300'],
+              ['Active use', metrics.mobile_relay.active_accounts, metrics.mobile_relay.paired_accounts ? `${Math.round(100 * metrics.mobile_relay.active_accounts / metrics.mobile_relay.paired_accounts)}% of paired` : '— of paired', 'Ran at least one successful mobile command or tracked mobile action.', 'text-emerald-300'],
+            ] as const).map(([label, value, rate, note, color]) => (
+              <div key={label} className="bg-[#111111] p-4 sm:p-5">
+                <div className="flex items-baseline justify-between gap-3">
+                  <strong className={`font-mono text-4xl font-semibold tracking-[-0.05em] ${color}`}>{value.toLocaleString('en-US')}</strong>
+                  <span className="rounded-full border border-white/10 px-2 py-1 text-[9px] font-semibold text-white/45">{rate}</span>
+                </div>
+                <h3 className="mt-4 text-sm font-semibold text-white/85">{label}</h3>
+                <p className="mt-1 text-xs leading-5 text-white/45">{note}</p>
+              </div>
+            ))}
+          </div>
+        )}
+
+        <div className="flex flex-wrap justify-between gap-2 p-4 text-[10px] text-white/40 sm:px-5">
+          <span>Counted by <strong className="font-mono font-semibold text-white/60">user_id</strong>; multiple phones and computers never inflate totals.</span>
+          <span>Last {featureWindowDays} days · exclusions applied</span>
+        </div>
+      </article>
+
       <article className="min-w-0 rounded-xl border border-white/[0.09] bg-[#111111] p-4 sm:p-5 xl:col-span-2">
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
