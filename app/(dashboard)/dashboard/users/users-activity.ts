@@ -165,6 +165,13 @@ export function workspaceModeCopy(
 export type GlobalWindowDays = 1 | 7 | 30 | 180
 export type FeatureWindowDays = 7 | 30 | 90 | 180
 
+export interface MobileRelayAdoption {
+  window_days: number
+  paired_accounts: number
+  connected_accounts: number
+  active_accounts: number
+}
+
 export interface UserGlobalMetrics {
   generated_at: string
   window_days: number
@@ -176,6 +183,7 @@ export interface UserGlobalMetrics {
   top_actions: UserGlobalAction[]
   actions: UserGlobalAction[]
   features: UserFeatureAdoption[]
+  mobile_relay: MobileRelayAdoption
   behavior_window_days: number
   health: UserCohortHealth
   behaviors: UserBehaviorMetric[]
