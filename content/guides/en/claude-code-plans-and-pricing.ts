@@ -16,7 +16,7 @@ This guide lays out what is known, dates every number, and flags the parts you s
     ctaAgent: 'claude-code',
     highlightedWords: ['Claude Code', 'Plans', 'Pricing'],
     publishedAt: '2026-08-05',
-    updatedAt: '2026-08-05',
+    updatedAt: '2026-08-23',
     alternateSlug: 'planes-y-precios-de-claude-code',
   },
   sections: [
@@ -59,7 +59,7 @@ This guide lays out what is known, dates every number, and flags the parts you s
       content: [
         {
           type: 'paragraph',
-          text: 'Claude Code quota has two layers, and you will feel both. The first is a <strong>rolling 5 hour window</strong>. It starts with your first message, not at a fixed clock time, and it slides forward. An intense afternoon can exhaust it while your weekly allowance is barely touched, and the only fix is to wait for the window to move.',
+          text: 'Claude Code quota has two layers, and you will feel both. The first is a <strong>rolling 5 hour window</strong>. It starts with your first message, not at a fixed clock time, and it slides forward. An intense afternoon can exhaust it while your weekly allowance is barely touched. You can wait for the window to move or, on an eligible paid plan, enable usage credits for work beyond the included limit.',
         },
         {
           type: 'paragraph',
@@ -98,7 +98,7 @@ This guide lays out what is known, dates every number, and flags the parts you s
         },
         {
           type: 'paragraph',
-          text: 'That pattern is exactly what <a href="/en/guides/claude-code-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">the Claude Code agent swarm guide</a> covers, and it is why watching quota while agents run matters more on Claude than on a pay-per-token setup: the wall is a hard stop, not a bigger invoice.',
+          text: 'That pattern is exactly what <a href="/en/guides/claude-code-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">the Claude Code agent swarm guide</a> covers. Watching quota still matters because included usage can disappear quickly, but paid plans can now enable <a href="https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">usage credits</a> instead of waiting for a reset.',
         },
       ],
     },
@@ -115,7 +115,7 @@ This guide lays out what is known, dates every number, and flags the parts you s
           headers: ['Model', 'Input', 'Output'],
           rows: [
             ['Claude Opus 5', '$5.00', '$25.00'],
-            ['Claude Sonnet 5', '$3.00', '$15.00'],
+            ['Claude Sonnet 5', '$2.00', '$10.00'],
             ['Claude Haiku 4.5', '$1.00', '$5.00'],
           ],
           caption: 'Anthropic first-party API rates, August 2026. Bedrock and Vertex are partner-operated and priced separately.',
@@ -126,7 +126,7 @@ This guide lays out what is known, dates every number, and flags the parts you s
         },
         {
           type: 'paragraph',
-          text: 'The trade-off is the obvious one: no monthly ceiling means a runaway agent is a runaway bill, where a subscription simply stops. For daily driving the subscription\'s predictable cost usually wins. For bursts, CI pipelines and evaluation runs, the API is cleaner, and you can set a spend cap in the console.',
+          text: 'The trade-off is the obvious one: metered usage can turn a runaway agent into a runaway bill. A subscription stays predictable only while usage credits are disabled; when they are enabled, work beyond the included limit is billed at standard API rates. For bursts, CI pipelines and evaluation runs, a dedicated API key is easier to budget and cap.',
         },
         {
           type: 'callout',

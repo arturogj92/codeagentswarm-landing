@@ -16,7 +16,7 @@ I run mixed swarms most days. This is AI coding agent orchestration at the proce
     ctaAgent: 'multi',
     highlightedWords: ['AI CLI agent swarm', 'in parallel'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-08-16',
+    updatedAt: '2026-08-23',
     alternateSlug: 'enjambre-de-agentes-cli-ia',
   },
   sections: [
@@ -39,7 +39,7 @@ I run mixed swarms most days. This is AI coding agent orchestration at the proce
         {
           type: 'callout',
           variant: 'info',
-          content: 'A swarm runs on top of the subscriptions you already pay for. Each terminal uses your own Claude, OpenAI, Google, Kimi, xAI SuperGrok/X Premium+, or opencode-connected provider plan independently. There is no special "swarm" plan and no extra per-agent cost from running them in parallel.',
+          content: 'A swarm runs on top of the provider access you already have. Each terminal uses your own Claude, OpenAI, Google, Kimi, xAI or OpenCode-connected account or API key independently. There is no special swarm plan and no extra CodeAgentSwarm fee per parallel agent.',
         },
         {
           type: 'paragraph',
@@ -83,7 +83,7 @@ I run mixed swarms most days. This is AI coding agent orchestration at the proce
         },
         {
           type: 'paragraph',
-          text: 'Antigravity CLI (agy) is Google\'s current coding CLI (the successor to the retired Gemini CLI) and still shines when you want a wide-context Google model in the swarm. OpenCode is provider-agnostic, so parallel sessions can sit on different model vendors. Kimi Code is a strong fit when you want Moonshot K3 in the mix. Grok Build (xAI, binary <code>grok</code>) is the one I reach for when I want SuperGrok-backed coding sessions supervised next to Claude or Codex. None of these replace the others; the point of a swarm is that you can run them side by side.',
+          text: 'Antigravity CLI (agy) is Google\'s current coding CLI and fits when you want a wide-context Google model in the swarm. OpenCode is provider agnostic, so parallel sessions can use different vendors. Kimi Code fits Moonshot models. Grok Build (xAI, binary <code>grok</code>) now uses Grok 4.6 and can be tried free before moving to paid limits or API billing. None replaces the others; the point of a swarm is to run them side by side.',
         },
         {
           type: 'callout',
@@ -137,7 +137,7 @@ I run mixed swarms most days. This is AI coding agent orchestration at the proce
         {
           type: 'code',
           language: 'bash',
-          code: '# Terminal tab 1 - deep refactor\ncd ~/my-project\nclaude\n\n# Terminal tab 2 - focused task\ncd ~/my-project\ncodex\n\n# Terminal tab 3 - Grok Build\ncd ~/my-project\ngrok',
+          code: '# Terminal tab 1: deep refactor\ncd ~/my-project\nclaude\n\n# Terminal tab 2: focused task\ncd ~/my-project\ncodex\n\n# Terminal tab 3: Grok Build\ncd ~/my-project\ngrok',
         },
         {
           type: 'paragraph',
@@ -438,7 +438,7 @@ I run mixed swarms most days. This is AI coding agent orchestration at the proce
     },
     {
       question: 'Which AI coding CLI should I use for what?',
-      answer: 'There is no single best agent, which is why a swarm helps. As a starting bias: Claude Code for deep refactors and careful multi-file reasoning, Codex CLI for focused well-scoped tasks, OpenCode when you want provider flexibility, Kimi Code for Moonshot K3, and Grok Build (xAI) when you want SuperGrok-backed sessions in the same swarm. Models change often, so treat this as a starting point and adjust based on your own results.',
+      answer: 'There is no single best agent, which is why a swarm helps. Start with Claude Code for deep refactors, Codex CLI for focused tasks, OpenCode for provider flexibility, Kimi Code for Moonshot models and Grok Build for Grok 4.6. Models change often, so adjust from your own results.',
     },
     {
       question: 'Do I need git worktrees to run agents in parallel?',

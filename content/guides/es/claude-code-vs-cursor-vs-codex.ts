@@ -9,12 +9,12 @@ export const guide: Guide = {
     metaDescription: 'Uno es un IDE, dos son agentes de terminal y la diferencia de precio es real. Qué hace mejor cada herramienta, dónde flojea cada una y cómo elegir bien en 2026.',
     intro: `El ecosistema de herramientas de IA para programar ha crecido muchísimo. Claude Code, Cursor y Codex CLI son tres de las opciones más populares, pero son herramientas fundamentalmente distintas diseñadas para flujos de trabajo diferentes.
 
-En esta guía te cuento qué hace cada una, dónde destaca y dónde se queda corta. Sin hype ni marketing - solo una comparativa honesta para que elijas lo que mejor encaje con tu forma de trabajar, o decidas usar más de una.`,
+Esta guía compara qué hace cada una, dónde encaja y cuánto cuesta para que elijas un flujo o combines varias con intención.`,
     ctaText: '¿Usas Claude Code, Codex CLI o Antigravity CLI? Ejecútalos todos en paralelo con CodeAgentSwarm. Varios terminales, un solo workspace.',
     ctaAgent: 'multi',
     highlightedWords: ['Claude Code', 'Cursor', 'Codex CLI'],
     publishedAt: '2026-04-15',
-    updatedAt: '2026-08-21',
+    updatedAt: '2026-08-23',
     alternateSlug: 'claude-code-vs-cursor-vs-codex',
   },
   sections: [
@@ -61,7 +61,7 @@ En esta guía te cuento qué hace cada una, dónde destaca y dónde se queda cor
         },
         {
           type: 'paragraph',
-          text: 'Funciona con Claude Sonnet (para velocidad) y Claude Opus (para razonamiento complejo). La palabra clave aquí es "agéntico" - Claude Code no solo sugiere código, sino que actúa. Crea archivos, modifica los existentes, ejecuta comandos de shell y encadena múltiples pasos para completar una tarea.',
+          text: 'Funciona con Claude Sonnet (para velocidad) y Claude Opus (para razonamiento complejo). La palabra clave aquí es "agéntico": Claude Code no solo sugiere código, sino que actúa. Crea archivos, modifica los existentes, ejecuta comandos de shell y encadena múltiples pasos para completar una tarea.',
         },
         {
           type: 'heading',
@@ -72,11 +72,11 @@ En esta guía te cuento qué hace cada una, dónde destaca y dónde se queda cor
         {
           type: 'list',
           items: [
-            '<strong>Comprensión profunda del código</strong> - Claude Code lee e indexa todo tu proyecto, entiende las relaciones entre archivos y mantiene el contexto a lo largo de conversaciones extensas',
-            '<strong>Flujos de trabajo agénticos de varios pasos</strong> - Planifica, ejecuta e itera. Pídele que refactorice un módulo y leerá el código, planificará los cambios, editará múltiples archivos, ejecutará tests y corregirá errores',
-            '<strong>Integraciones MCP</strong> - Soporte completo para servidores de Model Context Protocol, permitiéndote conectar Claude Code a bases de datos, APIs, navegadores y otras herramientas',
-            '<strong>Nativo de terminal</strong> - Funciona en cualquier terminal. Sin dependencia de editor. Úsalo junto a VS Code, Neovim, JetBrains o lo que prefieras',
-            '<strong>Continuidad de conversación</strong> - Mantiene el contexto dentro de las sesiones y puede retomar conversaciones anteriores',
+            '<strong>Inspección del código:</strong> Claude Code puede inspeccionar archivos del proyecto, seguir sus relaciones y mantener contexto durante una sesión',
+            '<strong>Flujos de trabajo agénticos de varios pasos:</strong> Planifica, ejecuta e itera. Pídele que refactorice un módulo y leerá el código, planificará los cambios, editará múltiples archivos, ejecutará tests y corregirá errores',
+            '<strong>Integraciones MCP:</strong> Soporte completo para servidores de Model Context Protocol, permitiéndote conectar Claude Code a bases de datos, APIs, navegadores y otras herramientas',
+            '<strong>Nativo de terminal:</strong> Funciona en cualquier terminal. Sin dependencia de editor. Úsalo junto a VS Code, Neovim, JetBrains o lo que prefieras',
+            '<strong>Continuidad de conversación:</strong> Mantiene el contexto dentro de las sesiones y puede retomar conversaciones anteriores',
           ],
         },
         {
@@ -128,12 +128,12 @@ En esta guía te cuento qué hace cada una, dónde destaca y dónde se queda cor
         {
           type: 'list',
           items: [
-            '<strong>Experiencia de IDE familiar</strong> - Si usas VS Code, Cursor te resultará como estar en casa. Todas tus extensiones y configuraciones funcionan',
-            '<strong>Autocompletado con Tab</strong> - El autocompletado de Cursor predice tu siguiente edición mientras escribes. Acepta sugerencias con Tab, algo que se siente muy natural para editar línea a línea',
-            '<strong>Soporte multi-modelo</strong> - Usa Claude, GPT-4, Gemini y otros modelos. Cambia entre ellos según la tarea',
-            '<strong>Modo agente</strong> - Para tareas más grandes, el modo agente de Cursor puede hacer cambios en múltiples archivos, ejecutar comandos e iterar, similar a lo que hacen los agentes CLI',
-            '<strong>Agentes en segundo plano</strong> - Ejecuta tareas en segundo plano mientras sigues programando en primer plano',
-            '<strong>Funciones de equipo</strong> - Controles de administración, analíticas de uso y configuraciones compartidas para equipos',
+            '<strong>Experiencia de IDE familiar:</strong> Cursor se basa en VS Code y muchas extensiones y configuraciones son compatibles',
+            '<strong>Autocompletado con Tab:</strong> El autocompletado de Cursor predice tu siguiente edición mientras escribes. Acepta sugerencias con Tab, algo que se siente muy natural para editar línea a línea',
+            '<strong>Soporte multimodelo:</strong> usa modelos actuales de Claude, GPT, Gemini y Grok, y cambia según la tarea',
+            '<strong>Modo agente:</strong> Para tareas más grandes, el modo agente de Cursor puede hacer cambios en múltiples archivos, ejecutar comandos e iterar, similar a lo que hacen los agentes CLI',
+            '<strong>Agentes en segundo plano:</strong> Ejecuta tareas en segundo plano mientras sigues programando en primer plano',
+            '<strong>Funciones de equipo:</strong> Controles de administración, analíticas de uso y configuraciones compartidas para equipos',
           ],
         },
         {
@@ -144,7 +144,7 @@ En esta guía te cuento qué hace cada una, dónde destaca y dónde se queda cor
         },
         {
           type: 'paragraph',
-          text: 'Cursor tiene un plan Hobby gratuito para evaluar. Los planes de pago en 2026: Pro a $20/mes, Pro+ a $60/mes con aproximadamente 3x los créditos de uso, Ultra a $200/mes con 20x, y Teams a $40 por usuario/mes. El antiguo modelo de "peticiones premium rápidas" ya no existe: el uso se cobra en créditos ligados al coste en tokens de cada modelo, el modo Auto da uso prácticamente ilimitado en los planes de pago, y puedes poner un límite de gasto en Settings para las sobras.',
+          text: 'Cursor tiene un plan Hobby gratuito para evaluar. A 23 de agosto de 2026, los planes individuales son Pro por 20 $/mes, Pro Plus por 60 $/mes y Ultra por 200 $/mes. Teams Standard cuesta 40 $ por usuario/mes y Teams Premium 120 $ por usuario/mes. El uso incluido depende del coste en tokens del modelo y el consumo bajo demanda puede continuar después con el límite de gasto que configures.',
         },
         {
           type: 'heading',
@@ -170,7 +170,7 @@ En esta guía te cuento qué hace cada una, dónde destaca y dónde se queda cor
         },
         {
           type: 'paragraph',
-          text: 'Codex CLI es el agente de programación de terminal open-source de OpenAI. Conceptualmente es similar a Claude Code - lo ejecutas en tu terminal, lo apuntas a un repositorio, y él lee archivos, hace cambios y ejecuta comandos. Funciona con los modelos de OpenAI (principalmente o3 y o4-mini).',
+          text: 'Codex CLI es el agente de programación de terminal open source de OpenAI. Conceptualmente es similar a Claude Code: lo ejecutas en tu terminal, lo apuntas a un repositorio y lee archivos, hace cambios y ejecuta comandos. Los modelos actuales de Codex incluyen GPT-5.6 Sol, Terra y Luna.',
         },
         {
           type: 'paragraph',
@@ -185,11 +185,11 @@ En esta guía te cuento qué hace cada una, dónde destaca y dónde se queda cor
         {
           type: 'list',
           items: [
-            '<strong>Incluido con la suscripción de ChatGPT</strong> - Si ya pagas ChatGPT Plus ($20/mes) o Pro, Codex CLI viene incluido sin coste adicional',
-            '<strong>Ligero y rápido</strong> - Diseñado para ser un agente de terminal ágil. Instálalo con npm, apúntalo a tu repo y listo',
-            '<strong>Open source</strong> - El código está disponible públicamente, lo que significa contribuciones de la comunidad y total transparencia',
-            '<strong>Soporte MCP</strong> - Al igual que Claude Code, Codex CLI soporta Model Context Protocol para integraciones con herramientas externas',
-            '<strong>Ejecución en sandbox</strong> - Se ejecuta en un sandbox por defecto, lo que lo hace más seguro para cambios experimentales',
+            '<strong>Incluido con ChatGPT:</strong> ChatGPT Plus y Pro incluyen Codex CLI dentro de los límites de uso del plan',
+            '<strong>Instalable mediante npm:</strong> Instálalo, apúntalo a tu repositorio e inicia una sesión de terminal',
+            '<strong>Open source:</strong> El código público permite inspección y contribuciones de la comunidad',
+            '<strong>Soporte MCP:</strong> Al igual que Claude Code, Codex CLI soporta Model Context Protocol para integraciones con herramientas externas',
+            '<strong>Ejecución en sandbox:</strong> Se ejecuta en un sandbox por defecto, lo que lo hace más seguro para cambios experimentales',
           ],
         },
         {
@@ -200,7 +200,7 @@ En esta guía te cuento qué hace cada una, dónde destaca y dónde se queda cor
         },
         {
           type: 'paragraph',
-          text: 'Codex CLI viene incluido con ChatGPT Plus ($20/mes) y ChatGPT Pro, que desde abril de 2026 tiene dos niveles: $100/mes (5x) y $200/mes (20x). El uso incluido ahora se mide en créditos basados en tokens compartidos entre las funciones agénticas de OpenAI. Si ya pagas ChatGPT por otros motivos, Codex CLI es efectivamente gratis. También puedes usarlo con una API key de OpenAI si prefieres pago por uso.',
+          text: 'Codex CLI viene incluido con ChatGPT Free, Go (8 $/mes), Plus (20 $/mes) y Pro, que se ofrece desde 100 $/mes con 5x de uso o 200 $/mes con 20x. El uso incluido se mide en créditos compartidos entre las funciones agénticas de OpenAI y se puede ampliar con más créditos. También puedes usar una clave de API de OpenAI para pagar por uso.',
         },
         {
           type: 'heading',
@@ -231,9 +231,9 @@ En esta guía te cuento qué hace cada una, dónde destaca y dónde se queda cor
         {
           type: 'list',
           items: [
-            '<strong>Claude Code</strong> - Agente CLI (se ejecuta en tu terminal)',
-            '<strong>Cursor</strong> - IDE completo (fork de VS Code con IA integrada)',
-            '<strong>Codex CLI</strong> - Agente CLI (se ejecuta en tu terminal)',
+            '<strong>Claude Code:</strong> Agente CLI (se ejecuta en tu terminal)',
+            '<strong>Cursor:</strong> IDE completo (fork de VS Code con IA integrada)',
+            '<strong>Codex CLI:</strong> Agente CLI (se ejecuta en tu terminal)',
           ],
         },
         {
@@ -245,9 +245,9 @@ En esta guía te cuento qué hace cada una, dónde destaca y dónde se queda cor
         {
           type: 'list',
           items: [
-            '<strong>Claude Code</strong> - Claude Pro $20/mes, Max $100/mes (5x) o $200/mes (20x)',
-            '<strong>Cursor</strong> - Plan Hobby gratuito, Pro $20/mes, Pro+ $60/mes, Ultra $200/mes, Teams $40/usuario',
-            '<strong>Codex CLI</strong> - Incluido con ChatGPT Plus $20/mes; Pro $100/mes (5x) o $200/mes (20x)',
+            '<strong>Claude Code:</strong> Claude Pro $20/mes, Max $100/mes (5x) o $200/mes (20x)',
+            '<strong>Cursor:</strong> Hobby gratis, Pro 20 $/mes, Pro Plus 60 $/mes, Ultra 200 $/mes, Teams Standard 40 $/usuario y Premium 120 $/usuario',
+            '<strong>Codex CLI:</strong> limitado en ChatGPT Free, Go 8 $/mes, Plus 20 $/mes; Pro desde 100 $/mes (5x) o 200 $/mes (20x)',
           ],
         },
         {
@@ -259,9 +259,9 @@ En esta guía te cuento qué hace cada una, dónde destaca y dónde se queda cor
         {
           type: 'list',
           items: [
-            '<strong>Claude Code</strong> - Solo modelos Claude (Sonnet, Opus)',
-            '<strong>Cursor</strong> - Múltiples modelos (Claude, GPT-4, Gemini y más)',
-            '<strong>Codex CLI</strong> - Solo modelos OpenAI (o3, o4-mini)',
+            '<strong>Claude Code:</strong> Solo modelos Claude (Sonnet, Opus)',
+            '<strong>Cursor:</strong> varios modelos actuales de Claude, GPT, Gemini y Grok',
+            '<strong>Codex CLI:</strong> solo modelos OpenAI, incluidos GPT-5.6 Sol, Terra y Luna',
           ],
         },
         {
@@ -273,9 +273,9 @@ En esta guía te cuento qué hace cada una, dónde destaca y dónde se queda cor
         {
           type: 'list',
           items: [
-            '<strong>Claude Code</strong> - Integración MCP completa',
-            '<strong>Cursor</strong> - Soporte MCP limitado',
-            '<strong>Codex CLI</strong> - Integración MCP completa',
+            '<strong>Claude Code:</strong> Integración MCP completa',
+            '<strong>Cursor:</strong> Soporte MCP limitado',
+            '<strong>Codex CLI:</strong> Integración MCP completa',
           ],
         },
         {
@@ -287,9 +287,9 @@ En esta guía te cuento qué hace cada una, dónde destaca y dónde se queda cor
         {
           type: 'list',
           items: [
-            '<strong>Claude Code</strong> - Fuerte. Construido desde cero como herramienta agéntica',
-            '<strong>Cursor</strong> - Bueno. Modo agente y agentes en segundo plano disponibles, pero la experiencia principal es IDE-first',
-            '<strong>Codex CLI</strong> - Bueno. Capacidades agénticas sólidas con ejecución en sandbox',
+            '<strong>Claude Code:</strong> Fuerte. Construido desde cero como herramienta agéntica',
+            '<strong>Cursor:</strong> Bueno. Modo agente y agentes en segundo plano disponibles, pero la experiencia principal es IDE-first',
+            '<strong>Codex CLI:</strong> Bueno. Capacidades agénticas sólidas con ejecución en sandbox',
           ],
         },
         {
@@ -301,9 +301,9 @@ En esta guía te cuento qué hace cada una, dónde destaca y dónde se queda cor
         {
           type: 'list',
           items: [
-            '<strong>Claude Code</strong> - No (es un agente de terminal, no un editor)',
-            '<strong>Cursor</strong> - Sí. Las sugerencias con Tab son una de sus funciones más potentes',
-            '<strong>Codex CLI</strong> - No (es un agente de terminal, no un editor)',
+            '<strong>Claude Code:</strong> No (es un agente de terminal, no un editor)',
+            '<strong>Cursor:</strong> Sí. Las sugerencias con Tab son una de sus funciones más potentes',
+            '<strong>Codex CLI:</strong> No (es un agente de terminal, no un editor)',
           ],
         },
         {
@@ -315,9 +315,9 @@ En esta guía te cuento qué hace cada una, dónde destaca y dónde se queda cor
         {
           type: 'list',
           items: [
-            '<strong>Claude Code</strong> - Herramienta nativa de terminal',
-            '<strong>Cursor</strong> - Tiene un terminal integrado, pero la experiencia principal es el editor',
-            '<strong>Codex CLI</strong> - Herramienta nativa de terminal',
+            '<strong>Claude Code:</strong> Herramienta nativa de terminal',
+            '<strong>Cursor:</strong> Tiene un terminal integrado, pero la experiencia principal es el editor',
+            '<strong>Codex CLI:</strong> Herramienta nativa de terminal',
           ],
         },
         {
@@ -329,9 +329,9 @@ En esta guía te cuento qué hace cada una, dónde destaca y dónde se queda cor
         {
           type: 'list',
           items: [
-            '<strong>Claude Code</strong> - Historial nativo básico (retomar última sesión). Historial completo y buscable con CodeAgentSwarm',
-            '<strong>Cursor</strong> - Historial de chat dentro de sesiones',
-            '<strong>Codex CLI</strong> - Historial de conversaciones básico',
+            '<strong>Claude Code:</strong> Historial nativo básico (retomar última sesión). Historial completo y buscable con CodeAgentSwarm',
+            '<strong>Cursor:</strong> Historial de chat dentro de sesiones',
+            '<strong>Codex CLI:</strong> Historial de conversaciones básico',
           ],
         },
         {
@@ -343,9 +343,9 @@ En esta guía te cuento qué hace cada una, dónde destaca y dónde se queda cor
         {
           type: 'list',
           items: [
-            '<strong>Claude Code</strong> - Sí, ejecuta múltiples instancias. Varios terminales organizados con CodeAgentSwarm',
-            '<strong>Cursor</strong> - Limitado. Los agentes en segundo plano ayudan, pero básicamente trabajas en un solo editor',
-            '<strong>Codex CLI</strong> - Sí, ejecuta múltiples instancias en terminales separados',
+            '<strong>Claude Code:</strong> Sí, ejecuta múltiples instancias. Varios terminales organizados con CodeAgentSwarm',
+            '<strong>Cursor:</strong> Limitado. Los agentes en segundo plano ayudan, pero básicamente trabajas en un solo editor',
+            '<strong>Codex CLI:</strong> Sí, ejecuta múltiples instancias en terminales separados',
           ],
         },
       ],
@@ -371,7 +371,7 @@ En esta guía te cuento qué hace cada una, dónde destaca y dónde se queda cor
             'Te encantan las sugerencias con Tab para autocompletado rápido',
             'Prefieres una interfaz familiar de VS Code y quieres mantener tus extensiones actuales',
             'Trabajas en un equipo que necesita controles de administración y gestión de uso',
-            'Quieres cambiar entre diferentes modelos de IA (Claude, GPT-4, Gemini) según la tarea',
+            'Quieres cambiar entre modelos actuales de Claude, GPT, Gemini y Grok según la tarea',
           ],
         },
         {
@@ -418,7 +418,7 @@ En esta guía te cuento qué hace cada una, dónde destaca y dónde se queda cor
         },
         {
           type: 'paragraph',
-          text: 'Estas herramientas no se excluyen mutuamente. Usar Cursor no te impide ejecutar Claude Code en un terminal aparte para refactorizaciones complejas. De hecho, esta combinación suele darte lo mejor de ambos mundos - asistencia rápida en línea más capacidades agénticas profundas.',
+          text: 'Estas herramientas no se excluyen. Cursor puede cubrir la asistencia en línea mientras Claude Code o Codex CLI ejecuta tareas grandes de varios archivos en otro terminal.',
         },
       ],
     },
@@ -437,16 +437,16 @@ En esta guía te cuento qué hace cada una, dónde destaca y dónde se queda cor
         {
           type: 'list',
           items: [
-            '<strong>Mezcla diferentes herramientas CLI en el mismo workspace</strong> - Ejecuta Claude Code en el terminal 1, Codex CLI en el terminal 2, Antigravity CLI en el terminal 3 y bash normal en el terminal 4. Todo visible a la vez',
-            '<strong>Notificaciones en tiempo real</strong> - Recibe una notificación cuando cualquier agente termina su tarea o necesita tu input, para que nunca te pierdas nada',
-            '<strong>Historial de conversaciones de todas las sesiones</strong> - Busca y retoma cualquier conversación pasada, organizada por proyecto y fecha',
-            '<strong>Ve lo que cada agente está cambiando</strong> - Rastrea los cambios de archivos en tiempo real para cada terminal de forma independiente',
-            '<strong>Seguimiento de tareas</strong> - Sabe en qué está trabajando cada terminal de un vistazo',
+            '<strong>Mezcla diferentes herramientas CLI en el mismo workspace:</strong> Ejecuta Claude Code en el terminal 1, Codex CLI en el terminal 2, Antigravity CLI en el terminal 3 y bash normal en el terminal 4. Todo visible a la vez',
+            '<strong>Notificaciones en tiempo real:</strong> Recibe una notificación cuando un agente termina o necesita tu input para detectar antes cuándo ha acabado',
+            '<strong>Historial de conversaciones de todas las sesiones:</strong> Busca y retoma cualquier conversación pasada, organizada por proyecto y fecha',
+            '<strong>Ve lo que cada agente está cambiando:</strong> Rastrea los cambios de archivos en tiempo real para cada terminal de forma independiente',
+            '<strong>Seguimiento de tareas:</strong> Sabes en qué está trabajando cada terminal de un vistazo',
           ],
         },
         {
           type: 'paragraph',
-          text: 'La idea es sencilla: no deberías tener que elegir una sola herramienta CLI. Diferentes modelos tienen diferentes fortalezas. A veces Claude gestiona mejor una tarea, a veces GPT-4 lo hace mejor. Con CodeAgentSwarm, los ejecutas todos y dejas que cada uno haga lo que mejor sabe hacer.',
+          text: 'La idea es sencilla: no deberías tener que elegir una sola herramienta CLI. Los modelos tienen fortalezas distintas. A veces Claude gestiona mejor una tarea y a veces lo hace un GPT actual. Con CodeAgentSwarm, los ejecutas todos y dejas que cada uno haga lo que mejor sabe hacer.',
         },
         {
           type: 'callout',
@@ -463,11 +463,11 @@ En esta guía te cuento qué hace cada una, dónde destaca y dónde se queda cor
   faq: [
     {
       question: '¿Es Claude Code mejor que Cursor?',
-      answer: 'Son herramientas diferentes. Claude Code es un agente de terminal diseñado para tareas de programación agénticas y de varios pasos. Cursor es un IDE con IA integrada para asistencia en línea y sugerencias de código. Muchos desarrolladores usan ambas - Cursor para edición diaria y Claude Code para refactorizaciones complejas de múltiples archivos.',
+      answer: 'Son herramientas diferentes. Claude Code es un agente de terminal diseñado para tareas de programación agénticas y de varios pasos. Cursor es un IDE con IA integrada para asistencia en línea y sugerencias de código. Muchos desarrolladores usan ambas: Cursor para edición diaria y Claude Code para refactorizaciones complejas de múltiples archivos.',
     },
     {
       question: '¿Es Codex CLI gratis?',
-      answer: 'Codex CLI viene incluido con la suscripción de ChatGPT Plus ($20/mes) o ChatGPT Pro. Si ya pagas ChatGPT, no hay coste adicional por usar Codex CLI.',
+      answer: 'Sí, con uso limitado en ChatGPT Free. También viene incluido con ChatGPT Go, Plus y Pro, y puedes ampliar el uso incluido con créditos.',
     },
     {
       question: '¿Puedo usar Claude Code y Cursor juntos?',
@@ -487,7 +487,7 @@ En esta guía te cuento qué hace cada una, dónde destaca y dónde se queda cor
     },
     {
       question: '¿Cuál es la configuración de IA para programar más barata?',
-      answer: 'Las tres herramientas empiezan en $20/mes. Codex CLI viene con ChatGPT Plus ($20/mes). Claude Code requiere Claude Pro ($20/mes). Cursor Pro cuesta $20/mes. La diferencia está en qué más obtienes con cada suscripción - ChatGPT Plus te da acceso a ChatGPT, Claude Pro te da claude.ai, y Cursor Pro te da el IDE. Elige según el ecosistema que más uses.',
+      answer: 'Cursor Hobby y el uso limitado de Codex en ChatGPT Free empiezan en 0 $. Claude Code empieza con Pro por 20 $/mes o con uso de API medido. Prueba primero las opciones gratuitas y paga por el flujo cuyos límites alcances de verdad.',
     },
   ],
 }

@@ -16,7 +16,7 @@ Yo trabajo con enjambres mixtos casi todos los días. Esto es orquestación de a
     ctaAgent: 'multi',
     highlightedWords: ['enjambre de agentes CLI de IA', 'en paralelo'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-08-16',
+    updatedAt: '2026-08-23',
     alternateSlug: 'ai-cli-agent-swarm',
   },
   sections: [
@@ -39,7 +39,7 @@ Yo trabajo con enjambres mixtos casi todos los días. Esto es orquestación de a
         {
           type: 'callout',
           variant: 'info',
-          content: 'Un enjambre funciona sobre las suscripciones que ya pagas. Cada terminal usa tu plan de Claude, OpenAI, Google, Kimi, SuperGrok/X Premium+ de xAI o el proveedor que conectes a opencode de forma independiente. No hay un plan especial de "enjambre" ni un coste extra por agente por ejecutarlos en paralelo.',
+          content: 'Un enjambre funciona sobre los accesos a proveedores que ya tienes. Cada terminal usa de forma independiente tu cuenta o clave de API de Claude, OpenAI, Google, Kimi, xAI o un proveedor conectado a OpenCode. No hay un plan especial de enjambre ni un recargo de CodeAgentSwarm por agente en paralelo.',
         },
         {
           type: 'paragraph',
@@ -83,7 +83,7 @@ Yo trabajo con enjambres mixtos casi todos los días. Esto es orquestación de a
         },
         {
           type: 'paragraph',
-          text: 'Antigravity CLI (agy) es la CLI de código actual de Google (sucesora del Gemini CLI retirado) y sigue encajando cuando quieres un modelo de Google de mucho contexto en el enjambre. OpenCode es agnóstico de proveedor, así que las sesiones en paralelo pueden ir a vendors distintos. Kimi Code encaja cuando quieres K3 de Moonshot en la mezcla. Grok Build (xAI, binario <code>grok</code>) es el que elijo cuando quiero sesiones con SuperGrok supervisadas junto a Claude o Codex. Ninguno sustituye a los demás; la gracia del enjambre es poder ejecutarlos a la vez.',
+          text: 'Antigravity CLI (agy) es la CLI de código actual de Google y encaja cuando quieres un modelo de Google de mucho contexto. OpenCode es agnóstico de proveedor, así que las sesiones pueden usar vendors distintos. Kimi Code cubre los modelos de Moonshot. Grok Build (xAI, binario <code>grok</code>) usa ahora Grok 4.6 y se puede probar gratis antes de pasar a límites de pago o facturación por API. Ninguno sustituye a los demás; la gracia es ejecutarlos a la vez.',
         },
         {
           type: 'callout',
@@ -137,7 +137,7 @@ Yo trabajo con enjambres mixtos casi todos los días. Esto es orquestación de a
         {
           type: 'code',
           language: 'bash',
-          code: '# Pestaña 1 - refactor profundo\ncd ~/mi-proyecto\nclaude\n\n# Pestaña 2 - tarea concreta\ncd ~/mi-proyecto\ncodex\n\n# Pestaña 3 - leer la base de código\ncd ~/mi-proyecto\ngrok',
+          code: '# Pestaña 1: refactor profundo\ncd ~/mi-proyecto\nclaude\n\n# Pestaña 2: tarea concreta\ncd ~/mi-proyecto\ncodex\n\n# Pestaña 3: leer la base de código\ncd ~/mi-proyecto\ngrok',
         },
         {
           type: 'paragraph',
@@ -438,7 +438,7 @@ Yo trabajo con enjambres mixtos casi todos los días. Esto es orquestación de a
     },
     {
       question: '¿Qué CLI de código uso para cada cosa?',
-      answer: 'No hay un único agente mejor, y por eso ayuda un enjambre. Como sesgo inicial: Claude Code para refactors profundos y razonamiento multi-archivo, Codex CLI para tareas concretas y bien delimitadas, OpenCode cuando quieres flexibilidad de proveedor, Kimi Code para K3 de Moonshot, y Grok Build (xAI) cuando quieres sesiones con SuperGrok en el mismo enjambre. Los modelos cambian a menudo, así que tómalo como punto de partida y ajústalo según tus propios resultados.',
+      answer: 'No hay un único agente mejor, y por eso ayuda un enjambre. Empieza con Claude Code para refactors profundos, Codex CLI para tareas concretas, OpenCode para flexibilidad de proveedor, Kimi Code para modelos de Moonshot y Grok Build para Grok 4.6. Los modelos cambian a menudo, así que ajústalo con tus propios resultados.',
     },
     {
       question: '¿Necesito git worktrees para ejecutar agentes en paralelo?',

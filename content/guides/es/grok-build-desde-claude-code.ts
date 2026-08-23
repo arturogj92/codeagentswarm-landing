@@ -14,7 +14,7 @@ Grok Build es la CLI de código de xAI (<code>grok</code>), no el chatbot Grok.`
     ctaAgent: 'multi',
     highlightedWords: ['Claude Code', 'Grok Build'],
     publishedAt: '2026-07-28',
-    updatedAt: '2026-07-28',
+    updatedAt: '2026-08-23',
     alternateSlug: 'grok-build-from-claude-code',
   },
   sections: [
@@ -37,7 +37,7 @@ Grok Build es la CLI de código de xAI (<code>grok</code>), no el chatbot Grok.`
       id: 'ambos',
       title: 'Ejecuta ambos, no fuerces el corte',
       content: [
-        { type: 'paragraph', text: 'La mayoría de equipos no deberían migrar todo el día uno. Pon Grok Build en tareas exploratorias o favorecidas por SuperGrok mientras Claude Code mantiene el camino crítico.' },
+        { type: 'paragraph', text: 'La mayoría de equipos no deberían migrar todos los flujos el primer día. Usa Grok Build con Grok 4.6 para tareas exploratorias mientras Claude Code mantiene el camino crítico y amplía desde resultados medidos.' },
       ],
     },
   ],

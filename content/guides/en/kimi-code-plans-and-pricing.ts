@@ -6,8 +6,8 @@ export const guide: Guide = {
     locale: 'en',
     title: 'Kimi Code Pricing: Monthly, Annual and API Costs',
     metaTitle: 'Kimi Code Pricing: Monthly, Annual & API Costs (2026)',
-    metaDescription: 'Compare Kimi Code monthly and annual plans, credit multipliers, weekly and 5-hour limits, plus current Kimi K2.7 Code API prices per million tokens.',
-    intro: `As of August 11, 2026, Kimi has four paid membership tiers. Monthly prices run from $19 to $199; annual billing brings the effective monthly range down to $15 to $159. Kimi Code capacity scales 1x, 5x, 15x and 30x across those tiers. All membership features share one credit pool, while Kimi Code also has its own weekly allowance and 5-hour rate limit.
+    metaDescription: 'Compare Kimi Code monthly and annual plans, agent credits, weekly and 5-hour limits, plus current Kimi K2.7 Code API prices per million tokens.',
+    intro: `As of August 23, 2026, Kimi has four paid membership tiers. Monthly prices run from $19 to $199; annual billing brings the effective monthly range down to $15 to $159. Every tier includes Kimi Code, while monthly agent credits rise from 60 to 720. Membership features share one credit pool, and Kimi Code also has its own weekly allowance and 5-hour rate limit.
 
 There is also a pay-per-token route. The current default coding model, Kimi K2.7 Code, costs $0.19 per million cached input tokens, $0.95 per million uncached input tokens and $4 per million output tokens through the Kimi API. Its context window is 262,144 tokens.
 
@@ -16,7 +16,7 @@ This guide separates those two billing systems and links every changing number t
     ctaAgent: 'kimi-code',
     highlightedWords: ['Kimi Code', 'Pricing'],
     publishedAt: '2026-07-18',
-    updatedAt: '2026-08-11',
+    updatedAt: '2026-08-23',
     alternateSlug: 'planes-y-precios-de-kimi-code',
   },
   sections: [
@@ -26,21 +26,21 @@ This guide separates those two billing systems and links every changing number t
       content: [
         {
           type: 'paragraph',
-          text: 'Kimi\'s <a href="https://www.kimi.com/help/membership/membership-pricing" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">official pricing page</a> lists these four paid plans as of August 11, 2026:',
+          text: 'Kimi\'s <a href="https://www.kimi.ai/help/membership/membership-pricing" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">official pricing page</a> lists these four paid plans as of August 23, 2026:',
         },
         {
           type: 'table',
-          headers: ['Plan', 'Monthly', 'Annual, effective monthly', 'Kimi Code credits'],
+          headers: ['Plan', 'Monthly', 'Annual, effective monthly', 'Agent credits', 'Kimi Code'],
           rows: [
-            ['Moderato', '$19', '$15 ($180/year)', '1x'],
-            ['Allegretto', '$39', '$31 ($372/year)', '5x'],
-            ['Allegro', '$99', '$79 ($948/year)', '15x'],
-            ['Vivace', '$199', '$159 ($1,908/year)', '30x'],
+            ['Moderato', '$19', '$15 ($180/year)', '60/month', 'Included'],
+            ['Allegretto', '$39', '$31 ($372/year)', '150/month', 'Included'],
+            ['Allegro', '$99', '$79 ($948/year)', '360/month', 'Included'],
+            ['Vivace', '$199', '$159 ($1,908/year)', '720/month', 'Included'],
           ],
         },
         {
           type: 'paragraph',
-          text: 'The multiplier is relative capacity, not a published token allowance. The <a href="https://www.kimi.com/help/membership/membership-overview" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">membership overview</a> says Kimi Code, Kimi Work, Deep Research, Slides, websites and the other membership features all draw from one shared credit pool. Heavy use elsewhere can therefore reduce what remains for coding.',
+          text: 'Agent credits are task units, not tokens, and harder tasks can consume more than one. The <a href="https://www.kimi.ai/help/membership/membership-overview" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">membership overview</a> says Kimi Code, Kimi Work, Deep Research, Slides, websites and the other membership features draw from one shared monthly pool. Heavy use elsewhere can therefore reduce what remains for coding.',
         },
         {
           type: 'callout',
@@ -59,7 +59,7 @@ This guide separates those two billing systems and links every changing number t
         },
         {
           type: 'paragraph',
-          text: 'Kimi does not publish a fixed token count for each 1x multiplier because task consumption varies. A long repository session can cost more credits than a short edit, and several parallel terminals reach the 5-hour limit faster than one.',
+          text: 'Kimi does not publish a fixed token count per agent credit because task consumption varies. A long repository session can cost more credits than a short edit, and several parallel terminals reach the 5-hour limit faster than one.',
         },
         {
           type: 'paragraph',
@@ -145,15 +145,15 @@ This guide separates those two billing systems and links every changing number t
   faq: [
     {
       question: 'Is Kimi Code free?',
-      answer: 'The Kimi Code CLI is free and open source. Model usage is billed separately through a Kimi membership or the Kimi API. As of August 11, 2026, the official paid membership table starts at $19 month-to-month or $15 per month with annual billing.',
+      answer: 'The Kimi Code CLI is free and open source. Model usage is billed separately through a Kimi membership or the Kimi API. As of August 23, 2026, the official paid membership table starts at $19 month-to-month or $15 per month with annual billing.',
     },
     {
       question: 'How much does Kimi Code cost per month?',
-      answer: 'Monthly plans are Moderato $19, Allegretto $39, Allegro $99 and Vivace $199. With annual billing, their effective monthly prices are $15, $31, $79 and $159. Kimi Code credits scale 1x, 5x, 15x and 30x.',
+      answer: 'Monthly plans are Moderato $19, Allegretto $39, Allegro $99 and Vivace $199. With annual billing, their effective monthly prices are $15, $31, $79 and $159. Monthly agent credits are 60, 150, 360 and 720.',
     },
     {
       question: 'Which Kimi plan includes Kimi Code?',
-      answer: 'All four paid tiers in the current official membership table list Kimi Code credits: Moderato 1x, Allegretto 5x, Allegro 15x and Vivace 30x.',
+      answer: 'All four paid tiers include Kimi Code. Their monthly agent-credit pools are 60 for Moderato, 150 for Allegretto, 360 for Allegro and 720 for Vivace.',
     },
     {
       question: 'How do Kimi Code limits reset?',

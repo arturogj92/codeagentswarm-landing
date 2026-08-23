@@ -7,7 +7,7 @@ export const guide: Guide = {
     title: 'Planes y precios de Antigravity: qué te da de verdad el nivel gratuito',
     metaTitle: 'Precios de Antigravity CLI: Free, Pro y Ultra explicados (2026)',
     metaDescription: 'Los precios de Antigravity explicados: el nivel gratuito y qué permite de verdad, Google AI Pro y Ultra, el bote de créditos y por qué han recortado los límites gratuitos varias veces.',
-    intro: `Antigravity no tiene suscripción propia. El acceso viaja dentro de un plan de Google AI, y a agosto de 2026 eso significa: un nivel gratuito realmente utilizable, Google AI Pro, Google AI Ultra, un nivel Ultra Max por encima, y una vía para organizaciones a través de Google Cloud con precio por consumo.
+    intro: `Antigravity no tiene suscripción propia. El acceso viaja dentro de un plan de Google AI y, a 23 de agosto de 2026, eso significa: nivel gratuito, Google AI Plus, Google AI Pro, Google AI Ultra 5x, Google AI Ultra 20x y una vía para organizaciones mediante Google Cloud con precio por consumo.
 
 El nivel gratuito es lo interesante aquí. A diferencia de <a href="/es/guias/planes-y-precios-de-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, que no está en su nivel gratuito en absoluto, el plan gratis de Antigravity te da acceso a varios modelos de frontera, autocompletado ilimitado y peticiones de comando ilimitadas, con límites de frecuencia semanales como única barrera, no funciones capadas. Se puede trabajar de verdad sin pagar.
 
@@ -16,7 +16,7 @@ Hay una pega que conviene conocer antes de montar un flujo de trabajo encima, y 
     ctaAgent: 'antigravity',
     highlightedWords: ['Antigravity', 'Planes', 'precios'],
     publishedAt: '2026-08-05',
-    updatedAt: '2026-08-05',
+    updatedAt: '2026-08-23',
     alternateSlug: 'antigravity-plans-and-pricing',
   },
   sections: [
@@ -33,9 +33,10 @@ Hay una pega que conviene conocer antes de montar un flujo de trabajo encima, y 
           headers: ['Plan', 'Precio', 'Qué cambia'],
           rows: [
             ['Individual (gratis)', '0 $', 'Todos los modelos, límites semanales básicos'],
+            ['Google AI Plus', 'Unos 8 $/mes', 'Más peticiones de Antigravity'],
             ['Google AI Pro', '20 $/mes', 'Límites más generosos, bote de créditos flexible'],
-            ['Google AI Ultra', '100 $/mes', '5x los límites de Pro'],
-            ['Ultra Max', '200 $/mes', '20x los límites de Pro'],
+            ['Google AI Ultra 5x', '100 $/mes', 'Peticiones de Antigravity más altas'],
+            ['Google AI Ultra 20x', '200 $/mes', 'Las peticiones de Antigravity más altas'],
             ['Organización', 'Vía Google Cloud', 'Precio de API por consumo'],
           ],
           caption: 'Niveles de acceso a Antigravity, agosto de 2026.',
@@ -47,11 +48,11 @@ Hay una pega que conviene conocer antes de montar un flujo de trabajo encima, y 
         },
         {
           type: 'paragraph',
-          text: 'Ese cambio de precios merece conocerse porque fue a favor del cliente, cosa poco habitual. Google introdujo el nivel Ultra de 100 $ como escalón intermedio, y el nivel superior anterior bajó de 250 $ a 200 $ y pasó a llamarse Ultra Max. Si estás leyendo una comparativa antigua que cita 250 $, es anterior a ese cambio.',
+          text: 'La oferta en vivo de Google One llama ahora a los dos planes superiores Google AI Ultra 5x y Google AI Ultra 20x. Las comparativas antiguas pueden llamar Ultra Max al nivel de 200 $ o citar 250 $; comprueba el checkout actual de tu cuenta antes de comprar.',
         },
         {
           type: 'paragraph',
-          text: 'Los multiplicadores 5x y 20x se miden contra Pro, no contra el nivel gratuito. Esto importa al calcular qué te compra de verdad una subida: el salto de gratis a Pro es el que te cambia el día, y los saltos por encima son para quien tiene agentes trabajando prácticamente sin parar.',
+          text: 'Google describe ahora el acceso a Antigravity como limitado, ampliado, más alto y máximo según el nivel. Es una comparación relativa, no una cifra publicada de peticiones, así que elige desde el consumo que muestre tu cuenta y no conviertas los nombres 5x y 20x en cuotas inventadas.',
         },
       ],
     },
@@ -88,11 +89,11 @@ Hay una pega que conviene conocer antes de montar un flujo de trabajo encima, y 
       content: [
         {
           type: 'paragraph',
-          text: 'Pro y Ultra incluyen un bote de créditos flexible. Los créditos se consumen una vez agotada la cuota incluida en tu plan, así que la cuota del plan es un suelo y no un techo duro, y cuestan alrededor de 0,01 $ cada uno a agosto de 2026, con compra por volumen disponible (unos 199 $ por 20.000 créditos).',
+          text: 'Google documenta créditos de IA adicionales para usuarios de Pro y Ultra una vez agotada la cuota incluida. El consumo sigue la tarifa estándar de API y varía según el modelo y la complejidad de la tarea, así que no existe una conversión plana y fiable de 0,01 $ para cada petición de Antigravity.',
         },
         {
           type: 'paragraph',
-          text: 'Eso pone a Antigravity en la misma categoría que <a href="/es/guias/planes-y-precios-de-codex" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex</a> y no en la de Claude Code: tocar tu límite es una invitación a gastar, no un muro que tengas que esperar. Que eso sea una buena noticia depende por completo de si te has dado cuenta.',
+          text: 'Esto coloca a Antigravity en la misma categoría general que <a href="/es/guias/planes-y-precios-de-codex" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex</a> y los planes de pago de Claude: puedes financiar trabajo fuera de la cuota incluida en vez de esperar siempre al reinicio. Que eso sea una buena noticia depende de si estaba en tu presupuesto.',
         },
         {
           type: 'paragraph',
@@ -175,7 +176,7 @@ Hay una pega que conviene conocer antes de montar un flujo de trabajo encima, y 
     },
     {
       question: '¿Cuánto cuesta Antigravity al mes?',
-      answer: 'No existe una suscripción a Antigravity. El acceso viene con un plan de Google AI: gratis, Pro por unos 20 $/mes, Ultra por unos 100 $/mes con 5x los límites de Pro, y Ultra Max por unos 200 $/mes con 20x. Verifica los precios vigentes en tu cuenta de Google, porque Google no los lista en la página de precios de Antigravity.',
+      answer: 'No existe una suscripción a Antigravity. El acceso viene con un plan de Google AI: gratis, Plus desde unos 8 $/mes, Pro por unos 20 $/mes, Ultra 5x por unos 100 $/mes y Ultra 20x por unos 200 $/mes. Verifica el precio vigente en tu cuenta antes de pagar.',
     },
     {
       question: '¿Cuántas peticiones permite el nivel gratuito de Antigravity?',
@@ -183,7 +184,7 @@ Hay una pega que conviene conocer antes de montar un flujo de trabajo encima, y 
     },
     {
       question: '¿Qué son los créditos de Antigravity y cuándo se usan?',
-      answer: 'Un bote flexible en los planes Pro y Ultra que se consume una vez agotada tu cuota incluida, a un precio aproximado de 0,01 $ cada uno con compra por volumen disponible. El nivel gratuito no tiene bote de créditos, así que quien va gratis simplemente espera a que se reinicie el límite.',
+      answer: 'Los usuarios de Pro y Ultra pueden comprar créditos de IA adicionales cuando se agota la cuota incluida. El consumo sigue la tarifa estándar de API y varía según el modelo y la complejidad, no tiene un precio fijo por petición. El nivel gratuito espera al reinicio.',
     },
     {
       question: '¿Por qué mi indicador de cuota dice que Antigravity no está corriendo si sí lo está?',

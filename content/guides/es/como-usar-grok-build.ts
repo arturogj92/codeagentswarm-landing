@@ -6,7 +6,7 @@ export const guide: Guide = {
     locale: 'es',
     title: 'Cómo usar Grok Build: instalación, login y comandos',
     metaTitle: 'Cómo usar Grok Build de xAI: instalación y comandos (2026)',
-    metaDescription: 'Grok Build es el agente de código en terminal de xAI (comando grok). Instálalo, inicia sesión con SuperGrok o X Premium+, aprende los comandos clave y supervísalo en CodeAgentSwarm.',
+    metaDescription: 'Grok Build es el agente de código en terminal de xAI. Instala el comando grok, entra con tu cuenta de xAI, aprende los comandos clave y supervisa varias sesiones.',
     intro: `Grok Build es el agente de código en terminal de xAI: un TUI que lee tu repo, edita archivos, ejecuta comandos, busca en la web y gestiona trabajo de varios pasos desde la shell. Instalas el binario <code>grok</code>, te autenticas y trabajas dentro de un proyecto igual que con Claude Code o Codex CLI.
 
 Tres productos distintos se llaman Grok: el chatbot de consumo Grok, la CLI oficial de código de xAI llamada Grok Build (el comando <code>grok</code> de esta guía) y herramientas comunitarias no oficiales llamadas grok-cli en GitHub. CodeAgentSwarm integra Grok Build, no el chat.
@@ -16,7 +16,7 @@ Esta guía cubre instalación, primer login, los flags que usarás de verdad, re
     ctaAgent: 'grok-build',
     highlightedWords: ['Grok Build'],
     publishedAt: '2026-07-28',
-    updatedAt: '2026-07-28',
+    updatedAt: '2026-08-23',
     alternateSlug: 'how-to-use-grok-build',
   },
   sections: [
@@ -47,7 +47,7 @@ Esta guía cubre instalación, primer login, los flags que usarás de verdad, re
         { type: 'paragraph', text: 'Desde un directorio de proyecto, ejecuta <code>grok</code>. En el primer arranque la CLI abre el navegador para autenticarte. Las credenciales van a <code>~/.grok/auth.json</code> y se renuevan solas.' },
         { type: 'paragraph', text: 'En CI o entornos sin navegador, usa una API key:' },
         { type: 'code', language: 'bash', code: 'export XAI_API_KEY="xai-..."\ngrok -p "Resume este repositorio"' },
-        { type: 'callout', variant: 'warning', content: 'El uso interactivo depende del plan de tu cuenta xAI (en la era beta se habla de SuperGrok o X Premium+). Confirma el acceso actual en xAI antes de un despliegue de equipo. Ver la <a href="/es/guias/precios-y-acceso-grok-build" class="text-neon-cyan hover:text-neon-purple transition-colors">guía de precios y acceso</a>.' },
+        { type: 'callout', variant: 'warning', content: 'Grok Build se puede probar gratis y los planes de pago de xAI aumentan los límites. Confirma el acceso actual antes de un despliegue de equipo y consulta la <a href="/es/guias/precios-y-acceso-grok-build" class="text-neon-cyan hover:text-neon-purple transition-colors">guía de precios y acceso</a>.' },
       ],
     },
     {
@@ -55,7 +55,7 @@ Esta guía cubre instalación, primer login, los flags que usarás de verdad, re
       title: 'Comandos y flags que importan',
       content: [
         { type: 'paragraph', text: 'No necesitas todos los flags. Estos son los del día a día:' },
-        { type: 'list', items: ['<code>grok</code> - TUI interactivo en el directorio actual', '<code>grok "arregla el test flaky"</code> - TUI con prompt inicial', '<code>grok -p "..."</code> - prompt headless a stdout', '<code>grok --continue</code> / <code>-c</code> - continuar la sesión más reciente de este cwd', '<code>grok --resume</code> / <code>-r</code> - reanudar por id o título', '<code>grok --always-approve</code> - auto-aprobar tools (estilo YOLO; con cuidado)', '<code>grok --worktree=nombre</code> - sesión en un git worktree nuevo', '<code>grok --no-plan</code> / <code>--no-subagents</code> - desactivar plan mode o subagentes nativos', '<code>grok sessions list</code> / <code>search</code> - buscar sesiones', '<code>grok export</code> - exportar transcript a Markdown'] },
+        { type: 'list', items: ['<code>grok</code>: TUI interactivo en el directorio actual', '<code>grok "arregla el test flaky"</code>: TUI con prompt inicial', '<code>grok -p "..."</code>: prompt headless a stdout', '<code>grok --continue</code> / <code>-c</code>: continuar la sesión más reciente de este cwd', '<code>grok --resume</code> / <code>-r</code>: reanudar por id o título', '<code>grok --always-approve</code>: auto-aprobar tools (estilo YOLO; con cuidado)', '<code>grok --worktree=nombre</code>: sesión en un git worktree nuevo', '<code>grok --no-plan</code> / <code>--no-subagents</code>: desactivar plan mode o subagentes nativos', '<code>grok sessions list</code> / <code>search</code>: buscar sesiones', '<code>grok export</code>: exportar transcript a Markdown'] },
         { type: 'paragraph', text: 'Los modos de permiso incluyen <code>default</code>, <code>acceptEdits</code>, <code>auto</code>, <code>dontAsk</code>, <code>bypassPermissions</code> y <code>plan</code>. Plan Mode se detalla en la <a href="/es/guias/modo-plan-grok-build" class="text-neon-cyan hover:text-neon-purple transition-colors">guía de Plan Mode</a>.' },
       ],
     },

@@ -5,18 +5,18 @@ export const guide: Guide = {
     slug: 'precios-y-acceso-grok-build',
     locale: 'es',
     title: 'Precios y acceso de Grok Build: qué te da cada plan de xAI',
-    metaTitle: 'Precios de Grok Build: SuperGrok, X Premium+ y Heavy (2026)',
-    metaDescription: 'Todas las vías de acceso a Grok Build: SuperGrok por 30 $, X Premium+ por 40 $, SuperGrok Heavy por 300 $, y la API de xAI para CI. Qué está verificado y qué no.',
-    intro: `No existe una suscripción independiente a Grok Build. El acceso viaja dentro de un plan de xAI o de X, y a agosto de 2026 eso significa: SuperGrok por 30 $/mes, X Premium+ por 40 $/mes, o SuperGrok Heavy por 300 $/mes con los límites más altos. Para automatización hay una vía aparte de pago por token a través de la API de xAI.
+    metaTitle: 'Precios de Grok Build: gratis, SuperGrok y API (2026)',
+    metaDescription: 'Grok Build se puede probar gratis. Compara Free, SuperGrok por 30 $, SuperGrok Plus por 100 $ y el precio actual de la API de Grok 4.6.',
+    intro: `Grok Build ya se puede probar gratis. xAI también ofrece SuperGrok por 30 $/mes y SuperGrok Plus por 100 $/mes para obtener más uso, además de otros niveles individuales y empresariales en su comparador en vivo. Para automatización existe una vía aparte de pago por token mediante la API de xAI.
 
 Antes de nada, la desambiguación que casi ninguna página hace. Hay tres cosas distintas que se llaman Grok: el <strong>chatbot Grok</strong> (la app de chat de consumo de xAI), <strong>Grok Build</strong> (la CLI oficial de programación de xAI, el comando <code>grok</code>, que es de lo que va esta página y lo que soporta CodeAgentSwarm), y varios proyectos de la comunidad en GitHub sin relación con xAI llamados <code>grok-cli</code>. Si instalas el que no es, nada de lo que hay aquí aplica.
 
-La historia del acceso ya ha cambiado una vez, y saberlo importa más que cualquier cifra suelta: Grok Build salió el 14 de mayo de 2026 restringido solo a SuperGrok Heavy, y diez días después xAI lo abrió a los niveles mucho más baratos SuperGrok y X Premium+. Todo lo escrito en esa primera ventana está desactualizado.`,
-    ctaText: 'CodeAgentSwarm es un espacio de trabajo encima de tu acceso a xAI, no un revendedor. Tú aportas SuperGrok, X Premium+ o una clave de API; nosotros añadimos supervisión multi-terminal, visibilidad de cuota e historial buscable.',
+Las fuentes vigentes son la <a href="https://x.ai/build" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">página de Grok Build</a> y el <a href="https://x.ai/pricing" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">comparador de planes</a> de xAI. Los artículos que presentan Grok Build como una herramienta solo de pago ya están desactualizados.`,
+    ctaText: 'CodeAgentSwarm es un espacio de trabajo sobre tu acceso a xAI, no un revendedor. Tú aportas una cuenta de xAI o una clave de API; nosotros añadimos supervisión multi-terminal, visibilidad de cuota e historial buscable.',
     ctaAgent: 'grok-build',
     highlightedWords: ['Precios', 'acceso', 'Grok Build'],
     publishedAt: '2026-07-28',
-    updatedAt: '2026-08-05',
+    updatedAt: '2026-08-23',
     alternateSlug: 'grok-build-pricing',
   },
   sections: [
@@ -26,28 +26,28 @@ La historia del acceso ya ha cambiado una vez, y saberlo importa más que cualqu
       content: [
         {
           type: 'paragraph',
-          text: 'Grok Build va empaquetado en las suscripciones de xAI y de X en vez de venderse por su cuenta. A agosto de 2026:',
+          text: 'xAI ofrece ahora una vía gratuita a Grok Build y planes de pago con límites mayores. Las páginas oficiales muestran esta oferta a 23 de agosto de 2026:',
         },
         {
           type: 'table',
           headers: ['Plan', 'Precio', 'Grok Build', 'Notas'],
           rows: [
-            ['Free', '0 $', 'No', 'Solo chat'],
-            ['SuperGrok', '30 $/mes', 'Sí', 'La entrada más barata'],
-            ['X Premium+', '40 $/mes', 'Sí', 'El mismo acceso a la CLI, con X incluido'],
-            ['SuperGrok Heavy', '300 $/mes', 'Sí', 'Los límites más altos; el único nivel al lanzarse'],
+            ['Free', '0 $', 'Sí', 'Disponible para probar con uso limitado'],
+            ['SuperGrok', '30 $/mes', 'Sí', 'Límites de uso más altos'],
+            ['SuperGrok Plus', '100 $/mes', 'Sí', 'Mucho más uso en Build y otras funciones de xAI'],
+            ['Otros niveles individuales', 'Consulta el checkout', 'Comprueba tu cuenta', 'El precio público de Lite y Heavy puede variar o no aparecer en el texto de la página'],
             ['API de xAI', 'Por token', 'Sí, headless', 'Para CI y automatización'],
           ],
-          caption: 'Vías de acceso a Grok Build, agosto de 2026. Verifícalo en tu cuenta de xAI antes de presupuestar un despliegue.',
+          caption: 'Vías de acceso a Grok Build verificadas el 23 de agosto de 2026. Revisa la página en vivo antes de presupuestar un despliegue.',
         },
         {
           type: 'paragraph',
-          text: 'Dos cosas que merece la pena destacar. Primera, <strong>SuperGrok por 30 $ y X Premium+ por 40 $ desbloquean la misma CLI</strong>, así que si por lo demás no te interesa X, SuperGrok es la puerta barata. Segunda, el nivel Heavy de 300 $ no es otro producto; es el mismo Grok Build con límites mucho más altos, cosa que solo importa si tienes agentes trabajando prácticamente sin parar.',
+          text: 'El cambio importante es que ya no hace falta pagar para evaluar la herramienta. SuperGrok aumenta los límites y SuperGrok Plus incluye mucho más uso en Build, Chat, Imagine y Voice. xAI muestra Lite y Heavy en su comparador, pero no publica un precio estable para todos los niveles en el texto de la página, así que usa el checkout en vivo para esos planes.',
         },
         {
           type: 'callout',
           variant: 'warning',
-          content: 'xAI se mueve rápido y ya ha cambiado el acceso a esta CLI una vez. Trata la tabla de arriba como algo fechado y no permanente, y confírmalo en tu propia cuenta antes de comprometer a un equipo. Si una página cita "peticiones por hora" exactas de Grok Build sin una fuente primaria de xAI, dala por caducada.',
+          content: 'xAI cambia sus planes con rapidez. Trata la tabla como una foto fechada y confirma el checkout antes de comprometer a un equipo. Si una página dice que Grok Build es solo de pago o cita peticiones exactas sin una fuente primaria de xAI, dala por caducada.',
         },
       ],
     },
@@ -57,11 +57,11 @@ La historia del acceso ya ha cambiado una vez, y saberlo importa más que cualqu
       content: [
         {
           type: 'paragraph',
-          text: 'Esta guía da precios porque los precios están publicados. Lo que no da a propósito es una cuota de peticiones, porque xAI no publica ninguna para Grok Build en ningún nivel, y todo artículo que dé un número concreto se lo ha inventado.',
+          text: 'Esta guía da los precios que xAI publica. No inventa una cuota de peticiones porque xAI describe los límites de forma relativa y no publica una cifra estable para cada nivel de Grok Build.',
         },
         {
           type: 'paragraph',
-          text: 'Lo que sí se observa es la forma de la medición: <strong>el consumo se lleva en un ciclo semanal</strong>, igual que hacen Anthropic y Moonshot con sus agentes de programación. Así que el consejo práctico se traslada. Tu ritmo de consumo depende de cuántos agentes lleves en paralelo mucho más que de cuántas horas estés al teclado, porque cada agente lee ficheros, ejecuta herramientas y razona por su cuenta.',
+          text: 'El consejo práctico sigue siendo válido: tu ritmo de consumo depende de cuántos agentes lleves en paralelo, porque cada uno lee ficheros, ejecuta herramientas y razona por su cuenta. Consulta la vista de uso de tu cuenta en vez de presupuestar desde un artículo antiguo.',
         },
         {
           type: 'paragraph',
@@ -75,15 +75,15 @@ La historia del acceso ya ha cambiado una vez, y saberlo importa más que cualqu
       content: [
         {
           type: 'paragraph',
-          text: 'Para cualquier cosa sin supervisión, <code>XAI_API_KEY</code> es el camino headless y cambia la cuota de la suscripción por facturación por token. A agosto de 2026 el modelo de programación cuesta alrededor de 0,20 $ por millón de tokens de entrada y 1,50 $ por millón de salida.',
+          text: 'Para trabajo sin supervisión, <code>XAI_API_KEY</code> es la vía headless y cambia los límites de la cuenta por facturación por token. Grok Build usa ahora Grok 4.6. Su tarifa estándar es de 2 $ por millón de tokens de entrada, 0,50 $ por millón de entrada en caché y 6 $ por millón de salida, con un precio mayor cuando una petición supera 200K de contexto.',
         },
         {
           type: 'paragraph',
-          text: 'Son tarifas agresivas para lo que se estila en esta categoría, y eso hace la API genuinamente atractiva en vez de un recurso de emergencia. Compáralo con <a href="/es/guias/planes-y-precios-de-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">las tarifas de Claude Code</a>, donde la salida va un orden de magnitud por encima.',
+          text: 'Grok 4.6 tiene una ventana de contexto de 500K. Su entrada de 2 $ iguala a Claude Sonnet 5 y su salida de 6 $ cuesta menos. Compáralo con <a href="/es/guias/planes-y-precios-de-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">las tarifas de Claude Code</a> antes de elegir un modelo para CI.',
         },
         {
           type: 'paragraph',
-          text: 'Aplica el intercambio de siempre: una suscripción se para cuando chocas con el muro, una clave de API sigue y te factura. Para un pipeline de CI eso es justo lo que quieres, porque una compilación no debería fallar porque a una persona se le haya agotado su asignación personal. Pon un límite de gasto en xAI y guarda la clave en el gestor de secretos de CI, no en la shell donde programas.',
+          text: 'La clave de API sigue funcionando mientras haya saldo y margen de uso, así que la automatización necesita presupuesto y alertas. Pon un límite de gasto en xAI y guarda la clave en el gestor de secretos de CI, no en la shell donde programas.',
         },
         {
           type: 'code',
@@ -106,7 +106,7 @@ La historia del acceso ya ha cambiado una vez, y saberlo importa más que cualqu
         },
         {
           type: 'paragraph',
-          text: 'Lo que sí añade es lo que una cuota semanal hace valioso: la app lee tu consumo real de SuperGrok y lo muestra junto al de tus otros agentes, así ves venir el muro mientras los agentes trabajan en vez de descubrirlo por un terminal parado.',
+          text: 'Lo que sí añade es visibilidad del uso: la app muestra el consumo de xAI junto al de tus otros agentes para que puedas reaccionar antes de que una sesión se pare.',
         },
       ],
     },
@@ -116,20 +116,20 @@ La historia del acceso ya ha cambiado una vez, y saberlo importa más que cualqu
       content: [
         {
           type: 'paragraph',
-          text: 'Frente a las demás CLI, Grok Build se sitúa en la parte cara del nivel de entrada y en la barata de la API.',
+          text: 'Frente a las demás CLI, Grok Build empieza gratis y el tramo estándar de su API cuesta 2 $ por millón de entrada, 0,50 $ por entrada en caché y 6 $ por salida.',
         },
         {
           type: 'list',
           items: [
-            '<strong>El precio de entrada es el más alto de la categoría.</strong> 30 $ frente a los 20 $ de <a href="/es/guias/planes-y-precios-de-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a> y <a href="/es/guias/planes-y-precios-de-antigravity" class="text-neon-cyan hover:text-neon-purple transition-colors">Antigravity</a>, y los 8 $ de <a href="/es/guias/planes-y-precios-de-codex" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex</a> en su plan Go.',
-            '<strong>No hay nivel gratuito.</strong> Como Claude Code y al revés que Antigravity, no puedes evaluar Grok Build sin pagar.',
-            '<strong>La API le gana a todos.</strong> A unos 0,20 $ y 1,50 $ por millón de tokens es drásticamente más barata por token que las alternativas de frontera, lo que la convierte en una buena candidata para automatización aunque uses otra cosa de forma interactiva.',
-            '<strong>El nivel máximo juega en otra liga.</strong> 300 $ el Heavy frente a los 200 $ de los niveles más caros de Claude y ChatGPT.',
+            '<strong>La evaluación empieza en 0 $.</strong> La página oficial dice que Grok Build está disponible para probar gratis.',
+            '<strong>SuperGrok empieza en 30 $.</strong> Está por encima de los planes de entrada de 20 $ de <a href="/es/guias/planes-y-precios-de-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a> y Cursor, pero no necesitas pagarlo para una primera prueba.',
+            '<strong>SuperGrok Plus cuesta 100 $.</strong> Añade mucho más uso en Build y otras funciones de xAI.',
+            '<strong>La API actual cuesta 2 $ de entrada y 6 $ de salida.</strong> La entrada en caché cuesta 0,50 $ por millón de tokens y las peticiones por encima de 200K de contexto cuestan más.',
           ],
         },
         {
           type: 'paragraph',
-          text: 'La lectura honesta: Grok Build no es la forma más barata de tener un agente, y sí es una buena candidata para la mitad de automatización de un montaje mixto. Usarlo junto a otro agente además significa dos cuotas completamente separadas, así que agotar una rara vez detiene toda la sesión, que es el argumento de <a href="/es/guias/enjambre-de-agentes-cli-ia" class="text-neon-cyan hover:text-neon-purple transition-colors">la guía del enjambre multi-CLI</a>.',
+          text: 'La lectura práctica: usa el acceso gratuito para probar Grok Build, paga por límites mayores solo cuando el consumo de tu cuenta lo justifique y reserva la API para automatización controlada. Ejecutarlo junto a otro agente también te da límites de proveedores separados, que es el argumento de <a href="/es/guias/enjambre-de-agentes-cli-ia" class="text-neon-cyan hover:text-neon-purple transition-colors">la guía del enjambre multi-CLI</a>.',
         },
       ],
     },
@@ -145,7 +145,7 @@ La historia del acceso ya ha cambiado una vez, y saberlo importa más que cualqu
         {
           type: 'callout',
           variant: 'tip',
-          content: 'Si falla la autenticación, comprueba el estado de tu suscripción en la cuenta de xAI o de X antes de depurar cualquier otra cosa. Un plan caducado y una instalación rota se ven exactamente igual desde el terminal.',
+          content: 'Si falla la autenticación, comprueba que la cuenta de xAI tenga acceso a Grok Build o que la clave de API tenga saldo antes de depurar la instalación.',
         },
         {
           type: 'paragraph',
@@ -157,23 +157,23 @@ La historia del acceso ya ha cambiado una vez, y saberlo importa más que cualqu
   faq: [
     {
       question: '¿Grok Build es gratis?',
-      answer: 'No. No hay nivel gratuito ni suscripción independiente a Grok Build. La vía más barata es SuperGrok por 30 $/mes, con X Premium+ por 40 $/mes desbloqueando la misma CLI, o una clave de API de xAI de pago por token para uso headless.',
+      answer: 'Sí. xAI indica que Grok Build está disponible para probar gratis. SuperGrok por 30 $/mes y SuperGrok Plus por 100 $/mes aumentan los límites, mientras una clave de API de xAI ofrece pago por token para trabajo headless.',
     },
     {
       question: '¿Cuánto cuesta Grok Build al mes?',
-      answer: 'A agosto de 2026: SuperGrok 30 $, X Premium+ 40 $, y SuperGrok Heavy 300 $ para los límites más altos. Los tres desbloquean la misma CLI; los niveles se diferencian en cuánto puedes usarla.',
+      answer: 'A 23 de agosto de 2026, la evaluación empieza gratis. xAI muestra SuperGrok por 30 $/mes y SuperGrok Plus por 100 $/mes. Otros niveles individuales aparecen en el comparador en vivo, así que verifica sus precios de checkout antes de pagar.',
     },
     {
-      question: '¿Qué diferencia hay entre SuperGrok y X Premium+ para Grok Build?',
-      answer: 'Para el acceso a la CLI, ninguna: los dos desbloquean Grok Build. X Premium+ cuesta 10 $ más e incluye funciones de X. Si no las quieres, SuperGrok es la puerta barata.',
+      question: '¿Qué añade SuperGrok Plus para Grok Build?',
+      answer: 'xAI describe SuperGrok Plus como mucho más uso en Build, Chat, Imagine y Voice, además de acceso prioritario y respuestas más rápidas. Cuesta 100 $/mes frente a los 30 $/mes de SuperGrok.',
     },
     {
       question: '¿Cuántas peticiones permite Grok Build?',
-      answer: 'xAI no publica una cuota de peticiones para Grok Build en ningún nivel, así que cualquier artículo que dé un número concreto se lo ha inventado. Lo que sí se observa es que el consumo se mide en un ciclo semanal, y que los agentes en paralelo lo queman varias veces más rápido que un solo terminal.',
+      answer: 'xAI no publica una cifra estable de peticiones para todos los niveles de Grok Build. Los límites varían por plan y pueden cambiar, así que consulta la vista de uso de tu cuenta. Los agentes en paralelo consumen la misma asignación más rápido que un terminal.',
     },
     {
       question: '¿Puedo usar una clave de API en vez de una suscripción?',
-      answer: 'Sí, para uso headless y de CI con XAI_API_KEY, facturado por token a unos 0,20 $ por millón de entrada y 1,50 $ por millón de salida. El login interactivo por navegador sigue siendo lo normal para personas. Usar los dos es un montaje válido: la suscripción para tu portátil y una clave con tope para el pipeline.',
+      answer: 'Sí. La API de Grok 4.6 cuesta 2 $ por millón de tokens de entrada, 0,50 $ por millón de entrada en caché y 6 $ por millón de salida en el tramo estándar de contexto. Las peticiones por encima de 200K cuestan más. Usa una clave con tope en el pipeline y el login de cuenta para el trabajo interactivo.',
     },
     {
       question: '¿CodeAgentSwarm incluye consumo de Grok?',

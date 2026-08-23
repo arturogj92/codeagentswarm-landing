@@ -146,6 +146,7 @@ Verified follow sources already include the self-owned GitHub Pages site, Uneed,
 10. English and Spanish guide prerenders are gated by their parent locale. Historical wrong-language paths remain permanent redirects instead of duplicate static pages.
 11. A localized About page now identifies Arturo García, explains the product and editorial method, links official identities and publishes AboutPage, Organization and Person structured data.
 12. Sixteen English and Spanish comparison pages now state the current Mobile Connect alpha access model and distinguish the August 23 product update from third-party facts last verified on July 26.
+13. Twenty-four English and Spanish pricing, comparison and Grok Build guides now reflect current plan names, prices, overflow billing and model families. The update uses official xAI, Anthropic, Moonshot, Google, OpenAI and Cursor pages checked on August 23, 2026; URLs, canonicals and hreflang targets were unchanged.
 
 ### Measured impact
 

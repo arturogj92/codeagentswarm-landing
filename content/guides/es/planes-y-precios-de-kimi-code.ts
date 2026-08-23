@@ -6,8 +6,8 @@ export const guide: Guide = {
     locale: 'es',
     title: 'Precios de Kimi Code: coste mensual, anual y por API',
     metaTitle: 'Precios de Kimi Code: mensual, anual y API (2026)',
-    metaDescription: 'Compara los planes mensuales y anuales de Kimi Code, créditos, límites semanales y de 5 horas, y los precios actuales de la API de Kimi K2.7 Code.',
-    intro: `A 11 de agosto de 2026, Kimi ofrece cuatro niveles de pago. Los precios mensuales van de 19 a 199 dólares; con facturación anual, el coste mensual efectivo baja a entre 15 y 159 dólares. La capacidad de Kimi Code escala 1x, 5x, 15x y 30x. Todas las funciones de la membresía comparten un pozo de créditos, mientras Kimi Code tiene además su propia asignación semanal y un límite de 5 horas.
+    metaDescription: 'Compara los planes mensuales y anuales de Kimi Code, créditos de agente, límites semanales y de 5 horas, y los precios actuales de la API de Kimi K2.7 Code.',
+    intro: `A 23 de agosto de 2026, Kimi ofrece cuatro niveles de pago. Los precios mensuales van de 19 a 199 dólares; con facturación anual, el coste mensual efectivo baja a entre 15 y 159 dólares. Todos incluyen Kimi Code y los créditos mensuales para agentes suben de 60 a 720. Las funciones de la membresía comparten un pozo de créditos, mientras Kimi Code tiene además su propia asignación semanal y un límite de 5 horas.
 
 También existe la vía de pago por token. El modelo de programación predeterminado actual, Kimi K2.7 Code, cuesta 0,19 dólares por millón de tokens de entrada en caché, 0,95 dólares sin caché y 4 dólares por millón de tokens de salida a través de la API de Kimi. Su ventana de contexto es de 262.144 tokens.
 
@@ -16,7 +16,7 @@ Esta guía separa ambos sistemas de facturación y enlaza cada cifra cambiante c
     ctaAgent: 'kimi-code',
     highlightedWords: ['Kimi Code', 'Precios'],
     publishedAt: '2026-07-18',
-    updatedAt: '2026-08-11',
+    updatedAt: '2026-08-23',
     alternateSlug: 'kimi-code-plans-and-pricing',
   },
   sections: [
@@ -26,21 +26,21 @@ Esta guía separa ambos sistemas de facturación y enlaza cada cifra cambiante c
       content: [
         {
           type: 'paragraph',
-          text: 'La <a href="https://www.kimi.com/help/membership/membership-pricing" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">página oficial de precios de Kimi</a> muestra estos cuatro planes de pago a 11 de agosto de 2026:',
+          text: 'La <a href="https://www.kimi.ai/help/membership/membership-pricing" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">página oficial de precios de Kimi</a> muestra estos cuatro planes de pago a 23 de agosto de 2026:',
         },
         {
           type: 'table',
-          headers: ['Plan', 'Mensual', 'Anual, coste mensual efectivo', 'Créditos de Kimi Code'],
+          headers: ['Plan', 'Mensual', 'Anual, coste mensual efectivo', 'Créditos de agente', 'Kimi Code'],
           rows: [
-            ['Moderato', '19 $', '15 $ (180 $/año)', '1x'],
-            ['Allegretto', '39 $', '31 $ (372 $/año)', '5x'],
-            ['Allegro', '99 $', '79 $ (948 $/año)', '15x'],
-            ['Vivace', '199 $', '159 $ (1.908 $/año)', '30x'],
+            ['Moderato', '19 $', '15 $ (180 $/año)', '60/mes', 'Incluido'],
+            ['Allegretto', '39 $', '31 $ (372 $/año)', '150/mes', 'Incluido'],
+            ['Allegro', '99 $', '79 $ (948 $/año)', '360/mes', 'Incluido'],
+            ['Vivace', '199 $', '159 $ (1.908 $/año)', '720/mes', 'Incluido'],
           ],
         },
         {
           type: 'paragraph',
-          text: 'El multiplicador indica capacidad relativa, no una cantidad pública de tokens. La <a href="https://www.kimi.com/help/membership/membership-overview" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">descripción oficial de la membresía</a> explica que Kimi Code, Kimi Work, Deep Research, Slides, webs y las demás funciones consumen un mismo pozo de créditos. Un uso intenso fuera de Kimi Code puede reducir lo que queda para programar.',
+          text: 'Los créditos de agente son unidades de tarea, no tokens, y una tarea difícil puede gastar más de uno. La <a href="https://www.kimi.ai/help/membership/membership-overview" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">descripción oficial de la membresía</a> explica que Kimi Code, Kimi Work, Deep Research, Slides, webs y las demás funciones consumen un mismo pozo mensual. Un uso intenso fuera de Kimi Code puede reducir lo que queda para programar.',
         },
         {
           type: 'callout',
@@ -59,7 +59,7 @@ Esta guía separa ambos sistemas de facturación y enlaza cada cifra cambiante c
         },
         {
           type: 'paragraph',
-          text: 'Kimi no publica una cantidad fija de tokens para cada multiplicador 1x porque el consumo cambia según la tarea. Una sesión larga sobre un repositorio puede gastar más créditos que una edición corta, y varios terminales en paralelo alcanzan el límite de 5 horas antes que uno solo.',
+          text: 'Kimi no publica una cantidad fija de tokens por crédito de agente porque el consumo cambia según la tarea. Una sesión larga sobre un repositorio puede gastar más créditos que una edición corta, y varios terminales en paralelo alcanzan el límite de 5 horas antes que uno solo.',
         },
         {
           type: 'paragraph',
@@ -145,15 +145,15 @@ Esta guía separa ambos sistemas de facturación y enlaza cada cifra cambiante c
   faq: [
     {
       question: '¿Kimi Code es gratis?',
-      answer: 'El CLI de Kimi Code es gratis y open source. El uso del modelo se factura aparte mediante una membresía Kimi o la API. A 11 de agosto de 2026, la tabla oficial de pago empieza en 19 dólares mes a mes o 15 dólares al mes con facturación anual.',
+      answer: 'El CLI de Kimi Code es gratis y open source. El uso del modelo se factura aparte mediante una membresía Kimi o la API. A 23 de agosto de 2026, la tabla oficial de pago empieza en 19 dólares mes a mes o 15 dólares al mes con facturación anual.',
     },
     {
       question: '¿Cuánto cuesta Kimi Code al mes?',
-      answer: 'Los planes mensuales son Moderato 19 $, Allegretto 39 $, Allegro 99 $ y Vivace 199 $. Con pago anual, sus costes mensuales efectivos son 15, 31, 79 y 159 dólares. Los créditos de Kimi Code escalan 1x, 5x, 15x y 30x.',
+      answer: 'Los planes mensuales son Moderato 19 $, Allegretto 39 $, Allegro 99 $ y Vivace 199 $. Con pago anual, sus costes mensuales efectivos son 15, 31, 79 y 159 dólares. Los créditos mensuales de agente son 60, 150, 360 y 720.',
     },
     {
       question: '¿Qué plan de Kimi incluye Kimi Code?',
-      answer: 'Los cuatro niveles de pago de la tabla oficial actual incluyen créditos de Kimi Code: Moderato 1x, Allegretto 5x, Allegro 15x y Vivace 30x.',
+      answer: 'Los cuatro niveles de pago incluyen Kimi Code. Sus bolsas mensuales de créditos de agente son 60 en Moderato, 150 en Allegretto, 360 en Allegro y 720 en Vivace.',
     },
     {
       question: '¿Cuándo se reinician los límites de Kimi Code?',

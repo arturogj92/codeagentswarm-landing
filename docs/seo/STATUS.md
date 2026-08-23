@@ -50,6 +50,7 @@ The detailed evidence and decisions live in [the August 23 growth and conversion
 - Removed 166 duplicate guide prerenders while preserving permanent wrong-language redirects.
 - Added localized About pages, creator and organization structured data, footer links and sitemap entries.
 - Corrected Mobile Connect access facts across sixteen English and Spanish comparison pages.
+- Refreshed pricing and access facts across twenty-four English and Spanish guides using current xAI, Anthropic, Moonshot, Google, OpenAI and Cursor sources.
 - Prepared five page-specific editorial pitches for explicit approval. Nothing has been sent.
 - Confirmed that the separate aggregate installation funnel already measures download requests, fresh launches, first terminals and seven-day returns.
 

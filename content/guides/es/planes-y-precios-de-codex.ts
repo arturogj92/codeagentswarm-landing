@@ -16,7 +16,7 @@ El resto del detalle es donde llega la sorpresa: la CLI, la versión web y la ex
     ctaAgent: 'codex',
     highlightedWords: ['Codex', 'Planes', 'precios'],
     publishedAt: '2026-08-05',
-    updatedAt: '2026-08-05',
+    updatedAt: '2026-08-23',
     alternateSlug: 'codex-plans-and-pricing',
   },
   sections: [
@@ -108,7 +108,7 @@ El resto del detalle es donde llega la sorpresa: la CLI, la versión web y la ex
         },
         {
           type: 'paragraph',
-          text: 'Es un diseño genuinamente útil y cambia el cálculo frente a Claude, donde chocar con el muro semanal es una parada en seco hasta que se reinicia el ciclo. En Codex puedes comprar tu salida de una entrega urgente. La otra cara es que "mi suscripción cuesta 20 $" deja de ser cierto en cuanto dependes de ellos, así que trata los créditos como un rescate ocasional y no como parte de tu capacidad normal.',
+          text: 'Es un diseño útil: en Codex puedes comprar tu salida de una entrega urgente. Los planes de pago de Claude ya permiten algo parecido mediante créditos de uso, así que la diferencia real está en cómo mide y cobra cada proveedor el exceso. Trata los créditos como un rescate ocasional y no como capacidad normal, o una suscripción de 20 $ deja de ser un presupuesto de 20 $.',
         },
         {
           type: 'paragraph',
@@ -191,7 +191,7 @@ El resto del detalle es donde llega la sorpresa: la CLI, la versión web y la ex
     },
     {
       question: '¿Qué pasa cuando me quedo sin uso de Codex?',
-      answer: 'Si tienes créditos en la cuenta, Codex sigue funcionando y factura contra ellos a unos 0,04 $ por crédito. Si no los tienes, se para hasta que se reinicia la ventana. Es una diferencia importante frente a Claude Code, donde chocar con el muro semanal es una parada en seco.',
+      answer: 'Si tienes créditos en la cuenta, Codex sigue funcionando y factura contra ellos a unos 0,04 $ por crédito. Si no los tienes, se para hasta que se reinicia la ventana. Los planes de pago de Claude también pueden activar créditos de uso, así que compara las tarifas y controles de exceso de cada proveedor.',
     },
     {
       question: '¿Uso un plan de ChatGPT o una clave de API para Codex?',

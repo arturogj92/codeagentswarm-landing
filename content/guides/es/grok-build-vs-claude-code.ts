@@ -16,7 +16,7 @@ Esta comparación es práctica: instalación y auth, fortalezas, huecos y cómo 
     ctaAgent: 'multi',
     highlightedWords: ['Grok Build', 'Claude Code'],
     publishedAt: '2026-07-28',
-    updatedAt: '2026-07-28',
+    updatedAt: '2026-08-23',
     alternateSlug: 'grok-build-vs-claude-code',
   },
   sections: [
@@ -24,8 +24,8 @@ Esta comparación es práctica: instalación y auth, fortalezas, huecos y cómo 
       id: 'respuesta-corta',
       title: 'Respuesta corta',
       content: [
-        { type: 'paragraph', text: 'Claude Code es la CLI nativa de Anthropic con un ecosistema enorme de skills, hooks y conocimiento comunitario. Grok Build es el TUI de código de xAI con modos headless/agent potentes, plan mode, subagentes nativos y modelos SuperGrok. Ninguna sustituye a la otra.' },
-        { type: 'paragraph', text: 'Si tu equipo ya vive en suscripciones Claude, Claude Code sigue siendo el default. Si tienes SuperGrok o X Premium+ y quieres modelos Grok en terminal, Grok Build es la entrada. Si tienes ambos, CodeAgentSwarm evita el alt-tab eterno.' },
+        { type: 'paragraph', text: 'Claude Code es la CLI nativa de Anthropic con un ecosistema enorme de skills, hooks y conocimiento comunitario. Grok Build es el TUI de código de xAI con modos headless y agent, plan mode, subagentes nativos y Grok 4.6. Ninguna sustituye a la otra.' },
+        { type: 'paragraph', text: 'Si tu equipo ya vive en suscripciones Claude, Claude Code sigue siendo el punto de partida. Si quieres probar modelos Grok en terminal, Grok Build ya tiene acceso gratuito, planes de pago y API. Si usas ambos, CodeAgentSwarm evita cambiar de contexto sin parar.' },
       ],
     },
     {
@@ -42,7 +42,7 @@ Esta comparación es práctica: instalación y auth, fortalezas, huecos y cómo 
         { type: 'heading', level: 3, text: 'Claude Code cuando', id: 'claude-cuando' },
         { type: 'paragraph', text: 'Necesitas el ecosistema más denso, el comportamiento de modelos Anthropic que ya confías, o un equipo estandarizado en permisos/MCP/skills de Claude.' },
         { type: 'heading', level: 3, text: 'Grok Build cuando', id: 'grok-cuando' },
-        { type: 'paragraph', text: 'Quieres código con SuperGrok, plan mode y subagentes de xAI, o rutas headless/agent que encajen en tu automatización. También al migrar desde Claude con cuidado (ver <a href="/es/guias/grok-build-desde-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">desde Claude Code</a>).' },
+        { type: 'paragraph', text: 'Quieres programar con Grok 4.6, plan mode y subagentes de xAI, o rutas headless y agent que encajen en tu automatización. También sirve para migrar desde Claude con cuidado; consulta <a href="/es/guias/grok-build-desde-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">Grok Build desde Claude Code</a>.' },
         { type: 'heading', level: 3, text: 'Ambos cuando', id: 'ambos-cuando' },
         { type: 'paragraph', text: 'Tareas distintas se benefician de modelos distintos. CodeAgentSwarm deja un terminal en Claude Code y otro en Grok Build sobre el mismo repo.' },
       ],

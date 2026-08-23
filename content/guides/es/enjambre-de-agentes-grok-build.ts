@@ -16,7 +16,7 @@ Esta guía es el pilar del paralelismo con Grok Build: pestañas, tmux y CodeAge
     ctaAgent: 'grok-build',
     highlightedWords: ['Grok Build', 'enjambre'],
     publishedAt: '2026-07-28',
-    updatedAt: '2026-07-28',
+    updatedAt: '2026-08-23',
     alternateSlug: 'grok-build-agent-swarm',
   },
   sections: [
@@ -26,7 +26,7 @@ Esta guía es el pilar del paralelismo con Grok Build: pestañas, tmux y CodeAge
       content: [
         { type: 'image', alt: 'Varios terminales Grok Build en CodeAgentSwarm', src: '/images/guides/multi-cli-agent-selector.png', caption: 'Varias sesiones grok independientes en un solo workspace.' },
         { type: 'paragraph', text: 'Un enjambre son N procesos CLI independientes. Abre tres terminales, ejecuta <code>grok</code> en cada uno, da una tarea distinta: ya es un enjambre. Los subagentes nativos (desactivables con <code>--no-subagents</code>) son otra herramienta: la sesión padre lanza hijos que controla. Ambos sirven; resuelven problemas distintos. Ver <a href="/es/guias/subagentes-grok-build-vs-enjambre" class="text-neon-cyan hover:text-neon-purple transition-colors">subagentes vs enjambre</a>.' },
-        { type: 'callout', variant: 'info', content: 'No hay recargo de xAI por sesiones en paralelo más allá de lo que permita tu plan SuperGrok / X Premium+. Cada sesión consume el mismo pool de cuenta.' },
+        { type: 'callout', variant: 'info', content: 'xAI no cobra un recargo separado por cada sesión en paralelo. Todas consumen los mismos límites de la cuenta gratuita o de pago, o el mismo presupuesto de API.' },
       ],
     },
     {
