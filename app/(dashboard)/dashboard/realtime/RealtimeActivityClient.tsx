@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import {
   agentLabel,
+  realtimeActionBreakdown,
   type RealtimeActivitySnapshot,
   type RealtimeWindowHours,
 } from '../users/users-activity'
@@ -240,17 +241,39 @@ export default function RealtimeActivityClient() {
                 <section className="rounded-2xl border border-white/[0.09] bg-[#111111] p-4 sm:p-5" aria-labelledby="areas-title">
                   <h2 id="areas-title" className="text-base font-semibold text-white/90">Top product areas</h2>
                   <div className="mt-4 space-y-3.5">
-                    {snapshot.top_actions.slice(0, 6).map((action) => (
-                      <div key={action.action}>
-                        <div className="mb-1.5 flex items-center justify-between gap-3 text-xs">
-                          <span className="truncate text-white/65">{actionLabel(action.action)}</span>
-                          <span className="font-mono text-white/45">{action.events}</span>
-                        </div>
-                        <div className="h-1.5 overflow-hidden rounded-full bg-white/[0.06]">
-                          <div className="h-full rounded-full bg-amber-400/70" style={{ width: `${Math.max(4, (action.events / maxAction) * 100)}%` }} />
-                        </div>
-                      </div>
-                    ))}
+                    {snapshot.top_actions.slice(0, 6).map((action) => {
+                      const breakdown = realtimeActionBreakdown(snapshot, action.action)
+                      const content = (
+                        <>
+                          <div className="flex items-center justify-between gap-3 text-xs">
+                            <span className="flex min-w-0 items-center gap-1.5">
+                              {breakdown.length > 0 && <span aria-hidden="true" className="shrink-0 text-white/35 transition-transform group-open:rotate-90">›</span>}
+                              <span className="truncate text-white/65">{actionLabel(action.action)}</span>
+                            </span>
+                            <span className="font-mono text-white/45">{action.events}</span>
+                          </div>
+                          <div className="mt-1.5 h-1.5 overflow-hidden rounded-full bg-white/[0.06]">
+                            <div className="h-full rounded-full bg-amber-400/70" style={{ width: `${Math.max(4, (action.events / maxAction) * 100)}%` }} />
+                          </div>
+                        </>
+                      )
+
+                      return breakdown.length > 0 ? (
+                        <details key={action.action} className="group">
+                          <summary className="cursor-pointer list-none rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 [&::-webkit-details-marker]:hidden">
+                            {content}
+                          </summary>
+                          <div className="ml-2 mt-2 space-y-1 border-l border-white/[0.08] pl-4">
+                            {breakdown.map((detail) => (
+                              <div key={detail.label} className="flex items-center justify-between gap-3 text-[11px]">
+                                <span className="truncate text-white/45">{detail.label}</span>
+                                <span className="font-mono text-white/35">{detail.events}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </details>
+                      ) : <div key={action.action}>{content}</div>
+                    })}
                   </div>
                 </section>
 
