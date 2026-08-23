@@ -57,7 +57,15 @@ export interface RealtimeActivitySnapshot {
     workspace_view: 'grid' | 'tabs' | 'list' | null
   }[]
   top_actions: { action: string; events: number }[]
+  action_breakdown?: {
+    action: string
+    actions: { label: string; events: number }[]
+  }[]
   agents: { agent: string; users: number; sessions: number }[]
+}
+
+export function realtimeActionBreakdown(snapshot: RealtimeActivitySnapshot, action: string) {
+  return snapshot.action_breakdown?.find((group) => group.action === action)?.actions || []
 }
 
 export function parseRealtimeWindowHours(value: unknown): RealtimeWindowHours | null {

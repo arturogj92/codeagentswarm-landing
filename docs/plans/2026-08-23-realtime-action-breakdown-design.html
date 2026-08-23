@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Real-time action breakdown proposal</title>
+  <style>
+    :root { color-scheme: dark; --bg:#090909; --panel:#111; --line:rgba(255,255,255,.09); --text:#fff; --muted:rgba(255,255,255,.58); --quiet:rgba(255,255,255,.38); --track:rgba(255,255,255,.06); --amber:#fbbf24; --amber-soft:rgba(251,191,36,.72); }
+    [data-theme="light"] { color-scheme:light; --bg:#f4f1ea; --panel:#fffdf8; --line:rgba(45,37,24,.14); --text:#211b12; --muted:rgba(33,27,18,.68); --quiet:rgba(33,27,18,.48); --track:rgba(33,27,18,.08); --amber:#a96300; --amber-soft:#c47b08; }
+    [data-theme="midnight"] { --bg:#070b16; --panel:#0d1322; --line:rgba(155,180,255,.13); --text:#f4f7ff; --muted:rgba(224,231,255,.62); --quiet:rgba(224,231,255,.4); --track:rgba(155,180,255,.08); }
+    [data-theme="espresso"] { --bg:#120d0a; --panel:#1b130f; --line:rgba(255,219,180,.12); --text:#fff8ef; --muted:rgba(255,235,211,.6); --quiet:rgba(255,235,211,.4); --track:rgba(255,219,180,.07); }
+    [data-theme="neon"] { --bg:#08070d; --panel:#100e18; --line:rgba(202,166,255,.17); --text:#fbf7ff; --muted:rgba(239,224,255,.62); --quiet:rgba(239,224,255,.4); --track:rgba(202,166,255,.08); --amber:#ffc533; }
+    * { box-sizing:border-box; }
+    body { margin:0; min-height:100vh; background:var(--bg); color:var(--text); font-family:Inter,ui-sans-serif,system-ui,sans-serif; }
+    button,select { font:inherit; }
+    .demo { position:fixed; z-index:5; top:12px; right:12px; display:flex; align-items:center; gap:8px; padding:8px 10px; border:1px solid var(--line); border-radius:10px; background:var(--panel); color:var(--muted); font-size:12px; box-shadow:0 10px 30px rgba(0,0,0,.25); }
+    .demo strong { color:var(--text); }
+    .demo select { border:1px solid var(--line); border-radius:7px; padding:4px 7px; background:var(--bg); color:var(--text); }
+    main { width:min(1536px,calc(100% - 48px)); margin:auto; padding:58px 0 46px; }
+    .eyebrow { margin:0 0 7px; color:var(--amber); font-size:11px; font-weight:750; letter-spacing:.16em; }
+    h1 { margin:0; font-size:34px; letter-spacing:-.04em; }
+    .lead { margin:8px 0 28px; color:var(--muted); font-size:14px; }
+    .metrics { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-bottom:20px; }
+    .metric,.card { border:1px solid var(--line); background:var(--panel); }
+    .metric { min-height:102px; padding:16px; border-radius:13px; }
+    .metric span,.metric small { display:block; color:var(--quiet); font-size:11px; }
+    .metric strong { display:block; margin:9px 0 4px; font-size:27px; }
+    .layout { display:grid; grid-template-columns:minmax(0,1.55fr) minmax(330px,.8fr); gap:22px; }
+    .card { border-radius:18px; overflow:hidden; }
+    .card-head { padding:20px 22px; border-bottom:1px solid var(--line); }
+    h2 { margin:0; font-size:17px; }
+    .sub { margin:6px 0 0; color:var(--quiet); font-size:12px; }
+    .person { display:grid; grid-template-columns:42px 1fr auto; align-items:center; gap:12px; padding:17px 22px; border-bottom:1px solid var(--line); }
+    .avatar { display:grid; place-items:center; width:38px; height:38px; border:1px solid var(--line); border-radius:50%; background:var(--track); color:var(--muted); font-size:12px; font-weight:700; }
+    .person strong { display:block; font-size:14px; }
+    .person span { display:block; margin-top:4px; color:var(--quiet); font-size:12px; }
+    .signal { text-align:right; color:var(--muted); font-size:12px; }
+    .areas { padding:20px 22px; }
+    .areas h2 { margin-bottom:14px; }
+    details { border-top:1px solid transparent; }
+    details + details { margin-top:10px; }
+    summary { list-style:none; cursor:pointer; border-radius:8px; padding:2px; }
+    summary::-webkit-details-marker { display:none; }
+    summary:focus-visible { outline:2px solid var(--amber); outline-offset:3px; }
+    .area-row { display:grid; grid-template-columns:14px 1fr auto; align-items:center; gap:7px; color:var(--muted); font-size:13px; }
+    .chevron { color:var(--quiet); transition:transform .16s ease; }
+    details[open] .chevron { transform:rotate(90deg); }
+    .bar { grid-column:2 / -1; height:6px; margin-top:8px; overflow:hidden; border-radius:999px; background:var(--track); }
+    .bar i { display:block; height:100%; border-radius:inherit; background:var(--amber-soft); }
+    .children { margin:9px 0 1px 21px; padding:4px 0 1px 14px; border-left:1px solid var(--line); list-style:none; }
+    .children li { display:flex; justify-content:space-between; gap:12px; padding:5px 0; color:var(--quiet); font-size:11px; }
+    .children strong { color:var(--muted); font-weight:520; }
+    .count { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; }
+    .hint { margin:15px 0 0; color:var(--quiet); font-size:10px; line-height:1.5; }
+    @media (prefers-reduced-motion:reduce) { .chevron { transition:none; } }
+    @media (max-width:820px) { main { width:min(100% - 28px,720px); padding-top:72px; } .metrics { grid-template-columns:repeat(2,1fr); } .layout { grid-template-columns:1fr; } .demo { left:14px; right:auto; } }
+  </style>
+</head>
+<body>
+  <div class="demo"><strong>Proposal</strong><label>Theme <select id="theme"><option>dark</option><option>light</option><option>midnight</option><option>espresso</option><option>neon</option></select></label></div>
+  <main>
+    <p class="eyebrow">● LIVE ACTIVITY</p>
+    <h1>Real-time activity</h1>
+    <p class="lead">See recent product activity by identified users. This view refreshes every 30 seconds.</p>
+    <section class="metrics" aria-label="Real-time summary">
+      <article class="metric"><span>Active users</span><strong>4</strong><small>Last 1 hour</small></article>
+      <article class="metric"><span>Active now</span><strong>4</strong><small>Recorded in the last 5 minutes</small></article>
+      <article class="metric"><span>Tracked events</span><strong>136</strong><small>Privacy-safe product events</small></article>
+      <article class="metric"><span>Agent sessions</span><strong>4</strong><small>Successful desktop and mobile launches</small></article>
+    </section>
+    <div class="layout">
+      <section class="card" aria-labelledby="users-title">
+        <div class="card-head"><h2 id="users-title">Latest active users</h2><p class="sub">Most recent meaningful action per user</p></div>
+        <div class="person"><div class="avatar">EA</div><div><strong>Earth and Wonder</strong><span>Terminal controls · Just now</span></div><div class="signal">No agent signal<br><span>v1.10.0</span></div></div>
+        <div class="person"><div class="avatar">SH</div><div><strong>Shaun Hendricks</strong><span>Terminal controls · Just now</span></div><div class="signal">No agent signal<br><span>v2.2.0</span></div></div>
+        <div class="person"><div class="avatar">AG</div><div><strong>Arturo García - Art0xDev</strong><span>Terminal switching · 1m ago</span></div><div class="signal">Codex<br><span>List · v2.2.0</span></div></div>
+      </section>
+      <section class="card areas" aria-labelledby="areas-title">
+        <h2 id="areas-title">Top product areas</h2>
+        <details open>
+          <summary><div class="area-row"><span class="chevron">›</span><span>Terminal controls</span><span class="count">53</span><div class="bar"><i style="width:100%"></i></div></div></summary>
+          <ol class="children"><li><strong>Set terminal status</strong><span class="count">26</span></li><li><strong>Fullscreen</strong><span class="count">14</span></li><li><strong>Paste image</strong><span class="count">6</span></li><li><strong>Minimize terminal</strong><span class="count">4</span></li><li><strong>Restore terminal</strong><span class="count">3</span></li></ol>
+        </details>
+        <details><summary><div class="area-row"><span class="chevron">›</span><span>Direct chat</span><span class="count">36</span><div class="bar"><i style="width:68%"></i></div></div></summary><ol class="children"><li><strong>Turn completed</strong><span class="count">19</span></li><li><strong>Turn started</strong><span class="count">14</span></li><li><strong>Session opened</strong><span class="count">3</span></li></ol></details>
+        <details><summary><div class="area-row"><span class="chevron">›</span><span>Terminal switching</span><span class="count">31</span><div class="bar"><i style="width:58%"></i></div></div></summary><ol class="children"><li><strong>Terminal 1</strong><span class="count">18</span></li><li><strong>Terminal 2</strong><span class="count">9</span></li><li><strong>Terminal 3+</strong><span class="count">4</span></li></ol></details>
+        <details><summary><div class="area-row"><span class="chevron">›</span><span>Agent sessions</span><span class="count">10</span><div class="bar"><i style="width:19%"></i></div></div></summary><ol class="children"><li><strong>Desktop launch</strong><span class="count">8</span></li><li><strong>Mobile launch</strong><span class="count">2</span></li></ol></details>
+        <p class="hint">Select any area to reveal its privacy-safe individual actions. The total always equals the visible breakdown.</p>
+      </section>
+    </div>
+  </main>
+  <script>document.getElementById('theme').addEventListener('change',event=>document.documentElement.dataset.theme=event.target.value)</script>
+</body>
+</html>
