@@ -114,6 +114,19 @@ Highest-impression opportunities:
 
 The highest-visibility snippets changed on August 11. Changing them again before the September 9 review would destroy the measurement window. No bulk title rewrite is justified.
 
+### ADE follow-up
+
+The Search Console export through August 21 shows an early but small association with ADE. `swarm terminal ade` produced 3 clicks from 15 impressions, with 20% CTR and an average position of 4.33. The same query already appeared before the August 9 homepage change, so this is not evidence that the new positioning caused the demand. No exact query for `agentic development environment` or its Spanish equivalent appears in the first 1,000 exported rows.
+
+The existing pillar pages are the safer place to build that association:
+
+| Page | Clicks | Impressions | CTR | Position |
+| --- | ---: | ---: | ---: | ---: |
+| `/en/guides/ai-cli-agent-swarm` | 45 | 8,457 | 0.53% | 7.76 |
+| `/es/guias/enjambre-de-agentes-cli-ia` | 3 | 155 | 1.94% | 7.64 |
+
+Both guides now explain what an Agentic Development Environment is and how it differs from an IDE or terminal multiplexer. Their URLs, titles, descriptions, canonicals and hreflang targets remain unchanged. Do not create a separate broad ADE guide until query data shows distinct demand; compare these two pages after a complete 28-day window instead.
+
 ## Authority
 
 Current snapshot:

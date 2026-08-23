@@ -16,7 +16,7 @@ En esta guía te explico las tres formas reales de ejecutar varias sesiones de C
     ctaAgent: 'codex',
     highlightedWords: ['varias sesiones de Codex CLI', 'a la vez'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-08-11',
+    updatedAt: '2026-08-23',
     alternateSlug: 'run-multiple-codex-sessions',
   },
   sections: [
@@ -277,7 +277,7 @@ En esta guía te explico las tres formas reales de ejecutar varias sesiones de C
           items: [
             '<strong>Pestañas de terminal:</strong> Gratis',
             '<strong>tmux/screen:</strong> Gratis',
-            '<strong>CodeAgentSwarm:</strong> Plan gratuito disponible, Pro para funcionalidades avanzadas. Tu uso de Codex lo factura OpenAI como siempre.',
+            '<strong>CodeAgentSwarm:</strong> Todas las funciones Pro son gratis durante la beta abierta. Tu uso de Codex lo factura OpenAI como siempre.',
           ],
         },
         {

@@ -16,7 +16,7 @@ CodeAgentSwarm is that dashboard. It is a free desktop app for macOS and Windows
     ctaAgent: 'claude-code',
     highlightedWords: ['Claude Code Dashboard', 'Every Session'],
     publishedAt: '2026-07-13',
-    updatedAt: '2026-08-11',
+    updatedAt: '2026-08-23',
     alternateSlug: 'panel-de-control-claude-code',
   },
   sections: [
@@ -209,7 +209,7 @@ CodeAgentSwarm is that dashboard. It is a free desktop app for macOS and Windows
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm is a free download for macOS and Windows, available from the home page. It installs locally, runs the real Claude Code CLI in real terminals, and uses your existing Claude subscription. There is no separate plan and no different model: the dashboard is a layer over the tool you already use, not a replacement for it.',
+          text: 'CodeAgentSwarm is free during the open beta, with every Pro feature included. It installs locally on macOS and Windows and runs the official Claude Code CLI in standard terminals using your existing Anthropic account. CodeAgentSwarm adds a dashboard and supervision layer; Anthropic still provides the model and sets your plan and usage limits.',
         },
         {
           type: 'paragraph',

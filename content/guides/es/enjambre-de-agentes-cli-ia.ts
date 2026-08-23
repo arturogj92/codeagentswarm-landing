@@ -48,6 +48,24 @@ Yo trabajo con enjambres mixtos casi todos los días. Esto es orquestación de a
       ],
     },
     {
+      id: 'entorno-desarrollo-agentico',
+      title: 'Del enjambre de agentes al entorno de desarrollo agéntico',
+      content: [
+        {
+          type: 'paragraph',
+          text: 'Un <strong>entorno de desarrollo agéntico (Agentic Development Environment, ADE)</strong> es un espacio de trabajo pensado para delegar tareas de software a agentes de programación con IA, supervisar su avance y revisar sus resultados. El enjambre es el conjunto de procesos independientes que trabajan en paralelo. El ADE es el entorno que permite dirigir ese trabajo sin perder el control.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Esa es la diferencia práctica frente a un IDE o un multiplexor de terminal. Un IDE pone en el centro el editor y los archivos. tmux organiza procesos de terminal. Un ADE pone en el centro las tareas delegadas, el estado de los agentes, los permisos y la revisión, mientras cada CLI sigue ejecutándose como un proceso de terminal normal.',
+        },
+        {
+          type: 'paragraph',
+          text: 'CodeAgentSwarm encaja en esa definición porque reúne agentes independientes de varios proveedores con un tablero de tareas compartido, notificaciones cuando un agente termina o necesita tu intervención, historial de conversaciones buscable, diffs en vivo y organización por proyectos. Cada CLI sigue funcionando como siempre, con el ADE como capa de supervisión.',
+        },
+      ],
+    },
+    {
       id: 'which-agent-for-what',
       title: '¿Qué CLI de código conviene para cada cosa?',
       content: [
@@ -344,7 +362,7 @@ Yo trabajo con enjambres mixtos casi todos los días. Esto es orquestación de a
           items: [
             '<strong>Pestañas de terminal:</strong> Gratis',
             '<strong>tmux/screen:</strong> Gratis',
-            '<strong>CodeAgentSwarm:</strong> Plan gratuito disponible, Pro para funciones avanzadas, funciona sobre tus suscripciones de agentes',
+            '<strong>CodeAgentSwarm:</strong> Todas las funciones Pro son gratis durante la beta abierta y funciona sobre tus suscripciones de agentes',
           ],
         },
         {
@@ -431,6 +449,10 @@ Yo trabajo con enjambres mixtos casi todos los días. Esto es orquestación de a
     {
       question: '¿Qué es un enjambre de agentes CLI de IA?',
       answer: 'Son varios agentes de código por línea de comandos, independientes (como Claude Code, Codex CLI, OpenCode, Kimi Code y Grok Build), ejecutándose en paralelo en un solo sitio, con visibilidad compartida de lo que hace cada uno. Cada agente es su propio proceso, con su conversación y su contexto, y el enjambre es la capa a su alrededor que añade notificaciones, historial buscable, visibilidad de cambios de archivos y control de permisos.',
+    },
+    {
+      question: '¿Qué es un entorno de desarrollo agéntico (ADE)?',
+      answer: 'Un ADE es un espacio de trabajo pensado para delegar tareas de software a agentes de programación con IA, supervisar su avance y revisar sus resultados. A diferencia de un IDE, que organiza el editor y los archivos, o tmux, que organiza procesos de terminal, un ADE pone en el centro las tareas, los agentes, los permisos y la revisión. CodeAgentSwarm aplica ese modelo a CLIs de programación independientes de varios proveedores.',
     },
     {
       question: '¿Puedo ejecutar Claude Code, Codex y Grok Build a la vez?',
