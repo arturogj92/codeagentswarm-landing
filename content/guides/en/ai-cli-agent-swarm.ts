@@ -362,7 +362,7 @@ I run mixed swarms most days. This is AI coding agent orchestration at the proce
           items: [
             '<strong>Terminal tabs:</strong> Free',
             '<strong>tmux/screen:</strong> Free',
-            '<strong>CodeAgentSwarm:</strong> Free tier available, Pro for advanced features, runs on top of your existing agent subscriptions',
+            '<strong>CodeAgentSwarm:</strong> All Pro features are free during the open beta, and it runs on top of your existing agent subscriptions',
           ],
         },
         {

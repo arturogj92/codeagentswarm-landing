@@ -16,7 +16,7 @@ En esta guía te explico las tres formas reales de montar un enjambre de Kimi Co
     ctaAgent: 'kimi-code',
     highlightedWords: ['Enjambre de agentes Kimi Code', 'Kimi'],
     publishedAt: '2026-07-18',
-    updatedAt: '2026-08-11',
+    updatedAt: '2026-08-23',
     alternateSlug: 'kimi-code-agent-swarm',
   },
   sections: [
@@ -293,7 +293,7 @@ En esta guía te explico las tres formas reales de montar un enjambre de Kimi Co
           items: [
             '<strong>Pestañas de terminal:</strong> Gratis',
             '<strong>tmux/screen:</strong> Gratis',
-            '<strong>CodeAgentSwarm:</strong> Tiene nivel gratuito, Pro para funciones avanzadas. Tu consumo de Kimi se factura por tu suscripción de Kimi en cualquiera de los casos.',
+            '<strong>CodeAgentSwarm:</strong> Todas las funciones Pro son gratis durante la beta abierta. Tu consumo de Kimi se factura por tu suscripción de Kimi en cualquiera de los casos.',
           ],
         },
         {

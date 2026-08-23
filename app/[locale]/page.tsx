@@ -18,7 +18,7 @@ import MCPSection from '@/components/MCPSection'
 // import SocialProofSection from '@/components/SocialProofSection'
 // import SwarmiSection from '@/components/SwarmiSection'
 import BringYourOwnSubSection from '@/components/BringYourOwnSubSection'
-import PricingSection from '@/components/PricingSection'
+import BetaPricingSection from '@/components/BetaPricingSection'
 import RoadmapSection from '@/components/RoadmapSection'
 import CommunitySection from '@/components/CommunitySection'
 import FAQSection from '@/components/FAQSection'
@@ -193,7 +193,7 @@ export default function Home() {
         {/* <SocialProofSection /> */}
         {/* <SwarmiSection /> */}
         <BringYourOwnSubSection />
-        <PricingSection />
+        <BetaPricingSection sectionId="pricing" />
         <RoadmapSection />
         <CommunitySection />
         <FAQSection />

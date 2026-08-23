@@ -12,7 +12,11 @@ import {
 } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 
-export default function BetaPricingSection() {
+interface BetaPricingSectionProps {
+  sectionId?: string
+}
+
+export default function BetaPricingSection({ sectionId = 'beta-pricing' }: BetaPricingSectionProps) {
   const t = useTranslations('pricing')
   const tBeta = useTranslations('beta.pricing')
   const sectionRef = useRef(null)
@@ -47,7 +51,7 @@ export default function BetaPricingSection() {
       cta: t('plans.free.cta'),
       popular: false,
       isBeta: false,
-      visible: true,
+      visible: false,
     },
     {
       name: t('plans.pro.name'),
@@ -56,7 +60,7 @@ export default function BetaPricingSection() {
       description: t('plans.pro.description'),
       gradient: 'from-neon-cyan to-teal-500',
       features: [
-        { name: t('features.terminals6'), included: true, badge: t('badges.boost3x') },
+        { name: t('features.terminals6'), included: true, badge: t('badges.boost25x') },
         { name: t('features.unlimitedProjects'), included: true, badge: t('badges.unlimited') },
         { name: t('features.notifications'), included: true },
         { name: t('features.realTimeChanges'), included: true },
@@ -76,18 +80,17 @@ export default function BetaPricingSection() {
       ],
       cta: tBeta('cta'),
       popular: true,
-      savings: t('badges.save30'),
       isBeta: true,
       visible: true,
     },
   ]
 
-  // Filter to show only visible plans (Free and Pro, hiding Starter)
+  // During validation, show the access users receive now rather than future tiers.
   const visiblePlans = plans.filter(plan => plan.visible)
 
   return (
     <section
-      id="beta-pricing"
+      id={sectionId}
       ref={sectionRef}
       className="relative py-16 md:py-32 px-6 overflow-hidden"
     >
@@ -129,7 +132,7 @@ export default function BetaPricingSection() {
         </motion.div>
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 gap-6 max-w-2xl mx-auto">
           {visiblePlans.map((plan, index) => (
             <motion.div
               key={plan.name}
@@ -181,11 +184,6 @@ export default function BetaPricingSection() {
                       <h3 className="text-xl font-display font-semibold text-white">
                         {plan.name}
                       </h3>
-                      {plan.savings && (
-                        <span className="text-xs px-2 py-0.5 bg-neon-green/20 text-neon-green rounded-full">
-                          {plan.savings}
-                        </span>
-                      )}
                     </div>
                   </div>
 
@@ -193,12 +191,6 @@ export default function BetaPricingSection() {
                   <div className="flex items-baseline gap-2 mb-3">
                     {plan.isBeta ? (
                       <div className="flex flex-col gap-3">
-                        <div className="inline-flex items-center gap-2">
-                          <span className="relative text-white/50 text-lg font-medium">
-                            €6.99/mo
-                            <span className="absolute left-0 right-0 top-1/2 h-[2px] bg-red-500/80 -rotate-6" />
-                          </span>
-                        </div>
                         <div className="flex items-center gap-3">
                           <span className="text-4xl font-display font-bold text-white">
                             €0
@@ -271,7 +263,7 @@ export default function BetaPricingSection() {
                   {plan.isBeta ? (
                     <a
                       href="#download"
-                      onClick={() => window.umami?.track('beta_pricing_cta_click')}
+                      onClick={() => window.umami?.track('beta_pricing_cta_click', { section: sectionId })}
                       className="flex items-center justify-center gap-2 w-full py-3 px-6 rounded-xl font-bold transition-all duration-300 bg-neon-cyan text-black hover:bg-amber-400"
                     >
                       {plan.cta}

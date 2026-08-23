@@ -362,7 +362,7 @@ Yo trabajo con enjambres mixtos casi todos los días. Esto es orquestación de a
           items: [
             '<strong>Pestañas de terminal:</strong> Gratis',
             '<strong>tmux/screen:</strong> Gratis',
-            '<strong>CodeAgentSwarm:</strong> Plan gratuito disponible, Pro para funciones avanzadas, funciona sobre tus suscripciones de agentes',
+            '<strong>CodeAgentSwarm:</strong> Todas las funciones Pro son gratis durante la beta abierta y funciona sobre tus suscripciones de agentes',
           ],
         },
         {

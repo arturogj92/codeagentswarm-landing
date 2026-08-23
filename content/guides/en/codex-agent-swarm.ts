@@ -16,7 +16,7 @@ In this guide I walk through the three practical ways to run a Codex swarm, comp
     ctaAgent: 'codex',
     highlightedWords: ['Codex agent swarm', 'Codex CLI'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-08-11',
+    updatedAt: '2026-08-23',
     alternateSlug: 'enjambre-de-agentes-codex',
   },
   sections: [
@@ -277,7 +277,7 @@ In this guide I walk through the three practical ways to run a Codex swarm, comp
           items: [
             '<strong>Terminal tabs:</strong> Free',
             '<strong>tmux/screen:</strong> Free',
-            '<strong>CodeAgentSwarm:</strong> Free tier available, Pro for advanced features. Your Codex usage is billed by OpenAI as usual.',
+            '<strong>CodeAgentSwarm:</strong> All Pro features are free during the open beta. Your Codex usage is billed by OpenAI as usual.',
           ],
         },
         {

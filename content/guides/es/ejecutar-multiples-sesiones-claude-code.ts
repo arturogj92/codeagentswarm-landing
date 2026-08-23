@@ -16,7 +16,7 @@ En esta guía te explico los tres métodos principales, los comparo de forma hon
     ctaAgent: 'claude-code',
     highlightedWords: ['varias sesiones', 'Claude Code'],
     publishedAt: '2026-04-15',
-    updatedAt: '2026-08-11',
+    updatedAt: '2026-08-23',
     alternateSlug: 'run-multiple-claude-code-sessions',
   },
   sections: [
@@ -271,7 +271,7 @@ En esta guía te explico los tres métodos principales, los comparo de forma hon
           items: [
             '<strong>Pestañas de terminal:</strong> Gratis',
             '<strong>tmux/screen:</strong> Gratis',
-            '<strong>CodeAgentSwarm:</strong> Plan gratuito disponible, Pro para funcionalidades avanzadas',
+            '<strong>CodeAgentSwarm:</strong> Todas las funciones Pro son gratis durante la beta abierta',
           ],
         },
         {
