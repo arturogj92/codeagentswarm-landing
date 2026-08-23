@@ -9,14 +9,14 @@ export const guide: Guide = {
     metaDescription: 'Conductor es una app solo para Mac con agentes Claude Code, Codex y Cursor en paralelo. CodeAgentSwarm mueve siete CLIs en macOS y Windows. Comparativa honesta.',
     intro: `Conductor es una app solo para macOS que lanza agentes de Claude Code, Codex y Cursor en paralelo dentro de workspaces aislados; CodeAgentSwarm es una app de escritorio para macOS y Windows que ejecuta siete CLIs de agentes en terminales paralelos. Misma idea, distinto alcance.
 
-Aviso: CodeAgentSwarm lo hacemos nosotros. Aun así, aquí se le reconoce a Conductor lo que hace bien, y cuando su web no documenta algo lo decimos como "no documentado" en lugar de afirmar que la función no existe. Todos los datos de terceros se comprobaron el 26 de julio de 2026 en conductor.build, incluidas su FAQ y los datos estructurados que publican en su portada.
+Aviso: CodeAgentSwarm lo hacemos nosotros. Aun así, aquí se le reconoce a Conductor lo que hace bien, y cuando su web no documenta algo lo decimos como "no documentado" en lugar de afirmar que la función no existe. Todos los datos de terceros se comprobaron el 26 de julio de 2026 en conductor.build, incluidas su FAQ y los datos estructurados que publican en su portada. La disponibilidad de CodeAgentSwarm en esta página se actualizó el 23 de agosto de 2026.
 
 Resumen rápido: si tú y tu equipo estáis todos en Mac y queréis una app nativa construida alrededor de revisar y mergear el trabajo de los agentes, Conductor es una elección seria y muy centrada. Si alguien toca Windows, o quieres más de tres CLIs de agentes, CodeAgentSwarm cubre terreno que Conductor no pisa.`,
     ctaText: '¿Necesitas un workspace de agentes en paralelo que también funcione en Windows y con siete CLIs en vez de tres? Descarga CodeAgentSwarm y monta tu primera tanda de terminales en paralelo.',
     ctaAgent: 'comparison',
     highlightedWords: ['Conductor', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
-    updatedAt: '2026-08-11',
+    updatedAt: '2026-08-23',
     alternateSlug: 'conductor-vs-codeagentswarm',
   },
   sections: [
@@ -96,7 +96,7 @@ Resumen rápido: si tú y tu equipo estáis todos en Mac y queréis una app nati
         },
         {
           type: 'paragraph',
-          text: 'Y las limitaciones, por delante: código cerrado sin repositorio público, sin versión para Linux, sin cliente móvil ni remoto, todavía en beta, y necesitas tus propias suscripciones para las CLIs que uses. Conductor también es cerrado, pero es una app nativa de Mac hecha por una empresa financiada, y si trabajas solo en Mac esa concentración vale algo.',
+          text: 'Y las limitaciones, por delante: código cerrado sin repositorio público, sin versión de escritorio para Linux, Mobile Connect aún en alpha (beta web para todas las cuentas, acceso nativo para iOS y Android bajo petición y el escritorio debe seguir abierto), todavía en beta, y necesitas tus propias suscripciones para las CLIs que uses. Conductor también es cerrado, pero es una app nativa de Mac hecha por una empresa financiada, y si trabajas solo en Mac esa concentración vale algo.',
         },
       ],
     },

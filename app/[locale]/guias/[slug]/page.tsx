@@ -14,8 +14,14 @@ interface PageProps {
   }>
 }
 
-// Generate static params for all Spanish guides
-export async function generateStaticParams() {
+// The parent layout generates both locales. Only pre-render the locale that
+// belongs to this route; wrong-language legacy URLs remain dynamic redirects.
+export async function generateStaticParams({
+  params: { locale },
+}: {
+  params: { locale: string }
+}) {
+  if (locale !== 'es') return []
   const slugs = getGuideSlugs('es')
   return slugs.map((slug) => ({ slug }))
 }
@@ -43,7 +49,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: meta.metaTitle,
     description: meta.metaDescription,
-    authors: [{ name: meta.author ?? 'CodeAgentSwarm Team', url: baseUrl }],
+    authors: [{ name: meta.author ?? 'CodeAgentSwarm', url: `${baseUrl}/es/about` }],
     alternates: {
       canonical: canonicalUrl,
       languages: {
@@ -115,8 +121,8 @@ export default async function GuiaPage({ params }: PageProps) {
     url: `${baseUrl}/es/guias/${slug}`,
     author: {
       '@type': 'Organization',
-      name: guide.meta.author ?? 'CodeAgentSwarm Team',
-      url: baseUrl,
+      name: guide.meta.author ?? 'CodeAgentSwarm',
+      url: `${baseUrl}/es/about`,
     },
     image: {
       '@type': 'ImageObject',

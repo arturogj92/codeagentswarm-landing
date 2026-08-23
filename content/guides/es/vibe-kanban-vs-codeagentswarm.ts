@@ -9,14 +9,14 @@ export const guide: Guide = {
     metaDescription: 'Vibe Kanban convierte el trabajo de los agentes en un kanban de issues. CodeAgentSwarm te deja pilotar sus terminales. Comparativa honesta verificada en julio de 2026.',
     intro: `Vibe Kanban convierte el trabajo de los agentes en un kanban de issues para equipos. CodeAgentSwarm te deja mirar y pilotar las propias terminales de los agentes, con el tablero como una función más y no como el producto entero.
 
-CodeAgentSwarm lo hacemos nosotros, y conviene que leas esta página sabiéndolo. Por eso aquí verás nuestros límites (código cerrado, solo macOS y Windows, sin app móvil, todavía en beta, y tú pones tus suscripciones de agentes) y también el crédito que Vibe Kanban merece en lo que hace mejor, empezando por ser código abierto y tener con diferencia la comunidad más grande de esta categoría. Cada dato de terceros se verificó el 26 de julio de 2026 en la web del fabricante, su README público y los datos públicos de GitHub, incluido un cambio de estado público que contamos entero.
+CodeAgentSwarm lo hacemos nosotros, y conviene que leas esta página sabiéndolo. Por eso aquí verás nuestros límites (código cerrado, sin build de escritorio para Linux, Mobile Connect aún en alpha, todavía en beta, y tú pones tus suscripciones de agentes) y también el crédito que Vibe Kanban merece en lo que hace mejor, empezando por ser código abierto y tener con diferencia la comunidad más grande de esta categoría. Cada dato de terceros se verificó el 26 de julio de 2026 en la web del fabricante, su README público y los datos públicos de GitHub, incluido un cambio de estado público que contamos entero. La disponibilidad de CodeAgentSwarm en esta página se actualizó el 23 de agosto de 2026.
 
 Si tu cuello de botella es planificar y revisar el trabajo en equipo, una herramienta que arranca por el kanban tiene la forma correcta. Si tu cuello de botella es seguir el ritmo de varias sesiones de agentes a la vez, la forma correcta es un espacio de supervisión.`,
     ctaText: 'Si quieres ver qué está haciendo cada agente ahora mismo, enterarte en el momento en que uno te necesita y tener un tablero que los agentes actualizan solos, descarga CodeAgentSwarm y pruébalo en tu próxima sesión en paralelo.',
     ctaAgent: 'comparison',
     highlightedWords: ['Vibe Kanban', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
-    updatedAt: '2026-08-11',
+    updatedAt: '2026-08-23',
     alternateSlug: 'vibe-kanban-vs-codeagentswarm',
   },
   sections: [
@@ -93,7 +93,7 @@ Si tu cuello de botella es planificar y revisar el trabajo en equipo, una herram
         },
         {
           type: 'paragraph',
-          text: 'Nuestros límites, sin rodeos: código cerrado y sin repositorio público, solo macOS y Windows, sin app móvil, todavía en beta (gratis y con Pro incluido durante la beta) y no somos proveedor de modelos, así que pones tus propias suscripciones.',
+          text: 'Nuestros límites, sin rodeos: código cerrado y sin repositorio público, sin build de escritorio para Linux, Mobile Connect aún en alpha (beta web para todas las cuentas, acceso nativo para iOS y Android bajo petición y el escritorio debe seguir abierto), todavía en beta con Pro incluido y no somos proveedor de modelos, así que pones tus propias suscripciones.',
         },
       ],
     },

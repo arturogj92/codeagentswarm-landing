@@ -2,7 +2,7 @@
 
 Last updated: 2026-08-23
 
-Release state: validated in the current worktree. Deployment and post-release measurement remain pending.
+Release state: both August 23 implementation waves are validated for master. Post-release measurement remains pending.
 
 ## Current state
 
@@ -22,8 +22,9 @@ Organic acquisition is growing quickly. The main constraint has moved from disco
 | Guide share of clean pageviews | 30,552, or 82.92% |
 | Home visitor to download click | 21.86% |
 | Guide pageview to direct download click | 0.635% |
-| Sitemap URLs returning 200 in the production build | 178 / 178 |
+| Sitemap URLs returning 200 in the production build | 180 / 180 |
 | Guide First Load JS | 185 kB, down from about 746 kB |
+| Static pages generated | 218, down from 382 |
 | Domain Rating in SEO MCP | 4.6 |
 | Referring domains in SEO MCP | 473 |
 | Referring domains marked follow | 9% |
@@ -44,15 +45,22 @@ The detailed evidence and decisions live in [the August 23 growth and conversion
 - Updated the public GitHub repository descriptions, homepages and topics to use the same category language.
 - Corrected stale Gemini wording in two open awesome-list PR descriptions without sending follow-up comments.
 - Replaced stale outreach drafts with a reviewed, factual and manual-only outreach plan.
+- Added privacy-safe real-user Core Web Vitals to the existing Umami tracker.
+- Converted the seven largest and most reused guide screenshots to responsive Next.js image output.
+- Removed 166 duplicate guide prerenders while preserving permanent wrong-language redirects.
+- Added localized About pages, creator and organization structured data, footer links and sitemap entries.
+- Corrected Mobile Connect access facts across sixteen English and Spanish comparison pages.
+- Prepared five page-specific editorial pitches for explicit approval. Nothing has been sent.
+- Confirmed that the separate aggregate installation funnel already measures download requests, fresh launches, first terminals and seven-day returns.
 
 ## Open priorities
 
-1. Deploy this worktree, then compare Beta CTA, confirmed waitlist and guide download events against an equal pre-release window.
-2. Connect landing acquisition to account creation, install and first activation. Download clicks are not customers.
+1. Compare Beta CTA, confirmed waitlist, guide download and Core Web Vitals events against an equal pre-release window after seven complete days.
+2. Review the aggregate installation funnel after cohorts mature. Do not invent person-level acquisition attribution without a separate privacy decision.
 3. Keep the high-impression snippets stable until the full September 9 Search Console review.
 4. Export Search Console query-by-page data before consolidating similar guides.
-5. Run the reviewed free editorial outreach manually and record accepted links plus their attributes.
-6. Optimize the largest guide images and the homepage video after measuring real Core Web Vitals.
+5. Send the five reviewed editorial pitches only after explicit approval, then record accepted links and their attributes.
+6. Revisit the homepage video and remaining screenshots only if real-user performance data shows they are still a bottleneck.
 7. Design a localized lead capture for Spanish traffic, which currently converts better in guides but records no email leads.
 
 ## Guardrails

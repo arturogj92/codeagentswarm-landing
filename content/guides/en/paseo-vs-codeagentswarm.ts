@@ -9,14 +9,14 @@ export const guide: Guide = {
     metaDescription: 'Paseo is a self-hosted, open source agent orchestrator you can drive from your phone. CodeAgentSwarm is a macOS and Windows desktop workspace for seven agent CLIs.',
     intro: `Paseo is a self-hosted, open source orchestrator you can supervise from your phone, while CodeAgentSwarm is a macOS and Windows desktop workspace that runs seven agent CLIs in parallel terminals. That is the difference in one line, and most of the decision follows from it.
 
-Full disclosure: we build CodeAgentSwarm. That is exactly why this page says out loud where Paseo is the better tool instead of pretending we win every row. Both products are judged on the same criteria, our limitations sit next to our features, and every third-party fact below was checked on July 26, 2026 against paseo.sh, the public getpaseo/paseo repository and public GitHub data.
+Full disclosure: we build CodeAgentSwarm. That is exactly why this page says out loud where Paseo is the better tool instead of pretending we win every row. Both products are judged on the same criteria, our limitations sit next to our features, and every third-party fact below was checked on July 26, 2026 against paseo.sh, the public getpaseo/paseo repository and public GitHub data. CodeAgentSwarm availability on this page was updated on August 23, 2026.
 
 Short version: if you want to start a job at your desk and check on it from a train, or you need software you can host and audit yourself, Paseo fits better. If you work on a Mac or a Windows machine and want seven agent CLIs, a shared task board and one searchable history across all of them, that is where CodeAgentSwarm earns its place.`,
     ctaText: 'If your work happens at a desk on macOS or Windows and you want seven agent CLIs, live diffs and a shared task board in one window, download CodeAgentSwarm and run your next batch of agents in parallel.',
     ctaAgent: 'comparison',
     highlightedWords: ['Paseo', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
-    updatedAt: '2026-08-11',
+    updatedAt: '2026-08-23',
     alternateSlug: 'paseo-vs-codeagentswarm',
   },
   sections: [
@@ -64,7 +64,7 @@ Short version: if you want to start a job at your desk and check on it from a tr
         },
         {
           type: 'paragraph',
-          text: 'That is a strong product and we will not pretend otherwise. The mobile story in particular is not a checkbox: they lean on parity between the phone app and the desktop app. CodeAgentSwarm has nothing comparable.',
+          text: 'That is a strong product and we will not pretend otherwise. The mobile story in particular is not a checkbox: they lean on parity between the phone app and the desktop app. CodeAgentSwarm offers Mobile Connect in alpha, with a web beta for every account and native access by request while the desktop stays open. That is not the same as Paseo shipping public native clients.',
         },
       ],
     },
@@ -97,7 +97,7 @@ Short version: if you want to start a job at your desk and check on it from a tr
         },
         {
           type: 'paragraph',
-          text: 'The limitations, stated plainly: CodeAgentSwarm is closed source with no public app repository, there is no Linux build, there is no mobile or remote client, it is beta software, and it needs your own subscriptions for whichever CLIs you run. If any of those is a hard requirement, Paseo is the honest recommendation.',
+          text: 'The limitations, stated plainly: CodeAgentSwarm is closed source with no public app repository, there is no Linux desktop build, Mobile Connect is still in alpha (web beta for every account, native iOS and Android access by request, desktop must stay open), it is beta software, and it needs your own subscriptions for whichever CLIs you run. If public native mobile access, Linux or self-hosting is a hard requirement, Paseo is the honest recommendation.',
         },
       ],
     },
@@ -112,12 +112,12 @@ Short version: if you want to start a job at your desk and check on it from a tr
             [
               '<strong>Platforms</strong>',
               'macOS, Windows and Linux desktop builds, iOS and Android apps, web and CLI',
-              'macOS and Windows desktop app. No Linux build',
+              'macOS and Windows desktop app. Mobile Connect alpha: web beta for every account, native iOS and Android access by request, desktop must stay open. No Linux build',
             ],
             [
               '<strong>Interface</strong>',
               'Self-hosted daemon plus desktop, mobile, web and CLI clients',
-              'One desktop workspace with parallel terminals, diffs and a task board',
+              'Desktop workspace plus Mobile Connect alpha. Web beta for every account; native access by request; desktop must stay open',
             ],
             [
               '<strong>Supported agents</strong>',
@@ -175,7 +175,7 @@ Short version: if you want to start a job at your desk and check on it from a tr
         {
           type: 'list',
           items: [
-            '<strong>You want to supervise agents from your phone.</strong> Paseo has native iOS and Android apps. CodeAgentSwarm is desktop only, so there is nothing to compare.',
+            '<strong>You want public native mobile access today.</strong> Paseo has public iOS and Android apps. CodeAgentSwarm Mobile Connect is still in alpha, native access is by request and the desktop must stay open.',
             '<strong>You need to self-host.</strong> Paseo is a daemon you run on your own laptop, VM or dev server. That is the architecture, not an add-on.',
             '<strong>Open source is a requirement.</strong> The code is public under AGPLv3, so you can read it and keep running it whatever happens to the company. With us you take our word for things.',
             '<strong>You care about telemetry and forced logins.</strong> Paseo states it has neither, which is an easy answer if procurement asks.',
@@ -237,7 +237,7 @@ Short version: if you want to start a job at your desk and check on it from a tr
     },
     {
       question: 'Can I supervise CodeAgentSwarm from my phone?',
-      answer: 'No. CodeAgentSwarm is a desktop application for macOS and Windows, with no mobile app and no remote client. Paseo wins clearly here: it ships native iOS and Android apps plus a web client, all connecting to a daemon you host, so you can start a task at your desk and check on it from anywhere. If mobile supervision is what you need, choose Paseo.',
+      answer: 'Yes, through Mobile Connect alpha. The web beta is available to every account, while native iOS and Android access is by request, and the desktop app must stay open because it remains the source of truth. Paseo still wins on public native availability and self-hosting: its iOS, Android and web clients connect to a daemon you run.',
     },
     {
       question: 'Does Paseo support Antigravity CLI or Kimi Code?',

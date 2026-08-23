@@ -9,14 +9,14 @@ export const guide: Guide = {
     metaDescription: 'Vibe Kanban turns agent work into a kanban of issues. CodeAgentSwarm lets you watch and drive the agent terminals. Honest comparison with facts verified July 2026.',
     intro: `Vibe Kanban turns agent work into a kanban of issues for teams. CodeAgentSwarm lets you watch and drive the agent terminals themselves, with the board as one feature rather than the whole product.
 
-We build CodeAgentSwarm, and you should read this page knowing that. It is why we list our own limits here (closed source, macOS and Windows only, no mobile app, still in beta, and you supply your own agent subscriptions) and why we credit Vibe Kanban for the things it does better, starting with being open source and having by far the biggest community in this category. Every third-party fact below was verified on July 26, 2026 against the vendor own site, their public README and public GitHub data, including a public status change we cover in full.
+We build CodeAgentSwarm, and you should read this page knowing that. It is why we list our own limits here (closed source, no Linux desktop build, Mobile Connect still in alpha, still in beta, and you supply your own agent subscriptions) and why we credit Vibe Kanban for the things it does better, starting with being open source and having by far the biggest community in this category. Every third-party fact below was verified on July 26, 2026 against the vendor own site, their public README and public GitHub data, including a public status change we cover in full. CodeAgentSwarm availability on this page was updated on August 23, 2026.
 
 If your bottleneck is planning and reviewing work as a team, a kanban-first tool is the right shape. If your bottleneck is keeping up with several agent sessions running at once, a supervision workspace is.`,
     ctaText: 'If you want to see what each agent is doing right now, get notified the moment one needs you, and keep a task board that the agents update themselves, download CodeAgentSwarm and try it on your next parallel session.',
     ctaAgent: 'comparison',
     highlightedWords: ['Vibe Kanban', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
-    updatedAt: '2026-08-11',
+    updatedAt: '2026-08-23',
     alternateSlug: 'vibe-kanban-vs-codeagentswarm',
   },
   sections: [
@@ -93,7 +93,7 @@ If your bottleneck is planning and reviewing work as a team, a kanban-first tool
         },
         {
           type: 'paragraph',
-          text: 'Our limits, plainly: closed source with no public repository, macOS and Windows only, no mobile app, still in beta (free with Pro included during beta), and we are not a model provider, so you bring your own subscriptions.',
+          text: 'Our limits, plainly: closed source with no public repository, no Linux desktop build, Mobile Connect still in alpha (web beta for every account, native iOS and Android access by request, desktop must stay open), still in beta with Pro included, and we are not a model provider, so you bring your own subscriptions.',
         },
       ],
     },

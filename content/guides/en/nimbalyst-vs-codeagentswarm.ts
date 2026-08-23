@@ -9,14 +9,14 @@ export const guide: Guide = {
     metaDescription: 'Nimbalyst, formerly Crystal, is a visual editor for what Claude Code and Codex produce. CodeAgentSwarm supervises seven agent CLIs. Honest comparison, verified in 2026.',
     intro: `Nimbalyst, the project formerly known as Crystal, is a visual editor for what Claude Code and Codex produce. CodeAgentSwarm is a supervision workspace for seven agent CLIs, built around the terminals rather than around the documents.
 
-We make CodeAgentSwarm, so this is an interested comparison and you should check it. That is also why this page is generous where Nimbalyst deserves it (it is open source, it runs on Linux, it has a mobile app and it was being actively committed to on the day we verified) and why our own limits are on the page: closed source, macOS and Windows only, no mobile app, still in beta, and you bring your own agent subscriptions. Every third-party fact here was verified on July 26, 2026 against nimbalyst.com, the public Nimbalyst README and public GitHub data.
+We make CodeAgentSwarm, so this is an interested comparison and you should check it. That is also why this page is generous where Nimbalyst deserves it (it is open source, it runs on Linux, it has a mobile app and it was being actively committed to on the day we verified) and why our own limits are on the page: closed source, no Linux desktop build, Mobile Connect still in alpha, still in beta, and you bring your own agent subscriptions. Every third-party fact here was verified on July 26, 2026 against nimbalyst.com, the public Nimbalyst README and public GitHub data. CodeAgentSwarm availability on this page was updated on August 23, 2026.
 
 Pick Nimbalyst if the work you care about is the artefact: markdown, mockups, diagrams, documents you want to edit alongside the agent. Pick CodeAgentSwarm if the work you care about is the sessions: several agent CLIs running at once and you needing to know what each one is doing.`,
     ctaText: 'If you want to supervise seven different agent CLIs at once, with notifications, live per-terminal diffs and one searchable history, download CodeAgentSwarm and see how it feels next to Nimbalyst.',
     ctaAgent: 'comparison',
     highlightedWords: ['Nimbalyst', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
-    updatedAt: '2026-08-11',
+    updatedAt: '2026-08-23',
     alternateSlug: 'nimbalyst-vs-codeagentswarm',
   },
   sections: [
@@ -88,7 +88,7 @@ Pick Nimbalyst if the work you care about is the artefact: markdown, mockups, di
         },
         {
           type: 'paragraph',
-          text: 'And the limits: closed source with no public repository, macOS and Windows only (no Linux), no mobile app, still in beta and free with Pro included during that period, and no models of our own, so your existing subscriptions do the work.',
+          text: 'And the limits: closed source with no public repository, no Linux desktop build, Mobile Connect still in alpha (web beta for every account, native iOS and Android access by request, desktop must stay open), still in beta with Pro included, and no models of our own, so your existing subscriptions do the work.',
         },
       ],
     },
@@ -100,7 +100,7 @@ Pick Nimbalyst if the work you care about is the artefact: markdown, mockups, di
           type: 'table',
           headers: ['', 'Nimbalyst (formerly Crystal)', 'CodeAgentSwarm'],
           rows: [
-            ['Platforms', 'macOS (Apple Silicon and Intel), Windows and Linux, plus a mobile app, per their README', 'macOS and Windows, no Linux and no mobile app'],
+            ['Platforms', 'macOS (Apple Silicon and Intel), Windows and Linux, plus a mobile app, per their README', 'macOS and Windows desktop. Mobile Connect alpha: web beta for every account, native iOS and Android access by request, desktop must stay open. No Linux build'],
             ['Interface', 'Desktop app built around visual editors, with a session kanban and an embedded terminal', 'Desktop workspace built around live agent terminals'],
             ['Supported agents', 'Codex, Claude Code, Opencode (alpha) and Copilot (alpha), per their README', 'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build and Cursor Agent'],
             ['Isolation model', 'Parallel sessions with git worktree support, per their README', 'A separate process per terminal, with optional git worktrees per session'],
@@ -129,7 +129,7 @@ Pick Nimbalyst if the work you care about is the artefact: markdown, mockups, di
             '<strong>You want to edit what the agent produces, visually.</strong> Markdown, mockups with annotations, Mermaid, Excalidraw, CSV and data models in WYSIWYG editors, approving changes as red and green diffs. We have no equivalent to that at all.',
             '<strong>You want open source.</strong> MIT, public repository, and an active one: there was a public commit on July 26, 2026, the day we verified. CodeAgentSwarm is closed source.',
             '<strong>You are on Linux.</strong> They ship a Linux build. We do not.',
-            '<strong>You want your phone in the loop.</strong> Their mobile app offers a session dashboard, push notifications, voice or text replies and swipe-through diff approval. We have no mobile app.',
+            '<strong>You want a public native mobile app today.</strong> Their mobile app offers a session dashboard, push notifications, voice or text replies and swipe-through diff approval. CodeAgentSwarm Mobile Connect is still in alpha: web beta is available, while native iOS and Android access is by request and the desktop must stay open.',
             '<strong>Non-developers are involved.</strong> Product and design people can work on documents and mockups in the same tool, which a terminal workspace does not really allow.',
             '<strong>You want to extend the tool.</strong> Their extension system lets you build custom editors for your own file types.',
           ],

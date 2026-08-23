@@ -15,6 +15,8 @@ CodeAgentSwarm does not have a traffic problem. It has a capture and authority-q
 
 The highest-return action is to convert and measure existing demand, not publish another broad content cluster.
 
+Two implementation waves were completed on August 23. The first reached production through commit `7f20aa1`; the second adds trust, real-user performance measurement and lighter guide rendering.
+
 ## Measurement method
 
 ### Umami
@@ -139,22 +141,38 @@ Verified follow sources already include the self-owned GitHub Pages site, Uneed,
 5. Survey pages inherited the home canonical and index directive. They now have localized, self-canonical `noindex,follow` metadata plus matching social metadata.
 6. Six indexable legal pages were missing from the sitemap. The sitemap now contains 178 canonical URLs.
 7. Beta copy incorrectly said Claude Code powered every agent, omitted Windows in onboarding and promised the founder price forever. English and Spanish now match the multiprovider product and first-year promise.
+8. Real-user Core Web Vitals now flow through the existing privacy-safe Umami tracker as `web_vital` events with metric, rounded value, unit and rating.
+9. Seven of the largest and most reused guide screenshots now use responsive Next.js image output with intrinsic dimensions and `sizes`. Those assets appear in about 139 guide placements.
+10. English and Spanish guide prerenders are gated by their parent locale. Historical wrong-language paths remain permanent redirects instead of duplicate static pages.
+11. A localized About page now identifies Arturo García, explains the product and editorial method, links official identities and publishes AboutPage, Organization and Person structured data.
+12. Sixteen English and Spanish comparison pages now state the current Mobile Connect alpha access model and distinguish the August 23 product update from third-party facts last verified on July 26.
 
 ### Measured impact
 
 - Guide First Load JS: about 746 kB before, 185 kB after.
 - Reduction: about 75%.
 - The former 2.2 MB raw client chunk containing unrelated guide bodies is gone.
-- Local crawl: 178 of 178 sitemap URLs returned HTTP 200.
+- Static output: 218 pages, down from 382. The locale cross-product no longer creates 166 duplicate guide prerenders.
+- Sitemap: 180 canonical URLs after adding the English and Spanish About pages.
+- Local crawl: 180 of 180 sitemap URLs returned HTTP 200.
 
 ### Not changed yet
 
 - Similar guide pairs were not merged because separate query and page exports cannot prove cannibalization.
-- The largest guide PNG files remain up to about 3.6 MB and need measured image work.
 - The home video remains about 4.2 to 4.6 MB with weak cache headers from its CDN.
-- The build still prerenders 332 route variants for 166 canonical guides because localized route parameters form a cross-product.
-- Real-user Core Web Vitals are not recorded.
-- The footer About link has no real destination, and guide authorship still uses a generic team identity. A factual team page needs owner input rather than invented biography.
+- Lower-frequency guide screenshots still use their original files. Convert more only if real-user data shows image transfer or LCP remains a bottleneck.
+- Landing analytics cannot join a specific anonymous visit or download click to an installed app without adding a cross-surface identifier.
+
+## Activation measurement
+
+The app and backend already shipped a privacy-safe aggregate installation funnel on August 23:
+
+- Download requests.
+- Fresh app launches.
+- First terminal created within seven days.
+- Return after at least one day and within seven days.
+
+This closes the aggregate download-to-activation gap. It deliberately does not identify a person across the website, installer and app, so acquisition source cannot be attributed to a specific installation. Do not duplicate this funnel in the landing site or weaken that privacy boundary without a separate product decision.
 
 ## Free authority work
 
@@ -164,13 +182,13 @@ Completed on 2026-08-23:
 - Removed stale Gemini wording from the private repository description and topics.
 - Corrected the descriptions of awesome-ai-devtools PR 759 and awesome-mac PR 2250.
 - Revalidated five current editorial category pages.
-- Replaced the stale outreach document with reviewed product facts and a manual send checklist.
+- Replaced the stale outreach document with reviewed product facts, a manual send checklist and five page-specific drafts.
 
 Next manual batch:
 
 1. Ask Singularity Society to turn its existing plain-text mention into a factual linked entry.
 2. Ask Tembo for an editorial evaluation.
-3. Ask Zevyn Studio, AgentsRoom and amux only after tailoring one sentence to each page.
+3. Ask Zevyn Studio, AgentsRoom and amux with the page-specific drafts.
 4. Publish a useful DEV article with an early contextual link.
 5. Verify StackShare, SaaSGrow and MCP client listing eligibility before submitting duplicates.
 
@@ -184,12 +202,16 @@ The 150 EUR budget should remain untouched until the free editorial batch lands 
 
 ## Validation
 
-- Eight targeted Node tests passed.
+- Thirteen SEO and guide tests plus twelve dashboard tests passed.
 - The production build completed and type checking passed. The repository still lacks ESLint, so the build reports that linting is unavailable.
-- All 178 sitemap URLs returned HTTP 200 locally.
+- The production build generated 218 pages and all 180 sitemap URLs returned HTTP 200 locally.
 - English and Spanish Beta CTAs navigated to the real download section in Playwright.
 - A mocked HTTP 500 kept the waitlist in an error state; a mocked duplicate response produced success.
 - The high-traffic guide retained its related recommendation without shipping unrelated guide text to client chunks.
+- The high-traffic comparison served its large screenshots through responsive `/_next/image` URLs with intrinsic dimensions and `sizes`.
+- A mocked Umami client received real TTFB and FCP `web_vital` events from a production build.
+- Both historical wrong-language guide paths returned HTTP 308 to their canonical localized paths.
+- The localized About page rendered without horizontal overflow at 390 and 1440 pixels, exposed the expected structured data and linked from the footer.
 - Desktop and mobile visual checks showed the primary Beta CTA in the first viewport.
 - Final browser checks reported zero console errors on the changed Beta pages.
 
@@ -202,5 +224,7 @@ After seven complete days, compare against the previous seven weekdays:
 - Direct guide downloads per guide pageview, split by product block, inline and final position.
 - Home download clicks per home visitor.
 - Spanish and English conversion separately.
+- Real-user LCP, INP and CLS by rating. TTFB and FCP are diagnostic, not business outcomes.
+- Aggregate download requests, fresh launches, first terminals and seven-day returns from the installation activation funnel.
 
 After 28 complete days, review Search Console clicks, impressions, CTR and position together. A CTR increase with a position decline is not automatically a win, and a click decline with lost impressions is not a snippet problem.

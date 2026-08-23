@@ -5,6 +5,16 @@ import { motion } from 'framer-motion'
 import { Info, AlertTriangle, Lightbulb, ImageIcon } from 'lucide-react'
 import type { ContentBlock, GuideSection } from '@/content/guides/types'
 
+const GUIDE_IMAGE_DIMENSIONS: Record<string, { width: number; height: number }> = {
+  '/images/guides/task-board-kanban.png': { width: 3024, height: 1964 },
+  '/images/guides/codex-agent-swarm.png': { width: 3024, height: 1964 },
+  '/images/guides/multi-terminal.png': { width: 3016, height: 1758 },
+  '/images/guides/multi-cli-agent-selector.png': { width: 2782, height: 1624 },
+  '/images/guides/antigravity-agent-swarm.png': { width: 2782, height: 1606 },
+  '/images/guides/multi-cli-three-agents.png': { width: 3024, height: 1964 },
+  '/images/guides/opencode-agent-swarm.png': { width: 3020, height: 1768 },
+}
+
 // Image placeholder component (when src is '#' or missing)
 function ImagePlaceholder({ alt, caption }: { alt: string; caption?: string }) {
   return (
@@ -46,16 +56,33 @@ function GuideImage({ src, alt, caption, size = 'full' }: { src: string; alt: st
     medium: 'max-w-full sm:max-w-lg mx-auto',
     full: 'w-full',
   }
+  const dimensions = GUIDE_IMAGE_DIMENSIONS[src]
+  const sizes = size === 'small'
+    ? '(max-width: 640px) calc(100vw - 2rem), 320px'
+    : size === 'medium'
+      ? '(max-width: 640px) calc(100vw - 2rem), 512px'
+      : '(max-width: 1024px) calc(100vw - 2rem), 820px'
 
   return (
     <figure className={`my-8 ${figureSizeClasses[size] || ''}`}>
       <div className="relative rounded-xl border border-white/10 overflow-hidden">
-        <img
-          src={src}
-          alt={alt}
-          className="w-full h-auto"
-          loading="lazy"
-        />
+        {dimensions ? (
+          <Image
+            src={src}
+            alt={alt}
+            width={dimensions.width}
+            height={dimensions.height}
+            sizes={sizes}
+            className="w-full h-auto"
+          />
+        ) : (
+          <img
+            src={src}
+            alt={alt}
+            className="w-full h-auto"
+            loading="lazy"
+          />
+        )}
       </div>
       {caption && (
         <figcaption className="mt-3 text-center text-sm text-white/50">

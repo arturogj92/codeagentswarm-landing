@@ -9,14 +9,14 @@ export const guide: Guide = {
     metaDescription: 'Nimbalyst, antes Crystal, es un editor visual de lo que producen Claude Code y Codex. CodeAgentSwarm supervisa siete CLI de agentes. Comparativa verificada en 2026.',
     intro: `Nimbalyst, el proyecto que antes se llamaba Crystal, es un editor visual de lo que producen Claude Code y Codex. CodeAgentSwarm es un espacio de supervisión para siete CLI de agentes, montado alrededor de las terminales y no de los documentos.
 
-CodeAgentSwarm lo hacemos nosotros, así que esta comparativa tiene parte interesada y conviene que la contrastes. También por eso somos generosos donde Nimbalyst lo merece (es código abierto, funciona en Linux, tiene app móvil y el día que lo verificamos estaba recibiendo commits) y por eso nuestros límites están en la página: código cerrado, solo macOS y Windows, sin app móvil, todavía en beta, y tú pones tus suscripciones de agentes. Cada dato de terceros se verificó el 26 de julio de 2026 en nimbalyst.com, el README público de Nimbalyst y los datos públicos de GitHub.
+CodeAgentSwarm lo hacemos nosotros, así que esta comparativa tiene parte interesada y conviene que la contrastes. También por eso somos generosos donde Nimbalyst lo merece (es código abierto, funciona en Linux, tiene app móvil y el día que lo verificamos estaba recibiendo commits) y por eso nuestros límites están en la página: código cerrado, sin build de escritorio para Linux, Mobile Connect aún en alpha, todavía en beta, y tú pones tus suscripciones de agentes. Cada dato de terceros se verificó el 26 de julio de 2026 en nimbalyst.com, el README público de Nimbalyst y los datos públicos de GitHub. La disponibilidad de CodeAgentSwarm en esta página se actualizó el 23 de agosto de 2026.
 
 Elige Nimbalyst si lo que te importa es el artefacto: markdown, mockups, diagramas, documentos que quieres editar junto al agente. Elige CodeAgentSwarm si lo que te importa son las sesiones: varias CLI de agentes a la vez y tú necesitando saber qué hace cada una.`,
     ctaText: 'Si quieres supervisar siete CLI de agentes distintas a la vez, con notificaciones, diffs en vivo por terminal y un único historial buscable, descarga CodeAgentSwarm y compáralo con Nimbalyst en tu día a día.',
     ctaAgent: 'comparison',
     highlightedWords: ['Nimbalyst', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
-    updatedAt: '2026-08-11',
+    updatedAt: '2026-08-23',
     alternateSlug: 'nimbalyst-vs-codeagentswarm',
   },
   sections: [
@@ -88,7 +88,7 @@ Elige Nimbalyst si lo que te importa es el artefacto: markdown, mockups, diagram
         },
         {
           type: 'paragraph',
-          text: 'Y los límites: código cerrado y sin repositorio público, solo macOS y Windows (nada de Linux), sin app móvil, todavía en beta y gratis con Pro incluido durante ese periodo, y sin modelos propios, así que el trabajo lo hacen tus suscripciones actuales.',
+          text: 'Y los límites: código cerrado y sin repositorio público, sin build de escritorio para Linux, Mobile Connect aún en alpha (beta web para todas las cuentas, acceso nativo para iOS y Android bajo petición y el escritorio debe seguir abierto), todavía en beta con Pro incluido y sin modelos propios, así que el trabajo lo hacen tus suscripciones actuales.',
         },
       ],
     },
@@ -100,7 +100,7 @@ Elige Nimbalyst si lo que te importa es el artefacto: markdown, mockups, diagram
           type: 'table',
           headers: ['', 'Nimbalyst (antes Crystal)', 'CodeAgentSwarm'],
           rows: [
-            ['Plataformas', 'macOS (Apple Silicon e Intel), Windows y Linux, más una app móvil, según su README', 'macOS y Windows, sin Linux y sin app móvil'],
+            ['Plataformas', 'macOS (Apple Silicon e Intel), Windows y Linux, más una app móvil, según su README', 'Escritorio para macOS y Windows. Mobile Connect en alpha: beta web para todas las cuentas, acceso nativo para iOS y Android bajo petición y el escritorio debe seguir abierto. Sin build de Linux'],
             ['Interfaz', 'App de escritorio construida sobre editores visuales, con kanban de sesiones y terminal integrada', 'Espacio de trabajo de escritorio construido sobre terminales de agentes en vivo'],
             ['Agentes soportados', 'Codex, Claude Code, Opencode (alpha) y Copilot (alpha), según su README', 'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent'],
             ['Modelo de aislamiento', 'Sesiones en paralelo con soporte de git worktrees, según su README', 'Un proceso separado por terminal, con git worktrees opcionales por sesión'],
@@ -129,7 +129,7 @@ Elige Nimbalyst si lo que te importa es el artefacto: markdown, mockups, diagram
             '<strong>Quieres editar visualmente lo que produce el agente.</strong> Markdown, mockups con anotaciones, Mermaid, Excalidraw, CSV y modelos de datos en editores WYSIWYG, aprobando los cambios como diffs en rojo y verde. Nosotros no tenemos nada equivalente.',
             '<strong>Quieres código abierto.</strong> MIT, repositorio público, y además activo: hubo un commit público el 26 de julio de 2026, el día que lo verificamos. CodeAgentSwarm es de código cerrado.',
             '<strong>Estás en Linux.</strong> Ellos publican build de Linux. Nosotros no.',
-            '<strong>Quieres el móvil dentro del bucle.</strong> Su app móvil ofrece panel de sesiones, notificaciones push, respuestas por voz o texto y aprobación de diffs deslizando. Nosotros no tenemos app móvil.',
+            '<strong>Quieres una app móvil nativa pública hoy.</strong> Su app ofrece panel de sesiones, notificaciones push, respuestas por voz o texto y aprobación de diffs deslizando. Mobile Connect de CodeAgentSwarm sigue en alpha: hay beta web, el acceso nativo para iOS y Android es bajo petición y el escritorio debe seguir abierto.',
             '<strong>Hay gente que no programa en el equipo.</strong> Producto y diseño pueden trabajar sobre documentos y mockups en la misma herramienta, algo que un espacio de terminales no permite de verdad.',
             '<strong>Quieres extender la herramienta.</strong> Su sistema de extensiones te deja construir editores a medida para tus propios tipos de archivo.',
           ],

@@ -9,14 +9,14 @@ export const guide: Guide = {
     metaDescription: 'T3 Code is an open source control plane that ends in a one-click PR. CodeAgentSwarm is a supervision workspace for seven agent CLIs. Honest 2026 comparison.',
     intro: `T3 Code is an MIT licensed, open source control plane that puts several coding agents behind one polished desktop UI and finishes each thread with a one-click pull request, while CodeAgentSwarm is a closed source desktop workspace built for supervising several agent CLIs at once, with desktop notifications, searchable cross-agent history and a kanban board the agents update themselves over MCP.
 
-Disclosure before anything else: we build CodeAgentSwarm. That is exactly why this page tries harder than most. T3 Code wins several rows below, and our own limitations (closed source, no Linux, no mobile client, still in beta) are printed in the same table as everything else. Every third-party fact here was checked on July 26, 2026 against t3.codes and public GitHub data, and anything we could not verify is labelled as such instead of guessed.
+Disclosure before anything else: we build CodeAgentSwarm. T3 Code wins several rows below, and our own limitations (closed source, no Linux desktop build, Mobile Connect still in alpha, still in beta) are printed in the same table as everything else. Every third-party fact here was checked on July 26, 2026 against t3.codes and public GitHub data, and anything we could not verify is labelled as such instead of guessed. CodeAgentSwarm availability on this page was updated on August 23, 2026.
 
 Short version: pick T3 Code if open source, Linux support and a fast path from diff to pull request matter most. Pick CodeAgentSwarm if you run agents from seven different vendors and need notifications, history and a task board to keep track of them.`,
     ctaText: 'Try both on the same repository and keep the one that fits your week. CodeAgentSwarm is free during beta, with Pro included, for macOS and Windows.',
     ctaAgent: 'comparison',
     highlightedWords: ['T3 Code', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
-    updatedAt: '2026-08-11',
+    updatedAt: '2026-08-23',
     alternateSlug: 't3-code-vs-codeagentswarm',
   },
   sections: [
@@ -88,7 +88,7 @@ Short version: pick T3 Code if open source, Linux support and a fast path from d
         },
         {
           type: 'paragraph',
-          text: 'The honest limitations, in the same breath: it is closed source, there is no public app repository, there is no Linux build, there is no mobile or remote client, it is beta software, it needs your own CLI subscriptions, and there is no one-click PR button (you commit from the app, then open the PR yourself). If any of those are dealbreakers, T3 Code is probably the better tool for you and the rest of this page will not change that.',
+          text: 'The honest limitations, in the same breath: it is closed source, there is no public app repository, there is no Linux desktop build, Mobile Connect is still in alpha (web beta for every account, native iOS and Android access by request, desktop must stay open), it is beta software, it needs your own CLI subscriptions, and there is no one-click PR button (you commit from the app, then open the PR yourself). If any of those are dealbreakers, T3 Code is probably the better tool for you and the rest of this page will not change that.',
         },
       ],
     },

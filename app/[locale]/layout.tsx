@@ -6,6 +6,7 @@ import { getMessages, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import Script from 'next/script'
 import { routing } from '@/i18n/routing'
+import WebVitals from '@/components/WebVitals'
 import '../globals.css'
 
 const inter = Inter({
@@ -49,7 +50,7 @@ export async function generateMetadata({
     metadataBase: new URL(baseUrl),
     title,
     description,
-    authors: [{ name: 'CodeAgentSwarm Team' }],
+    authors: [{ name: 'CodeAgentSwarm', url: `${baseUrl}/${locale}/about` }],
     creator: 'CodeAgentSwarm',
     publisher: 'CodeAgentSwarm',
     applicationName: 'CodeAgentSwarm',
@@ -152,6 +153,7 @@ export default async function LocaleLayout({
         />
       </head>
       <body className={`${inter.className} ${inter.variable} ${manrope.variable} ${handelGothic.variable} bg-black text-white antialiased`}>
+        <WebVitals />
         <NextIntlClientProvider messages={messages}>
           {/* Noise Overlay */}
           <div className="noise-overlay" aria-hidden="true" />

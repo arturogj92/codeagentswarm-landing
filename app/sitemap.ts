@@ -50,6 +50,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.8,
     },
+    ...(['en', 'es'] as const).map((locale) => ({
+      url: `${baseUrl}/${locale}/about`,
+      changeFrequency: 'monthly' as const,
+      priority: 0.4,
+    })),
     ...(['privacy', 'terms', 'cookies'] as const).flatMap((slug) => [
       {
         url: `${baseUrl}/en/${slug}`,

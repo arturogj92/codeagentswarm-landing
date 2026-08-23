@@ -9,14 +9,14 @@ export const guide: Guide = {
     metaDescription: 'CodeAgentSwarm, T3 Code, Superset, Paseo, Conductor, Claude Squad y más: estrellas, último commit y licencia. Todos los datos verificados el 26 de julio de 2026.',
     intro: `Si quieres ejecutar varios agentes de programación con IA a la vez y seguir sabiendo qué hace cada uno, las herramientas hechas para eso son CodeAgentSwarm, T3 Code, Superset, Paseo, Conductor, Vibe Kanban, Claude Squad y Nimbalyst. Son aplicaciones que lanzan y supervisan CLIs de programación como Claude Code, Codex CLI y OpenCode. No son lo mismo que LangGraph, CrewAI o AutoGen, que son librerías para construir sistemas de agentes escribiendo código y no abren un terminal por ti.
 
-Antes de nada, transparencia: nosotros hacemos CodeAgentSwarm, así que somos una de las herramientas de la lista. Justo por eso los criterios son idénticos para todas, nuestras limitaciones están escritas en la misma sección que nuestras ventajas, y cada dato de terceros (estrellas, licencia, último commit público, agentes soportados) se verificó el 26 de julio de 2026 contra las webs de cada proyecto y los datos públicos de GitHub. Nada de lo que leas aquí viene de la página de marketing de un competidor sin decirlo.
+Antes de nada, transparencia: nosotros hacemos CodeAgentSwarm, así que somos una de las herramientas de la lista. Justo por eso los criterios son idénticos para todas, nuestras limitaciones están escritas en la misma sección que nuestras ventajas, y cada dato de terceros (estrellas, licencia, último commit público, agentes soportados) se verificó el 26 de julio de 2026 contra las webs de cada proyecto y los datos públicos de GitHub. Nada de lo que leas aquí viene de la página de marketing de un competidor sin decirlo. La disponibilidad de CodeAgentSwarm en esta página se actualizó el 23 de agosto de 2026.
 
 Hay un hallazgo que conviene poner por delante, porque cambia cómo se lee cualquier ranking de estrellas de esta categoría. Los dos repos con más estrellas son los dos con menos actividad reciente: opcode no tiene ningún commit público desde el 16 de octubre de 2025 y Vibe Kanban ninguno desde el 24 de abril de 2026. Cuatro herramientas publicaron código el mismo día en que hicimos la comprobación. Popular y vivo no se miden igual.`,
     ctaText: 'Si quieres sesiones en paralelo supervisadas con Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent en macOS o Windows, con notificaciones, historial compartido y un kanban que actualizan los propios agentes, CodeAgentSwarm es gratis durante la beta. Descárgalo y júzgalo con la tabla de arriba delante.',
     ctaAgent: 'comparison',
     highlightedWords: ['agentes de IA', 'paralelo'],
     publishedAt: '2026-07-26',
-    updatedAt: '2026-08-11',
+    updatedAt: '2026-08-23',
     alternateSlug: 'best-tools-to-run-multiple-ai-coding-agents',
   },
   sections: [
@@ -257,7 +257,7 @@ Hay un hallazgo que conviene poner por delante, porque cambia cómo se lee cualq
           items: [
             'Código cerrado, sin repositorio público de la app. Si el open source es un requisito, párate aquí y quédate con T3 Code, Paseo o Nimbalyst.',
             'No hay build de Linux. Solo macOS y Windows.',
-            'No tiene cliente móvil ni acceso remoto. Si quieres mirar cómo va un agente desde el móvil, la herramienta que hace eso es Paseo.',
+            'Mobile Connect sigue en alpha. La beta web está disponible para todas las cuentas, el acceso nativo para iOS y Android es bajo petición y el escritorio debe permanecer abierto.',
             'Es software en beta, y a veces se comporta como software en beta.',
             'No es un proveedor de modelos. Traes tus propias suscripciones de Claude, OpenAI, Google, el proveedor que uses con opencode y Kimi, y funciona encima de ellas.',
             'No tiene botón de pull request en un clic. T3 Code sí tiene ese flujo y nosotros no.',
@@ -370,7 +370,7 @@ Hay un hallazgo que conviene poner por delante, porque cambia cómo se lee cualq
         },
         {
           type: 'paragraph',
-          text: 'Esta es la fila en la que perdemos limpiamente. CodeAgentSwarm no tiene cliente móvil ni acceso remoto, así que si el requisito es supervisar desde el teléfono, la respuesta es Paseo y no somos nosotros. El resto del intercambio, sobre todo el comportamiento nativo en Windows y el historial transversal, está en <a href="/es/guias/paseo-vs-codeagentswarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Paseo vs CodeAgentSwarm</a>.',
+          text: 'Paseo sigue ganando limpiamente en disponibilidad móvil pública y autoalojamiento. Mobile Connect de CodeAgentSwarm está en alpha, con beta web para todas las cuentas y acceso nativo bajo petición, y el escritorio debe permanecer abierto. Paseo ya publica clientes nativos alrededor de un daemon que alojas tú. El resto del intercambio, sobre todo el comportamiento nativo en Windows y el historial transversal, está en <a href="/es/guias/paseo-vs-codeagentswarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Paseo vs CodeAgentSwarm</a>.',
         },
         {
           type: 'paragraph',

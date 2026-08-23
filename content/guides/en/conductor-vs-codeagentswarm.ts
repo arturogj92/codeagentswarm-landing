@@ -9,14 +9,14 @@ export const guide: Guide = {
     metaDescription: 'Conductor is a Mac-only app for parallel Claude Code, Codex and Cursor agents. CodeAgentSwarm runs seven agent CLIs on macOS and Windows. Honest comparison.',
     intro: `Conductor is a macOS-only app for running Claude Code, Codex and Cursor agents in parallel isolated workspaces, while CodeAgentSwarm is a desktop workspace for macOS and Windows that runs seven agent CLIs in parallel terminals. Same idea, different reach.
 
-Full disclosure: we build CodeAgentSwarm. This page still gives Conductor its due, and where their site does not document something we write "not documented" instead of claiming the feature is missing. Every third-party fact below was checked on July 26, 2026 against conductor.build itself, including their FAQ and the structured data they publish on their homepage.
+Full disclosure: we build CodeAgentSwarm. This page still gives Conductor its due, and where their site does not document something we write "not documented" instead of claiming the feature is missing. Every third-party fact below was checked on July 26, 2026 against conductor.build itself, including their FAQ and the structured data they publish on their homepage. CodeAgentSwarm availability on this page was updated on August 23, 2026.
 
 Short version: if you and your team are all on Macs and you want a native app built around reviewing and merging agent work, Conductor is a focused, credible choice. If anyone touches Windows, or you want more than three agent CLIs, CodeAgentSwarm covers ground Conductor does not.`,
     ctaText: 'Need a parallel agent workspace that also runs on Windows, with seven agent CLIs instead of three? Download CodeAgentSwarm and set up your first batch of parallel terminals.',
     ctaAgent: 'comparison',
     highlightedWords: ['Conductor', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
-    updatedAt: '2026-08-11',
+    updatedAt: '2026-08-23',
     alternateSlug: 'conductor-vs-codeagentswarm',
   },
   sections: [
@@ -96,7 +96,7 @@ Short version: if you and your team are all on Macs and you want a native app bu
         },
         {
           type: 'paragraph',
-          text: 'And the limitations, up front: closed source with no public app repository, no Linux build, no mobile or remote client, still beta software, and you need your own subscriptions for the CLIs you run. Conductor is closed source too, but it is a Mac-native app from a funded company, and if you are a Mac-only shop that focus is worth something.',
+          text: 'And the limitations, up front: closed source with no public app repository, no Linux desktop build, Mobile Connect still in alpha (web beta for every account, native iOS and Android access by request, desktop must stay open), still beta software, and you need your own subscriptions for the CLIs you run. Conductor is closed source too, but it is a Mac-native app from a funded company, and if you are a Mac-only shop that focus is worth something.',
         },
       ],
     },

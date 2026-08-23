@@ -15,6 +15,7 @@ Earn a small number of relevant editorial links and accurate product mentions. D
 - Platforms: macOS and Windows.
 - Pricing: free during the beta.
 - Linux is not available.
+- Mobile Connect is in alpha. The web beta is open to every account, native iOS and Android access is by request, and the desktop must remain open.
 - Canonical URL: https://www.codeagentswarm.com
 
 Verify every fact again against the production site immediately before sending.
@@ -32,7 +33,7 @@ Checked on 2026-08-23. All five pages were live.
 ## Reviewed product blurb
 
 ```text
-CodeAgentSwarm is a closed-source desktop workspace for running and supervising seven AI coding agents in parallel: Claude Code, Codex CLI, Antigravity, OpenCode, Kimi Code, Grok Build and Cursor Agent. It is available on macOS and Windows and free during the beta. Linux is not available.
+CodeAgentSwarm is a closed-source desktop workspace for running and supervising seven AI coding agents in parallel: Claude Code, Codex CLI, Antigravity, OpenCode, Kimi Code, Grok Build and Cursor Agent. It is available on macOS and Windows and free during the beta. Linux is not available. Mobile Connect is in alpha: the web beta is open to every account, native iOS and Android access is by request, and the desktop must remain open.
 ```
 
 ## Reviewed pitch template
@@ -41,6 +42,95 @@ Customize the first sentence for the exact article. Do not invent competitor cor
 
 ```text
 Hi, I build CodeAgentSwarm, a closed-source desktop workspace for running and supervising seven AI coding agents in parallel on macOS and Windows. It supports Claude Code, Codex CLI, Antigravity, OpenCode, Kimi Code, Grok Build and Cursor Agent. It is free during the beta, and Linux is not available. If you are updating this comparison, I would appreciate your consideration. I can provide any factual details you need.
+```
+
+## Tailored drafts awaiting approval
+
+These are the exact proposed messages. Recheck the recipient and page immediately before sending. Do not send any of them without Arturo's explicit final approval.
+
+### Singularity Society
+
+Subject: Factual addition to your parallel-agent guide
+
+```text
+Hi Singularity Society team,
+
+I am Arturo, creator of CodeAgentSwarm. Your August 4 guide already names CodeAgentSwarm in the opening list, but the name is plain text and the decision guide does not describe it. Would you consider linking that mention to https://www.codeagentswarm.com/en and evaluating it for the "you lose track of the work itself" use case?
+
+Factual summary: CodeAgentSwarm is a closed-source macOS and Windows desktop workspace for supervising seven agent CLIs in parallel, with notifications, searchable cross-agent history, live diffs, optional per-session Git worktrees and a task board. It is free during the beta. It has no Linux desktop build. Mobile Connect is in alpha: the web beta is open to every account, native iOS and Android access is by request, and the desktop must remain open.
+
+Please judge whether it belongs in the comparison. I can provide the details you need.
+
+Thanks,
+Arturo García
+```
+
+### Tembo
+
+Subject: Local desktop orchestrator for your 2026 comparison
+
+```text
+Hi Tembo team,
+
+I am Arturo, creator of CodeAgentSwarm. Your guide's coding-native orchestrators section makes a useful distinction between frameworks, coding-native orchestrators and managed platforms. It currently highlights Composio and Conductor. Would you consider evaluating CodeAgentSwarm as another product in that category?
+
+CodeAgentSwarm is a closed-source desktop workspace for macOS and Windows. It runs seven existing agent CLIs in parallel, supports optional per-session Git worktrees, and adds notifications, live diffs, searchable cross-agent history and a task board. It is free during the beta, has no Linux desktop build and is not a managed cloud platform.
+
+Please judge whether it belongs in the comparison. I can provide the details you need.
+
+Thanks,
+Arturo García
+```
+
+### Zevyn Studio
+
+Subject: Candidate for your parallel-agent comparison matrix
+
+```text
+Hi Zevyn Studio team,
+
+I am Arturo, creator of CodeAgentSwarm. Your comparison scores the field on isolation, orchestration, review, agent backends, desktop UX and platform support. Would you consider evaluating CodeAgentSwarm as an additional comparator?
+
+The factual fit for your matrix is: macOS and Windows desktop app, seven agent CLIs, optional per-session Git worktrees, live diff review, notifications, searchable history and a task board. It is closed source, has no Linux desktop build and does not offer Zevyn's one-prompt supervisor and one-click merge flow. It is free during the beta. Mobile Connect is in alpha: the web beta is open to every account, native iOS and Android access is by request, and the desktop must remain open.
+
+Please judge whether it belongs in the comparison. I can provide the details you need.
+
+Thanks,
+Arturo García
+```
+
+### AgentsRoom
+
+Subject: Another visual command center for your 2026 guide
+
+```text
+Hi AgentsRoom team,
+
+I am Arturo, creator of CodeAgentSwarm. Your guide frames the problem as keeping track of agents rather than merely spawning more terminals. CodeAgentSwarm addresses that same problem with a different product boundary, so I would appreciate an editorial evaluation in your next update.
+
+CodeAgentSwarm is a closed-source macOS and Windows desktop workspace for seven agent CLIs, with live status, notifications, searchable cross-agent history, live diffs, optional per-session Git worktrees and a task board. Mobile Connect is in alpha: the web beta is open to every account, native iOS and Android access is by request, and the desktop must remain open. There is no Linux desktop build.
+
+Please judge whether it belongs in the comparison. I can provide the details you need.
+
+Thanks,
+Arturo García
+```
+
+### amux
+
+Subject: Missing dedicated desktop multiplexer for your matrix
+
+```text
+Hi amux team,
+
+I am Arturo, creator of CodeAgentSwarm. Your August guide compares dedicated multiplexers, built-in multi-agent features and cloud platforms across a detailed matrix. Would you consider evaluating CodeAgentSwarm for the dedicated-multiplexer section?
+
+The relevant matrix facts are: parallel sessions, optional per-session Git worktrees, a task board, live status and diffs, macOS and Windows support, and seven agent CLIs. Mobile Connect is in alpha: the web beta is open to every account, native iOS and Android access is by request, and the desktop must remain open. The product is closed source, has no Linux desktop build and is free during the beta.
+
+Please judge whether it belongs in the comparison. I can provide the details you need.
+
+Thanks,
+Arturo García
 ```
 
 ## Send checklist

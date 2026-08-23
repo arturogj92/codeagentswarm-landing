@@ -21,10 +21,13 @@ export default function Header() {
 
   // Check if we're on beta page (no banner)
   const isBetaPage = pathname?.includes('/beta')
+  const isHomePage = pathname === `/${locale}` || pathname === `/${locale}/`
+  const homeSectionHref = (section: string) => isHomePage ? `#${section}` : `/${locale}#${section}`
+  const downloadHref = isBetaPage || isHomePage ? '#download' : `/${locale}#download`
 
   // When scrolled, banner hides so header moves to top
   // When not scrolled, header is below banner
-  const topOffset = isBetaPage
+  const topOffset = isBetaPage || !isHomePage
     ? 'top-0'
     : isScrolled
       ? 'top-0'
@@ -37,9 +40,9 @@ export default function Header() {
         { name: 'FAQ', href: '#beta-faq' },
       ]
     : [
-        { name: t('features'), href: '#feature-videos' },
-        { name: t('pricing'), href: '#pricing' },
-        { name: t('faq'), href: '#faq' },
+        { name: t('features'), href: homeSectionHref('feature-videos') },
+        { name: t('pricing'), href: homeSectionHref('pricing') },
+        { name: t('faq'), href: homeSectionHref('faq') },
       ]
 
   // Throttled scroll handler for performance
@@ -168,7 +171,7 @@ export default function Header() {
           </a>
           <LocaleSwitcher />
           <a
-            href="#download"
+            href={downloadHref}
             onClick={() => {
               if (typeof window !== 'undefined') {
                 window.umami?.track('nav_download_header')
@@ -217,8 +220,9 @@ export default function Header() {
                   href={link.href}
                   className="text-lg text-white/70 hover:text-white transition-colors py-2"
                   onClick={(e) => {
-                    e.preventDefault()
                     setIsMobileMenuOpen(false)
+                    if (!link.href.startsWith('#')) return
+                    e.preventDefault()
                     // Scroll after menu closes
                     setTimeout(() => {
                       const targetId = link.href.replace('#', '')
@@ -263,11 +267,12 @@ export default function Header() {
                 <LocaleSwitcher />
               </div>
               <a
-                href="#download"
+                href={downloadHref}
                 className="mt-4 py-3 px-6 text-center text-black font-semibold rounded-full bg-white hover:bg-neutral-200 transition-colors"
                 onClick={(e) => {
-                  e.preventDefault()
                   setIsMobileMenuOpen(false)
+                  if (!downloadHref.startsWith('#')) return
+                  e.preventDefault()
                   setTimeout(() => {
                     const element = document.getElementById('download')
                     if (element) {

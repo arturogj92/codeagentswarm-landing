@@ -78,8 +78,19 @@ export default function Home() {
       // entidad en vez de reforzarla. x.com/CodeAgentSwarm daba 404 el 2026-07-27.
       sameAs: [
         'https://discord.gg/a9ZqmW9UfQ',
+        'https://x.com/Art0xDev',
+        'https://github.com/arturogj92/codeagentswarm-landing',
         'https://github.com/arturogj92/codeagentswarm-site',
       ],
+      founder: {
+        '@type': 'Person',
+        name: 'Arturo García',
+        sameAs: [
+          'https://github.com/arturogj92',
+          'https://x.com/Art0xDev',
+          'https://art0x.dev',
+        ],
+      },
     },
   }
 

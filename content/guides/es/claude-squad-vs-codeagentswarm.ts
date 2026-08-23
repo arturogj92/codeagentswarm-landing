@@ -9,14 +9,14 @@ export const guide: Guide = {
     metaDescription: 'Claude Squad gestiona agentes de IA en paralelo dentro de tu terminal. CodeAgentSwarm hace lo mismo desde el escritorio. Comparativa honesta verificada en julio de 2026.',
     intro: `Claude Squad gestiona varios agentes de programación con IA dentro de tu terminal. CodeAgentSwarm le da a ese mismo paralelismo una interfaz de escritorio, con notificaciones, historial buscable entre agentes y un tablero kanban que los propios agentes actualizan.
 
-Antes de seguir, transparencia total: CodeAgentSwarm lo hacemos nosotros. Justo por eso esta página dice dónde gana Claude Squad y enumera nuestros límites en voz alta (código cerrado, solo macOS y Windows, sin app móvil, todavía en beta, y tú pones tus propias suscripciones de agentes). Los dos se juzgan con los mismos criterios, y cada dato de terceros se verificó el 26 de julio de 2026 en la web del fabricante, su README público y los datos públicos de GitHub.
+Antes de seguir, transparencia total: CodeAgentSwarm lo hacemos nosotros. Justo por eso esta página dice dónde gana Claude Squad y enumera nuestros límites en voz alta (código cerrado, sin build de escritorio para Linux, Mobile Connect aún en alpha, todavía en beta, y tú pones tus propias suscripciones de agentes). Los dos se juzgan con los mismos criterios, y cada dato de terceros se verificó el 26 de julio de 2026 en la web del fabricante, su README público y los datos públicos de GitHub. La disponibilidad de CodeAgentSwarm en esta página se actualizó el 23 de agosto de 2026.
 
 Resumen rápido: si vives en la terminal, trabajas por SSH en máquinas remotas y quieres código abierto AGPL, Claude Squad te encaja mejor. Si prefieres una ventana de escritorio con notificaciones, historial entre agentes, diffs en vivo y siete proveedores en el mismo sitio, eso es lo que construimos nosotros.`,
     ctaText: 'Si quieres los mismos agentes en paralelo pero con ventana de escritorio, notificaciones e historial buscable de todos los agentes, descarga CodeAgentSwarm y pruébalo junto a Claude Squad.',
     ctaAgent: 'comparison',
     highlightedWords: ['Claude Squad', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
-    updatedAt: '2026-08-11',
+    updatedAt: '2026-08-23',
     alternateSlug: 'claude-squad-vs-codeagentswarm',
   },
   sections: [
@@ -96,7 +96,7 @@ Resumen rápido: si vives en la terminal, trabajas por SSH en máquinas remotas 
         },
         {
           type: 'paragraph',
-          text: 'Nuestros límites, sin adornos: la app es de código cerrado y no tiene repositorio público, solo se distribuye para macOS y Windows, no hay app móvil, sigue en beta (gratis y con Pro incluido durante ese periodo) y no somos proveedor de modelos, así que pones tus suscripciones de Claude, OpenAI u otras.',
+          text: 'Nuestros límites, sin adornos: la app es de código cerrado y no tiene repositorio público, el escritorio solo se distribuye para macOS y Windows, Mobile Connect sigue en alpha (beta web para todas las cuentas, acceso nativo para iOS y Android bajo petición y el escritorio debe seguir abierto), seguimos en beta con Pro incluido y no somos proveedor de modelos, así que pones tus suscripciones de Claude, OpenAI u otras.',
         },
       ],
     },

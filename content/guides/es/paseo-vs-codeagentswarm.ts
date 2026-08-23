@@ -9,14 +9,14 @@ export const guide: Guide = {
     metaDescription: 'Paseo es un orquestador open source autoalojado que controlas desde el móvil. CodeAgentSwarm es una app de escritorio para macOS y Windows con siete CLIs de agentes.',
     intro: `Paseo es un orquestador open source que montas tú mismo y que puedes supervisar desde el móvil; CodeAgentSwarm es una app de escritorio para macOS y Windows que ejecuta siete CLIs de agentes en terminales paralelos. Ahí está la diferencia en una frase, y casi toda la decisión sale de ahí.
 
-Aviso: CodeAgentSwarm lo hacemos nosotros. Precisamente por eso esta página dice sin rodeos en qué gana Paseo, en vez de fingir que nos llevamos todas las filas. Los dos se miden con los mismos criterios, nuestras limitaciones están junto a nuestras funciones, y todos los datos de terceros se comprobaron el 26 de julio de 2026 en paseo.sh, en el repositorio público getpaseo/paseo y en los datos públicos de GitHub.
+Aviso: CodeAgentSwarm lo hacemos nosotros. Precisamente por eso esta página dice sin rodeos en qué gana Paseo, en vez de fingir que nos llevamos todas las filas. Los dos se miden con los mismos criterios, nuestras limitaciones están junto a nuestras funciones, y todos los datos de terceros se comprobaron el 26 de julio de 2026 en paseo.sh, en el repositorio público getpaseo/paseo y en los datos públicos de GitHub. La disponibilidad de CodeAgentSwarm en esta página se actualizó el 23 de agosto de 2026.
 
 Resumen rápido: si quieres lanzar una tarea en el escritorio y revisarla desde el tren, o necesitas software que puedas alojar y auditar tú, Paseo encaja mejor. Si trabajas en un Mac o en un Windows y quieres siete CLIs de agentes, un tablero compartido y un historial buscable de todas ellas, ahí es donde CodeAgentSwarm tiene sentido.`,
     ctaText: 'Si tu trabajo pasa delante del ordenador, en macOS o Windows, y quieres siete CLIs de agentes, diffs en vivo y un tablero compartido en una sola ventana, descarga CodeAgentSwarm y lanza tu próxima tanda de agentes en paralelo.',
     ctaAgent: 'comparison',
     highlightedWords: ['Paseo', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
-    updatedAt: '2026-08-11',
+    updatedAt: '2026-08-23',
     alternateSlug: 'paseo-vs-codeagentswarm',
   },
   sections: [
@@ -64,7 +64,7 @@ Resumen rápido: si quieres lanzar una tarea en el escritorio y revisarla desde 
         },
         {
           type: 'paragraph',
-          text: 'Es un producto potente y no vamos a disimularlo. Lo del móvil, sobre todo, no es una casilla marcada por marcar: presumen de paridad entre la app del teléfono y la de escritorio. CodeAgentSwarm no tiene nada parecido.',
+          text: 'Es un producto potente y no vamos a disimularlo. Lo del móvil, sobre todo, no es una casilla marcada por marcar: presumen de paridad entre la app del teléfono y la de escritorio. CodeAgentSwarm ofrece Mobile Connect en alpha, con beta web para todas las cuentas y acceso nativo bajo petición mientras el escritorio sigue abierto. Eso no equivale a los clientes nativos públicos de Paseo.',
         },
       ],
     },
@@ -97,7 +97,7 @@ Resumen rápido: si quieres lanzar una tarea en el escritorio y revisarla desde 
         },
         {
           type: 'paragraph',
-          text: 'Las limitaciones, sin adornos: código cerrado y sin repositorio público, sin versión para Linux, sin cliente móvil ni remoto, todavía en beta, y necesitas tus propias suscripciones para las CLIs que uses. Si alguna de esas cosas es innegociable para ti, la recomendación honesta es Paseo.',
+          text: 'Las limitaciones, sin adornos: código cerrado y sin repositorio público, sin versión de escritorio para Linux, Mobile Connect aún en alpha (beta web para todas las cuentas, acceso nativo para iOS y Android bajo petición y el escritorio debe seguir abierto), todavía en beta, y necesitas tus propias suscripciones para las CLIs que uses. Si necesitas clientes nativos públicos, Linux o autoalojamiento, la recomendación honesta es Paseo.',
         },
       ],
     },
@@ -112,12 +112,12 @@ Resumen rápido: si quieres lanzar una tarea en el escritorio y revisarla desde 
             [
               '<strong>Plataformas</strong>',
               'Escritorio en macOS, Windows y Linux, apps de iOS y Android, web y CLI',
-              'App de escritorio para macOS y Windows. Sin versión para Linux',
+              'App de escritorio para macOS y Windows. Mobile Connect en alpha: beta web para todas las cuentas, acceso nativo para iOS y Android bajo petición y el escritorio debe seguir abierto. Sin versión para Linux',
             ],
             [
               '<strong>Interfaz</strong>',
               'Daemon autoalojado más clientes de escritorio, móvil, web y CLI',
-              'Un único workspace de escritorio con terminales, diffs y tablero',
+              'Workspace de escritorio más Mobile Connect en alpha. El escritorio debe seguir abierto',
             ],
             [
               '<strong>Agentes soportados</strong>',
@@ -175,7 +175,7 @@ Resumen rápido: si quieres lanzar una tarea en el escritorio y revisarla desde 
         {
           type: 'list',
           items: [
-            '<strong>Quieres supervisar agentes desde el móvil.</strong> Paseo tiene apps nativas de iOS y Android. CodeAgentSwarm es solo de escritorio, así que aquí no hay nada que comparar.',
+            '<strong>Quieres acceso móvil nativo público hoy.</strong> Paseo tiene apps públicas de iOS y Android. Mobile Connect de CodeAgentSwarm sigue en alpha, el acceso nativo es bajo petición y el escritorio debe permanecer abierto.',
             '<strong>Necesitas autoalojarlo.</strong> Paseo es un daemon que levantas en tu portátil, tu VM o tu servidor. Esa es su arquitectura, no un extra.',
             '<strong>El open source es un requisito.</strong> El código está bajo AGPLv3: lo puedes leer y seguir usando pase lo que pase con la empresa. Con nosotros te toca fiarte.',
             '<strong>Te importan la telemetría y los logins obligatorios.</strong> Paseo declara que no tiene ninguna de las dos cosas, respuesta fácil si te lo pregunta compras.',
@@ -237,7 +237,7 @@ Resumen rápido: si quieres lanzar una tarea en el escritorio y revisarla desde 
     },
     {
       question: '¿Puedo supervisar CodeAgentSwarm desde el móvil?',
-      answer: 'No. CodeAgentSwarm es una aplicación de escritorio para macOS y Windows, sin app móvil ni cliente remoto. Aquí gana Paseo con claridad: tiene apps nativas de iOS y Android más un cliente web, todos conectados a un daemon que alojas tú, así que puedes lanzar una tarea en tu mesa y seguirla desde cualquier sitio. Si buscas supervisión desde el móvil, elige Paseo.',
+      answer: 'Sí, mediante Mobile Connect alpha. La beta web está disponible para todas las cuentas, el acceso nativo para iOS y Android se ofrece bajo petición y la app de escritorio debe seguir abierta porque mantiene la fuente de verdad. Paseo sigue ganando en disponibilidad nativa pública y autoalojamiento: sus clientes de iOS, Android y web se conectan a un daemon que ejecutas tú.',
     },
     {
       question: '¿Paseo soporta Antigravity CLI o Kimi Code?',

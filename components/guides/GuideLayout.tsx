@@ -26,7 +26,7 @@ export default function GuideLayout({ guide, relatedGuide }: GuideLayoutProps) {
   const locale = meta.locale
   const toc = extractTOC(sections)
   const t = useTranslations('guides.downloadCta')
-  const authorName = meta.author ?? 'CodeAgentSwarm Team'
+  const authorName = meta.author ?? 'CodeAgentSwarm'
 
   // Breadcrumb configuration
   const guidesLabel = locale === 'es' ? 'Guías' : 'Guides'
@@ -102,7 +102,10 @@ export default function GuideLayout({ guide, relatedGuide }: GuideLayoutProps) {
                 {meta.title}
               </h1>
               <p className="text-sm text-white/40 mb-4">
-                {locale === 'es' ? 'Por ' : 'By '}{authorName}
+                {locale === 'es' ? 'Por ' : 'By '}
+                <Link href={`/${locale}/about`} className="hover:text-white transition-colors">
+                  {authorName}
+                </Link>
                 {(meta.updatedAt || meta.publishedAt) && (
                   <>
                     {' · '}{locale === 'es' ? 'Actualizado el ' : 'Updated '}
