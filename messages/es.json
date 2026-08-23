@@ -275,6 +275,7 @@
     "sending": "Enviando...",
     "success": "Solicitud registrada",
     "successDesc": "Te notificaremos en cuanto {platform} esté disponible.",
+    "error": "No hemos podido añadirte a la lista de espera. Comprueba tu conexión e inténtalo de nuevo. Si sigue fallando, escribe a hello@codeagentswarm.com.",
     "benefit1": "Acceso prioritario en el lanzamiento",
     "benefit2": "Precio especial de early adopter",
     "privacy": "Solo recibirás emails sobre la disponibilidad de {platform}. Sin spam."
@@ -590,7 +591,7 @@
       "titleHighlight": "Empezar",
       "step1": {
         "title": "Descarga la app y crea tu cuenta",
-        "description": "Instala CodeAgentSwarm en macOS e inicia sesión con Google, GitHub o Discord. Automáticamente tendrás acceso Pro."
+        "description": "Instala CodeAgentSwarm en macOS o Windows e inicia sesión con Google, GitHub o Discord. Tu acceso Pro se activa automáticamente."
       },
       "step2": {
         "title": "Comparte tu feedback",
@@ -686,14 +687,14 @@
       "items": {
         "q1": "¿La Beta es realmente gratis?",
         "a1": "Sí. Durante la Open Beta, el plan Pro es completamente gratis, con todas las funciones desbloqueadas y sin tarjeta.",
-        "q2": "¿Necesito una suscripción a Claude Code?",
-        "a2": "Sí. CodeAgentSwarm funciona encima de Claude Code, que es lo que permite la inteligencia de los agentes, las tareas paralelas y el uso de MCP. Necesitas una suscripción activa a Claude Code.",
-        "q3": "¿Se recomienda Claude Code Max?",
-        "a3": "Muy recomendable. Si trabajas en varios proyectos, refactors grandes, bases de código grandes o tareas paralelas, Max da mejor rendimiento y más capacidad.",
+        "q2": "¿Necesito suscripciones a todos los agentes compatibles?",
+        "a2": "No. Usa cualquier cuenta de CLI compatible que ya tengas. Cada proveedor mantiene su propio plan y límites de uso.",
+        "q3": "¿Puedo mezclar cuentas CLI gratuitas y de pago?",
+        "a3": "Sí. Combina cuentas gratuitas y de pago como prefieras. Se aplican el plan y los límites de uso de cada proveedor.",
         "q4": "¿Como puedo dar feedback?",
         "a4": "Nos encanta escuchar a nuestros usuarios. Envia tu feedback, reportes de bugs o peticiones de features a hello@codeagentswarm.com y te responderemos.",
         "q5": "¿Qué pasa cuando termine la Beta?",
-        "a5": "Tú eliges: seguir en Free, pasar a Pro o dejar de usarla. No hay cargos automáticos. Los founders que se unan durante la beta mantendrán el precio original de Pro para siempre.",
+        "a5": "Puedes seguir en Free, pasar a Pro o dejar de usar la app. No hay cargos automáticos. Los founders que se unan durante la beta mantienen el precio original de Pro durante su primer año.",
         "q6": "¿Qué sistema operativo necesito?",
         "a6": "macOS 12 o superior y Windows 10/11 (x64 y ARM64). Linux más adelante.",
         "q7": "¿CodeAgentSwarm almacena mi código?",

@@ -1,7 +1,8 @@
 import { Metadata } from 'next'
 import { notFound, permanentRedirect } from 'next/navigation'
 import { setRequestLocale } from 'next-intl/server'
-import { getGuide, getGuideSlugs } from '@/content/guides'
+import { getAllGuides, getGuide, getGuideSlugs } from '@/content/guides'
+import { pickRelatedGuideMeta } from '@/content/guides/types'
 import { GuideLayout } from '@/components/guides'
 
 const baseUrl = 'https://www.codeagentswarm.com'
@@ -103,6 +104,7 @@ export default async function GuiaPage({ params }: PageProps) {
   if (!guide) {
     notFound()
   }
+  const relatedGuide = pickRelatedGuideMeta(getAllGuides('es'), guide)
 
   // JSON-LD structured data - Article
   const jsonLdArticle = {
@@ -196,7 +198,7 @@ export default async function GuiaPage({ params }: PageProps) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }}
         />
       )}
-      <GuideLayout guide={guide} />
+      <GuideLayout guide={guide} relatedGuide={relatedGuide} />
     </>
   )
 }

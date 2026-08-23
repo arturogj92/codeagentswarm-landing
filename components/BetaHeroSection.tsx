@@ -8,13 +8,9 @@ import Image from 'next/image'
 export default function BetaHeroSection() {
   const t = useTranslations('beta.hero')
 
-  const scrollToForm = () => {
+  const trackBetaCta = () => {
     if (typeof window !== 'undefined') {
       window.umami?.track('beta_cta_click')
-    }
-    const formElement = document.getElementById('beta-signup-form')
-    if (formElement) {
-      formElement.scrollIntoView({ behavior: 'smooth', block: 'center' })
     }
   }
 
@@ -71,6 +67,36 @@ export default function BetaHeroSection() {
           </p>
         </motion.div>
 
+        {/* CTA Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8"
+        >
+          {/* Primary CTA */}
+          <a
+            href="#download"
+            onClick={trackBetaCta}
+            className="group relative"
+          >
+            <div className="absolute -inset-0.5 rounded-full blur-sm opacity-30 group-hover:opacity-70 transition-opacity bg-neon-cyan" />
+            <div className="relative flex items-center gap-2 px-8 py-4 text-black font-bold rounded-full transition-all bg-neon-cyan hover:bg-amber-400 hover:scale-105">
+              <Sparkles className="w-5 h-5" />
+              {t('primaryCta')}
+            </div>
+          </a>
+
+          {/* Secondary CTA */}
+          <button
+            onClick={scrollToFeatures}
+            className="group flex items-center gap-2 px-6 py-4 text-white/70 hover:text-white font-medium transition-colors"
+          >
+            {t('secondaryCta')}
+            <ChevronDown className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
+          </button>
+        </motion.div>
+
         {/* Product Image with modern effects */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -107,34 +133,6 @@ export default function BetaHeroSection() {
           </div>
         </motion.div>
 
-        {/* CTA Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.6 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8"
-        >
-          {/* Primary CTA */}
-          <button
-            onClick={scrollToForm}
-            className="group relative"
-          >
-            <div className="absolute -inset-0.5 rounded-full blur-sm opacity-30 group-hover:opacity-70 transition-opacity bg-neon-cyan" />
-            <div className="relative flex items-center gap-2 px-8 py-4 text-black font-bold rounded-full transition-all bg-neon-cyan hover:bg-amber-400 hover:scale-105">
-              <Sparkles className="w-5 h-5" />
-              {t('primaryCta')}
-            </div>
-          </button>
-
-          {/* Secondary CTA */}
-          <button
-            onClick={scrollToFeatures}
-            className="group flex items-center gap-2 px-6 py-4 text-white/70 hover:text-white font-medium transition-colors"
-          >
-            {t('secondaryCta')}
-            <ChevronDown className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
-          </button>
-        </motion.div>
       </div>
     </section>
   )

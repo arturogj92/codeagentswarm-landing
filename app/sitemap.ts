@@ -50,6 +50,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.8,
     },
+    ...(['privacy', 'terms', 'cookies'] as const).flatMap((slug) => [
+      {
+        url: `${baseUrl}/en/${slug}`,
+        changeFrequency: 'yearly' as const,
+        priority: 0.2,
+      },
+      {
+        url: `${baseUrl}/es/${slug}`,
+        changeFrequency: 'yearly' as const,
+        priority: 0.2,
+      },
+    ]),
   ];
 
   // Dynamic guide pages - English

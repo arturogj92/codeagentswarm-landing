@@ -5,9 +5,8 @@ import { ArrowRight, BookOpen } from 'lucide-react'
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 import { useEffect } from 'react'
-import type { Guide } from '@/content/guides/types'
-import { CTA_AGENT_MESSAGE_KEY } from '@/content/guides/types'
-import { extractTOC, getAllGuides } from '@/content/guides'
+import type { Guide, RelatedGuideMeta } from '@/content/guides/types'
+import { CTA_AGENT_MESSAGE_KEY, extractTOC } from '@/content/guides/types'
 import GuidesHeader from './GuidesHeader'
 import Breadcrumbs from './Breadcrumbs'
 import TableOfContents from './TableOfContents'
@@ -19,9 +18,10 @@ import GuideDownloadButton from './GuideDownloadButton'
 
 interface GuideLayoutProps {
   guide: Guide
+  relatedGuide: RelatedGuideMeta | null
 }
 
-export default function GuideLayout({ guide }: GuideLayoutProps) {
+export default function GuideLayout({ guide, relatedGuide }: GuideLayoutProps) {
   const { meta, sections, faq } = guide
   const locale = meta.locale
   const toc = extractTOC(sections)
@@ -64,14 +64,6 @@ export default function GuideLayout({ guide }: GuideLayoutProps) {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [meta.slug])
-
-  // Keep the crawlable recommendation inside the same topic instead of
-  // sending readers and search engines to an unrelated guide.
-  const relatedGuides = getAllGuides(locale)
-    .filter((g) => g.meta.slug !== meta.slug && g.meta.ctaAgent === meta.ctaAgent)
-    .sort((a, b) => a.meta.slug.localeCompare(b.meta.slug))
-  const slugHash = meta.slug.split('').reduce((acc, c) => acc + c.charCodeAt(0), 0)
-  const relatedGuide = relatedGuides.length > 0 ? relatedGuides[slugHash % relatedGuides.length] : null
 
   // Localized text
   const recommendedTitle = locale === 'es' ? 'También te puede interesar' : 'You might also like'
@@ -199,17 +191,17 @@ export default function GuideLayout({ guide }: GuideLayoutProps) {
                 <h3 className="text-xl font-semibold text-white mb-6">{recommendedTitle}</h3>
                 <div className="p-6 rounded-xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent hover:border-neon-cyan/30 transition-all group">
                   <Link
-                    href={`/${locale}/${locale === 'es' ? 'guias' : 'guides'}/${relatedGuide.meta.slug}`}
+                    href={`/${locale}/${locale === 'es' ? 'guias' : 'guides'}/${relatedGuide.slug}`}
                     onClick={() => {
-                      window.umami?.track('guide_related_click', { from: meta.slug, to: relatedGuide.meta.slug })
+                      window.umami?.track('guide_related_click', { from: meta.slug, to: relatedGuide.slug })
                     }}
                     className="block"
                   >
                     <h4 className="text-lg font-semibold text-white mb-3 group-hover:text-neon-cyan transition-colors">
-                      {relatedGuide.meta.title}
+                      {relatedGuide.title}
                     </h4>
                     <p className="text-white/70 leading-relaxed line-clamp-3 mb-4">
-                      {relatedGuide.meta.intro.split('\n')[0]}
+                      {relatedGuide.intro.split('\n')[0]}
                     </p>
                     <span className="inline-flex items-center gap-2 text-neon-cyan text-sm font-medium">
                       {locale === 'es' ? 'Leer guía' : 'Read guide'}

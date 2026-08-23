@@ -18,13 +18,6 @@ export default function BetaPricingSection() {
   const sectionRef = useRef(null)
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' })
 
-  const scrollToForm = () => {
-    const formElement = document.getElementById('beta-signup-form')
-    if (formElement) {
-      formElement.scrollIntoView({ behavior: 'smooth', block: 'center' })
-    }
-  }
-
   const plans = [
     {
       name: t('plans.free.name'),
@@ -276,13 +269,14 @@ export default function BetaPricingSection() {
 
                   {/* CTA Button */}
                   {plan.isBeta ? (
-                    <button
-                      onClick={scrollToForm}
+                    <a
+                      href="#download"
+                      onClick={() => window.umami?.track('beta_pricing_cta_click')}
                       className="flex items-center justify-center gap-2 w-full py-3 px-6 rounded-xl font-bold transition-all duration-300 bg-neon-cyan text-black hover:bg-amber-400"
                     >
                       {plan.cta}
                       <Sparkles className="w-4 h-4" />
-                    </button>
+                    </a>
                   ) : (
                     <a
                       href="#download"
