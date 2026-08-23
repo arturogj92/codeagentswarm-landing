@@ -7,7 +7,7 @@ const privacyEn: LegalDoc = {
   metaTitle: 'Privacy Policy | CodeAgentSwarm',
   metaDescription:
     'How CodeAgentSwarm handles your data: what we collect, what we never collect, who processes it, how long we keep it and how to exercise your GDPR rights.',
-  lastUpdated: '2026-06-22',
+  lastUpdated: '2026-08-23',
   intro:
     'This Privacy Policy explains what personal data CodeAgentSwarm collects when you use the desktop application and this website, why we collect it, who we share it with, and the rights you have over it. We have written it to match exactly what our software actually does. If anything here is unclear, email us at hello@codeagentswarm.com.',
   sections: [
@@ -36,7 +36,7 @@ const privacyEn: LegalDoc = {
         },
         {
           type: 'paragraph',
-          text: 'What we do collect is limited to: anonymous usage and error information that helps us keep the app working; the account details you give us if you choose to sign in; the messages you send to our in-app help assistant or to our support, feedback and survey forms; and billing status if you ever subscribe to a paid plan. Each of these is described in detail below.',
+          text: 'What we do collect is limited to: usage and error information that helps us keep the app working; the account details you give us if you choose to sign in; the messages you send to our in-app help assistant or to our support, feedback and survey forms; and billing status if you ever subscribe to a paid plan. Each of these is described in detail below.',
         },
       ],
     },
@@ -65,12 +65,12 @@ const privacyEn: LegalDoc = {
       blocks: [
         {
           type: 'heading',
-          text: 'a) Anonymous usage analytics (desktop app)',
+          text: 'a) Usage analytics (desktop app)',
           id: 'collected-analytics',
         },
         {
           type: 'paragraph',
-          text: 'In production builds, the app records which in-app actions are used (for example, opening a terminal or pressing a button), together with the app version and a random session identifier stored locally on your device. This is sent to our own backend. It does not include your name, email, file paths, code or terminal content. If you are signed in, these events can be associated with your account.',
+          text: 'In production builds, the app records successful launches and which in-app actions are used (for example, opening a terminal or pressing a button), together with the app version, operating system, processor architecture, a random session identifier and a separate random analytics installation identifier stored locally on your device. The installation identifier lets us measure first use and whether an installation returns. This is sent to our own backend. It does not include your name, email, file paths, code or terminal content. Events are not associated with your account while you are signed out; if you sign in, they can be associated with your account.',
         },
         {
           type: 'heading',

@@ -7,7 +7,7 @@ const privacyEs: LegalDoc = {
   metaTitle: 'Política de Privacidad | CodeAgentSwarm',
   metaDescription:
     'Cómo trata CodeAgentSwarm tus datos: qué recogemos, qué no recogemos nunca, quién los procesa, cuánto los conservamos y cómo ejercer tus derechos RGPD.',
-  lastUpdated: '2026-06-22',
+  lastUpdated: '2026-08-23',
   intro:
     'Esta Política de Privacidad explica qué datos personales recoge CodeAgentSwarm cuando usas la aplicación de escritorio y este sitio web, por qué los recogemos, con quién los compartimos y qué derechos tienes sobre ellos. La hemos redactado para que coincida exactamente con lo que hace nuestro software. Si algo no queda claro, escríbenos a hello@codeagentswarm.com.',
   sections: [
@@ -36,7 +36,7 @@ const privacyEs: LegalDoc = {
         },
         {
           type: 'paragraph',
-          text: 'Lo que sí recogemos se limita a: información anónima de uso y de errores que nos ayuda a mantener la app funcionando; los datos de cuenta que nos das si decides iniciar sesión; los mensajes que envías al asistente de ayuda dentro de la app o a nuestros formularios de soporte, feedback y encuestas; y el estado de facturación si algún día contratas un plan de pago. Cada uno se detalla más abajo.',
+          text: 'Lo que sí recogemos se limita a: información de uso y de errores que nos ayuda a mantener la app funcionando; los datos de cuenta que nos das si decides iniciar sesión; los mensajes que envías al asistente de ayuda dentro de la app o a nuestros formularios de soporte, feedback y encuestas; y el estado de facturación si algún día contratas un plan de pago. Cada uno se detalla más abajo.',
         },
       ],
     },
@@ -65,12 +65,12 @@ const privacyEs: LegalDoc = {
       blocks: [
         {
           type: 'heading',
-          text: 'a) Analítica anónima de uso (app de escritorio)',
+          text: 'a) Analítica de uso (app de escritorio)',
           id: 'collected-analytics',
         },
         {
           type: 'paragraph',
-          text: 'En las versiones de producción, la app registra qué acciones se usan dentro de la app (por ejemplo, abrir una terminal o pulsar un botón), junto con la versión de la app y un identificador de sesión aleatorio guardado localmente en tu dispositivo. Esto se envía a nuestro propio backend. No incluye tu nombre, email, rutas de archivo, código ni contenido de las terminales. Si has iniciado sesión, estos eventos pueden asociarse a tu cuenta.',
+          text: 'En las versiones de producción, la app registra los arranques correctos y qué acciones se usan dentro de la app (por ejemplo, abrir una terminal o pulsar un botón), junto con la versión de la app, el sistema operativo, la arquitectura del procesador, un identificador de sesión aleatorio y otro identificador aleatorio de instalación para analítica guardado localmente en tu dispositivo. El identificador de instalación nos permite medir el primer uso y si una instalación vuelve. Esto se envía a nuestro propio backend. No incluye tu nombre, email, rutas de archivo, código ni contenido de las terminales. Los eventos no se asocian a tu cuenta mientras no has iniciado sesión; si inicias sesión, pueden asociarse a tu cuenta.',
         },
         {
           type: 'heading',
