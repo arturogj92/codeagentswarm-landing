@@ -12,6 +12,7 @@ const VIDEO_CDN_BASE =
 // shifts layout when the video loads.
 const VIDEO_ASPECT: Record<string, number> = {
   'terminals.mp4': 1660 / 1080,
+  'terminals-list.mp4': 16 / 9,
   'multi-model.mp4': 1660 / 1080,
   'conversation_history.mp4': 1800 / 1080,
   'gitmanager.mp4': 972 / 720,
@@ -25,6 +26,9 @@ export function pickGuideVideo(slug: string): string {
   const s = slug.toLowerCase()
   const has = (...words: string[]) => words.some((w) => s.includes(w))
 
+  if (has('multiple-claude-code-accounts', 'varias-cuentas-claude-code-codex')) {
+    return 'terminals-list.mp4'
+  }
   if (has('history', 'historial', 'conversation', 'conversacion')) {
     return 'conversation_history.mp4'
   }

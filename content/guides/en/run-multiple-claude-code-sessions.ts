@@ -43,6 +43,10 @@ In this guide I will walk you through the three main methods, compare them hones
         },
         {
           type: 'paragraph',
+          text: 'Several sessions can share one login. If you need personal and work subscriptions signed in side by side, the <a href="/en/guides/multiple-claude-code-accounts" class="text-neon-cyan hover:text-neon-purple transition-colors">multiple Claude Code and Codex accounts guide</a> covers account isolation, defaults, switching and per-account quota.',
+        },
+        {
+          type: 'paragraph',
           text: 'The question is really about how you manage those sessions once you have more than one or two running. That is where the three methods below come in.',
         },
       ],

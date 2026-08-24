@@ -43,6 +43,10 @@ En esta guía te explico los tres métodos principales, los comparo de forma hon
         },
         {
           type: 'paragraph',
+          text: 'Varias sesiones pueden compartir un solo login. Si necesitas mantener iniciadas a la vez suscripciones personales y de trabajo, la guía sobre <a href="/es/guias/varias-cuentas-claude-code-codex" class="text-neon-cyan hover:text-neon-purple transition-colors">varias cuentas de Claude Code y Codex</a> explica el aislamiento, las cuentas predeterminadas, el cambio de cuenta y la cuota por cuenta.',
+        },
+        {
+          type: 'paragraph',
           text: 'La cuestión real es cómo gestionas esas sesiones una vez que tienes más de una o dos funcionando. Ahí es donde entran los tres métodos que te explico a continuación.',
         },
       ],

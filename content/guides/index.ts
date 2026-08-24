@@ -9,6 +9,7 @@ import enNotifications from './en/codeagentswarm-notifications'
 import enRealTimeChanges from './en/view-claude-code-changes-real-time'
 import enHistoryCompleteGuide from './en/claude-code-history-complete-guide'
 import enRunMultipleSessions from './en/run-multiple-claude-code-sessions'
+import enMultipleAccounts from './en/multiple-claude-code-accounts'
 import enTipsAndTricks from './en/claude-code-tips-and-tricks'
 import enYoloModeExplained from './en/claude-code-yolo-mode-explained'
 import enClaudeCodeVsCursorVsCodex from './en/claude-code-vs-cursor-vs-codex'
@@ -69,6 +70,7 @@ import esNotificaciones from './es/notificaciones-codeagentswarm'
 import esRealTimeChanges from './es/ver-cambios-claude-code-tiempo-real'
 import esHistorialCompleteGuide from './es/guia-completa-historial-claude-code'
 import esRunMultipleSessions from './es/ejecutar-multiples-sesiones-claude-code'
+import esMultipleAccounts from './es/varias-cuentas-claude-code-codex'
 import esTipsAndTricks from './es/trucos-y-consejos-claude-code'
 import esYoloModeExplained from './es/modo-yolo-claude-code-explicado'
 import esClaudeCodeVsCursorVsCodex from './es/claude-code-vs-cursor-vs-codex'
@@ -147,6 +149,7 @@ export const guides: Record<string, Record<string, Guide>> = {
     'view-claude-code-changes-real-time': enRealTimeChanges,
     'claude-code-history-complete-guide': enHistoryCompleteGuide,
     'run-multiple-claude-code-sessions': enRunMultipleSessions,
+    'multiple-claude-code-accounts': enMultipleAccounts,
     'claude-code-tips-and-tricks': enTipsAndTricks,
     'claude-code-yolo-mode-explained': enYoloModeExplained,
     'claude-code-vs-cursor-vs-codex': enClaudeCodeVsCursorVsCodex,
@@ -215,6 +218,7 @@ export const guides: Record<string, Record<string, Guide>> = {
     'ver-cambios-claude-code-tiempo-real': esRealTimeChanges,
     'guia-completa-historial-claude-code': esHistorialCompleteGuide,
     'ejecutar-multiples-sesiones-claude-code': esRunMultipleSessions,
+    'varias-cuentas-claude-code-codex': esMultipleAccounts,
     'trucos-y-consejos-claude-code': esTipsAndTricks,
     'modo-yolo-claude-code-explicado': esYoloModeExplained,
     'claude-code-vs-cursor-vs-codex': esClaudeCodeVsCursorVsCodex,

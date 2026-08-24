@@ -49,6 +49,10 @@ This guide walks through the three practical ways to run several Codex CLI sessi
         },
         {
           type: 'paragraph',
+          text: 'Several sessions can share one login. If you need personal and work subscriptions signed in side by side, the <a href="/en/guides/multiple-claude-code-accounts" class="text-neon-cyan hover:text-neon-purple transition-colors">multiple Claude Code and Codex accounts guide</a> covers account isolation, defaults, switching and per-account quota.',
+        },
+        {
+          type: 'paragraph',
           text: 'The real question is how you keep several sessions legible once you go past one or two. That is what the three methods below are about.',
         },
       ],

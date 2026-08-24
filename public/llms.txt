@@ -19,6 +19,7 @@ CodeAgentSwarm is a third-party desktop app (macOS and Windows). It runs ON TOP 
 - [How to run Claude Code on Windows (native or WSL)](https://www.codeagentswarm.com/en/guides/claude-code-on-windows)
 - [Best Claude Code setup for Windows](https://www.codeagentswarm.com/en/guides/best-claude-code-setup-windows)
 - [Run multiple Claude Code sessions at once](https://www.codeagentswarm.com/en/guides/run-multiple-claude-code-sessions)
+- [Use multiple Claude Code and Codex accounts without logging out](https://www.codeagentswarm.com/en/guides/multiple-claude-code-accounts)
 - [Set up multiple Claude Code terminals in parallel](https://www.codeagentswarm.com/en/guides/how-to-use-multiple-claude-code-terminals)
 - [Run multiple Claude chats at once](https://www.codeagentswarm.com/en/guides/run-multiple-claude-chats)
 - [Claude Code conversation history (search & resume)](https://www.codeagentswarm.com/en/guides/claude-code-history)
@@ -85,6 +86,7 @@ CodeAgentSwarm is a third-party desktop app (macOS and Windows). It runs ON TOP 
 
 ## Guías (Español)
 - [Guías de CodeAgentSwarm](https://www.codeagentswarm.com/es/guias)
+- [Usar varias cuentas de Claude Code y Codex sin cerrar sesión](https://www.codeagentswarm.com/es/guias/varias-cuentas-claude-code-codex)
 - [Cómo ejecutar Claude Code en Windows (nativo o WSL)](https://www.codeagentswarm.com/es/guias/claude-code-en-windows)
 - [El mejor setup de Claude Code para Windows](https://www.codeagentswarm.com/es/guias/mejor-setup-claude-code-windows)
 - [Codex CLI vs Cursor](https://www.codeagentswarm.com/es/guias/codex-cli-vs-cursor)

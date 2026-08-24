@@ -49,6 +49,10 @@ En esta guía te explico las tres formas reales de ejecutar varias sesiones de C
         },
         {
           type: 'paragraph',
+          text: 'Varias sesiones pueden compartir un solo login. Si necesitas mantener iniciadas a la vez suscripciones personales y de trabajo, la guía sobre <a href="/es/guias/varias-cuentas-claude-code-codex" class="text-neon-cyan hover:text-neon-purple transition-colors">varias cuentas de Claude Code y Codex</a> explica el aislamiento, las cuentas predeterminadas, el cambio de cuenta y la cuota por cuenta.',
+        },
+        {
+          type: 'paragraph',
           text: 'La cuestión real es cómo mantienes varias sesiones bajo control una vez que pasas de una o dos. De eso van los tres métodos de abajo.',
         },
       ],
