@@ -6,7 +6,7 @@ export const guide: Guide = {
     locale: 'es',
     title: 'Cómo ejecutar varios terminales de Claude Code en paralelo con CodeAgentSwarm',
     metaTitle: 'Cómo configurar varios terminales de Claude Code en paralelo (CodeAgentSwarm, 2026)',
-    metaDescription: 'Cómo ejecutar varios terminales de Claude Code al mismo tiempo. Configura sesiones paralelas, gestiona agentes concurrentes y resuelve conflictos automáticamente. También funciona con Codex CLI y Gemini CLI.',
+    metaDescription: 'Ejecuta varios terminales de Claude Code en paralelo con sesiones aisladas, diffs en vivo y avisos. Incluye configuración y prevención de conflictos.',
     intro: `Si alguna vez has intentado tener varias conversaciones de Claude Code simultaneas, ya sabes cómo acaba la película: pestañas abiertas por todos lados, pierdes el hilo y terminas pensando "¿pero en qué punto iba yo?".
 
 Yo he pasado por eso. Y justo para evitar ese caos monté CodeAgentSwarm: para que trabajar en paralelo sea algo normal, cómodo y sin saturarte.
@@ -16,7 +16,7 @@ En esta guía te explico, tal cual se lo contaría a un amigo, cómo usar varios
     ctaAgent: 'claude-code',
     highlightedWords: ['varios terminales', 'Claude Code'],
     publishedAt: '2026-02-01',
-    updatedAt: '2026-04-15',
+    updatedAt: '2026-08-11',
     alternateSlug: 'how-to-use-multiple-claude-code-terminals',
   },
   sections: [

@@ -14,7 +14,7 @@ CodeAgentSwarm has a built-in kanban-style Agent Task Board with four columns: P
 In this guide I will walk through what the task board is, how the agents keep it current on their own, and why that one detail changes how it feels to run several Claude Code sessions at once.`,
     highlightedWords: ['Task Management', 'Kanban Board', 'AI Agents'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-06-07',
+    updatedAt: '2026-08-11',
     ctaText: 'Open the Agent Task Board, assign a task to a terminal, and watch the AI move its own card from Pending to Completed.',
     ctaAgent: 'claude-code',
     alternateSlug: 'gestion-de-tareas-claude-code',
@@ -141,7 +141,7 @@ In this guide I will walk through what the task board is, how the agents keep it
       content: [
         {
           type: 'paragraph',
-          text: 'A single agent working on a single task does not really need a board. The board earns its keep the moment you have several agents going at once, which is exactly what CodeAgentSwarm is built for. It runs multiple AI CLI terminals (Claude Code, Codex CLI, Gemini CLI) in parallel, and once you have four or five of them working, "what is each one doing" stops being a question you can answer from memory.',
+          text: 'A single agent working on a single task does not really need a board. The board earns its keep the moment you have several agents going at once, which is exactly what CodeAgentSwarm is built for. It runs multiple AI CLI terminals (Claude Code, Codex CLI, Antigravity CLI) in parallel, and once you have four or five of them working, "what is each one doing" stops being a question you can answer from memory.',
         },
         {
           type: 'paragraph',

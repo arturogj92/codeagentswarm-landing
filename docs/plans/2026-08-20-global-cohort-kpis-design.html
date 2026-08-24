@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>CodeAgentSwarm · Cohort health proposal</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #090909;
+      --panel: #111;
+      --field: #0b0b0b;
+      --border: rgba(255, 255, 255, .09);
+      --soft: rgba(255, 255, 255, .055);
+      --text: rgba(255, 255, 255, .9);
+      --muted: rgba(255, 255, 255, .55);
+      --faint: rgba(255, 255, 255, .36);
+      --amber: #fcd34d;
+      --green: #6ee7b7;
+      --red: #fda4af;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-width: 320px; background: var(--bg); color: var(--text); font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; }
+    button, select { font: inherit; }
+    button:focus-visible, select:focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; }
+    .demo { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; gap: 12px; min-height: 42px; padding: 6px 28px; border-bottom: 1px dashed var(--border); background: rgba(9, 9, 9, .96); color: var(--muted); font-size: 11px; }
+    .demo strong { margin-right: auto; color: var(--amber); font-size: 9px; letter-spacing: .14em; text-transform: uppercase; }
+    .demo select { border: 1px solid var(--border); border-radius: 6px; background: var(--field); color: var(--text); padding: 5px 8px; }
+    header { border-bottom: 1px solid var(--border); background: var(--panel); }
+    .nav { height: 61px; max-width: 1440px; margin: 0 auto; padding: 0 42px; display: flex; align-items: center; gap: 12px; }
+    .mark { width: 30px; height: 30px; display: grid; place-items: center; border: 1px solid rgba(252, 211, 77, .25); border-radius: 8px; background: rgba(252, 211, 77, .1); color: var(--amber); font: 700 14px ui-monospace, monospace; }
+    .brand { font-size: 14px; font-weight: 650; }
+    .brand span { color: var(--muted); font-weight: 450; }
+    nav { margin-left: auto; display: flex; gap: 32px; color: var(--muted); font-size: 13px; }
+    nav .active { color: var(--amber); }
+    main { max-width: 1440px; margin: 0 auto; padding: 28px 42px 64px; }
+    .intro p { margin: 0 0 8px; color: var(--amber); font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+    h1 { margin: 0; font-size: 30px; letter-spacing: -.035em; }
+    .intro small { display: block; margin-top: 7px; color: var(--muted); font-size: 13px; }
+    .layout { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(380px, .65fr); gap: 16px; margin-top: 22px; align-items: start; }
+    .card { min-width: 0; padding: 20px; border: 1px solid var(--border); border-radius: 12px; background: var(--panel); }
+    .card-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; }
+    h2 { margin: 0; font-size: 18px; letter-spacing: -.02em; }
+    .sub { margin: 5px 0 0; color: var(--muted); font-size: 13px; }
+    .period { display: inline-flex; padding: 3px; border: 1px solid var(--border); border-radius: 8px; background: rgba(0, 0, 0, .25); }
+    .period button { border: 0; border-radius: 6px; background: transparent; color: var(--faint); padding: 5px 8px; font-size: 10px; cursor: pointer; }
+    .period button.active { background: rgba(252, 211, 77, .15); color: var(--amber); }
+    .actions { list-style: none; margin: 20px 0 0; padding: 0; }
+    .actions li { display: grid; grid-template-columns: 30px minmax(0, 1fr) auto; align-items: center; gap: 12px; padding: 8px 0; }
+    .rank { color: var(--faint); font: 13px ui-monospace, monospace; }
+    .action strong { display: block; font-size: 14px; }
+    .action small { color: var(--faint); font-size: 10px; }
+    .count { color: var(--muted); font: 13px ui-monospace, monospace; }
+    .diagnosis { margin-top: 18px; padding: 12px 13px; border: 1px solid rgba(252, 211, 77, .16); border-radius: 9px; background: rgba(252, 211, 77, .045); }
+    .diagnosis strong { display: block; color: var(--amber); font-size: 12px; }
+    .diagnosis p { margin: 4px 0 0; color: var(--muted); font-size: 11px; line-height: 1.45; }
+    .metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 16px 0 0; }
+    .metric { min-height: 154px; padding: 13px; border: 1px solid var(--border); border-radius: 10px; background: var(--field); }
+    .metric dt { color: var(--faint); font-size: 10px; letter-spacing: .09em; text-transform: uppercase; }
+    .metric dd { margin: 8px 0 0; color: var(--amber); font: 650 25px ui-monospace, monospace; }
+    .metric p { margin: 8px 0 0; color: var(--muted); font-size: 10px; line-height: 1.45; }
+    .metric p strong { color: rgba(255, 255, 255, .68); font-weight: 600; }
+    .trend { display: inline-flex; align-items: center; gap: 4px; margin-top: 8px; font: 600 10px ui-monospace, monospace; }
+    .up { color: var(--green); }
+    .down { color: var(--red); }
+    .exclusions { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--soft); }
+    .exclusions div { display: flex; justify-content: space-between; gap: 12px; }
+    .exclusions strong { color: var(--muted); font-size: 11px; letter-spacing: .13em; text-transform: uppercase; }
+    .exclusions span { color: var(--faint); font-size: 10px; }
+    .exclusions p { margin: 10px 0 0; color: var(--muted); font-size: 11px; line-height: 1.5; }
+    .behavior { grid-column: 1 / -1; }
+    .behavior-grid { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(320px, .55fr); gap: 16px; margin-top: 18px; }
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; min-width: 780px; border-collapse: collapse; }
+    th { padding: 9px 10px; border-bottom: 1px solid var(--border); color: var(--faint); text-align: left; font-size: 9px; font-weight: 650; letter-spacing: .11em; text-transform: uppercase; }
+    td { padding: 13px 10px; border-bottom: 1px solid var(--soft); color: var(--muted); font-size: 11px; vertical-align: top; }
+    tr:last-child td { border-bottom: 0; }
+    .feature-name { display: block; color: var(--text); font-size: 12px; font-weight: 650; }
+    .feature-why { display: block; max-width: 250px; margin-top: 4px; color: var(--faint); font-size: 9px; line-height: 1.4; }
+    .table-num { color: var(--text); font: 12px ui-monospace, monospace; white-space: nowrap; }
+    .table-num strong { color: var(--amber); }
+    .table-note { display: block; margin-top: 4px; color: var(--faint); font-size: 9px; line-height: 1.35; }
+    .mode-panel, .user-panel { padding: 15px; border: 1px solid var(--border); border-radius: 10px; background: var(--field); }
+    .mode-panel h3, .user-panel h3 { margin: 0; font-size: 13px; }
+    .panel-kicker { margin: 5px 0 0; color: var(--muted); font-size: 10px; line-height: 1.45; }
+    .mode-bar { display: flex; height: 12px; margin-top: 16px; overflow: hidden; border-radius: 999px; background: rgba(255, 255, 255, .04); }
+    .mode-bar span:nth-child(1) { width: 21.7%; background: #60a5fa; }
+    .mode-bar span:nth-child(2) { width: 43.5%; background: var(--amber); }
+    .mode-bar span:nth-child(3) { width: 34.8%; background: #a78bfa; }
+    .mode-legend { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; margin-top: 11px; }
+    .mode-legend div { color: var(--faint); font-size: 9px; }
+    .mode-legend strong { display: block; margin-top: 3px; color: var(--text); font: 12px ui-monospace, monospace; }
+    .sample-warning { margin: 14px 0 0; padding: 10px; border: 1px solid rgba(252, 211, 77, .16); border-radius: 8px; background: rgba(252, 211, 77, .045); color: var(--muted); font-size: 9px; line-height: 1.45; }
+    .sample-warning strong { color: var(--amber); }
+    .user-panel { grid-column: 1 / -1; }
+    .user-head { display: flex; justify-content: space-between; gap: 12px; }
+    .user-head span { color: var(--faint); font-size: 9px; }
+    .user-facts { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; margin-top: 14px; }
+    .user-fact { padding: 10px; border: 1px solid var(--soft); border-radius: 8px; background: rgba(255, 255, 255, .018); }
+    .user-fact span { display: block; color: var(--faint); font-size: 8px; letter-spacing: .09em; text-transform: uppercase; }
+    .user-fact strong { display: block; margin-top: 6px; color: var(--amber); font: 14px ui-monospace, monospace; }
+    .user-fact small { display: block; margin-top: 5px; color: var(--muted); font-size: 8px; line-height: 1.35; }
+    .state { display: none; min-height: 410px; place-items: center; color: var(--muted); text-align: center; }
+    .state strong { display: block; margin-bottom: 6px; color: var(--text); }
+    .skeleton { width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .skeleton i { height: 126px; border-radius: 10px; background: rgba(255, 255, 255, .045); }
+    body[data-state="loading"] .health-content,
+    body[data-state="empty"] .health-content,
+    body[data-state="error"] .health-content { display: none; }
+    body[data-state="loading"] .loading,
+    body[data-state="empty"] .empty,
+    body[data-state="error"] .error { display: grid; }
+    @media (max-width: 860px) {
+      .layout { grid-template-columns: 1fr; }
+      .health { grid-row: 1; }
+      .behavior { grid-column: 1; }
+      .behavior-grid { grid-template-columns: 1fr; }
+      .user-facts { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 560px) {
+      .demo { padding-inline: 14px; }
+      .nav { padding: 0 16px; }
+      nav { display: none; }
+      main { padding: 20px 14px 44px; }
+      h1 { font-size: 25px; }
+      .card { padding: 16px; }
+      .metrics { grid-template-columns: 1fr; }
+      .metric { min-height: 138px; }
+      .skeleton { grid-template-columns: 1fr; }
+      .user-facts { grid-template-columns: 1fr 1fr; }
+      .table-wrap { overflow: visible; }
+      table { min-width: 0; }
+      thead { display: none; }
+      tbody, tr, td { display: block; }
+      tr { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px; padding: 10px 0; border-bottom: 1px solid var(--soft); }
+      tr:last-child { border-bottom: 0; }
+      td { padding: 7px 5px; border: 0; }
+      td:first-child { grid-column: 1 / -1; padding-bottom: 9px; border-bottom: 1px solid rgba(255, 255, 255, .035); }
+      td:not(:first-child)::before { content: attr(data-label); display: block; margin-bottom: 4px; color: var(--faint); font-size: 7px; font-weight: 650; letter-spacing: .1em; text-transform: uppercase; }
+    }
+    @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+  </style>
+</head>
+<body data-state="loaded">
+  <div class="demo">
+    <strong>Proposal controls</strong>
+    <label>State <select id="state"><option value="loaded">Loaded</option><option value="loading">Loading</option><option value="empty">Empty</option><option value="error">Error</option></select></label>
+  </div>
+  <header>
+    <div class="nav"><div class="mark">@</div><div class="brand">CodeAgentSwarm <span>/ Operations</span></div><nav><span class="active">Users</span><span>Emails</span><span>Automation</span><span>Sign out</span></nav></div>
+  </header>
+  <main>
+    <section class="intro"><p>User analytics</p><h1>Product usage signals</h1><small>Current behaviour, not raw click volume.</small></section>
+    <section class="layout">
+      <article class="card">
+        <div class="card-head">
+          <div><h2>Top tracked actions</h2><p class="sub">Last 30 days · grouped for privacy</p></div>
+          <div class="period" aria-label="Global activity period"><button>24h</button><button>7d</button><button class="active">30d</button><button>180d</button></div>
+        </div>
+        <ol class="actions">
+          <li><span class="rank">01</span><span class="action"><strong>Terminal switching</strong><small>71 users reached</small></span><span class="count">25,697</span></li>
+          <li><span class="rank">02</span><span class="action"><strong>Fullscreen</strong><small>29 users reached</small></span><span class="count">2,811</span></li>
+          <li><span class="rank">03</span><span class="action"><strong>Open recent project</strong><small>74 users reached</small></span><span class="count">1,870</span></li>
+          <li><span class="rank">04</span><span class="action"><strong>Agent sessions</strong><small>35 users reached</small></span><span class="count">1,747</span></li>
+          <li><span class="rank">05</span><span class="action"><strong>Close terminal</strong><small>71 users reached</small></span><span class="count">1,550</span></li>
+          <li><span class="rank">06</span><span class="action"><strong>Paste image</strong><small>20 users reached</small></span><span class="count">1,170</span></li>
+        </ol>
+      </article>
+
+      <article class="card health">
+        <div><h2>Cohort health</h2><p class="sub">Last 30 days · compared with the previous 30</p></div>
+        <div class="state loading"><div class="skeleton"><i></i><i></i><i></i><i></i></div></div>
+        <div class="state empty"><div><strong>No cohort activity</strong>No identified users were active in this period.</div></div>
+        <div class="state error"><div><strong>Cohort health unavailable</strong>Top actions and user details remain usable.</div></div>
+        <div class="health-content">
+          <div class="diagnosis"><strong>Growth is accelerating; early engagement needs attention.</strong><p>More people are arriving and mature retention improved, while fewer new users reach the second terminal or use the app on multiple days.</p></div>
+          <dl class="metrics">
+            <div class="metric"><dt>Monthly active users</dt><dd>106</dd><span class="trend up">↑ 58 · +121%</span><p><strong>What it means:</strong> people who used the app in 30 days. Tracks audience growth.</p></div>
+            <div class="metric"><dt>Second-terminal activation</dt><dd>31.5%</dd><span class="trend down">↓ 6.0 pp</span><p><strong>What it means:</strong> new active users who opened a second terminal. Our clearest activation signal.</p></div>
+            <div class="metric"><dt>Returning users</dt><dd>64.2%</dd><span class="trend down">↓ 8.7 pp</span><p><strong>What it means:</strong> active on at least two different days. Measures repeat use.</p></div>
+            <div class="metric"><dt>Median active days</dt><dd>2</dd><span class="trend down">↓ 2 days</span><p><strong>What it means:</strong> the typical user was active on 2 days. Heavy users cannot inflate the median.</p></div>
+            <div class="metric"><dt>Weekly stickiness</dt><dd>51.9%</dd><span class="trend down">↓ 16.9 pp</span><p><strong>What it means:</strong> weekly users divided by monthly users. Shows how much of the audience used the app this week.</p></div>
+            <div class="metric"><dt>30-day return</dt><dd>46.9%</dd><span class="trend up">↑ 5.1 pp</span><p><strong>What it means:</strong> mature users who returned 7–30 days after first use. Tracks retention.</p></div>
+          </dl>
+          <div class="exclusions"><div><strong>Excluded users</strong><span>Change from any user detail</span></div><p>No exclusions. Every KPI uses the same identified-user cohort.</p></div>
+        </div>
+      </article>
+
+      <article class="card behavior">
+        <div class="card-head">
+          <div><h2>Feature behavior</h2><p class="sub">Last 30 days · reach, daily use and frequency without heavy-user distortion</p></div>
+          <span class="count">106 monthly active</span>
+        </div>
+        <div class="behavior-grid">
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Feature</th><th>Unique users</th><th>Avg users / day</th><th>Typical frequency</th><th>Repeat</th><th>Outcome</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><span class="feature-name">Search terminals</span><span class="feature-why">Cmd+Shift+A or the navbar button. Finds and jumps to an open terminal.</span></td>
+                  <td data-label="Unique users"><span class="table-num"><strong>14</strong> · 13.2%</span><span class="table-note">7 used the keyboard shortcut</span></td>
+                  <td data-label="Avg users / day"><span class="table-num">1.5</span><span class="table-note">unique people per calendar day</span></td>
+                  <td data-label="Typical frequency"><span class="table-num">1.5 opens</span><span class="table-note">median per user</span></td>
+                  <td data-label="Repeat"><span class="table-num">42.9%</span><span class="table-note">6 used it on 2+ days</span></td>
+                  <td data-label="Outcome"><span class="table-num">5 users</span><span class="table-note">completed a terminal switch</span></td>
+                </tr>
+                <tr>
+                  <td><span class="feature-name">Command Palette</span><span class="feature-why">Cmd+P. Searches product actions and runs the selected command.</span></td>
+                  <td data-label="Unique users"><span class="table-num"><strong>8</strong> · 7.5%</span><span class="table-note">opened from the shortcut</span></td>
+                  <td data-label="Avg users / day"><span class="table-num">0.8</span><span class="table-note">unique people per calendar day</span></td>
+                  <td data-label="Typical frequency"><span class="table-num">2 opens</span><span class="table-note">median per user</span></td>
+                  <td data-label="Repeat"><span class="table-num">25.0%</span><span class="table-note">2 used it on 2+ days</span></td>
+                  <td data-label="Outcome"><span class="table-num">5 users</span><span class="table-note">ran 113 commands</span></td>
+                </tr>
+                <tr>
+                  <td><span class="feature-name">Conversation History</span><span class="feature-why">Searches and restores earlier conversations across supported agents.</span></td>
+                  <td data-label="Unique users"><span class="table-num"><strong>≥28</strong> · ≥26.4%</span><span class="table-note">button opens; shortcut is missing</span></td>
+                  <td data-label="Avg users / day"><span class="table-num">≥2.8</span><span class="table-note">unique people per calendar day</span></td>
+                  <td data-label="Typical frequency"><span class="table-num">2 opens</span><span class="table-note">median per user</span></td>
+                  <td data-label="Repeat"><span class="table-num">32.1%</span><span class="table-note">9 used it on 2+ days</span></td>
+                  <td data-label="Outcome"><span class="table-num">Collecting</span><span class="table-note">single restores are not tracked yet</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <section class="mode-panel" aria-label="Workspace mode share">
+            <h3>Workspace mode share</h3>
+            <p class="panel-kicker">All three modes add up to 100% of exact selections.</p>
+            <div class="mode-bar" aria-label="Grid 21.7%, Tabs 43.5%, List 34.8%"><span></span><span></span><span></span></div>
+            <div class="mode-legend"><div>Grid<strong>21.7%</strong></div><div>Tabs<strong>43.5%</strong></div><div>List<strong>34.8%</strong></div></div>
+            <p class="sample-warning"><strong>No reliable winner yet.</strong> This is only 23 selections from 1 user since v2.1.0. The implementation should measure workspace mode on terminal launches so defaults count too.</p>
+          </section>
+
+          <section class="user-panel" aria-label="Per-user behavior example">
+            <div class="user-head"><div><h3>Per-user behavior</h3><p class="panel-kicker">The same clear signals inside the existing user detail.</p></div><span>Anonymized real example · 30d</span></div>
+            <div class="user-facts">
+              <div class="user-fact"><span>Active days</span><strong>9</strong><small>Used the app on nine separate days.</small></div>
+              <div class="user-fact"><span>Terminal depth</span><strong>8 max</strong><small>Reached eight simultaneous terminal slots.</small></div>
+              <div class="user-fact"><span>Search terminals</span><strong>5 → 3</strong><small>Five opens led to three switches.</small></div>
+              <div class="user-fact"><span>Command Palette</span><strong>7 → 5</strong><small>Seven opens led to five commands.</small></div>
+              <div class="user-fact"><span>History</span><strong>6 opens</strong><small>Restore outcomes are not tracked yet.</small></div>
+              <div class="user-fact"><span>Preferred mode</span><strong>Collecting</strong><small>Needs mode-at-launch telemetry.</small></div>
+            </div>
+          </section>
+        </div>
+      </article>
+    </section>
+  </main>
+  <script>
+    const state = document.getElementById('state');
+    state.addEventListener('change', () => { document.body.dataset.state = state.value; });
+  </script>
+</body>
+</html>

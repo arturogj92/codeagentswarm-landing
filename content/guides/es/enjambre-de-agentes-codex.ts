@@ -16,7 +16,7 @@ En esta guía te explico las tres formas reales de ejecutar un enjambre de Codex
     ctaAgent: 'codex',
     highlightedWords: ['enjambre de agentes Codex', 'Codex CLI'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-06-07',
+    updatedAt: '2026-08-23',
     alternateSlug: 'codex-agent-swarm',
   },
   sections: [
@@ -40,7 +40,7 @@ En esta guía te explico las tres formas reales de ejecutar un enjambre de Codex
         },
         {
           type: 'paragraph',
-          text: 'Y no te limita a Codex. Como cada agente es su propio proceso, puedes poner Codex CLI en algunos terminales y Claude Code o Gemini CLI en otros, todos trabajando sobre el mismo repositorio.',
+          text: 'Y no te limita a Codex. Como cada agente es su propio proceso, puedes poner Codex CLI en algunos terminales y Claude Code o Antigravity CLI en otros, todos trabajando sobre el mismo repositorio.',
         },
         {
           type: 'callout',
@@ -189,7 +189,7 @@ En esta guía te explico las tres formas reales de ejecutar un enjambre de Codex
         },
         {
           type: 'paragraph',
-          text: 'Pon cada terminal en "codex cli" para un enjambre 100% Codex, o mezcla Claude Code y Gemini CLI donde encajen mejor. Cada terminal es un proceso de Codex totalmente independiente, con su propia conversación y contexto de proyecto. CodeAgentSwarm funciona por encima de tus suscripciones actuales, así que no es un proveedor de modelos: solo orquesta los agentes que ya pagas.',
+          text: 'Pon cada terminal en "codex cli" para un enjambre 100% Codex, o mezcla Claude Code y Antigravity CLI donde encajen mejor. Cada terminal es un proceso de Codex totalmente independiente, con su propia conversación y contexto de proyecto. CodeAgentSwarm funciona por encima de tus suscripciones actuales, así que no es un proveedor de modelos: solo orquesta los agentes que ya pagas.',
         },
         {
           type: 'heading',
@@ -277,7 +277,7 @@ En esta guía te explico las tres formas reales de ejecutar un enjambre de Codex
           items: [
             '<strong>Pestañas de terminal:</strong> Gratis',
             '<strong>tmux/screen:</strong> Gratis',
-            '<strong>CodeAgentSwarm:</strong> Plan gratuito disponible, Pro para funciones avanzadas. Tu uso de Codex lo factura OpenAI como siempre.',
+            '<strong>CodeAgentSwarm:</strong> Todas las funciones Pro son gratis durante la beta abierta. Tu uso de Codex lo factura OpenAI como siempre.',
           ],
         },
         {
@@ -371,7 +371,7 @@ En esta guía te explico las tres formas reales de ejecutar un enjambre de Codex
     },
     {
       question: '¿Puedo mezclar Codex CLI y Claude Code en un mismo enjambre?',
-      answer: 'Sí. Como cada agente es solo un proceso aparte, puedes ejecutar Codex CLI en algunos terminales y Claude Code o Gemini CLI en otros, todos sobre el mismo proyecto. En CodeAgentSwarm eliges el agente por terminal con el selector SELECT AI AGENT, así que un enjambre mixto es lo normal y no un apaño.',
+      answer: 'Sí. Como cada agente es solo un proceso aparte, puedes ejecutar Codex CLI en algunos terminales y Claude Code o Antigravity CLI en otros, todos sobre el mismo proyecto. En CodeAgentSwarm eliges el agente por terminal con el selector SELECT AI AGENT, así que un enjambre mixto es lo normal y no un apaño.',
     },
     {
       question: '¿Ejecutar varios agentes de Codex cuesta más?',

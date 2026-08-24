@@ -27,7 +27,7 @@ const termsEn: LegalDoc = {
       blocks: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm is a desktop application that lets you run and manage multiple third-party AI command-line coding tools (such as Claude Code, OpenAI Codex and Gemini CLI) in parallel, with task management, change tracking and related features. The Service is a client that orchestrates those tools on your own computer.',
+          text: 'CodeAgentSwarm is a desktop application that lets you run and manage multiple third-party AI command-line coding tools (such as Claude Code, OpenAI Codex and Antigravity CLI) in parallel, with task management, change tracking and related features. The Service is a client that orchestrates those tools on your own computer.',
         },
         {
           type: 'callout',
@@ -93,7 +93,7 @@ const termsEn: LegalDoc = {
       blocks: [
         {
           type: 'paragraph',
-          text: 'The Service works alongside third-party tools and services, including AI CLIs (Anthropic Claude Code, OpenAI Codex, Google Gemini CLI), OAuth providers (GitHub, Google, Discord), payment processing (Stripe) and others. Your use of those is governed by their own terms and privacy policies. We are not responsible for their availability, content, output, pricing or conduct, and we do not control them.',
+          text: 'The Service works alongside third-party tools and services, including AI CLIs (Anthropic Claude Code, OpenAI Codex, Google Antigravity CLI), OAuth providers (GitHub, Google, Discord), payment processing (Stripe) and others. Your use of those is governed by their own terms and privacy policies. We are not responsible for their availability, content, output, pricing or conduct, and we do not control them.',
         },
       ],
     },

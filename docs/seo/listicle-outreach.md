@@ -1,147 +1,165 @@
-# Listicle outreach
+# Editorial outreach
 
-> **DRAFT. Nothing here has been sent. Arturo reviews, edits and sends personally.**
+Last reviewed: 2026-08-23
 
-## Why this matters
+**Draft only. Nothing in this file has been sent. Arturo reviews, edits and sends each message personally.**
 
-Five third-party listicles currently define the "tools to run multiple AI coding agents" category, and none of them mention CodeAgentSwarm. They do mention Claude Squad, Conductor, Crystal/Nimbalyst, vibe-kanban and Paseo. Getting into these lists is the highest-leverage distribution fix available right now, because AI answer engines source their category answers from exactly these pages. When Perplexity or ChatGPT is asked "best tools for managing multiple AI coding agents", it does not crawl the whole web: it reads two or three listicles and repeats them. If CodeAgentSwarm is not in the list, it is not in the answer.
+## Goal
 
-Two findings from the fact check on 2026-07-26 change how we open these conversations. First, parallelcode.app/compare does not include T3 Code, which is the fastest-growing tool in the category: about 15,000 GitHub stars in five months. Second, the top-starred tools that the lists do include are stalled. opcode has had no public commit since October 16, 2025, and Vibe Kanban none since April 24, 2026, yet both sit at the top of every star ranking. Every pitch below therefore leads with the correction and asks about CodeAgentSwarm second. A data contribution is a better opening than a plain inclusion request: it gives the author a reason to edit the page whether or not they add us, and it costs us nothing to be useful first.
+Earn a small number of relevant editorial links and accurate product mentions. Do not trade accuracy for volume, buy bulk directory packages or send automated outreach.
 
----
+## Current product facts
 
-## 1. nimbalyst.com
+- CodeAgentSwarm is a closed-source desktop workspace for running and supervising AI coding agents in parallel.
+- Supported agents: Claude Code, Codex CLI, Antigravity, OpenCode, Kimi Code, Grok Build and Cursor Agent.
+- Platforms: macOS and Windows.
+- Pricing: free during the beta.
+- Linux is not available.
+- Mobile Connect is in alpha. The web beta is open to every account, native iOS and Android access is by request, and the desktop must remain open.
+- Canonical URL: https://www.codeagentswarm.com
 
-**URL:** https://nimbalyst.com/blog/best-agent-management-tools-2026/
+Verify every fact again against the production site immediately before sending.
 
-**Ask:** add CodeAgentSwarm as an entry.
+## Revalidated editorial targets
 
-**Note:** this is a competitor's own blog, so expectations are low. Still worth one polite ask. Some competitors do list rivals to keep the post credible.
+Checked on 2026-08-23. All five pages were live.
 
-**Blurb (ready to paste):**
+1. [Singularity Society](https://singularitysociety.org/articles/tech-blog/2026-08-04-choosing-a-parallel-agent-tool-en/) already names CodeAgentSwarm as plain text, but does not include it in the decision guide. Ask for a link and a factual one-line description. This is the lowest-friction opportunity.
+2. [Tembo](https://www.tembo.io/blog/ai-agent-orchestration-tools) covers the category and does not mention CodeAgentSwarm. Ask for an editorial evaluation.
+3. [Zevyn Studio](https://zevyn.dev/compare/parallel-ai-coding-agents) compares six tools and does not mention CodeAgentSwarm. It is a competitor-owned page, so expect a low acceptance rate.
+4. [AgentsRoom](https://agentsroom.dev/blog/best-multi-agent-coding-tools) was updated on 2026-08-23 and does not mention CodeAgentSwarm. It is also competitor-owned, so keep the request short and factual.
+5. [amux](https://amux.io/guides/best-ai-agent-multiplexers-2026/) compares the category and does not mention CodeAgentSwarm. Recheck its contact route before sending.
 
-> CodeAgentSwarm is a desktop workspace to run and supervise multiple AI coding agents in parallel. It runs on macOS and Windows and supports five CLIs: Claude Code, Codex CLI, Antigravity CLI, OpenCode and Kimi Code. You get desktop notifications when an agent finishes or needs input, searchable history across every agent, per-terminal live diffs, and a kanban board agents update over MCP. Free during beta. Limitation: it is closed source and there is no Linux build.
+## Reviewed product blurb
 
-**Assets:** https://www.codeagentswarm.com/en , https://www.codeagentswarm.com/en/guides
+```text
+CodeAgentSwarm is a closed-source desktop workspace for running and supervising seven AI coding agents in parallel: Claude Code, Codex CLI, Antigravity, OpenCode, Kimi Code, Grok Build and Cursor Agent. It is available on macOS and Windows and free during the beta. Linux is not available. Mobile Connect is in alpha: the web beta is open to every account, native iOS and Android access is by request, and the desktop must remain open.
+```
 
-**Pitch draft:**
+## Reviewed pitch template
 
-> Hi, two data points from your list that you may want to check. I went through every tool in this category on July 26, 2026 and pulled the public GitHub numbers: opcode has had no public commit since October 16, 2025, and Vibe Kanban none since April 24, 2026, even though both still lead on stars. If it is useful, I keep a verified fact table we maintain (stars, last public commit, licence, supported agents, all dated) and I am happy to send it over with no strings attached. Separately, and I will be upfront about the conflict of interest: I build CodeAgentSwarm, a macOS and Windows desktop app for running several AI coding CLIs at once, and I think it fits the category you are covering. I know we compete, so no hard feelings if it does not make the cut. The download is free during the beta if you want to try it before deciding.
+Customize the first sentence for the exact article. Do not invent competitor corrections or reuse month-old star and commit counts.
 
----
+```text
+Hi, I build CodeAgentSwarm, a closed-source desktop workspace for running and supervising seven AI coding agents in parallel on macOS and Windows. It supports Claude Code, Codex CLI, Antigravity, OpenCode, Kimi Code, Grok Build and Cursor Agent. It is free during the beta, and Linux is not available. If you are updating this comparison, I would appreciate your consideration. I can provide any factual details you need.
+```
 
-## 2. amux.io
+## Tailored drafts awaiting approval
 
-**URL:** https://amux.io/blog/best-multi-agent-orchestrators-2026/
+These are the exact proposed messages. Recheck the recipient and page immediately before sending. Do not send any of them without Arturo's explicit final approval.
 
-**Ask:** add CodeAgentSwarm as an entry.
+### Singularity Society
 
-**Blurb (ready to paste):**
+Subject: Factual addition to your parallel-agent guide
 
-> CodeAgentSwarm is a desktop workspace to run and supervise multiple AI coding agents in parallel. Available for macOS and Windows, it drives five CLIs side by side: Claude Code, Codex CLI, Antigravity CLI, OpenCode and Kimi Code. It sends a desktop notification when an agent finishes or needs input, keeps a searchable history across all agents, shows per-terminal file diffs, and exposes a kanban board that agents update over MCP. Free during beta, closed source, no Linux build.
+```text
+Hi Singularity Society team,
 
-**Assets:** https://www.codeagentswarm.com/en , https://www.codeagentswarm.com/en/guides
+I am Arturo, creator of CodeAgentSwarm. Your August 4 guide already names CodeAgentSwarm in the opening list, but the name is plain text and the decision guide does not describe it. Would you consider linking that mention to https://www.codeagentswarm.com/en and evaluating it for the "you lose track of the work itself" use case?
 
-**Pitch draft:**
+Factual summary: CodeAgentSwarm is a closed-source macOS and Windows desktop workspace for supervising seven agent CLIs in parallel, with notifications, searchable cross-agent history, live diffs, optional per-session Git worktrees and a task board. It is free during the beta. It has no Linux desktop build. Mobile Connect is in alpha: the web beta is open to every account, native iOS and Android access is by request, and the desktop must remain open.
 
-> Hi, your post on multi-agent orchestrators is one of the few that actually compares how these tools isolate work instead of just listing features, so one correction is worth your time: two of the highest-starred tools in the category are not being maintained. As of July 26, 2026, opcode has no public commit since October 16, 2025 and Vibe Kanban none since April 24, 2026. I re-check the whole category on a schedule and keep a verified fact table we maintain with stars, last public commit and licence per tool, dated. Yours if you want it. The self-interested part: I build CodeAgentSwarm, a desktop app that runs Claude Code, Codex CLI, Antigravity CLI, OpenCode and Kimi Code in parallel with a git worktree per session. I am not asking for a good review, just for you to look at it and decide if it belongs in the list. Happy to send anything you need.
+Please judge whether it belongs in the comparison. I can provide the details you need.
 
----
+Thanks,
+Arturo García
+```
 
-## 3. munderdiffl.in
+### Tembo
 
-**URL:** https://munderdiffl.in/blog/best-claude-code-multi-agent-tools/
+Subject: Local desktop orchestrator for your 2026 comparison
 
-**Ask:** add CodeAgentSwarm as an entry.
+```text
+Hi Tembo team,
 
-**Blurb (ready to paste):**
+I am Arturo, creator of CodeAgentSwarm. Your guide's coding-native orchestrators section makes a useful distinction between frameworks, coding-native orchestrators and managed platforms. It currently highlights Composio and Conductor. Would you consider evaluating CodeAgentSwarm as another product in that category?
 
-> CodeAgentSwarm is a desktop workspace to run and supervise multiple AI coding agents in parallel. On macOS and Windows it runs Claude Code, Codex CLI, Antigravity CLI, OpenCode and Kimi Code in separate terminals in one window, notifies you on the desktop when an agent finishes or needs input, keeps conversation history searchable across every agent, shows live file diffs per terminal, and lets agents update a kanban board over MCP. Free during beta. It is closed source with no Linux build.
+CodeAgentSwarm is a closed-source desktop workspace for macOS and Windows. It runs seven existing agent CLIs in parallel, supports optional per-session Git worktrees, and adds notifications, live diffs, searchable cross-agent history and a task board. It is free during the beta, has no Linux desktop build and is not a managed cloud platform.
 
-**Assets:** https://www.codeagentswarm.com/en , https://www.codeagentswarm.com/en/guides
+Please judge whether it belongs in the comparison. I can provide the details you need.
 
-**Pitch draft:**
+Thanks,
+Arturo García
+```
 
-> Hi, I found your roundup of Claude Code multi-agent tools while researching the space, and there is one thing in it worth updating. Checked on July 26, 2026: opcode has had no public commit since October 16, 2025 and Vibe Kanban none since April 24, 2026, so two of the entries readers will assume are the safest bets are the two that have gone quiet. I keep a verified fact table we maintain for the whole category, dated, with stars, last public commit and licence. Say the word and I will send it. And the disclosure: I build CodeAgentSwarm, which does the same job as a native desktop app on macOS and Windows, and it also drives Codex CLI, Antigravity, OpenCode and Kimi Code, not only Claude. It is missing from your list, so I wanted to put it in front of you. Try it and judge it yourself, that is all I am asking for.
+### Zevyn Studio
 
----
+Subject: Candidate for your parallel-agent comparison matrix
 
-## 4. agentsroom.dev
+```text
+Hi Zevyn Studio team,
 
-**URL:** https://agentsroom.dev/blog/best-multi-agent-coding-tools
+I am Arturo, creator of CodeAgentSwarm. Your comparison scores the field on isolation, orchestration, review, agent backends, desktop UX and platform support. Would you consider evaluating CodeAgentSwarm as an additional comparator?
 
-**Ask:** add CodeAgentSwarm as an entry.
+The factual fit for your matrix is: macOS and Windows desktop app, seven agent CLIs, optional per-session Git worktrees, live diff review, notifications, searchable history and a task board. It is closed source, has no Linux desktop build and does not offer Zevyn's one-prompt supervisor and one-click merge flow. It is free during the beta. Mobile Connect is in alpha: the web beta is open to every account, native iOS and Android access is by request, and the desktop must remain open.
 
-**Blurb (ready to paste):**
+Please judge whether it belongs in the comparison. I can provide the details you need.
 
-> CodeAgentSwarm is a desktop workspace to run and supervise multiple AI coding agents in parallel. It ships for macOS and Windows and supports Claude Code, Codex CLI, Antigravity CLI, OpenCode and Kimi Code. Features include desktop notifications when an agent finishes or needs input, conversation history searchable across all agents, live per-terminal file diffs, and a kanban task board that agents update over MCP. It is free during the beta. It is closed source and has no Linux build.
+Thanks,
+Arturo García
+```
 
-**Assets:** https://www.codeagentswarm.com/en , https://www.codeagentswarm.com/en/guides
+### AgentsRoom
 
-**Pitch draft:**
+Subject: Another visual command center for your 2026 guide
 
-> Hi, your list of multi-agent coding tools covers the terminal-based options well, so here is something that may be worth a line in it. On July 26, 2026 I verified the public GitHub data for the whole category: opcode has no commit since October 16, 2025 and Vibe Kanban none since April 24, 2026, while T3 Code, Superset, Paseo and Nimbalyst all committed that same day. Star counts point the opposite way from maintenance here. I keep a verified fact table we maintain with those dates and can send it over if it saves you the digging. The interested part of the email: I build CodeAgentSwarm, a desktop app for the same problem, aimed at people who want to watch what each agent is doing instead of running them headless. It supports five different CLIs, not just Claude Code. If you are updating the post, I would like it considered. I can answer any question about how it works.
+```text
+Hi AgentsRoom team,
 
----
+I am Arturo, creator of CodeAgentSwarm. Your guide frames the problem as keeping track of agents rather than merely spawning more terminals. CodeAgentSwarm addresses that same problem with a different product boundary, so I would appreciate an editorial evaluation in your next update.
 
-## 5. parallelcode.app
+CodeAgentSwarm is a closed-source macOS and Windows desktop workspace for seven agent CLIs, with live status, notifications, searchable cross-agent history, live diffs, optional per-session Git worktrees and a task board. Mobile Connect is in alpha: the web beta is open to every account, native iOS and Android access is by request, and the desktop must remain open. There is no Linux desktop build.
 
-**URL:** https://parallelcode.app/compare/
+Please judge whether it belongs in the comparison. I can provide the details you need.
 
-**Ask:** add CodeAgentSwarm as an entry.
+Thanks,
+Arturo García
+```
 
-**Blurb (ready to paste):**
+### amux
 
-> CodeAgentSwarm is a desktop workspace to run and supervise multiple AI coding agents in parallel. It is a macOS and Windows app that runs five CLIs, Claude Code, Codex CLI, Antigravity CLI, OpenCode and Kimi Code, each in its own terminal. It gives you desktop notifications when an agent finishes or needs input, a searchable history across every agent, per-terminal live diffs, and a kanban board agents update over MCP. Free during beta, closed source, no Linux build yet.
+Subject: Missing dedicated desktop multiplexer for your matrix
 
-**Assets:** https://www.codeagentswarm.com/en , https://www.codeagentswarm.com/en/guides
+```text
+Hi amux team,
 
-**Pitch draft:**
+I am Arturo, creator of CodeAgentSwarm. Your August guide compares dedicated multiplexers, built-in multi-agent features and cloud platforms across a detailed matrix. Would you consider evaluating CodeAgentSwarm for the dedicated-multiplexer section?
 
-> Hi, I use your comparison page as a reference for this category, so two notes on the data before anything about my own product. T3 Code is not on the page, and as of July 26, 2026 it is the fastest-growing tool in the category: about 15,000 GitHub stars in five months (repo pingdotgg/t3code, MIT, created February 8, 2026). Also worth a footnote: opcode has had no public commit since October 16, 2025 and Vibe Kanban none since April 24, 2026, so the two highest-starred rows are the two least maintained. I keep a verified fact table we maintain covering the whole category with dated stars, last public commit and licence, and I will send it over if it is useful, with no expectation attached. Second thing, and I am aware it is the self-interested one: CodeAgentSwarm is not on the page either. It is a desktop app for macOS and Windows that runs several AI coding CLIs in parallel with real terminals, notifications and shared history. The facts you need for a row in the table are all on the site. Let me know if anything is unclear and I will correct it rather than argue with it.
+The relevant matrix facts are: parallel sessions, optional per-session Git worktrees, a task board, live status and diffs, macOS and Windows support, and seven agent CLIs. Mobile Connect is in alpha: the web beta is open to every account, native iOS and Android access is by request, and the desktop must remain open. The product is closed source, has no Linux desktop build and is free during the beta.
 
----
+Please judge whether it belongs in the comparison. I can provide the details you need.
 
-## Follow-ups (manual, need Arturo)
+Thanks,
+Arturo García
+```
 
-1. **Update the GitHub repo description** with the frozen category phrase:
+## Send checklist
 
-   ```bash
-   gh repo edit arturogj92/codeagentswarm-site --description "CodeAgentSwarm: a desktop workspace to run and supervise multiple AI coding agents in parallel (Claude Code, Codex CLI, Antigravity, OpenCode, Kimi Code). macOS + Windows."
-   ```
+- Confirm the page is still live and still omits CodeAgentSwarm.
+- Confirm the named person and preferred contact route.
+- Add one specific sentence that proves the article was read.
+- Keep the conflict-of-interest disclosure.
+- Ask for evaluation, not a positive review.
+- Send once. One polite follow-up after 10 to 14 days is the limit.
+- Record the date, result, final URL and link attributes.
 
-2. **Create a Wikidata item and a Crunchbase profile** for CodeAgentSwarm. Both are entity signals that answer engines use to decide a product exists as a real thing and not as a random domain.
+## GitHub authority already in motion
 
-3. **Re-run the citation scan** two to three weeks after the comparison pages deploy:
+- [awesome-ai-devtools PR 759](https://github.com/jamesmurdza/awesome-ai-devtools/pull/759): open. The entry is factual; the PR description was corrected on 2026-08-23.
+- [awesome-mac PR 2250](https://github.com/jaywcjlove/awesome-mac/pull/2250): open. The entry is factual; the PR description was corrected on 2026-08-23.
+- [awesome-agent-orchestrators PR 142](https://github.com/andyrewlee/awesome-agent-orchestrators/pull/142): open.
+- [awesome-gemini-cli PR 69](https://github.com/Piebald-AI/awesome-gemini-cli/pull/69): merged, but its published description still says CodeAgentSwarm runs Gemini CLI. Decide whether to remove the inaccurate entry or ask the maintainer for a correction before taking action.
 
-   ```bash
-   node scripts/ai-citation-scan.mjs --engine perplexity
-   node scripts/ai-citation-scan.mjs --report
-   ```
+Do not open duplicate submissions while these PRs remain active.
 
-### GitHub presence without open-sourcing the app (recommendations only, Arturo decides)
+## Free actions after outreach
 
-Every tool in this category except Conductor and us has a public repository, and that is where a
-large share of the category's discovery happens. Today, searching `codeagentswarm` on GitHub finds
-only the landing repo (1 star) and an info page (0 stars). These are options to change that without
-touching the app source. None of them is a decision, all of them are Arturo's call.
+1. Publish one useful technical article on DEV with the canonical product link among the first relevant outbound links.
+2. Verify the existing StackShare listing is public, indexable and accurate before creating another submission.
+3. Submit CodeAgentSwarm to SaaSGrow only after confirming the current free listing has a direct follow link and no badge requirement.
+4. List CodeAgentSwarm on MCP directories only as a client. Its MCP server depends on the app and is not a standalone server.
+5. Use Show HN only for a real product launch or substantial technical release.
 
-1. **Publish one real public repo**, for example `codeagentswarm-skills` (the skills we ship or
-   recommend) or a docs mirror of the guides. The goal is that a GitHub search for the product name
-   returns something with content, a README and commits, instead of two near-empty repos.
+## Paid work
 
-2. **Submit to the relevant awesome lists**: `awesome-claude-code`, `awesome-ai-agents` and
-   `awesome-mac`. These are the lists that both humans and answer engines read when they want a
-   catalogue rather than a review.
-
-3. **Evaluate listing the CodeAgentSwarm MCP task server** in the public MCP servers ecosystem. The
-   kanban-over-MCP integration is a genuine, self-contained thing other people could use, and MCP
-   directories are a discovery surface we are currently absent from.
-
-4. **Put the category sentence in a GitHub org or profile README**, verbatim: "CodeAgentSwarm is a
-   desktop workspace to run and supervise multiple AI coding agents in parallel." The same sentence
-   is already on the landing page, in llms.txt and in the guides, and repeating it identically is
-   what makes it the phrase that gets quoted back.
-
-5. **Whether the app repository itself ever goes public is explicitly Arturo's call.** Nothing in
-   this document assumes it, and none of the four points above requires it.
+No paid listing is approved by this document. Revalidate price, link attributes, traffic and editorial quality immediately before spending any budget.

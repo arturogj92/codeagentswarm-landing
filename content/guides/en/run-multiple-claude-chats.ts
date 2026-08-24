@@ -5,8 +5,8 @@ export const guide: Guide = {
     slug: 'run-multiple-claude-chats',
     locale: 'en',
     title: 'Can You Run Multiple Claude Chats at Once?',
-    metaTitle: 'Can You Run Multiple Claude Chats at Once? Yes, Here Is How (2026)',
-    metaDescription: 'Yes, you can run multiple Claude chats at the same time. On claude.ai use separate browser tabs or Projects. With Claude Code in the terminal, each session is its own process you can run in parallel.',
+    metaTitle: 'Run Multiple Claude Chats at Once: Web & CLI (2026)',
+    metaDescription: 'Yes. Run several Claude chats in browser tabs or Claude Code sessions in parallel. Compare web chats, terminals, Projects, and shared-file risks.',
     intro: `Yes, you can run multiple Claude chats at once, and there are two different ways depending on what you mean. If you mean the claude.ai web app, you can open several conversations at the same time in separate browser tabs, and Projects let you keep each chat organized around its own files and context. If you mean Claude Code in your terminal, each session is an independent process, so you can run several in parallel on the same machine, with no special plan needed.
 
 These are two separate questions that share the same search, so this guide answers both. The web app section is short because the answer is simple: open more tabs. The terminal section goes deeper, because running several Claude Code sessions in parallel is where it gets genuinely useful, and where a tool like CodeAgentSwarm makes the difference.
@@ -16,7 +16,7 @@ Pick the path that matches what you are trying to do. If you are chatting in the
     ctaAgent: 'claude-code',
     highlightedWords: ['multiple Claude chats', 'at once'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-06-07',
+    updatedAt: '2026-08-21',
     alternateSlug: 'varios-chats-de-claude-a-la-vez',
   },
   sections: [
@@ -125,7 +125,7 @@ Pick the path that matches what you are trying to do. If you are chatting in the
         {
           type: 'list',
           items: [
-            '<strong>Multiple terminals in parallel:</strong> run several Claude Code sessions at once, and pick a different agent per terminal if you want to mix in Codex CLI or Gemini CLI.',
+            '<strong>Multiple terminals in parallel:</strong> run several Claude Code sessions at once, and pick a different agent per terminal if you want to mix in Codex CLI or Antigravity CLI.',
             '<strong>Dynamic titles:</strong> each terminal shows what its session is doing right now, like "Refactoring Auth" or "Writing API Tests", instead of several identical tabs.',
             '<strong>Desktop notifications:</strong> when a session finishes or stops to ask you something, you get a native notification, so you can focus on one terminal and let the rest call you.',
             '<strong>Searchable history:</strong> every conversation across all terminals is saved and searchable, so you can trace what a session did yesterday or resume it later.',
@@ -134,7 +134,7 @@ Pick the path that matches what you are trying to do. If you are chatting in the
         },
         {
           type: 'paragraph',
-          text: 'Because every conversation is saved, you can step away from a session and pick it back up later, or go digging through what an earlier chat actually did. The <a href="/en/guides/claude-code-history" class="text-neon-cyan hover:text-neon-purple transition-colors">conversation history guide</a> goes deeper on how that history works across parallel sessions. And if you want to run a mixed setup with Claude Code, Codex and Gemini together rather than just multiple Claude Code sessions, the <a href="/en/guides/ai-cli-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">AI CLI agent swarm guide</a> covers that cross-vendor workflow in detail.',
+          text: 'Because every conversation is saved, you can step away from a session and pick it back up later, or go digging through what an earlier chat actually did. The <a href="/en/guides/claude-code-history" class="text-neon-cyan hover:text-neon-purple transition-colors">conversation history guide</a> goes deeper on how that history works across parallel sessions. For the same workflow with another CLI, see <a href="/en/guides/run-multiple-codex-sessions" class="text-neon-cyan hover:text-neon-purple transition-colors">multiple Codex sessions</a> or <a href="/en/guides/run-multiple-opencode-sessions" class="text-neon-cyan hover:text-neon-purple transition-colors">multiple OpenCode sessions</a>. To mix Claude Code, Codex and other agents in one setup, see the <a href="/en/guides/ai-cli-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">AI CLI agent swarm guide</a>.',
         },
         {
           type: 'callout',

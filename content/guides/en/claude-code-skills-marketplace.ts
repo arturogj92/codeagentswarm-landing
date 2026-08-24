@@ -6,17 +6,17 @@ export const guide: Guide = {
     locale: 'en',
     title: 'Claude Code Skills Marketplace: Browse and Install Agent Skills',
     metaTitle: 'Claude Code Skills Marketplace: Browse and Install Agent Skills (2026)',
-    metaDescription: 'Browse and one-click install Claude Code skills from a marketplace with tens of thousands of agent skills. Install the same skill to Claude, Gemini or Codex.',
+    metaDescription: 'Browse and install coding agent skills with one click. Share each skill across Claude, Codex, Antigravity, OpenCode, Kimi, Grok and Cursor Agent.',
     intro: `If you have ever wanted to give Claude Code a reusable capability (a way to write commits, run a release, generate a changelog) you have probably ended up copying SKILL.md files around by hand, dropping folders into hidden directories, and hoping you got the path right.
 
 CodeAgentSwarm ships with a built-in Skills Marketplace so you do not have to do any of that. It mirrors a large public catalogue of agent skills (tens of thousands of them), lets you search and sort by stars, and installs the one you want with a single click.
 
-The part I like most: when you install a skill, you choose where it goes. You can install it to Claude, to Gemini, to Codex, or to all of them at once. So one skill you found becomes a capability shared across every CLI agent you run, instead of something locked to a single tool.`,
+The part I like most: when you install a skill, you choose where it goes. Current builds support Claude, Codex, Antigravity, OpenCode, Kimi Code, Grok Build and Cursor Agent, or all seven at once. So one skill you found becomes a capability shared across every CLI agent you run, instead of something locked to a single tool.`,
     highlightedWords: ['Skills Marketplace', 'Agent Skills', 'Install'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-06-07',
+    updatedAt: '2026-08-11',
     alternateSlug: 'marketplace-de-skills-claude-code',
-    ctaText: 'Open the Skills Marketplace in CodeAgentSwarm, find a skill you actually want, and install it to Claude, Gemini or Codex in one click.',
+    ctaText: 'Open the Skills Marketplace in CodeAgentSwarm, find a skill you actually want, and install it to one agent or all seven in one click.',
     ctaAgent: 'claude-code',
   },
   sections: [
@@ -64,17 +64,15 @@ The part I like most: when you install a skill, you choose where it goes. You ca
         {
           type: 'list',
           items: [
-            'Install to Claude, dropping the skill into Claude Code\'s skills directory',
-            'Install to Gemini, so the Gemini CLI can use the same skill',
-            'Install to Codex, so the Codex CLI can use it too',
-            'Install all, which puts the skill into every agent at once',
+            'Install to one supported agent: Claude, Codex, Antigravity, OpenCode, Kimi Code, Grok Build or Cursor Agent',
+            'Install all, which puts the skill into all seven agents at once',
           ],
         },
         {
           type: 'image',
-          alt: 'A skill detail view in CodeAgentSwarm with Install to Claude, Install to Gemini, Install to Codex and Install all buttons',
+          alt: 'Older CodeAgentSwarm skill detail view showing the previous Claude, Gemini and Codex install targets',
           src: '/images/guides/skills-install-multi-cli.png',
-          caption: 'On a skill\'s detail view you choose the target: Claude, Gemini, Codex, or all of them at once.',
+          caption: 'This transition-era screenshot shows the former three-target selector. Current builds offer Claude, Codex, Antigravity, OpenCode, Kimi Code, Grok Build and Cursor Agent.',
           size: 'full',
         },
         {
@@ -87,14 +85,14 @@ The part I like most: when you install a skill, you choose where it goes. You ca
             'Open the Skills Marketplace in CodeAgentSwarm.',
             'Search for what you need, or sort by stars to see the popular ones.',
             'Open a skill to read its description and what it is for.',
-            'Click Install to Claude (or Gemini, Codex, or Install all).',
+            'Choose a target agent, or click Install all.',
             'Start a session and the agent can use the skill from then on.',
           ],
         },
         {
           type: 'callout',
           variant: 'tip',
-          content: 'If you are not sure which agent you will use a skill with, just pick Install all. The skill is small, and having it available everywhere means you never have to come back and install it again for a different CLI.',
+          content: 'If you are not sure which agent you will use a skill with, pick Install all. Having it available everywhere means you never have to return and install it again for another CLI.',
         },
       ],
     },
@@ -112,7 +110,7 @@ The part I like most: when you install a skill, you choose where it goes. You ca
         },
         {
           type: 'paragraph',
-          text: 'Installing to Gemini or Codex works the same way, each CLI has its own skills location, and CodeAgentSwarm puts the files where that agent expects them. That is the whole point of the multi-target install: one source, written to the right place for each tool.',
+          text: 'Installing to another supported agent works the same way. Each CLI has its own skills location, and CodeAgentSwarm puts the files where that agent expects them. That is the point of the multi-target install: one source, written to the right place for each tool.',
         },
         {
           type: 'callout',
@@ -123,23 +121,23 @@ The part I like most: when you install a skill, you choose where it goes. You ca
     },
     {
       id: 'across-clis',
-      title: 'One skill library across Claude, Gemini and Codex',
+      title: 'One skill library across all seven agents',
       content: [
         {
           type: 'paragraph',
-          text: 'This is the reason the marketplace matters more inside CodeAgentSwarm than it would as a standalone catalogue. CodeAgentSwarm is built to run several CLI agents in parallel, many terminals across Claude Code, the Codex CLI and the Gemini CLI at the same time.',
+          text: 'This is the reason the marketplace matters more inside CodeAgentSwarm than it would as a standalone catalogue. CodeAgentSwarm is built to run several CLI agents in parallel, across Claude Code, Codex, Antigravity, OpenCode, Kimi Code and Grok Build.',
         },
         {
           type: 'paragraph',
-          text: 'If your skills only worked with one agent, you would end up with a good toolbox for Claude and an empty one for Gemini and Codex. The multi-target install fixes that. Find a useful skill once, install it everywhere, and every agent in your swarm has the same capability.',
+          text: 'If your skills only worked with one agent, you would end up with one good toolbox and five empty ones. The multi-target install fixes that. Find a useful skill once, install it everywhere, and every agent in your swarm has the same capability.',
         },
         {
           type: 'paragraph',
-          text: 'For example, a "generate a release changelog" skill installed to all three means it does not matter which terminal handles the release. The Codex terminal, the Gemini terminal and the Claude terminal all know how to do it the same way.',
+          text: 'For example, a "generate a release changelog" skill installed to all seven means it does not matter which terminal handles the release. Every supported agent gets the same workflow.',
         },
         {
           type: 'paragraph',
-          text: 'If you want the bigger picture of running multiple CLI agents together, see this guide: <a href="/en/guides/ai-cli-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">How to Build an AI CLI Agent Swarm with Claude, Codex and Gemini</a>.',
+          text: 'If you want the bigger picture of running multiple CLI agents together, see this guide: <a href="/en/guides/ai-cli-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">How to Build an AI CLI Agent Swarm</a>.',
         },
       ],
     },
@@ -188,7 +186,7 @@ The part I like most: when you install a skill, you choose where it goes. You ca
         },
         {
           type: 'paragraph',
-          text: 'To share a skill, you can publish it to the public catalogue the marketplace mirrors, or simply commit the folder to a repo your team clones. Either way, the format is the same, so anything you build is portable across Claude, Gemini and Codex.',
+          text: 'To share a skill, you can publish it to the public catalogue the marketplace mirrors, or simply commit the folder to a repo your team clones. Either way, the format is the same, so anything you build is portable across all seven supported agents.',
         },
         {
           type: 'callout',
@@ -205,15 +203,15 @@ The part I like most: when you install a skill, you choose where it goes. You ca
     },
     {
       question: 'How do I install a Claude Code skill?',
-      answer: 'Open the Skills Marketplace inside CodeAgentSwarm, search or sort by stars to find a skill, open it, and click Install. On the skill\'s detail view you choose the target: Install to Claude, Install to Gemini, Install to Codex, or Install all. The files are written to the right place automatically.',
+      answer: 'Open the Skills Marketplace inside CodeAgentSwarm, search or sort by stars to find a skill, open it, and click Install. Choose Claude, Codex, Antigravity, OpenCode, Kimi Code, Grok Build, Cursor Agent or Install all. The files are written to the right place automatically.',
     },
     {
       question: 'Where are Claude Code skills stored?',
-      answer: 'Skills installed to Claude live in your Claude Code skills directory at ~/.claude/skills/, with each skill in its own folder next to its SKILL.md. They are plain files, so you can open, edit, version control or delete them. Gemini and Codex each have their own skills location, and CodeAgentSwarm writes the files where each agent expects them.',
+      answer: 'Skills installed to Claude live in your Claude Code skills directory at ~/.claude/skills/, with each skill in its own folder next to its SKILL.md. They are plain files, so you can open, edit, version control or delete them. Every supported agent has its own skills location, and CodeAgentSwarm writes the files where each one expects them.',
     },
     {
-      question: 'Can I use the same skill with Codex and Gemini?',
-      answer: 'Yes. When you install a skill from the marketplace you choose the target, and you can pick Install to Codex, Install to Gemini, Install to Claude, or Install all. Choosing Install all puts the same skill into every CLI agent at once, so one skill library works across all of them.',
+      question: 'Can I use the same skill with all supported agents?',
+      answer: 'Yes. Choose Claude, Codex, Antigravity, OpenCode, Kimi Code, Grok Build, Cursor Agent or Install all. Choosing Install all puts the same skill into every supported CLI agent at once.',
     },
     {
       question: 'How do I create my own skill?',

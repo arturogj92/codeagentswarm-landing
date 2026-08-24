@@ -7,7 +7,7 @@ export const guide: Guide = {
     title: 'Antigravity Plans and Pricing: What the Free Tier Really Gives You',
     metaTitle: 'Antigravity CLI Pricing: Free, Pro and Ultra Explained (2026)',
     metaDescription: 'Antigravity pricing explained: the free tier and what it actually allows, Google AI Pro and Ultra, the credit pool, and why the free limits have been cut repeatedly.',
-    intro: `Antigravity does not have its own subscription. Access rides on a Google AI plan, and as of August 2026 that means: a genuinely usable free tier, Google AI Pro, Google AI Ultra, an Ultra Max tier above it, and an organisation route through Google Cloud with consumption-based pricing.
+    intro: `Antigravity does not have its own subscription. Access rides on a Google AI plan, and as of August 23, 2026 that means: a free tier, Google AI Plus, Google AI Pro, Google AI Ultra 5x, Google AI Ultra 20x, and an organisation route through Google Cloud with consumption-based pricing.
 
 The free tier is the story here. Unlike <a href="/en/guides/claude-code-plans-and-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, which is not on its free tier at all, Antigravity's free plan gives you access to multiple frontier models, unlimited tab completions and unlimited command requests, gated by weekly rate limits rather than by feature. You can do real work on it without paying.
 
@@ -16,7 +16,7 @@ There is a catch worth knowing before you build a workflow around it, and it is 
     ctaAgent: 'antigravity',
     highlightedWords: ['Antigravity', 'Plans', 'Pricing'],
     publishedAt: '2026-08-05',
-    updatedAt: '2026-08-05',
+    updatedAt: '2026-08-23',
     alternateSlug: 'planes-y-precios-de-antigravity',
   },
   sections: [
@@ -33,9 +33,10 @@ There is a catch worth knowing before you build a workflow around it, and it is 
           headers: ['Plan', 'Price', 'What changes'],
           rows: [
             ['Individual (free)', '$0', 'All models, basic weekly rate limits'],
+            ['Google AI Plus', 'Around $8/month', 'Expanded Antigravity requests'],
             ['Google AI Pro', '$20/month', 'More generous rate limits, flexible credit pool'],
-            ['Google AI Ultra', '$100/month', '5x the Pro limits'],
-            ['Ultra Max', '$200/month', '20x the Pro limits'],
+            ['Google AI Ultra 5x', '$100/month', 'Higher Antigravity requests'],
+            ['Google AI Ultra 20x', '$200/month', 'Highest Antigravity requests'],
             ['Organisation', 'Via Google Cloud', 'Consumption-based API pricing'],
           ],
           caption: 'Antigravity access tiers, August 2026.',
@@ -47,11 +48,11 @@ There is a catch worth knowing before you build a workflow around it, and it is 
         },
         {
           type: 'paragraph',
-          text: 'That repricing is worth knowing about because it went in the customer\'s favour, which is rare. Google introduced the $100 Ultra tier as a middle step, and the previous top tier came down from $250 to $200 and was renamed Ultra Max. If you are reading an older comparison that quotes $250, it predates that change.',
+          text: 'The live Google One ladder now names the two top plans Google AI Ultra 5x and Google AI Ultra 20x. Older comparisons may call the $200 tier Ultra Max or quote $250; use the current Google account checkout before buying.',
         },
         {
           type: 'paragraph',
-          text: 'The 5x and 20x multipliers are measured against Pro, not against the free tier. This matters when you are working out what an upgrade actually buys you: the jump from free to Pro is the one that changes your day, and the jumps above it are for people running agents more or less continuously.',
+          text: 'Google now describes Antigravity access as limited, expanded, higher and highest across the ladder. That wording is relative rather than a published request count, so choose a plan from the usage shown in your account instead of converting the 5x and 20x plan names into invented quotas.',
         },
       ],
     },
@@ -88,11 +89,11 @@ There is a catch worth knowing before you build a workflow around it, and it is 
       content: [
         {
           type: 'paragraph',
-          text: 'Pro and Ultra include a flexible credit pool. Credits are consumed once your included plan quota runs out, so the plan quota is a floor rather than a hard ceiling, and they are priced at roughly $0.01 each as of August 2026, with bulk purchase available (around $199 for 20,000 credits).',
+          text: 'Google documents extra AI credits for Pro and Ultra users after the included quota runs out. The amount deducted follows standard API pricing and varies by model and task complexity, so there is no reliable flat $0.01 conversion for every Antigravity request.',
         },
         {
           type: 'paragraph',
-          text: 'This puts Antigravity in the same category as <a href="/en/guides/codex-plans-and-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex</a> rather than Claude Code: hitting your limit is a prompt to spend rather than a wall you have to wait out. Whether that is good news depends entirely on whether you noticed.',
+          text: 'This puts Antigravity in the same broad category as <a href="/en/guides/codex-plans-and-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex</a> and paid Claude plans: you can fund work beyond the included quota instead of always waiting for a reset. Whether that is good news depends on whether you budgeted for it.',
         },
         {
           type: 'paragraph',
@@ -159,7 +160,7 @@ There is a catch worth knowing before you build a workflow around it, and it is 
         },
         {
           type: 'paragraph',
-          text: '<a href="/" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a>, the desktop workspace for running several AI CLI agents in parallel, reads Antigravity\'s real quota from its local endpoint and shows it alongside your other agents\' usage, with the platform-specific discovery handled for you on macOS, Linux and Windows. You see the wall approaching while the agents work.',
+          text: '<a href="/" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a>, the desktop workspace for running several AI CLI agents in parallel, reads Antigravity\'s real quota from its local endpoint and shows it alongside your other agents\' usage, with the platform-specific discovery handled for you on macOS and Windows. You see the wall approaching while the agents work.',
         },
         {
           type: 'paragraph',
@@ -175,7 +176,7 @@ There is a catch worth knowing before you build a workflow around it, and it is 
     },
     {
       question: 'How much does Antigravity cost per month?',
-      answer: 'There is no Antigravity subscription. Access comes with a Google AI plan: free, Pro at around $20/month, Ultra at around $100/month for 5x the Pro limits, and Ultra Max at around $200/month for 20x. Verify current prices on your Google account, as Google does not list them on the Antigravity pricing page.',
+      answer: 'There is no Antigravity subscription. Access comes with a Google AI plan: free, Plus from around $8/month, Pro around $20/month, Ultra 5x around $100/month and Ultra 20x around $200/month. Verify the current price in your Google account before paying.',
     },
     {
       question: 'How many requests does the Antigravity free tier allow?',
@@ -183,7 +184,7 @@ There is a catch worth knowing before you build a workflow around it, and it is 
     },
     {
       question: 'What are Antigravity credits and when do they get used?',
-      answer: 'A flexible pool on the Pro and Ultra plans that is consumed once your included quota runs out, priced at roughly $0.01 each with bulk purchase available. The free tier has no credit pool, so free users simply wait for the limit to reset.',
+      answer: 'Pro and Ultra users can buy extra AI credits after the included quota runs out. Consumption follows standard API pricing and varies by model and task complexity, rather than one fixed price per request. Free users wait for the limit to reset.',
     },
     {
       question: 'Why does my quota display say Antigravity is not running when it is?',

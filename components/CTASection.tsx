@@ -28,17 +28,14 @@ function FOMOPopup({
   const [email, setEmail] = useState('')
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [failed, setFailed] = useState(false)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!email) return
 
     setLoading(true)
-
-    // Track the submission
-    if (typeof window !== 'undefined') {
-      window.umami?.track('fomo_email_submit', { platform, email: email.split('@')[1] })
-    }
+    setFailed(false)
 
     try {
       const response = await fetch('/api/waitlist', {
@@ -55,15 +52,16 @@ function FOMOPopup({
       if (response.ok || response.status === 409) {
         // Success or already registered - both are fine
         setSubmitted(true)
+        window.umami?.track('fomo_email_submit', { platform, email: email.split('@')[1] })
       } else {
         console.error('Waitlist API error:', response.status)
-        // Still show success to user for better UX
-        setSubmitted(true)
+        setFailed(true)
+        window.umami?.track('fomo_email_error', { platform, reason: `http_${response.status}` })
       }
     } catch (error) {
       console.error('Error submitting to waitlist:', error)
-      // Show success anyway for better UX
-      setSubmitted(true)
+      setFailed(true)
+      window.umami?.track('fomo_email_error', { platform, reason: 'network' })
     } finally {
       setLoading(false)
     }
@@ -153,6 +151,10 @@ function FOMOPopup({
                     {loading ? t('sending') : t('submit')}
                   </button>
                 </form>
+
+                <div role="status" aria-live="polite">
+                  {failed && <p className="text-red-400 text-sm mt-3 text-center">{t('error')}</p>}
+                </div>
 
                 <p className="text-center text-neutral-600 text-xs mt-4">
                   {t('privacy').replaceAll('{platform}', platform === 'windows' ? 'Windows' : 'Linux')}

@@ -1,7 +1,8 @@
 import { Metadata } from 'next'
 import { notFound, permanentRedirect } from 'next/navigation'
 import { setRequestLocale } from 'next-intl/server'
-import { getGuide, getGuideSlugs } from '@/content/guides'
+import { getAllGuides, getGuide, getGuideSlugs } from '@/content/guides'
+import { pickRelatedGuideMeta } from '@/content/guides/types'
 import { GuideLayout } from '@/components/guides'
 
 const baseUrl = 'https://www.codeagentswarm.com'
@@ -13,8 +14,14 @@ interface PageProps {
   }>
 }
 
-// Generate static params for all Spanish guides
-export async function generateStaticParams() {
+// The parent layout generates both locales. Only pre-render the locale that
+// belongs to this route; wrong-language legacy URLs remain dynamic redirects.
+export async function generateStaticParams({
+  params: { locale },
+}: {
+  params: { locale: string }
+}) {
+  if (locale !== 'es') return []
   const slugs = getGuideSlugs('es')
   return slugs.map((slug) => ({ slug }))
 }
@@ -42,6 +49,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: meta.metaTitle,
     description: meta.metaDescription,
+    authors: [{ name: meta.author ?? 'CodeAgentSwarm', url: `${baseUrl}/es/about` }],
     alternates: {
       canonical: canonicalUrl,
       languages: {
@@ -69,7 +77,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     },
     twitter: {
       card: 'summary_large_image',
-      site: '@CodeAgentSwarm',
       title: meta.metaTitle,
       description: meta.metaDescription,
       images: ['/og.png'],
@@ -103,6 +110,7 @@ export default async function GuiaPage({ params }: PageProps) {
   if (!guide) {
     notFound()
   }
+  const relatedGuide = pickRelatedGuideMeta(getAllGuides('es'), guide)
 
   // JSON-LD structured data - Article
   const jsonLdArticle = {
@@ -111,6 +119,17 @@ export default async function GuiaPage({ params }: PageProps) {
     headline: guide.meta.title,
     description: guide.meta.metaDescription,
     url: `${baseUrl}/es/guias/${slug}`,
+    author: {
+      '@type': 'Organization',
+      name: guide.meta.author ?? 'CodeAgentSwarm',
+      url: `${baseUrl}/es/about`,
+    },
+    image: {
+      '@type': 'ImageObject',
+      url: `${baseUrl}/og.png`,
+      width: 1200,
+      height: 630,
+    },
     ...(guide.meta.publishedAt && { datePublished: guide.meta.publishedAt }),
     ...(guide.meta.updatedAt && { dateModified: guide.meta.updatedAt }),
     inLanguage: 'es',
@@ -185,7 +204,7 @@ export default async function GuiaPage({ params }: PageProps) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }}
         />
       )}
-      <GuideLayout guide={guide} />
+      <GuideLayout guide={guide} relatedGuide={relatedGuide} />
     </>
   )
 }

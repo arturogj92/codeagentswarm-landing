@@ -105,6 +105,8 @@
 .signal {
   stroke-dasharray: 4 5;
   animation: capability-signal-flow 3s linear infinite;
+  /* Driven from the component: paused while the rail is off screen. */
+  animation-play-state: var(--signal-play, running);
 }
 
 .featureCopy {

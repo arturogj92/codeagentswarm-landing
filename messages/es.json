@@ -11,27 +11,26 @@
   "header": {
     "features": "Características",
     "demo": "Demo",
-    "pricing": "Precios",
+    "pricing": "Beta abierta",
     "roadmap": "Roadmap",
     "faq": "FAQ",
     "guides": "Guías"
   },
   "hero": {
-    "badge": "Open Beta – Pro se activa automáticamente al registrarte",
+    "badge": "Open Beta: Pro se activa automáticamente al registrarte",
     "badgeNew": "NUEVO",
-    "titleLine1": "Deja de cambiar de ventana.",
-    "titleLine2": "Orquesta varios agentes de IA en paralelo.",
-    "titleLine3": "Varios Terminales AI CLI. Un workspace. Todo bajo control.",
-    "subtitle": "Ejecuta varios terminales AI CLI en paralelo - Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code - con visibilidad en tiempo real, notificaciones instantáneas, historial completo y control total sobre múltiples proyectos.",
-    "powerStatement": "",
-    "authorityLine": "",
-    "requirements": "Compatible con Claude Code, Codex, Antigravity CLI, OpenCode o Kimi Code. macOS 12+ y Windows 10/11",
-    "claimAccess": "Descargar Gratis – Pro Incluido",
-    "securityBadge": "Modo Turbo con protección integrada. Tú defines los límites.",
+    "eyebrow": "Un workspace · Tus agentes de programación",
+    "titleLine1": "Agentes en paralelo.",
+    "titleLine2": "Un centro de mando visual.",
+    "subtitle": "Ejecuta Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent en paralelo dentro de un entorno de desarrollo agéntico pensado para supervisarlos.",
+    "claimAccess": "Descargar gratis",
+    "microcopy": "Pro incluido durante la beta · macOS 12+ · Windows 10/11",
+    "worksWith": "Compatible con",
+    "existingAccounts": "Usa tus cuentas CLI actuales",
     "stats": {
       "eyebrow": "Capacidades clave",
-      "terminals": "Terminales Paralelos",
-      "terminalsDesc": "Varios agentes AI CLI trabajando juntos",
+      "terminals": "Agentes de IA en Paralelo",
+      "terminalsDesc": "Varios agentes trabajando a la vez",
       "searchableChats": "Búsqueda Total",
       "searchableChatsDesc": "Historial completo, nunca pierdas contexto",
       "codePreview": "Visibilidad en Tiempo Real",
@@ -41,8 +40,8 @@
     },
     "videos": {
       "multiTerminal": {
-        "title": "Control Multi-Terminal",
-        "description": "Gestiona varias sesiones AI CLI simultáneamente"
+        "title": "Control Multiagente",
+        "description": "Gestiona varios agentes de IA simultáneamente"
       },
       "multiModel": {
         "title": "Multi-Modelo",
@@ -71,12 +70,12 @@
     "badge": "El Coste Oculto",
     "titleLine1": "Cambiar de ventana",
     "titleLine2": "te hace perder mucho tiempo",
-    "description": "Un solo terminal de Claude Code significa cambios de contexto constantes. Cada interrupción rompe tu concentración. Cada prompt repetido es tiempo perdido. Cada cambio sin visibilidad es un riesgo.",
+    "description": "Trabajar con un solo agente de IA cada vez obliga a cambiar de contexto constantemente. Cada ventana, hilo perdido y prompt repetido te roba tiempo.",
     "painPoints": {
       "switching": "Cambios de ventana constantes que fragmentan tu concentración.",
       "noView": "Claude Code modifica archivos sin que puedas ver qué está haciendo.",
       "repeating": "Sesiones que pierden contexto. Prompts que repites continuamente.",
-      "confidence": "La IA termina y no te enteras. Sin notificaciones, vives pendiente del terminal."
+      "confidence": "Un agente termina y no te enteras. Sin notificaciones, vives pendiente de su ventana."
     },
     "benefits": {
       "title": "¿Qué ganas con CodeAgentSwarm?",
@@ -91,16 +90,16 @@
       "oldWay": "Sin CodeAgentSwarm",
       "oldWayDesc": "Cambio de ventanas constante, contexto fragmentado, prompts repetidos",
       "newWay": "Con CodeAgentSwarm",
-      "newWayDesc": "Varios terminales, visibilidad total, cero pérdida de contexto",
+      "newWayDesc": "Varios agentes, una vista, cero pérdida de contexto",
       "switchingFatigue": "Cambiar de ventana",
       "costingHours": "te hace perder mucho tiempo",
       "allVisible": "Todo visible a la vez",
-      "sixTerminals": "Varios terminales, 1 vista",
+      "sixTerminals": "Varios agentes, 1 vista",
       "appPlaceholder": "Tu screenshot aquí",
       "pain1": "Alt+Tab constante entre ventanas",
       "pain2": "Claude cambia código sin que lo veas",
       "pain3": "Contexto perdido, prompts repetidos",
-      "benefit1": "Varios terminales visibles a la vez",
+      "benefit1": "Varios agentes visibles a la vez",
       "benefit2": "Diffs en tiempo real de cada cambio",
       "benefit3": "Agentes que crean y completan tareas solos",
       "chaosLabel": "Frustración constante",
@@ -113,16 +112,16 @@
       "title2": "Ahora <amber>tu workflow</amber> también puede serlo.",
       "text": "Cada agente, cada diff y cada notificación en una sola vista. Nada que buscar, nada que perderse.",
       "cta": "Pruébalo gratis",
-      "hint": "Gratis. Sin tarjeta. macOS, Windows y Linux."
+      "hint": "Gratis. Sin tarjeta. macOS y Windows. Linux próximamente."
     }
   },
   "solution": {
     "badge": "La Solución",
-    "titleLine1": "El workspace multi-terminal",
+    "titleLine1": "El workspace multiagente",
     "titleLine2": "que necesitas",
-    "description": "Varios terminales AI CLI (Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code) ejecutándose en paralelo. Visibilidad completa de cada agente. Notificaciones en tiempo real. Historial persistente. Gestión multi-proyecto sin fricción.",
+    "description": "CodeAgentSwarm es un centro de mando visual donde Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent trabajan en paralelo, con estado en vivo, notificaciones, historial buscable y control multiproyecto.",
     "points": {
-      "terminals": "Varios terminales AI CLI trabajando simultáneamente.",
+      "terminals": "Varios agentes de programación con IA trabajando simultáneamente.",
       "notifications": "Notificaciones instantáneas cuando un agente termina o requiere input.",
       "git": "Panel Git integrado con diffs en vivo.",
       "kanban": "Kanban que los agentes pueden leer y actualizar automáticamente.",
@@ -139,16 +138,16 @@
     "viewGuide": "Ver guía",
     "items": {
       "multiTerminal": {
-        "title": "Varias Terminales AI CLI en Paralelo",
-        "description": "Cada terminal es independiente: su propio proyecto, su propio contexto, su propia tarea. Sin conflictos. Sin esperas. Trabajas en frontend mientras otro terminal hace backend."
+        "title": "Varios Agentes de IA en Paralelo",
+        "description": "Cada agente tiene su propio proyecto, contexto y tarea. Trabaja en el frontend mientras otro agente se ocupa del backend sin perder de vista ninguno."
       },
       "taskWorkflow": {
         "title": "Tablero Agentic con MCP",
-        "description": "Crea tareas. Asígnalas a terminales. Revisa los cambios cuando terminan. Los agentes leen el tablero vía MCP y actualizan su progreso automáticamente."
+        "description": "Crea tareas, asígnalas a agentes y revisa los cambios cuando terminan. Los agentes leen el tablero vía MCP y actualizan su progreso automáticamente."
       },
       "notifications": {
         "title": "Notificaciones AI CLI en Tiempo Real",
-        "description": "Deja de vigilar terminales. Cuando un agente termina, necesita input o falla, te avisa. Trabaja en otra cosa mientras tus agentes IA trabajan para ti."
+        "description": "Deja de vigilar ventanas. Cuando un agente termina, necesita input o falla, CodeAgentSwarm te avisa para que puedas centrarte en otra cosa."
       },
       "visibility": {
         "title": "Visibilidad y Seguimiento de Cambios en Tiempo Real",
@@ -195,7 +194,7 @@
     "subtitle": "Descubre cómo los desarrolladores están mejorando su flujo de trabajo con Claude Code.",
     "testimonials": {
       "alex": {
-        "quote": "Ejecutar backend, frontend y tests en paralelo en varias terminales de Claude Code lo cambió todo.",
+        "quote": "Ejecutar agentes de Claude Code separados para backend, frontend y tests lo cambió todo.",
         "author": "Alex C.",
         "role": "Gestionando arquitectura Go/React de 12 microservicios"
       },
@@ -221,7 +220,7 @@
       "title": "Por qué funciona",
       "items": {
         "tasks": "Asignas tareas. Los agentes las leen y ejecutan solos.",
-        "notifications": "Te avisa cuando terminan. Deja de vigilar terminales.",
+        "notifications": "Te avisa cuando terminan. Deja de vigilar ventanas.",
         "diffs": "Ves qué cambia mientras trabajan. Cero sorpresas.",
         "history": "El prompt de hace 3 semanas sigue ahí. Búscalo."
       }
@@ -239,7 +238,7 @@
     "badge": "Integraciones MCP",
     "titleLine1": "Conecta tus herramientas",
     "titleHighlight": "en un clic",
-    "subtitle": "Un catálogo de integraciones que activas por proyecto. Tu agente IA lee PRs de GitHub, crea tickets en Jira, actualiza docs en Notion - sin salir del terminal.",
+    "subtitle": "Un catálogo de integraciones que activas por proyecto. Tu agente de IA lee PRs de GitHub, crea tickets en Jira y actualiza documentos de Notion sin salir de su flujo de trabajo.",
     "installAll": "Instalar todas las integraciones",
     "allInstalled": "Todas las integraciones instaladas",
     "installed": "integraciones activas",
@@ -276,14 +275,15 @@
     "sending": "Enviando...",
     "success": "Solicitud registrada",
     "successDesc": "Te notificaremos en cuanto {platform} esté disponible.",
+    "error": "No hemos podido añadirte a la lista de espera. Comprueba tu conexión e inténtalo de nuevo. Si sigue fallando, escribe a hello@codeagentswarm.com.",
     "benefit1": "Acceso prioritario en el lanzamiento",
     "benefit2": "Precio especial de early adopter",
     "privacy": "Solo recibirás emails sobre la disponibilidad de {platform}. Sin spam."
   },
   "pricing": {
-    "title": "Precios",
-    "titleHighlight": "transparentes",
-    "subtitle": "Comienza gratis. Escala según tus necesidades. Sin costes ocultos.",
+    "title": "Acceso completo durante",
+    "titleHighlight": "la beta abierta",
+    "subtitle": "Prueba el producto completo y ayúdanos a validarlo. Todas las funciones Pro son gratis durante la beta. No necesitas suscripción a CodeAgentSwarm ni tarjeta.",
     "perMonth": "mes",
     "betaSpecial": {
       "badge": "OFERTA BETA",
@@ -291,17 +291,17 @@
       "subtitle": "Durante la Open Beta",
       "strikethrough": "Precio post-beta: €6.99/mes",
       "bullets": {
-        "terminals": "Varios Terminales",
+        "terminals": "Varios Agentes de IA",
         "projects": "Proyectos Ilimitados",
         "mcp": "Todas las integraciones MCP"
       },
       "features": {
-        "terminals": "Varios terminales AI CLI en paralelo",
+        "terminals": "Varios agentes de programación con IA en paralelo",
         "projects": "Proyectos ilimitados sin restricciones",
         "notifications": "Notificaciones en tiempo real",
         "mcp": "Acceso completo al marketplace MCP"
       },
-      "cta": "Descargar – Pro se Activa Automáticamente"
+      "cta": "Descargar: Pro se Activa Automáticamente"
     },
     "showFeatures": "Ver comparativa completa",
     "hideFeatures": "Ocultar comparativa",
@@ -318,28 +318,28 @@
       },
       "pro": {
         "name": "Pro",
-        "description": "Para usuarios intensivos de AI CLI: varios terminales, notificaciones en tiempo real, flujos multi-proyecto e integración MCP completa",
+        "description": "Para desarrolladores que ejecutan varios agentes de IA, con notificaciones, flujos multiproyecto e integración MCP completa",
         "cta": "Suscribirse en App"
       }
     },
     "features": {
-      "terminals2": "2 terminales",
-      "terminals4": "4 terminales",
-      "terminals6": "25 terminales",
+      "terminals2": "2 agentes de IA",
+      "terminals4": "4 agentes de IA",
+      "terminals6": "50 agentes de IA",
       "projects2": "2 proyectos",
       "projects4": "4 proyectos",
       "unlimitedProjects": "Proyectos ilimitados",
       "notifications": "Notificaciones Live",
-      "realTimeChanges": "Cambios de Terminal en Tiempo Real",
+      "realTimeChanges": "Cambios del Agente en Tiempo Real",
       "gridOnly": "Solo Grid",
       "gridTabs": "Grid + Pestañas",
       "projectShortcuts": "Atajos de Proyecto",
-      "terminalShortcuts": "Atajos de Terminal",
+      "terminalShortcuts": "Atajos de Agente",
       "projectShortcut1": "1 Atajo de Proyecto",
-      "terminalShortcut1": "1 Atajo de Terminal",
+      "terminalShortcut1": "1 Atajo de Agente",
       "projectShortcuts6": "6 Atajos de Proyecto",
-      "terminalShortcutsUnlimited": "Atajos de Terminal Ilimitados",
-      "resizable": "Terminales Redimensionables",
+      "terminalShortcutsUnlimited": "Atajos de Agente Ilimitados",
+      "resizable": "Paneles de Agentes Redimensionables",
       "mcpConfig": "Configuración MCP",
       "mcpMarketplace": "MCP Marketplace",
       "gitAi": "Git + AI Commits",
@@ -356,13 +356,14 @@
       "unlimited": "ILIMITADO",
       "boost2x": "2X BOOST",
       "boost3x": "3X BOOST",
+      "boost25x": "25X BOOST",
       "boost6x": "6X BOOST",
       "modes2x": "2X MODOS"
     },
     "trustBadge": "30 días de garantía | Cancela cuando quieras | Pago seguro con Stripe",
     "whyUpgrade": {
-      "title": "¿Por qué Pro?",
-      "description": "Pro está pensado para desarrolladores que usan AI CLI de forma intensiva y necesitan varios terminales, proyectos ilimitados e integración completa con MCP. Las terminales en paralelo reducen tiempos de espera y cambios de contexto, mientras que las pestañas, atajos y controles avanzados te ayudan a ir más rápido y mantener a todos tus agentes alineados."
+      "title": "Todo está desbloqueado durante la beta",
+      "description": "Ejecuta hasta 50 agentes de IA en proyectos ilimitados. Todas las funciones Pro están incluidas mientras validamos el producto con usuarios de la beta."
     }
   },
   "roadmap": {
@@ -389,6 +390,7 @@
         "description": "Mas alla de Claude: soporte para multiples AI CLI agents.",
         "features": {
           "codex": "Integracion Codex CLI",
+          "grokBuild": "Ejecuta varios agentes de Grok Build con historial buscable y cambios en tiempo real en una sola app.",
           "antigravity": "Compatibilidad Antigravity CLI",
           "opencode": "Soporte opencode",
           "orchestration": "Orquestacion unificada de agentes"
@@ -455,44 +457,50 @@
     "titlePre": "Preguntas",
     "titleHighlight": "Frecuentes",
     "items": {
-      "q1": "¿Cómo uso varias terminales AI CLI (Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code) con CodeAgentSwarm?",
-      "a1": "CodeAgentSwarm hace que la configuración multi-terminal AI CLI sea simple. Solo abre la app y puedes ejecutar varios terminales AI CLI (Claude Code, Codex, Antigravity CLI, OpenCode o Kimi Code) simultáneamente. Cada terminal opera independientemente, permitiéndote trabajar en diferentes tareas o proyectos en paralelo con visibilidad en tiempo real completa.",
+      "q1": "¿Cómo ejecuto varios agentes de programación con IA en CodeAgentSwarm?",
+      "a1": "Abre CodeAgentSwarm y ejecuta Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code, Grok Build o Cursor Agent en paralelo. Cada agente funciona de forma independiente para trabajar en distintas tareas o proyectos, con todos sus estados visibles en un solo sitio.",
       "q2": "¿Cómo maneja CodeAgentSwarm la organización por proyectos?",
-      "a2": "CodeAgentSwarm te permite gestionar múltiples proyectos AI CLI sin problemas - ya uses Claude Code, Codex, Antigravity CLI, OpenCode o Kimi Code. Cambia entre proyectos sin perder contexto. Cada proyecto mantiene sus propias configuraciones de terminal, tableros de tareas e historial de conversaciones. Es un espacio de trabajo multiproyecto con IA diseñado para desarrolladores que manejan múltiples codebases.",
+      "a2": "CodeAgentSwarm mantiene juntos los agentes, el tablero de tareas y el historial de cada proyecto. Puedes cambiar de código base sin perder contexto ni reconstruir tu configuración.",
       "q3": "¿Tengo visibilidad en tiempo real y seguimiento de cambios en vivo?",
-      "a3": "¡Sí! CodeAgentSwarm proporciona visibilidad de código en tiempo real con diffs en vivo para que puedas ver los cambios de código de IA al instante. Los títulos dinámicos de terminal muestran en qué está trabajando cada agente AI CLI (Claude Code, Codex, Antigravity CLI, OpenCode o Kimi Code), y el sistema de seguimiento de archivos destaca exactamente qué cambió y cuándo.",
-      "q4": "¿Soporta CodeAgentSwarm notificaciones AI CLI (Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code)?",
-      "a4": "Absolutamente. Recibes notificaciones en tiempo real para eventos de programación IA. Cuando cualquier terminal AI CLI (Claude Code, Codex, Antigravity CLI, OpenCode o Kimi Code) termina una tarea, necesita tu input o encuentra un error, te avisa al instante. Nunca te pierdas una actualización con notificaciones de escritorio instantáneas.",
+      "a3": "Sí. Los diffs en vivo muestran los cambios de cada agente mientras ocurren. Los títulos dinámicos indican en qué trabaja Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code o Grok Build, y el seguimiento de archivos registra qué cambió y cuándo.",
+      "q4": "¿CodeAgentSwarm envía notificaciones para todos los agentes de IA?",
+      "a4": "Sí. CodeAgentSwarm envía una notificación de escritorio cuando cualquier agente termina una tarea, necesita tu input o encuentra un error.",
       "q5": "¿Cómo funciona el historial de conversaciones?",
-      "a5": "CodeAgentSwarm guarda tu historial completo de conversaciones AI CLI en todas las sesiones - ya uses Claude Code, Codex, Antigravity CLI, OpenCode o Kimi Code. Busca cualquier chat, decisión o fragmento de código pasado al instante. El historial de sesiones es completamente buscable, para que nunca pierdas contexto ni tengas que repetir explicaciones.",
+      "a5": "CodeAgentSwarm guarda el historial completo de conversaciones de todas las CLIs soportadas entre sesiones. Busca cualquier chat, decisión o fragmento de código al instante. El historial es buscable, así que no pierdes contexto ni repites explicaciones.",
       "q6": "¿Puedo controlar a qué tienen acceso mis agentes AI CLI?",
-      "a6": "Sí. CodeAgentSwarm proporciona configuración visual de permisos para Claude Code, Codex, Antigravity CLI, OpenCode y Kimi Code para gestionar acceso a archivos y acciones. Puedes configurar a qué puede acceder cada terminal, aprobar operaciones sensibles y mantener un entorno seguro de programación IA mientras usas el Modo Turbo para acciones seguras.",
+      "a6": "Sí. Los permisos visuales controlan los archivos y acciones disponibles para cada agente. Puedes aprobar operaciones sensibles mientras el Modo Turbo gestiona las rutinarias dentro de los límites que definas.",
       "q7": "¿Soporta CodeAgentSwarm herramientas MCP y el marketplace MCP?",
-      "a7": "¡Sí! CodeAgentSwarm incluye integración MCP completa con un marketplace MCP integrado. Conecta tus agentes AI CLI (Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code) a GitHub, Notion, Slack, Supabase, Brave Search, Playwright, PostgreSQL y más. Las herramientas MCP extienden lo que tus agentes pueden hacer.",
+      "a7": "Sí. CodeAgentSwarm incluye integración MCP completa con un marketplace MCP integrado. Conecta cualquiera de los siete agentes AI CLI soportados a GitHub, Notion, Slack, Supabase, Brave Search, Playwright, PostgreSQL y más. Las herramientas MCP amplían lo que pueden hacer tus agentes.",
       "q8": "¿Ayuda CodeAgentSwarm a evitar la pérdida de contexto en agentes AI CLI?",
-      "a8": "Sí. CodeAgentSwarm mantiene un historial sincronizado de conversaciones, muestra cambios en tiempo real de cada agente y vincula la estructura del proyecto con el contexto de cada terminal. Esto evita que tus agentes AI CLI (Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code) olviden acciones anteriores o pierdan el hilo en tareas de varios pasos.",
+      "a8": "Sí. CodeAgentSwarm mantiene un historial buscable entre sesiones, muestra los cambios de cada agente en tiempo real y vincula cada sesión con su proyecto. El trabajo anterior queda fácil de encontrar y retomar.",
       "q9": "¿Por qué no usar tmux?",
       "a9": "tmux gestiona ventanas. CodeAgentSwarm gestiona agentes: estado de tareas, notificaciones cuando terminan, diffs en vivo, historial por proyecto y permisos configurables. Si solo necesitas dividir la pantalla, tmux va bien. Si quieres saber qué hace cada agente y no perderte nada, necesitas CodeAgentSwarm.",
       "q10": "¿Puedo ejecutar Claude Code y Codex CLI a la vez?",
-      "a10": "Sí. Cada terminal de CodeAgentSwarm es un proceso independiente, así que puedes ejecutar Claude Code en uno y Codex CLI en otro al mismo tiempo. Eliges el agente por terminal (claude-code, codex cli, antigravity cli u opencode) y ejecutas varios en paralelo.",
+      "a10": "Sí. Cada sesión de agente es un proceso independiente, así que Claude Code y Codex CLI pueden ejecutarse al mismo tiempo. Elige el agente de cada sesión y abre tantas como permita tu plan.",
       "q11": "¿Funciona CodeAgentSwarm con Antigravity CLI?",
-      "a11": "Sí. CodeAgentSwarm ejecuta Antigravity CLI (agy), el sucesor oficial de Google del ya retirado Gemini CLI, junto a Claude Code, Codex CLI, OpenCode y Kimi Code en el mismo espacio de trabajo, con notificaciones compartidas, historial buscable y diffs en vivo por terminal. Puedes montar un enjambre entero de agentes Antigravity o mezclarlo con las otras CLIs.",
+      "a11": "Sí. CodeAgentSwarm ejecuta Antigravity CLI (agy), el sucesor oficial de Google del ya retirado Gemini CLI, junto a Claude Code, Codex CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent, con notificaciones compartidas, historial buscable y diffs en vivo para cada agente.",
       "q12": "¿Puedo mezclar distintos agentes AI CLI en un mismo enjambre?",
-      "a12": "Sí, y esa es la idea. Un mismo espacio de trabajo de CodeAgentSwarm puede ejecutar Claude Code, Codex CLI, Antigravity CLI, OpenCode y Kimi Code a la vez, cada uno en su terminal. Usa el agente que mejor encaje en cada tarea y vigílalos todos desde un solo sitio.",
+      "a12": "Sí. Un mismo espacio de trabajo puede ejecutar Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent a la vez. Usa el agente que mejor encaje en cada tarea y supervisa todos desde un solo sitio.",
       "q13": "¿Qué es un enjambre de agentes AI CLI?",
-      "a13": "Un enjambre de agentes AI CLI son varios agentes de código por línea de comandos (como Claude Code, Codex, Antigravity CLI, OpenCode y Kimi Code) ejecutándose en paralelo en un solo sitio, con visibilidad, notificaciones e historial compartidos. CodeAgentSwarm es el espacio de trabajo de escritorio hecho para ejecutar y supervisar ese enjambre.",
+      "a13": "Un enjambre de agentes AI CLI son varios agentes de código por línea de comandos (como Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent) ejecutándose en paralelo en un solo sitio, con visibilidad, notificaciones e historial compartidos. CodeAgentSwarm es el espacio de trabajo de escritorio hecho para ejecutar y supervisar ese enjambre.",
       "q14": "¿CodeAgentSwarm funciona con OpenCode?",
-      "a14": "Sí. CodeAgentSwarm ejecuta Claude Code, Codex CLI, Antigravity CLI, OpenCode y Kimi Code en paralelo en un mismo espacio de trabajo. Eliges el agente en cada terminal, así que puedes añadir sesiones de OpenCode a tu enjambre junto al resto de agentes.",
+      "a14": "Sí. CodeAgentSwarm ejecuta OpenCode junto a Claude Code, Codex CLI, Antigravity CLI, Kimi Code, Grok Build y Cursor Agent. Añade una o varias sesiones de OpenCode al mismo enjambre.",
       "q15": "¿CodeAgentSwarm funciona con Kimi Code?",
-      "a15": "Sí. Kimi Code CLI de Moonshot es el quinto agente compatible con CodeAgentSwarm, junto a Claude Code, Codex CLI, Antigravity CLI y OpenCode. Eliges Kimi Code en el lanzador como cualquier otro agente y tiene las mismas notificaciones, historial de conversaciones buscable y diffs en vivo. Puedes montar un enjambre entero de sesiones de Kimi Code o mezclarlo con las otras CLIs."
+      "a15": "Sí. Kimi Code CLI de Moonshot es un agente de primera clase en CodeAgentSwarm, junto a Claude Code, Codex CLI, Antigravity CLI, OpenCode, Grok Build y Cursor Agent. Eliges Kimi Code en el lanzador como cualquier otro agente y tiene las mismas notificaciones, historial de conversaciones buscable y diffs en vivo. Puedes montar un enjambre entero de sesiones de Kimi Code o mezclarlo con las otras CLIs.",
+      "q16": "¿Qué es un entorno de desarrollo agéntico (ADE) y por qué CodeAgentSwarm es uno?",
+      "a16": "Un entorno de desarrollo agéntico (Agentic Development Environment, ADE) está pensado para delegar tareas de software a agentes de programación con IA, ejecutarlos en sesiones aisladas o en paralelo y revisar sus resultados. CodeAgentSwarm es un ADE: permite dirigir Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent desde un solo lugar, con tareas, notificaciones, historial y permisos siempre visibles.",
+      "q17": "¿CodeAgentSwarm funciona con Grok Build?",
+      "a17": "Sí. CodeAgentSwarm ejecuta la CLI Grok Build de xAI (el comando grok) como agente de primera clase, así que puedes supervisar varios agentes de Grok Build junto a Claude Code, Codex o cualquier otra CLI compatible. Tú instalas e inicias sesión en Grok Build, y CodeAgentSwarm añade notificaciones, diffs en vivo para cada agente, historial buscable y cambio de proyecto.",
+      "q18": "¿CodeAgentSwarm funciona con Cursor Agent CLI?",
+      "a18": "Sí. CodeAgentSwarm se conecta a la CLI oficial cursor-agent mediante ACP. Muestra texto y herramientas en streaming, expone los modos Agent, Plan y Ask, gestiona permisos y cancelación, respeta .cursor/mcp.json y solo habilita la reanudación cuando la versión instalada anuncia soporte para loadSession."
     }
   },
   "cta": {
     "titleLine1": "Listo para",
     "titleHighlight": "Transformar",
     "titleLine2": "Tu Desarrollo?",
-    "subtitle": "Únete a los desarrolladores que quieren orquestar varias terminales AI CLI con visibilidad en tiempo real, notificaciones e historial completo.",
-    "instantSetup": "Si ya usas Claude Code, Codex, Antigravity CLI, OpenCode o Kimi Code, funciona al instante. Solo instala y abre.",
+    "subtitle": "Ejecuta todos tus agentes de programación con IA desde un centro de mando visual, con estado en vivo, notificaciones e historial buscable.",
+    "instantSetup": "Si ya usas Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code, Grok Build o Cursor Agent, funciona al instante. Solo instala y abre.",
     "version": "Version",
     "released": "Released",
     "loading": "Cargando releases...",
@@ -541,17 +549,17 @@
       "memory": "4GB minimo",
       "storageLabel": "Disco",
       "storage": "500MB",
-      "claudeCode": "Claude Code, Codex, Antigravity CLI, OpenCode o Kimi Code",
+      "claudeCode": "Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code, Grok Build o Cursor Agent",
       "gatekeeper": "Primera vez? Haz clic derecho - \"Abrir\" para bypass Gatekeeper."
     }
   },
   "footer": {
-    "description": "Espacio de trabajo de programacion con IA para varias terminales AI CLI (Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code), visibilidad en tiempo real, historial de conversaciones y gestion integrada de tareas.",
+    "description": "Centro de mando visual para ejecutar Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent en paralelo, con estado en vivo, historial de conversaciones y gestión integrada de tareas.",
     "product": "Producto",
     "company": "Empresa",
     "links": {
       "features": "Caracteristicas",
-      "pricing": "Precios",
+      "pricing": "Beta abierta",
       "roadmap": "Roadmap",
       "faq": "FAQ",
       "download": "Descargar",
@@ -574,8 +582,8 @@
   "beta": {
     "hero": {
       "headline": "Únete a la Open Beta",
-      "subheadline": "Un espacio de trabajo con IA con varios terminales AI CLI (Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code) en paralelo, visibilidad en tiempo real, notificaciones, historial completo de conversaciones y gestión multiproyecto, con todas las funciones Pro gratis durante la beta.",
-      "microcopy": "Funciona en macOS 12+ y Windows 10/11. Requiere Claude Code, Codex, Antigravity CLI, OpenCode o Kimi Code.",
+      "subheadline": "Ejecuta Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent en paralelo, con estado en vivo, notificaciones e historial completo. Pro está incluido durante la beta.",
+      "microcopy": "Funciona en macOS 12+ y Windows 10/11. Cursor Agent funciona de forma nativa en Windows.",
       "primaryCta": "Unirse a la Beta",
       "primaryCtaHint": "(Paso 1)",
       "secondaryCta": "Ver Características"
@@ -585,7 +593,7 @@
       "titleHighlight": "Empezar",
       "step1": {
         "title": "Descarga la app y crea tu cuenta",
-        "description": "Instala CodeAgentSwarm en macOS e inicia sesión con Google, GitHub o Discord. Automáticamente tendrás acceso Pro."
+        "description": "Instala CodeAgentSwarm en macOS o Windows e inicia sesión con Google, GitHub o Discord. Tu acceso Pro se activa automáticamente."
       },
       "step2": {
         "title": "Comparte tu feedback",
@@ -598,20 +606,20 @@
       "titlePre": "Todo lo que",
       "titleHighlight": "Necesitas",
       "point1": {
-        "title": "Varias Terminales AI CLI en Paralelo",
-        "description": "Ejecuta varios agentes AI CLI (Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code) simultáneamente. Cada terminal trabaja independientemente en diferentes tareas en múltiples proyectos."
+        "title": "Varios Agentes de IA en Paralelo",
+        "description": "Ejecuta Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent simultáneamente. Cada agente trabaja de forma independiente en una tarea o proyecto."
       },
       "point2": {
         "title": "Gestión de Tareas con IA",
-        "description": "Tablero Kanban integrado que los agentes pueden leer y actualizar vía MCP. Las tareas se sincronizan automáticamente en todos los terminales."
+        "description": "Tablero Kanban integrado que los agentes pueden leer y actualizar vía MCP. Las tareas se sincronizan en todo el enjambre."
       },
       "point3": {
         "title": "Notificaciones AI CLI en Tiempo Real",
-        "description": "Recibe notificaciones instantáneas cuando cualquier terminal termina, necesita input o encuentra un error. No te pierdas nada."
+        "description": "Recibe notificaciones instantáneas cuando cualquier agente termina, necesita input o encuentra un error."
       },
       "point4": {
         "title": "Visibilidad y Seguimiento de Cambios en Tiempo Real",
-        "description": "Ve los cambios de código de IA en tiempo real con diffs en vivo. Los títulos dinámicos de terminal muestran qué hace cada agente."
+        "description": "Ve los cambios de código en tiempo real con diffs en vivo. Los títulos dinámicos muestran qué hace cada agente."
       },
       "point5": {
         "title": "Historial Completo de Conversaciones",
@@ -665,14 +673,14 @@
       }
     },
     "pricing": {
-      "banner": "Durante la Open Beta, el plan Pro es 100% gratuito. Crea tu cuenta y se activa automáticamente.",
+      "banner": "Durante la beta abierta, todas las funciones Pro son gratis. Descarga la app, crea tu cuenta y todo se desbloquea automáticamente. Sin tarjeta.",
       "badge": "GRATIS DURANTE LA BETA",
       "priceStrikethrough": "~6,99 EUR/mes~",
       "priceFree": "GRATIS",
-      "cta": "Obtener Pro Gratis"
+      "cta": "Descargar la beta gratis"
     },
     "banner": {
-      "text": "Open Beta – Pro se activa solo al registrarte",
+      "text": "Open Beta: Pro se activa solo al registrarte",
       "cta": "Descargar Gratis"
     },
     "faq": {
@@ -681,22 +689,22 @@
       "items": {
         "q1": "¿La Beta es realmente gratis?",
         "a1": "Sí. Durante la Open Beta, el plan Pro es completamente gratis, con todas las funciones desbloqueadas y sin tarjeta.",
-        "q2": "¿Necesito una suscripción a Claude Code?",
-        "a2": "Sí. CodeAgentSwarm funciona encima de Claude Code, que es lo que permite la inteligencia de los agentes, las tareas paralelas y el uso de MCP. Necesitas una suscripción activa a Claude Code.",
-        "q3": "¿Se recomienda Claude Code Max?",
-        "a3": "Muy recomendable. Si trabajas en varios proyectos, refactors grandes, bases de código grandes o tareas paralelas, Max da mejor rendimiento y más capacidad.",
+        "q2": "¿Necesito suscripciones a todos los agentes compatibles?",
+        "a2": "No. Usa cualquier cuenta de CLI compatible que ya tengas. Cada proveedor mantiene su propio plan y límites de uso.",
+        "q3": "¿Puedo mezclar cuentas CLI gratuitas y de pago?",
+        "a3": "Sí. Combina cuentas gratuitas y de pago como prefieras. Se aplican el plan y los límites de uso de cada proveedor.",
         "q4": "¿Como puedo dar feedback?",
         "a4": "Nos encanta escuchar a nuestros usuarios. Envia tu feedback, reportes de bugs o peticiones de features a hello@codeagentswarm.com y te responderemos.",
         "q5": "¿Qué pasa cuando termine la Beta?",
-        "a5": "Tú eliges: seguir en Free, pasar a Pro o dejar de usarla. No hay cargos automáticos. Los founders que se unan durante la beta mantendrán el precio original de Pro para siempre.",
+        "a5": "Puedes seguir en Free, pasar a Pro o dejar de usar la app. No hay cargos automáticos. Los founders que se unan durante la beta mantienen el precio original de Pro durante su primer año.",
         "q6": "¿Qué sistema operativo necesito?",
         "a6": "macOS 12 o superior y Windows 10/11 (x64 y ARM64). Linux más adelante.",
         "q7": "¿CodeAgentSwarm almacena mi código?",
-        "a7": "No. Todo tu código permanece en tu máquina.",
+        "a7": "CodeAgentSwarm nunca recibe ni almacena tu código fuente ni el contenido del terminal. La CLI envía las instrucciones y el código directamente a su proveedor de IA, sujeto a su política de privacidad.",
         "q8": "¿Cómo activo Pro?",
         "a8": "No tienes que hacer nada. Durante la beta, Pro se activa automáticamente al crear tu cuenta. Descarga, inicia sesión y ya eres Pro.",
         "q9": "¿Soporta CodeAgentSwarm flujos multi-proyecto con Claude Code?",
-        "a9": "¡Sí! CodeAgentSwarm está diseñado para gestión multiproyecto. Cambia entre proyectos de Claude Code sin perder contexto. Cada proyecto mantiene sus propios terminales, tareas e historial de conversaciones. Gestiona múltiples proyectos de Claude Code sin problemas en un solo espacio de trabajo."
+        "a9": "Sí. CodeAgentSwarm está pensado para trabajar con varios proyectos. Cada uno conserva sus sesiones de agentes, tareas e historial, para que cambies de código base sin perder contexto."
       }
     }
   },
@@ -708,7 +716,7 @@
     "featured": {
       "0": {
         "title": "Varios Chats de Claude a la Vez",
-        "description": "Sí se puede: varias conversaciones de Claude trabajando en paralelo, cada una en su terminal y supervisadas desde una sola ventana"
+        "description": "Sí se puede: varios agentes de Claude trabajando en paralelo, cada uno con su propio contexto y todos supervisados desde una sola ventana"
       },
       "1": {
         "title": "Ver Cambios en Tiempo Real",
@@ -725,16 +733,18 @@
       "copy": "Claude Code, Codex, opencode, Kimi Code y Antigravity en un espacio de trabajo supervisado. Sin tmux, sin malabares con ventanas, cero cambios de contexto."
     },
     "downloadCta": {
-      "button": "Descárgalo gratis",
+      "button": "Descargar beta gratis",
       "otherPlatforms": "Otras plataformas",
       "context": {
-        "claudeCode": "CodeAgentSwarm hace todo esto por ti: varios terminales de Claude Code, historial buscable y vista de cambios en tiempo real, en una sola app.",
-        "codex": "CodeAgentSwarm hace todo esto por ti: varios terminales de Codex CLI, historial buscable y vista de cambios en tiempo real, en una sola app.",
-        "opencode": "CodeAgentSwarm hace todo esto por ti: varios terminales de opencode, historial buscable y vista de cambios en tiempo real, en una sola app.",
-        "kimiCode": "CodeAgentSwarm hace todo esto por ti: varios terminales de Kimi Code, historial buscable y vista de cambios en tiempo real, en una sola app.",
-        "antigravity": "CodeAgentSwarm hace todo esto por ti: varios terminales de Antigravity CLI, historial buscable y vista de cambios en tiempo real, en una sola app.",
-        "multi": "CodeAgentSwarm ejecuta tus agentes de código en paralelo: Claude Code, Codex, opencode, Kimi Code y Antigravity, con historial buscable y vista de cambios en tiempo real, en una sola app.",
-        "comparison": "La forma más rápida de decidir es probarlo: CodeAgentSwarm es gratis, se instala en un minuto y ejecuta Claude Code, Codex, opencode, Kimi Code y Antigravity en paralelo."
+        "claudeCode": "Ejecuta varios agentes de Claude Code con historial buscable y cambios en tiempo real en una sola app.",
+        "codex": "Ejecuta varios agentes de Codex CLI con historial buscable y cambios en tiempo real en una sola app.",
+        "opencode": "Ejecuta varios agentes de opencode con historial buscable y cambios en tiempo real en una sola app.",
+        "kimiCode": "Ejecuta varios agentes de Kimi Code con historial buscable y cambios en tiempo real en una sola app.",
+        "grokBuild": "Ejecuta varios agentes de Grok Build con historial buscable y cambios en tiempo real en una sola app.",
+        "cursorAgent": "Ejecuta Cursor Agent CLI por ACP con Chat en streaming, permisos visibles e historial por proyecto en una sola app.",
+        "antigravity": "Ejecuta varios agentes de Antigravity CLI con historial buscable y cambios en tiempo real en una sola app.",
+        "multi": "CodeAgentSwarm ejecuta tus agentes de código en paralelo: Claude Code, Codex, opencode, Kimi Code, Antigravity, Grok Build y Cursor Agent, con historial buscable y una sola superficie de supervisión.",
+        "comparison": "La forma más rápida de decidir es probarlo: CodeAgentSwarm es gratis, se instala en un minuto y ejecuta Claude Code, Codex, opencode, Kimi Code, Antigravity, Grok Build y Cursor Agent en paralelo."
       },
       "platform": {
         "silicon": "macOS · Apple Silicon",
@@ -803,5 +813,42 @@
       "backHome": "Volver al Inicio"
     },
     "error": "Algo salio mal. Intentalo de nuevo."
+  },
+  "interactiveDemo": {
+    "badge": "Pruébala sin instalar nada",
+    "title": "Trabajan sin que estés encima.",
+    "subtitle": "{count} agentes a la vez, cada uno con su tarea. El que necesita algo te avisa y se pone el primero de la lista; los demás siguen a lo suyo.",
+    "download": "Descárgala gratis",
+    "hintAnswer": "Contéstale: haz clic en una opción o pulsa {options, plural, =2 {1 o 2} other {del 1 al #}}",
+    "resize": "Arrastra para ensanchar la lista",
+    "launcher": {
+      "title": "Abrir un terminal nuevo",
+      "project": "Proyecto",
+      "agent": "Agente",
+      "search": "Buscar proyectos...",
+      "count": "{count} proyectos",
+      "empty": "Ningun proyecto coincide.",
+      "newProject": "Nuevo proyecto",
+      "importProject": "Importar proyecto",
+      "noProject": "Sin proyecto",
+      "close": "Cerrar"
+    },
+    "loading": "Cargando terminal...",
+    "loadingWorktree": "Creando worktree...",
+    "toastNow": "ahora",
+    "toast": {
+      "confirmation": "Un terminal necesita confirmación",
+      "finished": "Terminal terminado"
+    }
+  },
+  "modeCompare": {
+    "badge": "Chat o terminal",
+    "title": "La misma sesión, dos formas de leerla",
+    "subtitle": "El modo chat hace legible al agente: sus herramientas, su lista de tareas y sus preguntas pasan a ser cosas que puedes leer y pulsar. El CLI en crudo sigue a una tecla, con la misma conversación en el mismo segundo.",
+    "chatLabel": "Chat",
+    "terminalLabel": "Terminal",
+    "hint": "Arrastra para comparar",
+    "ariaLabel": "Comparar la vista de chat con la del terminal",
+    "footnote": "Cada agente corre en su CLI real por debajo. El modo chat es una vista de eso, no un sustituto."
   }
 }

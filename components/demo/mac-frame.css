@@ -1,0 +1,340 @@
+/*
+ * The MacBook around the demo, drawn entirely in CSS.
+ *
+ * A device mockup is one of the few things on a landing page a visitor looks at
+ * closely, and a PNG bezel either blurs on a retina screen or costs half a
+ * megabyte to avoid it. Borders and gradients stay sharp at any size for free.
+ *
+ * What makes it read as aluminium is not the grey: it is the edges. Every face
+ * gets a light line where it catches the light and a dark one where it turns
+ * away, which is why there are so many inset shadows below.
+ */
+
+.mac-frame {
+  /* The panel's proportions and the tallest it may get, in one place, because
+     the width of the whole machine is derived from them below. */
+  --screen-w: 16;
+  --screen-h: 10.3;
+  --screen-max-h: 74vh;
+  /* The black glass border. Thin: on this generation it is a rim, not a frame. */
+  --lid-pad: 9px;
+  /* How far the base sticks out past the lid on each side. The taper is the
+     silhouette cue that says laptop rather than monitor on a stand. */
+  --overhang: 4.2%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  /*
+   * The machine is capped by WIDTH, not by height, even though the thing being
+   * limited is its height.
+   *
+   * Capping the screen's height directly is the obvious move and it is wrong:
+   * the screen shrank to keep its ratio while the lid around it stayed at full
+   * width, so on a short window there was up to 358px of bare black lid down
+   * the right-hand side. Turning the height cap into the equivalent width cap
+   * here makes the lid, the base and the shadow all shrink WITH the screen,
+   * because every one of them is sized off this box.
+   */
+  /*
+   * ...but never so small that the workspace inside gives up.
+   *
+   * The demo collapses to a single column below 720px, a layout meant for
+   * phones. On a short, wide window (half a screen, a laptop at 1280x560) the
+   * height cap alone drove the machine down to 644px, so a desktop visitor got
+   * the phone layout inside a MacBook: no terminal pane, no header, half the
+   * lid empty. A mockup slightly taller than the fold beats that, and the
+   * section scrolls anyway.
+   */
+  /* Divided by the lid's share of the width, since the ceiling is about the
+     SCREEN and the frame is now wider than the lid by the overhang. */
+  max-width: calc(
+    max(860px, calc(var(--screen-max-h) * var(--screen-w) / var(--screen-h) + var(--lid-pad) * 2)) / 0.916
+  );
+  margin-inline: auto;
+  /* A hair of perspective on the whole assembly. Enough to read as an object
+     sitting on a surface, not enough to distort the screen. */
+  perspective: 2400px;
+}
+
+/* ---- Lid ---- */
+
+/*
+ * The bezel is BLACK, and thin.
+ *
+ * The first version framed the screen in wide brushed aluminium, which is what
+ * a MacBook looked like ten years ago. On an M-series machine the aluminium is
+ * a hairline around the edge and everything inside it is black glass, so the
+ * screen appears to run almost to the rim. That single change is most of what
+ * makes a CSS mockup read as the current machine rather than as "a laptop".
+ */
+.mac-lid {
+  position: relative;
+  /* Narrower than the base, which is what gives the silhouette its taper. */
+  width: calc(100% - var(--overhang) * 2);
+  padding: var(--lid-pad);
+  border-radius: 15px 15px 5px 5px;
+  background: #0c0c0e;
+  box-shadow:
+    /* The aluminium rim: one light hairline outside the black. */
+    0 0 0 1px #6a6b71,
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 26px 60px rgba(0, 0, 0, 0.5);
+}
+
+.mac-screen {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #0d0d12;
+  /* A MacBook Pro panel is 16:10.3. The demo used to set a fixed height while
+     the width followed the column, so on a wide screen it stretched out to
+     2.5:1 and read as a letterbox rather than as a laptop. Driving the height
+     from the ratio is what makes the proportions right at any width.
+
+     No max-height here: the ceiling lives on .mac-frame as a width, so that the
+     lid shrinks along with the screen instead of framing it in black. */
+  aspect-ratio: var(--screen-w) / var(--screen-h);
+  /* A hairline between the glass and the bezel. On a mockup with a white page
+     inside, the black bezel is obvious; with a dark app inside, bezel and
+     screen are the same colour and the rim vanishes. This is the one line that
+     keeps the machine from looking like a black rectangle. */
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.09),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.6);
+}
+
+/* Inside the lid the demo fills whatever the ratio leaves after the menu bar,
+   instead of carrying its own height. */
+.mac-screen .demo-root {
+  flex: 1;
+  height: auto;
+  min-height: 0;
+}
+
+/* The macOS menu bar, with the notch cut into the middle of it. This is the one
+   piece of chrome that says "an app running on somebody's Mac" rather than "a
+   web page dressed as one", and the app menu carries the product's name. */
+.mac-menubar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 24px;
+  padding: 0 10px;
+  background: #131318;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', sans-serif;
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.88);
+  user-select: none;
+}
+
+.mac-menubar-left,
+.mac-menubar-right {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  /* Both halves stop short of the notch instead of running under it, which is
+     what the real bar does. */
+  max-width: calc(50% - 84px);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.mac-menubar-right {
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.mac-apple svg {
+  display: block;
+  width: 13px;
+  height: 13px;
+}
+
+.mac-menu-app {
+  font-weight: 700;
+}
+
+.mac-menu-item {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.mac-status-icon {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  opacity: 0.85;
+}
+
+.mac-status-glyph {
+  width: 14px;
+  height: 14px;
+  opacity: 0.85;
+}
+
+.mac-battery {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+}
+
+.mac-battery-shell {
+  position: relative;
+  width: 22px;
+  height: 11px;
+  border-radius: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 1px;
+}
+
+/* The little nub on the right end of the battery. */
+.mac-battery-shell::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -3px;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 4px;
+  border-radius: 0 2px 2px 0;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.mac-battery-fill {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 1px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.mac-clock {
+  font-variant-numeric: tabular-nums;
+}
+
+/* The notch: small, pure black, hanging down out of the bezel into the screen.
+   Now that the bezel is black too it reads as one continuous piece, which is
+   exactly what it looks like on the machine. It used to be a 158px slab, far
+   wider than the real one, which made it read as a phone's island. */
+.mac-notch {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 104px;
+  height: 22px;
+  border-radius: 0 0 9px 9px;
+  background: #000;
+}
+
+/* The camera: a dark pinhole with a faint green ring, the detail people
+   recognise without being able to name it. */
+.mac-notch::after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #0a0a0c;
+  box-shadow: 0 0 0 1px rgba(90, 140, 110, 0.35);
+}
+
+/* The demo draws its own window chrome; inside the lid it IS the screen, so it
+   gives up its border and its shadow. */
+.mac-screen .demo-root {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* ---- Base ---- */
+
+/*
+ * The base is ALUMINIUM, and it is the widest part of the machine.
+ *
+ * It used to be dark and barely wider than the lid, so the whole thing looked
+ * like a monitor. Silver, sticking out on both sides, is what reads as a
+ * laptop: your eye takes the light band under the dark screen as the deck the
+ * lid is hinged to.
+ */
+.mac-base {
+  position: relative;
+  width: 100%;
+  /* Sized off its own WIDTH, so the deck keeps its thickness as the machine
+     scales. A percentage height would have resolved against a parent with no
+     definite height and quietly collapsed to the minimum. */
+  aspect-ratio: 36 / 1;
+  border-radius: 0 0 13px 13px;
+  background: linear-gradient(
+    #cfd0d5 0%,
+    #b9bac0 34%,
+    #a3a4ab 62%,
+    #86878e 88%,
+    #6f7076 100%
+  );
+  box-shadow:
+    /* Catch light along the top edge, shade along the front lip. */
+    inset 0 1px 0 rgba(255, 255, 255, 0.6),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.35),
+    0 16px 30px rgba(0, 0, 0, 0.45);
+}
+
+/* The thumb groove where you open the lid: a shallow recess, not a cut. */
+.mac-base-notch {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 17%;
+  height: 42%;
+  border-radius: 0 0 7px 7px;
+  background: linear-gradient(rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.07));
+  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.28);
+}
+
+/* Contact shadow on the surface underneath. Sells "resting on a desk" more than
+   any amount of bezel detail does. */
+.mac-shadow {
+  width: 74%;
+  height: 26px;
+  margin-top: -6px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.55), transparent 70%);
+  filter: blur(9px);
+  pointer-events: none;
+}
+
+/* On a phone the bezel is wasted width and the base would overflow the viewport.
+   The demo stands on its own there. */
+@media (max-width: 720px) {
+  .mac-lid {
+    padding: 0;
+    border-radius: 12px;
+    background: none;
+    box-shadow: none;
+  }
+
+  .mac-menubar,
+  .mac-base,
+  .mac-shadow {
+    display: none;
+  }
+
+  .mac-screen {
+    border-radius: 12px;
+    box-shadow: none;
+  }
+
+  .mac-screen .demo-root {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+  }
+}

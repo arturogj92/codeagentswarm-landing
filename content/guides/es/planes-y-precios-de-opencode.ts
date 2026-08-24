@@ -16,7 +16,7 @@ Esta guía cubre lo que cuesta de verdad cada vía, los modelos gratuitos que ll
     ctaAgent: 'opencode',
     highlightedWords: ['OpenCode', 'Planes', 'precios'],
     publishedAt: '2026-08-05',
-    updatedAt: '2026-08-05',
+    updatedAt: '2026-08-23',
     alternateSlug: 'opencode-plans-and-pricing',
   },
   sections: [
@@ -118,7 +118,7 @@ Esta guía cubre lo que cuesta de verdad cada vía, los modelos gratuitos que ll
         },
         {
           type: 'paragraph',
-          text: 'Una suscripción es un coste fijo con un techo duro de capacidad. Los meses flojos son dinero tirado y las semanas fuertes son un muro que no puedes saltar pagando. El pago por uso es un coste variable sin techo de capacidad y sin suelo de gasto: una semana sin trabajar cuesta cero, y una semana de refactorización dura cuesta lo que cueste.',
+          text: 'Una suscripción empieza como un coste fijo con capacidad incluida. Muchos proveedores ya permiten activar exceso de pago, así que el techo es opcional y la factura final puede dejar de ser fija. El pago por uso no tiene suelo mensual: una semana sin trabajar cuesta cero y una semana de refactorización dura cuesta lo que cueste.',
         },
         {
           type: 'paragraph',

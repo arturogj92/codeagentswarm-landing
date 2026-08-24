@@ -13,38 +13,16 @@ export async function generateMetadata({
   const isSpanish = locale === 'es'
 
   const title = isSpanish
-    ? 'CodeAgentSwarm Open Beta – Acceso Pro Gratis para Terminales AI CLI'
-    : 'CodeAgentSwarm Open Beta – Free Pro Access with Multiple AI CLI Terminals'
+    ? 'CodeAgentSwarm Open Beta: Pro Gratis para Agentes de IA'
+    : 'CodeAgentSwarm Open Beta: Free Pro Access for AI Coding Agents'
 
   const description = isSpanish
-    ? 'Unete a la open beta y accede gratis al plan Pro completo. Multiples terminales AI CLI (Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code) en paralelo, visibilidad en tiempo real, notificaciones, historial de conversaciones y gestion de multiples proyectos.'
-    : 'Join the open beta and get full Pro tier access for free. Multiple AI CLI terminals (Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code) in parallel, real-time visibility, notifications, conversation history and multi-project management.'
+    ? 'Únete a la open beta y ejecuta Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent en paralelo, con visibilidad en tiempo real, notificaciones, historial y Pro gratis.'
+    : 'Join the open beta and run Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code, Grok Build and Cursor Agent in parallel with live status, notifications, history and free Pro access.'
 
   return {
     title,
     description,
-    keywords: [
-      'CodeAgentSwarm beta',
-      'Claude Code beta',
-      'Codex CLI beta',
-      'Antigravity CLI beta',
-      'OpenCode beta',
-      'Kimi Code beta',
-      'AI coding workspace beta',
-      'AI CLI workspace',
-      'free pro access',
-      'multiple Claude Code terminals',
-      'multiple Codex terminals',
-      'multiple Antigravity CLI terminals',
-      'multiple OpenCode terminals',
-      'multiple Kimi Code terminals',
-      'real time visibility',
-      'AI CLI notifications',
-      'Claude Code notifications',
-      'conversation history',
-      'multi-project management',
-      'MCP tools',
-    ],
     alternates: {
       canonical: canonicalUrl,
       languages: {
@@ -55,11 +33,11 @@ export async function generateMetadata({
     },
     openGraph: {
       title: isSpanish
-        ? 'CodeAgentSwarm Open Beta – Acceso Pro Gratis para AI CLI'
-        : 'CodeAgentSwarm Open Beta – Free Pro Access for AI CLI',
+        ? 'CodeAgentSwarm Open Beta: Acceso Pro Gratis para AI CLI'
+        : 'CodeAgentSwarm Open Beta: Free Pro Access for AI CLI',
       description: isSpanish
-        ? 'Unete a la open beta y accede gratis al plan Pro. Multiples terminales AI CLI (Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code) con visibilidad en tiempo real.'
-        : 'Join the open beta and get free Pro tier access. Multiple AI CLI terminals (Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code) with real-time visibility.',
+        ? 'Únete a la open beta y ejecuta varios agentes de IA en paralelo con visibilidad en tiempo real y acceso Pro gratis.'
+        : 'Join the open beta and run multiple AI coding agents in parallel with real-time visibility and free Pro access.',
       type: 'website',
       siteName: 'CodeAgentSwarm',
       url: canonicalUrl,
@@ -78,11 +56,11 @@ export async function generateMetadata({
     twitter: {
       card: 'summary_large_image',
       title: isSpanish
-        ? 'CodeAgentSwarm Open Beta – Pro Gratis para AI CLI'
-        : 'CodeAgentSwarm Open Beta – Free Pro for AI CLI',
+        ? 'CodeAgentSwarm Open Beta: Pro Gratis para AI CLI'
+        : 'CodeAgentSwarm Open Beta: Free Pro for AI CLI',
       description: isSpanish
-        ? 'Unete a la beta y accede gratis a multiples terminales AI CLI (Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code) en paralelo.'
-        : 'Join the open beta and get free Pro tier access to multiple parallel AI CLI terminals (Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code).',
+        ? 'Únete a la beta y ejecuta varios agentes de IA en paralelo con Pro gratis.'
+        : 'Join the open beta and run multiple AI coding agents in parallel with free Pro access.',
       images: ['/og.png'],
     },
   }

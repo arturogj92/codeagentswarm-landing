@@ -4,17 +4,21 @@ import { useEffect } from 'react'
 import { useLocale, useTranslations } from 'next-intl'
 import Header from '@/components/Header'
 import BetaBanner from '@/components/BetaBanner'
+// HeroPromoSection is gone from the flow: master moved its six videos into
+// FeatureVideosSection, so rendering both would show the same reel twice.
 import HeroSection from '@/components/HeroSection'
 import FeatureVideosSection from '@/components/FeatureVideosSection'
 import ProblemSection from '@/components/ProblemSection'
 import FeaturesSection from '@/components/FeaturesSection'
 import WorksWithSection from '@/components/WorksWithSection'
 // import DemoSection from '@/components/DemoSection'
+import InteractiveDemoSection from '@/components/InteractiveDemoSection'
+import ModeCompareSection from '@/components/ModeCompareSection'
 import MCPSection from '@/components/MCPSection'
 // import SocialProofSection from '@/components/SocialProofSection'
 // import SwarmiSection from '@/components/SwarmiSection'
 import BringYourOwnSubSection from '@/components/BringYourOwnSubSection'
-import PricingSection from '@/components/PricingSection'
+import BetaPricingSection from '@/components/BetaPricingSection'
 import RoadmapSection from '@/components/RoadmapSection'
 import CommunitySection from '@/components/CommunitySection'
 import FAQSection from '@/components/FAQSection'
@@ -34,27 +38,27 @@ export default function Home() {
     '@type': 'SoftwareApplication',
     name: 'CodeAgentSwarm',
     description: locale === 'es'
-      ? 'CodeAgentSwarm es una app de escritorio para ejecutar y supervisar varios agentes de programación con IA en paralelo: Claude Code, Codex CLI, Antigravity CLI, OpenCode y Kimi Code.'
-      : 'CodeAgentSwarm is a desktop workspace to run and supervise multiple AI coding agents in parallel: Claude Code, Codex CLI, Antigravity CLI, OpenCode and Kimi Code.',
+      ? 'CodeAgentSwarm es un entorno de desarrollo agéntico (Agentic Development Environment, ADE) para ejecutar y supervisar varios agentes de programación con IA en paralelo: Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent.'
+      : 'CodeAgentSwarm is an Agentic Development Environment (ADE) for running and supervising multiple AI coding agents in parallel: Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build and Cursor Agent.',
     url: baseUrl,
     applicationCategory: 'DeveloperApplication',
     operatingSystem: 'macOS, Windows',
     featureList: locale === 'es'
       ? [
-          'Ejecuta varios terminales de IA en paralelo',
+          'Ejecuta varios agentes de programación con IA en paralelo',
           'Notificaciones de escritorio cuando un agente termina o necesita ayuda',
           'Historial de conversaciones buscable de todos los agentes',
-          'Diffs de archivos en vivo por terminal',
+          'Diffs de archivos en vivo para cada agente',
           'Control de permisos y modo YOLO',
           'Tablero kanban que los agentes actualizan por MCP',
           'Git worktrees por sesión',
           'Marketplace de skills y de servidores MCP',
         ]
       : [
-          'Run multiple AI CLI terminals in parallel',
+          'Run multiple AI coding agents in parallel',
           'Desktop notifications when an agent finishes or needs input',
           'Searchable conversation history across all agents',
-          'Per-terminal live file diffs',
+          'Live file diffs for every agent',
           'Permission and YOLO mode control',
           'Kanban task board that agents update over MCP',
           'Git worktrees per session',
@@ -74,8 +78,19 @@ export default function Home() {
       // entidad en vez de reforzarla. x.com/CodeAgentSwarm daba 404 el 2026-07-27.
       sameAs: [
         'https://discord.gg/a9ZqmW9UfQ',
+        'https://x.com/Art0xDev',
+        'https://github.com/arturogj92/codeagentswarm-landing',
         'https://github.com/arturogj92/codeagentswarm-site',
       ],
+      founder: {
+        '@type': 'Person',
+        name: 'Arturo García',
+        sameAs: [
+          'https://github.com/arturogj92',
+          'https://x.com/Art0xDev',
+          'https://art0x.dev',
+        ],
+      },
     },
   }
 
@@ -159,16 +174,26 @@ export default function Home() {
 
       <main>
         <HeroSection />
+        {/* The proof of the headline it sits under: "Parallel coding agents.
+            Zero window chaos." is a claim until you watch a swarm of them work
+            in one window. Desktop only - on a phone this renders nothing and
+            the page flows straight into Problem. */}
+        <InteractiveDemoSection />
         <ProblemSection />
         <FeaturesSection />
         <FeatureVideosSection />
         <WorksWithSection />
+        {/* After the agent roster on purpose: you have just read WHICH CLIs it
+            runs, and this answers how you read them - same session as chat or
+            as the raw terminal. Kept three sections away from the simulator so
+            the page never stacks two interactive demos. */}
+        <ModeCompareSection />
         {/* <DemoSection /> */}
         <MCPSection />
         {/* <SocialProofSection /> */}
         {/* <SwarmiSection /> */}
         <BringYourOwnSubSection />
-        <PricingSection />
+        <BetaPricingSection sectionId="pricing" />
         <RoadmapSection />
         <CommunitySection />
         <FAQSection />

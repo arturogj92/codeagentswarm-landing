@@ -1,0 +1,1280 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CodeAgentSwarm · Users dashboard redesign proposal</title>
+  <script>
+    document.documentElement.dataset.theme = localStorage.getItem('cas-users-demo-theme') || 'dark';
+  </script>
+  <style>
+    :root,
+    html[data-theme="dark"] {
+      color-scheme: dark;
+      --bg: #070707;
+      --surface: #10100f;
+      --surface-raised: #151513;
+      --surface-hover: #191916;
+      --border: #292824;
+      --border-soft: #1d1d1a;
+      --text: #f4f4f0;
+      --text-muted: #99988f;
+      --text-faint: #66655f;
+      --amber: #f5b82e;
+      --amber-soft: rgba(245, 184, 46, .12);
+      --green: #5bc98a;
+      --green-soft: rgba(91, 201, 138, .11);
+      --red: #e97777;
+      --red-soft: rgba(233, 119, 119, .1);
+      --blue: #75b7e8;
+      --chrome: rgba(13, 13, 12, .94);
+      --field: #0b0b0a;
+      --table-head: #0c0c0b;
+      --drawer-bg: #0d0d0c;
+      --subtle: #1b1b19;
+      --subtle-strong: #292824;
+      --avatar-bg: #1c1c19;
+      --overlay: rgba(0, 0, 0, .58);
+      --shadow: rgba(0, 0, 0, .45);
+      --skeleton-a: #151513;
+      --skeleton-b: #20201c;
+      --never-text: #8b8a84;
+      --border-strong: #45433c;
+      --radius: 12px;
+      --mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+      --sans: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    html[data-theme="midnight"] {
+      color-scheme: dark;
+      --bg: #0b1120; --surface: #131b31; --surface-raised: #18223c; --surface-hover: #1c2745;
+      --border: rgba(146, 170, 255, .13); --border-soft: rgba(146, 170, 255, .07);
+      --text: #eef2ff; --text-muted: #a3aecb; --text-faint: #687493;
+      --amber: #fbbf24; --amber-soft: rgba(251, 191, 36, .12);
+      --green: #54d49a; --green-soft: rgba(84, 212, 154, .11); --red: #f08a8a; --red-soft: rgba(240, 138, 138, .1); --blue: #8bbff0;
+      --chrome: rgba(5, 9, 20, .9); --field: #0e1628; --table-head: #0e1628; --drawer-bg: #10182b;
+      --subtle: #18223b; --subtle-strong: #243150; --avatar-bg: #1c2745; --overlay: rgba(2, 5, 13, .66);
+      --shadow: rgba(0, 0, 0, .55); --skeleton-a: #131b31; --skeleton-b: #1c2745; --never-text: #8f9ab5; --border-strong: #354367;
+    }
+
+    html[data-theme="espresso"] {
+      color-scheme: dark;
+      --bg: #161009; --surface: #1f1710; --surface-raised: #261c13; --surface-hover: #2b2015;
+      --border: rgba(240, 212, 160, .13); --border-soft: rgba(240, 212, 160, .07);
+      --text: #f5eddf; --text-muted: #bfae93; --text-faint: #776850;
+      --amber: #fbbf24; --amber-soft: rgba(251, 191, 36, .12);
+      --green: #62bd85; --green-soft: rgba(98, 189, 133, .11); --red: #e88a79; --red-soft: rgba(232, 138, 121, .1); --blue: #79afd3;
+      --chrome: rgba(12, 8, 4, .91); --field: #18110b; --table-head: #19120c; --drawer-bg: #1a130c;
+      --subtle: #241a11; --subtle-strong: #36291b; --avatar-bg: #2b2015; --overlay: rgba(8, 4, 1, .64);
+      --shadow: rgba(0, 0, 0, .55); --skeleton-a: #1f1710; --skeleton-b: #2b2015; --never-text: #a4957c; --border-strong: #4a3a27;
+    }
+
+    html[data-theme="neon"] {
+      color-scheme: dark;
+      --bg: #0e0817; --surface: #160d24; --surface-raised: #1b1029; --surface-hover: #201331;
+      --border: rgba(190, 160, 255, .14); --border-soft: rgba(190, 160, 255, .07);
+      --text: #f3edff; --text-muted: #a795c9; --text-faint: #665a80;
+      --amber: #fbbf24; --amber-soft: rgba(251, 191, 36, .12);
+      --green: #44d6c0; --green-soft: rgba(68, 214, 192, .11); --red: #f183b9; --red-soft: rgba(241, 131, 185, .1); --blue: #b39af2;
+      --chrome: rgba(8, 4, 14, .92); --field: #11091d; --table-head: #11091d; --drawer-bg: #130b20;
+      --subtle: #1b1029; --subtle-strong: #2b1b41; --avatar-bg: #201331; --overlay: rgba(5, 2, 10, .68);
+      --shadow: rgba(0, 0, 0, .6); --skeleton-a: #160d24; --skeleton-b: #201331; --never-text: #948ab2; --border-strong: #3d2d5c;
+    }
+
+    html[data-theme="light"] {
+      color-scheme: light;
+      --bg: #f3eee2; --surface: #faf6ea; --surface-raised: #fffdf6; --surface-hover: #f0eadc;
+      --border: rgba(101, 78, 45, .16); --border-soft: rgba(101, 78, 45, .09);
+      --text: #33291a; --text-muted: #6d5f45; --text-faint: #8b7b5e;
+      --amber: #96690f; --amber-soft: rgba(232, 165, 59, .14);
+      --green: #347c54; --green-soft: rgba(76, 154, 108, .12); --red: #b65045; --red-soft: rgba(182, 80, 69, .1); --blue: #416f9a;
+      --chrome: rgba(250, 246, 234, .94); --field: #fffdf6; --table-head: #f3eee2; --drawer-bg: #faf6ea;
+      --subtle: #eee6d5; --subtle-strong: #ddd2ba; --avatar-bg: #eee5d2; --overlay: rgba(51, 41, 26, .34);
+      --shadow: rgba(80, 60, 25, .18); --skeleton-a: #eee6d5; --skeleton-b: #ddd2ba; --never-text: #756a54; --border-strong: #bbaa86;
+    }
+
+    * { box-sizing: border-box; }
+    html { background: var(--bg); scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      background:
+        radial-gradient(circle at 77% -20%, color-mix(in srgb, var(--amber) 6%, transparent), transparent 34rem),
+        var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+    button, input, select { font: inherit; }
+    button, select { cursor: pointer; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+    button:focus-visible, input:focus-visible, select:focus-visible {
+      outline: 2px solid var(--amber);
+      outline-offset: 2px;
+    }
+
+    .app-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      height: 58px;
+      border-bottom: 1px solid var(--border-soft);
+      background: var(--chrome);
+      backdrop-filter: blur(14px);
+    }
+    .app-header__inner {
+      width: min(1360px, calc(100% - 40px));
+      height: 100%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 26px;
+    }
+    .brand { display: flex; align-items: center; gap: 10px; min-width: max-content; }
+    .brand-mark {
+      width: 29px;
+      height: 29px;
+      display: grid;
+      place-items: center;
+      border: 1px solid color-mix(in srgb, var(--amber) 35%, transparent);
+      border-radius: 8px;
+      color: var(--amber);
+      background: var(--amber-soft);
+      font: 700 15px/1 var(--mono);
+    }
+    .brand-name { font-size: 13px; font-weight: 650; letter-spacing: -.01em; }
+    .brand-name span { color: var(--text-faint); font-weight: 500; }
+    .nav { align-self: stretch; display: flex; align-items: center; gap: 3px; }
+    .nav a {
+      height: 100%;
+      padding: 0 12px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 550;
+    }
+    .nav a:hover { color: var(--text); }
+    .nav a.active { color: var(--text); }
+    .nav a.active::after {
+      content: "";
+      position: absolute;
+      left: 12px;
+      right: 12px;
+      bottom: -1px;
+      height: 2px;
+      background: var(--amber);
+    }
+    .sign-out {
+      margin-left: auto;
+      border: 0;
+      background: none;
+      color: var(--text-faint);
+      font-size: 12px;
+      padding: 8px;
+    }
+    .sign-out:hover { color: var(--text); }
+
+    main {
+      width: min(1360px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 30px 0 96px;
+    }
+    .page-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 22px; }
+    .eyebrow {
+      margin: 0 0 7px;
+      color: var(--amber);
+      font: 650 10px/1 var(--mono);
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    h1 { margin: 0; font-size: clamp(26px, 2.5vw, 34px); line-height: 1; letter-spacing: -.04em; }
+    .page-subtitle { max-width: 630px; margin: 9px 0 0; color: var(--text-muted); font-size: 13px; line-height: 1.5; }
+    .head-actions { display: flex; align-items: center; gap: 9px; }
+    .updated { color: var(--text-faint); font: 10px/1.2 var(--mono); text-align: right; }
+    .icon-button {
+      min-height: 34px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--surface);
+      color: var(--text-muted);
+      padding: 0 12px;
+      font-size: 11px;
+      transition: background .18s ease, border-color .18s ease, color .18s ease, transform .18s ease;
+    }
+    .icon-button:hover { color: var(--text); border-color: var(--border-strong); background: var(--surface-raised); }
+    .icon-button:active { transform: translateY(1px); }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .metric {
+      min-height: 118px;
+      padding: 16px 17px 14px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      color: inherit;
+      text-align: left;
+      transition: transform .18s ease, border-color .18s ease, background .18s ease;
+    }
+    .metric:hover { transform: translateY(-1px); border-color: var(--border-strong); background: var(--surface-raised); }
+    .metric.is-selected { border-color: color-mix(in srgb, var(--amber) 55%, transparent); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--amber) 8%, transparent); }
+    .metric.primary::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 90% 15%, color-mix(in srgb, var(--amber) 12%, transparent), transparent 55%);
+      pointer-events: none;
+    }
+    .metric-label { position: relative; color: var(--text-muted); font: 600 10px/1.2 var(--mono); letter-spacing: .09em; text-transform: uppercase; }
+    .metric-row { position: relative; display: flex; align-items: baseline; gap: 8px; margin-top: 11px; }
+    .metric-value { font-size: 30px; font-weight: 680; line-height: 1; letter-spacing: -.04em; font-variant-numeric: tabular-nums; }
+    .metric-share { color: var(--text-muted); font: 11px/1 var(--mono); }
+    .metric-hint { position: relative; margin-top: 9px; color: var(--text-faint); font-size: 11px; }
+    .metric.primary .metric-value { color: var(--amber); }
+    .metric.risk .metric-value { color: var(--amber); }
+    .metric.never .metric-value { color: var(--red); }
+
+    .distribution {
+      min-height: 51px;
+      padding: 10px 14px;
+      border: 1px solid var(--border-soft);
+      border-radius: 10px;
+      background: color-mix(in srgb, var(--surface) 78%, transparent);
+      display: grid;
+      grid-template-columns: auto minmax(220px, 1fr) auto;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+    .distribution-title { color: var(--text-muted); font-size: 11px; white-space: nowrap; }
+    .distribution-bar { display: flex; height: 7px; overflow: hidden; border-radius: 99px; background: var(--subtle-strong); }
+    .distribution-bar span:nth-child(1) { width: 30.9%; background: var(--green); }
+    .distribution-bar span:nth-child(2) { width: 23%; background: var(--amber); }
+    .distribution-bar span:nth-child(3) { width: 38.2%; background: color-mix(in srgb, var(--red) 70%, transparent); }
+    .distribution-bar span:nth-child(4) { width: 7.9%; background: var(--text-faint); }
+    .legend { display: flex; align-items: center; justify-content: flex-end; gap: 12px; flex-wrap: wrap; }
+    .legend span { display: inline-flex; align-items: center; gap: 5px; color: var(--text-faint); font: 10px/1 var(--mono); }
+    .legend i { width: 6px; height: 6px; border-radius: 2px; background: currentColor; }
+    .legend .active { color: var(--green); }
+    .legend .cooling { color: var(--amber); }
+    .legend .dormant { color: var(--red); }
+
+    .list-panel { border: 1px solid var(--border); border-radius: 13px; background: var(--surface); overflow: hidden; }
+    .toolbar {
+      min-height: 58px;
+      padding: 10px 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    .search { position: relative; min-width: 225px; flex: 1 1 320px; max-width: 390px; }
+    .search::before { content: "⌕"; position: absolute; left: 11px; top: 8px; color: var(--text-faint); font: 18px/1 var(--mono); }
+    .search input {
+      width: 100%;
+      height: 34px;
+      padding: 0 34px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--field);
+      color: var(--text);
+      font-size: 12px;
+    }
+    .search input::placeholder { color: var(--text-faint); }
+    .search kbd { position: absolute; right: 8px; top: 8px; color: var(--text-faint); font: 9px/1 var(--mono); border: 1px solid var(--border); border-radius: 4px; padding: 4px; }
+    .segments { display: flex; align-items: center; gap: 2px; padding: 3px; border: 1px solid var(--border-soft); border-radius: 8px; background: var(--field); }
+    .segments button {
+      height: 26px;
+      padding: 0 9px;
+      border: 0;
+      border-radius: 6px;
+      background: transparent;
+      color: var(--text-faint);
+      font-size: 10px;
+      font-weight: 600;
+    }
+    .segments button:hover { color: var(--text); }
+    .segments button.active { background: var(--surface-raised); color: var(--text); box-shadow: 0 0 0 1px var(--border); }
+    .filter-select {
+      height: 34px;
+      padding: 0 30px 0 10px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--field);
+      color: var(--text-muted);
+      font-size: 11px;
+    }
+    .filter-more { position: relative; }
+    .filter-more summary {
+      height: 34px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 0 10px;
+      list-style: none;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--field);
+      color: var(--text-muted);
+      font-size: 11px;
+      cursor: pointer;
+    }
+    .filter-more summary::-webkit-details-marker { display: none; }
+    .filter-more summary::after { content: "⌄"; color: var(--text-faint); }
+    .filter-more[open] summary { border-color: var(--border-strong); color: var(--text); }
+    .filter-count { min-width: 17px; height: 17px; display: none; place-items: center; border-radius: 99px; background: var(--amber-soft); color: var(--amber); font: 9px/1 var(--mono); }
+    .filter-count.show { display: grid; }
+    .filter-popover {
+      position: absolute;
+      top: 40px;
+      right: 0;
+      z-index: 15;
+      width: 286px;
+      padding: 12px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--drawer-bg);
+      box-shadow: 0 16px 42px var(--shadow);
+    }
+    .filter-popover label { display: grid; gap: 5px; color: var(--text-faint); font: 8px/1 var(--mono); letter-spacing: .07em; text-transform: uppercase; }
+    .filter-popover .filter-select { width: 100%; padding-right: 8px; text-transform: none; letter-spacing: 0; }
+    .filter-popover .clear-more { grid-column: 1 / -1; justify-self: end; border: 0; background: none; color: var(--amber); font-size: 10px; }
+    .result-count { margin-left: auto; white-space: nowrap; color: var(--text-faint); font: 10px/1 var(--mono); }
+
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; min-width: 1160px; border-collapse: collapse; }
+    thead { background: var(--table-head); }
+    th {
+      height: 39px;
+      padding: 0 12px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-faint);
+      text-align: left;
+      font: 600 9px/1 var(--mono);
+      letter-spacing: .085em;
+      text-transform: uppercase;
+    }
+    th:first-child, td:first-child { padding-left: 16px; }
+    th.num, td.num { text-align: right; }
+    tbody tr { border-bottom: 1px solid var(--border-soft); transition: background .15s ease; }
+    tbody tr:last-child { border-bottom: 0; }
+    tbody tr:hover { background: var(--surface-hover); }
+    td { height: 61px; padding: 8px 12px; color: var(--text-muted); font-size: 11px; vertical-align: middle; }
+    .user-button {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border: 0;
+      background: transparent;
+      color: inherit;
+      padding: 0;
+      text-align: left;
+    }
+    .avatar {
+      width: 29px;
+      height: 29px;
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      background: var(--avatar-bg);
+      color: var(--text);
+      font: 650 10px/1 var(--mono);
+    }
+    .user-name { display: block; max-width: 205px; overflow: hidden; text-overflow: ellipsis; color: var(--text); font-size: 12px; font-weight: 600; white-space: nowrap; }
+    .user-email { display: block; max-width: 205px; margin-top: 3px; overflow: hidden; text-overflow: ellipsis; color: var(--text-faint); font-size: 10px; white-space: nowrap; }
+    .user-meta { display: flex; align-items: center; gap: 5px; margin-top: 5px; }
+    .mini-tag { display: inline-flex; align-items: center; min-height: 17px; padding: 0 5px; border: 1px solid var(--border-soft); border-radius: 4px; color: var(--text-faint); font: 8px/1 var(--mono); }
+    .mini-tag.plan { color: var(--amber); border-color: color-mix(in srgb, var(--amber) 25%, transparent); background: var(--amber-soft); }
+    .status { display: inline-flex; align-items: center; gap: 6px; min-height: 23px; padding: 0 8px; border: 1px solid; border-radius: 6px; font-size: 10px; font-weight: 600; }
+    .status::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
+    .status.active { color: var(--green); border-color: color-mix(in srgb, var(--green) 24%, transparent); background: var(--green-soft); }
+    .status.cooling { color: var(--amber); border-color: color-mix(in srgb, var(--amber) 24%, transparent); background: var(--amber-soft); }
+    .status.dormant { color: var(--red); border-color: color-mix(in srgb, var(--red) 22%, transparent); background: var(--red-soft); }
+    .status.never { color: var(--never-text); border-color: var(--border); background: var(--subtle); }
+    .week { display: flex; align-items: center; gap: 3px; }
+    .week i { width: 9px; height: 17px; border: 1px solid var(--border); border-radius: 3px; background: var(--subtle); }
+    .week i.on { border-color: color-mix(in srgb, var(--amber) 48%, transparent); background: var(--amber); }
+    .week i.today { box-shadow: 0 0 0 1px color-mix(in srgb, var(--amber) 55%, transparent); }
+    .week-count { margin-left: 5px; color: var(--text-faint); font: 9px/1 var(--mono); }
+    .sessions strong { display: block; color: var(--text); font: 600 11px/1 var(--mono); }
+    .sessions span { display: block; margin-top: 5px; color: var(--text-faint); font-size: 9px; }
+    .sessions .version { display: inline-flex; margin-top: 7px; }
+    .streak { margin-top: 5px; color: var(--text-faint); font-size: 9px; }
+    .streak.hot { color: #d9a845; }
+    .agent { color: var(--text); font-size: 10px; }
+    .agent::before { content: ""; display: inline-block; width: 6px; height: 6px; margin-right: 6px; border-radius: 2px; background: var(--blue); vertical-align: 1px; }
+    .agent.claude::before { background: #d99055; }
+    .agent.antigravity::before { background: #70b69c; }
+    .agent.kimi::before { background: #9b9cdb; }
+    .agent.opencode::before { background: #aaa; }
+    .agent.grok::before { background: #b889da; }
+    .version { display: inline-flex; align-items: center; gap: 6px; color: var(--text); font: 10px/1 var(--mono); }
+    .version::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--green); }
+    .version.outdated::before { background: var(--amber); }
+    .version.unknown::before { background: var(--text-faint); }
+    .version-note { display: block; margin-top: 5px; color: var(--text-faint); font-size: 9px; }
+    td.num { color: var(--text); font-family: var(--mono); font-variant-numeric: tabular-nums; }
+    .last-seen { margin-top: 6px; }
+    .last-seen strong { display: block; color: var(--text); font-size: 10px; font-weight: 550; }
+    .last-seen span { display: block; margin-top: 3px; color: var(--text-faint); font-size: 9px; }
+    .row-arrow { width: 28px; height: 28px; border: 0; border-radius: 7px; background: transparent; color: var(--text-faint); font-size: 16px; }
+    .row-arrow:hover { background: var(--surface-raised); }
+    tbody tr:hover .row-arrow { color: var(--amber); }
+    .table-footer { min-height: 48px; padding: 8px 12px 8px 16px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; gap: 14px; color: var(--text-faint); font: 10px/1 var(--mono); }
+    .pager { display: flex; gap: 5px; }
+    .pager button { min-width: 29px; height: 29px; border: 1px solid var(--border); border-radius: 7px; background: var(--field); color: var(--text-muted); font-size: 11px; }
+    .pager button:hover:not(:disabled) { color: var(--text); border-color: var(--border-strong); }
+    .pager button:disabled { opacity: .35; cursor: not-allowed; }
+
+    .state-panel { display: none; min-height: 408px; place-items: center; padding: 40px 20px; text-align: center; }
+    .state-panel.show { display: grid; }
+    .state-icon { width: 44px; height: 44px; display: grid; place-items: center; margin: 0 auto 15px; border: 1px solid var(--border); border-radius: 13px; background: var(--surface-raised); color: var(--amber); font: 18px/1 var(--mono); }
+    .state-panel h2 { margin: 0; font-size: 16px; letter-spacing: -.02em; }
+    .state-panel p { max-width: 360px; margin: 8px auto 17px; color: var(--text-muted); font-size: 12px; line-height: 1.55; }
+    .retry { height: 32px; padding: 0 12px; border: 1px solid color-mix(in srgb, var(--amber) 35%, transparent); border-radius: 7px; background: var(--amber-soft); color: var(--amber); font-size: 11px; font-weight: 600; }
+    .skeletons { width: min(760px, 90%); }
+    .skeleton { height: 52px; margin: 0 0 8px; border-radius: 8px; background: linear-gradient(90deg, var(--skeleton-a) 25%, var(--skeleton-b) 50%, var(--skeleton-a) 75%); background-size: 200% 100%; animation: shimmer 1.35s infinite linear; }
+    @keyframes shimmer { to { background-position: -200% 0; } }
+
+    .drawer-backdrop { position: fixed; inset: 0; z-index: 40; background: var(--overlay); opacity: 0; pointer-events: none; transition: opacity .2s ease; }
+    .drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 41;
+      width: min(640px, 100%);
+      height: 100dvh;
+      padding: 19px 20px 28px;
+      overflow-y: auto;
+      border-left: 1px solid var(--border);
+      background: var(--drawer-bg);
+      box-shadow: -24px 0 70px var(--shadow);
+      transform: translateX(102%);
+      transition: transform .24s cubic-bezier(.22, .75, .25, 1);
+    }
+    body.drawer-open { overflow: hidden; }
+    body.drawer-open .drawer-backdrop { opacity: 1; pointer-events: auto; }
+    body.drawer-open .drawer { transform: translateX(0); }
+    .drawer-top { position: sticky; top: -19px; z-index: 4; display: flex; align-items: center; justify-content: space-between; margin: -19px -20px 18px; padding: 15px 20px 11px; border-bottom: 1px solid var(--border-soft); background: color-mix(in srgb, var(--drawer-bg) 94%, transparent); backdrop-filter: blur(12px); }
+    .drawer-kicker { color: var(--text-faint); font: 600 9px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; }
+    .close-drawer { width: 31px; height: 31px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); color: var(--text-muted); }
+    .close-drawer:hover { color: var(--text); background: var(--surface-hover); }
+    .drawer-person { display: flex; align-items: center; gap: 13px; margin-bottom: 20px; }
+    .drawer-person .avatar { width: 42px; height: 42px; border-radius: 12px; font-size: 12px; }
+    .drawer-person h2 { margin: 0 0 4px; font-size: 19px; letter-spacing: -.03em; }
+    .drawer-person p { margin: 0; color: var(--text-muted); font-size: 11px; }
+    .drawer-person .status { margin-left: auto; }
+    .profile-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: -8px 0 14px 55px; }
+    .profile-chip { min-height: 23px; display: inline-flex; align-items: center; gap: 6px; padding: 0 8px; border: 1px solid var(--border); border-radius: 6px; color: var(--text-muted); font: 9px/1 var(--mono); background: var(--surface); }
+    .profile-chip strong { color: var(--text); font-weight: 600; }
+    .drawer-actions { display: flex; gap: 7px; margin-bottom: 14px; }
+    .drawer-action { height: 31px; padding: 0 10px; border: 1px solid var(--border); border-radius: 7px; background: var(--surface); color: var(--text-muted); font-size: 10px; }
+    .drawer-action:hover { color: var(--text); border-color: var(--border-strong); }
+    .drawer-action.primary { border-color: color-mix(in srgb, var(--amber) 35%, transparent); background: var(--amber-soft); color: var(--amber); }
+    .drawer-stats { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--border); border-radius: 11px; overflow: hidden; margin-bottom: 12px; }
+    .drawer-stat { min-height: 82px; padding: 13px; border-right: 1px solid var(--border); background: var(--surface); }
+    .drawer-stat:nth-child(3n) { border-right: 0; }
+    .drawer-stat:nth-child(n+4) { border-top: 1px solid var(--border); }
+    .drawer-stat label { display: block; color: var(--text-faint); font: 600 8px/1.2 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+    .drawer-stat strong { display: block; margin-top: 11px; font-size: 18px; letter-spacing: -.03em; }
+    .drawer-stat small { display: block; margin-top: 4px; color: var(--text-faint); font-size: 9px; }
+    .drawer-section { margin-top: 12px; padding: 15px; border: 1px solid var(--border); border-radius: 11px; background: var(--surface); }
+    .drawer-section h3 { margin: 0 0 14px; color: var(--text-muted); font: 600 9px/1 var(--mono); letter-spacing: .09em; text-transform: uppercase; }
+    .heatmap { display: grid; grid-template-columns: repeat(18, 1fr); grid-template-rows: repeat(7, 8px); grid-auto-flow: column; gap: 3px; }
+    .heatmap i { border-radius: 2px; background: var(--subtle-strong); }
+    .heatmap i.l1 { background: color-mix(in srgb, var(--amber) 27%, transparent); }
+    .heatmap i.l2 { background: color-mix(in srgb, var(--amber) 55%, transparent); }
+    .heatmap i.l3 { background: var(--amber); }
+    .usage-row { margin-bottom: 13px; }
+    .usage-row:last-child { margin-bottom: 0; }
+    .usage-meta { display: flex; justify-content: space-between; margin-bottom: 6px; color: var(--text-muted); font-size: 10px; }
+    .usage-meta span:last-child { font-family: var(--mono); color: var(--text-faint); }
+    .usage-track { height: 5px; overflow: hidden; border-radius: 99px; background: var(--subtle-strong); }
+    .usage-track i { display: block; height: 100%; border-radius: inherit; background: var(--blue); }
+    .timeline { list-style: none; margin: 0; padding: 0; }
+    .timeline li { min-height: 36px; padding-left: 22px; position: relative; color: var(--text-muted); font-size: 10px; }
+    .timeline li::before { content: ""; position: absolute; left: 3px; top: 3px; width: 6px; height: 6px; border: 2px solid var(--drawer-bg); border-radius: 50%; background: var(--amber); box-shadow: 0 0 0 1px color-mix(in srgb, var(--amber) 50%, transparent); }
+    .timeline li::after { content: ""; position: absolute; left: 6px; top: 12px; bottom: -2px; width: 1px; background: var(--border); }
+    .timeline li:last-child::after { display: none; }
+    .timeline strong { display: block; color: var(--text); font-size: 10px; font-weight: 600; }
+    .timeline time { display: block; margin-top: 3px; color: var(--text-faint); font: 9px/1 var(--mono); }
+    .section-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+    .section-head h3 { margin: 0; }
+    .section-note { color: var(--text-faint); font: 8px/1 var(--mono); }
+    .kv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; overflow: hidden; border: 1px solid var(--border-soft); border-radius: 8px; background: var(--border-soft); }
+    .kv { min-height: 58px; padding: 10px; background: var(--drawer-bg); }
+    .kv label { display: block; color: var(--text-faint); font: 8px/1 var(--mono); letter-spacing: .07em; text-transform: uppercase; }
+    .kv strong { display: block; margin-top: 7px; color: var(--text); font-size: 10px; font-weight: 600; }
+    .kv small { display: block; margin-top: 4px; color: var(--text-faint); font-size: 8px; }
+    .split-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .subpanel { min-width: 0; padding: 12px; border: 1px solid var(--border-soft); border-radius: 8px; background: color-mix(in srgb, var(--drawer-bg) 70%, var(--surface)); }
+    .subpanel h4 { margin: 0 0 11px; color: var(--text-muted); font: 600 8px/1 var(--mono); letter-spacing: .07em; text-transform: uppercase; }
+    .feature-list, .connection-list { display: grid; gap: 10px; }
+    .feature-item { display: grid; grid-template-columns: 1fr auto; gap: 7px; align-items: center; }
+    .feature-item strong { color: var(--text); font-size: 10px; font-weight: 550; }
+    .feature-item span { color: var(--text-faint); font: 9px/1 var(--mono); }
+    .feature-bar { grid-column: 1 / -1; height: 3px; overflow: hidden; border-radius: 99px; background: var(--subtle-strong); }
+    .feature-bar i { display: block; height: 100%; border-radius: inherit; background: var(--amber); }
+    .connection { display: flex; align-items: center; gap: 9px; }
+    .connection-icon { width: 28px; height: 28px; flex: 0 0 auto; display: grid; place-items: center; border: 1px solid var(--border); border-radius: 7px; background: var(--surface); color: var(--amber); font: 700 10px/1 var(--mono); }
+    .connection strong { display: block; color: var(--text); font-size: 10px; }
+    .connection small { display: block; margin-top: 3px; color: var(--text-faint); font-size: 8px; }
+    .empty-detail { color: var(--text-faint); font-size: 10px; line-height: 1.5; }
+    .relationship-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .relationship-card { min-height: 92px; padding: 11px; border: 1px solid var(--border-soft); border-radius: 8px; background: var(--drawer-bg); }
+    .relationship-card label { display: block; color: var(--text-faint); font: 8px/1 var(--mono); letter-spacing: .07em; text-transform: uppercase; }
+    .relationship-card strong { display: block; margin-top: 8px; color: var(--text); font-size: 11px; }
+    .relationship-card p { margin: 5px 0 0; color: var(--text-faint); font-size: 9px; line-height: 1.45; }
+    .cloud-task-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; margin-top: 10px; overflow: hidden; border: 1px solid var(--border-soft); border-radius: 8px; background: var(--border-soft); }
+    .cloud-stat { min-height: 55px; padding: 10px; background: var(--drawer-bg); }
+    .cloud-stat label { display: block; color: var(--text-faint); font: 8px/1 var(--mono); text-transform: uppercase; }
+    .cloud-stat strong { display: block; margin-top: 8px; color: var(--text); font: 600 13px/1 var(--mono); }
+    .privacy-note { margin: 14px 2px 0; color: var(--text-faint); font-size: 9px; line-height: 1.5; }
+    .drawer-error { min-height: 68vh; display: grid; place-items: center; padding: 30px; text-align: center; }
+    .drawer-error[hidden], .drawer-content[hidden] { display: none; }
+    .toast { position: fixed; right: 22px; bottom: 22px; z-index: 70; padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px; background: var(--drawer-bg); color: var(--text); box-shadow: 0 10px 35px var(--shadow); font-size: 10px; opacity: 0; transform: translateY(8px); pointer-events: none; transition: .18s ease; }
+    .toast.show { opacity: 1; transform: translateY(0); }
+
+    .demo-controls {
+      position: fixed;
+      left: 50%;
+      bottom: 14px;
+      z-index: 60;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 5px;
+      border: 1px solid var(--border-strong);
+      border-radius: 10px;
+      background: color-mix(in srgb, var(--drawer-bg) 96%, transparent);
+      box-shadow: 0 10px 40px var(--shadow);
+      backdrop-filter: blur(12px);
+    }
+    .demo-label { padding: 0 8px 0 6px; color: var(--amber); font: 650 9px/1 var(--mono); letter-spacing: .09em; text-transform: uppercase; white-space: nowrap; }
+    .demo-controls button { height: 28px; padding: 0 9px; border: 0; border-radius: 6px; background: transparent; color: var(--text-faint); font-size: 10px; }
+    .demo-controls button:hover { color: var(--text); }
+    .demo-controls button.active { color: var(--text); background: var(--surface-hover); }
+    .demo-theme { height: 28px; padding: 0 24px 0 8px; border: 1px solid var(--border); border-radius: 6px; background: var(--field); color: var(--text-muted); font-size: 10px; }
+
+    @media (max-width: 1100px) {
+      .metric-grid { grid-template-columns: repeat(3, 1fr); }
+      .toolbar { flex-wrap: wrap; }
+      .result-count { margin-left: 0; }
+    }
+    @media (max-width: 760px) {
+      .app-header__inner, main { width: min(100% - 24px, 1360px); }
+      .app-header__inner { gap: 10px; }
+      .brand-name span, .nav a:not(.active), .sign-out { display: none; }
+      .nav { margin-left: auto; }
+      main { padding-top: 22px; }
+      .page-head { align-items: flex-start; }
+      .updated { display: none; }
+      .metric-grid { grid-template-columns: 1fr 1fr; }
+      .metric { min-height: 112px; padding: 14px; }
+      .metric-value { font-size: 25px; }
+      .distribution { grid-template-columns: 1fr; gap: 9px; }
+      .legend { justify-content: flex-start; }
+      .toolbar { align-items: stretch; }
+      .search { max-width: none; flex-basis: 100%; }
+      .segments { width: 100%; overflow-x: auto; }
+      .segments button { flex: 1 0 auto; }
+      .filter-select { flex: 1; min-width: 0; }
+      .result-count { align-self: center; }
+      table { min-width: 0; }
+      thead { display: none; }
+      tbody { display: grid; gap: 8px; padding: 8px; }
+      tbody tr { display: grid; grid-template-columns: 1fr auto; gap: 9px 12px; padding: 12px; border: 1px solid var(--border-soft); border-radius: 10px; background: var(--surface); }
+      td { height: auto; padding: 0 !important; }
+      td:nth-child(1) { grid-column: 1; }
+      td:nth-child(2) { grid-column: 2; grid-row: 1; }
+      td:nth-child(3) { grid-column: 1; grid-row: 2; }
+      td:nth-child(4) { grid-column: 2; grid-row: 2; }
+      td:nth-child(5), td:nth-child(6), td:nth-child(7) { display: none; }
+      .table-footer { flex-wrap: wrap; }
+      .drawer { padding-inline: 14px; }
+      .drawer-top { margin-inline: -14px; padding-inline: 14px; }
+      .drawer-stats { grid-template-columns: 1fr 1fr; }
+      .drawer-stat { min-height: 66px; border-right: 1px solid var(--border); border-top: 0; }
+      .drawer-stat:nth-child(2n) { border-right: 0; }
+      .drawer-stat:nth-child(n+3) { border-top: 1px solid var(--border); }
+      .split-grid, .relationship-grid { grid-template-columns: 1fr; }
+      .cloud-task-grid { grid-template-columns: repeat(2, 1fr); }
+      .filter-popover { left: auto; right: 0; width: min(286px, calc(100vw - 24px)); }
+      .demo-controls { width: calc(100% - 24px); overflow-x: auto; justify-content: flex-start; }
+    }
+    @media (max-width: 470px) {
+      .metric-grid { grid-template-columns: 1fr; }
+      .metric { min-height: 100px; }
+      .page-subtitle { font-size: 12px; }
+      .kv-grid { grid-template-columns: 1fr; }
+      .profile-meta { margin-left: 0; }
+      .filter-popover { grid-template-columns: 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="app-header">
+    <div class="app-header__inner">
+      <div class="brand">
+        <div class="brand-mark">@</div>
+        <div class="brand-name">CodeAgentSwarm <span>/ Operations</span></div>
+      </div>
+      <nav class="nav" aria-label="Dashboard">
+        <a class="active" href="#" aria-current="page">Users</a>
+        <a href="#">Emails</a>
+        <a href="#">Automation</a>
+      </nav>
+      <button class="sign-out" type="button">Sign out</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-head">
+      <div>
+        <p class="eyebrow">User activity</p>
+        <h1>Users</h1>
+        <p class="page-subtitle">Understand account activation, recorded product use, agent adoption, integrations, outreach, and subscription health.</p>
+      </div>
+      <div class="head-actions">
+        <div class="updated">ACTIVITY SNAPSHOT<br>UPDATED JUST NOW</div>
+        <button class="icon-button" id="refresh" type="button">↻ Refresh</button>
+      </div>
+    </div>
+
+    <section class="metric-grid" aria-label="Audience overview">
+      <button class="metric primary" type="button" data-metric="all" aria-pressed="false">
+        <div class="metric-label">Registered users</div>
+        <div class="metric-row"><span class="metric-value">152</span><span class="metric-share">+23 / 30d</span></div>
+        <div class="metric-hint">All accounts · 18% growth this month</div>
+      </button>
+      <button class="metric" type="button" data-metric="active" aria-pressed="false">
+        <div class="metric-label">Weekly active</div>
+        <div class="metric-row"><span class="metric-value">47</span><span class="metric-share">30.9%</span></div>
+        <div class="metric-hint">Recorded activity in the last 7 days</div>
+      </button>
+      <button class="metric" type="button" data-metric="monthly" aria-pressed="false">
+        <div class="metric-label">Monthly active</div>
+        <div class="metric-row"><span class="metric-value">82</span><span class="metric-share">53.9%</span></div>
+        <div class="metric-hint">Recorded activity at least once in 30 days</div>
+      </button>
+      <button class="metric" type="button" data-metric="activated" aria-pressed="false">
+        <div class="metric-label">Activated accounts</div>
+        <div class="metric-row"><span class="metric-value">108</span><span class="metric-share">71.1%</span></div>
+        <div class="metric-hint">Median 6h to first agent session</div>
+      </button>
+      <button class="metric risk" type="button" data-metric="cooling" aria-pressed="false">
+        <div class="metric-label">Inactive 7–30d</div>
+        <div class="metric-row"><span class="metric-value">35</span><span class="metric-share">23.0%</span></div>
+        <div class="metric-hint">Last seen 7–30 days ago</div>
+      </button>
+      <button class="metric never" type="button" data-metric="never" aria-pressed="false">
+        <div class="metric-label">No tracked activity</div>
+        <div class="metric-row"><span class="metric-value">12</span><span class="metric-share">7.9%</span></div>
+        <div class="metric-hint">Registered with no identified events</div>
+      </button>
+    </section>
+
+    <section class="distribution" aria-label="Lifecycle distribution">
+      <div class="distribution-title">152 registered users</div>
+      <div class="distribution-bar" aria-label="47 active, 35 cooling, 58 dormant, 12 never active"><span></span><span></span><span></span><span></span></div>
+      <div class="legend" aria-hidden="true">
+        <span class="active"><i></i>47 active</span>
+        <span class="cooling"><i></i>35 cooling</span>
+        <span class="dormant"><i></i>58 dormant</span>
+        <span><i></i>12 never</span>
+      </div>
+    </section>
+
+    <section class="list-panel" aria-label="Users">
+      <div id="normal-view">
+        <div class="toolbar">
+          <label class="search">
+            <span hidden>Search users</span>
+            <input id="search" type="search" aria-label="Search users" placeholder="Search name or email" autocomplete="off">
+            <kbd>/</kbd>
+          </label>
+          <div class="segments" aria-label="Filter by lifecycle">
+            <button class="active" type="button" data-segment="all" aria-pressed="true">All</button>
+            <button type="button" data-segment="active" aria-pressed="false">Active</button>
+            <button type="button" data-segment="cooling" aria-pressed="false">Cooling</button>
+            <button type="button" data-segment="dormant" aria-pressed="false">Dormant</button>
+            <button type="button" data-segment="never" aria-pressed="false">Never</button>
+          </div>
+          <select class="filter-select" id="agent-filter" aria-label="Filter by preferred agent">
+            <option value="all">All agents</option>
+            <option value="Codex">Codex</option>
+            <option value="Claude Code">Claude Code</option>
+            <option value="Antigravity">Antigravity</option>
+            <option value="Kimi Code">Kimi Code</option>
+            <option value="opencode">opencode</option>
+            <option value="Grok Build">Grok Build</option>
+          </select>
+          <details class="filter-more" id="filter-more">
+            <summary>More filters <span class="filter-count" id="filter-count">0</span></summary>
+            <div class="filter-popover">
+              <label>Activation
+                <select class="filter-select" id="activation-filter">
+                  <option value="all">All</option><option value="activated">Activated</option><option value="pending">Pending</option>
+                </select>
+              </label>
+              <label>App version
+                <select class="filter-select" id="version-filter">
+                  <option value="all">All</option><option value="latest">Latest</option><option value="outdated">Outdated</option><option value="unknown">Unknown</option>
+                </select>
+              </label>
+              <label>Provider
+                <select class="filter-select" id="provider-filter">
+                  <option value="all">All</option><option value="GitHub">GitHub</option><option value="Google">Google</option><option value="Discord">Discord</option>
+                </select>
+              </label>
+              <label>Plan
+                <select class="filter-select" id="plan-filter">
+                  <option value="all">All</option><option value="Free">Free</option><option value="Starter">Starter</option><option value="Pro">Pro</option>
+                </select>
+              </label>
+              <label>Integration
+                <select class="filter-select" id="integration-filter">
+                  <option value="all">All</option><option value="connected">Connected</option><option value="none">None</option>
+                </select>
+              </label>
+              <label>Contact
+                <select class="filter-select" id="contact-filter">
+                  <option value="all">All</option><option value="not-contacted">Not contacted</option><option value="contacted">Contacted</option><option value="replied">Replied</option><option value="excluded">Excluded</option>
+                </select>
+              </label>
+              <button class="clear-more" id="clear-more" type="button">Reset advanced filters</button>
+            </div>
+          </details>
+          <div class="result-count" id="result-count">152 users</div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">User</th>
+                <th scope="col">Activity state</th>
+                <th scope="col">Recorded · 7d</th>
+                <th scope="col">Work periods</th>
+                <th scope="col">Most-used agent</th>
+                <th scope="col">Joined</th>
+                <th scope="col"><span class="sr-only">Open</span></th>
+              </tr>
+            </thead>
+            <tbody id="user-rows"></tbody>
+          </table>
+        </div>
+        <div class="table-footer">
+          <span id="page-copy">Showing 1–8 of 152 users</span>
+          <div class="pager" aria-label="Pagination">
+            <button type="button" disabled aria-label="Previous page">←</button>
+            <button type="button" aria-label="Next page">→</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="state-panel" id="loading-view" aria-live="polite">
+        <div class="skeletons" aria-label="Loading users">
+          <div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div>
+        </div>
+      </div>
+      <div class="state-panel" id="empty-view">
+        <div><div class="state-icon">⌕</div><h2>No users match these filters</h2><p>Try another name, agent, or lifecycle stage. Your filters stay visible so it is easy to adjust them.</p><button class="retry" id="clear-filters" type="button">Clear filters</button></div>
+      </div>
+      <div class="state-panel" id="error-view" role="alert">
+        <div><div class="state-icon">!</div><h2>We couldn't load user activity</h2><p>The dashboard kept your filters. Retry when the connection is available.</p><button class="retry" id="retry" type="button">Retry</button></div>
+      </div>
+    </section>
+  </main>
+
+  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+  <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title" aria-hidden="true">
+    <div class="drawer-top"><span class="drawer-kicker">User activity</span><button class="close-drawer" id="close-drawer" type="button" aria-label="Close user detail">×</button></div>
+    <div class="drawer-error" id="drawer-error" hidden role="alert">
+      <div><div class="state-icon">!</div><h2>Activity detail unavailable</h2><p class="page-subtitle">The account is still visible; no missing response is presented as zero activity.</p><button class="retry" id="retry-detail" type="button">Retry detail</button></div>
+    </div>
+    <div class="drawer-content" id="drawer-content">
+      <div class="drawer-person">
+        <div class="avatar" id="drawer-avatar">CM</div>
+        <div><h2 id="drawer-title">Clara Mendoza</h2><p id="drawer-email">clara@northstar.example</p></div>
+        <span class="status active" id="drawer-status">Active</span>
+      </div>
+      <div class="profile-meta">
+        <span class="profile-chip" id="drawer-username">@claram</span>
+        <span class="profile-chip"><span id="drawer-provider">GitHub</span> OAuth</span>
+        <span class="profile-chip"><strong id="drawer-plan">Pro beta</strong></span>
+        <span class="profile-chip">App <strong id="drawer-version">1.10.0</strong></span>
+      </div>
+      <div class="drawer-actions">
+        <button class="drawer-action primary" id="compose-email" type="button">Send email</button>
+        <button class="drawer-action" id="copy-email" type="button">Copy email</button>
+      </div>
+      <div class="drawer-stats">
+        <div class="drawer-stat"><label>Last recorded</label><strong id="drawer-last">Today</strong><small id="drawer-last-hint">11:42</small></div>
+        <div class="drawer-stat"><label>Work periods</label><strong id="drawer-periods">9 / 24</strong><small>7d / 30d · 30m inactivity gap</small></div>
+        <div class="drawer-stat"><label>Active days</label><strong id="drawer-days">42 / 63</strong><small id="drawer-ratio">67% since first activity</small></div>
+        <div class="drawer-stat"><label>Current streak</label><strong id="drawer-streak">12 days</strong><small id="drawer-best-streak">best: 18 days</small></div>
+        <div class="drawer-stat"><label>Activation time</label><strong id="drawer-activation">11h</strong><small>to first agent session</small></div>
+        <div class="drawer-stat"><label>Tracked events</label><strong id="drawer-events">4,280</strong><small>available 180-day window</small></div>
+      </div>
+
+      <section class="drawer-section">
+        <div class="section-head"><h3>Account & activation</h3><span class="section-note" id="activation-state">Activated</span></div>
+        <div class="kv-grid">
+          <div class="kv"><label>Account created</label><strong id="account-created">Jun 07, 2026</strong><small id="account-age">63 days ago</small></div>
+          <div class="kv"><label>First recorded activity</label><strong id="account-first">Jun 08 · 08:24</strong><small id="account-first-note">11h 24m after signup</small></div>
+          <div class="kv"><label>Activation milestone</label><strong id="account-milestone">First agent session</strong><small id="account-agent">Codex</small></div>
+          <div class="kv"><label>Last login</label><strong id="account-login">Today · 11:37</strong><small>authentication event</small></div>
+          <div class="kv"><label>OAuth provider</label><strong id="account-provider">GitHub</strong><small id="account-username">@claram</small></div>
+          <div class="kv"><label>Subscription</label><strong id="account-subscription">Pro · Active</strong><small id="account-subscription-note">Beta entitlement · no charge</small></div>
+        </div>
+      </section>
+
+      <section class="drawer-section">
+        <div class="section-head"><h3>Recorded activity · last 18 weeks</h3><span class="section-note" id="heatmap-summary">42 active days</span></div>
+        <div class="heatmap" id="heatmap" role="img" aria-label="Activity heatmap"></div>
+      </section>
+
+      <section class="drawer-section">
+        <div class="section-head"><h3>Product usage</h3><span class="section-note">Tracked events</span></div>
+        <div class="split-grid">
+          <div class="subpanel"><h4>Top features</h4><div class="feature-list" id="feature-list"></div></div>
+          <div class="subpanel"><h4>Agent mix</h4><div id="agent-usage"></div></div>
+        </div>
+        <div class="cloud-task-grid" aria-label="Cloud task activity">
+          <div class="cloud-stat"><label>Owned</label><strong id="cloud-owned">18</strong></div>
+          <div class="cloud-stat"><label>Assigned</label><strong id="cloud-assigned">7</strong></div>
+          <div class="cloud-stat"><label>Done · 30d</label><strong id="cloud-completed">21</strong></div>
+          <div class="cloud-stat"><label>Synced</label><strong id="cloud-synced">9</strong></div>
+          <div class="cloud-stat"><label>Conflicts</label><strong id="cloud-conflicts">0</strong></div>
+        </div>
+      </section>
+
+      <section class="drawer-section">
+        <div class="section-head"><h3>Connections & relationship</h3><span class="section-note">No secrets exposed</span></div>
+        <div class="subpanel"><h4>Integrations</h4><div class="connection-list" id="integration-list"></div></div>
+        <div class="relationship-grid" style="margin-top:10px">
+          <div class="relationship-card"><label>Outreach</label><strong id="outreach-status">Replied</strong><p id="outreach-detail">Activation check-in sent Aug 02 · replied Aug 03</p></div>
+          <div class="relationship-card"><label>Billing</label><strong id="billing-status">Pro beta · Active</strong><p id="billing-detail">Beta entitlement; no payment due</p></div>
+        </div>
+      </section>
+
+      <section class="drawer-section">
+        <div class="section-head"><h3>Recent meaningful activity</h3><span class="section-note">Newest first</span></div>
+        <ol class="timeline" id="recent-timeline"></ol>
+      </section>
+      <p class="privacy-note">Activity is labelled “recorded” because analytics can be disabled. This view never exposes IP addresses, OAuth tokens, provider IDs, Stripe IDs, or precise location.</p>
+    </div>
+  </aside>
+
+  <div class="demo-controls" aria-label="Proposal controls">
+    <span class="demo-label">Proposal controls</span>
+    <select class="demo-theme" id="theme-select" aria-label="Preview theme">
+      <option value="dark">Dark</option><option value="light">Light</option><option value="midnight">Midnight</option><option value="espresso">Espresso</option><option value="neon">Neon</option>
+    </select>
+    <button class="active" type="button" data-state="normal">Normal</button>
+    <button type="button" data-state="loading">Loading</button>
+    <button type="button" data-state="empty">Empty</button>
+    <button type="button" data-state="error">Error</button>
+    <button type="button" data-state="detail-error">Detail error</button>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    const users = [
+      {
+        id: 'usr-clara', name: 'Clara Mendoza', email: 'clara@northstar.example', username: 'claram', provider: 'GitHub', plan: 'Pro',
+        status: 'active', activationState: 'activated', week: '1111111', active: 42, tenure: 63, streak: 12, bestStreak: 18,
+        last: 'Today', lastHint: '11:42', agent: 'Codex', events: 4280, periods7: 9, periods30: 24, joined: 'Jun 07, 2026',
+        version: '1.10.0', versionStatus: 'latest', first: 'Jun 08 · 08:24', activation: '11h 24m', lastLogin: 'Today · 11:37',
+        milestone: 'First agent session', features: [['Terminal sessions', 1284, 100], ['Task board', 842, 66], ['Conversation history', 551, 43]],
+        agentMix: [['Codex', 72, '#75b7e8'], ['Claude Code', 21, '#d99055'], ['Antigravity', 7, '#70b69c']],
+        integrations: [{ provider: 'Jira', initial: 'J', account: 'Northstar Workspace', domain: 'northstar.atlassian.example', state: 'Connected', connected: 'Jun 19', synced: '12 min ago' }],
+        outreach: { filter: 'replied', status: 'Replied', detail: 'Activation check-in sent Aug 02 · replied Aug 03 · email consent recorded' },
+        billing: { label: 'Pro beta · Active', detail: 'Beta entitlement · no charge · updated Aug 01' },
+        cloud: { owned: 18, assigned: 7, completed30: 21, synced: 9, conflicts: 0 },
+        recent: [['Started a Codex terminal', 'Today · 11:42 · app 1.10.0'], ['Completed a cloud task', 'Today · 10:18'], ['Synced Jira tasks', 'Today · 09:54']]
+      },
+      {
+        id: 'usr-mateusz', name: 'Mateusz Nowak', email: 'mateusz@fieldnote.example', username: 'mnowak', provider: 'Google', plan: 'Pro',
+        status: 'active', activationState: 'activated', week: '1011110', active: 31, tenure: 48, streak: 4, bestStreak: 11,
+        last: 'Today', lastHint: '09:18', agent: 'Claude Code', events: 1924, periods7: 6, periods30: 19, joined: 'Jun 22, 2026',
+        version: '1.10.0', versionStatus: 'latest', first: 'Jun 22 · 16:03', activation: '2h 08m', lastLogin: 'Today · 09:11',
+        milestone: 'First agent session', features: [['Terminal sessions', 704, 100], ['Project switcher', 488, 69], ['Task board', 332, 47]],
+        agentMix: [['Claude Code', 64, '#d99055'], ['Codex', 29, '#75b7e8'], ['opencode', 7, '#aaaaaa']],
+        integrations: [],
+        outreach: { filter: 'contacted', status: 'Contacted', detail: 'Product tips sent Jul 30 · no reply · email consent recorded' },
+        billing: { label: 'Pro · Active', detail: 'Last payment Aug 01 · renews Sep 01' },
+        cloud: { owned: 12, assigned: 4, completed30: 13, synced: 0, conflicts: 0 },
+        recent: [['Resumed a Claude Code conversation', 'Today · 09:18 · app 1.10.0'], ['Updated a cloud task', 'Yesterday · 17:06'], ['Opened project switcher', 'Yesterday · 14:33']]
+      },
+      {
+        id: 'usr-maja', name: 'Maja Chen', email: 'maja@paperplane.example', username: 'majac', provider: 'Discord', plan: 'Starter',
+        status: 'active', activationState: 'activated', week: '0111011', active: 18, tenure: 27, streak: 2, bestStreak: 6,
+        last: 'Yesterday', lastHint: '18:04', agent: 'Antigravity', events: 638, periods7: 5, periods30: 13, joined: 'Jul 13, 2026',
+        version: '1.10.0', versionStatus: 'latest', first: 'Jul 14 · 07:46', activation: '14h 02m', lastLogin: 'Yesterday · 17:58',
+        milestone: 'First agent session', features: [['Terminal sessions', 251, 100], ['Conversation history', 188, 75], ['Themes', 91, 36]],
+        agentMix: [['Antigravity', 78, '#70b69c'], ['Codex', 18, '#75b7e8'], ['Kimi Code', 4, '#9b9cdb']],
+        integrations: [{ provider: 'Jira', initial: 'J', account: 'Paperplane', domain: 'paperplane.atlassian.example', state: 'Connected', connected: 'Jul 18', synced: 'Yesterday · 18:01' }],
+        outreach: { filter: 'not-contacted', status: 'Not contacted', detail: 'Eligible for onboarding follow-up · email consent recorded' },
+        billing: { label: 'Starter · Active', detail: 'Last payment Jul 13 · renews Aug 13' },
+        cloud: { owned: 8, assigned: 9, completed30: 14, synced: 12, conflicts: 1 },
+        recent: [['Started an Antigravity terminal', 'Yesterday · 18:04 · app 1.10.0'], ['Resolved a sync conflict', 'Yesterday · 17:41'], ['Changed app theme', 'Aug 06 · 21:12']]
+      },
+      {
+        id: 'usr-elias', name: 'Elias Fontaine', email: 'elias@northloop.example', username: 'efontaine', provider: 'GitHub', plan: 'Pro',
+        status: 'cooling', activationState: 'activated', week: '0000000', active: 24, tenure: 92, streak: 0, bestStreak: 9,
+        last: '8 days ago', lastHint: 'Jul 31 · 16:27', agent: 'Codex', events: 1142, periods7: 0, periods30: 7, joined: 'May 09, 2026',
+        version: '1.9.3', versionStatus: 'outdated', first: 'May 10 · 10:14', activation: '19h 31m', lastLogin: 'Jul 31 · 16:21',
+        milestone: 'First agent session', features: [['Terminal sessions', 498, 100], ['Task board', 317, 64], ['Conversation history', 169, 34]],
+        agentMix: [['Codex', 81, '#75b7e8'], ['Claude Code', 14, '#d99055'], ['Grok Build', 5, '#b889da']],
+        integrations: [{ provider: 'Jira', initial: 'J', account: 'Northloop', domain: 'northloop.atlassian.example', state: 'Needs reconnect', connected: 'May 21', synced: '19 days ago' }],
+        outreach: { filter: 'contacted', status: 'Contacted', detail: 'We miss you sent Aug 05 · no reply · email consent recorded' },
+        billing: { label: 'Pro · Cancels Sep 01', detail: 'Cancel at period end · last payment Aug 01' },
+        cloud: { owned: 15, assigned: 3, completed30: 2, synced: 11, conflicts: 3 },
+        recent: [['Started a Codex terminal', 'Jul 31 · 16:27 · app 1.9.3'], ['Jira credentials expired', 'Jul 20 · 08:12'], ['Completed a cloud task', 'Jul 17 · 15:09']]
+      },
+      {
+        id: 'usr-sara', name: 'Sara Okafor', email: 'sara@bluepeak.example', username: 'sarao', provider: 'Google', plan: 'Starter',
+        status: 'cooling', activationState: 'activated', week: '0000000', active: 9, tenure: 51, streak: 0, bestStreak: 4,
+        last: '17 days ago', lastHint: 'Jul 22 · 08:51', agent: 'Kimi Code', events: 307, periods7: 0, periods30: 3, joined: 'Jun 19, 2026',
+        version: '1.9.2', versionStatus: 'outdated', first: 'Jun 21 · 11:17', activation: '1d 18h', lastLogin: 'Jul 22 · 08:48',
+        milestone: 'First agent session', features: [['Terminal sessions', 141, 100], ['Task board', 86, 61], ['Settings', 31, 22]],
+        agentMix: [['Kimi Code', 84, '#9b9cdb'], ['Claude Code', 16, '#d99055']],
+        integrations: [],
+        outreach: { filter: 'replied', status: 'Replied', detail: 'Activation question sent Jul 28 · replied Jul 29 · follow-up due' },
+        billing: { label: 'Starter · Past due', detail: 'Payment failed Aug 01 · retry scheduled Aug 09' },
+        cloud: { owned: 4, assigned: 2, completed30: 1, synced: 0, conflicts: 0 },
+        recent: [['Started a Kimi Code terminal', 'Jul 22 · 08:51 · app 1.9.2'], ['Opened task board', 'Jul 21 · 18:20'], ['Updated billing details', 'Jul 18 · 12:06']]
+      },
+      {
+        id: 'usr-luca', name: 'Luca Rossi', email: 'luca@arcway.example', username: 'lucar', provider: 'GitHub', plan: 'Pro',
+        status: 'dormant', activationState: 'activated', week: '0000000', active: 11, tenure: 164, streak: 0, bestStreak: 3,
+        last: '2 months ago', lastHint: 'Jun 03 · 13:22', agent: 'Claude Code', events: 519, periods7: 0, periods30: 0, joined: 'Feb 26, 2026',
+        version: '1.8.4', versionStatus: 'outdated', first: 'Feb 28 · 09:12', activation: '1d 21h', lastLogin: 'Jun 03 · 13:17',
+        milestone: 'First agent session', features: [['Terminal sessions', 271, 100], ['Conversation history', 114, 42], ['Project switcher', 76, 28]],
+        agentMix: [['Claude Code', 91, '#d99055'], ['Codex', 9, '#75b7e8']],
+        integrations: [{ provider: 'Jira', initial: 'J', account: 'Arcway', domain: 'arcway.atlassian.example', state: 'Disconnected', connected: 'Mar 04', synced: 'May 29' }],
+        outreach: { filter: 'excluded', status: 'Excluded', detail: 'Reason: user requested no product emails · excluded Jun 12' },
+        billing: { label: 'Pro · Canceled', detail: 'Subscription ended Jun 30 · last payment May 30' },
+        cloud: { owned: 6, assigned: 0, completed30: 0, synced: 4, conflicts: 0 },
+        recent: [['Resumed a Claude Code conversation', 'Jun 03 · 13:22 · app 1.8.4'], ['Disconnected Jira', 'May 29 · 10:45'], ['Canceled subscription', 'May 28 · 16:09']]
+      },
+      {
+        id: 'usr-ana', name: 'Ana Silva', email: 'ana@shipyard.example', username: 'anasilva', provider: 'Discord', plan: 'Free',
+        status: 'dormant', activationState: 'activated', week: '0000000', active: 3, tenure: 121, streak: 0, bestStreak: 2,
+        last: '3 months ago', lastHint: 'May 10 · 19:04', agent: 'opencode', events: 94, periods7: 0, periods30: 0, joined: 'Apr 10, 2026',
+        version: '1.7.2', versionStatus: 'outdated', first: 'Apr 18 · 20:31', activation: '8d 03h', lastLogin: 'May 10 · 18:59',
+        milestone: 'First agent session', features: [['Terminal sessions', 43, 100], ['Settings', 28, 65], ['Conversation history', 15, 35]],
+        agentMix: [['opencode', 100, '#aaaaaa']],
+        integrations: [],
+        outreach: { filter: 'contacted', status: 'Contacted', detail: 'We miss you sent Jun 15 · no reply · email consent recorded' },
+        billing: { label: 'Free · Active', detail: 'No payment method · updated Apr 10' },
+        cloud: { owned: 1, assigned: 0, completed30: 0, synced: 0, conflicts: 0 },
+        recent: [['Started an opencode terminal', 'May 10 · 19:04 · app 1.7.2'], ['Changed privacy settings', 'Apr 22 · 21:11'], ['Opened conversation history', 'Apr 18 · 21:03']]
+      },
+      {
+        id: 'usr-omar', name: 'Omar Haddad', email: 'omar@relay.example', username: 'ohaddad', provider: 'GitHub', plan: 'Free',
+        status: 'never', activationState: 'pending', week: '0000000', active: 0, tenure: 12, streak: 0, bestStreak: 0,
+        last: 'No activity', lastHint: 'No tracked events', agent: '—', events: 0, periods7: 0, periods30: 0, joined: 'Jul 28, 2026',
+        version: 'Unknown', versionStatus: 'unknown', first: '—', activation: 'Pending', lastLogin: 'Jul 28 · 14:06',
+        milestone: 'First agent session pending', features: [], agentMix: [], integrations: [],
+        outreach: { filter: 'not-contacted', status: 'Not contacted', detail: 'Eligible for first-session help · email consent not recorded' },
+        billing: { label: 'Free · Active', detail: 'No payment method · account created Jul 28' },
+        cloud: { owned: 0, assigned: 0, completed30: 0, synced: 0, conflicts: 0 },
+        recent: [['Account created', 'Jul 28 · 14:06'], ['Signed in with GitHub', 'Jul 28 · 14:06']]
+      }
+    ];
+
+    const totals = { all: 152, active: 47, monthly: 82, activated: 108, cooling: 35, dormant: 58, never: 12 };
+    const labels = { active: 'Active', cooling: 'Inactive 7–30d', dormant: 'Dormant >30d', never: 'No tracked activity' };
+    const rows = document.querySelector('#user-rows');
+    const search = document.querySelector('#search');
+    const agentFilter = document.querySelector('#agent-filter');
+    const advancedFilterIds = ['activation-filter', 'version-filter', 'provider-filter', 'plan-filter', 'integration-filter', 'contact-filter'];
+    const advancedFilters = Object.fromEntries(advancedFilterIds.map(id => [id, document.querySelector(`#${id}`)]));
+    const resultCount = document.querySelector('#result-count');
+    const pageCopy = document.querySelector('#page-copy');
+    const filterCount = document.querySelector('#filter-count');
+    const drawer = document.querySelector('#drawer');
+    const drawerContent = document.querySelector('#drawer-content');
+    const drawerError = document.querySelector('#drawer-error');
+    const toast = document.querySelector('#toast');
+    let segment = 'all';
+    let selectedUserId = users[0].id;
+    let lastTrigger = null;
+
+    function initials(name) { return name.split(' ').slice(0, 2).map(part => part[0]).join('').toUpperCase(); }
+    function agentClass(agent) {
+      const value = agent.toLowerCase();
+      if (value.startsWith('grok')) return 'grok';
+      if (value.startsWith('claude')) return 'claude';
+      if (value.startsWith('kimi')) return 'kimi';
+      return value.replaceAll(' ', '');
+    }
+    function weekMarkup(pattern) {
+      const count = pattern.split('').filter(value => value === '1').length;
+      return pattern.split('').map((on, index) => `<i class="${on === '1' ? 'on' : ''} ${index === 6 ? 'today' : ''}" title="${6 - index === 0 ? 'Today' : `${6 - index} days ago`}: ${on === '1' ? 'recorded activity' : 'no recorded activity'}"></i>`).join('') + `<span class="week-count">${count}/7</span>`;
+    }
+    function activeAdvancedFilterCount() {
+      return Object.values(advancedFilters).filter(control => control.value !== 'all').length;
+    }
+    function hasListFilters(query, agent) {
+      return Boolean(query || agent !== 'all' || activeAdvancedFilterCount());
+    }
+    function render() {
+      const query = search.value.trim().toLowerCase();
+      const agent = agentFilter.value;
+      const filtered = users.filter(user =>
+        (segment === 'all' || user.status === segment || (segment === 'monthly' && ['active', 'cooling'].includes(user.status)) || (segment === 'activated' && user.activationState === 'activated')) &&
+        (agent === 'all' || user.agent === agent) &&
+        (advancedFilters['activation-filter'].value === 'all' || user.activationState === advancedFilters['activation-filter'].value) &&
+        (advancedFilters['version-filter'].value === 'all' || user.versionStatus === advancedFilters['version-filter'].value) &&
+        (advancedFilters['provider-filter'].value === 'all' || user.provider === advancedFilters['provider-filter'].value) &&
+        (advancedFilters['plan-filter'].value === 'all' || user.plan === advancedFilters['plan-filter'].value) &&
+        (advancedFilters['integration-filter'].value === 'all' || (advancedFilters['integration-filter'].value === 'connected' ? user.integrations.length > 0 : user.integrations.length === 0)) &&
+        (advancedFilters['contact-filter'].value === 'all' || user.outreach.filter === advancedFilters['contact-filter'].value) &&
+        (!query || `${user.name} ${user.email}`.toLowerCase().includes(query))
+      );
+      rows.innerHTML = filtered.map(user => `<tr>
+          <td><button class="user-button" type="button" data-user="${user.id}"><span class="avatar">${initials(user.name)}</span><span><span class="user-name">${user.name}</span><span class="user-email">${user.email}</span><span class="user-meta"><span class="mini-tag">${user.provider}</span><span class="mini-tag plan">${user.plan}</span></span></span></button></td>
+          <td><span class="status ${user.status}">${labels[user.status]}</span><div class="last-seen"><strong>${user.last}</strong><span>${user.lastHint}</span></div></td>
+          <td><div class="week" aria-label="Recorded activity in the last seven days">${weekMarkup(user.week)}</div><div class="streak ${user.streak >= 7 ? 'hot' : ''}">${user.streak ? `↗ ${user.streak}-day streak` : 'No current streak'}</div></td>
+          <td><div class="sessions"><strong>${user.periods7} / ${user.periods30}</strong><span>7d / 30d</span><span class="version ${user.versionStatus}">${user.version === 'Unknown' ? 'Version unknown' : `v${user.version}`}</span></div></td>
+          <td><span class="agent ${agentClass(user.agent)}">${user.agent}</span></td>
+          <td>${user.joined}</td>
+          <td><button class="row-arrow" type="button" data-user="${user.id}" aria-label="Open ${user.name} detail">›</button></td>
+        </tr>`).join('');
+
+      const advancedCount = activeAdvancedFilterCount();
+      filterCount.textContent = advancedCount;
+      filterCount.classList.toggle('show', advancedCount > 0);
+      const fullCount = hasListFilters(query, agent) ? filtered.length : (totals[segment] ?? filtered.length);
+      resultCount.textContent = `${fullCount} user${fullCount === 1 ? '' : 's'}`;
+      pageCopy.textContent = filtered.length ? `Showing 1–${filtered.length} of ${fullCount} users` : 'No matching users';
+      document.querySelector('#normal-view').hidden = false;
+      document.querySelector('.table-wrap').hidden = filtered.length === 0;
+      document.querySelector('.table-footer').hidden = filtered.length === 0;
+      document.querySelector('#empty-view').classList.toggle('show', filtered.length === 0);
+    }
+
+    function selectSegment(next) {
+      segment = next;
+      document.querySelectorAll('[data-segment]').forEach(button => {
+        const selected = button.dataset.segment === next;
+        button.classList.toggle('active', selected);
+        button.setAttribute('aria-pressed', selected);
+      });
+      document.querySelectorAll('[data-metric]').forEach(button => {
+        const selected = button.dataset.metric === next;
+        button.classList.toggle('is-selected', selected);
+        button.setAttribute('aria-pressed', selected);
+      });
+      render();
+    }
+
+    function renderHeatmap(user) {
+      const seed = [...user.id].reduce((sum, character) => sum + character.charCodeAt(0), 0) % 126;
+      const activeDays = Math.min(user.active, 126);
+      const heatmap = document.querySelector('#heatmap');
+      heatmap.innerHTML = Array.from({ length: 126 }, (_, index) => {
+        const slot = (index * 17 + seed) % 126;
+        const level = slot >= activeDays ? '' : slot % 5 === 0 ? 'l3' : slot % 3 === 0 ? 'l2' : 'l1';
+        return `<i class="${level}" aria-hidden="true"></i>`;
+      }).join('');
+      heatmap.setAttribute('aria-label', `${activeDays} days with recorded activity in the last 18 weeks`);
+      document.querySelector('#heatmap-summary').textContent = `${activeDays} active day${activeDays === 1 ? '' : 's'}`;
+    }
+
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add('show');
+      clearTimeout(showToast.timer);
+      showToast.timer = setTimeout(() => toast.classList.remove('show'), 1700);
+    }
+
+    function openDrawer(id, showDetailError = false) {
+      const user = users.find(candidate => candidate.id === id);
+      if (!user) return;
+      selectedUserId = id;
+      if (document.activeElement?.matches('[data-user]')) lastTrigger = document.activeElement;
+      const pct = user.tenure ? Math.round(user.active / user.tenure * 100) : 0;
+
+      document.querySelector('#drawer-title').textContent = user.name;
+      document.querySelector('#drawer-email').textContent = user.email;
+      document.querySelector('#drawer-avatar').textContent = initials(user.name);
+      document.querySelector('#drawer-username').textContent = `@${user.username}`;
+      document.querySelector('#drawer-provider').textContent = user.provider;
+      document.querySelector('#drawer-plan').textContent = user.billing.label.split(' · ')[0];
+      document.querySelector('#drawer-version').textContent = user.version;
+      document.querySelector('#drawer-last').textContent = user.last;
+      document.querySelector('#drawer-last-hint').textContent = user.lastHint;
+      document.querySelector('#drawer-periods').textContent = `${user.periods7} / ${user.periods30}`;
+      document.querySelector('#drawer-days').textContent = `${user.active} / ${user.tenure}`;
+      document.querySelector('#drawer-ratio').textContent = user.activationState === 'activated' ? `${pct}% since first activity` : 'No tracked activity yet';
+      document.querySelector('#drawer-streak').textContent = user.streak ? `${user.streak} days` : '—';
+      document.querySelector('#drawer-best-streak').textContent = user.bestStreak ? `best: ${user.bestStreak} days` : 'no recorded streak';
+      document.querySelector('#drawer-activation').textContent = user.activation;
+      document.querySelector('#drawer-events').textContent = user.events.toLocaleString('en-US');
+
+      document.querySelector('#activation-state').textContent = user.activationState === 'activated' ? 'Activated' : 'Activation pending';
+      document.querySelector('#account-created').textContent = user.joined;
+      document.querySelector('#account-age').textContent = user.activationState === 'activated' ? `${user.tenure} observed days` : `${user.tenure} days since signup`;
+      document.querySelector('#account-first').textContent = user.first;
+      document.querySelector('#account-first-note').textContent = user.activationState === 'activated' ? `${user.activation} after signup` : 'No tracked activity';
+      document.querySelector('#account-milestone').textContent = user.milestone;
+      document.querySelector('#account-agent').textContent = user.agent === '—' ? 'No agent recorded' : user.agent;
+      document.querySelector('#account-login').textContent = user.lastLogin;
+      document.querySelector('#account-provider').textContent = user.provider;
+      document.querySelector('#account-username').textContent = `@${user.username}`;
+      document.querySelector('#account-subscription').textContent = user.billing.label;
+      document.querySelector('#account-subscription-note').textContent = user.billing.detail;
+
+      document.querySelector('#feature-list').innerHTML = user.features.length
+        ? user.features.map(([label, count, width]) => `<div class="feature-item"><strong>${label}</strong><span>${count.toLocaleString('en-US')}</span><div class="feature-bar"><i style="width:${width}%"></i></div></div>`).join('')
+        : '<p class="empty-detail">No feature activity has been recorded.</p>';
+      document.querySelector('#agent-usage').innerHTML = user.agentMix.length
+        ? user.agentMix.map(([name, share, color]) => `<div class="usage-row"><div class="usage-meta"><span>${name}</span><span>${share}%</span></div><div class="usage-track"><i style="width:${share}%; background:${color}"></i></div></div>`).join('')
+        : '<p class="empty-detail">No agent usage has been recorded.</p>';
+      document.querySelector('#integration-list').innerHTML = user.integrations.length
+        ? user.integrations.map(integration => `<div class="connection"><span class="connection-icon">${integration.initial}</span><span><strong>${integration.provider} · ${integration.state}</strong><small>${integration.account} · ${integration.domain}<br>Connected ${integration.connected} · last sync ${integration.synced}</small></span></div>`).join('')
+        : '<p class="empty-detail">No external integrations connected.</p>';
+
+      document.querySelector('#outreach-status').textContent = user.outreach.status;
+      document.querySelector('#outreach-detail').textContent = user.outreach.detail;
+      document.querySelector('#billing-status').textContent = user.billing.label;
+      document.querySelector('#billing-detail').textContent = user.billing.detail;
+      document.querySelector('#cloud-owned').textContent = user.cloud.owned;
+      document.querySelector('#cloud-assigned').textContent = user.cloud.assigned;
+      document.querySelector('#cloud-completed').textContent = user.cloud.completed30;
+      document.querySelector('#cloud-synced').textContent = user.cloud.synced;
+      document.querySelector('#cloud-conflicts').textContent = user.cloud.conflicts;
+      document.querySelector('#recent-timeline').innerHTML = user.recent.map(([label, time]) => `<li><strong>${label}</strong><time>${time}</time></li>`).join('');
+      renderHeatmap(user);
+
+      const status = document.querySelector('#drawer-status');
+      status.className = `status ${user.status}`;
+      status.textContent = labels[user.status];
+      drawerContent.hidden = showDetailError;
+      drawerError.hidden = !showDetailError;
+      document.body.classList.add('drawer-open');
+      drawer.setAttribute('aria-hidden', 'false');
+      drawer.scrollTop = 0;
+      document.querySelector('#close-drawer').focus();
+    }
+
+    function closeDrawer() {
+      document.body.classList.remove('drawer-open');
+      drawer.setAttribute('aria-hidden', 'true');
+      drawerContent.hidden = false;
+      drawerError.hidden = true;
+      if (lastTrigger?.isConnected) lastTrigger.focus();
+    }
+
+    function showState(state) {
+      const pageState = state === 'detail-error' ? 'normal' : state;
+      if (state !== 'detail-error') closeDrawer();
+      ['normal', 'loading', 'empty', 'error'].forEach(name => {
+        const element = document.querySelector(`#${name}-view`);
+        if (name === 'normal') element.hidden = !['normal', 'empty'].includes(pageState);
+        else element.classList.toggle('show', name === pageState);
+      });
+      if (pageState === 'empty') {
+        document.querySelector('.table-wrap').hidden = true;
+        document.querySelector('.table-footer').hidden = true;
+      } else if (pageState === 'normal') {
+        render();
+      }
+      document.querySelectorAll('[data-state]').forEach(button => button.classList.toggle('active', button.dataset.state === state));
+      if (state === 'detail-error') openDrawer(selectedUserId, true);
+    }
+
+    document.querySelectorAll('[data-segment]').forEach(button => button.addEventListener('click', () => selectSegment(button.dataset.segment)));
+    document.querySelectorAll('[data-metric]').forEach(button => button.addEventListener('click', () => selectSegment(button.dataset.metric)));
+    document.querySelectorAll('[data-state]').forEach(button => button.addEventListener('click', () => showState(button.dataset.state)));
+    rows.addEventListener('click', event => {
+      const button = event.target.closest('[data-user]');
+      if (button) openDrawer(button.dataset.user);
+    });
+    search.addEventListener('input', render);
+    agentFilter.addEventListener('change', render);
+    Object.values(advancedFilters).forEach(control => control.addEventListener('change', render));
+    function resetFilters() {
+      search.value = '';
+      agentFilter.value = 'all';
+      Object.values(advancedFilters).forEach(control => { control.value = 'all'; });
+      document.querySelector('#filter-more').removeAttribute('open');
+      selectSegment('all');
+      showState('normal');
+    }
+    document.querySelector('#clear-filters').addEventListener('click', resetFilters);
+    document.querySelector('#clear-more').addEventListener('click', resetFilters);
+    document.querySelector('#retry').addEventListener('click', () => { showState('loading'); setTimeout(() => showState('normal'), 650); });
+    document.querySelector('#retry-detail').addEventListener('click', event => {
+      const button = event.currentTarget;
+      button.disabled = true;
+      button.textContent = 'Retrying…';
+      setTimeout(() => {
+        button.disabled = false;
+        button.textContent = 'Retry detail';
+        openDrawer(selectedUserId);
+      }, 650);
+    });
+    document.querySelector('#refresh').addEventListener('click', event => {
+      const button = event.currentTarget;
+      button.textContent = '↻ Updated';
+      setTimeout(() => button.textContent = '↻ Refresh', 1200);
+    });
+    document.querySelector('#copy-email').addEventListener('click', () => {
+      const user = users.find(candidate => candidate.id === selectedUserId);
+      if (!user) return;
+      navigator.clipboard?.writeText(user.email).catch(() => {});
+      showToast('Email copied');
+    });
+    document.querySelector('#compose-email').addEventListener('click', () => showToast('Email composer would open for this user'));
+    document.querySelector('#close-drawer').addEventListener('click', closeDrawer);
+    document.querySelector('#drawer-backdrop').addEventListener('click', closeDrawer);
+    const themeSelect = document.querySelector('#theme-select');
+    const supportedThemes = [...themeSelect.options].map(option => option.value);
+    const initialTheme = supportedThemes.includes(document.documentElement.dataset.theme) ? document.documentElement.dataset.theme : 'dark';
+    document.documentElement.dataset.theme = initialTheme;
+    themeSelect.value = initialTheme;
+    themeSelect.addEventListener('change', () => {
+      document.documentElement.dataset.theme = themeSelect.value;
+      localStorage.setItem('cas-users-demo-theme', themeSelect.value);
+    });
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') closeDrawer();
+      if (event.key === '/' && !['INPUT', 'SELECT', 'TEXTAREA'].includes(document.activeElement.tagName)) { event.preventDefault(); search.focus(); }
+      if (event.key === 'Tab' && document.body.classList.contains('drawer-open')) {
+        const focusable = [...drawer.querySelectorAll('button:not(:disabled), [href], input, select, [tabindex]:not([tabindex="-1"])')].filter(element => element.offsetParent !== null);
+        if (!focusable.length) return;
+        const [first] = focusable;
+        const last = focusable.at(-1);
+        if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+        else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+      }
+    });
+
+    selectSegment('all');
+  </script>
+</body>
+</html>

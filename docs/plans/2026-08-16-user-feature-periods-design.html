@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>CodeAgentSwarm · Configurable feature signals proposal</title>
+  <style>
+    :root,
+    [data-theme="dark"] {
+      color-scheme: dark;
+      --bg: #090909; --panel: #111; --field: #0a0a0a;
+      --border: rgba(255,255,255,.09); --soft: rgba(255,255,255,.055);
+      --text: rgba(255,255,255,.9); --muted: rgba(255,255,255,.55); --faint: rgba(255,255,255,.36);
+      --accent: #fcd34d; --green: #6ee7b7; --rose: #fda4af; --blue: #93c5fd;
+    }
+    [data-theme="light"] {
+      color-scheme: light;
+      --bg: #f3eee2; --panel: #faf6ea; --field: #fffdf6;
+      --border: rgba(101,78,45,.16); --soft: rgba(101,78,45,.09);
+      --text: #33291a; --muted: #6d5f45; --faint: #8b7b5e;
+      --accent: #96690f; --green: #347c54; --rose: #a94050; --blue: #356a9e;
+    }
+    [data-theme="midnight"] {
+      --bg: #0b1120; --panel: #131b31; --field: #0e1628; --border: rgba(146,170,255,.13);
+      --soft: rgba(146,170,255,.07); --text: #eef2ff; --muted: #a3aecb; --faint: #687493;
+      --accent: #fbbf24; --green: #54d49a; --rose: #fb9ca8; --blue: #8ab4ff;
+    }
+    [data-theme="espresso"] {
+      --bg: #161009; --panel: #1f1710; --field: #18110b; --border: rgba(240,212,160,.13);
+      --soft: rgba(240,212,160,.07); --text: #f5eddf; --muted: #bfae93; --faint: #776850;
+      --accent: #fbbf24; --green: #62bd85; --rose: #e59a9a; --blue: #9bbcea;
+    }
+    [data-theme="neon"] {
+      --bg: #0e0817; --panel: #160d24; --field: #11091d; --border: rgba(190,160,255,.14);
+      --soft: rgba(190,160,255,.07); --text: #f3edff; --muted: #a795c9; --faint: #665a80;
+      --accent: #fbbf24; --green: #44d6c0; --rose: #ff8bad; --blue: #a9a5ff;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-width: 320px; background: var(--bg); color: var(--text); font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; }
+    button, select { font: inherit; cursor: pointer; }
+    button:focus-visible, select:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .demo { position: sticky; top: 0; z-index: 10; display: flex; justify-content: flex-end; align-items: center; gap: 12px; min-height: 38px; padding: 5px 24px; border-bottom: 1px dashed var(--border); background: color-mix(in srgb, var(--bg) 92%, transparent); color: var(--muted); font-size: 11px; }
+    .demo strong { margin-right: auto; color: var(--accent); font-size: 9px; letter-spacing: .12em; text-transform: uppercase; }
+    .demo select { border: 1px solid var(--border); border-radius: 6px; background: var(--field); color: var(--text); padding: 5px 8px; }
+    header { border-bottom: 1px solid var(--border); background: var(--panel); }
+    .nav { height: 61px; max-width: 1960px; margin: 0 auto; padding: 0 42px; display: flex; align-items: center; gap: 14px; }
+    .mark { width: 38px; height: 38px; display: grid; place-items: center; border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent); border-radius: 10px; background: color-mix(in srgb, var(--accent) 10%, transparent); color: var(--accent); font: 700 18px ui-monospace, monospace; }
+    .brand { font-size: 18px; font-weight: 650; } .brand span { color: var(--muted); font-weight: 450; }
+    nav { margin-left: auto; display: flex; gap: 38px; color: var(--muted); font-size: 15px; } nav .active { color: var(--accent); }
+    main { max-width: 1960px; margin: 0 auto; padding: 26px 42px 64px; }
+    .intro { display: flex; align-items: end; justify-content: space-between; gap: 18px; margin-bottom: 18px; }
+    .eyebrow { margin: 0 0 8px; color: var(--accent); font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+    h1 { margin: 0; font-size: clamp(25px, 3vw, 36px); letter-spacing: -.035em; } .intro p:last-child { margin: 8px 0 0; color: var(--muted); font-size: 14px; }
+    .live { display: inline-flex; gap: 7px; align-items: center; padding: 8px 11px; border: 1px solid color-mix(in srgb, var(--green) 25%, transparent); border-radius: 8px; color: var(--green); font-size: 11px; }
+    .live::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+    .grid { display: grid; grid-template-columns: minmax(0,1.2fr) minmax(340px,.8fr); gap: 16px; }
+    .card { min-width: 0; padding: 20px; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); }
+    .adoption { grid-column: 1 / -1; }
+    .card-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
+    h2 { margin: 0; font-size: 18px; letter-spacing: -.02em; } .sub { margin: 6px 0 0; color: var(--muted); font-size: 13px; }
+    .period { display: inline-flex; flex-wrap: wrap; padding: 3px; border: 1px solid var(--border); border-radius: 9px; background: color-mix(in srgb, var(--field) 75%, transparent); }
+    .period button { min-width: 42px; border: 0; border-radius: 6px; background: transparent; color: var(--faint); padding: 6px 9px; font-size: 10px; }
+    .period button.active { background: color-mix(in srgb, var(--accent) 15%, transparent); color: var(--accent); }
+    .event-pill { display: inline-block; margin-top: 14px; padding: 6px 9px; border: 1px solid var(--border); border-radius: 7px; color: var(--muted); font: 10px ui-monospace, monospace; }
+    .actions { list-style: none; margin: 18px 0 0; padding: 0; }
+    .actions li { display: grid; grid-template-columns: 30px minmax(0,1fr) auto; align-items: center; gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--soft); }
+    .actions li:last-child { border-bottom: 0; } .rank { color: var(--faint); font: 12px ui-monospace, monospace; }
+    .action-name { min-width: 0; } .action-name strong { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 14px; }
+    .action-name small { color: var(--faint); font-size: 10px; } .events { color: var(--muted); font: 13px ui-monospace, monospace; }
+    .cohort { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 18px; }
+    .metric { min-height: 94px; padding: 13px; border: 1px solid var(--border); border-radius: 10px; background: color-mix(in srgb, var(--field) 65%, transparent); }
+    .metric dt { color: var(--faint); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; }
+    .metric dd { margin: 7px 0 0; color: var(--accent); font: 650 22px ui-monospace, monospace; } .metric small { color: var(--faint); font-size: 9px; }
+    .feature-toolbar { display: flex; justify-content: space-between; gap: 14px; align-items: center; margin-top: 18px; }
+    .filters { display: flex; flex-wrap: wrap; gap: 7px; }
+    .filter { border: 1px solid var(--border); border-radius: 7px; background: transparent; color: var(--muted); padding: 6px 9px; font-size: 10px; }
+    .filter.active { border-color: color-mix(in srgb, var(--accent) 30%, transparent); background: color-mix(in srgb, var(--accent) 8%, transparent); color: var(--accent); }
+    .mature { color: var(--faint); font-size: 10px; } .mature b { color: var(--blue); font-weight: 600; }
+    .table-wrap { margin-top: 10px; overflow-x: auto; }
+    table { width: 100%; min-width: 900px; border-collapse: collapse; }
+    th { padding: 10px 12px; border-bottom: 1px solid var(--border); color: var(--faint); text-align: left; font-size: 10px; font-weight: 650; letter-spacing: .12em; text-transform: uppercase; }
+    td { padding: 13px 12px; border-bottom: 1px solid var(--soft); color: var(--muted); font-size: 12px; vertical-align: middle; }
+    tr:last-child td { border-bottom: 0; } .signal { color: var(--text); font-size: 13px; font-weight: 600; } .group { display: block; margin-top: 4px; color: var(--faint); font-size: 9px; text-transform: uppercase; letter-spacing: .09em; }
+    .num { color: var(--text); font: 13px ui-monospace, monospace; white-space: nowrap; } .num strong { color: var(--accent); } .num small { margin-left: 7px; color: var(--faint); font-size: 9px; }
+    .coverage { display: inline-flex; align-items: center; gap: 5px; border-radius: 999px; padding: 5px 8px; font-size: 9px; white-space: nowrap; }
+    .exact { background: color-mix(in srgb, var(--green) 10%, transparent); color: var(--green); }
+    .proxy { background: color-mix(in srgb, var(--blue) 10%, transparent); color: var(--blue); }
+    .next { background: color-mix(in srgb, var(--accent) 9%, transparent); color: var(--accent); }
+    .note { margin: 12px 0 0; color: var(--faint); font-size: 10px; line-height: 1.55; }
+    .state { display: none; margin-top: 18px; min-height: 220px; place-items: center; border: 1px dashed var(--border); border-radius: 10px; color: var(--muted); text-align: center; }
+    .state strong { display: block; color: var(--text); margin-bottom: 6px; }
+    .skeleton { width: min(560px,80%); display: grid; gap: 10px; } .skeleton i { height: 28px; border-radius: 7px; background: color-mix(in srgb, var(--text) 5%, transparent); }
+    body[data-state="loading"] .loaded, body[data-state="empty"] .loaded, body[data-state="error"] .loaded { display: none; }
+    body[data-state="loading"] .loading, body[data-state="empty"] .empty, body[data-state="error"] .error { display: grid; }
+    @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } .adoption { grid-column: 1; } .intro { align-items: flex-start; flex-direction: column; } }
+    @media (max-width: 760px) { .demo { padding-inline: 14px; flex-wrap: wrap; } .nav { padding: 0 16px; } nav { display: none; } main { padding: 18px 14px 44px; } .card { padding: 16px; } .card-head, .feature-toolbar { align-items: flex-start; flex-direction: column; } .period { width: 100%; } .period button { flex: 1; } .cohort { grid-template-columns: 1fr 1fr; } }
+    @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+  </style>
+</head>
+<body data-state="loaded">
+  <div class="demo">
+    <strong>Proposal controls</strong>
+    <label>State <select id="state"><option value="loaded">Loaded</option><option value="loading">Loading</option><option value="empty">Empty</option><option value="error">Error</option></select></label>
+    <label>Theme <select id="theme"><option>dark</option><option>light</option><option>midnight</option><option>espresso</option><option>neon</option></select></label>
+  </div>
+  <header><div class="nav"><div class="mark">@</div><div class="brand">CodeAgentSwarm <span>/ Operations</span></div><nav><span class="active">Users</span><span>Emails</span><span>Automation</span><span>Sign out</span></nav></div></header>
+  <main>
+    <section class="intro">
+      <div><p class="eyebrow">User analytics</p><h1>Product usage signals</h1><p>Current behaviour, not raw click volume.</p></div>
+      <span class="live">Identified users only</span>
+    </section>
+    <section class="grid">
+      <article class="card">
+        <div class="card-head">
+          <div><h2>Top tracked actions</h2><p class="sub" id="actions-sub">Last 7 days · grouped for privacy</p></div>
+          <div class="period" id="action-period" aria-label="Top actions period">
+            <button type="button" data-days="1" aria-pressed="false">24h</button><button type="button" data-days="7" class="active" aria-pressed="true">7d</button><button type="button" data-days="30" aria-pressed="false">30d</button><button type="button" data-days="180" aria-pressed="false">180d</button>
+          </div>
+        </div>
+        <div class="loaded"><span class="event-pill" id="event-total">14,269 events</span><ol class="actions" id="actions"></ol></div>
+        <div class="state loading"><div class="skeleton"><i></i><i></i><i></i><i></i><i></i></div></div>
+        <div class="state empty"><div><strong>No tracked activity</strong>No identified users generated events in this period.</div></div>
+        <div class="state error"><div><strong>Actions unavailable</strong>Retry keeps the selected period.</div></div>
+      </article>
+      <article class="card">
+        <div class="card-head"><div><h2>Global cohort</h2><p class="sub">The selected Top actions period</p></div></div>
+        <div class="loaded cohort">
+          <dl class="metric"><dt>Active users</dt><dd id="active-users">46</dd><small>identified in 7d</small></dl>
+          <dl class="metric"><dt>Actions tracked</dt><dd id="action-count">8</dd><small>shown by volume</small></dl>
+          <dl class="metric"><dt>Default period</dt><dd>7d</dd><small>always opens here</small></dl>
+          <dl class="metric"><dt>Excluded users</dt><dd>0</dd><small>same global cohort rules</small></dl>
+        </div>
+        <div class="state loading"><div class="skeleton"><i></i><i></i><i></i></div></div>
+        <div class="state empty"><div><strong>No cohort</strong>Change the period or user exclusions.</div></div>
+        <div class="state error"><div><strong>Cohort unavailable</strong>The rest of the users dashboard stays usable.</div></div>
+      </article>
+      <article class="card adoption">
+        <div class="card-head">
+          <div><h2>Feature adoption</h2><p class="sub" id="feature-sub">Reach and repeat · last 30 days</p></div>
+          <div class="period" id="feature-period" aria-label="Feature adoption period">
+            <button type="button" data-days="7" aria-pressed="false">7d</button><button type="button" data-days="30" class="active" aria-pressed="true">30d</button><button type="button" data-days="90" aria-pressed="false">90d</button><button type="button" data-days="180" aria-pressed="false">180d</button>
+          </div>
+        </div>
+        <div class="loaded">
+          <div class="feature-toolbar">
+            <div class="filters" aria-label="Signal category"><button class="filter active" data-filter="all">All signals</button><button class="filter" data-filter="workspace">Workspace</button><button class="filter" data-filter="automation">MCP & status</button></div>
+            <div class="mature"><b>30d return</b> always uses the mature 180d cohort</div>
+          </div>
+          <div class="table-wrap"><table>
+            <thead><tr><th>Signal</th><th>Reach</th><th>Repeat</th><th>30d return</th><th>Coverage</th></tr></thead>
+            <tbody id="features"></tbody>
+          </table></div>
+          <p class="note">Reach and repeat follow the selected period. Return stays on a mature 180-day cohort so a 7-day filter never fabricates retention. “Starts next release” means historical clicks cannot distinguish the requested outcome; exact tracking begins after the instrumentation ships.</p>
+        </div>
+        <div class="state loading"><div class="skeleton"><i></i><i></i><i></i><i></i><i></i></div></div>
+        <div class="state empty"><div><strong>No feature activity</strong>No users reached these signals in the selected period.</div></div>
+        <div class="state error"><div><strong>Feature signals unavailable</strong>No partial or stale percentages are shown.</div></div>
+      </article>
+    </section>
+  </main>
+  <script>
+    const actionData = {
+      1: [['Terminal switching',587,11],['Agent sessions',243,13],['Fullscreen',124,3],['Project shortcuts',36,4],['Settings',34,8],['Close terminal',31,7],['Open recent project',28,10],["What's new",18,3]],
+      7: [['Terminal switching',9558,23],['Agent sessions',1737,35],['Fullscreen',1271,11],['Open recent project',477,37],['Project shortcuts',430,12],['Close terminal',335,32],['Paste image',233,12],['Settings',228,32]],
+      30: [['Terminal switching',25697,41],['Fullscreen',2811,29],['Open recent project',1870,74],['Agent sessions',1747,35],['Close terminal',1550,71],['Paste image',1170,20],['Project shortcuts',1102,31],['Workspace toggle',680,56]],
+      180: [['Terminal switching',90516,70],['Fullscreen',8230,63],['Close terminal',5490,125],['Open recent project',4903,124],['Project shortcuts',4506,48],['Workspace toggle',2451,106],['Turbo mode',2073,68],['Conversation history',1971,46]]
+    };
+    const activeUsers = {1:13,7:46,30:95,180:159};
+    const featureData = {
+      7: {kanban:[20,7,43.5],tabs:[19,8,41.3],mcp:[13,4,28.3],status:[7,1,15.2],custom:[1,0,2.2],added:[1,0,2.2]},
+      30:{tabs:[56,24,58.9],kanban:[52,27,54.7],mcp:[41,16,43.2],status:[24,5,25.3],custom:[2,1,2.1],added:[1,0,1.1]},
+      90:{kanban:[82,41,64.1],tabs:[81,40,63.3],mcp:[69,27,53.9],status:[24,5,18.8],custom:[2,1,1.6],added:[1,0,.8]},
+      180:{tabs:[106,48,66.7],kanban:[105,53,66],mcp:[91,35,57.2],status:[24,5,15.1],custom:[2,1,1.3],added:[1,0,.6]}
+    };
+    const signals = [
+      {key:'kanban',name:'Kanban opened',group:'workspace',ret:'46.0%',sample:'29/63',coverage:'exact'},
+      {key:'tabs',name:'Tabs / Grid toggle',group:'workspace',ret:'52.3%',sample:'34/65',coverage:'proxy'},
+      {key:'grid',name:'Grid selected',group:'workspace',coverage:'next'},
+      {key:'tabsExact',name:'Tabs selected',group:'workspace',coverage:'next'},
+      {key:'list',name:'List selected',group:'workspace',coverage:'next'},
+      {key:'mcp',name:'MCP settings opened',group:'automation',ret:'49.1%',sample:'28/57',coverage:'exact'},
+      {key:'disabled',name:'MCP server disabled',group:'automation',coverage:'next'},
+      {key:'status',name:'Terminal status menu used',group:'automation',ret:'100%',sample:'1/1',coverage:'proxy'},
+      {key:'agentStatus',name:'Status set by agent',group:'automation',coverage:'next'},
+      {key:'custom',name:'Custom status created',group:'automation',ret:'—',sample:'0 mature',coverage:'proxy'},
+      {key:'added',name:'MCP server added',group:'automation',ret:'—',sample:'0 mature',coverage:'proxy'}
+    ];
+    const coverage = {exact:['Exact','exact'],proxy:['Historical proxy','proxy'],next:['Starts next release','next']};
+    const label = days => days === 1 ? 'Last 24 hours' : `Last ${days} days`;
+    let featureDays = 30, featureFilter = 'all';
+    function renderActions(days) {
+      const rows = actionData[days];
+      document.getElementById('actions-sub').textContent = `${label(days)} · grouped for privacy`;
+      document.getElementById('event-total').textContent = `${rows.reduce((sum,row)=>sum+row[1],0).toLocaleString()} events`;
+      document.getElementById('active-users').textContent = activeUsers[days];
+      document.querySelector('.metric small').textContent = `identified in ${days === 1 ? '24h' : `${days}d`}`;
+      document.getElementById('actions').innerHTML = rows.map((row,index)=>`<li><span class="rank">${String(index+1).padStart(2,'0')}</span><span class="action-name"><strong>${row[0]}</strong><small>${row[2]} users reached</small></span><span class="events">${row[1].toLocaleString()}</span></li>`).join('');
+    }
+    function renderFeatures() {
+      const values = featureData[featureDays];
+      document.getElementById('feature-sub').textContent = `Reach and repeat · last ${featureDays} days`;
+      document.getElementById('features').innerHTML = signals.filter(signal => featureFilter === 'all' || signal.group === featureFilter).map(signal => {
+        const value = values[signal.key];
+        const [coverageLabel,coverageClass] = coverage[signal.coverage];
+        const reach = value ? `<span class="num"><strong>${value[2]}%</strong><small>${value[0]} users</small></span>` : '<span class="num">—<small>new data</small></span>';
+        const repeat = value ? `<span class="num">${value[0] ? Math.round(value[1]/value[0]*1000)/10 : 0}%<small>${value[1]}/${value[0]}</small></span>` : '<span class="num">—</span>';
+        const ret = signal.ret ? `<span class="num">${signal.ret}<small>${signal.sample}</small></span>` : '<span class="num">—</span>';
+        return `<tr><td><span class="signal">${signal.name}</span><span class="group">${signal.group === 'workspace' ? 'Workspace' : 'MCP & status'}</span></td><td>${reach}</td><td>${repeat}</td><td>${ret}</td><td><span class="coverage ${coverageClass}">${coverageLabel}</span></td></tr>`;
+      }).join('');
+    }
+    function selectPeriod(selector, selected) {
+      document.querySelectorAll(selector).forEach(item => {
+        const active = item === selected;
+        item.classList.toggle('active', active);
+        item.setAttribute('aria-pressed', String(active));
+      });
+    }
+    document.querySelectorAll('#action-period button').forEach(button => button.addEventListener('click',()=>{ selectPeriod('#action-period button',button); renderActions(Number(button.dataset.days)); }));
+    document.querySelectorAll('#feature-period button').forEach(button => button.addEventListener('click',()=>{ featureDays=Number(button.dataset.days); selectPeriod('#feature-period button',button); renderFeatures(); }));
+    document.querySelectorAll('.filter').forEach(button => button.addEventListener('click',()=>{ featureFilter=button.dataset.filter; document.querySelectorAll('.filter').forEach(item=>item.classList.toggle('active',item===button)); renderFeatures(); }));
+    const theme = document.getElementById('theme'); theme.value=localStorage.getItem('cas-feature-period-theme')||'dark'; document.documentElement.dataset.theme=theme.value; theme.addEventListener('change',()=>{document.documentElement.dataset.theme=theme.value;localStorage.setItem('cas-feature-period-theme',theme.value);});
+    const state = document.getElementById('state'); state.addEventListener('change',()=>document.body.dataset.state=state.value);
+    renderActions(7); renderFeatures();
+  </script>
+</body>
+</html>

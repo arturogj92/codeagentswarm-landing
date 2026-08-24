@@ -84,7 +84,7 @@ export default function PricingSection() {
       description: t('plans.pro.description'),
       gradient: 'from-amber-500 to-blue-500',
       features: [
-        { name: t('features.terminals6'), included: true, badge: t('badges.boost3x') },
+        { name: t('features.terminals6'), included: true, badge: t('badges.boost25x') },
         { name: t('features.unlimitedProjects'), included: true, badge: t('badges.unlimited') },
         { name: t('features.notifications'), included: true },
         { name: t('features.realTimeChanges'), included: true },

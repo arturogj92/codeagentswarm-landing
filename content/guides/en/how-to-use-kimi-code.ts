@@ -7,7 +7,7 @@ export const guide: Guide = {
     title: 'How to Use Kimi Code: Install, Login, Commands, and the kimi-cli Trap',
     metaTitle: 'How to Use Kimi Code CLI: Install, Login and Commands (2026)',
     metaDescription: 'Kimi Code CLI explained: install Moonshot AI\'s terminal coding agent, log in, learn the commands that matter, and avoid installing the legacy kimi-cli by mistake.',
-    intro: `Kimi Code is Moonshot AI's command-line coding agent, the tool you get when you want Kimi K3 working directly in your terminal instead of a chat window. You install it, run <code>kimi</code> inside a project, and it reads your code, edits files, and runs commands the same way Claude Code or Codex CLI do.
+    intro: `Kimi Code is Moonshot AI's command-line coding agent. Its current default model is Kimi K2.7 Code, built for long-horizon software engineering with a 256K context window. You install it, run <code>kimi</code> inside a project, and it reads your code, edits files, and runs commands the same way Claude Code or Codex CLI do.
 
 There is one thing you should know before you type a single install command: Moonshot has shipped two different products that both install a binary called <code>kimi</code>, and the package names are crossed in a way that sends a lot of people to the wrong one. This guide covers that trap first, because it is the most common way a Kimi Code setup goes sideways, and then walks through installation, login, the flags and conventions you will actually use, and how to run Kimi Code inside CodeAgentSwarm next to your other agents.
 
@@ -16,7 +16,7 @@ Kimi Code moves fast, with new releases landing almost daily, so where something
     ctaAgent: 'kimi-code',
     highlightedWords: ['Kimi Code'],
     publishedAt: '2026-07-18',
-    updatedAt: '2026-07-18',
+    updatedAt: '2026-08-11',
     alternateSlug: 'como-usar-kimi-code',
   },
   sections: [
@@ -30,7 +30,7 @@ Kimi Code moves fast, with new releases landing almost daily, so where something
         },
         {
           type: 'paragraph',
-          text: 'Under the hood it runs on Kimi K3, the model Moonshot released on July 16, 2026: a 2.8 trillion parameter Mixture of Experts model with a context window of up to 1,048,576 tokens and native vision. K3 always reasons before answering, which makes it strong on hard multi-step work. If you want the model details and what they cost, the <a href="/en/guides/kimi-code-plans-and-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">plans and pricing guide</a> goes deep on that.',
+          text: 'The current default is <a href="https://www.kimi.com/es-419/resources/kimi-k2-7-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi K2.7 Code</a>: a one-trillion-parameter Mixture of Experts model with 32 billion active parameters and a 262,144-token context window. It always reasons; turning reasoning off routes the request to K2.6 instead. The <a href="/en/guides/kimi-code-plans-and-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">plans and pricing guide</a> has the current subscription and API costs.',
         },
         {
           type: 'paragraph',
@@ -188,7 +188,7 @@ Kimi Code moves fast, with new releases landing almost daily, so where something
       content: [
         {
           type: 'paragraph',
-          text: 'One Kimi Code session is one process working on one task. The moment you want a second task moving at the same time, you are into multiple terminals, and that is where <a href="/en" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a> comes in. It is a desktop app for macOS and Windows that runs several AI CLI terminals in one visual workspace, and Kimi Code is a first-class agent in it, alongside Claude Code, Codex CLI, Antigravity CLI and opencode.',
+          text: 'One Kimi Code session is one process working on one task. The moment you want a second task moving at the same time, you are into multiple terminals, and that is where <a href="/en" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a> comes in. It is a desktop app for macOS and Windows that runs several AI CLI terminals in one visual workspace, and Kimi Code is a first-class agent in it, alongside Claude Code, Codex CLI, Antigravity CLI, opencode and Grok Build.',
         },
         {
           type: 'paragraph',
@@ -204,7 +204,7 @@ Kimi Code moves fast, with new releases landing almost daily, so where something
   faq: [
     {
       question: 'What is Kimi Code?',
-      answer: 'Kimi Code is Moonshot AI\'s open-source terminal coding agent, run with the kimi command. It works like Claude Code or Codex CLI: you start it inside a project, describe what you want, and it reads code, edits files and runs commands with your approval. It is powered by Kimi K3, Moonshot\'s flagship model with a context window of up to 1M tokens.',
+      answer: 'Kimi Code is Moonshot AI\'s open-source terminal coding agent, run with the kimi command. It works like Claude Code or Codex CLI: you start it inside a project, describe what you want, and it reads code, edits files and runs commands with your approval. Its current default model is Kimi K2.7 Code with a 262,144-token context window.',
     },
     {
       question: 'How do I install Kimi Code CLI?',

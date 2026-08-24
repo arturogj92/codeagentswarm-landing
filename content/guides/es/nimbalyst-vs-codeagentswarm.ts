@@ -6,17 +6,17 @@ export const guide: Guide = {
     locale: 'es',
     title: 'Nimbalyst vs CodeAgentSwarm: comparativa honesta (2026)',
     metaTitle: 'Nimbalyst (antes Crystal) vs CodeAgentSwarm: comparativa honesta (2026)',
-    metaDescription: 'Nimbalyst, antes Crystal, es un editor visual de lo que producen Claude Code y Codex. CodeAgentSwarm supervisa cinco CLI de agentes. Comparativa verificada en julio de 2026.',
-    intro: `Nimbalyst, el proyecto que antes se llamaba Crystal, es un editor visual de lo que producen Claude Code y Codex. CodeAgentSwarm es un espacio de supervisión para cinco CLI de agentes, montado alrededor de las terminales y no de los documentos.
+    metaDescription: 'Nimbalyst, antes Crystal, es un editor visual de lo que producen Claude Code y Codex. CodeAgentSwarm supervisa siete CLI de agentes. Comparativa verificada en 2026.',
+    intro: `Nimbalyst, el proyecto que antes se llamaba Crystal, es un editor visual de lo que producen Claude Code y Codex. CodeAgentSwarm es un espacio de supervisión para siete CLI de agentes, montado alrededor de las terminales y no de los documentos.
 
-CodeAgentSwarm lo hacemos nosotros, así que esta comparativa tiene parte interesada y conviene que la contrastes. También por eso somos generosos donde Nimbalyst lo merece (es código abierto, funciona en Linux, tiene app móvil y el día que lo verificamos estaba recibiendo commits) y por eso nuestros límites están en la página: código cerrado, solo macOS y Windows, sin app móvil, todavía en beta, y tú pones tus suscripciones de agentes. Cada dato de terceros se verificó el 26 de julio de 2026 en nimbalyst.com, el README público de Nimbalyst y los datos públicos de GitHub.
+CodeAgentSwarm lo hacemos nosotros, así que esta comparativa tiene parte interesada y conviene que la contrastes. También por eso somos generosos donde Nimbalyst lo merece (es código abierto, funciona en Linux, tiene app móvil y el día que lo verificamos estaba recibiendo commits) y por eso nuestros límites están en la página: código cerrado, sin build de escritorio para Linux, Mobile Connect aún en alpha, todavía en beta, y tú pones tus suscripciones de agentes. Cada dato de terceros se verificó el 26 de julio de 2026 en nimbalyst.com, el README público de Nimbalyst y los datos públicos de GitHub. La disponibilidad de CodeAgentSwarm en esta página se actualizó el 23 de agosto de 2026.
 
 Elige Nimbalyst si lo que te importa es el artefacto: markdown, mockups, diagramas, documentos que quieres editar junto al agente. Elige CodeAgentSwarm si lo que te importa son las sesiones: varias CLI de agentes a la vez y tú necesitando saber qué hace cada una.`,
-    ctaText: 'Si quieres supervisar cinco CLI de agentes distintas a la vez, con notificaciones, diffs en vivo por terminal y un único historial buscable, descarga CodeAgentSwarm y compáralo con Nimbalyst en tu día a día.',
+    ctaText: 'Si quieres supervisar siete CLI de agentes distintas a la vez, con notificaciones, diffs en vivo por terminal y un único historial buscable, descarga CodeAgentSwarm y compáralo con Nimbalyst en tu día a día.',
     ctaAgent: 'comparison',
     highlightedWords: ['Nimbalyst', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
-    updatedAt: '2026-07-26',
+    updatedAt: '2026-08-23',
     alternateSlug: 'nimbalyst-vs-codeagentswarm',
   },
   sections: [
@@ -26,7 +26,7 @@ Elige Nimbalyst si lo que te importa es el artefacto: markdown, mockups, diagram
       content: [
         {
           type: 'paragraph',
-          text: 'Nimbalyst, antes Crystal, es un editor visual de lo que producen Claude Code y Codex, que te deja revisar y editar el markdown, los mockups y los diagramas junto al agente, mientras que CodeAgentSwarm es un espacio de supervisión para cinco CLI de agentes, montado alrededor de las terminales en marcha.',
+          text: 'Nimbalyst, antes Crystal, es un editor visual de lo que producen Claude Code y Codex, que te deja revisar y editar el markdown, los mockups y los diagramas junto al agente, mientras que CodeAgentSwarm es un espacio de supervisión para siete CLI de agentes, montado alrededor de las terminales en marcha.',
         },
         {
           type: 'paragraph',
@@ -74,7 +74,7 @@ Elige Nimbalyst si lo que te importa es el artefacto: markdown, mockups, diagram
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm es una app de escritorio para ejecutar y supervisar varios agentes de programación con IA en paralelo. Cada terminal es un proceso de agente real, y eliges por terminal entre Claude Code, Codex CLI, Antigravity CLI, OpenCode y Kimi Code.',
+          text: 'CodeAgentSwarm es una app de escritorio para ejecutar y supervisar varios agentes de programación con IA en paralelo. Cada terminal es un proceso de agente real, y eliges por terminal entre Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent.',
         },
         {
           type: 'image',
@@ -84,11 +84,11 @@ Elige Nimbalyst si lo que te importa es el artefacto: markdown, mockups, diagram
         },
         {
           type: 'paragraph',
-          text: 'El diseño empieza por la terminal. Tienes notificaciones de escritorio cuando un agente termina o necesita respuesta, historial de conversaciones buscable de los cinco agentes con reanudación, diffs de archivos en vivo por terminal, control de permisos con modo Turbo para las operaciones en las que confías, un tablero kanban que los agentes actualizan por MCP, git worktrees por sesión, cambio entre proyectos, mensajes de commit con IA, indicador de cuota del proveedor y marketplaces de skills y de MCP compartidos entre agentes.',
+          text: 'El diseño empieza por la terminal. Tienes notificaciones de escritorio cuando un agente termina o necesita respuesta, historial de conversaciones buscable de los siete agentes con reanudación cuando el agente la admite, diffs de archivos en vivo por terminal, control de permisos con modo Turbo para las operaciones en las que confías, un tablero kanban que los agentes actualizan por MCP, git worktrees por sesión, cambio entre proyectos, mensajes de commit con IA, indicador de cuota del proveedor y marketplaces de skills y de MCP compartidos entre agentes.',
         },
         {
           type: 'paragraph',
-          text: 'Y los límites: código cerrado y sin repositorio público, solo macOS y Windows (nada de Linux), sin app móvil, todavía en beta y gratis con Pro incluido durante ese periodo, y sin modelos propios, así que el trabajo lo hacen tus suscripciones actuales.',
+          text: 'Y los límites: código cerrado y sin repositorio público, sin build de escritorio para Linux, Mobile Connect aún en alpha (beta web para todas las cuentas, acceso nativo para iOS y Android bajo petición y el escritorio debe seguir abierto), todavía en beta con Pro incluido y sin modelos propios, así que el trabajo lo hacen tus suscripciones actuales.',
         },
       ],
     },
@@ -100,12 +100,12 @@ Elige Nimbalyst si lo que te importa es el artefacto: markdown, mockups, diagram
           type: 'table',
           headers: ['', 'Nimbalyst (antes Crystal)', 'CodeAgentSwarm'],
           rows: [
-            ['Plataformas', 'macOS (Apple Silicon e Intel), Windows y Linux, más una app móvil, según su README', 'macOS y Windows, sin Linux y sin app móvil'],
+            ['Plataformas', 'macOS (Apple Silicon e Intel), Windows y Linux, más una app móvil, según su README', 'Escritorio para macOS y Windows. Mobile Connect en alpha: beta web para todas las cuentas, acceso nativo para iOS y Android bajo petición y el escritorio debe seguir abierto. Sin build de Linux'],
             ['Interfaz', 'App de escritorio construida sobre editores visuales, con kanban de sesiones y terminal integrada', 'Espacio de trabajo de escritorio construido sobre terminales de agentes en vivo'],
-            ['Agentes soportados', 'Codex, Claude Code, Opencode (alpha) y Copilot (alpha), según su README', 'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code'],
+            ['Agentes soportados', 'Codex, Claude Code, Opencode (alpha) y Copilot (alpha), según su README', 'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent'],
             ['Modelo de aislamiento', 'Sesiones en paralelo con soporte de git worktrees, según su README', 'Un proceso separado por terminal, con git worktrees opcionales por sesión'],
             ['Notificaciones', 'Notificaciones push en su app móvil, según su README. Las notificaciones de escritorio no están documentadas en su web a 26 de julio de 2026', 'Notificaciones de escritorio cuando un agente termina o necesita respuesta'],
-            ['Historial de conversaciones', 'Búsqueda y reanudación de sesiones, con las sesiones enlazadas a los archivos que tocaron', 'Historial buscable de los cinco agentes, con reanudación'],
+            ['Historial de conversaciones', 'Búsqueda y reanudación de sesiones, con las sesiones enlazadas a los archivos que tocaron', 'Historial buscable de los siete agentes, con reanudación cuando el agente la admite'],
             ['Gestión de tareas', 'Seguimiento de tareas más una vista kanban de sesiones, editable por ti y por el agente', 'Tablero kanban que los agentes actualizan por MCP'],
             ['Código abierto', 'Sí, MIT, unas 1.300 estrellas en el repositorio actual', 'No, código cerrado y sin repositorio público de la app'],
             ['Precio', 'Gratis para uso individual según su web; existe un plan de pago para equipos según la navegación de su web (no verificamos ninguna cifra)', 'Gratis durante la beta con Pro incluido, y tú pones tus suscripciones de agentes'],
@@ -129,7 +129,7 @@ Elige Nimbalyst si lo que te importa es el artefacto: markdown, mockups, diagram
             '<strong>Quieres editar visualmente lo que produce el agente.</strong> Markdown, mockups con anotaciones, Mermaid, Excalidraw, CSV y modelos de datos en editores WYSIWYG, aprobando los cambios como diffs en rojo y verde. Nosotros no tenemos nada equivalente.',
             '<strong>Quieres código abierto.</strong> MIT, repositorio público, y además activo: hubo un commit público el 26 de julio de 2026, el día que lo verificamos. CodeAgentSwarm es de código cerrado.',
             '<strong>Estás en Linux.</strong> Ellos publican build de Linux. Nosotros no.',
-            '<strong>Quieres el móvil dentro del bucle.</strong> Su app móvil ofrece panel de sesiones, notificaciones push, respuestas por voz o texto y aprobación de diffs deslizando. Nosotros no tenemos app móvil.',
+            '<strong>Quieres una app móvil nativa pública hoy.</strong> Su app ofrece panel de sesiones, notificaciones push, respuestas por voz o texto y aprobación de diffs deslizando. Mobile Connect de CodeAgentSwarm sigue en alpha: hay beta web, el acceso nativo para iOS y Android es bajo petición y el escritorio debe seguir abierto.',
             '<strong>Hay gente que no programa en el equipo.</strong> Producto y diseño pueden trabajar sobre documentos y mockups en la misma herramienta, algo que un espacio de terminales no permite de verdad.',
             '<strong>Quieres extender la herramienta.</strong> Su sistema de extensiones te deja construir editores a medida para tus propios tipos de archivo.',
           ],
@@ -143,7 +143,7 @@ Elige Nimbalyst si lo que te importa es el artefacto: markdown, mockups, diagram
         {
           type: 'list',
           items: [
-            '<strong>Usas más de dos proveedores de agentes.</strong> Claude Code, Codex CLI, Antigravity CLI, OpenCode y Kimi Code son ciudadanos de primera aquí. Antigravity CLI y Kimi Code no aparecen entre los agentes soportados del README de Nimbalyst a 26 de julio de 2026.',
+            '<strong>Usas más de dos proveedores de agentes.</strong> Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent son ciudadanos de primera aquí. Antigravity CLI, Kimi Code y Grok Build no aparecen entre los agentes soportados del README de Nimbalyst a 26 de julio de 2026.',
             '<strong>Quieres las terminales, no una capa por encima.</strong> Cada sesión es una CLI real en un panel que puedes leer, desplazar y en el que puedes escribir, algo que importa cuando un agente hace algo inesperado.',
             '<strong>Quieres notificaciones de escritorio sin coger el móvil.</strong> Las nuestras saltan en la misma máquina en la que estás trabajando.',
             '<strong>Quieres un solo historial de todos los proveedores.</strong> Buscas una frase y encuentras la sesión, la haya ejecutado el agente que la haya ejecutado, y la reanudas ahí mismo.',

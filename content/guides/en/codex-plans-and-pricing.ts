@@ -16,7 +16,7 @@ The rest of the detail is where people get surprised: the CLI, the web version a
     ctaAgent: 'codex',
     highlightedWords: ['Codex', 'Plans', 'Pricing'],
     publishedAt: '2026-08-05',
-    updatedAt: '2026-08-05',
+    updatedAt: '2026-08-23',
     alternateSlug: 'planes-y-precios-de-codex',
   },
   sections: [
@@ -108,7 +108,7 @@ The rest of the detail is where people get surprised: the CLI, the web version a
         },
         {
           type: 'paragraph',
-          text: 'This is a genuinely useful design and it changes the calculus against Claude, where hitting the weekly wall is a hard stop until the cycle resets. On Codex you can buy your way through a deadline. The flip side is that "my subscription costs $20" stops being true the moment you rely on it, so treat credits as an occasional rescue rather than part of your normal capacity.',
+          text: 'This is a genuinely useful design: on Codex you can buy your way through a deadline. Claude paid plans can now do something similar with usage credits, so the real difference is how each provider meters and prices overflow. Treat credits as an occasional rescue rather than part of normal capacity, or a $20 subscription stops being a $20 budget.',
         },
         {
           type: 'paragraph',
@@ -191,7 +191,7 @@ The rest of the detail is where people get surprised: the CLI, the web version a
     },
     {
       question: 'What happens when I run out of Codex usage?',
-      answer: 'If you have credits on the account, Codex keeps working and bills against them at roughly $0.04 per credit. If you do not, it stops until the window resets. This is a meaningful difference from Claude Code, where hitting the weekly wall is a hard stop.',
+      answer: 'If you have credits on the account, Codex keeps working and bills against them at roughly $0.04 per credit. If you do not, it stops until the window resets. Claude paid plans can also enable usage credits, so compare each provider\'s overflow rates and controls before relying on them.',
     },
     {
       question: 'Should I use a ChatGPT plan or an OpenAI API key for Codex?',

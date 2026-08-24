@@ -11,12 +11,12 @@ export const guide: Guide = {
 
 That difference changes everything: how you give instructions, how much runs automatically, and where each one fits in your day. Picking the "winner" depends entirely on how you like to work, and plenty of developers end up using both.
 
-This guide compares them on capability and workflow rather than chasing benchmark numbers, then shows how CodeAgentSwarm lets you skip the choice at the swarm level by running Codex CLI alongside Claude Code and Gemini CLI in parallel.`,
-    ctaText: 'Like Codex CLI but want more than one terminal? Run several Codex CLI agents in parallel with CodeAgentSwarm, alongside Claude Code and Gemini CLI, all in one workspace.',
+This guide compares them on capability and workflow rather than chasing benchmark numbers, then shows how CodeAgentSwarm lets you skip the choice at the swarm level by running Codex CLI alongside Claude Code and Antigravity CLI in parallel.`,
+    ctaText: 'Like Codex CLI but want more than one terminal? Run several Codex CLI agents in parallel with CodeAgentSwarm, alongside Claude Code and Antigravity CLI, all in one workspace.',
     ctaAgent: 'codex',
     highlightedWords: ['Codex CLI', 'Cursor'],
     publishedAt: '2026-06-24',
-    updatedAt: '2026-06-24',
+    updatedAt: '2026-08-16',
     alternateSlug: 'codex-cli-vs-cursor',
   },
   sections: [
@@ -126,7 +126,7 @@ This guide compares them on capability and workflow rather than chasing benchmar
         },
         {
           type: 'paragraph',
-          text: 'Unlike Codex CLI, Cursor is not a terminal tool you run alongside an editor. It is the editor. The AI shows up as inline suggestions, a chat panel, and an agent mode for larger tasks, all inside one graphical app.',
+          text: 'This comparison uses <strong>Cursor</strong> to mean the Cursor IDE: the editor with inline suggestions, Chat and Agent mode. Cursor now also ships a separate <code>cursor-agent</code> CLI. For the terminal-to-terminal comparison, see <a href="/en/guides/cursor-cli-vs-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">Cursor CLI vs Claude Code</a>; for setup, use the <a href="/en/guides/cursor-agent-cli-acp-codeagentswarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Cursor CLI guide</a>.',
         },
         {
           type: 'heading',
@@ -361,7 +361,7 @@ This guide compares them on capability and workflow rather than chasing benchmar
         },
         {
           type: 'paragraph',
-          text: '<a href="/" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a> is a desktop app for running and supervising a swarm of AI CLI agents in one workspace. You get multiple terminals at once, and you choose the agent per terminal. Set them all to Codex CLI for a pure Codex swarm, or mix in Claude Code and Gemini CLI where they fit better.',
+          text: '<a href="/" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a> is a desktop app for running and supervising a swarm of AI CLI agents in one workspace. You get multiple terminals at once, and you choose the agent per terminal. Set them all to Codex CLI for a pure Codex swarm, or mix in Claude Code and Antigravity CLI where they fit better.',
         },
         {
           type: 'image',

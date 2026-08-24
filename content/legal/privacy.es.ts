@@ -7,7 +7,7 @@ const privacyEs: LegalDoc = {
   metaTitle: 'Política de Privacidad | CodeAgentSwarm',
   metaDescription:
     'Cómo trata CodeAgentSwarm tus datos: qué recogemos, qué no recogemos nunca, quién los procesa, cuánto los conservamos y cómo ejercer tus derechos RGPD.',
-  lastUpdated: '2026-06-22',
+  lastUpdated: '2026-08-23',
   intro:
     'Esta Política de Privacidad explica qué datos personales recoge CodeAgentSwarm cuando usas la aplicación de escritorio y este sitio web, por qué los recogemos, con quién los compartimos y qué derechos tienes sobre ellos. La hemos redactado para que coincida exactamente con lo que hace nuestro software. Si algo no queda claro, escríbenos a hello@codeagentswarm.com.',
   sections: [
@@ -32,11 +32,11 @@ const privacyEs: LegalDoc = {
         {
           type: 'callout',
           variant: 'tip',
-          text: 'CodeAgentSwarm es una aplicación de escritorio que ejecuta herramientas de IA de terceros (Claude Code, OpenAI Codex, Gemini CLI y similares) en terminales dentro de tu propio ordenador. El código, los archivos, las instrucciones y las respuestas de IA que ocurren en esas terminales viajan directamente desde la CLI de tu máquina al proveedor de IA que elijas, usando tu propia cuenta o clave de API. Nosotros no estamos en medio de esa comunicación y no recibimos ni almacenamos ese contenido.',
+          text: 'CodeAgentSwarm es una aplicación de escritorio que ejecuta herramientas de IA de terceros (Claude Code, OpenAI Codex, Antigravity CLI y similares) en terminales dentro de tu propio ordenador. El código, los archivos, las instrucciones y las respuestas de IA que ocurren en esas terminales viajan directamente desde la CLI de tu máquina al proveedor de IA que elijas, usando tu propia cuenta o clave de API. Nosotros no estamos en medio de esa comunicación y no recibimos ni almacenamos ese contenido.',
         },
         {
           type: 'paragraph',
-          text: 'Lo que sí recogemos se limita a: información anónima de uso y de errores que nos ayuda a mantener la app funcionando; los datos de cuenta que nos das si decides iniciar sesión; los mensajes que envías al asistente de ayuda dentro de la app o a nuestros formularios de soporte, feedback y encuestas; y el estado de facturación si algún día contratas un plan de pago. Cada uno se detalla más abajo.',
+          text: 'Lo que sí recogemos se limita a: información de uso y de errores que nos ayuda a mantener la app funcionando; los datos de cuenta que nos das si decides iniciar sesión; los mensajes que envías al asistente de ayuda dentro de la app o a nuestros formularios de soporte, feedback y encuestas; y el estado de facturación si algún día contratas un plan de pago. Cada uno se detalla más abajo.',
         },
       ],
     },
@@ -52,7 +52,7 @@ const privacyEs: LegalDoc = {
           type: 'list',
           items: [
             'El contenido de tus terminales, tu código fuente, tus archivos ni los datos de tus proyectos.',
-            'Las instrucciones que envías ni las respuestas que recibes de las CLIs de IA que ejecutas (Claude Code, Codex, Gemini CLI, etc.). Eso se rige por la política de privacidad del proveedor que uses (Anthropic, OpenAI, Google).',
+            'Las instrucciones que envías ni las respuestas que recibes de las CLIs de IA que ejecutas (Claude Code, Codex, Antigravity CLI, etc.). Eso se rige por la política de privacidad del proveedor que uses (Anthropic, OpenAI, Google).',
             'Tus claves de API o credenciales de los proveedores de IA. Se quedan en tu máquina.',
             'Cuando la app genera un mensaje de commit de git, ejecuta la CLI de Claude que ya tienes instalada en tu ordenador y le pasa el diff local de git. Eso ocurre en tu máquina; nosotros nunca vemos el diff.',
           ],
@@ -65,12 +65,12 @@ const privacyEs: LegalDoc = {
       blocks: [
         {
           type: 'heading',
-          text: 'a) Analítica anónima de uso (app de escritorio)',
+          text: 'a) Analítica de uso (app de escritorio)',
           id: 'collected-analytics',
         },
         {
           type: 'paragraph',
-          text: 'En las versiones de producción, la app registra qué acciones se usan dentro de la app (por ejemplo, abrir una terminal o pulsar un botón), junto con la versión de la app y un identificador de sesión aleatorio guardado localmente en tu dispositivo. Esto se envía a nuestro propio backend. No incluye tu nombre, email, rutas de archivo, código ni contenido de las terminales. Si has iniciado sesión, estos eventos pueden asociarse a tu cuenta.',
+          text: 'En las versiones de producción, la app registra los arranques correctos y qué acciones se usan dentro de la app (por ejemplo, abrir una terminal o pulsar un botón), junto con la versión de la app, el sistema operativo, la arquitectura del procesador, un identificador de sesión aleatorio y otro identificador aleatorio de instalación para analítica guardado localmente en tu dispositivo. El identificador de instalación nos permite medir el primer uso y si una instalación vuelve. Esto se envía a nuestro propio backend. No incluye tu nombre, email, rutas de archivo, código ni contenido de las terminales. Los eventos no se asocian a tu cuenta mientras no has iniciado sesión; si inicias sesión, pueden asociarse a tu cuenta.',
         },
         {
           type: 'heading',

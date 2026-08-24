@@ -3,55 +3,71 @@ import { getGuideSlugs, getGuide } from '@/content/guides';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.codeagentswarm.com';
-  const now = new Date();
+
+  const guideLastMod = (locale: string, slug: string): Date | undefined => {
+    const guide = getGuide(locale, slug);
+    const stamp = guide?.meta.updatedAt || guide?.meta.publishedAt;
+    return stamp ? new Date(`${stamp}T00:00:00Z`) : undefined;
+  };
+
+  const latestGuideLastMod = (locale: string): Date | undefined =>
+    getGuideSlugs(locale)
+      .map((slug) => guideLastMod(locale, slug))
+      .filter((date): date is Date => date !== undefined)
+      .sort((a, b) => b.getTime() - a.getTime())[0];
 
   // Static pages (no bare root URL to avoid canonical duplication with /en)
   const staticPages: MetadataRoute.Sitemap = [
     {
       url: `${baseUrl}/en`,
-      lastModified: now,
       changeFrequency: 'weekly',
       priority: 1,
     },
     {
       url: `${baseUrl}/es`,
-      lastModified: now,
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
       url: `${baseUrl}/en/guides`,
-      lastModified: now,
+      lastModified: latestGuideLastMod('en'),
       changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/es/guias`,
-      lastModified: now,
+      lastModified: latestGuideLastMod('es'),
       changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/en/beta`,
-      lastModified: now,
       changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/es/beta`,
-      lastModified: now,
       changeFrequency: 'weekly',
       priority: 0.8,
     },
+    ...(['en', 'es'] as const).map((locale) => ({
+      url: `${baseUrl}/${locale}/about`,
+      changeFrequency: 'monthly' as const,
+      priority: 0.4,
+    })),
+    ...(['privacy', 'terms', 'cookies'] as const).flatMap((slug) => [
+      {
+        url: `${baseUrl}/en/${slug}`,
+        changeFrequency: 'yearly' as const,
+        priority: 0.2,
+      },
+      {
+        url: `${baseUrl}/es/${slug}`,
+        changeFrequency: 'yearly' as const,
+        priority: 0.2,
+      },
+    ]),
   ];
-
-  // Use each guide's real updatedAt (falling back to publishedAt) so lastmod is
-  // truthful per URL instead of an identical build-time stamp on every entry.
-  const guideLastMod = (locale: string, slug: string): Date => {
-    const guide = getGuide(locale, slug);
-    const stamp = guide?.meta.updatedAt || guide?.meta.publishedAt;
-    return stamp ? new Date(stamp) : now;
-  };
 
   // Dynamic guide pages - English
   const enGuidePages: MetadataRoute.Sitemap = getGuideSlugs('en').map((slug) => ({

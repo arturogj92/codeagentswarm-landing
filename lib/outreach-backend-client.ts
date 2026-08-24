@@ -34,11 +34,23 @@ async function call<T>(path: string, init: RequestInit = {}): Promise<T> {
 
 export interface FunnelStats {
   since_days: number
-  stats: Record<string, { sent: number; replied: number; dry_run: number }>
+  schedule_utc: string
+  paused_templates: string[]
+  stats: Record<string, {
+    sent: number
+    replied: number
+    dry_run: number
+    delivered: number
+    bounced: number
+    clicked: number
+    failed: number
+    matured?: number
+    active_after_7d?: number
+  }>
 }
 
 export interface NextAction {
-  kind: 'excluded' | 'eligible' | 'scheduled' | 'cooldown' | 'waiting' | 'done' | 'none'
+  kind: 'excluded' | 'eligible' | 'scheduled' | 'cooldown' | 'waiting' | 'paused' | 'done' | 'none'
   label: string
   template: string | null
   date: string | null
@@ -50,9 +62,9 @@ export interface UserStatus {
   name: string | null
   user_created_at: string
   is_excluded: boolean
-  e1_quick_question: { template_slug: string; sent_at: string; responded_at: string | null; is_dry_run: boolean } | null
-  e2_we_miss_you: { template_slug: string; sent_at: string; responded_at: string | null; is_dry_run: boolean } | null
-  e3_follow_up: { template_slug: string; sent_at: string; responded_at: string | null; is_dry_run: boolean } | null
+  e1_quick_question: OutreachEmailStatus | null
+  e2_we_miss_you: OutreachEmailStatus | null
+  e3_follow_up: OutreachEmailStatus | null
   // Enriched by the backend (usersWithNextAction):
   active_days_14?: number
   active_days_30?: number
@@ -61,8 +73,21 @@ export interface UserStatus {
   next_action?: NextAction
 }
 
+export interface OutreachEmailStatus {
+  template_slug: string
+  sent_at: string
+  responded_at: string | null
+  response_verified: boolean
+  is_dry_run: boolean
+  send_status: 'reserved' | 'sent' | 'failed'
+  delivered_at?: string | null
+  bounced_at?: string | null
+  clicked_at?: string | null
+}
+
 export interface SimulateResult {
   as_of_date: string
+  paused_templates: string[]
   templates: Record<string, Array<{
     user_id: string
     email: string
@@ -71,10 +96,15 @@ export interface SimulateResult {
   }>>
 }
 
-export interface RunReport {
-  asOfDate: string
-  dryRun: boolean
-  templates: Record<string, { candidates: number; sent: number; skipped: number; failed: number }>
+export interface OutreachRun {
+  id: string
+  started_at: string
+  completed_at: string | null
+  status: 'running' | 'completed' | 'partial' | 'failed' | 'skipped'
+  candidate_count: number
+  sent_count: number
+  skipped_count: number
+  failed_count: number
 }
 
 export interface Exclusion {
@@ -98,11 +128,7 @@ export const outreachBackend = {
       body: JSON.stringify(asOfDate ? { as_of_date: asOfDate } : {}),
     }),
 
-  runNow: (dryRun: boolean) =>
-    call<RunReport>(`/api/admin/outreach/run-now`, {
-      method: 'POST',
-      body: JSON.stringify({ dry_run: dryRun }),
-    }),
+  runs: () => call<{ runs: OutreachRun[] }>(`/api/admin/outreach/runs`),
 
   listExclusions: () =>
     call<{ exclusions: Exclusion[] }>(`/api/admin/outreach/exclusions`),

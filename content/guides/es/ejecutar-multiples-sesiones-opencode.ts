@@ -16,7 +16,7 @@ En esta guía te explico las tres formas reales de ejecutar varias sesiones de o
     ctaAgent: 'opencode',
     highlightedWords: ['múltiples sesiones de OpenCode', 'a la vez'],
     publishedAt: '2026-07-05',
-    updatedAt: '2026-07-05',
+    updatedAt: '2026-08-23',
     alternateSlug: 'run-multiple-opencode-sessions',
   },
   sections: [
@@ -281,7 +281,7 @@ En esta guía te explico las tres formas reales de ejecutar varias sesiones de o
           items: [
             '<strong>Pestañas de terminal:</strong> Gratis',
             '<strong>tmux/screen:</strong> Gratis',
-            '<strong>CodeAgentSwarm:</strong> Plan gratuito disponible, Pro para funcionalidades avanzadas. Tu uso de opencode lo facturan los proveedores que conectes.',
+            '<strong>CodeAgentSwarm:</strong> Todas las funciones Pro son gratis durante la beta abierta. Tu uso de opencode lo facturan los proveedores que conectes.',
           ],
         },
         {

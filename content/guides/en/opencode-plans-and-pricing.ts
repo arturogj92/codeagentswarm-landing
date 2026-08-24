@@ -16,7 +16,7 @@ This guide covers what each route actually costs, the free models Zen carries, t
     ctaAgent: 'opencode',
     highlightedWords: ['OpenCode', 'Plans', 'Pricing'],
     publishedAt: '2026-08-05',
-    updatedAt: '2026-08-05',
+    updatedAt: '2026-08-23',
     alternateSlug: 'planes-y-precios-de-opencode',
   },
   sections: [
@@ -118,7 +118,7 @@ This guide covers what each route actually costs, the free models Zen carries, t
         },
         {
           type: 'paragraph',
-          text: 'A subscription is a fixed cost with a hard ceiling on capacity. Light months are wasted money and heavy weeks are a wall you cannot pay your way past. Pay-as-you-go is a variable cost with no ceiling on capacity and no floor on spend: a week off costs nothing, and a week of heavy refactoring costs whatever it costs.',
+          text: 'A subscription starts as a fixed cost with included capacity. Many providers now let you enable paid overflow, so the ceiling is optional and the final bill may not be fixed. Pay-as-you-go has no monthly floor: a week off costs nothing, and a week of heavy refactoring costs whatever it costs.',
         },
         {
           type: 'paragraph',

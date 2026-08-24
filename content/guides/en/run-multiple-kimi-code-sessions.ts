@@ -6,7 +6,7 @@ export const guide: Guide = {
     locale: 'en',
     title: 'How to Run Multiple Kimi Code Sessions at Once',
     metaTitle: 'How to Run Multiple Kimi Code Sessions at Once (3 Methods, 2026)',
-    metaDescription: 'Run multiple Kimi Code sessions at once. How kimi sessions, --continue and /title work, 3 practical methods, and what parallel agents do to your K3 quota.',
+    metaDescription: 'Run multiple Kimi Code sessions at once. Learn how --continue and /title work, 3 practical methods, and what parallel agents do to shared limits.',
     intro: `Yes, you can run multiple Kimi Code sessions at once. Each time you run the <code>kimi</code> command you start an independent session with its own conversation and context, so two or more of them can work on different tasks in the same repository at the same time without sharing anything.
 
 The part that takes a bit of thought is not starting the processes. It is keeping the sessions legible: which terminal is on which task, which one is waiting for a permission, and how fast they are draining the one quota they all share. Kimi Code gives you decent primitives for this (sessions are stored on disk per project, you can name them with <code>/title</code> and resume them with <code>--continue</code>), but nothing ties them together out of the box.
@@ -16,7 +16,7 @@ This guide covers how Kimi Code sessions actually work, the three practical ways
     ctaAgent: 'kimi-code',
     highlightedWords: ['multiple Kimi Code sessions', 'at once'],
     publishedAt: '2026-07-18',
-    updatedAt: '2026-07-18',
+    updatedAt: '2026-08-11',
     alternateSlug: 'ejecutar-multiples-sesiones-kimi-code',
   },
   sections: [
@@ -26,7 +26,7 @@ This guide covers how Kimi Code sessions actually work, the three practical ways
       content: [
         {
           type: 'paragraph',
-          text: '<a href="https://github.com/MoonshotAI/kimi-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi Code</a> is Moonshot AI\'s terminal coding agent, powered by Kimi K3. You install it once (<code>curl -fsSL https://code.kimi.com/kimi-code/install.sh | bash</code>, or <code>npm install -g @moonshot-ai/kimi-code</code> with Node 22.19+), log in once with <code>/login</code>, and start it with the <code>kimi</code> command. Every invocation is a separate process with its own conversation, its own context, and its own working directory.',
+          text: '<a href="https://github.com/MoonshotAI/kimi-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi Code</a> is Moonshot AI\'s terminal coding agent, with Kimi K2.7 Code as its current default model. You install it once (<code>curl -fsSL https://code.kimi.com/kimi-code/install.sh | bash</code>, or <code>npm install -g @moonshot-ai/kimi-code</code> with Node 22.19+), log in once with <code>/login</code>, and start it with the <code>kimi</code> command. Every invocation is a separate process with its own conversation, its own context, and its own working directory.',
         },
         {
           type: 'paragraph',
@@ -39,7 +39,7 @@ This guide covers how Kimi Code sessions actually work, the three practical ways
         {
           type: 'callout',
           variant: 'info',
-          content: 'All your Kimi Code sessions sign in with the same account and share one subscription quota, with a weekly refresh and a rolling 5 hour window. Parallel sessions do not cost extra, they just spend the same pool faster. More on that below.',
+          content: 'All Kimi Code sessions use the same account limits. Membership credits reset with the monthly billing cycle, while Kimi Code also has a weekly allowance and a 5 hour limit. Parallel sessions do not cost extra, but they spend those limits faster.',
         },
       ],
     },
@@ -159,7 +159,7 @@ This guide covers how Kimi Code sessions actually work, the three practical ways
       content: [
         {
           type: 'paragraph',
-          text: 'Every Kimi Code session draws from the same subscription pool: a quota that refreshes on a weekly cycle plus a rolling 5 hour window on top. Three sessions working flat out consume roughly three times faster than one, so heavy parallel bursts tend to hit the 5 hour window first, even with weekly quota to spare. Nothing breaks when you hit it, you just wait for the window to roll.',
+          text: 'Every Kimi Code session uses the same account limits. Membership credits reset with the monthly billing cycle, while Kimi Code has a weekly allowance and a 5 hour limit. Three sessions working flat out consume roughly three times faster than one, so heavy parallel bursts tend to hit the short window first. Nothing breaks when you hit it; you wait for capacity to return.',
         },
         {
           type: 'paragraph',
@@ -185,7 +185,7 @@ This guide covers how Kimi Code sessions actually work, the three practical ways
             '<strong>Dynamic titles:</strong> each terminal shows what its session is working on right now, instead of three tabs all labelled "kimi"',
             '<strong>Desktop notifications:</strong> a native notification when a session finishes or stops to ask for a permission, so no more babysitting tabs',
             '<strong>Searchable history:</strong> CodeAgentSwarm reads Kimi Code\'s locally stored sessions, so you can search and resume conversations across every terminal and every agent',
-            '<strong>Quota indicator:</strong> a live view of your shared Kimi quota, both the weekly cycle and the 5 hour window, for all sessions combined',
+            '<strong>Quota indicator:</strong> a live view of the Kimi Code weekly and 5 hour limits shared by all sessions',
             '<strong>Live file diffs:</strong> watch what each session changes in real time, per terminal and per project',
             '<strong>Task board:</strong> a kanban next to your terminals that the agents themselves update over MCP',
           ],
@@ -213,7 +213,7 @@ This guide covers how Kimi Code sessions actually work, the three practical ways
     },
     {
       question: 'Do multiple Kimi Code sessions cost more?',
-      answer: 'There is no surcharge for running sessions in parallel, but they all draw from the same subscription quota, which refreshes weekly and has a rolling 5 hour window on top. Parallel sessions finish the work sooner while spending the shared pool faster, so heavy bursts tend to feel the 5 hour window first. The total work your plan buys does not change.',
+      answer: 'There is no surcharge for parallel sessions, but they use the same account limits. Membership credits reset with the monthly billing cycle, and Kimi Code also has a weekly allowance plus a 5 hour limit. Parallel sessions finish sooner while spending those limits faster.',
     },
     {
       question: 'Can I run Kimi Code and Claude Code together?',

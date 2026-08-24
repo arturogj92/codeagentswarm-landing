@@ -36,6 +36,8 @@ export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   const isBetaPage = pathname?.includes('/beta')
+  const isHomePage = pathname === `/${locale}` || pathname === `/${locale}/`
+  const homeSectionHref = (section: string) => isHomePage ? `#${section}` : `/${locale}#${section}`
   const guidesHref = locale === 'es' ? '/es/guias' : '/en/guides'
 
   // Different links for beta page vs main landing
@@ -48,15 +50,15 @@ export default function Footer() {
           { name: t('links.guides'), href: guidesHref },
         ]
       : [
-          { name: t('links.features'), href: '#features' },
-          { name: t('links.pricing'), href: '#pricing' },
-          { name: t('links.roadmap'), href: '#roadmap' },
-          { name: t('links.faq'), href: '#faq' },
-          { name: t('links.download'), href: '#download' },
+          { name: t('links.features'), href: homeSectionHref('features') },
+          { name: t('links.pricing'), href: homeSectionHref('pricing') },
+          { name: t('links.roadmap'), href: homeSectionHref('roadmap') },
+          { name: t('links.faq'), href: homeSectionHref('faq') },
+          { name: t('links.download'), href: homeSectionHref('download') },
           { name: t('links.guides'), href: guidesHref },
         ],
     company: [
-      { name: t('links.about'), href: '#' },
+      { name: t('links.about'), href: '/about', internal: true },
       { name: t('links.contact'), href: 'mailto:hello@codeagentswarm.com' },
       { name: t('links.privacy'), href: '/privacy', internal: true },
       { name: t('links.terms'), href: '/terms', internal: true },
