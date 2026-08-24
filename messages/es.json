@@ -500,7 +500,8 @@
     "downloadFor": "Descargar para",
     "downloadDmg": "Descargar DMG",
     "downloadExe": "Descargar instalador",
-    "windowsSmartScreen": "Build sin firmar - si Windows SmartScreen avisa, pulsa Mas informacion y luego Ejecutar de todas formas.",
+    "windowsSmartScreenTitle": "¿Aparece un aviso al descargar o abrir?",
+    "windowsSmartScreenBody": "Tu navegador o Microsoft Defender SmartScreen pueden mostrar “no se descarga habitualmente” o “editor desconocido” porque esta versión es nueva y aún no está firmada. Estamos trabajando en el certificado de firma para Windows. Continúa solo con el instalador descargado desde codeagentswarm.com.",
     "mobileEmail": {
       "title": "¿Estás en el móvil?",
       "description": "Te enviamos el enlace de descarga para tu ordenador.",

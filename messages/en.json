@@ -500,7 +500,8 @@
     "downloadFor": "Download for",
     "downloadDmg": "Download DMG",
     "downloadExe": "Download installer",
-    "windowsSmartScreen": "Unsigned build - if Windows SmartScreen warns, click More info then Run anyway.",
+    "windowsSmartScreenTitle": "Seeing a warning when downloading or opening?",
+    "windowsSmartScreenBody": "Your browser or Microsoft Defender SmartScreen may show “not commonly downloaded” or “unknown publisher” because this version is new and not yet signed. We are working on the Windows signing certificate. Only continue with an installer downloaded from codeagentswarm.com.",
     "mobileEmail": {
       "title": "On your phone?",
       "description": "We'll email you the download link for your computer.",
