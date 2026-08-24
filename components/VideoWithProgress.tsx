@@ -52,6 +52,14 @@ export default function VideoWithProgress({
     }
   }, [isPlaying])
 
+  // Whether anyone will ever see or read the progress value. When nobody does,
+  // the whole tracking rig below must not run: it sets React state on EVERY
+  // frame of playback, and the carousel on the homepage uses this component
+  // with the bar hidden — which made a video that plays for minutes re-render
+  // its tree at 60fps to feed a bar that was never drawn. On a loaded machine
+  // that steady re-render is visible as flicker.
+  const progressHasAudience = showProgressBar || Boolean(onProgressChange)
+
   useEffect(() => {
     const video = videoRef.current
     if (!video) return
@@ -90,13 +98,15 @@ export default function VideoWithProgress({
       }
     }
 
-    video.addEventListener('play', handlePlay)
-    video.addEventListener('pause', handlePause)
+    // `ended` must stay wired regardless: the carousel advances on it.
     video.addEventListener('ended', handleEnded)
-    video.addEventListener('timeupdate', handleTimeUpdate)
-
-    if (!video.paused) {
-      handlePlay()
+    if (progressHasAudience) {
+      video.addEventListener('play', handlePlay)
+      video.addEventListener('pause', handlePause)
+      video.addEventListener('timeupdate', handleTimeUpdate)
+      if (!video.paused) {
+        handlePlay()
+      }
     }
 
     return () => {
@@ -108,7 +118,7 @@ export default function VideoWithProgress({
       video.removeEventListener('ended', handleEnded)
       video.removeEventListener('timeupdate', handleTimeUpdate)
     }
-  }, [onProgressChange, onVideoEnd])
+  }, [onProgressChange, onVideoEnd, progressHasAudience])
 
   return (
     <div className="relative w-full h-full">

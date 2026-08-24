@@ -16,7 +16,7 @@ Esta guía deja claro lo que se sabe, fecha cada número y señala qué partes c
     ctaAgent: 'claude-code',
     highlightedWords: ['Claude Code', 'Planes', 'precios'],
     publishedAt: '2026-08-05',
-    updatedAt: '2026-08-05',
+    updatedAt: '2026-08-23',
     alternateSlug: 'claude-code-plans-and-pricing',
   },
   sections: [
@@ -59,7 +59,7 @@ Esta guía deja claro lo que se sabe, fecha cada número y señala qué partes c
       content: [
         {
           type: 'paragraph',
-          text: 'La cuota de Claude Code tiene dos capas y vas a notar las dos. La primera es una <strong>ventana móvil de 5 horas</strong>. Empieza con tu primer mensaje, no a una hora fija del reloj, y se va desplazando. Una tarde intensa puede agotarla mientras tu asignación semanal está casi intacta, y el único remedio es esperar a que la ventana avance.',
+          text: 'La cuota de Claude Code tiene dos capas y vas a notar las dos. La primera es una <strong>ventana móvil de 5 horas</strong>. Empieza con tu primer mensaje, no a una hora fija del reloj, y se va desplazando. Una tarde intensa puede agotarla mientras tu asignación semanal está casi intacta. Puedes esperar a que la ventana avance o, en un plan de pago compatible, activar créditos de uso para continuar fuera del límite incluido.',
         },
         {
           type: 'paragraph',
@@ -98,7 +98,7 @@ Esta guía deja claro lo que se sabe, fecha cada número y señala qué partes c
         },
         {
           type: 'paragraph',
-          text: 'Ese patrón es exactamente lo que cubre <a href="/es/guias/enjambre-de-agentes-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">la guía del enjambre de agentes de Claude Code</a>, y es la razón de que vigilar la cuota mientras corren los agentes importe más en Claude que en un montaje de pago por token: el muro es una parada en seco, no una factura más alta.',
+          text: 'Ese patrón es exactamente lo que cubre <a href="/es/guias/enjambre-de-agentes-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">la guía del enjambre de agentes de Claude Code</a>. Vigilar la cuota sigue importando porque el uso incluido puede desaparecer rápido, pero los planes de pago ya pueden activar <a href="https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">créditos de uso</a> en vez de esperar al reinicio.',
         },
       ],
     },
@@ -115,7 +115,7 @@ Esta guía deja claro lo que se sabe, fecha cada número y señala qué partes c
           headers: ['Modelo', 'Entrada', 'Salida'],
           rows: [
             ['Claude Opus 5', '5,00 $', '25,00 $'],
-            ['Claude Sonnet 5', '3,00 $', '15,00 $'],
+            ['Claude Sonnet 5', '2,00 $', '10,00 $'],
             ['Claude Haiku 4.5', '1,00 $', '5,00 $'],
           ],
           caption: 'Tarifas de la API propia de Anthropic, agosto de 2026. Bedrock y Vertex los operan terceros y tienen precios aparte.',
@@ -126,7 +126,7 @@ Esta guía deja claro lo que se sabe, fecha cada número y señala qué partes c
         },
         {
           type: 'paragraph',
-          text: 'La contrapartida es la evidente: sin techo mensual, un agente desbocado es una factura desbocada, mientras que una suscripción simplemente se para. Para el día a día suele ganar el coste predecible de la suscripción. Para picos, pipelines de CI y rondas de evaluación, la API queda más limpia, y puedes poner un límite de gasto en la consola.',
+          text: 'La contrapartida es la evidente: el uso medido puede convertir un agente desbocado en una factura desbocada. La suscripción solo mantiene un coste predecible mientras los créditos de uso estén desactivados; si los activas, el trabajo que supera el límite incluido se cobra con las tarifas estándar de API. Para picos, CI y evaluaciones, una clave de API separada es más fácil de presupuestar y limitar.',
         },
         {
           type: 'callout',

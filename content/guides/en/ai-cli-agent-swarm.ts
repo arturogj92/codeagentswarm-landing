@@ -5,18 +5,18 @@ export const guide: Guide = {
     slug: 'ai-cli-agent-swarm',
     locale: 'en',
     title: 'AI CLI Agent Swarm: Run Multiple AI Coding Agents in Parallel',
-    metaTitle: 'AI CLI Agent Swarm: Run Claude Code, Codex and Gemini Together (2026)',
-    metaDescription: 'An AI CLI agent swarm is several coding agents (Claude Code, Codex, Gemini) running in parallel in one place. Here is how to run and manage them.',
-    intro: `An AI CLI agent swarm is what you get when you stop thinking of one coding agent in one terminal and start running several of them at once. Claude Code in one terminal, Codex CLI in another, Gemini CLI in a third, all working on the same project at the same time.
+    metaTitle: 'AI CLI Agent Swarm: Run 7 Coding Agents Together (2026)',
+    metaDescription: 'Run Claude Code, Codex, Cursor Agent, Antigravity, OpenCode, Kimi Code and Grok Build in parallel as one supervised AI CLI agent swarm.',
+    intro: `An AI CLI agent swarm is what you get when you stop thinking of one coding agent in one terminal and start running several of them at once. Claude Code in one terminal, Codex CLI in another, Grok Build or OpenCode in a third, all working on the same project at the same time.
 
 The idea sounds chaotic, and done badly it is. The point of this guide is to show you how to do it well: how to actually run multiple AI coding agents in parallel, how to decide which agent handles what, and how to keep visibility over a workspace where three or four agents are editing files at the same time.
 
-I run mixed swarms most days. Below I cover what an AI CLI agent swarm really is, the honest tradeoffs of each setup method, and where a purpose-built workspace earns its place over plain terminal tabs or tmux.`,
-    ctaText: 'Run Claude Code, Codex and Gemini side by side in one CodeAgentSwarm workspace. Multiple agents, shared visibility, one place to watch them all.',
+I run mixed swarms most days. This is AI coding agent orchestration at the process level: independent coding agents, one human supervisor. Below I cover the honest tradeoffs of each setup method and where a purpose-built workspace earns its place over plain terminal tabs or tmux. For the product comparison, see the <a href="/en/guides/best-tools-to-run-multiple-ai-coding-agents" class="text-neon-cyan hover:text-neon-purple transition-colors">best tools for running multiple AI coding agents</a>.`,
+    ctaText: 'Run Claude Code, Codex, Cursor Agent, Antigravity, OpenCode, Kimi Code and Grok Build side by side in one CodeAgentSwarm workspace. Multiple agents, shared visibility, one place to watch them all.',
     ctaAgent: 'multi',
     highlightedWords: ['AI CLI agent swarm', 'in parallel'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-07-18',
+    updatedAt: '2026-08-23',
     alternateSlug: 'enjambre-de-agentes-cli-ia',
   },
   sections: [
@@ -25,18 +25,12 @@ I run mixed swarms most days. Below I cover what an AI CLI agent swarm really is
       title: 'What is an AI CLI agent swarm?',
       content: [
         {
-          type: 'image',
-          alt: 'OpenAI Codex, Google Gemini CLI and Anthropic Claude Code running side by side as separate terminals in one CodeAgentSwarm window',
-          src: '/images/guides/multi-cli-three-agents.png',
-          caption: 'A cross-vendor swarm: Codex, Gemini CLI and Claude Code running together in one CodeAgentSwarm workspace, each in its own terminal.',
-        },
-        {
           type: 'paragraph',
           text: 'An AI CLI agent swarm is several independent AI coding CLI agents running in parallel in one place, with shared visibility over what each one is doing. Instead of a single agent in a single terminal, you have a handful of them, each its own process, each with its own conversation and context, working on tasks at the same time.',
         },
         {
           type: 'paragraph',
-          text: 'The agents are command-line tools you probably already use: <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a> from Anthropic, <a href="https://github.com/openai/codex" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex CLI</a> from OpenAI, and <a href="https://github.com/google-gemini/gemini-cli" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Gemini CLI</a> from Google. Each one runs <code>claude</code>, <code>codex</code>, or <code>gemini</code> in its own terminal. They do not know about each other. The swarm is the layer you put around them so you can run them together without losing the plot.',
+          text: 'The agents are command-line tools you probably already use: <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, <a href="https://github.com/openai/codex" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex CLI</a>, <a href="/en/guides/cursor-agent-cli-acp-codeagentswarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Cursor Agent CLI</a>, <a href="https://opencode.ai" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">OpenCode</a>, <a href="https://www.kimi.com/code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi Code</a>, <a href="https://x.ai" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Grok Build</a> and Google\'s Antigravity CLI. Each one runs independently. The swarm is the layer around them that keeps the work visible.',
         },
         {
           type: 'paragraph',
@@ -45,11 +39,29 @@ I run mixed swarms most days. Below I cover what an AI CLI agent swarm really is
         {
           type: 'callout',
           variant: 'info',
-          content: 'A swarm runs on top of the subscriptions you already pay for. Each terminal uses your own Claude, OpenAI, or Google plan independently. There is no special "swarm" plan and no extra per-agent cost from running them in parallel.',
+          content: 'A swarm runs on top of the provider access you already have. Each terminal uses your own Claude, OpenAI, Google, Kimi, xAI or OpenCode-connected account or API key independently. There is no special swarm plan and no extra CodeAgentSwarm fee per parallel agent.',
         },
         {
           type: 'paragraph',
-          text: 'If you only care about one vendor, the per-tool guides go deeper: the <a href="/en/guides/claude-code-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code agent swarm</a> (or the step-by-step version, <a href="/en/guides/run-multiple-claude-code-sessions" class="text-neon-cyan hover:text-neon-purple transition-colors">running multiple Claude Code sessions</a>), the <a href="/en/guides/codex-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex agent swarm</a>, the <a href="/en/guides/antigravity-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Antigravity agent swarm</a>, the <a href="/en/guides/opencode-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">OpenCode agent swarm</a>, and the <a href="/en/guides/kimi-code-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi Code agent swarm</a>. This page is the cross-vendor view, where you mix them.',
+          text: 'If you only care about one vendor, the per-tool guides go deeper: <a href="/en/guides/claude-code-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, <a href="/en/guides/codex-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex</a>, <a href="/en/guides/cursor-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Cursor Agent</a>, <a href="/en/guides/antigravity-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Antigravity</a>, <a href="/en/guides/opencode-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">OpenCode</a>, <a href="/en/guides/kimi-code-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi Code</a> and <a href="/en/guides/grok-build-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Grok Build</a>. This page is the cross-vendor view.',
+        },
+      ],
+    },
+    {
+      id: 'agentic-development-environment',
+      title: 'From an agent swarm to an Agentic Development Environment',
+      content: [
+        {
+          type: 'paragraph',
+          text: 'An <strong>Agentic Development Environment (ADE)</strong> is a workspace built around delegating software tasks to AI coding agents, supervising their progress and reviewing their results. The agent swarm is the group of independent processes working in parallel. The ADE is the environment that makes that work manageable.',
+        },
+        {
+          type: 'paragraph',
+          text: 'That is the practical difference from an IDE or terminal multiplexer. An IDE centers the editor and files. tmux arranges terminal processes. An ADE centers delegated tasks, agent status, permissions and review while each coding CLI continues to run as a normal terminal process.',
+        },
+        {
+          type: 'paragraph',
+          text: 'CodeAgentSwarm fits this definition because it combines independent agents from several vendors with a shared task board, notifications when an agent finishes or needs input, searchable conversation history, live diffs and project organization. Each CLI still works as usual, with the ADE providing the supervision layer.',
         },
       ],
     },
@@ -84,12 +96,12 @@ I run mixed swarms most days. Below I cover what an AI CLI agent swarm really is
         {
           type: 'heading',
           level: 3,
-          text: 'Gemini CLI for large-context work',
-          id: 'gemini-for-context',
+          text: 'Antigravity CLI, OpenCode, Kimi Code and Grok Build',
+          id: 'other-agents',
         },
         {
           type: 'paragraph',
-          text: 'Gemini CLI is the one I lean on when there is a lot to read at once: understanding an unfamiliar codebase, summarizing a large set of files, or answering questions that need a wide view of the project. Its large context window means you can throw more at it before you have to start trimming what it sees.',
+          text: 'Antigravity CLI (agy) is Google\'s current coding CLI and fits when you want a wide-context Google model in the swarm. OpenCode is provider agnostic, so parallel sessions can use different vendors. Kimi Code fits Moonshot models. Grok Build (xAI, binary <code>grok</code>) now uses Grok 4.6 and can be tried free before moving to paid limits or API billing. None replaces the others; the point of a swarm is to run them side by side.',
         },
         {
           type: 'callout',
@@ -128,7 +140,7 @@ I run mixed swarms most days. Below I cover what an AI CLI agent swarm really is
         },
         {
           type: 'paragraph',
-          text: 'No, they are different things. Anthropic\'s agent teams are sub-agents inside a single Claude Code session: one main agent spawns helpers that report back, all within one process and one vendor. An AI CLI agent swarm is several independent agents you supervise directly, each in its own terminal, possibly from different vendors (Claude Code, Codex, Gemini). One is delegation inside one session, the other is you running and watching several real sessions at once. They can coexist, but they solve different problems.',
+          text: 'No, they are different things. Anthropic\'s agent teams are sub-agents inside a single Claude Code session: one main agent spawns helpers that report back, all within one process and one vendor. An AI CLI agent swarm is several independent agents you supervise directly, each in its own terminal, possibly from different vendors (Claude Code, Codex, Antigravity, OpenCode, Kimi Code, Grok Build). One is delegation inside one session, the other is you running and watching several real sessions at once. They can coexist, but they solve different problems.',
         },
       ],
     },
@@ -143,7 +155,7 @@ I run mixed swarms most days. Below I cover what an AI CLI agent swarm really is
         {
           type: 'code',
           language: 'bash',
-          code: '# Terminal tab 1 - deep refactor\ncd ~/my-project\nclaude\n\n# Terminal tab 2 - focused task\ncd ~/my-project\ncodex\n\n# Terminal tab 3 - reading the codebase\ncd ~/my-project\ngemini',
+          code: '# Terminal tab 1: deep refactor\ncd ~/my-project\nclaude\n\n# Terminal tab 2: focused task\ncd ~/my-project\ncodex\n\n# Terminal tab 3: Grok Build\ncd ~/my-project\ngrok',
         },
         {
           type: 'paragraph',
@@ -197,7 +209,7 @@ I run mixed swarms most days. Below I cover what an AI CLI agent swarm really is
         {
           type: 'code',
           language: 'bash',
-          code: '# Start a tmux session for the swarm\ntmux new-session -s swarm\n\n# Split into panes\ntmux split-window -h\ntmux split-window -v\n\n# Run a different agent in each pane: claude, codex, gemini',
+          code: '# Start a tmux session for the swarm\ntmux new-session -s swarm\n\n# Split into panes\ntmux split-window -h\ntmux split-window -v\n\n# Run a different agent in each pane: claude, codex, grok',
         },
         {
           type: 'paragraph',
@@ -248,13 +260,7 @@ I run mixed swarms most days. Below I cover what an AI CLI agent swarm really is
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm is a desktop app built for exactly this: running an AI CLI agent swarm with real visibility and control. It runs on macOS and Windows, gives you multiple terminals in one workspace, and lets you pick the agent per terminal. It runs on top of your existing subscriptions, it is not a model provider, so your Claude, OpenAI, and Google plans keep working as they are.',
-        },
-        {
-          type: 'image',
-          alt: 'A CodeAgentSwarm terminal showing the SELECT AI AGENT picker with claude-code, gemini cli and codex cli options plus an Enable Turbo Mode toggle',
-          src: '/images/guides/multi-cli-agent-selector.png',
-          caption: 'Per-terminal agent choice: set each terminal to claude-code, codex cli or gemini cli, so a single swarm can mix all three vendors.',
+          text: 'CodeAgentSwarm is a desktop app built for exactly this: running an AI CLI agent swarm with real visibility and control. It runs on macOS and Windows, gives you multiple terminals in one workspace, and lets you pick the agent per terminal. It is not a model provider: every terminal uses the account and quota of the CLI you selected.',
         },
         {
           type: 'paragraph',
@@ -264,11 +270,11 @@ I run mixed swarms most days. Below I cover what an AI CLI agent swarm really is
           type: 'heading',
           level: 3,
           text: 'Multiple agents in parallel, your choice per terminal',
-          id: 'six-agents',
+          id: 'seven-agents',
         },
         {
           type: 'paragraph',
-          text: 'Each terminal has a SELECT AI AGENT picker offering claude-code, codex cli, and gemini cli. Set one terminal to Claude Code for a refactor, another to Codex for a contained task, another to Gemini for large-context reading, all in the same workspace and on the same project. You decide the mix and you can change it per terminal at any time.',
+          text: 'Each terminal has a SELECT AI AGENT picker offering Claude Code, Codex CLI, Cursor Agent, Antigravity CLI, OpenCode, Kimi Code and Grok Build. Set one terminal to Claude Code for a refactor, another to Cursor Agent for a planned change and another to Codex for a contained task. You decide the mix per terminal.',
         },
         {
           type: 'heading',
@@ -298,7 +304,7 @@ I run mixed swarms most days. Below I cover what an AI CLI agent swarm really is
         },
         {
           type: 'paragraph',
-          text: 'Every conversation, from every agent and every vendor, is saved and searchable in one place. You can find what Codex did yesterday, resume a Gemini session, or trace which agent made a change across the whole swarm. The <a href="/en/guides/claude-code-history" class="text-neon-cyan hover:text-neon-purple transition-colors">conversation history guide</a> covers how it works.',
+          text: 'Every conversation, from every agent and every vendor, is saved and searchable in one place. You can find what Codex did yesterday, resume a Grok Build session with <code>grok --continue</code> or <code>grok --resume</code>, or trace which agent made a change across the whole swarm. The <a href="/en/guides/claude-code-history" class="text-neon-cyan hover:text-neon-purple transition-colors">conversation history guide</a> covers how it works.',
         },
         {
           type: 'heading',
@@ -333,7 +339,7 @@ I run mixed swarms most days. Below I cover what an AI CLI agent swarm really is
         {
           type: 'callout',
           variant: 'tip',
-          content: 'For a step-by-step on opening and arranging terminals, see the <a href="/en/guides/how-to-use-multiple-claude-code-terminals" class="text-neon-cyan hover:text-neon-purple transition-colors">multi-terminal guide</a>. The same workspace runs Codex and Gemini terminals too.',
+          content: 'For a step-by-step on opening and arranging terminals, see the <a href="/en/guides/how-to-use-multiple-claude-code-terminals" class="text-neon-cyan hover:text-neon-purple transition-colors">multi-terminal guide</a>. The same workspace runs Codex, OpenCode, Kimi Code and Grok Build terminals too.',
         },
       ],
     },
@@ -356,7 +362,7 @@ I run mixed swarms most days. Below I cover what an AI CLI agent swarm really is
           items: [
             '<strong>Terminal tabs:</strong> Free',
             '<strong>tmux/screen:</strong> Free',
-            '<strong>CodeAgentSwarm:</strong> Free tier available, Pro for advanced features, runs on top of your existing agent subscriptions',
+            '<strong>CodeAgentSwarm:</strong> All Pro features are free during the open beta, and it runs on top of your existing agent subscriptions',
           ],
         },
         {
@@ -442,15 +448,19 @@ I run mixed swarms most days. Below I cover what an AI CLI agent swarm really is
   faq: [
     {
       question: 'What is an AI CLI agent swarm?',
-      answer: 'It is several independent AI coding CLI agents (such as Claude Code, Codex CLI, and Gemini CLI) running in parallel in one place, with shared visibility over what each one is doing. Each agent is its own process with its own conversation and context, and the swarm is the layer around them that adds notifications, searchable history, file change visibility, and permission control.',
+      answer: 'It is several independent AI coding CLI agents (such as Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build and Cursor Agent) running in parallel in one place, with shared visibility over what each one is doing. Each agent is its own process with its own conversation and context, and the swarm is the layer around them that adds notifications, searchable history, file change visibility, and permission control.',
     },
     {
-      question: 'Can I run Claude Code, Codex and Gemini at the same time?',
-      answer: 'Yes. Each agent runs as an independent CLI process, so you can run Claude Code, Codex CLI, and Gemini CLI side by side on the same project. CodeAgentSwarm lets you pick the agent per terminal and run multiple at once in one workspace, so you can mix vendors freely.',
+      question: 'What is an Agentic Development Environment (ADE)?',
+      answer: 'An ADE is a workspace designed for delegating software tasks to AI coding agents, supervising their progress and reviewing their results. Unlike an IDE, which centers the editor and files, or tmux, which arranges terminal processes, an ADE centers tasks, agents, permissions and review. CodeAgentSwarm applies that model to independent coding CLIs from several vendors.',
+    },
+    {
+      question: 'Can I run Claude Code, Codex and Grok Build at the same time?',
+      answer: 'Yes. Each agent runs as an independent CLI process, so you can run Claude Code, Codex CLI, Grok Build and the other supported CLIs side by side on the same project. CodeAgentSwarm lets you pick the agent per terminal and run multiple at once in one workspace, so you can mix vendors freely.',
     },
     {
       question: 'Which AI coding CLI should I use for what?',
-      answer: 'There is no single best agent, which is why a swarm helps. As a starting bias: Claude Code for deep refactors and changes that need careful reasoning across many files, Codex CLI for focused and well-scoped tasks like implementing a function or fixing a specific failure, and Gemini CLI for large-context work like understanding an unfamiliar codebase. Models change often, so treat this as a starting point and adjust based on your own results.',
+      answer: 'There is no single best agent, which is why a swarm helps. Start with Claude Code for deep refactors, Codex CLI for focused tasks, OpenCode for provider flexibility, Kimi Code for Moonshot models and Grok Build for Grok 4.6. Models change often, so adjust from your own results.',
     },
     {
       question: 'Do I need git worktrees to run agents in parallel?',

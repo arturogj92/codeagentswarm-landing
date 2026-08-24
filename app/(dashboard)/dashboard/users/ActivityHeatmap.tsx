@@ -1,104 +1,104 @@
-'use client'
-
 interface HeatmapProps {
-  /** Daily click counts. `d` is a calendar date string (YYYY-MM-DD, UTC). */
-  data: { d: string; clicks: number }[]
-  /** Size of the trailing window in days (defaults to ~6 months). */
+  data: { d: string; events: number }[]
   days?: number
 }
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+const DAY_MS = 86_400_000
 
 function toKey(date: Date): string {
-  const y = date.getFullYear()
-  const m = String(date.getMonth() + 1).padStart(2, '0')
-  const d = String(date.getDate()).padStart(2, '0')
-  return `${y}-${m}-${d}`
+  return date.toISOString().slice(0, 10)
 }
 
-// GitHub-style contribution grid: columns are weeks (Sun-Sat), shaded amber by
-// how many clicks happened that day relative to the user's busiest day.
+function level(events: number, maximum: number): string {
+  if (events <= 0) return 'bg-white/[0.06]'
+  const ratio = maximum > 0 ? events / maximum : 0
+  if (ratio > 0.66) return 'bg-amber-400'
+  if (ratio > 0.33) return 'bg-amber-400/70'
+  if (ratio > 0.12) return 'bg-amber-400/45'
+  return 'bg-amber-400/25'
+}
+
 export default function ActivityHeatmap({ data, days = 180 }: HeatmapProps) {
-  const counts = new Map<string, number>()
-  for (const { d, clicks } of data) counts.set(d, clicks)
-
-  const max = data.reduce((m, x) => Math.max(m, x.clicks), 0)
-
   const today = new Date()
-  today.setHours(0, 0, 0, 0)
-  const start = new Date(today.getTime() - (days - 1) * 86400000)
-  start.setDate(start.getDate() - start.getDay()) // back up to Sunday
+  const utcToday = new Date(Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate()))
+  const windowStart = new Date(utcToday.getTime() - (days - 1) * DAY_MS)
+  const windowStartKey = toKey(windowStart)
+  const todayKey = toKey(utcToday)
+  const visibleData = data.filter(({ d }) => d >= windowStartKey && d <= todayKey)
+  const counts = new Map(visibleData.map(({ d, events }) => [d, events]))
+  const maximum = visibleData.reduce((current, entry) => Math.max(current, entry.events), 0)
+  const total = visibleData.reduce((sum, entry) => sum + entry.events, 0)
+  const activeDays = visibleData.filter((entry) => entry.events > 0).length
 
-  const weeks: { date: Date; clicks: number }[][] = []
-  const cursor = new Date(start)
-  while (cursor <= today) {
-    const week: { date: Date; clicks: number }[] = []
-    for (let i = 0; i < 7; i++) {
-      week.push({ date: new Date(cursor), clicks: counts.get(toKey(cursor)) || 0 })
-      cursor.setDate(cursor.getDate() + 1)
+  const gridStart = new Date(windowStart)
+  gridStart.setUTCDate(gridStart.getUTCDate() - gridStart.getUTCDay())
+
+  const weeks: { date: Date; events: number; future: boolean }[][] = []
+  const cursor = new Date(gridStart)
+  while (cursor <= utcToday) {
+    const week: { date: Date; events: number; future: boolean }[] = []
+    for (let index = 0; index < 7; index += 1) {
+      const date = new Date(cursor)
+      const key = toKey(date)
+      week.push({ date, events: counts.get(key) ?? 0, future: date > utcToday })
+      cursor.setUTCDate(cursor.getUTCDate() + 1)
     }
     weeks.push(week)
   }
 
-  function level(clicks: number): string {
-    if (clicks <= 0) return 'bg-white/[0.06]'
-    const r = max > 0 ? clicks / max : 0
-    if (r > 0.66) return 'bg-amber-400'
-    if (r > 0.33) return 'bg-amber-400/70'
-    if (r > 0.12) return 'bg-amber-400/45'
-    return 'bg-amber-400/25'
-  }
-
-  // Month labels: show a month name above the first week where that month starts.
-  const monthLabels = weeks.map((week, i) => {
-    const firstOfMonth = week.find((c) => c.date.getDate() <= 7)
-    if (!firstOfMonth) return ''
-    const prev = i > 0 ? weeks[i - 1].find((c) => c.date.getDate() <= 7) : null
-    if (i === 0 || !prev || prev.date.getMonth() !== firstOfMonth.date.getMonth()) {
-      return MONTHS[firstOfMonth.date.getMonth()]
+  const monthLabels = weeks.map((week, index) => {
+    const monthStart = week.find(({ date }) => date.getUTCDate() <= 7)
+    if (!monthStart) return ''
+    const previous = index > 0 ? weeks[index - 1].find(({ date }) => date.getUTCDate() <= 7) : null
+    if (!previous || previous.date.getUTCMonth() !== monthStart.date.getUTCMonth()) {
+      return MONTHS[monthStart.date.getUTCMonth()]
     }
     return ''
   })
 
   return (
-    <div className="overflow-x-auto">
-      <div className="inline-flex flex-col gap-1">
-        {/* Month labels */}
+    <div
+      role="img"
+      aria-label={`${total.toLocaleString('en-US')} recorded events across ${activeDays} active days in the last ${days} days`}
+      className="max-w-full overflow-x-auto pb-1"
+    >
+      <div aria-hidden="true" className="inline-flex min-w-max flex-col gap-1">
         <div className="flex gap-1 pl-8">
-          {monthLabels.map((label, i) => (
-            <div key={i} className="w-3 text-[9px] text-white/40 overflow-visible whitespace-nowrap">
+          {monthLabels.map((label, index) => (
+            <div key={`${label}-${index}`} className="w-3 overflow-visible whitespace-nowrap text-[9px] text-white/55">
               {label}
             </div>
           ))}
         </div>
+
         <div className="flex gap-1">
-          {/* Weekday labels */}
-          <div className="flex flex-col gap-1 pr-1 text-[9px] text-white/40">
-            {['', 'Mon', '', 'Wed', '', 'Fri', ''].map((d, i) => (
-              <div key={i} className="h-3 leading-3">{d}</div>
+          <div className="flex flex-col gap-1 pr-1 text-[9px] text-white/55">
+            {['', 'Mon', '', 'Wed', '', 'Fri', ''].map((day, index) => (
+              <div key={`${day}-${index}`} className="h-3 leading-3">{day}</div>
             ))}
           </div>
-          {/* Week columns */}
-          {weeks.map((week, wi) => (
-            <div key={wi} className="flex flex-col gap-1">
-              {week.map((cell, di) => (
+
+          {weeks.map((week, weekIndex) => (
+            <div key={weekIndex} className="flex flex-col gap-1">
+              {week.map((cell) => (
                 <div
-                  key={di}
-                  className={`w-3 h-3 rounded-sm ${level(cell.clicks)}`}
-                  title={`${cell.clicks} click${cell.clicks === 1 ? '' : 's'} · ${toKey(cell.date)}`}
+                  key={toKey(cell.date)}
+                  className={`h-3 w-3 rounded-[3px] ${cell.future ? 'opacity-0' : level(cell.events, maximum)}`}
+                  title={cell.future ? undefined : `${cell.events} recorded event${cell.events === 1 ? '' : 's'} on ${toKey(cell.date)}`}
                 />
               ))}
             </div>
           ))}
         </div>
-        {/* Legend */}
-        <div className="flex items-center gap-1 justify-end pt-1 text-[9px] text-white/40">
+
+        <div className="flex items-center justify-end gap-1 pt-1 text-[9px] text-white/55">
           <span>Less</span>
-          <div className="w-3 h-3 rounded-sm bg-white/[0.06]" />
-          <div className="w-3 h-3 rounded-sm bg-amber-400/25" />
-          <div className="w-3 h-3 rounded-sm bg-amber-400/45" />
-          <div className="w-3 h-3 rounded-sm bg-amber-400/70" />
-          <div className="w-3 h-3 rounded-sm bg-amber-400" />
+          <span className="h-3 w-3 rounded-[3px] bg-white/[0.06]" />
+          <span className="h-3 w-3 rounded-[3px] bg-amber-400/25" />
+          <span className="h-3 w-3 rounded-[3px] bg-amber-400/45" />
+          <span className="h-3 w-3 rounded-[3px] bg-amber-400/70" />
+          <span className="h-3 w-3 rounded-[3px] bg-amber-400" />
           <span>More</span>
         </div>
       </div>

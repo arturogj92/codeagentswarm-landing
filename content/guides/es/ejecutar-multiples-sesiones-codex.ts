@@ -16,7 +16,7 @@ En esta guía te explico las tres formas reales de ejecutar varias sesiones de C
     ctaAgent: 'codex',
     highlightedWords: ['varias sesiones de Codex CLI', 'a la vez'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-06-07',
+    updatedAt: '2026-08-23',
     alternateSlug: 'run-multiple-codex-sessions',
   },
   sections: [
@@ -40,7 +40,7 @@ En esta guía te explico las tres formas reales de ejecutar varias sesiones de C
         },
         {
           type: 'paragraph',
-          text: 'Y no te limita a Codex. Como cada agente es su propio proceso, puedes ejecutar Codex CLI en algunos terminales y Claude Code o Gemini CLI en otros, todos sobre el mismo repositorio. Usar Codex y Claude Code juntos es una configuración habitual, y la visión general del <a href="/es/guias/enjambre-de-agentes-cli-ia" class="text-neon-cyan hover:text-neon-purple transition-colors">enjambre de agentes CLI de IA</a> muestra cómo encajan las distintas herramientas en paralelo.',
+          text: 'Y no te limita a Codex. Como cada agente es su propio proceso, puedes ejecutar Codex CLI en algunos terminales y Claude Code o Antigravity CLI en otros, todos sobre el mismo repositorio. Usar Codex y Claude Code juntos es una configuración habitual, y la visión general del <a href="/es/guias/enjambre-de-agentes-cli-ia" class="text-neon-cyan hover:text-neon-purple transition-colors">enjambre de agentes CLI de IA</a> muestra cómo encajan las distintas herramientas en paralelo.',
         },
         {
           type: 'callout',
@@ -193,7 +193,7 @@ En esta guía te explico las tres formas reales de ejecutar varias sesiones de C
         },
         {
           type: 'paragraph',
-          text: 'Pon todos los terminales en "codex cli" para ejecutar varias sesiones de Codex a la vez, o mezcla Claude Code y Gemini CLI donde encajen mejor. Cada terminal es un proceso de Codex totalmente independiente, con su propia conversación y contexto de proyecto. CodeAgentSwarm funciona sobre tus suscripciones existentes, así que no es un proveedor de modelos, solo orquesta los agentes que ya pagas. Si tu agente principal es Claude Code, la misma configuración se cubre en la guía para <a href="/es/guias/ejecutar-multiples-sesiones-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">ejecutar varias sesiones de Claude Code</a>.',
+          text: 'Pon todos los terminales en "codex cli" para ejecutar varias sesiones de Codex a la vez, o mezcla Claude Code y Antigravity CLI donde encajen mejor. Cada terminal es un proceso de Codex totalmente independiente, con su propia conversación y contexto de proyecto. CodeAgentSwarm funciona sobre tus suscripciones existentes, así que no es un proveedor de modelos, solo orquesta los agentes que ya pagas. Si tu agente principal es Claude Code, la misma configuración se cubre en la guía para <a href="/es/guias/ejecutar-multiples-sesiones-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">ejecutar varias sesiones de Claude Code</a>.',
         },
         {
           type: 'heading',
@@ -281,7 +281,7 @@ En esta guía te explico las tres formas reales de ejecutar varias sesiones de C
           items: [
             '<strong>Pestañas de terminal:</strong> Gratis',
             '<strong>tmux/screen:</strong> Gratis',
-            '<strong>CodeAgentSwarm:</strong> Plan gratuito disponible, Pro para funcionalidades avanzadas. Tu uso de Codex lo factura OpenAI como siempre.',
+            '<strong>CodeAgentSwarm:</strong> Todas las funciones Pro son gratis durante la beta abierta. Tu uso de Codex lo factura OpenAI como siempre.',
           ],
         },
         {
@@ -379,7 +379,7 @@ En esta guía te explico las tres formas reales de ejecutar varias sesiones de C
     },
     {
       question: '¿Puedo usar Codex y Claude Code juntos?',
-      answer: 'Sí. Como cada agente es solo un proceso aparte, puedes ejecutar Codex CLI en algunos terminales y Claude Code o Gemini CLI en otros, todos sobre el mismo proyecto. En CodeAgentSwarm eliges el agente por terminal con el selector SELECT AI AGENT, así que una configuración mixta de Codex y Claude Code es lo normal, no un apaño.',
+      answer: 'Sí. Como cada agente es solo un proceso aparte, puedes ejecutar Codex CLI en algunos terminales y Claude Code o Antigravity CLI en otros, todos sobre el mismo proyecto. En CodeAgentSwarm eliges el agente por terminal con el selector SELECT AI AGENT, así que una configuración mixta de Codex y Claude Code es lo normal, no un apaño.',
     },
     {
       question: '¿Cómo ejecuto sesiones de Codex CLI en full auto?',

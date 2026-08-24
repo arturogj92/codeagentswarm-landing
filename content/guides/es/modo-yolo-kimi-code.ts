@@ -16,7 +16,7 @@ También cubre lo que importa una vez apagadas las preguntas: cómo mantener vig
     ctaAgent: 'kimi-code',
     highlightedWords: ['Kimi Code', 'modo YOLO'],
     publishedAt: '2026-07-18',
-    updatedAt: '2026-07-18',
+    updatedAt: '2026-08-11',
     alternateSlug: 'kimi-code-yolo-mode',
   },
   sections: [
@@ -35,7 +35,7 @@ También cubre lo que importa una vez apagadas las preguntas: cómo mantener vig
         },
         {
           type: 'paragraph',
-          text: 'Kimi Code es el agente de código en terminal de <a href="https://www.kimi.com/code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Moonshot AI</a>, que corre sobre el modelo Kimi K3. Si aún no lo tienes instalado, la guía de <a href="/es/guias/como-usar-kimi-code" class="text-neon-cyan hover:text-neon-purple transition-colors">cómo usar Kimi Code</a> cubre la instalación y el login. Esta guía asume que ya lo tienes funcionando y quieres saber cuánto abrirle la mano.',
+          text: 'Kimi Code es el agente de código en terminal de <a href="https://www.kimi.com/code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Moonshot AI</a>, con Kimi K2.7 Code como modelo predeterminado actual. Si aún no lo tienes instalado, la guía de <a href="/es/guias/como-usar-kimi-code" class="text-neon-cyan hover:text-neon-purple transition-colors">cómo usar Kimi Code</a> cubre la instalación y el login. Esta guía asume que ya lo tienes funcionando y quieres saber cuánto abrirle la mano.',
         },
         {
           type: 'paragraph',

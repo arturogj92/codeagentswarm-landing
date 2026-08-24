@@ -16,7 +16,7 @@ CodeAgentSwarm es ese panel. Es una app de escritorio gratuita para macOS y Wind
     ctaAgent: 'claude-code',
     highlightedWords: ['Panel de control de Claude Code', 'todas tus sesiones'],
     publishedAt: '2026-07-13',
-    updatedAt: '2026-07-13',
+    updatedAt: '2026-08-23',
     alternateSlug: 'claude-code-dashboard',
   },
   sections: [
@@ -153,7 +153,7 @@ CodeAgentSwarm es ese panel. Es una app de escritorio gratuita para macOS y Wind
         {
           type: 'callout',
           variant: 'tip',
-          content: 'El panel no es solo para Claude. Cada terminal tiene un selector de agente, así que el mismo tablero y los mismos estados funcionan cuando algunas de tus sesiones ejecutan Codex, Gemini CLI u opencode junto a Claude Code.',
+          content: 'El panel no es solo para Claude. Cada terminal tiene un selector de agente, así que el mismo tablero y los mismos estados funcionan cuando algunas de tus sesiones ejecutan Codex, Antigravity CLI u opencode junto a Claude Code.',
         },
       ],
     },
@@ -209,7 +209,7 @@ CodeAgentSwarm es ese panel. Es una app de escritorio gratuita para macOS y Wind
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm es una descarga gratuita para macOS y Windows, disponible desde la página principal. Se instala en local, ejecuta el CLI real de Claude Code en terminales de verdad y usa tu suscripción de Claude de siempre. No hay plan aparte ni modelo distinto: el panel es una capa sobre la herramienta que ya usas, no un reemplazo.',
+          text: 'CodeAgentSwarm es gratis durante la beta abierta, con todas las funciones Pro incluidas. Se instala en local en macOS y Windows y ejecuta la CLI oficial de Claude Code en terminales estándar con tu cuenta actual de Anthropic. CodeAgentSwarm añade un panel y una capa de supervisión; Anthropic sigue proporcionando el modelo y definiendo tu plan y tus límites de uso.',
         },
         {
           type: 'paragraph',
@@ -217,7 +217,7 @@ CodeAgentSwarm es ese panel. Es una app de escritorio gratuita para macOS y Wind
         },
         {
           type: 'paragraph',
-          text: 'Y como cada terminal tiene un selector de agente, el mismo panel gestiona también sesiones de Codex, Gemini CLI y opencode. Una ventana, todos los agentes, todos los estados.',
+          text: 'Y como cada terminal tiene un selector de agente, el mismo panel gestiona también sesiones de Codex, Antigravity CLI y opencode. Una ventana, todos los agentes, todos los estados.',
         },
       ],
     },
@@ -241,7 +241,7 @@ CodeAgentSwarm es ese panel. Es una app de escritorio gratuita para macOS y Wind
     },
     {
       question: '¿El mismo panel puede gestionar agentes que no sean Claude Code?',
-      answer: 'Sí. Cada terminal de CodeAgentSwarm tiene un selector de agente, así que el mismo workspace puede ejecutar Claude Code, Codex, Gemini CLI y opencode en paralelo. El tablero de tareas, los estados, las notificaciones y el historial funcionan igual sea cual sea el agente de cada terminal.',
+      answer: 'Sí. Cada terminal de CodeAgentSwarm tiene un selector de agente, así que el mismo workspace puede ejecutar Claude Code, Codex, Antigravity CLI y opencode en paralelo. El tablero de tareas, los estados, las notificaciones y el historial funcionan igual sea cual sea el agente de cada terminal.',
     },
     {
       question: '¿Cómo me avisa el panel de que una sesión necesita mi respuesta?',

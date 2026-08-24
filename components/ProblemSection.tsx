@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, useInView } from 'framer-motion'
+import { motion, useInView, useReducedMotion } from 'framer-motion'
 import { useRef, ReactNode } from 'react'
 import { AlertTriangle, RefreshCw, Brain, X, Check, ArrowRight, Download } from 'lucide-react'
 import { useTranslations } from 'next-intl'
@@ -41,15 +41,15 @@ function ChaosScene() {
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:28px_28px]" />
 
       {/* deepest layer: windows bleeding off the screen edges */}
-      <MacWindow className="-top-[6%] -left-[7%] w-[34%] h-[30%] rotate-[2deg] z-[1] opacity-30 blur-[1px] hidden sm:block" title="npm — watch">
+      <MacWindow className="-top-[6%] -left-[7%] w-[34%] h-[30%] rotate-[2deg] z-[1] opacity-30 blur-[1px] hidden sm:block" title="npm: watch">
         <pre className="p-2 text-[8px] leading-[1.6] text-[#5f5f68] bg-[#101013]" style={MONO}>{'⚠ 14 modules rebuilt · waiting…'}</pre>
       </MacWindow>
-      <MacWindow className="-bottom-[9%] -right-[5%] w-[40%] h-[32%] -rotate-[2deg] z-[1] opacity-30 blur-[1px] hidden sm:block" title="terminal — zsh">
+      <MacWindow className="-bottom-[9%] -right-[5%] w-[40%] h-[32%] -rotate-[2deg] z-[1] opacity-30 blur-[1px] hidden sm:block" title="terminal: zsh">
         <pre className="p-2 text-[8px] leading-[1.6] text-[#5f5f68] bg-[#101013]" style={MONO}>{'$ git stash list\nstash@{0}: WIP… (4 days ago)'}</pre>
       </MacWindow>
 
       {/* buried second editor */}
-      <MacWindow className="top-[1%] left-[16%] w-[44%] h-[40%] rotate-[1deg] z-[1] opacity-40 blur-[0.5px] hidden sm:block" title="payments — Visual Studio Code">
+      <MacWindow className="top-[1%] left-[16%] w-[44%] h-[40%] rotate-[1deg] z-[1] opacity-40 blur-[0.5px] hidden sm:block" title="payments: Visual Studio Code">
         <div className="p-2.5 flex flex-col gap-1.5">
           {[70, 52, 80, 38, 64].map((w, i) => (
             <div key={i} className="h-[5px] rounded bg-white/[0.07]" style={{ width: `${w}%` }} />
@@ -58,7 +58,7 @@ function ChaosScene() {
       </MacWindow>
 
       {/* buried slack with unread pings */}
-      <MacWindow className="top-[8%] right-[24%] w-[34%] h-[46%] -rotate-[0.8deg] z-[2] opacity-55 hidden sm:block" title="Slack — dev-team">
+      <MacWindow className="top-[8%] right-[24%] w-[34%] h-[46%] -rotate-[0.8deg] z-[2] opacity-55 hidden sm:block" title="Slack: dev-team">
         <div className="flex h-[calc(100%-20px)]">
           <div className="w-[34%] bg-[#1a1220] border-r border-white/[0.05] px-2 py-1.5 text-[7.5px] leading-loose text-[#9a8fa5]">
             <div className="flex items-center justify-between"><b className="text-[#d5cfdb]"># deploys</b><span className="bg-[#c94f4f] text-white text-[6.5px] rounded-full px-[5px] font-bold">3</span></div>
@@ -74,7 +74,7 @@ function ChaosScene() {
       </MacWindow>
 
       {/* main editor */}
-      <MacWindow className="top-[4%] -left-[1%] w-[51%] h-[56%] -rotate-[1.6deg] z-[3]" title="auth-service — Visual Studio Code">
+      <MacWindow className="top-[4%] -left-[1%] w-[51%] h-[56%] -rotate-[1.6deg] z-[3]" title="auth-service: Visual Studio Code">
         <div className="flex h-[calc(100%-20px)] bg-[#131317]" style={MONO}>
           <div className="w-[22px] bg-[#1b1b20] border-r border-white/[0.05] flex-shrink-0" />
           <pre className="p-2 text-[8px] leading-[1.75] text-[#7d7d88]">
@@ -99,12 +99,12 @@ function ChaosScene() {
       </MacWindow>
 
       {/* buried expired terminal */}
-      <MacWindow className="bottom-[1%] left-[36%] w-[36%] h-[26%] rotate-[0.6deg] z-[2] opacity-55" title="claude — ~/dev/mobile">
+      <MacWindow className="bottom-[1%] left-[36%] w-[36%] h-[26%] rotate-[0.6deg] z-[2] opacity-55" title="claude: ~/dev/mobile">
         <pre className="p-2 text-[8px] leading-[1.6] text-[#5f5f68] bg-[#101013]" style={MONO}>✳ Claude Code · session expired 2h ago</pre>
       </MacWindow>
 
       {/* Claude Code terminal, real header, stuck waiting */}
-      <MacWindow className="-bottom-[1%] -left-[1%] w-[47%] h-[46%] -rotate-[1.3deg] z-[6]" title="claude — ~/dev/api">
+      <MacWindow className="-bottom-[1%] -left-[1%] w-[47%] h-[46%] -rotate-[1.3deg] z-[6]" title="claude: ~/dev/api">
         <pre className="p-2 px-2.5 text-[8px] leading-[1.6] text-[#b0b0b8] bg-[#101013] h-full" style={MONO}>
           <span className="flex gap-2 items-start">
             <span className="text-[#d97757] font-bold leading-[1.45]">{CLAUDE_ASCII}</span>
@@ -121,7 +121,7 @@ function ChaosScene() {
       </MacWindow>
 
       {/* Codex terminal, context lost */}
-      <MacWindow className="bottom-[6%] -right-[1.5%] w-[44%] h-[40%] rotate-[1.8deg] z-[5]" title="codex — ~/dev/web">
+      <MacWindow className="bottom-[6%] -right-[1.5%] w-[44%] h-[40%] rotate-[1.8deg] z-[5]" title="codex: ~/dev/web">
         <pre className="p-2 px-2.5 text-[8px] leading-[1.6] text-[#b0b0b8] bg-[#101013] h-full" style={MONO}>
           <b className="text-[#e8e8ec]">&gt;_ OpenAI Codex</b> <span className="text-[#5f5f68]">(v0.48.0)</span>{'\n'}
           <span className="text-[#5f5f68]">model: gpt-5.2-codex · ~/dev/web</span>{'\n'}
@@ -192,6 +192,7 @@ function ChaosScene() {
 
 function VisualComparison() {
   const t = useTranslations('problem.chaos')
+  const shouldReduceMotion = useReducedMotion()
 
   const painPoints = [
     { icon: RefreshCw, text: t('pain1') },
@@ -351,14 +352,19 @@ function VisualComparison() {
               className="relative"
             >
               <div className="relative aspect-[16/10] rounded-2xl overflow-hidden bg-[#050505] border border-amber-400/35 shadow-[0_0_40px_rgba(251,191,36,0.07)]">
-                <Image
-                  src="/images/codeagentswarm-12terminals.jpg"
-                  alt="CodeAgentSwarm - 12 AI agents working in parallel in one view"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover"
-                  loading="lazy"
-                />
+                <video
+                  data-testid="list-mode-demo"
+                  className="h-full w-full object-cover"
+                  autoPlay={!shouldReduceMotion}
+                  loop
+                  muted
+                  playsInline
+                  preload="metadata"
+                  poster="/images/list-mode-demo-poster.jpg"
+                  aria-hidden="true"
+                >
+                  <source src="/videos/list-mode-demo.mp4" type="video/mp4" />
+                </video>
               </div>
               <div className="absolute -bottom-3 left-1/2 -translate-x-1/2">
                 <motion.div

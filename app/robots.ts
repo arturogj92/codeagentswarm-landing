@@ -11,14 +11,20 @@ export default function robots(): MetadataRoute.Robots {
       },
       // Explicitly welcome AI answer-engine crawlers (GEO/AEO) so CodeAgentSwarm
       // can be cited by ChatGPT, Perplexity, Claude and Google AI Overviews.
-      { userAgent: 'GPTBot', allow: '/' },
-      { userAgent: 'OAI-SearchBot', allow: '/' },
-      { userAgent: 'ChatGPT-User', allow: '/' },
-      { userAgent: 'ClaudeBot', allow: '/' },
-      { userAgent: 'Claude-User', allow: '/' },
-      { userAgent: 'PerplexityBot', allow: '/' },
-      { userAgent: 'Perplexity-User', allow: '/' },
-      { userAgent: 'Google-Extended', allow: '/' },
+      {
+        userAgent: [
+          'GPTBot',
+          'OAI-SearchBot',
+          'ChatGPT-User',
+          'ClaudeBot',
+          'Claude-User',
+          'PerplexityBot',
+          'Perplexity-User',
+          'Google-Extended',
+        ],
+        allow: '/',
+        disallow: ['/login', '/dashboard'],
+      },
     ],
     sitemap: 'https://www.codeagentswarm.com/sitemap.xml',
   };

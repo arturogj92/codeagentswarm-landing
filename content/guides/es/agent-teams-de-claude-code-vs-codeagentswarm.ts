@@ -16,7 +16,7 @@ Esta guía explica qué es cada cosa, cuándo recurrir a una o a otra, y por qu�
     ctaAgent: 'comparison',
     highlightedWords: ['Agent Teams de Claude Code', 'CodeAgentSwarm'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-06-07',
+    updatedAt: '2026-08-11',
     alternateSlug: 'claude-code-agent-teams-vs-codeagentswarm',
   },
   sections: [
@@ -26,9 +26,9 @@ Esta guía explica qué es cada cosa, cuándo recurrir a una o a otra, y por qu�
       content: [
         {
           type: 'image',
-          alt: 'OpenAI Codex, Google Gemini CLI y Anthropic Claude Code ejecutándose lado a lado como tres terminales separadas e independientes en un mismo espacio de trabajo de CodeAgentSwarm',
+          alt: 'OpenAI Codex, la retirada Gemini CLI de Google mostrando su aviso de migración y Anthropic Claude Code ejecutándose en CodeAgentSwarm',
           src: '/images/guides/multi-cli-three-agents.png',
-          caption: 'CodeAgentSwarm ejecuta agentes independientes en paralelo: Codex, Gemini CLI y Claude Code como procesos separados en un mismo espacio de trabajo. Los agent teams nativos, en cambio, viven dentro de una sola sesión de Claude.',
+          caption: 'Una captura de la transición con Codex, Claude Code y la retirada Gemini CLI mostrando su aviso para migrar a Antigravity. Los agent teams nativos viven dentro de una sola sesión de Claude.',
         },
         {
           type: 'paragraph',
@@ -84,7 +84,7 @@ Esta guía explica qué es cada cosa, cuándo recurrir a una o a otra, y por qu�
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm es un espacio de trabajo de escritorio, para macOS y Windows, que ejecuta varios terminales CLI independientes en paralelo. Cada terminal es su propio proceso y su propia conversación, y eliges el agente por terminal: Claude Code en una, Codex CLI en otra, Gemini CLI en una tercera. No comparten contexto entre ellas y tú las supervisas directamente.',
+          text: 'CodeAgentSwarm es un espacio de trabajo de escritorio, para macOS y Windows, que ejecuta varios terminales CLI independientes en paralelo. Cada terminal es su propio proceso y su propia conversación, y eliges el agente por terminal: Claude Code en una, Codex CLI en otra, Antigravity CLI en una tercera. No comparten contexto entre ellas y tú las supervisas directamente.',
         },
         {
           type: 'paragraph',
@@ -93,7 +93,7 @@ Esta guía explica qué es cada cosa, cuándo recurrir a una o a otra, y por qu�
         {
           type: 'list',
           items: [
-            'Multiproveedor: combina Claude Code, Codex CLI y Gemini CLI en un mismo espacio, a tu elección por terminal',
+            'Multiproveedor: combina Claude Code, Codex CLI y Antigravity CLI en un mismo espacio, a tu elección por terminal',
             'Sesiones independientes: cada terminal es un proceso separado con su propia conversación y contexto',
             'Supervisado por ti: tú asignas y vigilas el trabajo, ningún agente está orquestando a los demás',
             'Notificaciones de escritorio: te avisa cuando cualquier agente termina o se detiene a preguntarte algo',
@@ -153,7 +153,7 @@ Esta guía explica qué es cada cosa, cuándo recurrir a una o a otra, y por qu�
           type: 'list',
           items: [
             '<strong>Agent teams de Claude Code:</strong> solo Claude, dentro de una sola sesión de Claude',
-            '<strong>CodeAgentSwarm:</strong> combina Claude Code, Codex CLI y Gemini CLI con libertad',
+            '<strong>CodeAgentSwarm:</strong> combina Claude Code, Codex CLI y Antigravity CLI con libertad',
           ],
         },
         {
@@ -214,7 +214,7 @@ Esta guía explica qué es cada cosa, cuándo recurrir a una o a otra, y por qu�
         },
         {
           type: 'paragraph',
-          text: 'Un montaje realista: la terminal 1 es una sesión de Claude Code abordando una refactorización grande, y dentro de ella Claude usa agent teams para repartirse los archivos afectados. La terminal 2 es Codex CLI escribiendo tests para otro módulo. La terminal 3 es Gemini CLI leyendo y resumiendo una parte desconocida del código. La delegación nativa se encarga del interior de una tarea; CodeAgentSwarm se encarga de ejecutar y vigilar las tres a la vez.',
+          text: 'Un montaje realista: la terminal 1 es una sesión de Claude Code abordando una refactorización grande, y dentro de ella Claude usa agent teams para repartirse los archivos afectados. La terminal 2 es Codex CLI escribiendo tests para otro módulo. La terminal 3 es Antigravity CLI leyendo y resumiendo una parte desconocida del código. La delegación nativa se encarga del interior de una tarea; CodeAgentSwarm se encarga de ejecutar y vigilar las tres a la vez.',
         },
         {
           type: 'list',

@@ -5,18 +5,18 @@ export const guide: Guide = {
     slug: 'enjambre-de-agentes-cli-ia',
     locale: 'es',
     title: 'Enjambre de agentes CLI de IA: ejecuta varios agentes de código en paralelo',
-    metaTitle: 'Enjambre de agentes CLI de IA: ejecuta Claude Code, Codex y Gemini juntos (2026)',
-    metaDescription: 'Un enjambre de agentes CLI de IA son varios agentes de código (Claude Code, Codex, Gemini) en paralelo en un solo sitio. Aquí ves cómo gestionarlos.',
-    intro: `Un enjambre de agentes CLI de IA es lo que tienes cuando dejas de pensar en un solo agente de código en un terminal y empiezas a ejecutar varios a la vez. Claude Code en un terminal, Codex CLI en otro, Gemini CLI en un tercero, todos trabajando en el mismo proyecto al mismo tiempo.
+    metaTitle: 'Enjambre de agentes CLI IA: 7 agentes en paralelo (2026)',
+    metaDescription: 'Ejecuta Claude Code, Codex, Cursor Agent, Antigravity, OpenCode, Kimi Code y Grok Build en paralelo como un enjambre CLI supervisado.',
+    intro: `Un enjambre de agentes CLI de IA es lo que tienes cuando dejas de pensar en un solo agente de código en un terminal y empiezas a ejecutar varios a la vez. Claude Code en un terminal, Codex CLI en otro, Grok Build u OpenCode en un tercero, todos trabajando en el mismo proyecto al mismo tiempo.
 
 La idea suena caótica, y mal hecha lo es. El objetivo de esta guía es enseñarte a hacerlo bien: cómo ejecutar de verdad varios agentes de código en paralelo, cómo decidir qué agente se encarga de qué, y cómo no perder la visibilidad de un workspace donde tres o cuatro agentes editan archivos a la vez.
 
-Yo trabajo con enjambres mixtos casi todos los días. Aquí te cuento qué es realmente un enjambre de agentes CLI de IA, los compromisos honestos de cada forma de montarlo, y dónde un workspace hecho a propósito se gana su sitio frente a las pestañas del terminal o tmux.`,
-    ctaText: 'Ejecuta Claude Code, Codex y Gemini en paralelo en un solo workspace de CodeAgentSwarm. Varios agentes, visibilidad compartida y un único sitio desde el que vigilarlos.',
+Yo trabajo con enjambres mixtos casi todos los días. Esto es orquestación de agentes de código con IA a nivel de proceso: agentes independientes y una persona que los supervisa. Aquí te cuento los compromisos honestos de cada forma de montarlo y dónde un workspace hecho a propósito se gana su sitio frente a las pestañas del terminal o tmux. Para comparar productos, consulta las <a href="/es/guias/mejores-herramientas-agentes-ia-en-paralelo" class="text-neon-cyan hover:text-neon-purple transition-colors">mejores herramientas para ejecutar varios agentes de código</a>.`,
+    ctaText: 'Ejecuta Claude Code, Codex, Cursor Agent, Antigravity, OpenCode, Kimi Code y Grok Build en paralelo en un solo workspace de CodeAgentSwarm. Varios agentes, visibilidad compartida y un único sitio desde el que vigilarlos.',
     ctaAgent: 'multi',
     highlightedWords: ['enjambre de agentes CLI de IA', 'en paralelo'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-07-18',
+    updatedAt: '2026-08-23',
     alternateSlug: 'ai-cli-agent-swarm',
   },
   sections: [
@@ -25,18 +25,12 @@ Yo trabajo con enjambres mixtos casi todos los días. Aquí te cuento qué es re
       title: '¿Qué es un enjambre de agentes CLI de IA?',
       content: [
         {
-          type: 'image',
-          alt: 'OpenAI Codex, Google Gemini CLI y Anthropic Claude Code ejecutándose a la vez como terminales separados en una sola ventana de CodeAgentSwarm',
-          src: '/images/guides/multi-cli-three-agents.png',
-          caption: 'Un enjambre multifabricante: Codex, Gemini CLI y Claude Code funcionando juntos en un mismo espacio de trabajo de CodeAgentSwarm, cada uno en su propio terminal.',
-        },
-        {
           type: 'paragraph',
           text: 'Un enjambre de agentes CLI de IA son varios agentes de código por línea de comandos, independientes, ejecutándose en paralelo en un solo sitio, con visibilidad compartida de lo que hace cada uno. En vez de un único agente en un único terminal, tienes un puñado de ellos, cada uno con su propio proceso, su propia conversación y su propio contexto, trabajando en tareas a la vez.',
         },
         {
           type: 'paragraph',
-          text: 'Los agentes son herramientas de línea de comandos que seguramente ya usas: <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a> de Anthropic, <a href="https://github.com/openai/codex" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex CLI</a> de OpenAI y <a href="https://github.com/google-gemini/gemini-cli" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Gemini CLI</a> de Google. Cada uno ejecuta <code>claude</code>, <code>codex</code> o <code>gemini</code> en su propio terminal. No saben unos de otros. El enjambre es la capa que pones alrededor para poder ejecutarlos juntos sin perder el hilo.',
+          text: 'Los agentes son herramientas de línea de comandos que seguramente ya usas: <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, <a href="https://github.com/openai/codex" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex CLI</a>, <a href="/es/guias/cursor-agent-cli-acp-codeagentswarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Cursor Agent CLI</a>, <a href="https://opencode.ai" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">OpenCode</a>, <a href="https://www.kimi.com/code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi Code</a>, <a href="https://x.ai" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Grok Build</a> y Antigravity CLI. Cada uno corre de forma independiente. El enjambre es la capa que mantiene visible el trabajo.',
         },
         {
           type: 'paragraph',
@@ -45,11 +39,29 @@ Yo trabajo con enjambres mixtos casi todos los días. Aquí te cuento qué es re
         {
           type: 'callout',
           variant: 'info',
-          content: 'Un enjambre funciona sobre las suscripciones que ya pagas. Cada terminal usa tu plan de Claude, OpenAI o Google de forma independiente. No hay un plan especial de "enjambre" ni un coste extra por agente por ejecutarlos en paralelo.',
+          content: 'Un enjambre funciona sobre los accesos a proveedores que ya tienes. Cada terminal usa de forma independiente tu cuenta o clave de API de Claude, OpenAI, Google, Kimi, xAI o un proveedor conectado a OpenCode. No hay un plan especial de enjambre ni un recargo de CodeAgentSwarm por agente en paralelo.',
         },
         {
           type: 'paragraph',
-          text: 'Si solo te interesa un proveedor, las guías por herramienta entran en más detalle: el <a href="/es/guias/enjambre-de-agentes-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">enjambre de agentes Claude Code</a> (o la versión paso a paso, <a href="/es/guias/ejecutar-multiples-sesiones-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">ejecutar varias sesiones de Claude Code</a>), el <a href="/es/guias/enjambre-de-agentes-codex" class="text-neon-cyan hover:text-neon-purple transition-colors">enjambre de agentes Codex</a>, el <a href="/es/guias/enjambre-de-agentes-antigravity" class="text-neon-cyan hover:text-neon-purple transition-colors">enjambre de agentes Antigravity</a>, el <a href="/es/guias/enjambre-de-agentes-opencode" class="text-neon-cyan hover:text-neon-purple transition-colors">enjambre de agentes OpenCode</a> y el <a href="/es/guias/enjambre-de-agentes-kimi-code" class="text-neon-cyan hover:text-neon-purple transition-colors">enjambre de agentes Kimi Code</a>. Esta página es la vista entre proveedores, donde los mezclas.',
+          text: 'Si solo te interesa un proveedor, las guías por herramienta entran en más detalle: <a href="/es/guias/enjambre-de-agentes-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, <a href="/es/guias/enjambre-de-agentes-codex" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex</a>, <a href="/es/guias/enjambre-de-agentes-cursor-cli" class="text-neon-cyan hover:text-neon-purple transition-colors">Cursor Agent</a>, <a href="/es/guias/enjambre-de-agentes-antigravity" class="text-neon-cyan hover:text-neon-purple transition-colors">Antigravity</a>, <a href="/es/guias/enjambre-de-agentes-opencode" class="text-neon-cyan hover:text-neon-purple transition-colors">OpenCode</a>, <a href="/es/guias/enjambre-de-agentes-kimi-code" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi Code</a> y <a href="/es/guias/enjambre-de-agentes-grok-build" class="text-neon-cyan hover:text-neon-purple transition-colors">Grok Build</a>. Esta página es la vista entre proveedores.',
+        },
+      ],
+    },
+    {
+      id: 'entorno-desarrollo-agentico',
+      title: 'Del enjambre de agentes al entorno de desarrollo agéntico',
+      content: [
+        {
+          type: 'paragraph',
+          text: 'Un <strong>entorno de desarrollo agéntico (Agentic Development Environment, ADE)</strong> es un espacio de trabajo pensado para delegar tareas de software a agentes de programación con IA, supervisar su avance y revisar sus resultados. El enjambre es el conjunto de procesos independientes que trabajan en paralelo. El ADE es el entorno que permite dirigir ese trabajo sin perder el control.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Esa es la diferencia práctica frente a un IDE o un multiplexor de terminal. Un IDE pone en el centro el editor y los archivos. tmux organiza procesos de terminal. Un ADE pone en el centro las tareas delegadas, el estado de los agentes, los permisos y la revisión, mientras cada CLI sigue ejecutándose como un proceso de terminal normal.',
+        },
+        {
+          type: 'paragraph',
+          text: 'CodeAgentSwarm encaja en esa definición porque reúne agentes independientes de varios proveedores con un tablero de tareas compartido, notificaciones cuando un agente termina o necesita tu intervención, historial de conversaciones buscable, diffs en vivo y organización por proyectos. Cada CLI sigue funcionando como siempre, con el ADE como capa de supervisión.',
         },
       ],
     },
@@ -84,12 +96,12 @@ Yo trabajo con enjambres mixtos casi todos los días. Aquí te cuento qué es re
         {
           type: 'heading',
           level: 3,
-          text: 'Gemini CLI para trabajo de mucho contexto',
-          id: 'gemini-for-context',
+          text: 'Antigravity CLI, OpenCode, Kimi Code y Grok Build',
+          id: 'otros-agentes',
         },
         {
           type: 'paragraph',
-          text: 'En Gemini CLI me apoyo cuando hay mucho que leer de golpe: entender una base de código que no conozco, resumir un conjunto grande de archivos o responder preguntas que necesitan una visión amplia del proyecto. Su gran ventana de contexto te deja meterle más antes de tener que empezar a recortar lo que ve.',
+          text: 'Antigravity CLI (agy) es la CLI de código actual de Google y encaja cuando quieres un modelo de Google de mucho contexto. OpenCode es agnóstico de proveedor, así que las sesiones pueden usar vendors distintos. Kimi Code cubre los modelos de Moonshot. Grok Build (xAI, binario <code>grok</code>) usa ahora Grok 4.6 y se puede probar gratis antes de pasar a límites de pago o facturación por API. Ninguno sustituye a los demás; la gracia es ejecutarlos a la vez.',
         },
         {
           type: 'callout',
@@ -128,7 +140,7 @@ Yo trabajo con enjambres mixtos casi todos los días. Aquí te cuento qué es re
         },
         {
           type: 'paragraph',
-          text: 'No, son cosas distintas. Los agent teams de Anthropic son subagentes dentro de una sola sesión de Claude Code: un agente principal lanza ayudantes que le reportan, todo dentro de un proceso y un proveedor. Un enjambre de agentes CLI de IA son varios agentes independientes que supervisas tú directamente, cada uno en su terminal, posiblemente de proveedores distintos (Claude Code, Codex, Gemini). Uno es delegación dentro de una sesión, el otro eres tú ejecutando y vigilando varias sesiones reales a la vez. Pueden convivir, pero resuelven problemas diferentes.',
+          text: 'No, son cosas distintas. Los agent teams de Anthropic son subagentes dentro de una sola sesión de Claude Code: un agente principal lanza ayudantes que le reportan, todo dentro de un proceso y un proveedor. Un enjambre de agentes CLI de IA son varios agentes independientes que supervisas tú directamente, cada uno en su terminal, posiblemente de proveedores distintos (Claude Code, Codex, Antigravity, OpenCode, Kimi Code, Grok Build). Uno es delegación dentro de una sesión, el otro eres tú ejecutando y vigilando varias sesiones reales a la vez. Pueden convivir, pero resuelven problemas diferentes.',
         },
       ],
     },
@@ -143,7 +155,7 @@ Yo trabajo con enjambres mixtos casi todos los días. Aquí te cuento qué es re
         {
           type: 'code',
           language: 'bash',
-          code: '# Pestaña 1 - refactor profundo\ncd ~/mi-proyecto\nclaude\n\n# Pestaña 2 - tarea concreta\ncd ~/mi-proyecto\ncodex\n\n# Pestaña 3 - leer la base de código\ncd ~/mi-proyecto\ngemini',
+          code: '# Pestaña 1: refactor profundo\ncd ~/mi-proyecto\nclaude\n\n# Pestaña 2: tarea concreta\ncd ~/mi-proyecto\ncodex\n\n# Pestaña 3: leer la base de código\ncd ~/mi-proyecto\ngrok',
         },
         {
           type: 'paragraph',
@@ -197,7 +209,7 @@ Yo trabajo con enjambres mixtos casi todos los días. Aquí te cuento qué es re
         {
           type: 'code',
           language: 'bash',
-          code: '# Inicia una sesión de tmux para el enjambre\ntmux new-session -s swarm\n\n# Divide en paneles\ntmux split-window -h\ntmux split-window -v\n\n# Ejecuta un agente distinto en cada panel: claude, codex, gemini',
+          code: '# Inicia una sesión de tmux para el enjambre\ntmux new-session -s swarm\n\n# Divide en paneles\ntmux split-window -h\ntmux split-window -v\n\n# Ejecuta un agente distinto en cada panel: claude, codex, grok',
         },
         {
           type: 'paragraph',
@@ -248,13 +260,7 @@ Yo trabajo con enjambres mixtos casi todos los días. Aquí te cuento qué es re
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm es una app de escritorio hecha justo para esto: ejecutar un enjambre de agentes CLI de IA con visibilidad y control de verdad. Funciona en macOS y Windows, te da varios terminales en un solo workspace y te deja elegir el agente por terminal. Funciona sobre tus suscripciones, no es un proveedor de modelos, así que tus planes de Claude, OpenAI y Google siguen funcionando tal cual.',
-        },
-        {
-          type: 'image',
-          alt: 'Un terminal de CodeAgentSwarm mostrando el selector SELECT AI AGENT con claude-code, gemini cli y codex cli, además de un interruptor Enable Turbo Mode',
-          src: '/images/guides/multi-cli-agent-selector.png',
-          caption: 'Elección de agente por terminal: pon cada terminal en claude-code, codex cli o gemini cli, para que un mismo enjambre mezcle los tres fabricantes.',
+          text: 'CodeAgentSwarm es una app de escritorio hecha justo para esto: ejecutar un enjambre de agentes CLI de IA con visibilidad y control de verdad. Funciona en macOS y Windows, te da varios terminales en un solo workspace y te deja elegir el agente por terminal. No es un proveedor de modelos: cada terminal usa la cuenta y la cuota de la CLI que elegiste.',
         },
         {
           type: 'paragraph',
@@ -264,11 +270,11 @@ Yo trabajo con enjambres mixtos casi todos los días. Aquí te cuento qué es re
           type: 'heading',
           level: 3,
           text: 'Varios agentes en paralelo, tú eliges por terminal',
-          id: 'six-agents',
+          id: 'seven-agents',
         },
         {
           type: 'paragraph',
-          text: 'Cada terminal tiene un selector SELECT AI AGENT que ofrece claude-code, codex cli y gemini cli. Pon un terminal en Claude Code para un refactor, otro en Codex para una tarea acotada y otro en Gemini para lectura de mucho contexto, todo en el mismo workspace y sobre el mismo proyecto. Tú decides la mezcla y puedes cambiarla por terminal cuando quieras.',
+          text: 'Cada terminal tiene un selector SELECT AI AGENT con Claude Code, Codex CLI, Cursor Agent, Antigravity CLI, OpenCode, Kimi Code y Grok Build. Pon uno en Claude para un refactor, otro en Cursor Agent para un cambio planificado y otro en Codex para una tarea acotada. Tú decides la mezcla por terminal.',
         },
         {
           type: 'heading',
@@ -298,7 +304,7 @@ Yo trabajo con enjambres mixtos casi todos los días. Aquí te cuento qué es re
         },
         {
           type: 'paragraph',
-          text: 'Cada conversación, de cada agente y cada proveedor, se guarda y se puede buscar en un solo sitio. Puedes encontrar lo que hizo Codex ayer, retomar una sesión de Gemini o rastrear qué agente hizo un cambio en todo el enjambre. La <a href="/es/guias/historial-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">guía del historial de conversaciones</a> explica cómo funciona.',
+          text: 'Cada conversación, de cada agente y cada proveedor, se guarda y se puede buscar en un solo sitio. Puedes encontrar lo que hizo Codex ayer, retomar una sesión de Grok Build o rastrear qué agente hizo un cambio en todo el enjambre. La <a href="/es/guias/historial-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">guía del historial de conversaciones</a> explica cómo funciona.',
         },
         {
           type: 'heading',
@@ -333,7 +339,7 @@ Yo trabajo con enjambres mixtos casi todos los días. Aquí te cuento qué es re
         {
           type: 'callout',
           variant: 'tip',
-          content: 'Para el paso a paso de cómo abrir y organizar terminales, mira la <a href="/es/guias/como-usar-varios-terminales-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">guía de varios terminales</a>. El mismo workspace ejecuta también terminales de Codex y Gemini.',
+          content: 'Para el paso a paso de cómo abrir y organizar terminales, mira la <a href="/es/guias/como-usar-varios-terminales-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">guía de varios terminales</a>. El mismo workspace ejecuta también terminales de Codex y Grok Build.',
         },
       ],
     },
@@ -356,7 +362,7 @@ Yo trabajo con enjambres mixtos casi todos los días. Aquí te cuento qué es re
           items: [
             '<strong>Pestañas de terminal:</strong> Gratis',
             '<strong>tmux/screen:</strong> Gratis',
-            '<strong>CodeAgentSwarm:</strong> Plan gratuito disponible, Pro para funciones avanzadas, funciona sobre tus suscripciones de agentes',
+            '<strong>CodeAgentSwarm:</strong> Todas las funciones Pro son gratis durante la beta abierta y funciona sobre tus suscripciones de agentes',
           ],
         },
         {
@@ -442,15 +448,19 @@ Yo trabajo con enjambres mixtos casi todos los días. Aquí te cuento qué es re
   faq: [
     {
       question: '¿Qué es un enjambre de agentes CLI de IA?',
-      answer: 'Son varios agentes de código por línea de comandos, independientes (como Claude Code, Codex CLI y Gemini CLI), ejecutándose en paralelo en un solo sitio, con visibilidad compartida de lo que hace cada uno. Cada agente es su propio proceso, con su conversación y su contexto, y el enjambre es la capa a su alrededor que añade notificaciones, historial buscable, visibilidad de cambios de archivos y control de permisos.',
+      answer: 'Son varios agentes de código por línea de comandos, independientes (como Claude Code, Codex CLI, OpenCode, Kimi Code y Grok Build), ejecutándose en paralelo en un solo sitio, con visibilidad compartida de lo que hace cada uno. Cada agente es su propio proceso, con su conversación y su contexto, y el enjambre es la capa a su alrededor que añade notificaciones, historial buscable, visibilidad de cambios de archivos y control de permisos.',
     },
     {
-      question: '¿Puedo ejecutar Claude Code, Codex y Gemini a la vez?',
-      answer: 'Sí. Cada agente se ejecuta como un proceso CLI independiente, así que puedes tener Claude Code, Codex CLI y Gemini CLI a la vez sobre el mismo proyecto. CodeAgentSwarm te deja elegir el agente por terminal y ejecutar varios a la vez en un solo workspace, así que mezclas proveedores con total libertad.',
+      question: '¿Qué es un entorno de desarrollo agéntico (ADE)?',
+      answer: 'Un ADE es un espacio de trabajo pensado para delegar tareas de software a agentes de programación con IA, supervisar su avance y revisar sus resultados. A diferencia de un IDE, que organiza el editor y los archivos, o tmux, que organiza procesos de terminal, un ADE pone en el centro las tareas, los agentes, los permisos y la revisión. CodeAgentSwarm aplica ese modelo a CLIs de programación independientes de varios proveedores.',
+    },
+    {
+      question: '¿Puedo ejecutar Claude Code, Codex y Grok Build a la vez?',
+      answer: 'Sí. Cada agente se ejecuta como un proceso CLI independiente, así que puedes tener Claude Code, Codex CLI, OpenCode, Kimi Code y Grok Build a la vez sobre el mismo proyecto. CodeAgentSwarm te deja elegir el agente por terminal y ejecutar varios a la vez en un solo workspace, así que mezclas proveedores con total libertad.',
     },
     {
       question: '¿Qué CLI de código uso para cada cosa?',
-      answer: 'No hay un único agente mejor, y por eso ayuda un enjambre. Como sesgo inicial: Claude Code para refactors profundos y cambios que necesitan razonar con cuidado entre muchos archivos, Codex CLI para tareas concretas y bien delimitadas como implementar una función o arreglar un fallo específico, y Gemini CLI para trabajo de mucho contexto como entender una base de código desconocida. Los modelos cambian a menudo, así que tómalo como punto de partida y ajústalo según tus propios resultados.',
+      answer: 'No hay un único agente mejor, y por eso ayuda un enjambre. Empieza con Claude Code para refactors profundos, Codex CLI para tareas concretas, OpenCode para flexibilidad de proveedor, Kimi Code para modelos de Moonshot y Grok Build para Grok 4.6. Los modelos cambian a menudo, así que ajústalo con tus propios resultados.',
     },
     {
       question: '¿Necesito git worktrees para ejecutar agentes en paralelo?',

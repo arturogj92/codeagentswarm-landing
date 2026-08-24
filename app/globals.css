@@ -27,6 +27,11 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: clamp(16px, calc(11.2px + 0.333vw), 24px);
+}
+
+section[id] {
+  scroll-margin-top: 5rem;
 }
 
 body {

@@ -6,6 +6,7 @@ import { getMessages, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import Script from 'next/script'
 import { routing } from '@/i18n/routing'
+import WebVitals from '@/components/WebVitals'
 import '../globals.css'
 
 const inter = Inter({
@@ -38,48 +39,18 @@ export async function generateMetadata({
   const isSpanish = locale === 'es'
 
   const title = isSpanish
-    ? 'CodeAgentSwarm – Espacio de trabajo con IA para terminales Claude Code, Codex, Antigravity CLI, OpenCode y Kimi Code'
-    : 'CodeAgentSwarm – AI coding workspace for Claude Code, Codex, Antigravity CLI, OpenCode and Kimi Code terminals with MCP tools'
+    ? 'CodeAgentSwarm | Entorno de Desarrollo Agéntico (ADE)'
+    : 'CodeAgentSwarm | Agentic Development Environment (ADE)'
 
   const description = isSpanish
-    ? 'CodeAgentSwarm es una app de escritorio para ejecutar y supervisar varios agentes de programación con IA en paralelo: Claude Code, Codex, Antigravity CLI, OpenCode y Kimi Code, con visibilidad en tiempo real, notificaciones, historial completo de conversaciones, control de permisos, gestión multiproyecto e integraciones MCP.'
-    : 'CodeAgentSwarm is a desktop workspace to run and supervise multiple AI coding agents in parallel: Claude Code, Codex, Antigravity CLI, OpenCode and Kimi Code, with real-time visibility, live notifications, full conversation history, permission control, multi-project management and MCP integrations.'
+    ? 'CodeAgentSwarm es un entorno de desarrollo agéntico (ADE) para orquestar Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent en paralelo.'
+    : 'CodeAgentSwarm is an Agentic Development Environment (ADE) for orchestrating Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build and Cursor Agent in parallel.'
 
   return {
     metadataBase: new URL(baseUrl),
     title,
     description,
-    keywords: [
-      'Claude Code',
-      'Codex CLI',
-      'Antigravity CLI',
-      'OpenCode',
-      'Kimi Code',
-      'AI coding workspace',
-      'AI developer workspace',
-      'AI CLI workspace',
-      'multi terminal coding workspace',
-      'multiple Claude Code terminals',
-      'multiple Codex terminals',
-      'multiple Antigravity CLI terminals',
-      'multiple OpenCode terminals',
-      'multiple Kimi Code terminals',
-      'Claude Code multi terminal setup',
-      'real time visibility',
-      'AI CLI notifications',
-      'Claude Code notifications',
-      'Claude Code conversation history',
-      'Claude Code permissions',
-      'MCP tools',
-      'MCP marketplace',
-      'multi-project management',
-      'real time change tracking',
-      'live diffs',
-      'CodeAgentSwarm',
-      'run multiple AI coding agents',
-      'AI coding agent supervision',
-    ],
-    authors: [{ name: 'CodeAgentSwarm Team' }],
+    authors: [{ name: 'CodeAgentSwarm', url: `${baseUrl}/${locale}/about` }],
     creator: 'CodeAgentSwarm',
     publisher: 'CodeAgentSwarm',
     applicationName: 'CodeAgentSwarm',
@@ -101,12 +72,10 @@ export async function generateMetadata({
       },
     },
     openGraph: {
-      title: isSpanish
-        ? 'CodeAgentSwarm – Terminales AI CLI en paralelo (Claude Code, Codex, Antigravity, OpenCode, Kimi Code)'
-        : 'CodeAgentSwarm – Multiple AI CLI terminals in parallel (Claude Code, Codex, Antigravity, OpenCode, Kimi Code)',
+      title,
       description: isSpanish
-        ? 'Desarrolla mas rapido con terminales AI CLI (Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code), integracion Git, seguimiento de cambios en tiempo real e historial completo.'
-        : 'Work faster with multiple AI CLI terminals (Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code), Git integration, real-time change tracking and full conversation history.',
+        ? 'Un ADE para dirigir varios agentes de programación con tareas, notificaciones, historial, permisos y diffs en vivo desde un solo lugar.'
+        : 'An ADE for directing multiple coding agents with tasks, notifications, history, permissions and live diffs in one place.',
       type: 'website',
       siteName: 'CodeAgentSwarm',
       url: canonicalUrl,
@@ -117,21 +86,17 @@ export async function generateMetadata({
           width: 1200,
           height: 630,
           alt: isSpanish
-            ? 'CodeAgentSwarm - Espacio de trabajo multi-terminal para AI CLI'
-            : 'CodeAgentSwarm - AI coding workspace for multiple AI CLI terminals',
+            ? 'CodeAgentSwarm - Centro de mando visual para agentes de IA'
+            : 'CodeAgentSwarm - Visual command center for AI coding agents',
         },
       ],
     },
     twitter: {
       card: 'summary_large_image',
-      site: '@CodeAgentSwarm',
-      creator: '@CodeAgentSwarm',
-      title: isSpanish
-        ? 'CodeAgentSwarm – Terminales AI CLI en paralelo'
-        : 'CodeAgentSwarm – Parallel AI CLI Terminals',
+      title,
       description: isSpanish
-        ? 'Orquesta multiples terminales AI CLI (Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code) en un workspace con visibilidad en tiempo real.'
-        : 'Orchestrate multiple AI CLI terminals (Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code) in one workspace with real-time visibility.',
+        ? 'Entorno de desarrollo agéntico para orquestar Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent en paralelo.'
+        : 'Agentic Development Environment for orchestrating Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build and Cursor Agent in parallel.',
       images: ['/og.png'],
     },
     robots: {
@@ -170,14 +135,25 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className="dark">
       <head>
+        {/*
+          data-domains is what keeps localhost out of the real numbers.
+          Without it Umami reports from wherever the script runs, so every
+          `npm run dev` session lands in production analytics: a single
+          afternoon of building the interactive demo put 81 demo_seen, 5
+          demo_answered and a download_app_demo_silicon in there, for a feature
+          that had not shipped. Which quietly poisons exactly the conversion
+          rates we look at to decide anything.
+        */}
         <Script
           defer
           src="https://umami-codeagentswarm-production.up.railway.app/script.js"
           data-website-id="a6cf83f7-4ba1-47af-87b3-4fdbd2d537d9"
+          data-domains="codeagentswarm.com,www.codeagentswarm.com"
           strategy="afterInteractive"
         />
       </head>
       <body className={`${inter.className} ${inter.variable} ${manrope.variable} ${handelGothic.variable} bg-black text-white antialiased`}>
+        <WebVitals />
         <NextIntlClientProvider messages={messages}>
           {/* Noise Overlay */}
           <div className="noise-overlay" aria-hidden="true" />

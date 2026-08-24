@@ -22,6 +22,8 @@ export type GuideCtaAgent =
   | 'opencode'
   | 'kimi-code'
   | 'antigravity'
+  | 'grok-build'
+  | 'cursor-agent'
   | 'multi'
   | 'comparison'
 
@@ -32,6 +34,8 @@ export const CTA_AGENT_MESSAGE_KEY: Record<GuideCtaAgent, string> = {
   opencode: 'opencode',
   'kimi-code': 'kimiCode',
   antigravity: 'antigravity',
+  'grok-build': 'grokBuild',
+  'cursor-agent': 'cursorAgent',
   multi: 'multi',
   comparison: 'comparison',
 }
@@ -69,6 +73,20 @@ export interface Guide {
   meta: GuideMeta
   sections: GuideSection[]
   faq?: FAQItem[]
+}
+
+export type RelatedGuideMeta = Pick<GuideMeta, 'slug' | 'title' | 'intro'>
+
+export function pickRelatedGuideMeta(guides: Guide[], current: Guide): RelatedGuideMeta | null {
+  const related = guides
+    .filter((guide) => guide.meta.slug !== current.meta.slug && guide.meta.ctaAgent === current.meta.ctaAgent)
+    .sort((a, b) => a.meta.slug.localeCompare(b.meta.slug))
+
+  if (related.length === 0) return null
+
+  const slugHash = current.meta.slug.split('').reduce((sum, character) => sum + character.charCodeAt(0), 0)
+  const { slug, title, intro } = related[slugHash % related.length].meta
+  return { slug, title, intro }
 }
 
 // Helper to get all section IDs for Table of Contents

@@ -5,8 +5,8 @@ export const guide: Guide = {
     slug: 'guia-completa-historial-claude-code',
     locale: 'es',
     title: 'Historial de Claude Code: dónde se guarda y cómo encontrarlo, respaldarlo y retomarlo',
-    metaTitle: '¿Dónde se guarda el historial de Claude Code? (2026)',
-    metaDescription: 'La carpeta exacta donde Claude Code guarda cada sesión, por qué el historial desaparece a los 30 días (cleanupPeriodDays) y cómo respaldar o recuperar conversaciones.',
+    metaTitle: 'Historial de Claude Code: encontrar y retomar sesiones (2026)',
+    metaDescription: 'Encuentra los archivos de sesión de Claude Code, busca el historial JSONL, retoma conversaciones y crea copias antes de que la limpieza automática las borre.',
     intro: `Si llevas un tiempo usando Claude Code, seguro que en algún momento te has preguntado: ¿dónde fue a parar esa conversación?
 
 Puede que resolvieras un bug complicado la semana pasada, tomaras una decisión de arquitectura hace tres días, o pasaras 20 minutos explicándole un módulo a Claude y ahora necesitas retomar donde lo dejaste.
@@ -16,7 +16,7 @@ La respuesta corta: Claude Code guarda cada sesión en local en ~/.claude/projec
     ctaAgent: 'claude-code',
     highlightedWords: ['historial', 'Claude Code', 'conversaciones'],
     publishedAt: '2026-04-15',
-    updatedAt: '2026-07-16',
+    updatedAt: '2026-08-21',
     alternateSlug: 'claude-code-history-complete-guide',
   },
   sections: [
@@ -188,7 +188,7 @@ La respuesta corta: Claude Code guarda cada sesión en local en ~/.claude/projec
         },
         {
           type: 'paragraph',
-          text: 'Para una guía detallada de todas estas funcionalidades, consulta nuestra guía dedicada: <a href="/es/guias/historial-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">Usar el historial de conversaciones en CodeAgentSwarm</a>.',
+          text: 'Para verlo en detalle, consulta cómo <a href="/es/guias/historial-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">usar el historial en CodeAgentSwarm</a>. Si trabajas con varias CLI, las guías relacionadas cubren el <a href="/es/guias/historial-conversaciones-codex" class="text-neon-cyan hover:text-neon-purple transition-colors">historial de Codex</a> y el <a href="/es/guias/historial-conversaciones-opencode" class="text-neon-cyan hover:text-neon-purple transition-colors">historial de OpenCode</a>. Los usuarios de Cursor deben seguir la guía específica del <a href="/es/guias/historial-conversaciones-cursor-cli" class="text-neon-cyan hover:text-neon-purple transition-colors">historial de Cursor CLI</a> porque la reanudación ACP depende de la versión instalada.',
         },
       ],
     },

@@ -9,14 +9,14 @@ export const guide: Guide = {
     metaDescription: 'CodeAgentSwarm, T3 Code, Superset, Paseo, Conductor, Claude Squad and more compared: stars, last commit, platforms. Every fact verified on July 26, 2026.',
     intro: `If you want to run several AI coding agents at once and still know what each of them is doing, the tools built for that job are CodeAgentSwarm, T3 Code, Superset, Paseo, Conductor, Vibe Kanban, Claude Squad and Nimbalyst. They are apps that run and supervise coding CLIs such as Claude Code, Codex CLI and OpenCode. They are not the same thing as LangGraph, CrewAI or AutoGen, which are libraries for building agent systems in code and cannot open a terminal for you.
 
-Disclosure before anything else: we build CodeAgentSwarm, so we are one of the tools on this list. That is exactly why the criteria are identical for everyone, why our own limitations are written down in the same section as our features, and why every third-party fact here (stars, licence, last public commit, supported agents) was verified on July 26, 2026 against the vendors' own sites and public GitHub data. Nothing in this guide is quoted from a competitor's marketing page without saying so.
+Disclosure before anything else: we build CodeAgentSwarm, so we are one of the tools on this list. That is exactly why the criteria are identical for everyone, why our own limitations are written down in the same section as our features, and why every third-party fact here (stars, licence, last public commit, supported agents) was verified on July 26, 2026 against the vendors' own sites and public GitHub data. Nothing in this guide is quoted from a competitor's marketing page without saying so. CodeAgentSwarm availability on this page was updated on August 23, 2026.
 
 One finding is worth putting up front, because it changes how you read every star count in this category. The two repos with the most stars are the two with the least recent activity: opcode has no public commit since October 16, 2025 and Vibe Kanban none since April 24, 2026. Four tools committed code on the day we checked. Popular and alive are not the same measurement.`,
-    ctaText: 'If you want supervised parallel sessions across Claude Code, Codex CLI, Antigravity CLI, OpenCode and Kimi Code on macOS or Windows, with notifications, shared history and a kanban the agents update themselves, CodeAgentSwarm is free during the beta. Download it and judge it against the table above.',
+    ctaText: 'If you want supervised parallel sessions across Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build and Cursor Agent on macOS or Windows, with notifications, shared history and a kanban the agents update themselves, CodeAgentSwarm is free during the beta. Download it and judge it against the table above.',
     ctaAgent: 'comparison',
     highlightedWords: ['AI Coding Agents', 'Parallel'],
     publishedAt: '2026-07-26',
-    updatedAt: '2026-07-26',
+    updatedAt: '2026-08-23',
     alternateSlug: 'mejores-herramientas-agentes-ia-en-paralelo',
   },
   sections: [
@@ -32,7 +32,7 @@ One finding is worth putting up front, because it changes how you read every sta
         },
         {
           type: 'paragraph',
-          text: 'Every tool in this guide does the same job. It launches coding CLIs that you already pay for, runs several at once, and gives you one place to watch, review and steer them. Some call themselves orchestrators, some control planes, some workspaces, some editors. The definition does not change: the agent is still Claude Code, Codex CLI or OpenCode, and the tool is the layer that makes running six of them at once something a human can follow.',
+          text: 'Every tool in this guide does the same job. It launches coding CLIs that you already pay for, runs several at once, and gives you one place to watch, review and steer them. Some call themselves orchestrators, some control planes, some workspaces, some editors. The definition does not change: the agent is still Claude Code, Codex CLI or OpenCode, and the tool is the layer that makes running seven of them at once something a human can follow.',
         },
         {
           type: 'paragraph',
@@ -66,7 +66,7 @@ One finding is worth putting up front, because it changes how you read every sta
             '<strong>You live in the terminal and want tmux and SSH, not a GUI</strong>: Claude Squad. It manages agents as tmux sessions, which means it works fine over SSH on a box with no desktop at all.',
             '<strong>You want kanban-style team orchestration and can accept slow maintenance</strong>: Vibe Kanban. It has the most stars in the category, and its last public commit was April 24, 2026.',
             '<strong>You want to visually edit what the agents produce</strong>: Nimbalyst. It positions itself as a visual editor for Claude Code and Codex, for markdown, mockups and diagrams as well as code.',
-            '<strong>You want a supervised desktop workspace across several vendors, with notifications, shared history and a kanban the agents update themselves</strong>: CodeAgentSwarm. Five CLIs on macOS and Windows, at the cost of being closed source with no Linux build.',
+            '<strong>You want a supervised desktop workspace across several vendors, with notifications, shared history and a kanban the agents update themselves</strong>: CodeAgentSwarm. Seven CLIs on macOS and Windows, at the cost of being closed source with no Linux build.',
           ],
         },
         {
@@ -92,7 +92,7 @@ One finding is worth putting up front, because it changes how you read every sta
               'No public repo',
               'Closed source',
               'macOS, Windows',
-              'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code',
+              'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build and Cursor Agent',
               'No, proprietary',
             ],
             [
@@ -198,7 +198,7 @@ One finding is worth putting up front, because it changes how you read every sta
     },
     {
       id: 'codeagentswarm',
-      title: 'CodeAgentSwarm: supervised parallel sessions across five CLIs',
+      title: 'CodeAgentSwarm: supervised parallel sessions across seven CLIs',
       content: [
         {
           type: 'paragraph',
@@ -211,7 +211,7 @@ One finding is worth putting up front, because it changes how you read every sta
         },
         {
           type: 'paragraph',
-          text: 'The five supported CLIs are Claude Code, Codex CLI, Antigravity CLI, OpenCode and Kimi Code. Antigravity CLI and Kimi Code are, as far as the documentation of the other tools in this comparison shows, only supported here. That is a narrow advantage and worth stating narrowly: it matters if you use those two agents, and it is irrelevant if you do not.',
+          text: 'The seven supported CLIs are Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build and Cursor Agent. The advantage is the depth of those integrations: CodeAgentSwarm understands each agent\'s sessions, permissions and capabilities instead of treating every command as an interchangeable terminal process.',
         },
         {
           type: 'image',
@@ -225,13 +225,13 @@ One finding is worth putting up front, because it changes how you read every sta
         },
         {
           type: 'image',
-          alt: 'CodeAgentSwarm conversation history showing sessions from several agents, searchable and resumable',
+          alt: 'CodeAgentSwarm conversation history showing sessions from several agents, searchable, with resume when the agent supports it',
           src: '/images/guides/conversation-history.png',
-          caption: 'One searchable history across every agent, with resume, so a conversation from three days ago in a different CLI is still findable.',
+          caption: 'One searchable history across every agent and capability-aware resume, so a conversation from three days ago in a different CLI is still findable.',
         },
         {
           type: 'paragraph',
-          text: 'Two more worth naming. The conversation history is cross-agent: sessions from all five CLIs land in one searchable place and resume from there, which is not the same as each CLI keeping its own history in its own format on disk. And the quota indicator reads the real usage windows per provider, so you see which agent is about to run out of budget before it stops mid-task rather than after.',
+          text: 'Two more worth naming. The conversation history is cross-agent: sessions from all seven CLIs land in one searchable place, with resume when the agent supports it, which is not the same as each CLI keeping its own history in its own format on disk. And the quota indicator reads the real usage windows per provider, so you see which agent is about to run out of budget before it stops mid-task rather than after.',
         },
         {
           type: 'paragraph',
@@ -240,9 +240,9 @@ One finding is worth putting up front, because it changes how you read every sta
         {
           type: 'list',
           items: [
-            'Five CLIs in one workspace, chosen per terminal, including Antigravity CLI and Kimi Code',
+            'Seven CLIs in one workspace, chosen per terminal, including Cursor Agent, Antigravity CLI, Kimi Code and Grok Build',
             'Notifications when an agent finishes or needs input, which is what actually lets you leave the window',
-            'One searchable, resumable conversation history across every agent instead of five separate ones',
+            'One searchable, resumable conversation history across every agent instead of seven separate ones',
             'A kanban board the agents update themselves over MCP',
             'Per-terminal live diffs and a git worktree per session',
             'Provider quota indicator that reads real usage windows per agent',
@@ -257,7 +257,7 @@ One finding is worth putting up front, because it changes how you read every sta
           items: [
             'Closed source, with no public app repository. If open source is a requirement, stop here and pick T3 Code, Paseo or Nimbalyst.',
             'No Linux build. macOS and Windows only.',
-            'No mobile client and no remote access. If you want to check on an agent from your phone, Paseo is the tool that does that.',
+            'Mobile Connect is still in alpha. The web beta is available to every account, native iOS and Android access is by request, and the desktop must stay open.',
             'It is beta software, and it behaves like beta software sometimes.',
             'It is not a model provider. You bring your own Claude, OpenAI, Google, opencode-provider and Kimi subscriptions, and it runs on top of them.',
             'No one-click pull request button. T3 Code has that flow and we do not.',
@@ -366,11 +366,11 @@ One finding is worth putting up front, because it changes how you read every sta
         },
         {
           type: 'paragraph',
-          text: 'The repository getpaseo/paseo had about 11,400 stars on July 26, 2026 with a public commit the same day, and it is AGPL-3.0, proper open source with a strong copyleft. It supports Claude Code, Codex, OpenCode, Copilot and Pi, the widest published agent list here alongside our own five. It gives you git worktrees, live streaming of agent output, push notifications and voice input, and states plainly that there is no telemetry and no forced login.',
+          text: 'The repository getpaseo/paseo had about 11,400 stars on July 26, 2026 with a public commit the same day, and it is AGPL-3.0, proper open source with a strong copyleft. It supports Claude Code, Codex, OpenCode, Copilot and Pi, one of the widest published agent lists here alongside our own seven. It gives you git worktrees, live streaming of agent output, push notifications and voice input, and states plainly that there is no telemetry and no forced login.',
         },
         {
           type: 'paragraph',
-          text: 'This is the row where we lose cleanly. CodeAgentSwarm has no mobile client and no remote access, so if supervising from a phone is the requirement, Paseo is the answer and we are not. The rest of the trade-off, mostly around Windows-native desktop behaviour and cross-agent history, is in <a href="/en/guides/paseo-vs-codeagentswarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Paseo vs CodeAgentSwarm</a>.',
+          text: 'Paseo still wins cleanly on public mobile availability and self-hosting. CodeAgentSwarm Mobile Connect is in alpha, with a web beta for every account and native access by request, and its desktop must stay open. Paseo already ships public native clients around a daemon you host. The rest of the trade-off, mostly around Windows-native desktop behaviour and cross-agent history, is in <a href="/en/guides/paseo-vs-codeagentswarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Paseo vs CodeAgentSwarm</a>.',
         },
         {
           type: 'paragraph',

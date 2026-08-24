@@ -2,7 +2,7 @@
 
 import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { useRef, useState, useEffect } from 'react'
-import { Download, ChevronDown, Calendar, X, Mail, Rocket, Bell, Smartphone } from 'lucide-react'
+import { Download, ChevronDown, Calendar, X, Mail, Rocket, Bell, ShieldCheck, Smartphone } from 'lucide-react'
 import Image from 'next/image'
 import { useLocale, useTranslations } from 'next-intl'
 import {
@@ -28,17 +28,14 @@ function FOMOPopup({
   const [email, setEmail] = useState('')
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [failed, setFailed] = useState(false)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!email) return
 
     setLoading(true)
-
-    // Track the submission
-    if (typeof window !== 'undefined') {
-      window.umami?.track('fomo_email_submit', { platform, email: email.split('@')[1] })
-    }
+    setFailed(false)
 
     try {
       const response = await fetch('/api/waitlist', {
@@ -55,15 +52,16 @@ function FOMOPopup({
       if (response.ok || response.status === 409) {
         // Success or already registered - both are fine
         setSubmitted(true)
+        window.umami?.track('fomo_email_submit', { platform, email: email.split('@')[1] })
       } else {
         console.error('Waitlist API error:', response.status)
-        // Still show success to user for better UX
-        setSubmitted(true)
+        setFailed(true)
+        window.umami?.track('fomo_email_error', { platform, reason: `http_${response.status}` })
       }
     } catch (error) {
       console.error('Error submitting to waitlist:', error)
-      // Show success anyway for better UX
-      setSubmitted(true)
+      setFailed(true)
+      window.umami?.track('fomo_email_error', { platform, reason: 'network' })
     } finally {
       setLoading(false)
     }
@@ -153,6 +151,10 @@ function FOMOPopup({
                     {loading ? t('sending') : t('submit')}
                   </button>
                 </form>
+
+                <div role="status" aria-live="polite">
+                  {failed && <p className="text-red-400 text-sm mt-3 text-center">{t('error')}</p>}
+                </div>
 
                 <p className="text-center text-neutral-600 text-xs mt-4">
                   {t('privacy').replaceAll('{platform}', platform === 'windows' ? 'Windows' : 'Linux')}
@@ -682,9 +684,17 @@ export default function CTASection() {
                   )}
                 </div>
 
-                <p className="text-center text-neutral-600 text-xs mt-4 max-w-2xl mx-auto">
-                  {t('windowsSmartScreen')}
-                </p>
+                <div className="flex items-start gap-3 mt-5 max-w-2xl mx-auto rounded-xl border border-amber-400/15 bg-amber-400/[0.04] px-4 py-3.5">
+                  <ShieldCheck className="w-5 h-5 shrink-0 mt-0.5 text-amber-300/80" aria-hidden="true" />
+                  <div>
+                    <p className="text-sm font-medium text-neutral-200">
+                      {t('windowsSmartScreenTitle')}
+                    </p>
+                    <p className="text-xs leading-relaxed text-neutral-400 mt-1">
+                      {t('windowsSmartScreenBody')}
+                    </p>
+                  </div>
+                </div>
                 </>
                 )}
 

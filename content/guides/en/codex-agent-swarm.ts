@@ -16,7 +16,7 @@ In this guide I walk through the three practical ways to run a Codex swarm, comp
     ctaAgent: 'codex',
     highlightedWords: ['Codex agent swarm', 'Codex CLI'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-06-07',
+    updatedAt: '2026-08-23',
     alternateSlug: 'enjambre-de-agentes-codex',
   },
   sections: [
@@ -40,7 +40,7 @@ In this guide I walk through the three practical ways to run a Codex swarm, comp
         },
         {
           type: 'paragraph',
-          text: 'You are not limited to Codex either. Because each agent is its own process, you can put Codex CLI in some terminals and Claude Code or Gemini CLI in others, all working the same repository.',
+          text: 'You are not limited to Codex either. Because each agent is its own process, you can put Codex CLI in some terminals and Claude Code or Antigravity CLI in others, all working the same repository.',
         },
         {
           type: 'callout',
@@ -189,7 +189,7 @@ In this guide I walk through the three practical ways to run a Codex swarm, comp
         },
         {
           type: 'paragraph',
-          text: 'Set every terminal to "codex cli" for a pure Codex swarm, or mix in Claude Code and Gemini CLI where they fit better. Each terminal is a fully independent Codex process with its own conversation and project context. CodeAgentSwarm runs on top of your existing subscriptions, so it is not a model provider, it just orchestrates the agents you already pay for.',
+          text: 'Set every terminal to "codex cli" for a pure Codex swarm, or mix in Claude Code and Antigravity CLI where they fit better. Each terminal is a fully independent Codex process with its own conversation and project context. CodeAgentSwarm runs on top of your existing subscriptions, so it is not a model provider, it just orchestrates the agents you already pay for.',
         },
         {
           type: 'heading',
@@ -277,7 +277,7 @@ In this guide I walk through the three practical ways to run a Codex swarm, comp
           items: [
             '<strong>Terminal tabs:</strong> Free',
             '<strong>tmux/screen:</strong> Free',
-            '<strong>CodeAgentSwarm:</strong> Free tier available, Pro for advanced features. Your Codex usage is billed by OpenAI as usual.',
+            '<strong>CodeAgentSwarm:</strong> All Pro features are free during the open beta. Your Codex usage is billed by OpenAI as usual.',
           ],
         },
         {
@@ -371,7 +371,7 @@ In this guide I walk through the three practical ways to run a Codex swarm, comp
     },
     {
       question: 'Can I mix Codex CLI and Claude Code in one swarm?',
-      answer: 'Yes. Because every agent is just a separate process, you can run Codex CLI in some terminals and Claude Code or Gemini CLI in others, all on the same project. In CodeAgentSwarm you choose the agent per terminal with the SELECT AI AGENT picker, so a mixed swarm is the default rather than a workaround.',
+      answer: 'Yes. Because every agent is just a separate process, you can run Codex CLI in some terminals and Claude Code or Antigravity CLI in others, all on the same project. In CodeAgentSwarm you choose the agent per terminal with the SELECT AI AGENT picker, so a mixed swarm is the default rather than a workaround.',
     },
     {
       question: 'Does running multiple Codex agents cost more?',

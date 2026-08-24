@@ -6,7 +6,7 @@ export const guide: Guide = {
     locale: 'es',
     title: 'Cómo ejecutar varias sesiones de Kimi Code a la vez',
     metaTitle: 'Cómo ejecutar varias sesiones de Kimi Code a la vez (3 métodos, 2026)',
-    metaDescription: 'Ejecuta varias sesiones de Kimi Code a la vez. Cómo funcionan las sesiones, --continue y /title, 3 métodos prácticos y qué le hacen los agentes en paralelo a tu cuota de K3.',
+    metaDescription: 'Ejecuta varias sesiones de Kimi Code a la vez. Aprende --continue y /title, 3 métodos prácticos y qué hacen los agentes en paralelo con los límites compartidos.',
     intro: `Sí, puedes ejecutar varias sesiones de Kimi Code a la vez. Cada vez que ejecutas el comando <code>kimi</code> arrancas una sesión independiente con su propia conversación y su propio contexto, así que dos o más pueden trabajar en tareas distintas del mismo repositorio al mismo tiempo sin compartir nada.
 
 Lo que pide un poco de cabeza no es arrancar los procesos, es mantener las sesiones legibles: qué terminal lleva qué tarea, cuál está esperando un permiso y a qué ritmo se están bebiendo la única cuota que comparten todas. Kimi Code te da buenas piezas para esto (las sesiones se guardan en disco por proyecto, puedes nombrarlas con <code>/title</code> y retomarlas con <code>--continue</code>), pero de serie nada las une.
@@ -16,7 +16,7 @@ Esta guía cubre cómo funcionan de verdad las sesiones de Kimi Code, las tres f
     ctaAgent: 'kimi-code',
     highlightedWords: ['varias sesiones de Kimi Code', 'a la vez'],
     publishedAt: '2026-07-18',
-    updatedAt: '2026-07-18',
+    updatedAt: '2026-08-11',
     alternateSlug: 'run-multiple-kimi-code-sessions',
   },
   sections: [
@@ -26,7 +26,7 @@ Esta guía cubre cómo funcionan de verdad las sesiones de Kimi Code, las tres f
       content: [
         {
           type: 'paragraph',
-          text: '<a href="https://github.com/MoonshotAI/kimi-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi Code</a> es el agente de código para terminal de Moonshot AI, con Kimi K3 debajo. Lo instalas una vez (<code>curl -fsSL https://code.kimi.com/kimi-code/install.sh | bash</code>, o <code>npm install -g @moonshot-ai/kimi-code</code> con Node 22.19+), haces login una vez con <code>/login</code> y lo arrancas con el comando <code>kimi</code>. Cada invocación es un proceso aparte con su propia conversación, su contexto y su directorio de trabajo.',
+          text: '<a href="https://github.com/MoonshotAI/kimi-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi Code</a> es el agente de código para terminal de Moonshot AI, con Kimi K2.7 Code como modelo predeterminado actual. Lo instalas una vez (<code>curl -fsSL https://code.kimi.com/kimi-code/install.sh | bash</code>, o <code>npm install -g @moonshot-ai/kimi-code</code> con Node 22.19+), haces login una vez con <code>/login</code> y lo arrancas con el comando <code>kimi</code>. Cada invocación es un proceso aparte con su propia conversación, su contexto y su directorio de trabajo.',
         },
         {
           type: 'paragraph',
@@ -39,7 +39,7 @@ Esta guía cubre cómo funcionan de verdad las sesiones de Kimi Code, las tres f
         {
           type: 'callout',
           variant: 'info',
-          content: 'Todas tus sesiones de Kimi Code entran con la misma cuenta y comparten una única cuota de suscripción, con renovación semanal y una ventana móvil de 5 horas. Las sesiones en paralelo no cuestan más, solo gastan el mismo fondo más rápido. Más abajo entramos en detalle.',
+          content: 'Todas las sesiones de Kimi Code usan los mismos límites de cuenta. Los créditos de membresía se reinician con el ciclo mensual, mientras Kimi Code también tiene una asignación semanal y un límite de 5 horas. El paralelismo no cuesta más, pero gasta esos límites más rápido.',
         },
       ],
     },
@@ -159,7 +159,7 @@ Esta guía cubre cómo funcionan de verdad las sesiones de Kimi Code, las tres f
       content: [
         {
           type: 'paragraph',
-          text: 'Todas las sesiones de Kimi Code tiran del mismo fondo de suscripción: una cuota que se renueva en ciclos semanales más una ventana móvil de 5 horas por encima. Tres sesiones a pleno rendimiento consumen más o menos tres veces más rápido que una, así que las ráfagas intensas en paralelo suelen chocar primero con la ventana de 5 horas, incluso con cuota semanal de sobra. Al llegar no se rompe nada: esperas a que la ventana ruede.',
+          text: 'Todas las sesiones de Kimi Code usan los mismos límites de cuenta. Los créditos de membresía se reinician con el ciclo mensual, mientras Kimi Code tiene una asignación semanal y un límite de 5 horas. Tres sesiones a pleno rendimiento consumen más o menos tres veces más rápido que una, así que las ráfagas intensas suelen chocar primero con la ventana corta. Al llegar no se rompe nada: esperas a recuperar capacidad.',
         },
         {
           type: 'paragraph',
@@ -185,7 +185,7 @@ Esta guía cubre cómo funcionan de verdad las sesiones de Kimi Code, las tres f
             '<strong>Títulos dinámicos:</strong> cada terminal muestra en qué está su sesión ahora mismo, en lugar de tres pestañas etiquetadas "kimi"',
             '<strong>Notificaciones de escritorio:</strong> aviso nativo cuando una sesión termina o se para a pedir un permiso, se acabó hacer de niñera de pestañas',
             '<strong>Historial buscable:</strong> CodeAgentSwarm lee las sesiones que Kimi Code guarda en local, así que buscas y retomas conversaciones de todos los terminales y todos los agentes',
-            '<strong>Indicador de cuota:</strong> una vista en vivo de tu cuota compartida de Kimi, ciclo semanal y ventana de 5 horas, para todas las sesiones juntas',
+            '<strong>Indicador de cuota:</strong> una vista en vivo de los límites semanal y de 5 horas que comparten las sesiones de Kimi Code',
             '<strong>Diffs de archivos en vivo:</strong> mira lo que cambia cada sesión en tiempo real, por terminal y por proyecto',
             '<strong>Tablero de tareas:</strong> un kanban junto a tus terminales que los propios agentes actualizan por MCP',
           ],
@@ -213,7 +213,7 @@ Esta guía cubre cómo funcionan de verdad las sesiones de Kimi Code, las tres f
     },
     {
       question: '¿Cuestan más varias sesiones de Kimi Code?',
-      answer: 'No hay sobrecoste por ejecutar sesiones en paralelo, pero todas tiran de la misma cuota de suscripción, que se renueva cada semana y tiene además una ventana móvil de 5 horas. Las sesiones en paralelo terminan el trabajo antes gastando el fondo común más rápido, así que las ráfagas intensas notan primero la ventana de 5 horas. El trabajo total que te da tu plan no cambia.',
+      answer: 'No hay sobrecoste por ejecutar sesiones en paralelo, pero todas usan los mismos límites de cuenta. Los créditos de membresía se reinician con el ciclo mensual, y Kimi Code añade una asignación semanal y un límite de 5 horas. Las sesiones terminan antes mientras gastan esos límites más rápido.',
     },
     {
       question: '¿Puedo ejecutar Kimi Code y Claude Code juntos?',

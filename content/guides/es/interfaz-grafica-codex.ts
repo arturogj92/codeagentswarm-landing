@@ -16,7 +16,7 @@ CodeAgentSwarm es justo ese tipo de interfaz para Codex. Funciona en macOS y Win
     ctaAgent: 'codex',
     highlightedWords: ['interfaz gráfica para Codex', 'app de escritorio'],
     publishedAt: '2026-07-13',
-    updatedAt: '2026-07-13',
+    updatedAt: '2026-08-23',
     alternateSlug: 'codex-gui',
   },
   sections: [
@@ -41,7 +41,7 @@ CodeAgentSwarm es justo ese tipo de interfaz para Codex. Funciona en macOS y Win
         {
           type: 'callout',
           variant: 'info',
-          content: 'Una interfaz no es un modelo distinto ni un plan distinto. CodeAgentSwarm funciona sobre tu cuenta de OpenAI, y el mismo workspace puede manejar Claude Code, Gemini CLI y opencode junto a Codex. Conservas toda la potencia del CLI, solo ganas una capa visual a su alrededor.',
+          content: 'Una interfaz no es un modelo distinto ni un plan distinto. CodeAgentSwarm funciona sobre tu cuenta de OpenAI, y el mismo workspace puede manejar Claude Code, Antigravity CLI y opencode junto a Codex. Conservas toda la potencia del CLI, solo ganas una capa visual a su alrededor.',
         },
         {
           type: 'paragraph',
@@ -217,7 +217,7 @@ CodeAgentSwarm es justo ese tipo de interfaz para Codex. Funciona en macOS y Win
         },
         {
           type: 'paragraph',
-          text: 'A partir de ahí, todo lo de esta guía queda a un clic: abre más terminales para más sesiones de Codex, saca el tablero de tareas, busca en conversaciones pasadas y observa los diffs mientras el agente trabaja. Hay un plan gratuito, con Pro para funciones avanzadas, y tu uso de Codex lo factura OpenAI como siempre.',
+          text: 'A partir de ahí, todo lo de esta guía queda a un clic: abre más terminales para más sesiones de Codex, saca el tablero de tareas, busca en conversaciones pasadas y observa los diffs mientras el agente trabaja. Todas las funciones Pro son gratis durante la beta abierta, y tu uso de Codex lo factura OpenAI como siempre.',
         },
         {
           type: 'paragraph',
@@ -249,11 +249,11 @@ CodeAgentSwarm es justo ese tipo de interfaz para Codex. Funciona en macOS y Win
     },
     {
       question: '¿Dónde descargo una interfaz gráfica para Codex?',
-      answer: 'CodeAgentSwarm se descarga gratis desde la página de inicio de codeagentswarm.com, para macOS y Windows. Instálalo, abre un terminal en el workspace, elige codex cli en el selector SELECT AI AGENT, y el terminal se convierte en una sesión de Codex con toda la capa visual alrededor. Hay un plan gratuito, con Pro para funciones avanzadas.',
+      answer: 'CodeAgentSwarm se descarga gratis desde la página de inicio de codeagentswarm.com, para macOS y Windows. Instálalo, abre un terminal en el workspace, elige codex cli en el selector SELECT AI AGENT, y el terminal se convierte en una sesión de Codex con toda la capa visual alrededor. Todas las funciones Pro son gratis durante la beta abierta.',
     },
     {
       question: '¿La misma interfaz puede ejecutar Claude Code y Gemini también?',
-      answer: 'Sí. CodeAgentSwarm no está atado a un solo proveedor. Cada terminal tiene un selector de agente, así que puedes poner uno en Codex CLI, otro en Claude Code, otro en Gemini CLI o en opencode, todo en el mismo workspace visual. Un montaje mixto es lo normal, no un apaño, y la guía del enjambre de agentes Codex cubre cómo ejecutar varios agentes en paralelo.',
+      answer: 'Sí. CodeAgentSwarm no está atado a un solo proveedor. Cada terminal tiene un selector de agente, así que puedes poner uno en Codex CLI, otro en Claude Code, otro en Antigravity CLI o en opencode, todo en el mismo workspace visual. Un montaje mixto es lo normal, no un apaño, y la guía del enjambre de agentes Codex cubre cómo ejecutar varios agentes en paralelo.',
     },
   ],
 }

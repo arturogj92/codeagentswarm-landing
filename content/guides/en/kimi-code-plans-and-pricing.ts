@@ -4,164 +4,140 @@ export const guide: Guide = {
   meta: {
     slug: 'kimi-code-plans-and-pricing',
     locale: 'en',
-    title: 'Kimi Code Plans and Pricing: What Each Tier Actually Gets You',
-    metaTitle: 'Kimi Code Plans and Pricing: Every Tier Explained (2026)',
-    metaDescription: 'Every Kimi Code plan explained: the free tier, paid tiers from $19 to $199, usage multipliers, the weekly quota with its 5 hour window, and pay-per-token rates.',
-    intro: `Kimi Code runs on a Kimi subscription, and as of July 2026 the plans are: Adagio (free), Moderato at $19/month, Allegretto at $39/month, Allegro at $99/month and Vivace at $199/month. Paid tiers scale your Kimi Code usage roughly 1x, 5x, 15x and 30x, and every plan draws from one shared credit pool that also covers the rest of your Kimi membership. If you would rather not subscribe at all, there is a pay-per-token path through the Moonshot Open Platform.
+    title: 'Kimi Code Pricing: Monthly, Annual and API Costs',
+    metaTitle: 'Kimi Code Pricing: Monthly, Annual & API Costs (2026)',
+    metaDescription: 'Compare Kimi Code monthly and annual plans, agent credits, weekly and 5-hour limits, plus current Kimi K2.7 Code API prices per million tokens.',
+    intro: `As of August 23, 2026, Kimi has four paid membership tiers. Monthly prices run from $19 to $199; annual billing brings the effective monthly range down to $15 to $159. Every tier includes Kimi Code, while monthly agent credits rise from 60 to 720. Membership features share one credit pool, and Kimi Code also has its own weekly allowance and 5-hour rate limit.
 
-That is the one-paragraph answer. The details are where people get surprised: quota refreshes on a weekly cycle but there is also a rolling 5 hour window that can stop you with plenty of weekly quota left, the famous 1 million token context is not actually available on every plan, and Moonshot's own pages have not always agreed about which tier unlocks Kimi Code.
+There is also a pay-per-token route. The current default coding model, Kimi K2.7 Code, costs $0.19 per million cached input tokens, $0.95 per million uncached input tokens and $4 per million output tokens through the Kimi API. Its context window is 262,144 tokens.
 
-This guide lays out what is known, dates every number, and flags the parts you should re-check on the official pricing page before paying, because Moonshot is iterating on this fast.`,
-    ctaText: 'Running Kimi Code agents against a weekly quota is a lot less stressful when you can see it. CodeAgentSwarm tracks Kimi\'s real weekly and 5 hour windows per terminal, alongside every other agent you run.',
+This guide separates those two billing systems and links every changing number to Kimi's official documentation. Prices can move, so use the date above and confirm the checkout total before paying.`,
+    ctaText: 'Running Kimi Code agents against rate limits is less stressful when you can see them. CodeAgentSwarm tracks Kimi usage alongside every other agent you run.',
     ctaAgent: 'kimi-code',
-    highlightedWords: ['Kimi Code', 'Plans', 'Pricing'],
+    highlightedWords: ['Kimi Code', 'Pricing'],
     publishedAt: '2026-07-18',
-    updatedAt: '2026-07-18',
+    updatedAt: '2026-08-23',
     alternateSlug: 'planes-y-precios-de-kimi-code',
   },
   sections: [
     {
       id: 'plans-at-a-glance',
-      title: 'The plans at a glance',
+      title: 'Kimi Code plans at a glance',
       content: [
         {
           type: 'paragraph',
-          text: 'Moonshot names its subscription tiers after musical tempos. As of July 2026, the lineup for a Kimi membership looks like this:',
+          text: 'Kimi\'s <a href="https://www.kimi.ai/help/membership/membership-pricing" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">official pricing page</a> lists these four paid plans as of August 23, 2026:',
         },
         {
-          type: 'list',
-          items: [
-            '<strong>Adagio</strong>: free. The entry point to Kimi, with tight limits',
-            '<strong>Moderato</strong>: $19/month. The first paid tier, 1x Kimi Code usage',
-            '<strong>Allegretto</strong>: $39/month, roughly 5x usage',
-            '<strong>Allegro</strong>: $99/month, roughly 15x usage',
-            '<strong>Vivace</strong>: $199/month, roughly 30x usage',
+          type: 'table',
+          headers: ['Plan', 'Monthly', 'Annual, effective monthly', 'Agent credits', 'Kimi Code'],
+          rows: [
+            ['Moderato', '$19', '$15 ($180/year)', '60/month', 'Included'],
+            ['Allegretto', '$39', '$31 ($372/year)', '150/month', 'Included'],
+            ['Allegro', '$99', '$79 ($948/year)', '360/month', 'Included'],
+            ['Vivace', '$199', '$159 ($1,908/year)', '720/month', 'Included'],
           ],
         },
         {
           type: 'paragraph',
-          text: 'Two things matter more than the multipliers. First, there is <strong>one credit pool per membership</strong>: Kimi Code, the Kimi chat app and anything else in the membership all draw from the same balance, so a heavy chat day eats into your coding budget. Second, the multipliers describe relative capacity, not hard token counts, and Moonshot has adjusted plan details more than once since Kimi K3 launched on July 16, 2026.',
+          text: 'Agent credits are task units, not tokens, and harder tasks can consume more than one. The <a href="https://www.kimi.ai/help/membership/membership-overview" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">membership overview</a> says Kimi Code, Kimi Work, Deep Research, Slides, websites and the other membership features draw from one shared monthly pool. Heavy use elsewhere can therefore reduce what remains for coding.',
         },
         {
           type: 'callout',
           variant: 'warning',
-          content: 'Moonshot\'s own pages have disagreed about which plan unlocks Kimi Code: some material pointed at Moderato, other pages suggested Allegretto. Plans are moving fast right now. Before you pay, confirm on the official Kimi pricing page which tier includes Kimi Code access and how much usage it grants.',
+          content: 'The $15, $31, $79 and $159 figures are monthly equivalents when you pay for a full year. Month-to-month billing is $19, $39, $99 and $199. Taxes may be added at checkout.',
         },
       ],
     },
     {
       id: 'how-quota-works',
-      title: 'How the quota actually works: weekly refresh plus a 5 hour window',
+      title: 'How Kimi Code limits work',
       content: [
         {
           type: 'paragraph',
-          text: 'Kimi Code quota has two layers, and you will feel both. The first layer is a <strong>weekly cycle</strong>: your quota refreshes every 7 days counted from your subscription date, and unused quota does not roll over. Burn nothing all week and you still start the next cycle with the same allowance.',
+          text: 'Two counters matter. Membership credits reset at the start of each monthly billing cycle. Kimi Code also has a separate <strong>weekly allowance and 5-hour rate limit</strong>. That Kimi Code limit does not consume the limits of other membership features, but the underlying membership credit pool is shared.',
         },
         {
           type: 'paragraph',
-          text: 'The second layer is a <strong>rolling 5 hour window</strong> on top. Even with most of your weekly quota untouched, an intense session can hit the 5 hour ceiling and stop you until the window slides forward. This is the layer that surprises people running several agents in parallel: four terminals of always-reasoning K3 chew through a 5 hour window fast.',
+          text: 'Kimi does not publish a fixed token count per agent credit because task consumption varies. A long repository session can cost more credits than a short edit, and several parallel terminals reach the 5-hour limit faster than one.',
         },
         {
           type: 'paragraph',
-          text: 'If you run out, Moonshot sells <strong>booster top-ups</strong>: a wallet balance you can spend to keep working past your included quota. Boosters are a stopgap; if you need them regularly, the next tier up or the pay-per-token platform is usually cheaper.',
-        },
-        {
-          type: 'paragraph',
-          text: 'To check where you stand, type <code>/usage</code> inside the Kimi Code TUI. There is no <code>kimi usage</code> shell subcommand as of July 2026, so you check from inside a session. The readout covers your current usage, your limits and windows, and any booster balance.',
-        },
-        {
-          type: 'callout',
-          variant: 'tip',
-          content: 'The 7-day-plus-5-hour model is nearly identical to how Anthropic meters Claude. If you already pace Claude Code around its weekly and 5 hour limits, your instincts transfer directly to Kimi Code.',
+          text: 'Type <code>/usage</code> inside the Kimi Code interface to inspect the limits attached to your account. Treat that live account view as the final authority for your remaining capacity.',
         },
       ],
     },
     {
-      id: 'context-gate',
-      title: 'The 1M context is gated by plan',
+      id: 'current-model',
+      title: 'The current Kimi Code model and context window',
       content: [
         {
           type: 'paragraph',
-          text: 'Kimi K3\'s headline feature is its 1,048,576 token context window. What the headline skips: <strong>on Moderato you get 256k tokens of context, and the full 1M requires Allegretto or higher</strong>, as of July 2026.',
+          text: '<a href="https://www.kimi.com/es-419/resources/kimi-k2-7-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi\'s K2.7 Code documentation</a> says Kimi K2.7 Code is now the default model in Kimi Code. It has a 256K context window (262,144 tokens), one trillion total parameters and 32 billion active parameters per token.',
         },
         {
           type: 'paragraph',
-          text: 'This matters for agent work specifically. A quarter-million tokens is still a lot, but if you picked Kimi for whole-repository context or giant refactors, the cheapest paid plan quietly does not deliver the thing you came for. Worse, an agent that believes it has 1M tokens while running against a 256k ceiling starts compacting its history earlier than you expect, and long tasks lose context you thought was safe.',
+          text: 'K2.7 Code always runs with reasoning enabled. If you disable reasoning in Kimi Code, the request is served by K2.6 instead. That makes older claims that Kimi Code always runs K3 with a one-million-token context incorrect for the current default setup.',
         },
         {
-          type: 'paragraph',
-          text: 'If the 1M window is the reason you are here, budget for Allegretto ($39/month) as the real entry price, or use the pay-per-token platform where the model serves its full window.',
+          type: 'callout',
+          variant: 'info',
+          content: 'Kimi K3 is a separate model and remains available in Kimi products. Do not use K3 pricing or its one-million-token context to estimate a default Kimi Code session running K2.7 Code.',
         },
       ],
     },
     {
       id: 'pay-per-token',
-      title: 'The pay-per-token alternative: Moonshot Open Platform',
+      title: 'Kimi K2.7 Code API pricing',
       content: [
         {
           type: 'paragraph',
-          text: 'You do not have to subscribe at all. The Moonshot Open Platform serves Kimi K3 (model id <code>kimi-k3</code>) with an API key and per-token billing. As of July 2026 the rates are:',
+          text: 'If you prefer usage billing, the Kimi API exposes model id <code>kimi-k2.7-code</code>. Kimi\'s official K2.7 Code page lists these rates as of August 11, 2026:',
         },
         {
           type: 'list',
           items: [
-            '<strong>$0.30 per million input tokens</strong> on cache hits',
-            '<strong>$3.00 per million input tokens</strong> on cache misses',
-            '<strong>$15.00 per million output tokens</strong>',
-            '<strong>Flat across the whole 1M context</strong>: no long-context surcharge tiers',
+            '<strong>$0.19 per million input tokens</strong> on cache hits',
+            '<strong>$0.95 per million input tokens</strong> on cache misses',
+            '<strong>$4.00 per million output tokens</strong>',
+            '<strong>262,144-token context window</strong>',
           ],
         },
         {
           type: 'paragraph',
-          text: 'The 10x gap between cache hits and misses is the number to internalize. Coding agents resend large, mostly stable context on every turn, which is exactly the traffic prompt caches love. In practice a well-behaved agent session leans heavily on the $0.30 rate, which is why K3 undercuts most frontier models on real agent workloads and not just on paper.',
+          text: 'Automatic context caching makes repeated repository context cheaper: a cache hit costs one fifth of an uncached input token. The trade-off is that API billing has no flat monthly ceiling, so set platform budgets before leaving an autonomous agent unattended.',
         },
         {
           type: 'paragraph',
-          text: 'The trade-off: pay-per-token has no flat monthly ceiling, so a runaway agent is a runaway bill. Rate limits on the platform also scale with your cumulative top-up, and the entry tier is tight for agent work. For daily driving, the subscription\'s predictable cost usually wins; for burst workloads or evaluation, the platform is cleaner.',
-        },
-        {
-          type: 'paragraph',
-          text: 'A related but separate option: Moonshot also runs Anthropic-compatible endpoints, so you can point Claude Code at K3 and skip the Kimi Code CLI entirely. We cover that setup, including its two different endpoints and auth variables, in <a href="/en/guides/kimi-k3-with-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi K3 with Claude Code</a>.',
+          text: 'If you specifically want to route the separate K3 model through an Anthropic-compatible client, see <a href="/en/guides/kimi-k3-with-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi K3 with Claude Code</a>. Its model, limits and prices should not be mixed with the K2.7 Code figures above.',
         },
       ],
     },
     {
       id: 'free-tier',
-      title: 'Is Kimi Code free? The Adagio reality',
+      title: 'Is Kimi Code free?',
       content: [
         {
           type: 'paragraph',
-          text: 'The Kimi Code CLI itself is free and open source (MIT license, installable in one line; see <a href="/en/guides/how-to-use-kimi-code" class="text-neon-cyan hover:text-neon-purple transition-colors">the setup guide</a>). What costs money is the model behind it.',
+          text: 'The Kimi Code CLI is open source under the MIT license and free to install. Model usage is separate. The current official membership table starts with Moderato at $19 month-to-month, or $15 per month when billed annually, and the API charges per token.',
         },
         {
           type: 'paragraph',
-          text: 'The free Adagio tier exists, and depending on current promotions it may include some Kimi Code usage, but treat it as a taste rather than a working allowance: an always-reasoning 2.8T parameter model is expensive to serve, and free quotas for it are correspondingly small. It is enough to evaluate whether K3\'s output quality justifies a paid plan for your work, and not much more.',
-        },
-        {
-          type: 'paragraph',
-          text: 'The honest budget framing: evaluating Kimi Code costs $0 to $19, and using it as a daily coding agent realistically starts at $19 to $39/month depending on which tier currently carries Kimi Code access and whether you need the full context window.',
+          text: 'Kimi may offer trials or promotions, but they can change and are not a reliable production budget. Confirm any free allowance inside your account rather than assuming an older Adagio offer still applies.',
         },
       ],
     },
     {
       id: 'watching-quota',
-      title: 'Watching Kimi quota while agents run',
+      title: 'Watching Kimi usage while agents run',
       content: [
         {
           type: 'paragraph',
-          text: 'Quota systems with rolling windows have one operational problem: you find out you hit the wall when the agent stops. That is annoying with one terminal and expensive with several, because parallel agents multiply your burn rate against the same shared pool.',
+          text: 'Rate limits become an operational problem when several agents share them: you usually discover the wall when work stops. <a href="/en" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a> shows provider usage alongside parallel terminals so you can rebalance work before a session stalls.',
         },
         {
           type: 'paragraph',
-          text: '<a href="/" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a>, the desktop workspace for running several AI CLI agents in parallel, reads Kimi\'s real quota (the weekly cycle and the 5 hour window, per Moonshot\'s own usage endpoint) and shows it alongside your other agents\' quotas: a usage ring in the navbar and a breakdown per provider. You see the wall approaching while the agents work, instead of discovering it from a stalled terminal.',
-        },
-        {
-          type: 'paragraph',
-          text: 'That pairs naturally with the multi-agent pattern from <a href="/en/guides/kimi-code-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">the Kimi Code agent swarm guide</a>: run Kimi where its pricing shines, keep <a href="/en/guides/kimi-code-vs-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a> or another agent on the rest, and let the quota display tell you when to rebalance.',
-        },
-        {
-          type: 'paragraph',
-          text: 'If you are pricing up a mixed setup, the same breakdown exists for the other agents: <a href="/en/guides/claude-code-plans-and-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code plans and pricing</a>, <a href="/en/guides/codex-plans-and-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex plans and pricing</a>, <a href="/en/guides/opencode-plans-and-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">OpenCode plans and pricing</a> and <a href="/en/guides/antigravity-plans-and-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">Antigravity plans and pricing</a>. The short version: Antigravity has the only genuinely usable free tier, Codex the cheapest paid entry, OpenCode the only route with no monthly fee at all, and Claude Code no free tier whatsoever.',
+          text: 'That pairs with the <a href="/en/guides/kimi-code-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi Code agent swarm guide</a>: use Kimi where it fits and keep another provider for overflow. If Cursor is the alternative, compare its subscription in the <a href="/en/guides/cursor-cli-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">Cursor CLI pricing guide</a>.',
         },
       ],
     },
@@ -169,27 +145,27 @@ This guide lays out what is known, dates every number, and flags the parts you s
   faq: [
     {
       question: 'Is Kimi Code free?',
-      answer: 'The CLI is free and open source, and the free Adagio tier gives you a small taste of the K3 model. For real work you need a paid Kimi plan (from $19/month as of July 2026) or a pay-per-token API key from the Moonshot Open Platform.',
+      answer: 'The Kimi Code CLI is free and open source. Model usage is billed separately through a Kimi membership or the Kimi API. As of August 23, 2026, the official paid membership table starts at $19 month-to-month or $15 per month with annual billing.',
     },
     {
       question: 'How much does Kimi Code cost per month?',
-      answer: 'As of July 2026: Moderato $19, Allegretto $39, Allegro $99 and Vivace $199 per month, with Kimi Code usage scaling roughly 1x, 5x, 15x and 30x across those tiers. All of them share one credit pool with the rest of your Kimi membership.',
+      answer: 'Monthly plans are Moderato $19, Allegretto $39, Allegro $99 and Vivace $199. With annual billing, their effective monthly prices are $15, $31, $79 and $159. Monthly agent credits are 60, 150, 360 and 720.',
     },
     {
       question: 'Which Kimi plan includes Kimi Code?',
-      answer: 'Moonshot\'s own pages have been inconsistent about this: some pointed at Moderato ($19), others at Allegretto ($39). Check the official pricing page at the moment you subscribe. If you want the full 1M token context rather than 256k, plan on Allegretto or higher regardless.',
+      answer: 'All four paid tiers include Kimi Code. Their monthly agent-credit pools are 60 for Moderato, 150 for Allegretto, 360 for Allegro and 720 for Vivace.',
     },
     {
-      question: 'Does unused Kimi Code quota roll over?',
-      answer: 'No. Quota refreshes every 7 days from your subscription date and unused allowance is gone at the reset. There is also a rolling 5 hour window on top, so you can be blocked temporarily even with weekly quota remaining.',
+      question: 'How do Kimi Code limits reset?',
+      answer: 'Membership credits reset at the start of each monthly billing cycle. Kimi Code also has its own weekly allowance and 5-hour rate limit. Check /usage inside Kimi Code for the limits and remaining capacity on your account.',
     },
     {
-      question: 'What is the Kimi Code 5 hour limit?',
-      answer: 'A rolling rate window layered on top of the weekly quota. Heavy usage inside any 5 hour span can hit it, at which point Kimi Code stops until the window slides forward. Parallel agent sessions reach it much faster than a single terminal.',
+      question: 'What model does Kimi Code use?',
+      answer: 'Kimi K2.7 Code is the default as of August 11, 2026. It always reasons and has a 262,144-token context window. Requests with reasoning disabled are served by K2.6 instead.',
     },
     {
-      question: 'How do I check my Kimi Code usage?',
-      answer: 'Type /usage inside a Kimi Code session. There is no kimi usage shell subcommand as of July 2026. If you run Kimi Code inside CodeAgentSwarm, the app tracks the weekly and 5 hour windows for you and shows them in its quota indicator.',
+      question: 'How much does the Kimi K2.7 Code API cost?',
+      answer: 'The official rates are $0.19 per million cached input tokens, $0.95 per million uncached input tokens and $4 per million output tokens for model kimi-k2.7-code, with a 262,144-token context window.',
     },
   ],
 }

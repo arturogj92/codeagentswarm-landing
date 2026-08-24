@@ -16,7 +16,7 @@ CodeAgentSwarm is that kind of Codex GUI app. It runs on macOS and Windows, give
     ctaAgent: 'codex',
     highlightedWords: ['Codex GUI', 'desktop app'],
     publishedAt: '2026-07-13',
-    updatedAt: '2026-07-13',
+    updatedAt: '2026-08-23',
     alternateSlug: 'interfaz-grafica-codex',
   },
   sections: [
@@ -41,7 +41,7 @@ CodeAgentSwarm is that kind of Codex GUI app. It runs on macOS and Windows, give
         {
           type: 'callout',
           variant: 'info',
-          content: 'A GUI is not a different model or a different plan. CodeAgentSwarm runs on top of your existing OpenAI account, and the same workspace can drive Claude Code, Gemini CLI and opencode alongside Codex. You keep the full CLI power, you just get a visual layer around it.',
+          content: 'A GUI is not a different model or a different plan. CodeAgentSwarm runs on top of your existing OpenAI account, and the same workspace can drive Claude Code, Antigravity CLI and opencode alongside Codex. You keep the full CLI power, you just get a visual layer around it.',
         },
         {
           type: 'paragraph',
@@ -217,7 +217,7 @@ CodeAgentSwarm is that kind of Codex GUI app. It runs on macOS and Windows, give
         },
         {
           type: 'paragraph',
-          text: 'From there, everything in this guide is one click away: open more terminals for more Codex sessions, bring up the task board, search past conversations, and watch diffs as the agent works. There is a free tier, with Pro for advanced features, and your Codex usage is billed by OpenAI as usual.',
+          text: 'From there, everything in this guide is one click away: open more terminals for more Codex sessions, bring up the task board, search past conversations, and watch diffs as the agent works. All Pro features are free during the open beta, and your Codex usage is billed by OpenAI as usual.',
         },
         {
           type: 'paragraph',
@@ -249,11 +249,11 @@ CodeAgentSwarm is that kind of Codex GUI app. It runs on macOS and Windows, give
     },
     {
       question: 'Where do I download a Codex GUI?',
-      answer: 'CodeAgentSwarm is a free download from the codeagentswarm.com home page, for macOS and Windows. Install it, open a terminal in the workspace, pick codex cli in the SELECT AI AGENT picker, and the terminal becomes a Codex session with the full visual layer around it. There is a free tier, with Pro for advanced features.',
+      answer: 'CodeAgentSwarm is a free download from the codeagentswarm.com home page, for macOS and Windows. Install it, open a terminal in the workspace, pick codex cli in the SELECT AI AGENT picker, and the terminal becomes a Codex session with the full visual layer around it. All Pro features are free during the open beta.',
     },
     {
       question: 'Can the same GUI run Claude Code and Gemini too?',
-      answer: 'Yes. CodeAgentSwarm is not tied to a single vendor. Each terminal has an agent picker, so you can set one to Codex CLI, another to Claude Code, another to Gemini CLI or opencode, all in the same visual workspace. A mixed setup is the default rather than a workaround, and the Codex agent swarm guide covers running several agents in parallel.',
+      answer: 'Yes. CodeAgentSwarm is not tied to a single vendor. Each terminal has an agent picker, so you can set one to Codex CLI, another to Claude Code, another to Antigravity CLI or opencode, all in the same visual workspace. A mixed setup is the default rather than a workaround, and the Codex agent swarm guide covers running several agents in parallel.',
     },
   ],
 }

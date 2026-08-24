@@ -16,7 +16,7 @@ This guide walks through the three practical ways to run several opencode sessio
     ctaAgent: 'opencode',
     highlightedWords: ['multiple OpenCode sessions', 'at once'],
     publishedAt: '2026-07-05',
-    updatedAt: '2026-07-05',
+    updatedAt: '2026-08-23',
     alternateSlug: 'ejecutar-multiples-sesiones-opencode',
   },
   sections: [
@@ -281,7 +281,7 @@ This guide walks through the three practical ways to run several opencode sessio
           items: [
             '<strong>Terminal tabs:</strong> Free',
             '<strong>tmux/screen:</strong> Free',
-            '<strong>CodeAgentSwarm:</strong> Free tier available, Pro for advanced features. Your opencode usage is billed by whichever providers you connect.',
+            '<strong>CodeAgentSwarm:</strong> All Pro features are free during the open beta. Your opencode usage is billed by whichever providers you connect.',
           ],
         },
         {

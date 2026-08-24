@@ -6,17 +6,17 @@ export const guide: Guide = {
     locale: 'en',
     title: 'Kimi Code Agent Swarm: Run Multiple Kimi Agents in Parallel',
     metaTitle: 'Kimi Code Agent Swarm: Run Multiple Kimi Agents in Parallel (2026)',
-    metaDescription: 'A Kimi Code agent swarm runs several kimi sessions in parallel. Learn 3 ways: terminal tabs, tmux, and CodeAgentSwarm, plus how the shared K3 quota behaves.',
-    intro: `A Kimi Code agent swarm just means several Kimi Code agents working in parallel instead of one at a time. Every time you run the <code>kimi</code> command you start an independent session with its own conversation and its own context, so nothing stops you from running three or four of them side by side, each on a different task, all powered by Kimi K3.
+    metaDescription: 'A Kimi Code agent swarm runs several kimi sessions in parallel. Learn 3 ways: terminal tabs, tmux and CodeAgentSwarm, plus how shared usage limits behave.',
+    intro: `A Kimi Code agent swarm just means several Kimi Code agents working in parallel instead of one at a time. Every time you run the <code>kimi</code> command you start an independent session with its own conversation and its own context, so nothing stops you from running three or four of them side by side, each on a different task, using the current Kimi K2.7 Code model.
 
-The catch is not starting the processes. It is keeping track of them once several agents are editing files, pausing for permission prompts, and finishing at different moments. Kimi Code adds one twist the other CLIs do not have in this exact shape: every agent in your swarm draws from the same Kimi subscription quota, which refreshes weekly and is also limited by a rolling 5 hour window. A swarm gets more done per hour, and it also burns that shared pool faster.
+The catch is not starting the processes. It is keeping track of them once several agents are editing files, pausing for permission prompts, and finishing at different moments. Every agent uses the same Kimi account. Membership credits reset with the monthly billing cycle, while Kimi Code also has a weekly allowance and a 5 hour limit. A swarm gets more done per hour, and it also spends those shared limits faster.
 
 In this guide I walk through the three practical ways to run a Kimi Code swarm, how the shared quota behaves when you go parallel, and where each method starts to hurt. For the broader picture across every CLI, start with the <a href="/en/guides/ai-cli-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">AI CLI agent swarm</a> overview, and for the session mechanics specifically see <a href="/en/guides/run-multiple-kimi-code-sessions" class="text-neon-cyan hover:text-neon-purple transition-colors">running multiple Kimi Code sessions</a>.`,
     ctaText: 'Run your Kimi Code agent swarm in CodeAgentSwarm. Several kimi terminals in parallel with live diffs, desktop notifications and a quota indicator that shows how much of your weekly and 5 hour windows the swarm has used.',
     ctaAgent: 'kimi-code',
     highlightedWords: ['Kimi Code Agent Swarm', 'Kimi'],
     publishedAt: '2026-07-18',
-    updatedAt: '2026-07-18',
+    updatedAt: '2026-08-23',
     alternateSlug: 'enjambre-de-agentes-kimi-code',
   },
   sections: [
@@ -30,7 +30,7 @@ In this guide I walk through the three practical ways to run a Kimi Code swarm, 
         },
         {
           type: 'paragraph',
-          text: 'So a Kimi Code agent swarm is not a special mode you unlock. It is simply more than one Kimi Code agent running at the same time. Open a second terminal, run <code>kimi</code> again, and you have two independent agents. One can be migrating a database layer while the other writes integration tests. Add a third and a fourth and you have a small swarm, every one of them running Kimi K3 with its huge context window.',
+          text: 'So a Kimi Code agent swarm is not a special mode you unlock. It is simply more than one Kimi Code agent running at the same time. Open a second terminal, run <code>kimi</code> again, and you have two independent agents. One can be migrating a database layer while the other writes integration tests. Add a third and a fourth and you have a small swarm, each using Kimi K2.7 Code with a 262,144-token context window by default.',
         },
         {
           type: 'paragraph',
@@ -53,7 +53,7 @@ In this guide I walk through the three practical ways to run a Kimi Code swarm, 
       content: [
         {
           type: 'paragraph',
-          text: 'This is the most important Kimi-specific fact before you scale up. Every Kimi Code agent you run signs in with the same account, and they all draw from one shared quota pool. That quota refreshes on a weekly cycle, and there is a rolling 5 hour window on top, so a burst of heavy parallel work can hit the short window even when plenty of weekly quota remains.',
+          text: 'This is the most important Kimi-specific fact before you scale up. Every Kimi Code agent signs in with the same account. Membership features share one credit pool that resets with the monthly billing cycle, while Kimi Code also has a weekly allowance and a 5 hour limit. A burst of heavy parallel work can hit the short window even when weekly capacity remains.',
         },
         {
           type: 'paragraph',
@@ -62,9 +62,9 @@ In this guide I walk through the three practical ways to run a Kimi Code swarm, 
         {
           type: 'list',
           items: [
-            'All agents share one pool: there is no per-terminal quota, so a swarm spends faster than a single agent',
-            'Weekly refresh: the pool resets on a 7 day cycle from your subscription date',
-            'Rolling 5 hour window: short bursts are limited separately, which is what parallel work tends to hit first',
+            'All agents use the same account limits: there is no separate allowance per terminal',
+            'Membership credits reset with the monthly billing cycle and are shared with other Kimi features',
+            'Kimi Code also has a weekly allowance and a separate 5 hour limit',
             'Check usage anytime with the <code>/usage</code> command inside any session',
           ],
         },
@@ -293,7 +293,7 @@ In this guide I walk through the three practical ways to run a Kimi Code swarm, 
           items: [
             '<strong>Terminal tabs:</strong> Free',
             '<strong>tmux/screen:</strong> Free',
-            '<strong>CodeAgentSwarm:</strong> Free tier available, Pro for advanced features. Your Kimi usage is billed through your existing Kimi subscription either way.',
+            '<strong>CodeAgentSwarm:</strong> All Pro features are free during the open beta. Your Kimi usage is billed through your existing Kimi subscription either way.',
           ],
         },
         {
@@ -387,7 +387,7 @@ In this guide I walk through the three practical ways to run a Kimi Code swarm, 
     },
     {
       question: 'Do parallel Kimi Code agents cost more?',
-      answer: 'There is no surcharge for parallelism, but there is a shared pool. Every agent draws from the same Kimi subscription quota, which refreshes weekly and is also limited by a rolling 5 hour window. Running four agents at once does the work sooner while consuming quota faster, so heavy swarms tend to feel the 5 hour window first. The total amount of work you can buy with your plan does not change.',
+      answer: 'There is no surcharge for parallelism, but every agent uses the same account limits. Membership credits reset with the monthly billing cycle, and Kimi Code also has a weekly allowance plus a 5 hour limit. Four agents can finish sooner, but they spend those limits faster than one.',
     },
     {
       question: 'Is a swarm the same as Kimi Code sub-agents?',

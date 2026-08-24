@@ -62,6 +62,24 @@ export default function WorksWithSection() {
       ),
       href: guidePath('kimi-code-agent-swarm', 'enjambre-de-agentes-kimi-code'),
       icon: '/icons/apps/kimi-icon.png',
+    },
+    {
+      name: 'Grok Build',
+      desc: g(
+        'Run a Grok Build swarm from xAI, supervised next to the other CLIs.',
+        'Monta un enjambre de agentes Grok Build (xAI), supervisado junto al resto de CLIs.'
+      ),
+      href: guidePath('grok-build-agent-swarm', 'enjambre-de-agentes-grok-build'),
+      icon: '/icons/apps/grok-icon.svg',
+    },
+    {
+      name: 'Cursor Agent',
+      desc: g(
+        'Run Cursor Agent CLI through ACP with streaming Chat and visible permissions.',
+        'Ejecuta Cursor Agent CLI por ACP con Chat en streaming y permisos visibles.'
+      ),
+      href: guidePath('cursor-agent-cli-acp-codeagentswarm', 'cursor-agent-cli-acp-codeagentswarm'),
+      icon: '/icons/apps/cursor-icon.svg',
       isNew: true,
     },
   ]
@@ -70,7 +88,7 @@ export default function WorksWithSection() {
 
   return (
     <section ref={ref} className="relative py-20 md:py-28 px-6 overflow-hidden">
-      <div className="max-w-6xl mx-auto relative z-10">
+      <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
@@ -86,13 +104,13 @@ export default function WorksWithSection() {
           </h2>
           <p className="text-white/70 text-lg max-w-2xl mx-auto">
             {g(
-              'One workspace for Claude Code, Codex CLI, Antigravity CLI, OpenCode and Kimi Code. Run them in parallel, mix vendors, and watch all of them from one place.',
-              'Un espacio de trabajo para Claude Code, Codex CLI, Antigravity CLI, OpenCode y Kimi Code. Ejecútalos en paralelo, mezcla proveedores y vigílalos todos desde un sitio.'
+              'One workspace for Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build and Cursor Agent. Run them in parallel, mix vendors, and watch all of them from one place.',
+              'Un espacio de trabajo para Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent. Ejecútalos en paralelo, mezcla proveedores y vigílalos todos desde un sitio.'
             )}
           </p>
         </motion.div>
 
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-5">
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-7">
           {tools.map((tool, i) => {
             const inner = (
               <>

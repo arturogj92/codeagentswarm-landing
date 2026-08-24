@@ -208,9 +208,9 @@ opencode --session <session-id>    # forma corta: -s`,
         },
         {
           type: 'image',
-          alt: 'Una conversación pasada de opencode reabierta en un terminal de CodeAgentSwarm con los mensajes previos visibles y el campo de entrada listo para continuar',
+          alt: 'Historial de conversaciones actual de CodeAgentSwarm con buscador, filtros de agente y proyecto, y sesiones anteriores seleccionables',
           src: '/images/guides/resume-conversation.png',
-          caption: 'Retoma cualquier conversación de opencode justo donde la dejaste, con su contexto previo cargado.',
+          caption: 'Busca, filtra y selecciona la conversación de opencode que quieras retomar desde el Historial de conversaciones actual.',
           size: 'medium',
         },
         {

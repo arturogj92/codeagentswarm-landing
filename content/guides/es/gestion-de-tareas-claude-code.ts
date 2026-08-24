@@ -14,7 +14,7 @@ CodeAgentSwarm incluye un tablero de tareas estilo Kanban (el Agent Task Board) 
 En esta guía te explico qué es el tablero de tareas, cómo lo mantienen al día los agentes por su cuenta y por qué ese detalle cambia por completo la sensación de ejecutar varias sesiones de Claude Code a la vez.`,
     highlightedWords: ['Gestión de tareas', 'tablero Kanban', 'agentes IA'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-06-07',
+    updatedAt: '2026-08-11',
     ctaText: 'Abre el Agent Task Board, asigna una tarea a un terminal y observa cómo la IA mueve su propia tarjeta de Pendiente a Completada.',
     ctaAgent: 'claude-code',
     alternateSlug: 'claude-code-task-management',
@@ -141,7 +141,7 @@ En esta guía te explico qué es el tablero de tareas, cómo lo mantienen al dí
       content: [
         {
           type: 'paragraph',
-          text: 'Un solo agente trabajando en una sola tarea no necesita realmente un tablero. El tablero se gana el sueldo en el momento en que tienes varios agentes a la vez, que es exactamente para lo que está hecho CodeAgentSwarm. Ejecuta varios terminales de CLI de IA (Claude Code, Codex CLI, Gemini CLI) en paralelo, y en cuanto tienes cuatro o cinco trabajando, "qué hace cada uno" deja de ser una pregunta que puedas responder de memoria.',
+          text: 'Un solo agente trabajando en una sola tarea no necesita realmente un tablero. El tablero se gana el sueldo en el momento en que tienes varios agentes a la vez, que es exactamente para lo que está hecho CodeAgentSwarm. Ejecuta varios terminales de CLI de IA (Claude Code, Codex CLI, Antigravity CLI) en paralelo, y en cuanto tienes cuatro o cinco trabajando, "qué hace cada uno" deja de ser una pregunta que puedas responder de memoria.',
         },
         {
           type: 'paragraph',

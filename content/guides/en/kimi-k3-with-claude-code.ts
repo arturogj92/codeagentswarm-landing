@@ -256,7 +256,7 @@ Everything below was checked against Moonshot's official docs. Their CLI ships r
     },
     {
       question: 'What does not work when running Kimi K3 in Claude Code?',
-      answer: 'Tool Search must stay off — Claude Code already disables it by default on non-Anthropic hosts, and Moonshot documents that the endpoint does not support it yet. WebFetch is not available on the Kimi endpoint and returns a visible "temporarily unavailable" error (WebSearch does work). Image support from third-party clients on the subscription endpoint is inconsistent, and on the pay-per-token endpoint vision works only as base64 or ms:// file ids, not public URLs.',
+      answer: 'Tool Search must stay off. Claude Code already disables it by default on non-Anthropic hosts, and Moonshot documents that the endpoint does not support it yet. WebFetch is not available on the Kimi endpoint and returns a visible "temporarily unavailable" error (WebSearch does work). Image support from third-party clients on the subscription endpoint is inconsistent, and on the pay-per-token endpoint vision works only as base64 or ms:// file ids, not public URLs.',
     },
     {
       question: 'Is Kimi K3 cheaper than Claude for coding?',

@@ -3,6 +3,9 @@
 import { useTranslations } from 'next-intl'
 import { useEffect, useRef, useState } from 'react'
 import GuideDownloadButton from './GuideDownloadButton'
+import { pickGuideVideo } from './guide-video'
+
+export { pickGuideVideo } from './guide-video'
 
 const VIDEO_CDN_BASE =
   'https://fqamfucosytcyueqadog.supabase.co/storage/v1/object/public/landing-assets/videos'
@@ -13,32 +16,26 @@ const VIDEO_CDN_BASE =
 const VIDEO_ASPECT: Record<string, number> = {
   'terminals.mp4': 1660 / 1080,
   'terminals-list.mp4': 16 / 9,
-  'multi-model.mp4': 1660 / 1080,
+  'multi-model-v2.mp4': 1660 / 1080,
+  'agent-claude.mp4': 1660 / 1080,
+  'agent-codex.mp4': 1660 / 1080,
+  'agent-antigravity.mp4': 1660 / 1080,
+  'agent-opencode.mp4': 1660 / 1080,
+  'agent-kimi.mp4': 1660 / 1080,
+  'agent-grok.mp4': 1660 / 1080,
+  'agent-chat-claude.mp4': 1660 / 1080,
+  'agent-chat-codex.mp4': 1660 / 1080,
+  'agent-chat-antigravity.mp4': 1660 / 1080,
+  'agent-chat-opencode.mp4': 1660 / 1080,
+  'agent-chat-kimi.mp4': 1660 / 1080,
+  'agent-chat-grok.mp4': 1660 / 1080,
   'conversation_history.mp4': 1800 / 1080,
   'gitmanager.mp4': 972 / 720,
-}
-
-// Pure, testable mapping from a guide slug (English or Spanish) to the demo
-// video that best matches its topic. Order matters: topic keywords win over
-// CLI-name keywords (e.g. "codex-cli-conversation-history" shows the
-// conversation history video, not the multi-model one).
-export function pickGuideVideo(slug: string): string {
-  const s = slug.toLowerCase()
-  const has = (...words: string[]) => words.some((w) => s.includes(w))
-
-  if (has('multiple-claude-code-accounts', 'varias-cuentas-claude-code-codex')) {
-    return 'terminals-list.mp4'
-  }
-  if (has('history', 'historial', 'conversation', 'conversacion')) {
-    return 'conversation_history.mp4'
-  }
-  if (has('changes', 'cambios', 'git')) {
-    return 'gitmanager.mp4'
-  }
-  if (/(^|-)vs(-|$)/.test(s) || has('yolo', 'codex', 'gemini', 'opencode', 'kimi')) {
-    return 'multi-model.mp4'
-  }
-  return 'terminals.mp4'
+  'guide-conversation-history.mp4': 16 / 9,
+  'guide-terminals.mp4': 16 / 9,
+  'guide-gitmanager.mp4': 16 / 9,
+  'guide-kanban.mp4': 16 / 9,
+  'guide-terminal-notifications.mp4': 1708 / 1080,
 }
 
 interface GuideProductBlockProps {
