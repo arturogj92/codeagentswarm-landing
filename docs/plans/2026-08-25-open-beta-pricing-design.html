@@ -1,0 +1,587 @@
+<!doctype html>
+<html lang="en" data-access="beta">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../../public/favicon.png">
+  <title>Open Beta pricing proposal</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0b0b0c;
+      --surface: #101012;
+      --surface-raised: #151517;
+      --text: #f2f2ee;
+      --muted: #9b9b95;
+      --quiet: #70706b;
+      --line: rgba(242, 242, 238, 0.14);
+      --line-strong: rgba(242, 242, 238, 0.24);
+      --accent: #dca72c;
+      --accent-hover: #edbd4d;
+      --accent-ink: #17130a;
+      --radius: 8px;
+      --page: 1240px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    button, a { font: inherit; }
+
+    a { color: inherit; }
+
+    button:focus-visible,
+    a:focus-visible,
+    summary:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
+    }
+
+    .review-bar {
+      position: fixed;
+      z-index: 20;
+      right: 16px;
+      bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 8px 9px 8px 12px;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius);
+      background: rgba(21, 21, 23, 0.96);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3);
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .review-bar strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .review-options {
+      display: flex;
+      gap: 2px;
+      padding: 2px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: var(--bg);
+    }
+
+    .review-options button {
+      border: 0;
+      border-radius: 4px;
+      padding: 5px 8px;
+      background: transparent;
+      color: var(--quiet);
+      cursor: pointer;
+    }
+
+    .review-options button[aria-pressed="true"] {
+      background: var(--surface-raised);
+      color: var(--text);
+    }
+
+    .site-header {
+      position: sticky;
+      z-index: 10;
+      top: 0;
+      border-bottom: 1px solid rgba(242, 242, 238, 0.08);
+      background: rgba(11, 11, 12, 0.92);
+      backdrop-filter: blur(16px);
+    }
+
+    .nav {
+      width: min(calc(100% - 48px), var(--page));
+      height: 72px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 680;
+      letter-spacing: -0.02em;
+    }
+
+    .brand img { width: 31px; height: 31px; }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      margin-left: auto;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .nav-cta,
+    .primary-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius);
+      background: var(--accent);
+      color: var(--accent-ink);
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 160ms ease, background 160ms ease;
+    }
+
+    .nav-cta { min-height: 38px; padding: 0 16px; font-size: 13px; }
+
+    .primary-cta {
+      min-height: 52px;
+      padding: 0 22px;
+      font-size: 15px;
+      white-space: nowrap;
+    }
+
+    .nav-cta:hover,
+    .primary-cta:hover { background: var(--accent-hover); }
+
+    .nav-cta:active,
+    .primary-cta:active { transform: translateY(1px); }
+
+    main { overflow: hidden; }
+
+    .pricing {
+      width: min(calc(100% - 48px), var(--page));
+      margin: 0 auto;
+      padding: clamp(78px, 8vw, 124px) 0 112px;
+    }
+
+    .pricing-intro {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(320px, 0.7fr);
+      gap: clamp(52px, 8vw, 110px);
+      align-items: end;
+      padding-bottom: 58px;
+    }
+
+    .beta-mark {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 24px;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 680;
+      letter-spacing: 0.01em;
+    }
+
+    .beta-mark::before {
+      width: 38px;
+      height: 1px;
+      background: currentColor;
+      content: "";
+    }
+
+    h1 {
+      max-width: 900px;
+      margin: 0;
+      font-size: clamp(46px, 6vw, 82px);
+      font-weight: 650;
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+      text-wrap: balance;
+    }
+
+    .offer {
+      border-top: 1px solid var(--line-strong);
+      padding-top: 24px;
+    }
+
+    .price-line {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .price {
+      font-size: clamp(54px, 6vw, 76px);
+      font-weight: 690;
+      line-height: 0.9;
+      letter-spacing: -0.06em;
+    }
+
+    .price-context {
+      max-width: 110px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .offer-copy {
+      max-width: 34ch;
+      margin: 0 0 25px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .capabilities {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      border-top: 1px solid var(--line-strong);
+      border-bottom: 1px solid var(--line-strong);
+    }
+
+    .capability {
+      min-height: 268px;
+      padding: 31px 34px 34px 0;
+    }
+
+    .capability + .capability {
+      border-left: 1px solid var(--line);
+      padding-left: 34px;
+    }
+
+    .capability-label {
+      margin: 0 0 48px;
+      color: var(--quiet);
+      font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .capability-value {
+      display: block;
+      margin-bottom: 9px;
+      color: var(--accent);
+      font-size: 25px;
+      font-weight: 650;
+      letter-spacing: -0.035em;
+    }
+
+    .capability h2 {
+      margin: 0 0 20px;
+      font-size: 24px;
+      font-weight: 610;
+      letter-spacing: -0.035em;
+    }
+
+    .capability ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .capability li {
+      margin-top: 9px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .product-proof {
+      display: grid;
+      grid-template-columns: minmax(240px, 0.48fr) minmax(0, 1.52fr);
+      gap: 42px;
+      align-items: center;
+      padding: 64px 0;
+      border-bottom: 1px solid var(--line-strong);
+    }
+
+    .proof-copy h2 {
+      margin: 0 0 14px;
+      font-size: 28px;
+      font-weight: 610;
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+    }
+
+    .proof-copy p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .product-proof figure { margin: 0; }
+
+    .product-proof img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 8.4;
+      object-fit: cover;
+      object-position: top left;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+
+    .all-features {
+      padding-top: 30px;
+    }
+
+    .all-features summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      border-radius: var(--radius);
+      padding: 14px 0;
+      cursor: pointer;
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 620;
+      list-style: none;
+    }
+
+    .all-features summary::-webkit-details-marker { display: none; }
+
+    .summary-note {
+      color: var(--quiet);
+      font-size: 12px;
+      font-weight: 450;
+    }
+
+    .chevron {
+      color: var(--accent);
+      transition: transform 180ms ease;
+    }
+
+    details[open] .chevron { transform: rotate(45deg); }
+
+    .feature-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px 36px;
+      margin: 14px 0 0;
+      padding: 28px 0 0;
+      border-top: 1px solid var(--line);
+      list-style: none;
+    }
+
+    .feature-list li {
+      padding: 8px 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    .post-beta-only { display: none; }
+    [data-access="post"] .beta-only { display: none; }
+    [data-access="post"] .post-beta-only { display: inline; }
+
+    @media (max-width: 1080px) {
+      .pricing-intro {
+        grid-template-columns: 1fr;
+        gap: 44px;
+      }
+
+      .offer { max-width: 520px; }
+    }
+
+    @media (max-width: 820px) {
+      .review-bar {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        left: auto;
+        justify-content: space-between;
+        border-top: 0;
+        border-right: 0;
+        border-left: 0;
+        border-radius: 0;
+        box-shadow: none;
+      }
+
+      .nav { width: min(calc(100% - 32px), var(--page)); height: 64px; }
+      .nav-links { display: none; }
+      .brand { font-size: 14px; }
+      .brand img { width: 28px; height: 28px; }
+      .nav-cta { min-height: 36px; padding: 0 12px; }
+
+      .pricing {
+        width: min(calc(100% - 32px), var(--page));
+        padding: 62px 0 96px;
+      }
+
+      .pricing-intro {
+        grid-template-columns: 1fr;
+        gap: 45px;
+        padding-bottom: 48px;
+      }
+
+      h1 { font-size: clamp(43px, 13vw, 62px); }
+      .offer { max-width: none; }
+
+      .capabilities { grid-template-columns: 1fr; }
+      .capability { min-height: 0; padding: 28px 0 30px; }
+      .capability + .capability { border-top: 1px solid var(--line); border-left: 0; padding-left: 0; }
+      .capability-label { margin-bottom: 27px; }
+
+      .product-proof { grid-template-columns: 1fr; gap: 30px; padding: 48px 0; }
+      .product-proof img { aspect-ratio: 16 / 10; }
+      .feature-list { grid-template-columns: 1fr; gap: 3px; }
+      .summary-note { display: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .nav-cta, .primary-cta, .chevron { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <aside class="review-bar" aria-label="Design proposal controls">
+    <strong>Proposal preview</strong>
+    <div class="review-options" role="group" aria-label="Access state">
+      <button type="button" data-state="beta" aria-pressed="true">Open Beta</button>
+      <button type="button" data-state="post" aria-pressed="false">After beta</button>
+    </div>
+  </aside>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="#" aria-label="CodeAgentSwarm home">
+        <img src="../../public/isotipo.png" alt="">
+        <span>CodeAgentSwarm</span>
+      </a>
+      <div class="nav-links">
+        <a href="#capabilities">How to join</a>
+        <a href="#pricing" aria-current="page">Open Beta</a>
+        <a href="#features">FAQ</a>
+      </div>
+      <a class="nav-cta" href="#download">Download free</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="pricing" id="pricing" aria-labelledby="pricing-title">
+      <div class="pricing-intro">
+        <div>
+          <p class="beta-mark"><span class="beta-only">Open Beta</span><span class="post-beta-only">Pro plan</span></p>
+          <h1 id="pricing-title">
+            <span class="beta-only">The complete product is free during beta.</span>
+            <span class="post-beta-only">The complete workspace for parallel AI agents.</span>
+          </h1>
+        </div>
+
+        <div class="offer">
+          <div class="price-line">
+            <span class="price"><span class="beta-only">€0</span><span class="post-beta-only">€6.99</span></span>
+            <span class="price-context"><span class="beta-only">for the entire open beta</span><span class="post-beta-only">per month</span></span>
+          </div>
+          <p class="offer-copy beta-only">Download the app and create an account. Pro activates automatically, with no CodeAgentSwarm subscription or credit card.</p>
+          <p class="offer-copy post-beta-only">Run more agents, manage unlimited projects and keep every workflow in one place.</p>
+          <a class="primary-cta" href="#download"><span class="beta-only">Download the free beta</span><span class="post-beta-only">Subscribe in the app</span></a>
+        </div>
+      </div>
+
+      <div class="capabilities" id="capabilities" aria-label="Included Pro capabilities">
+        <article class="capability">
+          <p class="capability-label">Run</p>
+          <strong class="capability-value">50 agents</strong>
+          <h2>Work in parallel</h2>
+          <ul>
+            <li>Grid and tab layouts</li>
+            <li>Resizable agent panels</li>
+            <li>Live notifications and changes</li>
+          </ul>
+        </article>
+
+        <article class="capability">
+          <p class="capability-label">Organize</p>
+          <strong class="capability-value">Unlimited projects</strong>
+          <h2>Keep context separate</h2>
+          <ul>
+            <li>Project and agent shortcuts</li>
+            <li>Task labels</li>
+            <li>Conversation history</li>
+          </ul>
+        </article>
+
+      </div>
+
+      <div class="product-proof">
+        <div class="proof-copy">
+          <h2>Pro means the product you can see.</h2>
+          <p>No teaser tier and no crossed-out feature matrix during beta. Every capability shown here is available after signup.</p>
+        </div>
+        <figure>
+          <img src="../../public/images/guides/multi-terminal.png" alt="CodeAgentSwarm running multiple AI coding agents in parallel">
+        </figure>
+      </div>
+
+      <details class="all-features" id="features">
+        <summary>
+          <span>View all 17 included Pro features</span>
+          <span class="summary-note">Nothing hidden behind another tier</span>
+          <span class="chevron" aria-hidden="true">+</span>
+        </summary>
+        <ul class="feature-list">
+          <li>50 AI agents</li>
+          <li>Unlimited projects</li>
+          <li>Live notifications</li>
+          <li>Real-time agent changes</li>
+          <li>Grid and tab layouts</li>
+          <li>6 project shortcuts</li>
+          <li>Unlimited agent shortcuts</li>
+          <li>Resizable agent panels</li>
+          <li>MCP configuration</li>
+          <li>MCP marketplace</li>
+          <li>Git integration and AI commits</li>
+          <li>Task labels</li>
+          <li>Keyboard shortcuts</li>
+          <li>Manage MCP permissions</li>
+          <li>Manage AI CLI permissions</li>
+          <li>Turbo Mode</li>
+          <li>Conversation history</li>
+        </ul>
+      </details>
+    </section>
+  </main>
+
+  <div id="download" hidden></div>
+
+  <script>
+    const controls = document.querySelectorAll('[data-state]');
+
+    const setAccessState = (state) => {
+      const nextState = state === 'post' ? 'post' : 'beta';
+      document.documentElement.dataset.access = nextState;
+      controls.forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.state === nextState)));
+    };
+
+    setAccessState(new URLSearchParams(window.location.search).get('access'));
+
+    controls.forEach((control) => {
+      control.addEventListener('click', () => {
+        const state = control.dataset.state;
+        setAccessState(state);
+        const url = new URL(window.location.href);
+        url.searchParams.set('access', state);
+        window.history.replaceState({}, '', url);
+      });
+    });
+  </script>
+</body>
+</html>
