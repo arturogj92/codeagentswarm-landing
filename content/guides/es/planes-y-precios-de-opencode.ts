@@ -16,7 +16,7 @@ Esta guía cubre lo que cuesta de verdad cada vía, los modelos gratuitos que ll
     ctaAgent: 'opencode',
     highlightedWords: ['OpenCode', 'Planes', 'precios'],
     publishedAt: '2026-08-05',
-    updatedAt: '2026-08-23',
+    updatedAt: '2026-08-25',
     alternateSlug: 'opencode-plans-and-pricing',
   },
   sections: [
@@ -58,18 +58,18 @@ Esta guía cubre lo que cuesta de verdad cada vía, los modelos gratuitos que ll
       content: [
         {
           type: 'paragraph',
-          text: 'Zen publica tarifas por millón de tokens separadas en entrada, salida, lecturas de caché y escrituras de caché. La horquilla del catálogo es enorme, y eso es lo más útil que hay que entender. A agosto de 2026:',
+          text: 'Zen publica tarifas por millón de tokens separadas en entrada, salida, lecturas de caché y escrituras de caché. La horquilla del catálogo es enorme, y eso es lo más útil que hay que entender. A 25 de agosto de 2026:',
         },
         {
           type: 'table',
           headers: ['Modelo', 'Entrada / 1M', 'Salida / 1M'],
           rows: [
-            ['DeepSeek V4 Flash Free, MiMo-V2.5 Free y otros', '0,00 $', '0,00 $'],
+            ['Big Pickle, MiMo-V2.5 Free y otros modelos gratuitos temporales', '0,00 $', '0,00 $'],
             ['GPT 5.6 Luna', '0,20 $', '1,20 $'],
             ['Claude Sonnet 5', '2,00 $', '10,00 $'],
             ['GPT 5.5 Pro', '30,00 $', '180,00 $'],
           ],
-          caption: 'Una muestra de las tarifas de OpenCode Zen, agosto de 2026. El catálogo completo está en la documentación de Zen.',
+          caption: 'Una muestra de las tarifas de OpenCode Zen, verificada el 25 de agosto de 2026. El catálogo completo está en la documentación de Zen.',
         },
         {
           type: 'paragraph',
@@ -77,7 +77,7 @@ Esta guía cubre lo que cuesta de verdad cada vía, los modelos gratuitos que ll
         },
         {
           type: 'paragraph',
-          text: 'Zen lleva además modelos gratuitos de verdad. No son una prueba ni están limitados hasta la inutilidad; son entradas reales del catálogo a 0 $ de entrada y 0 $ de salida. Para trabajo rutinario, refactorizaciones mecánicas y cualquier cosa donde lo que necesitas es sobre todo un editor competente y no un razonador profundo, pueden cubrirte más día del que esperarías.',
+          text: 'Zen ofrece además modelos publicados con coste cero en entrada y salida. OpenCode marca varios como ofertas por tiempo limitado, así que comprueba el catálogo actual antes de depender de uno en un flujo duradero.',
         },
         {
           type: 'paragraph',
@@ -149,7 +149,7 @@ Esta guía cubre lo que cuesta de verdad cada vía, los modelos gratuitos que ll
         },
         {
           type: 'paragraph',
-          text: 'Lo que cuesta dinero es el modelo que va detrás, y hasta eso tiene una vía gratuita de verdad con los modelos a coste cero de Zen. Puedes ejecutar OpenCode indefinidamente por 0 $ si te vale con el catálogo gratuito.',
+          text: 'Lo que cuesta dinero es el modelo que va detrás. Zen mantiene ahora una vía sin coste mediante modelos gratuitos temporales, pero el catálogo puede cambiar.',
         },
         {
           type: 'paragraph',
@@ -183,7 +183,7 @@ Esta guía cubre lo que cuesta de verdad cada vía, los modelos gratuitos que ll
   faq: [
     {
       question: '¿OpenCode es gratis?',
-      answer: 'Sí. La CLI es gratuita y de código abierto, sin edición de pago. Lo que cuesta dinero es el modelo que va detrás, y hasta eso tiene una vía gratuita: OpenCode Zen lleva modelos realmente gratuitos a 0 $ de entrada y 0 $ de salida, así que puedes ejecutar OpenCode indefinidamente sin pagar nada.',
+      answer: 'Sí. La CLI es gratuita y de código abierto, sin edición de pago. El uso del modelo se factura aparte. OpenCode Zen ofrece ahora modelos temporales a 0 $ de entrada y 0 $ de salida, pero su disponibilidad puede cambiar.',
     },
     {
       question: '¿Cuánto cuesta OpenCode al mes?',

@@ -16,7 +16,7 @@ The rest of the detail is where people get surprised: the CLI, the web version a
     ctaAgent: 'codex',
     highlightedWords: ['Codex', 'Plans', 'Pricing'],
     publishedAt: '2026-08-05',
-    updatedAt: '2026-08-23',
+    updatedAt: '2026-08-25',
     alternateSlug: 'planes-y-precios-de-codex',
   },
   sections: [

@@ -9,14 +9,14 @@ export const guide: Guide = {
     metaDescription: 'Superset es un editor source available para 10+ agentes en paralelo. CodeAgentSwarm supervisa siete agentes CLI. Comparativa honesta de 2026.',
     intro: `Superset es un editor de código source available construido para ejecutar diez o más agentes en paralelo, cada uno aislado en su propio worktree de git, mientras que CodeAgentSwarm es una app de escritorio de código cerrado construida para supervisar agentes de siete proveedores CLI concretos, con notificaciones del sistema, historial buscable entre agentes y un tablero kanban que los propios agentes actualizan por MCP.
 
-Transparencia por delante: CodeAgentSwarm lo hacemos nosotros. Por eso esta página dice dónde Superset es mejor en vez de disimularlo, y por eso nuestras limitaciones (código cerrado, sin build de escritorio para Linux, Mobile Connect aún en alpha, todavía en beta) están en la misma tabla que el resto. Las dos herramientas se juzgan con los mismos criterios. Todos los datos de terceros se verificaron el 26 de julio de 2026 en superset.sh y en los datos públicos de GitHub, y lo que no pudimos comprobar está marcado como tal. La disponibilidad de CodeAgentSwarm en esta página se actualizó el 23 de agosto de 2026.
+Transparencia por delante: CodeAgentSwarm lo hacemos nosotros. Por eso esta página dice dónde Superset es mejor en vez de disimularlo, y por eso nuestras limitaciones (código cerrado, sin build de escritorio para Linux, Mobile Connect aún en alpha, todavía en beta) están en la misma tabla que el resto. Las dos herramientas se juzgan con los mismos criterios. Todos los datos de terceros se verificaron el 25 de agosto de 2026 en superset.sh y en los datos públicos de GitHub, y lo que no pudimos comprobar está marcado como tal. La disponibilidad de CodeAgentSwarm en esta página se actualizó el 23 de agosto de 2026.
 
-Resumen rápido: elige Superset si quieres un entorno con forma de editor, soporte de Linux y código que puedas leer. Elige CodeAgentSwarm si trabajas con Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent y necesitas notificaciones, historial y un tablero para no perderles el hilo.`,
+Resumen rápido: elige Superset si quieres un entorno con forma de editor, soporte experimental de Linux y código que puedas leer. Elige CodeAgentSwarm si necesitas Windows hoy, historial buscable entre agentes y un tablero kanban que los agentes actualicen solos. Los dos documentan ya los siete proveedores compatibles con CodeAgentSwarm.`,
     ctaText: 'Las dos se empiezan gratis, así que pruébalas una semana sobre el mismo repositorio. CodeAgentSwarm es gratis durante la beta, con Pro incluido, para macOS y Windows.',
     ctaAgent: 'comparison',
     highlightedWords: ['Superset', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
-    updatedAt: '2026-08-23',
+    updatedAt: '2026-08-25',
     alternateSlug: 'superset-vs-codeagentswarm',
   },
   sections: [
@@ -35,7 +35,7 @@ Resumen rápido: elige Superset si quieres un entorno con forma de editor, sopor
         {
           type: 'callout',
           variant: 'info',
-          content: 'Aviso: CodeAgentSwarm es nuestro producto. Todo lo que se afirma aquí sobre Superset se verificó el 26 de julio de 2026 en su propia web (superset.sh) y en los datos públicos de GitHub del repositorio superset-sh/superset. Cuando algo no está documentado públicamente, lo decimos así en lugar de afirmar que Superset no lo tiene.',
+          content: 'Aviso: CodeAgentSwarm es nuestro producto. Todo lo que se afirma aquí sobre Superset se verificó el 25 de agosto de 2026 en su propia web (superset.sh) y en los datos públicos de GitHub del repositorio superset-sh/superset. Cuando algo no está documentado públicamente, lo decimos así en lugar de afirmar que Superset no lo tiene.',
         },
       ],
     },
@@ -49,7 +49,7 @@ Resumen rápido: elige Superset si quieres un entorno con forma de editor, sopor
         },
         {
           type: 'paragraph',
-          text: 'La licencia merece precisión, porque es fácil contarla mal. Superset es source available bajo la Elastic License 2.0, que no es una licencia de código abierto aprobada por la OSI: puedes leer el código y autoalojarlo dentro de sus términos, pero no tienes todas las libertades del software libre. Su propia FAQ lo explica igual. El repositorio rondaba las 12.600 estrellas el 26 de julio de 2026, con su último commit ese mismo día, y es público desde el 21 de octubre de 2025.',
+          text: 'La licencia merece precisión, porque es fácil contarla mal. Superset es source available bajo la Elastic License 2.0, que no es una licencia de código abierto aprobada por la OSI: puedes leer el código y autoalojarlo dentro de sus términos, pero no tienes todas las libertades del software libre. Su propia FAQ lo explica igual. El repositorio rondaba las 13.300 estrellas el 25 de agosto de 2026, con su último commit ese mismo día, y es público desde el 21 de octubre de 2025.',
         },
         {
           type: 'list',
@@ -64,7 +64,7 @@ Resumen rápido: elige Superset si quieres un entorno con forma de editor, sopor
         },
         {
           type: 'paragraph',
-          text: 'Sobre agentes, su FAQ es deliberadamente abierta: Superset funciona con cualquier agente de programación por CLI, y nombra Claude Code, OpenCode y OpenAI Codex; su frase es que si corre en un terminal, corre en Superset. El selector de agentes que enseñan en su portada muestra además Gemini, Cursor Agent, Mistral Vibe y Kimi Code. En plataformas, los datos estructurados de superset.sh declaran macOS, Windows y Linux, y el botón de descarga ofrece macOS.',
+          text: 'Su README documenta ahora soporte directo para Amp, Antigravity CLI, Claude Code, Codex CLI, Cursor Agent, Gemini CLI, Grok, Kimi Code y OpenCode, además de agentes personalizados de terminal. Hay releases para macOS y un AppImage experimental para Linux; Windows aún no está disponible. La app de iOS figura como próximamente.',
         },
       ],
     },
@@ -104,19 +104,19 @@ Resumen rápido: elige Superset si quieres un entorno con forma de editor, sopor
           type: 'table',
           headers: ['', 'Superset', 'CodeAgentSwarm'],
           rows: [
-            ['Plataformas', 'macOS, Windows y Linux según los datos estructurados de superset.sh. Su botón de descarga ofrece macOS', 'macOS y Windows. Sin build de Linux'],
+            ['Plataformas', 'macOS; AppImage experimental para Linux; Windows aún no disponible; iOS próximamente', 'macOS y Windows. Sin build de Linux'],
             ['Instalación y distribución', 'Descarga de escritorio desde superset.sh. Autoalojarlo desde el código está permitido dentro de la Elastic License 2.0', 'Instalador de escritorio para macOS y Windows'],
             ['Interfaz', 'Con forma de editor de código, con revisión de diffs y PR y opción de abrir en cualquier IDE (VS Code, Cursor, Xcode, JetBrains)', 'Workspace multiterminal con kanban, historial y diffs por terminal'],
-            ['Agentes soportados', 'Cualquier agente por CLI. Su FAQ nombra Claude Code, OpenCode y OpenAI Codex; su selector de portada muestra además Gemini, Cursor Agent, Mistral Vibe y Kimi Code', 'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent, integrados uno a uno'],
+            ['Agentes soportados', 'Amp, Antigravity CLI, Claude Code, Codex CLI, Cursor Agent, Gemini CLI, Grok, Kimi Code y OpenCode, más agentes personalizados de terminal', 'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent, integrados uno a uno'],
             ['Modelo de aislamiento', 'Un worktree de git aislado por agente, una rama por tarea', 'Worktrees de git por sesión, un proceso por terminal'],
-            ['Notificaciones', 'No documentado en su web a 26 de julio de 2026', 'Notificaciones de escritorio cuando un agente termina o necesita respuesta'],
-            ['Historial de conversaciones', 'No documentado en su web a 26 de julio de 2026', 'Historial buscable de los siete agentes, con opción de retomar cuando el agente la admite'],
+            ['Notificaciones', 'Sonidos al terminar y distintivos en el dock cuando un agente necesita atención', 'Notificaciones de escritorio cuando un agente termina o necesita respuesta'],
+            ['Historial de conversaciones', 'No documentado en su web a 25 de agosto de 2026', 'Historial buscable de los siete agentes, con opción de retomar cuando el agente la admite'],
             ['Gestión de tareas', 'Cambio entre tareas en paralelo, automatizaciones programadas y servidor MCP para control programático', 'Kanban que los agentes actualizan por MCP. Sin botón de PR con un clic'],
             ['Código abierto', 'No. Source available (Elastic License 2.0), que no está aprobada por la OSI', 'No. Código cerrado, sin repositorio público'],
             ['Precio', 'Plan gratuito, con planes de pago y enterprise en su web', 'Gratis durante la beta con Pro incluido. Pones tus suscripciones CLI'],
-            ['Último commit público (verificado el 26 jul 2026)', '26 de julio de 2026. Unas 12.600 estrellas, público desde el 21 de octubre de 2025', 'Código cerrado, sin repositorio público'],
+            ['Último commit público (verificado el 25 ago 2026)', '25 de agosto de 2026. Unas 13.300 estrellas, público desde el 21 de octubre de 2025', 'Código cerrado, sin repositorio público'],
           ],
-          caption: 'Todos los datos de terceros verificados el 26 de julio de 2026 en superset.sh y en los datos públicos de GitHub.',
+          caption: 'Todos los datos de terceros verificados el 25 de agosto de 2026 en superset.sh y en los datos públicos de GitHub.',
         },
       ],
     },
@@ -132,7 +132,7 @@ Resumen rápido: elige Superset si quieres un entorno con forma de editor, sopor
           type: 'list',
           items: [
             '<strong>Quieres un editor, no una rejilla de terminales.</strong> Superset tiene forma de editor, con navegación de archivos, revisión de diffs y vista de PR en la misma ventana. Si quieres leer y tocar el código sin salir de la app, encaja mejor que la nuestra.',
-            '<strong>Trabajas en Linux.</strong> Sus datos estructurados listan Linux como plataforma soportada. CodeAgentSwarm no tiene build de Linux, así que aquí no hay término medio.',
+            '<strong>Trabajas en Linux.</strong> Superset publica un AppImage experimental. CodeAgentSwarm no tiene build de Linux, así que Superset es la opción disponible si te sirve ese soporte experimental.',
             '<strong>Quieres ejecutar cualquier agente CLI, no una lista cerrada.</strong> Su postura es que si corre en un terminal, corre en Superset. Nosotros integramos siete proveedores: mejor para esos siete, peor para el resto.',
             '<strong>Quieres leer el código.</strong> La Elastic License 2.0 no es código abierto, pero source available gana a un binario cerrado si necesitas auditar el comportamiento o autoalojarlo dentro de sus términos.',
             '<strong>Quieres automatizaciones programadas y control programático.</strong> Su servidor MCP y sus automatizaciones apuntan a flujos desatendidos que CodeAgentSwarm no documenta.',
@@ -152,7 +152,7 @@ Resumen rápido: elige Superset si quieres un entorno con forma de editor, sopor
         {
           type: 'list',
           items: [
-            '<strong>Usas Antigravity CLI.</strong> No aparece entre los agentes de superset.sh a 26 de julio de 2026, y CodeAgentSwarm lo soporta directamente. Kimi Code sí está en las dos, así que esta fila no es un pleno.',
+            '<strong>Necesitas Windows hoy.</strong> Superset indica que Windows aún no está disponible. CodeAgentSwarm sí publica una app de escritorio para Windows.',
             '<strong>Prefieres que te interrumpan a estar comprobando.</strong> Las notificaciones saltan cuando cualquier agente termina o necesita respuesta, y eso pesa más cuantas más tareas en paralelo tengas que vigilar.',
             '<strong>Quieres un único historial buscable.</strong> Las conversaciones de los siete agentes se guardan y se buscan en el mismo sitio, en vez de vivir en siete formatos distintos, y se retoman cuando el agente lo permite.',
             '<strong>Quieres que el tablero lo mantengan los agentes.</strong> El kanban está expuesto por MCP, así que los agentes mueven sus propias tareas mientras trabajan.',
@@ -183,12 +183,12 @@ Resumen rápido: elige Superset si quieres un entorno con forma de editor, sopor
       answer: 'Superset tiene plan gratuito, además de planes de pago y enterprise listados en su web. Sobre la licencia, la respuesta precisa es que es source available bajo la Elastic License 2.0, que no está aprobada por la OSI: puedes inspeccionar el código y autoalojarlo dentro de sus términos, pero no es open source en sentido estricto. CodeAgentSwarm es gratis durante la beta con Pro incluido, y es de código cerrado y sin repositorio público.',
     },
     {
-      question: '¿Superset soporta Antigravity CLI o Kimi Code?',
-      answer: 'Kimi Code aparece en el selector de agentes de superset.sh, y su FAQ dice que Superset funciona con cualquier agente por CLI, así que un terminal con Kimi Code entra ahí. Antigravity CLI no aparece en su web a 26 de julio de 2026. CodeAgentSwarm soporta los dos como integraciones de primer nivel, junto a Claude Code, Codex CLI y OpenCode.',
+      question: '¿Superset soporta Antigravity CLI, Kimi Code o Grok?',
+      answer: 'Sí. Su README muestra Antigravity CLI, Kimi Code y Grok como totalmente soportados, junto a Claude Code, Codex CLI, Cursor Agent, OpenCode y otros. CodeAgentSwarm también integra los tres.',
     },
     {
       question: '¿Cuál se mantiene de forma más activa?',
-      answer: 'Las dos están activas y esta fila no la gana nadie. El repositorio público superset-sh/superset tuvo su último commit el 26 de julio de 2026, el mismo día en que se verificó esta página, con unas 12.600 estrellas y un historial público desde el 21 de octubre de 2025. CodeAgentSwarm es de código cerrado, así que no hay historial que consultar: nuestro ritmo te lo tienes que creer.',
+      answer: 'Las dos están activas y esta fila no la gana nadie. El repositorio público superset-sh/superset tuvo su último commit el 25 de agosto de 2026, el mismo día en que se verificó esta página, con unas 13.300 estrellas y un historial público desde el 21 de octubre de 2025. CodeAgentSwarm es de código cerrado, así que no hay historial que consultar: nuestro ritmo te lo tienes que creer.',
     },
     {
       question: '¿Puedo probar las dos gratis?',

@@ -16,7 +16,7 @@ Las fuentes vigentes son la <a href="https://x.ai/build" target="_blank" rel="no
     ctaAgent: 'grok-build',
     highlightedWords: ['Precios', 'acceso', 'Grok Build'],
     publishedAt: '2026-07-28',
-    updatedAt: '2026-08-23',
+    updatedAt: '2026-08-25',
     alternateSlug: 'grok-build-pricing',
   },
   sections: [
@@ -26,7 +26,7 @@ Las fuentes vigentes son la <a href="https://x.ai/build" target="_blank" rel="no
       content: [
         {
           type: 'paragraph',
-          text: 'xAI ofrece ahora una vía gratuita a Grok Build y planes de pago con límites mayores. Las páginas oficiales muestran esta oferta a 23 de agosto de 2026:',
+          text: 'xAI ofrece Grok Build en todos sus planes, incluido Free, y los planes de pago aportan límites mayores. Las páginas oficiales muestran esta oferta a 25 de agosto de 2026:',
         },
         {
           type: 'table',
@@ -38,7 +38,7 @@ Las fuentes vigentes son la <a href="https://x.ai/build" target="_blank" rel="no
             ['Otros niveles individuales', 'Consulta el checkout', 'Comprueba tu cuenta', 'El precio público de Lite y Heavy puede variar o no aparecer en el texto de la página'],
             ['API de xAI', 'Por token', 'Sí, headless', 'Para CI y automatización'],
           ],
-          caption: 'Vías de acceso a Grok Build verificadas el 23 de agosto de 2026. Revisa la página en vivo antes de presupuestar un despliegue.',
+          caption: 'Vías de acceso a Grok Build verificadas el 25 de agosto de 2026. Revisa la página en vivo antes de presupuestar un despliegue.',
         },
         {
           type: 'paragraph',
@@ -161,7 +161,7 @@ Las fuentes vigentes son la <a href="https://x.ai/build" target="_blank" rel="no
     },
     {
       question: '¿Cuánto cuesta Grok Build al mes?',
-      answer: 'A 23 de agosto de 2026, la evaluación empieza gratis. xAI muestra SuperGrok por 30 $/mes y SuperGrok Plus por 100 $/mes. Otros niveles individuales aparecen en el comparador en vivo, así que verifica sus precios de checkout antes de pagar.',
+      answer: 'A 25 de agosto de 2026, Grok Build está disponible en todos los planes, incluido Free. xAI muestra SuperGrok por 30 $/mes y SuperGrok Plus por 100 $/mes. Otros niveles individuales aparecen en el comparador en vivo, así que verifica sus precios de checkout antes de pagar.',
     },
     {
       question: '¿Qué añade SuperGrok Plus para Grok Build?',

@@ -247,8 +247,12 @@ changed more than 10 percent, and `NOW-STALLED` when a repo has been quiet for o
 
 ```bash
 node scripts/competitor-refresh.mjs
+node scripts/competitor-refresh.mjs --check
 node scripts/competitor-refresh.mjs --help
 ```
+
+Use `--check` in validation: it exits non-zero when stars, push dates or API access no longer
+match the recorded snapshot.
 
 ### When to run it
 

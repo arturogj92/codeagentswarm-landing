@@ -6,17 +6,17 @@ export const guide: Guide = {
     locale: 'es',
     title: 'Vibe Kanban vs CodeAgentSwarm: comparativa honesta (2026)',
     metaTitle: 'Vibe Kanban vs CodeAgentSwarm: comparativa honesta (2026)',
-    metaDescription: 'Vibe Kanban convierte el trabajo de los agentes en un kanban de issues. CodeAgentSwarm te deja pilotar sus terminales. Comparativa honesta verificada en julio de 2026.',
+    metaDescription: 'Vibe Kanban convierte el trabajo de los agentes en un kanban de issues. CodeAgentSwarm te deja pilotar sus terminales. Comparativa honesta verificada en agosto de 2026.',
     intro: `Vibe Kanban convierte el trabajo de los agentes en un kanban de issues para equipos. CodeAgentSwarm te deja mirar y pilotar las propias terminales de los agentes, con el tablero como una función más y no como el producto entero.
 
-CodeAgentSwarm lo hacemos nosotros, y conviene que leas esta página sabiéndolo. Por eso aquí verás nuestros límites (código cerrado, sin build de escritorio para Linux, Mobile Connect aún en alpha, todavía en beta, y tú pones tus suscripciones de agentes) y también el crédito que Vibe Kanban merece en lo que hace mejor, empezando por ser código abierto y tener con diferencia la comunidad más grande de esta categoría. Cada dato de terceros se verificó el 26 de julio de 2026 en la web del fabricante, su README público y los datos públicos de GitHub, incluido un cambio de estado público que contamos entero. La disponibilidad de CodeAgentSwarm en esta página se actualizó el 23 de agosto de 2026.
+CodeAgentSwarm lo hacemos nosotros, y conviene que leas esta página sabiéndolo. Por eso aquí verás nuestros límites (código cerrado, sin build de escritorio para Linux, Mobile Connect aún en alpha, todavía en beta, y tú pones tus suscripciones de agentes) y también el crédito que Vibe Kanban merece en lo que hace mejor, empezando por ser código abierto y tener con diferencia la comunidad más grande de esta categoría. Cada dato de terceros se verificó el 25 de agosto de 2026 en la web del fabricante, su README público y los datos públicos de GitHub, incluido un cambio de estado público que contamos entero. La disponibilidad de CodeAgentSwarm en esta página se actualizó el 23 de agosto de 2026.
 
 Si tu cuello de botella es planificar y revisar el trabajo en equipo, una herramienta que arranca por el kanban tiene la forma correcta. Si tu cuello de botella es seguir el ritmo de varias sesiones de agentes a la vez, la forma correcta es un espacio de supervisión.`,
     ctaText: 'Si quieres ver qué está haciendo cada agente ahora mismo, enterarte en el momento en que uno te necesita y tener un tablero que los agentes actualizan solos, descarga CodeAgentSwarm y pruébalo en tu próxima sesión en paralelo.',
     ctaAgent: 'comparison',
     highlightedWords: ['Vibe Kanban', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
-    updatedAt: '2026-08-23',
+    updatedAt: '2026-08-25',
     alternateSlug: 'vibe-kanban-vs-codeagentswarm',
   },
   sections: [
@@ -35,7 +35,7 @@ Si tu cuello de botella es planificar y revisar el trabajo en equipo, una herram
         {
           type: 'callout',
           variant: 'info',
-          content: 'Aviso: CodeAgentSwarm es nuestro producto, así que léelo como una comparativa con parte interesada y verifica lo que decimos. Todos los datos de terceros se comprobaron el 26 de julio de 2026 en vibekanban.com, el README público de BloopAI/vibe-kanban y los datos públicos de GitHub. Cuando su documentación no cubre algo, decimos que no está documentado en vez de afirmar que le falta.',
+          content: 'Aviso: CodeAgentSwarm es nuestro producto, así que léelo como una comparativa con parte interesada y verifica lo que decimos. Todos los datos de terceros se comprobaron el 25 de agosto de 2026 en vibekanban.com, el README público de BloopAI/vibe-kanban y los datos públicos de GitHub. Cuando su documentación no cubre algo, decimos que no está documentado en vez de afirmar que le falta.',
         },
       ],
     },
@@ -54,7 +54,7 @@ Si tu cuello de botella es planificar y revisar el trabajo en equipo, una herram
         {
           type: 'list',
           items: [
-            'Código abierto con licencia Apache-2.0 y unas 27.500 estrellas en GitHub (27.524 el 26 de julio de 2026), la comunidad más grande de esta comparativa',
+            'Código abierto con licencia Apache-2.0 y unas 27.900 estrellas en GitHub (27.907 el 25 de agosto de 2026), la comunidad más grande de esta comparativa',
             'Las issues del kanban como unidad principal de trabajo, pensadas para equipos y no para una sola persona',
             'Revisión de diffs con comentarios en línea que vuelven al agente sin salir de la interfaz',
             'Un navegador integrado con devtools, modo inspección y emulación de dispositivos',
@@ -69,7 +69,7 @@ Si tu cuello de botella es planificar y revisar el trabajo en equipo, una herram
         {
           type: 'callout',
           variant: 'warning',
-          content: 'Aquí damos fechas, no veredictos. Un proyecto Apache-2.0 con 27.500 estrellas no se evapora, y hay software mantenido por la comunidad que sobrevive a su empresa. Lee el anuncio, mira tú mismo la actividad del repositorio y decide qué significa eso para la forma de trabajar de tu equipo.',
+          content: 'Aquí damos fechas, no veredictos. Un proyecto Apache-2.0 con 27.900 estrellas no se evapora, y hay software mantenido por la comunidad que sobrevive a su empresa. Lee el anuncio, mira tú mismo la actividad del repositorio y decide qué significa eso para la forma de trabajar de tu equipo.',
         },
       ],
     },
@@ -109,14 +109,14 @@ Si tu cuello de botella es planificar y revisar el trabajo en equipo, una herram
             ['Interfaz', 'Tablero kanban e interfaz de workspaces en el navegador, con previsualización integrada de la app', 'Espacio de trabajo de escritorio con paneles de terminal en vivo'],
             ['Agentes soportados', 'Claude Code, Codex, Gemini CLI, GitHub Copilot, Amp, Cursor, OpenCode, Droid, CCR y Qwen Code según su README', 'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent'],
             ['Modelo de aislamiento', 'Un workspace por issue, cada uno con su rama, su terminal y su servidor de desarrollo', 'Un proceso separado por terminal, con git worktrees opcionales por sesión'],
-            ['Notificaciones', 'No documentado en su web a 26 de julio de 2026', 'Notificaciones de escritorio cuando un agente termina o necesita respuesta'],
+            ['Notificaciones', 'No documentado en su web a 25 de agosto de 2026', 'Notificaciones de escritorio cuando un agente termina o necesita respuesta'],
             ['Historial de conversaciones', 'Sesiones por workspace con interfaz de chat y panel de cambios, documentadas por workspace', 'Historial buscable de los siete agentes, con reanudación cuando el agente la admite'],
             ['Gestión de tareas', 'Es el producto entero: issues de kanban, filtros, personalización del tablero, asignación en equipo', 'Una función más del espacio de trabajo: un kanban que los agentes actualizan por MCP'],
-            ['Código abierto', 'Sí, Apache-2.0, unas 27.500 estrellas', 'No, código cerrado y sin repositorio público de la app'],
+            ['Código abierto', 'Sí, Apache-2.0, unas 27.900 estrellas', 'No, código cerrado y sin repositorio público de la app'],
             ['Precio', 'Código abierto y autohospedable; las suscripciones de pago en la nube se cancelaron según su anuncio del 10 de abril de 2026', 'Gratis durante la beta con Pro incluido, y tú pones tus suscripciones de agentes'],
-            ['Último commit público (verificado el 26 jul 2026)', '24 de abril de 2026', 'Código cerrado, sin repositorio público'],
+            ['Último commit público (verificado el 25 ago 2026)', '24 de abril de 2026', 'Código cerrado, sin repositorio público'],
           ],
-          caption: 'Verificado el 26 de julio de 2026 en vibekanban.com, su README público, su documentación y GitHub.',
+          caption: 'Verificado el 25 de agosto de 2026 en vibekanban.com, su README público, su documentación y GitHub.',
         },
       ],
     },
@@ -128,7 +128,7 @@ Si tu cuello de botella es planificar y revisar el trabajo en equipo, una herram
           type: 'list',
           items: [
             '<strong>Tu unidad de trabajo es una issue, no una sesión.</strong> Si el trabajo consiste en planificar y repartir tickets y los agentes son la forma de completarlos, una herramienta que arranca por el kanban encaja mejor que un espacio de terminales.',
-            '<strong>Quieres código abierto que puedas hospedar.</strong> Apache-2.0, unas 27.500 estrellas y autohospedaje documentado con Docker Compose. Nuestra app es de código cerrado y no hay nada que hospedar.',
+            '<strong>Quieres código abierto que puedas hospedar.</strong> Apache-2.0, unas 27.900 estrellas y autohospedaje documentado con Docker Compose. Nuestra app es de código cerrado y no hay nada que hospedar.',
             '<strong>Revisas en el navegador.</strong> Los comentarios en línea sobre un diff que vuelven directos al agente, más una previsualización integrada con devtools y emulación de dispositivos, están muy bien y nosotros no tenemos equivalente.',
             '<strong>Quieres más agentes donde elegir.</strong> Su README lista más de diez, incluidos Cursor, Amp, Droid y Qwen Code. Nuestra lista es de siete.',
             '<strong>Quieres gestionar las pull requests dentro de la herramienta.</strong> Abrir una PR con descripción escrita por IA y hacer merge desde la misma interfaz forma parte de su flujo.',
@@ -146,7 +146,7 @@ Si tu cuello de botella es planificar y revisar el trabajo en equipo, una herram
           items: [
             '<strong>Quieres ver trabajar a los agentes.</strong> Paneles de terminal en vivo, diffs de archivos por terminal según ocurren y títulos que te dicen en qué anda cada sesión ahora mismo.',
             '<strong>Prefieres que te interrumpan a estar mirando.</strong> Las notificaciones de escritorio te avisan en cuanto un agente termina o se para a preguntar algo.',
-            '<strong>Usas Antigravity CLI o Kimi Code.</strong> Ninguno aparece entre los agentes del README de Vibe Kanban a 26 de julio de 2026. Aquí los dos son ciudadanos de primera, junto a Claude Code, Codex CLI y OpenCode.',
+            '<strong>Usas Antigravity CLI o Kimi Code.</strong> Ninguno aparece entre los agentes del README de Vibe Kanban a 25 de agosto de 2026. Aquí los dos son ciudadanos de primera, junto a Claude Code, Codex CLI y OpenCode.',
             '<strong>Quieres un historial buscable entre proveedores.</strong> Todas las conversaciones de todos los agentes en un mismo buscador, con reanudación cuando el agente la admite desde cualquier punto.',
             '<strong>Quieres control de permisos por operación.</strong> El modo Turbo aprueba solo lo que tú confías y deja el resto bajo revisión, en vez de un interruptor de todo o nada.',
             '<strong>Quieres saber tu cuota antes de que el agente se quede a medias.</strong> El indicador de cuota del proveedor te enseña cuánto te queda.',
@@ -173,11 +173,11 @@ Si tu cuello de botella es planificar y revisar el trabajo en equipo, una herram
   faq: [
     {
       question: '¿Vibe Kanban es código abierto?',
-      answer: 'Sí. Vibe Kanban se publica en github.com/BloopAI/vibe-kanban con licencia Apache-2.0 y unas 27.500 estrellas (27.524 al verificarlo el 26 de julio de 2026), la comunidad más grande de todas las herramientas comparadas aquí. CodeAgentSwarm es de código cerrado y no tiene repositorio público de la aplicación.',
+      answer: 'Sí. Vibe Kanban se publica en github.com/BloopAI/vibe-kanban con licencia Apache-2.0 y unas 27.900 estrellas (27.907 al verificarlo el 25 de agosto de 2026), la comunidad más grande de todas las herramientas comparadas aquí. CodeAgentSwarm es de código cerrado y no tiene repositorio público de la aplicación.',
     },
     {
       question: '¿Vibe Kanban sigue mantenido?',
-      answer: 'Estos son los datos con fecha, verificados el 26 de julio de 2026. El 10 de abril de 2026, bloop, la empresa detrás de Vibe Kanban, anunció su cierre y que el proyecto continuaría como código abierto mantenido por la comunidad. El último commit público en la rama principal fue el 24 de abril de 2026, y el README lleva un aviso de cierre que enlaza a ese anuncio. El código sigue siendo Apache-2.0 y autohospedable, así que la pregunta es cuánto te fías de un mantenimiento comunitario, no si el software desaparece.',
+      answer: 'Estos son los datos con fecha, verificados el 25 de agosto de 2026. El 10 de abril de 2026, bloop, la empresa detrás de Vibe Kanban, anunció su cierre y que el proyecto continuaría como código abierto mantenido por la comunidad. El último commit público en la rama principal fue el 24 de abril de 2026, y el README lleva un aviso de cierre que enlaza a ese anuncio. El código sigue siendo Apache-2.0 y autohospedable, así que la pregunta es cuánto te fías de un mantenimiento comunitario, no si el software desaparece.',
     },
     {
       question: '¿Puedo seguir usando la nube y las funciones de equipo de Vibe Kanban?',
@@ -185,7 +185,7 @@ Si tu cuello de botella es planificar y revisar el trabajo en equipo, una herram
     },
     {
       question: '¿Vibe Kanban soporta Antigravity CLI o Kimi Code?',
-      answer: 'Ninguno aparece entre los agentes de programación del README de Vibe Kanban a 26 de julio de 2026, que menciona Claude Code, Codex, Gemini CLI, GitHub Copilot, Amp, Cursor, OpenCode, Droid, CCR y Qwen Code. CodeAgentSwarm soporta Antigravity CLI y Kimi Code de forma directa, junto a Claude Code, Codex CLI y OpenCode.',
+      answer: 'Ninguno aparece entre los agentes de programación del README de Vibe Kanban a 25 de agosto de 2026, que menciona Claude Code, Codex, Gemini CLI, GitHub Copilot, Amp, Cursor, OpenCode, Droid, CCR y Qwen Code. CodeAgentSwarm soporta Antigravity CLI y Kimi Code de forma directa, junto a Claude Code, Codex CLI y OpenCode.',
     },
   ],
 }

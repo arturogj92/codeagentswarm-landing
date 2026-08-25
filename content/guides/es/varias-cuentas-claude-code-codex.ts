@@ -11,12 +11,12 @@ export const guide: Guide = {
 
 Aquí conviene separar dos conceptos. Una cuenta es la identidad de Claude u OpenAI que tiene la suscripción y la cuota. Una sesión es una conversación o un agente en ejecución. Puedes abrir varias sesiones con una sola cuenta o vincular conversaciones distintas a cuentas distintas.
 
-Esta guía explica cómo añadir cuentas de Claude Code y Codex, elegir la predeterminada para conversaciones nuevas, cambiar la cuenta de un Chat inactivo sin perder su historial nativo y consultar la cuota de la cuenta que está trabajando.`,
+Esta guía explica cómo añadir cuentas de Claude Code y Codex, elegir la predeterminada para conversaciones nuevas y consultar la cuota de la cuenta que está trabajando. El cambio de cuenta de Codex sobre un Chat existente ha superado una prueba real entre cuentas. Claude usa el mismo diseño de reinicio, pero el cambio sobre un Chat existente aún no se ha verificado en vivo con dos cuentas de Claude distintas.`,
     ctaText: 'Mantén iniciadas tus cuentas personales y de trabajo de Claude Code o Codex, y elige la adecuada para cada conversación.',
     ctaAgent: 'multi',
     highlightedWords: ['varias cuentas', 'Claude Code', 'Codex'],
     publishedAt: '2026-08-24',
-    updatedAt: '2026-08-24',
+    updatedAt: '2026-08-25',
     alternateSlug: 'multiple-claude-code-accounts',
   },
   sections: [
@@ -172,7 +172,7 @@ Esta guía explica cómo añadir cuentas de Claude Code y Codex, elegir la prede
     },
     {
       question: '¿Cómo cambio de cuenta de Claude Code sin cerrar sesión?',
-      answer: 'Añade primero las dos cuentas. En un Chat inactivo, elige la cuenta desde el selector de cuota o usa Cmd+P y selecciona “Switch current conversation to <nombre>”.',
+      answer: 'Añade primero las dos cuentas. Puedes asignar una cuenta gestionada a un Chat nuevo. El cambio de cuenta sobre un Chat existente usa el mismo reinicio en reposo que Codex, pero aún no se ha verificado en vivo con dos cuentas de Claude distintas.',
     },
     {
       question: '¿Cambiar de cuenta inicia una conversación nueva?',

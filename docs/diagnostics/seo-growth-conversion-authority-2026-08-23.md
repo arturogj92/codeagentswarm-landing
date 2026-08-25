@@ -166,9 +166,9 @@ Verified follow sources already include the self-owned GitHub Pages site, Uneed,
 - Guide First Load JS: about 746 kB before, 185 kB after.
 - Reduction: about 75%.
 - The former 2.2 MB raw client chunk containing unrelated guide bodies is gone.
-- Static output: 218 pages, down from 382. The locale cross-product no longer creates 166 duplicate guide prerenders.
-- Sitemap: 180 canonical URLs after adding the English and Spanish About pages.
-- Local crawl: 180 of 180 sitemap URLs returned HTTP 200.
+- Static output: 221 pages, down from 382. The locale cross-product no longer creates 166 duplicate guide prerenders.
+- Sitemap: 182 canonical URLs.
+- Local crawl: 182 of 182 sitemap URLs returned HTTP 200.
 
 ### Not changed yet
 
@@ -231,10 +231,19 @@ The 150 EUR budget should remain untouched until the free editorial batch lands 
 
 ## Validation
 
-- Thirteen SEO and guide tests plus twelve dashboard tests passed.
+### August 25 volatile fact refresh
+
+- Rechecked pricing, plans, models and token rates against first-party xAI, Anthropic, OpenAI, Cursor, Moonshot AI and OpenCode sources.
+- Updated all English and Spanish pricing guides touched by those facts to `2026-08-25`.
+- Corrected Grok Build access in `public/llms.txt`: every xAI plan includes it; paid SuperGrok tiers increase limits.
+- Refreshed GitHub stars and latest push dates for the comparison set, and updated product scope where current vendor documentation had changed.
+- Rewrote the Conductor comparison around its current local/cloud split, four supported agents, multiplayer/API features and public Free, Pro, Teams and Enterprise pricing.
+- Added `node scripts/competitor-refresh.mjs --check` and a focused regression test for volatile-content verification dates.
+
+- Sixteen SEO and guide tests plus thirteen dashboard tests passed.
 - Thirteen focused guide, conversion and cross-link tests passed after the intent-based media change.
 - The production build completed and type checking passed. The repository still lacks ESLint, so the build reports that linting is unavailable.
-- The production build generated 218 pages and all 180 sitemap URLs returned HTTP 200 locally.
+- The production build generated 221 pages and all 182 sitemap URLs returned HTTP 200 locally.
 - English and Spanish Beta CTAs navigated to the real download section in Playwright.
 - A mocked HTTP 500 kept the waitlist in an error state; a mocked duplicate response produced success.
 - The high-traffic guide retained its related recommendation without shipping unrelated guide text to client chunks.

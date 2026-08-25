@@ -6,15 +6,15 @@ export const guide: Guide = {
     locale: 'en',
     title: 'Cursor CLI Pricing and Usage Explained',
     metaTitle: 'Cursor CLI Pricing, Plans and Usage (2026)',
-    metaDescription: 'Understand Cursor CLI pricing and usage: Hobby Free, Pro from $20 monthly, Teams at $40 per user monthly and the current 3x and 20x options.',
+    metaDescription: 'Understand Cursor CLI pricing and usage: Hobby Free, Pro at $20, Pro+ at $60, Ultra at $200 and Teams from $40 per user monthly.',
     intro: `Cursor Agent CLI uses your Cursor account. There is no separate CodeAgentSwarm model bill for running it through ACP. You sign in with <code>cursor-agent login</code> or provide <code>CURSOR_API_KEY</code>, and Cursor applies the subscription and usage attached to that account.
 
-As shown on Cursor's pricing page on 16 August 2026, Hobby is Free, Pro starts at $20 per month and Teams costs $40 per user per month. Cursor also shows individual options with 3x and 20x usage. Prices and included usage can change, so confirm the <a href="https://cursor.com/pricing" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">official Cursor pricing page</a> before buying.`,
+As shown in Cursor's pricing documentation on August 25, 2026, Hobby is Free, Pro costs $20 per month, Pro+ $60 and Ultra $200. Teams starts at $40 per user per month. Prices and included usage can change, so confirm the <a href="https://cursor.com/pricing" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">official Cursor pricing page</a> before buying.`,
     ctaText: 'Bring your own Cursor account to CodeAgentSwarm and supervise Cursor Agent sessions without moving model billing away from Cursor.',
     ctaAgent: 'cursor-agent',
     highlightedWords: ['Cursor CLI', 'Pricing', 'Usage'],
     publishedAt: '2026-08-16',
-    updatedAt: '2026-08-16',
+    updatedAt: '2026-08-25',
     alternateSlug: 'precios-y-uso-cursor-cli',
   },
   sections: [
@@ -24,12 +24,13 @@ As shown on Cursor's pricing page on 16 August 2026, Hobby is Free, Pro starts a
       content: [
         { type: 'table', headers: ['Plan', 'Published price or usage position', 'What this guide can verify'], rows: [
           ['Hobby', 'Free', 'The free individual entry plan'],
-          ['Pro', 'From $20/month', 'The paid individual entry plan'],
-          ['Pro+', '3x Pro Agent limits', 'The higher individual usage tier'],
-          ['Ultra', '20x Pro Agent limits', 'The power-user tier'],
-          ['Teams', '$40/user/month', 'Per-user team pricing'],
+          ['Pro', '$20/month', 'Includes Cursor Models and Other Models usage pools'],
+          ['Pro+', '$60/month', 'More included usage for daily Agent work'],
+          ['Ultra', '$200/month', 'The individual power-user tier'],
+          ['Teams Standard', '$40/user/month', 'Team administration and shared controls'],
+          ['Teams Premium', '$120/user/month', 'Five times the Standard Agent limits'],
         ], caption: 'Cursor pricing changes over time. Verify the current page and your account before budgeting.' },
-        { type: 'callout', variant: 'warning', content: 'The table records what Cursor displayed on 16 August 2026. It does not promise a fixed price, request count or model allowance.' },
+        { type: 'callout', variant: 'warning', content: 'The table records what Cursor documented on August 25, 2026. It does not promise a fixed request count or model allowance.' },
       ],
     },
     {
@@ -42,10 +43,11 @@ As shown on Cursor's pricing page on 16 August 2026, Hobby is Free, Pro starts a
       ],
     },
     {
-      id: 'usage-multipliers',
-      title: 'What the 3x and 20x usage labels mean',
+      id: 'usage-pools',
+      title: 'How the current usage pools work',
       content: [
-        { type: 'paragraph', text: 'Cursor currently presents higher individual tiers with 3x and 20x usage labels. Those multipliers describe relative included usage on the pricing page. They are not a verified promise of a fixed number of agent requests.' },
+        { type: 'paragraph', text: 'Pro, Pro+ and Ultra now include two monthly pools. Cursor Models covers Grok and Composer models. Other Models covers third-party models at their API rates. The model you choose therefore changes how quickly the included usage is consumed.' },
+        { type: 'paragraph', text: 'Cursor also documents a $0.25 per million token Cursor Token Rate for third-party models on Teams and Enterprise. It applies on top of the model API price; first-party Cursor models are exempt.' },
         { type: 'paragraph', text: 'Actual consumption depends on the work, selected model and number of active sessions. A long repository investigation can consume more than a short question, and several parallel agents draw usage independently.' },
         { type: 'callout', variant: 'info', content: 'Check the usage information inside your Cursor account for the allowance that applies to you. Public plan labels are not a substitute for account-specific usage data.' },
       ],
@@ -76,10 +78,10 @@ As shown on Cursor's pricing page on 16 August 2026, Hobby is Free, Pro starts a
     },
   ],
   faq: [
-    { question: 'Is Cursor Agent CLI free?', answer: 'Cursor shows a Hobby Free plan as of 16 August 2026. The CLI uses your Cursor account, and the features or usage available to that account can change. Check cursor.com/pricing for current terms.' },
-    { question: 'How much does Cursor Pro cost?', answer: 'Cursor lists Pro from $20 per month as of 16 August 2026. Verify the official pricing page because prices and included usage can change.' },
-    { question: 'How much does Cursor Teams cost?', answer: 'Cursor lists Teams at $40 per user per month as of 16 August 2026. Confirm current billing terms with Cursor before a rollout.' },
-    { question: 'What do 3x and 20x mean on Cursor pricing?', answer: 'They are relative usage labels shown for higher individual options. They do not establish a fixed number of agent requests in this guide.' },
+    { question: 'Is Cursor Agent CLI free?', answer: 'Cursor shows a Hobby Free plan as of August 25, 2026. The CLI uses your Cursor account, and the features or usage available to that account can change. Check cursor.com/pricing for current terms.' },
+    { question: 'How much do Cursor individual plans cost?', answer: 'Cursor lists Pro at $20, Pro+ at $60 and Ultra at $200 per month as of August 25, 2026.' },
+    { question: 'How much does Cursor Teams cost?', answer: 'Cursor lists Teams Standard at $40 and Teams Premium at $120 per user per month as of August 25, 2026.' },
+    { question: 'How does Cursor measure included usage?', answer: 'Current individual plans use separate Cursor Models and Other Models pools. Model choice affects consumption because third-party models draw usage at their API rates.' },
     { question: 'Does CodeAgentSwarm charge for Cursor models?', answer: 'No separate model usage is created by the ACP integration. Cursor authentication, subscription and usage remain with your Cursor account or CURSOR_API_KEY.' },
   ],
 }

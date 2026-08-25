@@ -11,12 +11,12 @@ export const guide: Guide = {
 
 The important distinction is that accounts are not sessions. An account is the Claude or OpenAI identity that owns the subscription and quota. A session is one conversation or running agent. You can run several sessions under one account, or bind different conversations to different accounts.
 
-This guide shows how to add Claude Code and Codex accounts, choose the default for new conversations, switch an idle Chat without losing its native history, and read quota for the account that is actually doing the work.`,
+This guide shows how to add Claude Code and Codex accounts, choose the default for new conversations and read quota for the account doing the work. Codex account switching on an existing Chat has passed a live cross-account check. Claude uses the same restart design, but the existing-Chat switch has not yet been live-verified with two distinct Claude accounts.`,
     ctaText: 'Keep your work and personal Claude Code or Codex accounts signed in, then choose the right account for each conversation.',
     ctaAgent: 'multi',
     highlightedWords: ['Multiple Claude Code Accounts', 'Codex Accounts'],
     publishedAt: '2026-08-24',
-    updatedAt: '2026-08-24',
+    updatedAt: '2026-08-25',
     alternateSlug: 'varias-cuentas-claude-code-codex',
   },
   sections: [
@@ -172,7 +172,7 @@ This guide shows how to add Claude Code and Codex accounts, choose the default f
     },
     {
       question: 'How do I switch Claude Code accounts without logging out?',
-      answer: 'Add both accounts first. In an idle Chat, choose the account from the quota popover or use Cmd+P and select “Switch current conversation to <label>”.',
+      answer: 'Add both accounts first. You can assign a managed account to a new Chat. Switching an existing Claude Chat uses the same idle restart path as Codex, but has not yet been live-verified with two distinct Claude accounts.',
     },
     {
       question: 'Does switching accounts start a new conversation?',

@@ -16,7 +16,7 @@ function usage() {
   console.log(`Competitor fact refresh
 
 Usage:
-  node scripts/competitor-refresh.mjs [--help]
+  node scripts/competitor-refresh.mjs [--check] [--help]
 
 Reads scripts/competitor-facts.json and asks the public GitHub API for the current
 stars and last push date of every entry that has a repo. Prints one row per tool with
@@ -25,6 +25,8 @@ the recorded value, the current value and any flags:
   DATA-STALE    the API last push date is not the one recorded in the JSON
   STARS-DRIFT   stars moved more than ${DRIFT_PCT} percent since the recorded value
   NOW-STALLED   the current last push is older than ${STALE_DAYS} days
+
+--check exits non-zero when recorded stars or last-push dates have changed.
 
 The API is called unauthenticated, so a run can hit the rate limit. Wait an hour and
 try again if that happens.`)
@@ -59,7 +61,8 @@ async function fetchRepo(repo) {
 }
 
 async function main() {
-  if (process.argv.slice(2).includes('--help')) {
+  const args = process.argv.slice(2)
+  if (args.includes('--help')) {
     usage()
     return
   }
@@ -68,6 +71,7 @@ async function main() {
   console.log(`Competitor facts recorded on ${facts.verified_at}, checked against GitHub now.\n`)
 
   const rows = []
+  let needsRefresh = false
   for (const entry of facts.competitors) {
     if (!entry.repo) {
       rows.push([entry.name, 'no public repo', 'no public repo', ''])
@@ -79,6 +83,7 @@ async function main() {
       data = await fetchRepo(entry.repo)
     } catch (err) {
       rows.push([entry.name, 'API error', String(err.message), 'CHECK-BY-HAND'])
+      needsRefresh = true
       continue
     }
 
@@ -86,9 +91,13 @@ async function main() {
     const currentPush = dayOf(data.pushed_at)
     const flags = []
 
-    if (currentPush !== entry.pushed_at) flags.push('DATA-STALE')
+    if (currentPush !== entry.pushed_at) {
+      flags.push('DATA-STALE')
+      needsRefresh = true
+    }
 
     let starsText = `${entry.stars} -> ${currentStars}`
+    if (currentStars !== entry.stars) needsRefresh = true
     if (typeof entry.stars === 'number' && entry.stars > 0) {
       const change = ((currentStars - entry.stars) / entry.stars) * 100
       starsText += ` (${change >= 0 ? '+' : ''}${change.toFixed(1)}%)`
@@ -118,6 +127,8 @@ async function main() {
   console.log(
     '\nReminder: when a number changes, update the guide tables, the visible verification dates in both languages and scripts/competitor-facts.json in the same commit.'
   )
+
+  if (args.includes('--check') && needsRefresh) process.exitCode = 1
 }
 
 main().catch(err => {

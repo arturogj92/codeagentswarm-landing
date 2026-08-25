@@ -6,17 +6,17 @@ export const guide: Guide = {
     locale: 'es',
     title: 'Conductor vs CodeAgentSwarm: comparativa honesta (2026)',
     metaTitle: 'Conductor vs CodeAgentSwarm: comparativa honesta (2026)',
-    metaDescription: 'Conductor es una app solo para Mac con agentes Claude Code, Codex y Cursor en paralelo. CodeAgentSwarm mueve siete CLIs en macOS y Windows. Comparativa honesta.',
-    intro: `Conductor es una app solo para macOS que lanza agentes de Claude Code, Codex y Cursor en paralelo dentro de workspaces aislados; CodeAgentSwarm es una app de escritorio para macOS y Windows que ejecuta siete CLIs de agentes en terminales paralelos. Misma idea, distinto alcance.
+    metaDescription: 'Compara los workspaces locales y cloud, cuatro agentes y precios de Conductor con CodeAgentSwarm en macOS y Windows.',
+    intro: `Conductor combina una app para macOS con workspaces cloud aislados para Claude Code, Codex, Cursor y OpenCode. CodeAgentSwarm es un workspace de escritorio para macOS y Windows que ejecuta siete CLIs de agentes en terminales paralelos. Misma idea, distinto modelo de despliegue.
 
-Aviso: CodeAgentSwarm lo hacemos nosotros. Aun así, aquí se le reconoce a Conductor lo que hace bien, y cuando su web no documenta algo lo decimos como "no documentado" en lugar de afirmar que la función no existe. Todos los datos de terceros se comprobaron el 26 de julio de 2026 en conductor.build, incluidas su FAQ y los datos estructurados que publican en su portada. La disponibilidad de CodeAgentSwarm en esta página se actualizó el 23 de agosto de 2026.
+Aviso: CodeAgentSwarm lo hacemos nosotros. Todos los datos de terceros se comprobaron el 25 de agosto de 2026 en la web, la página de precios y la documentación de Conductor.
 
-Resumen rápido: si tú y tu equipo estáis todos en Mac y queréis una app nativa construida alrededor de revisar y mergear el trabajo de los agentes, Conductor es una elección seria y muy centrada. Si alguien toca Windows, o quieres más de tres CLIs de agentes, CodeAgentSwarm cubre terreno que Conductor no pisa.`,
-    ctaText: '¿Necesitas un workspace de agentes en paralelo que también funcione en Windows y con siete CLIs en vez de tres? Descarga CodeAgentSwarm y monta tu primera tanda de terminales en paralelo.',
+Resumen rápido: elige Conductor por sus sandboxes cloud, la colaboración multiplayer y su API. Elige CodeAgentSwarm por Windows, siete CLIs integradas, historial buscable entre agentes y un kanban gestionado por los propios agentes.`,
+    ctaText: '¿Necesitas un workspace de agentes en paralelo que también funcione en Windows y con siete CLIs en vez de cuatro? Descarga CodeAgentSwarm y monta tu primera tanda de terminales en paralelo.',
     ctaAgent: 'comparison',
     highlightedWords: ['Conductor', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
-    updatedAt: '2026-08-23',
+    updatedAt: '2026-08-25',
     alternateSlug: 'conductor-vs-codeagentswarm',
   },
   sections: [
@@ -26,16 +26,16 @@ Resumen rápido: si tú y tu equipo estáis todos en Mac y queréis una app nati
       content: [
         {
           type: 'paragraph',
-          text: 'Conductor es una app solo para Mac que crea agentes de Claude Code, Codex y Cursor en paralelo dentro de workspaces aislados para que revises y mergees sus cambios; CodeAgentSwarm es una app de escritorio para macOS y Windows que ejecuta siete CLIs de agentes en terminales paralelos, con notificaciones, diffs en vivo y un tablero de tareas compartido.',
+          text: 'Conductor ejecuta Claude Code, Codex, Cursor y OpenCode en workspaces locales de Mac o sandboxes cloud gestionados; CodeAgentSwarm ejecuta siete CLIs localmente en macOS y Windows, con notificaciones, diffs en vivo y un tablero compartido.',
         },
         {
           type: 'paragraph',
-          text: 'Los dos parten de la misma idea: darle a cada agente su espacio aislado y luego hacer que el resultado sea revisable. Se separan en el alcance. Conductor apuesta del todo por el Mac y por tres agentes, y de esa concentración saca un producto nativo muy afinado. CodeAgentSwarm se reparte entre dos sistemas operativos y siete proveedores, lo cual pesa si tus máquinas y tus CLIs son variadas. Para el panorama general, empieza por <a href="/es/guias/mejores-herramientas-agentes-ia-en-paralelo" class="text-neon-cyan hover:text-neon-purple transition-colors">las mejores herramientas para agentes de IA en paralelo</a>.',
+          text: 'Los dos aíslan el trabajo del agente y facilitan su revisión. Conductor extiende ese modelo a sandboxes cloud gestionados, colaboración multiplayer y una API HTTP. CodeAgentSwarm mantiene el trabajo local y cubre dos sistemas operativos y siete proveedores. Para el panorama general, empieza por <a href="/es/guias/mejores-herramientas-agentes-ia-en-paralelo" class="text-neon-cyan hover:text-neon-purple transition-colors">las mejores herramientas para agentes de IA en paralelo</a>.',
         },
         {
           type: 'callout',
           variant: 'info',
-          content: 'Transparencia: CodeAgentSwarm es nuestro, así que léelo como una comparativa escrita por parte interesada. Todos los datos de terceros se verificaron el 26 de julio de 2026 en conductor.build, con sus propios textos, su FAQ y los datos estructurados que publican. Conductor no tiene repositorio público, así que varias filas aparecen como "no documentado" en vez de rellenarse a ojo.',
+          content: 'Transparencia: CodeAgentSwarm es nuestro, así que léelo como una comparativa escrita por parte interesada. Todos los datos de Conductor se verificaron el 25 de agosto de 2026 en conductor.build, su página de precios y su documentación. Conductor no tiene repositorio público, así que no hay historial público de código que comparar.',
         },
       ],
     },
@@ -45,25 +45,25 @@ Resumen rápido: si tú y tu equipo estáis todos en Mac y queréis una app nati
       content: [
         {
           type: 'paragraph',
-          text: '<a href="https://conductor.build" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Conductor</a> se describe con estas palabras suyas: "Create parallel Claude Code, Codex, and Cursor agents in isolated workspaces. See at a glance what they are working on, then review and merge their changes". Es decir, agentes en paralelo dentro de workspaces aislados, con una vista de qué hace cada uno para luego revisar y mergear. Lo desarrolla Melty Labs, una empresa de Y Combinator con sede en San Francisco, y su web indica macOS como sistema operativo.',
+          text: '<a href="https://conductor.build" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Conductor</a> se presenta ahora como un equipo de agentes cloud. Los workspaces locales siguen ejecutándose en Mac, mientras que Pro y planes superiores crean sandboxes gestionados que continúan trabajando después de cerrar la app. También ofrece workspaces multiplayer, una API HTTP beta y un servidor MCP.',
         },
         {
           type: 'paragraph',
-          text: 'El flujo que documentan es corto. Añades un repositorio, Conductor lo clona y trabaja íntegramente en tu Mac. Cada agente que levantas recibe un workspace aislado, y su FAQ explica qué hay debajo: "each Conductor workspace is a new git worktree", cada workspace es un worktree nuevo de git. Su propia descripción añade que además lleva su rama, su entorno de ejecución y una carpeta de contexto compartido. Después miras una lista que enseña quién trabaja y qué necesita atención, y revisas el código.',
+          text: 'Los workspaces locales usan git worktrees en tu Mac. Los cloud se ejecutan en sandboxes aislados de Vercel en us-east-1, con 8 vCPU, 16 GB de RAM y almacenamiento efímero. Conductor guarda en sus servidores las entradas y salidas de sesiones cloud; los datos de sesiones locales permanecen en tu dispositivo.',
         },
         {
           type: 'list',
           items: [
-            '<strong>Enfoque nativo en Mac:</strong> una sola plataforma, un solo objetivo de diseño, sin concesiones multiplataforma',
+            '<strong>Local y cloud:</strong> worktrees en Mac para trabajo local y sandboxes gestionados para agentes que siguen tras cerrar la app',
             '<strong>Workspaces aislados:</strong> un worktree de git, una rama, un entorno de ejecución y una carpeta de contexto compartido por agente',
             '<strong>Revisar y mergear dentro de la app:</strong> el producto gira alrededor de meter en la rama lo que hizo el agente, no solo de lanzarlo',
-            '<strong>Agentes de Cursor:</strong> uno de sus tres agentes compatibles y también una integración de primera clase en CodeAgentSwarm mediante el servidor ACP oficial de Cursor',
+            '<strong>Cuatro agentes integrados:</strong> Claude Code, Codex, Cursor y OpenCode',
             '<strong>Usa tu sesión actual:</strong> su FAQ dice que Conductor utiliza Claude Code tal y como ya hayas iniciado sesión, sea con API key o con un plan Claude Pro o Max',
           ],
         },
         {
           type: 'paragraph',
-          text: 'Y lo que no hemos podido verificar. Conductor no tiene repositorio público, así que no hay historial de commits ni estrellas que citar, y su web no publica página de precios (la ruta /pricing devolvía un 404 el 26 de julio de 2026). El historial de conversaciones, un tablero de tareas y las notificaciones de escritorio tampoco están documentados en su web a esa fecha. Eso no significa que no existan. Significa que no te vamos a decir ni que sí ni que no.',
+          text: 'Los precios ya son públicos: Free a $0 para workspaces locales en Mac, Pro a $50/mes con cloud, multiplayer para hasta cinco usuarios Pro y API, Teams a $60/usuario/mes y Enterprise con precio personalizado. El cómputo cloud aún no tiene coste adicional, pero Conductor avisa de que planea cobrarlo por uso.',
         },
       ],
     },
@@ -110,47 +110,47 @@ Resumen rápido: si tú y tu equipo estáis todos en Mac y queréis una app nati
           rows: [
             [
               '<strong>Plataformas</strong>',
-              'Solo macOS, según su propia web',
+              'App macOS para local; workspaces cloud; app iOS anunciada próximamente',
               'macOS y Windows. Sin versión para Linux',
             ],
             [
               '<strong>Interfaz</strong>',
-              'App de Mac con una lista de workspaces que muestra quién trabaja y qué necesita atención, más revisión de código',
+              'App de Mac, workspaces cloud, colaboración multiplayer y revisión de código',
               'Workspace de escritorio con terminales en paralelo, diffs en vivo y tablero',
             ],
             [
               '<strong>Agentes soportados</strong>',
-              'Claude Code, Codex y Cursor, según su FAQ',
+              'Claude Code, Codex, Cursor y OpenCode',
               'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent',
             ],
             [
               '<strong>Modelo de aislamiento</strong>',
-              'Un worktree de git por workspace, más su rama, su entorno de ejecución y una carpeta de contexto compartido',
+              'Git worktrees locales o sandboxes cloud gestionados y aislados',
               'Worktree de git por sesión y un proceso independiente por terminal',
             ],
             [
               '<strong>Notificaciones</strong>',
-              'Su web dice que la vista de workspaces enseña qué necesita atención. Las notificaciones de escritorio no están documentadas a 26 de julio de 2026',
+              'Estados de atención por workspace; el acceso móvil figura como próximo',
               'Notificaciones de escritorio cuando un agente termina o necesita intervención',
             ],
             [
               '<strong>Historial de conversaciones</strong>',
-              'No documentado en su web a 26 de julio de 2026',
+              'Conductor guarda las transcripciones cloud y permite acceder a ellas por API',
               'Buscable en los siete agentes, con reanudación cuando cada agente la admite',
             ],
             [
               '<strong>Gestión de tareas</strong>',
-              'No documentado en su web a 26 de julio de 2026',
+              'API HTTP beta y servidor MCP; sin kanban público documentado',
               'Tablero kanban que los propios agentes actualizan por MCP',
             ],
             [
               '<strong>Open source</strong>',
-              'Sin repositorio público a 26 de julio de 2026. Desarrollado por Melty Labs',
+              'Sin repositorio público a 25 de agosto de 2026. Desarrollado por Melty Labs',
               'No. Código cerrado, sin repositorio público de la app',
             ],
             [
               '<strong>Precio</strong>',
-              'No publicado como texto en su web a 26 de julio de 2026. Su FAQ sí dice que Conductor usa tu sesión existente de Claude Code',
+              'Free $0; Pro $50/mes; Teams $60/usuario/mes; Enterprise personalizado. Planean cobrar el uso cloud',
               'Gratis durante la beta con Pro incluido, y pones tú las suscripciones de las CLIs',
             ],
             [
@@ -159,7 +159,7 @@ Resumen rápido: si tú y tu equipo estáis todos en Mac y queréis una app nati
               'Código cerrado, sin repositorio público',
             ],
           ],
-          caption: 'Todos los datos de Conductor se comprobaron el 26 de julio de 2026 en conductor.build, incluidas su FAQ y los datos estructurados de su portada. Las filas marcadas como "no documentado" significan que no lo hemos encontrado publicado, no que la función no exista.',
+          caption: 'Todos los datos de Conductor se comprobaron el 25 de agosto de 2026 en conductor.build, su página de precios y su documentación.',
         },
       ],
     },
@@ -176,9 +176,9 @@ Resumen rápido: si tú y tu equipo estáis todos en Mac y queréis una app nati
           items: [
             '<strong>Trabajas solo en Mac y quieres una app nativa.</strong> Conductor apunta a una única plataforma, y eso se suele notar en el día a día.',
             '<strong>Tu cuello de botella es revisar, no lanzar.</strong> Su producto está montado alrededor de ver qué hizo cada agente y mergearlo, la parte que más gente subestima.',
-            '<strong>Quieres agentes de Cursor.</strong> Cursor es uno de sus tres agentes soportados. CodeAgentSwarm no mueve Cursor.',
+            '<strong>Quieres agentes cloud gestionados.</strong> Pro y planes superiores mantienen agentes en sandboxes aislados aunque cierres la app de Mac.',
             '<strong>Te convence el workspace aislado como concepto central.</strong> Una rama, un worktree, un entorno de ejecución y una carpeta de contexto compartido por agente es un modelo mental limpio.',
-            '<strong>Quieres menos piezas.</strong> Tres agentes en lugar de siete es menos que configurar y mantener al día, y a algunos equipos les compensa.',
+            '<strong>Quieres colaboración cloud.</strong> Compartir workspaces y usar su API beta da al equipo una coordinación remota que CodeAgentSwarm aún no ofrece.',
           ],
         },
         {
@@ -200,7 +200,7 @@ Resumen rápido: si tú y tu equipo estáis todos en Mac y queréis una app nati
           type: 'list',
           items: [
             '<strong>Tú o tu equipo usáis Windows.</strong> Conductor es solo macOS según su web. CodeAgentSwarm funciona en macOS y Windows, algo que pesa en cuanto una persona del equipo no está en Mac.',
-            '<strong>Quieres siete CLIs de agentes.</strong> Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent, mezclados entre terminales. Antigravity, OpenCode, Kimi y Grok no están entre los agentes que documenta Conductor.',
+            '<strong>Quieres siete CLIs de agentes.</strong> Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent, mezclados entre terminales. Antigravity, Kimi y Grok no están entre los agentes que documenta Conductor.',
             '<strong>Quieres un único historial buscable entre proveedores,</strong> con cualquier conversación recuperable en un terminal vivo.',
             '<strong>Quieres que sean los agentes quienes mantengan el tablero.</strong> El kanban lo actualizan ellos por MCP mientras trabajan, no tú después.',
             '<strong>Quieres que te avisen, no estar mirando.</strong> Las notificaciones saltan cuando un agente termina o necesita algo.',
@@ -215,7 +215,7 @@ Resumen rápido: si tú y tu equipo estáis todos en Mac y queréis una app nati
         },
         {
           type: 'paragraph',
-          text: 'Si descubriste Conductor, te gustó la idea y luego viste que es solo para macOS, esta es la sección que buscabas. Su web indica macOS como sistema operativo, así que a 26 de julio de 2026 no hay versión de Windows a la que esperar. Te quedan unas cuantas opciones honestas.',
+          text: 'Si descubriste Conductor, te gustó la idea y luego viste que su app local es solo para macOS, esta es la sección que buscabas. A 25 de agosto de 2026 no hay build de escritorio para Windows. Te quedan unas cuantas opciones honestas.',
         },
         {
           type: 'list',
@@ -249,19 +249,19 @@ Resumen rápido: si tú y tu equipo estáis todos en Mac y queréis una app nati
   faq: [
     {
       question: '¿Conductor funciona en Windows?',
-      answer: 'No. Conductor indica macOS como sistema operativo en su propia web y su titular habla de ejecutar agentes en paralelo en tu Mac, así que a 26 de julio de 2026 no hay versión para Windows. CodeAgentSwarm funciona en macOS y Windows, que es la razón principal por la que mucha gente que compara los dos acaba aquí. Ninguno de los dos tiene versión para Linux.',
+      answer: 'No. Conductor ofrece una app para macOS y workspaces cloud, pero no tiene build de escritorio para Windows a 25 de agosto de 2026. CodeAgentSwarm funciona localmente en macOS y Windows. Ninguno tiene build de escritorio para Linux.',
     },
     {
       question: '¿Conductor es open source?',
-      answer: 'No hay repositorio público de Conductor a 26 de julio de 2026. Es una app de Mac propietaria desarrollada por Melty Labs, una empresa de Y Combinator con sede en San Francisco, así que no hay historial de commits que puedas inspeccionar. CodeAgentSwarm también es de código cerrado y sin repositorio público, o sea que ninguno de los dos te da acceso al código. Si el open source es requisito, mira Paseo, que publica el suyo bajo AGPLv3.',
+      answer: 'No hay repositorio público de Conductor a 25 de agosto de 2026. Es software propietario desarrollado por Melty Labs, así que no hay historial de commits que puedas inspeccionar. CodeAgentSwarm también es cerrado y sin repositorio público. Si necesitas acceso al código, mira Paseo, que lo publica bajo AGPLv3.',
     },
     {
       question: '¿Qué agentes soporta cada uno?',
-      answer: 'Conductor soporta Claude Code, Codex y Cursor, según la FAQ de su web. CodeAgentSwarm soporta siete CLIs: Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent. Los dos ejecutan Cursor; CodeAgentSwarm también ejecuta Antigravity CLI, OpenCode, Kimi Code y Grok Build.',
+      answer: 'Conductor soporta Claude Code, Codex, Cursor y OpenCode. CodeAgentSwarm soporta siete CLIs: Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent. Los dos ejecutan Cursor y OpenCode; CodeAgentSwarm también ejecuta Antigravity CLI, Kimi Code y Grok Build.',
     },
     {
       question: '¿Hay forma de probar los dos gratis?',
-      answer: 'CodeAgentSwarm es gratis durante la beta, con Pro incluido, y pones tú las suscripciones de las CLIs. En el caso de Conductor, su web no publica precios como texto a 26 de julio de 2026 y la ruta /pricing devuelve un 404, así que no vamos a afirmar nada sobre lo que cuesta. Su FAQ sí documenta que Conductor usa tu sesión existente de Claude Code, sea con API key o con un plan Claude Pro o Max. Consulta conductor.build para ver las condiciones actuales.',
+      answer: 'Sí. CodeAgentSwarm es gratis durante la beta con Pro incluido. Conductor tiene un plan Free de $0 para workspaces locales en Mac; Pro cuesta $50/mes, Teams $60/usuario/mes y Enterprise tiene precio personalizado. Conductor dice que el cómputo cloud todavía no tiene coste adicional, pero que planea cobrarlo por uso. Ambos usan las suscripciones de agentes que tú aportas.',
     },
   ],
 }

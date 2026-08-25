@@ -6,17 +6,17 @@ export const guide: Guide = {
     locale: 'es',
     title: 'Precios de Kimi Code: coste mensual, anual y por API',
     metaTitle: 'Precios de Kimi Code: mensual, anual y API (2026)',
-    metaDescription: 'Compara los planes mensuales y anuales de Kimi Code, créditos de agente, límites semanales y de 5 horas, y los precios actuales de la API de Kimi K2.7 Code.',
-    intro: `A 23 de agosto de 2026, Kimi ofrece cuatro niveles de pago. Los precios mensuales van de 19 a 199 dólares; con facturación anual, el coste mensual efectivo baja a entre 15 y 159 dólares. Todos incluyen Kimi Code y los créditos mensuales para agentes suben de 60 a 720. Las funciones de la membresía comparten un pozo de créditos, mientras Kimi Code tiene además su propia asignación semanal y un límite de 5 horas.
+    metaDescription: 'Compara los niveles actuales de Kimi, el acceso a K3, los límites semanales y de 5 horas, y los precios por token de K3 y K2.7 Code.',
+    intro: `A 25 de agosto de 2026, la tabla oficial de Kimi tiene cuatro niveles: Andante por 49 ¥ al mes, Moderato por 99 ¥, Allegretto por 199 ¥ y Allegro por 699 ¥. Todos incluyen Kimi Code. K3 está disponible desde Moderato, mientras que Allegretto y los niveles superiores desbloquean hasta un millón de tokens de contexto en Kimi Code.
 
-También existe la vía de pago por token. El modelo de programación predeterminado actual, Kimi K2.7 Code, cuesta 0,19 dólares por millón de tokens de entrada en caché, 0,95 dólares sin caché y 4 dólares por millón de tokens de salida a través de la API de Kimi. Su ventana de contexto es de 262.144 tokens.
+También existe la vía de pago por token mediante Kimi Open Platform. Sus tarifas públicas actuales para K3 son 2 ¥ por entrada en caché, 20 ¥ por entrada sin caché y 100 ¥ por salida, todo por millón de tokens. K2.7 Code cuesta 1,30 ¥, 6,50 ¥ y 27 ¥, respectivamente.
 
 Esta guía separa ambos sistemas de facturación y enlaza cada cifra cambiante con la documentación oficial de Kimi. Los precios pueden cambiar: usa la fecha anterior y confirma el total en el checkout antes de pagar.`,
     ctaText: 'Ejecutar agentes de Kimi Code contra límites de uso estresa menos cuando puedes verlos. CodeAgentSwarm muestra el uso de Kimi junto al del resto de tus agentes.',
     ctaAgent: 'kimi-code',
     highlightedWords: ['Kimi Code', 'Precios'],
     publishedAt: '2026-07-18',
-    updatedAt: '2026-08-23',
+    updatedAt: '2026-08-25',
     alternateSlug: 'kimi-code-plans-and-pricing',
   },
   sections: [
@@ -26,26 +26,26 @@ Esta guía separa ambos sistemas de facturación y enlaza cada cifra cambiante c
       content: [
         {
           type: 'paragraph',
-          text: 'La <a href="https://www.kimi.ai/help/membership/membership-pricing" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">página oficial de precios de Kimi</a> muestra estos cuatro planes de pago a 23 de agosto de 2026:',
+          text: 'La <a href="https://www.kimi.com/en/help/membership/membership-overview" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">página oficial de membresías de Kimi</a> muestra estos cuatro planes de pago a 25 de agosto de 2026:',
         },
         {
           type: 'table',
-          headers: ['Plan', 'Mensual', 'Anual, coste mensual efectivo', 'Créditos de agente', 'Kimi Code'],
+          headers: ['Plan', 'Precio mensual publicado', 'Posición', 'Kimi Code'],
           rows: [
-            ['Moderato', '19 $', '15 $ (180 $/año)', '60/mes', 'Incluido'],
-            ['Allegretto', '39 $', '31 $ (372 $/año)', '150/mes', 'Incluido'],
-            ['Allegro', '99 $', '79 $ (948 $/año)', '360/mes', 'Incluido'],
-            ['Vivace', '199 $', '159 $ (1.908 $/año)', '720/mes', 'Incluido'],
+            ['Andante', '49 ¥', 'Uso cotidiano', 'Incluido; K2.7 Code'],
+            ['Moderato', '99 ¥', 'Productividad', 'Incluido; K3 hasta 256K'],
+            ['Allegretto', '199 ¥', 'Profesional', 'Incluido; K3 hasta 1M'],
+            ['Allegro', '699 ¥', 'Uso intensivo', 'Incluido; K3 hasta 1M'],
           ],
         },
         {
           type: 'paragraph',
-          text: 'Los créditos de agente son unidades de tarea, no tokens, y una tarea difícil puede gastar más de uno. La <a href="https://www.kimi.ai/help/membership/membership-overview" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">descripción oficial de la membresía</a> explica que Kimi Code, Kimi Work, Deep Research, Slides, webs y las demás funciones consumen un mismo pozo mensual. Un uso intenso fuera de Kimi Code puede reducir lo que queda para programar.',
+          text: 'Los créditos del plan se consumen según el uso real de tokens. Kimi Code, Kimi Work, Deep Research, Slides, webs y las demás funciones consumen un mismo pozo mensual, por lo que el uso intenso fuera de Kimi Code puede reducir lo que queda para programar.',
         },
         {
           type: 'callout',
           variant: 'warning',
-          content: 'Los importes de 15, 31, 79 y 159 dólares son equivalentes mensuales al pagar un año completo. Mes a mes, los precios son 19, 39, 99 y 199 dólares. El checkout puede añadir impuestos.',
+          content: 'El centro de ayuda oficial publica estos precios en yuanes. Kimi puede adaptar el checkout al mercado, así que confirma en tu cuenta la moneda, los impuestos y el descuento anual antes de pagar.',
         },
       ],
     },
@@ -69,43 +69,41 @@ Esta guía separa ambos sistemas de facturación y enlaza cada cifra cambiante c
     },
     {
       id: 'modelo-actual',
-      title: 'Modelo actual de Kimi Code y ventana de contexto',
+      title: 'Modelos actuales de Kimi Code y ventanas de contexto',
       content: [
         {
           type: 'paragraph',
-          text: 'La <a href="https://www.kimi.com/es-419/resources/kimi-k2-7-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">documentación de Kimi K2.7 Code</a> indica que K2.7 Code es ahora el modelo predeterminado de Kimi Code. Tiene una ventana de contexto de 256K (262.144 tokens), un billón de parámetros totales y 32.000 millones de parámetros activos por token.',
+          text: 'La <a href="https://www.kimi.com/code/docs/en/kimi-code/models.html" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">documentación de modelos de Kimi Code</a> muestra ahora K3 como modelo predeterminado. Moderato incluye K3 con hasta 256K de contexto; Allegretto y los niveles superiores desbloquean hasta 1M. La opción <code>k3-256k</code> consume menos cuota en el trabajo cotidiano.',
         },
         {
           type: 'paragraph',
-          text: 'K2.7 Code siempre se ejecuta con razonamiento. Si desactivas el razonamiento en Kimi Code, la petición pasa a K2.6. Por eso ya no son correctas las afirmaciones antiguas de que Kimi Code siempre ejecuta K3 con un millón de tokens de contexto.',
+          text: 'K2.7 Code sigue disponible para todos los miembros de pago bajo <code>kimi-for-coding</code>, con 262.144 tokens de contexto. Su variante HighSpeed requiere Allegretto o superior y consume unas tres veces más cuota. Desactivar el razonamiento dirige las peticiones de K3 o K2.7 a K2.6.',
         },
         {
           type: 'callout',
           variant: 'info',
-          content: 'Kimi K3 es otro modelo y sigue disponible en productos de Kimi. No uses el precio de K3 ni su contexto de un millón de tokens para calcular una sesión predeterminada de Kimi Code con K2.7 Code.',
+          content: 'K3 y K2.7 Code tienen ventanas de contexto, permisos de plan y precios por token distintos. Registra el identificador de modelo usado por cada agente antes de comparar coste o consumo de cuota.',
         },
       ],
     },
     {
       id: 'pago-por-token',
-      title: 'Precio de la API de Kimi K2.7 Code',
+      title: 'Precio de la API de Kimi K3 y K2.7 Code',
       content: [
         {
           type: 'paragraph',
-          text: 'Si prefieres pagar por uso, la API de Kimi expone el modelo <code>kimi-k2.7-code</code>. La página oficial de K2.7 Code publica estas tarifas a 11 de agosto de 2026:',
+          text: 'Si prefieres pagar por uso, Kimi Open Platform publica estas tarifas a 25 de agosto de 2026:',
         },
         {
           type: 'list',
           items: [
-            '<strong>0,19 $ por millón de tokens de entrada</strong> con acierto de caché',
-            '<strong>0,95 $ por millón de tokens de entrada</strong> sin acierto de caché',
-            '<strong>4,00 $ por millón de tokens de salida</strong>',
-            '<strong>Ventana de contexto de 262.144 tokens</strong>',
+            '<strong>K3:</strong> 2 ¥ por entrada en caché, 20 ¥ por entrada sin caché y 100 ¥ por salida, por millón de tokens; contexto de hasta 1M',
+            '<strong>K2.7 Code:</strong> 1,30 ¥ por entrada en caché, 6,50 ¥ por entrada sin caché y 27 ¥ por salida, por millón de tokens; contexto de 256K',
           ],
         },
         {
           type: 'paragraph',
-          text: 'La caché automática abarata el contexto repetido de un repositorio: un token de entrada con acierto cuesta una quinta parte que uno sin caché. La contrapartida es que la API no tiene un techo mensual fijo, así que configura presupuestos en la plataforma antes de dejar un agente autónomo sin supervisión.',
+          text: 'La caché automática abarata el contexto repetido de un repositorio. La API no tiene un techo mensual fijo, así que configura presupuestos en la plataforma antes de dejar un agente autónomo sin supervisión.',
         },
         {
           type: 'paragraph',
@@ -119,7 +117,7 @@ Esta guía separa ambos sistemas de facturación y enlaza cada cifra cambiante c
       content: [
         {
           type: 'paragraph',
-          text: 'El CLI de Kimi Code es open source bajo licencia MIT y se instala gratis. El uso del modelo se factura aparte. La tabla oficial actual de membresías empieza en Moderato, a 19 dólares mes a mes o 15 dólares mensuales con pago anual, y la API cobra por token.',
+          text: 'El CLI de Kimi Code es open source bajo licencia MIT y se instala gratis. El uso del modelo se factura aparte. La tabla oficial actual de membresías empieza en Andante por 49 ¥ al mes, y la API cobra por token.',
         },
         {
           type: 'paragraph',
@@ -145,15 +143,15 @@ Esta guía separa ambos sistemas de facturación y enlaza cada cifra cambiante c
   faq: [
     {
       question: '¿Kimi Code es gratis?',
-      answer: 'El CLI de Kimi Code es gratis y open source. El uso del modelo se factura aparte mediante una membresía Kimi o la API. A 23 de agosto de 2026, la tabla oficial de pago empieza en 19 dólares mes a mes o 15 dólares al mes con facturación anual.',
+      answer: 'El CLI de Kimi Code es gratis y open source. El uso del modelo se factura aparte mediante una membresía Kimi o la API. A 25 de agosto de 2026, la tabla oficial empieza en Andante por 49 ¥ al mes.',
     },
     {
       question: '¿Cuánto cuesta Kimi Code al mes?',
-      answer: 'Los planes mensuales son Moderato 19 $, Allegretto 39 $, Allegro 99 $ y Vivace 199 $. Con pago anual, sus costes mensuales efectivos son 15, 31, 79 y 159 dólares. Los créditos mensuales de agente son 60, 150, 360 y 720.',
+      answer: 'El centro de ayuda oficial muestra Andante por 49 ¥, Moderato por 99 ¥, Allegretto por 199 ¥ y Allegro por 699 ¥ al mes. Consulta tu cuenta para ver la moneda local, los impuestos y el precio anual.',
     },
     {
       question: '¿Qué plan de Kimi incluye Kimi Code?',
-      answer: 'Los cuatro niveles de pago incluyen Kimi Code. Sus bolsas mensuales de créditos de agente son 60 en Moderato, 150 en Allegretto, 360 en Allegro y 720 en Vivace.',
+      answer: 'Los cuatro niveles de pago incluyen Kimi Code. K3 está disponible desde Moderato. La documentación de Kimi Code concede el contexto K3 de hasta 1M a Allegretto y niveles superiores.',
     },
     {
       question: '¿Cuándo se reinician los límites de Kimi Code?',
@@ -161,11 +159,11 @@ Esta guía separa ambos sistemas de facturación y enlaza cada cifra cambiante c
     },
     {
       question: '¿Qué modelo usa Kimi Code?',
-      answer: 'Kimi K2.7 Code es el predeterminado a 11 de agosto de 2026. Siempre razona y tiene una ventana de contexto de 262.144 tokens. Las peticiones con el razonamiento desactivado pasan a K2.6.',
+      answer: 'K3 es el modelo predeterminado actual de Kimi Code. K2.7 Code sigue disponible como kimi-for-coding con 262.144 tokens de contexto. El nivel del plan controla el acceso a K3 y su contexto máximo.',
     },
     {
-      question: '¿Cuánto cuesta la API de Kimi K2.7 Code?',
-      answer: 'Las tarifas oficiales son 0,19 $ por millón de tokens de entrada en caché, 0,95 $ sin caché y 4 $ por millón de tokens de salida para el modelo kimi-k2.7-code, con un contexto de 262.144 tokens.',
+      question: '¿Cuánto cuestan Kimi K3 y K2.7 Code mediante la API?',
+      answer: 'Kimi Open Platform muestra K3 por 2 ¥ de entrada en caché, 20 ¥ de entrada y 100 ¥ de salida por millón de tokens. K2.7 Code cuesta 1,30 ¥, 6,50 ¥ y 27 ¥.',
     },
   ],
 }

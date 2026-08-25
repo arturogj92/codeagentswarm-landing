@@ -9,14 +9,14 @@ export const guide: Guide = {
     metaDescription: 'Superset is a source available code editor for running 10+ parallel agents. CodeAgentSwarm is a supervision workspace for seven agent CLIs. Honest 2026 comparison.',
     intro: `Superset is a source available code editor built around running ten or more parallel coding agents, each isolated in its own git worktree, while CodeAgentSwarm is a closed source desktop workspace built around supervising agents from seven specific CLI vendors, with desktop notifications, searchable cross-agent history and a kanban board the agents update themselves over MCP.
 
-Disclosure up front: we build CodeAgentSwarm. That is the reason this page states where Superset is better instead of pretending otherwise, and why our own limitations (closed source, no Linux desktop build, Mobile Connect still in alpha, still in beta) sit in the same table as everything else. Both tools were judged on the same criteria. Every third-party fact was verified on July 26, 2026 against superset.sh and public GitHub data, and anything we could not verify is labelled rather than guessed. CodeAgentSwarm availability on this page was updated on August 23, 2026.
+Disclosure up front: we build CodeAgentSwarm. That is the reason this page states where Superset is better instead of pretending otherwise, and why our own limitations (closed source, no Linux desktop build, Mobile Connect still in alpha, still in beta) sit in the same table as everything else. Both tools were judged on the same criteria. Every third-party fact was verified on August 25, 2026 against superset.sh and public GitHub data, and anything we could not verify is labelled rather than guessed. CodeAgentSwarm availability on this page was updated on August 23, 2026.
 
-Short version: pick Superset if you want an editor-shaped environment, Linux support and source you can inspect. Pick CodeAgentSwarm if you run Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build and Cursor Agent and need notifications, history and a task board to stay on top of them.`,
+Short version: pick Superset if you want an editor-shaped environment, experimental Linux support and source you can inspect. Pick CodeAgentSwarm if you need Windows today, searchable cross-agent history and a kanban board the agents update themselves. Both now document all seven agent vendors supported by CodeAgentSwarm.`,
     ctaText: 'Both are free to start, so run them on the same repository for a week. CodeAgentSwarm is free during beta, with Pro included, for macOS and Windows.',
     ctaAgent: 'comparison',
     highlightedWords: ['Superset', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
-    updatedAt: '2026-08-23',
+    updatedAt: '2026-08-25',
     alternateSlug: 'superset-vs-codeagentswarm',
   },
   sections: [
@@ -35,7 +35,7 @@ Short version: pick Superset if you want an editor-shaped environment, Linux sup
         {
           type: 'callout',
           variant: 'info',
-          content: 'Disclosure: CodeAgentSwarm is our product. Everything stated here about Superset was verified on July 26, 2026 against their own site (superset.sh) and public GitHub data for superset-sh/superset. Where something is not documented publicly, this page says so rather than claiming Superset lacks it.',
+          content: 'Disclosure: CodeAgentSwarm is our product. Everything stated here about Superset was verified on August 25, 2026 against their own site (superset.sh) and public GitHub data for superset-sh/superset. Where something is not documented publicly, this page says so rather than claiming Superset lacks it.',
         },
       ],
     },
@@ -49,7 +49,7 @@ Short version: pick Superset if you want an editor-shaped environment, Linux sup
         },
         {
           type: 'paragraph',
-          text: 'The licensing deserves precision, because it is easy to get wrong. Superset is source available under the Elastic License 2.0. That is not an OSI approved open source license: you can read the code and self-host it subject to the license terms, but the usual open source freedoms do not all apply. Their own FAQ puts it the same way. The repository had about 12,600 stars on July 26, 2026, with its last public commit that same day, and it has been public since October 21, 2025.',
+          text: 'The licensing deserves precision, because it is easy to get wrong. Superset is source available under the Elastic License 2.0. That is not an OSI approved open source license: you can read the code and self-host it subject to the license terms, but the usual open source freedoms do not all apply. Their own FAQ puts it the same way. The repository had about 13,300 stars on August 25, 2026, with its last public commit that same day, and it has been public since October 21, 2025.',
         },
         {
           type: 'list',
@@ -64,7 +64,7 @@ Short version: pick Superset if you want an editor-shaped environment, Linux sup
         },
         {
           type: 'paragraph',
-          text: 'On agents, their FAQ is deliberately open ended: Superset works with any CLI-based coding agent including Claude Code, OpenCode and OpenAI Codex, and "if it runs in a terminal, it runs in Superset". The agent picker illustrated on their homepage also shows Gemini, Cursor Agent, Mistral Vibe and Kimi Code. On platforms, the structured data on superset.sh declares macOS, Windows and Linux, and the download button offers macOS.',
+          text: 'Their README now documents first-class support for Amp, Antigravity CLI, Claude Code, Codex CLI, Cursor Agent, Gemini CLI, Grok, Kimi Code and OpenCode, while also accepting custom terminal agents. Releases are available for macOS; Linux has an experimental AppImage; Windows is not yet available. An iOS app is listed as coming soon.',
         },
       ],
     },
@@ -104,19 +104,19 @@ Short version: pick Superset if you want an editor-shaped environment, Linux sup
           type: 'table',
           headers: ['', 'Superset', 'CodeAgentSwarm'],
           rows: [
-            ['Platforms', 'macOS, Windows and Linux per the structured data on superset.sh. The site download button offers macOS', 'macOS and Windows. No Linux build'],
+            ['Platforms', 'macOS; experimental Linux AppImage; Windows not yet available; iOS coming soon', 'macOS and Windows. No Linux build'],
             ['Install and distribution', 'Desktop download from superset.sh. Self-hosting from source is allowed subject to the Elastic License 2.0 terms', 'Desktop installer for macOS and Windows'],
             ['Interface', 'Editor-shaped app ("Code Editor for the AI Agents Era") with diff and PR review, plus open-in-any-IDE (VS Code, Cursor, Xcode, JetBrains)', 'Multi-terminal workspace with a kanban board, history browser and per-terminal diffs'],
-            ['Supported agents', 'Any CLI-based agent, with Claude Code, OpenCode and OpenAI Codex named in their FAQ. Their homepage picker also shows Gemini, Cursor Agent, Mistral Vibe and Kimi Code', 'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build and Cursor Agent, integrated individually'],
+            ['Supported agents', 'Amp, Antigravity CLI, Claude Code, Codex CLI, Cursor Agent, Gemini CLI, Grok, Kimi Code and OpenCode, plus custom terminal agents', 'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build and Cursor Agent, integrated individually'],
             ['Isolation model', 'One isolated git worktree per agent, one branch per task', 'Git worktrees per session, one process per terminal'],
-            ['Notifications', 'Not documented on their site as of July 26, 2026. Their pitch is switching between tasks as they need your attention', 'Desktop notifications when an agent finishes or needs input'],
-            ['Conversation history', 'Not documented on their site as of July 26, 2026', 'Searchable history across all seven agents and capability-aware resume'],
+            ['Notifications', 'Completion chimes and dock badges when an agent needs attention', 'Desktop notifications when an agent finishes or needs input'],
+            ['Conversation history', 'Not documented on their site as of August 25, 2026', 'Searchable history across all seven agents and capability-aware resume'],
             ['Task management', 'Parallel task switching, scheduled automations and an MCP server for programmatic control', 'Kanban board the agents update themselves over MCP. No one-click PR button'],
             ['Open source', 'No. Source available (Elastic License 2.0), which is not an OSI approved open source license', 'No. Closed source, no public app repository'],
             ['Price', 'Free tier, with paid and enterprise plans listed on their site', 'Free during beta with Pro included. You bring your own CLI subscriptions'],
-            ['Last public commit (verified Jul 26, 2026)', 'July 26, 2026. About 12,600 stars, public since October 21, 2025', 'Closed source, no public repo'],
+            ['Last public commit (verified Aug 25, 2026)', 'August 25, 2026. About 13,300 stars, public since October 21, 2025', 'Closed source, no public repo'],
           ],
-          caption: 'All third-party facts verified on July 26, 2026 against superset.sh and public GitHub data.',
+          caption: 'All third-party facts verified on August 25, 2026 against superset.sh and public GitHub data.',
         },
       ],
     },
@@ -132,7 +132,7 @@ Short version: pick Superset if you want an editor-shaped environment, Linux sup
           type: 'list',
           items: [
             '<strong>You want an editor, not a terminal grid.</strong> Superset is shaped like a code editor, with file navigation, diff review and a PR view in one window. If you want to read and edit the code your agents touch without leaving the app, that shape fits better than ours.',
-            '<strong>You are on Linux.</strong> Their structured data lists Linux as a supported platform. CodeAgentSwarm has no Linux build, so this is a hard stop rather than a trade-off.',
+            '<strong>You are on Linux.</strong> Superset publishes an experimental AppImage. CodeAgentSwarm has no Linux build, so Superset is the available option if experimental support fits your workflow.',
             '<strong>You want to run any CLI agent, not a curated list.</strong> Their position is that if it runs in a terminal, it runs in Superset. We integrate seven vendors: better for those seven, worse for everything else.',
             '<strong>You want to read the source.</strong> Elastic License 2.0 is not open source, but source available still beats a closed binary if you need to audit behaviour or self-host under their terms.',
             '<strong>You want scheduled automations and programmatic control.</strong> Their MCP server and scheduled automations point at unattended workflows that CodeAgentSwarm does not document.',
@@ -152,7 +152,7 @@ Short version: pick Superset if you want an editor-shaped environment, Linux sup
         {
           type: 'list',
           items: [
-            '<strong>You use Antigravity CLI.</strong> It is not named among the agents on superset.sh as of July 26, 2026, and CodeAgentSwarm supports it directly. Kimi Code appears in both, so this row is not a clean sweep.',
+            '<strong>You need Windows today.</strong> Superset says Windows is not yet available. CodeAgentSwarm ships a Windows desktop build.',
             '<strong>You want to be interrupted, not to poll.</strong> Desktop notifications fire when any agent finishes or needs input, which matters more the more parallel tasks you are supposed to watch.',
             '<strong>You want one searchable history across vendors.</strong> Conversations from all seven agents are stored and searchable in one place instead of seven CLI formats on disk, with resume when the agent supports it.',
             '<strong>You want the board updated by the agents.</strong> The kanban is exposed over MCP, so agents move their own tasks while they work.',
@@ -183,12 +183,12 @@ Short version: pick Superset if you want an editor-shaped environment, Linux sup
       answer: 'Superset has a free tier, with paid and enterprise plans listed on their site. On licensing the precise answer is that Superset is source available under the Elastic License 2.0, which is not an OSI approved open source license: you can inspect the code and self-host it subject to the license terms, but it is not open source in the strict sense. CodeAgentSwarm is free during beta with Pro included, and closed source with no public repository.',
     },
     {
-      question: 'Does Superset support Antigravity CLI or Kimi Code?',
-      answer: 'Kimi Code appears in the agent picker shown on superset.sh, and their FAQ says Superset works with any CLI-based coding agent, so a Kimi Code terminal is covered. Antigravity CLI is not named anywhere on their site as of July 26, 2026. CodeAgentSwarm supports both as first-class integrations, alongside Claude Code, Codex CLI and OpenCode.',
+      question: 'Does Superset support Antigravity CLI, Kimi Code or Grok?',
+      answer: 'Yes. Its README lists Antigravity CLI, Kimi Code and Grok as fully supported, alongside Claude Code, Codex CLI, Cursor Agent, OpenCode and others. CodeAgentSwarm also integrates all three.',
     },
     {
       question: 'Which one is more actively maintained?',
-      answer: 'Both are actively developed, and neither side wins this row. The public superset-sh/superset repository had its last commit on July 26, 2026, the day this page was verified, with roughly 12,600 stars and a public history going back to October 21, 2025. CodeAgentSwarm is closed source, so there is no public commit history to check: our cadence has to be taken on trust, which is a fair point against us.',
+      answer: 'Both are actively developed, and neither side wins this row. The public superset-sh/superset repository had its last commit on August 25, 2026, the day this page was verified, with roughly 13,300 stars and a public history going back to October 21, 2025. CodeAgentSwarm is closed source, so there is no public commit history to check: our cadence has to be taken on trust, which is a fair point against us.',
     },
     {
       question: 'Can I try both for free?',

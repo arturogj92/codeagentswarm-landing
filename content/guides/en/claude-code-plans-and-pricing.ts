@@ -16,7 +16,7 @@ This guide lays out what is known, dates every number, and flags the parts you s
     ctaAgent: 'claude-code',
     highlightedWords: ['Claude Code', 'Plans', 'Pricing'],
     publishedAt: '2026-08-05',
-    updatedAt: '2026-08-23',
+    updatedAt: '2026-08-25',
     alternateSlug: 'planes-y-precios-de-claude-code',
   },
   sections: [

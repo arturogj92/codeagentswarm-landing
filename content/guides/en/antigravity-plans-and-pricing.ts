@@ -7,7 +7,7 @@ export const guide: Guide = {
     title: 'Antigravity Plans and Pricing: What the Free Tier Really Gives You',
     metaTitle: 'Antigravity CLI Pricing: Free, Pro and Ultra Explained (2026)',
     metaDescription: 'Antigravity pricing explained: the free tier and what it actually allows, Google AI Pro and Ultra, the credit pool, and why the free limits have been cut repeatedly.',
-    intro: `Antigravity does not have its own subscription. Access rides on a Google AI plan, and as of August 23, 2026 that means: a free tier, Google AI Plus, Google AI Pro, Google AI Ultra 5x, Google AI Ultra 20x, and an organisation route through Google Cloud with consumption-based pricing.
+    intro: `Antigravity does not have its own subscription. Access rides on a Google AI plan, and as of August 25, 2026 that means: a free tier, Google AI Plus, Google AI Pro, Google AI Ultra 5x, Google AI Ultra 20x, and an organisation route through Google Cloud with consumption-based pricing.
 
 The free tier is the story here. Unlike <a href="/en/guides/claude-code-plans-and-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, which is not on its free tier at all, Antigravity's free plan gives you access to multiple frontier models, unlimited tab completions and unlimited command requests, gated by weekly rate limits rather than by feature. You can do real work on it without paying.
 
@@ -16,7 +16,7 @@ There is a catch worth knowing before you build a workflow around it, and it is 
     ctaAgent: 'antigravity',
     highlightedWords: ['Antigravity', 'Plans', 'Pricing'],
     publishedAt: '2026-08-05',
-    updatedAt: '2026-08-23',
+    updatedAt: '2026-08-25',
     alternateSlug: 'planes-y-precios-de-antigravity',
   },
   sections: [

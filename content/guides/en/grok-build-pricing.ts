@@ -16,7 +16,7 @@ The current source of truth is xAI's <a href="https://x.ai/build" target="_blank
     ctaAgent: 'grok-build',
     highlightedWords: ['Grok Build', 'Pricing', 'Access'],
     publishedAt: '2026-07-28',
-    updatedAt: '2026-08-23',
+    updatedAt: '2026-08-25',
     alternateSlug: 'precios-y-acceso-grok-build',
   },
   sections: [
@@ -26,7 +26,7 @@ The current source of truth is xAI's <a href="https://x.ai/build" target="_blank
       content: [
         {
           type: 'paragraph',
-          text: 'xAI now offers a free route into Grok Build and paid plans with higher limits. The official pages show this current lineup as of August 23, 2026:',
+          text: 'xAI offers Grok Build on every plan, including Free, with paid plans providing higher limits. The official pages show this current lineup as of August 25, 2026:',
         },
         {
           type: 'table',
@@ -38,7 +38,7 @@ The current source of truth is xAI's <a href="https://x.ai/build" target="_blank
             ['Other individual tiers', 'Check live checkout', 'Check your account', 'Lite and Heavy pricing can vary or be omitted from public page text'],
             ['xAI API', 'Per token', 'Yes, headless', 'For CI and automation'],
           ],
-          caption: 'Routes into Grok Build, verified August 23, 2026. Check the live xAI page before budgeting a rollout.',
+          caption: 'Routes into Grok Build, verified August 25, 2026. Check the live xAI page before budgeting a rollout.',
         },
         {
           type: 'paragraph',
@@ -161,7 +161,7 @@ The current source of truth is xAI's <a href="https://x.ai/build" target="_blank
     },
     {
       question: 'How much does Grok Build cost per month?',
-      answer: 'As of August 23, 2026, evaluation starts free. xAI lists SuperGrok at $30/month and SuperGrok Plus at $100/month. Other individual tiers appear in the live comparison, so verify their current checkout prices before paying.',
+      answer: 'As of August 25, 2026, Grok Build is available on every plan, including Free. xAI lists SuperGrok at $30/month and SuperGrok Plus at $100/month. Other individual tiers appear in the live comparison, so verify their current checkout prices before paying.',
     },
     {
       question: 'What does SuperGrok Plus add for Grok Build?',

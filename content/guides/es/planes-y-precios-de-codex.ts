@@ -16,7 +16,7 @@ El resto del detalle es donde llega la sorpresa: la CLI, la versión web y la ex
     ctaAgent: 'codex',
     highlightedWords: ['Codex', 'Planes', 'precios'],
     publishedAt: '2026-08-05',
-    updatedAt: '2026-08-23',
+    updatedAt: '2026-08-25',
     alternateSlug: 'codex-plans-and-pricing',
   },
   sections: [

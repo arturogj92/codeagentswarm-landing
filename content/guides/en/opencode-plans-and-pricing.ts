@@ -16,7 +16,7 @@ This guide covers what each route actually costs, the free models Zen carries, t
     ctaAgent: 'opencode',
     highlightedWords: ['OpenCode', 'Plans', 'Pricing'],
     publishedAt: '2026-08-05',
-    updatedAt: '2026-08-23',
+    updatedAt: '2026-08-25',
     alternateSlug: 'planes-y-precios-de-opencode',
   },
   sections: [
@@ -58,18 +58,18 @@ This guide covers what each route actually costs, the free models Zen carries, t
       content: [
         {
           type: 'paragraph',
-          text: 'Zen publishes per-million-token rates split into input, output, cached reads and cached writes. The spread across the catalogue is enormous, which is the single most useful thing to understand about it. As of August 2026:',
+          text: 'Zen publishes per-million-token rates split into input, output, cached reads and cached writes. The spread across the catalogue is enormous, which is the single most useful thing to understand about it. As of August 25, 2026:',
         },
         {
           type: 'table',
           headers: ['Model', 'Input / 1M', 'Output / 1M'],
           rows: [
-            ['DeepSeek V4 Flash Free, MiMo-V2.5 Free and others', '$0.00', '$0.00'],
+            ['Big Pickle, MiMo-V2.5 Free and other temporary free models', '$0.00', '$0.00'],
             ['GPT 5.6 Luna', '$0.20', '$1.20'],
             ['Claude Sonnet 5', '$2.00', '$10.00'],
             ['GPT 5.5 Pro', '$30.00', '$180.00'],
           ],
-          caption: 'A sample of OpenCode Zen rates, August 2026. The full catalogue is on the Zen docs page.',
+          caption: 'A sample of OpenCode Zen rates, verified August 25, 2026. The full catalogue is on the Zen docs page.',
         },
         {
           type: 'paragraph',
@@ -77,7 +77,7 @@ This guide covers what each route actually costs, the free models Zen carries, t
         },
         {
           type: 'paragraph',
-          text: 'Zen also carries genuinely free models. They are not a trial and they are not rate-limited into uselessness; they are real entries in the catalogue at $0 input and $0 output. For routine work, mechanical refactors and anything where you mostly need a competent editor rather than a deep reasoner, they can carry more of your day than you would expect.',
+          text: 'Zen also carries models listed at $0 input and $0 output. OpenCode marks several of them as limited-time offers, so check the live catalogue before relying on one for a long-running workflow.',
         },
         {
           type: 'paragraph',
@@ -149,7 +149,7 @@ This guide covers what each route actually costs, the free models Zen carries, t
         },
         {
           type: 'paragraph',
-          text: 'What costs money is the model behind it, and even that has a genuinely free path through Zen\'s zero-cost models. You can run OpenCode indefinitely for $0 if you are content with the free catalogue.',
+          text: 'What costs money is the model behind it. Zen currently has a zero-cost path through temporary free models, but the catalogue can change.',
         },
         {
           type: 'paragraph',
@@ -183,7 +183,7 @@ This guide covers what each route actually costs, the free models Zen carries, t
   faq: [
     {
       question: 'Is OpenCode free?',
-      answer: 'Yes. The CLI is free and open source with no paid edition. What costs money is the model behind it, and even that has a free path: OpenCode Zen carries genuinely free models at $0 input and $0 output, so you can run OpenCode indefinitely for nothing.',
+      answer: 'Yes. The CLI is free and open source with no paid edition. Model usage is separate. OpenCode Zen currently carries temporary models at $0 input and $0 output, but their availability can change.',
     },
     {
       question: 'How much does OpenCode cost per month?',

@@ -6,17 +6,17 @@ export const guide: Guide = {
     locale: 'en',
     title: 'Conductor vs CodeAgentSwarm: An Honest Comparison (2026)',
     metaTitle: 'Conductor vs CodeAgentSwarm: Honest Comparison (2026)',
-    metaDescription: 'Conductor is a Mac-only app for parallel Claude Code, Codex and Cursor agents. CodeAgentSwarm runs seven agent CLIs on macOS and Windows. Honest comparison.',
-    intro: `Conductor is a macOS-only app for running Claude Code, Codex and Cursor agents in parallel isolated workspaces, while CodeAgentSwarm is a desktop workspace for macOS and Windows that runs seven agent CLIs in parallel terminals. Same idea, different reach.
+    metaDescription: 'Compare Conductor local and cloud workspaces, four agent CLIs and current pricing with CodeAgentSwarm on macOS and Windows.',
+    intro: `Conductor combines a macOS app with isolated cloud workspaces for Claude Code, Codex, Cursor and OpenCode. CodeAgentSwarm is a desktop workspace for macOS and Windows that runs seven agent CLIs in parallel terminals. Same premise, different deployment model.
 
-Full disclosure: we build CodeAgentSwarm. This page still gives Conductor its due, and where their site does not document something we write "not documented" instead of claiming the feature is missing. Every third-party fact below was checked on July 26, 2026 against conductor.build itself, including their FAQ and the structured data they publish on their homepage. CodeAgentSwarm availability on this page was updated on August 23, 2026.
+Full disclosure: we build CodeAgentSwarm. Every third-party fact below was checked on August 25, 2026 against Conductor's site, pricing page and documentation.
 
-Short version: if you and your team are all on Macs and you want a native app built around reviewing and merging agent work, Conductor is a focused, credible choice. If anyone touches Windows, or you want more than three agent CLIs, CodeAgentSwarm covers ground Conductor does not.`,
-    ctaText: 'Need a parallel agent workspace that also runs on Windows, with seven agent CLIs instead of three? Download CodeAgentSwarm and set up your first batch of parallel terminals.',
+Short version: choose Conductor for cloud sandboxes, multiplayer collaboration and its API. Choose CodeAgentSwarm for Windows, seven directly integrated CLIs, searchable cross-agent history and an agent-managed kanban board.`,
+    ctaText: 'Need a parallel agent workspace that also runs on Windows, with seven agent CLIs instead of four? Download CodeAgentSwarm and set up your first batch of parallel terminals.',
     ctaAgent: 'comparison',
     highlightedWords: ['Conductor', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
-    updatedAt: '2026-08-23',
+    updatedAt: '2026-08-25',
     alternateSlug: 'conductor-vs-codeagentswarm',
   },
   sections: [
@@ -26,16 +26,16 @@ Short version: if you and your team are all on Macs and you want a native app bu
       content: [
         {
           type: 'paragraph',
-          text: 'Conductor is a Mac-only app that creates parallel Claude Code, Codex and Cursor agents in isolated workspaces so you can review and merge their changes, while CodeAgentSwarm is a macOS and Windows desktop workspace that runs seven agent CLIs in parallel terminals with notifications, live diffs and a shared task board.',
+          text: 'Conductor runs Claude Code, Codex, Cursor and OpenCode in local Mac workspaces or managed cloud sandboxes, while CodeAgentSwarm runs seven CLIs locally on macOS and Windows with notifications, live diffs and a shared task board.',
         },
         {
           type: 'paragraph',
-          text: 'Both agree on the core insight: give each agent its own isolated workspace, then make the result reviewable. They diverge on reach. Conductor commits fully to the Mac and to three agents, and gets a tight native product out of that focus. CodeAgentSwarm spreads across two operating systems and seven agent vendors, which matters if your machines and CLIs are mixed. For the wider field, start with the <a href="/en/guides/best-tools-to-run-multiple-ai-coding-agents" class="text-neon-cyan hover:text-neon-purple transition-colors">best tools to run multiple AI coding agents</a>.',
+          text: 'Both isolate agent work and make it reviewable. Conductor extends that model into managed cloud sandboxes, multiplayer collaboration and an HTTP API. CodeAgentSwarm keeps work local and spreads across two operating systems and seven agent vendors. For the wider field, start with the <a href="/en/guides/best-tools-to-run-multiple-ai-coding-agents" class="text-neon-cyan hover:text-neon-purple transition-colors">best tools to run multiple AI coding agents</a>.',
         },
         {
           type: 'callout',
           variant: 'info',
-          content: 'Disclosure: CodeAgentSwarm is our product, so read this as a comparison written by an interested party. All third-party facts were verified on July 26, 2026 against conductor.build, using their own copy, their FAQ and their published structured data. Conductor has no public repository, so several rows below are marked as not documented rather than guessed at.',
+          content: 'Disclosure: CodeAgentSwarm is our product. All Conductor facts were verified on August 25, 2026 against conductor.build, its pricing page and its documentation. Conductor has no public repository, so there is no public source history to compare.',
         },
       ],
     },
@@ -45,25 +45,25 @@ Short version: if you and your team are all on Macs and you want a native app bu
       content: [
         {
           type: 'paragraph',
-          text: '<a href="https://conductor.build" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Conductor</a> describes itself in its own words: "Create parallel Claude Code, Codex, and Cursor agents in isolated workspaces. See at a glance what they are working on, then review and merge their changes." The headline is more direct still: run parallel coding agents on your Mac. It is built by Melty Labs, a Y Combinator company based in San Francisco, and their site lists macOS as the operating system.',
+          text: '<a href="https://conductor.build" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Conductor</a> now leads with cloud agent teams. Local workspaces still run on a Mac, while Pro and higher plans can create isolated managed sandboxes that keep working after the app closes. The product also supports multiplayer workspace sharing, a beta HTTP API and an MCP server.',
         },
         {
           type: 'paragraph',
-          text: 'The documented workflow is short. You add a repository, Conductor clones it and works entirely on your Mac. Every agent you spin up gets an isolated workspace, and their FAQ confirms what that means underneath: "each Conductor workspace is a new git worktree". Their own description adds that each workspace also gets its own branch, run environment and shared context folder. Then you look at a list showing who is working and what needs attention, and you review the code.',
+          text: 'Local workspaces use git worktrees on your Mac. Cloud workspaces run in isolated Vercel sandboxes in us-east-1 with 8 vCPUs, 16 GB of RAM and ephemeral storage. Conductor stores cloud session inputs and outputs on its servers, while local session data stays on your device.',
         },
         {
           type: 'list',
           items: [
-            '<strong>Mac-native focus:</strong> one platform, one design target, no cross-platform compromises',
+            '<strong>Local and cloud:</strong> Mac worktrees for local work, managed sandboxes for agents that must continue after the app closes',
             '<strong>Isolated workspaces:</strong> a git worktree, a branch, a run environment and a shared context folder per agent',
             '<strong>Review and merge in the app:</strong> the product is organized around landing agent output, not just launching agents',
-            '<strong>Cursor agents:</strong> one of their three supported agents and also a first-class CodeAgentSwarm integration through Cursor\'s official ACP server',
+            '<strong>Four first-party harnesses:</strong> Claude Code, Codex, Cursor and OpenCode',
             '<strong>Uses your existing login:</strong> their FAQ says Conductor uses Claude Code however you are already logged in, whether that is an API key or a Claude Pro or Max plan',
           ],
         },
         {
           type: 'paragraph',
-          text: 'A note on what we could not verify. Conductor has no public repository, so there is no commit history or star count to cite, and their site does not publish a pricing page (the /pricing path returned a 404 when checked on July 26, 2026). Conversation history, a task board and desktop notifications are also not documented on their site as of that date. That does not mean those things do not exist. It means we will not tell you either way.',
+          text: 'Pricing is now public: Free at $0 for local Mac workspaces, Pro at $50/month with cloud, multiplayer for up to five Pro users and the API, Teams at $60/user/month, and Enterprise at a custom price. Cloud compute has no additional usage fee yet, but Conductor says usage-based cloud pricing is planned.',
         },
       ],
     },
@@ -110,47 +110,47 @@ Short version: if you and your team are all on Macs and you want a native app bu
           rows: [
             [
               '<strong>Platforms</strong>',
-              'macOS only, per their own site',
+              'macOS app for local work; cloud workspaces; iOS app listed as coming soon',
               'macOS and Windows. No Linux build',
             ],
             [
               '<strong>Interface</strong>',
-              'Mac app with a workspace list showing who is working and what needs attention, plus code review',
+              'Mac app plus cloud workspaces, multiplayer collaboration and code review',
               'Desktop workspace with parallel terminals, live diffs and a task board',
             ],
             [
               '<strong>Supported agents</strong>',
-              'Claude Code, Codex and Cursor, per their FAQ',
+              'Claude Code, Codex, Cursor and OpenCode',
               'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build and Cursor Agent',
             ],
             [
               '<strong>Isolation model</strong>',
-              'One git worktree per workspace, plus its own branch, run environment and shared context folder',
+              'Local git worktrees or isolated managed cloud sandboxes',
               'Git worktree per session plus a separate process per terminal',
             ],
             [
               '<strong>Notifications</strong>',
-              'Their site says the workspace view shows what needs attention. Desktop notifications are not documented as of July 26, 2026',
+              'Workspace attention states; mobile access is listed as coming soon',
               'Desktop notifications when an agent finishes or needs input',
             ],
             [
               '<strong>Conversation history</strong>',
-              'Not documented on their site as of July 26, 2026',
+              'Cloud session transcripts are stored by Conductor and accessible through the API',
               'Searchable across all seven agents and capability-aware resume',
             ],
             [
               '<strong>Task management</strong>',
-              'Not documented on their site as of July 26, 2026',
+              'Beta HTTP API and MCP server; no public kanban feature documented',
               'Kanban board the agents update over MCP',
             ],
             [
               '<strong>Open source</strong>',
-              'No public repository as of July 26, 2026. Built by Melty Labs',
+              'No public repository as of August 25, 2026. Built by Melty Labs',
               'No. Closed source, no public app repository',
             ],
             [
               '<strong>Price</strong>',
-              'Not published as plain text on their site as of July 26, 2026. Their FAQ does say Conductor uses your existing Claude Code login',
+              'Free $0; Pro $50/month; Teams $60/user/month; Enterprise custom. Cloud usage pricing is planned',
               'Free during beta with Pro included, and you bring your own CLI subscriptions',
             ],
             [
@@ -159,7 +159,7 @@ Short version: if you and your team are all on Macs and you want a native app bu
               'Closed source, no public repo',
             ],
           ],
-          caption: 'All Conductor data checked on July 26, 2026 against conductor.build, including their FAQ and homepage structured data. Rows marked as not documented mean we could not find them published, not that the feature is absent.',
+          caption: 'All Conductor data checked on August 25, 2026 against conductor.build, its pricing page and documentation.',
         },
       ],
     },
@@ -176,9 +176,9 @@ Short version: if you and your team are all on Macs and you want a native app bu
           items: [
             '<strong>You are Mac-only and want a Mac-native app.</strong> Conductor targets one platform and nothing else, which usually shows in how an app feels day to day.',
             '<strong>Your bottleneck is review, not launching.</strong> Their product is organized around seeing what each agent did and merging it, the part most people underestimate.',
-            '<strong>You want Cursor agents in the mix.</strong> Cursor is one of their three supported agents. CodeAgentSwarm does not drive Cursor.',
+            '<strong>You want managed cloud agents.</strong> Pro and higher plans can keep agents running in isolated cloud sandboxes after the Mac app closes.',
             '<strong>You like the isolated workspace as a first-class concept.</strong> A branch, a worktree, a run environment and a shared context folder per agent is a clean mental model.',
-            '<strong>You want fewer moving parts.</strong> Three agents instead of seven is less to configure and keep updated, and for some teams that is the right trade.',
+            '<strong>You want cloud collaboration.</strong> Multiplayer workspace sharing and the beta API give teams remote coordination that CodeAgentSwarm does not currently offer.',
           ],
         },
         {
@@ -200,7 +200,7 @@ Short version: if you and your team are all on Macs and you want a native app bu
           type: 'list',
           items: [
             '<strong>You or your team use Windows.</strong> Conductor is macOS only per their site. CodeAgentSwarm runs on macOS and Windows, which matters the moment one person is not on a Mac.',
-            '<strong>You want seven agent CLIs.</strong> Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build and Cursor Agent, mixed freely across terminals. Antigravity, OpenCode, Kimi and Grok are not among the agents Conductor documents.',
+            '<strong>You want seven agent CLIs.</strong> Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build and Cursor Agent, mixed freely across terminals. Antigravity, Kimi and Grok are not among the agents Conductor documents.',
             '<strong>You want one searchable history across vendors,</strong> with any conversation resumable back into a live terminal.',
             '<strong>You want the agents to maintain the task board.</strong> The kanban is updated by the agents over MCP while they work, not by you afterwards.',
             '<strong>You want to be told, not to check.</strong> Desktop notifications fire when an agent finishes or needs input.',
@@ -215,7 +215,7 @@ Short version: if you and your team are all on Macs and you want a native app bu
         },
         {
           type: 'paragraph',
-          text: 'If you found Conductor, liked the idea and then discovered it is macOS only, this is the section you came for. Their site lists macOS as the operating system, so as of July 26, 2026 there is no Windows build to wait for. That leaves a few honest options.',
+          text: 'If you found Conductor, liked the idea and then discovered its local app is macOS only, this is the section you came for. As of August 25, 2026 there is no Windows desktop build. That leaves a few honest options.',
         },
         {
           type: 'list',
@@ -249,19 +249,19 @@ Short version: if you and your team are all on Macs and you want a native app bu
   faq: [
     {
       question: 'Does Conductor run on Windows?',
-      answer: 'No. Conductor lists macOS as its operating system on its own site, and its headline is about running parallel coding agents on your Mac, so as of July 26, 2026 there is no Windows version. CodeAgentSwarm runs on macOS and Windows, which is the main reason people comparing the two end up here. Neither product has a Linux build.',
+      answer: 'No. Conductor offers a macOS app and cloud workspaces, but no Windows desktop build as of August 25, 2026. CodeAgentSwarm runs locally on macOS and Windows. Neither product has a Linux desktop build.',
     },
     {
       question: 'Is Conductor open source?',
-      answer: 'There is no public repository for Conductor as of July 26, 2026. It is a proprietary Mac app built by Melty Labs, a Y Combinator company based in San Francisco, so there is no commit history you can inspect. CodeAgentSwarm is also closed source with no public application repository, so neither product gives you source access. If open source is a requirement, look at Paseo, which publishes its code under AGPLv3.',
+      answer: 'There is no public repository for Conductor as of August 25, 2026. It is proprietary software built by Melty Labs, so there is no commit history you can inspect. CodeAgentSwarm is also closed source with no public application repository. If source access is required, look at Paseo, which publishes its code under AGPLv3.',
     },
     {
       question: 'What agents does each one support?',
-      answer: 'Conductor supports Claude Code, Codex and Cursor, according to the FAQ on its site. CodeAgentSwarm supports seven CLIs: Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build and Cursor Agent. Both run Cursor; CodeAgentSwarm also runs Antigravity CLI, OpenCode, Kimi Code and Grok Build.',
+      answer: 'Conductor supports Claude Code, Codex, Cursor and OpenCode. CodeAgentSwarm supports seven CLIs: Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build and Cursor Agent. Both run Cursor and OpenCode; CodeAgentSwarm also runs Antigravity CLI, Kimi Code and Grok Build.',
     },
     {
       question: 'Is there a free way to try both?',
-      answer: 'CodeAgentSwarm is free during its beta with Pro included, and you bring your own subscriptions for the agent CLIs. For Conductor, their site does not publish pricing as plain text as of July 26, 2026 and the /pricing path returns a 404, so we will not make a claim about what it costs. Their FAQ does document that Conductor uses your existing Claude Code login, whether that is an API key or a Claude Pro or Max plan. Check conductor.build for current terms.',
+      answer: 'Yes. CodeAgentSwarm is free during its beta with Pro included. Conductor has a $0 Free plan for local Mac workspaces; Pro costs $50/month, Teams costs $60/user/month and Enterprise is custom. Conductor says cloud compute has no additional usage fee yet, but usage pricing is planned. Both products use the agent subscriptions you bring.',
     },
   ],
 }

@@ -7,7 +7,7 @@ export const guide: Guide = {
     title: 'Planes y precios de Antigravity: qué te da de verdad el nivel gratuito',
     metaTitle: 'Precios de Antigravity CLI: Free, Pro y Ultra explicados (2026)',
     metaDescription: 'Los precios de Antigravity explicados: el nivel gratuito y qué permite de verdad, Google AI Pro y Ultra, el bote de créditos y por qué han recortado los límites gratuitos varias veces.',
-    intro: `Antigravity no tiene suscripción propia. El acceso viaja dentro de un plan de Google AI y, a 23 de agosto de 2026, eso significa: nivel gratuito, Google AI Plus, Google AI Pro, Google AI Ultra 5x, Google AI Ultra 20x y una vía para organizaciones mediante Google Cloud con precio por consumo.
+    intro: `Antigravity no tiene suscripción propia. El acceso viaja dentro de un plan de Google AI y, a 25 de agosto de 2026, eso significa: nivel gratuito, Google AI Plus, Google AI Pro, Google AI Ultra 5x, Google AI Ultra 20x y una vía para organizaciones mediante Google Cloud con precio por consumo.
 
 El nivel gratuito es lo interesante aquí. A diferencia de <a href="/es/guias/planes-y-precios-de-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, que no está en su nivel gratuito en absoluto, el plan gratis de Antigravity te da acceso a varios modelos de frontera, autocompletado ilimitado y peticiones de comando ilimitadas, con límites de frecuencia semanales como única barrera, no funciones capadas. Se puede trabajar de verdad sin pagar.
 
@@ -16,7 +16,7 @@ Hay una pega que conviene conocer antes de montar un flujo de trabajo encima, y 
     ctaAgent: 'antigravity',
     highlightedWords: ['Antigravity', 'Planes', 'precios'],
     publishedAt: '2026-08-05',
-    updatedAt: '2026-08-23',
+    updatedAt: '2026-08-25',
     alternateSlug: 'antigravity-plans-and-pricing',
   },
   sections: [

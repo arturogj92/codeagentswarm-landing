@@ -1,6 +1,6 @@
 # SEO status
 
-Last updated: 2026-08-23
+Last updated: 2026-08-25
 
 Release state: both August 23 implementation waves are validated for master. Post-release measurement remains pending.
 
@@ -22,9 +22,9 @@ Organic acquisition is growing quickly. The main constraint has moved from disco
 | Guide share of clean pageviews | 30,552, or 82.92% |
 | Home visitor to download click | 21.86% |
 | Guide pageview to direct download click | 0.635% |
-| Sitemap URLs returning 200 in the production build | 180 / 180 |
+| Sitemap URLs returning 200 in the production build | 182 / 182 |
 | Guide First Load JS | 185 kB, down from about 746 kB |
-| Static pages generated | 218, down from 382 |
+| Static pages generated | 221, down from 382 |
 | Domain Rating in SEO MCP | 4.6 |
 | Referring domains in SEO MCP | 473 |
 | Referring domains marked follow | 9% |
@@ -53,6 +53,10 @@ The detailed evidence and decisions live in [the August 23 growth and conversion
 - Refreshed pricing and access facts across twenty-four English and Spanish guides using current xAI, Anthropic, Moonshot, Google, OpenAI and Cursor sources.
 - Prepared five page-specific editorial pitches for explicit approval. Nothing has been sent.
 - Confirmed that the separate aggregate installation funnel already measures download requests, fresh launches, first terminals and seven-day returns.
+- Revalidated volatile pricing, plan, model and token facts in the English and Spanish Cursor, Kimi, OpenCode, Grok, Claude and Codex guides against first-party sources.
+- Corrected the Grok Build `llms.txt` claim: it is available on every xAI plan, including Free; SuperGrok tiers raise limits.
+- Refreshed public repository metrics and current product scope across the English and Spanish comparison guides, including major Conductor, Superset and T3 changes.
+- Added `node scripts/competitor-refresh.mjs --check` plus a regression check for verification dates on volatile pricing and comparison content.
 
 ## Open priorities
 

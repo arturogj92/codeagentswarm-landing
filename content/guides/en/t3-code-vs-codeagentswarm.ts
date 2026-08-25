@@ -9,14 +9,14 @@ export const guide: Guide = {
     metaDescription: 'T3 Code is an open source control plane that ends in a one-click PR. CodeAgentSwarm is a supervision workspace for seven agent CLIs. Honest 2026 comparison.',
     intro: `T3 Code is an MIT licensed, open source control plane that puts several coding agents behind one polished desktop UI and finishes each thread with a one-click pull request, while CodeAgentSwarm is a closed source desktop workspace built for supervising several agent CLIs at once, with desktop notifications, searchable cross-agent history and a kanban board the agents update themselves over MCP.
 
-Disclosure before anything else: we build CodeAgentSwarm. T3 Code wins several rows below, and our own limitations (closed source, no Linux desktop build, Mobile Connect still in alpha, still in beta) are printed in the same table as everything else. Every third-party fact here was checked on July 26, 2026 against t3.codes and public GitHub data, and anything we could not verify is labelled as such instead of guessed. CodeAgentSwarm availability on this page was updated on August 23, 2026.
+Disclosure before anything else: we build CodeAgentSwarm. T3 Code wins several rows below, and our own limitations (closed source, no Linux desktop build, Mobile Connect still in alpha, still in beta) are printed in the same table as everything else. Every third-party fact here was checked on August 25, 2026 against t3.codes and public GitHub data, and anything we could not verify is labelled as such instead of guessed. CodeAgentSwarm availability on this page was updated on August 23, 2026.
 
 Short version: pick T3 Code if open source, Linux support and a fast path from diff to pull request matter most. Pick CodeAgentSwarm if you run agents from seven different vendors and need notifications, history and a task board to keep track of them.`,
     ctaText: 'Try both on the same repository and keep the one that fits your week. CodeAgentSwarm is free during beta, with Pro included, for macOS and Windows.',
     ctaAgent: 'comparison',
     highlightedWords: ['T3 Code', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
-    updatedAt: '2026-08-23',
+    updatedAt: '2026-08-25',
     alternateSlug: 't3-code-vs-codeagentswarm',
   },
   sections: [
@@ -35,7 +35,7 @@ Short version: pick T3 Code if open source, Linux support and a fast path from d
         {
           type: 'callout',
           variant: 'info',
-          content: 'Disclosure: CodeAgentSwarm is our product. Everything we say about T3 Code was verified on July 26, 2026 against their own site (t3.codes) and public GitHub data for pingdotgg/t3code. Where a feature is not documented publicly, this page says so rather than claiming T3 Code lacks it.',
+          content: 'Disclosure: CodeAgentSwarm is our product. Everything we say about T3 Code was verified on August 25, 2026 against their own site (t3.codes) and public GitHub data for pingdotgg/t3code. Where a feature is not documented publicly, this page says so rather than claiming T3 Code lacks it.',
         },
       ],
     },
@@ -49,7 +49,7 @@ Short version: pick T3 Code if open source, Linux support and a fast path from d
         },
         {
           type: 'paragraph',
-          text: 'The momentum is real and worth stating plainly. The repository was created on February 8, 2026 and had about 15,000 stars by July 26, 2026, with its last public commit that same day. Roughly 15,000 stars in five months is the fastest growth anyone in this category has shown, and it is a legitimate reason to take T3 Code seriously.',
+          text: 'The momentum is real and worth stating plainly. The repository was created on February 8, 2026 and had about 20,400 stars by August 25, 2026, with its last public commit that same day. Roughly 20,400 stars in six and a half months is the fastest growth anyone in this category has shown, and it is a legitimate reason to take T3 Code seriously.',
         },
         {
           type: 'list',
@@ -64,7 +64,7 @@ Short version: pick T3 Code if open source, Linux support and a fast path from d
         },
         {
           type: 'paragraph',
-          text: 'On agents, their site lists Claude Code, Codex, OpenCode, Cursor and Grok, and says more harnesses ship weekly. Distribution is unusually generous: you can run it with <code>npx t3@latest</code> without installing anything, or take the desktop app through winget on Windows, a Homebrew cask on macOS, or the AUR on Arch. Their download page also offers direct builds for macOS (Apple Silicon and Intel), Windows 10 and 11, and Linux as an AppImage. It is free, bring your own key, no subscription.',
+          text: 'On agents, their site lists Claude Code, Codex, OpenCode, Cursor and Grok, and says more harnesses ship weekly. Distribution is unusually generous: desktop apps for macOS, Windows and Linux, a web app, and public iOS and Android apps. It is free, open source under MIT and uses your existing agent subscriptions.',
         },
       ],
     },
@@ -104,19 +104,19 @@ Short version: pick T3 Code if open source, Linux support and a fast path from d
           type: 'table',
           headers: ['', 'T3 Code', 'CodeAgentSwarm'],
           rows: [
-            ['Platforms', 'macOS (Apple Silicon and Intel), Windows 10 and 11, Linux (AppImage)', 'macOS and Windows. No Linux build'],
+            ['Platforms', 'macOS, Windows and Linux desktop; web; iOS and Android', 'macOS and Windows. Mobile Connect alpha; no Linux build'],
             ['Install and distribution', '<code>npx t3@latest</code> with nothing installed, desktop app, winget, Homebrew cask, AUR, direct downloads', 'Desktop installer for macOS and Windows'],
             ['Interface', 'Three-panel layout with an integrated terminal, plus remote access', 'Multi-terminal workspace with a kanban board, history browser and per-terminal diffs'],
             ['Supported agents', 'Claude Code, Codex, OpenCode, Cursor and Grok listed on t3.codes, with more harnesses shipping weekly', 'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build and Cursor Agent'],
             ['Isolation model', 'Git worktrees, one branch per agent thread', 'Git worktrees per session, one process per terminal'],
-            ['Notifications', 'Not documented on their site as of July 26, 2026', 'Desktop notifications when an agent finishes or needs input'],
-            ['Conversation history', 'Per-turn diff viewer with chat and plan modes. A cross-agent searchable history is not documented on their site as of July 26, 2026', 'Searchable history across all seven agents and capability-aware resume'],
+            ['Notifications', 'Not documented on their site as of August 25, 2026', 'Desktop notifications when an agent finishes or needs input'],
+            ['Conversation history', 'Per-turn diff viewer with chat and plan modes. A cross-agent searchable history is not documented on their site as of August 25, 2026', 'Searchable history across all seven agents and capability-aware resume'],
             ['Task management', 'Per-project quick actions, plus one-click Commit, Push and Create PR', 'Kanban board the agents update over MCP. No one-click PR button'],
             ['Open source', 'Yes, MIT (pingdotgg/t3code)', 'No. Closed source, no public app repository'],
             ['Price', 'Free, bring your own key, no subscription (their claim)', 'Free during beta with Pro included. You bring your own CLI subscriptions'],
-            ['Last public commit (verified Jul 26, 2026)', 'July 26, 2026. About 15,000 stars since February 8, 2026', 'Closed source, no public repo'],
+            ['Last public commit (verified Aug 25, 2026)', 'August 25, 2026. About 20,400 stars since February 8, 2026', 'Closed source, no public repo'],
           ],
-          caption: 'All third-party facts verified on July 26, 2026 against t3.codes and public GitHub data.',
+          caption: 'All third-party facts verified on August 25, 2026 against t3.codes and public GitHub data.',
         },
       ],
     },
@@ -135,8 +135,8 @@ Short version: pick T3 Code if open source, Linux support and a fast path from d
             '<strong>You are on Linux.</strong> T3 Code ships an AppImage and is on the AUR. CodeAgentSwarm has no Linux build, so this is a hard stop rather than a trade-off.',
             '<strong>You want to try it in ten seconds.</strong> <code>npx t3@latest</code> runs it with nothing installed, a lower barrier than any installer.',
             '<strong>Your bottleneck is shipping, not supervising.</strong> One button to commit, push and open a PR with a generated title and body, including draft and stacked PRs, beats doing it by hand. We generate commit messages but have no PR button.',
-            '<strong>You use Cursor or Grok as your agent.</strong> Both are listed on their site. Neither is in CodeAgentSwarm.',
-            '<strong>You value community momentum.</strong> Roughly 15,000 stars in five months and weekly harness additions mean bugs get found and fixed fast.',
+            '<strong>You want public mobile apps.</strong> T3 Code ships iOS and Android apps today. CodeAgentSwarm Mobile Connect is still in alpha.',
+            '<strong>You value community momentum.</strong> Roughly 20,400 stars in six and a half months and frequent harness additions mean bugs get found and fixed fast.',
           ],
         },
       ],
@@ -152,7 +152,7 @@ Short version: pick T3 Code if open source, Linux support and a fast path from d
         {
           type: 'list',
           items: [
-            '<strong>You use Antigravity CLI or Kimi Code.</strong> Neither is named among the agents on t3.codes as of July 26, 2026. CodeAgentSwarm supports both, plus Claude Code, Codex CLI and OpenCode.',
+            '<strong>You use Antigravity CLI or Kimi Code.</strong> Neither is named among the agents on t3.codes as of August 25, 2026. CodeAgentSwarm supports both, plus Claude Code, Codex CLI and OpenCode.',
             '<strong>You want to be told, not to check.</strong> Desktop notifications fire when any agent finishes or needs input, so you can leave the window and come back when something happened.',
             '<strong>You want one searchable history across vendors.</strong> Conversations from all seven agents are stored and searchable in one place instead of seven different formats, with resume when the agent supports it.',
             '<strong>You want the agents to keep your board honest.</strong> The kanban is exposed over MCP, so agents move their own tasks as they work.',
@@ -184,11 +184,11 @@ Short version: pick T3 Code if open source, Linux support and a fast path from d
     },
     {
       question: 'Does T3 Code support Antigravity CLI or Kimi Code?',
-      answer: 'Neither is listed among the supported agents on t3.codes as of July 26, 2026. Their site names Claude Code, Codex, OpenCode, Cursor and Grok, and says more harnesses ship weekly, so this may change. CodeAgentSwarm supports Antigravity CLI and Kimi Code today, along with Claude Code, Codex CLI and OpenCode.',
+      answer: 'Neither is listed among the supported agents on t3.codes as of August 25, 2026. Their site names Claude Code, Codex, OpenCode, Cursor and Grok, and says more harnesses ship weekly, so this may change. CodeAgentSwarm supports Antigravity CLI and Kimi Code today, along with Claude Code, Codex CLI and OpenCode.',
     },
     {
       question: 'Which one is more actively maintained?',
-      answer: 'Both are active, and neither side wins this row. The public t3code repository had its last commit on July 26, 2026, the day this comparison was verified, with roughly 15,000 stars since it was created on February 8, 2026. CodeAgentSwarm is closed source, so there is no public commit history to inspect: our cadence has to be taken on trust, and that is a fair criticism.',
+      answer: 'Both are active, and neither side wins this row. The public t3code repository had its last commit on August 25, 2026, the day this comparison was verified, with roughly 20,400 stars since it was created on February 8, 2026. CodeAgentSwarm is closed source, so there is no public commit history to inspect: our cadence has to be taken on trust, and that is a fair criticism.',
     },
     {
       question: 'Can I try both for free?',

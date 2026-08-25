@@ -128,6 +128,36 @@ test('about and comparison pages expose current authorship and Mobile Connect fa
   for (const file of comparisons) {
     const source = await readFile(new URL(file, import.meta.url), 'utf8')
     assert.match(source, /Mobile Connect/)
-    assert.match(source, /updatedAt: '2026-08-23'/)
+    assert.match(source, /updatedAt: '2026-08-25'/)
   }
+})
+
+test('volatile pricing, token and competitor facts carry the current verification date', async () => {
+  const pricingFiles = [
+    '../content/guides/en/antigravity-plans-and-pricing.ts',
+    '../content/guides/en/cursor-cli-pricing.ts',
+    '../content/guides/en/kimi-code-plans-and-pricing.ts',
+    '../content/guides/en/opencode-plans-and-pricing.ts',
+    '../content/guides/en/grok-build-pricing.ts',
+    '../content/guides/en/claude-code-plans-and-pricing.ts',
+    '../content/guides/en/codex-plans-and-pricing.ts',
+    '../content/guides/es/precios-y-uso-cursor-cli.ts',
+    '../content/guides/es/planes-y-precios-de-antigravity.ts',
+    '../content/guides/es/planes-y-precios-de-kimi-code.ts',
+    '../content/guides/es/planes-y-precios-de-opencode.ts',
+    '../content/guides/es/precios-y-acceso-grok-build.ts',
+    '../content/guides/es/planes-y-precios-de-claude-code.ts',
+    '../content/guides/es/planes-y-precios-de-codex.ts',
+  ]
+
+  for (const file of pricingFiles) {
+    const source = await readFile(new URL(file, import.meta.url), 'utf8')
+    assert.match(source, /updatedAt: '2026-08-25'/)
+  }
+
+  const llms = await readFile(new URL('../public/llms.txt', import.meta.url), 'utf8')
+  const facts = JSON.parse(await readFile(new URL('../scripts/competitor-facts.json', import.meta.url), 'utf8'))
+
+  assert.match(llms, /Available on every xAI plan, including Free/)
+  assert.equal(facts.verified_at, '2026-08-25')
 })

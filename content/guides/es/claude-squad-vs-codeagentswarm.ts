@@ -6,17 +6,17 @@ export const guide: Guide = {
     locale: 'es',
     title: 'Claude Squad vs CodeAgentSwarm: comparativa honesta (2026)',
     metaTitle: 'Claude Squad vs CodeAgentSwarm: comparativa honesta (2026)',
-    metaDescription: 'Claude Squad gestiona agentes de IA en paralelo dentro de tu terminal. CodeAgentSwarm hace lo mismo desde el escritorio. Comparativa honesta verificada en julio de 2026.',
+    metaDescription: 'Claude Squad gestiona agentes de IA en paralelo dentro de tu terminal. CodeAgentSwarm hace lo mismo desde el escritorio. Comparativa honesta verificada en agosto de 2026.',
     intro: `Claude Squad gestiona varios agentes de programación con IA dentro de tu terminal. CodeAgentSwarm le da a ese mismo paralelismo una interfaz de escritorio, con notificaciones, historial buscable entre agentes y un tablero kanban que los propios agentes actualizan.
 
-Antes de seguir, transparencia total: CodeAgentSwarm lo hacemos nosotros. Justo por eso esta página dice dónde gana Claude Squad y enumera nuestros límites en voz alta (código cerrado, sin build de escritorio para Linux, Mobile Connect aún en alpha, todavía en beta, y tú pones tus propias suscripciones de agentes). Los dos se juzgan con los mismos criterios, y cada dato de terceros se verificó el 26 de julio de 2026 en la web del fabricante, su README público y los datos públicos de GitHub. La disponibilidad de CodeAgentSwarm en esta página se actualizó el 23 de agosto de 2026.
+Antes de seguir, transparencia total: CodeAgentSwarm lo hacemos nosotros. Justo por eso esta página dice dónde gana Claude Squad y enumera nuestros límites en voz alta (código cerrado, sin build de escritorio para Linux, Mobile Connect aún en alpha, todavía en beta, y tú pones tus propias suscripciones de agentes). Los dos se juzgan con los mismos criterios, y cada dato de terceros se verificó el 25 de agosto de 2026 en la web del fabricante, su README público y los datos públicos de GitHub. La disponibilidad de CodeAgentSwarm en esta página se actualizó el 23 de agosto de 2026.
 
 Resumen rápido: si vives en la terminal, trabajas por SSH en máquinas remotas y quieres código abierto AGPL, Claude Squad te encaja mejor. Si prefieres una ventana de escritorio con notificaciones, historial entre agentes, diffs en vivo y siete proveedores en el mismo sitio, eso es lo que construimos nosotros.`,
     ctaText: 'Si quieres los mismos agentes en paralelo pero con ventana de escritorio, notificaciones e historial buscable de todos los agentes, descarga CodeAgentSwarm y pruébalo junto a Claude Squad.',
     ctaAgent: 'comparison',
     highlightedWords: ['Claude Squad', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
-    updatedAt: '2026-08-23',
+    updatedAt: '2026-08-25',
     alternateSlug: 'claude-squad-vs-codeagentswarm',
   },
   sections: [
@@ -35,7 +35,7 @@ Resumen rápido: si vives en la terminal, trabajas por SSH en máquinas remotas 
         {
           type: 'callout',
           variant: 'info',
-          content: 'Nosotros hacemos CodeAgentSwarm, así que léelo como lo que es, una comparativa con parte interesada, y comprueba los datos por tu cuenta. Todos los datos de terceros de esta página se verificaron el 26 de julio de 2026 en la web del fabricante, su README público y los datos públicos de GitHub. Cuando algo no está documentado, lo decimos en vez de inventarlo.',
+          content: 'Nosotros hacemos CodeAgentSwarm, así que léelo como lo que es, una comparativa con parte interesada, y comprueba los datos por tu cuenta. Todos los datos de terceros de esta página se verificaron el 25 de agosto de 2026 en la web del fabricante, su README público y los datos públicos de GitHub. Cuando algo no está documentado, lo decimos en vez de inventarlo.',
         },
       ],
     },
@@ -45,7 +45,7 @@ Resumen rápido: si vives en la terminal, trabajas por SSH en máquinas remotas 
       content: [
         {
           type: 'paragraph',
-          text: '<a href="https://smtg-ai.github.io/claude-squad/" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Squad</a> es una aplicación de terminal que gestiona varios agentes de IA. El repositorio <a href="https://github.com/smtg-ai/claude-squad" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">smtg-ai/claude-squad</a> lo describe como una forma de gestionar agentes tipo Claude Code, Codex, OpenCode y Amp, y su README añade Gemini y otros agentes locales como Aider, que lanzas por sesión con el flag de programa o con un perfil con nombre.',
+          text: '<a href="https://smtg-ai.github.io/claude-squad/" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Squad</a> es una aplicación de terminal que gestiona varios agentes de IA. Su <a href="https://github.com/smtg-ai/claude-squad" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">README</a> actual menciona Claude Code, Codex, Gemini y Aider, y permite lanzar comandos locales arbitrarios por sesión mediante el flag de programa o perfiles con nombre.',
         },
         {
           type: 'paragraph',
@@ -54,8 +54,8 @@ Resumen rápido: si vives en la terminal, trabajas por SSH en máquinas remotas 
         {
           type: 'list',
           items: [
-            'Código abierto con licencia AGPL-3.0 y unas 8.200 estrellas en GitHub (8.186 el 26 de julio de 2026)',
-            'Último commit público el 17 de junio de 2026',
+            'Código abierto con licencia AGPL-3.0 y unas 8.400 estrellas en GitHub (8.362 el 25 de agosto de 2026)',
+            'Último commit público el 20 de agosto de 2026',
             'Una sesión de tmux y un git worktree por tarea, así las ramas no chocan',
             'Una pestaña de diff para revisar cambios, más teclas para commitear, hacer push, pausar y reanudar una sesión',
             'Un modo de aceptación automática en segundo plano (el flag autoyes) para los agentes que preguntan sin parar',
@@ -108,18 +108,18 @@ Resumen rápido: si vives en la terminal, trabajas por SSH en máquinas remotas 
           type: 'table',
           headers: ['', 'Claude Squad', 'CodeAgentSwarm'],
           rows: [
-            ['Plataformas', 'Entornos de terminal con tmux y la CLI de GitHub instalados, vía Homebrew o script de shell. Una instalación nativa en Windows no está documentada en su web a 26 de julio de 2026', 'App de escritorio para macOS y Windows'],
+            ['Plataformas', 'Entornos de terminal con tmux y la CLI de GitHub instalados, vía Homebrew o script de shell. Una instalación nativa en Windows no está documentada en su web a 25 de agosto de 2026', 'App de escritorio para macOS y Windows'],
             ['Interfaz', 'Interfaz de terminal, guiada por teclado', 'Espacio de trabajo gráfico de escritorio con paneles de terminal'],
-            ['Agentes soportados', 'Claude Code, Codex, Gemini, Amp, OpenCode y otros agentes locales como Aider, elegidos por sesión', 'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent'],
+            ['Agentes soportados', 'Claude Code, Codex, Gemini y Aider; comandos locales arbitrarios mediante el flag de programa', 'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent'],
             ['Modelo de aislamiento', 'Una sesión de tmux y un git worktree por tarea, con una rama para cada una', 'Un proceso separado por terminal, con git worktrees opcionales por sesión'],
-            ['Notificaciones', 'No documentado en su web a 26 de julio de 2026', 'Notificaciones de escritorio cuando un agente termina o necesita respuesta'],
-            ['Historial de conversaciones', 'Las sesiones se pueden pausar y reanudar en la app. Un historial buscable entre agentes no está documentado en su web a 26 de julio de 2026', 'Historial buscable de los siete agentes, con reanudación cuando el agente la admite'],
-            ['Gestión de tareas', 'Lista de sesiones con su estado. Un tablero kanban no está documentado en su web a 26 de julio de 2026', 'Tablero kanban que los agentes actualizan por MCP'],
+            ['Notificaciones', 'No documentado en su web a 25 de agosto de 2026', 'Notificaciones de escritorio cuando un agente termina o necesita respuesta'],
+            ['Historial de conversaciones', 'Las sesiones se pueden pausar y reanudar en la app. Un historial buscable entre agentes no está documentado en su web a 25 de agosto de 2026', 'Historial buscable de los siete agentes, con reanudación cuando el agente la admite'],
+            ['Gestión de tareas', 'Lista de sesiones con su estado. Un tablero kanban no está documentado en su web a 25 de agosto de 2026', 'Tablero kanban que los agentes actualizan por MCP'],
             ['Código abierto', 'Sí, AGPL-3.0', 'No, código cerrado y sin repositorio público de la app'],
             ['Precio', 'Gratis', 'Gratis durante la beta con Pro incluido, y tú pones tus suscripciones de agentes'],
-            ['Último commit público (verificado el 26 jul 2026)', '17 de junio de 2026', 'Código cerrado, sin repositorio público'],
+            ['Último commit público (verificado el 25 ago 2026)', '20 de agosto de 2026', 'Código cerrado, sin repositorio público'],
           ],
-          caption: 'Verificado el 26 de julio de 2026 en la web de Claude Squad, su README público y GitHub. Evitamos a propósito afirmar que le falta algo: donde su documentación no dice nada, esta tabla tampoco.',
+          caption: 'Verificado el 25 de agosto de 2026 en la web de Claude Squad, su README público y GitHub. Evitamos a propósito afirmar que le falta algo: donde su documentación no dice nada, esta tabla tampoco.',
         },
       ],
     },
@@ -135,7 +135,7 @@ Resumen rápido: si vives en la terminal, trabajas por SSH en máquinas remotas 
           type: 'list',
           items: [
             '<strong>Trabajas en máquinas remotas.</strong> Claude Squad se ejecuta donde vive tu código. Por SSH contra un servidor de desarrollo, un VPS o una estación Linux, una app de terminal tiene la forma correcta y una interfaz de escritorio directamente no está.',
-            '<strong>Quieres código abierto.</strong> AGPL-3.0, repositorio público y unas 8.200 estrellas. Puedes leer cada línea, hacer un fork y auditar qué hace con tu código. CodeAgentSwarm no puede ofrecerte eso.',
+            '<strong>Quieres código abierto.</strong> AGPL-3.0, repositorio público y unas 8.400 estrellas. Puedes leer cada línea, hacer un fork y auditar qué hace con tu código. CodeAgentSwarm no puede ofrecerte eso.',
             '<strong>Quieres Linux.</strong> CodeAgentSwarm solo se distribuye para macOS y Windows. Si tu máquina diaria es Linux, Claude Squad está disponible para ti y nosotros no.',
             '<strong>Ya vives en tmux.</strong> Si tu memoria muscular es de teclado y te molesta pasar al ratón, una interfaz de texto con gestión de sesiones a una tecla te va a parecer más rápida que cualquier ventana.',
             '<strong>Quieres cero peso de instalación.</strong> Un binario, sin cuenta, sin actualizador y sin runtime de escritorio empaquetado.',
@@ -152,11 +152,11 @@ Resumen rápido: si vives en la terminal, trabajas por SSH en máquinas remotas 
           type: 'list',
           items: [
             '<strong>Prefieres que te avisen a estar mirando.</strong> Las notificaciones de escritorio saltan cuando un agente termina o necesita respuesta, así puedes irte a otra cosa en vez de vigilar un panel.',
-            '<strong>Usas siete proveedores.</strong> Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent están soportados directamente. Antigravity, Kimi y Grok Build no aparecen entre los agentes del README de Claude Squad a 26 de julio de 2026.',
+            '<strong>Usas siete proveedores.</strong> Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent están soportados directamente. Antigravity, Kimi y Grok Build no aparecen entre los agentes del README de Claude Squad a 25 de agosto de 2026.',
             '<strong>Quieres un historial que se pueda buscar.</strong> Todas las conversaciones de todos los agentes se buscan desde un solo sitio, y puedes reanudar cualquiera donde la dejaste.',
             '<strong>Quieres ver los diffs en vivo.</strong> Los diffs por terminal se actualizan mientras el agente edita, así ves pronto si dos agentes se pisan en vez de descubrirlo al revisar.',
             '<strong>Quieres el trabajo registrado.</strong> El tablero kanban lo actualizan los propios agentes por MCP, así que refleja lo que ha pasado de verdad.',
-            '<strong>Estás en Windows.</strong> CodeAgentSwarm es una app de Windows de primera clase, mientras que una instalación nativa en Windows de Claude Squad no está documentada en su web a 26 de julio de 2026.',
+            '<strong>Estás en Windows.</strong> CodeAgentSwarm es una app de Windows de primera clase, mientras que una instalación nativa en Windows de Claude Squad no está documentada en su web a 25 de agosto de 2026.',
             '<strong>Te chocas con los límites del plan.</strong> El indicador de cuota te enseña cuánto te queda del proveedor antes de que un agente se quede a medias.',
           ],
         },
@@ -185,15 +185,15 @@ Resumen rápido: si vives en la terminal, trabajas por SSH en máquinas remotas 
   faq: [
     {
       question: '¿Claude Squad es código abierto?',
-      answer: 'Sí. Claude Squad se publica en github.com/smtg-ai/claude-squad con licencia AGPL-3.0 y unas 8.200 estrellas (8.186 al verificarlo el 26 de julio de 2026). CodeAgentSwarm es de código cerrado y no tiene repositorio público de la aplicación, lo cual es un punto real a favor de Claude Squad si te importa auditar el código o hacer un fork.',
+      answer: 'Sí. Claude Squad se publica en github.com/smtg-ai/claude-squad con licencia AGPL-3.0 y unas 8.400 estrellas (8.362 al verificarlo el 25 de agosto de 2026). CodeAgentSwarm es de código cerrado y no tiene repositorio público de la aplicación, lo cual es un punto real a favor de Claude Squad si te importa auditar el código o hacer un fork.',
     },
     {
       question: '¿Claude Squad sigue mantenido?',
-      answer: 'Su último commit público en la rama principal fue el 17 de junio de 2026, verificado el 26 de julio de 2026, es decir algo más de un mes antes de escribir esta página. Es un dato, no un veredicto: muchas herramientas de terminal estables se quedan calladas durante semanas. Mira tú mismo el repositorio antes de montar un flujo de trabajo encima.',
+      answer: 'Su último commit público en la rama principal fue el 20 de agosto de 2026, cinco días antes de verificar esta página. Eso confirma que seguía en desarrollo activo al comprobarlo. Mira tú mismo el repositorio antes de montar un flujo de trabajo encima.',
     },
     {
       question: '¿Claude Squad soporta Antigravity CLI o Kimi Code?',
-      answer: 'Ninguno aparece entre sus agentes soportados en el README de Claude Squad a 26 de julio de 2026, que menciona Claude Code, Codex, Gemini, Amp, OpenCode y otros agentes locales como Aider. Su flag de programa sí lanza un comando local arbitrario, así que apuntarlo a otra CLI puede funcionar, pero no está documentado. CodeAgentSwarm soporta Antigravity CLI y Kimi Code de forma directa, junto a Claude Code, Codex CLI y OpenCode.',
+      answer: 'Ninguno aparece nombrado en el README de Claude Squad a 25 de agosto de 2026, que menciona Claude Code, Codex, Gemini y Aider. Su flag de programa lanza un comando local arbitrario, así que apuntarlo a otra CLI puede funcionar, pero no es una integración propia documentada. CodeAgentSwarm soporta Antigravity CLI, OpenCode y Kimi Code de forma directa.',
     },
     {
       question: '¿Necesito saber tmux para usar Claude Squad?',
