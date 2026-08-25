@@ -41,6 +41,10 @@ test('the home validates the free beta instead of selling future plans', async (
   assert.doesNotMatch(home, /<PricingSection \/>/)
   assert.match(betaAccess, /track\('beta_pricing_cta_click', \{ section: sectionId \}\)/)
   assert.doesNotMatch(betaAccess, /€6\.99\/mo/)
+  assert.match(betaAccess, /min-\[1081px\]:grid-cols/)
+  assert.match(betaAccess, /md:grid-cols-2/)
+  assert.equal(betaAccess.match(/label: tProposal/g)?.length, 2)
+  assert.doesNotMatch(betaAccess, /badges\.|boost|glow|gradient/i)
 })
 
 test('shared navigation sends content-page section links to the localized home', async () => {

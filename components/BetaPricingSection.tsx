@@ -1,15 +1,6 @@
 'use client'
 
-import { motion, useInView } from 'framer-motion'
-import { useRef } from 'react'
-import {
-  Check,
-  X,
-  Zap,
-  Sparkles,
-  Crown,
-  Info,
-} from 'lucide-react'
+import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 
 interface BetaPricingSectionProps {
@@ -19,300 +10,145 @@ interface BetaPricingSectionProps {
 export default function BetaPricingSection({ sectionId = 'beta-pricing' }: BetaPricingSectionProps) {
   const t = useTranslations('pricing')
   const tBeta = useTranslations('beta.pricing')
-  const sectionRef = useRef(null)
-  const isInView = useInView(sectionRef, { once: true, margin: '-100px' })
+  const tProposal = useTranslations('beta.pricingProposal')
 
-  const plans = [
+  const capabilities = [
     {
-      name: t('plans.free.name'),
-      icon: Zap,
-      price: 0,
-      description: t('plans.free.description'),
-      gradient: 'from-gray-500 to-gray-600',
+      label: tProposal('run'),
+      value: t('features.terminals6'),
+      title: tProposal('workParallel'),
       features: [
-        { name: t('features.terminals2'), included: true },
-        { name: t('features.projects2'), included: true },
-        { name: t('features.notifications'), included: true },
-        { name: t('features.realTimeChanges'), included: true },
-        { name: t('features.gridOnly'), included: true },
-        { name: t('features.projectShortcuts'), included: false },
-        { name: t('features.terminalShortcuts'), included: false },
-        { name: t('features.resizable'), included: false },
-        { name: t('features.mcpConfig'), included: false },
-        { name: t('features.mcpMarketplace'), included: false },
-        { name: t('features.gitAi'), included: false },
-        { name: t('features.taskLabels'), included: false },
-        { name: t('features.shortcuts'), included: false },
-        { name: t('features.mcpPermissions'), included: false },
-        { name: t('features.claudePermissions'), included: false },
-        { name: t('features.turboMode'), included: false },
-        { name: t('features.history'), included: false },
+        t('features.gridTabs'),
+        t('features.resizable'),
+        tProposal('liveChanges'),
       ],
-      cta: t('plans.free.cta'),
-      popular: false,
-      isBeta: false,
-      visible: false,
     },
     {
-      name: t('plans.pro.name'),
-      icon: Crown,
-      price: 6.99,
-      description: t('plans.pro.description'),
-      gradient: 'from-neon-cyan to-teal-500',
+      label: tProposal('organize'),
+      value: t('features.unlimitedProjects'),
+      title: tProposal('keepContext'),
       features: [
-        { name: t('features.terminals6'), included: true, badge: t('badges.boost25x') },
-        { name: t('features.unlimitedProjects'), included: true, badge: t('badges.unlimited') },
-        { name: t('features.notifications'), included: true },
-        { name: t('features.realTimeChanges'), included: true },
-        { name: t('features.gridTabs'), included: true, badge: t('badges.modes2x') },
-        { name: t('features.projectShortcuts6'), included: true, badge: t('badges.boost6x') },
-        { name: t('features.terminalShortcutsUnlimited'), included: true, badge: t('badges.unlimited') },
-        { name: t('features.resizable'), included: true },
-        { name: t('features.mcpConfig'), included: true },
-        { name: t('features.mcpMarketplace'), included: true },
-        { name: t('features.gitAi'), included: true },
-        { name: t('features.taskLabels'), included: true },
-        { name: t('features.shortcuts'), included: true },
-        { name: t('features.mcpPermissions'), included: true },
-        { name: t('features.claudePermissions'), included: true },
-        { name: t('features.turboMode'), included: true, badge: t('badges.boost3x') },
-        { name: t('features.history'), included: true },
+        t('features.projectShortcuts6'),
+        t('features.taskLabels'),
+        t('features.history'),
       ],
-      cta: tBeta('cta'),
-      popular: true,
-      isBeta: true,
-      visible: true,
     },
   ]
 
-  // During validation, show the access users receive now rather than future tiers.
-  const visiblePlans = plans.filter(plan => plan.visible)
+  const allFeatures = [
+    'terminals6',
+    'unlimitedProjects',
+    'notifications',
+    'realTimeChanges',
+    'gridTabs',
+    'projectShortcuts6',
+    'terminalShortcutsUnlimited',
+    'resizable',
+    'mcpConfig',
+    'mcpMarketplace',
+    'gitAi',
+    'taskLabels',
+    'shortcuts',
+    'mcpPermissions',
+    'claudePermissions',
+    'turboMode',
+    'history',
+  ] as const
 
   return (
-    <section
-      id={sectionId}
-      ref={sectionRef}
-      className="relative py-16 md:py-32 px-6 overflow-hidden"
-    >
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-dark-900 via-black to-dark-900" />
-      <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-neon-cyan/10 rounded-full blur-3xl -translate-y-1/2" />
-      <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl -translate-y-1/2" />
-
-      <div className="max-w-7xl mx-auto relative z-10">
-        {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-12"
-        >
-          <h2 className="heading-lg mb-6">
-            <span className="gradient-text">{t('title')}</span>{' '}
-            <span className="text-white/60 font-light italic">{t('titleHighlight')}</span>
-          </h2>
-          <p className="text-lg text-white/40 max-w-2xl mx-auto">
-            {t('subtitle')}
-          </p>
-        </motion.div>
-
-        {/* Beta Banner */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="mb-12"
-        >
-          <div className="flex items-start gap-3 p-4 rounded-xl glass border border-neon-cyan/30 max-w-4xl mx-auto bg-neon-cyan/5">
-            <Info className="w-5 h-5 text-neon-cyan flex-shrink-0 mt-0.5" />
-            <p className="text-white/80 text-sm leading-relaxed font-medium">
-              {tBeta('banner')}
+    <section id={sectionId} className="relative overflow-hidden bg-[#0b0b0c] px-6 py-20 md:py-28">
+      <div className="mx-auto max-w-7xl">
+        <div className="grid grid-cols-1 items-end gap-11 pb-14 min-[1081px]:grid-cols-[minmax(0,1.5fr)_minmax(20rem,.7fr)] min-[1081px]:gap-24">
+          <div>
+            <p className="mb-6 flex items-center gap-3 text-sm font-semibold text-[var(--accent)] before:h-px before:w-10 before:bg-current">
+              {tProposal('eyebrow')}
             </p>
+            <h2 className="max-w-4xl text-[clamp(2.875rem,6vw,5.125rem)] font-semibold leading-[0.98] tracking-[-0.055em] text-zinc-100 text-balance">
+              {tProposal('headline')}
+            </h2>
           </div>
-        </motion.div>
 
-        {/* Pricing Cards */}
-        <div className="grid grid-cols-1 gap-6 max-w-2xl mx-auto">
-          {visiblePlans.map((plan, index) => (
-            <motion.div
-              key={plan.name}
-              initial={{ opacity: 0, y: 50 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-              transition={{ duration: 0.6, delay: index * 0.1 + 0.3 }}
-              className={`relative group ${plan.popular ? 'md:-mt-4 md:mb-4' : ''}`}
+          <div className="max-w-[32.5rem] border-t border-white/20 pt-6">
+            <div className="mb-5 flex items-baseline gap-3">
+              <span className="text-[clamp(3.375rem,6vw,4.75rem)] font-semibold leading-[0.9] tracking-[-0.06em] text-zinc-100">
+                €0
+              </span>
+              <span className="max-w-28 text-sm leading-snug text-zinc-400">
+                {tProposal('priceContext')}
+              </span>
+            </div>
+            <p className="mb-6 max-w-[34ch] text-base leading-relaxed text-zinc-400">
+              {tProposal('offer')}
+            </p>
+            <a
+              href="#download"
+              onClick={() => window.umami?.track('beta_pricing_cta_click', { section: sectionId })}
+              className="inline-flex min-h-[3.25rem] items-center justify-center whitespace-nowrap rounded-lg bg-[var(--accent)] px-6 font-bold text-[#17130a] transition-colors hover:bg-amber-300 active:translate-y-px"
             >
-              {/* Beta Badge (for Pro card) */}
-              {plan.isBeta && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-20">
-                  <motion.div
-                    initial={{ scale: 0 }}
-                    animate={isInView ? { scale: 1 } : { scale: 0 }}
-                    transition={{ delay: 0.7, type: 'spring', stiffness: 300 }}
-                    className="px-4 py-1.5 bg-neon-green text-black text-xs font-bold rounded-full shadow-lg"
-                  >
-                    {tBeta('badge')}
-                  </motion.div>
-                </div>
-              )}
+              {tBeta('cta')}
+            </a>
+          </div>
+        </div>
 
-              {/* Card */}
-              <div
-                className={`relative h-full rounded-2xl overflow-hidden transition-all duration-500 ${
-                  plan.popular
-                    ? 'border-2 border-neon-cyan/50'
-                    : 'border border-white/5 hover:border-white/10'
-                }`}
-              >
-                {/* Animated border for popular */}
-                {plan.popular && (
-                  <div className="absolute inset-0 bg-gradient-to-br from-neon-cyan/20 to-teal-500/20" />
-                )}
-
-                {/* Background */}
-                <div className="absolute inset-0 glass" />
-
-                {/* Content */}
-                <div className="relative p-8">
-                  {/* Header */}
-                  <div className="flex items-center gap-3 mb-4">
-                    <div
-                      className={`w-12 h-12 rounded-xl bg-gradient-to-br ${plan.gradient} p-3`}
-                    >
-                      <plan.icon className="w-full h-full text-white" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-display font-semibold text-white">
-                        {plan.name}
-                      </h3>
-                    </div>
-                  </div>
-
-                  {/* Price */}
-                  <div className="flex items-baseline gap-2 mb-3">
-                    {plan.isBeta ? (
-                      <div className="flex flex-col gap-3">
-                        <div className="flex items-center gap-3">
-                          <span className="text-4xl font-display font-bold text-white">
-                            €0
-                          </span>
-                          <span className="px-3 py-1.5 rounded-full bg-neon-green text-black text-sm font-bold uppercase tracking-wide">
-                            {tBeta('priceFree')}
-                          </span>
-                        </div>
-                      </div>
-                    ) : (
-                      <>
-                        <span className="text-4xl font-display font-bold text-white">
-                          €{plan.price}
-                        </span>
-                        <span className="text-white/40">/{t('perMonth')}</span>
-                      </>
-                    )}
-                  </div>
-
-                  <p className="text-sm text-white/50 mb-6">{plan.description}</p>
-
-                  {/* Features */}
-                  <div className="space-y-3 mb-8">
-                    {plan.features.map((feature) => (
-                      <div key={feature.name} className="flex items-center gap-3">
-                        {feature.included ? (
-                          <div
-                            className={`w-5 h-5 rounded-full flex items-center justify-center ${
-                              plan.popular
-                                ? 'bg-gradient-to-br from-neon-cyan/30 to-teal-500/30'
-                                : 'bg-neon-green/20'
-                            }`}
-                          >
-                            <Check
-                              className={`w-3 h-3 ${
-                                plan.popular ? 'text-neon-cyan' : 'text-neon-green'
-                              }`}
-                            />
-                          </div>
-                        ) : (
-                          <div className="w-5 h-5 rounded-full bg-white/5 flex items-center justify-center">
-                            <X className="w-3 h-3 text-white/20" />
-                          </div>
-                        )}
-                        <span
-                          className={`text-sm ${
-                            feature.included ? 'text-white/70' : 'text-white/30'
-                          }`}
-                        >
-                          {feature.name}
-                        </span>
-                        {'badge' in feature && feature.badge && (
-                          <span
-                            className={`text-[10px] px-2 py-0.5 rounded-full font-bold ${
-                              feature.badge === '3X BOOST'
-                                ? 'bg-gradient-to-r from-yellow-500 to-orange-500 text-white'
-                                : feature.badge === '2X BOOST'
-                                ? 'bg-gradient-to-r from-amber-500 to-blue-500 text-white'
-                                : 'bg-gradient-to-r from-neon-purple to-neon-magenta text-white'
-                            }`}
-                          >
-                            {feature.badge}
-                          </span>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* CTA Button */}
-                  {plan.isBeta ? (
-                    <a
-                      href="#download"
-                      onClick={() => window.umami?.track('beta_pricing_cta_click', { section: sectionId })}
-                      className="flex items-center justify-center gap-2 w-full py-3 px-6 rounded-xl font-bold transition-all duration-300 bg-neon-cyan text-black hover:bg-amber-400"
-                    >
-                      {plan.cta}
-                      <Sparkles className="w-4 h-4" />
-                    </a>
-                  ) : (
-                    <a
-                      href="#download"
-                      className={`flex items-center justify-center gap-2 w-full py-3 px-6 rounded-xl font-medium transition-all duration-300 ${
-                        plan.name === 'Starter'
-                          ? 'bg-gradient-to-r from-blue-600/20 to-amber-600/20 border border-blue-500/30 text-white/80 hover:from-blue-600/30 hover:to-amber-600/30'
-                          : 'bg-white/5 border border-white/10 text-white/70 hover:bg-white/10 hover:text-white'
-                      }`}
-                    >
-                      {plan.cta}
-                    </a>
-                  )}
-                </div>
-
-                {/* Hover glow */}
-                <div
-                  className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`}
-                >
-                  <div
-                    className={`absolute inset-0 bg-gradient-to-br ${plan.gradient} opacity-5 blur-2xl`}
-                  />
-                </div>
-              </div>
-            </motion.div>
+        <div className="grid grid-cols-1 border-y border-white/20 md:grid-cols-2">
+          {capabilities.map((capability, index) => (
+            <article
+              key={capability.label}
+              className={`py-8 md:min-h-[17rem] md:py-9 ${
+                index === 0
+                  ? 'md:pr-9'
+                  : 'border-t border-white/15 md:border-l md:border-t-0 md:pl-9'
+              }`}
+            >
+              <p className="mb-7 font-mono text-xs uppercase tracking-[0.08em] text-zinc-500 md:mb-12">
+                {capability.label}
+              </p>
+              <strong className="mb-2 block text-2xl font-semibold tracking-[-0.035em] text-[var(--accent)]">
+                {capability.value}
+              </strong>
+              <h3 className="mb-5 text-2xl font-semibold tracking-[-0.035em] text-zinc-100">
+                {capability.title}
+              </h3>
+              <ul className="space-y-2 text-sm leading-relaxed text-zinc-400">
+                {capability.features.map(feature => <li key={feature}>{feature}</li>)}
+              </ul>
+            </article>
           ))}
         </div>
 
-        {/* Why Upgrade Box */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.6, delay: 0.9 }}
-          className="mt-12 max-w-3xl mx-auto"
-        >
-          <div className="p-6 rounded-2xl glass border border-neon-cyan/20">
-            <h4 className="text-white/80 font-display font-medium mb-3 flex items-center gap-2">
-              <Crown className="w-5 h-5 text-neon-cyan" />
-              {t('whyUpgrade.title')}
-            </h4>
-            <p className="text-white/50 text-sm leading-relaxed">
-              {t('whyUpgrade.description')}
+        <div className="grid grid-cols-1 items-center gap-8 border-b border-white/20 py-12 md:grid-cols-[minmax(15rem,.48fr)_minmax(0,1.52fr)] md:gap-10 md:py-16">
+          <div>
+            <h3 className="mb-4 text-3xl font-semibold leading-tight tracking-[-0.04em] text-zinc-100">
+              {tProposal('proofTitle')}
+            </h3>
+            <p className="text-sm leading-relaxed text-zinc-400">
+              {tProposal('proofBody')}
             </p>
           </div>
-        </motion.div>
+          <Image
+            src="/images/guides/multi-terminal.png"
+            alt={tProposal('productAlt')}
+            width={3016}
+            height={1758}
+            sizes="(max-width: 768px) 100vw, 70vw"
+            className="aspect-[1.6] w-full rounded-lg border border-white/15 object-cover object-top md:aspect-[1.9048]"
+          />
+        </div>
+
+        <details className="group pt-8">
+          <summary className="flex cursor-pointer list-none items-center justify-between gap-5 rounded-lg py-4 text-sm font-semibold text-zinc-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--accent)] [&::-webkit-details-marker]:hidden">
+            <span>{tProposal('allFeatures')}</span>
+            <span className="ml-auto hidden text-xs font-normal text-zinc-500 sm:block">
+              {tProposal('allFeaturesNote')}
+            </span>
+            <span className="text-[var(--accent)] transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+          </summary>
+          <ul className="mt-3 grid grid-cols-1 gap-x-9 gap-y-1 border-t border-white/15 pt-7 text-sm leading-relaxed text-zinc-400 md:grid-cols-3">
+            {allFeatures.map(feature => (
+              <li key={feature} className="py-2">{t(`features.${feature}`)}</li>
+            ))}
+          </ul>
+        </details>
       </div>
     </section>
   )

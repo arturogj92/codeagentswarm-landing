@@ -679,6 +679,22 @@
       "priceFree": "FREE",
       "cta": "Download the Free Beta"
     },
+    "pricingProposal": {
+      "eyebrow": "Open Beta",
+      "headline": "The complete product is free during beta.",
+      "priceContext": "for the entire open beta",
+      "offer": "Download the app and create an account. Pro activates automatically, with no CodeAgentSwarm subscription or credit card.",
+      "run": "Run",
+      "workParallel": "Work in parallel",
+      "liveChanges": "Live notifications and changes",
+      "organize": "Organize",
+      "keepContext": "Keep context separate",
+      "proofTitle": "Pro means the product you can see.",
+      "proofBody": "No teaser tier and no crossed-out feature matrix during beta. Every capability shown here is available after signup.",
+      "productAlt": "CodeAgentSwarm running multiple AI coding agents in parallel",
+      "allFeatures": "View all 17 included Pro features",
+      "allFeaturesNote": "Nothing hidden behind another tier"
+    },
     "banner": {
       "text": "Open Beta: Pro unlocks automatically when you sign up",
       "cta": "Download Free"

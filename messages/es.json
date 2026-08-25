@@ -679,6 +679,22 @@
       "priceFree": "GRATIS",
       "cta": "Descargar la beta gratis"
     },
+    "pricingProposal": {
+      "eyebrow": "Open Beta",
+      "headline": "El producto completo es gratis durante la beta.",
+      "priceContext": "durante toda la beta abierta",
+      "offer": "Descarga la app y crea una cuenta. Pro se activa automáticamente, sin suscripción a CodeAgentSwarm ni tarjeta.",
+      "run": "Ejecuta",
+      "workParallel": "Trabaja en paralelo",
+      "liveChanges": "Notificaciones y cambios en directo",
+      "organize": "Organiza",
+      "keepContext": "Mantén cada contexto separado",
+      "proofTitle": "Pro es el producto que ves.",
+      "proofBody": "Durante la beta no hay un plan de muestra ni una tabla de funciones bloqueadas. Todo lo que aparece aquí se activa al registrarte.",
+      "productAlt": "CodeAgentSwarm ejecutando varios agentes de programación con IA en paralelo",
+      "allFeatures": "Ver las 17 funciones Pro incluidas",
+      "allFeaturesNote": "Nada oculto tras otro plan"
+    },
     "banner": {
       "text": "Open Beta: Pro se activa solo al registrarte",
       "cta": "Descargar Gratis"
