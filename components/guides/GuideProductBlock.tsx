@@ -42,14 +42,12 @@ interface GuideProductBlockProps {
   locale: 'en' | 'es'
   slug: string
   videoKey: string
-  /** Optional guide-specific copy (meta.ctaText); falls back to a generic text per locale. */
-  ctaText?: string
 }
 
 // Product showcase block rendered inside the guide article, right after the
 // intro. The video only starts loading when the block approaches the viewport
 // (IntersectionObserver) so it never competes with the guide's LCP.
-export default function GuideProductBlock({ locale, slug, videoKey, ctaText }: GuideProductBlockProps) {
+export default function GuideProductBlock({ locale, slug, videoKey }: GuideProductBlockProps) {
   const t = useTranslations('guides.productBlock')
   const containerRef = useRef<HTMLElement>(null)
   const [inView, setInView] = useState(false)
@@ -90,7 +88,7 @@ export default function GuideProductBlock({ locale, slug, videoKey, ctaText }: G
           {t('overline')}
         </div>
         <p className="text-[21px] font-bold text-white leading-[1.3] mb-1.5 m-0">{t('title')}</p>
-        <p className="text-[15.5px] text-white/65 mb-4 m-0">{ctaText ?? t('copy')}</p>
+        <p className="text-[15.5px] text-white/65 mb-4 m-0">{t('copy')}</p>
       </div>
 
       <div

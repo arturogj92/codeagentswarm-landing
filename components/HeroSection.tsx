@@ -121,7 +121,7 @@ export function VideoShowcase() {
   const videos = [
     {
       id: 1,
-      src: cdnVideo('terminals.mp4'),
+      src: cdnVideo('guide-terminals.mp4'),
       title: t('multiTerminal.title'),
       icon: Monitor,
       description: t('multiTerminal.description')

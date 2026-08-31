@@ -16,7 +16,7 @@ Short version: pick T3 Code if open source, Linux support and a fast path from d
     ctaAgent: 'comparison',
     highlightedWords: ['T3 Code', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
-    updatedAt: '2026-08-25',
+    updatedAt: '2026-08-31',
     alternateSlug: 't3-code-vs-codeagentswarm',
   },
   sections: [
@@ -49,7 +49,7 @@ Short version: pick T3 Code if open source, Linux support and a fast path from d
         },
         {
           type: 'paragraph',
-          text: 'The momentum is real and worth stating plainly. The repository was created on February 8, 2026 and had about 20,400 stars by August 25, 2026, with its last public commit that same day. Roughly 20,400 stars in six and a half months is the fastest growth anyone in this category has shown, and it is a legitimate reason to take T3 Code seriously.',
+          text: 'The momentum is real and worth stating plainly. The repository was created on February 8, 2026 and had 21,084 stars when its public GitHub data was refreshed on August 31, 2026, with its last public commit that day. Roughly 21,100 stars in under seven months is the fastest growth anyone in this category has shown, and it is a legitimate reason to take T3 Code seriously.',
         },
         {
           type: 'list',
@@ -114,9 +114,9 @@ Short version: pick T3 Code if open source, Linux support and a fast path from d
             ['Task management', 'Per-project quick actions, plus one-click Commit, Push and Create PR', 'Kanban board the agents update over MCP. No one-click PR button'],
             ['Open source', 'Yes, MIT (pingdotgg/t3code)', 'No. Closed source, no public app repository'],
             ['Price', 'Free, bring your own key, no subscription (their claim)', 'Free during beta with Pro included. You bring your own CLI subscriptions'],
-            ['Last public commit (verified Aug 25, 2026)', 'August 25, 2026. About 20,400 stars since February 8, 2026', 'Closed source, no public repo'],
+            ['Last public commit (verified Aug 31, 2026)', 'August 31, 2026. 21,084 stars since February 8, 2026', 'Closed source, no public repo'],
           ],
-          caption: 'All third-party facts verified on August 25, 2026 against t3.codes and public GitHub data.',
+          caption: 'Product facts verified on August 25, 2026 against t3.codes. Public GitHub stars and activity refreshed on August 31, 2026.',
         },
       ],
     },
@@ -136,7 +136,7 @@ Short version: pick T3 Code if open source, Linux support and a fast path from d
             '<strong>You want to try it in ten seconds.</strong> <code>npx t3@latest</code> runs it with nothing installed, a lower barrier than any installer.',
             '<strong>Your bottleneck is shipping, not supervising.</strong> One button to commit, push and open a PR with a generated title and body, including draft and stacked PRs, beats doing it by hand. We generate commit messages but have no PR button.',
             '<strong>You want public mobile apps.</strong> T3 Code ships iOS and Android apps today. CodeAgentSwarm Mobile Connect is still in alpha.',
-            '<strong>You value community momentum.</strong> Roughly 20,400 stars in six and a half months and frequent harness additions mean bugs get found and fixed fast.',
+            '<strong>You value community momentum.</strong> Roughly 21,100 stars in under seven months and frequent harness additions mean bugs get found and fixed fast.',
           ],
         },
       ],
@@ -188,7 +188,7 @@ Short version: pick T3 Code if open source, Linux support and a fast path from d
     },
     {
       question: 'Which one is more actively maintained?',
-      answer: 'Both are active, and neither side wins this row. The public t3code repository had its last commit on August 25, 2026, the day this comparison was verified, with roughly 20,400 stars since it was created on February 8, 2026. CodeAgentSwarm is closed source, so there is no public commit history to inspect: our cadence has to be taken on trust, and that is a fair criticism.',
+      answer: 'Both are active, and neither side wins this row. The public t3code repository had its last commit on August 31, 2026, with 21,084 stars when its GitHub data was refreshed that day. CodeAgentSwarm is closed source, so there is no public commit history to inspect: our cadence has to be taken on trust, and that is a fair criticism.',
     },
     {
       question: 'Can I try both for free?',

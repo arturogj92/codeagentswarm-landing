@@ -160,6 +160,9 @@ Verified follow sources already include the self-owned GitHub Pages site, Uneed,
 11. A localized About page now identifies Arturo García, explains the product and editorial method, links official identities and publishes AboutPage, Organization and Person structured data.
 12. Sixteen English and Spanish comparison pages now state the current Mobile Connect alpha access model and distinguish the August 23 product update from third-party facts last verified on July 26.
 13. Twenty-four English and Spanish pricing, comparison and Grok Build guides now reflect current plan names, prices, overflow billing and model families. The update uses official xAI, Anthropic, Moonshot, Google, OpenAI and Cursor pages checked on August 23, 2026; URLs, canonicals and hreflang targets were unchanged.
+14. The inline guide CTA now reuses the guide's existing intent-specific conversion copy. That copy appears once per guide; the product block and final CTA use their localized contextual fallbacks. Event names and CTA positions are unchanged, so the historical position split remains comparable.
+15. The obsolete 5.67 MB homepage showcase clip was replaced by an existing current 82 KB clip. Reused guide screenshots now include `resume-conversation.png` in the responsive image map.
+16. Below-fold instructional videos now require user playback and preload metadata only. The early intent-matched product block still activates near the viewport.
 
 ### Measured impact
 
@@ -173,7 +176,6 @@ Verified follow sources already include the self-owned GitHub Pages site, Uneed,
 ### Not changed yet
 
 - Similar guide pairs were not merged because separate query and page exports cannot prove cannibalization.
-- The home video remains about 4.2 to 4.6 MB with weak cache headers from its CDN.
 - Lower-frequency guide screenshots still use their original files. Convert more only if real-user data shows image transfer or LCP remains a bottleneck.
 - Landing analytics cannot join a specific anonymous visit or download click to an installed app without adding a cross-surface identifier.
 
@@ -198,13 +200,19 @@ Completed on 2026-08-23:
 - Revalidated five current editorial category pages.
 - Replaced the stale outreach document with reviewed product facts, a manual send checklist and five page-specific drafts.
 
+Revalidated on 2026-08-31:
+
+- All five editorial pages remain live. Singularity Society still names CodeAgentSwarm without linking it; the other four omit it.
+- The first email batch is Singularity Society, AgentsRoom, amux and Tembo. Zevyn stays on hold because its competitor-owned selection is deliberately narrow.
+- One reminder is ready for awesome-ai-devtools PR 759 and awesome-agent-orchestrators PR 142. awesome-mac PR 2250 already received a reminder.
+- The DEV draft stays unpublished. DEV's current policy warns against AI-assisted business promotion or backlink-led articles, so publishing it for authority would create an avoidable policy risk.
+
 Next manual batch:
 
-1. Ask Singularity Society to turn its existing plain-text mention into a factual linked entry.
-2. Ask Tembo for an editorial evaluation.
-3. Ask Zevyn Studio, AgentsRoom and amux with the page-specific drafts.
-4. Publish a useful DEV article with an early contextual link.
-5. Verify StackShare, SaaSGrow and MCP client listing eligibility before submitting duplicates.
+1. Send rendered tests of the four email drafts to Arturo and wait for inbox approval.
+2. After approval, send each email once and record replies, accepted links and link attributes.
+3. Post one concise reminder on awesome-ai-devtools PR 759 and awesome-agent-orchestrators PR 142.
+4. Verify StackShare, SaaSGrow and MCP client listing eligibility before submitting duplicates.
 
 Nothing has been sent to these editors and no new directory form has been submitted.
 
@@ -255,6 +263,16 @@ The 150 EUR budget should remain untouched until the free editorial batch lands 
 - Final browser checks reported zero console errors on the changed Beta pages.
 - The changed OpenCode history guide loaded its CDN video at ready state 4, rendered the searchable history interface, kept the download CTA visible and reported zero console errors.
 - The existing aggregate app and backend activation checks passed: 47 click tracker tests and the bounded weekly installation funnel migration test.
+
+### August 31 priority follow-up
+
+- Refreshed GitHub activity and star counts in four bilingual comparison pairs plus the bilingual category ranking. `node scripts/competitor-refresh.mjs --check` matched the public GitHub API.
+- Kept comparison titles and descriptions unchanged. Product facts not rechecked on August 31 retain their August 25 wording and date.
+- Seven complete days from August 24 through August 30 produced 6,034 guide pageviews and 71 direct downloads: 40 from the product block, 18 from the inline CTA and 13 from the final CTA.
+- The inline CTA baseline is 0.298% of guide pageviews. Measure it after 14 complete post-deployment days; treat at least 0.358% as the initial success threshold only if total guide conversion remains at or above the 1.177% baseline.
+- [Vercel documents](https://vercel.com/docs/bot-management) that verified bots bypass Bot Protection and Attack Challenge Mode. Together with recent Search Console crawling, there is no demonstrated crawler block that justifies weakening the firewall. The authenticated dashboard session available during this check did not own the production project, so traffic logs were not inspected.
+- Eighteen focused SEO, media and cross-link tests passed. The production build completed and generated all static output; the pre-existing missing-ESLint warning remains.
+- Desktop and 390 px browser checks confirmed that the contextual CTA wraps without horizontal overflow. Rendered instructional videos had controls, no autoplay and `preload="metadata"`; the mapped screenshot used responsive `/_next/image` output with intrinsic dimensions.
 
 ## Measurement plan after deployment
 

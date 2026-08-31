@@ -25,6 +25,19 @@ test('guide pages do not import the full content registry into the client bundle
   assert.doesNotMatch(source, /from ['"]@\/content\/guides['"]/)
 })
 
+test('the inline guide CTA reuses each guide-specific conversion message', async () => {
+  const layout = await readFile(new URL('./guides/GuideLayout.tsx', import.meta.url), 'utf8')
+  const inline = await readFile(new URL('./guides/GuideInlineCTA.tsx', import.meta.url), 'utf8')
+  const product = await readFile(new URL('./guides/GuideProductBlock.tsx', import.meta.url), 'utf8')
+
+  assert.match(layout, /<GuideInlineCTA[\s\S]*ctaText=\{meta\.ctaText\}/)
+  assert.match(layout, /sections\.length >= 2/)
+  assert.equal(layout.match(/meta\.ctaText/g)?.length, 1)
+  assert.match(inline, /ctaText\?: string/)
+  assert.match(inline, /\{ctaText \?\? t\(`context\.\$\{CTA_AGENT_MESSAGE_KEY\[ctaAgent\]\}`\)\}/)
+  assert.doesNotMatch(product, /ctaText/)
+})
+
 test('beta conversion links point to the real download section', async () => {
   for (const file of ['./BetaHeroSection.tsx', './BetaPricingSection.tsx']) {
     const source = await readFile(new URL(file, import.meta.url), 'utf8')
@@ -78,6 +91,7 @@ test('the most reused large guide images use responsive Next image output', asyn
   const source = await readFile(new URL('./guides/ContentRenderer.tsx', import.meta.url), 'utf8')
 
   for (const image of [
+    'resume-conversation.png',
     'task-board-kanban.png',
     'codex-agent-swarm.png',
     'multi-terminal.png',
@@ -89,6 +103,16 @@ test('the most reused large guide images use responsive Next image output', asyn
     assert.match(source, new RegExp(image.replace('.', '\\.')))
   }
   assert.match(source, /<Image[\s\S]*sizes=\{sizes\}/)
+})
+
+test('guide and homepage videos avoid downloading obsolete media eagerly', async () => {
+  const content = await readFile(new URL('./guides/ContentRenderer.tsx', import.meta.url), 'utf8')
+  const hero = await readFile(new URL('./HeroSection.tsx', import.meta.url), 'utf8')
+
+  assert.doesNotMatch(content, /case 'video':[\s\S]*?autoPlay[\s\S]*?case 'callout':/)
+  assert.match(content, /case 'video':[\s\S]*?preload="metadata"[\s\S]*?case 'callout':/)
+  assert.match(hero, /cdnVideo\('guide-terminals\.mp4'\)/)
+  assert.doesNotMatch(hero, /cdnVideo\('terminals\.mp4'\)/)
 })
 
 test('guide prerenders stay inside their own locale', async () => {
@@ -129,10 +153,23 @@ test('about and comparison pages expose current authorship and Mobile Connect fa
   assert.match(guideLayout, /href=\{`\/\$\{locale\}\/about`\}/)
   assert.match(sitemap, /\$\{locale\}\/about/)
 
+  const refreshedComparisons = new Set([
+    '../content/guides/en/best-tools-to-run-multiple-ai-coding-agents.ts',
+    '../content/guides/en/nimbalyst-vs-codeagentswarm.ts',
+    '../content/guides/en/paseo-vs-codeagentswarm.ts',
+    '../content/guides/en/superset-vs-codeagentswarm.ts',
+    '../content/guides/en/t3-code-vs-codeagentswarm.ts',
+    '../content/guides/es/mejores-herramientas-agentes-ia-en-paralelo.ts',
+    '../content/guides/es/nimbalyst-vs-codeagentswarm.ts',
+    '../content/guides/es/paseo-vs-codeagentswarm.ts',
+    '../content/guides/es/superset-vs-codeagentswarm.ts',
+    '../content/guides/es/t3-code-vs-codeagentswarm.ts',
+  ])
+
   for (const file of comparisons) {
     const source = await readFile(new URL(file, import.meta.url), 'utf8')
     assert.match(source, /Mobile Connect/)
-    assert.match(source, /updatedAt: '2026-08-25'/)
+    assert.match(source, new RegExp(`updatedAt: '${refreshedComparisons.has(file) ? '2026-08-31' : '2026-08-25'}'`))
   }
 })
 
@@ -163,5 +200,5 @@ test('volatile pricing, token and competitor facts carry the current verificatio
   const facts = JSON.parse(await readFile(new URL('../scripts/competitor-facts.json', import.meta.url), 'utf8'))
 
   assert.match(llms, /Available on every xAI plan, including Free/)
-  assert.equal(facts.verified_at, '2026-08-25')
+  assert.equal(facts.verified_at, '2026-08-31')
 })

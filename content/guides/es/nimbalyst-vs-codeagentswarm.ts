@@ -16,7 +16,7 @@ Elige Nimbalyst si lo que te importa es el artefacto: markdown, mockups, diagram
     ctaAgent: 'comparison',
     highlightedWords: ['Nimbalyst', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
-    updatedAt: '2026-08-25',
+    updatedAt: '2026-08-31',
     alternateSlug: 'nimbalyst-vs-codeagentswarm',
   },
   sections: [
@@ -49,7 +49,7 @@ Elige Nimbalyst si lo que te importa es el artefacto: markdown, mockups, diagram
         },
         {
           type: 'paragraph',
-          text: 'Es el proyecto que antes se llamaba Crystal. El repositorio antiguo, <a href="https://github.com/stravu/crystal" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">stravu/crystal</a>, sigue diciendo en su propia descripción que Crystal ahora es Nimbalyst y apunta a nimbalyst.com. Ese repositorio es MIT, tiene unas 3.100 estrellas (3.106) y su último commit público fue el 26 de febrero de 2026. El desarrollo se movió a <a href="https://github.com/nimbalyst/nimbalyst" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">nimbalyst/nimbalyst</a>, también MIT, con unas 1.600 estrellas (1.561) y un commit público del 24 de agosto de 2026. Verificamos la página el día 25. Si te acuerdas de Crystal, parece que el número de estrellas ha bajado: no ha bajado, el proyecto cambió de dirección.',
+          text: 'Es el proyecto que antes se llamaba Crystal. El repositorio antiguo, <a href="https://github.com/stravu/crystal" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">stravu/crystal</a>, sigue diciendo en su propia descripción que Crystal ahora es Nimbalyst y apunta a nimbalyst.com. Ese repositorio es MIT, tiene unas 3.100 estrellas (3.106) y su último commit público fue el 26 de febrero de 2026. El desarrollo se movió a <a href="https://github.com/nimbalyst/nimbalyst" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">nimbalyst/nimbalyst</a>, también MIT, con unas 1.600 estrellas (1.613) y un commit público del 28 de agosto de 2026. Actualizamos los datos del repositorio actual el 31 de agosto. Si te acuerdas de Crystal, parece que el número de estrellas ha bajado: no ha bajado, el proyecto cambió de dirección.',
         },
         {
           type: 'list',
@@ -109,9 +109,9 @@ Elige Nimbalyst si lo que te importa es el artefacto: markdown, mockups, diagram
             ['Gestión de tareas', 'Seguimiento de tareas más una vista kanban de sesiones, editable por ti y por el agente', 'Tablero kanban que los agentes actualizan por MCP'],
             ['Código abierto', 'Sí, MIT, unas 1.600 estrellas en el repositorio actual', 'No, código cerrado y sin repositorio público de la app'],
             ['Precio', 'Gratis para uso individual según su web; existe un plan de pago para equipos según la navegación de su web (no verificamos ninguna cifra)', 'Gratis durante la beta con Pro incluido, y tú pones tus suscripciones de agentes'],
-            ['Último commit público (verificado el 25 ago 2026)', '24 de agosto de 2026 en nimbalyst/nimbalyst; 26 de febrero de 2026 en el antiguo stravu/crystal', 'Código cerrado, sin repositorio público'],
+            ['Último commit público (verificado el 31 ago 2026)', '28 de agosto de 2026 en nimbalyst/nimbalyst; 26 de febrero de 2026 en el antiguo stravu/crystal', 'Código cerrado, sin repositorio público'],
           ],
-          caption: 'Verificado el 25 de agosto de 2026 en nimbalyst.com, el README público de Nimbalyst y los datos de GitHub de ambos repositorios.',
+          caption: 'Los datos del producto y del repositorio anterior se verificaron el 25 de agosto de 2026. Las estrellas y la actividad de nimbalyst/nimbalyst se actualizaron con datos públicos de GitHub el 31 de agosto de 2026.',
         },
       ],
     },
@@ -127,7 +127,7 @@ Elige Nimbalyst si lo que te importa es el artefacto: markdown, mockups, diagram
           type: 'list',
           items: [
             '<strong>Quieres editar visualmente lo que produce el agente.</strong> Markdown, mockups con anotaciones, Mermaid, Excalidraw, CSV y modelos de datos en editores WYSIWYG, aprobando los cambios como diffs en rojo y verde. Nosotros no tenemos nada equivalente.',
-            '<strong>Quieres código abierto.</strong> MIT, repositorio público, y además activo: hubo un commit público el 24 de agosto, un día antes de verificarlo. CodeAgentSwarm es de código cerrado.',
+            '<strong>Quieres código abierto.</strong> MIT, repositorio público, y además activo: hubo un commit público el 28 de agosto, tres días antes de actualizar los datos del repositorio. CodeAgentSwarm es de código cerrado.',
             '<strong>Estás en Linux.</strong> Ellos publican build de Linux. Nosotros no.',
             '<strong>Quieres una app móvil nativa pública hoy.</strong> Su app ofrece panel de sesiones, notificaciones push, respuestas por voz o texto y aprobación de diffs deslizando. Mobile Connect de CodeAgentSwarm sigue en alpha: hay beta web, el acceso nativo para iOS y Android es bajo petición y el escritorio debe seguir abierto.',
             '<strong>Hay gente que no programa en el equipo.</strong> Producto y diseño pueden trabajar sobre documentos y mockups en la misma herramienta, algo que un espacio de terminales no permite de verdad.',
@@ -176,15 +176,15 @@ Elige Nimbalyst si lo que te importa es el artefacto: markdown, mockups, diagram
   faq: [
     {
       question: '¿Nimbalyst es lo mismo que Crystal?',
-      answer: 'Sí, es el mismo proyecto con otro nombre. El repositorio antiguo stravu/crystal dice en su propia descripción que Crystal ahora es Nimbalyst y enlaza a nimbalyst.com. Crystal es MIT, tiene unas 3.100 estrellas y su último commit público fue el 26 de febrero de 2026, mientras que el desarrollo continúa en nimbalyst/nimbalyst, también MIT, con unas 1.600 estrellas y un commit público del 24 de agosto de 2026. Todo verificado el 25 de agosto de 2026.',
+      answer: 'Sí, es el mismo proyecto con otro nombre. El repositorio antiguo stravu/crystal dice en su propia descripción que Crystal ahora es Nimbalyst y enlaza a nimbalyst.com. Crystal es MIT, tiene unas 3.100 estrellas y su último commit público fue el 26 de febrero de 2026, mientras que el desarrollo continúa en nimbalyst/nimbalyst, también MIT, con unas 1.600 estrellas y un commit público del 28 de agosto de 2026. Los datos del producto y del repositorio anterior se verificaron el 25 de agosto; la actividad del repositorio actual se actualizó el 31 de agosto de 2026.',
     },
     {
       question: '¿Nimbalyst es código abierto?',
-      answer: 'Sí. El repositorio nimbalyst/nimbalyst se publica con licencia MIT y tiene unas 1.600 estrellas (1.561 al verificarlo el 25 de agosto de 2026). Su README aclara que el servidor de sincronización que hay detrás de sus funciones de equipo es un proyecto aparte. CodeAgentSwarm es de código cerrado y no tiene repositorio público de la aplicación, así que si el código abierto es un requisito, ese punto lo gana Nimbalyst.',
+      answer: 'Sí. El repositorio nimbalyst/nimbalyst se publica con licencia MIT y tiene unas 1.600 estrellas (1.613 al actualizarlo el 31 de agosto de 2026). Su README aclara que el servidor de sincronización que hay detrás de sus funciones de equipo es un proyecto aparte. CodeAgentSwarm es de código cerrado y no tiene repositorio público de la aplicación, así que si el código abierto es un requisito, ese punto lo gana Nimbalyst.',
     },
     {
       question: '¿Nimbalyst se mantiene activamente?',
-      answer: 'Al comprobarlo el 25 de agosto de 2026, el repositorio nimbalyst/nimbalyst tenía un commit público del día 24, así que estaba activo en el momento de la verificación. El repositorio anterior, stravu/crystal, tuvo su último commit público el 26 de febrero de 2026, algo esperable tras el cambio de nombre. Mira el repositorio por tu cuenta antes de montar un flujo de trabajo sobre cualquier herramienta.',
+      answer: 'Al comprobarlo el 31 de agosto de 2026, el repositorio nimbalyst/nimbalyst tenía un commit público del día 28, así que estaba activo en el momento de la verificación. El repositorio anterior, stravu/crystal, tuvo su último commit público el 26 de febrero de 2026, algo esperable tras el cambio de nombre. Mira el repositorio por tu cuenta antes de montar un flujo de trabajo sobre cualquier herramienta.',
     },
     {
       question: '¿Nimbalyst soporta Antigravity CLI o Kimi Code?',

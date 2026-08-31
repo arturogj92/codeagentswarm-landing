@@ -16,7 +16,7 @@ Short version: pick Superset if you want an editor-shaped environment, experimen
     ctaAgent: 'comparison',
     highlightedWords: ['Superset', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
-    updatedAt: '2026-08-25',
+    updatedAt: '2026-08-31',
     alternateSlug: 'superset-vs-codeagentswarm',
   },
   sections: [
@@ -49,7 +49,7 @@ Short version: pick Superset if you want an editor-shaped environment, experimen
         },
         {
           type: 'paragraph',
-          text: 'The licensing deserves precision, because it is easy to get wrong. Superset is source available under the Elastic License 2.0. That is not an OSI approved open source license: you can read the code and self-host it subject to the license terms, but the usual open source freedoms do not all apply. Their own FAQ puts it the same way. The repository had about 13,300 stars on August 25, 2026, with its last public commit that same day, and it has been public since October 21, 2025.',
+          text: 'The licensing deserves precision, because it is easy to get wrong. Superset is source available under the Elastic License 2.0. That is not an OSI approved open source license: you can read the code and self-host it subject to the license terms, but the usual open source freedoms do not all apply. Their own FAQ puts it the same way. The repository had 13,538 stars when its public GitHub data was refreshed on August 31, 2026, with its last public commit that day, and it has been public since October 21, 2025.',
         },
         {
           type: 'list',
@@ -114,9 +114,9 @@ Short version: pick Superset if you want an editor-shaped environment, experimen
             ['Task management', 'Parallel task switching, scheduled automations and an MCP server for programmatic control', 'Kanban board the agents update themselves over MCP. No one-click PR button'],
             ['Open source', 'No. Source available (Elastic License 2.0), which is not an OSI approved open source license', 'No. Closed source, no public app repository'],
             ['Price', 'Free tier, with paid and enterprise plans listed on their site', 'Free during beta with Pro included. You bring your own CLI subscriptions'],
-            ['Last public commit (verified Aug 25, 2026)', 'August 25, 2026. About 13,300 stars, public since October 21, 2025', 'Closed source, no public repo'],
+            ['Last public commit (verified Aug 31, 2026)', 'August 31, 2026. 13,538 stars, public since October 21, 2025', 'Closed source, no public repo'],
           ],
-          caption: 'All third-party facts verified on August 25, 2026 against superset.sh and public GitHub data.',
+          caption: 'Product facts verified on August 25, 2026 against superset.sh. Public GitHub stars and activity refreshed on August 31, 2026.',
         },
       ],
     },
@@ -188,7 +188,7 @@ Short version: pick Superset if you want an editor-shaped environment, experimen
     },
     {
       question: 'Which one is more actively maintained?',
-      answer: 'Both are actively developed, and neither side wins this row. The public superset-sh/superset repository had its last commit on August 25, 2026, the day this page was verified, with roughly 13,300 stars and a public history going back to October 21, 2025. CodeAgentSwarm is closed source, so there is no public commit history to check: our cadence has to be taken on trust, which is a fair point against us.',
+      answer: 'Both are actively developed, and neither side wins this row. The public superset-sh/superset repository had its last commit on August 31, 2026, with 13,538 stars when its GitHub data was refreshed that day and a public history going back to October 21, 2025. CodeAgentSwarm is closed source, so there is no public commit history to check: our cadence has to be taken on trust, which is a fair point against us.',
     },
     {
       question: 'Can I try both for free?',

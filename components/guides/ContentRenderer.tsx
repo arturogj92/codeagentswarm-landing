@@ -6,6 +6,7 @@ import { Info, AlertTriangle, Lightbulb, ImageIcon } from 'lucide-react'
 import type { ContentBlock, GuideSection } from '@/content/guides/types'
 
 const GUIDE_IMAGE_DIMENSIONS: Record<string, { width: number; height: number }> = {
+  '/images/guides/resume-conversation.png': { width: 1316, height: 1195 },
   '/images/guides/task-board-kanban.png': { width: 3024, height: 1964 },
   '/images/guides/codex-agent-swarm.png': { width: 3024, height: 1964 },
   '/images/guides/multi-terminal.png': { width: 3016, height: 1758 },
@@ -235,10 +236,10 @@ function renderBlock(block: ContentBlock, index: number) {
               src={block.src}
               poster={block.poster}
               controls
-              autoPlay
               muted
               loop
               playsInline
+              preload="metadata"
               className="w-full"
             />
           </div>

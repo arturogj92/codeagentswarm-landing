@@ -59,7 +59,7 @@ export interface GuideMeta {
   metaDescription: string
   intro: string
   introVideo?: string // Optional video URL to show after intro
-  ctaText?: string // Optional custom CTA text for the final section
+  ctaText?: string // Optional guide-specific copy for the inline CTA
   ctaAgent: GuideCtaAgent // Drives agent-aware CTA copy; see GuideCtaAgent
   highlightedWords?: string[] // Optional keywords to highlight in title (for guide index page)
   publishedAt?: string

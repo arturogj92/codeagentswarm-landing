@@ -16,7 +16,7 @@ Resumen rápido: elige T3 Code si te importan el código abierto, el soporte de 
     ctaAgent: 'comparison',
     highlightedWords: ['T3 Code', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
-    updatedAt: '2026-08-25',
+    updatedAt: '2026-08-31',
     alternateSlug: 't3-code-vs-codeagentswarm',
   },
   sections: [
@@ -49,7 +49,7 @@ Resumen rápido: elige T3 Code si te importan el código abierto, el soporte de 
         },
         {
           type: 'paragraph',
-          text: 'El impulso que llevan es real y conviene decirlo sin rodeos. El repositorio se creó el 8 de febrero de 2026 y el 25 de agosto de 2026 rondaba las 20.400 estrellas, con su último commit público ese mismo día. Es el crecimiento más rápido de toda la categoría, y un motivo legítimo para tomárselos en serio.',
+          text: 'El impulso que llevan es real y conviene decirlo sin rodeos. El repositorio se creó el 8 de febrero de 2026 y tenía 21.084 estrellas al refrescar sus datos públicos de GitHub el 31 de agosto de 2026, con su último commit público ese mismo día. Unas 21.100 estrellas en menos de siete meses es el crecimiento más rápido de toda la categoría, y un motivo legítimo para tomárselos en serio.',
         },
         {
           type: 'list',
@@ -114,9 +114,9 @@ Resumen rápido: elige T3 Code si te importan el código abierto, el soporte de 
             ['Gestión de tareas', 'Acciones rápidas por proyecto y commit, push y PR con un clic', 'Kanban que los agentes actualizan por MCP. Sin botón de PR con un clic'],
             ['Código abierto', 'Sí, MIT (pingdotgg/t3code)', 'No. Código cerrado, sin repositorio público'],
             ['Precio', 'Gratis, con tus propias claves y sin suscripción (según ellos)', 'Gratis durante la beta con Pro incluido. Pones tus suscripciones CLI'],
-            ['Último commit público (verificado el 25 ago 2026)', '25 de agosto de 2026. Unas 20.400 estrellas desde el 8 de febrero de 2026', 'Código cerrado, sin repositorio público'],
+            ['Último commit público (verificado el 31 ago 2026)', '31 de agosto de 2026. 21.084 estrellas desde el 8 de febrero de 2026', 'Código cerrado, sin repositorio público'],
           ],
-          caption: 'Todos los datos de terceros verificados el 25 de agosto de 2026 en t3.codes y en los datos públicos de GitHub.',
+          caption: 'Datos de producto verificados el 25 de agosto de 2026 en t3.codes. Estrellas y actividad pública de GitHub refrescadas el 31 de agosto de 2026.',
         },
       ],
     },
@@ -136,7 +136,7 @@ Resumen rápido: elige T3 Code si te importan el código abierto, el soporte de 
             '<strong>Quieres probarlo en diez segundos.</strong> <code>npx t3@latest</code> lo arranca sin instalar nada, y no hay instalador que baje más la barrera.',
             '<strong>Tu cuello de botella es entregar, no supervisar.</strong> Un botón para commitear, hacer push y abrir la PR con título y cuerpo generados, incluyendo PRs en borrador y apiladas, gana a hacerlo a mano. Nosotros generamos el mensaje de commit, pero no tenemos botón de PR.',
             '<strong>Quieres apps móviles públicas.</strong> T3 Code ofrece apps para iOS y Android. Mobile Connect de CodeAgentSwarm sigue en alpha.',
-            '<strong>Te interesa la comunidad.</strong> Unas 20.400 estrellas en seis meses y medio y nuevas integraciones frecuentes hacen que los fallos se detecten y se arreglen rápido.',
+            '<strong>Te interesa la comunidad.</strong> Unas 21.100 estrellas en menos de siete meses y nuevas integraciones frecuentes hacen que los fallos se detecten y se arreglen rápido.',
           ],
         },
       ],
@@ -188,7 +188,7 @@ Resumen rápido: elige T3 Code si te importan el código abierto, el soporte de 
     },
     {
       question: '¿Cuál se mantiene de forma más activa?',
-      answer: 'Las dos están activas, y esta fila no la gana nadie. El repositorio público t3code tuvo su último commit el 25 de agosto de 2026, el mismo día en que se verificó esta comparativa, con unas 20.400 estrellas desde que se creó el 8 de febrero de 2026. CodeAgentSwarm es de código cerrado, así que no hay historial público que inspeccionar, y esa es una crítica justa: nuestro ritmo te lo tienes que creer.',
+      answer: 'Las dos están activas, y esta fila no la gana nadie. El repositorio público t3code tuvo su último commit el 31 de agosto de 2026 y tenía 21.084 estrellas al refrescar sus datos de GitHub ese día. CodeAgentSwarm es de código cerrado, así que no hay historial público que inspeccionar, y esa es una crítica justa: nuestro ritmo te lo tienes que creer.',
     },
     {
       question: '¿Puedo probar las dos gratis?',

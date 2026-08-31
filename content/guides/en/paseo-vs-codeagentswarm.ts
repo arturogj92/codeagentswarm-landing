@@ -16,7 +16,7 @@ Short version: if you want to start a job at your desk and check on it from a tr
     ctaAgent: 'comparison',
     highlightedWords: ['Paseo', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
-    updatedAt: '2026-08-25',
+    updatedAt: '2026-08-31',
     alternateSlug: 'paseo-vs-codeagentswarm',
   },
   sections: [
@@ -49,7 +49,7 @@ Short version: if you want to start a job at your desk and check on it from a tr
         },
         {
           type: 'paragraph',
-          text: 'The public repository is <a href="https://github.com/getpaseo/paseo" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">getpaseo/paseo</a>. At the time of checking it had about 15,000 stars (14,951 exactly) and its most recent public commit landed on August 25, 2026, the same day this page was written. The LICENSE file places the code under AGPLv3, with third-party components under their own licenses.',
+          text: 'The public repository is <a href="https://github.com/getpaseo/paseo" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">getpaseo/paseo</a>. It had 15,543 stars when its public GitHub data was refreshed on August 31, 2026, and its most recent public commit landed on August 30. The LICENSE file places the code under AGPLv3, with third-party components under their own licenses.',
         },
         {
           type: 'list',
@@ -156,11 +156,11 @@ Short version: if you want to start a job at your desk and check on it from a tr
             ],
             [
               '<strong>Last public commit</strong>',
-              'August 25, 2026, on a repo with about 15,000 stars',
+              'August 30, 2026, on a repo with 15,543 stars when refreshed on August 31',
               'Closed source, no public repo',
             ],
           ],
-          caption: 'All Paseo data checked on August 25, 2026 against paseo.sh, the getpaseo/paseo repository and public GitHub data. Rows marked as not documented mean we could not find them published, not that the feature is missing.',
+          caption: 'Product facts checked on August 25, 2026 against paseo.sh. Public GitHub stars and activity refreshed on August 31, 2026. Rows marked as not documented mean we could not find them published, not that the feature is missing.',
         },
       ],
     },
@@ -233,7 +233,7 @@ Short version: if you want to start a job at your desk and check on it from a tr
   faq: [
     {
       question: 'Is Paseo open source?',
-      answer: 'Yes. Paseo is developed in public at github.com/getpaseo/paseo and its LICENSE file places the code under AGPLv3, with third-party components keeping their original licenses. As of August 25, 2026 the repository had about 15,000 stars. CodeAgentSwarm, by contrast, is closed source with no public application repository.',
+      answer: 'Yes. Paseo is developed in public at github.com/getpaseo/paseo and its LICENSE file places the code under AGPLv3, with third-party components keeping their original licenses. The repository had 15,543 stars when refreshed on August 31, 2026. CodeAgentSwarm, by contrast, is closed source with no public application repository.',
     },
     {
       question: 'Can I supervise CodeAgentSwarm from my phone?',
@@ -245,7 +245,7 @@ Short version: if you want to start a job at your desk and check on it from a tr
     },
     {
       question: 'Are both projects actively maintained?',
-      answer: 'Paseo is verifiably active: its most recent public commit at the time of checking was August 25, 2026, the same day these facts were gathered. CodeAgentSwarm is under active development too, but it is closed source, so there is no public commit history you can inspect to confirm that yourself. That asymmetry is worth weighing.',
+      answer: 'Paseo is verifiably active: its most recent public commit was August 30, 2026 when the repository data was refreshed on August 31. CodeAgentSwarm is under active development too, but it is closed source, so there is no public commit history you can inspect to confirm that yourself. That asymmetry is worth weighing.',
     },
   ],
 }

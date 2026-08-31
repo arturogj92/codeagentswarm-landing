@@ -1,8 +1,8 @@
 # SEO status
 
-Last updated: 2026-08-25
+Last updated: 2026-08-31
 
-Release state: both August 23 implementation waves are validated for master. Post-release measurement remains pending.
+Release state: the August 31 conversion, comparison and media changes passed production validation. Start post-release measurement only after the master deployment reports success.
 
 ## Current state
 
@@ -22,6 +22,7 @@ Organic acquisition is growing quickly. The main constraint has moved from disco
 | Guide share of clean pageviews | 30,552, or 82.92% |
 | Home visitor to download click | 21.86% |
 | Guide pageview to direct download click | 0.635% |
+| Guide pageview to direct download click, Aug 24-30 | 71 / 6,034, or 1.177% |
 | Sitemap URLs returning 200 in the production build | 182 / 182 |
 | Guide First Load JS | 185 kB, down from about 746 kB |
 | Static pages generated | 221, down from 382 |
@@ -57,16 +58,23 @@ The detailed evidence and decisions live in [the August 23 growth and conversion
 - Corrected the Grok Build `llms.txt` claim: it is available on every xAI plan, including Free; SuperGrok tiers raise limits.
 - Refreshed public repository metrics and current product scope across the English and Spanish comparison guides, including major Conductor, Superset and T3 changes.
 - Added `node scripts/competitor-refresh.mjs --check` plus a regression check for verification dates on volatile pricing and comparison content.
+- Reused every guide's existing intent-specific `ctaText` once, in the inline download CTA, without changing event names, positions, URLs or snippets.
+- Refreshed GitHub activity and star counts on August 31 across four bilingual comparisons and the bilingual category ranking. Product facts remain dated August 25 where they were not rechecked.
+- Added responsive image output for the remaining reused `resume-conversation.png` screenshot.
+- Replaced the obsolete 5.67 MB homepage showcase clip with the existing current 82 KB clip.
+- Made below-fold instructional videos user-initiated with metadata-only preload; the early intent-matched product block is unchanged.
+- Confirmed from current [Vercel Bot Management documentation](https://vercel.com/docs/bot-management) that Bot Protection and Attack Challenge Mode exclude verified bots. Recent Search Console crawling shows Google can reach the site, so no firewall weakening was justified. The current dashboard session cannot access the production project, so project traffic logs were not inspected.
 
 ## Open priorities
 
-1. Compare Beta CTA, confirmed waitlist, guide download and Core Web Vitals events against an equal pre-release window after seven complete days.
+1. Measure the inline guide CTA after 14 complete post-deployment days. Its Aug 24-30 baseline is 18 / 6,034 pageviews, or 0.298%; the initial success threshold is at least 0.358% without reducing total guide conversion below 1.177%.
 2. Review the aggregate installation funnel after cohorts mature. Do not invent person-level acquisition attribution without a separate privacy decision.
 3. Keep the high-impression snippets stable until the full September 9 Search Console review.
 4. Export Search Console query-by-page data before consolidating similar guides.
-5. Send the five reviewed editorial pitches only after explicit approval, then record accepted links and their attributes.
-6. Revisit the homepage video and remaining screenshots only if real-user performance data shows they are still a bottleneck.
-7. Design a localized lead capture for Spanish traffic, which currently converts better in guides but records no email leads.
+5. After explicit approval, send the four revalidated editorial pitches and the two prepared GitHub reminders, then record accepted links and their attributes. Keep Zevyn and the AI-assisted DEV draft on hold.
+6. Inspect production Vercel firewall logs with the owning account only if verified-bot crawling or indexing declines. Do not add a broad bypass based on generic curl challenges.
+7. Revisit the remaining homepage video and lower-frequency screenshots only if real-user performance data shows they are still a bottleneck.
+8. Design a localized lead capture for Spanish traffic, which currently converts better in guides but records no email leads.
 
 ## Guardrails
 
@@ -78,4 +86,4 @@ The detailed evidence and decisions live in [the August 23 growth and conversion
 
 ## Next update
 
-Earliest full snippet review: 2026-09-09. Review conversion sooner after seven complete post-deployment days.
+Earliest full snippet review: 2026-09-09. Review the inline CTA after 14 complete post-deployment days.

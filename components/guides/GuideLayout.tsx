@@ -143,7 +143,6 @@ export default function GuideLayout({ guide, relatedGuide }: GuideLayoutProps) {
                 locale={locale}
                 slug={meta.slug}
                 videoKey={pickGuideVideo(meta.slug)}
-                ctaText={meta.ctaText}
               />
             )}
 
@@ -153,10 +152,15 @@ export default function GuideLayout({ guide, relatedGuide }: GuideLayoutProps) {
             {/* Content sections, with the inline CTA after the first section:
                 the reader has just gotten the core answer and 25%-scroll data
                 shows ~half of visitors reach this point. */}
-            {sections.length >= 3 ? (
+            {sections.length >= 2 ? (
               <>
                 <ContentRenderer sections={sections.slice(0, 1)} />
-                <GuideInlineCTA locale={locale} slug={meta.slug} ctaAgent={meta.ctaAgent} />
+                <GuideInlineCTA
+                  locale={locale}
+                  slug={meta.slug}
+                  ctaAgent={meta.ctaAgent}
+                  ctaText={meta.ctaText}
+                />
                 <ContentRenderer sections={sections.slice(1)} />
               </>
             ) : (
@@ -175,7 +179,7 @@ export default function GuideLayout({ guide, relatedGuide }: GuideLayoutProps) {
             >
               <div className="text-center">
                 <p className="text-neutral-400 mb-6">
-                  {meta.ctaText ?? t(`context.${CTA_AGENT_MESSAGE_KEY[meta.ctaAgent]}`)}
+                  {t(`context.${CTA_AGENT_MESSAGE_KEY[meta.ctaAgent]}`)}
                 </p>
                 <div className="flex justify-center">
                   <GuideDownloadButton locale={locale} slug={meta.slug} position="final" align="center" />

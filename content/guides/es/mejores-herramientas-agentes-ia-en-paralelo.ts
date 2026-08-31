@@ -9,14 +9,14 @@ export const guide: Guide = {
     metaDescription: 'CodeAgentSwarm, T3 Code, Superset, Paseo, Conductor, Claude Squad y más: estrellas, último commit y licencia. Todos los datos verificados el 25 de agosto de 2026.',
     intro: `Si quieres ejecutar varios agentes de programación con IA a la vez y seguir sabiendo qué hace cada uno, las herramientas hechas para eso son CodeAgentSwarm, T3 Code, Superset, Paseo, Conductor, Vibe Kanban, Claude Squad y Nimbalyst. Son aplicaciones que lanzan y supervisan CLIs de programación como Claude Code, Codex CLI y OpenCode. No son lo mismo que LangGraph, CrewAI o AutoGen, que son librerías para construir sistemas de agentes escribiendo código y no abren un terminal por ti.
 
-Antes de nada, transparencia: nosotros hacemos CodeAgentSwarm, así que somos una de las herramientas de la lista. Justo por eso los criterios son idénticos para todas, nuestras limitaciones están escritas en la misma sección que nuestras ventajas, y cada dato de terceros (estrellas, licencia, último commit público, agentes soportados) se verificó el 25 de agosto de 2026 contra las webs de cada proyecto y los datos públicos de GitHub. Nada de lo que leas aquí viene de la página de marketing de un competidor sin decirlo. La disponibilidad de CodeAgentSwarm en esta página se actualizó el 23 de agosto de 2026.
+Antes de nada, transparencia: nosotros hacemos CodeAgentSwarm, así que somos una de las herramientas de la lista. Justo por eso los criterios son idénticos para todas y nuestras limitaciones están escritas en la misma sección que nuestras ventajas. Los datos de producto, licencia y agentes soportados se verificaron el 25 de agosto de 2026 contra las webs de cada proyecto; las estrellas y la actividad pública de GitHub se actualizaron el 31 de agosto de 2026. Nada de lo que leas aquí viene de la página de marketing de un competidor sin decirlo. La disponibilidad de CodeAgentSwarm en esta página se actualizó el 23 de agosto de 2026.
 
-Hay un hallazgo que conviene poner por delante, porque cambia cómo se lee cualquier ranking de estrellas de esta categoría. Los dos repos con más estrellas son los dos con menos actividad reciente: opcode no tiene ningún commit público desde el 16 de octubre de 2025 y Vibe Kanban ninguno desde el 24 de abril de 2026. Tres herramientas publicaron código el día de la comprobación y Nimbalyst lo hizo el día anterior. Popular y vivo no se miden igual.`,
+Hay un hallazgo que conviene poner por delante, porque cambia cómo se lee cualquier ranking de estrellas de esta categoría. Los dos repos con más estrellas son los dos con menos actividad reciente: opcode no tiene ningún commit público desde el 16 de octubre de 2025 y Vibe Kanban ninguno desde el 24 de abril de 2026. T3 Code, Superset y Pane publicaron código el 31 de agosto, Paseo el día 30 y Nimbalyst el día 28. Popular y vivo no se miden igual.`,
     ctaText: 'Si quieres sesiones en paralelo supervisadas con Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent en macOS o Windows, con notificaciones, historial compartido y un kanban que actualizan los propios agentes, CodeAgentSwarm es gratis durante la beta. Descárgalo y júzgalo con la tabla de arriba delante.',
     ctaAgent: 'comparison',
     highlightedWords: ['agentes de IA', 'paralelo'],
     publishedAt: '2026-07-26',
-    updatedAt: '2026-08-25',
+    updatedAt: '2026-08-31',
     alternateSlug: 'best-tools-to-run-multiple-ai-coding-agents',
   },
   sections: [
@@ -85,7 +85,7 @@ Hay un hallazgo que conviene poner por delante, porque cambia cómo se lee cualq
         },
         {
           type: 'table',
-          headers: ['Herramienta', 'Estrellas en GitHub (25 ago 2026)', 'Último commit público', 'Plataformas', 'Agentes soportados', 'Open source'],
+          headers: ['Herramienta', 'Estrellas en GitHub (31 ago 2026)', 'Último commit público', 'Plataformas', 'Agentes soportados', 'Open source'],
           rows: [
             [
               'CodeAgentSwarm',
@@ -97,24 +97,24 @@ Hay un hallazgo que conviene poner por delante, porque cambia cómo se lee cualq
             ],
             [
               'T3 Code',
-              'Unas 20.400',
-              '25 de agosto de 2026',
+              'Unas 21.100',
+              '31 de agosto de 2026',
               'Escritorio en macOS, Windows y Linux; web; iOS y Android',
               'Claude Code, Codex, Cursor, Grok Build y OpenCode',
               'Sí, MIT',
             ],
             [
               'Superset',
-              'Unas 13.300',
-              '25 de agosto de 2026',
+              'Unas 13.500',
+              '31 de agosto de 2026',
               'macOS; AppImage experimental para Linux; Windows aún no disponible; iOS próximamente',
               'Amp, Antigravity, Claude, Codex, Cursor, Gemini, Grok, Kimi y OpenCode',
               'Código disponible, Elastic License 2.0',
             ],
             [
               'Paseo',
-              'Unas 15.000',
-              '25 de agosto de 2026',
+              'Unas 15.500',
+              '30 de agosto de 2026',
               'Demonio autoalojado con clientes de escritorio, móvil, web y CLI (App Store de iOS y Google Play)',
               'Claude Code, Codex, OpenCode, Copilot, Pi',
               'Sí, AGPL-3.0',
@@ -146,7 +146,7 @@ Hay un hallazgo que conviene poner por delante, porque cambia cómo se lee cualq
             [
               'Nimbalyst',
               'Unas 1.600',
-              '24 de agosto de 2026',
+              '28 de agosto de 2026',
               'macOS, Windows y Linux; app nativa de iOS',
               'Claude Code, Codex, OpenCode (alpha) y Copilot (alpha)',
               'Sí, MIT',
@@ -160,12 +160,12 @@ Hay un hallazgo que conviene poner por delante, porque cambia cómo se lee cualq
               'No, propietaria',
             ],
           ],
-          caption: 'Estrellas, último commit público, licencias y agentes soportados leídos de las webs de cada proyecto y de los datos públicos de GitHub el 25 de agosto de 2026.',
+          caption: 'Los datos de producto, licencias y agentes soportados se leyeron de las webs de cada proyecto el 25 de agosto de 2026. Las estrellas y las fechas del último commit público se actualizaron el 31 de agosto de 2026.',
         },
         {
           type: 'callout',
           variant: 'info',
-          content: 'Todo lo que hay en esta tabla se verificó el 25 de agosto de 2026. Las estrellas se mueven, los repos se archivan y una herramienta que estaba parada en julio puede publicar en agosto. Si una fila está desfasada o mal, dínoslo: la corregimos y ponemos la fecha del cambio.',
+          content: 'Los datos de producto, licencias y agentes soportados de esta tabla se verificaron el 25 de agosto de 2026; las estrellas y la actividad pública de GitHub se actualizaron el día 31. Las estrellas se mueven, los repos se archivan y una herramienta que estaba parada en julio puede publicar en agosto. Si una fila está desfasada o mal, dínoslo: la corregimos y ponemos la fecha del cambio.',
         },
         {
           type: 'paragraph',
@@ -183,7 +183,7 @@ Hay un hallazgo que conviene poner por delante, porque cambia cómo se lee cualq
         },
         {
           type: 'paragraph',
-          text: 'Mira ahora el otro extremo. T3 Code, Superset y Paseo tenían commits públicos del 25 de agosto de 2026, y Nimbalyst uno del día 24. T3 Code pasó de crear el repositorio el 8 de febrero de 2026 a unas 20.400 estrellas en seis meses y medio, el crecimiento más rápido que ha logrado nadie en esta categoría. Nada de eso se ve en un ranking de estrellas, porque las estrellas son un contador acumulado y el desarrollo es un ritmo.',
+          text: 'Mira ahora el otro extremo. T3 Code y Superset tenían commits públicos del 31 de agosto de 2026, Paseo uno del día 30 y Nimbalyst uno del día 28. T3 Code pasó de crear el repositorio el 8 de febrero de 2026 a unas 21.100 estrellas en menos de siete meses, el crecimiento más rápido que ha logrado nadie en esta categoría. Nada de eso se ve en un ranking de estrellas, porque las estrellas son un contador acumulado y el desarrollo es un ritmo.',
         },
         {
           type: 'paragraph',
@@ -275,7 +275,7 @@ Hay un hallazgo que conviene poner por delante, porque cambia cómo se lee cualq
       content: [
         {
           type: 'paragraph',
-          text: 'T3 Code se define como el plano de control open source para agentes de programación. Viene del equipo de Ping, alrededor de Theo Browne (t3.gg), lo que explica parte del crecimiento, pero no todo: el repositorio pingdotgg/t3code se creó el 8 de febrero de 2026 y tenía unas 20.400 estrellas el 25 de agosto de 2026, con un commit público de ese mismo día. Nada más en esta comparativa ha crecido a ese ritmo.',
+          text: 'T3 Code se define como el plano de control open source para agentes de programación. Viene del equipo de Ping, alrededor de Theo Browne (t3.gg), lo que explica parte del crecimiento, pero no todo: el repositorio pingdotgg/t3code se creó el 8 de febrero de 2026 y tenía unas 21.100 estrellas al actualizarlo el 31 de agosto de 2026, con un commit público de ese mismo día. Nada más en esta comparativa ha crecido a ese ritmo.',
         },
         {
           type: 'paragraph',
@@ -323,7 +323,7 @@ Hay un hallazgo que conviene poner por delante, porque cambia cómo se lee cualq
         },
         {
           type: 'paragraph',
-          text: 'El repositorio superset-sh/superset tenía unas 13.300 estrellas el 25 de agosto de 2026 y un commit público de ese mismo día. Su README muestra Amp, Antigravity, Claude Code, Codex, Cursor, Gemini, Grok, Kimi Code y OpenCode como totalmente soportados. La licencia merece precisión: Elastic License 2.0. El código está en GitHub y lo puedes leer, pero Elastic 2.0 no es una licencia open source aprobada por la OSI, así que lo correcto es decir código disponible y no open source. Si tu empresa tiene una política de licencias, esa es justo la distinción que va a salir en la revisión.',
+          text: 'El repositorio superset-sh/superset tenía unas 13.500 estrellas al actualizarlo el 31 de agosto de 2026 y un commit público de ese mismo día. Su README muestra Amp, Antigravity, Claude Code, Codex, Cursor, Gemini, Grok, Kimi Code y OpenCode como totalmente soportados. La licencia merece precisión: Elastic License 2.0. El código está en GitHub y lo puedes leer, pero Elastic 2.0 no es una licencia open source aprobada por la OSI, así que lo correcto es decir código disponible y no open source. Si tu empresa tiene una política de licencias, esa es justo la distinción que va a salir en la revisión.',
         },
         {
           type: 'paragraph',
@@ -366,7 +366,7 @@ Hay un hallazgo que conviene poner por delante, porque cambia cómo se lee cualq
         },
         {
           type: 'paragraph',
-          text: 'El repositorio getpaseo/paseo tenía unas 15.000 estrellas el 25 de agosto de 2026 con un commit público del mismo día, y su licencia es AGPL-3.0, open source de verdad y con copyleft fuerte. Soporta Claude Code, Codex, OpenCode, Copilot y Pi, una de las listas publicadas más amplias de esta comparativa junto con nuestros siete. Te da git worktrees, streaming en vivo de la salida de los agentes, notificaciones push y entrada por voz, y afirma sin rodeos que no hay telemetría ni login obligatorio.',
+          text: 'El repositorio getpaseo/paseo tenía unas 15.500 estrellas al actualizarlo el 31 de agosto de 2026 con un commit público del día 30, y su licencia es AGPL-3.0, open source de verdad y con copyleft fuerte. Soporta Claude Code, Codex, OpenCode, Copilot y Pi, una de las listas publicadas más amplias de esta comparativa junto con nuestros siete. Te da git worktrees, streaming en vivo de la salida de los agentes, notificaciones push y entrada por voz, y afirma sin rodeos que no hay telemetría ni login obligatorio.',
         },
         {
           type: 'paragraph',
@@ -446,7 +446,7 @@ Hay un hallazgo que conviene poner por delante, porque cambia cómo se lee cualq
         },
         {
           type: 'paragraph',
-          text: 'Nimbalyst es el editor visual para Claude Code y Codex: sesiones en paralelo, revisión de diffs de IA y edición de markdown, mockups, diagramas y código. Es MIT, gratis y open source, con unas 1.600 estrellas verificadas el 25 de agosto de 2026 y un commit del día 24. El número es bajo porque el repositorio es nuevo, no porque el proyecto sea pequeño: esta es la herramienta que antes se llamaba Crystal, y el repo antiguo acumulaba unas 3.100 estrellas antes del cambio de nombre. Si tu trabajo con agentes produce documentos y diagramas tanto como código, esta es la que tiene la forma adecuada. Más en <a href="/es/guias/nimbalyst-vs-codeagentswarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Nimbalyst vs CodeAgentSwarm</a>.',
+          text: 'Nimbalyst es el editor visual para Claude Code y Codex: sesiones en paralelo, revisión de diffs de IA y edición de markdown, mockups, diagramas y código. Es MIT, gratis y open source, con unas 1.600 estrellas al actualizarlo el 31 de agosto de 2026 y un commit del día 28. El número es bajo porque el repositorio es nuevo, no porque el proyecto sea pequeño: esta es la herramienta que antes se llamaba Crystal, y el repo antiguo acumulaba unas 3.100 estrellas antes del cambio de nombre. Si tu trabajo con agentes produce documentos y diagramas tanto como código, esta es la que tiene la forma adecuada. Más en <a href="/es/guias/nimbalyst-vs-codeagentswarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Nimbalyst vs CodeAgentSwarm</a>.',
         },
         {
           type: 'heading',
@@ -466,7 +466,7 @@ Hay un hallazgo que conviene poner por delante, porque cambia cómo se lee cualq
       content: [
         {
           type: 'paragraph',
-          text: '<strong>Pane</strong> (runpane.com, repo dcouple/Pane) es un gestor de agentes de IA open source y orientado al terminal, que se describe como agnóstico de agente (cualquier CLI) y agnóstico de sistema (macOS, Windows y Linux). Tenía 412 estrellas el 25 de agosto de 2026 y un commit público del 25 de agosto de 2026. Es pequeña y está en desarrollo, y la combinación de cualquier agente en cualquier sistema es más rara de lo que parece.',
+          text: '<strong>Pane</strong> (runpane.com, repo dcouple/Pane) es un gestor de agentes de IA open source y orientado al terminal, que se describe como agnóstico de agente (cualquier CLI) y agnóstico de sistema (macOS, Windows y Linux). Tenía 428 estrellas y un commit público del 31 de agosto al actualizarlo ese día. Es pequeña y está en desarrollo, y la combinación de cualquier agente en cualquier sistema es más rara de lo que parece.',
         },
         {
           type: 'paragraph',
@@ -508,7 +508,7 @@ Hay un hallazgo que conviene poner por delante, porque cambia cómo se lee cualq
     },
     {
       question: '¿Cuáles de estas herramientas se mantienen activamente en 2026?',
-      answer: 'Verificado el 25 de agosto de 2026: T3 Code, Superset y Paseo tenían commits públicos de ese día; Nimbalyst del día 24 y Claude Squad del 20. Vibe Kanban tiene su último commit del 24 de abril de 2026 y opcode del 16 de octubre de 2025. CodeAgentSwarm y Conductor son de código cerrado, así que en ninguna hay historial público de commits que consultar.',
+      answer: 'Actividad de GitHub actualizada el 31 de agosto de 2026: T3 Code y Superset tenían commits públicos de ese día, Paseo del día 30, Nimbalyst del día 28 y Claude Squad del 20. Vibe Kanban tiene su último commit del 24 de abril de 2026 y opcode del 16 de octubre de 2025. CodeAgentSwarm y Conductor son de código cerrado, así que en ninguna hay historial público de commits que consultar.',
     },
     {
       question: '¿LangGraph, CrewAI o AutoGen son alternativas a estas herramientas?',
@@ -516,7 +516,7 @@ Hay un hallazgo que conviene poner por delante, porque cambia cómo se lee cualq
     },
     {
       question: '¿Qué ha pasado con Crystal?',
-      answer: 'Crystal pasó a llamarse Nimbalyst. El repositorio antiguo stravu/crystal indica que Crystal ahora es Nimbalyst y apunta a nimbalyst.com. El repositorio actual es nimbalyst/nimbalyst, con licencia MIT, unas 1.600 estrellas y un commit público del 24 de agosto de 2026. Los artículos antiguos que recomiendan Crystal describen el mismo producto con su nombre anterior.',
+      answer: 'Crystal pasó a llamarse Nimbalyst. El repositorio antiguo stravu/crystal indica que Crystal ahora es Nimbalyst y apunta a nimbalyst.com. El repositorio actual es nimbalyst/nimbalyst, con licencia MIT, unas 1.600 estrellas y un commit público del 28 de agosto de 2026. Los artículos antiguos que recomiendan Crystal describen el mismo producto con su nombre anterior.',
     },
     {
       question: '¿Terragon sigue disponible?',

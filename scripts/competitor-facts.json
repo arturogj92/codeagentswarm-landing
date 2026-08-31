@@ -1,36 +1,36 @@
 {
-  "verified_at": "2026-08-25",
+  "verified_at": "2026-08-31",
   "note": "Canonical verified competitor facts used by the comparison guides. Re-verify with competitor-refresh.mjs and update the guides plus this file together.",
   "competitors": [
     {
       "name": "T3 Code",
       "site": "https://t3.codes",
       "repo": "pingdotgg/t3code",
-      "stars": 20381,
-      "pushed_at": "2026-08-25",
+      "stars": 21084,
+      "pushed_at": "2026-08-31",
       "license": "MIT"
     },
     {
       "name": "Superset",
       "site": "https://superset.sh",
       "repo": "superset-sh/superset",
-      "stars": 13326,
-      "pushed_at": "2026-08-25",
+      "stars": 13538,
+      "pushed_at": "2026-08-31",
       "license": "Elastic-2.0"
     },
     {
       "name": "Paseo",
       "site": "https://paseo.sh",
       "repo": "getpaseo/paseo",
-      "stars": 14951,
-      "pushed_at": "2026-08-25",
+      "stars": 15543,
+      "pushed_at": "2026-08-30",
       "license": "AGPL-3.0"
     },
     {
       "name": "Vibe Kanban",
       "site": "https://vibekanban.com",
       "repo": "BloopAI/vibe-kanban",
-      "stars": 27909,
+      "stars": 27961,
       "pushed_at": "2026-04-24",
       "license": "Apache-2.0"
     },
@@ -38,7 +38,7 @@
       "name": "opcode",
       "site": "https://opcode.sh",
       "repo": "winfunc/opcode",
-      "stars": 22389,
+      "stars": 22385,
       "pushed_at": "2025-10-16",
       "license": "AGPL-3.0"
     },
@@ -46,7 +46,7 @@
       "name": "Claude Squad",
       "site": "https://github.com/smtg-ai/claude-squad",
       "repo": "smtg-ai/claude-squad",
-      "stars": 8362,
+      "stars": 8396,
       "pushed_at": "2026-08-20",
       "license": "AGPL-3.0"
     },
@@ -54,16 +54,16 @@
       "name": "Nimbalyst",
       "site": "https://nimbalyst.com",
       "repo": "nimbalyst/nimbalyst",
-      "stars": 1561,
-      "pushed_at": "2026-08-24",
+      "stars": 1613,
+      "pushed_at": "2026-08-28",
       "license": "MIT"
     },
     {
       "name": "Pane",
       "site": "https://runpane.com",
       "repo": "dcouple/Pane",
-      "stars": 412,
-      "pushed_at": "2026-08-25",
+      "stars": 428,
+      "pushed_at": "2026-08-31",
       "license": "AGPL-3.0"
     },
     {

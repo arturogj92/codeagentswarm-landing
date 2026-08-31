@@ -16,7 +16,7 @@ Pick Nimbalyst if the work you care about is the artefact: markdown, mockups, di
     ctaAgent: 'comparison',
     highlightedWords: ['Nimbalyst', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
-    updatedAt: '2026-08-25',
+    updatedAt: '2026-08-31',
     alternateSlug: 'nimbalyst-vs-codeagentswarm',
   },
   sections: [
@@ -49,7 +49,7 @@ Pick Nimbalyst if the work you care about is the artefact: markdown, mockups, di
         },
         {
           type: 'paragraph',
-          text: 'This is the project formerly called Crystal. The old repository, <a href="https://github.com/stravu/crystal" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">stravu/crystal</a>, still says in its own description that Crystal is now Nimbalyst and points at nimbalyst.com. That repository is MIT with about 3,100 stars (3,106) and its last public commit was February 26, 2026. Development moved to <a href="https://github.com/nimbalyst/nimbalyst" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">nimbalyst/nimbalyst</a>, also MIT, with about 1,600 stars (1,561) and a public commit on August 24, 2026. We verified the page on August 25. So if you remember Crystal, the star count looks like it dropped: it did not, the project changed address.',
+          text: 'This is the project formerly called Crystal. The old repository, <a href="https://github.com/stravu/crystal" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">stravu/crystal</a>, still says in its own description that Crystal is now Nimbalyst and points at nimbalyst.com. That repository is MIT with about 3,100 stars (3,106) and its last public commit was February 26, 2026. Development moved to <a href="https://github.com/nimbalyst/nimbalyst" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">nimbalyst/nimbalyst</a>, also MIT, with about 1,600 stars (1,613) and a public commit on August 28, 2026. We refreshed the current repository data on August 31. So if you remember Crystal, the star count looks like it dropped: it did not, the project changed address.',
         },
         {
           type: 'list',
@@ -109,9 +109,9 @@ Pick Nimbalyst if the work you care about is the artefact: markdown, mockups, di
             ['Task management', 'Task tracking plus a kanban view of sessions, editable by you and by the agent', 'Kanban board that the agents update over MCP'],
             ['Open source', 'Yes, MIT, about 1,600 stars on the current repository', 'No, closed source with no public app repository'],
             ['Price', 'Free for individuals per their site; a paid Teams tier exists per their site navigation (we did not verify any figures)', 'Free during beta with Pro included, and you bring your own agent subscriptions'],
-            ['Last public commit (verified Aug 25, 2026)', 'August 24, 2026 on nimbalyst/nimbalyst; February 26, 2026 on the old stravu/crystal repository', 'Closed source, no public repo'],
+            ['Last public commit (verified Aug 31, 2026)', 'August 28, 2026 on nimbalyst/nimbalyst; February 26, 2026 on the old stravu/crystal repository', 'Closed source, no public repo'],
           ],
-          caption: 'Verified on August 25, 2026 from nimbalyst.com, the public Nimbalyst README and GitHub data for both repositories.',
+          caption: 'Product facts and predecessor repository data were verified on August 25, 2026. Current nimbalyst/nimbalyst stars and activity were refreshed from public GitHub data on August 31, 2026.',
         },
       ],
     },
@@ -127,7 +127,7 @@ Pick Nimbalyst if the work you care about is the artefact: markdown, mockups, di
           type: 'list',
           items: [
             '<strong>You want to edit what the agent produces, visually.</strong> Markdown, mockups with annotations, Mermaid, Excalidraw, CSV and data models in WYSIWYG editors, approving changes as red and green diffs. We have no equivalent to that at all.',
-            '<strong>You want open source.</strong> MIT, public repository, and an active one: there was a public commit on August 24, one day before we verified. CodeAgentSwarm is closed source.',
+            '<strong>You want open source.</strong> MIT, public repository, and an active one: there was a public commit on August 28, three days before we refreshed the repository data. CodeAgentSwarm is closed source.',
             '<strong>You are on Linux.</strong> They ship a Linux build. We do not.',
             '<strong>You want a public native mobile app today.</strong> Their mobile app offers a session dashboard, push notifications, voice or text replies and swipe-through diff approval. CodeAgentSwarm Mobile Connect is still in alpha: web beta is available, while native iOS and Android access is by request and the desktop must stay open.',
             '<strong>Non-developers are involved.</strong> Product and design people can work on documents and mockups in the same tool, which a terminal workspace does not really allow.',
@@ -176,15 +176,15 @@ Pick Nimbalyst if the work you care about is the artefact: markdown, mockups, di
   faq: [
     {
       question: 'Is Nimbalyst the same as Crystal?',
-      answer: 'Yes, it is the same project renamed. The old repository stravu/crystal states in its own description that Crystal is now Nimbalyst and links to nimbalyst.com. Crystal is MIT with about 3,100 stars and its last public commit was February 26, 2026, while development continues at nimbalyst/nimbalyst, also MIT, with about 1,600 stars and a public commit on August 24, 2026. All verified on August 25, 2026.',
+      answer: 'Yes, it is the same project renamed. The old repository stravu/crystal states in its own description that Crystal is now Nimbalyst and links to nimbalyst.com. Crystal is MIT with about 3,100 stars and its last public commit was February 26, 2026, while development continues at nimbalyst/nimbalyst, also MIT, with about 1,600 stars and a public commit on August 28, 2026. Product facts and predecessor repository data were verified on August 25; current repository activity was refreshed on August 31, 2026.',
     },
     {
       question: 'Is Nimbalyst open source?',
-      answer: 'Yes. The nimbalyst/nimbalyst repository is published under the MIT license, with about 1,600 stars (1,561 when verified on August 25, 2026). Their README notes that the collaboration sync server behind their team features is a separate project. CodeAgentSwarm is closed source with no public application repository, so if open source is a requirement, Nimbalyst wins that point.',
+      answer: 'Yes. The nimbalyst/nimbalyst repository is published under the MIT license, with about 1,600 stars (1,613 when refreshed on August 31, 2026). Their README notes that the collaboration sync server behind their team features is a separate project. CodeAgentSwarm is closed source with no public application repository, so if open source is a requirement, Nimbalyst wins that point.',
     },
     {
       question: 'Is Nimbalyst actively maintained?',
-      answer: 'When checked on August 25, 2026, the nimbalyst/nimbalyst repository had a public commit from August 24, so it was active at the time of verification. The predecessor repository, stravu/crystal, last saw a public commit on February 26, 2026, which is expected after the rename. Check the repository yourself before committing a workflow to any tool.',
+      answer: 'When checked on August 31, 2026, the nimbalyst/nimbalyst repository had a public commit from August 28, so it was active at the time of verification. The predecessor repository, stravu/crystal, last saw a public commit on February 26, 2026, which is expected after the rename. Check the repository yourself before committing a workflow to any tool.',
     },
     {
       question: 'Does Nimbalyst support Antigravity CLI or Kimi Code?',

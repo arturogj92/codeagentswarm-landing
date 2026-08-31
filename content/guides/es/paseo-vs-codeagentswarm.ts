@@ -16,7 +16,7 @@ Resumen rápido: si quieres lanzar una tarea en el escritorio y revisarla desde 
     ctaAgent: 'comparison',
     highlightedWords: ['Paseo', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
-    updatedAt: '2026-08-25',
+    updatedAt: '2026-08-31',
     alternateSlug: 'paseo-vs-codeagentswarm',
   },
   sections: [
@@ -49,7 +49,7 @@ Resumen rápido: si quieres lanzar una tarea en el escritorio y revisarla desde 
         },
         {
           type: 'paragraph',
-          text: 'El repositorio público es <a href="https://github.com/getpaseo/paseo" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">getpaseo/paseo</a>. En el momento de la comprobación tenía unas 15.000 estrellas (14.951 exactamente) y su último commit público era del 25 de agosto de 2026, el mismo día en que se escribió esta página. El fichero LICENSE sitúa el código bajo AGPLv3, con los componentes de terceros bajo sus propias licencias.',
+          text: 'El repositorio público es <a href="https://github.com/getpaseo/paseo" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">getpaseo/paseo</a>. Tenía 15.543 estrellas al refrescar sus datos públicos de GitHub el 31 de agosto de 2026, y su último commit público era del día 30. El fichero LICENSE sitúa el código bajo AGPLv3, con los componentes de terceros bajo sus propias licencias.',
         },
         {
           type: 'list',
@@ -156,11 +156,11 @@ Resumen rápido: si quieres lanzar una tarea en el escritorio y revisarla desde 
             ],
             [
               '<strong>Último commit público</strong>',
-              '25 de agosto de 2026, en un repo con unas 15.000 estrellas',
+              '30 de agosto de 2026, en un repo con 15.543 estrellas al refrescarlo el día 31',
               'Código cerrado, sin repositorio público',
             ],
           ],
-          caption: 'Todos los datos de Paseo se comprobaron el 25 de agosto de 2026 en paseo.sh, en el repositorio getpaseo/paseo y en los datos públicos de GitHub. Las filas marcadas como "no documentado" significan que no lo hemos encontrado publicado, no que la función no exista.',
+          caption: 'Datos de producto comprobados el 25 de agosto de 2026 en paseo.sh. Estrellas y actividad pública de GitHub refrescadas el 31 de agosto de 2026. Las filas marcadas como "no documentado" significan que no lo hemos encontrado publicado, no que la función no exista.',
         },
       ],
     },
@@ -233,7 +233,7 @@ Resumen rápido: si quieres lanzar una tarea en el escritorio y revisarla desde 
   faq: [
     {
       question: '¿Paseo es open source?',
-      answer: 'Sí. Paseo se desarrolla en abierto en github.com/getpaseo/paseo y su fichero LICENSE sitúa el código bajo AGPLv3, con los componentes de terceros bajo sus licencias originales. A 25 de agosto de 2026 el repositorio tenía unas 15.000 estrellas. CodeAgentSwarm, en cambio, es de código cerrado y no tiene repositorio público de la aplicación.',
+      answer: 'Sí. Paseo se desarrolla en abierto en github.com/getpaseo/paseo y su fichero LICENSE sitúa el código bajo AGPLv3, con los componentes de terceros bajo sus licencias originales. El repositorio tenía 15.543 estrellas al refrescarlo el 31 de agosto de 2026. CodeAgentSwarm, en cambio, es de código cerrado y no tiene repositorio público de la aplicación.',
     },
     {
       question: '¿Puedo supervisar CodeAgentSwarm desde el móvil?',
@@ -245,7 +245,7 @@ Resumen rápido: si quieres lanzar una tarea en el escritorio y revisarla desde 
     },
     {
       question: '¿Están los dos proyectos mantenidos?',
-      answer: 'Paseo lo está de forma verificable: su último commit público en el momento de la comprobación fue del 25 de agosto de 2026, el mismo día en que se recogieron estos datos. CodeAgentSwarm también está en desarrollo activo, pero al ser de código cerrado no hay historial público que puedas inspeccionar para confirmarlo por tu cuenta. Esa asimetría cuenta.',
+      answer: 'Paseo lo está de forma verificable: su último commit público era del 30 de agosto de 2026 al refrescar los datos del repositorio el día 31. CodeAgentSwarm también está en desarrollo activo, pero al ser de código cerrado no hay historial público que puedas inspeccionar para confirmarlo por tu cuenta. Esa asimetría cuenta.',
     },
   ],
 }

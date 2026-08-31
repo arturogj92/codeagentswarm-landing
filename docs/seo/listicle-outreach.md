@@ -1,6 +1,6 @@
 # Editorial outreach
 
-Last reviewed: 2026-08-23
+Last reviewed: 2026-08-31
 
 **Draft only. Nothing in this file has been sent. Arturo reviews, edits and sends each message personally.**
 
@@ -22,13 +22,13 @@ Verify every fact again against the production site immediately before sending.
 
 ## Revalidated editorial targets
 
-Checked on 2026-08-23. All five pages were live.
+Checked on 2026-08-31. All five pages were live. Only Singularity Society currently names CodeAgentSwarm, and that mention is plain text.
 
-1. [Singularity Society](https://singularitysociety.org/articles/tech-blog/2026-08-04-choosing-a-parallel-agent-tool-en/) already names CodeAgentSwarm as plain text, but does not include it in the decision guide. Ask for a link and a factual one-line description. This is the lowest-friction opportunity.
-2. [Tembo](https://www.tembo.io/blog/ai-agent-orchestration-tools) covers the category and does not mention CodeAgentSwarm. Ask for an editorial evaluation.
-3. [Zevyn Studio](https://zevyn.dev/compare/parallel-ai-coding-agents) compares six tools and does not mention CodeAgentSwarm. It is a competitor-owned page, so expect a low acceptance rate.
-4. [AgentsRoom](https://agentsroom.dev/blog/best-multi-agent-coding-tools) was updated on 2026-08-23 and does not mention CodeAgentSwarm. It is also competitor-owned, so keep the request short and factual.
-5. [amux](https://amux.io/guides/best-ai-agent-multiplexers-2026/) compares the category and does not mention CodeAgentSwarm. Recheck its contact route before sending.
+1. [Singularity Society](https://singularitysociety.org/articles/tech-blog/2026-08-04-choosing-a-parallel-agent-tool-en/) already names CodeAgentSwarm as plain text. Ask `info@singularitysociety.org` to link the existing mention and consider a factual description. This is the lowest-friction opportunity.
+2. [AgentsRoom](https://agentsroom.dev/blog/best-multi-agent-coding-tools) compares eight products and was updated on 2026-08-30. Ask `contact@agentsroom.dev` for an editorial evaluation. AgentsRoom owns both the article and a product in the comparison.
+3. [amux](https://amux.io/guides/best-ai-agent-multiplexers-2026/) presents a matrix of dedicated multiplexers, built-in multi-agent features and cloud platforms. Ask `support@amux.io` for an editorial evaluation. amux owns both the article and a product in the comparison.
+4. [Tembo](https://www.tembo.io/blog/ai-agent-orchestration-tools) covers the category and does not mention CodeAgentSwarm. Ask `support@tembo.io` for an editorial evaluation. Tembo is also a competitor, so acceptance is uncertain.
+5. [Zevyn Studio](https://zevyn.dev/compare/parallel-ai-coding-agents) compares six tools and does not mention CodeAgentSwarm. It is a direct competitor-owned page with a deliberately narrow selection. Keep this target on hold unless the first four messages fail.
 
 ## Reviewed product blurb
 
@@ -50,16 +50,18 @@ These are the exact proposed messages. Recheck the recipient and page immediatel
 
 ### Singularity Society
 
-Subject: Factual addition to your parallel-agent guide
+Recipient: `info@singularitysociety.org`
+
+Subject: CodeAgentSwarm link in your parallel agent guide
 
 ```text
 Hi Singularity Society team,
 
-I am Arturo, creator of CodeAgentSwarm. Your August 4 guide already names CodeAgentSwarm in the opening list, but the name is plain text and the decision guide does not describe it. Would you consider linking that mention to https://www.codeagentswarm.com/en and evaluating it for the "you lose track of the work itself" use case?
+I’m Arturo, and I created CodeAgentSwarm. Your August 4 guide already includes CodeAgentSwarm in the opening list, but the name is plain text. Would you consider linking it to https://www.codeagentswarm.com/en?
 
-Factual summary: CodeAgentSwarm is a closed-source macOS and Windows desktop workspace for supervising seven agent CLIs in parallel, with notifications, searchable cross-agent history, live diffs, optional per-session Git worktrees and a task board. It is free during the beta. It has no Linux desktop build. Mobile Connect is in alpha: the web beta is open to every account, native iOS and Android access is by request, and the desktop must remain open.
+If useful for the decision guide, a factual description is: CodeAgentSwarm is a closed-source desktop workspace for macOS and Windows that runs seven AI coding CLIs in parallel and provides notifications, searchable history, live diffs and a task board. It is free during the open beta and has no Linux build.
 
-Please judge whether it belongs in the comparison. I can provide the details you need.
+Please decide whether that detail belongs in the guide. I’m happy to provide anything you need to verify it.
 
 Thanks,
 Arturo García
@@ -67,22 +69,26 @@ Arturo García
 
 ### Tembo
 
+Recipient: `support@tembo.io`
+
 Subject: Local desktop orchestrator for your 2026 comparison
 
 ```text
 Hi Tembo team,
 
-I am Arturo, creator of CodeAgentSwarm. Your guide's coding-native orchestrators section makes a useful distinction between frameworks, coding-native orchestrators and managed platforms. It currently highlights Composio and Conductor. Would you consider evaluating CodeAgentSwarm as another product in that category?
+I’m Arturo, and I created CodeAgentSwarm. Your guide separates frameworks, coding-native orchestrators and managed platforms. Would you consider evaluating CodeAgentSwarm as a local visual orchestrator in a future update?
 
-CodeAgentSwarm is a closed-source desktop workspace for macOS and Windows. It runs seven existing agent CLIs in parallel, supports optional per-session Git worktrees, and adds notifications, live diffs, searchable cross-agent history and a task board. It is free during the beta, has no Linux desktop build and is not a managed cloud platform.
+CodeAgentSwarm is a closed-source desktop workspace for macOS and Windows that runs seven AI coding CLIs in parallel on the user’s machine. It provides notifications, searchable history, live diffs and a task board. It is free during the open beta, has no Linux build and is not a managed cloud platform.
 
-Please judge whether it belongs in the comparison. I can provide the details you need.
+Please decide whether it belongs in the guide. I can provide any details needed to verify the facts.
 
 Thanks,
 Arturo García
 ```
 
 ### Zevyn Studio
+
+Hold. Do not send in the first batch.
 
 Subject: Candidate for your parallel-agent comparison matrix
 
@@ -101,16 +107,18 @@ Arturo García
 
 ### AgentsRoom
 
-Subject: Another visual command center for your 2026 guide
+Recipient: `contact@agentsroom.dev`
+
+Subject: CodeAgentSwarm for your multi-agent tools guide
 
 ```text
 Hi AgentsRoom team,
 
-I am Arturo, creator of CodeAgentSwarm. Your guide frames the problem as keeping track of agents rather than merely spawning more terminals. CodeAgentSwarm addresses that same problem with a different product boundary, so I would appreciate an editorial evaluation in your next update.
+I’m Arturo, and I created CodeAgentSwarm. I read your updated guide on tools for running multiple coding agents, including the way it separates terminal workflows, diff review, mobile control and cross-project oversight. Would you consider evaluating CodeAgentSwarm for a future update?
 
-CodeAgentSwarm is a closed-source macOS and Windows desktop workspace for seven agent CLIs, with live status, notifications, searchable cross-agent history, live diffs, optional per-session Git worktrees and a task board. Mobile Connect is in alpha: the web beta is open to every account, native iOS and Android access is by request, and the desktop must remain open. There is no Linux desktop build.
+It is a closed-source desktop workspace for macOS and Windows that runs seven AI coding CLIs in parallel. It provides notifications, searchable cross-agent history, live diffs and a task board. It is free during the open beta and has no Linux build.
 
-Please judge whether it belongs in the comparison. I can provide the details you need.
+I realize AgentsRoom publishes the guide and is part of the comparison. I’m only asking for an editorial assessment, and I can provide any details needed to verify the facts.
 
 Thanks,
 Arturo García
@@ -118,16 +126,18 @@ Arturo García
 
 ### amux
 
-Subject: Missing dedicated desktop multiplexer for your matrix
+Recipient: `support@amux.io`
+
+Subject: CodeAgentSwarm for your multiplexer comparison
 
 ```text
 Hi amux team,
 
-I am Arturo, creator of CodeAgentSwarm. Your August guide compares dedicated multiplexers, built-in multi-agent features and cloud platforms across a detailed matrix. Would you consider evaluating CodeAgentSwarm for the dedicated-multiplexer section?
+I’m Arturo, and I created CodeAgentSwarm. Your August comparison evaluates dedicated multiplexers on parallel sessions, Git isolation, mobile access, task boards and platform support. Would you consider evaluating CodeAgentSwarm as another dedicated desktop product?
 
-The relevant matrix facts are: parallel sessions, optional per-session Git worktrees, a task board, live status and diffs, macOS and Windows support, and seven agent CLIs. Mobile Connect is in alpha: the web beta is open to every account, native iOS and Android access is by request, and the desktop must remain open. The product is closed source, has no Linux desktop build and is free during the beta.
+It is a closed-source workspace for macOS and Windows that runs seven AI coding CLIs in parallel. It provides notifications, searchable cross-agent history, live diffs and a task board. It is free during the open beta and has no Linux build.
 
-Please judge whether it belongs in the comparison. I can provide the details you need.
+I know amux publishes the comparison and is one of the products in it. I’m only asking for an editorial assessment, and I can provide any details needed to verify the facts.
 
 Thanks,
 Arturo García
@@ -140,21 +150,33 @@ Arturo García
 - Add one specific sentence that proves the article was read.
 - Keep the conflict-of-interest disclosure.
 - Ask for evaluation, not a positive review.
+- Render each message with the `feedback-custom` email template and send it to Arturo's test inbox first.
+- Wait for Arturo to approve the rendered test before sending it to the editor.
 - Send once. One polite follow-up after 10 to 14 days is the limit.
 - Record the date, result, final URL and link attributes.
 
 ## GitHub authority already in motion
 
-- [awesome-ai-devtools PR 759](https://github.com/jamesmurdza/awesome-ai-devtools/pull/759): open. The entry is factual; the PR description was corrected on 2026-08-23.
-- [awesome-mac PR 2250](https://github.com/jaywcjlove/awesome-mac/pull/2250): open. The entry is factual; the PR description was corrected on 2026-08-23.
-- [awesome-agent-orchestrators PR 142](https://github.com/andyrewlee/awesome-agent-orchestrators/pull/142): open.
-- [awesome-gemini-cli PR 69](https://github.com/Piebald-AI/awesome-gemini-cli/pull/69): merged, but its published description still says CodeAgentSwarm runs Gemini CLI. Decide whether to remove the inaccurate entry or ask the maintainer for a correction before taking action.
+- [awesome-ai-devtools PR 759](https://github.com/jamesmurdza/awesome-ai-devtools/pull/759): open, mergeable, checks passing, no comments or reviews. One reminder is ready:
+
+  ```text
+  Hi James, just following up on this addition to the Multi-Agent Orchestration section. Would you be open to reviewing it when you have a moment? If it is not a fit for the list, no problem. Thanks.
+  ```
+
+- [awesome-agent-orchestrators PR 142](https://github.com/andyrewlee/awesome-agent-orchestrators/pull/142): open, mergeable, no comments or reviews. One reminder is ready:
+
+  ```text
+  Hi Andy, just following up on the CodeAgentSwarm addition to Desktop & Web agents. Would you be open to reviewing it when you have a moment? If it is not a fit for the list, no problem. Thanks.
+  ```
+
+- [awesome-mac PR 2250](https://github.com/jaywcjlove/awesome-mac/pull/2250): open and already received a polite reminder on 2026-08-08. Do not add another now.
+- [awesome-gemini-cli PR 69](https://github.com/Piebald-AI/awesome-gemini-cli/pull/69): merged, but its published description incorrectly says CodeAgentSwarm runs Gemini CLI. Prepare a separate removal PR after the authority batch. Replacing Gemini with Antigravity would leave an unrelated tool in a Gemini-specific list.
 
 Do not open duplicate submissions while these PRs remain active.
 
 ## Free actions after outreach
 
-1. Publish one useful technical article on DEV with the canonical product link among the first relevant outbound links.
+1. Keep [dev-community-draft.md](dev-community-draft.md) unpublished. [DEV's current AI-assisted article policy](https://dev.to/guidelines-for-ai-assisted-articles-on-dev/) requires disclosure and warns against AI-assisted business promotion or backlink-led articles. The draft can become source material for a future human-authored tutorial, but it is not an approved backlink action.
 2. Verify the existing StackShare listing is public, indexable and accurate before creating another submission.
 3. Submit CodeAgentSwarm to SaaSGrow only after confirming the current free listing has a direct follow link and no badge requirement.
 4. List CodeAgentSwarm on MCP directories only as a client. Its MCP server depends on the app and is not a standalone server.

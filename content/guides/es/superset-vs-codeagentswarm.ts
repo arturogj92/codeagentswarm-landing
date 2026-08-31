@@ -16,7 +16,7 @@ Resumen rápido: elige Superset si quieres un entorno con forma de editor, sopor
     ctaAgent: 'comparison',
     highlightedWords: ['Superset', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
-    updatedAt: '2026-08-25',
+    updatedAt: '2026-08-31',
     alternateSlug: 'superset-vs-codeagentswarm',
   },
   sections: [
@@ -49,7 +49,7 @@ Resumen rápido: elige Superset si quieres un entorno con forma de editor, sopor
         },
         {
           type: 'paragraph',
-          text: 'La licencia merece precisión, porque es fácil contarla mal. Superset es source available bajo la Elastic License 2.0, que no es una licencia de código abierto aprobada por la OSI: puedes leer el código y autoalojarlo dentro de sus términos, pero no tienes todas las libertades del software libre. Su propia FAQ lo explica igual. El repositorio rondaba las 13.300 estrellas el 25 de agosto de 2026, con su último commit ese mismo día, y es público desde el 21 de octubre de 2025.',
+          text: 'La licencia merece precisión, porque es fácil contarla mal. Superset es source available bajo la Elastic License 2.0, que no es una licencia de código abierto aprobada por la OSI: puedes leer el código y autoalojarlo dentro de sus términos, pero no tienes todas las libertades del software libre. Su propia FAQ lo explica igual. El repositorio tenía 13.538 estrellas al refrescar sus datos públicos de GitHub el 31 de agosto de 2026, con su último commit público ese mismo día, y es público desde el 21 de octubre de 2025.',
         },
         {
           type: 'list',
@@ -114,9 +114,9 @@ Resumen rápido: elige Superset si quieres un entorno con forma de editor, sopor
             ['Gestión de tareas', 'Cambio entre tareas en paralelo, automatizaciones programadas y servidor MCP para control programático', 'Kanban que los agentes actualizan por MCP. Sin botón de PR con un clic'],
             ['Código abierto', 'No. Source available (Elastic License 2.0), que no está aprobada por la OSI', 'No. Código cerrado, sin repositorio público'],
             ['Precio', 'Plan gratuito, con planes de pago y enterprise en su web', 'Gratis durante la beta con Pro incluido. Pones tus suscripciones CLI'],
-            ['Último commit público (verificado el 25 ago 2026)', '25 de agosto de 2026. Unas 13.300 estrellas, público desde el 21 de octubre de 2025', 'Código cerrado, sin repositorio público'],
+            ['Último commit público (verificado el 31 ago 2026)', '31 de agosto de 2026. 13.538 estrellas, público desde el 21 de octubre de 2025', 'Código cerrado, sin repositorio público'],
           ],
-          caption: 'Todos los datos de terceros verificados el 25 de agosto de 2026 en superset.sh y en los datos públicos de GitHub.',
+          caption: 'Datos de producto verificados el 25 de agosto de 2026 en superset.sh. Estrellas y actividad pública de GitHub refrescadas el 31 de agosto de 2026.',
         },
       ],
     },
@@ -188,7 +188,7 @@ Resumen rápido: elige Superset si quieres un entorno con forma de editor, sopor
     },
     {
       question: '¿Cuál se mantiene de forma más activa?',
-      answer: 'Las dos están activas y esta fila no la gana nadie. El repositorio público superset-sh/superset tuvo su último commit el 25 de agosto de 2026, el mismo día en que se verificó esta página, con unas 13.300 estrellas y un historial público desde el 21 de octubre de 2025. CodeAgentSwarm es de código cerrado, así que no hay historial que consultar: nuestro ritmo te lo tienes que creer.',
+      answer: 'Las dos están activas y esta fila no la gana nadie. El repositorio público superset-sh/superset tuvo su último commit el 31 de agosto de 2026 y tenía 13.538 estrellas al refrescar sus datos de GitHub ese día, con un historial público desde el 21 de octubre de 2025. CodeAgentSwarm es de código cerrado, así que no hay historial que consultar: nuestro ritmo te lo tienes que creer.',
     },
     {
       question: '¿Puedo probar las dos gratis?',
