@@ -7,7 +7,7 @@ const termsEs: LegalDoc = {
   metaTitle: 'Términos del Servicio | CodeAgentSwarm',
   metaDescription:
     'Los términos que rigen el uso de la aplicación de escritorio y el sitio web de CodeAgentSwarm, incluyendo uso aceptable, herramientas de IA de terceros, garantías y responsabilidad.',
-  lastUpdated: '2026-06-22',
+  lastUpdated: '2026-08-31',
   intro:
     'Estos Términos del Servicio ("Términos") rigen tu uso de la aplicación de escritorio CodeAgentSwarm, el sitio web y los servicios relacionados (en conjunto, el "Servicio"). Léelos con atención. Al descargar, instalar o usar el Servicio aceptas estos Términos. Si no estás de acuerdo, no uses el Servicio.',
   sections: [
@@ -62,7 +62,7 @@ const termsEs: LegalDoc = {
       blocks: [
         {
           type: 'paragraph',
-          text: 'Te concedemos una licencia personal, limitada, no exclusiva, intransferible y revocable para instalar y usar el Servicio con fines propios de desarrollo de software, sujeta a estos Términos. Nos reservamos todos los derechos que no se te conceden expresamente.',
+          text: 'Te concedemos una licencia limitada, no exclusiva, intransferible y revocable para instalar y usar el Servicio con fines internos de desarrollo de software, incluido el uso en nombre de una organización que haya aceptado estos Términos, sujeta a estos Términos. Nos reservamos todos los derechos no concedidos expresamente.',
         },
       ],
     },
@@ -128,7 +128,7 @@ const termsEs: LegalDoc = {
       blocks: [
         {
           type: 'paragraph',
-          text: 'El Servicio, incluido su software, diseño, marcas y contenido, es propiedad del Proveedor o de sus licenciantes y está protegido por las leyes de propiedad intelectual. Estos Términos no te transfieren ninguna titularidad. Lo que crees usando el Servicio (como tu propio código) sigue siendo tuyo.',
+          text: 'El Servicio, incluido su software, diseño, marcas y contenido, es propiedad del Proveedor o de sus licenciantes y está protegido por las leyes de propiedad intelectual. Los componentes de terceros y el software distribuido por separado siguen sujetos a los términos y avisos que los acompañan. CAS Cloud, cuando se obtiene como paquete independiente, se rige por la licencia que acompaña a dicho paquete. Estos Términos no te transfieren ninguna titularidad. Lo que crees usando el Servicio (como tu propio código) sigue siendo tuyo.',
         },
       ],
     },
