@@ -7,7 +7,7 @@ const termsEn: LegalDoc = {
   metaTitle: 'Terms of Service | CodeAgentSwarm',
   metaDescription:
     'The terms that govern your use of the CodeAgentSwarm desktop application and website, including acceptable use, third-party AI tools, warranties and liability.',
-  lastUpdated: '2026-06-22',
+  lastUpdated: '2026-08-31',
   intro:
     'These Terms of Service ("Terms") govern your use of the CodeAgentSwarm desktop application, website and related services (together, the "Service"). Please read them carefully. By downloading, installing or using the Service you agree to these Terms. If you do not agree, do not use the Service.',
   sections: [
@@ -62,7 +62,7 @@ const termsEn: LegalDoc = {
       blocks: [
         {
           type: 'paragraph',
-          text: 'We grant you a personal, limited, non-exclusive, non-transferable and revocable licence to install and use the Service for your own software development purposes, subject to these Terms. We retain all rights not expressly granted to you.',
+          text: 'We grant you a limited, non-exclusive, non-transferable and revocable licence to install and use the Service for your own internal software development purposes, including on behalf of an organisation that has accepted these Terms, subject to these Terms. We retain all rights not expressly granted to you.',
         },
       ],
     },
@@ -128,7 +128,7 @@ const termsEn: LegalDoc = {
       blocks: [
         {
           type: 'paragraph',
-          text: 'The Service, including its software, design, trademarks and content, is owned by the Provider or its licensors and is protected by intellectual property laws. These Terms do not transfer any ownership to you. Anything you create using the Service (such as your own code) remains yours.',
+          text: 'The Service, including its software, design, trademarks and content, is owned by the Provider or its licensors and is protected by intellectual property laws. Third-party components and software distributed separately remain governed by their accompanying terms and notices. CAS Cloud, when obtained as a separate package, is governed by the licence accompanying that package. These Terms do not transfer any ownership to you. Anything you create using the Service (such as your own code) remains yours.',
         },
       ],
     },
