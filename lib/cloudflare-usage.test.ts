@@ -19,6 +19,7 @@ test('applies Cloudflare WebSocket billing and both relay safety limits', () => 
   }], [{ max: { storedBytes: 4_608_000 } }], Date.UTC(2026, 8, 1, 13))
 
   assert.equal(snapshot.dailyRawRequests, 200_000)
+  assert.equal(snapshot.dailyBillableRequests, 86_000)
   assert.equal(snapshot.dailyRequestLimit, 300_000)
   assert.equal(snapshot.monthlyBillableRequests, 86_000)
   assert.equal(snapshot.status, 'safe')
@@ -32,5 +33,6 @@ test('applies Cloudflare WebSocket billing and both relay safety limits', () => 
     },
   ], [], [], Date.UTC(2026, 8, 2))
   assert.equal(tomorrow.dailyRequestLimit, 90_000)
+  assert.equal(tomorrow.dailyBillableRequests, 200_000)
   assert.equal(tomorrow.status, 'stopped')
 })

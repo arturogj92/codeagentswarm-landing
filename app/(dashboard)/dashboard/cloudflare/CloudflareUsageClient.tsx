@@ -223,11 +223,11 @@ export default function CloudflareUsageClient() {
 
             <section aria-label="Cloudflare usage summary" className="mt-3 grid gap-2.5 sm:grid-cols-2 xl:grid-cols-4">
               <Metric
-                label="Daily raw operations"
-                value={compact(snapshot.dailyRawRequests)}
-                percentage={percent(snapshot.dailyRawRequests, snapshot.dailyRequestLimit)}
+                label="Daily billable request units"
+                value={compact(snapshot.dailyBillableRequests)}
+                percentage={percent(snapshot.dailyBillableRequests, snapshot.dailyRequestLimit)}
                 note={`${compact(snapshot.dailyRequestLimit)} relay safety stop · resets 00:00 UTC`}
-                used={snapshot.dailyRawRequests}
+                used={snapshot.dailyBillableRequests}
                 limit={snapshot.dailyRequestLimit}
                 bar={tone.bar}
               />
@@ -319,7 +319,7 @@ export default function CloudflareUsageClient() {
               <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-400/10 font-bold text-emerald-300">✓</span>
               <div>
                 <h2 className="text-sm font-semibold text-emerald-100">Hard relay safety stop</h2>
-                <p className="mt-1 text-[11px] leading-5 text-white/50">D1 rejects new relay operations before 90,000 raw requests per day or 900,000 billable request units per month. It does not depend on Cloudflare&apos;s delayed budget alerts.</p>
+                <p className="mt-1 text-[11px] leading-5 text-white/50">D1 rejects new relay operations before {compact(snapshot.dailyRequestLimit)} billable requests per day or 900,000 per month. Twenty incoming WebSocket messages count as one request.</p>
               </div>
               <a href="https://dash.cloudflare.com/" target="_blank" rel="noreferrer" className="text-xs font-semibold text-emerald-300 hover:text-emerald-200">Open Cloudflare billing ↗</a>
             </section>
@@ -335,7 +335,7 @@ export default function CloudflareUsageClient() {
                     <tr><th className="px-5 py-3 font-medium">Meter</th><th className="px-3 py-3 font-medium">Used</th><th className="px-3 py-3 font-medium">Allowance</th><th className="px-3 py-3 font-medium">Protection / rate</th><th className="px-5 py-3 font-medium">Status</th></tr>
                   </thead>
                   <tbody className="divide-y divide-white/[0.055] text-white/55">
-                    <AllowanceRow label="Daily raw operations" used={integer(snapshot.dailyRawRequests)} allowance="100,000 reference ceiling" rate="Stops at 90,000" status={statusLabel(snapshot.dailyRawRequests, snapshot.dailyRequestLimit)} />
+                    <AllowanceRow label="Daily billable requests" used={integer(snapshot.dailyBillableRequests)} allowance={`${integer(snapshot.dailyRequestLimit)} / day`} rate="20 WS messages = 1 request" status={statusLabel(snapshot.dailyBillableRequests, snapshot.dailyRequestLimit)} />
                     <AllowanceRow label="Monthly billable requests" used={integer(snapshot.monthlyBillableRequests)} allowance="1,000,000 / month" rate="Stops at 900,000" status={statusLabel(snapshot.monthlyBillableRequests, snapshot.monthlyRequestLimit)} />
                     <AllowanceRow label="Compute duration" used={`${integer(snapshot.durationGbSeconds)} GB-s`} allowance="400,000 GB-s / month" rate="$12.50 / million" status={statusLabel(snapshot.durationGbSeconds, snapshot.includedDurationGbSeconds)} />
                     <AllowanceRow label="Rows read" used={integer(snapshot.rowsRead)} allowance="25 billion / month" rate="$0.001 / million" status={statusLabel(snapshot.rowsRead, snapshot.includedRowsRead)} />

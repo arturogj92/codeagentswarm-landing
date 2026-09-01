@@ -36,6 +36,7 @@ export type CloudflareUsageSnapshot = {
   cycleEnd: string
   status: 'safe' | 'near' | 'stopped' | 'overage'
   dailyRawRequests: number
+  dailyBillableRequests: number
   dailyRequestLimit: number
   monthlyBillableRequests: number
   monthlyRequestLimit: number
@@ -108,6 +109,9 @@ export function summarizeCloudflareUsage(
   const dailyRawRequests = hourly
     .filter((hour) => hour.hour.startsWith(today))
     .reduce((total, hour) => total + hour.rawRequests, 0)
+  const dailyBillableRequests = hourly
+    .filter((hour) => hour.hour.startsWith(today))
+    .reduce((total, hour) => total + hour.billableRequests, 0)
   const errors = hourly.reduce((total, hour) => total + hour.errors, 0)
   const durationGbSeconds = periodic.reduce((total, row) => total + number(row.sum.duration), 0)
   const rowsRead = periodic.reduce((total, row) => total + number(row.sum.rowsRead), 0)
@@ -121,8 +125,8 @@ export function summarizeCloudflareUsage(
     ? ((storedBytes - INCLUDED_STORAGE_BYTES) / 1_000_000_000) * 0.2
     : 0
   const estimatedOverageUsd = requestOverage + durationOverage + readOverage + writeOverage + storageOverage
-  const stopped = dailyRawRequests >= dailyRequestLimit || monthlyBillableRequests >= MONTHLY_REQUEST_LIMIT
-  const near = dailyRawRequests >= dailyRequestLimit * 0.8
+  const stopped = dailyBillableRequests >= dailyRequestLimit || monthlyBillableRequests >= MONTHLY_REQUEST_LIMIT
+  const near = dailyBillableRequests >= dailyRequestLimit * 0.8
     || monthlyBillableRequests >= MONTHLY_REQUEST_LIMIT * 0.8
   const status = estimatedOverageUsd > 0 ? 'overage' : stopped ? 'stopped' : near ? 'near' : 'safe'
 
@@ -132,6 +136,7 @@ export function summarizeCloudflareUsage(
     cycleEnd: generatedAt,
     status,
     dailyRawRequests,
+    dailyBillableRequests,
     dailyRequestLimit,
     monthlyBillableRequests,
     monthlyRequestLimit: MONTHLY_REQUEST_LIMIT,
