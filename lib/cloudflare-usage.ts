@@ -2,6 +2,8 @@ const GRAPHQL_URL = 'https://api.cloudflare.com/client/v4/graphql'
 const SCRIPT_NAME = 'codeagentswarm-connect'
 
 const DAILY_REQUEST_LIMIT = 90_000
+const TEMPORARY_DAILY_REQUEST_LIMIT = 300_000
+const TEMPORARY_DAILY_REQUEST_LIMIT_DAY = '2026-09-01'
 const MONTHLY_REQUEST_LIMIT = 900_000
 const INCLUDED_REQUESTS = 1_000_000
 const INCLUDED_DURATION = 400_000
@@ -73,6 +75,9 @@ export function summarizeCloudflareUsage(
   const generatedAt = date.toISOString()
   const cycleStart = new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), 1)).toISOString()
   const today = generatedAt.slice(0, 10)
+  const dailyRequestLimit = today === TEMPORARY_DAILY_REQUEST_LIMIT_DAY
+    ? TEMPORARY_DAILY_REQUEST_LIMIT
+    : DAILY_REQUEST_LIMIT
   const hours = new Map<string, { rawRequests: number; billableRequests: number; errors: number }>()
 
   for (const row of invocations) {
@@ -116,8 +121,8 @@ export function summarizeCloudflareUsage(
     ? ((storedBytes - INCLUDED_STORAGE_BYTES) / 1_000_000_000) * 0.2
     : 0
   const estimatedOverageUsd = requestOverage + durationOverage + readOverage + writeOverage + storageOverage
-  const stopped = dailyRawRequests >= DAILY_REQUEST_LIMIT || monthlyBillableRequests >= MONTHLY_REQUEST_LIMIT
-  const near = dailyRawRequests >= DAILY_REQUEST_LIMIT * 0.8
+  const stopped = dailyRawRequests >= dailyRequestLimit || monthlyBillableRequests >= MONTHLY_REQUEST_LIMIT
+  const near = dailyRawRequests >= dailyRequestLimit * 0.8
     || monthlyBillableRequests >= MONTHLY_REQUEST_LIMIT * 0.8
   const status = estimatedOverageUsd > 0 ? 'overage' : stopped ? 'stopped' : near ? 'near' : 'safe'
 
@@ -127,7 +132,7 @@ export function summarizeCloudflareUsage(
     cycleEnd: generatedAt,
     status,
     dailyRawRequests,
-    dailyRequestLimit: DAILY_REQUEST_LIMIT,
+    dailyRequestLimit,
     monthlyBillableRequests,
     monthlyRequestLimit: MONTHLY_REQUEST_LIMIT,
     includedRequests: INCLUDED_REQUESTS,
