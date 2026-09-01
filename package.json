@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "test:users": "node --experimental-strip-types --test \"app/(dashboard)/dashboard/users/users-activity.test.ts\"",
+    "test:cloudflare": "node --experimental-strip-types --test lib/cloudflare-usage.test.ts",
     "test:legal": "node --experimental-strip-types --test content/legal/terms-license.test.ts"
   },
   "dependencies": {

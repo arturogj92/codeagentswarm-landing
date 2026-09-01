@@ -30,3 +30,14 @@ npm run dev
 ```
 
 Run `npm run build` to verify a production build.
+
+## Private Cloudflare usage dashboard
+
+`/dashboard/cloudflare` queries Cloudflare GraphQL only from the server. Set
+`CLOUDFLARE_ACCOUNT_ID` and a read-only `CLOUDFLARE_API_TOKEN` with Account
+Analytics Read. `CLOUDFLARE_RELAY_SCRIPT_NAME` is optional and defaults to
+`codeagentswarm-connect`. Never expose the token through a `NEXT_PUBLIC_*`
+variable.
+
+Run `npm run test:cloudflare` to verify the 20:1 WebSocket billing conversion,
+daily stop and monthly stop calculations.

@@ -8,6 +8,7 @@ const ITEMS = [
   { href: '/dashboard/realtime', label: 'Real-time activity' },
   { href: '/dashboard/emails', label: 'Emails' },
   { href: '/dashboard/emails/automation', label: 'Automation' },
+  { href: '/dashboard/cloudflare', label: 'Cloudflare' },
 ]
 
 function isCurrent(pathname: string, href: string): boolean {
