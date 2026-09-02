@@ -6,7 +6,7 @@ export const guide: Guide = {
     locale: 'en',
     title: 'OpenCode YOLO Mode: Does opencode Have One? Permissions Explained',
     metaTitle: 'OpenCode YOLO Mode: Config-Driven Permissions Explained (2026)',
-    metaDescription: 'Does opencode have a YOLO mode? There is no single flag. Autonomy is config-driven in opencode.json. How to run opencode full auto safely without flying blind.',
+    metaDescription: 'How to bypass permissions in opencode: there is no YOLO flag. Autonomy is config-driven in opencode.json. Run opencode full auto without flying blind.',
     intro: `If you use any terminal coding agent for more than a few minutes, the approval prompts get old fast. Every file write, every shell command stops and waits for you to say yes. With Claude Code and Codex, people reach for a one-flag bypass and the community started calling that "YOLO mode".
 
 opencode takes a different route. There is no <code>--yolo</code>, no <code>--full-auto</code>, no dangerously-skip-anything flag. Instead of one blunt switch, opencode reads how much freedom you gave it from its permission configuration. You decide, in a config file, which kinds of actions run automatically, which ask first, and which are blocked. The closest thing to "YOLO mode" is setting everything to allow, and that carries exactly the same risks as any bypass flag.
@@ -16,7 +16,7 @@ This guide explains what that config-driven model actually looks like, what genu
     ctaAgent: 'opencode',
     highlightedWords: ['OpenCode', 'YOLO mode'],
     publishedAt: '2026-07-05',
-    updatedAt: '2026-07-05',
+    updatedAt: '2026-09-01',
     alternateSlug: 'modo-yolo-opencode',
   },
   sections: [
@@ -24,6 +24,16 @@ This guide explains what that config-driven model actually looks like, what genu
       id: 'what-is-opencode-yolo',
       title: 'What "YOLO mode" means, and the short answer for opencode',
       content: [
+        {
+          type: 'heading',
+          level: 3,
+          text: 'opencode bypass permissions: is there a flag?',
+          id: 'opencode-bypass-permissions',
+        },
+        {
+          type: 'paragraph',
+          text: 'There is no opencode bypass permissions flag. opencode ships no <code>--yolo</code>, no <code>--full-auto</code> and no dangerously-skip-permissions option. Permissions are config-driven: in <code>opencode.json</code> you set each action type to allow, ask or deny, and setting everything to allow is the closest opencode gets to bypassing permissions.',
+        },
         {
           type: 'image',
           alt: 'A CodeAgentSwarm terminal showing the SELECT AI AGENT picker where you choose the agent per terminal, including opencode',
@@ -230,6 +240,18 @@ This guide explains what that config-driven model actually looks like, what genu
     {
       question: 'How do I make opencode run without asking for approval?',
       answer: 'Set the permissions to allow in opencode.json. A minimal example is { "permission": { "edit": "allow", "bash": "ask" } }, and allowing every action type is the fully unattended version. Because the exact keys and values change between versions, check the official opencode docs for the schema your installed version supports before relying on a config.',
+    },
+    {
+      question: 'How do I bypass permissions in opencode?',
+      answer: 'You cannot bypass them with a flag, because opencode does not have one. You bypass them in configuration: set the permissions to allow in opencode.json, and an all-allow config is the fully unattended version. Since the exact keys and values change between versions, check the official opencode docs for the schema your installed version supports.',
+    },
+    {
+      question: 'Does opencode have a --dangerously-skip-permissions flag?',
+      answer: 'No. That flag belongs to Claude Code, and Codex has --full-auto. opencode ships no equivalent, so there is nothing to type to turn approvals off for a run. Its allow, ask and deny behaviour lives in opencode.json instead.',
+    },
+    {
+      question: 'How do I make opencode skip permission prompts?',
+      answer: 'Set the action types you want unattended to allow in opencode.json, either globally at ~/.config/opencode/opencode.json or per project and per agent. A selective config is the safer version: allow file edits so routine work flies through, and keep shell and destructive Git actions on ask.',
     },
     {
       question: 'Is it safe to set all opencode permissions to allow?',

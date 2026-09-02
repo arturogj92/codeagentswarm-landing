@@ -4,9 +4,9 @@ export const guide: Guide = {
   meta: {
     slug: 'grok-build-pricing',
     locale: 'en',
-    title: 'Grok Build Pricing and Access: What Each xAI Plan Gets You',
-    metaTitle: 'Grok Build Pricing: Free, SuperGrok and API Costs (2026)',
-    metaDescription: 'Grok Build can be tried free. Compare Free, SuperGrok at $30, SuperGrok Plus at $100 and current Grok 4.6 API pricing for CI and automation.',
+    title: 'Grok Build Pricing and Access: Plans, API Cost and Parallel Agents',
+    metaTitle: 'Grok Build Pricing 2026: Free, SuperGrok and API Cost',
+    metaDescription: 'Grok Build is free to try. SuperGrok $30, SuperGrok Plus $100, API $2 in and $6 out. Plus what several sessions at once do to your limits.',
     intro: `Grok Build is now available to try free. xAI also lists SuperGrok at $30/month and SuperGrok Plus at $100/month for higher usage, with additional individual and business tiers shown on its live comparison page. For automation there is a separate pay-per-token route through the xAI API.
 
 Before anything else, the disambiguation that most pages skip. Three different things are called Grok: the <strong>Grok chatbot</strong> (xAI's consumer chat app), <strong>Grok Build</strong> (xAI's official coding CLI, the <code>grok</code> command, which is what this page is about and what CodeAgentSwarm supports), and various unaffiliated community projects on GitHub named <code>grok-cli</code>. If you install the wrong one, nothing here applies.
@@ -16,7 +16,7 @@ The current source of truth is xAI's <a href="https://x.ai/build" target="_blank
     ctaAgent: 'grok-build',
     highlightedWords: ['Grok Build', 'Pricing', 'Access'],
     publishedAt: '2026-07-28',
-    updatedAt: '2026-08-25',
+    updatedAt: '2026-09-01',
     alternateSlug: 'precios-y-acceso-grok-build',
   },
   sections: [
@@ -93,6 +93,34 @@ The current source of truth is xAI's <a href="https://x.ai/build" target="_blank
       ],
     },
     {
+      id: 'parallel-agents',
+      title: 'What running several Grok Build sessions at once does to the cost',
+      content: [
+        {
+          type: 'paragraph',
+          text: 'On a plan, extra sessions add no fee. They consume the same account allowance faster, because each agent independently reads files, runs tools and reasons. Four Grok Build terminals draw from exactly the allowance four separate terminals would, which is why the deciding number is how many agents you keep busy rather than which app they run in.',
+        },
+        {
+          type: 'paragraph',
+          text: 'On an API key the effect is a direct cost instead of an earlier wall. Grok 4.6 bills $2 per million input tokens, $0.50 per million cached input tokens and $6 per million output tokens at the standard context tier, with higher pricing above 200K context, so spend over an hour tracks how many agents are actually working.',
+        },
+        {
+          type: 'table',
+          headers: ['Sessions at once', 'What to expect', 'What to watch'],
+          rows: [
+            ['1', 'One session against your plan limits, or one stream of tokens against the API key.', 'Nothing unusual. Check the account usage view for the limits that apply to you.'],
+            ['2 to 3', 'Plan limits arrive roughly two to three times sooner. On the API, token spend rises in about the same proportion.', 'Requests above 200K context cost more, and long investigations reach that tier faster.'],
+            ['4 or more', 'No swarm fee on the xAI side, but the shared allowance drains at the pace of the busy agents.', 'On an API key, set a spend cap on the xAI side before leaving agents unattended.'],
+          ],
+          caption: 'A rule of thumb, not a published quota. xAI describes limits relatively and does not publish one stable request count for every Grok Build tier.',
+        },
+        {
+          type: 'paragraph',
+          text: 'How to divide work between those sessions, and how to stop them duplicating each other, is in <a href="/en/guides/grok-build-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">the Grok Build agent swarm guide</a>.',
+        },
+      ],
+    },
+    {
       id: 'cas-cost',
       title: 'What CodeAgentSwarm costs on top',
       content: [
@@ -130,6 +158,24 @@ The current source of truth is xAI's <a href="https://x.ai/build" target="_blank
         {
           type: 'paragraph',
           text: 'The practical reading: use the free access to test Grok Build, pay for higher limits only when your account usage proves you need them, and use the API for controlled automation. Running it alongside another agent also gives you separate provider limits, which is the argument in <a href="/en/guides/ai-cli-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">the multi-CLI swarm guide</a>.',
+        },
+        {
+          type: 'table',
+          headers: ['Agent', 'Free tier', 'Cheapest paid', 'Top individual tier', 'How you are billed'],
+          rows: [
+            ['Claude Code', 'No (Free plan has no Claude Code)', 'Pro, $20/month', 'Max 20x, $200/month', 'Subscription with 5 hour and weekly windows; API tokens optional'],
+            ['Codex CLI', 'Limited', 'Go, $8/month', 'Pro, $200/month', 'ChatGPT subscription shared with web and IDE; API tokens optional'],
+            ['Kimi Code', 'CLI is free, model usage is not', 'Andante, ¥49/month', 'Allegro, ¥699/month', 'Membership with weekly and 5 hour limits; API per token'],
+            ['OpenCode', 'CLI is free and open source', 'None, pay as you go', 'None', 'Your own provider key, or OpenCode Zen prepaid per token'],
+            ['Antigravity', 'Yes, with weekly rate limits', 'Google AI Plus, around $8/month', 'Google AI Ultra 20x, $200/month', 'Google AI plan with rate limits and credits'],
+            ['Grok Build', 'Yes, limited usage', 'SuperGrok, $30/month', 'SuperGrok Plus, $100/month', 'xAI plan rate limits; API per token'],
+            ['Cursor Agent', 'Hobby, free', 'Pro, $20/month', 'Ultra, $200/month', 'Cursor plan with usage pools per model'],
+          ],
+          caption: 'Entry and top tiers per agent CLI, all verified August 25, 2026. Prices change often; each linked guide carries its own verification date.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Every number in that table has its own page with the full tier list and the fine print: <a href="/en/guides/claude-code-plans-and-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, <a href="/en/guides/codex-plans-and-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex</a>, <a href="/en/guides/kimi-code-plans-and-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi Code</a>, <a href="/en/guides/opencode-plans-and-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">OpenCode</a>, <a href="/en/guides/antigravity-plans-and-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">Antigravity</a> and <a href="/en/guides/cursor-cli-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">Cursor CLI</a>.',
         },
       ],
     },
@@ -178,6 +224,14 @@ The current source of truth is xAI's <a href="https://x.ai/build" target="_blank
     {
       question: 'Does CodeAgentSwarm include Grok usage?',
       answer: 'No. CodeAgentSwarm is the workspace, not a reseller. Model usage is billed by xAI or against your own API key, and running four Grok Build terminals adds no swarm fee beyond your existing allowance.',
+    },
+    {
+      question: 'Is there a Grok Build subscription?',
+      answer: 'Not a standalone one. Grok Build comes with your xAI plan: Free with limited usage, SuperGrok at $30/month and SuperGrok Plus at $100/month, with other individual tiers shown in the live comparison. An xAI API key is the separate pay-per-token route for headless work.',
+    },
+    {
+      question: 'Does Grok Build cost more when several sessions run at once?',
+      answer: 'On a plan there is no extra fee, but the shared account limits arrive faster because each session reads files, runs tools and reasons on its own. On an API key it is a direct cost: Grok 4.6 bills $2 per million input tokens and $6 per million output tokens at the standard context tier, and more above 200K context.',
     },
   ],
 }

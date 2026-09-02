@@ -6,7 +6,7 @@ export const guide: Guide = {
     locale: 'es',
     title: 'Cómo usar Antigravity CLI (agy): instalación, comandos y varias sesiones',
     metaTitle: 'Cómo usar Antigravity CLI (agy): instalación y comandos (2026)',
-    metaDescription: 'Guía completa de Antigravity CLI (el comando agy), el sucesor de Gemini CLI de Google. Qué es, cómo instalarlo, los comandos esenciales y cómo ejecutar varias sesiones en paralelo.',
+    metaDescription: 'agy install en una línea y los comandos esenciales de agy: la guía completa de Antigravity CLI, el sucesor de Gemini CLI, y las sesiones en paralelo.',
     intro: `Si usabas Gemini CLI y fuiste a buscarlo hace poco, ya no estaba. Google retiró Gemini CLI en junio de 2026 y lo reemplazó por Antigravity CLI, el comando <code>agy</code>. Esta guía es el recorrido práctico: qué es Antigravity CLI de verdad, cómo instalarlo en macOS, Linux y Windows, los comandos que usarás cada día y cómo recupera tu configuración antigua de Gemini en el primer arranque.
 
 Antigravity CLI es un único binario compilado, sin runtime de Node ni de Python que gestionar, y trae ocho modelos en el mismo terminal en lugar de uno. Además es multiagente por defecto, así que una sola sesión de agy reparte y coordina sus propios sub-agentes dentro de una tarea en vez de funcionar como un chat lineal.
@@ -16,7 +16,7 @@ Al terminar te manejarás con Antigravity CLI por tu cuenta, y sabrás cómo eje
     ctaAgent: 'antigravity',
     highlightedWords: ['Antigravity CLI', 'agy'],
     publishedAt: '2026-06-29',
-    updatedAt: '2026-06-29',
+    updatedAt: '2026-09-01',
     alternateSlug: 'how-to-use-antigravity-cli',
   },
   sections: [
@@ -73,6 +73,16 @@ Al terminar te manejarás con Antigravity CLI por tu cuenta, y sabrás cómo eje
       id: 'install',
       title: 'Cómo instalar Antigravity CLI',
       content: [
+        {
+          type: 'heading',
+          level: 3,
+          text: 'agy install: la versión corta',
+          id: 'agy-install',
+        },
+        {
+          type: 'paragraph',
+          text: 'En macOS y Linux, ejecuta <code>curl -fsSL https://antigravity.google/cli/install.sh | bash</code>. En Windows, ejecuta <code>irm https://antigravity.google/cli/install.ps1 | iex</code> en PowerShell, que instala el binario en <code>%LOCALAPPDATA%</code>. Después abre un terminal nuevo y ejecuta <code>agy</code>. Eso es todo el agy install: no hay runtime de Node ni de Python que montar antes.',
+        },
         {
           type: 'paragraph',
           text: 'Instalar Antigravity CLI es cosa de una línea en cualquier plataforma. Como es un único binario, no hay ningún runtime que montar antes.',
@@ -282,6 +292,14 @@ Al terminar te manejarás con Antigravity CLI por tu cuenta, y sabrás cómo eje
     {
       question: '¿Cómo instalo Antigravity CLI?',
       answer: 'En macOS y Linux, ejecuta curl -fsSL https://antigravity.google/cli/install.sh | bash. En Windows, ejecuta el instalador de PowerShell con irm https://antigravity.google/cli/install.ps1 | iex, que lo instala en %LOCALAPPDATA%. Es un único binario, así que no hay runtime de Node ni de Python que montar antes. Abre un terminal nuevo después y ejecuta agy para empezar.',
+    },
+    {
+      question: '¿Cómo instalo agy?',
+      answer: 'El agy install es una línea. En macOS y Linux, ejecuta curl -fsSL https://antigravity.google/cli/install.sh | bash. En Windows, ejecuta irm https://antigravity.google/cli/install.ps1 | iex en PowerShell, que deja el binario en %LOCALAPPDATA% sin permisos de administrador. Abre un terminal nuevo para que coja el PATH y ejecuta agy.',
+    },
+    {
+      question: '¿agy y Antigravity CLI son lo mismo?',
+      answer: 'Sí. agy es el comando que tecleas; Antigravity CLI es la herramienta que ejecuta. Google publica Antigravity CLI como un único binario llamado agy, así que "agy install" e "instalar Antigravity CLI" son lo mismo.',
     },
     {
       question: '¿Antigravity CLI es gratis?',

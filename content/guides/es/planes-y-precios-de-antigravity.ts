@@ -4,9 +4,9 @@ export const guide: Guide = {
   meta: {
     slug: 'planes-y-precios-de-antigravity',
     locale: 'es',
-    title: 'Planes y precios de Antigravity: qué te da de verdad el nivel gratuito',
-    metaTitle: 'Precios de Antigravity CLI: Free, Pro y Ultra explicados (2026)',
-    metaDescription: 'Los precios de Antigravity explicados: el nivel gratuito y qué permite de verdad, Google AI Pro y Ultra, el bote de créditos y por qué han recortado los límites gratuitos varias veces.',
+    title: 'Planes y precios de Antigravity: nivel gratuito, límites y agentes en paralelo',
+    metaTitle: 'Precios de Antigravity 2026: Free, Pro, Ultra y límites',
+    metaDescription: 'Precios de Antigravity: nivel gratuito, Plus unos 8 $, Pro 20 $, Ultra 5x 100 $ y 20x 200 $. Y qué le hacen al límite semanal varias sesiones a la vez.',
     intro: `Antigravity no tiene suscripción propia. El acceso viaja dentro de un plan de Google AI y, a 25 de agosto de 2026, eso significa: nivel gratuito, Google AI Plus, Google AI Pro, Google AI Ultra 5x, Google AI Ultra 20x y una vía para organizaciones mediante Google Cloud con precio por consumo.
 
 El nivel gratuito es lo interesante aquí. A diferencia de <a href="/es/guias/planes-y-precios-de-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, que no está en su nivel gratuito en absoluto, el plan gratis de Antigravity te da acceso a varios modelos de frontera, autocompletado ilimitado y peticiones de comando ilimitadas, con límites de frecuencia semanales como única barrera, no funciones capadas. Se puede trabajar de verdad sin pagar.
@@ -16,7 +16,7 @@ Hay una pega que conviene conocer antes de montar un flujo de trabajo encima, y 
     ctaAgent: 'antigravity',
     highlightedWords: ['Antigravity', 'Planes', 'precios'],
     publishedAt: '2026-08-05',
-    updatedAt: '2026-08-25',
+    updatedAt: '2026-09-01',
     alternateSlug: 'antigravity-plans-and-pricing',
   },
   sections: [
@@ -106,6 +106,34 @@ Hay una pega que conviene conocer antes de montar un flujo de trabajo encima, y 
       ],
     },
     {
+      id: 'agentes-paralelos',
+      title: 'Qué le hace al coste ejecutar varias sesiones de Antigravity a la vez',
+      content: [
+        {
+          type: 'paragraph',
+          text: 'Antigravity te mide por límites de frecuencia semanales y no por una factura en marcha, así que los agentes en paralelo no generan una factura mayor. Generan un muro más temprano. Todas las sesiones de agy beben de la misma asignación de la cuenta, de modo que el límite llega en proporción a cuántas estén trabajando de verdad.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Lo que pasa al llegar a ese muro depende de tu plan. Pro y Ultra pueden seguir tirando del bote de créditos, que sigue la tarifa estándar de API y varía según el modelo y la complejidad de la tarea. El nivel gratuito no tiene bote de créditos, así que cuando se agotan los límites semanales todas las sesiones se paran y toca esperar al reinicio.',
+        },
+        {
+          type: 'table',
+          headers: ['Sesiones a la vez', 'Qué esperar', 'Qué vigilar'],
+          rows: [
+            ['1', 'Es más o menos para lo que está dimensionado el nivel gratuito: una persona llevando un agente con cabeza.', 'Poco. Los límites semanales solo se notan en una semana intensa.'],
+            ['2 a 3', 'Los límites de frecuencia semanales llegan entre dos y tres veces antes que con una sola sesión.', 'En el nivel gratuito es donde los límites empiezan a molestar a mitad de sesión, sin créditos a los que recurrir.'],
+            ['4 o más', 'El patrón de agentes en paralelo no es para lo que está dimensionado el nivel gratuito, y se nota dentro de una misma sesión.', 'En Pro y Ultra el exceso cae en créditos, con precio según modelo y complejidad, así que presupuéstalos o sube de nivel.'],
+          ],
+          caption: 'Es una regla aproximada, no una cuota publicada. Google describe el acceso a Antigravity de forma relativa y no como una cifra de peticiones, así que consulta el consumo que muestre tu cuenta.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Cómo repartir el trabajo entre esas sesiones está en <a href="/es/guias/enjambre-de-agentes-antigravity" class="text-neon-cyan hover:text-neon-purple transition-colors">la guía del enjambre de agentes de Antigravity</a>, y el montaje en sí está en <a href="/es/guias/ejecutar-multiples-sesiones-antigravity-cli" class="text-neon-cyan hover:text-neon-purple transition-colors">cómo ejecutar varias sesiones de Antigravity CLI</a>.',
+        },
+      ],
+    },
+    {
       id: 'visibilidad-de-cuota',
       title: 'El problema de visibilidad, y una cosa que rompe',
       content: [
@@ -147,6 +175,24 @@ Hay una pega que conviene conocer antes de montar un flujo de trabajo encima, y 
         {
           type: 'paragraph',
           text: 'La conclusión útil de verdad es que <strong>Antigravity es la mejor opción gratuita y una opción de pago del montón</strong>. Usa el nivel gratuito para evaluar la programación agéntica sin comprometerte a nada, y toma la decisión de pagar por los méritos del agente y no por el precio, porque a 20 $ y 100 $ toda la categoría cobra prácticamente lo mismo.',
+        },
+        {
+          type: 'table',
+          headers: ['Agente', 'Nivel gratuito', 'Pago más barato', 'Nivel individual más alto', 'Cómo te facturan'],
+          rows: [
+            ['Claude Code', 'No (el plan Free no incluye Claude Code)', 'Pro, 20 $/mes', 'Max 20x, 200 $/mes', 'Suscripción con ventanas de 5 horas y semanales; tokens de API opcionales'],
+            ['Codex CLI', 'Limitado', 'Go, 8 $/mes', 'Pro, 200 $/mes', 'Suscripción de ChatGPT compartida con la web y el IDE; tokens de API opcionales'],
+            ['Kimi Code', 'La CLI es gratis, el uso del modelo no', 'Andante, 49 ¥/mes', 'Allegro, 699 ¥/mes', 'Membresía con límites semanales y de 5 horas; API por token'],
+            ['OpenCode', 'La CLI es gratis y de código abierto', 'Ninguno, pago por uso', 'Ninguno', 'Tu propia clave de proveedor, o saldo prepago por token en OpenCode Zen'],
+            ['Antigravity', 'Sí, con límites de frecuencia semanales', 'Google AI Plus, unos 8 $/mes', 'Google AI Ultra 20x, 200 $/mes', 'Plan de Google AI con límites de frecuencia y créditos'],
+            ['Grok Build', 'Sí, con uso limitado', 'SuperGrok, 30 $/mes', 'SuperGrok Plus, 100 $/mes', 'Límites del plan de xAI; API por token'],
+            ['Cursor Agent', 'Hobby, gratis', 'Pro, 20 $/mes', 'Ultra, 200 $/mes', 'Plan de Cursor con pozos de uso por modelo'],
+          ],
+          caption: 'Niveles de entrada y superiores de cada CLI de agente, verificados el 25 de agosto de 2026. Los precios cambian a menudo; cada guía enlazada lleva su propia fecha de verificación.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Cada cifra de esa tabla tiene su propia página con la lista completa de niveles y la letra pequeña: <a href="/es/guias/planes-y-precios-de-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, <a href="/es/guias/planes-y-precios-de-codex" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex</a>, <a href="/es/guias/planes-y-precios-de-kimi-code" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi Code</a>, <a href="/es/guias/planes-y-precios-de-opencode" class="text-neon-cyan hover:text-neon-purple transition-colors">OpenCode</a>, <a href="/es/guias/precios-y-acceso-grok-build" class="text-neon-cyan hover:text-neon-purple transition-colors">Grok Build</a> y <a href="/es/guias/precios-y-uso-cursor-cli" class="text-neon-cyan hover:text-neon-purple transition-colors">Cursor CLI</a>.',
         },
       ],
     },
@@ -193,6 +239,18 @@ Hay una pega que conviene conocer antes de montar un flujo de trabajo encima, y 
     {
       question: '¿Antigravity es más barato que Claude Code?',
       answer: 'En el nivel gratuito, rotundamente sí, porque Claude Code no tiene nivel gratuito. En los niveles de pago los dos cuestan prácticamente lo mismo (20 $ y 100 $), así que la decisión debería ir sobre los modelos y el agente, no sobre la factura.',
+    },
+    {
+      question: '¿Qué planes tiene Antigravity?',
+      answer: 'No existe una suscripción a Antigravity. El acceso viaja dentro de un plan de Google AI: gratis, Plus por unos 8 $/mes, Pro por 20 $/mes, Ultra 5x por 100 $/mes y Ultra 20x por 200 $/mes, más una vía para organizaciones por Google Cloud con precio por consumo. Google no publica esos precios en la propia página de Antigravity, así que verifícalos en tu cuenta antes de pagar.',
+    },
+    {
+      question: '¿Necesito Google AI Pro para usar Antigravity CLI (agy)?',
+      answer: 'No. El nivel gratuito ya da acceso a varios modelos de frontera, autocompletado ilimitado y peticiones de comando ilimitadas, con límites de frecuencia semanales como única barrera en vez de funciones capadas. Pro sube esos límites y añade el bote de créditos que te deja seguir trabajando más allá de la cuota incluida.',
+    },
+    {
+      question: '¿Qué le pasa al límite cuando ejecuto varias sesiones de agy a la vez?',
+      answer: 'Todas beben de la misma asignación de la cuenta, así que los límites de frecuencia semanales llegan antes en proporción a cuántas sesiones estén realmente ocupadas. En Pro y Ultra el exceso pasa a créditos. En el nivel gratuito no hay bote de créditos, así que todas las sesiones se paran hasta que el límite se reinicie.',
     },
   ],
 }

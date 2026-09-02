@@ -5,8 +5,8 @@ export const guide: Guide = {
     slug: 'antigravity-yolo-mode',
     locale: 'en',
     title: 'Antigravity YOLO Mode: How --dangerously-skip-permissions Really Works',
-    metaTitle: 'Antigravity CLI YOLO Mode Explained (2026)',
-    metaDescription: 'How to run Antigravity CLI in YOLO mode with --dangerously-skip-permissions, what it actually skips, when it is worth it, and how to contain the blast radius.',
+    metaTitle: 'Antigravity (agy) YOLO Mode: Skip Permissions Explained (2026)',
+    metaDescription: 'How to run agy with --dangerously-skip-permissions, what the flag actually skips, when YOLO mode is worth it, and how to contain the blast radius.',
     intro: `Antigravity's YOLO mode is one flag: <code>agy --dangerously-skip-permissions</code>. It turns off the confirmation prompt on every action the agent takes, so <code>agy</code> stops asking and just runs.
 
 The name is not marketing. Google could have called it auto-approve, and other vendors do, but the flag is deliberately spelled out so you cannot type it by accident or leave it in a script without noticing. That honesty is worth respecting: this is the mode where the agent edits, deletes, installs and executes without a checkpoint.
@@ -16,7 +16,7 @@ This guide covers what the flag actually skips, why it changes how fast Antigrav
     ctaAgent: 'antigravity',
     highlightedWords: ['Antigravity', 'YOLO', 'Mode'],
     publishedAt: '2026-08-05',
-    updatedAt: '2026-08-05',
+    updatedAt: '2026-09-01',
     alternateSlug: 'modo-yolo-antigravity',
   },
   sections: [
@@ -24,6 +24,16 @@ This guide covers what the flag actually skips, why it changes how fast Antigrav
       id: 'the-flag',
       title: 'The flag, and what it actually does',
       content: [
+        {
+          type: 'heading',
+          level: 3,
+          text: 'agy --dangerously-skip-permissions: what the flag skips',
+          id: 'agy-skip-permissions',
+        },
+        {
+          type: 'paragraph',
+          text: '<code>agy --dangerously-skip-permissions</code> skips the confirmation prompt on every action that changes something: writing a file, deleting one, running a shell command, installing a dependency. agy stops asking and just runs. It is the same agent making the same decisions, so what the flag removes is your veto, not the agent\'s caution.',
+        },
         {
           type: 'code',
           language: 'bash',
@@ -173,6 +183,14 @@ This guide covers what the flag actually skips, why it changes how fast Antigrav
     {
       question: 'Is --dangerously-skip-permissions safe?',
       answer: 'It is as safe as your ability to undo it. Commit before you start so the agent output is a reviewable diff, give each agent its own git worktree so parallel sessions cannot collide, and keep the task tightly scoped. Do not use it on infrastructure, credentials, production, or a codebase you cannot review by reading the diff.',
+    },
+    {
+      question: 'How do I run agy with --dangerously-skip-permissions?',
+      answer: 'Type the flag in full when you start the session: agy --dangerously-skip-permissions. From then on agy auto-approves every action for that run. Commit before you start so the output is a reviewable diff, keep the task tightly scoped, and give each parallel session its own git worktree.',
+    },
+    {
+      question: 'Is there an agy skip permissions flag?',
+      answer: 'Yes, and --dangerously-skip-permissions is all of it. There is no shorter option: the flag is spelled out on purpose so you cannot type it by accident or leave it in a script without noticing. It skips the approval prompt on file writes, deletions, shell commands and installs.',
     },
     {
       question: 'Why does the flag have such an alarming name?',

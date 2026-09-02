@@ -4,9 +4,9 @@ export const guide: Guide = {
   meta: {
     slug: 'antigravity-plans-and-pricing',
     locale: 'en',
-    title: 'Antigravity Plans and Pricing: What the Free Tier Really Gives You',
-    metaTitle: 'Antigravity CLI Pricing: Free, Pro and Ultra Explained (2026)',
-    metaDescription: 'Antigravity pricing explained: the free tier and what it actually allows, Google AI Pro and Ultra, the credit pool, and why the free limits have been cut repeatedly.',
+    title: 'Antigravity Plans and Pricing: Free Tier, Rate Limits and Parallel Agents',
+    metaTitle: 'Antigravity Pricing 2026: Free, Pro, Ultra and Rate Limits',
+    metaDescription: 'Antigravity pricing: free tier, Plus around $8, Pro $20, Ultra 5x $100, 20x $200. Plus what several agy sessions at once do to the weekly limit.',
     intro: `Antigravity does not have its own subscription. Access rides on a Google AI plan, and as of August 25, 2026 that means: a free tier, Google AI Plus, Google AI Pro, Google AI Ultra 5x, Google AI Ultra 20x, and an organisation route through Google Cloud with consumption-based pricing.
 
 The free tier is the story here. Unlike <a href="/en/guides/claude-code-plans-and-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, which is not on its free tier at all, Antigravity's free plan gives you access to multiple frontier models, unlimited tab completions and unlimited command requests, gated by weekly rate limits rather than by feature. You can do real work on it without paying.
@@ -16,7 +16,7 @@ There is a catch worth knowing before you build a workflow around it, and it is 
     ctaAgent: 'antigravity',
     highlightedWords: ['Antigravity', 'Plans', 'Pricing'],
     publishedAt: '2026-08-05',
-    updatedAt: '2026-08-25',
+    updatedAt: '2026-09-01',
     alternateSlug: 'planes-y-precios-de-antigravity',
   },
   sections: [
@@ -106,6 +106,34 @@ There is a catch worth knowing before you build a workflow around it, and it is 
       ],
     },
     {
+      id: 'parallel-agents',
+      title: 'What running several Antigravity sessions at once does to the cost',
+      content: [
+        {
+          type: 'paragraph',
+          text: 'Antigravity meters you on weekly rate limits rather than on a running bill, so parallel agents do not produce a bigger invoice. They produce an earlier wall. Every agy session draws from the same account allowance, so the limit arrives in proportion to how many of them are actually working.',
+        },
+        {
+          type: 'paragraph',
+          text: 'What happens at that wall depends on your plan. Pro and Ultra can keep going on the credit pool, which follows standard API pricing and varies by model and task complexity. The free tier has no credit pool at all, so when the weekly limits are exhausted every session stops and you wait for the reset.',
+        },
+        {
+          type: 'table',
+          headers: ['Sessions at once', 'What to expect', 'What to watch'],
+          rows: [
+            ['1', 'This is roughly what the free tier is sized for: one person driving one agent thoughtfully.', 'Little. You feel the weekly rate limits only in a heavy week.'],
+            ['2 to 3', 'The weekly rate limits arrive around two to three times sooner than with a single session.', 'On the free tier this is where the limits start to bite mid-session, with no credits to fall back on.'],
+            ['4 or more', 'The parallel-agent pattern is not what the free tier is sized for, and you notice it inside a single session.', 'On Pro and Ultra the overflow lands on credits priced by model and task complexity, so budget for them or move up a tier.'],
+          ],
+          caption: 'A rule of thumb, not a published quota. Google describes Antigravity access relatively rather than as a request count, so check the usage shown in your own account.',
+        },
+        {
+          type: 'paragraph',
+          text: 'How to split work across those sessions is in <a href="/en/guides/antigravity-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">the Antigravity agent swarm guide</a>, and the setup itself is in <a href="/en/guides/run-multiple-antigravity-cli-sessions" class="text-neon-cyan hover:text-neon-purple transition-colors">how to run multiple Antigravity CLI sessions</a>.',
+        },
+      ],
+    },
+    {
       id: 'quota-visibility',
       title: 'The visibility problem, and one thing it breaks',
       content: [
@@ -147,6 +175,24 @@ There is a catch worth knowing before you build a workflow around it, and it is 
         {
           type: 'paragraph',
           text: 'The genuinely useful takeaway is that <strong>Antigravity is the best free option and a middling paid one</strong>. Use the free tier to evaluate agentic coding without committing to anything, and make the paid decision on the merits of the agent rather than on price, because at $20 and $100 the whole category charges roughly the same.',
+        },
+        {
+          type: 'table',
+          headers: ['Agent', 'Free tier', 'Cheapest paid', 'Top individual tier', 'How you are billed'],
+          rows: [
+            ['Claude Code', 'No (Free plan has no Claude Code)', 'Pro, $20/month', 'Max 20x, $200/month', 'Subscription with 5 hour and weekly windows; API tokens optional'],
+            ['Codex CLI', 'Limited', 'Go, $8/month', 'Pro, $200/month', 'ChatGPT subscription shared with web and IDE; API tokens optional'],
+            ['Kimi Code', 'CLI is free, model usage is not', 'Andante, ¥49/month', 'Allegro, ¥699/month', 'Membership with weekly and 5 hour limits; API per token'],
+            ['OpenCode', 'CLI is free and open source', 'None, pay as you go', 'None', 'Your own provider key, or OpenCode Zen prepaid per token'],
+            ['Antigravity', 'Yes, with weekly rate limits', 'Google AI Plus, around $8/month', 'Google AI Ultra 20x, $200/month', 'Google AI plan with rate limits and credits'],
+            ['Grok Build', 'Yes, limited usage', 'SuperGrok, $30/month', 'SuperGrok Plus, $100/month', 'xAI plan rate limits; API per token'],
+            ['Cursor Agent', 'Hobby, free', 'Pro, $20/month', 'Ultra, $200/month', 'Cursor plan with usage pools per model'],
+          ],
+          caption: 'Entry and top tiers per agent CLI, all verified August 25, 2026. Prices change often; each linked guide carries its own verification date.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Every number in that table has its own page with the full tier list and the fine print: <a href="/en/guides/claude-code-plans-and-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, <a href="/en/guides/codex-plans-and-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex</a>, <a href="/en/guides/kimi-code-plans-and-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi Code</a>, <a href="/en/guides/opencode-plans-and-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">OpenCode</a>, <a href="/en/guides/grok-build-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">Grok Build</a> and <a href="/en/guides/cursor-cli-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">Cursor CLI</a>.',
         },
       ],
     },
@@ -193,6 +239,18 @@ There is a catch worth knowing before you build a workflow around it, and it is 
     {
       question: 'Is Antigravity cheaper than Claude Code?',
       answer: 'At the free tier, decisively yes, because Claude Code has no free tier. At the paid tiers the two are priced almost identically ($20 and $100), so the decision should be about the models and the agent rather than the bill.',
+    },
+    {
+      question: 'What are the Antigravity plans?',
+      answer: 'There is no Antigravity subscription. Access rides on a Google AI plan: free, Plus at around $8/month, Pro at $20/month, Ultra 5x at $100/month and Ultra 20x at $200/month, plus an organisation route through Google Cloud priced by consumption. Google does not publish these prices on the Antigravity page itself, so verify them in your Google account before paying.',
+    },
+    {
+      question: 'Do I need Google AI Pro to use Antigravity CLI (agy)?',
+      answer: 'No. The free tier already gives access to multiple frontier models, unlimited tab completions and unlimited command requests, gated by weekly rate limits rather than by feature. Pro raises those limits and adds the credit pool that lets you keep working past the included quota.',
+    },
+    {
+      question: 'What happens to the rate limit when I run several agy sessions at once?',
+      answer: 'They all draw from the same account allowance, so the weekly rate limits arrive sooner in proportion to how many sessions are actually busy. On Pro and Ultra the overflow goes to credits. On the free tier there is no credit pool, so every session stops until the limit resets.',
     },
   ],
 }

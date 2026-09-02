@@ -5,7 +5,7 @@ export const guide: Guide = {
     slug: 'modo-yolo-antigravity',
     locale: 'es',
     title: 'Modo YOLO de Antigravity: cómo funciona de verdad --dangerously-skip-permissions',
-    metaTitle: 'Modo YOLO de Antigravity CLI explicado (2026)',
+    metaTitle: 'Modo YOLO de Antigravity (agy): saltar permisos (2026)',
     metaDescription: 'Cómo ejecutar Antigravity CLI en modo YOLO con --dangerously-skip-permissions, qué se salta en realidad, cuándo compensa y cómo acotar el radio de daño.',
     intro: `El modo YOLO de Antigravity es un flag: <code>agy --dangerously-skip-permissions</code>. Desactiva la confirmación en cada acción que toma el agente, así que <code>agy</code> deja de preguntar y simplemente ejecuta.
 
@@ -16,7 +16,7 @@ Esta guía cubre qué se salta el flag en realidad, por qué cambia lo rápido q
     ctaAgent: 'antigravity',
     highlightedWords: ['Antigravity', 'modo', 'YOLO'],
     publishedAt: '2026-08-05',
-    updatedAt: '2026-08-05',
+    updatedAt: '2026-09-01',
     alternateSlug: 'antigravity-yolo-mode',
   },
   sections: [
@@ -24,6 +24,16 @@ Esta guía cubre qué se salta el flag en realidad, por qué cambia lo rápido q
       id: 'el-flag',
       title: 'El flag, y qué hace en realidad',
       content: [
+        {
+          type: 'heading',
+          level: 3,
+          text: 'agy --dangerously-skip-permissions: qué salta la bandera',
+          id: 'agy-skip-permissions',
+        },
+        {
+          type: 'paragraph',
+          text: '<code>agy --dangerously-skip-permissions</code> se salta la confirmación en cada acción que cambia algo: escribir un fichero, borrarlo, ejecutar un comando de shell, instalar una dependencia. agy deja de preguntar y simplemente ejecuta. Es el mismo agente tomando las mismas decisiones, así que lo que quita la bandera es tu derecho a veto, no la prudencia del agente.',
+        },
         {
           type: 'code',
           language: 'bash',
@@ -173,6 +183,14 @@ Esta guía cubre qué se salta el flag en realidad, por qué cambia lo rápido q
     {
       question: '¿Es seguro --dangerously-skip-permissions?',
       answer: 'Es tan seguro como tu capacidad de deshacerlo. Haz commit antes de empezar para que la salida del agente sea un diff revisable, dale a cada agente su propio worktree de git para que las sesiones en paralelo no choquen, y mantén la tarea bien acotada. No lo uses en infraestructura, credenciales, producción, ni en un código que no puedas revisar leyendo el diff.',
+    },
+    {
+      question: '¿Cómo ejecuto agy con --dangerously-skip-permissions?',
+      answer: 'Teclea la bandera entera al iniciar la sesión: agy --dangerously-skip-permissions. A partir de ahí agy aprueba automáticamente cada acción de esa tirada. Haz commit antes de empezar para que la salida sea un diff revisable, mantén la tarea bien acotada y dale a cada sesión en paralelo su propio worktree de git.',
+    },
+    {
+      question: '¿Existe una bandera agy skip permissions?',
+      answer: 'Sí, y es --dangerously-skip-permissions, no hay otra. No existe una opción más corta: la bandera está escrita así a propósito para que no puedas teclearla por accidente ni dejarla en un script sin enterarte. Se salta la confirmación al escribir ficheros, borrarlos, ejecutar comandos de shell e instalar dependencias.',
     },
     {
       question: '¿Por qué el flag tiene un nombre tan alarmante?',

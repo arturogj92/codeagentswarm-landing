@@ -1,6 +1,6 @@
 # SEO status
 
-Last updated: 2026-08-31
+Last updated: 2026-09-01
 
 Release state: the August 31 conversion, comparison and media changes passed production validation. Start post-release measurement only after the master deployment reports success.
 
@@ -65,13 +65,27 @@ The detailed evidence and decisions live in [the August 23 growth and conversion
 - Made below-fold instructional videos user-initiated with metadata-only preload; the early intent-matched product block is unchanged.
 - Confirmed from current [Vercel Bot Management documentation](https://vercel.com/docs/bot-management) that Bot Protection and Attack Challenge Mode exclude verified bots. Recent Search Console crawling shows Google can reach the site, so no firewall weakening was justified. The current dashboard session cannot access the production project, so project traffic logs were not inspected.
 
+## September 1 pricing and query-match pass
+
+Arturo asked to push the pricing cluster now instead of waiting for the September 9 snippet review, so the snippet-stability guardrail was lifted for these pages only. Evidence from the September 1 Search Console export (92 days to August 29): every pricing query sat in positions 8 to 9 with CTR near 0.1% (`claude code pricing` 9,146 impressions, 13 clicks; `claude pricing` 7,628 / 8; `claude plans` 4,828 / 3; `kimi coding plan` 4,561 / 9), and the seven English pricing guides together held about 330,000 impressions for about 1,350 clicks. The AI Overview already answers the official price table, so the pages now lead with what it does not: which tier survives several sessions running together, and one cross-agent comparison table shared by all seven pricing guides, which also turns the cluster into a linked hub.
+
+Changed, English and Spanish, 22 files, all `updatedAt: 2026-09-01`:
+
+- Seven pricing guides: keyword-first `metaTitle` under 62 characters, `metaDescription` with prices first and the parallel-agent hook second, a new sessions table framed as a rule of thumb, the shared cross-agent table with links to the other six pricing guides, and FAQ entries that match the exact queries (`claude subscription`, `claude plans`, `codex plans`, `kimi coding plan`, `kimi token plan`, `kimi subscription`, `kimi moderato limits`, `antigravity plans`). No figure was added that the guides did not already carry; all facts keep the August 25, 2026 verification date.
+- Antigravity how-to and YOLO guides, OpenCode YOLO and history guides: an H3 plus first-sentence answer and FAQ entries matching `agy install`, `agy --dangerously-skip-permissions`, `opencode bypass permissions` and `opencode resume session`, which already ranked in positions 3 to 6 without containing the words.
+- `public/llms.txt` titles resynced for the 18 guides whose `metaTitle` changed. That file is maintained by hand and had drifted before this pass.
+
+Authority actions the same day: the four listicle pitches were sent (see `listicle-outreach.md`) and reminders were posted on awesome-ai-devtools PR 759 and awesome-agent-orchestrators PR 142.
+
+Measure from September 15 onward: pricing cluster CTR and position per page and per query against the figures above; `agy` and `opencode` query CTR; whether the cross links move the weakest pricing pages (Grok, position 9.8; Cursor, position 6.3 with 954 impressions).
+
 ## Open priorities
 
 1. Measure the inline guide CTA after 14 complete post-deployment days. Its Aug 24-30 baseline is 18 / 6,034 pageviews, or 0.298%; the initial success threshold is at least 0.358% without reducing total guide conversion below 1.177%.
 2. Review the aggregate installation funnel after cohorts mature. Do not invent person-level acquisition attribution without a separate privacy decision.
-3. Keep the high-impression snippets stable until the full September 9 Search Console review.
+3. Keep the high-impression non-pricing snippets stable until the full September 9 Search Console review. The pricing cluster was already rewritten on September 1; judge it from September 15.
 4. Export Search Console query-by-page data before consolidating similar guides.
-5. After explicit approval, send the four revalidated editorial pitches and the two prepared GitHub reminders, then record accepted links and their attributes. Keep Zevyn and the AI-assisted DEV draft on hold.
+5. The four editorial pitches and the two GitHub reminders went out on September 1. Record accepted links and their attributes; one follow-up between September 11 and 15 at most. Keep Zevyn and the AI-assisted DEV draft on hold.
 6. Inspect production Vercel firewall logs with the owning account only if verified-bot crawling or indexing declines. Do not add a broad bypass based on generic curl challenges.
 7. Revisit the remaining homepage video and lower-frequency screenshots only if real-user performance data shows they are still a bottleneck.
 8. Design a localized lead capture for Spanish traffic, which currently converts better in guides but records no email leads.

@@ -5,8 +5,8 @@ export const guide: Guide = {
     slug: 'historial-conversaciones-opencode',
     locale: 'es',
     title: 'Historial de conversaciones de OpenCode: cómo encontrarlo y retomarlo',
-    metaTitle: 'Historial de conversaciones de OpenCode: ver y retomar sesiones (2026)',
-    metaDescription: 'Encuentra el historial de conversaciones de opencode, retoma la última sesión con --continue o una concreta con --session, y busca cualquier conversación de opencode por palabra clave entre proyectos.',
+    metaTitle: 'Historial de OpenCode: retomar sesiones y buscar (2026)',
+    metaDescription: 'opencode resume session en dos comandos: --continue para la última y --session para una concreta. Y búsqueda por palabra clave en todo tu historial.',
     intro: `opencode guarda un historial de tus sesiones. Cada conversación se almacena en local mientras trabajas, y puedes retomar una anterior para continuar donde lo dejaste. Retoma la sesión más reciente con \`opencode --continue\`, o salta directamente a una concreta con \`opencode --session <id>\`. Solo eso ya te ahorra tener que explicarle el mismo módulo a opencode una y otra vez.
 
 La limitación aparece cuando acumulas decenas de sesiones de opencode repartidas en varios proyectos. El historial nativo está bien para continuar tu última conversación, pero no tiene búsqueda por contenido, no muestra de qué iba realmente cada sesión y te obliga a recordar ids de sesión para llegar a cualquier cosa más allá de la última.
@@ -16,7 +16,7 @@ En resumen: tu historial de opencode ya está en tu máquina y puedes retomarlo.
     ctaAgent: 'opencode',
     highlightedWords: ['historial', 'OpenCode', 'retomar'],
     publishedAt: '2026-07-05',
-    updatedAt: '2026-07-05',
+    updatedAt: '2026-09-01',
     alternateSlug: 'opencode-conversation-history',
   },
   sections: [
@@ -51,8 +51,14 @@ En resumen: tu historial de opencode ya está en tu máquina y puedes retomarlo.
       title: 'Historial y resume nativo de opencode',
       content: [
         {
+          type: 'heading',
+          level: 3,
+          text: 'opencode resume session: los dos comandos',
+          id: 'opencode-resume-session',
+        },
+        {
           type: 'paragraph',
-          text: 'opencode almacena tus sesiones en tu máquina mientras trabajas, así que una conversación no se pierde en cuanto cierras el terminal. A diferencia de otros agentes, opencode incluye comandos de resume claros, así que no tienes que adivinar flags: continúa tu sesión más reciente o abre una concreta por su id.',
+          text: 'Retomas una sesión de opencode con uno de dos comandos. Para retomar la última sesión, ejecuta <code>opencode --continue</code> (forma corta <code>-c</code>), que recupera tu conversación más reciente justo donde paraste. Para retomar una más antigua, ejecuta <code>opencode --session &lt;session-id&gt;</code> (forma corta <code>-s</code>) con su id.',
         },
         {
           type: 'code',
@@ -62,6 +68,10 @@ opencode --continue    # forma corta: -c
 
 # Retoma una sesión concreta por su id
 opencode --session <session-id>    # forma corta: -s`,
+        },
+        {
+          type: 'paragraph',
+          text: 'opencode almacena tus sesiones en tu máquina mientras trabajas, así que una conversación no se pierde en cuanto cierras el terminal. A diferencia de otros agentes, opencode incluye comandos de resume claros, así que no tienes que adivinar flags: continúa tu sesión más reciente o abre una concreta por su id.',
         },
         {
           type: 'paragraph',
@@ -276,6 +286,14 @@ opencode --session <session-id>    # forma corta: -s`,
     {
       question: '¿Cómo retomo una sesión anterior de opencode?',
       answer: 'Ejecuta opencode --continue (forma corta -c) para retomar tu sesión más reciente, o opencode --session <id> (forma corta -s) para retomar una concreta por su id. En CodeAgentSwarm abres la vista de Historial o el modo retomar, encuentras la conversación y la reabres en cualquier terminal con su contexto previo cargado.',
+    },
+    {
+      question: '¿Cómo retomo la última sesión de opencode?',
+      answer: 'Ejecuta opencode --continue, o su forma corta opencode -c, en el proyecto donde corrió la sesión. Reabre tu conversación más reciente con el contexto que acumuló, así que sigues donde paraste en vez de volver a explicar el mismo módulo.',
+    },
+    {
+      question: '¿Cuál es el comando de resume de opencode?',
+      answer: 'Son dos: opencode --continue (-c) retoma tu sesión más reciente, y opencode --session <id> (-s) retoma una concreta por su id. El segundo necesita el id, que es justo la parte incómoda cuando acumulas muchas sesiones en varios proyectos.',
     },
     {
       question: '¿Dónde se guarda el historial de opencode?',

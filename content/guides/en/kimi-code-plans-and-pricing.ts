@@ -4,9 +4,9 @@ export const guide: Guide = {
   meta: {
     slug: 'kimi-code-plans-and-pricing',
     locale: 'en',
-    title: 'Kimi Code Pricing: Monthly, Annual and API Costs',
-    metaTitle: 'Kimi Code Pricing: Monthly, Annual & API Costs (2026)',
-    metaDescription: 'Compare current Kimi membership tiers, K3 access, weekly and 5-hour limits, plus K3 and K2.7 Code API prices per million tokens.',
+    title: 'Kimi Code Pricing: Every Plan, the Limits, and What Parallel Agents Cost',
+    metaTitle: 'Kimi Code Pricing 2026: Coding Plan, Limits and API Cost',
+    metaDescription: 'Andante ¥49, Moderato ¥99, Allegretto ¥199, Allegro ¥699, plus API per token. And what the official table skips: what happens with several agents at once.',
     intro: `As of August 25, 2026, Kimi's official membership table has four tiers: Andante at ¥49/month, Moderato at ¥99, Allegretto at ¥199 and Allegro at ¥699. Every tier includes Kimi Code. K3 starts at Moderato, while Allegretto and higher unlock up to a one-million-token context in Kimi Code.
 
 There is also a pay-per-token route through Kimi Open Platform. Its current public rates are ¥2 cached input, ¥20 uncached input and ¥100 output per million tokens for K3. K2.7 Code costs ¥1.30 cached input, ¥6.50 uncached input and ¥27 output per million tokens.
@@ -16,7 +16,7 @@ This guide separates those two billing systems and links every changing number t
     ctaAgent: 'kimi-code',
     highlightedWords: ['Kimi Code', 'Pricing'],
     publishedAt: '2026-07-18',
-    updatedAt: '2026-08-25',
+    updatedAt: '2026-09-01',
     alternateSlug: 'planes-y-precios-de-kimi-code',
   },
   sections: [
@@ -68,6 +68,30 @@ This guide separates those two billing systems and links every changing number t
       ],
     },
     {
+      id: 'parallel-agents',
+      title: 'Which plan you need when several Kimi Code sessions run at once',
+      content: [
+        {
+          type: 'paragraph',
+          text: 'Kimi does not publish a session count per tier, so nobody can honestly tell you that Moderato equals a fixed number of agents. What Kimi does publish is the shape of the limits: a monthly credit pool shared with the other membership features, a weekly Kimi Code allowance and a 5 hour rate limit. That shape is enough to predict which ceiling you meet first.',
+        },
+        {
+          type: 'table',
+          headers: ['Sessions at once', 'What to expect', 'What to watch'],
+          rows: [
+            ['1 session', 'The 5 hour rate limit rarely gets in the way', 'The shared monthly credit pool, since Kimi Work, Deep Research and Slides draw from the same one'],
+            ['2 to 3 sessions', 'The 5 hour limit starts to bite before the month ends, since parallel terminals reach it faster than one', 'Run /usage between tasks, and prefer the k3-256k option for routine work because it uses less quota'],
+            ['4 or more sessions', 'Expect the weekly Kimi Code allowance to matter as much as the 5 hour one', 'The HighSpeed K2.7 Code variant consumes roughly three times the quota, so keep it off bulk work'],
+          ],
+          caption: 'Kimi publishes no fixed session count per tier. This is the shape of the limits as documented on August 25, 2026; the live /usage view on your account is the final authority.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Because consumption is measured in credits rather than requests, moving up a tier buys you a bigger pool, not a documented number of parallel agents. The practical setup is in <a href="/en/guides/run-multiple-kimi-code-sessions" class="text-neon-cyan hover:text-neon-purple transition-colors">run multiple Kimi Code sessions</a>, and the wider workflow in <a href="/en/guides/kimi-code-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">the Kimi Code agent swarm guide</a>.',
+        },
+      ],
+    },
+    {
       id: 'current-model',
       title: 'Current Kimi Code models and context windows',
       content: [
@@ -108,6 +132,34 @@ This guide separates those two billing systems and links every changing number t
         {
           type: 'paragraph',
           text: 'If you specifically want to route the separate K3 model through an Anthropic-compatible client, see <a href="/en/guides/kimi-k3-with-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi K3 with Claude Code</a>. Its model, limits and prices should not be mixed with the K2.7 Code figures above.',
+        },
+      ],
+    },
+    {
+      id: 'compare-across-agents',
+      title: 'How Kimi Code pricing compares with the other agent CLIs',
+      content: [
+        {
+          type: 'paragraph',
+          text: 'A price only means something next to the alternatives. Kimi is published in yuan and sits low at the entry level, with an open source CLI you can install before paying anything, and it is one of the few that never publishes a fixed request count. Here is the whole category, one line each, checked on the same day.',
+        },
+        {
+          type: 'table',
+          headers: ['Agent', 'Free tier', 'Cheapest paid', 'Top individual tier', 'How you are billed'],
+          rows: [
+            ['Claude Code', 'No (Free plan has no Claude Code)', 'Pro, $20/month', 'Max 20x, $200/month', 'Subscription with 5 hour and weekly windows; API tokens optional'],
+            ['Codex CLI', 'Limited', 'Go, $8/month', 'Pro, $200/month', 'ChatGPT subscription shared with web and IDE; API tokens optional'],
+            ['Kimi Code', 'CLI is free, model usage is not', 'Andante, ¥49/month', 'Allegro, ¥699/month', 'Membership with weekly and 5 hour limits; API per token'],
+            ['OpenCode', 'CLI is free and open source', 'None, pay as you go', 'None', 'Your own provider key, or OpenCode Zen prepaid per token'],
+            ['Antigravity', 'Yes, with weekly rate limits', 'Google AI Plus, around $8/month', 'Google AI Ultra 20x, $200/month', 'Google AI plan with rate limits and credits'],
+            ['Grok Build', 'Yes, limited usage', 'SuperGrok, $30/month', 'SuperGrok Plus, $100/month', 'xAI plan rate limits; API per token'],
+            ['Cursor Agent', 'Hobby, free', 'Pro, $20/month', 'Ultra, $200/month', 'Cursor plan with usage pools per model'],
+          ],
+          caption: 'Entry and top tiers per agent CLI, all verified August 25, 2026. Prices change often; each linked guide carries its own verification date.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Each row has its own guide with the full ladder and the quota mechanics behind it: <a href="/en/guides/claude-code-plans-and-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, <a href="/en/guides/codex-plans-and-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex CLI</a>, <a href="/en/guides/opencode-plans-and-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">OpenCode</a>, <a href="/en/guides/antigravity-plans-and-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">Antigravity</a>, <a href="/en/guides/grok-build-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">Grok Build</a> and <a href="/en/guides/cursor-cli-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">Cursor Agent</a>.',
         },
       ],
     },
@@ -164,6 +216,22 @@ This guide separates those two billing systems and links every changing number t
     {
       question: 'How much do Kimi K3 and K2.7 Code cost through the API?',
       answer: 'Kimi Open Platform lists K3 at ¥2 cached input, ¥20 input and ¥100 output per million tokens. K2.7 Code is ¥1.30 cached input, ¥6.50 input and ¥27 output.',
+    },
+    {
+      question: 'What is the Kimi coding plan?',
+      answer: 'There is no separate coding plan to buy. Kimi Code is included in all four membership tiers: Andante at ¥49/month, Moderato at ¥99, Allegretto at ¥199 and Allegro at ¥699. K3 starts at Moderato, and Allegretto or higher unlocks the up-to-1M context in Kimi Code.',
+    },
+    {
+      question: 'What is the Kimi token plan?',
+      answer: 'That is the pay-per-token route through Kimi Open Platform, billed by usage instead of a membership. As of August 25, 2026 K3 costs ¥2 cached input, ¥20 uncached input and ¥100 output per million tokens, and K2.7 Code costs ¥1.30, ¥6.50 and ¥27. It has no flat monthly ceiling, so set a platform budget first.',
+    },
+    {
+      question: 'Which Kimi subscription do I need for Kimi Code?',
+      answer: 'Any of the four paid tiers includes it. Andante at ¥49 gives you K2.7 Code, Moderato at ¥99 adds K3 up to 256K context, and Allegretto at ¥199 or Allegro at ¥699 unlock K3 up to 1M. Kimi does not publish how many parallel sessions each tier supports, so check /usage on your own account.',
+    },
+    {
+      question: 'What are the Kimi Moderato limits?',
+      answer: 'Moderato costs ¥99 per month and includes Kimi Code with K3 up to 256K context. Like every tier it is metered by a monthly credit pool shared with the other membership features, plus a weekly Kimi Code allowance and a 5 hour rate limit. Kimi publishes no request count for it, so run /usage inside Kimi Code to see where your account stands.',
     },
   ],
 }

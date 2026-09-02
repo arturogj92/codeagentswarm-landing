@@ -4,9 +4,9 @@ export const guide: Guide = {
   meta: {
     slug: 'opencode-plans-and-pricing',
     locale: 'en',
-    title: 'OpenCode Plans and Pricing: The One With No Subscription',
-    metaTitle: 'OpenCode Pricing: BYOK, Zen and Real Costs (2026)',
-    metaDescription: 'OpenCode pricing explained: the CLI is free and open source, bring your own key costs whatever your provider charges, and OpenCode Zen is pay-as-you-go with no monthly fee.',
+    title: 'OpenCode Plans and Pricing: No Subscription, and What Parallel Agents Cost',
+    metaTitle: 'OpenCode Pricing 2026: Free CLI, Zen, BYOK and Real Cost',
+    metaDescription: 'OpenCode CLI is free and open source, Zen is pay per token with no monthly fee. Plus what running several agents at once does to your bill.',
     intro: `OpenCode is the odd one out in this category, and the short answer is genuinely short: <strong>there is no subscription and there is no monthly fee</strong>. The CLI is free and open source. You either bring your own API key from any provider, in which case that provider bills you directly and OpenCode takes nothing, or you use OpenCode Zen, a gateway with pay-as-you-go per-token pricing and no markup on requests.
 
 That means there is no plan table to compare, no 5 hour window, no weekly cap and no tier to outgrow. There is also no ceiling: OpenCode will never stop you because a quota ran out, and it will never stop you because a bill got large either.
@@ -16,7 +16,7 @@ This guide covers what each route actually costs, the free models Zen carries, t
     ctaAgent: 'opencode',
     highlightedWords: ['OpenCode', 'Plans', 'Pricing'],
     publishedAt: '2026-08-05',
-    updatedAt: '2026-08-25',
+    updatedAt: '2026-09-01',
     alternateSlug: 'planes-y-precios-de-opencode',
   },
   sections: [
@@ -109,6 +109,34 @@ This guide covers what each route actually costs, the free models Zen carries, t
       ],
     },
     {
+      id: 'parallel-agents',
+      title: 'What running several OpenCode sessions at once does to the cost',
+      content: [
+        {
+          type: 'paragraph',
+          text: 'OpenCode bills per token on both routes, so there is no shared allowance to divide and no wall to hit. Two agents working at the same time simply consume tokens at the same time, and your spend over an hour tracks the number of agents that are actually busy rather than the number of terminals you have open.',
+        },
+        {
+          type: 'paragraph',
+          text: 'That makes a parallel workflow easy to reason about and easy to underestimate. The model matters more than the count: three sessions on a budget model can cost less than one session on a frontier model, given the spread in the Zen catalogue. What the count changes is how fast the balance drains, and therefore how often auto-reload fires.',
+        },
+        {
+          type: 'table',
+          headers: ['Sessions at once', 'What to expect', 'What to watch'],
+          rows: [
+            ['1', 'Spend tracks the per-token rate of the model you picked, and nothing else.', 'Model choice. Zen output rates run from $0 to $180 per million tokens.'],
+            ['2 to 3', 'Roughly two to three times the token spend of one session over the same period, because each agent reads files, reasons and calls tools on its own.', 'The $5 auto-reload threshold arrives sooner, and each automatic top-up is $20 plus the card processing passed at cost.'],
+            ['4 or more', 'Spend scales roughly with the number of busy agents. There is no quota to run out of, so nothing stops the run except the balance.', 'Turn auto-reload off before any unattended run so the balance becomes a hard cap.'],
+          ],
+          caption: 'A rule of thumb, not a published rate. OpenCode has no per-session pricing, so the real number depends on the model and the work.',
+        },
+        {
+          type: 'paragraph',
+          text: 'The practical side of that is in <a href="/en/guides/opencode-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">the OpenCode agent swarm guide</a>, and the mechanics of getting several sessions going are in <a href="/en/guides/run-multiple-opencode-sessions" class="text-neon-cyan hover:text-neon-purple transition-colors">how to run multiple OpenCode sessions</a>.',
+        },
+      ],
+    },
+    {
       id: 'vs-subscription',
       title: 'Pay-as-you-go against a subscription: when each one wins',
       content: [
@@ -136,6 +164,24 @@ This guide covers what each route actually costs, the free models Zen carries, t
         {
           type: 'paragraph',
           text: 'The setup that works best in practice is not choosing at all. Keep a subscription for your daily driver and keep OpenCode on the side for overflow, for the weeks you hit a weekly cap, and for automation. Two providers on two separate meters means you are almost never fully stopped, which is the argument developed in <a href="/en/guides/opencode-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">the OpenCode agent swarm guide</a>.',
+        },
+        {
+          type: 'table',
+          headers: ['Agent', 'Free tier', 'Cheapest paid', 'Top individual tier', 'How you are billed'],
+          rows: [
+            ['Claude Code', 'No (Free plan has no Claude Code)', 'Pro, $20/month', 'Max 20x, $200/month', 'Subscription with 5 hour and weekly windows; API tokens optional'],
+            ['Codex CLI', 'Limited', 'Go, $8/month', 'Pro, $200/month', 'ChatGPT subscription shared with web and IDE; API tokens optional'],
+            ['Kimi Code', 'CLI is free, model usage is not', 'Andante, ¥49/month', 'Allegro, ¥699/month', 'Membership with weekly and 5 hour limits; API per token'],
+            ['OpenCode', 'CLI is free and open source', 'None, pay as you go', 'None', 'Your own provider key, or OpenCode Zen prepaid per token'],
+            ['Antigravity', 'Yes, with weekly rate limits', 'Google AI Plus, around $8/month', 'Google AI Ultra 20x, $200/month', 'Google AI plan with rate limits and credits'],
+            ['Grok Build', 'Yes, limited usage', 'SuperGrok, $30/month', 'SuperGrok Plus, $100/month', 'xAI plan rate limits; API per token'],
+            ['Cursor Agent', 'Hobby, free', 'Pro, $20/month', 'Ultra, $200/month', 'Cursor plan with usage pools per model'],
+          ],
+          caption: 'Entry and top tiers per agent CLI, all verified August 25, 2026. Prices change often; each linked guide carries its own verification date.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Every number in that table has its own page with the full tier list and the fine print: <a href="/en/guides/claude-code-plans-and-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, <a href="/en/guides/codex-plans-and-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex</a>, <a href="/en/guides/kimi-code-plans-and-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi Code</a>, <a href="/en/guides/antigravity-plans-and-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">Antigravity</a>, <a href="/en/guides/grok-build-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">Grok Build</a> and <a href="/en/guides/cursor-cli-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">Cursor CLI</a>.',
         },
       ],
     },
@@ -204,6 +250,18 @@ This guide covers what each route actually costs, the free models Zen carries, t
     {
       question: 'Is OpenCode cheaper than Claude Code or Codex?',
       answer: 'It depends entirely on how much you use it. Bursty or occasional work is cheaper on OpenCode because quiet weeks cost nothing. Steady heavy daily use on a frontier model usually costs more than a $100 subscription. The most common good answer is to run both: a subscription for daily work, OpenCode for overflow and automation.',
+    },
+    {
+      question: 'Is there an OpenCode subscription?',
+      answer: 'No. There is no monthly plan and no tier ladder to climb. You either bring your own provider key, in which case that provider bills you directly, or you top up an OpenCode Zen balance and pay per token. A month with no work costs $0.',
+    },
+    {
+      question: 'Does running several OpenCode agents at once cost more?',
+      answer: 'Yes, and roughly in proportion. Each agent reads files, reasons and calls tools on its own, so token spend over a given hour tracks how many agents are actually busy. There is no quota wall to stop you, so your balance and the auto-reload setting are the only brakes.',
+    },
+    {
+      question: 'What is the cheapest way to use OpenCode?',
+      answer: 'The CLI itself is free and open source. If you already pay for an Anthropic or OpenAI key, bringing it costs nothing extra. Zen also lists temporary models at $0 input and $0 output, though OpenCode marks several of them as limited-time offers.',
     },
   ],
 }

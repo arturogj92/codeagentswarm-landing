@@ -4,9 +4,9 @@ export const guide: Guide = {
   meta: {
     slug: 'planes-y-precios-de-codex',
     locale: 'es',
-    title: 'Planes y precios de Codex: qué te da de verdad cada nivel de ChatGPT',
-    metaTitle: 'Precios de Codex CLI: todos los planes explicados (2026)',
-    metaDescription: 'Todos los planes de Codex: el nivel gratuito, Go por 8 $, Plus por 20 $, los dos niveles Pro de 100 $ y 200 $, asientos de Business, créditos y la vía de pago por token.',
+    title: 'Precios de Codex CLI: cada plan y cuál necesitas para agentes en paralelo',
+    metaTitle: 'Precios de Codex CLI 2026: planes, límites y coste real',
+    metaDescription: 'Nivel gratuito, Go 8 $, Plus 20 $, Pro 100 $ o 200 $, Business y créditos. Y lo que no cuentan: qué plan aguanta 3 o 4 sesiones de Codex a la vez.',
     intro: `No existe una suscripción a Codex. Codex viaja dentro del plan de ChatGPT que ya tengas, y a agosto de 2026 la oferta es: Free (Codex limitado), Go por 8 $/mes, Plus por 20 $/mes, Pro por 100 $/mes con 5x de uso o por 200 $/mes con 20x, Business por 25 $/usuario/mes y Enterprise. Si prefieres no suscribirte, Codex también acepta una clave de API de OpenAI y factura por token.
 
 Esa es la respuesta de un párrafo, y ya contiene lo que casi todos los artículos comparativos se equivocan: <strong>Pro son ahora dos precios distintos</strong>. OpenAI añadió un nivel Pro de 100 $ en abril de 2026, entre Plus y el Pro original de 200 $, y los dos se diferencian en el multiplicador de uso y en qué más traen empaquetado, no en qué modelos te dan.
@@ -16,7 +16,7 @@ El resto del detalle es donde llega la sorpresa: la CLI, la versión web y la ex
     ctaAgent: 'codex',
     highlightedWords: ['Codex', 'Planes', 'precios'],
     publishedAt: '2026-08-05',
-    updatedAt: '2026-08-25',
+    updatedAt: '2026-09-01',
     alternateSlug: 'codex-plans-and-pricing',
   },
   sections: [
@@ -99,6 +99,30 @@ El resto del detalle es donde llega la sorpresa: la CLI, la versión web y la ex
       ],
     },
     {
+      id: 'agentes-en-paralelo',
+      title: 'Qué plan necesitas cuando tienes varias sesiones de Codex a la vez',
+      content: [
+        {
+          type: 'paragraph',
+          text: 'Como la CLI, la versión web y la extensión del IDE comparten una única asignación, la pregunta que decide tu nivel no es cuántas horas programas, sino <strong>cuántas sesiones de Codex están consumiendo a la vez</strong>. Cada terminal extra es otro consumidor en el mismo contador, y la extensión del IDE que olvidaste abierta también.',
+        },
+        {
+          type: 'table',
+          headers: ['Sesiones a la vez', 'Nivel que suele aguantar', 'Por qué'],
+          rows: [
+            ['1 sesión', 'Go por 8 $/mes, o Plus por 20 $/mes', 'Plus es la base 1x a la que casi todos se refieren; Go va justo pero es acceso real, no una demo'],
+            ['2 o 3 sesiones', 'Pro por 100 $/mes, 5x Plus', 'Dos o tres sesiones vacían la misma ventana de 5 horas dos o tres veces más rápido, y cada superficie que uses suma encima'],
+            ['4 o más sesiones', 'Pro por 200 $/mes, 20x Plus', 'Cuatro terminales más una extensión de IDE son cinco consumidores en un contador, así que el tope semanal llega pronto'],
+          ],
+          caption: 'Regla aproximada deducida de los multiplicadores publicados, no un número de sesiones que prometa OpenAI. Codex publica rangos por modelo en vez de cifras fijas, así que tu elección de modelo también mueve esto.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Antes de subir de nivel, prueba las dos palancas baratas que ya cubre esta guía: baja a un modelo más rápido para el trabajo rutinario, que te compra más peticiones dentro de la misma ventana, y guarda los créditos para la entrega urgente puntual. La mecánica de llevar varios terminales está en <a href="/es/guias/ejecutar-multiples-sesiones-codex" class="text-neon-cyan hover:text-neon-purple transition-colors">ejecutar varias sesiones de Codex</a>, y el flujo completo en <a href="/es/guias/enjambre-de-agentes-codex" class="text-neon-cyan hover:text-neon-purple transition-colors">la guía del enjambre de agentes de Codex</a>.',
+        },
+      ],
+    },
+    {
       id: 'creditos',
       title: 'Créditos: la válvula de escape encima del plan',
       content: [
@@ -132,6 +156,34 @@ El resto del detalle es donde llega la sorpresa: la CLI, la versión web y la ex
           type: 'callout',
           variant: 'info',
           content: 'Los dos caminos no se excluyen. Deja tu portátil con la suscripción y dale a tu pipeline de CI su propia clave de API, y así ninguno puede dejar sin comer al otro. Eso sí, que la clave viva en el gestor de secretos de CI y no en el perfil de shell donde programas.',
+        },
+      ],
+    },
+    {
+      id: 'comparar-con-otros-agentes',
+      title: 'Cómo se compara el precio de Codex con las demás CLI de agentes',
+      content: [
+        {
+          type: 'paragraph',
+          text: 'Un precio solo significa algo al lado de las alternativas. El nivel Go de 8 $ convierte a Codex en la entrada real más barata de la categoría, y Codex es además el único cuya cuota se comparte con una app web y una extensión de IDE. Esta es toda la categoría, una línea por agente, revisada el mismo día.',
+        },
+        {
+          type: 'table',
+          headers: ['Agente', 'Nivel gratuito', 'Pago más barato', 'Nivel individual más alto', 'Cómo se factura'],
+          rows: [
+            ['Claude Code', 'No (el plan Free no incluye Claude Code)', 'Pro, 20 $/mes', 'Max 20x, 200 $/mes', 'Suscripción con ventanas de 5 horas y semanales; tokens de API opcionales'],
+            ['Codex CLI', 'Limitado', 'Go, 8 $/mes', 'Pro, 200 $/mes', 'Suscripción de ChatGPT compartida con la web y el IDE; tokens de API opcionales'],
+            ['Kimi Code', 'El CLI es gratis, el uso del modelo no', 'Andante, 49 ¥/mes', 'Allegro, 699 ¥/mes', 'Membresía con límites semanales y de 5 horas; API por token'],
+            ['OpenCode', 'El CLI es gratis y de código abierto', 'Ninguno, pago por uso', 'Ninguno', 'Tu propia clave de proveedor, o OpenCode Zen prepago por token'],
+            ['Antigravity', 'Sí, con límites de uso semanales', 'Google AI Plus, unos 8 $/mes', 'Google AI Ultra 20x, 200 $/mes', 'Plan de Google AI con límites de uso y créditos'],
+            ['Grok Build', 'Sí, uso limitado', 'SuperGrok, 30 $/mes', 'SuperGrok Plus, 100 $/mes', 'Límites de uso del plan de xAI; API por token'],
+            ['Cursor Agent', 'Hobby, gratis', 'Pro, 20 $/mes', 'Ultra, 200 $/mes', 'Plan de Cursor con bolsas de uso por modelo'],
+          ],
+          caption: 'Niveles de entrada y máximos de cada CLI de agente, todos verificados el 25 de agosto de 2026. Los precios cambian a menudo; cada guía enlazada lleva su propia fecha de verificación.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Cada fila tiene su propia guía con la escalera completa y la mecánica de cuotas detrás: <a href="/es/guias/planes-y-precios-de-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, <a href="/es/guias/planes-y-precios-de-kimi-code" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi Code</a>, <a href="/es/guias/planes-y-precios-de-opencode" class="text-neon-cyan hover:text-neon-purple transition-colors">OpenCode</a>, <a href="/es/guias/planes-y-precios-de-antigravity" class="text-neon-cyan hover:text-neon-purple transition-colors">Antigravity</a>, <a href="/es/guias/precios-y-acceso-grok-build" class="text-neon-cyan hover:text-neon-purple transition-colors">Grok Build</a> y <a href="/es/guias/precios-y-uso-cursor-cli" class="text-neon-cyan hover:text-neon-purple transition-colors">Cursor Agent</a>.',
         },
       ],
     },
@@ -196,6 +248,18 @@ El resto del detalle es donde llega la sorpresa: la CLI, la versión web y la ex
     {
       question: '¿Uso un plan de ChatGPT o una clave de API para Codex?',
       answer: 'Suscripción para el trabajo interactivo, clave de API para la automatización. El pago por token castiga la salida y los agentes de programación producen mucha, pero un trabajo de CI no debería fallar porque una persona se haya quedado sin su cuota personal. Usar los dos a la vez es un montaje válido.',
+    },
+    {
+      question: '¿Cuáles son los planes de Codex?',
+      answer: 'No hay un plan de Codex por separado. Codex va dentro de tu plan de ChatGPT: Free con acceso limitado, Go por 8 $/mes, Plus por 20 $, Pro por 100 $ (5x Plus) o 200 $ (20x Plus), Business por 25 $ por usuario y Enterprise. La alternativa de pago por token es una clave de API de OpenAI.',
+    },
+    {
+      question: '¿Necesito una suscripción a ChatGPT para usar Codex CLI?',
+      answer: 'No del todo. ChatGPT Free incluye acceso limitado a Codex, y Codex también acepta una clave de API de OpenAI y factura por token. Para el trabajo diario la suscripción sale más barata y más predecible, desde 8 $/mes con el plan Go.',
+    },
+    {
+      question: '¿Qué plan de Codex necesito para llevar varias sesiones en paralelo?',
+      answer: 'Plus por 20 $ lleva una sesión con holgura. Dos o tres suelen pedir Pro por 100 $, que es 5x Plus, y cuatro o más apuntan a Pro por 200 $. Recuerda que la asignación se comparte con Codex en la web y en el IDE, así que esas superficies cuentan como sesiones extra.',
     },
   ],
 }
