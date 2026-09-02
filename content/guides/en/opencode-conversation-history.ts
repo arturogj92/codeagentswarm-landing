@@ -5,8 +5,8 @@ export const guide: Guide = {
     slug: 'opencode-conversation-history',
     locale: 'en',
     title: 'How to Find and Resume Your OpenCode Conversation History',
-    metaTitle: 'OpenCode Conversation History: Find and Resume Your Sessions (2026)',
-    metaDescription: 'Find your opencode conversation history, resume the last session with --continue or a specific one with --session, and search every opencode conversation by keyword across projects.',
+    metaTitle: 'OpenCode Conversation History: Resume Sessions & Search (2026)',
+    metaDescription: 'opencode resume session in two commands: --continue for the last one, --session for a specific one. Plus keyword search across every opencode conversation.',
     intro: `opencode keeps a history of your sessions. Each conversation is stored locally as you work, and you can resume a past one to pick up where you left off. Resume the most recent session with \`opencode --continue\`, or jump straight to a specific one with \`opencode --session <id>\`. That alone saves you from re-explaining the same module to opencode over and over.
 
 The limitation shows up once you have dozens of opencode sessions across several projects. The native history is fine for continuing your last conversation, but it has no full-text search, no preview of what each session was actually about, and it makes you remember session ids to reach anything older than the last one.
@@ -16,7 +16,7 @@ The short version: your opencode history is already on your machine and you can 
     ctaAgent: 'opencode',
     highlightedWords: ['history', 'OpenCode', 'resume'],
     publishedAt: '2026-07-05',
-    updatedAt: '2026-07-05',
+    updatedAt: '2026-09-01',
     alternateSlug: 'historial-conversaciones-opencode',
   },
   sections: [
@@ -51,8 +51,14 @@ The short version: your opencode history is already on your machine and you can 
       title: 'Native opencode history and resume',
       content: [
         {
+          type: 'heading',
+          level: 3,
+          text: 'opencode resume session: the two commands',
+          id: 'opencode-resume-session',
+        },
+        {
           type: 'paragraph',
-          text: 'opencode stores your sessions on your machine as you work, so a conversation is not lost the moment you close the terminal. Unlike some agents, opencode ships clear resume commands, so you do not have to guess at flags: continue your most recent session, or open a specific one by its id.',
+          text: 'You resume an opencode session with one of two commands. To resume the last session, run <code>opencode --continue</code> (short form <code>-c</code>), which picks your most recent conversation back up where you stopped. To resume an older one, run <code>opencode --session &lt;session-id&gt;</code> (short form <code>-s</code>) with its id.',
         },
         {
           type: 'code',
@@ -62,6 +68,10 @@ opencode --continue    # short form: -c
 
 # Resume a specific session by id
 opencode --session <session-id>    # short form: -s`,
+        },
+        {
+          type: 'paragraph',
+          text: 'opencode stores your sessions on your machine as you work, so a conversation is not lost the moment you close the terminal. Unlike some agents, opencode ships clear resume commands, so you do not have to guess at flags: continue your most recent session, or open a specific one by its id.',
         },
         {
           type: 'paragraph',
@@ -276,6 +286,14 @@ opencode --session <session-id>    # short form: -s`,
     {
       question: 'How do I resume a previous opencode session?',
       answer: 'Run opencode --continue (short form -c) to resume your most recent session, or opencode --session <id> (short form -s) to resume a specific one by id. In CodeAgentSwarm you open the History view or resume mode, find the conversation, and reopen it in any terminal with its previous context loaded.',
+    },
+    {
+      question: 'How do I resume the last opencode session?',
+      answer: 'Run opencode --continue, or its short form opencode -c, in the project where the session ran. It reopens your most recent conversation with the context it built up, so you carry on where you stopped instead of explaining the same module again.',
+    },
+    {
+      question: 'What is the opencode resume command?',
+      answer: 'There are two: opencode --continue (-c) resumes your most recent session, and opencode --session <id> (-s) resumes a specific one by its id. The second needs the id, which is the part that gets awkward once you have many sessions across projects.',
     },
     {
       question: 'Where is opencode history stored?',

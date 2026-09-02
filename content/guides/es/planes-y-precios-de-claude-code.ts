@@ -4,9 +4,9 @@ export const guide: Guide = {
   meta: {
     slug: 'planes-y-precios-de-claude-code',
     locale: 'es',
-    title: 'Planes y precios de Claude Code: qué te da de verdad cada nivel',
-    metaTitle: 'Precios de Claude Code: todos los planes explicados (2026)',
-    metaDescription: 'Todos los planes de Claude Code: Pro por 20 $, Max 5x por 100 $, Max 20x por 200 $, asientos de Team y pago por token. Cómo funcionan de verdad los límites semanales y de 5 horas.',
+    title: 'Precios de Claude Code: cada plan y cuál necesitas para agentes en paralelo',
+    metaTitle: 'Precios de Claude Code 2026: planes, límites y coste real',
+    metaDescription: 'Pro 20 $, Max 5x 100 $, Max 20x 200 $, asientos Team y pago por token. Y lo que la web oficial no cuenta: qué plan aguanta 3 o 4 agentes a la vez.',
     intro: `Claude Code viene con una suscripción de Claude, y a agosto de 2026 los planes son: Free (sin Claude Code), Pro por 20 $/mes, Max 5x desde 100 $/mes, Max 20x por 200 $/mes, Team desde 20 $/asiento y Enterprise. También existe la vía de pago por token a través de la API de Anthropic si prefieres no suscribirte.
 
 Esa es la respuesta de un párrafo. El dinero está en los detalles: Anthropic publica multiplicadores, no recuentos de tokens, así que "5x" es relativo a Pro y no un número contra el que puedas presupuestar. Hay dos capas de cuota apiladas, una ventana móvil de 5 horas y un ciclo semanal, y el ciclo semanal son en realidad dos topes distintos. Tu uso de Claude Code y tu uso del chat de Claude salen del mismo bote, así que un día intenso en la app de chat se come tu presupuesto de programación.
@@ -16,7 +16,7 @@ Esta guía deja claro lo que se sabe, fecha cada número y señala qué partes c
     ctaAgent: 'claude-code',
     highlightedWords: ['Claude Code', 'Planes', 'precios'],
     publishedAt: '2026-08-05',
-    updatedAt: '2026-08-25',
+    updatedAt: '2026-09-01',
     alternateSlug: 'claude-code-plans-and-pricing',
   },
   sections: [
@@ -100,6 +100,20 @@ Esta guía deja claro lo que se sabe, fecha cada número y señala qué partes c
           type: 'paragraph',
           text: 'Ese patrón es exactamente lo que cubre <a href="/es/guias/enjambre-de-agentes-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">la guía del enjambre de agentes de Claude Code</a>. Vigilar la cuota sigue importando porque el uso incluido puede desaparecer rápido, pero los planes de pago ya pueden activar <a href="https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">créditos de uso</a> en vez de esperar al reinicio.',
         },
+        {
+          type: 'table',
+          headers: ['Sesiones a la vez', 'Nivel que suele aguantar', 'Por qué'],
+          rows: [
+            ['1 sesión', 'Pro, 20 $/mes', 'La base 1x está pensada para un agente que llevas y revisas mientras trabaja'],
+            ['2 o 3 sesiones', 'Max 5x, desde 100 $/mes', 'Dos o tres agentes vacían la misma ventana de 5 horas unas dos o tres veces más rápido que uno'],
+            ['4 o más sesiones', 'Max 20x, 200 $/mes', 'Cuatro agentes llegan al techo de 5 horas unas cuatro veces antes, y los topes semanales llegan con ellos'],
+          ],
+          caption: 'Regla aproximada deducida de los multiplicadores que publica Anthropic, no un número de sesiones que prometa. El consumo real depende del tamaño del contexto, del modelo y de cuánto lee cada agente antes de actuar.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Tómatelo como punto de partida, no como garantía. Anthropic publica multiplicadores y no recuentos de tokens, así que la única prueba honesta es una semana en el nivel más barato con <code>/usage</code> a mano. Si acabas la semana sin chocar con el muro, subir de nivel es dinero que no necesitas gastar.',
+        },
       ],
     },
     {
@@ -132,6 +146,34 @@ Esta guía deja claro lo que se sabe, fecha cada número y señala qué partes c
           type: 'callout',
           variant: 'info',
           content: 'Puedes cambiar por proyecto. Claude Code lee ANTHROPIC_API_KEY cuando está definida, así que un trabajo de CI puede facturar por token mientras tu portátil sigue usando la suscripción. Eso sí, cuidado con dejarte esa variable exportada en la shell donde programas, o pagarás dos veces sin enterarte.',
+        },
+      ],
+    },
+    {
+      id: 'comparar-con-otros-agentes',
+      title: 'Cómo se compara el precio de Claude Code con las demás CLI de agentes',
+      content: [
+        {
+          type: 'paragraph',
+          text: 'Un precio solo significa algo al lado de las alternativas. Claude Code es la única de las siete sin ninguna vía gratuita, y su precio de entrada está en la mitad de la tabla, no arriba del todo. Esta es toda la categoría, una línea por agente, revisada el mismo día.',
+        },
+        {
+          type: 'table',
+          headers: ['Agente', 'Nivel gratuito', 'Pago más barato', 'Nivel individual más alto', 'Cómo se factura'],
+          rows: [
+            ['Claude Code', 'No (el plan Free no incluye Claude Code)', 'Pro, 20 $/mes', 'Max 20x, 200 $/mes', 'Suscripción con ventanas de 5 horas y semanales; tokens de API opcionales'],
+            ['Codex CLI', 'Limitado', 'Go, 8 $/mes', 'Pro, 200 $/mes', 'Suscripción de ChatGPT compartida con la web y el IDE; tokens de API opcionales'],
+            ['Kimi Code', 'El CLI es gratis, el uso del modelo no', 'Andante, 49 ¥/mes', 'Allegro, 699 ¥/mes', 'Membresía con límites semanales y de 5 horas; API por token'],
+            ['OpenCode', 'El CLI es gratis y de código abierto', 'Ninguno, pago por uso', 'Ninguno', 'Tu propia clave de proveedor, o OpenCode Zen prepago por token'],
+            ['Antigravity', 'Sí, con límites de uso semanales', 'Google AI Plus, unos 8 $/mes', 'Google AI Ultra 20x, 200 $/mes', 'Plan de Google AI con límites de uso y créditos'],
+            ['Grok Build', 'Sí, uso limitado', 'SuperGrok, 30 $/mes', 'SuperGrok Plus, 100 $/mes', 'Límites de uso del plan de xAI; API por token'],
+            ['Cursor Agent', 'Hobby, gratis', 'Pro, 20 $/mes', 'Ultra, 200 $/mes', 'Plan de Cursor con bolsas de uso por modelo'],
+          ],
+          caption: 'Niveles de entrada y máximos de cada CLI de agente, todos verificados el 25 de agosto de 2026. Los precios cambian a menudo; cada guía enlazada lleva su propia fecha de verificación.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Cada fila tiene su propia guía con la escalera completa y la mecánica de cuotas detrás: <a href="/es/guias/planes-y-precios-de-codex" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex CLI</a>, <a href="/es/guias/planes-y-precios-de-kimi-code" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi Code</a>, <a href="/es/guias/planes-y-precios-de-opencode" class="text-neon-cyan hover:text-neon-purple transition-colors">OpenCode</a>, <a href="/es/guias/planes-y-precios-de-antigravity" class="text-neon-cyan hover:text-neon-purple transition-colors">Antigravity</a>, <a href="/es/guias/precios-y-acceso-grok-build" class="text-neon-cyan hover:text-neon-purple transition-colors">Grok Build</a> y <a href="/es/guias/precios-y-uso-cursor-cli" class="text-neon-cyan hover:text-neon-purple transition-colors">Cursor Agent</a>.',
         },
       ],
     },
@@ -200,6 +242,18 @@ Esta guía deja claro lo que se sabe, fecha cada número y señala qué partes c
     {
       question: '¿Cómo consulto mi consumo de Claude Code?',
       answer: 'Escribe /usage dentro de una sesión de Claude Code, o abre Ajustes y luego Uso en la web de Claude para ver la hora de reinicio semanal. Si ejecutas Claude Code dentro de CodeAgentSwarm, la app te lleva las ventanas y te las enseña en su indicador de cuota.',
+    },
+    {
+      question: '¿Qué suscripción de Claude necesito para Claude Code?',
+      answer: 'Cualquiera de pago. Pro por 20 $/mes es la entrada, Max 5x desde 100 $ y Max 20x por 200 $ añaden uso por encima, y los asientos de Team empiezan en 20 $. El plan Free no incluye Claude Code. Elige por cuántas sesiones mantienes abiertas a la vez, no por cuántas horas trabajas.',
+    },
+    {
+      question: '¿Existe un plan aparte de Claude Code o son los mismos planes de Claude?',
+      answer: 'Son los mismos. No hay una suscripción de Claude Code: viene incluido en los planes de Claude y sale del mismo bote de uso que las apps de chat. La única vía de facturación aparte es una clave de API de Anthropic, que cobra por token.',
+    },
+    {
+      question: '¿Cuál es la forma más barata de llevar varios agentes de Claude Code a la vez?',
+      answer: 'Max 5x por 100 $/mes es el punto de entrada realista para tres o cuatro sesiones en paralelo, porque Pro te va a frenar a diario. Más barato todavía es repartir: deja Claude para lo difícil y mueve el trabajo rutinario a un agente con otro contador, ya que las cuotas son independientes.',
     },
   ],
 }

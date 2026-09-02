@@ -4,9 +4,9 @@ export const guide: Guide = {
   meta: {
     slug: 'planes-y-precios-de-opencode',
     locale: 'es',
-    title: 'Planes y precios de OpenCode: el que no tiene suscripción',
-    metaTitle: 'Precios de OpenCode: BYOK, Zen y coste real (2026)',
-    metaDescription: 'Los precios de OpenCode explicados: la CLI es gratis y de código abierto, traer tu propia clave cuesta lo que cobre tu proveedor, y OpenCode Zen es pago por uso sin cuota mensual.',
+    title: 'Planes y precios de OpenCode: sin suscripción, y lo que cuestan los agentes en paralelo',
+    metaTitle: 'Precios de OpenCode 2026: CLI gratis, Zen, BYOK y coste real',
+    metaDescription: 'La CLI de OpenCode es gratis y de código abierto, y Zen es pago por token sin cuota mensual. Y lo que le hacen a tu factura varios agentes a la vez.',
     intro: `OpenCode es el raro de la categoría, y la respuesta corta es de verdad corta: <strong>no hay suscripción y no hay cuota mensual</strong>. La CLI es gratis y de código abierto. O traes tu propia clave de API de cualquier proveedor, y entonces ese proveedor te factura directamente y OpenCode no se lleva nada, o usas OpenCode Zen, una pasarela con precios por token de pago por uso y sin margen sobre las peticiones.
 
 Eso significa que no hay tabla de planes que comparar, ni ventana de 5 horas, ni tope semanal, ni nivel que se te quede pequeño. Tampoco hay techo: OpenCode nunca te va a parar porque se haya agotado una cuota, y tampoco te va a parar porque una factura se haya puesto grande.
@@ -16,7 +16,7 @@ Esta guía cubre lo que cuesta de verdad cada vía, los modelos gratuitos que ll
     ctaAgent: 'opencode',
     highlightedWords: ['OpenCode', 'Planes', 'precios'],
     publishedAt: '2026-08-05',
-    updatedAt: '2026-08-25',
+    updatedAt: '2026-09-01',
     alternateSlug: 'opencode-plans-and-pricing',
   },
   sections: [
@@ -109,6 +109,34 @@ Esta guía cubre lo que cuesta de verdad cada vía, los modelos gratuitos que ll
       ],
     },
     {
+      id: 'agentes-paralelos',
+      title: 'Qué le hace al coste ejecutar varias sesiones de OpenCode a la vez',
+      content: [
+        {
+          type: 'paragraph',
+          text: 'OpenCode factura por token en las dos vías, así que no hay una asignación compartida que repartir ni un muro contra el que chocar. Dos agentes trabajando a la vez consumen tokens a la vez, y tu gasto en una hora sigue al número de agentes que están ocupados de verdad, no al número de terminales que tengas abiertos.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Eso hace que un flujo en paralelo sea fácil de razonar y fácil de subestimar. El modelo importa más que la cantidad: tres sesiones con un modelo económico pueden costar menos que una sola con un modelo de frontera, vista la horquilla del catálogo de Zen. Lo que sí cambia con la cantidad es lo rápido que se vacía el saldo, y por tanto cada cuánto salta la recarga automática.',
+        },
+        {
+          type: 'table',
+          headers: ['Sesiones a la vez', 'Qué esperar', 'Qué vigilar'],
+          rows: [
+            ['1', 'El gasto sigue la tarifa por token del modelo que hayas elegido, y nada más.', 'La elección de modelo. La salida en Zen va de 0 $ a 180 $ por millón de tokens.'],
+            ['2 a 3', 'Entre dos y tres veces el gasto en tokens de una sola sesión en el mismo tiempo, porque cada agente lee ficheros, razona y llama a herramientas por su cuenta.', 'El umbral de recarga de 5 $ llega antes, y cada recarga automática son 20 $ más la comisión de tarjeta trasladada a precio de coste.'],
+            ['4 o más', 'El gasto escala más o menos con el número de agentes ocupados. No hay cuota que agotar, así que nada para la ejecución salvo el saldo.', 'Desactiva la recarga automática antes de cualquier ejecución sin supervisión para que el saldo sea un límite duro.'],
+          ],
+          caption: 'Es una regla aproximada, no una tarifa publicada. OpenCode no cobra por sesión, así que el número real depende del modelo y del trabajo.',
+        },
+        {
+          type: 'paragraph',
+          text: 'La parte práctica está en <a href="/es/guias/enjambre-de-agentes-opencode" class="text-neon-cyan hover:text-neon-purple transition-colors">la guía del enjambre de agentes de OpenCode</a>, y la mecánica de tener varias sesiones a la vez está en <a href="/es/guias/ejecutar-multiples-sesiones-opencode" class="text-neon-cyan hover:text-neon-purple transition-colors">cómo ejecutar varias sesiones de OpenCode</a>.',
+        },
+      ],
+    },
+    {
       id: 'contra-suscripcion',
       title: 'Pago por uso contra suscripción: cuándo gana cada uno',
       content: [
@@ -136,6 +164,24 @@ Esta guía cubre lo que cuesta de verdad cada vía, los modelos gratuitos que ll
         {
           type: 'paragraph',
           text: 'El montaje que mejor funciona en la práctica es no elegir. Mantén una suscripción como caballo de batalla y OpenCode al lado para el desbordamiento, para las semanas en que tocas el tope semanal y para la automatización. Dos proveedores en dos contadores separados significan que casi nunca estás parado del todo, que es el argumento que desarrolla <a href="/es/guias/enjambre-de-agentes-opencode" class="text-neon-cyan hover:text-neon-purple transition-colors">la guía del enjambre de agentes de OpenCode</a>.',
+        },
+        {
+          type: 'table',
+          headers: ['Agente', 'Nivel gratuito', 'Pago más barato', 'Nivel individual más alto', 'Cómo te facturan'],
+          rows: [
+            ['Claude Code', 'No (el plan Free no incluye Claude Code)', 'Pro, 20 $/mes', 'Max 20x, 200 $/mes', 'Suscripción con ventanas de 5 horas y semanales; tokens de API opcionales'],
+            ['Codex CLI', 'Limitado', 'Go, 8 $/mes', 'Pro, 200 $/mes', 'Suscripción de ChatGPT compartida con la web y el IDE; tokens de API opcionales'],
+            ['Kimi Code', 'La CLI es gratis, el uso del modelo no', 'Andante, 49 ¥/mes', 'Allegro, 699 ¥/mes', 'Membresía con límites semanales y de 5 horas; API por token'],
+            ['OpenCode', 'La CLI es gratis y de código abierto', 'Ninguno, pago por uso', 'Ninguno', 'Tu propia clave de proveedor, o saldo prepago por token en OpenCode Zen'],
+            ['Antigravity', 'Sí, con límites de frecuencia semanales', 'Google AI Plus, unos 8 $/mes', 'Google AI Ultra 20x, 200 $/mes', 'Plan de Google AI con límites de frecuencia y créditos'],
+            ['Grok Build', 'Sí, con uso limitado', 'SuperGrok, 30 $/mes', 'SuperGrok Plus, 100 $/mes', 'Límites del plan de xAI; API por token'],
+            ['Cursor Agent', 'Hobby, gratis', 'Pro, 20 $/mes', 'Ultra, 200 $/mes', 'Plan de Cursor con pozos de uso por modelo'],
+          ],
+          caption: 'Niveles de entrada y superiores de cada CLI de agente, verificados el 25 de agosto de 2026. Los precios cambian a menudo; cada guía enlazada lleva su propia fecha de verificación.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Cada cifra de esa tabla tiene su propia página con la lista completa de niveles y la letra pequeña: <a href="/es/guias/planes-y-precios-de-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, <a href="/es/guias/planes-y-precios-de-codex" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex</a>, <a href="/es/guias/planes-y-precios-de-kimi-code" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi Code</a>, <a href="/es/guias/planes-y-precios-de-antigravity" class="text-neon-cyan hover:text-neon-purple transition-colors">Antigravity</a>, <a href="/es/guias/precios-y-acceso-grok-build" class="text-neon-cyan hover:text-neon-purple transition-colors">Grok Build</a> y <a href="/es/guias/precios-y-uso-cursor-cli" class="text-neon-cyan hover:text-neon-purple transition-colors">Cursor CLI</a>.',
         },
       ],
     },
@@ -204,6 +250,18 @@ Esta guía cubre lo que cuesta de verdad cada vía, los modelos gratuitos que ll
     {
       question: '¿OpenCode sale más barato que Claude Code o Codex?',
       answer: 'Depende por completo de cuánto lo uses. El trabajo a ráfagas u ocasional sale más barato en OpenCode porque las semanas tranquilas no cuestan nada. El uso diario pesado y constante con un modelo de frontera suele costar más que una suscripción de 100 $. La respuesta buena más habitual es usar los dos: suscripción para el día a día y OpenCode para el desbordamiento y la automatización.',
+    },
+    {
+      question: '¿Hay suscripción de OpenCode?',
+      answer: 'No. No hay plan mensual ni escalera de niveles. O traes tu propia clave de proveedor, y entonces te factura ese proveedor, o cargas saldo en OpenCode Zen y pagas por token. Un mes sin trabajar cuesta 0 $.',
+    },
+    {
+      question: '¿Ejecutar varios agentes de OpenCode a la vez cuesta más?',
+      answer: 'Sí, y más o menos en proporción. Cada agente lee ficheros, razona y llama a herramientas por su cuenta, así que el gasto en tokens de una hora sigue al número de agentes realmente ocupados. No hay muro de cuota que te pare, así que el saldo y la recarga automática son los únicos frenos.',
+    },
+    {
+      question: '¿Cuál es la forma más barata de usar OpenCode?',
+      answer: 'La CLI en sí es gratis y de código abierto. Si ya pagas una clave de Anthropic o de OpenAI, traerla no te cuesta nada extra. Zen ofrece además modelos temporales a 0 $ de entrada y 0 $ de salida, aunque OpenCode marca varios como ofertas por tiempo limitado.',
     },
   ],
 }

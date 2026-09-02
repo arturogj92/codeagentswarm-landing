@@ -4,9 +4,9 @@ export const guide: Guide = {
   meta: {
     slug: 'claude-code-plans-and-pricing',
     locale: 'en',
-    title: 'Claude Code Plans and Pricing: What Each Tier Actually Gets You',
-    metaTitle: 'Claude Code Pricing: Every Plan Explained (2026)',
-    metaDescription: 'Every Claude Code plan explained: Pro at $20, Max 5x at $100, Max 20x at $200, Team seats, and pay-per-token. How the weekly and 5 hour limits really work.',
+    title: 'Claude Code Pricing: Every Plan, and Which One You Need for Parallel Agents',
+    metaTitle: 'Claude Code Pricing 2026: Plans, Limits, Parallel Agent Cost',
+    metaDescription: 'Pro $20, Max 5x $100, Max 20x $200, Team seats, API tokens. Plus what the official page skips: which plan survives 3 or 4 Claude Code agents at once.',
     intro: `Claude Code comes with a Claude subscription, and as of August 2026 the plans are: Free (no Claude Code), Pro at $20/month, Max 5x from $100/month, Max 20x at $200/month, Team from $20/seat and Enterprise. There is also a pay-per-token path through the Anthropic API if you would rather not subscribe.
 
 That is the one-paragraph answer. The details are where the money is: Anthropic publishes multipliers, not token counts, so "5x" is relative to Pro rather than a number you can budget against. There are two quota layers stacked on top of each other, a rolling 5 hour window and a weekly cycle, and the weekly cycle is actually two separate caps. Your Claude Code usage and your Claude chat usage draw from the same pool, so a heavy day in the chat app eats your coding budget.
@@ -16,7 +16,7 @@ This guide lays out what is known, dates every number, and flags the parts you s
     ctaAgent: 'claude-code',
     highlightedWords: ['Claude Code', 'Plans', 'Pricing'],
     publishedAt: '2026-08-05',
-    updatedAt: '2026-08-25',
+    updatedAt: '2026-09-01',
     alternateSlug: 'planes-y-precios-de-claude-code',
   },
   sections: [
@@ -100,6 +100,20 @@ This guide lays out what is known, dates every number, and flags the parts you s
           type: 'paragraph',
           text: 'That pattern is exactly what <a href="/en/guides/claude-code-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">the Claude Code agent swarm guide</a> covers. Watching quota still matters because included usage can disappear quickly, but paid plans can now enable <a href="https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">usage credits</a> instead of waiting for a reset.',
         },
+        {
+          type: 'table',
+          headers: ['Sessions at once', 'Tier that usually holds', 'Why'],
+          rows: [
+            ['1 session', 'Pro, $20/month', 'The 1x baseline is sized for one agent you drive and review as it works'],
+            ['2 to 3 sessions', 'Max 5x, from $100/month', 'Two or three agents drain the same 5 hour window roughly two to three times faster than one'],
+            ['4 or more sessions', 'Max 20x, $200/month', 'Four agents reach the 5 hour ceiling about four times faster, and the weekly caps arrive with it'],
+          ],
+          caption: 'Rule of thumb derived from the multipliers Anthropic publishes, not a session count it promises. Real burn depends on context size, model choice and how much each agent reads before it acts.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Treat that as a starting point rather than a guarantee. Anthropic publishes multipliers, not token counts, so the only honest test is a week on the cheaper tier with <code>/usage</code> open. If you finish the week without hitting a wall, the upgrade is money you do not need to spend.',
+        },
       ],
     },
     {
@@ -132,6 +146,34 @@ This guide lays out what is known, dates every number, and flags the parts you s
           type: 'callout',
           variant: 'info',
           content: 'You can switch per project. Claude Code reads ANTHROPIC_API_KEY when it is set, so a CI job can bill per token while your laptop keeps using the subscription. Just be careful not to leave that variable exported in the shell you code in, or you will silently pay twice.',
+        },
+      ],
+    },
+    {
+      id: 'compare-across-agents',
+      title: 'How Claude Code pricing compares with the other agent CLIs',
+      content: [
+        {
+          type: 'paragraph',
+          text: 'A price only means something next to the alternatives. Claude Code is the only one of the seven with no free path at all, and its entry price sits in the middle of the pack rather than at the top. Here is the whole category, one line each, checked on the same day.',
+        },
+        {
+          type: 'table',
+          headers: ['Agent', 'Free tier', 'Cheapest paid', 'Top individual tier', 'How you are billed'],
+          rows: [
+            ['Claude Code', 'No (Free plan has no Claude Code)', 'Pro, $20/month', 'Max 20x, $200/month', 'Subscription with 5 hour and weekly windows; API tokens optional'],
+            ['Codex CLI', 'Limited', 'Go, $8/month', 'Pro, $200/month', 'ChatGPT subscription shared with web and IDE; API tokens optional'],
+            ['Kimi Code', 'CLI is free, model usage is not', 'Andante, ¥49/month', 'Allegro, ¥699/month', 'Membership with weekly and 5 hour limits; API per token'],
+            ['OpenCode', 'CLI is free and open source', 'None, pay as you go', 'None', 'Your own provider key, or OpenCode Zen prepaid per token'],
+            ['Antigravity', 'Yes, with weekly rate limits', 'Google AI Plus, around $8/month', 'Google AI Ultra 20x, $200/month', 'Google AI plan with rate limits and credits'],
+            ['Grok Build', 'Yes, limited usage', 'SuperGrok, $30/month', 'SuperGrok Plus, $100/month', 'xAI plan rate limits; API per token'],
+            ['Cursor Agent', 'Hobby, free', 'Pro, $20/month', 'Ultra, $200/month', 'Cursor plan with usage pools per model'],
+          ],
+          caption: 'Entry and top tiers per agent CLI, all verified August 25, 2026. Prices change often; each linked guide carries its own verification date.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Each row has its own guide with the full ladder and the quota mechanics behind it: <a href="/en/guides/codex-plans-and-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex CLI</a>, <a href="/en/guides/kimi-code-plans-and-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi Code</a>, <a href="/en/guides/opencode-plans-and-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">OpenCode</a>, <a href="/en/guides/antigravity-plans-and-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">Antigravity</a>, <a href="/en/guides/grok-build-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">Grok Build</a> and <a href="/en/guides/cursor-cli-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">Cursor Agent</a>.',
         },
       ],
     },
@@ -200,6 +242,18 @@ This guide lays out what is known, dates every number, and flags the parts you s
     {
       question: 'How do I check my Claude Code usage?',
       answer: 'Run /usage inside a Claude Code session, or open Settings then Usage in the Claude web app for the weekly reset time. If you run Claude Code inside CodeAgentSwarm, the app tracks the windows for you and shows them in its quota indicator.',
+    },
+    {
+      question: 'Which Claude subscription do I need for Claude Code?',
+      answer: 'Any paid one. Pro at $20/month is the entry point, Max 5x from $100 and Max 20x at $200 add usage on top, and Team seats start at $20. The Free plan does not include Claude Code at all. Pick by how many sessions you keep running at once, not by how many hours you work.',
+    },
+    {
+      question: 'Is there a separate Claude Code plan, or are the Claude plans the same thing?',
+      answer: 'They are the same thing. There is no Claude Code subscription: Claude Code comes with the Claude plans and draws from the same usage pool as the Claude chat apps. The only separate billing route is an Anthropic API key, which bills per token instead.',
+    },
+    {
+      question: 'What is the cheapest way to run several Claude Code agents at once?',
+      answer: 'Max 5x at $100/month is the realistic entry point for three or four parallel sessions, because Pro will stop you daily. Cheaper still is spreading the work: keep Claude for the hard parts and move routine tasks to an agent on a separate meter, since the quotas are independent.',
     },
   ],
 }

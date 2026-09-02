@@ -6,7 +6,7 @@ export const guide: Guide = {
     locale: 'es',
     title: 'Modo YOLO de OpenCode: ¿existe? Los permisos explicados',
     metaTitle: 'Modo YOLO de OpenCode: permisos por configuración (2026)',
-    metaDescription: '¿Tiene opencode un modo YOLO? No hay un único flag. La autonomía se configura en opencode.json. Cómo ejecutar opencode en full auto con seguridad sin ir a ciegas.',
+    metaDescription: 'Cómo hacer bypass permissions en opencode: no hay flag YOLO. La autonomía se configura en opencode.json. Ejecuta opencode en full auto sin ir a ciegas.',
     intro: `Si usas cualquier agente de código en terminal más de unos minutos, las peticiones de aprobación cansan rápido. Cada escritura de archivo, cada comando de shell se para a esperar que digas que sí. Con Claude Code y Codex, la gente tira de un bypass de un solo flag, y la comunidad empezó a llamar a eso "modo YOLO".
 
 opencode toma un camino distinto. No hay <code>--yolo</code>, no hay <code>--full-auto</code>, no hay ningún flag de saltarse-nada-peligrosamente. En vez de un interruptor tosco, opencode lee cuánta libertad le diste desde su configuración de permisos. Tú decides, en un archivo de config, qué tipos de acciones se ejecutan solas, cuáles preguntan primero y cuáles se bloquean. Lo más parecido al "modo YOLO" es poner todo en allow, y eso conlleva exactamente los mismos riesgos que cualquier flag de bypass.
@@ -16,7 +16,7 @@ Esta guía explica cómo es de verdad ese modelo por configuración, qué se rom
     ctaAgent: 'opencode',
     highlightedWords: ['OpenCode', 'modo YOLO'],
     publishedAt: '2026-07-05',
-    updatedAt: '2026-07-05',
+    updatedAt: '2026-09-01',
     alternateSlug: 'opencode-yolo-mode',
   },
   sections: [
@@ -24,6 +24,16 @@ Esta guía explica cómo es de verdad ese modelo por configuración, qué se rom
       id: 'que-es-modo-yolo-opencode',
       title: 'Qué significa "modo YOLO" y la respuesta corta para opencode',
       content: [
+        {
+          type: 'heading',
+          level: 3,
+          text: 'opencode bypass permissions: ¿existe una bandera?',
+          id: 'opencode-bypass-permissions',
+        },
+        {
+          type: 'paragraph',
+          text: 'No existe ninguna bandera de opencode bypass permissions. opencode no trae <code>--yolo</code>, ni <code>--full-auto</code>, ni ninguna opción de saltarse-los-permisos-peligrosamente. Los permisos se configuran: en <code>opencode.json</code> pones cada tipo de acción en allow, ask o deny, y poner todo en allow es lo más cerca que llega opencode de saltarse los permisos.',
+        },
         {
           type: 'image',
           alt: 'Un terminal de CodeAgentSwarm mostrando el selector SELECT AI AGENT donde eliges el agente por terminal, incluido opencode',
@@ -230,6 +240,18 @@ Esta guía explica cómo es de verdad ese modelo por configuración, qué se rom
     {
       question: '¿Cómo hago que opencode se ejecute sin pedir aprobación?',
       answer: 'Pon los permisos en allow en opencode.json. Un ejemplo mínimo es { "permission": { "edit": "allow", "bash": "ask" } }, y permitir todos los tipos de acción es la versión totalmente sin supervisión. Como las claves y los valores exactos cambian entre versiones, revisa la documentación oficial de opencode para el esquema que admite tu versión instalada antes de fiarte de una config.',
+    },
+    {
+      question: '¿Cómo hago bypass permissions en opencode?',
+      answer: 'No puedes saltártelos con una bandera, porque opencode no tiene ninguna. Se hace desde la configuración: pon los permisos en allow en opencode.json, y una config todo-en-allow es la versión totalmente sin supervisión. Como las claves y los valores exactos cambian entre versiones, revisa la documentación oficial de opencode para el esquema que admite tu versión instalada.',
+    },
+    {
+      question: '¿Tiene opencode una bandera --dangerously-skip-permissions?',
+      answer: 'No. Esa bandera es de Claude Code, y Codex tiene --full-auto. opencode no trae ningún equivalente, así que no hay nada que teclear para apagar las aprobaciones en una tirada. Su comportamiento de allow, ask y deny vive en opencode.json.',
+    },
+    {
+      question: '¿Cómo hago que opencode se salte las confirmaciones de permisos?',
+      answer: 'Pon en allow los tipos de acción que quieras sin supervisión en opencode.json, de forma global en ~/.config/opencode/opencode.json o por proyecto y por agente. Una config selectiva es la versión más segura: permite las ediciones de archivos para que el trabajo rutinario vuele, y mantén en ask las acciones de shell y las destructivas de Git.',
     },
     {
       question: '¿Es seguro poner todos los permisos de opencode en allow?',

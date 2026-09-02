@@ -1,8 +1,19 @@
 # Editorial outreach
 
-Last reviewed: 2026-08-31
+Last reviewed: 2026-09-01
 
-**Draft only. Nothing in this file has been sent. Arturo reviews, edits and sends each message personally.**
+## Send log
+
+| Date | Recipient | Resend id | Result |
+| --- | --- | --- | --- |
+| 2026-09-01 | info@singularitysociety.org | cbcbaab0-0086-4f1f-b128-b770cf0b947b | sent, awaiting reply |
+| 2026-09-01 | contact@agentsroom.dev | 667f0a51-351c-495b-9de6-a2c90a75c50c | sent, awaiting reply |
+| 2026-09-01 | support@amux.io | bb7d6c99-8eb7-4bb0-8e6f-701df3e5c8ba | sent, awaiting reply |
+| 2026-09-01 | support@tembo.io | 6f9be4e1-7a18-42b7-bd9b-224bff38c527 | sent, awaiting reply |
+
+The four first-batch messages below were sent on 2026-09-01 through Resend from hello@codeagentswarm.com after Arturo's explicit approval, exactly as drafted. All four pages were rechecked live that day; only Singularity Society mentioned CodeAgentSwarm, in plain text. Earliest follow-up: 2026-09-11 to 2026-09-15, one reminder only. Zevyn stays on hold. The GitHub reminders were NOT sent.
+
+**Arturo reviews, edits and sends each message personally.**
 
 ## Goal
 
