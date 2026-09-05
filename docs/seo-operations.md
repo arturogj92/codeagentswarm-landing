@@ -17,14 +17,14 @@ For a private local preview, use `node scripts/seo-daily-report.mjs --dry-run`. 
 
 `.github/workflows/indexnow.yml` listens for successful GitHub deployment statuses with environment `Production`, which matches this site's Vercel integration. Preview and failed deployments do not submit URLs. No deployment token or paid dependency is added.
 
-The workflow checks out the deployed commit and compares it with the prior successful production deployment. Changes to a guide notify its canonical URL and localized guide index, including deleted guides. Shared guide UI changes notify guide URLs; shared site UI/translations notify all live sitemap URLs. Report scripts and docs alone do not notify pages. With no successful baseline in the last 100 production deployments, it submits the live sitemap once.
+The workflow checks out the deployed commit and compares it with the prior successful production deployment. Changes to a guide notify its canonical URL and localized guide index, including deleted guides. Shared guide UI changes notify guide URLs; shared site UI/translations notify all deployed sitemap URLs. Report scripts and docs alone do not notify pages. With no successful baseline in the last 100 production deployments, it submits the deployed sitemap once.
 
-The existing public key must be available at its production URL before submission. Only canonical HTTPS URLs on `www.codeagentswarm.com` are accepted. A 200/202 means the request was accepted, not that a URL is indexed or ranked.
+After a successful production deployment, CI builds the exact deployed commit and reads its generated sitemap and existing public key with `--deployed-build`. This avoids Vercel bot challenges on server-side requests without changing site protection. IndexNow still verifies ownership using the public key URL. Manual submissions without this flag check the live key before sending. Only canonical HTTPS URLs on `www.codeagentswarm.com` are accepted. A 200/202 means the request was accepted, not that a URL is indexed or ranked.
 
-Local read-only inspection, after fetching the relevant commits:
+Local read-only inspection, after fetching the relevant commits and running `npm run build`:
 
 ```sh
-node scripts/indexnow-ping.mjs --dry-run --since FULL_PREVIOUS_DEPLOYMENT_SHA
+node scripts/indexnow-ping.mjs --dry-run --deployed-build --since FULL_PREVIOUS_DEPLOYMENT_SHA
 ```
 
 Recovery after a verified successful production deployment:

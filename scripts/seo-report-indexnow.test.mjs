@@ -1,5 +1,8 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
+import { mkdtempSync, mkdirSync, writeFileSync, rmSync } from 'node:fs'
+import { tmpdir } from 'node:os'
+import { join } from 'node:path'
 import { buildReport, reportWindow, downloadClicks } from './seo-daily-report.mjs'
 import { changedUrls, validateUrls, main as indexNow } from './indexnow-ping.mjs'
 
@@ -78,4 +81,32 @@ test('IndexNow dry-run cannot send and a missing key prevents submission', async
   fetch.mock.mockImplementation(async () => new Response('not the key'))
   await assert.rejects(indexNow([`${origin}/en`]),/key is not available/)
   assert.equal(fetch.mock.callCount(),1)
+})
+
+
+test('IndexNow uses the deployed build without requesting the bot-protected site', async (t) => {
+  const cwd = process.cwd()
+  const dir = mkdtempSync(join(tmpdir(), 'indexnow-'))
+  t.after(() => { process.chdir(cwd); rmSync(dir, {recursive:true,force:true}) })
+  process.chdir(dir)
+  mkdirSync('.next/server/app', {recursive:true})
+  mkdirSync('public')
+  const key = '23805737595743fe97240d74cb15ff20'
+  writeFileSync('.next/server/app/sitemap.xml.body', `<urlset><url><loc>${origin}/en</loc></url></urlset>`)
+  writeFileSync(`public/${key}.txt`, key)
+  t.mock.method(console, 'log', () => {})
+  const fetch = t.mock.method(globalThis, 'fetch', async (url, options) => {
+    assert.equal(url, 'https://api.indexnow.org/indexnow')
+    assert.equal(options.method, 'POST')
+    assert.deepEqual(JSON.parse(options.body).urlList, [`${origin}/en`])
+    assert.equal(JSON.parse(options.body).keyLocation, `${origin}/${key}.txt`)
+    return new Response('', {status:202})
+  })
+  await indexNow(['--dry-run', '--deployed-build', '--sitemap'])
+  assert.equal(fetch.mock.callCount(), 0)
+  await indexNow(['--deployed-build', '--sitemap'])
+  assert.equal(fetch.mock.callCount(), 1)
+  writeFileSync(`public/${key}.txt`, 'wrong key')
+  await assert.rejects(indexNow(['--deployed-build', '--sitemap']), /key is not available/)
+  assert.equal(fetch.mock.callCount(), 1)
 })

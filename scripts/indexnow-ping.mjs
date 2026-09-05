@@ -2,6 +2,7 @@
 // Run only AFTER a successful production deployment. --since compares the last
 // successful deployment with this checkout, including deleted guide URLs.
 import { execFileSync } from 'node:child_process'
+import { readFile } from 'node:fs/promises'
 import { pathToFileURL } from 'node:url'
 
 const HOST = 'www.codeagentswarm.com'
@@ -43,34 +44,48 @@ export function changedUrls(files, sitemap) {
   return validateUrls([...urls])
 }
 
-async function sitemapUrls() {
-  const res = await fetch(`${ORIGIN}/sitemap.xml`, { signal: AbortSignal.timeout(20000) })
-  if (!res.ok) throw new Error(`Sitemap: HTTP ${res.status}`)
-  const urls = [...(await res.text()).matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1])
+async function sitemapUrls(deployedBuild) {
+  let xml
+  if (deployedBuild) {
+    xml = await readFile('.next/server/app/sitemap.xml.body', 'utf8')
+  } else {
+    const res = await fetch(`${ORIGIN}/sitemap.xml`, { signal: AbortSignal.timeout(20000) })
+    if (!res.ok) throw new Error(`Sitemap: HTTP ${res.status}`)
+    xml = await res.text()
+  }
+  const urls = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1])
   if (!urls.length) throw new Error('Production sitemap has no URLs')
   return validateUrls(urls)
 }
 
 export async function main(args = process.argv.slice(2)) {
   const dryRun = args.includes('--dry-run')
-  args = args.filter((arg) => arg !== '--dry-run')
+  // CI checks out and builds the exact successful production deployment.
+  const deployedBuild = args.includes('--deployed-build')
+  args = args.filter((arg) => !['--dry-run', '--deployed-build'].includes(arg))
   let urls
   if (args[0] === '--since' && args.length === 2) {
     if (!/^[a-f0-9]{40}$/.test(args[1])) throw new Error('--since requires a full commit SHA')
     const files = execFileSync('git', ['diff', '--name-only', args[1], 'HEAD'], { encoding: 'utf8' }).trim().split('\n')
-    urls = changedUrls(files, await sitemapUrls())
+    urls = changedUrls(files, await sitemapUrls(deployedBuild))
   } else if (args[0] === '--sitemap' && args.length === 1) {
-    urls = await sitemapUrls()
+    urls = await sitemapUrls(deployedBuild)
   } else if (args.length && args.every((arg) => !arg.startsWith('--'))) {
     urls = validateUrls(args)
   } else {
-    throw new Error('Usage: indexnow-ping.mjs [--dry-run] --since SHA | --sitemap | URL [URL...]')
+    throw new Error('Usage: indexnow-ping.mjs [--dry-run] [--deployed-build] --since SHA | --sitemap | URL [URL...]')
   }
   if (!urls.length) { console.log('No public URLs changed'); return }
   if (dryRun) { console.log(urls.join('\n')); return }
   const keyLocation = `${ORIGIN}/${KEY}.txt`
-  const keyRes = await fetch(keyLocation, { signal: AbortSignal.timeout(20000) })
-  if (!keyRes.ok || (await keyRes.text()).trim() !== KEY) throw new Error('Production IndexNow key is not available')
+  let key
+  if (deployedBuild) {
+    key = await readFile(`public/${KEY}.txt`, 'utf8')
+  } else {
+    const keyRes = await fetch(keyLocation, { signal: AbortSignal.timeout(20000) })
+    if (keyRes.ok) key = await keyRes.text()
+  }
+  if (key?.trim() !== KEY) throw new Error('Production IndexNow key is not available')
   const res = await fetch(ENDPOINT, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json; charset=utf-8' },

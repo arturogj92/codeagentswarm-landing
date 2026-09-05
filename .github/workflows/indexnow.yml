@@ -23,6 +23,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+          cache: npm
+      - run: npm ci
+      - name: Build the deployed sitemap without requesting the bot-protected website
+        run: npm run build
       - name: Find the previous successful production deployment
         id: previous
         uses: actions/github-script@v7
@@ -43,14 +47,14 @@ jobs:
               }
             }
             // First deployment, or no successful baseline in the last 100:
-            // submit the live sitemap once rather than miss changed pages.
+            // submit the deployed sitemap once rather than miss changed pages.
             core.setOutput('sha', '');
       - name: Submit changed public URLs
         env:
           BEFORE_SHA: ${{ steps.previous.outputs.sha }}
         run: |
           if [ -n "$BEFORE_SHA" ]; then
-            node scripts/indexnow-ping.mjs --since "$BEFORE_SHA"
+            node scripts/indexnow-ping.mjs --deployed-build --since "$BEFORE_SHA"
           else
-            node scripts/indexnow-ping.mjs --sitemap
+            node scripts/indexnow-ping.mjs --deployed-build --sitemap
           fi
