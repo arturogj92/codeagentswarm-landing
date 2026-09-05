@@ -137,8 +137,8 @@ export default function GuideLayout({ guide, relatedGuide }: GuideLayoutProps) {
               )}
             </motion.header>
 
-            {/* ponytail: skip stale six-agent footage until a real Cursor capture exists. */}
-            {meta.ctaAgent !== 'cursor-agent' && (
+            {/* ponytail: skip unrelated footage until real Cursor and Pi captures exist. */}
+            {!['cursor-agent', 'pi'].includes(meta.ctaAgent) && (
               <GuideProductBlock
                 locale={locale}
                 slug={meta.slug}

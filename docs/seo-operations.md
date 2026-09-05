@@ -58,3 +58,49 @@ node --test scripts/seo-report-indexnow.test.mjs components/guides/guide-video.t
 npm run lint
 npm run build
 ```
+
+## Pi editorial launch, September 6
+
+Pi has four distinct search intents, each with an English and Spanish guide:
+installation/first task, models/subscriptions, comparison with OpenCode, and
+native Windows setup. Each pair uses matching section structure, reciprocal
+hreflang, dated Article metadata and FAQPage data generated from the same visible
+answers. The guide index has a Pi family, established OpenCode guides link into
+the cluster, and llms.txt references the eight canonical URLs.
+
+The guides describe Pi support in CAS as beta testing. Their inline and final
+download copy explicitly identifies the current public app rather than promising
+Pi availability. No Pi footage is fabricated: the existing exclusion for agents
+without a real capture also excludes Pi. Homepage agent lists and promotion remain
+unchanged; the future landing announcement is a separate unpublished change.
+
+Facts were checked against Pi's README, provider, models, Windows and RPC
+documentation and OpenCode's agent, permissions and ACP references on September 6.
+Product-specific claims use the Pi 0.85.1 integration checks recorded in the app's
+docs/systems/pi-rpc-agent.md. This does not claim every upstream paid provider
+was tested. No private account configuration appears in the articles.
+
+Build validation exposed a pre-existing prerender gap: the leaf guide generators
+guarded on a parent locale, but this build supplied no parent locale and emitted
+zero guide HTML pages. Both route generators now return explicit locale and slug
+pairs. The resulting build contains all 176 guide pages; wrong-language legacy
+routes retain their runtime redirects. The old source-regex regression check
+asserted the ineffective guard; it now executes the generator with a stub catalog.
+A separate stale pricing test accepts review dates newer than its baseline rather
+than requiring an obsolete exact date. No pricing content was rewritten.
+
+Validation:
+- npm run build and npm run lint (existing image warnings remain).
+- node scripts/check-pi-seo.mjs after building: eight bilingual guides, matching
+  FAQs, metadata, canonical/hreflang, internal links, indexability and discovery;
+  also checks every sitemap guide is actually prerendered.
+- node --test scripts/seo-report-indexnow.test.mjs components/guides/guide-video.test.mjs content/guides/generative-ai-crosslinks.test.mjs content/guides/cursor-seo-links.test.mjs components/seo-conversion-regressions.test.mjs: 23 passing tests.
+- Local production browser checks at 1440x1000 and 390x844, English/Spanish,
+  confirm readable guides without horizontal overflow and no visible Pi on either
+  homepage.
+
+Publish through the existing production deployment and IndexNow workflow. Record
+the successful deployment and submission separately from actual indexing. Search
+or answer-engine visibility is not guaranteed by schema, crawler access or
+llms.txt. Measure Pi URLs and queries in Search Console and guide visits/downloads
+in the existing analytics after complete reporting days.

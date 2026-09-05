@@ -14,16 +14,11 @@ interface PageProps {
   }>
 }
 
-// The parent layout generates both locales. Only pre-render the locale that
-// belongs to this route; wrong-language legacy URLs remain dynamic redirects.
-export async function generateStaticParams({
-  params: { locale },
-}: {
-  params: { locale: string }
-}) {
-  if (locale !== 'en') return []
-  const slugs = getGuideSlugs('en')
-  return slugs.map((slug) => ({ slug }))
+// Return both dynamic segments explicitly. In the current Next build the
+// leaf generator can run without a parent locale; an early locale guard
+// silently deferred every guide to runtime instead of prerendering it.
+export function generateStaticParams() {
+  return getGuideSlugs('en').map((slug) => ({ locale: 'en', slug }))
 }
 
 // Generate metadata with SEO
