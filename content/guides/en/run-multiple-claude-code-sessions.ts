@@ -16,7 +16,7 @@ In this guide I will walk you through the three main methods, compare them hones
     ctaAgent: 'claude-code',
     highlightedWords: ['multiple sessions', 'Claude Code'],
     publishedAt: '2026-04-15',
-    updatedAt: '2026-08-23',
+    updatedAt: '2026-09-05',
     alternateSlug: 'ejecutar-multiples-sesiones-claude-code',
   },
   sections: [
@@ -26,7 +26,7 @@ In this guide I will walk you through the three main methods, compare them hones
       content: [
         {
           type: 'paragraph',
-          text: '<a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a> sessions are independent processes. When you open a terminal and run <code>claude</code>, that session has its own conversation thread, its own context window, and its own working state. Nothing about it is shared with other sessions.',
+          text: '<a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a> sessions are independent processes. When you open a terminal and run <code>claude</code>, that session has its own conversation thread, its own context window, and its own working state. Conversations are separate, but sessions in one checkout still share files and an account can share usage limits.',
         },
         {
           type: 'paragraph',
@@ -48,6 +48,10 @@ In this guide I will walk you through the three main methods, compare them hones
         {
           type: 'paragraph',
           text: 'The question is really about how you manage those sessions once you have more than one or two running. That is where the three methods below come in.',
+        },
+        {
+          type: 'paragraph',
+          text: 'For a reproducible check of what stays isolated, see <a href="/en/guides/git-worktrees-for-ai-coding-agents#local-isolation-check" class="text-neon-cyan hover:text-neon-purple transition-colors">our two-worktree file isolation test</a>. It includes observed results, a runnable example and the limits to check before merging.',
         },
       ],
     },

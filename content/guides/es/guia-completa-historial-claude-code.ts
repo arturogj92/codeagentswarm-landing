@@ -7,16 +7,14 @@ export const guide: Guide = {
     title: 'Historial de Claude Code: dónde se guarda y cómo encontrarlo, respaldarlo y retomarlo',
     metaTitle: 'Historial de Claude Code: encontrar y retomar sesiones (2026)',
     metaDescription: 'Encuentra los archivos de sesión de Claude Code, busca el historial JSONL, retoma conversaciones y crea copias antes de que la limpieza automática las borre.',
-    intro: `Si llevas un tiempo usando Claude Code, seguro que en algún momento te has preguntado: ¿dónde fue a parar esa conversación?
+    intro: `Claude Code guarda las transcripciones locales en ~/.claude/projects/ por defecto. Ejecuta claude -c para continuar la última conversación del directorio actual, o claude --resume para elegir una sesión anterior.
 
-Puede que resolvieras un bug complicado la semana pasada, tomaras una decisión de arquitectura hace tres días, o pasaras 20 minutos explicándole un módulo a Claude y ahora necesitas retomar donde lo dejaste.
-
-La respuesta corta: Claude Code guarda cada sesión en local en ~/.claude/projects/, y puedes retomar la más reciente con "claude -c" o una concreta con "claude -r". La respuesta larga, cómo encontrar, buscar, respaldar y retomar cualquier conversación anterior, es lo que cubre esta guía.`,
+Esta guía explica cómo encontrar, buscar y respaldar conversaciones. Si trabajas con varios agentes o proyectos, también muestra cómo reunir su historial en el escritorio de CodeAgentSwarm.`,
     ctaText: 'Prueba a gestionar tu historial de Claude Code con CodeAgentSwarm. Busca cualquier conversación, filtra por proyecto y retoma con un clic.',
     ctaAgent: 'claude-code',
     highlightedWords: ['historial', 'Claude Code', 'conversaciones'],
     publishedAt: '2026-04-15',
-    updatedAt: '2026-08-21',
+    updatedAt: '2026-09-05',
     alternateSlug: 'claude-code-history-complete-guide',
   },
   sections: [
@@ -35,14 +33,14 @@ La respuesta corta: Claude Code guarda cada sesión en local en ~/.claude/projec
         {
           type: 'list',
           items: [
-            '<code>/history</code> - Lista las sesiones recientes dentro de una sesión activa de Claude Code',
+            '<code>/resume</code> - Lista las sesiones recientes dentro de una sesión activa de Claude Code',
             '<code>claude -c</code> - Retoma la conversación más reciente del proyecto actual',
             '<code>claude -r SESSION_ID</code> - Retoma una conversación específica por su ID',
           ],
         },
         {
           type: 'paragraph',
-          text: 'Puedes encontrar todos los detalles sobre estos comandos en la <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">documentación oficial de Claude Code</a>. Estos comandos funcionan, pero tienen limitaciones reales en cuanto empiezas a usar Claude Code en serio con múltiples proyectos.',
+          text: 'Puedes encontrar todos los detalles sobre estos comandos en la <a href="https://code.claude.com/docs/en/cli-reference" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">documentación oficial de Claude Code</a>. Los comandos y el selector se comprobaron con la documentación oficial el 5 de septiembre de 2026.',
         },
       ],
     },
@@ -52,11 +50,11 @@ La respuesta corta: Claude Code guarda cada sesión en local en ~/.claude/projec
       content: [
         {
           type: 'paragraph',
-          text: 'Claude Code borra por defecto las transcripciones con más de 30 días. Si una sesión que jurarías que existía no aparece por ningún lado, esta limpieza automática es la causa más probable: el archivo JSONL se eliminó de <code>~/.claude/projects/</code> sin avisar.',
+          text: 'Claude Code borra por defecto las transcripciones con más de 30 días. Antes de dar una sesión por borrada, comprueba su proyecto y <code>CLAUDE_CONFIG_DIR</code>. Consulta las <a href="https://code.claude.com/docs/en/claude-directory#application-data" class="text-neon-cyan hover:text-neon-purple transition-colors">reglas de retención y sus excepciones</a>.',
         },
         {
           type: 'paragraph',
-          text: 'Puedes cambiar el periodo de retención con el ajuste <code>cleanupPeriodDays</code> en <code>~/.claude/settings.json</code>. Ponle un número grande para conservarlo prácticamente todo:',
+          text: 'Puedes cambiar el periodo de retención con el ajuste <code>cleanupPeriodDays</code> en <code>~/.claude/settings.json</code>. Añade este valor conservando los demás ajustes. Ampliar la retención no sustituye las copias de seguridad:',
         },
         {
           type: 'code',
@@ -72,25 +70,25 @@ La respuesta corta: Claude Code guarda cada sesión en local en ~/.claude/projec
     },
     {
       id: 'el-problema',
-      title: 'El problema del historial nativo de Claude Code',
+      title: 'Cómo buscar y previsualizar el historial nativo de Claude Code',
       content: [
         {
           type: 'paragraph',
-          text: 'El historial nativo está pensado para lo básico: retomar tu última conversación o listar sesiones recientes. En cuanto necesitas más, la cosa se complica:',
-        },
-        {
-          type: 'list',
-          items: [
-            '<strong>Sin búsqueda.</strong> No puedes buscar "esa discusión sobre autenticación de la semana pasada" en tus conversaciones. Tendrías que hacer grep en archivos JSONL manualmente.',
-            '<strong>Sin acceso cross-proyecto.</strong> El historial está vinculado al directorio donde empezó la conversación. Para buscar en otro proyecto, tienes que navegar allí primero.',
-            '<strong>Sin visión general.</strong> No hay forma de ver todas tus conversaciones de un vistazo, organizadas por proyecto o fecha.',
-            '<strong>Sin vista previa.</strong> Ves IDs de sesión y timestamps, pero no de qué trataba realmente la conversación.',
-            '<strong>Sin filtros.</strong> No puedes filtrar por proyecto, rango de fechas o contenido.',
-          ],
+          text: 'El <a href="https://code.claude.com/docs/en/sessions#use-the-session-picker" class="text-neon-cyan hover:text-neon-purple transition-colors">selector actual</a> permite buscar y previsualizar: escribe para filtrar, pulsa Espacio para previsualizar o Ctrl+A para incluir otros proyectos. Para buscar prompts anteriores, usa Ctrl+R en la entrada: consulta el <a href="https://code.claude.com/docs/en/interactive-mode#command-history" class="text-neon-cyan hover:text-neon-purple transition-colors">historial de comandos</a>.',
         },
         {
           type: 'paragraph',
-          text: 'Si usas Claude Code en un solo proyecto de vez en cuando, esto es suficiente. Pero si trabajas en múltiples proyectos a diario y Claude Code es tu herramienta principal de desarrollo, necesitas algo mejor.',
+          text: 'CodeAgentSwarm añade una vista de escritorio compartida entre tus agentes, con búsqueda por contenido, filtros por proyecto y conversaciones que puedes retomar junto a tus terminales activos.',
+        },
+      ],
+    },
+    {
+      id: 'backup-and-restore',
+      title: 'Cómo hacer una copia y restaurar el historial de Claude Code',
+      content: [
+        {
+          type: 'paragraph',
+          text: 'Cierra las sesiones que quieras respaldar y copia la carpeta projects a una ubicación de backup separada, conservando sus subdirectorios. Si defines CLAUDE_CONFIG_DIR, usa su carpeta projects. Protege la copia: las transcripciones pueden contener código y salidas de herramientas. Para restaurar, respalda primero la carpeta actual y copia solo los archivos de sesión que falten a su subdirectorio original, sin sobrescribir archivos más recientes. Conserva la ruta del proyecto cuando sea posible y comprueba la sesión con claude --resume. Ampliar la retención no recupera un archivo borrado.',
         },
       ],
     },
@@ -100,7 +98,7 @@ La respuesta corta: Claude Code guarda cada sesión en local en ~/.claude/projec
       content: [
         {
           type: 'paragraph',
-          text: '<a href="/" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a> envuelve Claude Code con un sistema completo de historial que resuelve todas las limitaciones anteriores. Cada conversación, en cada terminal, en cada proyecto, se guarda automáticamente, es buscable y se puede retomar.',
+          text: '<a href="/es#download" class="text-neon-cyan hover:text-neon-purple transition-colors">Descarga CodeAgentSwarm</a> para buscar contenido, filtrar por proyecto y agente y retomar una sesión junto a tus otros terminales. Sigue el flujo de esta guía con tus conversaciones existentes.',
         },
         {
           type: 'image',
@@ -150,7 +148,7 @@ La respuesta corta: Claude Code guarda cada sesión en local en ~/.claude/projec
         },
         {
           type: 'paragraph',
-          text: '¿Encontraste la conversación que necesitas? Haz clic y CodeAgentSwarm abre un nuevo terminal con todo el contexto anterior cargado. Claude recuerda todo: el código que discutisteis, las decisiones que tomasteis, las explicaciones que diste. Sin <code>cd</code> al directorio correcto, sin <code>claude -r</code> con un ID de sesión. Solo clic y a seguir trabajando.',
+          text: '¿Encontraste la conversación que necesitas? Haz clic y CodeAgentSwarm abre un nuevo terminal con todo el contexto anterior cargado. La conversación guardada aporta contexto; las sesiones largas pueden haberse compactado. Sin <code>cd</code> al directorio correcto, sin <code>claude -r</code> con un ID de sesión. Solo clic y a seguir trabajando.',
         },
         {
           type: 'heading',
@@ -205,7 +203,7 @@ La respuesta corta: Claude Code guarda cada sesión en local en ~/.claude/projec
           items: [
             '<strong>Deja de re-explicar módulos.</strong> Pasaste 15 minutos explicándole tu sistema de autenticación a Claude el martes. Con historial, retomas esa conversación en vez de explicarlo otra vez desde cero.',
             '<strong>Mantén decisiones consistentes.</strong> Las decisiones de arquitectura se acumulan en conversaciones. Sin historial, puedes contradecir una decisión de hace tres días sin darte cuenta.',
-            '<strong>Ahorra tokens.</strong> Cada vez que re-explicas contexto, estás quemando tokens y tiempo. Retomar una conversación con contexto existente es más barato y rápido.',
+            '<strong>Reutiliza el contexto.</strong> Retomar ahorra explicaciones, pero un historial largo sigue consumiendo contexto y tokens.',
             '<strong>Trabaja en múltiples proyectos con confianza.</strong> Cuando puedes buscar y retomar cualquier conversación de cualquier proyecto, cambiar entre proyectos deja de ser una pesadilla de cambio de contexto.',
             '<strong>Nunca pierdas una solución.</strong> ¿Ese fix ingenioso que se te ocurrió a las 11 de la noche? Está en tu historial. Búscalo, encuéntralo, reutilízalo.',
           ],
@@ -248,7 +246,7 @@ La respuesta corta: Claude Code guarda cada sesión en local en ~/.claude/projec
     },
     {
       question: '¿Cómo encuentro conversaciones antiguas de Claude Code?',
-      answer: 'Con herramientas nativas, usa /history dentro de una sesión o navega por los archivos en ~/.claude/projects/. Con CodeAgentSwarm, tienes búsqueda de texto completo en todas las conversaciones y todos los proyectos con retomar en un clic.',
+      answer: 'Abre claude --resume desde tu shell o /resume desde una sesión. También puedes consultar los archivos JSONL locales. CodeAgentSwarm integra la búsqueda de conversaciones junto a tus terminales.',
     },
     {
       question: '¿Cómo retomo una conversación anterior de Claude Code?',
@@ -256,11 +254,11 @@ La respuesta corta: Claude Code guarda cada sesión en local en ~/.claude/projec
     },
     {
       question: '¿Puedo buscar en todas mis conversaciones de Claude Code?',
-      answer: 'Claude Code nativo no tiene búsqueda integrada. Tendrías que hacer grep en archivos JSONL manualmente. CodeAgentSwarm proporciona búsqueda instantánea de texto completo en todas las conversaciones, todos los proyectos, con vista previa y filtrado.',
+      answer: 'Sí. El selector nativo permite filtrar y previsualizar. CodeAgentSwarm ofrece búsqueda por contenido en su vista de historial junto a tus otros agentes.',
     },
     {
       question: '¿El historial de Claude Code funciona entre diferentes proyectos?',
-      answer: 'El historial nativo está vinculado a cada directorio de proyecto por separado. Necesitas navegar al proyecto primero. CodeAgentSwarm proporciona búsqueda cross-proyecto y retomar desde cualquier terminal.',
+      answer: 'Sí. El selector nativo puede incluir otros proyectos. CodeAgentSwarm ofrece filtros por proyecto y agente en una vista de escritorio.',
     },
     {
       question: '¿Cómo hago backup del historial de conversaciones de Claude Code?',
@@ -268,15 +266,15 @@ La respuesta corta: Claude Code guarda cada sesión en local en ~/.claude/projec
     },
     {
       question: '¿Puedo transferir el historial a un ordenador nuevo?',
-      answer: 'Sí. Copia ~/.claude/ de la máquina antigua a la nueva. Las rutas son absolutas, así que funciona mejor cuando tu estructura de directorios es la misma.',
+      answer: 'Respalda primero el destino y transfiere la carpeta projects de forma privada, conservando las rutas de proyecto cuando sea posible. Inicia sesión por separado en el nuevo ordenador. Evita copiar credenciales o sobrescribir transcripciones más recientes.',
     },
     {
       question: '¿El historial ocupa mucho espacio en disco?',
-      answer: 'No. Cada conversación ocupa unos cientos de KB a unos pocos MB. Incluso usuarios intensivos raramente superan los 500MB en total.',
+      answer: 'Depende de la duración de las sesiones y de las salidas de herramientas. Comprueba el tamaño de tu carpeta projects antes de elegir dónde respaldarla; no hay un límite de tamaño universal útil.',
     },
     {
-      question: '¿Cuál es la diferencia entre /history y claude -c?',
-      answer: '/history lista sesiones recientes y sus IDs dentro de una sesión activa. "claude -c" inicia Claude Code retomando automáticamente la conversación más reciente del proyecto actual.',
+      question: '¿Cuál es la diferencia entre /resume y claude -c?',
+      answer: 'Usa /resume para elegir una sesión. El comando claude -c continúa la última conversación del directorio actual.',
     },
     {
       question: '¿Por qué ha desaparecido mi historial de Claude Code?',

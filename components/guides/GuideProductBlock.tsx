@@ -76,6 +76,13 @@ export default function GuideProductBlock({ locale, slug, videoKey }: GuideProdu
 
   const videoSrc = `${VIDEO_CDN_BASE}/${videoKey}`
   const aspectRatio = VIDEO_ASPECT[videoKey] ?? 16 / 9
+  const message = videoKey === 'guide-conversation-history.mp4'
+    ? 'history'
+    : videoKey === 'guide-terminals.mp4'
+      ? 'parallel'
+      : videoKey === 'guide-gitmanager.mp4'
+        ? 'worktrees'
+        : null
 
   return (
     <aside
@@ -87,8 +94,8 @@ export default function GuideProductBlock({ locale, slug, videoKey }: GuideProdu
           <span className="w-1.5 h-1.5 rounded-full bg-neon-cyan shadow-[0_0_10px_rgba(251,191,36,0.8)]" />
           {t('overline')}
         </div>
-        <p className="text-[21px] font-bold text-white leading-[1.3] mb-1.5 m-0">{t('title')}</p>
-        <p className="text-[15.5px] text-white/65 mb-4 m-0">{t('copy')}</p>
+        <p className="text-[21px] font-bold text-white leading-[1.3] mb-1.5 m-0">{t(message ? `${message}.title` : 'title')}</p>
+        <p className="text-[15.5px] text-white/65 mb-4 m-0">{t(message ? `${message}.copy` : 'copy')}</p>
       </div>
 
       <div

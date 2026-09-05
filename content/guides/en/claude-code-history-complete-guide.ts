@@ -7,16 +7,14 @@ export const guide: Guide = {
     title: 'Claude Code History: Where It Is Stored and How to Find, Back Up & Resume It',
     metaTitle: 'Claude Code History: Find, Resume & Restore Sessions (2026)',
     metaDescription: 'Find Claude Code session files, search JSONL history, resume previous conversations, and back up or restore chats before automatic cleanup removes them.',
-    intro: `If you have been using Claude Code for a while, at some point you have probably wondered: where did that conversation go?
+    intro: `Claude Code saves local transcripts in ~/.claude/projects/ by default. Run claude -c to continue the latest conversation in your current directory, or claude --resume to choose an older session.
 
-Maybe you solved a tricky bug last week, made an architecture decision three days ago, or spent 20 minutes explaining a module to Claude and now you need to pick up where you left off.
-
-The short answer: Claude Code stores every session locally in ~/.claude/projects/, and you can resume the most recent one with "claude -c" or a specific one with "claude -r". The longer answer, how to actually find, search, back up and resume any past conversation, is what this guide covers.`,
+This guide covers finding, searching and backing up conversations. If you work across several agents or projects, it also shows how CodeAgentSwarm brings their history into one desktop workspace.`,
     ctaText: 'Try managing your Claude Code history with CodeAgentSwarm. Search any conversation, filter by project, and resume in one click.',
     ctaAgent: 'claude-code',
     highlightedWords: ['history', 'Claude Code', 'conversations'],
     publishedAt: '2026-04-15',
-    updatedAt: '2026-08-21',
+    updatedAt: '2026-09-05',
     alternateSlug: 'guia-completa-historial-claude-code',
   },
   sections: [
@@ -35,14 +33,14 @@ The short answer: Claude Code stores every session locally in ~/.claude/projects
         {
           type: 'list',
           items: [
-            '<code>/history</code> - List recent sessions inside an active Claude Code session',
+            '<code>/resume</code> - List recent sessions inside an active Claude Code session',
             '<code>claude -c</code> - Resume the most recent conversation for the current project',
             '<code>claude -r SESSION_ID</code> - Resume a specific conversation by its ID',
           ],
         },
         {
           type: 'paragraph',
-          text: 'You can find full details on these commands in the <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">official Claude Code documentation</a>. They work, but they have real limitations once you start using Claude Code seriously across multiple projects.',
+          text: 'You can find full details on these commands in the <a href="https://code.claude.com/docs/en/cli-reference" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">official Claude Code documentation</a>. Commands and picker behavior were checked against the official documentation on September 5, 2026.',
         },
       ],
     },
@@ -52,11 +50,11 @@ The short answer: Claude Code stores every session locally in ~/.claude/projects
       content: [
         {
           type: 'paragraph',
-          text: 'Claude Code deletes conversation transcripts older than 30 days by default. If a session you swear existed is nowhere to be found, this retention cleanup is the most likely reason: the JSONL file was removed from <code>~/.claude/projects/</code> automatically.',
+          text: 'Claude Code deletes conversation transcripts older than 30 days by default. Before assuming deletion, check the project and <code>CLAUDE_CONFIG_DIR</code> used for the session. See the <a href="https://code.claude.com/docs/en/claude-directory#application-data" class="text-neon-cyan hover:text-neon-purple transition-colors">retention rules and exceptions</a>.',
         },
         {
           type: 'paragraph',
-          text: 'You can change the retention period with the <code>cleanupPeriodDays</code> setting in <code>~/.claude/settings.json</code>. Set it to a large number to effectively keep everything:',
+          text: 'You can change the retention period with the <code>cleanupPeriodDays</code> setting in <code>~/.claude/settings.json</code>. Merge this value into your existing settings; keep the other keys. A longer retention window does not replace backups:',
         },
         {
           type: 'code',
@@ -72,25 +70,25 @@ The short answer: Claude Code stores every session locally in ~/.claude/projects
     },
     {
       id: 'the-problem',
-      title: 'The problem with native Claude Code history',
+      title: 'How to search and preview native Claude Code history',
       content: [
         {
           type: 'paragraph',
-          text: 'Native history was designed for simple use: resume your last conversation or list recent sessions. Once you go beyond that, things get frustrating fast:',
-        },
-        {
-          type: 'list',
-          items: [
-            '<strong>No search.</strong> You cannot search for "that authentication discussion from last week" across your conversations. You would need to grep through raw JSONL files manually.',
-            '<strong>No cross-project access.</strong> History is locked to the project directory where the conversation started. Want to find a conversation from another project? Navigate there first.',
-            '<strong>No visual overview.</strong> There is no way to see all your conversations at a glance, organized by project or date.',
-            '<strong>No content preview.</strong> You see session IDs and timestamps, but not what the conversation was actually about.',
-            '<strong>No filtering.</strong> Cannot filter by project, date range, or conversation content.',
-          ],
+          text: 'The current <a href="https://code.claude.com/docs/en/sessions#use-the-session-picker" class="text-neon-cyan hover:text-neon-purple transition-colors">session picker</a> supports search and previews: type to filter, press Space to preview, or Ctrl+A to include other projects. For previous prompts, use Ctrl+R in the input to search <a href="https://code.claude.com/docs/en/interactive-mode#command-history" class="text-neon-cyan hover:text-neon-purple transition-colors">command history</a>.',
         },
         {
           type: 'paragraph',
-          text: 'If you use Claude Code on one project occasionally, this is fine. But if you work across multiple projects daily and rely on Claude Code as your main development tool, you need something better.',
+          text: 'CodeAgentSwarm adds a shared desktop view across your agents, with content search, project filters and conversations you can reopen beside your running terminals.',
+        },
+      ],
+    },
+    {
+      id: 'backup-and-restore',
+      title: 'How to back up and restore Claude Code history',
+      content: [
+        {
+          type: 'paragraph',
+          text: 'Close the sessions you want to back up, then copy the projects folder to a separate backup location, preserving its subdirectories. If you set CLAUDE_CONFIG_DIR, use its projects folder. Keep the backup private: transcripts can contain source code and tool output. To restore, first back up the current folder, then copy only the missing session files into their original project subdirectory without overwriting newer files. Keep the same project path when possible and check the restored session with claude --resume. Raising retention cannot recover a deleted file.',
         },
       ],
     },
@@ -100,7 +98,7 @@ The short answer: Claude Code stores every session locally in ~/.claude/projects
       content: [
         {
           type: 'paragraph',
-          text: '<a href="/" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a> wraps Claude Code with a complete history system that solves every limitation listed above. Every conversation, across every terminal, across every project, is automatically stored, searchable and resumable.',
+          text: '<a href="/en#download" class="text-neon-cyan hover:text-neon-purple transition-colors">Download CodeAgentSwarm</a> to search conversation content, filter by project and agent, and resume a session beside your other terminals. Follow the workflow below using your existing conversations.',
         },
         {
           type: 'image',
@@ -150,7 +148,7 @@ The short answer: Claude Code stores every session locally in ~/.claude/projects
         },
         {
           type: 'paragraph',
-          text: 'Found the conversation you need? Click on it and CodeAgentSwarm opens a new terminal with all the previous context loaded. Claude remembers everything: the code you discussed, the decisions you made, the explanations you gave. No <code>cd</code> to the right directory, no <code>claude -r</code> with a session ID. Just click and keep working.',
+          text: 'Found the conversation you need? Click on it and CodeAgentSwarm opens a new terminal with all the previous context loaded. The saved conversation provides context; long sessions may have been compacted. No <code>cd</code> to the right directory, no <code>claude -r</code> with a session ID. Just click and keep working.',
         },
         {
           type: 'heading',
@@ -205,7 +203,7 @@ The short answer: Claude Code stores every session locally in ~/.claude/projects
           items: [
             '<strong>Stop re-explaining modules.</strong> You spent 15 minutes explaining your auth system to Claude last Tuesday. With history, you resume that conversation instead of explaining it again from scratch.',
             '<strong>Keep decisions consistent.</strong> Architecture decisions accumulate across conversations. Without history, you risk contradicting a decision you made three days ago because you forgot.',
-            '<strong>Save tokens.</strong> Every time you re-explain context, you are burning tokens and time. Resuming a conversation with existing context is cheaper and faster.',
+            '<strong>Reuse context.</strong> Resuming saves re-explanation, but long histories still consume context and tokens.',
             '<strong>Work across multiple projects confidently.</strong> When you can search and resume any conversation from any project, switching between projects stops being a context-switching nightmare.',
             '<strong>Never lose a solution.</strong> That clever fix you came up with at 11pm? It is in your history. Search for it, find it, reuse it.',
           ],
@@ -248,7 +246,7 @@ The short answer: Claude Code stores every session locally in ~/.claude/projects
     },
     {
       question: 'How do I find old Claude Code conversations?',
-      answer: 'With native tools, use /history inside a session or browse files in ~/.claude/projects/. With CodeAgentSwarm, you get full-text search across all conversations and all projects with one click resume.',
+      answer: 'Open claude --resume from your shell or /resume inside a session. You can also browse the local JSONL files. CodeAgentSwarm brings conversation search into the same workspace as your terminals.',
     },
     {
       question: 'How do I resume a previous Claude Code conversation?',
@@ -256,11 +254,11 @@ The short answer: Claude Code stores every session locally in ~/.claude/projects
     },
     {
       question: 'Can I search through all my Claude Code conversations?',
-      answer: 'Native Claude Code has no built-in search. You would need to grep through JSONL files manually. CodeAgentSwarm provides instant full-text search across all conversations, all projects, with message preview and filtering.',
+      answer: 'Yes. The native picker supports filtering and previews. CodeAgentSwarm offers content search in its history view alongside your other agents.',
     },
     {
       question: 'Does Claude Code history work across different projects?',
-      answer: 'Native history is tied to each project directory separately. You need to navigate to the project first. CodeAgentSwarm provides cross-project search and resume from any terminal.',
+      answer: 'Yes. The native picker can include other projects. CodeAgentSwarm provides project and agent filters in one desktop view.',
     },
     {
       question: 'How do I back up my Claude Code conversation history?',
@@ -268,15 +266,15 @@ The short answer: Claude Code stores every session locally in ~/.claude/projects
     },
     {
       question: 'Can I transfer Claude Code history to a new computer?',
-      answer: 'Yes. Copy ~/.claude/ from the old machine to the new one. Note that paths are absolute, so it works best when your directory structure matches.',
+      answer: 'Back up the destination first, then transfer the projects folder privately, preserving project paths where possible. Sign in separately on the new computer. Avoid copying credentials or overwriting newer transcripts.',
     },
     {
       question: 'Does Claude Code history use a lot of disk space?',
-      answer: 'No. Each conversation uses a few hundred KB to a few MB. Even heavy users rarely exceed 500MB total.',
+      answer: 'Size depends on session length and tool output. Check the size of your projects folder before choosing backup storage; there is no useful universal size limit.',
     },
     {
-      question: 'What is the difference between /history and claude -c?',
-      answer: '/history lists recent sessions and their IDs inside an active session. "claude -c" starts Claude Code and automatically resumes the most recent conversation for the current project.',
+      question: 'What is the difference between /resume and claude -c?',
+      answer: 'Use /resume to choose a session. The claude -c command continues the latest conversation in the current directory.',
     },
     {
       question: 'Why did my Claude Code history disappear?',

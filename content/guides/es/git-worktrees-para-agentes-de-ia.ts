@@ -16,7 +16,7 @@ En esta guía explico el problema en concreto, qué es de verdad un git worktree
     ctaAgent: 'multi',
     highlightedWords: ['Git worktrees', 'agentes de IA'],
     publishedAt: '2026-07-05',
-    updatedAt: '2026-07-05',
+    updatedAt: '2026-09-05',
     alternateSlug: 'git-worktrees-for-ai-coding-agents',
   },
   sections: [
@@ -120,6 +120,55 @@ En esta guía explico el problema en concreto, qué es de verdad un git worktree
         {
           type: 'paragraph',
           text: 'Esto funciona, y si solo levantas un enjambre de vez en cuando es perfectamente razonable. La fricción está en la contabilidad. Creas una carpeta y una rama por agente, recuerdas qué agente está en qué carpeta, limpias los worktrees cuando terminas y mantienes esas carpetas extra fuera de tu editor y de tu git status. Hazlo varias veces al día entre proyectos y el montaje empieza a costar más de lo que ahorra.',
+        },
+      ],
+    },
+    {
+      id: 'local-isolation-check',
+      title: 'Prueba reproducible: dos sesiones editan el mismo archivo',
+      content: [
+        {
+          type: 'paragraph',
+          text: 'El 5 de septiembre de 2026 comprobamos el servicio de worktrees de CodeAgentSwarm con un repositorio temporal de Git en macOS. Creó dos ramas; escribimos un valor distinto en example.txt en cada copia y verificamos que el original seguía intacto. Fueron ediciones deterministas de archivos, no tareas generadas por IA ni una prueba de velocidad.',
+        },
+        {
+          type: 'table',
+          headers: [
+            'Copia de trabajo',
+            'Valor tras las dos ediciones',
+          ],
+          rows: [
+            [
+              'main',
+              'baseline',
+            ],
+            [
+              'A',
+              'change A',
+            ],
+            [
+              'B',
+              'change B',
+            ],
+          ],
+        },
+        {
+          type: 'paragraph',
+          text: 'Descarga el <a href="/examples/worktree-isolation.mjs" download class="text-neon-cyan hover:text-neon-purple transition-colors">worktree-isolation.mjs</a> y ejecútalo con Node.js y Git instalados. Reproduce la misma comprobación de aislamiento con Git, sin la app ni llamadas a modelos de pago, y elimina su repositorio temporal al terminar.',
+        },
+        {
+          type: 'code',
+          language: 'bash',
+          code: 'node worktree-isolation.mjs',
+        },
+        {
+          type: 'callout',
+          variant: 'info',
+          content: 'Esta prueba comprueba solo el aislamiento de archivos. Los worktrees comparten el historial de Git y las aplicaciones pueden compartir puertos, bases de datos o servicios externos. Los cambios en las mismas líneas pueden entrar en conflicto al fusionar. Revisa cada diff y ejecuta tus tests antes de fusionar.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Para probar el flujo en la app, <a href="/es#download" class="text-neon-cyan hover:text-neon-purple transition-colors">descarga CodeAgentSwarm</a>, activa Git Worktree en dos terminales nuevos y comprueba sus carpetas antes de empezar.',
         },
       ],
     },

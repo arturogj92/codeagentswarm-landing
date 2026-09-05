@@ -90,7 +90,7 @@ export default function GuideLayout({ guide, relatedGuide }: GuideLayoutProps) {
 
         <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-12">
           {/* Main content */}
-          <article className="min-w-0">
+          <article className="min-w-0 [overflow-wrap:anywhere]">
             {/* Header */}
             <motion.header
               initial={{ opacity: 0, y: 20 }}
