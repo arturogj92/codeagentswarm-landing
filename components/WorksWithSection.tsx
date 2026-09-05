@@ -80,6 +80,15 @@ export default function WorksWithSection() {
       ),
       href: guidePath('cursor-agent-cli-acp-codeagentswarm', 'cursor-agent-cli-acp-codeagentswarm'),
       icon: '/icons/apps/cursor-icon.svg',
+    },
+    {
+      name: 'Pi (beta)',
+      desc: g(
+        'Use Pi with your connected models in Chat or CLI, with permissions and searchable history.',
+        'Usa Pi con tus modelos conectados en Chat o CLI, con permisos e historial buscable.'
+      ),
+      href: guidePath('how-to-use-pi-coding-agent', 'como-usar-pi-coding-agent'),
+      icon: '/icons/apps/pi-icon.svg',
       isNew: true,
     },
   ]
@@ -104,13 +113,13 @@ export default function WorksWithSection() {
           </h2>
           <p className="text-white/70 text-lg max-w-2xl mx-auto">
             {g(
-              'One workspace for Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build and Cursor Agent. Run them in parallel, mix vendors, and watch all of them from one place.',
-              'Un espacio de trabajo para Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent. Ejecútalos en paralelo, mezcla proveedores y vigílalos todos desde un sitio.'
+              'One workspace for Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent and Pi (beta). Run them in parallel, mix vendors, and watch all of them from one place.',
+              'Un espacio de trabajo para Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent y Pi (beta). Ejecútalos en paralelo, mezcla proveedores y vigílalos todos desde un sitio.'
             )}
           </p>
         </motion.div>
 
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-7">
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {tools.map((tool, i) => {
             const inner = (
               <>
