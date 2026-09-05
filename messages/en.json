@@ -746,7 +746,19 @@
     "productBlock": {
       "overline": "The 30-second way",
       "title": "Skip the manual setup: this is what it looks like in CodeAgentSwarm",
-      "copy": "Claude Code, Codex, opencode, Kimi Code and Antigravity in one supervised workspace. No tmux, no window juggling, zero context switching."
+      "copy": "Claude Code, Codex, opencode, Kimi Code and Antigravity in one supervised workspace. No tmux, no window juggling, zero context switching.",
+      "history": {
+        "title": "Find that conversation. Pick up where you left off.",
+        "copy": "Search conversation content, filter by project and agent, and resume beside your other terminals."
+      },
+      "parallel": {
+        "title": "Keep your parallel agents in view",
+        "copy": "Run separate sessions in one workspace, see which agents need attention, and return to the right task."
+      },
+      "worktrees": {
+        "title": "Give each agent its own checkout",
+        "copy": "Use a Git worktree per terminal to separate file edits, then review the changes before merging."
+      }
     },
     "downloadCta": {
       "button": "Download free beta",

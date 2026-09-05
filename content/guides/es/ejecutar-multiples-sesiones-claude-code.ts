@@ -16,7 +16,7 @@ En esta guía te explico los tres métodos principales, los comparo de forma hon
     ctaAgent: 'claude-code',
     highlightedWords: ['varias sesiones', 'Claude Code'],
     publishedAt: '2026-04-15',
-    updatedAt: '2026-08-23',
+    updatedAt: '2026-09-05',
     alternateSlug: 'run-multiple-claude-code-sessions',
   },
   sections: [
@@ -48,6 +48,10 @@ En esta guía te explico los tres métodos principales, los comparo de forma hon
         {
           type: 'paragraph',
           text: 'La cuestión real es cómo gestionas esas sesiones una vez que tienes más de una o dos funcionando. Ahí es donde entran los tres métodos que te explico a continuación.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Para comprobar qué queda aislado, consulta <a href="/es/guias/git-worktrees-para-agentes-de-ia#local-isolation-check" class="text-neon-cyan hover:text-neon-purple transition-colors">nuestra prueba de aislamiento con dos worktrees</a>. Incluye resultados observados, un ejemplo ejecutable y los límites que debes revisar antes de fusionar.',
         },
       ],
     },

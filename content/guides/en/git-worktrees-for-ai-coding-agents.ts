@@ -16,7 +16,7 @@ In this guide I explain the problem in concrete terms, what a git worktree actua
     ctaAgent: 'multi',
     highlightedWords: ['Git Worktrees', 'AI Coding Agents'],
     publishedAt: '2026-07-05',
-    updatedAt: '2026-07-05',
+    updatedAt: '2026-09-05',
     alternateSlug: 'git-worktrees-para-agentes-de-ia',
   },
   sections: [
@@ -120,6 +120,55 @@ In this guide I explain the problem in concrete terms, what a git worktree actua
         {
           type: 'paragraph',
           text: 'This works, and if you only spin up a swarm occasionally it is perfectly reasonable. The friction is in the bookkeeping. You create a folder and a branch per agent, remember which agent is in which folder, clean up the worktrees when you are done, and keep those extra folders out of your editor and your git status. Do it a few times a day across projects and the setup starts to cost more than it saves.',
+        },
+      ],
+    },
+    {
+      id: 'local-isolation-check',
+      title: 'Reproducible check: two sessions edit the same filename',
+      content: [
+        {
+          type: 'paragraph',
+          text: 'On September 5, 2026, we checked the CodeAgentSwarm worktree service against a temporary Git repository on macOS. It created two branches; we wrote a different value to example.txt in each checkout and verified that the original file stayed unchanged. These were deterministic file edits, not AI-generated tasks or a speed benchmark.',
+        },
+        {
+          type: 'table',
+          headers: [
+            'Checkout',
+            'Value after both edits',
+          ],
+          rows: [
+            [
+              'main',
+              'baseline',
+            ],
+            [
+              'A',
+              'change A',
+            ],
+            [
+              'B',
+              'change B',
+            ],
+          ],
+        },
+        {
+          type: 'paragraph',
+          text: 'Download the <a href="/examples/worktree-isolation.mjs" download class="text-neon-cyan hover:text-neon-purple transition-colors">worktree-isolation.mjs</a> example and run it with Node.js and Git installed. It independently reproduces the same file-isolation check using Git, without the app or paid model calls, and removes its temporary repository afterward.',
+        },
+        {
+          type: 'code',
+          language: 'bash',
+          code: 'node worktree-isolation.mjs',
+        },
+        {
+          type: 'callout',
+          variant: 'info',
+          content: 'This checks file isolation only. Worktrees still share Git history, and applications can share ports, databases or external services. Edits to the same lines can still conflict when you merge. Review each diff and run your tests before merging.',
+        },
+        {
+          type: 'paragraph',
+          text: 'To try the workflow in the app, <a href="/en#download" class="text-neon-cyan hover:text-neon-purple transition-colors">download CodeAgentSwarm</a>, enable Git Worktree for two new terminals and inspect each terminal folder before starting work.',
         },
       ],
     },

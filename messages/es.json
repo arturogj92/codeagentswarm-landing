@@ -746,7 +746,19 @@
     "productBlock": {
       "overline": "La forma de 30 segundos",
       "title": "Sáltate el montaje manual: así se ve en CodeAgentSwarm",
-      "copy": "Claude Code, Codex, opencode, Kimi Code y Antigravity en un espacio de trabajo supervisado. Sin tmux, sin malabares con ventanas, cero cambios de contexto."
+      "copy": "Claude Code, Codex, opencode, Kimi Code y Antigravity en un espacio de trabajo supervisado. Sin tmux, sin malabares con ventanas, cero cambios de contexto.",
+      "history": {
+        "title": "Encuentra esa conversación y retómala",
+        "copy": "Busca por contenido, filtra por proyecto y agente y retoma la conversación junto a tus otros terminales."
+      },
+      "parallel": {
+        "title": "Ten a la vista tus agentes en paralelo",
+        "copy": "Ejecuta sesiones separadas en un espacio, identifica qué agentes necesitan atención y vuelve a la tarea correcta."
+      },
+      "worktrees": {
+        "title": "Dale a cada agente su propia copia de trabajo",
+        "copy": "Usa un worktree de Git por terminal para separar los cambios y revísalos antes de fusionarlos."
+      }
     },
     "downloadCta": {
       "button": "Descargar beta gratis",

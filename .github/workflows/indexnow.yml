@@ -1,0 +1,60 @@
+name: Notify IndexNow after production deployment
+
+on:
+  deployment_status:
+
+permissions:
+  contents: read
+  deployments: read
+
+concurrency:
+  group: indexnow-production
+  cancel-in-progress: false
+
+jobs:
+  notify:
+    if: github.event.deployment_status.state == 'success' && github.event.deployment.environment == 'Production'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.deployment.sha }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - name: Build the deployed sitemap without requesting the bot-protected website
+        run: npm run build
+      - name: Find the previous successful production deployment
+        id: previous
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const current = context.payload.deployment;
+            const { data: deployments } = await github.rest.repos.listDeployments({
+              ...context.repo, environment: 'Production', per_page: 100,
+            });
+            for (const deployment of deployments) {
+              if (deployment.id >= current.id || deployment.sha === current.sha) continue;
+              const { data: statuses } = await github.rest.repos.listDeploymentStatuses({
+                ...context.repo, deployment_id: deployment.id, per_page: 100,
+              });
+              if (statuses.some(status => status.state === 'success')) {
+                core.setOutput('sha', deployment.sha);
+                return;
+              }
+            }
+            // First deployment, or no successful baseline in the last 100:
+            // submit the deployed sitemap once rather than miss changed pages.
+            core.setOutput('sha', '');
+      - name: Submit changed public URLs
+        env:
+          BEFORE_SHA: ${{ steps.previous.outputs.sha }}
+        run: |
+          if [ -n "$BEFORE_SHA" ]; then
+            node scripts/indexnow-ping.mjs --deployed-build --since "$BEFORE_SHA"
+          else
+            node scripts/indexnow-ping.mjs --deployed-build --sitemap
+          fi
