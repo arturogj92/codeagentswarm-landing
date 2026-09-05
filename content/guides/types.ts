@@ -24,6 +24,7 @@ export type GuideCtaAgent =
   | 'antigravity'
   | 'grok-build'
   | 'cursor-agent'
+  | 'pi'
   | 'multi'
   | 'comparison'
 
@@ -36,6 +37,7 @@ export const CTA_AGENT_MESSAGE_KEY: Record<GuideCtaAgent, string> = {
   antigravity: 'antigravity',
   'grok-build': 'grokBuild',
   'cursor-agent': 'cursorAgent',
+  pi: 'pi',
   multi: 'multi',
   comparison: 'comparison',
 }

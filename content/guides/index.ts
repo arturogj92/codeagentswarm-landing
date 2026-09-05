@@ -176,9 +176,23 @@ import esCursorVsClaude from './es/cursor-cli-vs-claude-code'
 import esCursorWindows from './es/cursor-cli-en-windows'
 import esCursorPricing from './es/precios-y-uso-cursor-cli'
 
+import enPiSetup from './en/how-to-use-pi-coding-agent'
+import esPiSetup from './es/como-usar-pi-coding-agent'
+import enPiModels from './en/pi-coding-agent-models-subscriptions'
+import esPiModels from './es/pi-coding-agent-modelos-suscripciones'
+import enPiComparison from './en/pi-vs-opencode'
+import esPiComparison from './es/pi-vs-opencode'
+import enPiWindows from './en/pi-coding-agent-on-windows'
+import esPiWindows from './es/pi-coding-agent-en-windows'
+
 // Registry of all guides by locale and slug
 export const guides: Record<string, Record<string, Guide>> = {
   en: {
+    'how-to-use-pi-coding-agent': enPiSetup,
+    'pi-coding-agent-models-subscriptions': enPiModels,
+    'pi-vs-opencode': enPiComparison,
+    'pi-coding-agent-on-windows': enPiWindows,
+
     'how-to-use-multiple-claude-code-terminals': enMultipleTerminals,
     'claude-code-history': enClaudeCodeHistory,
     'codeagentswarm-notifications': enNotifications,
@@ -265,6 +279,11 @@ export const guides: Record<string, Record<string, Guide>> = {
     'cursor-cli-pricing': enCursorPricing,
   },
   es: {
+    'como-usar-pi-coding-agent': esPiSetup,
+    'pi-coding-agent-modelos-suscripciones': esPiModels,
+    'pi-vs-opencode': esPiComparison,
+    'pi-coding-agent-en-windows': esPiWindows,
+
     'como-usar-varios-terminales-claude-code': esMultipleTerminals,
     'historial-claude-code': esHistorialClaudeCode,
     'notificaciones-codeagentswarm': esNotificaciones,

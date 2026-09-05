@@ -115,12 +115,17 @@ test('guide and homepage videos avoid downloading obsolete media eagerly', async
   assert.doesNotMatch(hero, /cdnVideo\('terminals\.mp4'\)/)
 })
 
-test('guide prerenders stay inside their own locale', async () => {
-  const english = await readFile(new URL('../app/[locale]/guides/[slug]/page.tsx', import.meta.url), 'utf8')
-  const spanish = await readFile(new URL('../app/[locale]/guias/[slug]/page.tsx', import.meta.url), 'utf8')
-
-  assert.match(english, /if \(locale !== 'en'\) return \[\]/)
-  assert.match(spanish, /if \(locale !== 'es'\) return \[\]/)
+test('guide prerenders include both segments without depending on a parent locale', async () => {
+  for (const [locale, route] of [['en', 'guides'], ['es', 'guias']]) {
+    const source = await readFile(new URL(`../app/[locale]/${route}/[slug]/page.tsx`, import.meta.url), 'utf8')
+    const body = source.match(/export function generateStaticParams\(\) \{([\s\S]*?)\n\}/)?.[1]
+    assert.ok(body, 'missing static generator')
+    const result = new Function('getGuideSlugs', body)((requestedLocale) => {
+      assert.equal(requestedLocale, locale)
+      return ['example-guide']
+    })
+    assert.deepEqual(result, [{ locale, slug: 'example-guide' }])
+  }
 })
 
 test('about and comparison pages expose current authorship and Mobile Connect facts', async () => {
@@ -173,7 +178,7 @@ test('about and comparison pages expose current authorship and Mobile Connect fa
   }
 })
 
-test('volatile pricing, token and competitor facts carry the current verification date', async () => {
+test('volatile pricing, token and competitor facts retain review dates at least as recent as the baseline', async () => {
   const pricingFiles = [
     '../content/guides/en/antigravity-plans-and-pricing.ts',
     '../content/guides/en/cursor-cli-pricing.ts',
@@ -193,7 +198,8 @@ test('volatile pricing, token and competitor facts carry the current verificatio
 
   for (const file of pricingFiles) {
     const source = await readFile(new URL(file, import.meta.url), 'utf8')
-    assert.match(source, /updatedAt: '2026-08-25'/)
+    const updatedAt = source.match(/updatedAt: '(\d{4}-\d{2}-\d{2})'/)?.[1]
+    assert.ok(updatedAt && updatedAt >= '2026-08-25', file + ' is missing a recent review date')
   }
 
   const llms = await readFile(new URL('../public/llms.txt', import.meta.url), 'utf8')

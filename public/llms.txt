@@ -19,6 +19,19 @@ CodeAgentSwarm is a third-party Agentic Development Environment for macOS and Wi
 - [Guides index (EN)](https://www.codeagentswarm.com/en/guides)
 - [Guías (ES)](https://www.codeagentswarm.com/es/guias)
 
+## Pi coding agent: editorial guides and beta status
+
+Pi is a separate coding harness, not a model provider. Install the current package @earendil-works/pi-coding-agent and authenticate inside Pi with /login. CodeAgentSwarm's Pi integration is in beta testing; these guides do not announce availability in the standard public download. The beta uses native Pi RPC, preserves Pi-owned credentials and exposes model/provider selection. CAS Cloud authentication belongs to the host running Pi. ChatGPT Plus/Pro login is supported by Pi; Pi documents Claude third-party harness usage as additional per-token usage. Check the linked provider sources for current account terms. Reviewed 2026-09-06.
+
+- [Pi: how-to-use-pi-coding-agent (EN)](https://www.codeagentswarm.com/en/guides/how-to-use-pi-coding-agent)
+- [Pi: como-usar-pi-coding-agent (ES)](https://www.codeagentswarm.com/es/guias/como-usar-pi-coding-agent)
+- [Pi: pi-coding-agent-models-subscriptions (EN)](https://www.codeagentswarm.com/en/guides/pi-coding-agent-models-subscriptions)
+- [Pi: pi-coding-agent-modelos-suscripciones (ES)](https://www.codeagentswarm.com/es/guias/pi-coding-agent-modelos-suscripciones)
+- [Pi: pi-vs-opencode (EN)](https://www.codeagentswarm.com/en/guides/pi-vs-opencode)
+- [Pi: pi-vs-opencode (ES)](https://www.codeagentswarm.com/es/guias/pi-vs-opencode)
+- [Pi: pi-coding-agent-on-windows (EN)](https://www.codeagentswarm.com/en/guides/pi-coding-agent-on-windows)
+- [Pi: pi-coding-agent-en-windows (ES)](https://www.codeagentswarm.com/es/guias/pi-coding-agent-en-windows)
+
 ## Guides
 
 - [AI CLI Agent Swarm: Run Claude, Codex, OpenCode, Kimi and Grok (2026)](https://www.codeagentswarm.com/en/guides/ai-cli-agent-swarm)
