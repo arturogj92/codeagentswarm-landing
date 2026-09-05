@@ -19,6 +19,66 @@ const guide: Guide = {
   },
   sections: [
     {
+      id: 'quick-answer',
+      title: 'Respuesta rápida',
+      content: [
+        {
+          type: 'image',
+          src: '/icons/apps/pi-icon.svg',
+          alt: 'Pi coding agent',
+          size: 'inline',
+        },
+        {
+          type: 'callout',
+          variant: 'info',
+          content: 'Instala Pi, ábrelo en tu proyecto, conecta un proveedor con /login y elige un modelo con /model. Después encárgale una tarea pequeña que puedas comprobar. En la beta de CodeAgentSwarm puedes trabajar con ese agente desde las vistas Chat y CLI.',
+        },
+      ],
+    },
+    {
+      id: 'pi-in-action',
+      title: 'Pi en CodeAgentSwarm, en imágenes',
+      content: [
+        {
+          type: 'image',
+          src: '/images/guides/pi-chat-beta.webp',
+          alt: 'Pi en Chat de CodeAgentSwarm con un proyecto de ejemplo',
+          size: 'full',
+          caption: 'Captura real de CodeAgentSwarm beta en macOS: Pi ejecutándose con un proyecto de ejemplo. La imagen no anuncia disponibilidad en la descarga pública.',
+        },
+        {
+          type: 'paragraph',
+          text: 'El selector muestra el modelo y su proveedor. Puedes revisar esa conexión sin salir del proyecto, mientras Chat conserva los mensajes y las herramientas de la tarea.',
+        },
+        {
+          type: 'image',
+          src: '/images/guides/pi-model-picker-beta.webp',
+          alt: 'Selector de modelos de Pi con el proveedor OpenAI Codex',
+          size: 'full',
+          caption: 'Los modelos dependen de la cuenta conectada. Captura de la beta en macOS.',
+        },
+      ],
+    },
+    {
+      id: 'practical-check',
+      title: 'Una primera tarea que puedes comprobar',
+      content: [
+        {
+          type: 'paragraph',
+          text: 'Usa un repositorio pequeño que conozcas. Empieza pidiendo a Pi que lea el README y el manifiesto del paquete, identifique el comando de pruebas y explique el proyecto sin modificar archivos. Así compruebas que trabaja en la carpeta correcta antes de pedir cambios.',
+        },
+        {
+          type: 'code',
+          language: 'text',
+          code: 'Lee README.md y package.json. Explica qué hace este proyecto\ny cómo ejecutar sus pruebas en tres puntos breves. No cambies archivos.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Después pide un cambio con una condición de aceptación, por ejemplo añadir una prueba para mover una tarea a Hecho. Revisa los archivos modificados y ejecuta el comando de pruebas real. Una respuesta terminada en Chat no equivale a unas pruebas correctas.',
+        },
+      ],
+    },
+    {
       id: 'what-is-pi',
       title: 'Qué es Pi y qué hace el harness',
       content: [

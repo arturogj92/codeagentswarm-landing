@@ -19,6 +19,59 @@ const guide: Guide = {
   },
   sections: [
     {
+      id: 'quick-answer',
+      title: 'Respuesta rápida',
+      content: [
+        {
+          type: 'image',
+          src: '/icons/apps/pi-icon.svg',
+          alt: 'Pi coding agent',
+          size: 'inline',
+        },
+        {
+          type: 'callout',
+          variant: 'info',
+          content: 'Pi funciona en Windows nativo. Instala el paquete npm actual y elige Git Bash o configura su herramienta PowerShell. En Chat de CodeAgentSwarm beta, la integración selecciona la herramienta PowerShell nativa para Windows.',
+        },
+      ],
+    },
+    {
+      id: 'pi-in-action',
+      title: 'Pi en CodeAgentSwarm, en imágenes',
+      content: [
+        {
+          type: 'image',
+          src: '/images/guides/pi-chat-beta.webp',
+          alt: 'Pi en Chat de CodeAgentSwarm con un proyecto de ejemplo',
+          size: 'full',
+          caption: 'Captura real de CodeAgentSwarm beta en macOS: Pi ejecutándose con un proyecto de ejemplo. La imagen no anuncia disponibilidad en la descarga pública. Se muestra la interfaz Chat; no es una captura de Windows.',
+        },
+        {
+          type: 'paragraph',
+          text: 'El selector muestra el modelo y su proveedor. Puedes revisar esa conexión sin salir del proyecto, mientras Chat conserva los mensajes y las herramientas de la tarea.',
+        },
+      ],
+    },
+    {
+      id: 'practical-check',
+      title: 'Comprobar el shell de Windows antes de editar',
+      content: [
+        {
+          type: 'code',
+          language: 'powershell',
+          code: 'Get-Command pi -All\nnode --version\npi --version',
+        },
+        {
+          type: 'paragraph',
+          text: 'Dentro de Pi, pide que muestre el directorio de trabajo y liste los archivos con la herramienta de comandos elegida. Revisa el nombre de la herramienta y su salida. Después pide que lea el script de pruebas antes de ejecutar algo que modifique archivos.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Si cambias a WSL, trátalo como otro entorno: su directorio personal, el comando Pi instalado y las credenciales pueden ser diferentes a los de Windows nativo. Elige el entorno que utiliza el proyecto y completa allí la configuración.',
+        },
+      ],
+    },
+    {
       id: 'install',
       title: 'Instalar el paquete actual de Pi',
       content: [

@@ -19,6 +19,66 @@ const guide: Guide = {
   },
   sections: [
     {
+      id: 'quick-answer',
+      title: 'Quick answer',
+      content: [
+        {
+          type: 'image',
+          src: '/icons/apps/pi-icon.svg',
+          alt: 'Pi coding agent',
+          size: 'inline',
+        },
+        {
+          type: 'callout',
+          variant: 'info',
+          content: 'Install Pi, open it in your project, use /login to connect a provider and /model to choose a model. Then give it a small, verifiable task. In the CodeAgentSwarm beta, you can use the same agent through Chat and CLI views.',
+        },
+      ],
+    },
+    {
+      id: 'pi-in-action',
+      title: 'Pi in CodeAgentSwarm, in pictures',
+      content: [
+        {
+          type: 'image',
+          src: '/images/guides/pi-chat-beta.webp',
+          alt: 'Pi in CodeAgentSwarm Chat with a sample project',
+          size: 'full',
+          caption: 'Real CodeAgentSwarm beta capture on macOS: Pi running with a sample project. This image does not announce availability in the public download.',
+        },
+        {
+          type: 'paragraph',
+          text: 'The picker shows the model and its provider. You can inspect that connection without leaving the project, while Chat keeps the task messages and tools together.',
+        },
+        {
+          type: 'image',
+          src: '/images/guides/pi-model-picker-beta.webp',
+          alt: 'Pi model picker showing the OpenAI Codex provider',
+          size: 'full',
+          caption: 'Models depend on the connected account. Captured in the macOS beta.',
+        },
+      ],
+    },
+    {
+      id: 'practical-check',
+      title: 'A first task you can verify',
+      content: [
+        {
+          type: 'paragraph',
+          text: 'Use a small repository you understand. Start by asking Pi to read its README and package manifest, identify the test command and explain the project without changing files. This establishes whether it is working in the right directory before you ask for edits.',
+        },
+        {
+          type: 'code',
+          language: 'text',
+          code: 'Read README.md and package.json. Explain what this project does\nand how to run its checks, in three short bullets. Do not change files.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Next, ask for one change with an acceptance condition, such as adding a test for moving a task to Done. Review the files Pi changed and run the actual test command. A successful chat response is not the same as passing checks.',
+        },
+      ],
+    },
+    {
       id: 'what-is-pi',
       title: 'What is Pi, and what does the harness do?',
       content: [

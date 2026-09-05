@@ -104,3 +104,9 @@ the successful deployment and submission separately from actual indexing. Search
 or answer-engine visibility is not guaranteed by schema, crawler access or
 llms.txt. Measure Pi URLs and queries in Search Console and guide visits/downloads
 in the existing analytics after complete reporting days.
+
+### Pi guide visual follow-up (2026-09-06)
+
+All eight Pi articles now include a direct answer, Pi icon, practical task or diagnosis section, and a captioned capture from the running macOS beta. The setup article shows both Chat and the model picker; the Windows article explicitly identifies the image as macOS Chat, not Windows evidence. Captures use a disposable sample project and a real Pi process connected through its OpenAI Codex provider. No customer conversations, account identifiers or credentials are included. This remains separate from the unpublished home-page announcement in draft PR #20.
+
+The existing image component supplies intrinsic dimensions and responsive Next image variants. `node scripts/check-pi-seo.mjs` additionally checks the icon, screenshot files, captions and rendered alternative text in every language.

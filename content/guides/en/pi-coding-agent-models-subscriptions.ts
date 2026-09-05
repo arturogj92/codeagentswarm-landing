@@ -19,6 +19,75 @@ const guide: Guide = {
   },
   sections: [
     {
+      id: 'quick-answer',
+      title: 'Quick answer',
+      content: [
+        {
+          type: 'image',
+          src: '/icons/apps/pi-icon.svg',
+          alt: 'Pi coding agent',
+          size: 'inline',
+        },
+        {
+          type: 'callout',
+          variant: 'info',
+          content: 'Pi keeps its own provider connections. A ChatGPT subscription, an API key and a custom gateway are different ways to access models. Check the provider label in the model picker before sending a task.',
+        },
+      ],
+    },
+    {
+      id: 'pi-in-action',
+      title: 'Pi in CodeAgentSwarm, in pictures',
+      content: [
+        {
+          type: 'image',
+          src: '/images/guides/pi-model-picker-beta.webp',
+          alt: 'Pi model picker showing the OpenAI Codex provider',
+          size: 'full',
+          caption: 'Models depend on the connected account. Captured in the macOS beta.',
+        },
+        {
+          type: 'paragraph',
+          text: 'The picker shows the model and its provider. You can inspect that connection without leaving the project, while Chat keeps the task messages and tools together.',
+        },
+      ],
+    },
+    {
+      id: 'practical-check',
+      title: 'Diagnose model access by symptom',
+      content: [
+        {
+          type: 'table',
+          headers: [
+            'What you see',
+            'What to check',
+          ],
+          rows: [
+            [
+              'No models',
+              'Run /login inside Pi on the host that runs this session.',
+            ],
+            [
+              'Only a custom gateway',
+              'Add your intended provider through /login, preserving the gateway configuration.',
+            ],
+            [
+              'A model appears but the request fails',
+              'Read the provider error; verify account access, credentials and available usage.',
+            ],
+            [
+              'Desktop works, Cloud does not',
+              'Configure Pi on the Cloud host. Your desktop login stays on the desktop.',
+            ],
+          ],
+        },
+        {
+          type: 'paragraph',
+          text: 'Read both parts of a selection such as “GPT-5.5 · openai-codex”: the first names the model, the second identifies the connection. The screenshot is one configured account at capture time; your menu may contain a different set of models.',
+        },
+      ],
+    },
+    {
       id: 'subscription',
       title: 'Can Pi use an existing subscription?',
       content: [

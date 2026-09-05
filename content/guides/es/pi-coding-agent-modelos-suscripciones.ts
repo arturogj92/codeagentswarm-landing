@@ -19,6 +19,75 @@ const guide: Guide = {
   },
   sections: [
     {
+      id: 'quick-answer',
+      title: 'Respuesta rápida',
+      content: [
+        {
+          type: 'image',
+          src: '/icons/apps/pi-icon.svg',
+          alt: 'Pi coding agent',
+          size: 'inline',
+        },
+        {
+          type: 'callout',
+          variant: 'info',
+          content: 'Pi guarda sus propias conexiones a proveedores. Una suscripción ChatGPT, una clave API y un gateway personalizado son formas diferentes de acceder a modelos. Comprueba la etiqueta del proveedor en el selector antes de enviar una tarea.',
+        },
+      ],
+    },
+    {
+      id: 'pi-in-action',
+      title: 'Pi en CodeAgentSwarm, en imágenes',
+      content: [
+        {
+          type: 'image',
+          src: '/images/guides/pi-model-picker-beta.webp',
+          alt: 'Selector de modelos de Pi con el proveedor OpenAI Codex',
+          size: 'full',
+          caption: 'Los modelos dependen de la cuenta conectada. Captura de la beta en macOS.',
+        },
+        {
+          type: 'paragraph',
+          text: 'El selector muestra el modelo y su proveedor. Puedes revisar esa conexión sin salir del proyecto, mientras Chat conserva los mensajes y las herramientas de la tarea.',
+        },
+      ],
+    },
+    {
+      id: 'practical-check',
+      title: 'Diagnosticar el acceso a modelos por síntoma',
+      content: [
+        {
+          type: 'table',
+          headers: [
+            'Qué aparece',
+            'Qué comprobar',
+          ],
+          rows: [
+            [
+              'Ningún modelo',
+              'Ejecuta /login dentro de Pi en el equipo que ejecuta esta sesión.',
+            ],
+            [
+              'Solo un gateway personalizado',
+              'Añade el proveedor deseado con /login y conserva la configuración del gateway.',
+            ],
+            [
+              'El modelo aparece pero falla la petición',
+              'Lee el error del proveedor; verifica acceso, credenciales y uso disponible.',
+            ],
+            [
+              'Funciona en escritorio pero no en Cloud',
+              'Configura Pi en el host Cloud. El login del escritorio permanece en el escritorio.',
+            ],
+          ],
+        },
+        {
+          type: 'paragraph',
+          text: 'Lee las dos partes de una selección como «GPT-5.5 · openai-codex»: la primera identifica el modelo y la segunda la conexión. La captura muestra una cuenta configurada en ese momento; tu menú puede incluir otros modelos.',
+        },
+      ],
+    },
+    {
       id: 'subscription',
       title: '¿Pi puede usar una suscripción que ya tengo?',
       content: [
