@@ -19,6 +19,59 @@ const guide: Guide = {
   },
   sections: [
     {
+      id: 'quick-answer',
+      title: 'Quick answer',
+      content: [
+        {
+          type: 'image',
+          src: '/icons/apps/pi-icon.svg',
+          alt: 'Pi coding agent',
+          size: 'inline',
+        },
+        {
+          type: 'callout',
+          variant: 'info',
+          content: 'Pi runs on native Windows. Install the current npm package, then choose Git Bash or configure its PowerShell tool. In CodeAgentSwarm beta Chat, the integration selects the native PowerShell tool for Windows.',
+        },
+      ],
+    },
+    {
+      id: 'pi-in-action',
+      title: 'Pi in CodeAgentSwarm, in pictures',
+      content: [
+        {
+          type: 'image',
+          src: '/images/guides/pi-chat-beta.webp',
+          alt: 'Pi in CodeAgentSwarm Chat with a sample project',
+          size: 'full',
+          caption: 'Real CodeAgentSwarm beta capture on macOS: Pi running with a sample project. This image does not announce availability in the public download.This illustrates the Chat interface; it is not a Windows screenshot.',
+        },
+        {
+          type: 'paragraph',
+          text: 'The picker shows the model and its provider. You can inspect that connection without leaving the project, while Chat keeps the task messages and tools together.',
+        },
+      ],
+    },
+    {
+      id: 'practical-check',
+      title: 'Verify the Windows shell before editing',
+      content: [
+        {
+          type: 'code',
+          language: 'powershell',
+          code: 'Get-Command pi -All\nnode --version\npi --version',
+        },
+        {
+          type: 'paragraph',
+          text: 'Inside Pi, ask it to print the working directory and list the project files using the selected command tool. Inspect the tool name and output. Then ask it to read the project test script before running anything that changes files.',
+        },
+        {
+          type: 'paragraph',
+          text: 'If you switch to WSL, treat that as another environment: its home directory, installed Pi command and credentials can differ from native Windows. Choose the environment used by the project and finish its setup there.',
+        },
+      ],
+    },
+    {
       id: 'install',
       title: 'Install the current Pi package',
       content: [

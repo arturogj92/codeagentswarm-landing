@@ -19,6 +19,59 @@ const guide: Guide = {
   },
   sections: [
     {
+      id: 'quick-answer',
+      title: 'Respuesta rápida',
+      content: [
+        {
+          type: 'image',
+          src: '/icons/apps/pi-icon.svg',
+          alt: 'Pi coding agent',
+          size: 'inline',
+        },
+        {
+          type: 'callout',
+          variant: 'info',
+          content: 'Pi ofrece una base pequeña que puedes ampliar; OpenCode incluye flujos de planificación y subagentes. Ambos conectan con distintos proveedores de modelos. Elige por el flujo que necesitas y compara una tarea real con la misma conexión al modelo.',
+        },
+      ],
+    },
+    {
+      id: 'pi-in-action',
+      title: 'Pi en CodeAgentSwarm, en imágenes',
+      content: [
+        {
+          type: 'image',
+          src: '/images/guides/pi-chat-beta.webp',
+          alt: 'Pi en Chat de CodeAgentSwarm con un proyecto de ejemplo',
+          size: 'full',
+          caption: 'Captura real de CodeAgentSwarm beta en macOS: Pi ejecutándose con un proyecto de ejemplo. La imagen no anuncia disponibilidad en la descarga pública.',
+        },
+        {
+          type: 'paragraph',
+          text: 'El selector muestra el modelo y su proveedor. Puedes revisar esa conexión sin salir del proyecto, mientras Chat conserva los mensajes y las herramientas de la tarea.',
+        },
+      ],
+    },
+    {
+      id: 'practical-check',
+      title: 'Compararlos con una tarea concreta',
+      content: [
+        {
+          type: 'list',
+          items: [
+            'Crea un worktree para Pi y otro para OpenCode desde el mismo commit.',
+            'Usa el mismo proveedor y modelo cuando ambos admitan esa conexión.',
+            'Da a ambos la misma condición de aceptación, como arreglar una prueba que falla sin cambiar la API pública.',
+            'Compara el diff, los resultados de las pruebas, las aprobaciones y las correcciones que has tenido que pedir.',
+          ],
+        },
+        {
+          type: 'paragraph',
+          text: 'Anota las diferencias de permisos y herramientas junto al resultado. Si un agente dispone de instrucciones adicionales o de un servicio MCP que el otro no tiene, describe esa diferencia antes de atribuir el resultado al agente.',
+        },
+      ],
+    },
+    {
       id: 'comparison',
       title: 'Pi y OpenCode de un vistazo',
       content: [

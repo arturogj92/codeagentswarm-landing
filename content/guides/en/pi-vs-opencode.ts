@@ -19,6 +19,59 @@ const guide: Guide = {
   },
   sections: [
     {
+      id: 'quick-answer',
+      title: 'Quick answer',
+      content: [
+        {
+          type: 'image',
+          src: '/icons/apps/pi-icon.svg',
+          alt: 'Pi coding agent',
+          size: 'inline',
+        },
+        {
+          type: 'callout',
+          variant: 'info',
+          content: 'Pi offers a small core you can extend; OpenCode includes built-in planning and subagent workflows. Both can connect to multiple model providers. Choose by the workflow you need, then compare a real task with the same model connection.',
+        },
+      ],
+    },
+    {
+      id: 'pi-in-action',
+      title: 'Pi in CodeAgentSwarm, in pictures',
+      content: [
+        {
+          type: 'image',
+          src: '/images/guides/pi-chat-beta.webp',
+          alt: 'Pi in CodeAgentSwarm Chat with a sample project',
+          size: 'full',
+          caption: 'Real CodeAgentSwarm beta capture on macOS: Pi running with a sample project. This image does not announce availability in the public download.',
+        },
+        {
+          type: 'paragraph',
+          text: 'The picker shows the model and its provider. You can inspect that connection without leaving the project, while Chat keeps the task messages and tools together.',
+        },
+      ],
+    },
+    {
+      id: 'practical-check',
+      title: 'Compare them on one bounded task',
+      content: [
+        {
+          type: 'list',
+          items: [
+            'Create one worktree for Pi and another for OpenCode from the same commit.',
+            'Use the same provider and model where both support that connection.',
+            'Give both the same acceptance condition, such as fixing one failing test without changing the public API.',
+            'Compare the diff, test results, tool approvals and the amount of correction you needed.',
+          ],
+        },
+        {
+          type: 'paragraph',
+          text: 'Record differences in permissions and available tools alongside the result. If one agent has extra project instructions or an MCP service the other lacks, describe that setup difference before attributing the outcome to the agent.',
+        },
+      ],
+    },
+    {
       id: 'comparison',
       title: 'Pi and OpenCode at a glance',
       content: [
