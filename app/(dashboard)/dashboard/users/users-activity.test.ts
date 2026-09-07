@@ -6,6 +6,7 @@ import {
   compareAppVersions,
   filterUsers,
   getLifecycle,
+  mainButtonUsage,
   normalizeAgent,
   parseExcludedUserIds,
   parseFeatureWindowDays,
@@ -20,6 +21,39 @@ import {
   type RealtimeActivitySnapshot,
   type UserCohortHealth,
 } from './users-activity.ts'
+
+test('main buttons keep their product order and exact catalog counts', () => {
+  const buttons = [
+    ['nav_kanban', 'Open Kanban'],
+    ['nav_create_task', 'Create task'],
+    ['nav_history', 'Conversation history'],
+    ['nav_quick_switcher', 'Search open agents'],
+    ['nav_git_status', 'Git'],
+    ['navbar_shortcut_open', 'Open shortcut'],
+    ['button_app_add_terminal_btn', 'New agent'],
+    ['navbar_add_shortcut', 'Add shortcut'],
+    ['button_app_new_tab_btn', 'New agent (sidebar)'],
+    ['settings_open', 'Settings'],
+  ]
+  const catalog = buttons.map(([action], index) => ({ action, events: index * 10, users: index }))
+  assert.deepEqual(mainButtonUsage([...catalog].reverse()), buttons.map(([action, label], index) => ({
+    action, label, events: index * 10, users: index,
+  })))
+  assert.equal(catalog[0].events, 0)
+})
+
+test('missing button clicks stay unknown instead of borrowing success or shortcut events', () => {
+  const rows = mainButtonUsage([
+    { action: 'nav_history', events: 4, users: 2 },
+    { action: 'conversation_history_opened', events: 20, users: 6 },
+    { action: 'terminal_session_launch', events: 50, users: 9 },
+    { action: 'navbar_shortcut_keyboard', events: 8, users: 3 },
+  ])
+  assert.equal(rows.length, 10)
+  assert.deepEqual(rows[2], { action: 'nav_history', label: 'Conversation history', events: 4, users: 2 })
+  assert.equal(rows.filter(({ events, users }) => events === null && users === null).length, 9)
+  assert.equal(mainButtonUsage([]).length, 10)
+})
 
 function user(overrides: Partial<UserActivityRow> = {}): UserActivityRow {
   return {

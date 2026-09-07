@@ -12,10 +12,12 @@ import {
 import ActivityHeatmap from './ActivityHeatmap'
 import {
   EMPTY_USER_FILTERS,
+  MAIN_BUTTONS,
   agentLabel,
   compareAppVersions,
   filterUsers,
   getLifecycle,
+  mainButtonUsage,
   parseExcludedUserIds,
   primaryAgentSignal,
   summarizeCohortHealth,
@@ -77,13 +79,12 @@ const LIFECYCLE_META: Record<Lifecycle, { label: string; dot: string; badge: str
 }
 
 const ACTION_LABELS: Record<string, string> = {
+  ...Object.fromEntries(MAIN_BUTTONS.map(({ action, label }) => [action, label])),
   terminal_tab_switch: 'Terminal switching',
   terminal_minimize: 'Minimize terminal',
   terminal_focus_shortcut: 'Focus terminal shortcut',
   terminal_shortcut: 'Terminal shortcut',
-  navbar_shortcut_open: 'Open project shortcut',
   navbar_shortcut_keyboard: 'Open project shortcut by keyboard',
-  navbar_add_shortcut: 'Add project shortcut',
   quick_switcher_shortcut: 'Search terminals shortcut',
   command_palette_shortcut: 'Command palette shortcut',
   command_palette_run: 'Command Palette command run',
@@ -215,6 +216,7 @@ export default function UsersActivityClient() {
   const [copied, setCopied] = useState<string | null>(null)
 
   const searchRef = useRef<HTMLInputElement>(null)
+  const globalAbortRef = useRef<AbortController | null>(null)
   const detailAbortRef = useRef<AbortController | null>(null)
   const returnFocusRef = useRef<HTMLElement | null>(null)
   const drawerRef = useRef<HTMLElement>(null)
@@ -244,10 +246,15 @@ export default function UsersActivityClient() {
     windowDays: GlobalWindowDays,
     adoptionDays: FeatureWindowDays,
   ) => {
+    globalAbortRef.current?.abort()
+    const controller = new AbortController()
+    globalAbortRef.current = controller
+    setGlobalMetrics(null)
     setGlobalLoading(true)
     setGlobalError(null)
     try {
       const response = await fetch('/api/dashboard/users/global', {
+        signal: controller.signal,
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -258,11 +265,13 @@ export default function UsersActivityClient() {
       })
       const payload = await response.json()
       if (!response.ok) throw new Error(payload?.error || 'Failed to load global metrics')
-      setGlobalMetrics(payload as UserGlobalMetrics)
+      if (!controller.signal.aborted) setGlobalMetrics(payload as UserGlobalMetrics)
     } catch (caught) {
-      setGlobalError(caught instanceof Error ? caught.message : 'Failed to load global metrics')
+      if (!controller.signal.aborted) {
+        setGlobalError(caught instanceof Error ? caught.message : 'Failed to load global metrics')
+      }
     } finally {
-      setGlobalLoading(false)
+      if (globalAbortRef.current === controller) setGlobalLoading(false)
     }
   }, [])
 
@@ -281,6 +290,7 @@ export default function UsersActivityClient() {
     if (!exclusionsReady) return
     localStorage.setItem(GLOBAL_EXCLUSIONS_KEY, JSON.stringify(excludedUserIds))
     void loadGlobalMetrics(excludedUserIds, globalWindowDays, featureWindowDays)
+    return () => globalAbortRef.current?.abort()
   }, [excludedUserIds, exclusionsReady, featureWindowDays, globalWindowDays, loadGlobalMetrics])
 
   useEffect(() => {
@@ -703,8 +713,8 @@ function GlobalInsights({ metrics, loading, error, excludedUsers, windowDays, fe
   const actionResults = normalizedActionQuery
     ? (metrics?.actions || []).filter((action) => (
         `${action.action} ${actionLabel(action.action)}`.toLowerCase().includes(normalizedActionQuery)
-      )).slice(0, 20)
-    : []
+      ))
+    : (metrics?.actions || [])
   const windowLabel = windowDays === 1 ? 'Last 24 hours' : `Last ${windowDays} days`
   const visibleFeatures = (metrics?.features || []).filter((feature) => (
     featureFilter === 'all' || feature.category === featureFilter
@@ -734,9 +744,9 @@ function GlobalInsights({ metrics, loading, error, excludedUsers, windowDays, fe
       <article className="rounded-xl border border-white/[0.09] bg-[#111111] p-4 sm:p-5">
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
-            <h2 className="text-lg font-semibold tracking-[-0.02em] text-white">Top tracked actions</h2>
+            <h2 className="text-lg font-semibold tracking-[-0.02em] text-white">Main button usage</h2>
             <p className="mt-1 text-sm text-white/55">
-              {windowLabel} · grouped for privacy · identified users
+              {windowLabel} · Recorded clicks · identified users
             </p>
           </div>
           <div className="flex flex-wrap items-center justify-end gap-2">
@@ -755,7 +765,7 @@ function GlobalInsights({ metrics, loading, error, excludedUsers, windowDays, fe
             </div>
             {metrics && (
               <span className="rounded-md border border-white/10 px-2 py-1 text-[10px] font-medium text-white/55">
-                {metrics.events.toLocaleString('en-US')} events
+                {metrics.events.toLocaleString('en-US')} all events
               </span>
             )}
           </div>
@@ -771,14 +781,14 @@ function GlobalInsights({ metrics, loading, error, excludedUsers, windowDays, fe
           </div>
         ) : (
           <ol className="mt-5 space-y-3">
-            {(metrics?.top_actions || []).slice(0, 8).map((action, index) => (
+            {mainButtonUsage(metrics?.actions || []).map((action, index) => (
               <li key={action.action} className="grid grid-cols-[30px_minmax(0,1fr)_auto] items-center gap-3">
                 <span className="font-mono text-sm text-white/45">{String(index + 1).padStart(2, '0')}</span>
                 <div className="min-w-0">
-                  <p className="truncate text-sm font-medium text-white/85 sm:text-base">{actionLabel(action.action)}</p>
-                  <p className="text-[10px] text-white/45">{action.users.toLocaleString('en-US')} users reached</p>
+                  <p className="truncate text-sm font-medium text-white/85 sm:text-base">{action.label}</p>
+                  <p className="text-[10px] text-white/45">{action.users === null ? '— users · No clicks recorded' : `${action.users.toLocaleString('en-US')} users reached`}</p>
                 </div>
-                <span className="font-mono text-sm text-white/55 sm:text-base">{action.events.toLocaleString('en-US')}</span>
+                <span className="font-mono text-sm text-white/55 sm:text-base">{action.events === null ? '—' : action.events.toLocaleString('en-US')} clicks</span>
               </li>
             ))}
           </ol>
@@ -802,35 +812,24 @@ function GlobalInsights({ metrics, loading, error, excludedUsers, windowDays, fe
                 className="h-10 w-full rounded-lg border border-white/10 bg-black/30 px-3 text-sm text-white/80 outline-none placeholder:text-white/30 focus:border-amber-400/55 focus:ring-2 focus:ring-amber-400/15"
               />
             </div>
-            {normalizedActionQuery ? (
-              actionResults.length > 0 ? (
-                <ul className="mt-3 max-h-72 space-y-1 overflow-y-auto pr-1">
-                  {actionResults.map((action) => (
-                    <li key={action.action} className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3 rounded-lg px-2.5 py-2 hover:bg-white/[0.035]">
-                      <div className="min-w-0">
-                        <p className="truncate text-sm text-white/80">{actionLabel(action.action)}</p>
-                        <p className="truncate font-mono text-[9px] text-white/35">{action.action} · {action.users.toLocaleString('en-US')} users</p>
-                      </div>
-                      <span className="font-mono text-sm text-white/55">{action.events.toLocaleString('en-US')}</span>
-                    </li>
-                  ))}
-                </ul>
-              ) : (
-                <p className="mt-3 text-xs text-white/45">No tracked action matches “{actionQuery.trim()}”.</p>
-              )
-            ) : (
-              <div className="mt-3 flex flex-wrap gap-2">
-                {['minimize', 'shortcut', 'fork', 'screenshot'].map((example) => (
-                  <button
-                    key={example}
-                    type="button"
-                    onClick={() => setActionQuery(example)}
-                    className="rounded-md border border-white/10 px-2 py-1 text-[10px] text-white/45 transition hover:border-amber-400/30 hover:text-amber-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
-                  >
-                    {example}
-                  </button>
+            {actionResults.length > 0 ? (
+              <ul className="mt-3 max-h-72 space-y-1 overflow-y-auto pr-1">
+                {actionResults.map((action) => (
+                  <li key={action.action} className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3 rounded-lg px-2.5 py-2 hover:bg-white/[0.035]">
+                    <div className="min-w-0">
+                      <p className="truncate text-sm text-white/80">{actionLabel(action.action)}</p>
+                      <p className="truncate font-mono text-[9px] text-white/35">{action.action} · {action.users.toLocaleString('en-US')} users</p>
+                    </div>
+                    <span className="font-mono text-sm text-white/55">{action.events.toLocaleString('en-US')}</span>
+                  </li>
                 ))}
-              </div>
+              </ul>
+            ) : (
+              <p className="mt-3 text-xs text-white/45">
+                {normalizedActionQuery
+                  ? `No tracked action matches “${actionQuery.trim()}”.`
+                  : 'No actions tracked in this period.'}
+              </p>
             )}
           </div>
         )}

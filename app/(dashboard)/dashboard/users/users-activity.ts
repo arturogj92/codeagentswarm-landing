@@ -79,6 +79,26 @@ export interface UserGlobalAction {
   users: number
 }
 
+export const MAIN_BUTTONS = [
+  { action: 'nav_kanban', label: 'Open Kanban' },
+  { action: 'nav_create_task', label: 'Create task' },
+  { action: 'nav_history', label: 'Conversation history' },
+  { action: 'nav_quick_switcher', label: 'Search open agents' },
+  { action: 'nav_git_status', label: 'Git' },
+  { action: 'navbar_shortcut_open', label: 'Open shortcut' },
+  { action: 'button_app_add_terminal_btn', label: 'New agent' },
+  { action: 'navbar_add_shortcut', label: 'Add shortcut' },
+  { action: 'button_app_new_tab_btn', label: 'New agent (sidebar)' },
+  { action: 'settings_open', label: 'Settings' },
+]
+
+export function mainButtonUsage(actions: UserGlobalAction[]) {
+  return MAIN_BUTTONS.map((button) => {
+    const usage = actions.find(({ action }) => action === button.action)
+    return { ...button, events: usage?.events ?? null, users: usage?.users ?? null }
+  })
+}
+
 export interface UserFeatureAdoption {
   feature: string
   category: 'workspace' | 'automation'
