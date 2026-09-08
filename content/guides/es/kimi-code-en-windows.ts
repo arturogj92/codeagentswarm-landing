@@ -16,7 +16,7 @@ Si estás montando otros agentes en la misma máquina, nuestras guías de <a hre
     ctaAgent: 'kimi-code',
     highlightedWords: ['Kimi Code', 'Windows'],
     publishedAt: '2026-07-18',
-    updatedAt: '2026-07-18',
+    updatedAt: '2026-09-08',
     alternateSlug: 'kimi-code-on-windows',
   },
   sections: [
@@ -81,6 +81,21 @@ Si estás montando otros agentes en la misma máquina, nuestras guías de <a hre
             'Ejecuta <code>kimi --version</code>. Deberías ver una versión 0.x, lo que confirma que tienes el CLI actual en TypeScript y no el kimi-cli legacy en Python.',
             'Entra en la carpeta de un proyecto, ejecuta <code>kimi</code> e inicia sesión con <code>/login</code> (navegador para suscripciones, API key para pago por token).',
           ],
+        },
+        {
+          type: 'heading',
+          level: 3,
+          text: 'El comando de instalación de Kimi Code en PowerShell',
+          id: 'comando-instalacion-kimi-code-ps1',
+        },
+        {
+          type: 'paragraph',
+          text: 'Si has buscado la línea del instalador tal cual, este es el comando completo. <code>irm</code> es el alias de PowerShell para <code>Invoke-RestMethod</code>, que descarga el script desde code.kimi.com, e <code>iex</code> (<code>Invoke-Expression</code>) lo ejecuta en la sesión actual. Necesita tener Git for Windows instalado y no pide permisos de administrador.',
+        },
+        {
+          type: 'code',
+          language: 'powershell',
+          code: 'irm https://code.kimi.com/kimi-code/install.ps1 | iex',
         },
         {
           type: 'paragraph',
@@ -174,6 +189,10 @@ Si estás montando otros agentes en la misma máquina, nuestras guías de <a hre
     {
       question: '¿Kimi Code funciona en Windows?',
       answer: 'Sí. Moonshot publica un instalador oficial de PowerShell (irm https://code.kimi.com/kimi-code/install.ps1 | iex), y hay paquete de npm para máquinas con Node 22.19 o superior. El requisito duro es Git for Windows, que debe estar instalado antes del primer arranque porque Kimi Code usa Git Bash como su entorno de shell.',
+    },
+    {
+      question: '¿Qué hace irm https://code.kimi.com/kimi-code/install.ps1 | iex?',
+      answer: 'Es el instalador oficial de Kimi Code para Windows en una sola línea. irm (Invoke-RestMethod) descarga el script install.ps1 desde code.kimi.com e iex (Invoke-Expression) lo ejecuta en PowerShell. El script baja la última release de Kimi Code, verifica su checksum y añade el ejecutable kimi a tu PATH. Instala antes Git for Windows y, al terminar, abre un terminal nuevo y ejecuta kimi --version.',
     },
     {
       question: '¿Por qué Kimi Code necesita Git for Windows?',

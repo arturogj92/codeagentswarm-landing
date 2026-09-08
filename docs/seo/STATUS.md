@@ -1,6 +1,6 @@
 # SEO status
 
-Last updated: 2026-09-01
+Last updated: 2026-09-08
 
 Release state: the August 31 conversion, comparison and media changes passed production validation. Start post-release measurement only after the master deployment reports success.
 
@@ -26,9 +26,9 @@ Organic acquisition is growing quickly. The main constraint has moved from disco
 | Sitemap URLs returning 200 in the production build | 182 / 182 |
 | Guide First Load JS | 185 kB, down from about 746 kB |
 | Static pages generated | 221, down from 382 |
-| Domain Rating in SEO MCP | 4.6 |
-| Referring domains in SEO MCP | 473 |
-| Referring domains marked follow | 9% |
+| Domain Rating in SEO MCP | 5 |
+| Referring domains in SEO MCP | 367 |
+| Follow referring domains in SEO MCP | 17 |
 
 The SEO MCP follow fields are percentages, not counts. The previous status incorrectly reported `4` dofollow referring domains. At 9%, the rounded estimate is about 43 follow referring domains, but only the percentage should be treated as measured.
 
@@ -79,11 +79,25 @@ Authority actions the same day: the four listicle pitches were sent (see `listic
 
 Measure from September 15 onward: pricing cluster CTR and position per page and per query against the figures above; `agy` and `opencode` query CTR; whether the cross links move the weakest pricing pages (Grok, position 9.8; Cursor, position 6.3 with 954 impressions).
 
+## September 8 review and query-match pass
+
+Evidence from the September 5 Search Console export (92 days to September 3) and Umami. Clicks per day flattened for the first time since May: 410 in the week of August 20 to 26, 385 the following week, while impressions per day kept climbing from 45,558 to 47,258 and reached 62,851 to 66,048 on September 2 and 3. Blended CTR fell from 0.90% to 0.78%. The new visibility arrives on data queries, mostly pricing, that the AI Overview answers without a click. Average position improved to 5.8, so this is not a ranking loss. The pricing pass from September 1 cannot show in this export; judge it from September 15 as planned.
+
+Other findings: `claude-code-history-complete-guide` remains the largest single loss (339,502 impressions, 1,741 clicks, 0.51% CTR, position 5.55). Codex queries bring 1,523 clicks against 951 for Claude with half the impressions; `codex auto mode` is the first non-brand query with 271 clicks in position 3.7. The United States holds 27% of impressions with 0.46% CTR in position 8.1, while Germany, Spain, the United Kingdom and France convert about three times better in positions 5.5 to 6.3. SEO MCP now reports Domain Rating 5, 782 backlinks, 367 referring domains and 17 follow referring domains, counted this time rather than estimated from a percentage. The three awesome-list pull requests (759, 142, 2250) stay open without review and the four September 1 pitches have no reply. One follow-up between September 11 and 15 remains the limit.
+
+Changed, without touching any metaTitle or metaDescription, so the September 9 snippet guardrail holds:
+
+- `kimi-code-on-windows` and `kimi-code-en-windows`: the literal query `irm https://code.kimi.com/kimi-code/install.ps1` had 3,137 impressions in position 8 and one click. Both guides already contained the command inside longer blocks; they now carry an H3, a one-line code block and an FAQ entry whose question is the command itself, mirroring what was done for `agy install`.
+- `modo-yolo-claude-code-explicado`: the one-word query `modoyolo` had 2,338 impressions in position 8.7 and one click, and no page contained the token. Added an FAQ entry that defines it and points to the safe alternatives.
+- `updatedAt` set to 2026-09-08 on the three files so the sitemap `lastmod` reflects the change.
+
+Not changed on purpose: `claude-code-yolo-mode-explained` (56,669 impressions, 0.40% CTR, position 8.2) and the history guides are high-impression non-pricing snippets and stay frozen until the September 9 review. `t3code` and `t3 code` (5,135 impressions, 0.1% CTR) are a competitor brand and are not pursued. The competitor star counts drift under 5% since August 31 and were not refreshed.
+
 ## Open priorities
 
 1. Measure the inline guide CTA after 14 complete post-deployment days. Its Aug 24-30 baseline is 18 / 6,034 pageviews, or 0.298%; the initial success threshold is at least 0.358% without reducing total guide conversion below 1.177%.
 2. Review the aggregate installation funnel after cohorts mature. Do not invent person-level acquisition attribution without a separate privacy decision.
-3. Keep the high-impression non-pricing snippets stable until the full September 9 Search Console review. The pricing cluster was already rewritten on September 1; judge it from September 15.
+3. Keep the high-impression non-pricing snippets stable until the full September 9 Search Console review. The pricing cluster was already rewritten on September 1; judge it from September 15. On September 9, start with `claude-code-yolo-mode-explained` (`claude yolo mode` 7,880 impressions, 0.29% CTR, position 4.1) and the `kimi` non-pricing pages (34,650 impressions, 0.6% CTR).
 4. Export Search Console query-by-page data before consolidating similar guides.
 5. The four editorial pitches and the two GitHub reminders went out on September 1. Record accepted links and their attributes; one follow-up between September 11 and 15 at most. Keep Zevyn and the AI-assisted DEV draft on hold.
 6. Inspect production Vercel firewall logs with the owning account only if verified-bot crawling or indexing declines. Do not add a broad bypass based on generic curl challenges.

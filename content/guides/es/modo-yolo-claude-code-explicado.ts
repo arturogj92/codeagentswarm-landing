@@ -16,7 +16,7 @@ La ganancia de velocidad es real. Pero los riesgos también. Esta guía cubre qu
     ctaAgent: 'claude-code',
     highlightedWords: ['YOLO mode', 'Claude Code'],
     publishedAt: '2026-04-15',
-    updatedAt: '2026-08-11',
+    updatedAt: '2026-09-08',
     alternateSlug: 'claude-code-yolo-mode-explained',
   },
   sections: [
@@ -385,6 +385,10 @@ La ganancia de velocidad es real. Pero los riesgos también. Esta guía cubre qu
     {
       question: '¿Cómo funcionan los permisos de Claude Code (Allow, Ask, Deny)?',
       answer: 'Allow: la acción se ejecuta automáticamente. Ask: pide confirmación (pero en Turbo Mode actúa como Allow). Deny: bloquea la acción completamente. Puedes configurar estos permisos por categoría y por herramienta individual.',
+    },
+    {
+      question: '¿Qué significa modoyolo?',
+      answer: 'Modoyolo es la forma abreviada, todo junto, con la que mucha gente busca el modo YOLO: ejecutar Claude Code con --dangerously-skip-permissions para que no pida confirmación en cada acción. Viene de "you only live once". Es exactamente el modo YOLO que explica esta guía, con los mismos riesgos y las mismas alternativas seguras: las reglas Allow, Ask y Deny o el Turbo Mode de CodeAgentSwarm.',
     },
     {
       question: '¿Cómo funcionan los permisos de MCP en CodeAgentSwarm?',
