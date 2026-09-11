@@ -25,6 +25,7 @@ export type GuideCtaAgent =
   | 'grok-build'
   | 'cursor-agent'
   | 'pi'
+  | 'devin'
   | 'multi'
   | 'comparison'
 
@@ -38,6 +39,7 @@ export const CTA_AGENT_MESSAGE_KEY: Record<GuideCtaAgent, string> = {
   'grok-build': 'grokBuild',
   'cursor-agent': 'cursorAgent',
   pi: 'pi',
+  devin: 'devin',
   multi: 'multi',
   comparison: 'comparison',
 }
@@ -60,6 +62,7 @@ export interface GuideMeta {
   metaTitle: string
   metaDescription: string
   intro: string
+  socialImage?: string // Optional 1200x630 image for article and social previews
   introVideo?: string // Optional video URL to show after intro
   ctaText?: string // Optional guide-specific copy for the inline CTA
   ctaAgent: GuideCtaAgent // Drives agent-aware CTA copy; see GuideCtaAgent

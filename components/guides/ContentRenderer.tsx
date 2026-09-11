@@ -6,6 +6,11 @@ import { Info, AlertTriangle, Lightbulb, ImageIcon } from 'lucide-react'
 import type { ContentBlock, GuideSection } from '@/content/guides/types'
 
 const GUIDE_IMAGE_DIMENSIONS: Record<string, { width: number; height: number }> = {
+  '/images/guides/devin-chat-beta.webp': { width: 1440, height: 977 },
+  '/images/guides/devin-models-beta.webp': { width: 1440, height: 977 },
+  '/images/guides/devin-history-beta.webp': { width: 1440, height: 977 },
+  '/images/guides/devin-quota-beta.webp': { width: 1440, height: 1224 },
+  '/images/guides/devin-windows-beta.webp': { width: 1440, height: 742 },
   '/images/guides/pi-chat-beta.webp': { width: 1440, height: 980 },
   '/images/guides/pi-model-picker-beta.webp': { width: 1440, height: 980 },
   '/images/guides/resume-conversation.png': { width: 1316, height: 1195 },

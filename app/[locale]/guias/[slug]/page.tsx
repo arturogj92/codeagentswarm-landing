@@ -63,7 +63,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       locale: 'es_ES',
       images: [
         {
-          url: '/og.png',
+          url: meta.socialImage ?? '/og.png',
           width: 1200,
           height: 630,
           alt: meta.title,
@@ -74,7 +74,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       card: 'summary_large_image',
       title: meta.metaTitle,
       description: meta.metaDescription,
-      images: ['/og.png'],
+      images: [meta.socialImage ?? '/og.png'],
     },
     robots: {
       index: true,
@@ -121,7 +121,7 @@ export default async function GuiaPage({ params }: PageProps) {
     },
     image: {
       '@type': 'ImageObject',
-      url: `${baseUrl}/og.png`,
+      url: `${baseUrl}${guide.meta.socialImage ?? '/og.png'}`,
       width: 1200,
       height: 630,
     },

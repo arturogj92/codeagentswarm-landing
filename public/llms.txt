@@ -205,3 +205,16 @@ Pi is a separate coding harness, not a model provider. Install the current packa
 - [Historial de conversaciones de Antigravity CLI: dónde vive y cómo retomarlas (2026)](https://www.codeagentswarm.com/es/guias/historial-conversaciones-antigravity)
 - [Antigravity CLI en Windows: nativo o WSL (2026)](https://www.codeagentswarm.com/es/guias/antigravity-cli-en-windows)
 - [Enjambre de agentes Antigravity: varias sesiones de agy en paralelo (2026)](https://www.codeagentswarm.com/es/guias/enjambre-de-agentes-antigravity)
+
+## Devin CLI (integration in beta testing)
+
+Devin CLI is a local coding agent. CodeAgentSwarm integration is in beta testing for an upcoming release, including Chat and CLI views, model selection, account quota, native Windows installation, history and optional MCP. These guides and beta screenshots do not announce availability in the current public download. Devin account access and usage are separate from CodeAgentSwarm. Reviewed 2026-09-11.
+
+- [Devin CLI: installation, login and your first coding task](https://www.codeagentswarm.com/en/guides/how-to-use-devin-cli)
+- [Devin CLI on Windows: native install and troubleshooting](https://www.codeagentswarm.com/en/guides/devin-cli-on-windows)
+- [Devin CLI models and usage limits: read the right meter](https://www.codeagentswarm.com/en/guides/devin-cli-models-usage-limits)
+- [Devin CLI MCP and history: connect tools and resume work](https://www.codeagentswarm.com/en/guides/devin-cli-mcp-history)
+- [Devin CLI: instalación, login y tu primera tarea de código](https://www.codeagentswarm.com/es/guias/como-usar-devin-cli)
+- [Devin CLI en Windows: instalación nativa y solución de errores](https://www.codeagentswarm.com/es/guias/devin-cli-en-windows)
+- [Modelos y cuotas de Devin CLI: entiende cada indicador](https://www.codeagentswarm.com/es/guias/devin-cli-modelos-cuotas)
+- [MCP e historial de Devin CLI: conecta herramientas y retoma tareas](https://www.codeagentswarm.com/es/guias/devin-cli-mcp-historial)

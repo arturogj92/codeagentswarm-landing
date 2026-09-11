@@ -770,6 +770,7 @@
         "kimiCode": "Ejecuta varios agentes de Kimi Code con historial buscable y cambios en tiempo real en una sola app.",
         "grokBuild": "Ejecuta varios agentes de Grok Build con historial buscable y cambios en tiempo real en una sola app.",
         "cursorAgent": "Ejecuta Cursor Agent CLI por ACP con Chat en streaming, permisos visibles e historial por proyecto en una sola app.",
+        "devin": "El Chat de Devin, su instalación y el historial están en pruebas beta para un próximo release de CodeAgentSwarm. El botón descarga la app pública actual; consulta sus notas para comprobar la disponibilidad de Devin.",
         "pi": "El soporte de Pi en CodeAgentSwarm está en pruebas beta. La descarga es la app pública actual; consulta sus notas de versión para comprobar la disponibilidad de Pi.",
         "antigravity": "Ejecuta varios agentes de Antigravity CLI con historial buscable y cambios en tiempo real en una sola app.",
         "multi": "CodeAgentSwarm ejecuta tus agentes de código en paralelo: Claude Code, Codex, opencode, Kimi Code, Antigravity, Grok Build y Cursor Agent, con historial buscable y una sola superficie de supervisión.",

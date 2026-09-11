@@ -1,3 +1,11 @@
+import enDevin0 from './en/how-to-use-devin-cli'
+import esDevin0 from './es/como-usar-devin-cli'
+import enDevin1 from './en/devin-cli-on-windows'
+import esDevin1 from './es/devin-cli-en-windows'
+import enDevin2 from './en/devin-cli-models-usage-limits'
+import esDevin2 from './es/devin-cli-modelos-cuotas'
+import enDevin3 from './en/devin-cli-mcp-history'
+import esDevin3 from './es/devin-cli-mcp-historial'
 // Guide registry - maps slugs to guide content
 
 import type { Guide } from './types'
@@ -188,6 +196,10 @@ import esPiWindows from './es/pi-coding-agent-en-windows'
 // Registry of all guides by locale and slug
 export const guides: Record<string, Record<string, Guide>> = {
   en: {
+    'how-to-use-devin-cli': enDevin0,
+    'devin-cli-on-windows': enDevin1,
+    'devin-cli-models-usage-limits': enDevin2,
+    'devin-cli-mcp-history': enDevin3,
     'how-to-use-pi-coding-agent': enPiSetup,
     'pi-coding-agent-models-subscriptions': enPiModels,
     'pi-vs-opencode': enPiComparison,
@@ -279,6 +291,10 @@ export const guides: Record<string, Record<string, Guide>> = {
     'cursor-cli-pricing': enCursorPricing,
   },
   es: {
+    'como-usar-devin-cli': esDevin0,
+    'devin-cli-en-windows': esDevin1,
+    'devin-cli-modelos-cuotas': esDevin2,
+    'devin-cli-mcp-historial': esDevin3,
     'como-usar-pi-coding-agent': esPiSetup,
     'pi-coding-agent-modelos-suscripciones': esPiModels,
     'pi-vs-opencode': esPiComparison,
