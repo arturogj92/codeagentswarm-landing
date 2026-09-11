@@ -130,6 +130,10 @@ const guide: Guide = {
         {
           "type": "paragraph",
           "text": "The integration is being tested for an upcoming CodeAgentSwarm release. The screenshots show that beta, not a promise that the current public installer already includes Devin. Sign in with the official Devin CLI on the computer that runs the agent."
+        },
+        {
+          "type": "paragraph",
+          "text": "Before choosing a model, see <a href=\"/en/guides/swe-2-benchmarks\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">SWE-2 benchmarks and a practical test</a>."
         }
       ]
     }

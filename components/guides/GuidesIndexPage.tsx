@@ -19,6 +19,7 @@ interface GuidesIndexPageProps {
 type Family = 'cross' | 'claude' | 'codex' | 'antigravity' | 'opencode' | 'kimi' | 'grok' | 'cursor' | 'pi' | 'devin'
 
 const FAMILY_BY_EN_SLUG: Record<string, Family> = {
+  'swe-2-benchmarks': 'devin',
   'how-to-use-devin-cli': 'devin',
   'devin-cli-on-windows': 'devin',
   'devin-cli-models-usage-limits': 'devin',

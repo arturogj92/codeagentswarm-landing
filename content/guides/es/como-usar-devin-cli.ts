@@ -130,6 +130,10 @@ const guide: Guide = {
         {
           "type": "paragraph",
           "text": "La integración está en pruebas para un próximo release de CodeAgentSwarm. Las capturas muestran esa beta y no anuncian que el instalador público actual ya incluya Devin. Inicia sesión con la CLI oficial de Devin en el ordenador donde se ejecuta el agente."
+        },
+        {
+          "type": "paragraph",
+          "text": "Antes de elegir modelo, consulta <a href=\"/es/guias/swe-2-benchmarks-comparativa\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">los benchmarks y la prueba práctica de SWE-2</a>."
         }
       ]
     }

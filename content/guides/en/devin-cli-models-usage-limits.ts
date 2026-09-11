@@ -4,10 +4,10 @@ const guide: Guide = {
   "meta": {
     "slug": "devin-cli-models-usage-limits",
     "locale": "en",
-    "title": "Devin CLI models and usage limits: read the right meter",
-    "metaTitle": "Devin CLI Models, Usage Limits and Quota Explained",
-    "metaDescription": "Choose a Devin CLI model and distinguish context tokens from daily and weekly account quota. See the model picker and usage panel in CodeAgentSwarm beta.",
-    "intro": "A model choice, a conversation context meter and an account quota answer different questions. Read them separately before starting a long task. This guide explains the controls and shows how the CodeAgentSwarm beta presents them.",
+    "title": "Devin Pro pricing, free SWE-2 and CLI usage limits",
+    "metaTitle": "Devin Pro Pricing: Free SWE-2 and CLI Usage Limits",
+    "metaDescription": "Check Devin Pro pricing, the free SWE-2 promotion and its conflicting official end dates. Understand model selection, context tokens and daily or weekly quota.",
+    "intro": "Looking for unlimited SWE-2 with Devin Pro? The current offer provides temporary free use in Desktop and CLI. Check the date and selected model before subscribing. Verified September 11, 2026.",
     "ctaText": "The Devin model picker and quota panel are in CodeAgentSwarm beta testing. Check the public release notes for availability; the app download does not include a Devin subscription.",
     "ctaAgent": "devin",
     "highlightedWords": [
@@ -19,6 +19,33 @@ const guide: Guide = {
     "socialImage": "/images/guides/devin-cli-og-en.png"
   },
   "sections": [
+    {
+      "id": "pro-swe-2",
+      "title": "Devin Pro costs $20 per month",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "<a href=\"https://devin.ai/pricing\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Official pricing</a> lists Pro at <strong>$20 per month</strong> with free SWE-2 in Desktop and CLI through <strong>October 10, 2026</strong>."
+        },
+        {
+          "type": "paragraph",
+          "text": "On September 10, <a href=\"https://x.com/devindesktop/status/2098092331140296972\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Devin Desktop announced a month of unlimited usage on X</a> for Pro and Teams. The offer covers SWE-2 in Desktop and CLI."
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "content": "The <a href=\"https://docs.devin.ai/desktop/models\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">model documentation</a> gives a different end date: <strong>October 8, 2026</strong>. Confirm the terms in the picker and your account before paying."
+        },
+        {
+          "type": "paragraph",
+          "text": "<a href=\"https://docs.devin.ai/desktop/accounts/quota\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">The quota documentation</a> says free models do not use your allowance. While SWE-2 is marked free, that is the practical benefit of the promotion. Other paid models still consume their allowance; the announcement does not establish free Devin Cloud or unrestricted availability."
+        },
+        {
+          "type": "paragraph",
+          "text": "To assess its performance, see <a href=\"/en/guides/swe-2-benchmarks\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">SWE-2 benchmarks and a repeatable test on your project</a>."
+        }
+      ]
+    },
     {
       "id": "quick-answer",
       "title": "Choose from the models your account exposes",
@@ -146,9 +173,27 @@ const guide: Guide = {
           "text": "The integration is being tested for an upcoming CodeAgentSwarm release. The screenshots show that beta, not a promise that the current public installer already includes Devin. Sign in with the official Devin CLI on the computer that runs the agent."
         }
       ]
+    },
+    {
+      "id": "after-promotion",
+      "title": "What changes after the promotion",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "<a href=\"https://docs.devin.ai/desktop/models\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">The model table</a> lists these post-promotion rates per million tokens: $3 input, $15 output and $0.30 cached input. Check the current picker price. These are usage rates, separate from the monthly subscription."
+        },
+        {
+          "type": "paragraph",
+          "text": "Budget for the end of the promotion. Keep a representative task, its results and observed usage so you can decide whether it remains worthwhile when the model is no longer marked free."
+        }
+      ]
     }
   ],
   "faq": [
+    {
+      "question": "Is SWE-2 unlimited forever with Devin Pro?",
+      "answer": "There is no permanent promise. The promotion is temporary, and official sources disagree between October 8 and October 10, 2026. Confirm the end date and price label in your account."
+    },
     {
       "question": "Are context tokens the same as Devin quota?",
       "answer": "No. Context describes the current conversation. Account quota describes usage within the allowance windows reported for your plan."

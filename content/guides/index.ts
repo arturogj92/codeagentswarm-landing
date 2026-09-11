@@ -1,3 +1,5 @@
+import enSwe2Benchmarks from './en/swe-2-benchmarks'
+import esSwe2Benchmarks from './es/swe-2-benchmarks-comparativa'
 import enDevin0 from './en/how-to-use-devin-cli'
 import esDevin0 from './es/como-usar-devin-cli'
 import enDevin1 from './en/devin-cli-on-windows'
@@ -196,6 +198,7 @@ import esPiWindows from './es/pi-coding-agent-en-windows'
 // Registry of all guides by locale and slug
 export const guides: Record<string, Record<string, Guide>> = {
   en: {
+    'swe-2-benchmarks': enSwe2Benchmarks,
     'how-to-use-devin-cli': enDevin0,
     'devin-cli-on-windows': enDevin1,
     'devin-cli-models-usage-limits': enDevin2,
@@ -291,6 +294,7 @@ export const guides: Record<string, Record<string, Guide>> = {
     'cursor-cli-pricing': enCursorPricing,
   },
   es: {
+    'swe-2-benchmarks-comparativa': esSwe2Benchmarks,
     'como-usar-devin-cli': esDevin0,
     'devin-cli-en-windows': esDevin1,
     'devin-cli-modelos-cuotas': esDevin2,

@@ -218,3 +218,6 @@ Devin CLI is a local coding agent. CodeAgentSwarm integration is in beta testing
 - [Devin CLI en Windows: instalación nativa y solución de errores](https://www.codeagentswarm.com/es/guias/devin-cli-en-windows)
 - [Modelos y cuotas de Devin CLI: entiende cada indicador](https://www.codeagentswarm.com/es/guias/devin-cli-modelos-cuotas)
 - [MCP e historial de Devin CLI: conecta herramientas y retoma tareas](https://www.codeagentswarm.com/es/guias/devin-cli-mcp-historial)
+
+- [SWE-2 benchmarks and a practical repository test](https://www.codeagentswarm.com/en/guides/swe-2-benchmarks)
+- [Benchmarks de SWE-2 y una prueba en tu repositorio](https://www.codeagentswarm.com/es/guias/swe-2-benchmarks-comparativa)

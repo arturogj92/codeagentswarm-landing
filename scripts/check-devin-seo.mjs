@@ -3,6 +3,7 @@ import { readFile, access } from 'node:fs/promises'
 import { stripTypeScriptTypes } from 'node:module'
 
 const pairs = [
+  ["swe-2-benchmarks", "swe-2-benchmarks-comparativa"],
   [
     "how-to-use-devin-cli",
     "como-usar-devin-cli"
@@ -67,6 +68,7 @@ for (const pair of pairs) {
     assert.ok(html.includes(meta.socialImage), 'social image missing')
     await access(new URL('../public' + meta.socialImage, import.meta.url))
     assert.equal((html.match(/<h1[ >]/g) || []).length, 1)
+    assert.doesNotMatch(html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, ''), /[—–]|&mdash;|&ndash;/, 'long dash in visible copy')
     const schemas = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(m => JSON.parse(m[1]))
     assert.ok(schemas.some(s => s['@type'] === 'Article' && s.dateModified === meta.updatedAt))
     const faq = schemas.find(s => s['@type'] === 'FAQPage')
@@ -78,4 +80,4 @@ for (const pair of pairs) {
     }
   }
 }
-console.log('Devin SEO: 8 bilingual pages, matching FAQs, canonical/hreflang, indexability, sitemap, llms and internal links passed.')
+console.log('Devin SEO: 10 bilingual pages, matching FAQs, canonical/hreflang, indexability, sitemap, llms and internal links passed.')
