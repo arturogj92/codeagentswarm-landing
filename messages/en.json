@@ -758,7 +758,20 @@
       "worktrees": {
         "title": "Give each agent its own checkout",
         "copy": "Use a Git worktree per terminal to separate file edits, then review the changes before merging."
-      }
+      },
+      "agentTitle": "Your {agent} sessions, in one window.",
+      "agentCopy": "Run {agent} alongside your other agents. Search their history and see when a session needs your attention.",
+      "workspaceLabel": "Your agent workspace",
+      "workspaceAlt": "Real CodeAgentSwarm workspace with four named Codex sessions for a storefront project",
+      "workspaceCaption": "Parallel workspace. Example shown with Codex.",
+      "featureCaption": "See this workflow in CodeAgentSwarm.",
+      "enlarge": "Enlarge the workspace preview",
+      "close": "Close preview",
+      "providerNote": "Use your own model provider.",
+      "mobilePrompt": "On your phone? Email yourself the download link.",
+      "emailButton": "Email me the download link",
+      "emailLabel": "Email address",
+      "emailReset": "Use another email"
     },
     "downloadCta": {
       "button": "Download free beta",
@@ -782,7 +795,10 @@
         "windowsX64": "Windows · x64",
         "windowsArm64": "Windows · ARM64",
         "generic": "macOS & Windows"
-      }
+      },
+      "windowsButton": "Download for Windows",
+      "macButton": "Download for Mac",
+      "freeBeta": "Free beta"
     },
     "stickyBar": {
       "text": "runs your Claude Code sessions in parallel.",

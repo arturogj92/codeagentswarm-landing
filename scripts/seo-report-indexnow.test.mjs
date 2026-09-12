@@ -18,7 +18,7 @@ test('report uses a complete UTC day and all four direct guide platforms', () =>
   assert.throws(() => downloadClicks([{x:'download_app_guide_intel',y:'8'}], 'guide'))
 })
 
-test('report does not replace a zero day with a later date or count scrolls as visitors', async (t) => {
+test('report uses pageviews rather than path visitors and preserves zero download days', async (t) => {
   const saved = { UMAMI_USERNAME: process.env.UMAMI_USERNAME, UMAMI_PASSWORD: process.env.UMAMI_PASSWORD }
   process.env.UMAMI_USERNAME = 'test'
   process.env.UMAMI_PASSWORD = 'test'
@@ -39,6 +39,11 @@ test('report does not replace a zero day with a later date or count scrolls as v
       assert.ok(url.searchParams.get('startAt'))
       assert.equal(Number(url.searchParams.get('endAt')) % 86400000, 86399999)
       if (url.pathname.endsWith('/stats')) data = {visitors:40}
+      else if (url.pathname.endsWith('/metrics/expanded')) data = [
+        {name:'/en/guides/example',pageviews:'140',visitors:100},
+        {name:'/en/guides',pageviews:'25',visitors:20},
+        {name:'/es/guias/ejemplo',pageviews:60,visitors:50},
+      ]
       else if (url.searchParams.get('type') === 'path') data = [
         {x:'/en/guides/example',y:100}, {x:'/en/guides',y:20}, {x:'/es/guias/ejemplo',y:50},
       ]
@@ -53,9 +58,9 @@ test('report does not replace a zero day with a later date or count scrolls as v
   assert.match(report,/2026-09-04 \(dia completo UTC\)/)
   assert.match(report,/Solicitudes de instalador: 0\./)
   assert.match(report,/directa desde guias: 4\./)
-  assert.match(report,/Paginas vistas de guias: 150/)
-  assert.match(report,/2\.67%/)
-  assert.match(report,/\/en\/guides\/example: 3 \/ 100/)
+  assert.match(report,/Paginas vistas de guias: 200/)
+  assert.match(report,/2\.00%/)
+  assert.match(report,/\/en\/guides\/example: 3 \/ 140/)
   assert.doesNotMatch(report,/999|Puente de guias/)
 })
 

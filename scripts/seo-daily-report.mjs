@@ -53,7 +53,13 @@ async function umamiWindow(token, startAt, endAt) {
   const [stats, events, paths] = await Promise.all([
     getJson(`${base}/stats?${qs}`, auth),
     getJson(`${base}/metrics?${qs}&type=event`, auth).then(metricRows),
-    getJson(`${base}/metrics?${qs}&type=path`, auth).then(metricRows),
+    // Basic path metrics count visitors. Expanded metrics expose actual pageviews.
+    getJson(`${base}/metrics/expanded?${qs}&type=path`, auth).then((rows) => metricRows(
+      rows.map(({ name, pageviews }) => ({
+        x: name,
+        y: typeof pageviews === 'string' && /^\d+$/.test(pageviews) ? Number(pageviews) : pageviews,
+      }))
+    )),
   ])
   const guidePaths = paths.filter(({ x }) => isGuide(x)).sort((a, b) => b.y - a.y)
   const topGuides = await Promise.all(guidePaths.slice(0, 5).map(async ({ x, y }) => ({

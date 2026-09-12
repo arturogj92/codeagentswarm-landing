@@ -758,7 +758,20 @@
       "worktrees": {
         "title": "Dale a cada agente su propia copia de trabajo",
         "copy": "Usa un worktree de Git por terminal para separar los cambios y revísalos antes de fusionarlos."
-      }
+      },
+      "agentTitle": "Tus sesiones de {agent}, en una sola ventana.",
+      "agentCopy": "Usa {agent} junto a tus otros agentes. Busca en su historial y ve cuándo una sesión necesita tu atención.",
+      "workspaceLabel": "Tu espacio de trabajo",
+      "workspaceAlt": "Espacio de trabajo real de CodeAgentSwarm con cuatro sesiones de Codex para una tienda online",
+      "workspaceCaption": "Sesiones en paralelo. Ejemplo con Codex.",
+      "featureCaption": "Mira este flujo de trabajo en CodeAgentSwarm.",
+      "enlarge": "Ampliar la vista del espacio de trabajo",
+      "close": "Cerrar vista previa",
+      "providerNote": "Usa tu propio proveedor de modelos.",
+      "mobilePrompt": "¿Estás en el móvil? Envíate el enlace de descarga por email.",
+      "emailButton": "Enviarme el enlace de descarga",
+      "emailLabel": "Dirección de email",
+      "emailReset": "Usar otro email"
     },
     "downloadCta": {
       "button": "Descargar beta gratis",
@@ -782,7 +795,10 @@
         "windowsX64": "Windows · x64",
         "windowsArm64": "Windows · ARM64",
         "generic": "macOS y Windows"
-      }
+      },
+      "windowsButton": "Descargar para Windows",
+      "macButton": "Descargar para Mac",
+      "freeBeta": "Beta gratis"
     },
     "stickyBar": {
       "text": "ejecuta tus sesiones de Claude Code en paralelo.",

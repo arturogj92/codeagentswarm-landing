@@ -9,6 +9,7 @@ export interface GuideDownloadState {
   direct: boolean
   target: DownloadTarget | null
   version: string | null
+  options: Array<{ target: DownloadTarget; href: string; version: string }>
 }
 
 // One fetch per page load, shared by every CTA instance on the page. The API
@@ -36,15 +37,26 @@ export function useGuideDownload(locale: 'en' | 'es'): GuideDownloadState {
     direct: false,
     target: null,
     version: null,
+    options: [],
   })
 
   useEffect(() => {
     let cancelled = false
     Promise.all([fetchReleases(), detectDownloadTarget()]).then(([releases, target]) => {
-      if (cancelled || !target || releases.length === 0) return
-      const resolved = resolveDownloadForTarget(releases, target)
-      if (!resolved) return
-      setState({ href: resolved.href, direct: true, target, version: resolved.version })
+      if (cancelled) return
+      const targets: DownloadTarget[] = ['silicon', 'intel', 'windows_x64', 'windows_arm64']
+      const options = targets.flatMap((target) => {
+        const resolved = resolveDownloadForTarget(releases, target)
+        return resolved ? [{ target, ...resolved }] : []
+      })
+      const resolved = options.find((option) => option.target === target)
+      setState({
+        href: resolved?.href ?? `/${locale}#download`,
+        direct: Boolean(resolved),
+        target: resolved?.target ?? null,
+        version: resolved?.version ?? null,
+        options,
+      })
     })
     return () => {
       cancelled = true

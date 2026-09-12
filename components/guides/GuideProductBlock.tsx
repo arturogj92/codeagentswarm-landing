@@ -1,7 +1,11 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useId, useRef, useState } from 'react'
+import Image from 'next/image'
+import { Expand, X } from 'lucide-react'
+import type { GuideCtaAgent } from '@/content/guides/types'
+import MobileEmailPanel from '../MobileEmailPanel'
 import GuideDownloadButton from './GuideDownloadButton'
 import { pickGuideVideo } from './guide-video'
 
@@ -42,13 +46,16 @@ interface GuideProductBlockProps {
   locale: 'en' | 'es'
   slug: string
   videoKey: string
+  ctaAgent: GuideCtaAgent
 }
 
 // Product showcase block rendered inside the guide article, right after the
 // intro. The video only starts loading when the block approaches the viewport
 // (IntersectionObserver) so it never competes with the guide's LCP.
-export default function GuideProductBlock({ locale, slug, videoKey }: GuideProductBlockProps) {
+export default function GuideProductBlock({ locale, slug, videoKey, ctaAgent }: GuideProductBlockProps) {
   const t = useTranslations('guides.productBlock')
+  const headingId = useId()
+  const dialogRef = useRef<HTMLDialogElement>(null)
   const containerRef = useRef<HTMLElement>(null)
   const [inView, setInView] = useState(false)
 
@@ -84,40 +91,81 @@ export default function GuideProductBlock({ locale, slug, videoKey }: GuideProdu
         ? 'worktrees'
         : null
 
+  const agentNames: Partial<Record<GuideCtaAgent, string>> = {
+    'claude-code': 'Claude Code', codex: 'Codex', opencode: 'OpenCode',
+    'kimi-code': 'Kimi Code', antigravity: 'Antigravity', 'grok-build': 'Grok Build',
+  }
+  const agent = agentNames[ctaAgent]
+  const useFeatureVideo = videoKey.startsWith('guide-') && videoKey !== 'guide-terminals.mp4'
+  const media = (expanded = false) => useFeatureVideo ? (
+    <video
+      className="block w-full h-auto"
+      style={{ aspectRatio }}
+      src={inView ? videoSrc : undefined}
+      autoPlay={!expanded}
+      controls={expanded}
+      muted loop playsInline preload="none"
+    />
+  ) : (
+    <Image
+      src="/images/guides/parallel-workspace-codex.webp"
+      alt={t('workspaceAlt')}
+      width={1280} height={720}
+      sizes={expanded ? '94vw' : '(max-width: 767px) 90vw, 420px'}
+      className="block w-full h-auto"
+    />
+  )
+
   return (
     <aside
       ref={containerRef}
-      className="mb-10 rounded-[20px] border border-neon-cyan/25 overflow-hidden bg-[#0a0a0a] bg-[linear-gradient(160deg,rgba(251,191,36,0.07),rgba(0,0,0,0)_45%)] shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
+      aria-labelledby={headingId}
+      data-guide-product-block
+      className="mb-10 grid md:grid-cols-2 gap-6 items-center p-5 md:p-7 rounded-[20px] border border-neon-cyan/25 bg-[#0a0a0a] bg-[linear-gradient(130deg,rgba(251,191,36,0.055),transparent_65%)]"
     >
-      <div className="px-4 pt-[18px] sm:px-[26px] sm:pt-[22px]">
-        <div className="inline-flex items-center gap-[7px] text-[11.5px] font-semibold uppercase tracking-[0.14em] text-neon-cyan mb-2.5">
-          <span className="w-1.5 h-1.5 rounded-full bg-neon-cyan shadow-[0_0_10px_rgba(251,191,36,0.8)]" />
-          {t('overline')}
+      <div>
+        <p className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.13em] text-neon-cyan mb-3">
+          <span aria-hidden="true" className="w-[5px] h-[5px] rounded-full bg-neon-cyan" />
+          {agent ? `${agent}${/windows/.test(slug) ? ' · Windows' : ''}` : t('workspaceLabel')}
+        </p>
+        <h2 id={headingId} className="text-[28px] font-bold text-white leading-[1.15] tracking-[-0.035em] mb-3">
+          {message ? t(`${message}.title`) : agent ? t('agentTitle', { agent }) : t('parallel.title')}
+        </h2>
+        <p className="text-sm leading-[1.65] text-white/65 mb-6">
+          {message ? t(`${message}.copy`) : agent ? t('agentCopy', { agent }) : t('parallel.copy')}
+        </p>
+        <div className="hidden md:block">
+          <GuideDownloadButton locale={locale} slug={slug} position="product_block" size="lg" align="left" />
         </div>
-        <p className="text-[21px] font-bold text-white leading-[1.3] mb-1.5 m-0">{t(message ? `${message}.title` : 'title')}</p>
-        <p className="text-[15.5px] text-white/65 mb-4 m-0">{t(message ? `${message}.copy` : 'copy')}</p>
+        <div className="md:hidden">
+          <MobileEmailPanel guide={slug} />
+        </div>
+        <p className="text-[11px] text-neutral-400 mt-4">{t('providerNote')}</p>
       </div>
-
-      <div
-        className="mx-4 sm:mx-[26px] rounded-xl border border-white/10 overflow-hidden bg-black"
-        style={{ aspectRatio }}
+      <figure className="min-w-0 m-0">
+        <button
+          type="button"
+          onClick={() => dialogRef.current?.showModal()}
+          aria-label={t('enlarge')}
+          className="relative block w-full rounded-[10px] border border-white/15 overflow-hidden bg-black cursor-zoom-in focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-neon-cyan"
+        >
+          {media()}
+          <span className="absolute right-2 bottom-2 p-1.5 rounded bg-neutral-900/90 border border-white/15"><Expand aria-hidden="true" className="w-3.5 h-3.5 text-neutral-300" /></span>
+        </button>
+        <figcaption className="text-[10px] md:text-[9px] leading-relaxed text-neutral-400 mt-2">
+          {t(useFeatureVideo ? 'featureCaption' : 'workspaceCaption')}
+        </figcaption>
+      </figure>
+      <dialog
+        ref={dialogRef}
+        aria-label={t('enlarge')}
+        onClick={(event) => { if (event.target === event.currentTarget) dialogRef.current?.close() }}
+        className="m-auto w-[94vw] max-w-[1100px] max-h-[94vh] p-4 pt-10 rounded-xl border border-white/25 bg-neutral-950 text-white backdrop:bg-black/80 backdrop:backdrop-blur-sm"
       >
-        {inView && (
-          <video
-            className="block w-full h-full object-cover"
-            src={videoSrc}
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="none"
-          />
-        )}
-      </div>
-
-      <div className="px-4 pt-4 pb-5 sm:px-[26px] sm:pt-[18px] sm:pb-6">
-        <GuideDownloadButton locale={locale} slug={slug} position="product_block" size="lg" align="left" />
-      </div>
+        <button type="button" onClick={() => dialogRef.current?.close()} aria-label={t('close')} className="absolute top-2 right-3 p-1 focus-visible:outline focus-visible:outline-neon-cyan"><X className="w-5 h-5" /></button>
+        {media(true)}
+        <p className="text-xs text-neutral-400 mt-3">{t(useFeatureVideo ? 'featureCaption' : 'workspaceCaption')}</p>
+      </dialog>
     </aside>
   )
 }

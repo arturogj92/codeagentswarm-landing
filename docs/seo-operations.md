@@ -6,12 +6,32 @@
 
 - Home and guide download events remain separate. Guide totals include Apple Silicon, Intel, Windows x64 and Windows ARM64, across all existing CTA positions.
 - Guide click rates divide direct download clicks by guide pageviews. They are event/pageview rates, not unique-user conversion or confirmed installations.
+- Pageviews come from `/metrics/expanded?type=path`, using `name` and `pageviews` (the latter can be a numeric string). The basic `/metrics?type=path` endpoint counts visitors per URL; summing it undercounts pageviews and overstates the click rate. The September 12 correction also ranks the top five by actual pageviews. Recalculate historical daily-report rates before comparing them with corrected reports.
 - The five most viewed guides show their own download-click counts using Umami's page filter. Guide indexes are excluded from article pageviews.
 - Installer requests are reported separately. Bots, retries and repeat visitors can produce multiple requests. First app launch and activation remain in the existing aggregate installation funnel.
 - Scroll-depth and legacy CTA events remain available in Umami, but do not substitute for direct downloads or pageviews.
 - Malformed data or a result reaching the 10,000-row metrics ceiling is unavailable, not a guessed zero. Raise the ceiling/use pagination if this site reaches it.
 
 For a private local preview, use `node scripts/seo-daily-report.mjs --dry-run`. This prints the report without sending Telegram and needs only the Umami credentials. Do not print real traffic reports in public Actions logs. Importing the module has no network or delivery side effects.
+
+For installation follow-up, keep website clicks, installer requests and observed fresh launches separate. The existing `installation_activation_v1` RPC measures first-terminal activation within seven days, but its `returned_after_1d` and `returned_after_7d` fields have no fixed upper bound. They are not fixed-window retention. Compare mature cohorts with the same observation window, exclude update-harness versions `90.0.x`, and account for the late-August rollout of installation telemetry. Installation identifiers do not attribute app use to a particular guide or acquisition source.
+
+## Guide download block (September 12)
+
+The approved compact block puts the platform download before the workspace preview. It applies to the existing eligible guides, including articles covering macOS. Download detection still selects Apple Silicon, Intel, Windows x64 or Windows ARM64; native “Other platforms” links reuse the same resolved release list and tracking. Existing Cursor/Pi/Devin showcase exclusions stay in place. General workspace imagery is a frame from the existing public `guide-terminals.mp4`, explicitly captioned as a Codex example; feature-specific history/worktree videos retain their matching footage.
+
+Below 768px the block reuses the home email form and `/api/download-link`. `mobile_link_offer_view`, `mobile_link_submit` and `mobile_link_error` now carry `source`, plus `guide` and `position: product_block` for guide traffic. A submit is successful only when the endpoint acknowledges `emailSent: true`. Keep those email events separate from installer clicks; the existing backend email/download-link tracking remains unchanged.
+
+Run the focused browser check against a local production build:
+
+```sh
+npm run build
+npm run start -- --port 3016 --hostname 127.0.0.1
+# In a second terminal; uses Playwright from this repo or the sibling app.
+node scripts/check-guide-downloads.cjs
+```
+
+`PLAYWRIGHT_MODULE` can point to an existing Playwright installation. `GUIDE_EVIDENCE_DIR` selects the screenshot/result directory (default `/tmp/guide-download-evidence`). The check intercepts email, download and notification requests, verifies all four architectures plus English/Spanish mobile states and home reuse, and makes no real send or installer request. This is landing browser coverage; the Desktop live verifier does not exercise this surface. The shared `landing-release` recipe supplies the build, lint and existing landing checks.
 
 ## IndexNow
 
