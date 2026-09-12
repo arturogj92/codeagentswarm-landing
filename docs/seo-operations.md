@@ -18,7 +18,7 @@ For installation follow-up, keep website clicks, installer requests and observed
 
 ## Guide download block (September 12)
 
-The approved compact block puts the platform download before the workspace preview. It applies to the existing eligible guides, including articles covering macOS. Download detection still selects Apple Silicon, Intel, Windows x64 or Windows ARM64; native “Other platforms” links reuse the same resolved release list and tracking. Existing Cursor/Pi/Devin showcase exclusions stay in place. General workspace imagery is a frame from the existing public `guide-terminals.mp4`, explicitly captioned as a Codex example; feature-specific history/worktree videos retain their matching footage.
+The approved compact block puts the platform download before the workspace preview. It applies to the existing eligible guides, including articles covering macOS. Download detection still selects Apple Silicon, Intel, Windows x64 or Windows ARM64; native “Other platforms” links reuse the same resolved release list and tracking. Existing Cursor/Pi/Devin showcase exclusions stay in place. General workspace imagery reuses the existing English `list-mode-demo-poster.jpg`, showing eight agent sessions in List mode, including in the enlarged preview; feature-specific history/worktree videos retain their matching footage.
 
 Below 768px the block reuses the home email form and `/api/download-link`. `mobile_link_offer_view`, `mobile_link_submit` and `mobile_link_error` now carry `source`, plus `guide` and `position: product_block` for guide traffic. A submit is successful only when the endpoint acknowledges `emailSent: true`. Keep those email events separate from installer clicks; the existing backend email/download-link tracking remains unchanged.
 

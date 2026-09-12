@@ -113,9 +113,9 @@ export default function GuideProductBlock({ locale, slug, videoKey = 'guide-term
     />
   ) : (
     <Image
-      src="/images/guides/parallel-workspace-codex.webp"
+      src="/images/list-mode-demo-poster.jpg"
       alt={t('workspaceAlt')}
-      width={1280} height={720}
+      width={1920} height={1200}
       sizes={expanded ? '94vw' : '(max-width: 767px) 90vw, 420px'}
       className="block w-full h-auto"
     />
