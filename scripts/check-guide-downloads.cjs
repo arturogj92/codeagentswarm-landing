@@ -145,7 +145,10 @@ async function submit(page) {
         assert.equal(await cta.count(), 1)
         if (position === 'after_first_group') assert.ok(await cta.evaluate(el => el.previousElementSibling?.tagName === 'SECTION' && el.nextElementSibling?.tagName === 'SECTION'))
         if (position === 'final') assert.equal(await cta.locator('figure, video, dialog').count(), 0)
-        if (position === 'feature_videos') assert.ok(await cta.evaluate(el => el.parentElement.previousElementSibling?.id === 'feature-videos'))
+        if (position === 'feature_videos') {
+          assert.ok(await cta.evaluate(el => el.parentElement.previousElementSibling?.id === 'feature-videos'))
+          assert.equal(await page.locator('#feature-videos a[href="#download"]').count(), 0, 'No duplicate download CTA inside the video')
+        }
         await screenshot(page, `${source}-${position}-${width}`, selector)
         if (width === 1440) {
           const link = cta.getByRole('link', { name: 'Download for Windows', exact: true })

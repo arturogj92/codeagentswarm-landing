@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Play, Download, Zap, Grid3X3, Bell, Terminal, Monitor, Layout, GitBranch, Pause, History, Layers, Volume2, VolumeX } from 'lucide-react'
+import { Play, Zap, Grid3X3, Bell, Terminal, Monitor, Layout, GitBranch, Pause, History, Layers, Volume2, VolumeX } from 'lucide-react'
 import { useEffect, useState, useRef } from 'react'
 import { useTranslations, useLocale } from 'next-intl'
 import VideoWithProgress from './VideoWithProgress'
@@ -260,17 +260,6 @@ export function VideoShowcase() {
                   <p className="text-xs text-white/60">{videos[currentVideo].description}</p>
                 </div>
               </div>
-              <a
-                href="#download"
-                onClick={(e) => {
-                  e.stopPropagation()
-                  window.umami?.track('video_cta_download_click', { video_name: videos[currentVideo].title })
-                }}
-                className="hidden sm:inline-flex shrink-0 items-center gap-2 px-4 py-2 mr-24 bg-neon-cyan text-black text-sm font-semibold rounded-full hover:bg-amber-400 transition-colors"
-              >
-                <Download className="w-4 h-4" />
-                {t('downloadCta')}
-              </a>
             </div>
           </div>
 
