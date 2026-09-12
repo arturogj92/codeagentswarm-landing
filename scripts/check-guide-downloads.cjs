@@ -45,19 +45,21 @@ async function prepare(browser, userAgent, width = 1440, architecture) {
   page.on('pageerror', error => errors.push(error.message))
   return { context, page }
 }
-async function screenshot(page, name) {
-  const block = page.locator('[data-guide-product-block]')
+async function screenshot(page, name, selector = '[data-guide-product-block]') {
+  const block = page.locator(selector)
   await page.evaluate(() => document.fonts.ready)
   await page.waitForTimeout(800)
   await block.evaluate(el => scrollTo({ top: el.getBoundingClientRect().top + scrollY - 98, behavior: 'instant' }))
   await page.waitForTimeout(200)
   await page.screenshot({ path: path.join(output, `${name}.png`) })
-  const loaded = await block.locator('figure img').evaluate(el => el.complete && el.naturalWidth > 0)
-  assert.ok(loaded, 'Workspace image loaded')
+  if (await block.locator('figure img').count()) {
+    const loaded = await block.locator('figure img').evaluate(el => el.complete && el.naturalWidth > 0)
+    assert.ok(loaded, 'Workspace image loaded')
+  }
   assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), 'No horizontal overflow')
 }
 async function submit(page) {
-  await page.getByRole('button', { name: /Email me the download link/ }).click()
+  await page.locator('[data-guide-product-block]').getByRole('button', { name: /Email me the download link/ }).click()
   await page.getByRole('button', { name: 'Sending...' }).waitFor()
 }
 (async () => {
@@ -122,15 +124,68 @@ async function submit(page) {
     await page.locator('[data-guide-product-block]').getByRole('button', { name: /Enviarme el enlace/ }).waitFor()
     await screenshot(page, 'mobile-es')
     await page.goto(`${base}/en#download`)
-    const homeInput = page.getByRole('textbox', { name: 'Email address', exact: true })
+    const homeInput = page.locator('#download').getByRole('textbox', { name: 'Email address', exact: true })
     await homeInput.waitFor()
     await homeInput.fill('preview@example.com')
     emailReply = { status: 200, body: { emailSent: true } }
     await page.getByRole('button', { name: 'Email me the link', exact: true }).click()
     await page.getByText('Done, check your inbox', { exact: true }).waitFor()
     await context.close()
+    for (const [route, source, position] of [
+      ['/en', 'home', 'feature_videos'],
+      ['/en/guides', 'guides_index', 'after_first_group'],
+      ['/en/guides/opencode-on-windows', 'guide', 'final'],
+    ]) {
+      const selector = `[data-download-cta="${source}:${position}"]`
+      for (const width of [1440, 390]) {
+        const { context, page } = await prepare(browser, width === 390 ? iphone : windows, width, 'x86')
+        await page.goto(base + route)
+        const cta = page.locator(selector)
+        await cta.waitFor()
+        assert.equal(await cta.count(), 1)
+        if (position === 'after_first_group') assert.ok(await cta.evaluate(el => el.previousElementSibling?.tagName === 'SECTION' && el.nextElementSibling?.tagName === 'SECTION'))
+        if (position === 'final') assert.equal(await cta.locator('figure, video, dialog').count(), 0)
+        if (position === 'feature_videos') assert.ok(await cta.evaluate(el => el.parentElement.previousElementSibling?.id === 'feature-videos'))
+        await screenshot(page, `${source}-${position}-${width}`, selector)
+        if (width === 1440) {
+          const link = cta.getByRole('link', { name: 'Download for Windows', exact: true })
+          await link.waitFor()
+          const downloaded = page.waitForEvent('download')
+          await link.click()
+          await downloaded
+          const event = await page.evaluate(() => window.guideEvents.filter(e => e.name.startsWith('download_app_')).at(-1))
+          assert.equal(event.name, `download_app_${source}_windows_x64`)
+          assert.equal(event.data.source, source)
+          assert.equal(event.data.position, position)
+          assert.equal(event.data.guide, source === 'guide' ? 'opencode-on-windows' : undefined)
+          assert.equal(notifications.at(-1).data.position, position)
+        } else {
+          await cta.getByRole('textbox', { name: 'Email address' }).fill('preview@example.com')
+          emailReply = { status: 200, body: { emailSent: true } }
+          await cta.getByRole('button', { name: /Email me the download link/ }).click()
+          await cta.getByText('Done, check your inbox', { exact: true }).waitFor()
+          const event = await page.evaluate(() => window.guideEvents.filter(e => e.name === 'mobile_link_submit').at(-1))
+          assert.equal(event.data.source, source)
+          assert.equal(event.data.position, position)
+          assert.equal(event.data.guide, source === 'guide' ? 'opencode-on-windows' : undefined)
+          assert.ok(await page.locator('input[type=email]').evaluateAll(inputs => new Set(inputs.map(i => i.id)).size === inputs.length))
+        }
+        await context.close()
+      }
+    }
+    for (const [route, text] of [
+      ['/en/guides/how-to-use-pi-coding-agent', 'Pi support in CodeAgentSwarm is in beta testing.'],
+      ['/en/guides/how-to-use-devin-cli', 'Devin Chat, installation and history are in CodeAgentSwarm beta testing'],
+      ['/es/guias/opencode-en-windows', 'Prueba CodeAgentSwarm'],
+    ]) {
+      const { context, page } = await prepare(browser, iphone, 390)
+      await page.goto(base + route)
+      const footer = page.locator('[data-download-cta="guide:final"]')
+      assert.ok((await footer.innerText()).includes(text))
+      await context.close()
+    }
     assert.deepEqual(errors, [])
-    const result = { ok: true, platforms: ['windows-x64', 'windows-arm64', 'mac-silicon', 'mac-intel'], mobile: ['validation', 'sending', 'success', 'reset', 'rate-limit', 'error', 'email-not-sent', 'Spanish', 'home reuse'], emailRequests: emailRequests.length, screenshots: fs.readdirSync(output).filter(f => f.endsWith('.png')), errors }
+    const result = { ok: true, placements: ['home:feature_videos', 'guides_index:after_first_group', 'guide:final'], platforms: ['windows-x64', 'windows-arm64', 'mac-silicon', 'mac-intel'], mobile: ['validation', 'sending', 'success', 'reset', 'rate-limit', 'error', 'email-not-sent', 'Spanish', 'home reuse'], emailRequests: emailRequests.length, screenshots: fs.readdirSync(output).filter(f => f.endsWith('.png')), errors }
     fs.writeFileSync(path.join(output, 'result.json'), JSON.stringify(result, null, 2))
     console.log(JSON.stringify(result, null, 2))
   } finally { await browser.close() }

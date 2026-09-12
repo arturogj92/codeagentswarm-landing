@@ -3,10 +3,9 @@
 import { motion } from 'framer-motion'
 import { ArrowRight, BookOpen } from 'lucide-react'
 import Link from 'next/link'
-import { useTranslations } from 'next-intl'
 import { useEffect } from 'react'
 import type { Guide, RelatedGuideMeta } from '@/content/guides/types'
-import { CTA_AGENT_MESSAGE_KEY, extractTOC } from '@/content/guides/types'
+import { extractTOC } from '@/content/guides/types'
 import GuidesHeader from './GuidesHeader'
 import Breadcrumbs from './Breadcrumbs'
 import TableOfContents from './TableOfContents'
@@ -14,7 +13,6 @@ import ContentRenderer from './ContentRenderer'
 import FAQAccordion from './FAQAccordion'
 import GuideProductBlock, { pickGuideVideo } from './GuideProductBlock'
 import GuideInlineCTA from './GuideInlineCTA'
-import GuideDownloadButton from './GuideDownloadButton'
 
 interface GuideLayoutProps {
   guide: Guide
@@ -25,7 +23,6 @@ export default function GuideLayout({ guide, relatedGuide }: GuideLayoutProps) {
   const { meta, sections, faq } = guide
   const locale = meta.locale
   const toc = extractTOC(sections)
-  const t = useTranslations('guides.downloadCta')
   const authorName = meta.author ?? 'CodeAgentSwarm'
 
   // Breadcrumb configuration
@@ -171,22 +168,10 @@ export default function GuideLayout({ guide, relatedGuide }: GuideLayoutProps) {
             {/* FAQ section */}
             {faq && faq.length > 0 && <FAQAccordion items={faq} locale={locale} />}
 
-            {/* Final note / CTA */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.5 }}
-              className="mt-16 p-8 rounded-2xl bg-neutral-950 border border-white/10"
-            >
-              <div className="text-center">
-                <p className="text-neutral-400 mb-6">
-                  {t(`context.${CTA_AGENT_MESSAGE_KEY[meta.ctaAgent]}`)}
-                </p>
-                <div className="flex justify-center">
-                  <GuideDownloadButton locale={locale} slug={meta.slug} position="final" align="center" />
-                </div>
-              </div>
-            </motion.div>
+            {/* Compact download CTA; preserve agent availability copy. */}
+            <div className="mt-16">
+              <GuideProductBlock locale={locale} slug={meta.slug} ctaAgent={meta.ctaAgent} position="final" compact />
+            </div>
 
             {/* Recommended guide section */}
             {relatedGuide && (

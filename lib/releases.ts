@@ -18,6 +18,9 @@ export interface Release {
   downloads?: Record<string, DownloadAsset>
 }
 
+export type DownloadSource = 'guide' | 'home' | 'guides_index'
+export type DownloadPosition = 'inline' | 'product_block' | 'final' | 'feature_videos' | 'after_first_group' | 'download_section'
+
 export type DownloadTarget = 'silicon' | 'intel' | 'windows_x64' | 'windows_arm64'
 
 export const BACKEND_BASE = 'https://codeagentswarm-backend-production.up.railway.app'

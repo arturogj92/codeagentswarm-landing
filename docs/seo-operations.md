@@ -33,6 +33,12 @@ node scripts/check-guide-downloads.cjs
 
 `PLAYWRIGHT_MODULE` can point to an existing Playwright installation. `GUIDE_EVIDENCE_DIR` selects the screenshot/result directory (default `/tmp/guide-download-evidence`). The check intercepts email, download and notification requests, verifies all four architectures plus English/Spanish mobile states and home reuse, and makes no real send or installer request. This is landing browser coverage; the Desktop live verifier does not exercise this surface. The shared `landing-release` recipe supplies the build, lint and existing landing checks.
 
+### Additional CTA placements
+
+The same approved block appears once after the homepage feature videos (`source: home`, `position: feature_videos`) and once after the first guide-index group (`source: guides_index`, `position: after_first_group`). Article endings use a compact version without media (`source: guide`, `position: final`), preserving the original agent-specific availability text, including Pi and Devin beta caveats.
+
+Direct-download events use `download_app_home_*`, `download_app_guides_index_*` and the existing `download_app_guide_*` respectively. All carry `source` and `position`; only article events carry `guide`. The mobile offer/view, submit and error events use the same placement fields. The existing home download section is `home:download_section`. Compare each placement separately; do not count guide-index traffic as article traffic. The focused `check-guide-downloads.cjs` browser check covers all three placements on desktop/mobile, event attribution, unique email input IDs and preserved availability text.
+
 ## IndexNow
 
 `.github/workflows/indexnow.yml` listens for successful GitHub deployment statuses with environment `Production`, which matches this site's Vercel integration. Preview and failed deployments do not submit URLs. No deployment token or paid dependency is added.

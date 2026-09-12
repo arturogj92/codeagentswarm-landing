@@ -771,7 +771,8 @@
       "mobilePrompt": "¿Estás en el móvil? Envíate el enlace de descarga por email.",
       "emailButton": "Enviarme el enlace de descarga",
       "emailLabel": "Dirección de email",
-      "emailReset": "Usar otro email"
+      "emailReset": "Usar otro email",
+      "compactTitle": "Prueba CodeAgentSwarm"
     },
     "downloadCta": {
       "button": "Descargar beta gratis",

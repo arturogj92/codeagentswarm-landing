@@ -1,5 +1,7 @@
 'use client'
 
+import { Fragment } from 'react'
+import GuideProductBlock from './GuideProductBlock'
 import { motion } from 'framer-motion'
 import { BookOpen, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
@@ -232,8 +234,9 @@ export default function GuidesIndexPage({ guides, locale }: GuidesIndexPageProps
         </motion.div>
 
         {/* Guides grouped by tool family */}
-        {groups.map(group => (
-          <section key={group.family} className="mb-12 last:mb-0">
+        {groups.map((group, index) => (
+          <Fragment key={group.family}>
+          <section className="mb-12 last:mb-0">
             <div className="flex items-center gap-2.5 mb-5 pl-1">
               <span className="flex items-center gap-1.5">
                 {group.icons.map(icon => (
@@ -248,6 +251,8 @@ export default function GuidesIndexPage({ guides, locale }: GuidesIndexPageProps
               {group.items.map(renderCard)}
             </div>
           </section>
+          {index === 0 && <GuideProductBlock locale={locale} source="guides_index" position="after_first_group" />}
+          </Fragment>
         ))}
 
         {/* Empty state */}

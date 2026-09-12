@@ -24,6 +24,7 @@ import CommunitySection from '@/components/CommunitySection'
 import FAQSection from '@/components/FAQSection'
 import GuidesSection from '@/components/GuidesSection'
 import CTASection from '@/components/CTASection'
+import GuideProductBlock from '@/components/guides/GuideProductBlock'
 import Footer from '@/components/Footer'
 import { buildFaqItems } from '@/lib/faq-items'
 
@@ -182,6 +183,9 @@ export default function Home() {
         <ProblemSection />
         <FeaturesSection />
         <FeatureVideosSection />
+        <div className="relative max-w-5xl mx-auto px-6 pb-8">
+          <GuideProductBlock locale={locale === 'es' ? 'es' : 'en'} source="home" position="feature_videos" />
+        </div>
         <WorksWithSection />
         {/* After the agent roster on purpose: you have just read WHICH CLIs it
             runs, and this answers how you read them - same session as chat or

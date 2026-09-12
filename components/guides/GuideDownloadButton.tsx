@@ -4,7 +4,7 @@ import { Download } from 'lucide-react'
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 import { useGuideDownload } from '@/hooks/useGuideDownload'
-import { ARCHITECTURE_BY_TARGET, notifyLandingEvent, type DownloadTarget } from '@/lib/releases'
+import { ARCHITECTURE_BY_TARGET, notifyLandingEvent, type DownloadTarget, type DownloadSource, type DownloadPosition } from '@/lib/releases'
 
 const PLATFORM_MESSAGE_KEY: Record<DownloadTarget, string> = {
   silicon: 'silicon',
@@ -15,37 +15,38 @@ const PLATFORM_MESSAGE_KEY: Record<DownloadTarget, string> = {
 
 interface GuideDownloadButtonProps {
   locale: 'en' | 'es'
-  slug: string
-  position: 'inline' | 'product_block' | 'final'
+  slug?: string
+  position: DownloadPosition
+  source?: DownloadSource
+  prominent?: boolean
   size?: 'md' | 'lg'
   align?: 'start' | 'left' | 'center'
 }
 
-export default function GuideDownloadButton({ locale, slug, position, size = 'md', align = 'start' }: GuideDownloadButtonProps) {
+export default function GuideDownloadButton({ locale, slug, position, source = 'guide', prominent = position === 'product_block', size = 'md', align = 'start' }: GuideDownloadButtonProps) {
   const t = useTranslations('guides.downloadCta')
   const download = useGuideDownload(locale)
 
-  const productBlock = position === 'product_block'
+  const productBlock = prominent
+  const attribution: Record<string, string> = { source, position, ...(source === 'guide' && slug ? { guide: slug } : {}) }
   const trackClick = (choice = download) => {
     // Legacy click events keep their historical names so the Umami baselines
     // (guide_cta_click / guide_product_block_click) stay comparable.
-    if (position === 'product_block') {
-      window.umami?.track('guide_product_block_click', { guide: slug })
+    if (source === 'guide') {
+      window.umami?.track(position === 'product_block' ? 'guide_product_block_click' : 'guide_cta_click', attribution)
     } else {
-      window.umami?.track('guide_cta_click', { guide: slug, position })
+      window.umami?.track(`${source}_cta_click`, attribution)
     }
     if (choice.direct && choice.target) {
       // New guide-born download events, parallel to download_app_home_*.
-      window.umami?.track(`download_app_guide_${choice.target}`, {
-        guide: slug,
-        position,
+      window.umami?.track(`download_app_${source}_${choice.target}`, {
+        ...attribution,
         version: choice.version ?? '',
       })
       notifyLandingEvent('download_app', {
         architecture: ARCHITECTURE_BY_TARGET[choice.target],
         version: choice.version ?? '',
-        source: 'guide',
-        guide: slug,
+        ...attribution,
       })
     }
   }
@@ -83,7 +84,7 @@ export default function GuideDownloadButton({ locale, slug, position, size = 'md
             <a
               href={`/${locale}#download`}
               onClick={() => {
-                window.umami?.track('guide_cta_click', { guide: slug, position, link: 'other_platforms' })
+                window.umami?.track('guide_cta_click', { ...attribution, link: 'other_platforms' })
               }}
               className="underline decoration-white/30 underline-offset-2 hover:text-white/70 transition-colors"
             >

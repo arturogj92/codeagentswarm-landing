@@ -4,7 +4,8 @@ import { useTranslations } from 'next-intl'
 import { useEffect, useId, useRef, useState } from 'react'
 import Image from 'next/image'
 import { Expand, X } from 'lucide-react'
-import type { GuideCtaAgent } from '@/content/guides/types'
+import { CTA_AGENT_MESSAGE_KEY, type GuideCtaAgent } from '@/content/guides/types'
+import type { DownloadSource, DownloadPosition } from '@/lib/releases'
 import MobileEmailPanel from '../MobileEmailPanel'
 import GuideDownloadButton from './GuideDownloadButton'
 import { pickGuideVideo } from './guide-video'
@@ -44,16 +45,20 @@ const VIDEO_ASPECT: Record<string, number> = {
 
 interface GuideProductBlockProps {
   locale: 'en' | 'es'
-  slug: string
-  videoKey: string
-  ctaAgent: GuideCtaAgent
+  slug?: string
+  videoKey?: string
+  ctaAgent?: GuideCtaAgent
+  source?: DownloadSource
+  position?: DownloadPosition
+  compact?: boolean
 }
 
 // Product showcase block rendered inside the guide article, right after the
 // intro. The video only starts loading when the block approaches the viewport
 // (IntersectionObserver) so it never competes with the guide's LCP.
-export default function GuideProductBlock({ locale, slug, videoKey, ctaAgent }: GuideProductBlockProps) {
+export default function GuideProductBlock({ locale, slug, videoKey = 'guide-terminals.mp4', ctaAgent = 'multi', source = 'guide', position = 'product_block', compact = false }: GuideProductBlockProps) {
   const t = useTranslations('guides.productBlock')
+  const cta = useTranslations('guides.downloadCta')
   const headingId = useId()
   const dialogRef = useRef<HTMLDialogElement>(null)
   const containerRef = useRef<HTMLElement>(null)
@@ -116,32 +121,40 @@ export default function GuideProductBlock({ locale, slug, videoKey, ctaAgent }: 
     />
   )
 
+  const actions = (
+    <div>
+        <div className="hidden md:block">
+          <GuideDownloadButton locale={locale} slug={slug} position={position} source={source} prominent size="lg" align="left" />
+        </div>
+        <div className="md:hidden">
+          <MobileEmailPanel guide={slug} source={source} position={position} compact />
+        </div>
+        <p className="text-[11px] text-neutral-400 mt-4">{t('providerNote')}</p>
+    </div>
+  )
+
   return (
     <aside
       ref={containerRef}
       aria-labelledby={headingId}
-      data-guide-product-block
-      className="mb-10 grid md:grid-cols-2 gap-6 items-center p-5 md:p-7 rounded-[20px] border border-neon-cyan/25 bg-[#0a0a0a] bg-[linear-gradient(130deg,rgba(251,191,36,0.055),transparent_65%)]"
+      data-guide-product-block={source === 'guide' && position === 'product_block' ? '' : undefined}
+      data-download-cta={`${source}:${position}`}
+      className={`mb-10 grid ${compact ? 'md:grid-cols-[minmax(0,1fr)_auto]' : 'md:grid-cols-2'} gap-6 items-center p-5 md:p-7 rounded-[20px] border border-neon-cyan/25 bg-[#0a0a0a] bg-[linear-gradient(130deg,rgba(251,191,36,0.055),transparent_65%)]`}
     >
       <div>
         <p className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.13em] text-neon-cyan mb-3">
           <span aria-hidden="true" className="w-[5px] h-[5px] rounded-full bg-neon-cyan" />
-          {agent ? `${agent}${/windows/.test(slug) ? ' · Windows' : ''}` : t('workspaceLabel')}
+          {agent ? `${agent}${/windows/.test(slug ?? '') ? ' · Windows' : ''}` : t('workspaceLabel')}
         </p>
         <h2 id={headingId} className="text-[28px] font-bold text-white leading-[1.15] tracking-[-0.035em] mb-3">
-          {message ? t(`${message}.title`) : agent ? t('agentTitle', { agent }) : t('parallel.title')}
+          {compact ? t('compactTitle') : message ? t(`${message}.title`) : agent ? t('agentTitle', { agent }) : t('parallel.title')}
         </h2>
-        <p className="text-sm leading-[1.65] text-white/65 mb-6">
-          {message ? t(`${message}.copy`) : agent ? t('agentCopy', { agent }) : t('parallel.copy')}
+        <p className={`text-sm leading-[1.65] text-white/65 ${compact ? '' : 'mb-6'}`}>
+          {compact ? cta(`context.${CTA_AGENT_MESSAGE_KEY[ctaAgent]}`) : message ? t(`${message}.copy`) : agent ? t('agentCopy', { agent }) : t('parallel.copy')}
         </p>
-        <div className="hidden md:block">
-          <GuideDownloadButton locale={locale} slug={slug} position="product_block" size="lg" align="left" />
-        </div>
-        <div className="md:hidden">
-          <MobileEmailPanel guide={slug} />
-        </div>
-        <p className="text-[11px] text-neutral-400 mt-4">{t('providerNote')}</p>
+        {!compact && actions}
       </div>
+      {compact ? actions : <>
       <figure className="min-w-0 m-0">
         <button
           type="button"
@@ -166,6 +179,7 @@ export default function GuideProductBlock({ locale, slug, videoKey, ctaAgent }: 
         {media(true)}
         <p className="text-xs text-neutral-400 mt-3">{t(useFeatureVideo ? 'featureCaption' : 'workspaceCaption')}</p>
       </dialog>
+      </>}
     </aside>
   )
 }
