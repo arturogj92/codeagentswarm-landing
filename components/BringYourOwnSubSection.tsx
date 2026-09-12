@@ -21,20 +21,13 @@ export default function BringYourOwnSubSection() {
     { name: 'Kimi Code', command: 'kimi', icon: '/icons/apps/kimi-icon.png' },
     { name: 'Grok Build', command: 'grok', icon: '/icons/apps/grok-icon.svg' },
     { name: 'Cursor Agent', command: 'cursor-agent', icon: '/icons/apps/cursor-icon.svg' },
+    { name: 'Pi (beta)', command: 'pi', icon: '/icons/apps/pi-icon.svg' },
   ]
 
-  /**
-   * Three claims, one line, on purpose.
-   *
-   * They used to carry a second sentence each and came to 1163px inside a
-   * 1152px row, so the third one dropped to a line of its own and sat there
-   * looking abandoned. Cutting the second sentences fixed the wrap and read
-   * better anyway: "your plan's limits" already says we add none.
-   */
   const claims = [
     // Positive form of the same fact: the old "no keys resold" made the reader
     // stop to picture a company that does resell keys.
-    g("Your plan's limits, not ours.", 'Tus límites son los de tu plan.'),
+    g('Usage follows your connected provider.', 'El consumo depende del proveedor conectado.'),
     g('Mix vendors in the same swarm.', 'Mezcla proveedores en el mismo enjambre.'),
     g(
       'CodeAgentSwarm never receives or stores your code.',
