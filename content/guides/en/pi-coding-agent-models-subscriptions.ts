@@ -10,11 +10,12 @@ const guide: Guide = {
     intro: 'Pi can use several model providers, but the account you connect determines the available models and how usage is billed. Start by choosing the provider, then select a model. A Claude model name alone does not tell you which service is handling the request.',
     ctaText: 'Pi support in CodeAgentSwarm is in beta testing. The download below is the current public app; check its release notes for Pi availability.',
     ctaAgent: 'pi',
+    socialImage: '/images/guides/pi-coding-agent-og-en.png',
     highlightedWords: [
       'Pi',
     ],
     publishedAt: '2026-09-06',
-    updatedAt: '2026-09-06',
+    updatedAt: '2026-09-22',
     alternateSlug: 'pi-coding-agent-modelos-suscripciones',
   },
   sections: [
@@ -158,6 +159,25 @@ const guide: Guide = {
           text: 'A model can appear through different providers. Compare the provider as well as the name when you want a particular subscription or API account to pay for the request. Reasoning and image support also depend on the selected model.',
         },
       ],
+    },
+    {
+      "id": "inspect-catalog",
+      "title": "Inspect the catalog before copying a model name",
+      "content": [
+        {
+          "type": "code",
+          "language": "bash",
+          "code": "pi --list-models\npi --list-models codex"
+        },
+        {
+          "type": "paragraph",
+          "text": "These commands inspect the installed catalog without sending a coding task. The filtered command helps locate Codex entries; use a search term for the provider you actually connected. A listed entry is still not proof of billing eligibility or remaining allowance."
+        },
+        {
+          "type": "paragraph",
+          "text": "For a support request, record Pi version, provider, model ID and the error message. Remove account identifiers and credentials. Keep the CLI version with the result: a provider catalog can change independently of the model name in an older screenshot."
+        }
+      ]
     },
     {
       id: 'missing-provider',

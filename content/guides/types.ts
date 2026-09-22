@@ -26,6 +26,7 @@ export type GuideCtaAgent =
   | 'cursor-agent'
   | 'pi'
   | 'devin'
+  | 'muse'
   | 'multi'
   | 'comparison'
 
@@ -40,6 +41,7 @@ export const CTA_AGENT_MESSAGE_KEY: Record<GuideCtaAgent, string> = {
   'cursor-agent': 'cursorAgent',
   pi: 'pi',
   devin: 'devin',
+  muse: 'muse',
   multi: 'multi',
   comparison: 'comparison',
 }

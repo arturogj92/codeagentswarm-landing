@@ -10,11 +10,12 @@ const guide: Guide = {
     intro: 'Pi can run on Windows, but the terminal you launch it from and the shell its model uses are separate choices. This guide covers installation and the PowerShell tool, then explains the behavior verified in CodeAgentSwarm\'s Windows beta.',
     ctaText: 'Pi support in CodeAgentSwarm is in beta testing. The download below is the current public app; check its release notes for Pi availability.',
     ctaAgent: 'pi',
+    socialImage: '/images/guides/pi-coding-agent-og-en.png',
     highlightedWords: [
       'Pi',
     ],
     publishedAt: '2026-09-06',
-    updatedAt: '2026-09-06',
+    updatedAt: '2026-09-22',
     alternateSlug: 'pi-coding-agent-en-windows',
   },
   sections: [
@@ -44,7 +45,7 @@ const guide: Guide = {
           src: '/images/guides/pi-chat-beta.webp',
           alt: 'Pi in CodeAgentSwarm Chat with a sample project',
           size: 'full',
-          caption: 'Real CodeAgentSwarm beta capture on macOS: Pi running with a sample project. This image does not announce availability in the public download.This illustrates the Chat interface; it is not a Windows screenshot.',
+          caption: 'Real CodeAgentSwarm beta capture on macOS: Pi running with a sample project. This image does not announce availability in the public download. This illustrates the Chat interface; it is not a Windows screenshot.',
         },
         {
           type: 'paragraph',

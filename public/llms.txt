@@ -21,7 +21,7 @@ CodeAgentSwarm is a third-party Agentic Development Environment for macOS and Wi
 
 ## Pi coding agent: editorial guides and beta status
 
-Pi is a separate coding harness, not a model provider. Install the current package @earendil-works/pi-coding-agent and authenticate inside Pi with /login. CodeAgentSwarm's Pi integration is in beta testing; these guides do not announce availability in the standard public download. The beta uses native Pi RPC, preserves Pi-owned credentials and exposes model/provider selection. CAS Cloud authentication belongs to the host running Pi. ChatGPT Plus/Pro login is supported by Pi; Pi documents Claude third-party harness usage as additional per-token usage. Check the linked provider sources for current account terms. Reviewed 2026-09-06.
+Pi is a separate coding harness, not a model provider. Install the current package @earendil-works/pi-coding-agent and authenticate inside Pi with /login. CodeAgentSwarm's Pi integration is in beta testing; these guides do not announce availability in the standard public download. The beta uses native Pi RPC, preserves Pi-owned credentials and exposes model/provider selection. CAS Cloud authentication belongs to the host running Pi. ChatGPT Plus/Pro login is supported by Pi; Pi documents Claude third-party harness usage as additional per-token usage. Check the linked provider sources for current account terms. Reviewed 2026-09-22.
 
 - [Pi: how-to-use-pi-coding-agent (EN)](https://www.codeagentswarm.com/en/guides/how-to-use-pi-coding-agent)
 - [Pi: como-usar-pi-coding-agent (ES)](https://www.codeagentswarm.com/es/guias/como-usar-pi-coding-agent)
@@ -212,12 +212,25 @@ Devin CLI is a local coding agent. CodeAgentSwarm integration is in beta testing
 
 - [Devin CLI: installation, login and your first coding task](https://www.codeagentswarm.com/en/guides/how-to-use-devin-cli)
 - [Devin CLI on Windows: native install and troubleshooting](https://www.codeagentswarm.com/en/guides/devin-cli-on-windows)
-- [Devin CLI models and usage limits: read the right meter](https://www.codeagentswarm.com/en/guides/devin-cli-models-usage-limits)
+- [Devin Pro pricing, free SWE-2 and CLI usage limits](https://www.codeagentswarm.com/en/guides/devin-cli-models-usage-limits)
 - [Devin CLI MCP and history: connect tools and resume work](https://www.codeagentswarm.com/en/guides/devin-cli-mcp-history)
 - [Devin CLI: instalación, login y tu primera tarea de código](https://www.codeagentswarm.com/es/guias/como-usar-devin-cli)
 - [Devin CLI en Windows: instalación nativa y solución de errores](https://www.codeagentswarm.com/es/guias/devin-cli-en-windows)
-- [Modelos y cuotas de Devin CLI: entiende cada indicador](https://www.codeagentswarm.com/es/guias/devin-cli-modelos-cuotas)
+- [Precios de Devin Pro, SWE-2 gratis y cuotas de la CLI](https://www.codeagentswarm.com/es/guias/devin-cli-modelos-cuotas)
 - [MCP e historial de Devin CLI: conecta herramientas y retoma tareas](https://www.codeagentswarm.com/es/guias/devin-cli-mcp-historial)
 
 - [SWE-2 benchmarks and a practical repository test](https://www.codeagentswarm.com/en/guides/swe-2-benchmarks)
 - [Benchmarks de SWE-2 y una prueba en tu repositorio](https://www.codeagentswarm.com/es/guias/swe-2-benchmarks-comparativa)
+
+## Muse Code: standalone guides and upcoming integration
+
+Muse Code is Meta's coding agent; Muse Spark is its model family. CodeAgentSwarm support is being prepared for an upcoming release and is not announced as available in the current public installer. Meta account access and billing are separate. Standard and Contributor have different data-use terms. Workflows depend on the installed build and rollout; Windows has separate platform limitations. Reviewed 2026-09-22.
+
+- [Muse Code: installation, login and first task](https://www.codeagentswarm.com/en/guides/how-to-use-muse-code)
+- [Muse Code en español: instalación y primera tarea](https://www.codeagentswarm.com/es/guias/como-usar-muse-code)
+- [Muse Code on Windows: PowerShell and troubleshooting](https://www.codeagentswarm.com/en/guides/muse-code-on-windows)
+- [Muse Code en Windows: PowerShell y solución de errores](https://www.codeagentswarm.com/es/guias/muse-code-en-windows)
+- [Muse Code models, pricing and privacy](https://www.codeagentswarm.com/en/guides/muse-code-models-pricing-privacy)
+- [Muse Code: modelos, precios y privacidad](https://www.codeagentswarm.com/es/guias/muse-code-modelos-precios-privacidad)
+- [Muse Code MCP, skills and workflows](https://www.codeagentswarm.com/en/guides/muse-code-mcp-skills-workflows)
+- [Muse Code: MCP, skills y workflows](https://www.codeagentswarm.com/es/guias/muse-code-mcp-skills-workflows)

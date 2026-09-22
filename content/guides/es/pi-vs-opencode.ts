@@ -10,11 +10,12 @@ const guide: Guide = {
     intro: 'Pi y OpenCode pueden resolver el mismo tipo de tareas y conectarse a proveedores de modelos similares. Sus diferencias están en el flujo de trabajo que rodea al modelo. Esta comparación separa el acceso al modelo de la planificación, las herramientas y la integración.',
     ctaText: 'El soporte de Pi en CodeAgentSwarm está en pruebas beta. La descarga corresponde a la app pública actual; consulta sus notas de versión para comprobar la disponibilidad de Pi.',
     ctaAgent: 'pi',
+    socialImage: '/images/guides/pi-coding-agent-og-es.png',
     highlightedWords: [
       'Pi',
     ],
     publishedAt: '2026-09-06',
-    updatedAt: '2026-09-06',
+    updatedAt: '2026-09-22',
     alternateSlug: 'pi-vs-opencode',
   },
   sections: [
@@ -34,6 +35,55 @@ const guide: Guide = {
           content: 'Pi ofrece una base pequeña que puedes ampliar; OpenCode incluye flujos de planificación y subagentes. Ambos conectan con distintos proveedores de modelos. Elige por el flujo que necesitas y compara una tarea real con la misma conexión al modelo.',
         },
       ],
+    },
+    {
+      "id": "which-should-you-choose",
+      "title": "Pi u OpenCode: ¿cuál elegir?",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Elige Pi si quieres una configuración pequeña y estás dispuesto a añadir los flujos que necesites. Valora OpenCode si tu primera tarea ya requiere su agente Plan, subagentes o configuración MCP. Ninguna de esas diferencias demuestra qué modelo escribirá mejor código para tu proyecto."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Tu necesidad inmediata",
+            "Empieza por valorar",
+            "Qué comprobar"
+          ],
+          "rows": [
+            [
+              "Entender un repositorio y arreglar un fallo concreto",
+              "Cualquiera",
+              "El mismo proveedor, modelo y pruebas del proyecto."
+            ],
+            [
+              "Planificar antes de modificar archivos",
+              "OpenCode",
+              "Qué cambios y comandos permite Plan con tu configuración."
+            ],
+            [
+              "Crear una herramienta o flujo propio",
+              "Pi",
+              "El código de la extensión, sus permisos y su mantenimiento."
+            ],
+            [
+              "Conectar un servicio MCP existente",
+              "OpenCode",
+              "La autenticación del servidor y las herramientas que expone."
+            ],
+            [
+              "Usar Pi desde un chat de escritorio",
+              "CodeAgentSwarm beta",
+              "La disponibilidad en la release y los límites documentados de la integración."
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Usa esta tabla para elegir qué probar y comprueba el flujo que te importa. Instalar diez extensiones para reproducir una función que ya utilizas tiene un coste; adoptar un flujo más grande que nunca necesitas también."
+        }
+      ]
     },
     {
       id: 'pi-in-action',
@@ -162,6 +212,7 @@ const guide: Guide = {
       id: 'choose',
       title: '¿Qué flujo encaja con tu proyecto?',
       content: [
+        {"type": "paragraph", "text": "Si también estás valorando el agente de Meta, la <a href=\"/es/guias/como-usar-muse-code\">guía de Muse Code</a> explica su cuenta y primera tarea. Decide si necesitas probarlo antes de ampliar la comparación entre Pi y OpenCode."},
         {
           type: 'list',
           items: [

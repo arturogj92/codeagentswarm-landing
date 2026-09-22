@@ -10,11 +10,12 @@ const guide: Guide = {
     intro: 'Pi puede usar varios proveedores de modelos, pero la cuenta que conectas determina los modelos disponibles y cómo se factura el consumo. Primero elige el proveedor y después el modelo. Ver el nombre de un modelo Claude no basta para saber qué servicio atiende la petición.',
     ctaText: 'El soporte de Pi en CodeAgentSwarm está en pruebas beta. La descarga corresponde a la app pública actual; consulta sus notas de versión para comprobar la disponibilidad de Pi.',
     ctaAgent: 'pi',
+    socialImage: '/images/guides/pi-coding-agent-og-es.png',
     highlightedWords: [
       'Pi',
     ],
     publishedAt: '2026-09-06',
-    updatedAt: '2026-09-06',
+    updatedAt: '2026-09-22',
     alternateSlug: 'pi-coding-agent-models-subscriptions',
   },
   sections: [
@@ -158,6 +159,25 @@ const guide: Guide = {
           text: 'Un modelo puede aparecer a través de distintos proveedores. Compara también el proveedor cuando quieras que pague una suscripción o cuenta API concreta. El razonamiento y la entrada de imágenes dependen asimismo del modelo seleccionado.',
         },
       ],
+    },
+    {
+      "id": "inspect-catalog",
+      "title": "Consulta el catálogo antes de copiar un nombre de modelo",
+      "content": [
+        {
+          "type": "code",
+          "language": "bash",
+          "code": "pi --list-models\npi --list-models codex"
+        },
+        {
+          "type": "paragraph",
+          "text": "Estos comandos consultan el catálogo instalado sin enviar una tarea de programación. El segundo filtra las entradas de Codex; utiliza un término del proveedor que hayas conectado. Que un modelo aparezca no demuestra que puedas usarlo con tu cuenta ni que tengas cuota disponible."
+        },
+        {
+          "type": "paragraph",
+          "text": "Para pedir ayuda, anota la versión de Pi, el proveedor, el identificador del modelo y el mensaje de error. Retira los identificadores de cuenta y las credenciales. Conserva la versión de la CLI junto al resultado: el catálogo puede cambiar respecto al nombre mostrado en una captura antigua."
+        }
+      ]
     },
     {
       id: 'missing-provider',
