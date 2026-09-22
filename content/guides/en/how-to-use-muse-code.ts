@@ -93,7 +93,7 @@ const guide: Guide = {
         },
         {
           "type": "paragraph",
-          "text": "Preview the proposed instructions first. If the repository already contains an <code>AGENTS.md</code>, read and edit that file deliberately. Keep commands that help the agent work: the package directory, the test command and a restriction that matters. Avoid filling it with generic programming advice. <a href=\"https://dev.meta.ai/docs/muse-code/configuration\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Configuration and project context</a> explains how Muse loads those files."
+          "text": "Preview the proposed instructions first. The dry run does not create a file. If there is no <code>AGENTS.md</code> and the proposal is correct, run <code>muse init</code>, then review the generated file. If the repository already contains an <code>AGENTS.md</code>, read and edit that file deliberately. Keep commands that help the agent work: the package directory, the test command and a restriction that matters. Avoid filling it with generic programming advice. <a href=\"https://dev.meta.ai/docs/muse-code/configuration\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Configuration and project context</a> explains how Muse loads those files."
         },
         {
           "type": "paragraph",

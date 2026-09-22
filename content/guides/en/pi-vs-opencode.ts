@@ -223,7 +223,7 @@ const guide: Guide = {
         },
         {
           type: 'paragraph',
-          text: 'Start with <a href="/en/guides/how-to-use-pi-coding-agent" class="text-neon-cyan hover:text-neon-purple transition-colors">Pi installation</a> or the <a href="/en/guides/opencode-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">OpenCode workflow guide</a>. <strong>Pi in CodeAgentSwarm remains in beta testing; the SEO guide is not a public release announcement.</strong>',
+          text: 'Start with <a href="/en/guides/how-to-use-pi-coding-agent" class="text-neon-cyan hover:text-neon-purple transition-colors">Pi installation</a> or the <a href="/en/guides/opencode-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">OpenCode workflow guide</a>. <strong>Pi in CodeAgentSwarm remains in beta testing. Check the release notes for availability.</strong>',
         },
       ],
     },

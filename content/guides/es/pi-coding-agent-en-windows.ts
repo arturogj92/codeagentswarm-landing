@@ -54,25 +54,6 @@ const guide: Guide = {
       ],
     },
     {
-      id: 'practical-check',
-      title: 'Comprobar el shell de Windows antes de editar',
-      content: [
-        {
-          type: 'code',
-          language: 'powershell',
-          code: 'Get-Command pi -All\nnode --version\npi --version',
-        },
-        {
-          type: 'paragraph',
-          text: 'Dentro de Pi, pide que muestre el directorio de trabajo y liste los archivos con la herramienta de comandos elegida. Revisa el nombre de la herramienta y su salida. Después pide que lea el script de pruebas antes de ejecutar algo que modifique archivos.',
-        },
-        {
-          type: 'paragraph',
-          text: 'Si cambias a WSL, trátalo como otro entorno: su directorio personal, el comando Pi instalado y las credenciales pueden ser diferentes a los de Windows nativo. Elige el entorno que utiliza el proyecto y completa allí la configuración.',
-        },
-      ],
-    },
-    {
       id: 'install',
       title: 'Instalar el paquete actual de Pi',
       content: [
@@ -135,6 +116,25 @@ const guide: Guide = {
         {
           type: 'paragraph',
           text: 'El proveedor determina el acceso a modelos y la facturación. Consulta <a href="/es/guias/pi-coding-agent-modelos-suscripciones" class="text-neon-cyan hover:text-neon-purple transition-colors">las suscripciones y modelos de Pi</a> para conectar ChatGPT, Claude o una API.',
+        },
+      ],
+    },
+    {
+      id: 'practical-check',
+      title: 'Comprobar el shell de Windows antes de editar',
+      content: [
+        {
+          type: 'code',
+          language: 'powershell',
+          code: 'Get-Command pi -All\nnode --version\npi --version',
+        },
+        {
+          type: 'paragraph',
+          text: 'Dentro de Pi, pide que muestre el directorio de trabajo y liste los archivos con la herramienta de comandos elegida. Revisa el nombre de la herramienta y su salida. Después pide que lea el script de pruebas antes de ejecutar algo que modifique archivos.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Si cambias a WSL, trátalo como otro entorno: su directorio personal, el comando Pi instalado y las credenciales pueden ser diferentes a los de Windows nativo. Elige el entorno que utiliza el proyecto y completa allí la configuración.',
         },
       ],
     },

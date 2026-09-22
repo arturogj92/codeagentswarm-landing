@@ -54,25 +54,6 @@ const guide: Guide = {
       ],
     },
     {
-      id: 'practical-check',
-      title: 'Verify the Windows shell before editing',
-      content: [
-        {
-          type: 'code',
-          language: 'powershell',
-          code: 'Get-Command pi -All\nnode --version\npi --version',
-        },
-        {
-          type: 'paragraph',
-          text: 'Inside Pi, ask it to print the working directory and list the project files using the selected command tool. Inspect the tool name and output. Then ask it to read the project test script before running anything that changes files.',
-        },
-        {
-          type: 'paragraph',
-          text: 'If you switch to WSL, treat that as another environment: its home directory, installed Pi command and credentials can differ from native Windows. Choose the environment used by the project and finish its setup there.',
-        },
-      ],
-    },
-    {
       id: 'install',
       title: 'Install the current Pi package',
       content: [
@@ -135,6 +116,25 @@ const guide: Guide = {
         {
           type: 'paragraph',
           text: 'Provider choice determines model access and billing. See <a href="/en/guides/pi-coding-agent-models-subscriptions" class="text-neon-cyan hover:text-neon-purple transition-colors">Pi subscriptions and models</a> for ChatGPT, Claude and API connections.',
+        },
+      ],
+    },
+    {
+      id: 'practical-check',
+      title: 'Verify the Windows shell before editing',
+      content: [
+        {
+          type: 'code',
+          language: 'powershell',
+          code: 'Get-Command pi -All\nnode --version\npi --version',
+        },
+        {
+          type: 'paragraph',
+          text: 'Inside Pi, ask it to print the working directory and list the project files using the selected command tool. Inspect the tool name and output. Then ask it to read the project test script before running anything that changes files.',
+        },
+        {
+          type: 'paragraph',
+          text: 'If you switch to WSL, treat that as another environment: its home directory, installed Pi command and credentials can differ from native Windows. Choose the environment used by the project and finish its setup there.',
         },
       ],
     },

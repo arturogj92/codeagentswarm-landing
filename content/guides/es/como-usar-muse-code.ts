@@ -93,7 +93,7 @@ const guide: Guide = {
         },
         {
           "type": "paragraph",
-          "text": "Examina primero las instrucciones propuestas. Si el repositorio ya contiene un <code>AGENTS.md</code>, lee y modifica ese archivo de forma deliberada. Conserva información útil: la carpeta del paquete, el comando de tests y una restricción concreta del proyecto. La <a href=\"https://dev.meta.ai/docs/muse-code/configuration\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">guía de configuración y contexto</a> explica cómo carga Muse estos archivos."
+          "text": "Examina primero las instrucciones propuestas. La simulación no crea ningún archivo. Si no existe <code>AGENTS.md</code> y la propuesta es correcta, ejecuta <code>muse init</code> y revisa el archivo generado. Si el repositorio ya contiene un <code>AGENTS.md</code>, lee y modifica ese archivo de forma deliberada. Conserva información útil: la carpeta del paquete, el comando de tests y una restricción concreta del proyecto. La <a href=\"https://dev.meta.ai/docs/muse-code/configuration\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">guía de configuración y contexto</a> explica cómo carga Muse estos archivos."
         },
         {
           "type": "paragraph",

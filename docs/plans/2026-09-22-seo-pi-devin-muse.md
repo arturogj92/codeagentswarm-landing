@@ -96,3 +96,20 @@ Research, implementation, editorial review and local validation are complete. De
 Publish/indexing is separate from compilation; no ranking or indexing guarantee.
 After publication, measure the preserved/new URLs over matched complete windows,
 keeping guide download events separate from home downloads.
+
+## Follow-up editorial review
+
+A second independent review found and resolved three reader-facing issues in both
+languages: the Muse instructions now explain how to create AGENTS.md after the
+preview; Pi's Windows verification comes after installation and sign-in; and the
+Pi/OpenCode comparison no longer exposes an internal SEO editorial note.
+
+The follow-up production build and all 26 Pi/Devin/Muse rendered SEO checks pass.
+Chromium verified EN-to-ES and ES-to-EN navigation for Muse setup, Pi Windows and
+SWE-2, plus the corrected Muse step and Pi section order. Desktop (1440×1000) and
+mobile (390×844) screenshots were inspected; the mobile page has no document
+horizontal overflow. No navigation implementation change was needed.
+
+Updated local preview: http://localhost:3101. Review screenshots:
+`/tmp/cas-seo-evidence/muse-rules-review.png` and
+`/tmp/cas-seo-evidence/pi-windows-review-mobile.png`.
