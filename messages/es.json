@@ -27,6 +27,7 @@
     "microcopy": "Pro incluido durante la beta · macOS 12+ · Windows 10/11",
     "worksWith": "Compatible con",
     "existingAccounts": "Usa tus cuentas CLI actuales",
+    "upcomingAgents": "En preparación: <muse>Muse Code</muse>, <pi>Pi</pi> y <devin>Devin CLI</devin>. Todavía no están incluidos en la app pública.",
     "stats": {
       "eyebrow": "Capacidades clave",
       "terminals": "Agentes de IA en Paralelo",

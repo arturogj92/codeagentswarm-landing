@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 import { Play, Zap, Grid3X3, Bell, Terminal, Monitor, Layout, GitBranch, Pause, History, Layers, Volume2, VolumeX } from 'lucide-react'
 import { useEffect, useState, useRef } from 'react'
 import { useTranslations, useLocale } from 'next-intl'
@@ -332,6 +333,7 @@ export function VideoShowcase() {
 }
 
 export default function HeroSection() {
+  const locale = useLocale()
   const t = useTranslations('hero')
 
   return (
@@ -425,6 +427,13 @@ export default function HeroSection() {
               <span className="hidden sm:block h-4 w-px bg-white/10" aria-hidden="true" />
               <span>{t('existingAccounts')}</span>
             </div>
+            <p className="max-w-2xl text-center text-sm leading-relaxed text-white/60">
+              {t.rich('upcomingAgents', {
+                muse: chunks => <Link href={locale === 'es' ? '/es/guias/como-usar-muse-code' : '/en/guides/how-to-use-muse-code'} className="text-neon-cyan underline underline-offset-4 hover:text-white">{chunks}</Link>,
+                pi: chunks => <Link href={locale === 'es' ? '/es/guias/como-usar-pi-coding-agent' : '/en/guides/how-to-use-pi-coding-agent'} className="text-neon-cyan underline underline-offset-4 hover:text-white">{chunks}</Link>,
+                devin: chunks => <Link href={locale === 'es' ? '/es/guias/como-usar-devin-cli' : '/en/guides/how-to-use-devin-cli'} className="text-neon-cyan underline underline-offset-4 hover:text-white">{chunks}</Link>,
+              })}
+            </p>
           </motion.div>
         </div>
 
