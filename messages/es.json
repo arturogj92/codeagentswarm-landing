@@ -786,6 +786,7 @@
         "cursorAgent": "Ejecuta Cursor Agent CLI por ACP con Chat en streaming, permisos visibles e historial por proyecto en una sola app.",
         "devin": "El Chat de Devin, su instalación y el historial están en pruebas beta para un próximo release de CodeAgentSwarm. El botón descarga la app pública actual; consulta sus notas para comprobar la disponibilidad de Devin.",
         "pi": "El soporte de Pi en CodeAgentSwarm está en pruebas beta. La descarga es la app pública actual; consulta sus notas de versión para comprobar la disponibilidad de Pi.",
+        "muse": "El soporte de Muse Code se está preparando para una versión de CodeAgentSwarm. La descarga es la app pública actual; consulta sus notas para comprobar la disponibilidad de Muse. El acceso y la facturación de Meta son independientes.",
         "antigravity": "Ejecuta varios agentes de Antigravity CLI con historial buscable y cambios en tiempo real en una sola app.",
         "multi": "CodeAgentSwarm ejecuta tus agentes de código en paralelo: Claude Code, Codex, opencode, Kimi Code, Antigravity, Grok Build y Cursor Agent, con historial buscable y una sola superficie de supervisión.",
         "comparison": "La forma más rápida de decidir es probarlo: CodeAgentSwarm es gratis, se instala en un minuto y ejecuta Claude Code, Codex, opencode, Kimi Code, Antigravity, Grok Build y Cursor Agent en paralelo."

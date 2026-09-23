@@ -7,14 +7,14 @@ const guide: Guide = {
     "title": "Devin Pro pricing, free SWE-2 and CLI usage limits",
     "metaTitle": "Devin Pro Pricing: Free SWE-2 and CLI Usage Limits",
     "metaDescription": "Check Devin Pro pricing, the free SWE-2 promotion and its conflicting official end dates. Understand model selection, context tokens and daily or weekly quota.",
-    "intro": "Looking for unlimited SWE-2 with Devin Pro? The current offer provides temporary free use in Desktop and CLI. Check the date and selected model before subscribing. Verified September 11, 2026.",
+    "intro": "Looking for unlimited SWE-2 with Devin Pro? The current offer provides temporary free use in Desktop and CLI. Check the date and selected model before subscribing. Verified September 22, 2026.",
     "ctaText": "The Devin model picker and quota panel are in CodeAgentSwarm beta testing. Check the public release notes for availability; the app download does not include a Devin subscription.",
     "ctaAgent": "devin",
     "highlightedWords": [
       "Devin"
     ],
     "publishedAt": "2026-09-11",
-    "updatedAt": "2026-09-11",
+    "updatedAt": "2026-09-22",
     "alternateSlug": "devin-cli-modelos-cuotas",
     "socialImage": "/images/guides/devin-cli-og-en.png"
   },
@@ -34,7 +34,7 @@ const guide: Guide = {
         {
           "type": "callout",
           "variant": "info",
-          "content": "The <a href=\"https://docs.devin.ai/desktop/models\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">model documentation</a> gives a different end date: <strong>October 8, 2026</strong>. Confirm the terms in the picker and your account before paying."
+          "content": "The <a href=\"https://docs.devin.ai/desktop/models\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">model documentation</a> gives a different end date: <strong>October 15, 2026</strong>. Confirm the terms in the picker and your account before paying."
         },
         {
           "type": "paragraph",
@@ -64,6 +64,20 @@ const guide: Guide = {
         {
           "type": "paragraph",
           "text": "Inside the CLI, use <code>/model</code> to open its picker. The available catalog can change; organization settings may restrict it. Adaptive is a routing option, rather than a promise of one fixed underlying model. <a href=\"https://docs.devin.ai/cli/models\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Official model documentation</a>."
+        }
+      ]
+    },
+    {
+      "id": "choose-swe-2",
+      "title": "How to select SWE-2 without guessing a model ID",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Open <code>/model</code> in the interactive CLI, select a SWE-2 entry offered to your account and record its reasoning effort. The shortcut <code>swe</code> follows the latest model in that family, so it is not a permanent SWE-2 version pin. For repeatable comparisons, keep the exact catalog entry and CLI version."
+        },
+        {
+          "type": "paragraph",
+          "text": "Adaptive and Fusion are different choices from a fixed SWE-2 session. If the goal is to evaluate SWE-2, check the selection before each run rather than assuming every Devin answer used that model. See <a href=\"https://docs.devin.ai/cli/models\">Devin model selection</a>."
         }
       ]
     },
@@ -192,7 +206,7 @@ const guide: Guide = {
   "faq": [
     {
       "question": "Is SWE-2 unlimited forever with Devin Pro?",
-      "answer": "There is no permanent promise. The promotion is temporary, and official sources disagree between October 8 and October 10, 2026. Confirm the end date and price label in your account."
+      "answer": "There is no permanent promise. The promotion is temporary, and official sources disagree between October 10 and October 15, 2026. Confirm the end date and price label in your account."
     },
     {
       "question": "Are context tokens the same as Devin quota?",

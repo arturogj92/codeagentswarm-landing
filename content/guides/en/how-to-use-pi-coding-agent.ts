@@ -10,11 +10,12 @@ const guide: Guide = {
     intro: 'Pi is a terminal coding agent that connects a language model to your project files and tools. You choose the provider; Pi manages the conversation and tool execution. This guide gets a standalone Pi session running before explaining the CodeAgentSwarm beta integration.',
     ctaText: 'Pi support in CodeAgentSwarm is in beta testing. The download below is the current public app; check its release notes for Pi availability.',
     ctaAgent: 'pi',
+    socialImage: '/images/guides/pi-coding-agent-og-en.png',
     highlightedWords: [
       'Pi',
     ],
     publishedAt: '2026-09-06',
-    updatedAt: '2026-09-06',
+    updatedAt: '2026-09-22',
     alternateSlug: 'como-usar-pi-coding-agent',
   },
   sections: [
@@ -32,6 +33,49 @@ const guide: Guide = {
           type: 'callout',
           variant: 'info',
           content: 'Install Pi, open it in your project, use /login to connect a provider and /model to choose a model. Then give it a small, verifiable task. In the CodeAgentSwarm beta, you can use the same agent through Chat and CLI views.',
+        },
+      ],
+    },
+    {
+      id: 'install',
+      title: 'Install Pi on macOS or Linux',
+      content: [
+        {
+          type: 'paragraph',
+          text: 'Use Node.js 22.19.0 or newer for the Pi version verified by CodeAgentSwarm, 0.85.1. Check your Node and npm versions before installing the current package. Older tutorials may use the former @mariozechner package name.',
+        },
+        {
+          type: 'code',
+          language: 'bash',
+          code: 'node --version\nnpm --version\nnpm install -g --ignore-scripts @earendil-works/pi-coding-agent\npi --version',
+        },
+        {
+          type: 'paragraph',
+          text: 'Run the commands in a system shell, then open Pi from a project directory. For PowerShell and shell-tool configuration, use the <a href="/en/guides/pi-coding-agent-on-windows" class="text-neon-cyan hover:text-neon-purple transition-colors">Windows setup guide</a>.',
+        },
+      ],
+    },
+    {
+      id: 'first-task',
+      title: 'Connect a provider and try a small task',
+      content: [
+        {
+          type: 'code',
+          language: 'bash',
+          code: 'cd /path/to/your/project\npi',
+        },
+        {
+          type: 'list',
+          items: [
+            'Inside Pi, enter <code>/login</code> and complete the chosen provider\'s sign-in flow.',
+            'Enter <code>/model</code> and choose a model that your account can access.',
+            'Start with a bounded request: "Read this project and tell me which command runs its tests. Do not change files."',
+            'For the next task, request one specific change, inspect the diff and run the relevant check.',
+          ],
+        },
+        {
+          type: 'paragraph',
+          text: 'A subscription login and an API key can have different billing. Read the <a href="/en/guides/pi-coding-agent-models-subscriptions" class="text-neon-cyan hover:text-neon-purple transition-colors">models and subscriptions guide</a> before choosing your provider.',
         },
       ],
     },
@@ -93,47 +137,23 @@ const guide: Guide = {
       ],
     },
     {
-      id: 'install',
-      title: 'Install Pi on macOS or Linux',
-      content: [
+      "id": "installation-check",
+      "title": "Pi command not found or the wrong version?",
+      "content": [
         {
-          type: 'paragraph',
-          text: 'Use Node.js 22.19.0 or newer for the Pi version verified by CodeAgentSwarm, 0.85.1. Check your Node and npm versions before installing the current package. Older tutorials may use the former @mariozechner package name.',
+          "type": "code",
+          "language": "bash",
+          "code": "command -v pi\nnpm list -g --depth=0 @earendil-works/pi-coding-agent\nnpm config get prefix\npi --version"
         },
         {
-          type: 'code',
-          language: 'bash',
-          code: 'node --version\nnpm --version\nnpm install -g --ignore-scripts @earendil-works/pi-coding-agent\npi --version',
+          "type": "paragraph",
+          "text": "Compare the installed package with the Pi command your shell resolves. Reopen the terminal after installation. A Node version manager can leave a global package under one Node installation while your current shell uses another. Reinstall into the active Node environment only after checking that mismatch."
         },
         {
-          type: 'paragraph',
-          text: 'Run the commands in a system shell, then open Pi from a project directory. For PowerShell and shell-tool configuration, use the <a href="/en/guides/pi-coding-agent-on-windows" class="text-neon-cyan hover:text-neon-purple transition-colors">Windows setup guide</a>.',
-        },
-      ],
-    },
-    {
-      id: 'first-task',
-      title: 'Connect a provider and try a small task',
-      content: [
-        {
-          type: 'code',
-          language: 'bash',
-          code: 'cd /path/to/your/project\npi',
-        },
-        {
-          type: 'list',
-          items: [
-            'Inside Pi, enter <code>/login</code> and complete the chosen provider\'s sign-in flow.',
-            'Enter <code>/model</code> and choose a model that your account can access.',
-            'Start with a bounded request: "Read this project and tell me which command runs its tests. Do not change files."',
-            'For the next task, request one specific change, inspect the diff and run the relevant check.',
-          ],
-        },
-        {
-          type: 'paragraph',
-          text: 'A subscription login and an API key can have different billing. Read the <a href="/en/guides/pi-coding-agent-models-subscriptions" class="text-neon-cyan hover:text-neon-purple transition-colors">models and subscriptions guide</a> before choosing your provider.',
-        },
-      ],
+          "type": "paragraph",
+          "text": "If Pi starts but the first request fails, read the provider error and continue with <a href=\"/en/guides/pi-coding-agent-models-subscriptions\">model access and authentication</a>. Reinstalling the CLI does not add credit to an API account."
+        }
+      ]
     },
     {
       id: 'history',

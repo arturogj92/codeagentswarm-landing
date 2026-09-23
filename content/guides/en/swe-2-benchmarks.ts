@@ -14,11 +14,25 @@ const guide: Guide = {
       "SWE-2"
     ],
     "publishedAt": "2026-09-11",
-    "updatedAt": "2026-09-11",
+    "updatedAt": "2026-09-22",
     "alternateSlug": "swe-2-benchmarks-comparativa",
     "socialImage": "/images/guides/devin-cli-og-en.png"
   },
   "sections": [
+    {
+      "id": "what-is-swe-2",
+      "title": "What is SWE-2, and how is it related to Devin?",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "SWE-2 is Cognition’s coding model. Devin CLI is an agent that can run it and other models. SWE-bench is a benchmark name, not another name for SWE-2. Keep the model, agent and evaluation separate when reading a score or choosing what to install."
+        },
+        {
+          "type": "paragraph",
+          "text": "To try it, follow <a href=\"/en/guides/how-to-use-devin-cli\">Devin CLI setup</a>, open <code>/model</code> and select SWE-2 from your account’s catalog. Check the <a href=\"/en/guides/devin-cli-models-usage-limits\">pricing and quota guide</a> before a long test. The published comparison below was checked against Cognition’s source on September 22, 2026."
+        }
+      ]
+    },
     {
       "id": "published-results",
       "title": "Results published by Cognition",
@@ -138,6 +152,46 @@ const guide: Guide = {
         {
           "type": "paragraph",
           "text": "A useful result is a change you would accept in the project. Count your own fixes and review time; a quick response can become expensive if it needs corrections."
+        }
+      ]
+    },
+    {
+      "id": "acceptance-test",
+      "title": "Define success before reading the answer",
+      "content": [
+        {
+          "type": "code",
+          "language": "text",
+          "code": "Fix the failing test described below. Start from the supplied commit.\nPreserve the public API and avoid unrelated dependency changes.\nExplain the root cause, make the smallest fix and run the relevant tests.\nReport commands, results and anything you could not verify."
+        },
+        {
+          "type": "paragraph",
+          "text": "Replace “the failing test” with a real reproduction and expected behavior. Run the project check yourself from the final checkout. Reject a solution that makes the test pass by deleting its assertion or changing the required behavior. Count a manual rescue as intervention even if the final diff is good."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Record",
+            "Why it changes the conclusion"
+          ],
+          "rows": [
+            [
+              "First attempt and retries",
+              "A successful retry still consumed time and usage."
+            ],
+            [
+              "Human review minutes",
+              "Correct-looking code can cost more to verify than to generate."
+            ],
+            [
+              "Tests that passed and tests not run",
+              "A confident final message is not evidence of a working change."
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Keep failures and incomplete runs in the sample; otherwise your success rate describes only the attempts you chose to keep."
         }
       ]
     },

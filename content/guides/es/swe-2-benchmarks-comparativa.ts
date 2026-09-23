@@ -14,11 +14,25 @@ const guide: Guide = {
       "SWE-2"
     ],
     "publishedAt": "2026-09-11",
-    "updatedAt": "2026-09-11",
+    "updatedAt": "2026-09-22",
     "alternateSlug": "swe-2-benchmarks",
     "socialImage": "/images/guides/devin-cli-og-es.png"
   },
   "sections": [
+    {
+      "id": "what-is-swe-2",
+      "title": "¿Qué es SWE-2 y qué relación tiene con Devin?",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "SWE-2 es el modelo de programación de Cognition. Devin CLI es un agente que puede utilizarlo junto con otros modelos. SWE-bench es el nombre de un benchmark, no otro nombre de SWE-2. Distingue modelo, agente y evaluación al leer un resultado o decidir qué instalar."
+        },
+        {
+          "type": "paragraph",
+          "text": "Para probarlo, sigue la <a href=\"/es/guias/como-usar-devin-cli\">instalación de Devin CLI</a>, abre <code>/model</code> y selecciona SWE-2 en el catálogo de tu cuenta. Revisa la <a href=\"/es/guias/devin-cli-modelos-cuotas\">guía de precios y cuotas</a> antes de una prueba larga. La comparación publicada se contrastó con la fuente de Cognition el 22 de septiembre de 2026."
+        }
+      ]
+    },
     {
       "id": "published-results",
       "title": "Resultados publicados por Cognition",
@@ -138,6 +152,46 @@ const guide: Guide = {
         {
           "type": "paragraph",
           "text": "Un resultado útil es una solución que aceptarías en el proyecto. Cuenta los arreglos que hiciste tú y el tiempo de revisión; una respuesta rápida puede resultar cara si necesita correcciones."
+        }
+      ]
+    },
+    {
+      "id": "acceptance-test",
+      "title": "Define el éxito antes de leer la respuesta",
+      "content": [
+        {
+          "type": "code",
+          "language": "text",
+          "code": "Arregla la prueba que falla descrita a continuación. Parte del commit indicado.\nConserva la API pública y evita cambios ajenos en dependencias.\nExplica la causa, aplica la corrección mínima y ejecuta las pruebas relevantes.\nIndica comandos, resultados y lo que no hayas podido verificar."
+        },
+        {
+          "type": "paragraph",
+          "text": "Sustituye “la prueba que falla” por una reproducción real y el comportamiento esperado. Ejecuta tú la comprobación desde el estado final del repositorio. Descarta una solución que pase borrando la aserción o cambiando el requisito. Cuenta una corrección manual como intervención aunque el diff final sea bueno."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Anota",
+            "Por qué cambia la conclusión"
+          ],
+          "rows": [
+            [
+              "Primer intento y repeticiones",
+              "Un segundo intento que funciona también consume tiempo y uso."
+            ],
+            [
+              "Minutos de revisión humana",
+              "Comprobar código que parece correcto puede costar más que generarlo."
+            ],
+            [
+              "Pruebas superadas y no ejecutadas",
+              "Un mensaje final seguro no demuestra que el cambio funcione."
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Conserva los fallos y los intentos incompletos: si los eliminas, la tasa de éxito solo describe los resultados que decidiste guardar."
         }
       ]
     },

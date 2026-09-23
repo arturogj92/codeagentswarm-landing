@@ -52,6 +52,8 @@ for (const pair of pairs) {
     assert.match(html, /name="robots" content="index, follow"/)
     assert.ok(sitemap.includes(`<loc>${url}</loc>`), 'sitemap ' + url)
     assert.ok(llms.includes(url), 'llms ' + url)
+    assert.ok(html.includes(meta.socialImage), 'social image missing')
+    await access(new URL('../public' + meta.socialImage, import.meta.url))
     assert.equal((html.match(/<h1[ >]/g) || []).length, 1)
     const schemas = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(m => JSON.parse(m[1]))
     assert.ok(schemas.some(s => s['@type'] === 'Article' && s.dateModified === meta.updatedAt))

@@ -134,8 +134,8 @@ export default function GuideLayout({ guide, relatedGuide }: GuideLayoutProps) {
               )}
             </motion.header>
 
-            {/* ponytail: skip unrelated footage until real Cursor and Pi captures exist. */}
-            {!['cursor-agent', 'pi', 'devin'].includes(meta.ctaAgent) && (
+            {/* ponytail: show product footage only when it depicts the guide's agent. */}
+            {!['cursor-agent', 'pi', 'devin', 'muse'].includes(meta.ctaAgent) && (
               <GuideProductBlock
                 locale={locale}
                 slug={meta.slug}

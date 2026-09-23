@@ -10,11 +10,12 @@ const guide: Guide = {
     intro: 'Pi es un agente de programación de terminal que conecta un modelo de lenguaje con los archivos y herramientas de tu proyecto. Tú eliges el proveedor; Pi gestiona la conversación y la ejecución de herramientas. Primero vamos a arrancar Pi y después veremos la integración beta de CodeAgentSwarm.',
     ctaText: 'El soporte de Pi en CodeAgentSwarm está en pruebas beta. La descarga corresponde a la app pública actual; consulta sus notas de versión para comprobar la disponibilidad de Pi.',
     ctaAgent: 'pi',
+    socialImage: '/images/guides/pi-coding-agent-og-es.png',
     highlightedWords: [
       'Pi',
     ],
     publishedAt: '2026-09-06',
-    updatedAt: '2026-09-06',
+    updatedAt: '2026-09-22',
     alternateSlug: 'how-to-use-pi-coding-agent',
   },
   sections: [
@@ -32,6 +33,49 @@ const guide: Guide = {
           type: 'callout',
           variant: 'info',
           content: 'Instala Pi, ábrelo en tu proyecto, conecta un proveedor con /login y elige un modelo con /model. Después encárgale una tarea pequeña que puedas comprobar. En la beta de CodeAgentSwarm puedes trabajar con ese agente desde las vistas Chat y CLI.',
+        },
+      ],
+    },
+    {
+      id: 'install',
+      title: 'Instalar Pi en macOS o Linux',
+      content: [
+        {
+          type: 'paragraph',
+          text: 'Usa Node.js 22.19.0 o posterior para la versión de Pi verificada por CodeAgentSwarm, la 0.85.1. Comprueba las versiones de Node y npm antes de instalar el paquete actual. Algunos tutoriales antiguos utilizan el nombre anterior del paquete, @mariozechner.',
+        },
+        {
+          type: 'code',
+          language: 'bash',
+          code: 'node --version\nnpm --version\nnpm install -g --ignore-scripts @earendil-works/pi-coding-agent\npi --version',
+        },
+        {
+          type: 'paragraph',
+          text: 'Ejecuta los comandos en un shell del sistema y abre Pi desde la carpeta de un proyecto. Para PowerShell y la herramienta de comandos, consulta la <a href="/es/guias/pi-coding-agent-en-windows" class="text-neon-cyan hover:text-neon-purple transition-colors">guía de Windows</a>.',
+        },
+      ],
+    },
+    {
+      id: 'first-task',
+      title: 'Conectar un proveedor y probar una tarea pequeña',
+      content: [
+        {
+          type: 'code',
+          language: 'bash',
+          code: 'cd /ruta/a/tu/proyecto\npi',
+        },
+        {
+          type: 'list',
+          items: [
+            'Dentro de Pi, escribe <code>/login</code> y completa el inicio de sesión del proveedor elegido.',
+            'Escribe <code>/model</code> y elige un modelo al que tu cuenta tenga acceso.',
+            'Empieza con una petición acotada: "Lee este proyecto y dime qué comando ejecuta sus pruebas. No cambies archivos".',
+            'Para la siguiente tarea, pide un cambio concreto, revisa el diff y ejecuta la comprobación correspondiente.',
+          ],
+        },
+        {
+          type: 'paragraph',
+          text: 'El login con suscripción y una clave API pueden tener facturación distinta. Consulta la <a href="/es/guias/pi-coding-agent-modelos-suscripciones" class="text-neon-cyan hover:text-neon-purple transition-colors">guía de modelos y suscripciones</a> antes de elegir proveedor.',
         },
       ],
     },
@@ -93,47 +137,23 @@ const guide: Guide = {
       ],
     },
     {
-      id: 'install',
-      title: 'Instalar Pi en macOS o Linux',
-      content: [
+      "id": "installation-check",
+      "title": "¿No se encuentra Pi o aparece otra versión?",
+      "content": [
         {
-          type: 'paragraph',
-          text: 'Usa Node.js 22.19.0 o posterior para la versión de Pi verificada por CodeAgentSwarm, la 0.85.1. Comprueba las versiones de Node y npm antes de instalar el paquete actual. Algunos tutoriales antiguos utilizan el nombre anterior del paquete, @mariozechner.',
+          "type": "code",
+          "language": "bash",
+          "code": "command -v pi\nnpm list -g --depth=0 @earendil-works/pi-coding-agent\nnpm config get prefix\npi --version"
         },
         {
-          type: 'code',
-          language: 'bash',
-          code: 'node --version\nnpm --version\nnpm install -g --ignore-scripts @earendil-works/pi-coding-agent\npi --version',
+          "type": "paragraph",
+          "text": "Compara el paquete instalado con el comando Pi que resuelve tu terminal. Vuelve a abrir el terminal después de instalar. Un gestor de versiones de Node puede dejar el paquete global en una instalación mientras la terminal utiliza otra. Reinstala en el entorno activo solo después de comprobar esa diferencia."
         },
         {
-          type: 'paragraph',
-          text: 'Ejecuta los comandos en un shell del sistema y abre Pi desde la carpeta de un proyecto. Para PowerShell y la herramienta de comandos, consulta la <a href="/es/guias/pi-coding-agent-en-windows" class="text-neon-cyan hover:text-neon-purple transition-colors">guía de Windows</a>.',
-        },
-      ],
-    },
-    {
-      id: 'first-task',
-      title: 'Conectar un proveedor y probar una tarea pequeña',
-      content: [
-        {
-          type: 'code',
-          language: 'bash',
-          code: 'cd /ruta/a/tu/proyecto\npi',
-        },
-        {
-          type: 'list',
-          items: [
-            'Dentro de Pi, escribe <code>/login</code> y completa el inicio de sesión del proveedor elegido.',
-            'Escribe <code>/model</code> y elige un modelo al que tu cuenta tenga acceso.',
-            'Empieza con una petición acotada: "Lee este proyecto y dime qué comando ejecuta sus pruebas. No cambies archivos".',
-            'Para la siguiente tarea, pide un cambio concreto, revisa el diff y ejecuta la comprobación correspondiente.',
-          ],
-        },
-        {
-          type: 'paragraph',
-          text: 'El login con suscripción y una clave API pueden tener facturación distinta. Consulta la <a href="/es/guias/pi-coding-agent-modelos-suscripciones" class="text-neon-cyan hover:text-neon-purple transition-colors">guía de modelos y suscripciones</a> antes de elegir proveedor.',
-        },
-      ],
+          "type": "paragraph",
+          "text": "Si Pi arranca pero falla la primera petición, lee el error del proveedor y sigue con <a href=\"/es/guias/pi-coding-agent-modelos-suscripciones\">acceso a modelos y autenticación</a>. Reinstalar la CLI no añade saldo a una cuenta de API."
+        }
+      ]
     },
     {
       id: 'history',

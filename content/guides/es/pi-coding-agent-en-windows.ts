@@ -10,11 +10,12 @@ const guide: Guide = {
     intro: 'Pi funciona en Windows, pero el terminal desde el que lo abres y el shell que utiliza su modelo son elecciones distintas. Esta guía cubre la instalación y la herramienta PowerShell, y explica el comportamiento verificado en la beta de Windows de CodeAgentSwarm.',
     ctaText: 'El soporte de Pi en CodeAgentSwarm está en pruebas beta. La descarga corresponde a la app pública actual; consulta sus notas de versión para comprobar la disponibilidad de Pi.',
     ctaAgent: 'pi',
+    socialImage: '/images/guides/pi-coding-agent-og-es.png',
     highlightedWords: [
       'Pi',
     ],
     publishedAt: '2026-09-06',
-    updatedAt: '2026-09-06',
+    updatedAt: '2026-09-22',
     alternateSlug: 'pi-coding-agent-on-windows',
   },
   sections: [
@@ -49,25 +50,6 @@ const guide: Guide = {
         {
           type: 'paragraph',
           text: 'El selector muestra el modelo y su proveedor. Puedes revisar esa conexión sin salir del proyecto, mientras Chat conserva los mensajes y las herramientas de la tarea.',
-        },
-      ],
-    },
-    {
-      id: 'practical-check',
-      title: 'Comprobar el shell de Windows antes de editar',
-      content: [
-        {
-          type: 'code',
-          language: 'powershell',
-          code: 'Get-Command pi -All\nnode --version\npi --version',
-        },
-        {
-          type: 'paragraph',
-          text: 'Dentro de Pi, pide que muestre el directorio de trabajo y liste los archivos con la herramienta de comandos elegida. Revisa el nombre de la herramienta y su salida. Después pide que lea el script de pruebas antes de ejecutar algo que modifique archivos.',
-        },
-        {
-          type: 'paragraph',
-          text: 'Si cambias a WSL, trátalo como otro entorno: su directorio personal, el comando Pi instalado y las credenciales pueden ser diferentes a los de Windows nativo. Elige el entorno que utiliza el proyecto y completa allí la configuración.',
         },
       ],
     },
@@ -134,6 +116,25 @@ const guide: Guide = {
         {
           type: 'paragraph',
           text: 'El proveedor determina el acceso a modelos y la facturación. Consulta <a href="/es/guias/pi-coding-agent-modelos-suscripciones" class="text-neon-cyan hover:text-neon-purple transition-colors">las suscripciones y modelos de Pi</a> para conectar ChatGPT, Claude o una API.',
+        },
+      ],
+    },
+    {
+      id: 'practical-check',
+      title: 'Comprobar el shell de Windows antes de editar',
+      content: [
+        {
+          type: 'code',
+          language: 'powershell',
+          code: 'Get-Command pi -All\nnode --version\npi --version',
+        },
+        {
+          type: 'paragraph',
+          text: 'Dentro de Pi, pide que muestre el directorio de trabajo y liste los archivos con la herramienta de comandos elegida. Revisa el nombre de la herramienta y su salida. Después pide que lea el script de pruebas antes de ejecutar algo que modifique archivos.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Si cambias a WSL, trátalo como otro entorno: su directorio personal, el comando Pi instalado y las credenciales pueden ser diferentes a los de Windows nativo. Elige el entorno que utiliza el proyecto y completa allí la configuración.',
         },
       ],
     },

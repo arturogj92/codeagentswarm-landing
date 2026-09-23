@@ -1,3 +1,11 @@
+import enMuse0 from './en/how-to-use-muse-code'
+import esMuse0 from './es/como-usar-muse-code'
+import enMuse1 from './en/muse-code-on-windows'
+import esMuse1 from './es/muse-code-en-windows'
+import enMuse2 from './en/muse-code-models-pricing-privacy'
+import esMuse2 from './es/muse-code-modelos-precios-privacidad'
+import enMuse3 from './en/muse-code-mcp-skills-workflows'
+import esMuse3 from './es/muse-code-mcp-skills-workflows'
 import enSwe2Benchmarks from './en/swe-2-benchmarks'
 import esSwe2Benchmarks from './es/swe-2-benchmarks-comparativa'
 import enDevin0 from './en/how-to-use-devin-cli'
@@ -199,6 +207,10 @@ import esPiWindows from './es/pi-coding-agent-en-windows'
 export const guides: Record<string, Record<string, Guide>> = {
   en: {
     'swe-2-benchmarks': enSwe2Benchmarks,
+    'how-to-use-muse-code': enMuse0,
+    'muse-code-on-windows': enMuse1,
+    'muse-code-models-pricing-privacy': enMuse2,
+    'muse-code-mcp-skills-workflows': enMuse3,
     'how-to-use-devin-cli': enDevin0,
     'devin-cli-on-windows': enDevin1,
     'devin-cli-models-usage-limits': enDevin2,
@@ -295,6 +307,10 @@ export const guides: Record<string, Record<string, Guide>> = {
   },
   es: {
     'swe-2-benchmarks-comparativa': esSwe2Benchmarks,
+    'como-usar-muse-code': esMuse0,
+    'muse-code-en-windows': esMuse1,
+    'muse-code-modelos-precios-privacidad': esMuse2,
+    'muse-code-mcp-skills-workflows': esMuse3,
     'como-usar-devin-cli': esDevin0,
     'devin-cli-en-windows': esDevin1,
     'devin-cli-modelos-cuotas': esDevin2,

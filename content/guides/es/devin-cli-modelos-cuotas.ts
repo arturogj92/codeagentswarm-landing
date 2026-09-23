@@ -7,14 +7,14 @@ const guide: Guide = {
     "title": "Devin Pro: precio, SWE-2 gratis y cuotas de la CLI",
     "metaTitle": "Devin Pro: precio, SWE-2 gratis y límites de uso",
     "metaDescription": "Consulta el precio de Devin Pro, la promoción de SWE-2 y sus fechas oficiales discrepantes. Aprende a leer modelos, contexto y cuotas diarias y semanales.",
-    "intro": "¿Buscas SWE-2 ilimitado con Devin Pro? La oferta vigente permite usarlo gratis temporalmente en Desktop y CLI. Comprueba la fecha y el modelo antes de contratar. Revisado el 11 de septiembre de 2026.",
+    "intro": "¿Buscas SWE-2 ilimitado con Devin Pro? La oferta vigente permite usarlo gratis temporalmente en Desktop y CLI. Comprueba la fecha y el modelo antes de contratar. Revisado el 22 de septiembre de 2026.",
     "ctaText": "El selector de modelos y el panel de cuotas de Devin están en pruebas beta de CodeAgentSwarm. Consulta su disponibilidad en las notas del release público; la descarga no incluye una suscripción a Devin.",
     "ctaAgent": "devin",
     "highlightedWords": [
       "Devin"
     ],
     "publishedAt": "2026-09-11",
-    "updatedAt": "2026-09-11",
+    "updatedAt": "2026-09-22",
     "alternateSlug": "devin-cli-models-usage-limits",
     "socialImage": "/images/guides/devin-cli-og-es.png"
   },
@@ -34,7 +34,7 @@ const guide: Guide = {
         {
           "type": "callout",
           "variant": "info",
-          "content": "Hay una discrepancia: <a href=\"https://docs.devin.ai/desktop/models\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">la documentación de modelos</a> indica el <strong>8 de octubre de 2026</strong>. Confirma las condiciones en el selector y tu cuenta antes de pagar."
+          "content": "Hay una discrepancia: <a href=\"https://docs.devin.ai/desktop/models\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">la documentación de modelos</a> indica el <strong>15 de octubre de 2026</strong>. Confirma las condiciones en el selector y tu cuenta antes de pagar."
         },
         {
           "type": "paragraph",
@@ -64,6 +64,20 @@ const guide: Guide = {
         {
           "type": "paragraph",
           "text": "Dentro de la CLI, usa <code>/model</code> para abrir el selector. El catálogo puede cambiar y la organización puede restringirlo. Adaptive es una opción de selección automática, no la promesa de usar siempre el mismo modelo. <a href=\"https://docs.devin.ai/cli/models\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Documentación oficial de modelos</a>."
+        }
+      ]
+    },
+    {
+      "id": "choose-swe-2",
+      "title": "Cómo elegir SWE-2 sin adivinar el identificador",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Abre <code>/model</code> en la CLI interactiva, elige una entrada de SWE-2 disponible para tu cuenta y anota su nivel de razonamiento. El alias <code>swe</code> apunta al modelo más reciente de esa familia: no fija SWE-2 para siempre. Para repetir una comparación, guarda la entrada exacta del catálogo y la versión de la CLI."
+        },
+        {
+          "type": "paragraph",
+          "text": "Adaptive y Fusion son opciones distintas de una sesión con SWE-2 fijo. Si quieres evaluar SWE-2, revisa la selección antes de cada intento en lugar de suponer que todas las respuestas de Devin utilizan ese modelo. Consulta la <a href=\"https://docs.devin.ai/cli/models\">selección de modelos de Devin</a>."
         }
       ]
     },
@@ -192,7 +206,7 @@ const guide: Guide = {
   "faq": [
     {
       "question": "¿SWE-2 es ilimitado para siempre con Devin Pro?",
-      "answer": "No hay una promesa permanente. La promoción es temporal y las fuentes oficiales discrepan entre el 8 y el 10 de octubre de 2026. Confirma la fecha y la etiqueta de precio en tu cuenta."
+      "answer": "No hay una promesa permanente. La promoción es temporal y las fuentes oficiales discrepan entre el 10 y el 15 de octubre de 2026. Confirma la fecha y la etiqueta de precio en tu cuenta."
     },
     {
       "question": "¿Los tokens de contexto son la cuota de Devin?",

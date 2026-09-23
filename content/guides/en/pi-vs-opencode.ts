@@ -10,11 +10,12 @@ const guide: Guide = {
     intro: 'Pi and OpenCode can work on the same kind of coding tasks, and they can connect to overlapping model providers. Their differences are in the agent workflow around the model. This comparison separates model access from planning, tools and integration.',
     ctaText: 'Pi support in CodeAgentSwarm is in beta testing. The download below is the current public app; check its release notes for Pi availability.',
     ctaAgent: 'pi',
+    socialImage: '/images/guides/pi-coding-agent-og-en.png',
     highlightedWords: [
       'Pi',
     ],
     publishedAt: '2026-09-06',
-    updatedAt: '2026-09-06',
+    updatedAt: '2026-09-22',
     alternateSlug: 'pi-vs-opencode',
   },
   sections: [
@@ -34,6 +35,55 @@ const guide: Guide = {
           content: 'Pi offers a small core you can extend; OpenCode includes built-in planning and subagent workflows. Both can connect to multiple model providers. Choose by the workflow you need, then compare a real task with the same model connection.',
         },
       ],
+    },
+    {
+      "id": "which-should-you-choose",
+      "title": "Pi or OpenCode: which should you choose?",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Choose Pi if you want to keep your agent setup small and are willing to add the workflows you need. Choose OpenCode if your first task already needs its built-in Plan agent, subagents or MCP configuration. Neither choice establishes which model will write better code for your project."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Your immediate need",
+            "Start by evaluating",
+            "What to verify"
+          ],
+          "rows": [
+            [
+              "Explain a repository and make one contained fix",
+              "Either agent",
+              "The same provider, model and project checks."
+            ],
+            [
+              "Plan before changing files",
+              "OpenCode",
+              "Which edits and commands the Plan agent permits in your configuration."
+            ],
+            [
+              "Build a custom tool or project workflow",
+              "Pi",
+              "The extension source, its permissions and maintenance cost."
+            ],
+            [
+              "Connect an existing MCP service",
+              "OpenCode",
+              "Server authentication and which tools it exposes."
+            ],
+            [
+              "Use Pi from a desktop chat",
+              "CodeAgentSwarm beta",
+              "Release availability and the documented limits of the Pi integration."
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Treat this as a shortlist, then test the workflow that matters to you. Installing ten extensions just to reproduce a feature you already use is a cost; so is adopting a larger workflow you never need."
+        }
+      ]
     },
     {
       id: 'pi-in-action',
@@ -162,6 +212,7 @@ const guide: Guide = {
       id: 'choose',
       title: 'Which workflow fits your project?',
       content: [
+        {"type": "paragraph", "text": "If you are also considering Meta’s agent, the <a href=\"/en/guides/how-to-use-muse-code\">Muse Code setup guide</a> covers its separate account and first task. Keep that agent choice separate from this Pi/OpenCode comparison."},
         {
           type: 'list',
           items: [
@@ -172,7 +223,7 @@ const guide: Guide = {
         },
         {
           type: 'paragraph',
-          text: 'Start with <a href="/en/guides/how-to-use-pi-coding-agent" class="text-neon-cyan hover:text-neon-purple transition-colors">Pi installation</a> or the <a href="/en/guides/opencode-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">OpenCode workflow guide</a>. <strong>Pi in CodeAgentSwarm remains in beta testing; the SEO guide is not a public release announcement.</strong>',
+          text: 'Start with <a href="/en/guides/how-to-use-pi-coding-agent" class="text-neon-cyan hover:text-neon-purple transition-colors">Pi installation</a> or the <a href="/en/guides/opencode-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">OpenCode workflow guide</a>. <strong>Pi in CodeAgentSwarm remains in beta testing. Check the release notes for availability.</strong>',
         },
       ],
     },
