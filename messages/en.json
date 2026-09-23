@@ -27,6 +27,7 @@
     "microcopy": "Pro included during beta · macOS 12+ · Windows 10/11",
     "worksWith": "Works with",
     "existingAccounts": "Uses your existing CLI accounts",
+    "upcomingAgents": "In preparation: <muse>Muse Code</muse>, <pi>Pi</pi> and <devin>Devin CLI</devin>. Not yet included in the public app.",
     "stats": {
       "eyebrow": "Core capabilities",
       "terminals": "Parallel AI Agents",

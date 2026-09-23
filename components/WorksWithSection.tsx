@@ -82,6 +82,36 @@ export default function WorksWithSection() {
       icon: '/icons/apps/cursor-icon.svg',
       isNew: true,
     },
+    {
+      name: 'Muse Code',
+      desc: g(
+        'Meta’s coding agent. Read the setup guide while its CodeAgentSwarm integration is in testing; it is not yet in the public app.',
+        'El agente de código de Meta. Consulta la guía de instalación mientras probamos su integración en CodeAgentSwarm; aún no está en la app pública.'
+      ),
+      href: guidePath('how-to-use-muse-code', 'como-usar-muse-code'),
+      icon: '/icons/apps/muse-icon.svg',
+      comingSoon: true,
+    },
+    {
+      name: 'Pi coding agent',
+      desc: g(
+        'Choose your model provider and get started with Pi. Its CodeAgentSwarm integration is in testing and is not yet in the public app.',
+        'Elige tu proveedor de modelos y empieza con Pi. Su integración en CodeAgentSwarm está en pruebas y aún no está en la app pública.'
+      ),
+      href: guidePath('how-to-use-pi-coding-agent', 'como-usar-pi-coding-agent'),
+      icon: '/icons/apps/pi-icon.svg',
+      comingSoon: true,
+    },
+    {
+      name: 'Devin CLI',
+      desc: g(
+        'Set up Devin CLI and learn about SWE-2. Its CodeAgentSwarm integration is in testing and is not yet in the public app.',
+        'Configura Devin CLI y conoce SWE-2. Su integración en CodeAgentSwarm está en pruebas y aún no está en la app pública.'
+      ),
+      href: guidePath('how-to-use-devin-cli', 'como-usar-devin-cli'),
+      icon: '/icons/apps/devin-icon.svg',
+      comingSoon: true,
+    },
   ]
 
   const umbrellaHref = guidePath('ai-cli-agent-swarm', 'enjambre-de-agentes-cli-ia')
@@ -110,7 +140,7 @@ export default function WorksWithSection() {
           </p>
         </motion.div>
 
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-7">
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {tools.map((tool, i) => {
             const inner = (
               <>
@@ -128,7 +158,7 @@ export default function WorksWithSection() {
                   </h3>
                   {tool.comingSoon && (
                     <span className="text-[10px] px-2 py-0.5 rounded-full bg-white/10 text-neutral-400 font-medium">
-                      {g('Soon', 'Próximamente')}
+                      {g('In preparation', 'En preparación')}
                     </span>
                   )}
                   {tool.isNew && (
@@ -138,12 +168,10 @@ export default function WorksWithSection() {
                   )}
                 </div>
                 <p className="text-white/70 text-sm leading-relaxed mb-4">{tool.desc}</p>
-                {!tool.comingSoon && (
-                  <span className="mt-auto inline-flex items-center gap-1 text-sm text-neon-cyan">
-                    {g('Read the guide', 'Ver la guía')}
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                  </span>
-                )}
+                <span className="mt-auto inline-flex items-center gap-1 text-sm text-neon-cyan">
+                  {g('Read the guide', 'Ver la guía')}
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </span>
               </>
             )
             return (
@@ -153,18 +181,12 @@ export default function WorksWithSection() {
                 animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ duration: 0.5, delay: 0.1 * i }}
               >
-                {tool.comingSoon ? (
-                  <div className="flex flex-col h-full rounded-2xl glass border border-dashed border-white/15 p-5 opacity-70 cursor-default">
-                    {inner}
-                  </div>
-                ) : (
-                  <Link
-                    href={tool.href}
-                    className="group flex flex-col h-full rounded-2xl glass border border-white/10 p-5 transition-colors hover:border-neon-cyan/40"
-                  >
-                    {inner}
-                  </Link>
-                )}
+                <Link
+                  href={tool.href}
+                  className={`group flex flex-col h-full rounded-2xl glass border p-5 transition-colors hover:border-neon-cyan/40 ${tool.comingSoon ? 'border-dashed border-white/15' : 'border-white/10'}`}
+                >
+                  {inner}
+                </Link>
               </motion.div>
             )
           })}
