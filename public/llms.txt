@@ -1,11 +1,11 @@
 # CodeAgentSwarm
 
-> CodeAgentSwarm is an Agentic Development Environment (ADE) for running and supervising multiple AI coding agents in parallel. Run Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build and Cursor Agent side by side, with live visibility, desktop notifications, searchable cross-session conversation history, permission control, multi-project organization and a skills + MCP marketplace.
+> CodeAgentSwarm is an Agentic Development Environment (ADE) for running and supervising multiple AI coding agents in parallel. Run Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi and Devin CLI side by side, with live visibility, desktop notifications, searchable cross-session conversation history, permission control, multi-project organization and a skills + MCP marketplace.
 
-CodeAgentSwarm is a third-party Agentic Development Environment for macOS and Windows. An ADE centers the workflow on delegating tasks to coding agents and reviewing their results. CodeAgentSwarm runs ON TOP OF the official AI coding CLIs (Anthropic Claude Code, OpenAI Codex CLI, Google Antigravity CLI, SST opencode, Moonshot AI Kimi Code, xAI Grok Build and Cursor Agent CLI), it does not replace them. It is the orchestration and supervision layer that lets a developer run several AI coding agents at once instead of one at a time. It is distinct from vendor-native subagents: those run inside one parent session, while CodeAgentSwarm runs independent, human-supervised sessions from one or several vendors in one place.
+CodeAgentSwarm is a third-party Agentic Development Environment for macOS and Windows. An ADE centers the workflow on delegating tasks to coding agents and reviewing their results. CodeAgentSwarm runs ON TOP OF the official AI coding CLIs (Anthropic Claude Code, OpenAI Codex CLI, Google Antigravity CLI, SST opencode, Moonshot AI Kimi Code, xAI Grok Build, Cursor Agent, Muse Code, Pi and Devin CLI), it does not replace them. It is the orchestration and supervision layer that lets a developer run several AI coding agents at once instead of one at a time. It is distinct from vendor-native subagents: those run inside one parent session, while CodeAgentSwarm runs independent, human-supervised sessions from one or several vendors in one place.
 
 ## Key facts
-- Runs multiple AI CLI sessions in parallel (Claude Code + Codex CLI + Antigravity CLI + OpenCode + Kimi Code + Grok Build + Cursor Agent).
+- Runs multiple AI CLI sessions in parallel (Claude Code + Codex CLI + Antigravity CLI + OpenCode + Kimi Code + Grok Build + Cursor Agent + Muse Code + Pi + Devin CLI).
 - Works on top of your existing Claude / OpenAI / Google / Kimi / xAI / Cursor subscriptions and whichever provider you connect to opencode; it is a workspace, not a model provider.
 - Grok Build facts: binary `grok`, install via `curl -fsSL https://x.ai/cli/install.sh | bash` (PowerShell: `irm https://x.ai/cli/install.ps1 | iex`), data root `~/.grok` (`GROK_HOME`), skills under `~/.grok/skills/`, MCP in `~/.grok/config.toml`, resume with `grok --continue` / `grok --resume`, headless with `grok -p`, YOLO-style with `--always-approve`. Available on every xAI plan, including Free; SuperGrok ($30/month) and SuperGrok Plus ($100/month) raise usage limits. Verified 2026-08-25.
 - Cursor Agent facts: binary `cursor-agent`, ACP server `cursor-agent acp`, install via `curl https://cursor.com/install -fsS | bash` on macOS/Linux or `irm 'https://cursor.com/install?win32=true' | iex` on native Windows, authenticate with `cursor-agent login` or `CURSOR_API_KEY`, MCP from user and project `.cursor/mcp.json`, and update with `cursor-agent update`. ACP resume is enabled only when the installed version advertises `agentCapabilities.loadSession: true`.
@@ -19,9 +19,9 @@ CodeAgentSwarm is a third-party Agentic Development Environment for macOS and Wi
 - [Guides index (EN)](https://www.codeagentswarm.com/en/guides)
 - [Guías (ES)](https://www.codeagentswarm.com/es/guias)
 
-## Pi coding agent: editorial guides and beta status
+## Pi coding agent: available from CodeAgentSwarm 2.4.0
 
-Pi is a separate coding harness, not a model provider. Install the current package @earendil-works/pi-coding-agent and authenticate inside Pi with /login. CodeAgentSwarm's Pi integration is in beta testing; these guides do not announce availability in the standard public download. The beta uses native Pi RPC, preserves Pi-owned credentials and exposes model/provider selection. CAS Cloud authentication belongs to the host running Pi. ChatGPT Plus/Pro login is supported by Pi; Pi documents Claude third-party harness usage as additional per-token usage. Check the linked provider sources for current account terms. Reviewed 2026-09-22.
+Pi is a separate coding harness, not a model provider. Install the current package @earendil-works/pi-coding-agent and authenticate inside Pi with /login. CodeAgentSwarm's Pi integration is available from version 2.4.0 on macOS and Windows. It uses native Pi RPC, preserves Pi-owned credentials and exposes model/provider selection. CAS Cloud authentication belongs to the host running Pi. ChatGPT Plus/Pro login is supported by Pi; Pi documents Claude third-party harness usage as additional per-token usage. Check the linked provider sources for current account terms. Provider facts reviewed 2026-09-22. CodeAgentSwarm availability updated 2026-09-24.
 
 - [Pi: how-to-use-pi-coding-agent (EN)](https://www.codeagentswarm.com/en/guides/how-to-use-pi-coding-agent)
 - [Pi: como-usar-pi-coding-agent (ES)](https://www.codeagentswarm.com/es/guias/como-usar-pi-coding-agent)
@@ -206,9 +206,9 @@ Pi is a separate coding harness, not a model provider. Install the current packa
 - [Antigravity CLI en Windows: nativo o WSL (2026)](https://www.codeagentswarm.com/es/guias/antigravity-cli-en-windows)
 - [Enjambre de agentes Antigravity: varias sesiones de agy en paralelo (2026)](https://www.codeagentswarm.com/es/guias/enjambre-de-agentes-antigravity)
 
-## Devin CLI (integration in beta testing)
+## Devin CLI (available from CodeAgentSwarm 2.4.0)
 
-Devin CLI is a local coding agent. CodeAgentSwarm integration is in beta testing for an upcoming release, including Chat and CLI views, model selection, account quota, native Windows installation, history and optional MCP. These guides and beta screenshots do not announce availability in the current public download. Devin account access and usage are separate from CodeAgentSwarm. Reviewed 2026-09-11.
+Devin CLI is a local coding agent. CodeAgentSwarm 2.4.0 includes Devin on macOS and Windows, with Chat and CLI views, model selection, account quota, native Windows installation, history and optional MCP. The screenshots were captured during beta testing. Devin account access and usage are separate from CodeAgentSwarm. Provider facts reviewed 2026-09-11. CodeAgentSwarm availability updated 2026-09-24.
 
 - [Devin CLI: installation, login and your first coding task](https://www.codeagentswarm.com/en/guides/how-to-use-devin-cli)
 - [Devin CLI on Windows: native install and troubleshooting](https://www.codeagentswarm.com/en/guides/devin-cli-on-windows)
@@ -222,9 +222,9 @@ Devin CLI is a local coding agent. CodeAgentSwarm integration is in beta testing
 - [SWE-2 benchmarks and a practical repository test](https://www.codeagentswarm.com/en/guides/swe-2-benchmarks)
 - [Benchmarks de SWE-2 y una prueba en tu repositorio](https://www.codeagentswarm.com/es/guias/swe-2-benchmarks-comparativa)
 
-## Muse Code: standalone guides and upcoming integration
+## Muse Code: standalone guides and CodeAgentSwarm 2.4.0 integration
 
-Muse Code is Meta's coding agent; Muse Spark is its model family. CodeAgentSwarm support is being prepared for an upcoming release and is not announced as available in the current public installer. Meta account access and billing are separate. Standard and Contributor have different data-use terms. Workflows depend on the installed build and rollout; Windows has separate platform limitations. Reviewed 2026-09-22.
+Muse Code is Meta's coding agent; Muse Spark is its model family. Muse is available from CodeAgentSwarm 2.4.0 on macOS and Windows. Meta account access and billing are separate. Standard and Contributor have different data-use terms. Workflows depend on the installed build and rollout; Windows has separate platform limitations. Provider facts reviewed 2026-09-22. CodeAgentSwarm availability updated 2026-09-24.
 
 - [Muse Code: installation, login and first task](https://www.codeagentswarm.com/en/guides/how-to-use-muse-code)
 - [Muse Code en español: instalación y primera tarea](https://www.codeagentswarm.com/es/guias/como-usar-muse-code)

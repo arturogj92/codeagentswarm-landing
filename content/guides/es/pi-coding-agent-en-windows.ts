@@ -8,14 +8,14 @@ const guide: Guide = {
     metaTitle: 'Pi Coding Agent en Windows: instalación y PowerShell',
     metaDescription: 'Instala Pi coding agent en Windows, elige Git Bash o la herramienta PowerShell, resuelve problemas de PATH y conoce el funcionamiento de Pi en CAS beta.',
     intro: 'Pi funciona en Windows, pero el terminal desde el que lo abres y el shell que utiliza su modelo son elecciones distintas. Esta guía cubre la instalación y la herramienta PowerShell, y explica el comportamiento verificado en la beta de Windows de CodeAgentSwarm.',
-    ctaText: 'El soporte de Pi en CodeAgentSwarm está en pruebas beta. La descarga corresponde a la app pública actual; consulta sus notas de versión para comprobar la disponibilidad de Pi.',
+    ctaText: 'Usa Pi con tu proveedor de modelos en CodeAgentSwarm 2.4.0. Descarga la app para macOS o Windows.',
     ctaAgent: 'pi',
     socialImage: '/images/guides/pi-coding-agent-og-es.png',
     highlightedWords: [
       'Pi',
     ],
     publishedAt: '2026-09-06',
-    updatedAt: '2026-09-22',
+    updatedAt: '2026-09-24',
     alternateSlug: 'pi-coding-agent-on-windows',
   },
   sections: [
@@ -45,7 +45,7 @@ const guide: Guide = {
           src: '/images/guides/pi-chat-beta.webp',
           alt: 'Pi en Chat de CodeAgentSwarm con un proyecto de ejemplo',
           size: 'full',
-          caption: 'Captura real de CodeAgentSwarm beta en macOS: Pi ejecutándose con un proyecto de ejemplo. La imagen no anuncia disponibilidad en la descarga pública. Se muestra la interfaz Chat; no es una captura de Windows.',
+          caption: 'Captura real de CodeAgentSwarm beta en macOS: Pi ejecutándose con un proyecto de ejemplo. Pi está disponible desde CodeAgentSwarm 2.4.0. Se muestra la interfaz Chat; no es una captura de Windows.',
         },
         {
           type: 'paragraph',
@@ -163,7 +163,7 @@ const guide: Guide = {
       content: [
         {
           type: 'paragraph',
-          text: '<strong>El soporte de Pi está en pruebas beta y todavía no se ha anunciado para la descarga pública estándar.</strong> En la integración Chat comprobada, la extensión gestionada selecciona la herramienta PowerShell nativa de Pi en Windows. La ejecución de herramientas en Chat no necesita Git Bash.',
+          text: '<strong>Pi está disponible en CodeAgentSwarm 2.4.0 para Windows.</strong> En la integración Chat comprobada, la extensión gestionada selecciona la herramienta PowerShell nativa de Pi en Windows. La ejecución de herramientas en Chat no necesita Git Bash.',
         },
         {
           type: 'paragraph',
@@ -183,11 +183,11 @@ const guide: Guide = {
     },
     {
       question: '¿Abrir Pi desde PowerShell hace que sus comandos usen PowerShell?',
-      answer: 'No. Configura la herramienta powershell en Pi independiente. En Chat de CAS beta, la extensión gestionada la selecciona en Windows.',
+      answer: 'No. Configura la herramienta powershell en Pi independiente. En Chat de CAS, la extensión gestionada la selecciona en Windows.',
     },
     {
       question: '¿Está probado el soporte de Windows en CodeAgentSwarm?',
-      answer: 'La integración beta de Pi se comprobó con Pi real en Windows 11 ARM64, incluyendo comandos, permisos y reanudación. Su disponibilidad en la descarga pública es una decisión de lanzamiento aparte.',
+      answer: 'La integración beta de Pi se comprobó con Pi real en Windows 11 ARM64, incluyendo comandos, permisos y reanudación. Pi está incluido en la descarga pública desde la versión 2.4.0.',
     },
   ],
 }

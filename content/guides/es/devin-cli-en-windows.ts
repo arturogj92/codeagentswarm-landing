@@ -8,13 +8,13 @@ const guide: Guide = {
     "metaTitle": "Devin CLI en Windows: instalar, login y corregir PATH",
     "metaDescription": "Configura Devin CLI nativo en Windows con PowerShell. Comprueba PATH, inicia sesión y localiza sus archivos con capturas de la beta de CodeAgentSwarm.",
     "intro": "Una instalación nativa permite a Devin usar las rutas y la cuenta de tu entorno Windows. Empieza en PowerShell, comprueba el ejecutable e inicia sesión. WSL es otro entorno y debe tratarse como una instalación independiente.",
-    "ctaText": "El soporte nativo de Devin en Windows está en pruebas beta de CodeAgentSwarm. Descarga la app pública actual y consulta sus notas antes de esperar esta integración.",
+    "ctaText": "El soporte nativo de Devin en Windows está disponible en CodeAgentSwarm 2.4.0. Descarga la app e inicia sesión con tu cuenta de Devin.",
     "ctaAgent": "devin",
     "highlightedWords": [
       "Devin"
     ],
     "publishedAt": "2026-09-11",
-    "updatedAt": "2026-09-11",
+    "updatedAt": "2026-09-24",
     "alternateSlug": "devin-cli-on-windows",
     "socialImage": "/images/guides/devin-cli-og-es.png"
   },
@@ -48,7 +48,7 @@ const guide: Guide = {
           "type": "image",
           "src": "/images/guides/devin-windows-beta.webp",
           "alt": "Diálogo de instalación de Devin CLI en CodeAgentSwarm para Windows",
-          "caption": "Captura real del diálogo de instalación en la beta de Windows. La app pública puede no incluir aún Devin.",
+          "caption": "Captura real del diálogo de instalación en la beta de Windows. Devin está disponible desde CodeAgentSwarm 2.4.0.",
           "size": "full"
         }
       ]
@@ -83,7 +83,7 @@ const guide: Guide = {
         },
         {
           "type": "paragraph",
-          "text": "Usa la ruta real de tu proyecto. En la beta de CodeAgentSwarm, selecciona ese mismo proyecto al crear una sesión de Devin. Si te autenticaste dentro de WSL, repite el login en la CLI nativa de Windows antes de esperar que lo use la app nativa."
+          "text": "Usa la ruta real de tu proyecto. En CodeAgentSwarm, selecciona ese mismo proyecto al crear una sesión de Devin. Si te autenticaste dentro de WSL, repite el login en la CLI nativa de Windows antes de esperar que lo use la app nativa."
         }
       ]
     },
@@ -110,7 +110,7 @@ const guide: Guide = {
         },
         {
           "type": "paragraph",
-          "text": "Estas son las ubicaciones verificadas con nuestra instalación nativa de Windows. El ejecutable puede instalarse en Local mientras Devin guarda los datos de cuenta y sesiones en Roaming. La beta de CodeAgentSwarm resuelve estas ubicaciones por separado."
+          "text": "Estas son las ubicaciones verificadas con nuestra instalación nativa de Windows. El ejecutable puede instalarse en Local mientras Devin guarda los datos de cuenta y sesiones en Roaming. CodeAgentSwarm resuelve estas ubicaciones por separado."
         },
         {
           "type": "paragraph",
@@ -139,11 +139,11 @@ const guide: Guide = {
     },
     {
       "id": "codeagentswarm-beta",
-      "title": "Devin en CodeAgentSwarm: estado de la beta",
+      "title": "Devin en CodeAgentSwarm: disponible en la 2.4.0",
       "content": [
         {
           "type": "paragraph",
-          "text": "La integración está en pruebas para un próximo release de CodeAgentSwarm. Las capturas muestran esa beta y no anuncian que el instalador público actual ya incluya Devin. Inicia sesión con la CLI oficial de Devin en el ordenador donde se ejecuta el agente."
+          "text": "Devin está disponible en CodeAgentSwarm 2.4.0 para macOS y Windows. Las capturas se tomaron durante las pruebas beta. Inicia sesión con la CLI oficial de Devin en el ordenador donde se ejecuta el agente."
         }
       ]
     }

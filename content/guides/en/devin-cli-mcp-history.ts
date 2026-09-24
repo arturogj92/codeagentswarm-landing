@@ -6,15 +6,15 @@ const guide: Guide = {
     "locale": "en",
     "title": "Devin CLI MCP and history: connect tools and resume work",
     "metaTitle": "Devin CLI MCP, History and Session Resume",
-    "metaDescription": "Configure Devin CLI MCP by scope, inspect connected tools and resume saved conversations. Includes history and optional MCP in the CodeAgentSwarm beta.",
+    "metaDescription": "Configure Devin CLI MCP by scope, inspect connected tools and resume saved conversations. Includes history and optional MCP in CodeAgentSwarm 2.4.0.",
     "intro": "MCP connects tools to an agent; history keeps the conversation you want to continue. They solve different problems. Set up one tool you trust, check that Devin can see it, then verify that the conversation can be reopened.",
-    "ctaText": "Devin history, resume and optional CodeAgentSwarm MCP are in beta testing for an upcoming release. Check the current public app release notes for availability.",
+    "ctaText": "Devin history, resume and optional CodeAgentSwarm MCP are available from CodeAgentSwarm 2.4.0.",
     "ctaAgent": "devin",
     "highlightedWords": [
       "Devin"
     ],
     "publishedAt": "2026-09-11",
-    "updatedAt": "2026-09-11",
+    "updatedAt": "2026-09-24",
     "alternateSlug": "devin-cli-mcp-historial",
     "socialImage": "/images/guides/devin-cli-og-en.png"
   },
@@ -53,7 +53,7 @@ const guide: Guide = {
         },
         {
           "type": "paragraph",
-          "text": "In CodeAgentSwarm beta, Devin conversations are available through history, search and bookmarks. A saved shortcut can reopen the associated conversation. Check the project and previous messages when resuming so your next request has the intended context."
+          "text": "In CodeAgentSwarm, Devin conversations are available through history, search and bookmarks. A saved shortcut can reopen the associated conversation. Check the project and previous messages when resuming so your next request has the intended context."
         }
       ]
     },
@@ -103,7 +103,7 @@ const guide: Guide = {
       "content": [
         {
           "type": "paragraph",
-          "text": "The beta can connect Devin to CodeAgentSwarm tools for supported session and workspace actions. The app setting controls this integration. If you turn it off, new Devin launches should respect that choice; do not add it back manually just to make a test request work."
+          "text": "CodeAgentSwarm can connect Devin to CodeAgentSwarm tools for supported session and workspace actions. The app setting controls this integration. If you turn it off, new Devin launches should respect that choice; do not add it back manually just to make a test request work."
         },
         {
           "type": "paragraph",
@@ -132,11 +132,11 @@ const guide: Guide = {
     },
     {
       "id": "codeagentswarm-beta",
-      "title": "Devin in CodeAgentSwarm: beta status",
+      "title": "Devin in CodeAgentSwarm: available in 2.4.0",
       "content": [
         {
           "type": "paragraph",
-          "text": "The integration is being tested for an upcoming CodeAgentSwarm release. The screenshots show that beta, not a promise that the current public installer already includes Devin. Sign in with the official Devin CLI on the computer that runs the agent."
+          "text": "Devin is available in CodeAgentSwarm 2.4.0 for macOS and Windows. The screenshots were captured during beta testing. Sign in with the official Devin CLI on the computer that runs the agent."
         }
       ]
     }
@@ -148,7 +148,7 @@ const guide: Guide = {
     },
     {
       "question": "Do I need CodeAgentSwarm MCP to use Devin?",
-      "answer": "No. The CodeAgentSwarm MCP integration is optional in the beta. Devin also supports its own MCP configuration."
+      "answer": "No. The CodeAgentSwarm MCP integration is optional in CodeAgentSwarm. Devin also supports its own MCP configuration."
     },
     {
       "question": "Should I commit personal MCP credentials?",

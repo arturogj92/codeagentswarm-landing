@@ -8,14 +8,14 @@ const guide: Guide = {
     metaTitle: 'Pi vs OpenCode: Coding Agent Differences Explained',
     metaDescription: 'Compare Pi and OpenCode by model access, plan mode, permissions, MCP and integration protocol. Choose a coding workflow without confusing agents with models.',
     intro: 'Pi and OpenCode can work on the same kind of coding tasks, and they can connect to overlapping model providers. Their differences are in the agent workflow around the model. This comparison separates model access from planning, tools and integration.',
-    ctaText: 'Pi support in CodeAgentSwarm is in beta testing. The download below is the current public app; check its release notes for Pi availability.',
+    ctaText: 'Use Pi with your chosen model provider in CodeAgentSwarm 2.4.0. Download the app for macOS or Windows.',
     ctaAgent: 'pi',
     socialImage: '/images/guides/pi-coding-agent-og-en.png',
     highlightedWords: [
       'Pi',
     ],
     publishedAt: '2026-09-06',
-    updatedAt: '2026-09-22',
+    updatedAt: '2026-09-24',
     alternateSlug: 'pi-vs-opencode',
   },
   sections: [
@@ -94,7 +94,7 @@ const guide: Guide = {
           src: '/images/guides/pi-chat-beta.webp',
           alt: 'Pi in CodeAgentSwarm Chat with a sample project',
           size: 'full',
-          caption: 'Real CodeAgentSwarm beta capture on macOS: Pi running with a sample project. This image does not announce availability in the public download.',
+          caption: 'Real CodeAgentSwarm beta capture on macOS: Pi running with a sample project. Pi is available from CodeAgentSwarm 2.4.0.',
         },
         {
           type: 'paragraph',
@@ -155,7 +155,7 @@ const guide: Guide = {
             ],
             [
               'Tool permissions',
-              'In CAS beta Chat, the managed extension asks for tool approval.',
+              'In CAS Chat, the managed extension asks for tool approval.',
               'Configurable allow, ask and deny rules.',
             ],
           ],
@@ -186,7 +186,7 @@ const guide: Guide = {
       content: [
         {
           type: 'paragraph',
-          text: 'Pi\'s native process interface is <code>pi --mode rpc</code>, using JSON lines for commands and events. CodeAgentSwarm\'s Pi beta connects to that interface. It does not launch an ACP adapter. OpenCode documents a separate <code>opencode acp</code> entry point for ACP clients.',
+          text: 'Pi\'s native process interface is <code>pi --mode rpc</code>, using JSON lines for commands and events. CodeAgentSwarm\'s Pi integration connects to that interface. It does not launch an ACP adapter. OpenCode documents a separate <code>opencode acp</code> entry point for ACP clients.',
         },
         {
           type: 'paragraph',
@@ -200,11 +200,11 @@ const guide: Guide = {
       content: [
         {
           type: 'paragraph',
-          text: 'OpenCode has <a href="https://opencode.ai/docs/mcp-servers/" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">native MCP server configuration</a>. Pi can add functionality through extensions. In CAS beta, its managed extension bridges only the Swarm-owned MCP server and preserves unrelated configuration. That is not a claim that every custom MCP server is imported into Pi.',
+          text: 'OpenCode has <a href="https://opencode.ai/docs/mcp-servers/" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">native MCP server configuration</a>. Pi can add functionality through extensions. In CAS, its managed extension bridges only the Swarm-owned MCP server and preserves unrelated configuration. That is not a claim that every custom MCP server is imported into Pi.',
         },
         {
           type: 'paragraph',
-          text: 'CAS beta Chat applies its manual, auto-approve edits or full-access choices to Pi tool requests. CLI view retains Pi\'s own behavior. These approvals are not an operating-system sandbox. If you need a restricted environment, provide that environment separately.',
+          text: 'CAS Chat applies its manual, auto-approve edits or full-access choices to Pi tool requests. CLI view retains Pi\'s own behavior. These approvals are not an operating-system sandbox. If you need a restricted environment, provide that environment separately.',
         },
       ],
     },
@@ -223,7 +223,7 @@ const guide: Guide = {
         },
         {
           type: 'paragraph',
-          text: 'Start with <a href="/en/guides/how-to-use-pi-coding-agent" class="text-neon-cyan hover:text-neon-purple transition-colors">Pi installation</a> or the <a href="/en/guides/opencode-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">OpenCode workflow guide</a>. <strong>Pi in CodeAgentSwarm remains in beta testing. Check the release notes for availability.</strong>',
+          text: 'Start with <a href="/en/guides/how-to-use-pi-coding-agent" class="text-neon-cyan hover:text-neon-purple transition-colors">Pi installation</a> or the <a href="/en/guides/opencode-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">OpenCode workflow guide</a>. <strong>Pi is available from CodeAgentSwarm 2.4.0.</strong>',
         },
       ],
     },
@@ -235,7 +235,7 @@ const guide: Guide = {
     },
     {
       question: 'Does CodeAgentSwarm connect Pi through ACP?',
-      answer: 'No. The Pi beta uses Pi\'s native RPC process interface. OpenCode has its own documented ACP interface.',
+      answer: 'No. The Pi integration uses Pi\'s native RPC process interface. OpenCode has its own documented ACP interface.',
     },
     {
       question: 'Which one produces better code?',

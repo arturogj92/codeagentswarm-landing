@@ -423,12 +423,21 @@ export default function HeroSection() {
                 >
                   <img src="/icons/apps/cursor-icon.svg" alt="Cursor Agent" className="w-4 h-4 object-contain" />
                 </span>
+                <span className="w-7 h-7 rounded-full flex items-center justify-center bg-[#0d0d0d] border-2 border-[#0e0e12] shadow-lg" title="Muse Code">
+                  <img src="/icons/apps/muse-icon.svg" alt="Muse Code" className="w-4 h-4 object-contain" />
+                </span>
+                <span className="w-7 h-7 rounded-full flex items-center justify-center bg-[#0d0d0d] border-2 border-[#0e0e12] shadow-lg" title="Pi">
+                  <img src="/icons/apps/pi-icon.svg" alt="Pi" className="w-4 h-4 object-contain" />
+                </span>
+                <span className="w-7 h-7 rounded-full flex items-center justify-center bg-[#0d0d0d] border-2 border-[#0e0e12] shadow-lg" title="Devin CLI">
+                  <img src="/icons/apps/devin-icon.svg" alt="Devin CLI" className="w-4 h-4 object-contain" />
+                </span>
               </div>
               <span className="hidden sm:block h-4 w-px bg-white/10" aria-hidden="true" />
               <span>{t('existingAccounts')}</span>
             </div>
             <p className="max-w-2xl text-center text-sm leading-relaxed text-white/60">
-              {t.rich('upcomingAgents', {
+              {t.rich('newAgents', {
                 muse: chunks => <Link href={locale === 'es' ? '/es/guias/como-usar-muse-code' : '/en/guides/how-to-use-muse-code'} className="text-neon-cyan underline underline-offset-4 hover:text-white">{chunks}</Link>,
                 pi: chunks => <Link href={locale === 'es' ? '/es/guias/como-usar-pi-coding-agent' : '/en/guides/how-to-use-pi-coding-agent'} className="text-neon-cyan underline underline-offset-4 hover:text-white">{chunks}</Link>,
                 devin: chunks => <Link href={locale === 'es' ? '/es/guias/como-usar-devin-cli' : '/en/guides/how-to-use-devin-cli'} className="text-neon-cyan underline underline-offset-4 hover:text-white">{chunks}</Link>,

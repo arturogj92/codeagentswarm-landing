@@ -8,14 +8,14 @@ const guide: Guide = {
     metaTitle: 'Pi vs OpenCode: diferencias entre los agentes',
     metaDescription: 'Compara Pi y OpenCode por modelos, modo plan, permisos, MCP y protocolo de integración. Elige un flujo de programación sin confundir agentes con modelos.',
     intro: 'Pi y OpenCode pueden resolver el mismo tipo de tareas y conectarse a proveedores de modelos similares. Sus diferencias están en el flujo de trabajo que rodea al modelo. Esta comparación separa el acceso al modelo de la planificación, las herramientas y la integración.',
-    ctaText: 'El soporte de Pi en CodeAgentSwarm está en pruebas beta. La descarga corresponde a la app pública actual; consulta sus notas de versión para comprobar la disponibilidad de Pi.',
+    ctaText: 'Usa Pi con tu proveedor de modelos en CodeAgentSwarm 2.4.0. Descarga la app para macOS o Windows.',
     ctaAgent: 'pi',
     socialImage: '/images/guides/pi-coding-agent-og-es.png',
     highlightedWords: [
       'Pi',
     ],
     publishedAt: '2026-09-06',
-    updatedAt: '2026-09-22',
+    updatedAt: '2026-09-24',
     alternateSlug: 'pi-vs-opencode',
   },
   sections: [
@@ -94,7 +94,7 @@ const guide: Guide = {
           src: '/images/guides/pi-chat-beta.webp',
           alt: 'Pi en Chat de CodeAgentSwarm con un proyecto de ejemplo',
           size: 'full',
-          caption: 'Captura real de CodeAgentSwarm beta en macOS: Pi ejecutándose con un proyecto de ejemplo. La imagen no anuncia disponibilidad en la descarga pública.',
+          caption: 'Captura real de CodeAgentSwarm beta en macOS: Pi ejecutándose con un proyecto de ejemplo. Pi está disponible desde CodeAgentSwarm 2.4.0.',
         },
         {
           type: 'paragraph',
@@ -155,7 +155,7 @@ const guide: Guide = {
             ],
             [
               'Permisos de herramientas',
-              'En Chat de CAS beta, la extensión gestionada pide aprobación.',
+              'En Chat de CAS, la extensión gestionada pide aprobación.',
               'Reglas configurables de permitir, preguntar y denegar.',
             ],
           ],
@@ -186,7 +186,7 @@ const guide: Guide = {
       content: [
         {
           type: 'paragraph',
-          text: 'La interfaz nativa de Pi entre procesos es <code>pi --mode rpc</code>, con líneas JSON para comandos y eventos. La beta de Pi en CodeAgentSwarm se conecta a esa interfaz. No arranca un adaptador ACP. OpenCode documenta por separado <code>opencode acp</code> para clientes ACP.',
+          text: 'La interfaz nativa de Pi entre procesos es <code>pi --mode rpc</code>, con líneas JSON para comandos y eventos. Pi en CodeAgentSwarm se conecta a esa interfaz. No arranca un adaptador ACP. OpenCode documenta por separado <code>opencode acp</code> para clientes ACP.',
         },
         {
           type: 'paragraph',
@@ -200,11 +200,11 @@ const guide: Guide = {
       content: [
         {
           type: 'paragraph',
-          text: 'OpenCode tiene <a href="https://opencode.ai/docs/mcp-servers/" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">configuración nativa de servidores MCP</a>. Pi puede añadir funciones mediante extensiones. En CAS beta, su extensión gestionada conecta únicamente el servidor MCP propio de Swarm y conserva la configuración ajena. Eso no significa que importe todos los servidores MCP personalizados a Pi.',
+          text: 'OpenCode tiene <a href="https://opencode.ai/docs/mcp-servers/" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">configuración nativa de servidores MCP</a>. Pi puede añadir funciones mediante extensiones. En CAS, su extensión gestionada conecta únicamente el servidor MCP propio de Swarm y conserva la configuración ajena. Eso no significa que importe todos los servidores MCP personalizados a Pi.',
         },
         {
           type: 'paragraph',
-          text: 'Chat de CAS beta aplica a las peticiones de Pi sus opciones manual, aprobación automática de ediciones y acceso completo. La vista CLI conserva el comportamiento propio de Pi. Estas aprobaciones no son un sandbox del sistema operativo. Si necesitas un entorno restringido, proporciónalo aparte.',
+          text: 'Chat de CAS aplica a las peticiones de Pi sus opciones manual, aprobación automática de ediciones y acceso completo. La vista CLI conserva el comportamiento propio de Pi. Estas aprobaciones no son un sandbox del sistema operativo. Si necesitas un entorno restringido, proporciónalo aparte.',
         },
       ],
     },
@@ -223,7 +223,7 @@ const guide: Guide = {
         },
         {
           type: 'paragraph',
-          text: 'Empieza por la <a href="/es/guias/como-usar-pi-coding-agent" class="text-neon-cyan hover:text-neon-purple transition-colors">instalación de Pi</a> o la <a href="/es/guias/enjambre-de-agentes-opencode" class="text-neon-cyan hover:text-neon-purple transition-colors">guía de trabajo con OpenCode</a>. <strong>Pi en CodeAgentSwarm sigue en pruebas beta. Consulta las notas de versión para conocer su disponibilidad.</strong>',
+          text: 'Empieza por la <a href="/es/guias/como-usar-pi-coding-agent" class="text-neon-cyan hover:text-neon-purple transition-colors">instalación de Pi</a> o la <a href="/es/guias/enjambre-de-agentes-opencode" class="text-neon-cyan hover:text-neon-purple transition-colors">guía de trabajo con OpenCode</a>. <strong>Pi está disponible desde CodeAgentSwarm 2.4.0.</strong>',
         },
       ],
     },
@@ -235,7 +235,7 @@ const guide: Guide = {
     },
     {
       question: '¿CodeAgentSwarm conecta Pi mediante ACP?',
-      answer: 'No. La beta de Pi usa su interfaz nativa RPC entre procesos. OpenCode tiene su propia interfaz ACP documentada.',
+      answer: 'No. La integración de Pi usa su interfaz nativa RPC entre procesos. OpenCode tiene su propia interfaz ACP documentada.',
     },
     {
       question: '¿Cuál produce mejor código?',

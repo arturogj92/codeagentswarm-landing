@@ -6,16 +6,16 @@ const guide: Guide = {
     locale: 'en',
     title: 'Pi coding agent: installation, login and your first task',
     metaTitle: 'Pi Coding Agent: Install, Sign In and Start Coding',
-    metaDescription: 'Learn what Pi coding agent does, install the current npm package, connect a model and resume sessions. Includes the status of Pi in CodeAgentSwarm beta.',
-    intro: 'Pi is a terminal coding agent that connects a language model to your project files and tools. You choose the provider; Pi manages the conversation and tool execution. This guide gets a standalone Pi session running before explaining the CodeAgentSwarm beta integration.',
-    ctaText: 'Pi support in CodeAgentSwarm is in beta testing. The download below is the current public app; check its release notes for Pi availability.',
+    metaDescription: 'Learn what Pi coding agent does, install the current npm package, connect a model and resume sessions. Includes Pi support in CodeAgentSwarm 2.4.0.',
+    intro: 'Pi is a terminal coding agent that connects a language model to your project files and tools. You choose the provider; Pi manages the conversation and tool execution. This guide gets a standalone Pi session running before explaining the CodeAgentSwarm integration.',
+    ctaText: 'Use Pi with your chosen model provider in CodeAgentSwarm 2.4.0. Download the app for macOS or Windows.',
     ctaAgent: 'pi',
     socialImage: '/images/guides/pi-coding-agent-og-en.png',
     highlightedWords: [
       'Pi',
     ],
     publishedAt: '2026-09-06',
-    updatedAt: '2026-09-22',
+    updatedAt: '2026-09-24',
     alternateSlug: 'como-usar-pi-coding-agent',
   },
   sections: [
@@ -32,7 +32,7 @@ const guide: Guide = {
         {
           type: 'callout',
           variant: 'info',
-          content: 'Install Pi, open it in your project, use /login to connect a provider and /model to choose a model. Then give it a small, verifiable task. In the CodeAgentSwarm beta, you can use the same agent through Chat and CLI views.',
+          content: 'Install Pi, open it in your project, use /login to connect a provider and /model to choose a model. Then give it a small, verifiable task. In CodeAgentSwarm, you can use the same agent through Chat and CLI views.',
         },
       ],
     },
@@ -88,7 +88,7 @@ const guide: Guide = {
           src: '/images/guides/pi-chat-beta.webp',
           alt: 'Pi in CodeAgentSwarm Chat with a sample project',
           size: 'full',
-          caption: 'Real CodeAgentSwarm beta capture on macOS: Pi running with a sample project. This image does not announce availability in the public download.',
+          caption: 'Real CodeAgentSwarm beta capture on macOS: Pi running with a sample project. Pi is available from CodeAgentSwarm 2.4.0.',
         },
         {
           type: 'paragraph',
@@ -176,15 +176,15 @@ const guide: Guide = {
     },
     {
       id: 'codeagentswarm-beta',
-      title: 'Pi in CodeAgentSwarm: beta status',
+      title: 'Pi in CodeAgentSwarm: available in 2.4.0',
       content: [
         {
           type: 'paragraph',
-          text: '<strong>The Pi integration is in beta testing. It is not yet announced as available in the standard public download.</strong> A tested beta build exposes Pi in both Chat and CLI views, with streaming, model selection, permission decisions, history and resume.',
+          text: '<strong>Pi is available in CodeAgentSwarm 2.4.0 for macOS and Windows.</strong> CodeAgentSwarm exposes Pi in both Chat and CLI views, with streaming, model selection, permission decisions, history and resume.',
         },
         {
           type: 'paragraph',
-          text: 'The integration uses Pi\'s native RPC mode. In the beta, sign in from Pi\'s CLI view, then open a new Pi Chat to load the available model catalog. Existing Codex and Claude CLI account credentials are not copied into Pi.',
+          text: 'The integration uses Pi\'s native RPC mode. In CodeAgentSwarm, sign in from Pi\'s CLI view, then open a new Pi Chat to load the available model catalog. Existing Codex and Claude CLI account credentials are not copied into Pi.',
         },
         {
           type: 'paragraph',
@@ -204,7 +204,7 @@ const guide: Guide = {
     },
     {
       question: 'Can I use Pi in the public CodeAgentSwarm download today?',
-      answer: 'Pi support is in beta testing. Check the public app release notes for availability; this guide is not a release announcement.',
+      answer: 'Pi is included in CodeAgentSwarm 2.4.0 for macOS and Windows.',
     },
   ],
 }

@@ -6,16 +6,16 @@ const guide: Guide = {
     locale: 'en',
     title: 'Run Pi coding agent on Windows: installation and PowerShell',
     metaTitle: 'Pi Coding Agent on Windows: Install and Use PowerShell',
-    metaDescription: 'Install Pi coding agent on Windows, choose Git Bash or its PowerShell tool, fix PATH problems and understand how the CodeAgentSwarm Pi beta runs commands.',
+    metaDescription: 'Install Pi coding agent on Windows, choose Git Bash or its PowerShell tool, fix PATH problems and understand how CodeAgentSwarm with Pi runs commands.',
     intro: 'Pi can run on Windows, but the terminal you launch it from and the shell its model uses are separate choices. This guide covers installation and the PowerShell tool, then explains the behavior verified in CodeAgentSwarm\'s Windows beta.',
-    ctaText: 'Pi support in CodeAgentSwarm is in beta testing. The download below is the current public app; check its release notes for Pi availability.',
+    ctaText: 'Use Pi with your chosen model provider in CodeAgentSwarm 2.4.0. Download the app for macOS or Windows.',
     ctaAgent: 'pi',
     socialImage: '/images/guides/pi-coding-agent-og-en.png',
     highlightedWords: [
       'Pi',
     ],
     publishedAt: '2026-09-06',
-    updatedAt: '2026-09-22',
+    updatedAt: '2026-09-24',
     alternateSlug: 'pi-coding-agent-en-windows',
   },
   sections: [
@@ -32,7 +32,7 @@ const guide: Guide = {
         {
           type: 'callout',
           variant: 'info',
-          content: 'Pi runs on native Windows. Install the current npm package, then choose Git Bash or configure its PowerShell tool. In CodeAgentSwarm beta Chat, the integration selects the native PowerShell tool for Windows.',
+          content: 'Pi runs on native Windows. Install the current npm package, then choose Git Bash or configure its PowerShell tool. In CodeAgentSwarm Chat, the integration selects the native PowerShell tool for Windows.',
         },
       ],
     },
@@ -45,7 +45,7 @@ const guide: Guide = {
           src: '/images/guides/pi-chat-beta.webp',
           alt: 'Pi in CodeAgentSwarm Chat with a sample project',
           size: 'full',
-          caption: 'Real CodeAgentSwarm beta capture on macOS: Pi running with a sample project. This image does not announce availability in the public download. This illustrates the Chat interface; it is not a Windows screenshot.',
+          caption: 'Real CodeAgentSwarm beta capture on macOS: Pi running with a sample project. Pi is available from CodeAgentSwarm 2.4.0. This illustrates the Chat interface; it is not a Windows screenshot.',
         },
         {
           type: 'paragraph',
@@ -159,11 +159,11 @@ const guide: Guide = {
     },
     {
       id: 'cas-windows',
-      title: 'What the CodeAgentSwarm Windows beta does',
+      title: 'What the CodeAgentSwarm Windows integration does',
       content: [
         {
           type: 'paragraph',
-          text: '<strong>Pi support is in beta testing and has not yet been announced for the standard public download.</strong> In the tested CAS Chat integration, the managed Pi extension selects Pi\'s native PowerShell tool on Windows. Chat tool execution therefore does not require Git Bash.',
+          text: '<strong>Pi is available in CodeAgentSwarm 2.4.0 for Windows.</strong> In the tested CAS Chat integration, the managed Pi extension selects Pi\'s native PowerShell tool on Windows. Chat tool execution therefore does not require Git Bash.',
         },
         {
           type: 'paragraph',
@@ -183,11 +183,11 @@ const guide: Guide = {
     },
     {
       question: 'Does launching Pi in PowerShell make its commands use PowerShell?',
-      answer: 'No. Configure the powershell tool for standalone Pi. In CAS beta Chat, the managed extension selects that tool on Windows.',
+      answer: 'No. Configure the powershell tool for standalone Pi. In CAS Chat, the managed extension selects that tool on Windows.',
     },
     {
       question: 'Is Windows support tested in CodeAgentSwarm?',
-      answer: 'The Pi beta integration was checked with real Pi on Windows 11 ARM64, including shell commands, permission decisions and resume. Public download availability is a separate release decision.',
+      answer: 'The Pi beta integration was checked with real Pi on Windows 11 ARM64, including shell commands, permission decisions and resume. Pi is included in the public download from version 2.4.0.',
     },
   ],
 }

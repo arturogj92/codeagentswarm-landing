@@ -1,5 +1,12 @@
 # SEO publishing and download measurement
 
+## Release 2.4.0 availability (2026-09-24)
+
+Muse Code, Pi and Devin CLI are available in the public macOS and Windows app from 2.4.0. The EN/ES homepage, agent cards, guide CTAs, availability sections and `llms.txt` reflect this release. Historical beta screenshot captions and provider-specific limitations remain accurate; they are not availability gates. Earlier beta rollout notes below are historical.
+
+After `npm run build`, run `node scripts/check-release-agents.mjs` plus the existing `check-pi-seo.mjs`, `check-devin-seo.mjs` and `check-muse-seo.mjs`. Together these validate homepage availability and the 26 bilingual agent guide pages, including canonical URLs, language alternates, structured data, sitemap entries, images and internal links. Publishing through the existing Vercel Git integration triggers the production IndexNow workflow; acceptance does not guarantee indexing or rankings.
+
+
 ## Daily report
 
 `node scripts/seo-daily-report.mjs` uses the existing Umami and Telegram credentials configured in the scheduled workflow. It reports the previous complete UTC day and compares it with the same weekday seven days earlier. Installer requests use exactly those UTC dates too; a missing date is zero, not the last nonempty day.

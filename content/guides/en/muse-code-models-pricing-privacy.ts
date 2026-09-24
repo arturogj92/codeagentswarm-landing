@@ -9,13 +9,13 @@ const guide: Guide = {
     "metaDescription": "Compare Muse Code Standard and Contributor models, API token prices and subscriptions. Check training, retention and credentials before sending project code.",
     "intro": "Choosing a Muse model also means choosing how your project data is treated. Keep that decision separate from how you pay. This guide covers the model IDs, a worked API cost example and the account checks that prevent a subscription session from accidentally using a separate API key.",
     "socialImage": "/images/guides/muse-code-og-en.png",
-    "ctaText": "Muse support is in beta testing for an upcoming CodeAgentSwarm release. This button downloads the current public app; check its release notes for Muse availability.",
+    "ctaText": "Use Muse Code in CodeAgentSwarm 2.4.0 for macOS and Windows. Meta account access and billing are separate.",
     "ctaAgent": "muse",
     "highlightedWords": [
       "Muse"
     ],
     "publishedAt": "2026-09-22",
-    "updatedAt": "2026-09-22",
+    "updatedAt": "2026-09-24",
     "alternateSlug": "muse-code-modelos-precios-privacidad"
   },
   "sections": [
@@ -173,11 +173,11 @@ const guide: Guide = {
         {
           "type": "callout",
           "variant": "info",
-          "content": "The upcoming Muse integration explicitly selects Standard unless the user chooses another model, with no silent Contributor fallback. It is still in beta testing. Observed host usage is not a verified account-wide quota, and an empty usage view must not be read as unlimited remaining capacity."
+          "content": "The Muse integration in CodeAgentSwarm 2.4.0 explicitly selects Standard unless the user chooses another model, with no silent Contributor fallback. Observed host usage is not a verified account-wide quota, and an empty usage view must not be read as unlimited remaining capacity."
         },
         {
           "type": "paragraph",
-          "text": "Use <a href=\"/en/guides/how-to-use-muse-code\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">the first-task guide</a> to validate the standalone CLI before adding a desktop integration. Check CodeAgentSwarm’s public release notes for Muse availability."
+          "text": "Use <a href=\"/en/guides/how-to-use-muse-code\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">the first-task guide</a> to validate the standalone CLI before adding a desktop integration. Muse is included from CodeAgentSwarm 2.4.0."
         }
       ]
     }

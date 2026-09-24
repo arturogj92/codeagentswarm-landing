@@ -9,13 +9,13 @@ const guide: Guide = {
     "metaDescription": "Compara Standard y Contributor en Muse Code, precios por tokens y suscripciones. Revisa entrenamiento, retención y credenciales antes de enviar tu código.",
     "intro": "Elegir un modelo de Muse también determina cómo se trata el contenido del proyecto. Conviene separar esa decisión de la forma de pago. Esta guía explica los identificadores de modelo, un cálculo de coste de API y las comprobaciones de cuenta que evitan usar una clave aparte por error.",
     "socialImage": "/images/guides/muse-code-og-es.png",
-    "ctaText": "El soporte de Muse está en pruebas beta para una próxima versión de CodeAgentSwarm. El botón descarga la app pública actual; consulta sus notas para comprobar la disponibilidad de Muse.",
+    "ctaText": "Usa Muse Code en CodeAgentSwarm 2.4.0 para macOS y Windows. El acceso y la facturación de Meta son independientes.",
     "ctaAgent": "muse",
     "highlightedWords": [
       "Muse"
     ],
     "publishedAt": "2026-09-22",
-    "updatedAt": "2026-09-22",
+    "updatedAt": "2026-09-24",
     "alternateSlug": "muse-code-models-pricing-privacy"
   },
   "sections": [
@@ -168,16 +168,16 @@ const guide: Guide = {
     },
     {
       "id": "beta",
-      "title": "Qué establece la beta de CodeAgentSwarm",
+      "title": "Muse en CodeAgentSwarm 2.4.0",
       "content": [
         {
           "type": "callout",
           "variant": "info",
-          "content": "La próxima integración de Muse selecciona Standard explícitamente salvo que el usuario elija otro modelo, sin cambiar a Contributor de forma silenciosa. Sigue en pruebas beta. El consumo observado en un equipo no equivale a una cuota verificada de toda la cuenta; una vista vacía tampoco significa capacidad ilimitada."
+          "content": "La integración de Muse en CodeAgentSwarm 2.4.0 selecciona Standard explícitamente salvo que el usuario elija otro modelo, sin cambiar a Contributor de forma silenciosa. El consumo observado en un equipo no equivale a una cuota verificada de toda la cuenta; una vista vacía tampoco significa capacidad ilimitada."
         },
         {
           "type": "paragraph",
-          "text": "Usa la <a href=\"/es/guias/como-usar-muse-code\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">guía de primera tarea</a> para validar la CLI independiente antes de añadir una integración de escritorio. Consulta las notas públicas de CodeAgentSwarm para comprobar la disponibilidad de Muse."
+          "text": "Usa la <a href=\"/es/guias/como-usar-muse-code\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">guía de primera tarea</a> para validar la CLI independiente antes de añadir una integración de escritorio. Muse está incluido desde CodeAgentSwarm 2.4.0."
         }
       ]
     }

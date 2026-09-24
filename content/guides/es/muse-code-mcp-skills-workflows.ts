@@ -9,13 +9,13 @@ const guide: Guide = {
     "metaDescription": "Configura MCP y skills reutilizables en Muse Code. Diagnostica fallos de servidores requeridos y comprueba los workflows antes de repartir tareas entre agentes.",
     "intro": "Un servidor MCP da acceso a herramientas. Una skill aporta instrucciones reutilizables. Un workflow organiza varias tareas de agentes. Elige la incorporación más pequeña que resuelva tu problema actual y compruébala por separado antes de combinar las tres en un proyecto de producción.",
     "socialImage": "/images/guides/muse-code-og-es.png",
-    "ctaText": "El soporte de Muse está en pruebas beta para una próxima versión de CodeAgentSwarm. El botón descarga la app pública actual; consulta sus notas para comprobar la disponibilidad de Muse.",
+    "ctaText": "Usa Muse Code en CodeAgentSwarm 2.4.0 para macOS y Windows. El acceso y la facturación de Meta son independientes.",
     "ctaAgent": "muse",
     "highlightedWords": [
       "Muse"
     ],
     "publishedAt": "2026-09-22",
-    "updatedAt": "2026-09-22",
+    "updatedAt": "2026-09-24",
     "alternateSlug": "muse-code-mcp-skills-workflows"
   },
   "sections": [
@@ -173,7 +173,7 @@ const guide: Guide = {
         },
         {
           "type": "paragraph",
-          "text": "La integración de CodeAgentSwarm sigue en beta para una próxima versión. Empieza con <a href=\"/es/guias/como-usar-muse-code\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">una tarea verificada en la CLI</a> y revisa <a href=\"/es/guias/muse-code-modelos-precios-privacidad\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">el modelo y sus condiciones de datos</a> antes de conectar servicios privados."
+          "text": "Muse está disponible desde CodeAgentSwarm 2.4.0. Empieza con <a href=\"/es/guias/como-usar-muse-code\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">una tarea verificada en la CLI</a> y revisa <a href=\"/es/guias/muse-code-modelos-precios-privacidad\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">el modelo y sus condiciones de datos</a> antes de conectar servicios privados."
         }
       ]
     }

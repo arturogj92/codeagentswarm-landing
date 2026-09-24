@@ -36,7 +36,7 @@ for (const pair of pairs) {
     const url = `${base}/${route}/${meta.slug}`
     assert.equal(meta.alternateSlug, pair[1 - i])
     assert.equal(meta.ctaAgent, 'pi')
-    assert.match(meta.ctaText, /beta/)
+    assert.match(meta.ctaText, /2\.4\.0/)
     assert.ok(!titles.has(meta.metaTitle), 'duplicate title')
     titles.add(meta.metaTitle)
     assert.ok(meta.metaTitle.length <= 65, meta.slug + ' title too long')

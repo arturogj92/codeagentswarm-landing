@@ -6,16 +6,16 @@ const guide: Guide = {
     "locale": "es",
     "title": "Cómo usar Muse Code: instalación, login y primera tarea",
     "metaTitle": "Cómo usar Muse Code: instalación, login y primera tarea",
-    "metaDescription": "Instala Muse Code, elige Muse Spark 1.3 y verifica tu primera tarea de programación. Aprende a usar reglas, reanudar sesiones y comprobar el estado de la beta.",
+    "metaDescription": "Instala Muse Code, elige Muse Spark 1.3 y verifica tu primera tarea de programación. Aprende a usar reglas, reanudar sesiones y usar CodeAgentSwarm 2.4.0.",
     "intro": "Muse Code es el agente de programación de Meta para terminal. Empieza con un repositorio pequeño que conozcas, pídele que lo inspeccione y comprueba su primer cambio con una prueba que puedas ejecutar tú. Esta guía recorre la instalación y la primera conversación que podrás retomar.",
     "socialImage": "/images/guides/muse-code-og-es.png",
-    "ctaText": "El soporte de Muse está en pruebas beta para una próxima versión de CodeAgentSwarm. El botón descarga la app pública actual; consulta sus notas para comprobar la disponibilidad de Muse.",
+    "ctaText": "Usa Muse Code en CodeAgentSwarm 2.4.0 para macOS y Windows. El acceso y la facturación de Meta son independientes.",
     "ctaAgent": "muse",
     "highlightedWords": [
       "Muse"
     ],
     "publishedAt": "2026-09-22",
-    "updatedAt": "2026-09-22",
+    "updatedAt": "2026-09-24",
     "alternateSlug": "how-to-use-muse-code"
   },
   "sections": [
@@ -131,7 +131,7 @@ const guide: Guide = {
         {
           "type": "callout",
           "variant": "info",
-          "content": "La integración de Muse se está probando para una próxima versión de CodeAgentSwarm. Sigue los pasos de la CLI independiente de esta guía y consulta las notas de versión antes de esperar soporte de Muse en la app descargada."
+          "content": "Muse está disponible en CodeAgentSwarm 2.4.0 para macOS y Windows. Usa esta guía para instalar la CLI independiente e iniciar sesión con tu cuenta de Meta."
         }
       ]
     }
