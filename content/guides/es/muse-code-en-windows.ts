@@ -9,13 +9,13 @@ const guide: Guide = {
     "metaDescription": "Instala Muse Code en Windows con PowerShell, comprueba el PATH e inicia sesión. Resuelve fallos de shell, sandbox y cuenta y conoce los límites actuales.",
     "intro": "Muse Code dispone de un instalador nativo para Windows. La primera comprobación útil es que PowerShell pueda abrir el comando instalado desde el proyecto que quieres editar. Separa la instalación, el login y la primera tarea para identificar la causa de cada fallo.",
     "socialImage": "/images/guides/muse-code-og-es.png",
-    "ctaText": "El soporte de Muse está en pruebas beta para una próxima versión de CodeAgentSwarm. El botón descarga la app pública actual; consulta sus notas para comprobar la disponibilidad de Muse.",
+    "ctaText": "Usa Muse Code en CodeAgentSwarm 2.4.0 para macOS y Windows. El acceso y la facturación de Meta son independientes.",
     "ctaAgent": "muse",
     "highlightedWords": [
       "Muse"
     ],
     "publishedAt": "2026-09-22",
-    "updatedAt": "2026-09-22",
+    "updatedAt": "2026-09-24",
     "alternateSlug": "muse-code-on-windows"
   },
   "sections": [
@@ -147,7 +147,7 @@ const guide: Guide = {
         {
           "type": "callout",
           "variant": "info",
-          "content": "El soporte de Muse se está preparando para una próxima versión de CodeAgentSwarm. Estos pasos corresponden a la CLI nativa oficial. Consulta las notas de la app pública para comprobar la disponibilidad de la integración en Windows; las pruebas beta no garantizan todas las funciones de Muse."
+          "content": "Muse está disponible en CodeAgentSwarm 2.4.0 para Windows. Estos pasos corresponden a la CLI nativa oficial. Las funciones de Muse siguen dependiendo de la versión instalada y de la plataforma."
         },
         {
           "type": "paragraph",

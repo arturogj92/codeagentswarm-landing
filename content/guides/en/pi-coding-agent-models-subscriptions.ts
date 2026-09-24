@@ -8,14 +8,14 @@ const guide: Guide = {
     metaTitle: 'Pi Models: ChatGPT, Claude and Subscription Setup',
     metaDescription: 'Connect Pi to ChatGPT, Claude, APIs or local models. Understand subscription billing, sign in with /login and fix missing providers in the model picker.',
     intro: 'Pi can use several model providers, but the account you connect determines the available models and how usage is billed. Start by choosing the provider, then select a model. A Claude model name alone does not tell you which service is handling the request.',
-    ctaText: 'Pi support in CodeAgentSwarm is in beta testing. The download below is the current public app; check its release notes for Pi availability.',
+    ctaText: 'Use Pi with your chosen model provider in CodeAgentSwarm 2.4.0. Download the app for macOS or Windows.',
     ctaAgent: 'pi',
     socialImage: '/images/guides/pi-coding-agent-og-en.png',
     highlightedWords: [
       'Pi',
     ],
     publishedAt: '2026-09-06',
-    updatedAt: '2026-09-22',
+    updatedAt: '2026-09-24',
     alternateSlug: 'pi-coding-agent-modelos-suscripciones',
   },
   sections: [
@@ -142,7 +142,7 @@ const guide: Guide = {
         },
         {
           type: 'paragraph',
-          text: 'In CodeAgentSwarm\'s Pi beta, complete this in CLI view and then open a new Pi Chat. Chat shows the model and provider together. Authenticating Codex elsewhere in CAS does not authenticate Pi: the two agents keep separate credentials.',
+          text: 'In CodeAgentSwarm\'s Pi integration, complete this in CLI view and then open a new Pi Chat. Chat shows the model and provider together. Authenticating Codex elsewhere in CAS does not authenticate Pi: the two agents keep separate credentials.',
         },
       ],
     },

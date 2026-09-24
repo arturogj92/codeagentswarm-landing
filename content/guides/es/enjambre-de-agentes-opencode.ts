@@ -16,7 +16,7 @@ En esta guía te explico las tres formas reales de ejecutar un enjambre de openc
     ctaAgent: 'opencode',
     highlightedWords: ['Enjambre de agentes OpenCode', 'opencode'],
     publishedAt: '2026-07-05',
-    updatedAt: '2026-09-06',
+    updatedAt: '2026-09-24',
     alternateSlug: 'opencode-agent-swarm',
   },
   sections: [
@@ -26,7 +26,7 @@ En esta guía te explico las tres formas reales de ejecutar un enjambre de openc
       content: [
         {
           type: 'paragraph',
-          text: 'Para conocer otro flujo de programación con varios proveedores, compara <a href="/es/guias/pi-vs-opencode" class="text-neon-cyan hover:text-neon-purple transition-colors">Pi vs OpenCode</a>: modelos, planificación, permisos e integración son decisiones distintas. El soporte de Pi en CodeAgentSwarm está en pruebas beta.',
+          text: 'Para conocer otro flujo de programación con varios proveedores, compara <a href="/es/guias/pi-vs-opencode" class="text-neon-cyan hover:text-neon-purple transition-colors">Pi vs OpenCode</a>: modelos, planificación, permisos e integración son decisiones distintas. Pi está disponible desde CodeAgentSwarm 2.4.0.',
         },
         {
           type: 'image',

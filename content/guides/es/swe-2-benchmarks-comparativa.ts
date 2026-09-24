@@ -8,13 +8,13 @@ const guide: Guide = {
     "metaTitle": "Benchmarks de SWE-2: comparativa con Fable y GPT-6",
     "metaDescription": "Compara los benchmarks publicados de SWE-2, Fable 5.1 y GPT-6 Astra. Revisa la metodología y prepara una prueba en tu repositorio antes de elegir un modelo.",
     "intro": "Para elegir un modelo de programación conviene mirar qué tareas resuelve, cuánto tarda y cuánto trabajo deja al revisor. Esta guía reúne resultados publicados y un método sencillo para comprobar si SWE-2 encaja en tu proyecto.",
-    "ctaText": "Prueba el selector de Devin y compara conversaciones en la beta de CodeAgentSwarm. La integración está en pruebas para una próxima versión; consulta su disponibilidad en las notas de la versión pública.",
+    "ctaText": "Prueba el selector de Devin y compara conversaciones en CodeAgentSwarm 2.4.0.",
     "ctaAgent": "devin",
     "highlightedWords": [
       "SWE-2"
     ],
     "publishedAt": "2026-09-11",
-    "updatedAt": "2026-09-22",
+    "updatedAt": "2026-09-24",
     "alternateSlug": "swe-2-benchmarks",
     "socialImage": "/images/guides/devin-cli-og-es.png"
   },

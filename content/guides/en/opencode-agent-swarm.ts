@@ -16,7 +16,7 @@ In this guide I walk through the three practical ways to run an opencode swarm, 
     ctaAgent: 'opencode',
     highlightedWords: ['OpenCode Agent Swarm', 'opencode'],
     publishedAt: '2026-07-05',
-    updatedAt: '2026-09-06',
+    updatedAt: '2026-09-24',
     alternateSlug: 'enjambre-de-agentes-opencode',
   },
   sections: [
@@ -26,7 +26,7 @@ In this guide I walk through the three practical ways to run an opencode swarm, 
       content: [
         {
           type: 'paragraph',
-          text: 'For another provider-flexible coding workflow, compare <a href="/en/guides/pi-vs-opencode" class="text-neon-cyan hover:text-neon-purple transition-colors">Pi vs OpenCode</a>: model access, planning, permissions and integration are separate decisions. Pi support in CodeAgentSwarm is in beta testing.',
+          text: 'For another provider-flexible coding workflow, compare <a href="/en/guides/pi-vs-opencode" class="text-neon-cyan hover:text-neon-purple transition-colors">Pi vs OpenCode</a>: model access, planning, permissions and integration are separate decisions. Pi is available from CodeAgentSwarm 2.4.0.',
         },
         {
           type: 'image',

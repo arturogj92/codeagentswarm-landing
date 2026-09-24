@@ -8,13 +8,13 @@ const guide: Guide = {
     "metaTitle": "Devin Pro Pricing: Free SWE-2 and CLI Usage Limits",
     "metaDescription": "Check Devin Pro pricing, the free SWE-2 promotion and its conflicting official end dates. Understand model selection, context tokens and daily or weekly quota.",
     "intro": "Looking for unlimited SWE-2 with Devin Pro? The current offer provides temporary free use in Desktop and CLI. Check the date and selected model before subscribing. Verified September 22, 2026.",
-    "ctaText": "The Devin model picker and quota panel are in CodeAgentSwarm beta testing. Check the public release notes for availability; the app download does not include a Devin subscription.",
+    "ctaText": "The Devin model picker and quota panel are available in CodeAgentSwarm 2.4.0; the app download does not include a Devin subscription.",
     "ctaAgent": "devin",
     "highlightedWords": [
       "Devin"
     ],
     "publishedAt": "2026-09-11",
-    "updatedAt": "2026-09-22",
+    "updatedAt": "2026-09-24",
     "alternateSlug": "devin-cli-modelos-cuotas",
     "socialImage": "/images/guides/devin-cli-og-en.png"
   },
@@ -142,7 +142,7 @@ const guide: Guide = {
         },
         {
           "type": "paragraph",
-          "text": "The CodeAgentSwarm beta reads the current Devin CLI profile and shows the usage windows returned for it. The percentages are used quota. A missing or failed response should not be interpreted as zero consumption."
+          "text": "CodeAgentSwarm reads the current Devin CLI profile and shows the usage windows returned for it. The percentages are used quota. A missing or failed response should not be interpreted as zero consumption."
         }
       ]
     },
@@ -180,11 +180,11 @@ const guide: Guide = {
     },
     {
       "id": "codeagentswarm-beta",
-      "title": "Devin in CodeAgentSwarm: beta status",
+      "title": "Devin in CodeAgentSwarm: available in 2.4.0",
       "content": [
         {
           "type": "paragraph",
-          "text": "The integration is being tested for an upcoming CodeAgentSwarm release. The screenshots show that beta, not a promise that the current public installer already includes Devin. Sign in with the official Devin CLI on the computer that runs the agent."
+          "text": "Devin is available in CodeAgentSwarm 2.4.0 for macOS and Windows. The screenshots were captured during beta testing. Sign in with the official Devin CLI on the computer that runs the agent."
         }
       ]
     },
@@ -218,7 +218,7 @@ const guide: Guide = {
     },
     {
       "question": "Does CodeAgentSwarm include Devin usage?",
-      "answer": "No. Devin account access and usage are separate from the CodeAgentSwarm subscription. The integration is currently in beta testing."
+      "answer": "No. Devin account access and usage are separate from the CodeAgentSwarm subscription. The integration is available from CodeAgentSwarm 2.4.0."
     }
   ]
 }

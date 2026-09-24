@@ -21,6 +21,9 @@ export default function BringYourOwnSubSection() {
     { name: 'Kimi Code', command: 'kimi', icon: '/icons/apps/kimi-icon.png' },
     { name: 'Grok Build', command: 'grok', icon: '/icons/apps/grok-icon.svg' },
     { name: 'Cursor Agent', command: 'cursor-agent', icon: '/icons/apps/cursor-icon.svg' },
+    { name: 'Muse Code', command: 'muse', icon: '/icons/apps/muse-icon.svg' },
+    { name: 'Pi', command: 'pi', icon: '/icons/apps/pi-icon.svg' },
+    { name: 'Devin CLI', command: 'devin', icon: '/icons/apps/devin-icon.svg' },
   ]
 
   /**
@@ -79,7 +82,7 @@ export default function BringYourOwnSubSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-7 gap-3 mt-11">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3 mt-11">
           {agents.map((agent, i) => (
             <motion.div
               key={agent.name}

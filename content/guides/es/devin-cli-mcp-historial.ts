@@ -6,15 +6,15 @@ const guide: Guide = {
     "locale": "es",
     "title": "MCP e historial de Devin CLI: conecta herramientas y retoma tareas",
     "metaTitle": "Devin CLI: MCP, historial y reanudar sesiones",
-    "metaDescription": "Configura MCP en Devin CLI por ámbito, revisa las herramientas y reanuda conversaciones guardadas. Incluye historial y MCP opcional en la beta de CodeAgentSwarm.",
+    "metaDescription": "Configura MCP en Devin CLI, revisa las herramientas y reanuda conversaciones guardadas. Incluye historial y MCP opcional en CodeAgentSwarm 2.4.0.",
     "intro": "MCP conecta herramientas al agente; el historial conserva la conversación que quieres continuar. Resuelven problemas distintos. Configura una herramienta de confianza, comprueba que Devin puede verla y verifica después que puedes reabrir la conversación.",
-    "ctaText": "El historial de Devin, la reanudación y el MCP opcional de CodeAgentSwarm están en pruebas beta para un próximo release. Consulta su disponibilidad en las notas de la app pública actual.",
+    "ctaText": "El historial de Devin, la reanudación y el MCP opcional de CodeAgentSwarm están disponibles desde CodeAgentSwarm 2.4.0.",
     "ctaAgent": "devin",
     "highlightedWords": [
       "Devin"
     ],
     "publishedAt": "2026-09-11",
-    "updatedAt": "2026-09-11",
+    "updatedAt": "2026-09-24",
     "alternateSlug": "devin-cli-mcp-history",
     "socialImage": "/images/guides/devin-cli-og-es.png"
   },
@@ -53,7 +53,7 @@ const guide: Guide = {
         },
         {
           "type": "paragraph",
-          "text": "En la beta de CodeAgentSwarm, las conversaciones de Devin aparecen en el historial, la búsqueda y los marcadores. Un acceso directo guardado puede reabrir la conversación asociada. Comprueba el proyecto y los mensajes anteriores al reanudar para que la siguiente petición tenga el contexto correcto."
+          "text": "En CodeAgentSwarm, las conversaciones de Devin aparecen en el historial, la búsqueda y los marcadores. Un acceso directo guardado puede reabrir la conversación asociada. Comprueba el proyecto y los mensajes anteriores al reanudar para que la siguiente petición tenga el contexto correcto."
         }
       ]
     },
@@ -103,7 +103,7 @@ const guide: Guide = {
       "content": [
         {
           "type": "paragraph",
-          "text": "La beta puede conectar Devin a las herramientas de CodeAgentSwarm para las acciones compatibles de sesión y espacio de trabajo. El ajuste de la app controla esta integración. Si lo desactivas, los nuevos arranques de Devin deben respetarlo; no lo vuelvas a añadir manualmente solo para que funcione una petición de prueba."
+          "text": "CodeAgentSwarm puede conectar Devin a las herramientas de CodeAgentSwarm para las acciones compatibles de sesión y espacio de trabajo. El ajuste de la app controla esta integración. Si lo desactivas, los nuevos arranques de Devin deben respetarlo; no lo vuelvas a añadir manualmente solo para que funcione una petición de prueba."
         },
         {
           "type": "paragraph",
@@ -132,11 +132,11 @@ const guide: Guide = {
     },
     {
       "id": "codeagentswarm-beta",
-      "title": "Devin en CodeAgentSwarm: estado de la beta",
+      "title": "Devin en CodeAgentSwarm: disponible en la 2.4.0",
       "content": [
         {
           "type": "paragraph",
-          "text": "La integración está en pruebas para un próximo release de CodeAgentSwarm. Las capturas muestran esa beta y no anuncian que el instalador público actual ya incluya Devin. Inicia sesión con la CLI oficial de Devin en el ordenador donde se ejecuta el agente."
+          "text": "Devin está disponible en CodeAgentSwarm 2.4.0 para macOS y Windows. Las capturas se tomaron durante las pruebas beta. Inicia sesión con la CLI oficial de Devin en el ordenador donde se ejecuta el agente."
         }
       ]
     }
@@ -148,7 +148,7 @@ const guide: Guide = {
     },
     {
       "question": "¿Necesito el MCP de CodeAgentSwarm para usar Devin?",
-      "answer": "No. La integración MCP de CodeAgentSwarm es opcional en la beta. Devin también admite su propia configuración MCP."
+      "answer": "No. La integración MCP de CodeAgentSwarm es opcional en CodeAgentSwarm. Devin también admite su propia configuración MCP."
     },
     {
       "question": "¿Debo guardar credenciales personales de MCP en Git?",

@@ -16,7 +16,7 @@ export default function WorksWithSection() {
   const guidePath = (enSlug: string, esSlug: string) =>
     es ? `/es/guias/${esSlug}` : `/en/guides/${enSlug}`
 
-  type Tool = { name: string; desc: string; href: string; icon: string; comingSoon?: boolean; isNew?: boolean }
+  type Tool = { name: string; desc: string; href: string; icon: string; isNew?: boolean }
   const tools: Tool[] = [
     {
       name: 'Claude Code',
@@ -85,32 +85,32 @@ export default function WorksWithSection() {
     {
       name: 'Muse Code',
       desc: g(
-        'Meta’s coding agent. Read the setup guide while its CodeAgentSwarm integration is in testing; it is not yet in the public app.',
-        'El agente de código de Meta. Consulta la guía de instalación mientras probamos su integración en CodeAgentSwarm; aún no está en la app pública.'
+        'Run Meta’s Muse Code alongside your other agents. Available in CodeAgentSwarm 2.4.0.',
+        'Ejecuta Muse Code de Meta junto a tus otros agentes. Disponible en CodeAgentSwarm 2.4.0.'
       ),
       href: guidePath('how-to-use-muse-code', 'como-usar-muse-code'),
       icon: '/icons/apps/muse-icon.svg',
-      comingSoon: true,
+      isNew: true,
     },
     {
       name: 'Pi coding agent',
       desc: g(
-        'Choose your model provider and get started with Pi. Its CodeAgentSwarm integration is in testing and is not yet in the public app.',
-        'Elige tu proveedor de modelos y empieza con Pi. Su integración en CodeAgentSwarm está en pruebas y aún no está en la app pública.'
+        'Choose your model provider and run Pi in Chat or CLI. Available in CodeAgentSwarm 2.4.0.',
+        'Elige tu proveedor de modelos y usa Pi en Chat o CLI. Disponible en CodeAgentSwarm 2.4.0.'
       ),
       href: guidePath('how-to-use-pi-coding-agent', 'como-usar-pi-coding-agent'),
       icon: '/icons/apps/pi-icon.svg',
-      comingSoon: true,
+      isNew: true,
     },
     {
       name: 'Devin CLI',
       desc: g(
-        'Set up Devin CLI and learn about SWE-2. Its CodeAgentSwarm integration is in testing and is not yet in the public app.',
-        'Configura Devin CLI y conoce SWE-2. Su integración en CodeAgentSwarm está en pruebas y aún no está en la app pública.'
+        'Use Devin CLI with Chat, model selection and conversation history in CodeAgentSwarm 2.4.0.',
+        'Usa Devin CLI con Chat, selección de modelo e historial de conversaciones en CodeAgentSwarm 2.4.0.'
       ),
       href: guidePath('how-to-use-devin-cli', 'como-usar-devin-cli'),
       icon: '/icons/apps/devin-icon.svg',
-      comingSoon: true,
+      isNew: true,
     },
   ]
 
@@ -134,8 +134,8 @@ export default function WorksWithSection() {
           </h2>
           <p className="text-white/70 text-lg max-w-2xl mx-auto">
             {g(
-              'One workspace for Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build and Cursor Agent. Run them in parallel, mix vendors, and watch all of them from one place.',
-              'Un espacio de trabajo para Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent. Ejecútalos en paralelo, mezcla proveedores y vigílalos todos desde un sitio.'
+              'One workspace for Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi and Devin CLI. Run them in parallel, mix vendors, and watch all of them from one place.',
+              'Un espacio de trabajo para Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi y Devin CLI. Ejecútalos en paralelo, mezcla proveedores y vigílalos todos desde un sitio.'
             )}
           </p>
         </motion.div>
@@ -149,18 +149,13 @@ export default function WorksWithSection() {
                     src={tool.icon}
                     alt=""
                     aria-hidden="true"
-                    className={tool.comingSoon ? 'w-7 h-7' : 'w-6 h-6'}
+                    className="w-6 h-6"
                   />
                 </div>
                 <div className="flex items-center gap-2 mb-2 flex-wrap">
                   <h3 className="text-lg font-semibold text-white group-hover:text-neon-cyan transition-colors">
                     {tool.name}
                   </h3>
-                  {tool.comingSoon && (
-                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-white/10 text-neutral-400 font-medium">
-                      {g('In preparation', 'En preparación')}
-                    </span>
-                  )}
                   {tool.isNew && (
                     <span className="text-[10px] px-2 py-0.5 rounded-full bg-neon-cyan/15 text-neon-cyan font-medium">
                       {g('New', 'Nuevo')}
@@ -183,7 +178,7 @@ export default function WorksWithSection() {
               >
                 <Link
                   href={tool.href}
-                  className={`group flex flex-col h-full rounded-2xl glass border p-5 transition-colors hover:border-neon-cyan/40 ${tool.comingSoon ? 'border-dashed border-white/15' : 'border-white/10'}`}
+                  className="group flex flex-col h-full rounded-2xl glass border border-white/10 p-5 transition-colors hover:border-neon-cyan/40"
                 >
                   {inner}
                 </Link>

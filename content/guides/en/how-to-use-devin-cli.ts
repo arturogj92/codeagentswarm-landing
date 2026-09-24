@@ -7,14 +7,14 @@ const guide: Guide = {
     "title": "Devin CLI: installation, login and your first coding task",
     "metaTitle": "Devin CLI: Install, Sign In and Start Coding",
     "metaDescription": "Install Devin CLI, sign in and run a first task you can verify. See real CodeAgentSwarm beta screenshots and learn where models, quota and history fit.",
-    "intro": "Devin CLI brings a coding agent to your local project. Start with a small task, verify that it can read the right files, and keep the resulting conversation for the next step. This guide covers the standalone CLI and the upcoming CodeAgentSwarm integration.",
-    "ctaText": "Devin Chat, installation and history are in CodeAgentSwarm beta testing for an upcoming release. The button downloads the current public app; check its release notes for Devin availability.",
+    "intro": "Devin CLI brings a coding agent to your local project. Start with a small task, verify that it can read the right files, and keep the resulting conversation for the next step. This guide covers the standalone CLI and the CodeAgentSwarm 2.4.0 integration.",
+    "ctaText": "Devin Chat, installation and history are available in CodeAgentSwarm 2.4.0 for macOS and Windows.",
     "ctaAgent": "devin",
     "highlightedWords": [
       "Devin"
     ],
     "publishedAt": "2026-09-11",
-    "updatedAt": "2026-09-11",
+    "updatedAt": "2026-09-24",
     "alternateSlug": "como-usar-devin-cli",
     "socialImage": "/images/guides/devin-cli-og-en.png"
   },
@@ -43,7 +43,7 @@ const guide: Guide = {
           "type": "image",
           "src": "/images/guides/devin-chat-beta.webp",
           "alt": "Devin explaining a sample project in CodeAgentSwarm Chat",
-          "caption": "Real macOS beta capture with a sample project. Devin support is planned for an upcoming release.",
+          "caption": "Real macOS beta capture with a sample project. Devin is available from CodeAgentSwarm 2.4.0.",
           "size": "full"
         },
         {
@@ -67,7 +67,7 @@ const guide: Guide = {
         },
         {
           "type": "paragraph",
-          "text": "CodeAgentSwarm beta also provides Devin installation and update controls. If detection fails after a successful system installation, reopen the app so it receives the updated environment."
+          "text": "CodeAgentSwarm also provides Devin installation and update controls. If detection fails after a successful system installation, reopen the app so it receives the updated environment."
         }
       ]
     },
@@ -82,7 +82,7 @@ const guide: Guide = {
         },
         {
           "type": "paragraph",
-          "text": "Complete the browser sign-in flow with the account you intend to use. In CodeAgentSwarm beta, perform this step in the Devin CLI view, then open a new Devin Chat. Authentication belongs to Devin on that host. <a href=\"https://docs.devin.ai/cli/enterprise/devin-auth\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Devin authentication</a>."
+          "text": "Complete the browser sign-in flow with the account you intend to use. In CodeAgentSwarm, perform this step in the Devin CLI view, then open a new Devin Chat. Authentication belongs to Devin on that host. <a href=\"https://docs.devin.ai/cli/enterprise/devin-auth\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Devin authentication</a>."
         }
       ]
     },
@@ -125,11 +125,11 @@ const guide: Guide = {
     },
     {
       "id": "codeagentswarm-beta",
-      "title": "Devin in CodeAgentSwarm: beta status",
+      "title": "Devin in CodeAgentSwarm: available in 2.4.0",
       "content": [
         {
           "type": "paragraph",
-          "text": "The integration is being tested for an upcoming CodeAgentSwarm release. The screenshots show that beta, not a promise that the current public installer already includes Devin. Sign in with the official Devin CLI on the computer that runs the agent."
+          "text": "Devin is available in CodeAgentSwarm 2.4.0 for macOS and Windows. The screenshots were captured during beta testing. Sign in with the official Devin CLI on the computer that runs the agent."
         },
         {
           "type": "paragraph",
@@ -145,11 +145,11 @@ const guide: Guide = {
     },
     {
       "question": "Do I sign in through CodeAgentSwarm?",
-      "answer": "In the beta, run the official Devin sign-in flow from its CLI view. Then open a new Devin Chat on the same host."
+      "answer": "In CodeAgentSwarm, run the official Devin sign-in flow from its CLI view. Then open a new Devin Chat on the same host."
     },
     {
       "question": "Is Devin included in the current public app?",
-      "answer": "The integration is in beta testing for an upcoming release. Check the public release notes for availability."
+      "answer": "Yes. Devin is included in CodeAgentSwarm 2.4.0 for macOS and Windows."
     }
   ]
 }

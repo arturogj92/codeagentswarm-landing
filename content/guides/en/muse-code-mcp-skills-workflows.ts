@@ -9,13 +9,13 @@ const guide: Guide = {
     "metaDescription": "Set up Muse Code MCP and reusable skills, diagnose required-server failures and check workflow availability before designing parallel agent tasks.",
     "intro": "An MCP server gives Muse access to tools. A skill supplies reusable instructions. A workflow organizes several agent tasks. Choose the smallest addition that solves your current problem, and test it separately before combining all three in a production project.",
     "socialImage": "/images/guides/muse-code-og-en.png",
-    "ctaText": "Muse support is in beta testing for an upcoming CodeAgentSwarm release. This button downloads the current public app; check its release notes for Muse availability.",
+    "ctaText": "Use Muse Code in CodeAgentSwarm 2.4.0 for macOS and Windows. Meta account access and billing are separate.",
     "ctaAgent": "muse",
     "highlightedWords": [
       "Muse"
     ],
     "publishedAt": "2026-09-22",
-    "updatedAt": "2026-09-22",
+    "updatedAt": "2026-09-24",
     "alternateSlug": "muse-code-mcp-skills-workflows"
   },
   "sections": [
@@ -173,7 +173,7 @@ const guide: Guide = {
         },
         {
           "type": "paragraph",
-          "text": "The CodeAgentSwarm integration remains in beta for an upcoming release. Start with <a href=\"/en/guides/how-to-use-muse-code\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">a verified standalone task</a> and review <a href=\"/en/guides/muse-code-models-pricing-privacy\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">model and data choices</a> before connecting private services."
+          "text": "Muse is available from CodeAgentSwarm 2.4.0. Start with <a href=\"/en/guides/how-to-use-muse-code\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">a verified standalone task</a> and review <a href=\"/en/guides/muse-code-models-pricing-privacy\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">model and data choices</a> before connecting private services."
         }
       ]
     }
