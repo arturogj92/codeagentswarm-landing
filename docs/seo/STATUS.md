@@ -1,10 +1,27 @@
 # SEO status
 
-Last updated: 2026-09-08
+Last updated: 2026-09-25
 
 Release state: the August 31 conversion, comparison and media changes passed production validation. Start post-release measurement only after the master deployment reports success.
 
-## Current state
+## September 25 measurement
+
+The [September 25 review](../diagnostics/seo-review-2026-09-25.md) uses the new Search Console export through September 22 and live Umami data through September 24.
+
+- Google clicks increased from 8,422 to 12,725 across matched 28-day windows (+51.1%). Impressions increased 90.3%, while CTR fell from 0.972% to 0.772%.
+- Across August 26–September 8 and September 9–22, direct guide download clicks increased from 115 to 260. Actual article pageviews increased from 13,775 to 15,144; click rate increased from 0.835% to 1.717%. These are download clicks, not installations or unique new users.
+- The product block supplied 209 of 260 recent guide clicks. Keep it and review the complete September 13–26 window when available; September 5 and 12 changes prevent isolating the August 31 release.
+- The inline CTA remains below target: 32/15,144 = 0.211%. The August 24–30 baseline was 6,581 actual pageviews, not 6,034: total baseline 71/6,581 = 1.079%, inline 18/6,581 = 0.274%, corrected +20% inline target 0.328%.
+- Prioritize existing GUI, dashboard, Windows and parallel-session pages. Codex YOLO recorded 1 direct download click from 1,466 recent pageviews; Codex GUI recorded 12 from 154, with 12 observed sessions with a click.
+- The exact before/after pricing CTR review still needs date-filtered page/query exports. The new Pages and Queries files contain only 92-day aggregates, not the required comparison.
+
+The entries below preserve historical baselines and implementation context. Use the September 25 review for current conversion conclusions and priorities.
+
+## September 25 implementation
+
+Prepared on `seo/conversion-september-25`: bilingual corrections to Codex YOLO, GUI and history; contextual links from Claude history to dashboard/parallel sessions; an explicit product name on the inline download button. Existing slugs, alternates, anchors, platform destinations and event attribution are preserved. Product blocks and pricing snippets stay unchanged. See the review for the intent map and post-deployment measurement protocol.
+
+## Historical baseline through September 8
 
 Organic acquisition is growing quickly. The main constraint has moved from discovery to conversion, measurement and link quality.
 
@@ -93,7 +110,7 @@ Changed, without touching any metaTitle or metaDescription, so the September 9 s
 
 Not changed on purpose: `claude-code-yolo-mode-explained` (56,669 impressions, 0.40% CTR, position 8.2) and the history guides are high-impression non-pricing snippets and stay frozen until the September 9 review. `t3code` and `t3 code` (5,135 impressions, 0.1% CTR) are a competitor brand and are not pursued. The competitor star counts drift under 5% since August 31 and were not refreshed.
 
-## Open priorities
+## Priorities recorded September 8 (historical)
 
 1. Measure the inline guide CTA after 14 complete post-deployment days. Its Aug 24-30 baseline is 18 / 6,034 pageviews, or 0.298%; the initial success threshold is at least 0.358% without reducing total guide conversion below 1.177%.
 2. Review the aggregate installation funnel after cohorts mature. Do not invent person-level acquisition attribution without a separate privacy decision.
@@ -114,4 +131,4 @@ Not changed on purpose: `claude-code-yolo-mode-explained` (56,669 impressions, 0
 
 ## Next update
 
-Earliest full snippet review: 2026-09-09. Review the inline CTA after 14 complete post-deployment days.
+Review the complete September 13–26 conversion window when all days are available. Complete the pricing/snippet comparison with date-filtered page and query data; the September 25 aggregate export cannot isolate those changes.

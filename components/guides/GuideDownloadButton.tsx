@@ -70,7 +70,7 @@ export default function GuideDownloadButton({ locale, slug, position, source = '
     <div className={`flex flex-col gap-1.5 ${alignClasses}`}>
       <a href={download.href} onClick={() => trackClick()} className={`${buttonClasses} focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-neon-cyan`}>
         {productBlock && download.target && (download.target.startsWith('windows') ? <svg aria-hidden="true" className="w-4 h-4" viewBox="0 0 16 16" fill="currentColor"><path d="M0 2.2 6.5 1.3v6H0zm7.5-1L16 0v7.3H7.5zM0 8.3h6.5v6L0 13.4zm7.5 0H16V16l-8.5-1.2z" /></svg> : <Image src="/icons/apple-logo.png" alt="" width={16} height={16} className="brightness-0" />)}
-        {productBlock && download.target ? t(download.target.startsWith('windows') ? 'windowsButton' : 'macButton') : t('button')}
+        {productBlock && download.target ? t(download.target.startsWith('windows') ? 'windowsButton' : 'macButton') : t(position === 'inline' ? 'inlineButton' : 'button')}
         <Download className="w-4 h-4" strokeWidth={2.4} />
       </a>
       {/* Fixed-height caption so the platform text can swap in after detection
