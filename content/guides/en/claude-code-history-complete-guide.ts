@@ -42,6 +42,10 @@ This guide covers finding, searching and backing up conversations. If you work a
           type: 'paragraph',
           text: 'You can find full details on these commands in the <a href="https://code.claude.com/docs/en/cli-reference" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">official Claude Code documentation</a>. Commands and picker behavior were checked against the official documentation on September 5, 2026.',
         },
+        {
+          type: 'paragraph',
+          text: 'If you need to check history while supervising active tasks, the <a href="/en/guides/claude-code-dashboard" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code dashboard guide</a> shows how to organize sessions. To divide work, see <a href="/en/guides/run-multiple-claude-code-sessions" class="text-neon-cyan hover:text-neon-purple transition-colors">how to run multiple Claude Code sessions</a>.',
+        },
       ],
     },
     {

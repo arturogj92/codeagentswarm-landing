@@ -7,221 +7,192 @@ export const guide: Guide = {
     title: 'Codex GUI: A Visual Desktop App for OpenAI Codex CLI',
     metaTitle: 'Codex GUI: The Desktop App for OpenAI Codex CLI (2026)',
     metaDescription: 'A Codex GUI is a graphical desktop app on top of OpenAI Codex CLI. CodeAgentSwarm gives Codex a visual workspace, task board, diffs and notifications.',
-    intro: `A Codex GUI is a graphical desktop app that runs OpenAI Codex CLI inside a visual workspace instead of a bare terminal. The agent underneath stays exactly the same: same CLI, same model, same OpenAI account, just with a visual layer around it.
-
-That layer is what the terminal cannot give you. Codex CLI is text scrolling past in one window, which is fine for a single session and painful the moment you run two or three, forget which one is doing what, and scroll back to find what changed.
-
-CodeAgentSwarm is that kind of Codex GUI app. It runs on macOS and Windows, gives Codex multiple terminals side by side, a task board, searchable history, live diffs, desktop notifications and clickable permission controls. It does not replace Codex CLI and it does not change how the agent works. It gives the same CLI a dashboard.`,
-    ctaText: 'Give OpenAI Codex a real desktop app: a visual workspace with several Codex terminals, a task board, live diffs and notifications, all on top of the CLI and the OpenAI account you already use.',
+    intro: 'CodeAgentSwarm is an independent app for working with Codex on macOS and Windows. Open sessions in Chat or terminal views, find saved conversations and review project changes from one window.\n\nUse your own Codex account. Downloading CodeAgentSwarm does not include model access or replace provider billing. This guide explains when a graphical interface helps and how to get started with your project.',
+    ctaText: 'Open your project and start a Codex session in CodeAgentSwarm. Review one task and its changes before adding more agents. The app is available for macOS and Windows.',
     ctaAgent: 'codex',
-    highlightedWords: ['Codex GUI', 'desktop app'],
+    highlightedWords: [
+      'Codex GUI',
+      'desktop app',
+    ],
     publishedAt: '2026-07-13',
-    updatedAt: '2026-08-23',
+    updatedAt: '2026-09-25',
     alternateSlug: 'interfaz-grafica-codex',
   },
   sections: [
     {
       id: 'what-is-a-codex-gui',
-      title: 'What is a Codex GUI?',
+      title: 'When to use a Codex GUI',
       content: [
         {
-          type: 'image',
-          alt: 'Multiple OpenAI Codex CLI terminals running side by side in one CodeAgentSwarm window, the visual workspace at the core of a Codex GUI',
-          src: '/images/guides/codex-agent-swarm.png',
-          caption: 'A Codex GUI: several Codex CLI sessions in their own terminals in one visual window, the part a plain terminal cannot give you.',
+          type: 'paragraph',
+          text: 'If you need a command or want to continue one session, Codex CLI can do that. CodeAgentSwarm helps when you want to see several sessions, switch projects or find a conversation across agents. It is an independent application, not the official OpenAI app.',
+        },
+        {
+          type: 'table',
+          headers: [
+            'Your goal',
+            'Where to start',
+          ],
+          rows: [
+            [
+              'Run a task in the terminal',
+              'Use Codex CLI with the appropriate project and permissions.',
+            ],
+            [
+              'Supervise several sessions',
+              '<a href="/en/guides/run-multiple-codex-sessions" class="text-neon-cyan hover:text-neon-purple transition-colors">Set up multiple Codex sessions</a>',
+            ],
+            [
+              'Find and continue a conversation',
+              '<a href="/en/guides/codex-cli-conversation-history" class="text-neon-cyan hover:text-neon-purple transition-colors">Read the history guide</a>',
+            ],
+            [
+              'Get started on Windows',
+              '<a href="/en/guides/codex-cli-on-windows" class="text-neon-cyan hover:text-neon-purple transition-colors">Check the Codex Windows setup</a>',
+            ],
+          ],
         },
         {
           type: 'paragraph',
-          text: 'A Codex GUI is a graphical interface that wraps the <a href="https://github.com/openai/codex" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">OpenAI Codex CLI</a> in a desktop app. The agent itself does not change: it still runs in a real terminal, still reads and writes files in your repository, still signs in with <code>codex login</code> and uses your own OpenAI account. The GUI adds a visual layer on top so you can see what each Codex session is doing and control it with clicks instead of memorizing flags and scrollback.',
-        },
-        {
-          type: 'paragraph',
-          text: 'CodeAgentSwarm is a Codex GUI in this sense. It is a desktop app for macOS and Windows that gives the CLI a real workspace: multiple terminals side by side, a task board, searchable conversation history, live file diffs, native notifications, permission controls, project shortcuts, and a skills and MCP marketplace. None of that replaces the agent. It is an OpenAI Codex GUI and manager built around the tool you already run.',
-        },
-        {
-          type: 'callout',
-          variant: 'info',
-          content: 'A GUI is not a different model or a different plan. CodeAgentSwarm runs on top of your existing OpenAI account, and the same workspace can drive Claude Code, Antigravity CLI and opencode alongside Codex. You keep the full CLI power, you just get a visual layer around it.',
-        },
-        {
-          type: 'paragraph',
-          text: 'If what you mostly want is to run more than one Codex agent at once, the deeper guides are <a href="/en/guides/run-multiple-codex-sessions" class="text-neon-cyan hover:text-neon-purple transition-colors">running multiple Codex CLI sessions</a> and the <a href="/en/guides/codex-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex agent swarm</a> guide. This page answers the question "what is Codex GUI" on its own terms: what the graphical layer gives you that a bare terminal does not.',
+          text: 'To try the app, download CodeAgentSwarm using the button on this page, open your project and select Codex when creating a session. Choose Chat for an integrated conversation or the terminal if you prefer the CLI interface.',
         },
       ],
     },
     {
       id: 'what-you-get-in-the-gui',
-      title: 'What you get in a Codex GUI app',
+      title: 'What you can do in CodeAgentSwarm',
       content: [
         {
-          type: 'paragraph',
-          text: 'The point of a Codex interface is to surface the things the terminal hides. Here is what the visual layer actually gives you, capability by capability.',
-        },
-        {
           type: 'heading',
           level: 3,
-          text: 'A visual workspace with multiple Codex terminals',
           id: 'visual-workspace',
+          text: 'See independent sessions',
         },
         {
           type: 'paragraph',
-          text: 'Instead of one terminal in one window, you get a grid of terminals in a single app. Each one runs its own independent Codex CLI session, on the same project or different projects, and each terminal has an agent picker so you decide what runs where. You can lay them out, focus one, and glance at the rest, which is the core of any usable Codex dashboard. The step-by-step setup is in <a href="/en/guides/run-multiple-codex-sessions" class="text-neon-cyan hover:text-neon-purple transition-colors">running multiple Codex CLI sessions</a>.',
+          text: 'Each session can work on a task or project. Read titles and statuses in the grid or list, then open the conversation that needs your attention. Prepare separate worktrees if two tasks will modify the same files.',
+        },
+        {
+          type: 'image',
+          src: '/images/guides/parallel-workspace-codex.webp',
+          alt: 'Codex Chat and terminal sessions inside CodeAgentSwarm',
+          caption: 'One window with several Codex tasks. Each session keeps its own controls.',
         },
         {
           type: 'heading',
           level: 3,
-          text: 'A task board the agents update themselves',
           id: 'task-board',
+          text: 'Organize tasks',
         },
         {
           type: 'paragraph',
-          text: 'A kanban task board sits over the workspace, and the agents update it over MCP as they work. You create tasks, hand them to terminals, and watch cards move through in progress and done, so you have a visual record of what got built without reading logs. When several Codex sessions are chipping away at related features, the board keeps the plan visible instead of living in your head.',
+          text: 'Use the board to organize work. With the CodeAgentSwarm MCP configured, you can ask an agent to read and update the relevant tasks. Check the result before considering a task finished.',
         },
         {
           type: 'heading',
           level: 3,
-          text: 'Searchable history across every session',
           id: 'searchable-history',
+          text: 'Search conversations',
         },
         {
           type: 'paragraph',
-          text: 'Every conversation is saved and searchable in one place, instead of vanishing when you close a terminal tab. You can find what a Codex session decided last week, resume it, and trace which terminal made a particular change. This is one of the biggest gaps a Codex GUI fills, and the <a href="/en/guides/codex-cli-conversation-history" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex conversation history guide</a> covers it in depth.',
+          text: 'Search text in saved conversations and filter by project or agent. Open a result to recover its context. Codex also provides its own resume commands; the app adds a shared view across agents.',
         },
         {
           type: 'heading',
           level: 3,
-          text: 'Live diffs of what Codex changed',
           id: 'live-diffs',
+          text: 'Review changes',
         },
         {
           type: 'paragraph',
-          text: 'You can watch the file changes each Codex session is making, per terminal and at project level, in real time. No more guessing what the agent touched: you see the diff as it happens and you can review it before committing. When two sessions edit the same file, you notice while it happens instead of discovering it in a messy diff later.',
+          text: 'Review modified files and the project diff before committing. Sessions that share a folder also share its files: opening two chats does not automatically separate their changes.',
         },
         {
           type: 'heading',
           level: 3,
-          text: 'Desktop notifications',
           id: 'notifications',
+          text: 'Act on notifications',
         },
         {
           type: 'paragraph',
-          text: 'When a Codex session finishes its task or stops to ask for an approval, you get a native desktop notification. You can work in one terminal and let the rest tell you when they need you, instead of babysitting a prompt that may take minutes to respond.',
+          text: 'Use notifications and session statuses to return to a conversation when it needs a reply. Check operating-system notification permissions if alerts do not arrive.',
         },
         {
           type: 'heading',
           level: 3,
-          text: 'Approval and permission controls you can click',
           id: 'permission-controls',
+          text: 'Choose permissions',
         },
         {
           type: 'paragraph',
-          text: 'Codex has its own approval modes, from suggest-only up to full auto with <code>--full-auto</code>, plus a sandbox. The GUI sits above that with Turbo Mode and per-terminal permissions, so you can let a session run unattended on the safe operations while the dangerous ones stay gated behind your approval. You configure it in the interface rather than juggling command-line flags, which matters more once several sessions are acting at once.',
+          text: 'Check each session’s permission mode. Turbo Mode in the Codex terminal bypasses approvals and sandboxing; it does not add an automatic dangerous-command block. The <a href="/en/guides/codex-yolo-mode" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex YOLO and sandbox guide</a> explains the options.',
         },
         {
           type: 'heading',
           level: 3,
-          text: 'Project shortcuts and a skills + MCP marketplace',
           id: 'shortcuts-marketplace',
+          text: 'Set up projects and tools',
         },
         {
           type: 'paragraph',
-          text: 'Project shortcuts let you jump straight into the repos you work on without retyping paths. A built-in skills marketplace and MCP marketplace let you add capabilities and connect external tools from the GUI, so the workspace grows with you instead of staying a plain terminal.',
+          text: 'Save the projects you use and add the skills or MCP connections you need. External tools may require their own setup and account.',
         },
       ],
     },
     {
       id: 'codex-cli-vs-codex-gui',
-      title: 'Codex CLI vs Codex GUI',
+      title: 'Codex CLI or a graphical interface',
       content: [
         {
-          type: 'paragraph',
-          text: 'The Codex CLI vs Codex GUI question has a simple honest answer: it is not either-or. The GUI runs the real CLI underneath, so the comparison is really about what the visual layer adds and when it is worth having.',
-        },
-        {
           type: 'heading',
           level: 3,
-          text: 'What the raw Codex CLI already does well',
           id: 'cli-strengths',
-        },
-        {
-          type: 'list',
-          items: [
-            'It is already installed once you have Codex, nothing extra needed',
-            'For a single session focused on one task, it is all you need',
-            'Full agent power, nothing is hidden or removed by a wrapper',
-            'It scripts and pipes like any other command-line tool',
-          ],
-        },
-        {
-          type: 'heading',
-          level: 3,
-          text: 'Where the terminal gets painful',
-          id: 'cli-pain',
-        },
-        {
-          type: 'list',
-          items: [
-            'Several Codex sessions at once turn into a stack of identical-looking tabs',
-            'No notification when a session finishes or stops for an approval',
-            'History is scrollback, which you cannot search across sessions or days',
-            'You read text to figure out what changed, instead of seeing a diff',
-            'Approval modes and context live in flags and memory, not in a visible UI',
-          ],
-        },
-        {
-          type: 'heading',
-          level: 3,
-          text: 'What the GUI adds on top',
-          id: 'gui-adds',
+          text: 'One task from the terminal',
         },
         {
           type: 'paragraph',
-          text: 'The GUI does not take anything away. Underneath, it is still running real Codex CLI in a real terminal, with the same model and the same OpenAI account. What it adds is everything around the prompt: a workspace you can see, a task board, searchable history, live diffs, notifications, and clickable permissions. If you only ever run one Codex session at a time, the raw terminal is fine and you should not overthink it. Once you run several, or you keep losing track of what each one did, the visual layer is what removes that friction.',
+          text: 'The CLI provides conversation, command execution and session resumption. If that workflow already works for you, keep using it. You do not need another app to enable Codex options.',
         },
         {
-          type: 'image',
-          alt: 'CodeAgentSwarm dashboard showing a kanban task board with columns for tasks, on top of AI CLI agent terminals',
-          src: '/images/guides/task-board-kanban.png',
-          caption: 'One surface of the GUI: a kanban task board the agents update as they work while you watch.',
-          size: 'medium',
+          type: 'heading',
+          level: 3,
+          id: 'cli-pain',
+          text: 'Several projects and agents',
         },
         {
-          type: 'callout',
-          variant: 'tip',
-          content: 'Because the GUI drives the CLI rather than replacing it, you can switch back to a bare terminal any time. Nothing about CodeAgentSwarm locks Codex in: it is a layer, not a fork. If Claude Code is your main agent, the same idea is covered in the <a href="/en/guides/claude-code-gui" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code GUI guide</a>.',
+          type: 'paragraph',
+          text: 'When you switch between tasks, a shared view helps you find the right conversation and check what is pending. That is a reason to try CodeAgentSwarm with real work.',
+        },
+        {
+          type: 'heading',
+          level: 3,
+          id: 'gui-adds',
+          text: 'Try it with a familiar task',
+        },
+        {
+          type: 'paragraph',
+          text: 'Start with a familiar project and a small task. Check how messages appear, where to find history and how to review the diff. Add a second session once you understand that workflow.',
         },
       ],
     },
     {
       id: 'codex-gui-download',
-      title: 'Codex GUI download: getting started',
+      title: 'Download and set up CodeAgentSwarm for Codex',
       content: [
-        {
-          type: 'paragraph',
-          text: 'Getting a Codex GUI running takes a couple of minutes. CodeAgentSwarm is a free download from the home page, for macOS and Windows, and it works with the Codex CLI you already have installed.',
-        },
         {
           type: 'list',
           items: [
-            'Download CodeAgentSwarm from the home page and install it like any desktop app',
-            'Open a terminal in the workspace and point it at your project',
-            'Pick "codex cli" in the SELECT AI AGENT picker for that terminal',
-            'If you have not signed in yet, run <code>codex login</code> once, then work as usual',
+            'Download the CodeAgentSwarm installer for your system using the button on this page. On a phone, you can email yourself the link.',
+            'Install the app and open or add your project folder.',
+            'Create a session, select Codex, and choose Chat or terminal.',
+            'Complete Codex setup and sign-in if needed. Use your own provider account.',
+            'Check permissions, send a small task and review the changes before continuing.',
           ],
         },
         {
-          type: 'image',
-          alt: 'A CodeAgentSwarm terminal showing the SELECT AI AGENT picker with claude-code, gemini cli and codex cli options plus an Enable Turbo Mode toggle',
-          src: '/images/guides/multi-cli-agent-selector.png',
-          caption: 'Each terminal has its own agent picker. Set it to codex cli and the terminal becomes a Codex session inside the GUI.',
-        },
-        {
           type: 'paragraph',
-          text: 'From there, everything in this guide is one click away: open more terminals for more Codex sessions, bring up the task board, search past conversations, and watch diffs as the agent works. All Pro features are free during the open beta, and your Codex usage is billed by OpenAI as usual.',
-        },
-        {
-          type: 'paragraph',
-          text: 'On platforms: the Codex GUI story today is macOS and Windows. There is no Codex GUI for Linux from CodeAgentSwarm right now, so on Linux the practical options remain the terminal and multiplexers like tmux.',
+          text: 'The public app is available for macOS and Windows. Model access and limits depend on your Codex account. CodeAgentSwarm does not include an OpenAI subscription.',
         },
       ],
     },
@@ -229,31 +200,27 @@ CodeAgentSwarm is that kind of Codex GUI app. It runs on macOS and Windows, give
   faq: [
     {
       question: 'What is a Codex GUI?',
-      answer: 'A Codex GUI is a graphical desktop app that runs OpenAI Codex CLI inside a visual workspace. The agent underneath is the real CLI, unchanged, using your own OpenAI account. The GUI adds the layer the terminal lacks: multiple Codex terminals side by side, a task board, searchable conversation history, live file diffs, desktop notifications and clickable permission controls. CodeAgentSwarm is a Codex GUI in exactly this sense.',
+      answer: 'A visual interface for working with Codex. CodeAgentSwarm provides Chat, terminals, history and project change review in an independent app for macOS and Windows.',
     },
     {
-      question: 'Is there a Codex GUI for Windows?',
-      answer: 'Yes. CodeAgentSwarm is a desktop app for both Windows and macOS. It installs locally, runs the Codex CLI on your machine, and uses your existing OpenAI account. There is no separate model or plan involved, so a Codex GUI on Windows works the same way it does on a Mac.',
+      question: 'Is CodeAgentSwarm the official OpenAI app?',
+      answer: 'No. It is an independent application that integrates Codex alongside other agents. It uses your provider account and does not include additional model access.',
     },
     {
-      question: 'Is there a Codex GUI for Linux?',
-      answer: 'Not from CodeAgentSwarm today. The app currently ships for macOS and Windows only, so there is no Codex GUI for Linux right now. On Linux, the practical way to run several Codex sessions remains the terminal itself, with tools like tmux for split panes.',
+      question: 'Can I use CodeAgentSwarm with Codex on Windows?',
+      answer: 'Yes. Download the Windows installer, open your project, select Codex and complete its setup and sign-in.',
     },
     {
-      question: 'Does a GUI replace Codex CLI?',
-      answer: 'No. A GUI like CodeAgentSwarm runs Codex CLI in a real terminal under the hood and adds a visual layer around it. The agent, the model and your OpenAI account stay exactly the same. The GUI is a dashboard and manager on top of the CLI, not a different tool, and you can go back to a bare terminal whenever you want.',
+      question: 'Is there a Linux version of CodeAgentSwarm?',
+      answer: 'The public CodeAgentSwarm app is available for macOS and Windows. To use Codex on Linux, check its native options.',
     },
     {
-      question: 'Does it work with my existing ChatGPT or OpenAI subscription?',
-      answer: 'Yes. CodeAgentSwarm is not a model provider. Each Codex terminal signs in with codex login and uses your existing OpenAI account, exactly like the CLI in a bare terminal. Your Codex usage is billed by OpenAI as usual, and the GUI adds no surcharge on top of it.',
+      question: 'Do I need Turbo Mode?',
+      answer: 'No. You can work with normal permissions. Codex terminal Turbo Mode bypasses approvals and sandboxing, and is not required to open several sessions.',
     },
     {
-      question: 'Where do I download a Codex GUI?',
-      answer: 'CodeAgentSwarm is a free download from the codeagentswarm.com home page, for macOS and Windows. Install it, open a terminal in the workspace, pick codex cli in the SELECT AI AGENT picker, and the terminal becomes a Codex session with the full visual layer around it. All Pro features are free during the open beta.',
-    },
-    {
-      question: 'Can the same GUI run Claude Code and Gemini too?',
-      answer: 'Yes. CodeAgentSwarm is not tied to a single vendor. Each terminal has an agent picker, so you can set one to Codex CLI, another to Claude Code, another to Antigravity CLI or opencode, all in the same visual workspace. A mixed setup is the default rather than a workaround, and the Codex agent swarm guide covers running several agents in parallel.',
+      question: 'Can I use my Codex account?',
+      answer: 'Yes. Use your Codex account with its applicable limits. CodeAgentSwarm does not replace provider access or billing.',
     },
   ],
 }

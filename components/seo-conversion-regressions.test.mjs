@@ -208,3 +208,42 @@ test('volatile pricing, token and competitor facts retain review dates at least 
   assert.match(llms, /Available on every xAI plan, including Free/)
   assert.equal(facts.verified_at, '2026-08-31')
 })
+
+test('Codex guides give usable commands and link to existing bilingual destinations', async () => {
+  const load = async (locale, slug) => {
+    const source = await readFile(new URL(`../content/guides/${locale}/${slug}.ts`, import.meta.url), 'utf8')
+    return (await import(`data:text/javascript,${encodeURIComponent(stripTypeScriptTypes(source))}`)).guide
+  }
+  for (const [en, es] of [
+    ['codex-yolo-mode', 'modo-yolo-codex'],
+    ['codex-gui', 'interfaz-grafica-codex'],
+    ['codex-cli-conversation-history', 'historial-conversaciones-codex'],
+    ['claude-code-history-complete-guide', 'guia-completa-historial-claude-code'],
+  ]) {
+    const english = await load('en', en)
+    const spanish = await load('es', es)
+    assert.equal(english.meta.alternateSlug, es)
+    assert.equal(spanish.meta.alternateSlug, en)
+    assert.deepEqual(english.sections.map(s => s.content.map(b => b.type)), spanish.sections.map(s => s.content.map(b => b.type)))
+    for (const [locale, slug, page] of [['en', en, english], ['es', es, spanish]]) {
+      assert.equal(page.meta.slug, slug)
+      assert.ok(page.meta.ctaText && page.meta.ctaAgent)
+      const serialized = JSON.stringify(page)
+      for (const [, targetLocale, targetSlug] of serialized.matchAll(/href=\\"\/(en|es)\/(?:guides|guias)\/([^\\"#?]+)/g)) {
+        const target = await load(targetLocale, targetSlug)
+        assert.equal(target.meta.slug, targetSlug)
+        assert.equal(targetLocale, locale, `cross-language link in ${slug}`)
+      }
+      if (en === 'codex-yolo-mode') {
+        const commands = page.sections[0].content.filter(b => b.type === 'code').map(b => b.code)
+        assert.ok(commands.some(c => c.includes('--sandbox workspace-write --ask-for-approval never')))
+        assert.ok(serialized.includes('--dangerously-bypass-approvals-and-sandbox'))
+        assert.ok(page.faq.some(f => f.question.includes('--yolo')))
+      }
+      if (en === 'codex-cli-conversation-history') {
+        assert.ok(page.sections[0].content.some(b => b.code === 'codex resume'))
+        assert.ok(serialized.includes('codex resume --all'))
+      }
+    }
+  }
+})

@@ -7,16 +7,12 @@ export const guide: Guide = {
     title: 'Cómo ver y retomar el historial de conversaciones de Codex CLI',
     metaTitle: 'Cómo ver y retomar el historial de conversaciones de Codex CLI (2026)',
     metaDescription: 'Cómo encontrar el historial de conversaciones de Codex CLI, retomar una sesión anterior y buscar cualquier conversación de Codex por palabra clave. Resume nativo de Codex más el historial buscable de CodeAgentSwarm para todos tus agentes.',
-    intro: `Codex CLI guarda un historial de tus sesiones. Cada conversación se almacena en local mientras trabajas, y puedes retomar una sesión anterior para continuar donde lo dejaste en lugar de empezar de cero cada vez. Solo eso ya te ahorra tener que explicarle el mismo módulo a Codex una y otra vez.
-
-La limitación aparece cuando acumulas decenas de sesiones de Codex repartidas en varios proyectos. El historial nativo está bien para volver a tu última conversación, pero no tiene búsqueda por contenido, no muestra de qué iba realmente cada sesión y no ofrece una vista única que cruce todos los proyectos.
-
-En resumen: tu historial de Codex CLI ya está en tu máquina y puedes retomarlo. CodeAgentSwarm convierte ese historial en una memoria buscable y multiproyecto que puedes retomar desde cualquier terminal, aunque la conversación pertenezca a otra sesión de Codex, a otro proyecto o incluso a otro agente.`,
-    ctaText: 'Deja de revisar tus sesiones de Codex una por una. Busca todo tu historial de Codex CLI por palabra clave y retoma la conversación correcta desde cualquier terminal en CodeAgentSwarm.',
+    intro: 'Ejecuta codex resume para elegir una conversación guardada, codex resume --last para continuar la más reciente o codex resume --all para incluir otros proyectos. Las transcripciones se guardan en $CODEX_HOME/sessions, por defecto ~/.codex/sessions.\n\nEsta guía explica cómo retomar una sesión y reunir las conversaciones de distintos agentes en CodeAgentSwarm.',
+    ctaText: 'Busca tus conversaciones de Codex por contenido y filtra por proyecto en CodeAgentSwarm. Abre la sesión que necesitas junto a tus otras tareas. Disponible para macOS y Windows.',
     ctaAgent: 'codex',
     highlightedWords: ['historial', 'Codex CLI', 'retomar'],
     publishedAt: '2026-06-24',
-    updatedAt: '2026-08-11',
+    updatedAt: '2026-09-25',
     alternateSlug: 'codex-cli-conversation-history',
   },
   sections: [
@@ -25,24 +21,21 @@ En resumen: tu historial de Codex CLI ya está en tu máquina y puedes retomarlo
       title: 'Qué es el historial de conversaciones de Codex CLI',
       content: [
         {
-          type: 'callout',
-          variant: 'tip',
-          content: 'Respuesta rápida: Codex CLI guarda tus sesiones en local mientras trabajas, y puedes retomar una sesión anterior para continuarla con su contexto previo intacto. El resto de la guía muestra cómo retomar de forma nativa y cómo hacer buscable cada conversación de Codex en todos tus proyectos.',
+          type: 'paragraph',
+          text: 'Para volver a una conversación, abre el selector de sesiones:',
         },
         {
-          type: 'image',
-          alt: 'Historial de conversaciones buscable de CodeAgentSwarm mostrando sesiones pasadas de Codex CLI organizadas por proyecto con buscador y fechas',
-          src: '/images/guides/conversation-history.png',
-          caption: 'Historial de conversaciones buscable en CodeAgentSwarm, con tus sesiones de Codex organizadas por proyecto y fecha.',
-          size: 'full',
+          type: 'code',
+          language: 'bash',
+          code: 'codex resume',
         },
         {
           type: 'paragraph',
-          text: 'El historial de conversaciones de Codex CLI es el registro de tus sesiones pasadas con el agente: lo que pediste, lo que hizo Codex y el contexto que se fue acumulando por el camino. Como cada sesión de Codex es su propio proceso con su propia conversación, ese historial es justo lo que te permite volver a un trabajo más tarde en lugar de explicarlo todo desde cero.',
+          text: 'Si la conversación no aparece, prueba <code>codex resume --all</code> para quitar el filtro del directorio actual. Comprueba también que estás usando la misma configuración de <code>CODEX_HOME</code>.',
         },
         {
           type: 'paragraph',
-          text: 'Si ya usas <a href="https://github.com/openai/codex" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex CLI</a>, seguramente has retomado una sesión anterior alguna vez. Ese resume nativo es muy útil, pero está pensado para el caso simple: volver a una conversación reciente. En cuanto acumulas muchas sesiones de Codex en varios proyectos, necesitas una forma de encontrar la correcta, y ahí es donde sigue esta guía.',
+          text: 'Para buscar conversaciones entre agentes desde una ventana, consulta la <a href="/es/guias/interfaz-grafica-codex" class="text-neon-cyan hover:text-neon-purple transition-colors">interfaz gráfica para Codex</a>. Si quieres continuar varias tareas a la vez, sigue la guía de <a href="/es/guias/ejecutar-multiples-sesiones-codex" class="text-neon-cyan hover:text-neon-purple transition-colors">sesiones de Codex en paralelo</a>.',
         },
       ],
     },
@@ -51,53 +44,47 @@ En resumen: tu historial de Codex CLI ya está en tu máquina y puedes retomarlo
       title: 'Historial y resume nativo de Codex CLI',
       content: [
         {
-          type: 'paragraph',
-          text: 'Codex CLI almacena tus sesiones en tu máquina mientras trabajas, así que una conversación no se pierde en cuanto cierras el terminal. La capacidad central que tienes de serie es poder retomar una sesión anterior: en lugar de abrir una conversación nueva, continúas una existente con su contexto acumulado.',
-        },
-        {
-          type: 'paragraph',
-          text: 'En la práctica, esto significa que puedes:',
-        },
-        {
-          type: 'list',
-          items: [
-            'Retomar tu sesión de Codex más reciente y seguir donde paraste',
-            'Elegir una sesión anterior para continuarla, en vez de empezar siempre de cero',
-            'Conservar el contexto que construyó una sesión: decisiones, explicaciones y la forma del código que discutisteis',
+          type: 'table',
+          headers: [
+            'Comando',
+            'Uso',
+          ],
+          rows: [
+            [
+              'codex resume',
+              'Abre el selector de sesiones.',
+            ],
+            [
+              'codex resume --last',
+              'Continúa la sesión más reciente.',
+            ],
+            [
+              'codex resume --all',
+              'Incluye sesiones de otros directorios.',
+            ],
+            [
+              'codex resume SESSION_ID',
+              'Retoma una sesión por su ID.',
+            ],
           ],
         },
         {
-          type: 'callout',
-          variant: 'info',
-          content: 'Los flags de resume y las rutas de almacenamiento cambian entre versiones de Codex CLI, así que consulta <code>codex --help</code> y la documentación oficial de Codex para el comando exacto de tu versión. La capacidad es constante: Codex conserva tus sesiones y te deja continuar una anterior.',
+          type: 'paragraph',
+          text: 'Opciones comprobadas con <code>codex resume --help</code> en Codex CLI 0.156.0 el 25 de septiembre de 2026. Revisa la ayuda de tu instalación si se comporta de otra forma.',
         },
         {
           type: 'paragraph',
-          text: 'Es la misma idea que retomar una conversación de Claude Code, pero para Codex. Si también usas Claude Code, la guía hermana sobre el <a href="/es/guias/historial-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">historial de conversaciones de Claude Code</a> cubre el flujo equivalente para ese agente.',
+          text: 'Las transcripciones están en <code>$CODEX_HOME/sessions</code>, por defecto <code>~/.codex/sessions</code>. Consulta las <a href="https://learn.chatgpt.com/docs/reference/troubleshooting" class="text-neon-cyan hover:text-neon-purple transition-colors">rutas documentadas por OpenAI</a>. Conserva una copia privada de las conversaciones importantes antes de cambiar o limpiar esos archivos.',
         },
       ],
     },
     {
       id: 'el-problema',
-      title: 'Dónde empieza a molestar el historial nativo de Codex',
+      title: 'Cuándo ayuda un historial compartido entre agentes',
       content: [
         {
           type: 'paragraph',
-          text: 'El resume nativo es perfecto cuando la conversación que quieres es la última o está cerca. La fricción empieza cuando no lo es. En cuanto usas Codex en serio, en varios proyectos y con muchas sesiones, las limitaciones se acumulan rápido:',
-        },
-        {
-          type: 'list',
-          items: [
-            '<strong>Sin búsqueda por contenido.</strong> No puedes buscar "esa sesión de migración de base de datos de la semana pasada" en tu historial de Codex. Te toca recorrer una lista o recordar qué sesión era.',
-            '<strong>Sin vista previa del contenido.</strong> Una lista de sesiones dice poco de lo que contenía cada una, así que abres la equivocada y vuelves atrás más de una vez.',
-            '<strong>Sin vista multiproyecto.</strong> El historial queda anclado a donde corrió la sesión. Encontrar trabajo de otro proyecto implica ir allí primero.',
-            '<strong>Sin filtros.</strong> No puedes acotar por proyecto, por fecha ni por el tema de la conversación.',
-            '<strong>Sin vista entre agentes.</strong> Si además usas Claude Code o Antigravity CLI, cada agente guarda su propio historial en su propio sitio, así que no hay un único lugar donde mirar.',
-          ],
-        },
-        {
-          type: 'paragraph',
-          text: 'Si usas Codex en un proyecto de vez en cuando, nada de esto importa. Si Codex forma parte de tu día a día en muchos repositorios, empiezas a perder tiempo de verdad solo intentando encontrar la conversación que quieres retomar.',
+          text: 'El selector nativo de Codex ya permite retomar sesiones de otros proyectos con <code>--all</code>. Si también trabajas con Claude Code u otros agentes, CodeAgentSwarm reúne las conversaciones disponibles en una vista con búsqueda por contenido y filtros de proyecto y agente.',
         },
       ],
     },
@@ -240,45 +227,32 @@ En resumen: tu historial de Codex CLI ya está en tu máquina y puedes retomarlo
       content: [
         {
           type: 'paragraph',
-          text: 'Ambos te dejan retomar una conversación pasada de Codex. La diferencia es lo fácil que es encontrar la correcta cuando tienes muchas:',
-        },
-        {
-          type: 'list',
-          items: [
-            '<strong>Retomar tu última sesión:</strong> Codex nativo lo resuelve bien por sí solo.',
-            '<strong>Encontrar una sesión antigua por palabra clave:</strong> el nativo no tiene búsqueda por contenido; CodeAgentSwarm busca dentro del contenido.',
-            '<strong>Trabajar entre proyectos:</strong> el historial nativo queda anclado a donde corrió la sesión; CodeAgentSwarm te da una vista única multiproyecto.',
-            '<strong>Trabajar entre agentes:</strong> cada CLI guarda su propio historial; CodeAgentSwarm reúne las conversaciones de Codex, Claude Code y Gemini.',
-            '<strong>Retomar desde cualquier sitio:</strong> el nativo implica navegar hasta el lugar correcto; CodeAgentSwarm retoma cualquier conversación desde cualquier terminal.',
-          ],
-        },
-        {
-          type: 'paragraph',
-          text: 'Si solo vuelves a tu sesión de Codex más reciente, el resume nativo es todo lo que necesitas. En cuanto te pones a buscar "¿en qué sesión arreglé eso?", el historial buscable es la mejor respuesta.',
+          text: 'Codex CLI permite elegir una sesión, continuar la última o consultar otros proyectos. CodeAgentSwarm añade una vista compartida de las conversaciones de varios agentes. Puedes usar el selector nativo para una sesión concreta y la app para organizar tu trabajo entre proyectos.',
         },
       ],
     },
+
   ],
   faq: [
     {
       question: '¿Codex CLI guarda el historial de conversaciones?',
-      answer: 'Sí. Codex CLI conserva tus sesiones en local mientras trabajas, así que una conversación no se pierde al cerrar el terminal. Puedes retomar una sesión anterior para continuarla con su contexto previo. Consulta codex --help y la documentación oficial de Codex para el comando exacto de retomar en tu versión.',
+      answer: 'Sí. Puedes continuar una conversación guardada con codex resume. Conserva una copia privada si necesitas proteger el historial frente a borrados o cambios de configuración.',
     },
     {
       question: '¿Cómo retomo una sesión anterior de Codex?',
-      answer: 'De forma nativa, Codex CLI te permite retomar una sesión pasada para continuarla en lugar de empezar de cero. El flag exacto depende de tu versión de Codex, así que consulta codex --help. En CodeAgentSwarm abres la vista de Historial o el modo retomar, encuentras la conversación y la reabres en cualquier terminal con su contexto previo cargado.',
+      answer: 'Ejecuta codex resume para elegirla, codex resume --last para continuar la más reciente o codex resume SESSION_ID si conoces su identificador.',
     },
     {
       question: '¿Dónde se guarda el historial de Codex CLI?',
-      answer: 'Codex CLI almacena las sesiones en local en tu máquina, y la ubicación exacta puede cambiar entre versiones, así que confírmala en la documentación oficial de Codex para tu instalación. CodeAgentSwarm guarda su propia copia buscable de cada conversación para que puedas buscar y retomar entre proyectos y agentes sin depender de rutas de archivos.',
+      answer: 'Las transcripciones están en $CODEX_HOME/sessions, por defecto ~/.codex/sessions. Si has cambiado CODEX_HOME, comprueba esa ubicación.',
     },
     {
       question: '¿Puedo buscar en todas mis conversaciones de Codex?',
-      answer: 'El historial nativo de Codex no tiene búsqueda por contenido, así que recorres la lista o tiras de memoria. CodeAgentSwarm ofrece búsqueda por contenido instantánea en cada conversación de Codex, en todos los proyectos, con vista previa de los mensajes para confirmar la sesión correcta antes de abrirla.',
+      answer: 'CodeAgentSwarm permite buscar por contenido en las conversaciones disponibles y filtrar por proyecto y agente. Para elegir una sesión desde Codex CLI, usa codex resume.',
     },
     {
       question: '¿El historial de Codex funciona entre distintos proyectos?',
-      answer: 'El historial nativo de Codex queda anclado a donde corrió cada sesión, así que encontrar trabajo de otro proyecto implica ir allí primero. CodeAgentSwarm organiza las conversaciones por proyecto, te deja filtrar por uno y retoma cualquiera desde cualquier terminal.',
+      answer: 'Sí. Ejecuta codex resume --all para incluir sesiones de otros directorios. CodeAgentSwarm también ofrece filtros de proyecto en su historial compartido entre agentes.',
     },
     {
       question: '¿Puedo ver juntos el historial de Codex y de Claude Code?',

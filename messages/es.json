@@ -777,6 +777,7 @@
     },
     "downloadCta": {
       "button": "Descargar beta gratis",
+      "inlineButton": "Descargar CodeAgentSwarm",
       "otherPlatforms": "Otras plataformas",
       "context": {
         "claudeCode": "Ejecuta varios agentes de Claude Code con historial buscable y cambios en tiempo real en una sola app.",

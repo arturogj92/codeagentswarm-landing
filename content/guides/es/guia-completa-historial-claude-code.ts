@@ -42,6 +42,10 @@ Esta guía explica cómo encontrar, buscar y respaldar conversaciones. Si trabaj
           type: 'paragraph',
           text: 'Puedes encontrar todos los detalles sobre estos comandos en la <a href="https://code.claude.com/docs/en/cli-reference" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">documentación oficial de Claude Code</a>. Los comandos y el selector se comprobaron con la documentación oficial el 5 de septiembre de 2026.',
         },
+        {
+          type: 'paragraph',
+          text: 'Si necesitas consultar el historial mientras supervisas tareas activas, la guía del <a href="/es/guias/panel-de-control-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">panel de Claude Code</a> muestra cómo organizar las sesiones. Para repartir trabajo, consulta <a href="/es/guias/ejecutar-multiples-sesiones-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">cómo ejecutar varias sesiones de Claude Code</a>.',
+        },
       ],
     },
     {
