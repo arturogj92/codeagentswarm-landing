@@ -7,16 +7,16 @@ export const guide: Guide = {
     title: 'Claude Code Dashboard: Manage Every Session From One Window',
     metaTitle: 'Claude Code Dashboard: Manage Every Session in One Place (2026)',
     metaDescription: 'A Claude Code dashboard lets you monitor and manage every session from one window: per-terminal status, a kanban task board, notifications and history.',
-    intro: `A Claude Code dashboard is a single window where you monitor and manage every running Claude Code session: which terminal is working, which one finished, which one is stuck waiting for your answer, and what task each of them is on. Instead of clicking through a stack of terminal tabs to check on each agent, you glance at one screen and know where everything stands.
+    intro: `A Claude Code dashboard helps you see which sessions are working, which need an answer and which changes are ready to review. Anthropic provides its own desktop interface with parallel sessions; independent workspaces offer another way to organize the work.
 
-That matters because Claude Code itself gives you none of this. Anthropic ships it as a CLI, so each session is a wall of text in its own window, and once you run three or four of them the real work becomes remembering who is doing what.
+CodeAgentSwarm is an independent desktop app for macOS and Windows. It combines session status, a task board, notifications, searchable history and file-change review across supported coding agents. It is useful when you want Claude Code and Codex in the same workspace or need to supervise work across several projects.
 
-CodeAgentSwarm is that dashboard. It is a free desktop app for macOS and Windows that runs your sessions in one workspace and adds the oversight layer on top: per-terminal status, a kanban task board the agents update themselves, desktop notifications, searchable history, live file changes and one-click project switching. This guide is about using it as a Claude Code manager: seeing everything, catching the terminal that needs you, and keeping a swarm of agents under control.`,
+This guide covers that supervision workflow. Pro is included during the open beta, and your agents keep their own provider accounts and usage limits.`,
     ctaText: 'Put every Claude Code session on one dashboard: see each terminal\'s status, its tasks and its changes at a glance, and let the sessions tell you when they need you.',
     ctaAgent: 'claude-code',
     highlightedWords: ['Claude Code Dashboard', 'Every Session'],
     publishedAt: '2026-07-13',
-    updatedAt: '2026-08-23',
+    updatedAt: '2026-09-25',
     alternateSlug: 'panel-de-control-claude-code',
   },
   sections: [
@@ -34,7 +34,7 @@ CodeAgentSwarm is that dashboard. It is a free desktop app for macOS and Windows
         },
         {
           type: 'paragraph',
-          text: 'This is a management problem, not a coding problem. The agents are fine, you just cannot see them. A Claude Code session manager exists to answer three questions continuously and without being asked: what is each session doing, which ones are done, and which one is blocked on me.',
+          text: 'The useful questions are concrete: what is each session doing, which ones are ready for review, and which need an answer? Anthropic also offers <a href="https://code.claude.com/docs/en/desktop" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">parallel sessions in Claude Code Desktop</a>. CodeAgentSwarm adds a workspace for supervising agents from several providers with shared project tasks and history.',
         },
         {
           type: 'paragraph',
@@ -177,7 +177,7 @@ CodeAgentSwarm is that dashboard. It is a free desktop app for macOS and Windows
             'Status: you are the status system. Knowing if a session is done means clicking in and reading output.',
             'Blocked sessions: a permission prompt in a background tab waits silently until you find it.',
             'Task tracking: which session owns which piece of work lives in your head or a separate tool.',
-            'History: scrollback dies with the tab, and you cannot search across sessions or days.',
+            'History: Claude Code saves its sessions, while conversations from other agents have their own histories.',
             'Changes: figuring out what an agent modified means reading its output or running git yourself.',
           ],
         },
@@ -199,7 +199,7 @@ CodeAgentSwarm is that dashboard. It is a free desktop app for macOS and Windows
         },
         {
           type: 'paragraph',
-          text: 'For one occasional session, tabs are fine and you do not need any of this. The dashboard earns its place at the point where checking on your sessions starts costing more than the sessions save you, which in practice is around the third parallel agent.',
+          text: 'For one occasional session, your existing terminal or provider app may be enough. Consider CodeAgentSwarm when you want shared project tasks, history and session status across providers. Parallel agents can still edit the same files: use separate <a href="/en/guides/git-worktrees-for-ai-coding-agents" class="text-neon-cyan hover:text-neon-purple transition-colors">Git worktrees when you need isolated working copies</a>, and review the results before merging.',
         },
       ],
     },
@@ -225,7 +225,7 @@ CodeAgentSwarm is that dashboard. It is a free desktop app for macOS and Windows
   faq: [
     {
       question: 'Is there an official Anthropic Claude Code dashboard?',
-      answer: 'No. Anthropic ships Claude Code as a command-line tool, and it does not include a graphical dashboard for monitoring sessions. Dashboards come from desktop apps built around the CLI. CodeAgentSwarm is one of those: it runs the real Claude Code in real terminals and adds the management layer on top, with per-terminal status, a task board, notifications and searchable history.',
+      answer: 'Yes. Anthropic provides Claude Code in its desktop app, including parallel sessions and visual diff review. CodeAgentSwarm is an independent workspace for supervising Claude Code alongside other coding agents, with shared project tasks, history and notifications.',
     },
     {
       question: 'Can I manage multiple Claude Code sessions from one dashboard?',
@@ -233,7 +233,7 @@ CodeAgentSwarm is that dashboard. It is a free desktop app for macOS and Windows
     },
     {
       question: 'Does the dashboard show Claude Code usage or token costs?',
-      answer: 'No. CodeAgentSwarm is a session and task dashboard, not a cost analytics tool. It shows you what each session is doing, its status, its tasks, its conversation history and its file changes. It does not track token consumption or spending. If you are searching for usage dashboards in that billing sense, that is a different category of tool.',
+      answer: 'CodeAgentSwarm can display provider quota and usage-window information where the selected account and integration expose it. That indicator is separate from a billing report: check the provider account for authoritative charges and plan limits.',
     },
     {
       question: 'Does the dashboard change how Claude Code works?',

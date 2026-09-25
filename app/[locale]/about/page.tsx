@@ -16,10 +16,18 @@ const copy = {
     factsTitle: 'What the product does today',
     facts: [
       'Runs on macOS and Windows. A Linux desktop build is not available.',
-      'Supports Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build and Cursor Agent.',
+      'CodeAgentSwarm 2.4.0 supports Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi and Devin CLI.',
       'Uses the agent accounts and subscriptions you already have. CodeAgentSwarm is not a model provider.',
-      'Mobile Connect is in alpha. The web beta is available to every account, while native iOS and Android access is available by request. The desktop remains the source of truth and must stay open.',
+      'Mobile Connect lets you follow and message your desktop sessions from a paired mobile device. The desktop running those sessions must stay online.',
       'The desktop app is free with Pro included during the open beta.',
+    ],
+    fitTitle: 'When CodeAgentSwarm fits your workflow',
+    fit: 'Use CodeAgentSwarm when you want to supervise several coding sessions, mix agents from different providers, or keep project tasks, conversations and file changes together. You assign the work, answer approval requests and review the result. Each provider keeps its own account requirements and usage limits.',
+    limits: 'For one session, your existing CLI or the provider’s own app may be enough. Parallel sessions do not automatically isolate file changes: use separate Git worktrees when agents need independent copies of the same repository, and review changes before merging.',
+    workflows: [
+      { label: 'Manage Claude Code sessions', href: '/en/guides/claude-code-dashboard' },
+      { label: 'Use Codex in a shared workspace', href: '/en/guides/codex-gui' },
+      { label: 'Check Git worktree isolation', href: '/en/guides/git-worktrees-for-ai-coding-agents' },
     ],
     guidesTitle: 'How the guides are maintained',
     guides: 'The guides are written from the product team point of view, and every comparison discloses that interest. Third-party facts are dated and linked to their sources. Product claims are corrected when shipped behavior changes. If you find an error, send the URL and the correction to hello@codeagentswarm.com.',
@@ -39,10 +47,18 @@ const copy = {
     factsTitle: 'Qué hace el producto hoy',
     facts: [
       'Funciona en macOS y Windows. No hay una versión de escritorio para Linux.',
-      'Admite Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent.',
+      'CodeAgentSwarm 2.4.0 admite Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi y Devin CLI.',
       'Usa las cuentas y suscripciones de agentes que ya tienes. CodeAgentSwarm no es un proveedor de modelos.',
-      'Mobile Connect está en alpha. La beta web está disponible para todas las cuentas, mientras que el acceso nativo para iOS y Android se ofrece bajo petición. El escritorio sigue siendo la fuente de verdad y debe permanecer abierto.',
+      'Mobile Connect permite seguir tus sesiones de escritorio y enviarles mensajes desde un dispositivo móvil vinculado. El ordenador que ejecuta esas sesiones debe seguir conectado.',
       'La app de escritorio es gratis con Pro incluido durante la beta abierta.',
+    ],
+    fitTitle: 'Cuándo encaja CodeAgentSwarm en tu trabajo',
+    fit: 'Usa CodeAgentSwarm cuando quieras supervisar varias sesiones de programación, combinar agentes de distintos proveedores o reunir tareas, conversaciones y cambios de archivos por proyecto. Tú asignas el trabajo, respondes a las solicitudes de permisos y revisas el resultado. Cada proveedor mantiene sus requisitos de cuenta y sus límites de uso.',
+    limits: 'Para una sola sesión, tu CLI habitual o la app del proveedor pueden ser suficientes. Las sesiones en paralelo no aíslan automáticamente los cambios: usa Git worktrees separados cuando los agentes necesiten copias independientes del mismo repositorio y revisa los cambios antes de integrarlos.',
+    workflows: [
+      { label: 'Gestionar sesiones de Claude Code', href: '/es/guias/panel-de-control-claude-code' },
+      { label: 'Usar Codex en un espacio compartido', href: '/es/guias/interfaz-grafica-codex' },
+      { label: 'Comprobar el aislamiento con Git worktrees', href: '/es/guias/git-worktrees-para-agentes-de-ia' },
     ],
     guidesTitle: 'Cómo se mantienen las guías',
     guides: 'Las guías están escritas desde el punto de vista del equipo del producto y cada comparativa declara ese interés. Los datos de terceros llevan fecha y enlazan sus fuentes. Las afirmaciones sobre el producto se corrigen cuando cambia el comportamiento publicado. Si encuentras un error, envía la URL y la corrección a hello@codeagentswarm.com.',
@@ -161,6 +177,19 @@ export default async function AboutPage({
                 <li key={fact} className="flex gap-3 leading-relaxed">
                   <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-neon-cyan" aria-hidden="true" />
                   <span>{fact}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <section id="workflows">
+            <h2 className="text-2xl font-display font-semibold text-white mb-4">{page.fitTitle}</h2>
+            <p className="text-white/70 leading-relaxed mb-4">{page.fit}</p>
+            <p className="text-white/70 leading-relaxed mb-5">{page.limits}</p>
+            <ul className="space-y-3">
+              {page.workflows.map((workflow) => (
+                <li key={workflow.href}>
+                  <a href={workflow.href} className="text-neon-cyan underline underline-offset-4 hover:text-white">{workflow.label}</a>
                 </li>
               ))}
             </ul>

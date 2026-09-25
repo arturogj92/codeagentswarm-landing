@@ -459,11 +459,11 @@
     "titleHighlight": "Frecuentes",
     "items": {
       "q1": "¿Cómo ejecuto varios agentes de programación con IA en CodeAgentSwarm?",
-      "a1": "Abre CodeAgentSwarm y ejecuta Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code, Grok Build o Cursor Agent en paralelo. Cada agente funciona de forma independiente para trabajar en distintas tareas o proyectos, con todos sus estados visibles en un solo sitio.",
+      "a1": "Abre CodeAgentSwarm, elige un proyecto y lanza un agente para cada tarea. Las sesiones se ejecutan de forma independiente, así que puedes trabajar en distintas tareas o proyectos en paralelo y ver su estado en un solo sitio. Usa Git worktrees separados cuando las sesiones necesiten copias aisladas del mismo repositorio.",
       "q2": "¿Cómo maneja CodeAgentSwarm la organización por proyectos?",
       "a2": "CodeAgentSwarm mantiene juntos los agentes, el tablero de tareas y el historial de cada proyecto. Puedes cambiar de código base sin perder contexto ni reconstruir tu configuración.",
       "q3": "¿Tengo visibilidad en tiempo real y seguimiento de cambios en vivo?",
-      "a3": "Sí. Los diffs en vivo muestran los cambios de cada agente mientras ocurren. Los títulos dinámicos indican en qué trabaja Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code o Grok Build, y el seguimiento de archivos registra qué cambió y cuándo.",
+      "a3": "Sí. CodeAgentSwarm muestra los cambios de archivos en vivo y el estado de las sesiones para que puedas seguir el trabajo de cada agente y revisar sus cambios. Revisa el diff y ejecuta las comprobaciones necesarias antes de hacer commit o integrar el trabajo.",
       "q4": "¿CodeAgentSwarm envía notificaciones para todos los agentes de IA?",
       "a4": "Sí. CodeAgentSwarm envía una notificación de escritorio cuando cualquier agente termina una tarea, necesita tu input o encuentra un error.",
       "q5": "¿Cómo funciona el historial de conversaciones?",
@@ -471,11 +471,11 @@
       "q6": "¿Puedo controlar a qué tienen acceso mis agentes AI CLI?",
       "a6": "Sí. Los permisos visuales controlan los archivos y acciones disponibles para cada agente. Puedes aprobar operaciones sensibles mientras el Modo Turbo gestiona las rutinarias dentro de los límites que definas.",
       "q7": "¿Soporta CodeAgentSwarm herramientas MCP y el marketplace MCP?",
-      "a7": "Sí. CodeAgentSwarm incluye integración MCP completa con un marketplace MCP integrado. Conecta cualquiera de los siete agentes AI CLI soportados a GitHub, Notion, Slack, Supabase, Brave Search, Playwright, PostgreSQL y más. Las herramientas MCP amplían lo que pueden hacer tus agentes.",
+      "a7": "CodeAgentSwarm incluye un marketplace MCP para configurar integraciones como GitHub, Notion, Supabase y Playwright. Las herramientas y opciones disponibles dependen del agente y del servidor MCP elegidos.",
       "q8": "¿Ayuda CodeAgentSwarm a evitar la pérdida de contexto en agentes AI CLI?",
       "a8": "Sí. CodeAgentSwarm mantiene un historial buscable entre sesiones, muestra los cambios de cada agente en tiempo real y vincula cada sesión con su proyecto. El trabajo anterior queda fácil de encontrar y retomar.",
       "q9": "¿Por qué no usar tmux?",
-      "a9": "tmux gestiona ventanas. CodeAgentSwarm gestiona agentes: estado de tareas, notificaciones cuando terminan, diffs en vivo, historial por proyecto y permisos configurables. Si solo necesitas dividir la pantalla, tmux va bien. Si quieres saber qué hace cada agente y no perderte nada, necesitas CodeAgentSwarm.",
+      "a9": "tmux encaja si quieres paneles de terminal y prefieres configurar tu propio flujo. CodeAgentSwarm reúne tareas por proyecto, estado de sesiones, notificaciones, historial buscable y revisión de cambios en una app de escritorio. Elígelo cuando quieras esos controles juntos o uses agentes de varios proveedores.",
       "q10": "¿Puedo ejecutar Claude Code y Codex CLI a la vez?",
       "a10": "Sí. Cada sesión de agente es un proceso independiente, así que Claude Code y Codex CLI pueden ejecutarse al mismo tiempo. Elige el agente de cada sesión y abre tantas como permita tu plan.",
       "q11": "¿Funciona CodeAgentSwarm con Antigravity CLI?",
@@ -493,7 +493,9 @@
       "q17": "¿CodeAgentSwarm funciona con Grok Build?",
       "a17": "Sí. CodeAgentSwarm ejecuta la CLI Grok Build de xAI (el comando grok) como agente de primera clase, así que puedes supervisar varios agentes de Grok Build junto a Claude Code, Codex o cualquier otra CLI compatible. Tú instalas e inicias sesión en Grok Build, y CodeAgentSwarm añade notificaciones, diffs en vivo para cada agente, historial buscable y cambio de proyecto.",
       "q18": "¿CodeAgentSwarm funciona con Cursor Agent CLI?",
-      "a18": "Sí. CodeAgentSwarm se conecta a la CLI oficial cursor-agent mediante ACP. Muestra texto y herramientas en streaming, expone los modos Agent, Plan y Ask, gestiona permisos y cancelación, respeta .cursor/mcp.json y solo habilita la reanudación cuando la versión instalada anuncia soporte para loadSession."
+      "a18": "Sí. CodeAgentSwarm se conecta a la CLI oficial cursor-agent mediante ACP. Muestra texto y herramientas en streaming, expone los modos Agent, Plan y Ask, gestiona permisos y cancelación, respeta .cursor/mcp.json y solo habilita la reanudación cuando la versión instalada anuncia soporte para loadSession.",
+      "q19": "¿CodeAgentSwarm es gratis y en qué sistemas operativos funciona?",
+      "a19": "La app de escritorio funciona en macOS 12+ y Windows 10/11, con Pro incluido sin coste durante la beta abierta. Crea una cuenta de CodeAgentSwarm e inicia sesión en los agentes que quieras usar. Sus suscripciones, cargos de API y límites de uso son independientes. No hay una versión de escritorio para Linux."
     }
   },
   "cta": {
