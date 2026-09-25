@@ -7,16 +7,16 @@ export const guide: Guide = {
     title: 'Interfaz gráfica de Claude Code: una app de escritorio visual para tus CLIs de IA',
     metaTitle: 'Interfaz gráfica de Claude Code: app, tareas y diffs (2026)',
     metaDescription: 'Una interfaz gráfica de Claude Code es una app de escritorio sobre el CLI. CodeAgentSwarm le da a Claude Code un workspace visual, tablero, diffs y avisos.',
-    intro: `Claude Code es una herramienta de terminal. Escribes en un prompt, lee y edita archivos, y todo lo que ves es texto pasando por una sola ventana. Eso está muy bien para la potencia, y no tan bien cuando ejecutas varias sesiones, intentas recordar qué hace cada una y subes a buscar qué cambió.
+    intro: `Claude Code puede usarse desde el terminal o desde la interfaz de escritorio de Anthropic. Un espacio gráfico ayuda a seguir las sesiones y revisar cambios sin depender solo de pestañas de terminal.
 
-Una interfaz gráfica de Claude Code es una app de escritorio que se sitúa encima de ese CLI. Sigues teniendo debajo el agente completo de línea de comandos, solo que ganas una capa visual a su alrededor: un workspace con varios terminales a la vez, un tablero de tareas, historial buscable, diffs en vivo, notificaciones de escritorio y controles de permisos que puedes pulsar en lugar de memorizar.
+CodeAgentSwarm es un espacio de trabajo independiente para macOS y Windows. Reúne Claude Code con otros agentes de programación, tareas por proyecto, historial de conversaciones buscable, diffs en vivo y notificaciones. Conservas tus cuentas de agente y decides qué trabajo debe hacer cada sesión.
 
-CodeAgentSwarm es justo ese tipo de interfaz. Funciona en macOS y Windows, no reemplaza a Claude Code y no cambia cómo trabaja el agente. Le da al mismo CLI un panel para que puedas verlo y dirigirlo sin vivir dentro de un muro de texto de terminal.`,
-    ctaText: 'Dale a Claude Code una app de escritorio de verdad: un workspace visual con varios terminales, un tablero de tareas, diffs en vivo y notificaciones, todo sobre el CLI que ya usas.',
+Encaja cuando quieres supervisión compartida entre proveedores o proyectos. Para una sola sesión, tu CLI habitual o la app de Anthropic pueden ser suficientes. CodeAgentSwarm incluye Pro durante la beta abierta; el acceso y el consumo de los proveedores son independientes.`,
+    ctaText: 'Supervisa Claude Code junto a tus otros agentes, con tareas, historial, diffs en vivo y notificaciones en un solo espacio.',
     ctaAgent: 'claude-code',
     highlightedWords: ['interfaz gráfica de Claude Code', 'app de escritorio'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-08-11',
+    updatedAt: '2026-09-25',
     alternateSlug: 'claude-code-gui',
   },
   sections: [
@@ -32,7 +32,7 @@ CodeAgentSwarm es justo ese tipo de interfaz. Funciona en macOS y Windows, no re
         },
         {
           type: 'paragraph',
-          text: 'Una interfaz gráfica de Claude Code es una interfaz visual que envuelve el agente de línea de comandos <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a> dentro de una app de escritorio. El agente en sí sigue igual: sigue ejecutándose en un terminal de verdad, sigue leyendo y escribiendo archivos, sigue usando tu propia suscripción de Claude. La interfaz añade una capa visual encima para que veas qué hace el agente y lo controles con clics en lugar de recordar comandos y scrollback.',
+          text: 'Anthropic ofrece <a href="https://code.claude.com/docs/en/desktop" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code en su app de escritorio</a>, con sesiones paralelas y revisión visual de diffs. CodeAgentSwarm es un producto independiente creado por Arturo García, no una app oficial de Anthropic. Se centra en supervisar Claude Code y otros agentes de programación en el mismo espacio.',
         },
         {
           type: 'paragraph',
@@ -85,7 +85,7 @@ CodeAgentSwarm es justo ese tipo de interfaz. Funciona en macOS y Windows, no re
         },
         {
           type: 'paragraph',
-          text: 'Cada conversación se guarda y se puede buscar en un solo sitio, en vez de esfumarse al cerrar una pestaña de terminal. Puedes encontrar lo que hizo una sesión la semana pasada, retomarla y rastrear qué terminal hizo un cambio concreto. Esta es una de las mayores carencias que cubre un gestor de Claude Code, porque el scrollback del terminal no es algo que puedas buscar a lo largo de los días.',
+          text: 'Claude Code ya guarda conversaciones y permite retomar sesiones anteriores. CodeAgentSwarm reúne los historiales de agentes compatibles en una interfaz con búsqueda entre proyectos. La <a href="/es/guias/historial-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">guía del historial de Claude Code</a> explica la reanudación nativa y la búsqueda compartida.',
         },
         {
           type: 'heading',
@@ -146,7 +146,7 @@ CodeAgentSwarm es justo ese tipo de interfaz. Funciona en macOS y Windows, no re
         {
           type: 'list',
           items: [
-            'Es gratis y ya está instalado en cuanto tienes Claude Code',
+            'No hace falta instalar otro espacio de trabajo si ya usas Claude Code',
             'Para una sola sesión, centrada en una tarea, es todo lo que necesitas',
             'Toda la potencia del agente, un envoltorio no esconde ni quita nada',
             'Se programa y se encadena con pipes como cualquier otra herramienta de línea de comandos',
@@ -162,10 +162,10 @@ CodeAgentSwarm es justo ese tipo de interfaz. Funciona en macOS y Windows, no re
           type: 'list',
           items: [
             'Varias sesiones a la vez se convierten en un montón de pestañas que parecen iguales',
-            'Sin aviso cuando el agente termina o se para a preguntarte algo',
-            'El historial es scrollback, que no puedes buscar entre sesiones ni entre días',
-            'Lees texto para averiguar qué cambió, en lugar de ver un diff',
-            'Permisos y contexto viven en flags y en tu memoria, no en una UI visible',
+            'Los avisos dependen del terminal y de los hooks que configures',
+            'Las conversaciones guardadas de distintos agentes están en historiales separados',
+            'Revisar cambios de varias sesiones exige seguir sus repositorios y ramas',
+            'Hay que revisar los permisos de cada sesión, uses la interfaz que uses',
           ],
         },
         {
@@ -196,7 +196,7 @@ CodeAgentSwarm es justo ese tipo de interfaz. Funciona en macOS y Windows, no re
   faq: [
     {
       question: '¿Existe una interfaz gráfica para Claude Code?',
-      answer: 'Sí. Claude Code llega como un CLI de terminal, pero puedes ejecutarlo dentro de una app de escritorio gráfica. CodeAgentSwarm es una interfaz gráfica de Claude Code para macOS y Windows que le da al CLI un workspace visual con varios terminales, un tablero de tareas, historial buscable, diffs en vivo, notificaciones y controles de permisos. Ejecuta el agente real por debajo, así que conservas toda la potencia del CLI con una capa visual encima.',
+      answer: 'Sí. Anthropic ofrece una interfaz de escritorio para Claude Code. CodeAgentSwarm es una opción independiente para macOS y Windows que reúne Claude Code con otros agentes, tareas por proyecto, historial buscable, diffs en vivo y notificaciones.',
     },
     {
       question: '¿Una interfaz gráfica de Claude Code reemplaza al CLI?',
@@ -207,7 +207,7 @@ CodeAgentSwarm es justo ese tipo de interfaz. Funciona en macOS y Windows, no re
       answer: 'El terminal es una sola ventana de texto donde se ejecuta el agente. Un panel es una capa gráfica que saca a la luz lo que el terminal esconde: varias sesiones de un vistazo, un tablero de tareas, historial buscable entre días, diffs de archivos en vivo y notificaciones de escritorio. El panel no cambia cómo trabaja el agente, solo hace que su actividad sea visible y pulsable.',
     },
     {
-      question: '¿La app de escritorio de Claude Code funciona en Windows y macOS?',
+      question: '¿CodeAgentSwarm funciona con Claude Code en Windows y macOS?',
       answer: 'Sí. CodeAgentSwarm es una app de escritorio para macOS y Windows. Se instala en local, ejecuta el CLI de Claude Code en tu máquina y usa tu propia suscripción de Claude. No hay ningún modelo ni plan aparte.',
     },
     {

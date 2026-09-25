@@ -25,7 +25,7 @@ export const guide: Guide = {
       content: [
         {
           type: 'paragraph',
-          text: 'If you need a command or want to continue one session, Codex CLI can do that. CodeAgentSwarm helps when you want to see several sessions, switch projects or find a conversation across agents. It is an independent application, not the official OpenAI app.',
+          text: 'If you need a command or want to continue one session, Codex CLI can do that. CodeAgentSwarm helps when you want to see several sessions, switch projects or find a conversation across agents. It is an independent application. For OpenAI’s own desktop interface, see the <a href="https://learn.chatgpt.com/docs/developer-commands" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">official documentation for codex app</a>.',
         },
         {
           type: 'table',

@@ -1,5 +1,38 @@
 # SEO publishing and download measurement
 
+## Product discovery review, September 25
+
+The home FAQ and About page now state current product availability, separate provider costs and when the workspace fits. The existing Claude GUI, Codex GUI and Claude dashboard guides in both languages acknowledge official desktop interfaces and native history. They explain the shared-provider workflow without claiming those native features are absent. Their titles, descriptions, canonical URLs, language alternates and section anchors are preserved. The four Claude guides receive a new review date; the two Codex guides retain the September 25 review already published in PR #25. The existing conversion layout and event attribution are unchanged.
+
+The About page links to the existing dashboard, Codex GUI and worktree example. `llms.txt` mirrors the public product facts; it is not treated as a ranking mechanism. No new indexable page, hidden content, review score, paid backlink, mass submission or outreach message is introduced.
+
+Sources checked: [OpenAI crawlers](https://developers.openai.com/api/docs/bots), [Codex CLI](https://learn.chatgpt.com/docs/codex/cli), [OpenAI developer commands](https://learn.chatgpt.com/docs/developer-commands), [Claude Code Desktop](https://code.claude.com/docs/en/desktop), and [Google AI search guidance](https://developers.google.com/search/docs/appearance/ai-features). Product quota availability is corroborated by the app's Claude quota reader; it is not a billing report.
+
+Validation: `npm run lint`, `npm run build`, `node scripts/check-release-agents.mjs`, `node scripts/check-product-discovery.mjs` and the existing `components/seo-conversion-regressions.test.mjs` checks. The product check inspects generated HTML for ten EN/ES pages and requires FAQ answers to match both the visible page and its structured data.
+
+Initial local validation passed on September 25: production build, all 13 conversion regressions, release checks and product discovery checks. Lint reports existing image/hook warnings in untouched components. Browser QA used EN/ES at 1440×1000 and 390×844, without feature flags, with analytics requests blocked. About and the home FAQ worked in both languages; the English dashboard and Spanish Codex guide returned 200 with one H1. No horizontal overflow or JavaScript errors were observed. Desktop/mobile About captures are in `/tmp/cas-discovery-about-1440.png` and `/tmp/cas-discovery-about-390.png`. These are local checks, not a production deployment or a measured visibility lift.
+
+Publication integration preserves PR #25 (production commit `4997667`), including its Codex guide rewrite and inline download changes. The two Codex GUI guides only gain an official OpenAI documentation link in this publication. The integrated production build, all 14 conversion regressions, release checks and ten-page discovery checks passed. All six guides preserve their existing titles, descriptions, slugs, language alternates, publication dates and section anchors.
+
+### Measuring recommendations
+
+No ChatGPT recommendation baseline has been collected. Web search results and assistant referral visits are not substitutes. Use these ten fixed questions for a baseline and subsequent checks in new chats, without naming CodeAgentSwarm or adding this repository as context:
+
+1. What desktop tools can manage Claude Code and Codex together?
+2. How can I supervise several AI coding agents on Windows?
+3. Which apps organize coding agent conversations and tasks across projects?
+4. What are my options for a graphical interface for Codex?
+5. When would I use an agent workspace instead of tmux?
+6. ¿Qué aplicaciones permiten gestionar Claude Code y Codex juntos?
+7. ¿Cómo puedo supervisar varios agentes de programación en Windows?
+8. ¿Qué herramientas reúnen conversaciones y tareas de agentes por proyecto?
+9. ¿Qué opciones tengo para usar Codex con una interfaz gráfica?
+10. ¿Cuándo conviene usar un espacio para agentes en lugar de tmux?
+
+Record date, exact prompt, model, language, personalization settings, whether search actually ran, recommended products and cited URLs. Keep search and non-search results separate, with two new-chat runs per prompt and condition. Record failed runs as unavailable. Count product recommendations, incidental mentions and website citations separately. Repeat weekly with the same settings; compare recommendation rates only within matching conditions. Do not infer global visibility or causality from this small sample.
+
+Record the actual production deployment date. Compare 28 complete post-deployment days against 28 complete pre-deployment days for these guide URLs in Search Console and Umami, splitting locale and device. Review clicks, impressions, position and guide download clicks per pageview together. A fall needs investigation of query mix and ranking before attribution to these edits. No ranking or mention increase is guaranteed.
+
 ## Release 2.4.0 availability (2026-09-24)
 
 Muse Code, Pi and Devin CLI are available in the public macOS and Windows app from 2.4.0. The EN/ES homepage, agent cards, guide CTAs, availability sections and `llms.txt` reflect this release. Historical beta screenshot captions and provider-specific limitations remain accurate; they are not availability gates. Earlier beta rollout notes below are historical.

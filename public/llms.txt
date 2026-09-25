@@ -12,9 +12,13 @@ CodeAgentSwarm is a third-party Agentic Development Environment for macOS and Wi
 - Quota indicator reads real provider usage windows per agent, including Kimi Code's weekly refresh and rolling 5-hour window.
 - Core features: real-time per-terminal visibility, desktop notifications when an agent finishes or needs input, searchable conversation history across all agents, per-terminal live file diffs, permission and Turbo/YOLO control, multi-project switching with shortcuts, a skills marketplace and an MCP server marketplace, AI-generated git commit messages, and a task/kanban board that agents update over MCP.
 - Available for macOS and Windows.
+- The desktop app includes Pro at no cost during the open beta. Agent access and usage remain subject to each provider's account and plan; CodeAgentSwarm does not include model usage.
+- Useful for supervising several coding sessions or mixing providers with shared project tasks, history and change review. A single session may only need its existing CLI or provider app. Use separate Git worktrees when parallel agents need isolated working copies; review changes before merging.
 
 ## Product
 - [CodeAgentSwarm home](https://www.codeagentswarm.com/en)
+- [Product facts, creator and workflow examples (EN)](https://www.codeagentswarm.com/en/about)
+- [Producto, creador y ejemplos de uso (ES)](https://www.codeagentswarm.com/es/about)
 - [Beta / download](https://www.codeagentswarm.com/en/beta)
 - [Guides index (EN)](https://www.codeagentswarm.com/en/guides)
 - [Guías (ES)](https://www.codeagentswarm.com/es/guias)

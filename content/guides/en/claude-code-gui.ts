@@ -7,16 +7,16 @@ export const guide: Guide = {
     title: 'Claude Code GUI: A Visual Desktop App for Your AI Coding CLIs',
     metaTitle: 'Claude Code GUI: Desktop App, Task Board & Live Diffs (2026)',
     metaDescription: 'A Claude Code GUI is a graphical desktop app on top of the CLI. CodeAgentSwarm gives Claude Code a visual workspace, task board, diffs and notifications.',
-    intro: `Claude Code is a terminal tool. You type into a prompt, it reads and edits files, and everything you see is text scrolling past in a single window. That is great for power, and not so great when you are running several sessions, trying to remember what each one is doing, and scrolling back to find what changed.
+    intro: `Claude Code can be used from a terminal or through Anthropic’s desktop interface. A graphical workspace helps you follow sessions and review changes without relying only on terminal tabs.
 
-A Claude Code GUI is a graphical desktop app that sits on top of that CLI. You still get the full command-line agent underneath, you just get a visual layer around it: a workspace with several terminals at once, a task board, searchable history, live diffs, desktop notifications, and permission controls you can click instead of memorize.
+CodeAgentSwarm is an independent desktop workspace for macOS and Windows. It brings Claude Code together with other coding agents, project tasks, searchable conversation history, live diffs and notifications. You keep your existing agent accounts and decide which work each session should do.
 
-CodeAgentSwarm is exactly that kind of GUI. It runs on macOS and Windows, it does not replace Claude Code, and it does not change how the agent works. It gives the same CLI a dashboard so you can see and steer it without living inside a wall of terminal text.`,
-    ctaText: 'Give Claude Code a real desktop app: a visual workspace with multiple terminals, a task board, live diffs and notifications, all on top of the CLI you already use.',
+Choose it when you want shared supervision across providers or projects. For a single session, your existing CLI or Anthropic’s app may be sufficient. CodeAgentSwarm includes Pro during the open beta; provider access and usage are separate.`,
+    ctaText: 'Supervise Claude Code alongside your other agents, with tasks, history, live diffs and notifications in one workspace.',
     ctaAgent: 'claude-code',
     highlightedWords: ['Claude Code GUI', 'desktop app'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-08-11',
+    updatedAt: '2026-09-25',
     alternateSlug: 'interfaz-grafica-claude-code',
   },
   sections: [
@@ -32,7 +32,7 @@ CodeAgentSwarm is exactly that kind of GUI. It runs on macOS and Windows, it doe
         },
         {
           type: 'paragraph',
-          text: 'A Claude Code GUI is a graphical interface that wraps the <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a> command-line agent in a desktop app. The agent itself stays the same: it still runs in a real terminal, still reads and writes files, still uses your own Claude subscription. The GUI adds a visual layer on top so you can see what the agent is doing and control it with clicks instead of remembering commands and scrollback.',
+          text: 'Anthropic offers <a href="https://code.claude.com/docs/en/desktop" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code in its desktop app</a>, including parallel sessions and visual diff review. CodeAgentSwarm is a separate product built by Arturo García, not an official Anthropic app. Its focus is supervising Claude Code and other coding agents in the same workspace.',
         },
         {
           type: 'paragraph',
@@ -85,7 +85,7 @@ CodeAgentSwarm is exactly that kind of GUI. It runs on macOS and Windows, it doe
         },
         {
           type: 'paragraph',
-          text: 'Every conversation is saved and searchable in one place, instead of vanishing when you close a terminal tab. You can find what a session did last week, resume it, and trace which terminal made a particular change. This is one of the biggest gaps a Claude Code manager fills, because raw terminal scrollback is not something you can search across days.',
+          text: 'Claude Code already stores conversations and can resume previous sessions. CodeAgentSwarm brings supported agent histories into one searchable interface across projects. The <a href="/en/guides/claude-code-history" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code history guide</a> explains native resume and the shared workspace search.',
         },
         {
           type: 'heading',
@@ -146,7 +146,7 @@ CodeAgentSwarm is exactly that kind of GUI. It runs on macOS and Windows, it doe
         {
           type: 'list',
           items: [
-            'It is free and already installed once you have Claude Code',
+            'There is no extra workspace to install if you already use Claude Code',
             'For a single session, focused on one task, it is all you need',
             'Full agent power, nothing is hidden or removed by a wrapper',
             'It scripts and pipes like any other command-line tool',
@@ -162,10 +162,10 @@ CodeAgentSwarm is exactly that kind of GUI. It runs on macOS and Windows, it doe
           type: 'list',
           items: [
             'Several sessions at once turn into a stack of identical-looking tabs',
-            'No notification when the agent finishes or stops to ask you something',
-            'History is scrollback, which you cannot search across sessions or days',
-            'You read text to figure out what changed, instead of seeing a diff',
-            'Permissions and context live in flags and memory, not in a visible UI',
+            'Notifications depend on the terminal and hooks you configure',
+            'Saved conversations from different coding agents are kept in separate histories',
+            'Reviewing changes across several sessions means keeping track of their repositories and branches',
+            'Permissions need to be checked for each session, whichever interface you use',
           ],
         },
         {
@@ -196,7 +196,7 @@ CodeAgentSwarm is exactly that kind of GUI. It runs on macOS and Windows, it doe
   faq: [
     {
       question: 'Is there a GUI for Claude Code?',
-      answer: 'Yes. Claude Code ships as a terminal CLI, but you can run it inside a graphical desktop app. CodeAgentSwarm is a Claude Code GUI for macOS and Windows that gives the CLI a visual workspace with multiple terminals, a task board, searchable history, live diffs, notifications and permission controls. It runs the real agent underneath, so you keep the full CLI power with a visual layer on top.',
+      answer: 'Yes. Anthropic provides a desktop interface for Claude Code. CodeAgentSwarm is an independent option for macOS and Windows that brings Claude Code together with other agents, project tasks, searchable history, live diffs and notifications.',
     },
     {
       question: 'Does a Claude Code GUI replace the CLI?',
@@ -207,7 +207,7 @@ CodeAgentSwarm is exactly that kind of GUI. It runs on macOS and Windows, it doe
       answer: 'The terminal is a single text window where the agent runs. A dashboard is a graphical layer that surfaces what the terminal hides: several sessions at a glance, a task board, searchable history across days, live file diffs, and desktop notifications. The dashboard does not change how the agent works, it just makes its activity visible and clickable.',
     },
     {
-      question: 'Does the Claude Code desktop app work on Windows and macOS?',
+      question: 'Does CodeAgentSwarm work with Claude Code on Windows and macOS?',
       answer: 'Yes. CodeAgentSwarm is a desktop app for both macOS and Windows. It installs locally, runs the Claude Code CLI on your machine, and uses your own Claude subscription. There is no separate model or plan involved.',
     },
     {

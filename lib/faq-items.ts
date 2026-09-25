@@ -6,9 +6,9 @@
 // el acordeón, así que la pregunta salía en pantalla pero no en los datos
 // estructurados que lee Google. Importa `buildFaqItems` en los dos sitios para
 // que no puedan volver a desincronizarse.
-// Al añadir Cursor Agent (q18) se sube el contador aquí y en messages en/es.
+// Al añadir una pregunta, actualiza el contador y ambos idiomas en messages.
 
-export const FAQ_ITEM_COUNT = 18
+export const FAQ_ITEM_COUNT = 19
 
 export type FaqItem = { q: string; a: string }
 
