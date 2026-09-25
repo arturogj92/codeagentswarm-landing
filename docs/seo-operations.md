@@ -70,6 +70,13 @@ References: [GitHub deployment status events](https://docs.github.com/en/actions
 
 ### Bing discovery access correction (2026-09-25)
 
+Scope clarification after accessing the signed-in Bing UI: the supplied warning
+screenshot belongs to **megakill.app**, not CodeAgentSwarm. The independently
+verified CodeAgentSwarm access correction below remains valid, but does not resolve
+megakill.app's warnings. Its public sitemap has 35 URLs, all returning HTTP 200;
+its Bing Sitemaps screen had no registered sitemaps when inspected. Registration
+and crawl diagnostics for that property remain pending.
+
 Unauthenticated automated requests to `robots.txt`, `sitemap.xml` and the IndexNow
 ownership file returned Vercel's HTTP 429 bot challenge. The files already existed;
 adding another sitemap would not fix their accessibility. This reproduced a public
