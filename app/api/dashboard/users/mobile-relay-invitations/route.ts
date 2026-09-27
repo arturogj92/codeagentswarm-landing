@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { revalidateTag } from 'next/cache'
 import { verifyToken, COOKIE_NAME } from '@/lib/auth'
 import { supabaseRpc } from '@/lib/supabase-client'
 import type { MobileRelayAccessRequest } from '@/app/(dashboard)/dashboard/users/users-activity'
@@ -25,6 +26,7 @@ export async function PATCH(request: NextRequest) {
       },
     })
     if (!invitation) return NextResponse.json({ error: 'Request not found' }, { status: 404 })
+    revalidateTag('user-activity-global')
     return NextResponse.json(invitation)
   } catch (error) {
     console.error('Failed to mark Mobile Relay invitation:', error)

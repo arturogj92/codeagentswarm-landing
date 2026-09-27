@@ -68,6 +68,7 @@ interface SupabaseRpcOptions {
    * ever invoked from auth-gated dashboard routes.
    */
   useServiceRole?: boolean
+  signal?: AbortSignal
 }
 
 export async function supabaseRpc<T>(options: SupabaseRpcOptions): Promise<T> {
@@ -75,6 +76,9 @@ export async function supabaseRpc<T>(options: SupabaseRpcOptions): Promise<T> {
   const { url, key } = getConfig(useServiceRole)
 
   const response = await fetch(`${url}/rest/v1/rpc/${fn}`, {
+    signal: options.signal
+      ? AbortSignal.any([options.signal, AbortSignal.timeout(35_000)])
+      : AbortSignal.timeout(35_000),
     method: 'POST',
     headers: {
       apikey: key,

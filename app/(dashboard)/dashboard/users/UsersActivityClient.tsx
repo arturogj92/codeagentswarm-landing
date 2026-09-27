@@ -216,30 +216,43 @@ export default function UsersActivityClient() {
   const [copied, setCopied] = useState<string | null>(null)
 
   const searchRef = useRef<HTMLInputElement>(null)
+  const usersAbortRef = useRef<AbortController | null>(null)
   const globalAbortRef = useRef<AbortController | null>(null)
+  const globalRequestKeyRef = useRef<string | null>(null)
   const detailAbortRef = useRef<AbortController | null>(null)
   const returnFocusRef = useRef<HTMLElement | null>(null)
   const drawerRef = useRef<HTMLElement>(null)
   const closeButtonRef = useRef<HTMLButtonElement>(null)
 
   const loadUsers = useCallback(async () => {
+    usersAbortRef.current?.abort()
+    const controller = new AbortController()
+    usersAbortRef.current = controller
     setLoading(true)
     setError(null)
     try {
-      const response = await fetch('/api/dashboard/users/overview')
+      const response = await fetch('/api/dashboard/users/overview', {
+        signal: AbortSignal.any([controller.signal, AbortSignal.timeout(50_000)]),
+      })
       const payload = await response.json()
       if (!response.ok) throw new Error(payload?.error || 'Failed to load users')
       const overview = payload as UserActivityOverview
+      if (controller.signal.aborted) return
       setUsers(Array.isArray(overview.users) ? overview.users : [])
       setGeneratedAt(overview.generated_at || new Date().toISOString())
     } catch (caught) {
-      setError(caught instanceof Error ? caught.message : 'Failed to load users')
+      if (!controller.signal.aborted) {
+        setError(caught instanceof Error ? caught.message : 'Failed to load users')
+      }
     } finally {
-      setLoading(false)
+      if (usersAbortRef.current === controller) setLoading(false)
     }
   }, [])
 
-  useEffect(() => { void loadUsers() }, [loadUsers])
+  useEffect(() => {
+    void loadUsers()
+    return () => usersAbortRef.current?.abort()
+  }, [loadUsers])
 
   const loadGlobalMetrics = useCallback(async (
     excluded: string[],
@@ -249,12 +262,14 @@ export default function UsersActivityClient() {
     globalAbortRef.current?.abort()
     const controller = new AbortController()
     globalAbortRef.current = controller
-    setGlobalMetrics(null)
+    const requestKey = JSON.stringify([excluded, windowDays, adoptionDays])
+    if (globalRequestKeyRef.current !== requestKey) setGlobalMetrics(null)
+    globalRequestKeyRef.current = requestKey
     setGlobalLoading(true)
     setGlobalError(null)
     try {
       const response = await fetch('/api/dashboard/users/global', {
-        signal: controller.signal,
+        signal: AbortSignal.any([controller.signal, AbortSignal.timeout(50_000)]),
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -288,7 +303,9 @@ export default function UsersActivityClient() {
 
   useEffect(() => {
     if (!exclusionsReady) return
-    localStorage.setItem(GLOBAL_EXCLUSIONS_KEY, JSON.stringify(excludedUserIds))
+    try {
+      localStorage.setItem(GLOBAL_EXCLUSIONS_KEY, JSON.stringify(excludedUserIds))
+    } catch { /* Loading still works when browser storage is unavailable. */ }
     void loadGlobalMetrics(excludedUserIds, globalWindowDays, featureWindowDays)
     return () => globalAbortRef.current?.abort()
   }, [excludedUserIds, exclusionsReady, featureWindowDays, globalWindowDays, loadGlobalMetrics])
