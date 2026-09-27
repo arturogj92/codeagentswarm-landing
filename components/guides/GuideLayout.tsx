@@ -1,6 +1,5 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import { ArrowRight, BookOpen } from 'lucide-react'
 import Link from 'next/link'
 import { useEffect } from 'react'
@@ -89,12 +88,7 @@ export default function GuideLayout({ guide, relatedGuide }: GuideLayoutProps) {
           {/* Main content */}
           <article className="min-w-0 [overflow-wrap:anywhere]">
             {/* Header */}
-            <motion.header
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="mb-10"
-            >
+            <header className="mb-10">
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
                 {meta.title}
               </h1>
@@ -132,7 +126,7 @@ export default function GuideLayout({ guide, relatedGuide }: GuideLayoutProps) {
                   </div>
                 </figure>
               )}
-            </motion.header>
+            </header>
 
             {/* ponytail: show product footage only when it depicts the guide's agent. */}
             {!['cursor-agent', 'pi', 'devin', 'muse'].includes(meta.ctaAgent) && (
@@ -175,12 +169,7 @@ export default function GuideLayout({ guide, relatedGuide }: GuideLayoutProps) {
 
             {/* Recommended guide section */}
             {relatedGuide && (
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4, duration: 0.5 }}
-                className="mt-16"
-              >
+              <div className="mt-16">
                 <h3 className="text-xl font-semibold text-white mb-6">{recommendedTitle}</h3>
                 <div className="p-6 rounded-xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent hover:border-neon-cyan/30 transition-all group">
                   <Link
@@ -211,7 +200,7 @@ export default function GuideLayout({ guide, relatedGuide }: GuideLayoutProps) {
                     {viewAllGuidesText}
                   </Link>
                 </div>
-              </motion.div>
+              </div>
             )}
           </article>
 

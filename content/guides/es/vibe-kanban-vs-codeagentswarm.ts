@@ -7,16 +7,12 @@ export const guide: Guide = {
     title: 'Vibe Kanban vs CodeAgentSwarm: comparativa honesta (2026)',
     metaTitle: 'Vibe Kanban vs CodeAgentSwarm: comparativa honesta (2026)',
     metaDescription: 'Vibe Kanban convierte el trabajo de los agentes en un kanban de issues. CodeAgentSwarm te deja pilotar sus terminales. Comparativa honesta verificada en agosto de 2026.',
-    intro: `Vibe Kanban convierte el trabajo de los agentes en un kanban de issues para equipos. CodeAgentSwarm te deja mirar y pilotar las propias terminales de los agentes, con el tablero como una función más y no como el producto entero.
-
-CodeAgentSwarm lo hacemos nosotros, y conviene que leas esta página sabiéndolo. Por eso aquí verás nuestros límites (código cerrado, sin build de escritorio para Linux, Mobile Connect aún en alpha, todavía en beta, y tú pones tus suscripciones de agentes) y también el crédito que Vibe Kanban merece en lo que hace mejor, empezando por ser código abierto y tener con diferencia la comunidad más grande de esta categoría. Cada dato de terceros se verificó el 25 de agosto de 2026 en la web del fabricante, su README público y los datos públicos de GitHub, incluido un cambio de estado público que contamos entero. La disponibilidad de CodeAgentSwarm en esta página se actualizó el 23 de agosto de 2026.
-
-Si tu cuello de botella es planificar y revisar el trabajo en equipo, una herramienta que arranca por el kanban tiene la forma correcta. Si tu cuello de botella es seguir el ritmo de varias sesiones de agentes a la vez, la forma correcta es un espacio de supervisión.`,
+    intro: 'Vibe Kanban convierte el trabajo de los agentes en un kanban de issues para equipos. CodeAgentSwarm te deja mirar y pilotar las propias terminales de los agentes, con el tablero como una función más y no como el producto entero.\n\nCodeAgentSwarm lo hacemos nosotros, y conviene que leas esta página sabiéndolo. Por eso aquí verás nuestros límites (código cerrado, sin build de escritorio para Linux, Mobile Connect aún en alpha, todavía en beta, y tú pones tus suscripciones de agentes) y también el crédito que Vibe Kanban merece en lo que hace mejor, empezando por ser código abierto y tener con diferencia la comunidad más grande de esta categoría. Cada dato de terceros se verificó el 25 de agosto de 2026 en la web del fabricante, su README público y los datos públicos de GitHub, incluido un cambio de estado público que contamos entero. La disponibilidad de CodeAgentSwarm en esta página se actualizó el 23 de agosto de 2026.\n\nSi tu cuello de botella es planificar y revisar el trabajo en equipo, una herramienta que arranca por el kanban tiene la forma correcta. Si tu cuello de botella es seguir el ritmo de varias sesiones de agentes a la vez, la forma correcta es un espacio de supervisión.\n\nLa actividad de la rama principal se volvió a comprobar el 27 de septiembre de 2026: el último commit es una corrección del router del 19 de septiembre. Las demás afirmaciones conservan la fecha de verificación indicada.',
     ctaText: 'Si quieres ver qué está haciendo cada agente ahora mismo, enterarte en el momento en que uno te necesita y tener un tablero que los agentes actualizan solos, descarga CodeAgentSwarm y pruébalo en tu próxima sesión en paralelo.',
     ctaAgent: 'comparison',
     highlightedWords: ['Vibe Kanban', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
-    updatedAt: '2026-08-25',
+    updatedAt: '2026-09-27',
     alternateSlug: 'vibe-kanban-vs-codeagentswarm',
   },
   sections: [
@@ -59,7 +55,7 @@ Si tu cuello de botella es planificar y revisar el trabajo en equipo, una herram
             'Revisión de diffs con comentarios en línea que vuelven al agente sin salir de la interfaz',
             'Un navegador integrado con devtools, modo inspección y emulación de dispositivos',
             'Creación y merge de pull requests desde la propia herramienta',
-            'Último commit público en la rama principal: 24 de abril de 2026',
+            'Último commit público en la rama principal: 19 de septiembre de 2026',
           ],
         },
         {
@@ -114,7 +110,7 @@ Si tu cuello de botella es planificar y revisar el trabajo en equipo, una herram
             ['Gestión de tareas', 'Es el producto entero: issues de kanban, filtros, personalización del tablero, asignación en equipo', 'Una función más del espacio de trabajo: un kanban que los agentes actualizan por MCP'],
             ['Código abierto', 'Sí, Apache-2.0, unas 27.900 estrellas', 'No, código cerrado y sin repositorio público de la app'],
             ['Precio', 'Código abierto y autohospedable; las suscripciones de pago en la nube se cancelaron según su anuncio del 10 de abril de 2026', 'Gratis durante la beta con Pro incluido, y tú pones tus suscripciones de agentes'],
-            ['Último commit público (verificado el 25 ago 2026)', '24 de abril de 2026', 'Código cerrado, sin repositorio público'],
+            ['Último commit público (verificado el 27 sep 2026)', '19 de septiembre de 2026', 'Código cerrado, sin repositorio público'],
           ],
           caption: 'Verificado el 25 de agosto de 2026 en vibekanban.com, su README público, su documentación y GitHub.',
         },
@@ -177,7 +173,7 @@ Si tu cuello de botella es planificar y revisar el trabajo en equipo, una herram
     },
     {
       question: '¿Vibe Kanban sigue mantenido?',
-      answer: 'Estos son los datos con fecha, verificados el 25 de agosto de 2026. El 10 de abril de 2026, bloop, la empresa detrás de Vibe Kanban, anunció su cierre y que el proyecto continuaría como código abierto mantenido por la comunidad. El último commit público en la rama principal fue el 24 de abril de 2026, y el README lleva un aviso de cierre que enlaza a ese anuncio. El código sigue siendo Apache-2.0 y autohospedable, así que la pregunta es cuánto te fías de un mantenimiento comunitario, no si el software desaparece.',
+      answer: 'La rama principal recibió una corrección del router el 19 de septiembre de 2026, comprobada el 27 de septiembre. El anuncio de cierre de bloop de abril describía la continuidad del proyecto como código abierto mantenido por la comunidad. No debe confundirse el cierre de la empresa con ausencia de commits en el proyecto.',
     },
     {
       question: '¿Puedo seguir usando la nube y las funciones de equipo de Vibe Kanban?',

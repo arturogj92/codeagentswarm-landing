@@ -76,6 +76,7 @@ export interface GuideMeta {
   author?: string
   // For hreflang - the slug in the other language
   alternateSlug: string
+  relatedSlug?: string // Editorial next step in the same locale; otherwise use the agent fallback.
 }
 
 export interface Guide {
@@ -87,8 +88,18 @@ export interface Guide {
 export type RelatedGuideMeta = Pick<GuideMeta, 'slug' | 'title' | 'intro'>
 
 export function pickRelatedGuideMeta(guides: Guide[], current: Guide): RelatedGuideMeta | null {
+  const editorial = guides.find((guide) =>
+    guide.meta.slug === current.meta.relatedSlug &&
+    guide.meta.slug !== current.meta.slug &&
+    guide.meta.locale === current.meta.locale
+  )
+  if (editorial) {
+    const { slug, title, intro } = editorial.meta
+    return { slug, title, intro }
+  }
+
   const related = guides
-    .filter((guide) => guide.meta.slug !== current.meta.slug && guide.meta.ctaAgent === current.meta.ctaAgent)
+    .filter((guide) => guide.meta.slug !== current.meta.slug && guide.meta.ctaAgent === current.meta.ctaAgent && guide.meta.locale === current.meta.locale)
     .sort((a, b) => a.meta.slug.localeCompare(b.meta.slug))
 
   if (related.length === 0) return null

@@ -16,7 +16,8 @@ En esta guía explico el problema en concreto, qué es de verdad un git worktree
     ctaAgent: 'multi',
     highlightedWords: ['Git worktrees', 'agentes de IA'],
     publishedAt: '2026-07-05',
-    updatedAt: '2026-09-05',
+    updatedAt: '2026-09-27',
+    relatedSlug: 'kanban-automatico-agentes-ia',
     alternateSlug: 'git-worktrees-for-ai-coding-agents',
   },
   sections: [
@@ -50,6 +51,10 @@ En esta guía explico el problema en concreto, qué es de verdad un git worktree
         {
           type: 'paragraph',
           text: 'La solución obvia es dar a cada agente su propia carpeta. Podrías clonar el repo varias veces, pero eso es pesado y un desperdicio. Git ya trae una respuesta más ligera de fábrica: los worktrees.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Una vez definido el reparto de archivos y el aislamiento, puedes poner el trabajo en cola con <a href="/es/guias/kanban-automatico-agentes-ia" class="text-neon-cyan hover:text-neon-purple transition-colors">Auto Kanban</a>.',
         },
       ],
     },

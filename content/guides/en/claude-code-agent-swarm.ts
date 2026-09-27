@@ -7,16 +7,13 @@ export const guide: Guide = {
     title: 'Claude Code Agent Swarm: Run Multiple Claude Agents in Parallel',
     metaTitle: 'Claude Code Agent Swarm: Run Multiple Claude Agents in Parallel (2026)',
     metaDescription: 'A Claude agent swarm runs several independent Claude Code sessions at once. How it differs from subagents, the 3 ways to set one up, and how to keep it from turning into merge chaos.',
-    intro: `A Claude code swarm is several independent Claude Code sessions running at the same time, each on its own task. Every time you run <code>claude</code> you get a separate process with its own conversation and its own context window, so nothing stops you from having four of them working the same repository at once.
-
-The first thing worth clearing up: this is not the same as Claude Code's built-in subagents. Those live inside one session and share its context and usage. A swarm is several sessions that know nothing about each other. The difference decides which one you actually want, so the next section covers it before anything else.
-
-The second thing is that starting the processes is trivial and supervising them is not. Three Claude agents finish at different moments, stop for different permission prompts, and occasionally edit the same file. This guide covers the three practical ways to run a Claude agent swarm, where each one breaks, and how to stop parallel agents from stepping on each other. For the same setup on other CLIs, see the <a href="/en/guides/ai-cli-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">AI CLI agent swarm</a> overview or the <a href="/en/guides/codex-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex agent swarm</a> guide.`,
+    intro: 'A Claude code swarm is several independent Claude Code sessions running at the same time, each on its own task. Every time you run <code>claude</code> you get a separate process with its own conversation and its own context window, so nothing stops you from having four of them working the same repository at once.\n\nThe first thing worth clearing up: this is not the same as Claude Code\'s built-in subagents. Subagents work within a session, with their own context. Agent Teams is another feature: it coordinates multiple Claude Code sessions through a lead, tasks and messages. The difference decides which one you actually want, so the next section covers it before anything else.\n\nThe second thing is that starting the processes is trivial and supervising them is not. Three Claude agents finish at different moments, stop for different permission prompts, and occasionally edit the same file. This guide covers the three practical ways to run a Claude agent swarm, where each one breaks, and how to stop parallel agents from stepping on each other. For the same setup on other CLIs, see the <a href="/en/guides/ai-cli-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">AI CLI agent swarm</a> overview or the <a href="/en/guides/codex-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex agent swarm</a> guide.',
     ctaText: 'Run your Claude agent swarm in CodeAgentSwarm. Several Claude Code terminals in one window, with desktop notifications, live diffs and per-terminal permissions so parallel agents stay supervised.',
     ctaAgent: 'claude-code',
     highlightedWords: ['Claude Code Agent Swarm', 'Claude Agents'],
     publishedAt: '2026-07-31',
-    updatedAt: '2026-07-31',
+    updatedAt: '2026-09-27',
+    relatedSlug: 'claude-code-dashboard',
     alternateSlug: 'enjambre-de-agentes-claude-code',
   },
   sections: [
@@ -30,11 +27,11 @@ The second thing is that starting the processes is trivial and supervising them 
         },
         {
           type: 'table',
-          headers: ['', 'Subagents / agent teams', 'A Claude swarm'],
+          headers: ['', 'Subagents', 'A Claude swarm'],
           rows: [
             ['What it is', 'Helpers spawned inside one Claude Code session', 'Several separate Claude Code sessions'],
             ['Who is in charge', 'Claude orchestrates them for you', 'You assign the work'],
-            ['Context', 'Shared with the parent session', 'Each one has its own, fully isolated'],
+            ['Context', 'Own context; returns results to the caller', 'Each one has its own, fully isolated'],
             ['Lifetime', 'Ephemeral, they end with the task', 'As long as you keep the session open'],
             ['Best for', 'Splitting one task into parallel steps', 'Several unrelated tasks at once'],
             ['Can mix vendors', 'No, all Claude', 'Yes, Claude plus Codex, opencode, others'],
@@ -52,6 +49,10 @@ The second thing is that starting the processes is trivial and supervising them 
         {
           type: 'paragraph',
           text: 'The rest of this guide is about the swarm: several independent Claude Code sessions, and how to run them without losing track.',
+        },
+        {
+          type: 'paragraph',
+          text: 'To keep track of which session is working or needs input, use the <a href="/en/guides/claude-code-dashboard" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code dashboard</a>.',
         },
       ],
     },
@@ -347,7 +348,7 @@ The second thing is that starting the processes is trivial and supervising them 
     },
     {
       question: 'Is a Claude agent swarm the same as subagents or agent teams?',
-      answer: 'No. Subagents and agent teams are helpers spawned inside a single Claude Code session, sharing that session\'s context and usage, orchestrated by Claude to split one task. A swarm is several fully separate sessions with isolated context that you assign work to yourself. Use subagents for one problem that decomposes, a swarm for several unrelated problems. They combine fine: any terminal in your swarm can run a session that uses subagents.',
+      answer: 'These terms are not interchangeable. Subagents work within a session with their own context. Agent Teams coordinates Claude Code sessions through a lead, tasks and messages. A swarm describes the use of several sessions, which you can supervise yourself or coordinate with tools such as CodeAgentSwarm.',
     },
     {
       question: 'How many Claude Code agents can I run at once?',

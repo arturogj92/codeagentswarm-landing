@@ -16,7 +16,8 @@ En esta guía te explico los tres métodos principales, los comparo de forma hon
     ctaAgent: 'claude-code',
     highlightedWords: ['varias sesiones', 'Claude Code'],
     publishedAt: '2026-04-15',
-    updatedAt: '2026-09-05',
+    updatedAt: '2026-09-27',
+    relatedSlug: 'interfaz-grafica-claude-code',
     alternateSlug: 'run-multiple-claude-code-sessions',
   },
   sections: [
@@ -52,6 +53,10 @@ En esta guía te explico los tres métodos principales, los comparo de forma hon
         {
           type: 'paragraph',
           text: 'Para comprobar qué queda aislado, consulta <a href="/es/guias/git-worktrees-para-agentes-de-ia#local-isolation-check" class="text-neon-cyan hover:text-neon-purple transition-colors">nuestra prueba de aislamiento con dos worktrees</a>. Incluye resultados observados, un ejemplo ejecutable y los límites que debes revisar antes de fusionar.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Para abrir y supervisar estas sesiones desde una interfaz visual, consulta la <a href="/es/guias/interfaz-grafica-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">guía de la interfaz gráfica de Claude Code</a>.',
         },
       ],
     },

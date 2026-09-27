@@ -16,7 +16,8 @@ In this guide I will walk you through the three main methods, compare them hones
     ctaAgent: 'claude-code',
     highlightedWords: ['multiple sessions', 'Claude Code'],
     publishedAt: '2026-04-15',
-    updatedAt: '2026-09-05',
+    updatedAt: '2026-09-27',
+    relatedSlug: 'claude-code-gui',
     alternateSlug: 'ejecutar-multiples-sesiones-claude-code',
   },
   sections: [
@@ -52,6 +53,10 @@ In this guide I will walk you through the three main methods, compare them hones
         {
           type: 'paragraph',
           text: 'For a reproducible check of what stays isolated, see <a href="/en/guides/git-worktrees-for-ai-coding-agents#local-isolation-check" class="text-neon-cyan hover:text-neon-purple transition-colors">our two-worktree file isolation test</a>. It includes observed results, a runnable example and the limits to check before merging.',
+        },
+        {
+          type: 'paragraph',
+          text: 'For a visual way to open and supervise these sessions, see the <a href="/en/guides/claude-code-gui" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code GUI guide</a>.',
         },
       ],
     },

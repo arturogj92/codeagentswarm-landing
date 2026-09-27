@@ -7,16 +7,12 @@ export const guide: Guide = {
     title: 'Vibe Kanban vs CodeAgentSwarm: An Honest Comparison (2026)',
     metaTitle: 'Vibe Kanban vs CodeAgentSwarm: An Honest Comparison (2026)',
     metaDescription: 'Vibe Kanban turns agent work into a kanban of issues. CodeAgentSwarm lets you watch and drive the agent terminals. Honest comparison with facts verified August 2026.',
-    intro: `Vibe Kanban turns agent work into a kanban of issues for teams. CodeAgentSwarm lets you watch and drive the agent terminals themselves, with the board as one feature rather than the whole product.
-
-We build CodeAgentSwarm, and you should read this page knowing that. It is why we list our own limits here (closed source, no Linux desktop build, Mobile Connect still in alpha, still in beta, and you supply your own agent subscriptions) and why we credit Vibe Kanban for the things it does better, starting with being open source and having by far the biggest community in this category. Every third-party fact below was verified on August 25, 2026 against the vendor own site, their public README and public GitHub data, including a public status change we cover in full. CodeAgentSwarm availability on this page was updated on August 23, 2026.
-
-If your bottleneck is planning and reviewing work as a team, a kanban-first tool is the right shape. If your bottleneck is keeping up with several agent sessions running at once, a supervision workspace is.`,
+    intro: 'Vibe Kanban turns agent work into a kanban of issues for teams. CodeAgentSwarm lets you watch and drive the agent terminals themselves, with the board as one feature rather than the whole product.\n\nWe build CodeAgentSwarm, and you should read this page knowing that. It is why we list our own limits here (closed source, no Linux desktop build, Mobile Connect still in alpha, still in beta, and you supply your own agent subscriptions) and why we credit Vibe Kanban for the things it does better, starting with being open source and having by far the biggest community in this category. Every third-party fact below was verified on August 25, 2026 against the vendor own site, their public README and public GitHub data, including a public status change we cover in full. CodeAgentSwarm availability on this page was updated on August 23, 2026.\n\nIf your bottleneck is planning and reviewing work as a team, a kanban-first tool is the right shape. If your bottleneck is keeping up with several agent sessions running at once, a supervision workspace is.\n\nDefault-branch activity was checked again on September 27, 2026: the latest commit is a September 19 router fix. Other claims retain their stated verification date.',
     ctaText: 'If you want to see what each agent is doing right now, get notified the moment one needs you, and keep a task board that the agents update themselves, download CodeAgentSwarm and try it on your next parallel session.',
     ctaAgent: 'comparison',
     highlightedWords: ['Vibe Kanban', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
-    updatedAt: '2026-08-25',
+    updatedAt: '2026-09-27',
     alternateSlug: 'vibe-kanban-vs-codeagentswarm',
   },
   sections: [
@@ -59,7 +55,7 @@ If your bottleneck is planning and reviewing work as a team, a kanban-first tool
             'Diff review with inline comments sent back to the agent without leaving the UI',
             'A built-in browser preview with devtools, inspect mode and device emulation',
             'Pull request creation and merge from inside the tool',
-            'Last public commit on the default branch: April 24, 2026',
+            'Last public commit on the default branch: September 19, 2026',
           ],
         },
         {
@@ -114,7 +110,7 @@ If your bottleneck is planning and reviewing work as a team, a kanban-first tool
             ['Task management', 'The whole product: kanban issues, filtering, board customisation, team assignment', 'One feature of the workspace: a kanban the agents update over MCP'],
             ['Open source', 'Yes, Apache-2.0, roughly 27,900 stars', 'No, closed source with no public app repository'],
             ['Price', 'Open source and self-hostable; the paid cloud subscriptions were terminated per their April 10, 2026 announcement', 'Free during beta with Pro included, and you bring your own agent subscriptions'],
-            ['Last public commit (verified Aug 25, 2026)', 'April 24, 2026', 'Closed source, no public repo'],
+            ['Last public commit (verified Sep 27, 2026)', 'September 19, 2026', 'Closed source, no public repo'],
           ],
           caption: 'Verified on August 25, 2026 from vibekanban.com, their public README, their docs and GitHub.',
         },
@@ -177,7 +173,7 @@ If your bottleneck is planning and reviewing work as a team, a kanban-first tool
     },
     {
       question: 'Is Vibe Kanban still maintained?',
-      answer: 'Here are the dated facts, verified on August 25, 2026. On April 10, 2026 bloop, the company behind Vibe Kanban, announced it was shutting down and that the project would continue as open source and community maintained. The last public commit on the default branch was April 24, 2026, and the README carries a sunsetting banner linking to that announcement. The code remains Apache-2.0 and self-hostable, so this is a question of how comfortable you are depending on community maintenance, not of the software disappearing.',
+      answer: 'The default branch received a router fix on September 19, 2026, checked on September 27. The April bloop shutdown announcement described the project continuing as community-maintained open source. The company shutdown should not be confused with an absence of project commits.',
     },
     {
       question: 'Can I still use the Vibe Kanban cloud and team features?',

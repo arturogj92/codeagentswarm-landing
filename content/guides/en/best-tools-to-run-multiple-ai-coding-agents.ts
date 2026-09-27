@@ -7,16 +7,12 @@ export const guide: Guide = {
     title: 'The Best Tools to Run Multiple AI Coding Agents in Parallel (2026)',
     metaTitle: 'Best Tools to Run Multiple AI Coding Agents in Parallel (2026, verified)',
     metaDescription: 'CodeAgentSwarm, T3 Code, Superset, Paseo, Conductor, Claude Squad and more compared: stars, last commit, platforms. Every fact verified on August 25, 2026.',
-    intro: `If you want to run several AI coding agents at once and still know what each of them is doing, the tools built for that job are CodeAgentSwarm, T3 Code, Superset, Paseo, Conductor, Vibe Kanban, Claude Squad and Nimbalyst. They are apps that run and supervise coding CLIs such as Claude Code, Codex CLI and OpenCode. They are not the same thing as LangGraph, CrewAI or AutoGen, which are libraries for building agent systems in code and cannot open a terminal for you.
-
-Disclosure before anything else: we build CodeAgentSwarm, so we are one of the tools on this list. That is exactly why the criteria are identical for everyone and why our own limitations are written down in the same section as our features. Product, licence and supported-agent facts were verified on August 25, 2026 against the vendors' own sites; public GitHub stars and activity were refreshed on August 31, 2026. Nothing in this guide is quoted from a competitor's marketing page without saying so. CodeAgentSwarm availability on this page was updated on August 23, 2026.
-
-One finding is worth putting up front, because it changes how you read every star count in this category. The two repos with the most stars are the two with the least recent activity: opcode has no public commit since October 16, 2025 and Vibe Kanban none since April 24, 2026. T3 Code, Superset and Pane all committed code on August 31, Paseo on August 30 and Nimbalyst on August 28. Popular and alive are not the same measurement.`,
+    intro: 'If you want to run several AI coding agents at once and still know what each of them is doing, the tools built for that job are CodeAgentSwarm, T3 Code, Superset, Paseo, Conductor, Vibe Kanban, Claude Squad and Nimbalyst. They are apps that run and supervise coding CLIs such as Claude Code, Codex CLI and OpenCode. They are not the same thing as LangGraph, CrewAI or AutoGen, which are libraries for building agent systems in code and cannot open a terminal for you.\n\nDisclosure before anything else: we build CodeAgentSwarm, so we are one of the tools on this list. That is exactly why the criteria are identical for everyone and why our own limitations are written down in the same section as our features. Product, licence and supported-agent facts were verified on August 25, 2026 against the vendors\' own sites; public GitHub stars and activity were refreshed on August 31, 2026. Nothing in this guide is quoted from a competitor\'s marketing page without saying so. CodeAgentSwarm availability on this page was updated on August 23, 2026.\n\nSeptember 27 review: Vibe Kanban has a code commit dated September 19, 2026, and opcode has a README change dated September 18. The earlier inactivity claims no longer describe the current history. A documentation edit alone does not demonstrate functional maintenance.',
     ctaText: 'If you want supervised parallel sessions across Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build and Cursor Agent on macOS or Windows, with notifications, shared history and a kanban the agents update themselves, CodeAgentSwarm is free during the beta. Download it and judge it against the table above.',
     ctaAgent: 'comparison',
     highlightedWords: ['AI Coding Agents', 'Parallel'],
     publishedAt: '2026-07-26',
-    updatedAt: '2026-08-31',
+    updatedAt: '2026-09-27',
     alternateSlug: 'mejores-herramientas-agentes-ia-en-paralelo',
   },
   sections: [
@@ -64,7 +60,7 @@ One finding is worth putting up front, because it changes how you read every sta
             '<strong>You want to supervise from your phone, or self-host the whole thing</strong>: Paseo. It runs a self-hosted daemon with desktop, mobile, web and CLI clients, and it ships real apps on the iOS App Store and Google Play.',
             '<strong>You want managed cloud sandboxes and multiplayer collaboration</strong>: Conductor. Its local app is macOS only, while cloud workspaces can keep agents running after the app closes.',
             '<strong>You live in the terminal and want tmux and SSH, not a GUI</strong>: Claude Squad. It manages agents as tmux sessions, which means it works fine over SSH on a box with no desktop at all.',
-            '<strong>You want kanban-style team orchestration and can accept slow maintenance</strong>: Vibe Kanban. It has the most stars in the category, and its last public commit was April 24, 2026.',
+            '<strong>You want to organize work in a kanban</strong>: evaluate Vibe Kanban and its community maintenance model. Its default branch received a code fix on September 19, 2026.',
             '<strong>You want to visually edit what the agents produce</strong>: Nimbalyst. It positions itself as a visual editor for Claude Code and Codex, for markdown, mockups and diagrams as well as code.',
             '<strong>You want a supervised desktop workspace across several vendors, with notifications, shared history and a kanban the agents update themselves</strong>: CodeAgentSwarm. Seven CLIs on macOS and Windows, at the cost of being closed source with no Linux build.',
           ],
@@ -122,7 +118,7 @@ One finding is worth putting up front, because it changes how you read every sta
             [
               'Vibe Kanban',
               'About 27,900',
-              'April 24, 2026',
+              'September 19, 2026 (checked September 27)',
               'Windows, macOS and Linux',
               'Coding agents such as Claude Code, Gemini CLI and Amp',
               'Yes, Apache-2.0',
@@ -130,7 +126,7 @@ One finding is worth putting up front, because it changes how you read every sta
             [
               'opcode',
               'About 22,400',
-              'October 16, 2025',
+              'September 18, 2026, README (checked September 27)',
               'Not documented on their site as of August 25, 2026',
               'Claude Code',
               'Yes, AGPL-3.0',
@@ -160,12 +156,12 @@ One finding is worth putting up front, because it changes how you read every sta
               'No, proprietary',
             ],
           ],
-          caption: 'Product, licence and supported-agent facts were read from the vendors\' own sites on August 25, 2026. Public GitHub stars and last-commit dates were refreshed on August 31, 2026.',
+          caption: 'Product, licence and supported-agent facts were read from the vendors\' own sites on August 25, 2026. Public GitHub stars and activity were refreshed on August 31, 2026; Vibe Kanban and opcode default-branch commits were checked again on September 27.',
         },
         {
           type: 'callout',
           variant: 'info',
-          content: 'Product, licence and supported-agent facts in this table were verified on August 25, 2026; public GitHub stars and activity were refreshed on August 31. Star counts move, repos get archived, and a tool that was quiet in July can ship in August. If a row is out of date or wrong, tell us and we will fix it and say when we did.',
+          content: 'Product, licence and supported-agent facts in this table were verified on August 25, 2026; public GitHub stars and activity were refreshed on August 31, except the Vibe Kanban and opcode commit dates checked on September 27. Star counts move, repos get archived, and a tool that was quiet in July can ship in August. If a row is out of date or wrong, tell us and we will fix it and say when we did.',
         },
         {
           type: 'paragraph',
@@ -179,11 +175,11 @@ One finding is worth putting up front, because it changes how you read every sta
       content: [
         {
           type: 'paragraph',
-          text: 'Sort this category by GitHub stars and the ranking is close to useless. The top two are Vibe Kanban with about 27,900 stars and opcode with about 22,400. Vibe Kanban has no public commit since April 24, 2026, four months before we verified. opcode has none since October 16, 2025, more than ten months before. They still lead every star ranking, every "top 10 tools" post, and by extension the AI answers written from those posts.',
+          text: 'Stars measure accumulated interest, not software health. A fresh check of the default branches shows a router fix in <a href="https://github.com/BloopAI/vibe-kanban/commit/d5cbb5380fa0b32e98ef9b8d987f63decce4be3a" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Vibe Kanban</a> dated September 19, 2026, and a README edit in <a href="https://github.com/winfunc/opcode/commit/d1ca30a3c0c39fff01fde2f86c2d5af6a1db658b" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">opcode</a> dated September 18. Those are different kinds of changes and do not support the same maintenance conclusion.',
         },
         {
           type: 'paragraph',
-          text: 'Now look at the other end. T3 Code and Superset had public commits on August 31, 2026, Paseo on August 30 and Nimbalyst on August 28. T3 Code went from repository creation on February 8, 2026 to about 21,100 stars in under seven months, which is the fastest growth anybody in this category has managed. None of that shows up in a star ranking, because stars are a lifetime counter and development is a rate.',
+          text: 'Star counts and the other dates in the table retain their observation dates. Before choosing, review recent changes, releases and issues relevant to your workflow. An August count is not a current measurement.',
         },
         {
           type: 'paragraph',
@@ -192,7 +188,7 @@ One finding is worth putting up front, because it changes how you read every sta
         {
           type: 'callout',
           variant: 'tip',
-          content: 'A ten-second check: open the repo, look at the "last commit" timestamp on the file list, then open the issues tab sorted by recently created. A live project has recent commits and answered issues. A parked one has neither, whatever its star count says.',
+          content: 'Open the commits and inspect what changed. Then check releases and issue responses. A push or README edit is not the same as a new functional release.',
         },
       ],
     },
@@ -436,7 +432,7 @@ One finding is worth putting up front, because it changes how you read every sta
         },
         {
           type: 'paragraph',
-          text: 'Vibe Kanban has the most stars in the category, about 27,900 on August 25, 2026, and describes itself as a project management tool for teams building with AI coding agents, working with agents such as Claude Code, Gemini CLI and Amp. It is Apache-2.0. Its last public commit was April 24, 2026, and the comparison page at parallelcode.app describes it as community-maintained since April 2026, which matches the repository. If the kanban-first model is what you want and a slower maintenance pace is acceptable, it is still capable. Details in <a href="/en/guides/vibe-kanban-vs-codeagentswarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Vibe Kanban vs CodeAgentSwarm</a>.',
+          text: 'Vibe Kanban offers a kanban task workflow and publishes its code under Apache-2.0. Its default branch includes a <a href="https://github.com/BloopAI/vibe-kanban/commit/d5cbb5380fa0b32e98ef9b8d987f63decce4be3a" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">September 19, 2026 router fix</a>. Evaluate current releases and issues before adopting it. More detail in <a href="/en/guides/vibe-kanban-vs-codeagentswarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Vibe Kanban vs CodeAgentSwarm</a>.',
         },
         {
           type: 'heading',
@@ -456,7 +452,7 @@ One finding is worth putting up front, because it changes how you read every sta
         },
         {
           type: 'paragraph',
-          text: 'opcode is a GUI app and toolkit for Claude Code, AGPL-3.0, with about 22,400 stars on August 25, 2026, the second highest here. Two facts qualify that number. It supports Claude Code only, so it is not a multi-vendor option. And its last public commit was October 16, 2025, more than ten months before we verified. It is the clearest example of the pattern in this guide: a star count that keeps it at the top of every list, and a repository quiet for over ten months. There is no dedicated comparison page for it here because we do not think it is a live alternative today.',
+          text: 'opcode is a GUI and toolkit for Claude Code under AGPL-3.0. Its latest default-branch commit, checked on September 27, 2026, is a <a href="https://github.com/winfunc/opcode/commit/d1ca30a3c0c39fff01fde2f86c2d5af6a1db658b" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">September 18 README edit</a>. That corrects this guide’s older date, but does not show that its Claude Code integrations have been updated. Review releases and functional changes to decide whether it fits.',
         },
       ],
     },
@@ -508,7 +504,7 @@ One finding is worth putting up front, because it changes how you read every sta
     },
     {
       question: 'Which of these tools are actively maintained in 2026?',
-      answer: 'GitHub activity refreshed on August 31, 2026: T3 Code and Superset had public commits from that day, Paseo from August 30, Nimbalyst from August 28 and Claude Squad from August 20. Vibe Kanban last changed on April 24, 2026, and opcode on October 16, 2025. CodeAgentSwarm and Conductor are closed source, so there is no public commit history to check for either.',
+      answer: 'September 27 review: Vibe Kanban has a code commit dated September 19, 2026, and opcode has a README change dated September 18. The earlier inactivity claims no longer describe the current history. A documentation edit alone does not demonstrate functional maintenance. The other dates and counts retain their August observation date. CodeAgentSwarm and Conductor have no public application commit history for this comparison.',
     },
     {
       question: 'Are LangGraph, CrewAI or AutoGen alternatives to these tools?',

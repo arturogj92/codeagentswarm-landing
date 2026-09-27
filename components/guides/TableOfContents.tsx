@@ -49,11 +49,9 @@ export default function TableOfContents({ items, locale }: TableOfContentsProps)
       <ul className="space-y-2 border-l border-white/10 pl-4">
         {items.map((item) => (
           <li key={item.id}>
-            {/* Botón en vez de <a href="#..."> a propósito: Google indexaba los
-                fragmentos (#section) como resultados separados con 0% CTR. El
-                scroll ya era 100% JS (preventDefault), así que la UX no cambia. */}
-            <button
-              type="button"
+            <a
+              href={`#${item.id}`}
+              aria-current={activeId === item.id ? 'location' : undefined}
               className={`
                 block w-full text-left text-sm transition-all duration-200
                 ${item.level === 3 ? 'ml-3 text-xs' : ''}
@@ -63,16 +61,9 @@ export default function TableOfContents({ items, locale }: TableOfContentsProps)
                     : 'text-white/60 hover:text-white'
                 }
               `}
-              onClick={() => {
-                const element = document.getElementById(item.id)
-                if (element) {
-                  element.scrollIntoView({ behavior: 'smooth' })
-                  setActiveId(item.id)
-                }
-              }}
             >
               {item.title}
-            </button>
+            </a>
           </li>
         ))}
       </ul>
