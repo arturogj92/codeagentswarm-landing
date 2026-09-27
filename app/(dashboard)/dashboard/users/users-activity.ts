@@ -35,6 +35,34 @@ export interface UserActivityOverview {
   generated_at: string
 }
 
+export interface UserActivityCharts {
+  generated_at: string
+  window_days: number
+  users_by_platform: { platform: string; users: number }[]
+  downloads_7d: { platform: string; downloads: number }[]
+  agent_daily: { day: string; agent: string; sessions: number; users: number }[]
+}
+
+export function buildAgentTrend(charts: UserActivityCharts) {
+  const today = new Date(charts.generated_at)
+  today.setUTCHours(0, 0, 0, 0)
+  const days = Array.from({ length: charts.window_days }, (_, index) => (
+    new Date(today.getTime() - (charts.window_days - 1 - index) * 86_400_000).toISOString().slice(0, 10)
+  ))
+  const rows = new Map(charts.agent_daily.map((row) => [`${row.day}:${row.agent}`, row]))
+  const agents = [...new Set(charts.agent_daily.map((row) => row.agent))].sort()
+  return {
+    days,
+    series: agents.map((agent) => ({
+      agent,
+      points: days.map((day) => ({
+        sessions: rows.get(`${day}:${agent}`)?.sessions ?? 0,
+        users: rows.get(`${day}:${agent}`)?.users ?? 0,
+      })),
+    })),
+  }
+}
+
 export type RealtimeWindowHours = 0.5 | 1 | 4 | 12 | 24
 
 export interface RealtimeActivitySnapshot {

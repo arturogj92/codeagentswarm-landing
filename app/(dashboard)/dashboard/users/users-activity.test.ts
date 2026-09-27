@@ -3,6 +3,7 @@ import test from 'node:test'
 
 import {
   EMPTY_USER_FILTERS,
+  buildAgentTrend,
   compareAppVersions,
   filterUsers,
   getLifecycle,
@@ -20,7 +21,31 @@ import {
   type UserActivityRow,
   type RealtimeActivitySnapshot,
   type UserCohortHealth,
+  type UserActivityCharts,
 } from './users-activity.ts'
+
+test('agent lines keep UTC dates, zero-activity days, and unique-user counts separate from sessions', () => {
+  const charts: UserActivityCharts = {
+    generated_at: '2026-03-30T00:05:00Z',
+    window_days: 7,
+    users_by_platform: [],
+    downloads_7d: [],
+    agent_daily: [
+      { day: '2026-03-29', agent: 'codex', sessions: 12, users: 2 },
+      { day: '2026-03-24', agent: 'claude', sessions: 3, users: 1 },
+      { day: '2026-03-30', agent: 'codex', sessions: 1, users: 1 },
+      { day: '2026-03-23', agent: 'claude', sessions: 99, users: 10 },
+    ],
+  }
+  const trend = buildAgentTrend(charts)
+  assert.deepEqual(trend.days, ['2026-03-24', '2026-03-25', '2026-03-26', '2026-03-27', '2026-03-28', '2026-03-29', '2026-03-30'])
+  assert.deepEqual(trend.series.map(({ agent }) => agent), ['claude', 'codex'])
+  assert.deepEqual(trend.series[0].points.map(({ sessions }) => sessions), [3, 0, 0, 0, 0, 0, 0])
+  assert.deepEqual(trend.series[1].points.map(({ users }) => users), [0, 0, 0, 0, 0, 2, 1])
+  assert.equal(trend.series[1].points[5].sessions, 12)
+  assert.deepEqual(buildAgentTrend({ ...charts, agent_daily: [] }).series, [])
+  assert.equal(buildAgentTrend({ ...charts, generated_at: '2026-03-30T00:05:00+02:00' }).days.at(-1), '2026-03-29')
+})
 
 test('main buttons keep their product order and exact catalog counts', () => {
   const buttons = [

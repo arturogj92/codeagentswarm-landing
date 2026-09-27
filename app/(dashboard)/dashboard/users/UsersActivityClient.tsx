@@ -10,6 +10,7 @@ import {
   type RefObject,
 } from 'react'
 import ActivityHeatmap from './ActivityHeatmap'
+import UserAnalyticsCharts from './UserAnalyticsCharts'
 import {
   EMPTY_USER_FILTERS,
   MAIN_BUTTONS,
@@ -202,6 +203,7 @@ export default function UsersActivityClient() {
   const [featureWindowDays, setFeatureWindowDays] = useState<FeatureWindowDays>(30)
   const [excludedUserIds, setExcludedUserIds] = useState<string[]>([])
   const [exclusionsReady, setExclusionsReady] = useState(false)
+  const [chartsRefreshKey, setChartsRefreshKey] = useState(0)
   const [filters, setFilters] = useState<UserFilters>(EMPTY_USER_FILTERS)
   const [segment, setSegment] = useState<Segment>('all')
   const [advancedOpen, setAdvancedOpen] = useState(false)
@@ -508,6 +510,7 @@ export default function UsersActivityClient() {
   }
 
   function refreshDashboard() {
+    setChartsRefreshKey((key) => key + 1)
     void loadUsers()
     if (exclusionsReady) void loadGlobalMetrics(excludedUserIds, globalWindowDays, featureWindowDays)
   }
@@ -567,6 +570,8 @@ export default function UsersActivityClient() {
           </div>
           <p className="text-[11px] text-white/55">Exclusive lifecycle groups · based on last recorded event</p>
         </div>
+
+        <UserAnalyticsCharts excludedUserIds={excludedUserIds} ready={exclusionsReady} refreshKey={chartsRefreshKey} />
 
         <GlobalInsights
           metrics={globalMetrics}
