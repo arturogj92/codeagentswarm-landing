@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import dynamic from 'next/dynamic'
 import { motion } from 'framer-motion'
 import { Info, AlertTriangle, Lightbulb, ImageIcon } from 'lucide-react'
 import type { ContentBlock, GuideSection } from '@/content/guides/types'
@@ -21,6 +22,14 @@ const GUIDE_IMAGE_DIMENSIONS: Record<string, { width: number; height: number }> 
   '/images/guides/antigravity-agent-swarm.png': { width: 2782, height: 1606 },
   '/images/guides/multi-cli-three-agents.png': { width: 3024, height: 1964 },
   '/images/guides/opencode-agent-swarm.png': { width: 3020, height: 1768 },
+}
+
+// Interactive 2.4.0 demos (same components as the home section). Client-only and
+// loaded on demand so guides without a demo block never download them.
+const GUIDE_DEMOS = {
+  coordinators: dynamic(() => import('@/components/release240/CoordinatorsDemo'), { ssr: false }),
+  'auto-kanban': dynamic(() => import('@/components/release240/AutoKanbanDemo'), { ssr: false }),
+  'daily-budget': dynamic(() => import('@/components/release240/DailyBudgetDemo'), { ssr: false }),
 }
 
 // Image placeholder component (when src is '#' or missing)
@@ -325,6 +334,20 @@ function renderBlock(block: ContentBlock, index: number) {
           )}
         </figure>
       )
+
+    case 'demo': {
+      const Demo = GUIDE_DEMOS[block.demo]
+      return (
+        <figure key={index} className="my-10 not-prose">
+          <Demo />
+          {block.caption && (
+            <figcaption className="mt-3 text-center text-sm text-white/50">
+              {block.caption}
+            </figcaption>
+          )}
+        </figure>
+      )
+    }
 
     default:
       return null

@@ -171,6 +171,63 @@
       "updates": "Actualizaciones Automáticas"
     }
   },
+  "release240": {
+    "eyebrow": "Novedades de la 2.4.0",
+    "badge": "NUEVO",
+    "titlePre": "Ahora tus agentes",
+    "titleHighlight": "dirigen el equipo",
+    "subtitle": "Dale el objetivo a un agente. Él abre las sesiones, mantiene el tablero en marcha y no se sale de tu presupuesto.",
+    "jumpLabel": "Ir a una novedad",
+    "jump": {
+      "coordinators": "Coordinadores",
+      "autoKanban": "Kanban en piloto automático",
+      "budget": "Presupuesto diario"
+    },
+    "viewGuide": "Ver guía",
+    "coordinators": {
+      "eyebrow": "Coordinadores",
+      "titlePre": "Un agente planifica.",
+      "titleHighlight": "El resto se pone a trabajar.",
+      "description": "Arranca un coordinador para un proyecto o para todos. Cuéntale lo que necesitas. Reparte el trabajo, abre sesiones en segundo plano y te lo cuenta todo en el mismo Chat.",
+      "check1": "Planifica en un proyecto o en todos a la vez",
+      "check2": "Abre cada sesión con el agente que mejor encaja",
+      "check3": "Te avisa cuando el trabajo está hecho"
+    },
+    "autoKanban": {
+      "eyebrow": "Kanban en piloto automático",
+      "titlePre": "Tu backlog avanza",
+      "titleHighlight": "aunque tú no estés.",
+      "description": "Pon una tarea en cola con el botón del rayo y elige quién la hace: el agente, el modelo y el espacio de trabajo. Auto arranca cada tarea por su cuenta, tantas a la vez como le permitas, y el trabajo terminado te espera en testing.",
+      "check1": "Cada tarea puede ir con un agente y un modelo distintos",
+      "check2": "Auto abre la sesión y le pasa la tarea",
+      "check3": "Sigue cada tarea en directo y revísala después en testing"
+    },
+    "budget": {
+      "eyebrow": "Un presupuesto diario para cada agente",
+      "titlePre": "Gasta tu cuota día a día,",
+      "titleHighlight": "no antes de comer.",
+      "description": "Pon un límite diario a cada proveedor o deja que Smart pace reparta entre los días lo que queda de tu ventana. Elige qué pasa al llegar al límite. ¿Te hace falta un poco más? Añade un 5% solo por hoy.",
+      "check1": "Un tope diario por proveedor, o Smart pace",
+      "check2": "Al llegar al límite: te avisa, pausa el trabajo nuevo o se detiene",
+      "check3": "Un clic y tienes un 5% extra hoy"
+    },
+    "demo": {
+      "tryGoal": "Prueba un objetivo",
+      "replay": "Repetir",
+      "goals": {
+        "pricing": "Lanzar la página de precios",
+        "checkout": "Arreglar los fallos del checkout",
+        "release": "Preparar la versión 2.5"
+      },
+      "steps": {
+        "s1": "Pon tareas en cola: elige agente o usa los ajustes de Auto",
+        "s2": "Auto las arranca una a una",
+        "s3": "Mira trabajar a cada agente",
+        "s4": "Revisa lo terminado"
+      },
+      "yourTurn": "Te toca: pon en cola la tarea #4 con el rayo"
+    }
+  },
   "socialProof": {
     "stats": {
       "workflow": {
@@ -692,9 +749,6 @@
       "liveChanges": "Notificaciones y cambios en directo",
       "organize": "Organiza",
       "keepContext": "Mantén cada contexto separado",
-      "proofTitle": "Pro es el producto que ves.",
-      "proofBody": "Durante la beta no hay un plan de muestra ni una tabla de funciones bloqueadas. Todo lo que aparece aquí se activa al registrarte.",
-      "productAlt": "CodeAgentSwarm ejecutando varios agentes de programación con IA en paralelo",
       "allFeatures": "Ver las 17 funciones Pro incluidas",
       "allFeaturesNote": "Nada oculto tras otro plan"
     },

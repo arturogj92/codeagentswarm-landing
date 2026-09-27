@@ -171,6 +171,63 @@
       "updates": "Auto Updates"
     }
   },
+  "release240": {
+    "eyebrow": "New in 2.4.0",
+    "badge": "NEW",
+    "titlePre": "Your agents now",
+    "titleHighlight": "run the team",
+    "subtitle": "Give one agent the goal. It opens the sessions, keeps the board moving and stays inside your budget.",
+    "jumpLabel": "Jump to a feature",
+    "jump": {
+      "coordinators": "Coordinators",
+      "autoKanban": "Kanban on autopilot",
+      "budget": "Daily budget"
+    },
+    "viewGuide": "View guide",
+    "coordinators": {
+      "eyebrow": "Coordinators",
+      "titlePre": "One agent plans.",
+      "titleHighlight": "The rest get to work.",
+      "description": "Start a coordinator for one project or for all of them. Tell it what you need. It splits the work, opens worker sessions in the background and reports back in the same Chat.",
+      "check1": "Plans across one project or every project",
+      "check2": "Opens each session with the agent that fits the job",
+      "check3": "Reports back when the work is done"
+    },
+    "autoKanban": {
+      "eyebrow": "Kanban on autopilot",
+      "titlePre": "Your backlog moves",
+      "titleHighlight": "while you don’t.",
+      "description": "Queue a task with the lightning button and pick who does it: the agent, the model and the workspace. Auto starts each task on its own, as many at once as you allow, and the finished work waits for you in testing.",
+      "check1": "Each task can run with a different agent and model",
+      "check2": "Auto opens the session and hands over the task",
+      "check3": "Watch every task work live, then review it in testing"
+    },
+    "budget": {
+      "eyebrow": "A daily budget for every agent",
+      "titlePre": "Spend your quota by the day,",
+      "titleHighlight": "not by lunch.",
+      "description": "Set a daily limit for each provider, or let Smart pace spread what is left of your window across the days. Choose what happens at the limit. Need a little more? Add 5% for today.",
+      "check1": "A daily cap per provider, or Smart pace",
+      "check2": "At the limit: notify you, pause new work or stop",
+      "check3": "One click for an extra 5% today"
+    },
+    "demo": {
+      "tryGoal": "Try a goal",
+      "replay": "Replay",
+      "goals": {
+        "pricing": "Ship the pricing page",
+        "checkout": "Fix the checkout bugs",
+        "release": "Prepare release 2.5"
+      },
+      "steps": {
+        "s1": "Queue tasks: pick an agent or use the Auto defaults",
+        "s2": "Auto starts each one on its own",
+        "s3": "Watch each agent work",
+        "s4": "Review the finished work"
+      },
+      "yourTurn": "Your turn: queue task #4 with the lightning button"
+    }
+  },
   "socialProof": {
     "stats": {
       "workflow": {
@@ -692,9 +749,6 @@
       "liveChanges": "Live notifications and changes",
       "organize": "Organize",
       "keepContext": "Keep context separate",
-      "proofTitle": "Pro means the product you can see.",
-      "proofBody": "No teaser tier and no crossed-out feature matrix during beta. Every capability shown here is available after signup.",
-      "productAlt": "CodeAgentSwarm running multiple AI coding agents in parallel",
       "allFeatures": "View all 17 included Pro features",
       "allFeaturesNote": "Nothing hidden behind another tier"
     },

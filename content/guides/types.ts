@@ -11,6 +11,8 @@ export type ContentBlock =
   | { type: 'callout'; variant: 'tip' | 'warning' | 'info'; content: string }
   | { type: 'table'; headers: string[]; rows: string[][]; caption?: string }
   | { type: 'divider' }
+  // Interactive product demo rendered by components/release240 (same demos as the home section).
+  | { type: 'demo'; demo: 'coordinators' | 'auto-kanban' | 'daily-budget'; caption?: string }
 
 // Which agent (or reader intent) the guide's CTAs should speak to.
 // 'multi' covers cross-agent guides (worktrees, MCP, skills) and guides about

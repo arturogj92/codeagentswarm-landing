@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 
 interface BetaPricingSectionProps {
@@ -114,25 +113,6 @@ export default function BetaPricingSection({ sectionId = 'beta-pricing' }: BetaP
               </ul>
             </article>
           ))}
-        </div>
-
-        <div className="grid grid-cols-1 items-center gap-8 border-b border-white/20 py-12 md:grid-cols-[minmax(15rem,.48fr)_minmax(0,1.52fr)] md:gap-10 md:py-16">
-          <div>
-            <h3 className="mb-4 text-3xl font-semibold leading-tight tracking-[-0.04em] text-zinc-100">
-              {tProposal('proofTitle')}
-            </h3>
-            <p className="text-sm leading-relaxed text-zinc-400">
-              {tProposal('proofBody')}
-            </p>
-          </div>
-          <Image
-            src="/images/guides/multi-terminal.png"
-            alt={tProposal('productAlt')}
-            width={3016}
-            height={1758}
-            sizes="(max-width: 768px) 100vw, 70vw"
-            className="aspect-[1.6] w-full rounded-lg border border-white/15 object-cover object-top md:aspect-[1.9048]"
-          />
         </div>
 
         <details className="group pt-8">

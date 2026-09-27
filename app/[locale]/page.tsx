@@ -10,6 +10,7 @@ import HeroSection from '@/components/HeroSection'
 import FeatureVideosSection from '@/components/FeatureVideosSection'
 import ProblemSection from '@/components/ProblemSection'
 import FeaturesSection from '@/components/FeaturesSection'
+import NewIn240Section from '@/components/NewIn240Section'
 import WorksWithSection from '@/components/WorksWithSection'
 // import DemoSection from '@/components/DemoSection'
 import InteractiveDemoSection from '@/components/InteractiveDemoSection'
@@ -182,6 +183,7 @@ export default function Home() {
         <InteractiveDemoSection />
         <ProblemSection />
         <FeaturesSection />
+        <NewIn240Section />
         <FeatureVideosSection />
         <div className="relative max-w-5xl mx-auto px-6 pb-8">
           <GuideProductBlock locale={locale === 'es' ? 'es' : 'en'} source="home" position="feature_videos" />

@@ -202,6 +202,12 @@ import enPiComparison from './en/pi-vs-opencode'
 import esPiComparison from './es/pi-vs-opencode'
 import enPiWindows from './en/pi-coding-agent-on-windows'
 import esPiWindows from './es/pi-coding-agent-en-windows'
+import enWeeklyLimitBudget from './en/claude-code-weekly-limit-daily-budget'
+import esWeeklyLimitBudget from './es/limite-semanal-claude-code-presupuesto-diario'
+import enAgentCoordinator from './en/ai-coding-agent-coordinator'
+import esAgentCoordinator from './es/coordinador-agentes-ia'
+import enAutoKanban from './en/auto-kanban-ai-coding-agents'
+import esAutoKanban from './es/kanban-automatico-agentes-ia'
 
 // Registry of all guides by locale and slug
 export const guides: Record<string, Record<string, Guide>> = {
@@ -219,6 +225,9 @@ export const guides: Record<string, Record<string, Guide>> = {
     'pi-coding-agent-models-subscriptions': enPiModels,
     'pi-vs-opencode': enPiComparison,
     'pi-coding-agent-on-windows': enPiWindows,
+    'claude-code-weekly-limit-daily-budget': enWeeklyLimitBudget,
+    'ai-coding-agent-coordinator': enAgentCoordinator,
+    'auto-kanban-ai-coding-agents': enAutoKanban,
 
     'how-to-use-multiple-claude-code-terminals': enMultipleTerminals,
     'claude-code-history': enClaudeCodeHistory,
@@ -319,6 +328,9 @@ export const guides: Record<string, Record<string, Guide>> = {
     'pi-coding-agent-modelos-suscripciones': esPiModels,
     'pi-vs-opencode': esPiComparison,
     'pi-coding-agent-en-windows': esPiWindows,
+    'limite-semanal-claude-code-presupuesto-diario': esWeeklyLimitBudget,
+    'coordinador-agentes-ia': esAgentCoordinator,
+    'kanban-automatico-agentes-ia': esAutoKanban,
 
     'como-usar-varios-terminales-claude-code': esMultipleTerminals,
     'historial-claude-code': esHistorialClaudeCode,

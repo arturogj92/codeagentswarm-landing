@@ -95,6 +95,7 @@ const guide: Guide = {
 | `image` | `alt`, `src`, `caption?` | Image (use `#` for placeholder) |
 | `callout` | `variant` (tip\|warning\|info), `content` | Highlighted box |
 | `divider` | - | Horizontal rule |
+| `demo` | `demo` (`coordinators`\|`auto-kanban`\|`daily-budget`), `caption?` | Interactive product demo from `components/release240` (same as the home "New in 2.4.0" section), loaded client-side only |
 
 ### SEO Requirements
 
