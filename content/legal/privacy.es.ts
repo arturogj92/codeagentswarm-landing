@@ -36,7 +36,7 @@ const privacyEs: LegalDoc = {
         },
         {
           type: 'paragraph',
-          text: 'Lo que sí recogemos se limita a: información anónima de uso y de errores que nos ayuda a mantener la app funcionando; los datos de cuenta que nos das si decides iniciar sesión; los mensajes que envías al asistente de ayuda dentro de la app o a nuestros formularios de soporte, feedback y encuestas; y el estado de facturación si algún día contratas un plan de pago. Cada uno se detalla más abajo.',
+          text: 'Lo que sí recogemos se limita a: información de uso y de errores que nos ayuda a mantener la app funcionando; los datos de cuenta que nos das si decides iniciar sesión; los mensajes que envías al asistente de ayuda dentro de la app o a nuestros formularios de soporte, feedback y encuestas; y el estado de facturación si algún día contratas un plan de pago. Cada uno se detalla más abajo.',
         },
       ],
     },
@@ -65,7 +65,7 @@ const privacyEs: LegalDoc = {
       blocks: [
         {
           type: 'heading',
-          text: 'a) Analítica anónima de uso (app de escritorio)',
+          text: 'a) Analítica de uso (app de escritorio)',
           id: 'collected-analytics',
         },
         {

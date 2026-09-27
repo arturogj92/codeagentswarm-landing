@@ -36,7 +36,7 @@ const privacyEn: LegalDoc = {
         },
         {
           type: 'paragraph',
-          text: 'What we do collect is limited to: anonymous usage and error information that helps us keep the app working; the account details you give us if you choose to sign in; the messages you send to our in-app help assistant or to our support, feedback and survey forms; and billing status if you ever subscribe to a paid plan. Each of these is described in detail below.',
+          text: 'What we do collect is limited to: usage and error information that helps us keep the app working; the account details you give us if you choose to sign in; the messages you send to our in-app help assistant or to our support, feedback and survey forms; and billing status if you ever subscribe to a paid plan. Each of these is described in detail below.',
         },
       ],
     },
@@ -65,7 +65,7 @@ const privacyEn: LegalDoc = {
       blocks: [
         {
           type: 'heading',
-          text: 'a) Anonymous usage analytics (desktop app)',
+          text: 'a) Usage analytics (desktop app)',
           id: 'collected-analytics',
         },
         {
