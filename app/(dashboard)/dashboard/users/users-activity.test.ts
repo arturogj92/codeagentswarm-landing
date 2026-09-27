@@ -3,6 +3,7 @@ import test from 'node:test'
 
 import {
   EMPTY_USER_FILTERS,
+  agentLabel,
   buildAgentTrend,
   compareAppVersions,
   filterUsers,
@@ -23,6 +24,20 @@ import {
   type UserCohortHealth,
   type UserActivityCharts,
 } from './users-activity.ts'
+
+test('Pi, Devin and Muse have distinct identities and daily series', () => {
+  const agents = ['pi', 'devin', 'muse']
+  assert.deepEqual(['Pi_coding-agent', 'Devin CLI', 'Muse Code'].map(normalizeAgent), agents)
+  assert.deepEqual(agents.map(agentLabel), ['Pi', 'Devin', 'Muse Code'])
+  assert.equal(normalizeAgent('api'), 'api')
+  const trend = buildAgentTrend({
+    generated_at: '2026-09-28T12:00:00Z', window_days: 7,
+    users_by_platform: [], downloads_7d: [],
+    agent_daily: agents.map((agent, index) => ({ day: '2026-09-28', agent, sessions: index + 1, users: 1 })),
+  })
+  assert.deepEqual(trend.series.map(({ agent }) => agent), ['devin', 'muse', 'pi'])
+  assert.deepEqual(trend.series.map(({ points }) => points.at(-1)?.sessions), [2, 3, 1])
+})
 
 test('agent lines keep UTC dates, zero-activity days, and unique-user counts separate from sessions', () => {
   const charts: UserActivityCharts = {

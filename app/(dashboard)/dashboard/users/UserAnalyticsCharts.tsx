@@ -1,12 +1,15 @@
 'use client'
 
 import { useEffect, useMemo, useRef, useState } from 'react'
+import Image from 'next/image'
+import { Terminal } from 'lucide-react'
 import { agentLabel, buildAgentTrend, type FeatureWindowDays, type UserActivityCharts } from './users-activity'
 
 const CARD = 'rounded-xl border border-white/[0.09] bg-[#111111] p-4 sm:p-5'
 const COLORS: Record<string, string> = {
   claude: '#fb923c', codex: '#34d399', antigravity: '#c084fc', opencode: '#60a5fa',
   kimi: '#f472b6', grok: '#facc15', cursor: '#22d3ee', gemini: '#a3e635', other: '#a3a3a3',
+  pi: '#f87171', devin: '#a5b4fc', muse: '#2dd4bf',
 }
 const PLATFORMS = [
   { key: 'mac', label: 'Mac', color: '#60a5fa' },
@@ -64,16 +67,6 @@ export default function UserAnalyticsCharts({ excludedUserIds, ready, refreshKey
             Downloads include all visitors.
           </p>
         </div>
-        <label className="flex items-center gap-2 text-xs text-white/60">
-          Agent trend
-          <select
-            value={windowDays}
-            onChange={(event) => setWindowDays(Number(event.target.value) as FeatureWindowDays)}
-            className="rounded-lg border border-white/15 bg-[#111111] px-3 py-2 text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
-          >
-            {[7, 30, 90, 180].map((days) => <option key={days} value={days}>Last {days} days</option>)}
-          </select>
-        </label>
       </div>
       {error ? (
         <div role="alert" className="rounded-xl border border-rose-400/25 bg-rose-400/[0.07] p-4 text-sm text-rose-200">
@@ -90,20 +83,20 @@ export default function UserAnalyticsCharts({ excludedUserIds, ready, refreshKey
           <div className="grid gap-4 md:grid-cols-2">
             <PlatformBars
               title="Users by operating system"
-              description="Registered accounts · last known desktop OS"
+              description="All registered accounts · last known desktop OS"
               unit="users"
               counts={Object.fromEntries(charts.users_by_platform.map((row) => [row.platform, row.users]))}
               note="Each account counts once. Unknown means no recorded desktop OS."
             />
             <PlatformBars
-              title="Downloads by operating system"
-              description="Last 7 days · today included · UTC"
+              title="Downloads in the last 7 days"
+              description="By operating system · today included · UTC"
               unit="downloads"
               counts={Object.fromEntries(charts.downloads_7d.map((row) => [row.platform, row.downloads]))}
               note="Tracked download requests, including repeats. Mac and Windows each include both architectures."
             />
           </div>
-          <AgentTrend key={`${charts.generated_at}:${charts.window_days}`} charts={charts} />
+          <AgentTrend key={`${charts.generated_at}:${charts.window_days}`} charts={charts} onWindowDays={setWindowDays} />
         </>
       )}
     </section>
@@ -142,7 +135,24 @@ function PlatformBars({ title, description, unit, counts, note }: {
   )
 }
 
-function AgentTrend({ charts }: { charts: UserActivityCharts }) {
+function AgentName({ agent }: { agent: string }) {
+  const icon = Object.hasOwn(COLORS, agent) && agent !== 'other'
+    ? `/icons/apps/${agent}-icon.${['antigravity', 'kimi'].includes(agent) ? 'png' : 'svg'}`
+    : null
+  return (
+    <span className="inline-flex items-center gap-1.5 whitespace-nowrap">
+      {icon
+        ? <Image src={icon} alt="" width={16} height={16} unoptimized className="h-4 w-4 shrink-0 object-contain" />
+        : <Terminal aria-hidden="true" className="h-4 w-4 shrink-0" />}
+      {label(agent)}
+    </span>
+  )
+}
+
+function AgentTrend({ charts, onWindowDays }: {
+  charts: UserActivityCharts
+  onWindowDays: (days: FeatureWindowDays) => void
+}) {
   const { days, series } = useMemo(() => buildAgentTrend(charts), [charts])
   const [selected, setSelected] = useState(days.length - 1)
   const [metric, setMetric] = useState<'sessions' | 'users'>('sessions')
@@ -167,12 +177,24 @@ function AgentTrend({ charts }: { charts: UserActivityCharts }) {
           <h3 className="font-semibold">Daily agent usage</h3>
           <p className="mt-1 text-xs text-white/55">Last {charts.window_days} days · session launches · UTC · today is partial</p>
         </div>
-        <div aria-label="Agent usage metric" className="flex rounded-lg border border-white/10 p-1">
-          {(['sessions', 'users'] as const).map((value) => (
-            <button key={value} type="button" aria-pressed={metric === value} onClick={() => setMetric(value)} className={`rounded-md px-3 py-1.5 text-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 ${metric === value ? 'bg-white/10 text-white' : 'text-white/50'}`}>
-              {value === 'sessions' ? 'Sessions' : 'Unique users'}
-            </button>
-          ))}
+        <div className="flex flex-wrap items-center gap-3">
+          <label className="flex items-center gap-2 text-xs text-white/60">
+            Agent trend
+            <select
+              value={charts.window_days}
+              onChange={(event) => onWindowDays(Number(event.target.value) as FeatureWindowDays)}
+              className="rounded-lg border border-white/15 bg-[#111111] px-3 py-2 text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
+            >
+              {[7, 30, 90, 180].map((days) => <option key={days} value={days}>Last {days} days</option>)}
+            </select>
+          </label>
+          <div aria-label="Agent usage metric" className="flex rounded-lg border border-white/10 p-1">
+            {(['sessions', 'users'] as const).map((value) => (
+              <button key={value} type="button" aria-pressed={metric === value} onClick={() => setMetric(value)} className={`rounded-md px-3 py-1.5 text-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 ${metric === value ? 'bg-white/10 text-white' : 'text-white/50'}`}>
+                {value === 'sessions' ? 'Sessions' : 'Unique users'}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
       {series.length === 0 ? (
@@ -180,7 +202,7 @@ function AgentTrend({ charts }: { charts: UserActivityCharts }) {
       ) : (
         <>
           <ul aria-label="Agent legend" className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-xs text-white/75">
-            {series.map(({ agent }) => <li key={agent} className="flex items-center gap-2"><span className="h-2 w-2 rounded-full" style={{ backgroundColor: COLORS[agent] || COLORS.other }} />{label(agent)}</li>)}
+            {series.map(({ agent }) => <li key={agent} className="flex items-center gap-2"><span className="h-2 w-2 rounded-full" style={{ backgroundColor: COLORS[agent] || COLORS.other }} /><AgentName agent={agent} /></li>)}
           </ul>
           <svg
             ref={chartRef}
@@ -216,7 +238,7 @@ function AgentTrend({ charts }: { charts: UserActivityCharts }) {
           </label>
           <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2 rounded-lg bg-white/[0.035] p-3 text-xs" aria-live="polite" aria-atomic="true">
             <span className="font-semibold">{dateLabel(days[selected])}{selected === days.length - 1 ? ' · today' : ''}</span>
-            {series.map(({ agent, points }) => <span key={agent} style={{ color: COLORS[agent] || COLORS.other }}>{label(agent)}: <strong className="tabular-nums">{number(points[selected][metric])}</strong> {metric}</span>)}
+            {series.map(({ agent, points }) => <span key={agent} className="inline-flex items-center gap-1" style={{ color: COLORS[agent] || COLORS.other }}><AgentName agent={agent} />: <strong className="tabular-nums">{number(points[selected][metric])}</strong> {metric}</span>)}
           </div>
           <p className="mt-3 text-[11px] text-white/50">Recorded desktop and mobile session launches, including resumed sessions. Users are unique per agent per day; this does not measure time spent.</p>
           <details className="mt-3 text-xs text-white/60">
@@ -224,7 +246,7 @@ function AgentTrend({ charts }: { charts: UserActivityCharts }) {
             <div className="mt-3 max-h-64 overflow-auto">
               <table className="w-full text-left tabular-nums">
                 <caption className="sr-only">Daily {metric} by agent in UTC</caption>
-                <thead><tr><th scope="col" className="p-2">Date (UTC)</th>{series.map(({ agent }) => <th key={agent} scope="col" className="p-2">{label(agent)}</th>)}</tr></thead>
+                <thead><tr><th scope="col" className="p-2">Date (UTC)</th>{series.map(({ agent }) => <th key={agent} scope="col" className="p-2"><AgentName agent={agent} /></th>)}</tr></thead>
                 <tbody>{days.map((day, index) => <tr key={day} className="border-t border-white/[0.06]"><th scope="row" className="whitespace-nowrap p-2 font-normal">{day}</th>{series.map(({ agent, points }) => <td key={agent} className="p-2">{number(points[index][metric])}</td>)}</tr>)}</tbody>
               </table>
             </div>

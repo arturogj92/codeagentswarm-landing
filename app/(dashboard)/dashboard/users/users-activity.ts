@@ -384,6 +384,14 @@ const AGENT_ALIASES: Record<string, string> = {
   'cursor agent': 'cursor',
   gemini: 'gemini',
   'gemini cli': 'gemini',
+  pi: 'pi',
+  'pi cli': 'pi',
+  'pi coding agent': 'pi',
+  devin: 'devin',
+  'devin cli': 'devin',
+  muse: 'muse',
+  'muse cli': 'muse',
+  'muse code': 'muse',
 }
 
 const AGENT_LABELS: Record<string, string> = {
@@ -395,6 +403,9 @@ const AGENT_LABELS: Record<string, string> = {
   grok: 'Grok Build',
   cursor: 'Cursor',
   gemini: 'Gemini (legacy)',
+  pi: 'Pi',
+  devin: 'Devin',
+  muse: 'Muse Code',
 }
 
 export function normalizeAgent(value: string | null): string {
