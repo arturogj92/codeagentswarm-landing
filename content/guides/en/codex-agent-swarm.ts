@@ -16,7 +16,8 @@ In this guide I walk through the three practical ways to run a Codex swarm, comp
     ctaAgent: 'codex',
     highlightedWords: ['Codex agent swarm', 'Codex CLI'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-08-23',
+    updatedAt: '2026-09-27',
+    relatedSlug: 'codex-gui',
     alternateSlug: 'enjambre-de-agentes-codex',
   },
   sections: [

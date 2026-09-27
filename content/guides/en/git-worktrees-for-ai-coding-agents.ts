@@ -16,7 +16,8 @@ In this guide I explain the problem in concrete terms, what a git worktree actua
     ctaAgent: 'multi',
     highlightedWords: ['Git Worktrees', 'AI Coding Agents'],
     publishedAt: '2026-07-05',
-    updatedAt: '2026-09-05',
+    updatedAt: '2026-09-27',
+    relatedSlug: 'auto-kanban-ai-coding-agents',
     alternateSlug: 'git-worktrees-para-agentes-de-ia',
   },
   sections: [
@@ -50,6 +51,10 @@ In this guide I explain the problem in concrete terms, what a git worktree actua
         {
           type: 'paragraph',
           text: 'The obvious workaround is to give each agent its own folder. You could clone the repo several times, but that is heavy and wasteful. Git already has a lighter answer built in: worktrees.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Once you have planned file ownership and isolation, you can queue the work with <a href="/en/guides/auto-kanban-ai-coding-agents" class="text-neon-cyan hover:text-neon-purple transition-colors">Auto Kanban</a>.',
         },
       ],
     },

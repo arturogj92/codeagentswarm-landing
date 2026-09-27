@@ -16,7 +16,8 @@ En esta guía te explico las tres formas reales de ejecutar un enjambre de Codex
     ctaAgent: 'codex',
     highlightedWords: ['enjambre de agentes Codex', 'Codex CLI'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-08-23',
+    updatedAt: '2026-09-27',
+    relatedSlug: 'interfaz-grafica-codex',
     alternateSlug: 'codex-agent-swarm',
   },
   sections: [

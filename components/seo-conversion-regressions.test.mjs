@@ -8,7 +8,7 @@ const guideTypesUrl = `data:text/javascript,${encodeURIComponent(stripTypeScript
 const { pickRelatedGuideMeta } = await import(guideTypesUrl)
 
 const guide = (slug, ctaAgent = 'codex') => ({
-  meta: { slug, ctaAgent, title: `Title ${slug}`, intro: `Intro ${slug}` },
+  meta: { slug, ctaAgent, locale: 'en', title: `Title ${slug}`, intro: `Intro ${slug}` },
   sections: [],
 })
 
@@ -18,6 +18,22 @@ test('related-guide selection stays on topic and returns metadata only', () => {
 
   assert.deepEqual(result, { slug: 'a', title: 'Title a', intro: 'Intro a' })
   assert.equal(pickRelatedGuideMeta([current, guide('other', 'opencode')], current), null)
+})
+
+test('editorial next steps can cross agent groups but never languages or self-link', () => {
+  const current = guide('a')
+  const target = guide('next', 'multi')
+  const fallback = guide('b')
+  const spanish = { ...target, meta: { ...target.meta, locale: 'es' } }
+  current.meta.relatedSlug = 'next'
+
+  assert.equal(pickRelatedGuideMeta([current, fallback, spanish, target], current).slug, 'next')
+  assert.equal(pickRelatedGuideMeta([current, fallback, spanish], current).slug, 'b')
+  current.meta.relatedSlug = 'a'
+  assert.equal(pickRelatedGuideMeta([current, fallback], current).slug, 'b')
+  current.meta.relatedSlug = 'missing'
+  assert.equal(pickRelatedGuideMeta([current, fallback], current).slug, 'b')
+  assert.equal(pickRelatedGuideMeta([current, spanish], current), null)
 })
 
 test('guide pages do not import the full content registry into the client bundle', async () => {
@@ -174,7 +190,8 @@ test('about and comparison pages expose current authorship and Mobile Connect fa
   for (const file of comparisons) {
     const source = await readFile(new URL(file, import.meta.url), 'utf8')
     assert.match(source, /Mobile Connect/)
-    assert.match(source, new RegExp(`updatedAt: '${refreshedComparisons.has(file) ? '2026-08-31' : '2026-08-25'}'`))
+    const updatedAt = source.match(/updatedAt: '(\d{4}-\d{2}-\d{2})'/)?.[1]
+    assert.ok(updatedAt >= (refreshedComparisons.has(file) ? '2026-08-31' : '2026-08-25'), file)
   }
 })
 

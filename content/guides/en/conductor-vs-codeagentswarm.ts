@@ -7,16 +7,16 @@ export const guide: Guide = {
     title: 'Conductor vs CodeAgentSwarm: An Honest Comparison (2026)',
     metaTitle: 'Conductor vs CodeAgentSwarm: Honest Comparison (2026)',
     metaDescription: 'Compare Conductor local and cloud workspaces, four agent CLIs and current pricing with CodeAgentSwarm on macOS and Windows.',
-    intro: `Conductor combines a macOS app with isolated cloud workspaces for Claude Code, Codex, Cursor and OpenCode. CodeAgentSwarm is a desktop workspace for macOS and Windows that runs seven agent CLIs in parallel terminals. Same premise, different deployment model.
+    intro: `Conductor combines a macOS app with isolated cloud workspaces for Claude Code, Codex, Cursor and OpenCode. CodeAgentSwarm is a desktop workspace for macOS and Windows that runs multiple agent CLIs in parallel terminals. Same premise, different deployment model.
 
 Full disclosure: we build CodeAgentSwarm. Every third-party fact below was checked on August 25, 2026 against Conductor's site, pricing page and documentation.
 
-Short version: choose Conductor for cloud sandboxes, multiplayer collaboration and its API. Choose CodeAgentSwarm for Windows, seven directly integrated CLIs, searchable cross-agent history and an agent-managed kanban board.`,
-    ctaText: 'Need a parallel agent workspace that also runs on Windows, with seven agent CLIs instead of four? Download CodeAgentSwarm and set up your first batch of parallel terminals.',
+Short version: choose Conductor for cloud sandboxes, multiplayer collaboration and its API. Choose CodeAgentSwarm for Windows, multiple integrated agents, searchable cross-agent history and an agent-managed kanban board.`,
+    ctaText: 'Need a parallel agent workspace that also runs on Windows, with multiple supported agents? Download CodeAgentSwarm and set up your first batch of parallel terminals.',
     ctaAgent: 'comparison',
     highlightedWords: ['Conductor', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
-    updatedAt: '2026-08-25',
+    updatedAt: '2026-09-27',
     alternateSlug: 'conductor-vs-codeagentswarm',
   },
   sections: [
@@ -26,11 +26,11 @@ Short version: choose Conductor for cloud sandboxes, multiplayer collaboration a
       content: [
         {
           type: 'paragraph',
-          text: 'Conductor runs Claude Code, Codex, Cursor and OpenCode in local Mac workspaces or managed cloud sandboxes, while CodeAgentSwarm runs seven CLIs locally on macOS and Windows with notifications, live diffs and a shared task board.',
+          text: 'Conductor runs Claude Code, Codex, Cursor and OpenCode in local Mac workspaces or managed cloud sandboxes, while CodeAgentSwarm runs multiple CLIs locally on macOS and Windows with notifications, live diffs and a shared task board.',
         },
         {
           type: 'paragraph',
-          text: 'Both isolate agent work and make it reviewable. Conductor extends that model into managed cloud sandboxes, multiplayer collaboration and an HTTP API. CodeAgentSwarm keeps work local and spreads across two operating systems and seven agent vendors. For the wider field, start with the <a href="/en/guides/best-tools-to-run-multiple-ai-coding-agents" class="text-neon-cyan hover:text-neon-purple transition-colors">best tools to run multiple AI coding agents</a>.',
+          text: 'Both isolate agent work and make it reviewable. Conductor extends that model into managed cloud sandboxes, multiplayer collaboration and an HTTP API. CodeAgentSwarm keeps work local and spreads across two operating systems and multiple agent providers. For the wider field, start with the <a href="/en/guides/best-tools-to-run-multiple-ai-coding-agents" class="text-neon-cyan hover:text-neon-purple transition-colors">best tools to run multiple AI coding agents</a>.',
         },
         {
           type: 'callout',
@@ -73,7 +73,7 @@ Short version: choose Conductor for cloud sandboxes, multiplayer collaboration a
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm is a desktop workspace to run and supervise multiple AI coding agents in parallel. It runs on macOS and Windows, it is not a model provider, and it drives agent CLIs you install yourself: Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build and Cursor Agent.',
+          text: 'CodeAgentSwarm is a desktop workspace to run and supervise multiple AI coding agents in parallel. It runs on macOS and Windows, it is not a model provider, and it drives agent CLIs you install yourself, including: Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build and Cursor Agent.',
         },
         {
           type: 'image',
@@ -86,7 +86,7 @@ Short version: choose Conductor for cloud sandboxes, multiplayer collaboration a
           items: [
             'Parallel terminals, each with its own agent, project and conversation',
             'Desktop notifications when an agent finishes or stops to ask you something',
-            'Searchable conversation history across all seven agents and capability-aware resume back into a terminal',
+            'Searchable conversation history across supported agents and capability-aware resume back into a terminal',
             'Per-terminal live file diffs while the agent is still working',
             'Permission control, including a Turbo mode when you want to stop approving every step',
             'A kanban task board the agents update themselves over MCP',
@@ -136,7 +136,7 @@ Short version: choose Conductor for cloud sandboxes, multiplayer collaboration a
             [
               '<strong>Conversation history</strong>',
               'Cloud session transcripts are stored by Conductor and accessible through the API',
-              'Searchable across all seven agents and capability-aware resume',
+              'Searchable across supported agents and capability-aware resume',
             ],
             [
               '<strong>Task management</strong>',
@@ -200,7 +200,7 @@ Short version: choose Conductor for cloud sandboxes, multiplayer collaboration a
           type: 'list',
           items: [
             '<strong>You or your team use Windows.</strong> Conductor is macOS only per their site. CodeAgentSwarm runs on macOS and Windows, which matters the moment one person is not on a Mac.',
-            '<strong>You want seven agent CLIs.</strong> Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build and Cursor Agent, mixed freely across terminals. Antigravity, Kimi and Grok are not among the agents Conductor documents.',
+            '<strong>You want multiple agent CLIs.</strong> Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build and Cursor Agent, mixed freely across terminals. Antigravity, Kimi and Grok are not among the agents Conductor documents.',
             '<strong>You want one searchable history across vendors,</strong> with any conversation resumable back into a live terminal.',
             '<strong>You want the agents to maintain the task board.</strong> The kanban is updated by the agents over MCP while they work, not by you afterwards.',
             '<strong>You want to be told, not to check.</strong> Desktop notifications fire when an agent finishes or needs input.',
@@ -237,7 +237,7 @@ Short version: choose Conductor for cloud sandboxes, multiplayer collaboration a
       content: [
         {
           type: 'paragraph',
-          text: 'On a Mac, yes. Neither tool is a model provider and both drive CLIs installed on your machine with your own credentials, so running Conductor for the repositories where you want its review and merge flow and CodeAgentSwarm for the ones where you want seven agents and a shared board is workable.',
+          text: 'On a Mac, yes. Neither tool is a model provider and both drive CLIs installed on your machine with your own credentials, so running Conductor for the repositories where you want its review and merge flow and CodeAgentSwarm for the ones where you want multiple agents and a shared board is workable.',
         },
         {
           type: 'paragraph',
@@ -257,7 +257,7 @@ Short version: choose Conductor for cloud sandboxes, multiplayer collaboration a
     },
     {
       question: 'What agents does each one support?',
-      answer: 'Conductor supports Claude Code, Codex, Cursor and OpenCode. CodeAgentSwarm supports seven CLIs: Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build and Cursor Agent. Both run Cursor and OpenCode; CodeAgentSwarm also runs Antigravity CLI, Kimi Code and Grok Build.',
+      answer: 'Conductor supports Claude Code, Codex, Cursor and OpenCode. CodeAgentSwarm supports CLIs including: Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build and Cursor Agent. Both run Cursor and OpenCode; CodeAgentSwarm also runs Antigravity CLI, Kimi Code and Grok Build.',
     },
     {
       question: 'Is there a free way to try both?',

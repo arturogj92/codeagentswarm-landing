@@ -17,6 +17,7 @@ This guide covers how to queue tasks, the settings each task can carry, how many
     updatedAt: '2026-09-27',
     ctaText: 'Queue three tasks in the Auto lane tonight and review them in In Testing tomorrow.',
     ctaAgent: 'multi',
+    relatedSlug: 'ai-coding-agent-coordinator',
     alternateSlug: 'kanban-automatico-agentes-ia',
   },
   sections: [

@@ -1,0 +1,482 @@
+[
+  {
+    "path": "/en/guides",
+    "mode": "no-js",
+    "width": 1440,
+    "status": 200,
+    "visible": true,
+    "overflow": false,
+    "nativeFaq": false,
+    "nativeToc": false
+  },
+  {
+    "path": "/es/guias",
+    "mode": "no-js",
+    "width": 1440,
+    "status": 200,
+    "visible": true,
+    "overflow": false,
+    "nativeFaq": false,
+    "nativeToc": false
+  },
+  {
+    "path": "/en/guides/claude-code-agent-teams-vs-codeagentswarm",
+    "mode": "no-js",
+    "width": 1440,
+    "status": 200,
+    "visible": true,
+    "overflow": false,
+    "nativeFaq": true,
+    "nativeToc": true
+  },
+  {
+    "path": "/es/guias/agent-teams-de-claude-code-vs-codeagentswarm",
+    "mode": "no-js",
+    "width": 1440,
+    "status": 200,
+    "visible": true,
+    "overflow": false,
+    "nativeFaq": true,
+    "nativeToc": true
+  },
+  {
+    "path": "/en/guides/claude-code-agent-swarm",
+    "mode": "no-js",
+    "width": 1440,
+    "status": 200,
+    "visible": true,
+    "overflow": false,
+    "nativeFaq": true,
+    "nativeToc": true
+  },
+  {
+    "path": "/es/guias/enjambre-de-agentes-claude-code",
+    "mode": "no-js",
+    "width": 1440,
+    "status": 200,
+    "visible": true,
+    "overflow": false,
+    "nativeFaq": true,
+    "nativeToc": true
+  },
+  {
+    "path": "/en/guides/auto-kanban-ai-coding-agents",
+    "mode": "no-js",
+    "width": 1440,
+    "status": 200,
+    "visible": true,
+    "overflow": false,
+    "nativeFaq": true,
+    "nativeToc": true
+  },
+  {
+    "path": "/es/guias/kanban-automatico-agentes-ia",
+    "mode": "no-js",
+    "width": 1440,
+    "status": 200,
+    "visible": true,
+    "overflow": false,
+    "nativeFaq": true,
+    "nativeToc": true
+  },
+  {
+    "path": "/en/guides",
+    "mode": "no-js",
+    "width": 390,
+    "status": 200,
+    "visible": true,
+    "overflow": false,
+    "nativeFaq": false,
+    "nativeToc": false
+  },
+  {
+    "path": "/es/guias",
+    "mode": "no-js",
+    "width": 390,
+    "status": 200,
+    "visible": true,
+    "overflow": false,
+    "nativeFaq": false,
+    "nativeToc": false
+  },
+  {
+    "path": "/en/guides/claude-code-agent-teams-vs-codeagentswarm",
+    "mode": "no-js",
+    "width": 390,
+    "status": 200,
+    "visible": true,
+    "overflow": false,
+    "nativeFaq": true,
+    "nativeToc": false
+  },
+  {
+    "path": "/es/guias/agent-teams-de-claude-code-vs-codeagentswarm",
+    "mode": "no-js",
+    "width": 390,
+    "status": 200,
+    "visible": true,
+    "overflow": false,
+    "nativeFaq": true,
+    "nativeToc": false
+  },
+  {
+    "path": "/en/guides/claude-code-agent-swarm",
+    "mode": "no-js",
+    "width": 390,
+    "status": 200,
+    "visible": true,
+    "overflow": false,
+    "nativeFaq": true,
+    "nativeToc": false
+  },
+  {
+    "path": "/es/guias/enjambre-de-agentes-claude-code",
+    "mode": "no-js",
+    "width": 390,
+    "status": 200,
+    "visible": true,
+    "overflow": false,
+    "nativeFaq": true,
+    "nativeToc": false
+  },
+  {
+    "path": "/en/guides/auto-kanban-ai-coding-agents",
+    "mode": "no-js",
+    "width": 390,
+    "status": 200,
+    "visible": true,
+    "overflow": false,
+    "nativeFaq": true,
+    "nativeToc": false
+  },
+  {
+    "path": "/es/guias/kanban-automatico-agentes-ia",
+    "mode": "no-js",
+    "width": 390,
+    "status": 200,
+    "visible": true,
+    "overflow": false,
+    "nativeFaq": true,
+    "nativeToc": false
+  },
+  {
+    "path": "/en/guides",
+    "mode": "blocked-chunks",
+    "width": 1440,
+    "status": 200,
+    "visible": true,
+    "overflow": false,
+    "nativeFaq": false,
+    "nativeToc": false
+  },
+  {
+    "path": "/es/guias",
+    "mode": "blocked-chunks",
+    "width": 1440,
+    "status": 200,
+    "visible": true,
+    "overflow": false,
+    "nativeFaq": false,
+    "nativeToc": false
+  },
+  {
+    "path": "/en/guides/claude-code-agent-teams-vs-codeagentswarm",
+    "mode": "blocked-chunks",
+    "width": 1440,
+    "status": 200,
+    "visible": true,
+    "overflow": false,
+    "nativeFaq": true,
+    "nativeToc": true
+  },
+  {
+    "path": "/es/guias/agent-teams-de-claude-code-vs-codeagentswarm",
+    "mode": "blocked-chunks",
+    "width": 1440,
+    "status": 200,
+    "visible": true,
+    "overflow": false,
+    "nativeFaq": true,
+    "nativeToc": true
+  },
+  {
+    "path": "/en/guides/claude-code-agent-swarm",
+    "mode": "blocked-chunks",
+    "width": 1440,
+    "status": 200,
+    "visible": true,
+    "overflow": false,
+    "nativeFaq": true,
+    "nativeToc": true
+  },
+  {
+    "path": "/es/guias/enjambre-de-agentes-claude-code",
+    "mode": "blocked-chunks",
+    "width": 1440,
+    "status": 200,
+    "visible": true,
+    "overflow": false,
+    "nativeFaq": true,
+    "nativeToc": true
+  },
+  {
+    "path": "/en/guides/auto-kanban-ai-coding-agents",
+    "mode": "blocked-chunks",
+    "width": 1440,
+    "status": 200,
+    "visible": true,
+    "overflow": false,
+    "nativeFaq": true,
+    "nativeToc": true
+  },
+  {
+    "path": "/es/guias/kanban-automatico-agentes-ia",
+    "mode": "blocked-chunks",
+    "width": 1440,
+    "status": 200,
+    "visible": true,
+    "overflow": false,
+    "nativeFaq": true,
+    "nativeToc": true
+  },
+  {
+    "path": "/en/guides",
+    "mode": "blocked-chunks",
+    "width": 390,
+    "status": 200,
+    "visible": true,
+    "overflow": false,
+    "nativeFaq": false,
+    "nativeToc": false
+  },
+  {
+    "path": "/es/guias",
+    "mode": "blocked-chunks",
+    "width": 390,
+    "status": 200,
+    "visible": true,
+    "overflow": false,
+    "nativeFaq": false,
+    "nativeToc": false
+  },
+  {
+    "path": "/en/guides/claude-code-agent-teams-vs-codeagentswarm",
+    "mode": "blocked-chunks",
+    "width": 390,
+    "status": 200,
+    "visible": true,
+    "overflow": false,
+    "nativeFaq": true,
+    "nativeToc": false
+  },
+  {
+    "path": "/es/guias/agent-teams-de-claude-code-vs-codeagentswarm",
+    "mode": "blocked-chunks",
+    "width": 390,
+    "status": 200,
+    "visible": true,
+    "overflow": false,
+    "nativeFaq": true,
+    "nativeToc": false
+  },
+  {
+    "path": "/en/guides/claude-code-agent-swarm",
+    "mode": "blocked-chunks",
+    "width": 390,
+    "status": 200,
+    "visible": true,
+    "overflow": false,
+    "nativeFaq": true,
+    "nativeToc": false
+  },
+  {
+    "path": "/es/guias/enjambre-de-agentes-claude-code",
+    "mode": "blocked-chunks",
+    "width": 390,
+    "status": 200,
+    "visible": true,
+    "overflow": false,
+    "nativeFaq": true,
+    "nativeToc": false
+  },
+  {
+    "path": "/en/guides/auto-kanban-ai-coding-agents",
+    "mode": "blocked-chunks",
+    "width": 390,
+    "status": 200,
+    "visible": true,
+    "overflow": false,
+    "nativeFaq": true,
+    "nativeToc": false
+  },
+  {
+    "path": "/es/guias/kanban-automatico-agentes-ia",
+    "mode": "blocked-chunks",
+    "width": 390,
+    "status": 200,
+    "visible": true,
+    "overflow": false,
+    "nativeFaq": true,
+    "nativeToc": false
+  },
+  {
+    "path": "/en/guides",
+    "mode": "normal",
+    "width": 1440,
+    "status": 200,
+    "visible": true,
+    "overflow": false,
+    "nativeFaq": false,
+    "nativeToc": false
+  },
+  {
+    "path": "/es/guias",
+    "mode": "normal",
+    "width": 1440,
+    "status": 200,
+    "visible": true,
+    "overflow": false,
+    "nativeFaq": false,
+    "nativeToc": false
+  },
+  {
+    "path": "/en/guides/claude-code-agent-teams-vs-codeagentswarm",
+    "mode": "normal",
+    "width": 1440,
+    "status": 200,
+    "visible": true,
+    "overflow": false,
+    "nativeFaq": true,
+    "nativeToc": true
+  },
+  {
+    "path": "/es/guias/agent-teams-de-claude-code-vs-codeagentswarm",
+    "mode": "normal",
+    "width": 1440,
+    "status": 200,
+    "visible": true,
+    "overflow": false,
+    "nativeFaq": true,
+    "nativeToc": true
+  },
+  {
+    "path": "/en/guides/claude-code-agent-swarm",
+    "mode": "normal",
+    "width": 1440,
+    "status": 200,
+    "visible": true,
+    "overflow": false,
+    "nativeFaq": true,
+    "nativeToc": true
+  },
+  {
+    "path": "/es/guias/enjambre-de-agentes-claude-code",
+    "mode": "normal",
+    "width": 1440,
+    "status": 200,
+    "visible": true,
+    "overflow": false,
+    "nativeFaq": true,
+    "nativeToc": true
+  },
+  {
+    "path": "/en/guides/auto-kanban-ai-coding-agents",
+    "mode": "normal",
+    "width": 1440,
+    "status": 200,
+    "visible": true,
+    "overflow": false,
+    "nativeFaq": true,
+    "nativeToc": true
+  },
+  {
+    "path": "/es/guias/kanban-automatico-agentes-ia",
+    "mode": "normal",
+    "width": 1440,
+    "status": 200,
+    "visible": true,
+    "overflow": false,
+    "nativeFaq": true,
+    "nativeToc": true
+  },
+  {
+    "path": "/en/guides",
+    "mode": "normal",
+    "width": 390,
+    "status": 200,
+    "visible": true,
+    "overflow": false,
+    "nativeFaq": false,
+    "nativeToc": false
+  },
+  {
+    "path": "/es/guias",
+    "mode": "normal",
+    "width": 390,
+    "status": 200,
+    "visible": true,
+    "overflow": false,
+    "nativeFaq": false,
+    "nativeToc": false
+  },
+  {
+    "path": "/en/guides/claude-code-agent-teams-vs-codeagentswarm",
+    "mode": "normal",
+    "width": 390,
+    "status": 200,
+    "visible": true,
+    "overflow": false,
+    "nativeFaq": true,
+    "nativeToc": false
+  },
+  {
+    "path": "/es/guias/agent-teams-de-claude-code-vs-codeagentswarm",
+    "mode": "normal",
+    "width": 390,
+    "status": 200,
+    "visible": true,
+    "overflow": false,
+    "nativeFaq": true,
+    "nativeToc": false
+  },
+  {
+    "path": "/en/guides/claude-code-agent-swarm",
+    "mode": "normal",
+    "width": 390,
+    "status": 200,
+    "visible": true,
+    "overflow": false,
+    "nativeFaq": true,
+    "nativeToc": false
+  },
+  {
+    "path": "/es/guias/enjambre-de-agentes-claude-code",
+    "mode": "normal",
+    "width": 390,
+    "status": 200,
+    "visible": true,
+    "overflow": false,
+    "nativeFaq": true,
+    "nativeToc": false
+  },
+  {
+    "path": "/en/guides/auto-kanban-ai-coding-agents",
+    "mode": "normal",
+    "width": 390,
+    "status": 200,
+    "visible": true,
+    "overflow": false,
+    "nativeFaq": true,
+    "nativeToc": false
+  },
+  {
+    "path": "/es/guias/kanban-automatico-agentes-ia",
+    "mode": "normal",
+    "width": 390,
+    "status": 200,
+    "visible": true,
+    "overflow": false,
+    "nativeFaq": true,
+    "nativeToc": false
+  }
+]

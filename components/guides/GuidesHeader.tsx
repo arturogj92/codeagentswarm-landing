@@ -18,7 +18,7 @@ export default function GuidesHeader() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
         {/* Logo */}
         <motion.div
-          initial={{ opacity: 0, x: -20 }}
+          initial={false}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
         >
@@ -40,7 +40,7 @@ export default function GuidesHeader() {
         {/* Desktop Navigation */}
         <motion.div
           className="hidden lg:flex items-center gap-2"
-          initial={{ opacity: 0, x: 20 }}
+          initial={false}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >

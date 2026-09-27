@@ -17,6 +17,7 @@ En esta guía te cuento cómo encolar tareas, qué ajustes puede llevar cada una
     updatedAt: '2026-09-27',
     ctaText: 'Encola tres tareas en el carril Auto esta noche y revísalas mañana en In Testing.',
     ctaAgent: 'multi',
+    relatedSlug: 'coordinador-agentes-ia',
     alternateSlug: 'auto-kanban-ai-coding-agents',
   },
   sections: [

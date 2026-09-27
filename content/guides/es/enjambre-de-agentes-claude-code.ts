@@ -7,16 +7,13 @@ export const guide: Guide = {
     title: 'Enjambre de agentes Claude Code: ejecuta varios agentes de Claude en paralelo',
     metaTitle: 'Enjambre de agentes Claude Code: varios agentes de Claude en paralelo (2026)',
     metaDescription: 'Un enjambre de agentes Claude ejecuta varias sesiones de Claude Code a la vez. En qué se diferencia de los subagentes, las 3 formas de montarlo y cómo evitar el caos de merges.',
-    intro: `Un enjambre de agentes Claude Code no es más que varias sesiones independientes de Claude Code funcionando a la vez, cada una con su tarea. Cada vez que ejecutas <code>claude</code> obtienes un proceso separado con su propia conversación y su propia ventana de contexto, así que nada te impide tener cuatro trabajando en el mismo repositorio.
-
-Lo primero que conviene aclarar: esto no es lo mismo que los subagentes que Claude Code trae de serie. Esos viven dentro de una sesión y comparten su contexto y su consumo. Un enjambre son varias sesiones que no saben nada unas de otras. La diferencia decide cuál te interesa de verdad, así que la primera sección va sobre eso.
-
-Lo segundo es que arrancar los procesos es trivial y supervisarlos no. Tres agentes de Claude terminan en momentos distintos, se paran a pedir permisos distintos y de vez en cuando editan el mismo archivo. En esta guía te cuento las tres formas reales de montar un enjambre, dónde se rompe cada una y cómo evitar que los agentes en paralelo se pisen. Para el mismo montaje con otras CLI, mira la visión general del <a href="/es/guias/enjambre-de-agentes-cli-ia" class="text-neon-cyan hover:text-neon-purple transition-colors">enjambre de agentes CLI de IA</a> o la guía del <a href="/es/guias/enjambre-de-agentes-codex" class="text-neon-cyan hover:text-neon-purple transition-colors">enjambre de agentes Codex</a>.`,
+    intro: 'Un enjambre de agentes Claude Code no es más que varias sesiones independientes de Claude Code funcionando a la vez, cada una con su tarea. Cada vez que ejecutas <code>claude</code> obtienes un proceso separado con su propia conversación y su propia ventana de contexto, así que nada te impide tener cuatro trabajando en el mismo repositorio.\n\nLo primero que conviene aclarar: esto no es lo mismo que los subagentes que Claude Code trae de serie. Los subagentes trabajan dentro de una sesión, con contexto propio. Agent Teams es otra función: coordina varias sesiones de Claude Code mediante un líder, tareas y mensajes. La diferencia decide cuál te interesa de verdad, así que la primera sección va sobre eso.\n\nLo segundo es que arrancar los procesos es trivial y supervisarlos no. Tres agentes de Claude terminan en momentos distintos, se paran a pedir permisos distintos y de vez en cuando editan el mismo archivo. En esta guía te cuento las tres formas reales de montar un enjambre, dónde se rompe cada una y cómo evitar que los agentes en paralelo se pisen. Para el mismo montaje con otras CLI, mira la visión general del <a href="/es/guias/enjambre-de-agentes-cli-ia" class="text-neon-cyan hover:text-neon-purple transition-colors">enjambre de agentes CLI de IA</a> o la guía del <a href="/es/guias/enjambre-de-agentes-codex" class="text-neon-cyan hover:text-neon-purple transition-colors">enjambre de agentes Codex</a>.',
     ctaText: 'Ejecuta tu enjambre de agentes Claude en CodeAgentSwarm. Varios terminales de Claude Code en una ventana, con notificaciones de escritorio, diffs en vivo y permisos por terminal.',
     ctaAgent: 'claude-code',
     highlightedWords: ['Enjambre de agentes Claude Code', 'varios agentes'],
     publishedAt: '2026-07-31',
-    updatedAt: '2026-07-31',
+    updatedAt: '2026-09-27',
+    relatedSlug: 'panel-de-control-claude-code',
     alternateSlug: 'claude-code-agent-swarm',
   },
   sections: [
@@ -30,11 +27,11 @@ Lo segundo es que arrancar los procesos es trivial y supervisarlos no. Tres agen
         },
         {
           type: 'table',
-          headers: ['', 'Subagentes / agent teams', 'Un enjambre de Claude'],
+          headers: ['', 'Subagentes', 'Un enjambre de Claude'],
           rows: [
             ['Qué es', 'Ayudantes lanzados dentro de una sesión de Claude Code', 'Varias sesiones separadas de Claude Code'],
             ['Quién manda', 'Claude los orquesta por ti', 'Tú repartes el trabajo'],
-            ['Contexto', 'Compartido con la sesión padre', 'Cada uno el suyo, aislado del resto'],
+            ['Contexto', 'Contexto propio; devuelve resultados al llamador', 'Cada uno el suyo, aislado del resto'],
             ['Duración', 'Efímeros, mueren con la tarea', 'Lo que mantengas la sesión abierta'],
             ['Ideal para', 'Partir una tarea en pasos paralelos', 'Varias tareas sin relación entre sí'],
             ['Mezclar proveedores', 'No, todo Claude', 'Sí, Claude con Codex, opencode y otros'],
@@ -48,6 +45,10 @@ Lo segundo es que arrancar los procesos es trivial y supervisarlos no. Tres agen
           type: 'callout',
           variant: 'info',
           content: 'No compiten, se suman. Un terminal de tu enjambre puede estar ejecutando una sesión de Claude que a su vez lanza sus propios subagentes. La <a href="/es/guias/agent-teams-de-claude-code-vs-codeagentswarm" class="text-neon-cyan hover:text-neon-purple transition-colors">comparativa con agent teams</a> lo desarrolla.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Para ver qué sesión está trabajando o necesita una respuesta, consulta el <a href="/es/guias/panel-de-control-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">panel de Claude Code</a>.',
         },
       ],
     },
@@ -343,7 +344,7 @@ Lo segundo es que arrancar los procesos es trivial y supervisarlos no. Tres agen
     },
     {
       question: '¿Un enjambre de Claude es lo mismo que los subagentes o los agent teams?',
-      answer: 'No. Los subagentes y los agent teams son ayudantes que se lanzan dentro de una sola sesión de Claude Code, comparten su contexto y su consumo, y los orquesta Claude para partir una tarea. Un enjambre son varias sesiones completamente separadas, con contexto aislado, a las que repartes el trabajo tú. Usa subagentes para un problema que se descompone y un enjambre para varios problemas sin relación. Se combinan sin problema: cualquier terminal de tu enjambre puede ejecutar una sesión que use subagentes.',
+      answer: 'No son términos equivalentes. Los subagentes trabajan dentro de una sesión con contexto propio. Agent Teams coordina sesiones de Claude Code con un líder, tareas y mensajes. Un enjambre describe el uso de varias sesiones, que puedes supervisar tú o coordinar mediante herramientas como CodeAgentSwarm.',
     },
     {
       question: '¿Cuántos agentes de Claude Code puedo ejecutar a la vez?',

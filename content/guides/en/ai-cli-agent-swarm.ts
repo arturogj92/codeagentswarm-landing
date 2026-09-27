@@ -16,7 +16,8 @@ I run mixed swarms most days. This is AI coding agent orchestration at the proce
     ctaAgent: 'multi',
     highlightedWords: ['AI CLI agent swarm', 'in parallel'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-08-23',
+    updatedAt: '2026-09-27',
+    relatedSlug: 'git-worktrees-for-ai-coding-agents',
     alternateSlug: 'enjambre-de-agentes-cli-ia',
   },
   sections: [
@@ -44,6 +45,10 @@ I run mixed swarms most days. This is AI coding agent orchestration at the proce
         {
           type: 'paragraph',
           text: 'If you only care about one vendor, the per-tool guides go deeper: <a href="/en/guides/claude-code-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, <a href="/en/guides/codex-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex</a>, <a href="/en/guides/cursor-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Cursor Agent</a>, <a href="/en/guides/antigravity-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Antigravity</a>, <a href="/en/guides/opencode-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">OpenCode</a>, <a href="/en/guides/kimi-code-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi Code</a> and <a href="/en/guides/grok-build-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Grok Build</a>. This page is the cross-vendor view.',
+        },
+        {
+          type: 'paragraph',
+          text: 'When several agents may edit the same files, learn how to isolate their changes with <a href="/en/guides/git-worktrees-for-ai-coding-agents" class="text-neon-cyan hover:text-neon-purple transition-colors">Git worktrees</a>.',
         },
       ],
     },
@@ -140,7 +145,7 @@ I run mixed swarms most days. This is AI coding agent orchestration at the proce
         },
         {
           type: 'paragraph',
-          text: 'No, they are different things. Anthropic\'s agent teams are sub-agents inside a single Claude Code session: one main agent spawns helpers that report back, all within one process and one vendor. An AI CLI agent swarm is several independent agents you supervise directly, each in its own terminal, possibly from different vendors (Claude Code, Codex, Antigravity, OpenCode, Kimi Code, Grok Build). One is delegation inside one session, the other is you running and watching several real sessions at once. They can coexist, but they solve different problems.',
+          text: 'Agent Teams coordinates multiple Claude Code sessions with separate context, shared tasks and messages. A CLI agent swarm can include other providers. CodeAgentSwarm lets you supervise those sessions directly or delegate to a coordinator; the distinction is the providers and workspace, not whether only one option has independent sessions. See the <a href="/en/guides/claude-code-agent-teams-vs-codeagentswarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Agent Teams comparison</a>.',
         },
       ],
     },
@@ -468,7 +473,7 @@ I run mixed swarms most days. This is AI coding agent orchestration at the proce
     },
     {
       question: 'Is an AI CLI agent swarm the same as Claude Code agent teams?',
-      answer: 'No. Claude Code agent teams are sub-agents inside a single Claude Code session, all within one process and one vendor. An AI CLI agent swarm is several independent agents you supervise directly, each in its own terminal, possibly from different vendors. One is delegation inside a session, the other is running and watching several real sessions at once. They solve different problems and can coexist.',
+      answer: 'Agent Teams coordinates multiple Claude Code sessions with separate context, shared tasks and messages. A CLI agent swarm can include other providers. CodeAgentSwarm lets you supervise those sessions directly or delegate to a coordinator; the distinction is the providers and workspace, not whether only one option has independent sessions.',
     },
   ],
 }

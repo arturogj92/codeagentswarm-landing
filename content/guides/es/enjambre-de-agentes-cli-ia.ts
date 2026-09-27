@@ -16,7 +16,8 @@ Yo trabajo con enjambres mixtos casi todos los días. Esto es orquestación de a
     ctaAgent: 'multi',
     highlightedWords: ['enjambre de agentes CLI de IA', 'en paralelo'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-08-23',
+    updatedAt: '2026-09-27',
+    relatedSlug: 'git-worktrees-para-agentes-de-ia',
     alternateSlug: 'ai-cli-agent-swarm',
   },
   sections: [
@@ -44,6 +45,10 @@ Yo trabajo con enjambres mixtos casi todos los días. Esto es orquestación de a
         {
           type: 'paragraph',
           text: 'Si solo te interesa un proveedor, las guías por herramienta entran en más detalle: <a href="/es/guias/enjambre-de-agentes-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, <a href="/es/guias/enjambre-de-agentes-codex" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex</a>, <a href="/es/guias/enjambre-de-agentes-cursor-cli" class="text-neon-cyan hover:text-neon-purple transition-colors">Cursor Agent</a>, <a href="/es/guias/enjambre-de-agentes-antigravity" class="text-neon-cyan hover:text-neon-purple transition-colors">Antigravity</a>, <a href="/es/guias/enjambre-de-agentes-opencode" class="text-neon-cyan hover:text-neon-purple transition-colors">OpenCode</a>, <a href="/es/guias/enjambre-de-agentes-kimi-code" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi Code</a> y <a href="/es/guias/enjambre-de-agentes-grok-build" class="text-neon-cyan hover:text-neon-purple transition-colors">Grok Build</a>. Esta página es la vista entre proveedores.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Cuando varios agentes puedan editar los mismos archivos, aprende a aislar sus cambios con <a href="/es/guias/git-worktrees-para-agentes-de-ia" class="text-neon-cyan hover:text-neon-purple transition-colors">Git worktrees</a>.',
         },
       ],
     },
@@ -140,7 +145,7 @@ Yo trabajo con enjambres mixtos casi todos los días. Esto es orquestación de a
         },
         {
           type: 'paragraph',
-          text: 'No, son cosas distintas. Los agent teams de Anthropic son subagentes dentro de una sola sesión de Claude Code: un agente principal lanza ayudantes que le reportan, todo dentro de un proceso y un proveedor. Un enjambre de agentes CLI de IA son varios agentes independientes que supervisas tú directamente, cada uno en su terminal, posiblemente de proveedores distintos (Claude Code, Codex, Antigravity, OpenCode, Kimi Code, Grok Build). Uno es delegación dentro de una sesión, el otro eres tú ejecutando y vigilando varias sesiones reales a la vez. Pueden convivir, pero resuelven problemas diferentes.',
+          text: 'Agent Teams coordina varias sesiones de Claude Code con contexto propio, tareas compartidas y mensajes. Un enjambre de agentes CLI puede incluir otros proveedores. CodeAgentSwarm permite supervisar esas sesiones directamente o delegar en un coordinador; la diferencia está en los proveedores y el espacio de trabajo, no en que solo una opción tenga sesiones independientes. Consulta la <a href="/es/guias/agent-teams-de-claude-code-vs-codeagentswarm" class="text-neon-cyan hover:text-neon-purple transition-colors">comparativa de Agent Teams</a>.',
         },
       ],
     },
@@ -468,7 +473,7 @@ Yo trabajo con enjambres mixtos casi todos los días. Esto es orquestación de a
     },
     {
       question: '¿Un enjambre de agentes CLI de IA es lo mismo que los agent teams de Claude Code?',
-      answer: 'No. Los agent teams de Claude Code son subagentes dentro de una sola sesión de Claude Code, todo dentro de un proceso y un proveedor. Un enjambre de agentes CLI de IA son varios agentes independientes que supervisas tú directamente, cada uno en su terminal, posiblemente de proveedores distintos. Uno es delegación dentro de una sesión, el otro es ejecutar y vigilar varias sesiones reales a la vez. Resuelven problemas diferentes y pueden convivir.',
+      answer: 'Agent Teams coordina varias sesiones de Claude Code con contexto propio, tareas compartidas y mensajes. Un enjambre de agentes CLI puede incluir otros proveedores. CodeAgentSwarm permite supervisar esas sesiones directamente o delegar en un coordinador; la diferencia está en los proveedores y el espacio de trabajo, no en que solo una opción tenga sesiones independientes.',
     },
   ],
 }

@@ -2,7 +2,6 @@
 
 import { Fragment } from 'react'
 import GuideProductBlock from './GuideProductBlock'
-import { motion } from 'framer-motion'
 import { BookOpen, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import type { Guide } from '@/content/guides/types'
@@ -175,16 +174,10 @@ export default function GuidesIndexPage({ guides, locale }: GuidesIndexPageProps
     items: guides.filter(g => familyOf(g) === family),
   })).filter(group => group.items.length > 0)
 
-  let cardIndex = 0
   const renderCard = (guide: GuideSummary) => {
-    const delay = Math.min(cardIndex * 0.05, 0.4)
-    cardIndex += 1
     return (
-      <motion.article
+      <article
         key={guide.meta.slug}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay }}
         className="group relative"
       >
         <Link
@@ -206,7 +199,7 @@ export default function GuidesIndexPage({ guides, locale }: GuidesIndexPageProps
             </div>
           </div>
         </Link>
-      </motion.article>
+      </article>
     )
   }
 
@@ -221,12 +214,7 @@ export default function GuidesIndexPage({ guides, locale }: GuidesIndexPageProps
 
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12 lg:pt-28 lg:pb-20">
         {/* Page Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-neon-cyan/10 border border-neon-cyan/30 mb-6">
             <BookOpen className="w-5 h-5 text-neon-cyan" />
             <span className="text-sm font-medium text-neon-cyan">{pageTitle}</span>
@@ -237,7 +225,7 @@ export default function GuidesIndexPage({ guides, locale }: GuidesIndexPageProps
           <p className="text-lg text-white/70 max-w-2xl mx-auto">
             {pageSubtitle}
           </p>
-        </motion.div>
+        </div>
 
         {/* Guides grouped by tool family */}
         {groups.map((group, index) => (
@@ -263,16 +251,12 @@ export default function GuidesIndexPage({ guides, locale }: GuidesIndexPageProps
 
         {/* Empty state */}
         {guides.length === 0 && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="text-center py-16"
-          >
+          <div className="text-center py-16">
             <BookOpen className="w-16 h-16 text-white/20 mx-auto mb-4" />
             <p className="text-white/50">
               {isSpanish ? 'Próximamente más guías...' : 'More guides coming soon...'}
             </p>
-          </motion.div>
+          </div>
         )}
       </div>
     </div>

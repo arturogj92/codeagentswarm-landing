@@ -2,7 +2,6 @@
 
 import Image from 'next/image'
 import dynamic from 'next/dynamic'
-import { motion } from 'framer-motion'
 import { Info, AlertTriangle, Lightbulb, ImageIcon } from 'lucide-react'
 import type { ContentBlock, GuideSection } from '@/content/guides/types'
 
@@ -361,18 +360,15 @@ interface ContentRendererProps {
 export default function ContentRenderer({ sections }: ContentRendererProps) {
   return (
     <div className="prose-custom">
-      {sections.map((section, sectionIndex) => (
-        <motion.section
+      {sections.map((section) => (
+        <section
           key={section.id}
           id={section.id}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: sectionIndex * 0.1, duration: 0.5 }}
           className="mb-12 scroll-mt-24"
         >
           <h2 className="text-2xl font-bold text-white mb-4">{section.title}</h2>
           {section.content.map((block, blockIndex) => renderBlock(block, blockIndex))}
-        </motion.section>
+        </section>
       ))}
     </div>
   )
