@@ -7,7 +7,7 @@ const cookiesEs: LegalDoc = {
   metaTitle: 'Política de Cookies | CodeAgentSwarm',
   metaDescription:
     'CodeAgentSwarm usa analítica sin cookies y respetuosa con la privacidad, y no utiliza cookies de seguimiento ni de publicidad. Esto es exactamente lo que usamos y lo que no.',
-  lastUpdated: '2026-06-22',
+  lastUpdated: '2026-09-27',
   intro:
     'Esta Política de Cookies explica las cookies y tecnologías similares que se usan en el sitio web y en la aplicación de escritorio de CodeAgentSwarm. La versión corta: no usamos cookies de seguimiento ni de publicidad, y nuestra analítica no usa cookies.',
   sections: [
@@ -55,7 +55,7 @@ const cookiesEs: LegalDoc = {
       blocks: [
         {
           type: 'paragraph',
-          text: 'La aplicación de escritorio no es un navegador web y no usa cookies de sitio. Guarda algunos valores localmente en tu dispositivo (por ejemplo un identificador de sesión aleatorio usado para la analítica anónima de uso y tus ajustes locales). Estos no salen de tu dispositivo salvo en la forma descrita en nuestra Política de Privacidad.',
+          text: 'La app de escritorio utiliza almacenamiento local para ajustes y autenticación. La analítica opcional también utiliza identificadores aleatorios de instalación y sesión, creados solo después de habilitarla en Ajustes > Privacidad. Esta función no necesita una cookie web; el requisito de consentimiento también se aplica a sus identificadores locales de analítica. Con consentimiento, los eventos y estos identificadores se envían a nuestro backend y pueden vincularse a tu cuenta mientras has iniciado sesión. Son seudónimos, no totalmente anónimos. Puedes retirar el consentimiento en Ajustes > Privacidad. Consulta las categorías de datos y la retención en nuestra Política de Privacidad.',
         },
       ],
     },

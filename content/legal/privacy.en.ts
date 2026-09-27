@@ -7,7 +7,7 @@ const privacyEn: LegalDoc = {
   metaTitle: 'Privacy Policy | CodeAgentSwarm',
   metaDescription:
     'How CodeAgentSwarm handles your data: what we collect, what we never collect, who processes it, how long we keep it and how to exercise your GDPR rights.',
-  lastUpdated: '2026-06-22',
+  lastUpdated: '2026-09-27',
   intro:
     'This Privacy Policy explains what personal data CodeAgentSwarm collects when you use the desktop application and this website, why we collect it, who we share it with, and the rights you have over it. We have written it to match exactly what our software actually does. If anything here is unclear, email us at hello@codeagentswarm.com.',
   sections: [
@@ -70,7 +70,7 @@ const privacyEn: LegalDoc = {
         },
         {
           type: 'paragraph',
-          text: 'In production builds, the app records which in-app actions are used (for example, opening a terminal or pressing a button), together with the app version and a random session identifier stored locally on your device. This is sent to our own backend. It does not include your name, email, file paths, code or terminal content. If you are signed in, these events can be associated with your account.',
+          text: 'Optional desktop usage analytics are off until you explicitly enable them in Settings > Privacy. You can withdraw consent there at any time; this stops new collection and discards unsent events. With consent, production builds send feature actions and outcomes, provider and public model choices (custom model names become "custom"), worktree usage, and the names of settings controls used, never their free-text values. Events also include app version, operating system, processor architecture, and random session and installation identifiers. Installation identifiers are stored locally after consent and help measure returning installations. Events go to our own backend; development builds and automated tests do not send production usage events. We do not include project names or paths, file names, prompts, code, terminal commands or output, screenshots, or credentials in usage analytics. Events are pseudonymous: while signed out they have no account association; while signed in they can be linked to your account. They are therefore not described as fully anonymous.',
         },
         {
           type: 'heading',
@@ -140,8 +140,8 @@ const privacyEn: LegalDoc = {
           type: 'list',
           items: [
             'Performance of a contract (Art. 6.1.b): to provide your account, the help assistant and any paid subscription you request.',
-            'Legitimate interest (Art. 6.1.f): to keep the app secure and working, fix errors, understand anonymous usage and prevent abuse, in a way that is proportionate and does not override your rights.',
-            'Consent (Art. 6.1.a): where we ask for it, for example optional analytics or marketing emails. You can withdraw consent at any time.',
+            'Legitimate interest (Art. 6.1.f): to keep the app secure and working, fix errors and prevent abuse, in a way that is proportionate and does not override your rights.',
+            'Consent (Art. 6.1.a): for optional desktop usage analytics and, where requested, marketing emails. You can withdraw consent at any time.',
             'Legal obligation (Art. 6.1.c): to comply with accounting, tax or other legal duties when applicable.',
           ],
         },
@@ -193,7 +193,7 @@ const privacyEn: LegalDoc = {
           items: [
             'Account data: while your account exists, and deleted when you ask us to delete it.',
             'Support, feedback and survey messages: kept while needed to handle your request and for a reasonable period afterwards.',
-            'Anonymous analytics and error reports: kept in aggregate to improve the product.',
+            'Desktop usage events: retained for up to 14 months, then deleted by our retention process. Error reports have their own retention schedule.',
             'Billing records: kept for as long as legally required for accounting and tax purposes.',
           ],
         },

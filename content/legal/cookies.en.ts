@@ -7,7 +7,7 @@ const cookiesEn: LegalDoc = {
   metaTitle: 'Cookie Notice | CodeAgentSwarm',
   metaDescription:
     'CodeAgentSwarm uses privacy-friendly, cookieless analytics and does not use tracking or advertising cookies. Here is exactly what we do and do not use.',
-  lastUpdated: '2026-06-22',
+  lastUpdated: '2026-09-27',
   intro:
     'This Cookie Notice explains the cookies and similar technologies used on the CodeAgentSwarm website and desktop application. The short version: we do not use tracking or advertising cookies, and our analytics is cookieless.',
   sections: [
@@ -55,7 +55,7 @@ const cookiesEn: LegalDoc = {
       blocks: [
         {
           type: 'paragraph',
-          text: 'The desktop app is not a web browser and does not use website cookies. It stores some values locally on your device (for example a random session identifier used for anonymous usage analytics and your local settings). These never leave your device except as described in our Privacy Policy.',
+          text: 'The desktop app uses local storage for settings and authentication. Optional product analytics also use random installation and session identifiers, created only after you enable analytics in Settings > Privacy. No website cookie is required for this feature; the consent requirement still applies to its local analytics identifiers. With consent, usage events and these identifiers are sent to our backend and can be linked to your account while signed in. They are pseudonymous, not fully anonymous. You can withdraw consent in Settings > Privacy. See our Privacy Policy for the data categories and retention.',
         },
       ],
     },
