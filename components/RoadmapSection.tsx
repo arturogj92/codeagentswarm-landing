@@ -33,7 +33,7 @@ const roadmapItems: RoadmapItem[] = [
     quarter: 'Q3',
     year: '2026',
     key: 'linux',
-    status: 'in-progress',
+    status: 'shipped',
     featureKeys: ['distros', 'packages', 'parity'],
   },
   {
@@ -50,7 +50,8 @@ const shippedCount = roadmapItems.filter((i) => i.status === 'shipped').length
 // Rail fill reaches the middle of the in-progress node: each of the 4 node
 // slots is 25% wide, so node N sits at (N * 25) + 12.5 percent.
 const inProgressIndex = roadmapItems.findIndex((i) => i.status === 'in-progress')
-const railFillPercent = inProgressIndex * 25 + 12.5
+// With nothing in progress, the rail stops at the last shipped node.
+const railFillPercent = (inProgressIndex >= 0 ? inProgressIndex : shippedCount - 1) * 25 + 12.5
 
 function StatusChip({ status, t }: { status: Status; t: ReturnType<typeof useTranslations> }) {
   if (status === 'shipped') {

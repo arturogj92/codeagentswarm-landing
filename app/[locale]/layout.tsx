@@ -43,8 +43,8 @@ export async function generateMetadata({
     : 'CodeAgentSwarm | Agentic Development Environment (ADE)'
 
   const description = isSpanish
-    ? 'Ejecuta Claude Code, Codex, Muse Code, Pi, Devin CLI y más agentes en paralelo. Supervisa tareas, permisos e historial en CodeAgentSwarm para macOS y Windows.'
-    : 'Run Claude Code, Codex, Muse Code, Pi, Devin CLI and more agents in parallel. Supervise tasks, permissions and history in CodeAgentSwarm for macOS and Windows.'
+    ? 'Ejecuta Claude Code, Codex, Muse Code, Pi, Devin CLI y más agentes en paralelo. Supervisa tareas, permisos e historial en CodeAgentSwarm para macOS, Windows y Linux.'
+    : 'Run Claude Code, Codex, Muse Code, Pi, Devin CLI and more agents in parallel. Supervise tasks, permissions and history in CodeAgentSwarm for macOS, Windows and Linux.'
 
   return {
     metadataBase: new URL(baseUrl),

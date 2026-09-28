@@ -5,8 +5,8 @@ const asset = { fileName: 'test', fileUrl: 'https://example.invalid/test', fileS
 const releases: Release[] = [{ version: '2.4.1', releaseDate: '', formattedDownloads: { macArm: null, macIntel: null },
   downloads: Object.fromEntries(['x64', 'arm64'].flatMap(arch => ['deb', 'appimage'].map(format => [`linux-${arch}-${format}`, asset]))),
 }, { version: '2.4.0', releaseDate: '', formattedDownloads: { macArm: asset, macIntel: null }, downloads: { 'win32-x64': asset } }]
-test('Linux stays hidden by default, including Linux-only releases', () => {
-  if (process.env.NEXT_PUBLIC_LINUX_DOWNLOADS_ENABLED === 'true') {
+test('Linux is public by default and hidden only by an explicit false', () => {
+  if (process.env.NEXT_PUBLIC_LINUX_DOWNLOADS_ENABLED !== 'false') {
     assert.equal(publicReleases(releases).length, 2)
     assert.equal(getLinuxDownloads(releases).length, 4)
     assert.ok(getLinuxDownloads(releases).every(d => d.href.endsWith(d.target)))

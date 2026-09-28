@@ -113,7 +113,7 @@
       "title2": "Ahora <amber>tu workflow</amber> también puede serlo.",
       "text": "Cada agente, cada diff y cada notificación en una sola vista. Nada que buscar, nada que perderse.",
       "cta": "Pruébalo gratis",
-      "hint": "Gratis. Sin tarjeta. macOS y Windows. Linux próximamente."
+      "hint": "Gratis. Sin tarjeta. macOS, Windows y Linux."
     }
   },
   "solution": {
@@ -469,7 +469,7 @@
         "features": {
           "distros": "Builds para Ubuntu, Debian y Fedora",
           "packages": "Paquetes AppImage y .deb",
-          "parity": "Paridad total de features con macOS"
+          "parity": "Los mismos agentes, Chat y Kanban que en macOS"
         }
       },
       "autonomous": {
@@ -552,7 +552,7 @@
       "q18": "¿CodeAgentSwarm funciona con Cursor Agent CLI?",
       "a18": "Sí. CodeAgentSwarm se conecta a la CLI oficial cursor-agent mediante ACP. Muestra texto y herramientas en streaming, expone los modos Agent, Plan y Ask, gestiona permisos y cancelación, respeta .cursor/mcp.json y solo habilita la reanudación cuando la versión instalada anuncia soporte para loadSession.",
       "q19": "¿CodeAgentSwarm es gratis y en qué sistemas operativos funciona?",
-      "a19": "La app de escritorio funciona en macOS 12+ y Windows 10/11, con Pro incluido sin coste durante la beta abierta. Crea una cuenta de CodeAgentSwarm e inicia sesión en los agentes que quieras usar. Sus suscripciones, cargos de API y límites de uso son independientes. No hay una versión de escritorio para Linux."
+      "a19": "La app de escritorio funciona en macOS 12+, Windows 10/11 y Linux (deb y AppImage, x64 y ARM64), con Pro incluido sin coste durante la beta abierta. Crea una cuenta de CodeAgentSwarm e inicia sesión en los agentes que quieras usar. Sus suscripciones, cargos de API y límites de uso son independientes."
     }
   },
   "cta": {
@@ -771,7 +771,7 @@
         "q5": "¿Qué pasa cuando termine la Beta?",
         "a5": "Puedes seguir en Free, pasar a Pro o dejar de usar la app. No hay cargos automáticos. Los founders que se unan durante la beta mantienen el precio original de Pro durante su primer año.",
         "q6": "¿Qué sistema operativo necesito?",
-        "a6": "macOS 12 o superior y Windows 10/11 (x64 y ARM64). Linux más adelante.",
+        "a6": "macOS 12 o superior, Windows 10/11 y Linux (Ubuntu, Debian y Fedora en deb o AppImage), cada uno para x64 y ARM64.",
         "q7": "¿CodeAgentSwarm almacena mi código?",
         "a7": "CodeAgentSwarm nunca recibe ni almacena tu código fuente ni el contenido del terminal. La CLI envía las instrucciones y el código directamente a su proveedor de IA, sujeto a su política de privacidad.",
         "q8": "¿Cómo activo Pro?",
@@ -854,7 +854,7 @@
         "intel": "macOS · Intel",
         "windowsX64": "Windows · x64",
         "windowsArm64": "Windows · ARM64",
-        "generic": "macOS y Windows"
+        "generic": "macOS, Windows y Linux"
       },
       "windowsButton": "Descargar para Windows",
       "macButton": "Descargar para Mac",
@@ -862,7 +862,7 @@
     },
     "stickyBar": {
       "text": "ejecuta tus sesiones de Claude Code en paralelo.",
-      "textShort": "Gratis para macOS y Windows",
+      "textShort": "Gratis para macOS, Windows y Linux",
       "button": "Descárgalo gratis",
       "close": "Cerrar"
     }

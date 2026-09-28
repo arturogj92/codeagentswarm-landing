@@ -87,8 +87,8 @@ export function resolveDownloadForTarget(
   return null
 }
 
-// Explicit opt-in: publishing an update must not enable public Linux downloads.
-export const LINUX_DOWNLOADS_ENABLED = process.env.NEXT_PUBLIC_LINUX_DOWNLOADS_ENABLED === 'true'
+// Linux downloads are public since 2.4.1. Set the build variable to 'false' to hide them again.
+export const LINUX_DOWNLOADS_ENABLED = process.env.NEXT_PUBLIC_LINUX_DOWNLOADS_ENABLED !== 'false'
 
 export function getLinuxDownloads(releases: Release[]) {
   if (!LINUX_DOWNLOADS_ENABLED) return []

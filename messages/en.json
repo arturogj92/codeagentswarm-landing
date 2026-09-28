@@ -113,7 +113,7 @@
       "title2": "Now <amber>your workflow</amber> can too.",
       "text": "Every agent, every diff, every notification in one view. Nothing to hunt, nothing to miss.",
       "cta": "Try it free",
-      "hint": "Free. No credit card. macOS and Windows. Linux coming soon."
+      "hint": "Free. No credit card. macOS, Windows and Linux."
     }
   },
   "solution": {
@@ -469,7 +469,7 @@
         "features": {
           "distros": "Ubuntu, Debian & Fedora builds",
           "packages": "AppImage & .deb packages",
-          "parity": "Full feature parity with macOS"
+          "parity": "Same agents, Chat and Kanban as on macOS"
         }
       },
       "autonomous": {
@@ -552,7 +552,7 @@
       "q18": "Does CodeAgentSwarm work with Cursor Agent CLI?",
       "a18": "Yes. CodeAgentSwarm connects to the official cursor-agent CLI through ACP. It streams text and tool activity, exposes Agent, Plan and Ask modes, handles permissions and cancellation, respects .cursor/mcp.json and enables resume only when the installed Cursor version advertises loadSession support.",
       "q19": "Is CodeAgentSwarm free, and which operating systems does it support?",
-      "a19": "The desktop app runs on macOS 12+ and Windows 10/11, with Pro included at no cost during the open beta. Create a CodeAgentSwarm account and sign in to the agents you want to use. Their subscriptions, API charges and usage limits remain separate. A Linux desktop build is not available."
+      "a19": "The desktop app runs on macOS 12+, Windows 10/11 and Linux (deb and AppImage, x64 and ARM64), with Pro included at no cost during the open beta. Create a CodeAgentSwarm account and sign in to the agents you want to use. Their subscriptions, API charges and usage limits remain separate."
     }
   },
   "cta": {
@@ -771,7 +771,7 @@
         "q5": "What happens when the Beta ends?",
         "a5": "You can stay on Free, upgrade to Pro, or stop using the app. There are no automatic charges. Beta founders keep the original Pro price for their first year.",
         "q6": "What OS is required?",
-        "a6": "macOS 12 or later and Windows 10/11 (x64 and ARM64). Linux coming later.",
+        "a6": "macOS 12 or later, Windows 10/11 and Linux (Ubuntu, Debian and Fedora as deb or AppImage), each for x64 and ARM64.",
         "q7": "Does CodeAgentSwarm store my code?",
         "a7": "CodeAgentSwarm never receives or stores your source code or terminal content. The CLI sends prompts and code directly to its AI provider under that provider's privacy policy.",
         "q8": "How do I activate Pro?",
@@ -854,7 +854,7 @@
         "intel": "macOS · Intel",
         "windowsX64": "Windows · x64",
         "windowsArm64": "Windows · ARM64",
-        "generic": "macOS & Windows"
+        "generic": "macOS, Windows & Linux"
       },
       "windowsButton": "Download for Windows",
       "macButton": "Download for Mac",
@@ -862,7 +862,7 @@
     },
     "stickyBar": {
       "text": "runs your Claude Code sessions in parallel.",
-      "textShort": "Free for macOS & Windows",
+      "textShort": "Free for macOS, Windows & Linux",
       "button": "Download free",
       "close": "Dismiss"
     }
