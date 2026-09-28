@@ -16,7 +16,7 @@ In this guide I'll explain, plain and simple, why your skills get stuck in one a
     ctaAgent: 'multi',
     highlightedWords: ['skills', 'Codex', 'Antigravity'],
     publishedAt: '2026-07-04',
-    updatedAt: '2026-07-04',
+    updatedAt: '2026-09-29',
     alternateSlug: 'compartir-skills-entre-claude-code-codex-antigravity',
   },
   sections: [
@@ -197,7 +197,7 @@ In this guide I'll explain, plain and simple, why your skills get stuck in one a
     },
     {
       question: 'Does this work on Windows and macOS?',
-      answer: 'Yes. CodeAgentSwarm runs on both, and the export works the same way on each. Only the skill folder paths differ per operating system, and the app handles that for you.',
+      answer: 'Yes. CodeAgentSwarm runs on macOS, Windows and Linux, and the export works the same way on each. Only the skill folder paths differ per operating system, and the app handles that for you.',
     },
   ],
 }

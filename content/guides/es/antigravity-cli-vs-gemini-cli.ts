@@ -16,7 +16,7 @@ Gemini CLI fue una buena herramienta y se ganó a su público, así que esto no 
     ctaAgent: 'antigravity',
     highlightedWords: ['Antigravity CLI', 'Gemini CLI', 'migrar'],
     publishedAt: '2026-06-29',
-    updatedAt: '2026-06-29',
+    updatedAt: '2026-09-29',
     alternateSlug: 'antigravity-cli-vs-gemini-cli',
   },
   sections: [
@@ -238,7 +238,7 @@ Gemini CLI fue una buena herramienta y se ganó a su público, así que esto no 
         },
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm es una app de escritorio para ejecutar varias sesiones de CLI de IA en paralelo con visibilidad real. Funciona en macOS y Windows, y no es un proveedor de modelos, así que cada sesión de Antigravity CLI sigue usando tu propio inicio de sesión de Google y tu propia instalación de <code>agy</code>. La app solo le da un sitio donde vivir a las sesiones: varios terminales en un espacio de trabajo, con el agente elegido por terminal desde el selector SELECT AI AGENT.',
+          text: 'CodeAgentSwarm es una app de escritorio para ejecutar varias sesiones de CLI de IA en paralelo con visibilidad real. Funciona en macOS, Windows y Linux, y no es un proveedor de modelos, así que cada sesión de Antigravity CLI sigue usando tu propio inicio de sesión de Google y tu propia instalación de <code>agy</code>. La app solo le da un sitio donde vivir a las sesiones: varios terminales en un espacio de trabajo, con el agente elegido por terminal desde el selector SELECT AI AGENT.',
         },
         {
           type: 'image',

@@ -16,7 +16,7 @@ I run mixed swarms most days. This is AI coding agent orchestration at the proce
     ctaAgent: 'multi',
     highlightedWords: ['AI CLI agent swarm', 'in parallel'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-09-27',
+    updatedAt: '2026-09-29',
     relatedSlug: 'git-worktrees-for-ai-coding-agents',
     alternateSlug: 'enjambre-de-agentes-cli-ia',
   },
@@ -265,7 +265,7 @@ I run mixed swarms most days. This is AI coding agent orchestration at the proce
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm is a desktop app built for exactly this: running an AI CLI agent swarm with real visibility and control. It runs on macOS and Windows, gives you multiple terminals in one workspace, and lets you pick the agent per terminal. It is not a model provider: every terminal uses the account and quota of the CLI you selected.',
+          text: 'CodeAgentSwarm is a desktop app built for exactly this: running an AI CLI agent swarm with real visibility and control. It runs on macOS, Windows and Linux, gives you multiple terminals in one workspace, and lets you pick the agent per terminal. It is not a model provider: every terminal uses the account and quota of the CLI you selected.',
         },
         {
           type: 'paragraph',

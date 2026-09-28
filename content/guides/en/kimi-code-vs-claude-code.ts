@@ -16,7 +16,7 @@ This comparison goes through what each one actually does better, what carries ov
     ctaAgent: 'multi',
     highlightedWords: ['Kimi Code', 'Claude Code'],
     publishedAt: '2026-07-18',
-    updatedAt: '2026-08-11',
+    updatedAt: '2026-09-29',
     alternateSlug: 'kimi-code-vs-claude-code',
   },
   sections: [
@@ -311,7 +311,7 @@ This comparison goes through what each one actually does better, what carries ov
       content: [
         {
           type: 'paragraph',
-          text: 'This is exactly the setup <a href="/" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a> was built for. It is a desktop workspace (macOS and Windows) that runs multiple AI CLI terminals in parallel, and Kimi Code is a first-class agent in it alongside Claude Code, Codex CLI, Antigravity CLI, opencode and Grok Build.',
+          text: 'This is exactly the setup <a href="/" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a> was built for. It is a desktop workspace (macOS, Windows and Linux) that runs multiple AI CLI terminals in parallel, and Kimi Code is a first-class agent in it alongside Claude Code, Codex CLI, Antigravity CLI, opencode and Grok Build.',
         },
         {
           type: 'list',

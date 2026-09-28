@@ -16,7 +16,7 @@ This guide walks through the three practical ways to run several opencode sessio
     ctaAgent: 'opencode',
     highlightedWords: ['multiple OpenCode sessions', 'at once'],
     publishedAt: '2026-07-05',
-    updatedAt: '2026-08-23',
+    updatedAt: '2026-09-29',
     alternateSlug: 'ejecutar-multiples-sesiones-opencode',
   },
   sections: [
@@ -173,7 +173,7 @@ This guide walks through the three practical ways to run several opencode sessio
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm is a desktop app built for exactly this: running and supervising several AI CLI sessions in one place. It runs on macOS and Windows, gives you multiple terminals in a single workspace, and lets you choose the agent per terminal. To run opencode in parallel you just pick "opencode" in the SELECT AI AGENT picker in each terminal you want running opencode.',
+          text: 'CodeAgentSwarm is a desktop app built for exactly this: running and supervising several AI CLI sessions in one place. It runs on macOS, Windows and Linux, gives you multiple terminals in a single workspace, and lets you choose the agent per terminal. To run opencode in parallel you just pick "opencode" in the SELECT AI AGENT picker in each terminal you want running opencode.',
         },
         {
           type: 'image',

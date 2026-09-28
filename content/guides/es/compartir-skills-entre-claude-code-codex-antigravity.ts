@@ -16,7 +16,7 @@ En esta guía te explico, claro y sencillo, por qué tus skills se quedan atrapa
     ctaAgent: 'multi',
     highlightedWords: ['skills', 'Codex', 'Antigravity'],
     publishedAt: '2026-07-04',
-    updatedAt: '2026-07-04',
+    updatedAt: '2026-09-29',
     alternateSlug: 'share-skills-between-claude-code-codex-antigravity',
   },
   sections: [
@@ -197,7 +197,7 @@ En esta guía te explico, claro y sencillo, por qué tus skills se quedan atrapa
     },
     {
       question: '¿Esto funciona en Windows y macOS?',
-      answer: 'Sí. CodeAgentSwarm funciona en ambos y la exportación va igual en cada uno. Solo cambian las rutas de las carpetas de skills según el sistema operativo, y la app se encarga de eso por ti.',
+      answer: 'Sí. CodeAgentSwarm funciona en macOS, Windows y Linux, y la exportación va igual en cada uno. Solo cambian las rutas de las carpetas de skills según el sistema operativo, y la app se encarga de eso por ti.',
     },
   ],
 }

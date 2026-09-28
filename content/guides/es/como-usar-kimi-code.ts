@@ -16,7 +16,7 @@ Kimi Code se mueve rápido, con versiones nuevas casi a diario, así que donde a
     ctaAgent: 'kimi-code',
     highlightedWords: ['Kimi Code'],
     publishedAt: '2026-07-18',
-    updatedAt: '2026-08-11',
+    updatedAt: '2026-09-29',
     alternateSlug: 'how-to-use-kimi-code',
   },
   sections: [
@@ -188,7 +188,7 @@ Kimi Code se mueve rápido, con versiones nuevas casi a diario, así que donde a
       content: [
         {
           type: 'paragraph',
-          text: 'Una sesión de Kimi Code es un proceso trabajando en una tarea. En cuanto quieres una segunda tarea avanzando a la vez, ya estás en varios terminales, y ahí es donde entra <a href="/es" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a>. Es una app de escritorio para macOS y Windows que ejecuta varios terminales de agentes CLI en un espacio de trabajo visual, y Kimi Code es un agente de primera en ella, junto a Claude Code, Codex CLI, Antigravity CLI, opencode y Grok Build.',
+          text: 'Una sesión de Kimi Code es un proceso trabajando en una tarea. En cuanto quieres una segunda tarea avanzando a la vez, ya estás en varios terminales, y ahí es donde entra <a href="/es" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a>. Es una app de escritorio para macOS, Windows y Linux que ejecuta varios terminales de agentes CLI en un espacio de trabajo visual, y Kimi Code es un agente de primera en ella, junto a Claude Code, Codex CLI, Antigravity CLI, opencode y Grok Build.',
         },
         {
           type: 'paragraph',
@@ -224,7 +224,7 @@ Kimi Code se mueve rápido, con versiones nuevas casi a diario, así que donde a
     },
     {
       question: '¿Cómo ejecuto varias sesiones de Kimi Code a la vez?',
-      answer: 'Cada sesión de kimi es un proceso independiente, así que puedes correr una por terminal. CodeAgentSwarm lo hace manejable: es una app de escritorio para macOS y Windows donde Kimi Code es un agente soportado, y añade notificaciones de escritorio, historial buscable, diffs en vivo y un indicador de cuota sobre todas tus sesiones en paralelo.',
+      answer: 'Cada sesión de kimi es un proceso independiente, así que puedes correr una por terminal. CodeAgentSwarm lo hace manejable: es una app de escritorio para macOS, Windows y Linux donde Kimi Code es un agente soportado, y añade notificaciones de escritorio, historial buscable, diffs en vivo y un indicador de cuota sobre todas tus sesiones en paralelo.',
     },
   ],
 }

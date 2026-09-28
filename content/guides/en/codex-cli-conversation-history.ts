@@ -8,11 +8,11 @@ export const guide: Guide = {
     metaTitle: 'Codex CLI Conversation History: How to Find and Resume Your Sessions (2026)',
     metaDescription: 'How to find your Codex CLI conversation history, resume a past session, and search every Codex conversation by keyword. Native Codex resume plus CodeAgentSwarm searchable history across all your agents.',
     intro: 'Run codex resume to pick a saved conversation, codex resume --last to continue the most recent, or codex resume --all to include other projects. Transcripts are stored in $CODEX_HOME/sessions, which defaults to ~/.codex/sessions.\n\nThis guide explains how to resume a session and bring conversations from different agents into one view in CodeAgentSwarm.',
-    ctaText: 'Search your Codex conversations by content and filter by project in CodeAgentSwarm. Open the session you need alongside your other tasks. Available for macOS and Windows.',
+    ctaText: 'Search your Codex conversations by content and filter by project in CodeAgentSwarm. Open the session you need alongside your other tasks. Available for macOS, Windows and Linux.',
     ctaAgent: 'codex',
     highlightedWords: ['history', 'Codex CLI', 'resume'],
     publishedAt: '2026-06-24',
-    updatedAt: '2026-09-25',
+    updatedAt: '2026-09-29',
     alternateSlug: 'historial-conversaciones-codex',
   },
   sections: [

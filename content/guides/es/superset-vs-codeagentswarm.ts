@@ -9,14 +9,14 @@ export const guide: Guide = {
     metaDescription: 'Superset es un editor source available para 10+ agentes en paralelo. CodeAgentSwarm supervisa siete agentes CLI. Comparativa honesta de 2026.',
     intro: `Superset es un editor de código source available construido para ejecutar diez o más agentes en paralelo, cada uno aislado en su propio worktree de git, mientras que CodeAgentSwarm es una app de escritorio de código cerrado construida para supervisar agentes de siete proveedores CLI concretos, con notificaciones del sistema, historial buscable entre agentes y un tablero kanban que los propios agentes actualizan por MCP.
 
-Transparencia por delante: CodeAgentSwarm lo hacemos nosotros. Por eso esta página dice dónde Superset es mejor en vez de disimularlo, y por eso nuestras limitaciones (código cerrado, sin build de escritorio para Linux, Mobile Connect aún en alpha, todavía en beta) están en la misma tabla que el resto. Las dos herramientas se juzgan con los mismos criterios. Todos los datos de terceros se verificaron el 25 de agosto de 2026 en superset.sh y en los datos públicos de GitHub, y lo que no pudimos comprobar está marcado como tal. La disponibilidad de CodeAgentSwarm en esta página se actualizó el 23 de agosto de 2026.
+Transparencia por delante: CodeAgentSwarm lo hacemos nosotros. Por eso esta página dice dónde Superset es mejor en vez de disimularlo, y por eso nuestras limitaciones (código cerrado, Mobile Connect aún en alpha, todavía en beta) están en la misma tabla que el resto. Las dos herramientas se juzgan con los mismos criterios. Todos los datos de terceros se verificaron el 25 de agosto de 2026 en superset.sh y en los datos públicos de GitHub, y lo que no pudimos comprobar está marcado como tal. La disponibilidad de CodeAgentSwarm en esta página se actualizó el 29 de septiembre de 2026.
 
-Resumen rápido: elige Superset si quieres un entorno con forma de editor, soporte experimental de Linux y código que puedas leer. Elige CodeAgentSwarm si necesitas Windows hoy, historial buscable entre agentes y un tablero kanban que los agentes actualicen solos. Los dos documentan ya los siete proveedores compatibles con CodeAgentSwarm.`,
-    ctaText: 'Las dos se empiezan gratis, así que pruébalas una semana sobre el mismo repositorio. CodeAgentSwarm es gratis durante la beta, con Pro incluido, para macOS y Windows.',
+Resumen rápido: elige Superset si quieres un entorno con forma de editor y código que puedas leer. Elige CodeAgentSwarm si necesitas Windows hoy, historial buscable entre agentes y un tablero kanban que los agentes actualicen solos. Los dos documentan ya los siete proveedores compatibles con CodeAgentSwarm.`,
+    ctaText: 'Las dos se empiezan gratis, así que pruébalas una semana sobre el mismo repositorio. CodeAgentSwarm es gratis durante la beta, con Pro incluido, para macOS, Windows y Linux.',
     ctaAgent: 'comparison',
     highlightedWords: ['Superset', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
-    updatedAt: '2026-08-31',
+    updatedAt: '2026-09-29',
     alternateSlug: 'superset-vs-codeagentswarm',
   },
   sections: [
@@ -74,7 +74,7 @@ Resumen rápido: elige Superset si quieres un entorno con forma de editor, sopor
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm es una app de escritorio para ejecutar y supervisar varios agentes de programación con IA en paralelo. Funciona en macOS y Windows, es de código cerrado y es gratis durante la beta con Pro incluido. Nunca te vende acceso a modelos: cada terminal usa una suscripción CLI que ya tienes.',
+          text: 'CodeAgentSwarm es una app de escritorio para ejecutar y supervisar varios agentes de programación con IA en paralelo. Funciona en macOS, Windows y Linux, es de código cerrado y es gratis durante la beta con Pro incluido. Nunca te vende acceso a modelos: cada terminal usa una suscripción CLI que ya tienes.',
         },
         {
           type: 'image',
@@ -88,7 +88,7 @@ Resumen rápido: elige Superset si quieres un entorno con forma de editor, sopor
         },
         {
           type: 'paragraph',
-          text: 'Las limitaciones, sin rodeos: código cerrado y sin repositorio público, sin build de escritorio para Linux, Mobile Connect aún en alpha (beta web para todas las cuentas, acceso nativo para iOS y Android bajo petición y el escritorio debe seguir abierto), software en beta, hacen falta tus propias suscripciones CLI y no hay botón de PR con un clic. Si necesitas leer el código de la herramienta que gobierna tus agentes, Superset te deja hacerlo y nosotros no.',
+          text: 'Las limitaciones, sin rodeos: código cerrado y sin repositorio público, Mobile Connect aún en alpha (beta web para todas las cuentas, acceso nativo para iOS y Android bajo petición y el escritorio debe seguir abierto), software en beta, hacen falta tus propias suscripciones CLI y no hay botón de PR con un clic. Si necesitas leer el código de la herramienta que gobierna tus agentes, Superset te deja hacerlo y nosotros no.',
         },
       ],
     },
@@ -104,8 +104,8 @@ Resumen rápido: elige Superset si quieres un entorno con forma de editor, sopor
           type: 'table',
           headers: ['', 'Superset', 'CodeAgentSwarm'],
           rows: [
-            ['Plataformas', 'macOS; AppImage experimental para Linux; Windows aún no disponible; iOS próximamente', 'macOS y Windows. Sin build de Linux'],
-            ['Instalación y distribución', 'Descarga de escritorio desde superset.sh. Autoalojarlo desde el código está permitido dentro de la Elastic License 2.0', 'Instalador de escritorio para macOS y Windows'],
+            ['Plataformas', 'macOS; AppImage experimental para Linux; Windows aún no disponible; iOS próximamente', 'macOS, Windows y Linux'],
+            ['Instalación y distribución', 'Descarga de escritorio desde superset.sh. Autoalojarlo desde el código está permitido dentro de la Elastic License 2.0', 'Instalador de escritorio para macOS y Windows; .deb y AppImage para Linux'],
             ['Interfaz', 'Con forma de editor de código, con revisión de diffs y PR y opción de abrir en cualquier IDE (VS Code, Cursor, Xcode, JetBrains)', 'Workspace multiterminal con kanban, historial y diffs por terminal'],
             ['Agentes soportados', 'Amp, Antigravity CLI, Claude Code, Codex CLI, Cursor Agent, Gemini CLI, Grok, Kimi Code y OpenCode, más agentes personalizados de terminal', 'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent, integrados uno a uno'],
             ['Modelo de aislamiento', 'Un worktree de git aislado por agente, una rama por tarea', 'Worktrees de git por sesión, un proceso por terminal'],
@@ -132,7 +132,6 @@ Resumen rápido: elige Superset si quieres un entorno con forma de editor, sopor
           type: 'list',
           items: [
             '<strong>Quieres un editor, no una rejilla de terminales.</strong> Superset tiene forma de editor, con navegación de archivos, revisión de diffs y vista de PR en la misma ventana. Si quieres leer y tocar el código sin salir de la app, encaja mejor que la nuestra.',
-            '<strong>Trabajas en Linux.</strong> Superset publica un AppImage experimental. CodeAgentSwarm no tiene build de Linux, así que Superset es la opción disponible si te sirve ese soporte experimental.',
             '<strong>Quieres ejecutar cualquier agente CLI, no una lista cerrada.</strong> Su postura es que si corre en un terminal, corre en Superset. Nosotros integramos siete proveedores: mejor para esos siete, peor para el resto.',
             '<strong>Quieres leer el código.</strong> La Elastic License 2.0 no es código abierto, pero source available gana a un binario cerrado si necesitas auditar el comportamiento o autoalojarlo dentro de sus términos.',
             '<strong>Quieres automatizaciones programadas y control programático.</strong> Su servidor MCP y sus automatizaciones apuntan a flujos desatendidos que CodeAgentSwarm no documenta.',
@@ -192,7 +191,7 @@ Resumen rápido: elige Superset si quieres un entorno con forma de editor, sopor
     },
     {
       question: '¿Puedo probar las dos gratis?',
-      answer: 'Sí. Superset ofrece un plan gratuito y una descarga de escritorio desde superset.sh, y CodeAgentSwarm es gratis durante la beta con Pro incluido en macOS y Windows. Ninguna revende acceso a modelos, así que en los dos casos sigues usando las suscripciones CLI que ya pagas, y compararlas solo te cuesta tiempo.',
+      answer: 'Sí. Superset ofrece un plan gratuito y una descarga de escritorio desde superset.sh, y CodeAgentSwarm es gratis durante la beta con Pro incluido en macOS, Windows y Linux. Ninguna revende acceso a modelos, así que en los dos casos sigues usando las suscripciones CLI que ya pagas, y compararlas solo te cuesta tiempo.',
     },
   ],
 }

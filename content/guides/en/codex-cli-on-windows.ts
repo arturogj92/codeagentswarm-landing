@@ -16,7 +16,7 @@ And once Codex is running, we will also show you how to go from a single Codex t
     ctaAgent: 'codex',
     highlightedWords: ['Codex CLI', 'Windows'],
     publishedAt: '2026-06-24',
-    updatedAt: '2026-06-24',
+    updatedAt: '2026-09-29',
     alternateSlug: 'codex-cli-en-windows',
   },
   sections: [
@@ -208,7 +208,7 @@ codex`,
         },
         {
           type: 'paragraph',
-          text: 'That is the problem <a href="/en" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a> solves, and it is a native desktop app for both Windows and macOS. It runs your Codex CLI inside a visual workspace, so Windows developers get a real GUI plus multiple Codex terminals side by side, with desktop notifications when an agent finishes or needs input, searchable history across every session, and a live diff of what each terminal changed.',
+          text: 'That is the problem <a href="/en" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a> solves, and it is a native desktop app for Windows, macOS and Linux. It runs your Codex CLI inside a visual workspace, so Windows developers get a real GUI plus multiple Codex terminals side by side, with desktop notifications when an agent finishes or needs input, searchable history across every session, and a live diff of what each terminal changed.',
         },
         {
           type: 'image',
@@ -256,7 +256,7 @@ codex`,
     },
     {
       question: 'Does CodeAgentSwarm work on Windows?',
-      answer: 'Yes. CodeAgentSwarm is a native desktop app for Windows (x64 and ARM64) and macOS. It runs on top of your existing Codex CLI install and lets Windows developers supervise several Codex terminals in parallel with a real GUI.',
+      answer: 'Yes. CodeAgentSwarm is a native desktop app for Windows (x64 and ARM64), macOS and Linux. It runs on top of your existing Codex CLI install and lets Windows developers supervise several Codex terminals in parallel with a real GUI.',
     },
   ],
 }

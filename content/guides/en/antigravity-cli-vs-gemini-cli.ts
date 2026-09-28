@@ -16,7 +16,7 @@ Gemini CLI was a good tool and it earned its audience, so this is not a hype pie
     ctaAgent: 'antigravity',
     highlightedWords: ['Antigravity CLI', 'Gemini CLI', 'Migrate'],
     publishedAt: '2026-06-29',
-    updatedAt: '2026-06-29',
+    updatedAt: '2026-09-29',
     alternateSlug: 'antigravity-cli-vs-gemini-cli',
   },
   sections: [
@@ -238,7 +238,7 @@ Gemini CLI was a good tool and it earned its audience, so this is not a hype pie
         },
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm is a desktop app for running several AI CLI sessions in parallel with real visibility. It runs on macOS and Windows, and it is not a model provider, so each Antigravity CLI session keeps using your own Google sign-in and your own <code>agy</code> install. The app just gives the sessions a place to live: multiple terminals in one workspace, the agent chosen per terminal from the SELECT AI AGENT picker.',
+          text: 'CodeAgentSwarm is a desktop app for running several AI CLI sessions in parallel with real visibility. It runs on macOS, Windows and Linux, and it is not a model provider, so each Antigravity CLI session keeps using your own Google sign-in and your own <code>agy</code> install. The app just gives the sessions a place to live: multiple terminals in one workspace, the agent chosen per terminal from the SELECT AI AGENT picker.',
         },
         {
           type: 'image',

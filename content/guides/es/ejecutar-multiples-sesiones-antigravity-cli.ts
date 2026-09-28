@@ -16,7 +16,7 @@ Al terminar sabrás qué enfoque encaja con tu forma de trabajar, ya quieras dos
     ctaAgent: 'antigravity',
     highlightedWords: ['varias sesiones de Antigravity CLI', 'paralelo'],
     publishedAt: '2026-06-29',
-    updatedAt: '2026-08-23',
+    updatedAt: '2026-09-29',
     alternateSlug: 'run-multiple-antigravity-cli-sessions',
   },
   sections: [
@@ -174,7 +174,7 @@ Al terminar sabrás qué enfoque encaja con tu forma de trabajar, ya quieras dos
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm es una aplicación de escritorio creada justo para esto: ejecutar varias sesiones de CLI de IA en paralelo con visibilidad y control reales. Funciona en macOS y Windows, te da varios terminales en un mismo espacio de trabajo y te deja elegir el agente por terminal. Para ejecutar Antigravity CLI en paralelo solo eliges "antigravity" en cada terminal que quieras, y puedes mezclar Claude Code o Codex CLI junto a él.',
+          text: 'CodeAgentSwarm es una aplicación de escritorio creada justo para esto: ejecutar varias sesiones de CLI de IA en paralelo con visibilidad y control reales. Funciona en macOS, Windows y Linux, te da varios terminales en un mismo espacio de trabajo y te deja elegir el agente por terminal. Para ejecutar Antigravity CLI en paralelo solo eliges "antigravity" en cada terminal que quieras, y puedes mezclar Claude Code o Codex CLI junto a él.',
         },
         {
           type: 'image',

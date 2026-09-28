@@ -12,7 +12,7 @@ export const guide: Guide = {
     ctaAgent: 'claude-code',
     highlightedWords: ['Claude Code Agent Swarm', 'Claude Agents'],
     publishedAt: '2026-07-31',
-    updatedAt: '2026-09-27',
+    updatedAt: '2026-09-29',
     relatedSlug: 'claude-code-dashboard',
     alternateSlug: 'enjambre-de-agentes-claude-code',
   },
@@ -200,7 +200,7 @@ export const guide: Guide = {
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm is a desktop app built for exactly this: running and supervising a swarm of AI CLI agents in one place. It runs on macOS and Windows, gives you multiple terminals in one workspace, and lets you pick the agent per terminal. For a Claude swarm you select "claude code" in the SELECT AI AGENT picker in each terminal.',
+          text: 'CodeAgentSwarm is a desktop app built for exactly this: running and supervising a swarm of AI CLI agents in one place. It runs on macOS, Windows and Linux, gives you multiple terminals in one workspace, and lets you pick the agent per terminal. For a Claude swarm you select "claude code" in the SELECT AI AGENT picker in each terminal.',
         },
         {
           type: 'image',

@@ -16,7 +16,7 @@ En esta guía te explico las tres formas reales de montar un enjambre de Kimi Co
     ctaAgent: 'kimi-code',
     highlightedWords: ['Enjambre de agentes Kimi Code', 'Kimi'],
     publishedAt: '2026-07-18',
-    updatedAt: '2026-08-23',
+    updatedAt: '2026-09-29',
     alternateSlug: 'kimi-code-agent-swarm',
   },
   sections: [
@@ -191,7 +191,7 @@ En esta guía te explico las tres formas reales de montar un enjambre de Kimi Co
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm es una app de escritorio construida exactamente para esto: ejecutar y supervisar un enjambre de agentes CLI de IA en un solo sitio. Funciona en macOS y Windows, te da varios terminales en un mismo espacio de trabajo y te deja elegir el agente por terminal. Kimi Code es un agente de primera clase junto a Claude Code, Codex CLI, Antigravity CLI y opencode, así que para un enjambre de Kimi solo tienes que elegir Kimi Code en el selector de agente de cada terminal.',
+          text: 'CodeAgentSwarm es una app de escritorio construida exactamente para esto: ejecutar y supervisar un enjambre de agentes CLI de IA en un solo sitio. Funciona en macOS, Windows y Linux, te da varios terminales en un mismo espacio de trabajo y te deja elegir el agente por terminal. Kimi Code es un agente de primera clase junto a Claude Code, Codex CLI, Antigravity CLI y opencode, así que para un enjambre de Kimi solo tienes que elegir Kimi Code en el selector de agente de cada terminal.',
         },
         {
           type: 'paragraph',

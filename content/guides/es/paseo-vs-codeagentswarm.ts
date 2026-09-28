@@ -6,17 +6,17 @@ export const guide: Guide = {
     locale: 'es',
     title: 'Paseo vs CodeAgentSwarm: comparativa honesta (2026)',
     metaTitle: 'Paseo vs CodeAgentSwarm: comparativa honesta (2026)',
-    metaDescription: 'Paseo es un orquestador open source autoalojado que controlas desde el móvil. CodeAgentSwarm es una app de escritorio para macOS y Windows con siete CLIs de agentes.',
-    intro: `Paseo es un orquestador open source que montas tú mismo y que puedes supervisar desde el móvil; CodeAgentSwarm es una app de escritorio para macOS y Windows que ejecuta siete CLIs de agentes en terminales paralelos. Ahí está la diferencia en una frase, y casi toda la decisión sale de ahí.
+    metaDescription: 'Paseo es un orquestador open source autoalojado que controlas desde el móvil. CodeAgentSwarm es una app de escritorio para macOS, Windows y Linux con siete CLIs de agentes.',
+    intro: `Paseo es un orquestador open source que montas tú mismo y que puedes supervisar desde el móvil; CodeAgentSwarm es una app de escritorio para macOS, Windows y Linux que ejecuta siete CLIs de agentes en terminales paralelos. Ahí está la diferencia en una frase, y casi toda la decisión sale de ahí.
 
-Aviso: CodeAgentSwarm lo hacemos nosotros. Precisamente por eso esta página dice sin rodeos en qué gana Paseo, en vez de fingir que nos llevamos todas las filas. Los dos se miden con los mismos criterios, nuestras limitaciones están junto a nuestras funciones, y todos los datos de terceros se comprobaron el 25 de agosto de 2026 en paseo.sh, en el repositorio público getpaseo/paseo y en los datos públicos de GitHub. La disponibilidad de CodeAgentSwarm en esta página se actualizó el 23 de agosto de 2026.
+Aviso: CodeAgentSwarm lo hacemos nosotros. Precisamente por eso esta página dice sin rodeos en qué gana Paseo, en vez de fingir que nos llevamos todas las filas. Los dos se miden con los mismos criterios, nuestras limitaciones están junto a nuestras funciones, y todos los datos de terceros se comprobaron el 25 de agosto de 2026 en paseo.sh, en el repositorio público getpaseo/paseo y en los datos públicos de GitHub. La disponibilidad de CodeAgentSwarm en esta página se actualizó el 29 de septiembre de 2026.
 
-Resumen rápido: si quieres lanzar una tarea en el escritorio y revisarla desde el tren, o necesitas software que puedas alojar y auditar tú, Paseo encaja mejor. Si trabajas en un Mac o en un Windows y quieres siete CLIs de agentes, un tablero compartido y un historial buscable de todas ellas, ahí es donde CodeAgentSwarm tiene sentido.`,
-    ctaText: 'Si tu trabajo pasa delante del ordenador, en macOS o Windows, y quieres siete CLIs de agentes, diffs en vivo y un tablero compartido en una sola ventana, descarga CodeAgentSwarm y lanza tu próxima tanda de agentes en paralelo.',
+Resumen rápido: si quieres lanzar una tarea en el escritorio y revisarla desde el tren, o necesitas software que puedas alojar y auditar tú, Paseo encaja mejor. Si trabajas en Mac, Windows o Linux y quieres siete CLIs de agentes, un tablero compartido y un historial buscable de todas ellas, ahí es donde CodeAgentSwarm tiene sentido.`,
+    ctaText: 'Si tu trabajo pasa delante del ordenador, en macOS, Windows o Linux, y quieres siete CLIs de agentes, diffs en vivo y un tablero compartido en una sola ventana, descarga CodeAgentSwarm y lanza tu próxima tanda de agentes en paralelo.',
     ctaAgent: 'comparison',
     highlightedWords: ['Paseo', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
-    updatedAt: '2026-08-31',
+    updatedAt: '2026-09-29',
     alternateSlug: 'paseo-vs-codeagentswarm',
   },
   sections: [
@@ -26,7 +26,7 @@ Resumen rápido: si quieres lanzar una tarea en el escritorio y revisarla desde 
       content: [
         {
           type: 'paragraph',
-          text: 'Paseo es un orquestador open source y autoalojado, con clientes de escritorio, móvil, web y CLI que hablan con un daemon en tu propia máquina; CodeAgentSwarm es una app de escritorio de código cerrado para macOS y Windows que ejecuta siete CLIs de agentes a la vez en terminales paralelos.',
+          text: 'Paseo es un orquestador open source y autoalojado, con clientes de escritorio, móvil, web y CLI que hablan con un daemon en tu propia máquina; CodeAgentSwarm es una app de escritorio de código cerrado para macOS, Windows y Linux que ejecuta siete CLIs de agentes a la vez en terminales paralelos.',
         },
         {
           type: 'paragraph',
@@ -74,7 +74,7 @@ Resumen rápido: si quieres lanzar una tarea en el escritorio y revisarla desde 
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm es una app de escritorio para ejecutar y supervisar varios agentes de programación con IA en paralelo. Funciona en macOS y Windows, no es un proveedor de modelos, y pilota las CLIs de agentes que ya tienes instaladas: Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent.',
+          text: 'CodeAgentSwarm es una app de escritorio para ejecutar y supervisar varios agentes de programación con IA en paralelo. Funciona en macOS, Windows y Linux, no es un proveedor de modelos, y pilota las CLIs de agentes que ya tienes instaladas: Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent.',
         },
         {
           type: 'image',
@@ -97,7 +97,7 @@ Resumen rápido: si quieres lanzar una tarea en el escritorio y revisarla desde 
         },
         {
           type: 'paragraph',
-          text: 'Las limitaciones, sin adornos: código cerrado y sin repositorio público, sin versión de escritorio para Linux, Mobile Connect aún en alpha (beta web para todas las cuentas, acceso nativo para iOS y Android bajo petición y el escritorio debe seguir abierto), todavía en beta, y necesitas tus propias suscripciones para las CLIs que uses. Si necesitas clientes nativos públicos, Linux o autoalojamiento, la recomendación honesta es Paseo.',
+          text: 'Las limitaciones, sin adornos: código cerrado y sin repositorio público, Mobile Connect aún en alpha (beta web para todas las cuentas, acceso nativo para iOS y Android bajo petición y el escritorio debe seguir abierto), todavía en beta, y necesitas tus propias suscripciones para las CLIs que uses. Si necesitas clientes nativos públicos o autoalojamiento, la recomendación honesta es Paseo.',
         },
       ],
     },
@@ -112,7 +112,7 @@ Resumen rápido: si quieres lanzar una tarea en el escritorio y revisarla desde 
             [
               '<strong>Plataformas</strong>',
               'Escritorio en macOS, Windows y Linux, apps de iOS y Android, web y CLI',
-              'App de escritorio para macOS y Windows. Mobile Connect en alpha: beta web para todas las cuentas, acceso nativo para iOS y Android bajo petición y el escritorio debe seguir abierto. Sin versión para Linux',
+              'App de escritorio para macOS, Windows y Linux. Mobile Connect en alpha: beta web para todas las cuentas, acceso nativo para iOS y Android bajo petición y el escritorio debe seguir abierto',
             ],
             [
               '<strong>Interfaz</strong>',
@@ -180,7 +180,6 @@ Resumen rápido: si quieres lanzar una tarea en el escritorio y revisarla desde 
             '<strong>El open source es un requisito.</strong> El código está bajo AGPLv3: lo puedes leer y seguir usando pase lo que pase con la empresa. Con nosotros te toca fiarte.',
             '<strong>Te importan la telemetría y los logins obligatorios.</strong> Paseo declara que no tiene ninguna de las dos cosas, respuesta fácil si te lo pregunta compras.',
             '<strong>Usas GitHub Copilot o Pi.</strong> Los dos aparecen en su documentación y ninguno está entre las siete CLIs que movemos.',
-            '<strong>Trabajas en Linux.</strong> Paseo publica build de Linux. Nosotros no.',
           ],
         },
         {
@@ -196,7 +195,7 @@ Resumen rápido: si quieres lanzar una tarea en el escritorio y revisarla desde 
       content: [
         {
           type: 'paragraph',
-          text: 'La otra cara es un flujo que ocurre delante del ordenador, en macOS o Windows, donde el cuello de botella no es el acceso sino la atención: demasiados agentes y pocos ojos.',
+          text: 'La otra cara es un flujo que ocurre delante del ordenador, en macOS, Windows o Linux, donde el cuello de botella no es el acceso sino la atención: demasiados agentes y pocos ojos.',
         },
         {
           type: 'list',

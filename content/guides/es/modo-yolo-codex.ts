@@ -8,14 +8,14 @@ export const guide: Guide = {
     metaTitle: 'Modo YOLO de Codex: --yolo, permisos y sandbox (2026)',
     metaDescription: 'Qué desactiva codex --yolo, cómo conservar el sandbox sin peticiones de aprobación y por qué el antiguo --full-auto depende de tu versión de Codex CLI.',
     intro: 'Codex acepta --yolo como alias de --dangerously-bypass-approvals-and-sandbox: desactiva las peticiones de aprobación y el sandbox. Si buscas que trabaje con menos interrupciones dentro del proyecto, configura el sandbox y las aprobaciones por separado.\n\nAquí tienes los comandos, qué pasa con el antiguo --full-auto y cómo supervisar varias sesiones desde CodeAgentSwarm. Una interfaz de escritorio no convierte un comando peligroso en uno seguro.',
-    ctaText: 'Supervisa tus sesiones de Codex en CodeAgentSwarm: consulta qué necesita respuesta, busca conversaciones y revisa los cambios del proyecto. Descarga la app para macOS o Windows y usa tu cuenta de Codex.',
+    ctaText: 'Supervisa tus sesiones de Codex en CodeAgentSwarm: consulta qué necesita respuesta, busca conversaciones y revisa los cambios del proyecto. Descarga la app para macOS, Windows o Linux y usa tu cuenta de Codex.',
     ctaAgent: 'codex',
     highlightedWords: [
       'Codex CLI',
       'modo YOLO',
     ],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-09-25',
+    updatedAt: '2026-09-29',
     alternateSlug: 'codex-yolo-mode',
   },
   sections: [
@@ -213,7 +213,7 @@ export const guide: Guide = {
     },
     {
       question: '¿Cómo superviso varias sesiones de Codex?',
-      answer: 'CodeAgentSwarm ofrece sesiones independientes, historial de conversaciones y revisión de cambios del proyecto en una app para macOS y Windows. Configura los permisos de cada sesión y usa worktrees cuando debas separar archivos.',
+      answer: 'CodeAgentSwarm ofrece sesiones independientes, historial de conversaciones y revisión de cambios del proyecto en una app para macOS, Windows y Linux. Configura los permisos de cada sesión y usa worktrees cuando debas separar archivos.',
     },
   ],
 }

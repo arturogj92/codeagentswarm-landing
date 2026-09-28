@@ -16,7 +16,7 @@ Y cuando tengas Codex funcionando, también te enseñamos cómo pasar de un solo
     ctaAgent: 'codex',
     highlightedWords: ['Codex CLI', 'Windows'],
     publishedAt: '2026-06-24',
-    updatedAt: '2026-06-24',
+    updatedAt: '2026-09-29',
     alternateSlug: 'codex-cli-on-windows',
   },
   sections: [
@@ -208,7 +208,7 @@ codex`,
         },
         {
           type: 'paragraph',
-          text: 'Ese es el problema que resuelve <a href="/es" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a>, y es una app de escritorio nativa tanto para Windows como para macOS. Ejecuta tu Codex CLI dentro de un espacio de trabajo visual, así que los desarrolladores en Windows tienen una GUI de verdad más varios terminales de Codex en paralelo, con notificaciones de escritorio cuando un agente termina o necesita tu input, historial buscable de todas las sesiones y un diff en vivo de lo que cambió cada terminal.',
+          text: 'Ese es el problema que resuelve <a href="/es" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a>, y es una app de escritorio nativa para Windows, macOS y Linux. Ejecuta tu Codex CLI dentro de un espacio de trabajo visual, así que los desarrolladores en Windows tienen una GUI de verdad más varios terminales de Codex en paralelo, con notificaciones de escritorio cuando un agente termina o necesita tu input, historial buscable de todas las sesiones y un diff en vivo de lo que cambió cada terminal.',
         },
         {
           type: 'image',
@@ -256,7 +256,7 @@ codex`,
     },
     {
       question: '¿CodeAgentSwarm funciona en Windows?',
-      answer: 'Sí. CodeAgentSwarm es una app de escritorio nativa para Windows (x64 y ARM64) y macOS. Funciona sobre tu instalación existente de Codex CLI y permite a los desarrolladores en Windows supervisar varios terminales de Codex en paralelo con una GUI de verdad.',
+      answer: 'Sí. CodeAgentSwarm es una app de escritorio nativa para Windows (x64 y ARM64), macOS y Linux. Funciona sobre tu instalación existente de Codex CLI y permite a los desarrolladores en Windows supervisar varios terminales de Codex en paralelo con una GUI de verdad.',
     },
   ],
 }

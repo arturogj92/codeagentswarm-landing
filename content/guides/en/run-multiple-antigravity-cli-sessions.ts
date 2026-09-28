@@ -16,7 +16,7 @@ By the end you will know which approach fits the way you work, whether you want 
     ctaAgent: 'antigravity',
     highlightedWords: ['multiple Antigravity CLI sessions', 'parallel'],
     publishedAt: '2026-06-29',
-    updatedAt: '2026-08-23',
+    updatedAt: '2026-09-29',
     alternateSlug: 'ejecutar-multiples-sesiones-antigravity-cli',
   },
   sections: [
@@ -174,7 +174,7 @@ By the end you will know which approach fits the way you work, whether you want 
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm is a desktop app built for exactly this: running several AI CLI sessions in parallel with real visibility and control. It runs on macOS and Windows, gives you multiple terminals in one workspace, and lets you choose the agent per terminal. To run Antigravity CLI in parallel you just pick "antigravity" in each terminal you want, and you can mix in Claude Code or Codex CLI alongside it.',
+          text: 'CodeAgentSwarm is a desktop app built for exactly this: running several AI CLI sessions in parallel with real visibility and control. It runs on macOS, Windows and Linux, gives you multiple terminals in one workspace, and lets you choose the agent per terminal. To run Antigravity CLI in parallel you just pick "antigravity" in each terminal you want, and you can mix in Claude Code or Codex CLI alongside it.',
         },
         {
           type: 'image',

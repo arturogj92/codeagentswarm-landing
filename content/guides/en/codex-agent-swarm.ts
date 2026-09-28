@@ -16,7 +16,7 @@ In this guide I walk through the three practical ways to run a Codex swarm, comp
     ctaAgent: 'codex',
     highlightedWords: ['Codex agent swarm', 'Codex CLI'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-09-27',
+    updatedAt: '2026-09-29',
     relatedSlug: 'codex-gui',
     alternateSlug: 'enjambre-de-agentes-codex',
   },
@@ -170,7 +170,7 @@ In this guide I walk through the three practical ways to run a Codex swarm, comp
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm is a desktop app built for exactly this: running and supervising a swarm of AI CLI agents in one place. It runs on macOS and Windows, gives you multiple terminals in a single workspace, and lets you choose the agent per terminal. For a Codex swarm you just pick "codex cli" in the SELECT AI AGENT picker in each terminal you want running Codex.',
+          text: 'CodeAgentSwarm is a desktop app built for exactly this: running and supervising a swarm of AI CLI agents in one place. It runs on macOS, Windows and Linux, gives you multiple terminals in a single workspace, and lets you choose the agent per terminal. For a Codex swarm you just pick "codex cli" in the SELECT AI AGENT picker in each terminal you want running Codex.',
         },
         {
           type: 'image',

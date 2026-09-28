@@ -16,7 +16,7 @@ By the end you will be comfortable using Antigravity CLI on its own, and you wil
     ctaAgent: 'antigravity',
     highlightedWords: ['Antigravity CLI', 'agy'],
     publishedAt: '2026-06-29',
-    updatedAt: '2026-09-01',
+    updatedAt: '2026-09-29',
     alternateSlug: 'como-usar-antigravity-cli',
   },
   sections: [
@@ -249,7 +249,7 @@ By the end you will be comfortable using Antigravity CLI on its own, and you wil
         },
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm is a desktop app for macOS and Windows built for exactly this. It gives you multiple terminals in one window, and in the SELECT AI AGENT picker you choose the agent per terminal: claude-code, codex cli, or antigravity. Set several terminals to antigravity and you have a control room for parallel agy sessions, all in one place.',
+          text: 'CodeAgentSwarm is a desktop app for macOS, Windows and Linux built for exactly this. It gives you multiple terminals in one window, and in the SELECT AI AGENT picker you choose the agent per terminal: claude-code, codex cli, or antigravity. Set several terminals to antigravity and you have a control room for parallel agy sessions, all in one place.',
         },
         {
           type: 'image',

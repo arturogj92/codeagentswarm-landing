@@ -7,12 +7,12 @@ export const guide: Guide = {
     title: 'Vibe Kanban vs CodeAgentSwarm: comparativa honesta (2026)',
     metaTitle: 'Vibe Kanban vs CodeAgentSwarm: comparativa honesta (2026)',
     metaDescription: 'Vibe Kanban convierte el trabajo de los agentes en un kanban de issues. CodeAgentSwarm te deja pilotar sus terminales. Comparativa honesta verificada en agosto de 2026.',
-    intro: 'Vibe Kanban convierte el trabajo de los agentes en un kanban de issues para equipos. CodeAgentSwarm te deja mirar y pilotar las propias terminales de los agentes, con el tablero como una función más y no como el producto entero.\n\nCodeAgentSwarm lo hacemos nosotros, y conviene que leas esta página sabiéndolo. Por eso aquí verás nuestros límites (código cerrado, sin build de escritorio para Linux, Mobile Connect aún en alpha, todavía en beta, y tú pones tus suscripciones de agentes) y también el crédito que Vibe Kanban merece en lo que hace mejor, empezando por ser código abierto y tener con diferencia la comunidad más grande de esta categoría. Cada dato de terceros se verificó el 25 de agosto de 2026 en la web del fabricante, su README público y los datos públicos de GitHub, incluido un cambio de estado público que contamos entero. La disponibilidad de CodeAgentSwarm en esta página se actualizó el 23 de agosto de 2026.\n\nSi tu cuello de botella es planificar y revisar el trabajo en equipo, una herramienta que arranca por el kanban tiene la forma correcta. Si tu cuello de botella es seguir el ritmo de varias sesiones de agentes a la vez, la forma correcta es un espacio de supervisión.\n\nLa actividad de la rama principal se volvió a comprobar el 27 de septiembre de 2026: el último commit es una corrección del router del 19 de septiembre. Las demás afirmaciones conservan la fecha de verificación indicada.',
+    intro: 'Vibe Kanban convierte el trabajo de los agentes en un kanban de issues para equipos. CodeAgentSwarm te deja mirar y pilotar las propias terminales de los agentes, con el tablero como una función más y no como el producto entero.\n\nCodeAgentSwarm lo hacemos nosotros, y conviene que leas esta página sabiéndolo. Por eso aquí verás nuestros límites (código cerrado, Mobile Connect aún en alpha, todavía en beta, y tú pones tus suscripciones de agentes) y también el crédito que Vibe Kanban merece en lo que hace mejor, empezando por ser código abierto y tener con diferencia la comunidad más grande de esta categoría. Cada dato de terceros se verificó el 25 de agosto de 2026 en la web del fabricante, su README público y los datos públicos de GitHub, incluido un cambio de estado público que contamos entero. La disponibilidad de CodeAgentSwarm en esta página se actualizó el 29 de septiembre de 2026.\n\nSi tu cuello de botella es planificar y revisar el trabajo en equipo, una herramienta que arranca por el kanban tiene la forma correcta. Si tu cuello de botella es seguir el ritmo de varias sesiones de agentes a la vez, la forma correcta es un espacio de supervisión.\n\nLa actividad de la rama principal se volvió a comprobar el 27 de septiembre de 2026: el último commit es una corrección del router del 19 de septiembre. Las demás afirmaciones conservan la fecha de verificación indicada.',
     ctaText: 'Si quieres ver qué está haciendo cada agente ahora mismo, enterarte en el momento en que uno te necesita y tener un tablero que los agentes actualizan solos, descarga CodeAgentSwarm y pruébalo en tu próxima sesión en paralelo.',
     ctaAgent: 'comparison',
     highlightedWords: ['Vibe Kanban', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
-    updatedAt: '2026-09-27',
+    updatedAt: '2026-09-29',
     alternateSlug: 'vibe-kanban-vs-codeagentswarm',
   },
   sections: [
@@ -75,7 +75,7 @@ export const guide: Guide = {
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm es una app de escritorio para ejecutar y supervisar varios agentes de programación con IA en paralelo. Funciona en macOS y Windows, cada terminal es un proceso de agente real y eliges el agente por terminal entre Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent.',
+          text: 'CodeAgentSwarm es una app de escritorio para ejecutar y supervisar varios agentes de programación con IA en paralelo. Funciona en macOS, Windows y Linux, cada terminal es un proceso de agente real y eliges el agente por terminal entre Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent.',
         },
         {
           type: 'image',
@@ -89,7 +89,7 @@ export const guide: Guide = {
         },
         {
           type: 'paragraph',
-          text: 'Nuestros límites, sin rodeos: código cerrado y sin repositorio público, sin build de escritorio para Linux, Mobile Connect aún en alpha (beta web para todas las cuentas, acceso nativo para iOS y Android bajo petición y el escritorio debe seguir abierto), todavía en beta con Pro incluido y no somos proveedor de modelos, así que pones tus propias suscripciones.',
+          text: 'Nuestros límites, sin rodeos: código cerrado y sin repositorio público, Mobile Connect aún en alpha (beta web para todas las cuentas, acceso nativo para iOS y Android bajo petición y el escritorio debe seguir abierto), todavía en beta con Pro incluido y no somos proveedor de modelos, así que pones tus propias suscripciones.',
         },
       ],
     },
@@ -101,7 +101,7 @@ export const guide: Guide = {
           type: 'table',
           headers: ['', 'Vibe Kanban', 'CodeAgentSwarm'],
           rows: [
-            ['Plataformas', 'Se ejecuta en local con npx vibe-kanban y se usa desde el navegador; autohospedaje documentado con Docker Compose', 'App de escritorio para macOS y Windows'],
+            ['Plataformas', 'Se ejecuta en local con npx vibe-kanban y se usa desde el navegador; autohospedaje documentado con Docker Compose', 'App de escritorio para macOS, Windows y Linux'],
             ['Interfaz', 'Tablero kanban e interfaz de workspaces en el navegador, con previsualización integrada de la app', 'Espacio de trabajo de escritorio con paneles de terminal en vivo'],
             ['Agentes soportados', 'Claude Code, Codex, Gemini CLI, GitHub Copilot, Amp, Cursor, OpenCode, Droid, CCR y Qwen Code según su README', 'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent'],
             ['Modelo de aislamiento', 'Un workspace por issue, cada uno con su rama, su terminal y su servidor de desarrollo', 'Un proceso separado por terminal, con git worktrees opcionales por sesión'],
@@ -128,7 +128,7 @@ export const guide: Guide = {
             '<strong>Revisas en el navegador.</strong> Los comentarios en línea sobre un diff que vuelven directos al agente, más una previsualización integrada con devtools y emulación de dispositivos, están muy bien y nosotros no tenemos equivalente.',
             '<strong>Quieres más agentes donde elegir.</strong> Su README lista más de diez, incluidos Cursor, Amp, Droid y Qwen Code. Nuestra lista es de siete.',
             '<strong>Quieres gestionar las pull requests dentro de la herramienta.</strong> Abrir una PR con descripción escrita por IA y hacer merge desde la misma interfaz forma parte de su flujo.',
-            '<strong>No estás en macOS ni en Windows.</strong> Se lanza con npx allí donde haya Node, así que una máquina Linux vale. CodeAgentSwarm no está disponible ahí.',
+            '<strong>No quieres instalar una app de escritorio.</strong> Se lanza con npx allí donde haya Node y se usa desde el navegador. CodeAgentSwarm necesita su app de escritorio.',
           ],
         },
       ],
@@ -146,7 +146,7 @@ export const guide: Guide = {
             '<strong>Quieres un historial buscable entre proveedores.</strong> Todas las conversaciones de todos los agentes en un mismo buscador, con reanudación cuando el agente la admite desde cualquier punto.',
             '<strong>Quieres control de permisos por operación.</strong> El modo Turbo aprueba solo lo que tú confías y deja el resto bajo revisión, en vez de un interruptor de todo o nada.',
             '<strong>Quieres saber tu cuota antes de que el agente se quede a medias.</strong> El indicador de cuota del proveedor te enseña cuánto te queda.',
-            '<strong>Quieres una app de escritorio mantenida en Windows.</strong> Publicamos builds firmadas para macOS y Windows y las actualizamos con regularidad.',
+            '<strong>Quieres una app de escritorio mantenida en Windows o Linux.</strong> Publicamos builds firmadas para macOS y Windows, paquetes .deb y AppImage para Linux, y las actualizamos con regularidad.',
           ],
         },
       ],

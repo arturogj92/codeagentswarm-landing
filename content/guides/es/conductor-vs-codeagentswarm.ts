@@ -6,17 +6,17 @@ export const guide: Guide = {
     locale: 'es',
     title: 'Conductor vs CodeAgentSwarm: comparativa honesta (2026)',
     metaTitle: 'Conductor vs CodeAgentSwarm: comparativa honesta (2026)',
-    metaDescription: 'Compara los workspaces locales y cloud, cuatro agentes y precios de Conductor con CodeAgentSwarm en macOS y Windows.',
-    intro: `Conductor combina una app para macOS con workspaces cloud aislados para Claude Code, Codex, Cursor y OpenCode. CodeAgentSwarm es un workspace de escritorio para macOS y Windows que ejecuta varias CLIs de agentes en terminales paralelos. Misma idea, distinto modelo de despliegue.
+    metaDescription: 'Compara los workspaces locales y cloud, cuatro agentes y precios de Conductor con CodeAgentSwarm en macOS, Windows y Linux.',
+    intro: `Conductor combina una app para macOS con workspaces cloud aislados para Claude Code, Codex, Cursor y OpenCode. CodeAgentSwarm es un workspace de escritorio para macOS, Windows y Linux que ejecuta varias CLIs de agentes en terminales paralelos. Misma idea, distinto modelo de despliegue.
 
 Aviso: CodeAgentSwarm lo hacemos nosotros. Todos los datos de terceros se comprobaron el 25 de agosto de 2026 en la web, la página de precios y la documentación de Conductor.
 
-Resumen rápido: elige Conductor por sus sandboxes cloud, la colaboración multiplayer y su API. Elige CodeAgentSwarm por Windows, varias CLIs integradas, historial buscable entre agentes y un kanban gestionado por los propios agentes.`,
-    ctaText: '¿Necesitas un workspace de agentes en paralelo que también funcione en Windows y con varios agentes compatibles? Descarga CodeAgentSwarm y monta tu primera tanda de terminales en paralelo.',
+Resumen rápido: elige Conductor por sus sandboxes cloud, la colaboración multiplayer y su API. Elige CodeAgentSwarm por Windows y Linux, varias CLIs integradas, historial buscable entre agentes y un kanban gestionado por los propios agentes.`,
+    ctaText: '¿Necesitas un workspace de agentes en paralelo que también funcione en Windows y Linux, y con varios agentes compatibles? Descarga CodeAgentSwarm y monta tu primera tanda de terminales en paralelo.',
     ctaAgent: 'comparison',
     highlightedWords: ['Conductor', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
-    updatedAt: '2026-09-27',
+    updatedAt: '2026-09-29',
     alternateSlug: 'conductor-vs-codeagentswarm',
   },
   sections: [
@@ -26,11 +26,11 @@ Resumen rápido: elige Conductor por sus sandboxes cloud, la colaboración multi
       content: [
         {
           type: 'paragraph',
-          text: 'Conductor ejecuta Claude Code, Codex, Cursor y OpenCode en workspaces locales de Mac o sandboxes cloud gestionados; CodeAgentSwarm ejecuta varias CLIs localmente en macOS y Windows, con notificaciones, diffs en vivo y un tablero compartido.',
+          text: 'Conductor ejecuta Claude Code, Codex, Cursor y OpenCode en workspaces locales de Mac o sandboxes cloud gestionados; CodeAgentSwarm ejecuta varias CLIs localmente en macOS, Windows y Linux, con notificaciones, diffs en vivo y un tablero compartido.',
         },
         {
           type: 'paragraph',
-          text: 'Los dos aíslan el trabajo del agente y facilitan su revisión. Conductor extiende ese modelo a sandboxes cloud gestionados, colaboración multiplayer y una API HTTP. CodeAgentSwarm mantiene el trabajo local y cubre dos sistemas operativos y varios proveedores. Para el panorama general, empieza por <a href="/es/guias/mejores-herramientas-agentes-ia-en-paralelo" class="text-neon-cyan hover:text-neon-purple transition-colors">las mejores herramientas para agentes de IA en paralelo</a>.',
+          text: 'Los dos aíslan el trabajo del agente y facilitan su revisión. Conductor extiende ese modelo a sandboxes cloud gestionados, colaboración multiplayer y una API HTTP. CodeAgentSwarm mantiene el trabajo local y cubre tres sistemas operativos y varios proveedores. Para el panorama general, empieza por <a href="/es/guias/mejores-herramientas-agentes-ia-en-paralelo" class="text-neon-cyan hover:text-neon-purple transition-colors">las mejores herramientas para agentes de IA en paralelo</a>.',
         },
         {
           type: 'callout',
@@ -73,7 +73,7 @@ Resumen rápido: elige Conductor por sus sandboxes cloud, la colaboración multi
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm es una app de escritorio para ejecutar y supervisar varios agentes de programación con IA en paralelo. Funciona en macOS y Windows, no es un proveedor de modelos, y pilota las CLIs de agentes que instalas tú, como: Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent.',
+          text: 'CodeAgentSwarm es una app de escritorio para ejecutar y supervisar varios agentes de programación con IA en paralelo. Funciona en macOS, Windows y Linux, no es un proveedor de modelos, y pilota las CLIs de agentes que instalas tú, como: Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent.',
         },
         {
           type: 'image',
@@ -96,7 +96,7 @@ Resumen rápido: elige Conductor por sus sandboxes cloud, la colaboración multi
         },
         {
           type: 'paragraph',
-          text: 'Y las limitaciones, por delante: código cerrado sin repositorio público, sin versión de escritorio para Linux, Mobile Connect aún en alpha (beta web para todas las cuentas, acceso nativo para iOS y Android bajo petición y el escritorio debe seguir abierto), todavía en beta, y necesitas tus propias suscripciones para las CLIs que uses. Conductor también es cerrado, pero es una app nativa de Mac hecha por una empresa financiada, y si trabajas solo en Mac esa concentración vale algo.',
+          text: 'Y las limitaciones, por delante: código cerrado sin repositorio público, Mobile Connect aún en alpha (beta web para todas las cuentas, acceso nativo para iOS y Android bajo petición y el escritorio debe seguir abierto), todavía en beta, y necesitas tus propias suscripciones para las CLIs que uses. Conductor también es cerrado, pero es una app nativa de Mac hecha por una empresa financiada, y si trabajas solo en Mac esa concentración vale algo.',
         },
       ],
     },
@@ -111,7 +111,7 @@ Resumen rápido: elige Conductor por sus sandboxes cloud, la colaboración multi
             [
               '<strong>Plataformas</strong>',
               'App macOS para local; workspaces cloud; app iOS anunciada próximamente',
-              'macOS y Windows. Sin versión para Linux',
+              'macOS, Windows y Linux',
             ],
             [
               '<strong>Interfaz</strong>',
@@ -199,7 +199,7 @@ Resumen rápido: elige Conductor por sus sandboxes cloud, la colaboración multi
         {
           type: 'list',
           items: [
-            '<strong>Tú o tu equipo usáis Windows.</strong> Conductor es solo macOS según su web. CodeAgentSwarm funciona en macOS y Windows, algo que pesa en cuanto una persona del equipo no está en Mac.',
+            '<strong>Tú o tu equipo usáis Windows.</strong> Conductor es solo macOS según su web. CodeAgentSwarm funciona en macOS, Windows y Linux, algo que pesa en cuanto una persona del equipo no está en Mac.',
             '<strong>Quieres varias CLIs de agentes.</strong> Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent, mezclados entre terminales. Antigravity, Kimi y Grok no están entre los agentes que documenta Conductor.',
             '<strong>Quieres un único historial buscable entre proveedores,</strong> con cualquier conversación recuperable en un terminal vivo.',
             '<strong>Quieres que sean los agentes quienes mantengan el tablero.</strong> El kanban lo actualizan ellos por MCP mientras trabajan, no tú después.',
@@ -220,7 +220,7 @@ Resumen rápido: elige Conductor por sus sandboxes cloud, la colaboración multi
         {
           type: 'list',
           items: [
-            '<strong>CodeAgentSwarm</strong> funciona en macOS y Windows, con terminales en paralelo, worktrees por sesión, diffs en vivo, notificaciones de escritorio y tablero compartido. Es nuestro, es cerrado y está en beta, tenlo en cuenta.',
+            '<strong>CodeAgentSwarm</strong> funciona en macOS, Windows y Linux, con terminales en paralelo, worktrees por sesión, diffs en vivo, notificaciones de escritorio y tablero compartido. Es nuestro, es cerrado y está en beta, tenlo en cuenta.',
             '<strong>Paseo</strong> publica builds de escritorio para Windows y Linux además de macOS, es open source bajo AGPLv3 y añade clientes móviles y web. Lo desglosamos en <a href="/es/guias/paseo-vs-codeagentswarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Paseo vs CodeAgentSwarm</a>.',
             '<strong>T3 Code</strong> también sale de macOS. Lo comparamos en <a href="/es/guias/t3-code-vs-codeagentswarm" class="text-neon-cyan hover:text-neon-purple transition-colors">T3 Code vs CodeAgentSwarm</a>.',
           ],
@@ -241,7 +241,7 @@ Resumen rápido: elige Conductor por sus sandboxes cloud, la colaboración multi
         },
         {
           type: 'paragraph',
-          text: 'La regla es la de siempre con dos orquestadores: no apuntes los dos a la misma rama del mismo repositorio a la vez. Worktrees separados o proyectos separados, y no se estorban. En Windows la duda ni aparece, porque de los dos solo funciona uno.',
+          text: 'La regla es la de siempre con dos orquestadores: no apuntes los dos a la misma rama del mismo repositorio a la vez. Worktrees separados o proyectos separados, y no se estorban. En Windows o Linux la duda ni aparece, porque de los dos solo funciona uno.',
         },
       ],
     },
@@ -249,7 +249,7 @@ Resumen rápido: elige Conductor por sus sandboxes cloud, la colaboración multi
   faq: [
     {
       question: '¿Conductor funciona en Windows?',
-      answer: 'No. Conductor ofrece una app para macOS y workspaces cloud, pero no tiene build de escritorio para Windows a 25 de agosto de 2026. CodeAgentSwarm funciona localmente en macOS y Windows. Ninguno tiene build de escritorio para Linux.',
+      answer: 'No. Conductor ofrece una app para macOS y workspaces cloud, pero no tiene build de escritorio para Windows a 25 de agosto de 2026, ni tampoco para Linux. CodeAgentSwarm funciona localmente en macOS, Windows y Linux.',
     },
     {
       question: '¿Conductor es open source?',

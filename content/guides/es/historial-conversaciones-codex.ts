@@ -8,11 +8,11 @@ export const guide: Guide = {
     metaTitle: 'Cómo ver y retomar el historial de conversaciones de Codex CLI (2026)',
     metaDescription: 'Cómo encontrar el historial de conversaciones de Codex CLI, retomar una sesión anterior y buscar cualquier conversación de Codex por palabra clave. Resume nativo de Codex más el historial buscable de CodeAgentSwarm para todos tus agentes.',
     intro: 'Ejecuta codex resume para elegir una conversación guardada, codex resume --last para continuar la más reciente o codex resume --all para incluir otros proyectos. Las transcripciones se guardan en $CODEX_HOME/sessions, por defecto ~/.codex/sessions.\n\nEsta guía explica cómo retomar una sesión y reunir las conversaciones de distintos agentes en CodeAgentSwarm.',
-    ctaText: 'Busca tus conversaciones de Codex por contenido y filtra por proyecto en CodeAgentSwarm. Abre la sesión que necesitas junto a tus otras tareas. Disponible para macOS y Windows.',
+    ctaText: 'Busca tus conversaciones de Codex por contenido y filtra por proyecto en CodeAgentSwarm. Abre la sesión que necesitas junto a tus otras tareas. Disponible para macOS, Windows y Linux.',
     ctaAgent: 'codex',
     highlightedWords: ['historial', 'Codex CLI', 'retomar'],
     publishedAt: '2026-06-24',
-    updatedAt: '2026-09-25',
+    updatedAt: '2026-09-29',
     alternateSlug: 'codex-cli-conversation-history',
   },
   sections: [

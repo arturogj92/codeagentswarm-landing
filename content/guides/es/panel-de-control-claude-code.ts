@@ -9,14 +9,14 @@ export const guide: Guide = {
     metaDescription: 'Un panel de control de Claude Code te deja supervisar y gestionar todas tus sesiones desde una ventana: estado por terminal, tablero kanban, avisos e historial.',
     intro: `Un panel de control de Claude Code ayuda a ver qué sesiones trabajan, cuáles necesitan respuesta y qué cambios están listos para revisar. Anthropic ofrece su propia interfaz de escritorio con sesiones paralelas; los espacios independientes son otra forma de organizar el trabajo.
 
-CodeAgentSwarm es una app de escritorio independiente para macOS y Windows. Combina estado de sesiones, tablero de tareas, notificaciones, historial buscable y revisión de cambios entre agentes compatibles. Encaja cuando quieres Claude Code y Codex en un mismo espacio o necesitas supervisar trabajo en varios proyectos.
+CodeAgentSwarm es una app de escritorio independiente para macOS, Windows y Linux. Combina estado de sesiones, tablero de tareas, notificaciones, historial buscable y revisión de cambios entre agentes compatibles. Encaja cuando quieres Claude Code y Codex en un mismo espacio o necesitas supervisar trabajo en varios proyectos.
 
 Esta guía explica ese flujo de supervisión. Pro está incluido durante la beta abierta y tus agentes mantienen sus propias cuentas de proveedor y límites de uso.`,
     ctaText: 'Pon todas tus sesiones de Claude Code en un solo panel: ve de un vistazo el estado de cada terminal, sus tareas y sus cambios, y deja que las sesiones te avisen cuando te necesiten.',
     ctaAgent: 'claude-code',
     highlightedWords: ['Panel de control de Claude Code', 'todas tus sesiones'],
     publishedAt: '2026-07-13',
-    updatedAt: '2026-09-25',
+    updatedAt: '2026-09-29',
     alternateSlug: 'claude-code-dashboard',
   },
   sections: [
@@ -209,7 +209,7 @@ Esta guía explica ese flujo de supervisión. Pro está incluido durante la beta
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm es gratis durante la beta abierta, con todas las funciones Pro incluidas. Se instala en local en macOS y Windows y ejecuta la CLI oficial de Claude Code en terminales estándar con tu cuenta actual de Anthropic. CodeAgentSwarm añade un panel y una capa de supervisión; Anthropic sigue proporcionando el modelo y definiendo tu plan y tus límites de uso.',
+          text: 'CodeAgentSwarm es gratis durante la beta abierta, con todas las funciones Pro incluidas. Se instala en local en macOS, Windows o Linux y ejecuta la CLI oficial de Claude Code en terminales estándar con tu cuenta actual de Anthropic. CodeAgentSwarm añade un panel y una capa de supervisión; Anthropic sigue proporcionando el modelo y definiendo tu plan y tus límites de uso.',
         },
         {
           type: 'paragraph',

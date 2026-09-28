@@ -24,7 +24,7 @@
     "titleLine2": "One visual command center.",
     "subtitle": "Run Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi and Devin CLI in parallel inside an Agentic Development Environment built for supervision.",
     "claimAccess": "Download free",
-    "microcopy": "Pro included during beta · macOS 12+ · Windows 10/11",
+    "microcopy": "Pro included during beta · macOS 12+ · Windows 10/11 · Linux",
     "worksWith": "Works with",
     "existingAccounts": "Uses your existing CLI accounts",
     "newAgents": "Now in 2.4.0: <muse>Muse Code</muse>, <pi>Pi</pi> and <devin>Devin CLI</devin>.",
@@ -603,7 +603,7 @@
     "requirements": {
       "title": "System Requirements",
       "osLabel": "OS",
-      "os": "macOS 12+ / Windows 10/11",
+      "os": "macOS 12+ / Windows 10/11 / Linux",
       "agentLabel": "Agent",
       "memoryLabel": "Memory",
       "memory": "4GB RAM minimum",
@@ -643,7 +643,7 @@
     "hero": {
       "headline": "Join the Open Beta",
       "subheadline": "Join the Open Beta and run Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi and Devin CLI in parallel, with live status, notifications and full conversation history. Pro is included during the beta.",
-      "microcopy": "Works on macOS 12+ and Windows 10/11. Cursor Agent runs natively on Windows.",
+      "microcopy": "Works on macOS 12+, Windows 10/11 and Linux. Cursor Agent runs natively on Windows.",
       "primaryCta": "Join Beta Now",
       "primaryCtaHint": "(Step 1)",
       "secondaryCta": "See Features"
@@ -653,7 +653,7 @@
       "titleHighlight": "Get Started",
       "step1": {
         "title": "Download the app & create your account",
-        "description": "Install CodeAgentSwarm on macOS or Windows, then sign in with Google, GitHub, or Discord. Pro access activates automatically."
+        "description": "Install CodeAgentSwarm on macOS, Windows or Linux, then sign in with Google, GitHub, or Discord. Pro access activates automatically."
       },
       "step2": {
         "title": "Share your feedback",
@@ -704,7 +704,7 @@
       "successTitle": "You're in!",
       "successSubtitle": "Your beta request has been received. Now follow these steps:",
       "successStep1Title": "Download the app",
-      "successStep1Desc": "Get CodeAgentSwarm for macOS",
+      "successStep1Desc": "Get CodeAgentSwarm for macOS, Windows or Linux",
       "successStep2Title": "Sign in with the same email",
       "successStep2Desc": "Use Google, GitHub or Discord",
       "successStep3Title": "Start using it",

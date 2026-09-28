@@ -16,7 +16,7 @@ Yo trabajo con enjambres mixtos casi todos los días. Esto es orquestación de a
     ctaAgent: 'multi',
     highlightedWords: ['enjambre de agentes CLI de IA', 'en paralelo'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-09-27',
+    updatedAt: '2026-09-29',
     relatedSlug: 'git-worktrees-para-agentes-de-ia',
     alternateSlug: 'ai-cli-agent-swarm',
   },
@@ -265,7 +265,7 @@ Yo trabajo con enjambres mixtos casi todos los días. Esto es orquestación de a
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm es una app de escritorio hecha justo para esto: ejecutar un enjambre de agentes CLI de IA con visibilidad y control de verdad. Funciona en macOS y Windows, te da varios terminales en un solo workspace y te deja elegir el agente por terminal. No es un proveedor de modelos: cada terminal usa la cuenta y la cuota de la CLI que elegiste.',
+          text: 'CodeAgentSwarm es una app de escritorio hecha justo para esto: ejecutar un enjambre de agentes CLI de IA con visibilidad y control de verdad. Funciona en macOS, Windows y Linux, te da varios terminales en un solo workspace y te deja elegir el agente por terminal. No es un proveedor de modelos: cada terminal usa la cuenta y la cuota de la CLI que elegiste.',
         },
         {
           type: 'paragraph',

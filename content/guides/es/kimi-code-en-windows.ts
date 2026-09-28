@@ -16,7 +16,7 @@ Si estás montando otros agentes en la misma máquina, nuestras guías de <a hre
     ctaAgent: 'kimi-code',
     highlightedWords: ['Kimi Code', 'Windows'],
     publishedAt: '2026-07-18',
-    updatedAt: '2026-09-08',
+    updatedAt: '2026-09-29',
     alternateSlug: 'kimi-code-on-windows',
   },
   sections: [
@@ -176,7 +176,7 @@ Si estás montando otros agentes en la misma máquina, nuestras guías de <a hre
         },
         {
           type: 'paragraph',
-          text: '<a href="/es" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a> es una app de escritorio nativa para Windows y macOS construida para ese problema de supervisión. Kimi Code es un agente soportado en ella, junto a Claude Code, Codex CLI, Antigravity CLI y opencode, y el agente se elige por terminal. Tienes notificaciones de escritorio cuando una sesión termina o necesita algo, historial buscable entre todos los agentes, diffs en vivo por terminal, y un indicador de cuota que lee las ventanas semanal y de 5 horas de Kimi.',
+          text: '<a href="/es" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a> es una app de escritorio nativa para Windows, macOS y Linux construida para ese problema de supervisión. Kimi Code es un agente soportado en ella, junto a Claude Code, Codex CLI, Antigravity CLI y opencode, y el agente se elige por terminal. Tienes notificaciones de escritorio cuando una sesión termina o necesita algo, historial buscable entre todos los agentes, diffs en vivo por terminal, y un indicador de cuota que lee las ventanas semanal y de 5 horas de Kimi.',
         },
         {
           type: 'paragraph',

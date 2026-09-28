@@ -24,7 +24,7 @@
     "titleLine2": "Un centro de mando visual.",
     "subtitle": "Ejecuta Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi y Devin CLI en paralelo dentro de un entorno de desarrollo agéntico pensado para supervisarlos.",
     "claimAccess": "Descargar gratis",
-    "microcopy": "Pro incluido durante la beta · macOS 12+ · Windows 10/11",
+    "microcopy": "Pro incluido durante la beta · macOS 12+ · Windows 10/11 · Linux",
     "worksWith": "Compatible con",
     "existingAccounts": "Usa tus cuentas CLI actuales",
     "newAgents": "Ya en la 2.4.0: <muse>Muse Code</muse>, <pi>Pi</pi> y <devin>Devin CLI</devin>.",
@@ -603,7 +603,7 @@
     "requirements": {
       "title": "Requisitos del Sistema",
       "osLabel": "SO",
-      "os": "macOS 12+ / Windows 10/11",
+      "os": "macOS 12+ / Windows 10/11 / Linux",
       "agentLabel": "Agente",
       "memoryLabel": "RAM",
       "memory": "4GB minimo",
@@ -643,7 +643,7 @@
     "hero": {
       "headline": "Únete a la Open Beta",
       "subheadline": "Ejecuta Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi y Devin CLI en paralelo, con estado en vivo, notificaciones e historial completo. Pro está incluido durante la beta.",
-      "microcopy": "Funciona en macOS 12+ y Windows 10/11. Cursor Agent funciona de forma nativa en Windows.",
+      "microcopy": "Funciona en macOS 12+, Windows 10/11 y Linux. Cursor Agent funciona de forma nativa en Windows.",
       "primaryCta": "Unirse a la Beta",
       "primaryCtaHint": "(Paso 1)",
       "secondaryCta": "Ver Características"
@@ -653,7 +653,7 @@
       "titleHighlight": "Empezar",
       "step1": {
         "title": "Descarga la app y crea tu cuenta",
-        "description": "Instala CodeAgentSwarm en macOS o Windows e inicia sesión con Google, GitHub o Discord. Tu acceso Pro se activa automáticamente."
+        "description": "Instala CodeAgentSwarm en macOS, Windows o Linux e inicia sesión con Google, GitHub o Discord. Tu acceso Pro se activa automáticamente."
       },
       "step2": {
         "title": "Comparte tu feedback",
@@ -704,7 +704,7 @@
       "successTitle": "¡Ya estás dentro!",
       "successSubtitle": "Hemos recibido tu solicitud. Ahora sigue estos pasos:",
       "successStep1Title": "Descarga la app",
-      "successStep1Desc": "Obtén CodeAgentSwarm para macOS",
+      "successStep1Desc": "Obtén CodeAgentSwarm para macOS, Windows o Linux",
       "successStep2Title": "Inicia sesión con el mismo email",
       "successStep2Desc": "Usa Google, GitHub o Discord",
       "successStep3Title": "Empieza a usarlo",

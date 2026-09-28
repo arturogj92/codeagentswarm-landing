@@ -14,7 +14,7 @@ That's the moment where most people get lazy. You type "wip", or "fixes", or "st
 CodeAgentSwarm has a built-in Git Manager for exactly this. It reads your staged files and the diff, generates a clear commit message with AI, and lets you stage, commit, push and pull without leaving the app. You can get a short, concise message or a more detailed one with a body. In this guide I'll show you how it works and how I use it after a busy session.`,
     highlightedWords: ['AI Commit Messages', 'commit', 'Claude Code'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-06-07',
+    updatedAt: '2026-09-29',
     alternateSlug: 'mensajes-de-commit-con-ia-claude-code',
     ctaText: 'Next time your agents leave a pile of changes, open the Git Manager, generate the commit message with AI, and commit without leaving CodeAgentSwarm.',
     ctaAgent: 'claude-code',
@@ -141,7 +141,7 @@ CodeAgentSwarm has a built-in Git Manager for exactly this. It reads your staged
         },
         {
           type: 'paragraph',
-          text: 'This works on both macOS and Windows, on top of your existing Git setup. The AI message generation is available on the Pro plan, and it runs on top of the subscriptions you already pay for, so there is no separate model key to manage just for commits.',
+          text: 'This works on macOS, Windows and Linux, on top of your existing Git setup. The AI message generation is available on the Pro plan, and it runs on top of the subscriptions you already pay for, so there is no separate model key to manage just for commits.',
         },
       ],
     },
@@ -168,8 +168,8 @@ CodeAgentSwarm has a built-in Git Manager for exactly this. It reads your staged
       answer: 'Use a concise single line for small, self explanatory changes. Use a detailed message with a body for bigger refactors and features where you want to explain what changed and why. You can edit either result before committing.',
     },
     {
-      question: 'Is the AI commit message generator available on macOS and Windows?',
-      answer: 'Yes, CodeAgentSwarm runs on both macOS and Windows. The Git Manager and the AI message generation work on both, on top of your existing Git installation. The AI generation is part of the Pro plan.',
+      question: 'Is the AI commit message generator available on macOS, Windows and Linux?',
+      answer: 'Yes, CodeAgentSwarm runs on macOS, Windows and Linux. The Git Manager and the AI message generation work on all three, on top of your existing Git installation. The AI generation is part of the Pro plan.',
     },
   ],
 }

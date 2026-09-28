@@ -7,7 +7,7 @@ export const guide: Guide = {
     title: 'Agent Teams de Claude Code vs CodeAgentSwarm: cuál es la diferencia',
     metaTitle: 'Agent Teams de Claude Code vs CodeAgentSwarm: cuál es la diferencia (2026)',
     metaDescription: 'Compara los equipos de sesiones independientes de Claude Code con CodeAgentSwarm: contexto, coordinación, proveedores y cómo activar Agent Teams.',
-    intro: 'Agent Teams coordina varias sesiones de Claude Code con contexto propio. CodeAgentSwarm reúne sesiones de distintos proveedores en un espacio de trabajo de escritorio para macOS y Windows. Ambos permiten delegar trabajo: en CodeAgentSwarm puedes supervisarlo directamente o recurrir a un <a href="/es/guias/coordinador-agentes-ia" class="text-neon-cyan hover:text-neon-purple transition-colors">coordinador de CodeAgentSwarm</a>.\n\nLa diferencia útil es el entorno de trabajo, los proveedores y cómo revisas los resultados. Esta comparativa explica también cómo activar la función experimental de Claude Code.',
+    intro: 'Agent Teams coordina varias sesiones de Claude Code con contexto propio. CodeAgentSwarm reúne sesiones de distintos proveedores en un espacio de trabajo de escritorio para macOS, Windows y Linux. Ambos permiten delegar trabajo: en CodeAgentSwarm puedes supervisarlo directamente o recurrir a un <a href="/es/guias/coordinador-agentes-ia" class="text-neon-cyan hover:text-neon-purple transition-colors">coordinador de CodeAgentSwarm</a>.\n\nLa diferencia útil es el entorno de trabajo, los proveedores y cómo revisas los resultados. Esta comparativa explica también cómo activar la función experimental de Claude Code.',
     ctaText: 'Coordina sesiones de Claude Code y Codex desde CodeAgentSwarm, con tareas, historial y revisión de cambios en un mismo espacio.',
     ctaAgent: 'comparison',
     highlightedWords: [
@@ -15,7 +15,7 @@ export const guide: Guide = {
       'CodeAgentSwarm',
     ],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-09-27',
+    updatedAt: '2026-09-29',
     alternateSlug: 'claude-code-agent-teams-vs-codeagentswarm',
     relatedSlug: 'coordinador-agentes-ia',
   },

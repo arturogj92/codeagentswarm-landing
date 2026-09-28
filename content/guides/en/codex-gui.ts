@@ -7,15 +7,15 @@ export const guide: Guide = {
     title: 'Codex GUI: A Visual Desktop App for OpenAI Codex CLI',
     metaTitle: 'Codex GUI: The Desktop App for OpenAI Codex CLI (2026)',
     metaDescription: 'A Codex GUI is a graphical desktop app on top of OpenAI Codex CLI. CodeAgentSwarm gives Codex a visual workspace, task board, diffs and notifications.',
-    intro: 'CodeAgentSwarm is an independent app for working with Codex on macOS and Windows. Open sessions in Chat or terminal views, find saved conversations and review project changes from one window.\n\nUse your own Codex account. Downloading CodeAgentSwarm does not include model access or replace provider billing. This guide explains when a graphical interface helps and how to get started with your project.',
-    ctaText: 'Open your project and start a Codex session in CodeAgentSwarm. Review one task and its changes before adding more agents. The app is available for macOS and Windows.',
+    intro: 'CodeAgentSwarm is an independent app for working with Codex on macOS, Windows and Linux. Open sessions in Chat or terminal views, find saved conversations and review project changes from one window.\n\nUse your own Codex account. Downloading CodeAgentSwarm does not include model access or replace provider billing. This guide explains when a graphical interface helps and how to get started with your project.',
+    ctaText: 'Open your project and start a Codex session in CodeAgentSwarm. Review one task and its changes before adding more agents. The app is available for macOS, Windows and Linux.',
     ctaAgent: 'codex',
     highlightedWords: [
       'Codex GUI',
       'desktop app',
     ],
     publishedAt: '2026-07-13',
-    updatedAt: '2026-09-25',
+    updatedAt: '2026-09-29',
     alternateSlug: 'interfaz-grafica-codex',
   },
   sections: [
@@ -192,7 +192,7 @@ export const guide: Guide = {
         },
         {
           type: 'paragraph',
-          text: 'The public app is available for macOS and Windows. Model access and limits depend on your Codex account. CodeAgentSwarm does not include an OpenAI subscription.',
+          text: 'The public app is available for macOS, Windows and Linux. Model access and limits depend on your Codex account. CodeAgentSwarm does not include an OpenAI subscription.',
         },
       ],
     },
@@ -200,7 +200,7 @@ export const guide: Guide = {
   faq: [
     {
       question: 'What is a Codex GUI?',
-      answer: 'A visual interface for working with Codex. CodeAgentSwarm provides Chat, terminals, history and project change review in an independent app for macOS and Windows.',
+      answer: 'A visual interface for working with Codex. CodeAgentSwarm provides Chat, terminals, history and project change review in an independent app for macOS, Windows and Linux.',
     },
     {
       question: 'Is CodeAgentSwarm the official OpenAI app?',
@@ -212,7 +212,7 @@ export const guide: Guide = {
     },
     {
       question: 'Is there a Linux version of CodeAgentSwarm?',
-      answer: 'The public CodeAgentSwarm app is available for macOS and Windows. To use Codex on Linux, check its native options.',
+      answer: 'Yes. CodeAgentSwarm runs on Linux as well as macOS and Windows. Download the .deb or AppImage from codeagentswarm.com, open your project, select Codex and complete its setup and sign-in.',
     },
     {
       question: 'Do I need Turbo Mode?',

@@ -16,7 +16,7 @@ Esta guía cubre cómo funcionan de verdad las sesiones de Kimi Code, las tres f
     ctaAgent: 'kimi-code',
     highlightedWords: ['varias sesiones de Kimi Code', 'a la vez'],
     publishedAt: '2026-07-18',
-    updatedAt: '2026-08-11',
+    updatedAt: '2026-09-29',
     alternateSlug: 'run-multiple-kimi-code-sessions',
   },
   sections: [
@@ -173,7 +173,7 @@ Esta guía cubre cómo funcionan de verdad las sesiones de Kimi Code, las tres f
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm es una app de escritorio para macOS y Windows construida para ejecutar y supervisar varias sesiones CLI de IA en un solo sitio. Kimi Code es un agente de primera clase junto a Claude Code, Codex CLI, Antigravity CLI y opencode: eliges el agente por terminal, así que ejecutar tres sesiones de Kimi Code es abrir tres terminales y elegir Kimi Code en cada uno.',
+          text: 'CodeAgentSwarm es una app de escritorio para macOS, Windows y Linux construida para ejecutar y supervisar varias sesiones CLI de IA en un solo sitio. Kimi Code es un agente de primera clase junto a Claude Code, Codex CLI, Antigravity CLI y opencode: eliges el agente por terminal, así que ejecutar tres sesiones de Kimi Code es abrir tres terminales y elegir Kimi Code en cada uno.',
         },
         {
           type: 'paragraph',

@@ -7,12 +7,12 @@ export const guide: Guide = {
     title: 'Las mejores herramientas para ejecutar varios agentes de IA en paralelo (2026)',
     metaTitle: 'Mejores herramientas para ejecutar varios agentes de IA en paralelo (2026, verificado)',
     metaDescription: 'CodeAgentSwarm, T3 Code, Superset, Paseo, Conductor, Claude Squad y más: estrellas, último commit y licencia. Todos los datos verificados el 25 de agosto de 2026.',
-    intro: 'Si quieres ejecutar varios agentes de programación con IA a la vez y seguir sabiendo qué hace cada uno, las herramientas hechas para eso son CodeAgentSwarm, T3 Code, Superset, Paseo, Conductor, Vibe Kanban, Claude Squad y Nimbalyst. Son aplicaciones que lanzan y supervisan CLIs de programación como Claude Code, Codex CLI y OpenCode. No son lo mismo que LangGraph, CrewAI o AutoGen, que son librerías para construir sistemas de agentes escribiendo código y no abren un terminal por ti.\n\nAntes de nada, transparencia: nosotros hacemos CodeAgentSwarm, así que somos una de las herramientas de la lista. Justo por eso los criterios son idénticos para todas y nuestras limitaciones están escritas en la misma sección que nuestras ventajas. Los datos de producto, licencia y agentes soportados se verificaron el 25 de agosto de 2026 contra las webs de cada proyecto; las estrellas y la actividad pública de GitHub se actualizaron el 31 de agosto de 2026. Nada de lo que leas aquí viene de la página de marketing de un competidor sin decirlo. La disponibilidad de CodeAgentSwarm en esta página se actualizó el 23 de agosto de 2026.\n\nRevisión del 27 de septiembre: Vibe Kanban tiene un commit de código del 19 de septiembre de 2026 y opcode un cambio de README del 18 de septiembre. Las antiguas afirmaciones de inactividad ya no describen el historial actual. Una edición de documentación no demuestra por sí sola mantenimiento funcional.',
-    ctaText: 'Si quieres sesiones en paralelo supervisadas con Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent en macOS o Windows, con notificaciones, historial compartido y un kanban que actualizan los propios agentes, CodeAgentSwarm es gratis durante la beta. Descárgalo y júzgalo con la tabla de arriba delante.',
+    intro: 'Si quieres ejecutar varios agentes de programación con IA a la vez y seguir sabiendo qué hace cada uno, las herramientas hechas para eso son CodeAgentSwarm, T3 Code, Superset, Paseo, Conductor, Vibe Kanban, Claude Squad y Nimbalyst. Son aplicaciones que lanzan y supervisan CLIs de programación como Claude Code, Codex CLI y OpenCode. No son lo mismo que LangGraph, CrewAI o AutoGen, que son librerías para construir sistemas de agentes escribiendo código y no abren un terminal por ti.\n\nAntes de nada, transparencia: nosotros hacemos CodeAgentSwarm, así que somos una de las herramientas de la lista. Justo por eso los criterios son idénticos para todas y nuestras limitaciones están escritas en la misma sección que nuestras ventajas. Los datos de producto, licencia y agentes soportados se verificaron el 25 de agosto de 2026 contra las webs de cada proyecto; las estrellas y la actividad pública de GitHub se actualizaron el 31 de agosto de 2026. Nada de lo que leas aquí viene de la página de marketing de un competidor sin decirlo. La disponibilidad de CodeAgentSwarm en esta página se actualizó el 29 de septiembre de 2026.\n\nRevisión del 27 de septiembre: Vibe Kanban tiene un commit de código del 19 de septiembre de 2026 y opcode un cambio de README del 18 de septiembre. Las antiguas afirmaciones de inactividad ya no describen el historial actual. Una edición de documentación no demuestra por sí sola mantenimiento funcional.',
+    ctaText: 'Si quieres sesiones en paralelo supervisadas con Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent en macOS, Windows o Linux, con notificaciones, historial compartido y un kanban que actualizan los propios agentes, CodeAgentSwarm es gratis durante la beta. Descárgalo y júzgalo con la tabla de arriba delante.',
     ctaAgent: 'comparison',
     highlightedWords: ['agentes de IA', 'paralelo'],
     publishedAt: '2026-07-26',
-    updatedAt: '2026-09-27',
+    updatedAt: '2026-09-29',
     alternateSlug: 'best-tools-to-run-multiple-ai-coding-agents',
   },
   sections: [
@@ -62,7 +62,7 @@ export const guide: Guide = {
             '<strong>Vives en el terminal y quieres tmux y SSH, no una interfaz gráfica</strong>: Claude Squad. Gestiona los agentes como sesiones de tmux, así que funciona por SSH en una máquina sin escritorio.',
             '<strong>Quieres organizar el trabajo en un kanban</strong>: evalúa Vibe Kanban y su modelo de mantenimiento comunitario. Su rama principal recibió una corrección de código el 19 de septiembre de 2026.',
             '<strong>Quieres editar visualmente lo que producen los agentes</strong>: Nimbalyst. Se posiciona como editor visual para Claude Code y Codex, tanto para markdown, mockups y diagramas como para código.',
-            '<strong>Quieres un escritorio supervisado con varios proveedores, notificaciones, historial compartido y un kanban que actualizan los propios agentes</strong>: CodeAgentSwarm. Siete CLIs en macOS y Windows, a cambio de ser código cerrado y no tener build de Linux.',
+            '<strong>Quieres un escritorio supervisado con varios proveedores, notificaciones, historial compartido y un kanban que actualizan los propios agentes</strong>: CodeAgentSwarm. Siete CLIs en macOS, Windows y Linux, a cambio de ser código cerrado.',
           ],
         },
         {
@@ -87,7 +87,7 @@ export const guide: Guide = {
               'CodeAgentSwarm',
               'Sin repo público',
               'Código cerrado',
-              'macOS, Windows',
+              'macOS, Windows y Linux',
               'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent',
               'No, propietaria',
             ],
@@ -198,7 +198,7 @@ export const guide: Guide = {
       content: [
         {
           type: 'paragraph',
-          text: 'Esta es nuestra herramienta, así que lee esta sección sabiéndolo. CodeAgentSwarm es una app de escritorio para macOS y Windows que ejecuta varios CLIs de programación como terminales independientes en un mismo espacio de trabajo. Eliges el agente terminal a terminal, así que Claude Code puede estar con un refactor en uno mientras Codex CLI escribe tests en otro y OpenCode lee un módulo desconocido en un tercero. Cada terminal es su propio proceso y su propia conversación. No comparten nada entre ellos salvo lo que tú compartas.',
+          text: 'Esta es nuestra herramienta, así que lee esta sección sabiéndolo. CodeAgentSwarm es una app de escritorio para macOS, Windows y Linux que ejecuta varios CLIs de programación como terminales independientes en un mismo espacio de trabajo. Eliges el agente terminal a terminal, así que Claude Code puede estar con un refactor en uno mientras Codex CLI escribe tests en otro y OpenCode lee un módulo desconocido en un tercero. Cada terminal es su propio proceso y su propia conversación. No comparten nada entre ellos salvo lo que tú compartas.',
         },
         {
           type: 'video',
@@ -252,7 +252,6 @@ export const guide: Guide = {
           type: 'list',
           items: [
             'Código cerrado, sin repositorio público de la app. Si el open source es un requisito, párate aquí y quédate con T3 Code, Paseo o Nimbalyst.',
-            'No hay build de Linux. Solo macOS y Windows.',
             'Mobile Connect sigue en alpha. La beta web está disponible para todas las cuentas, el acceso nativo para iOS y Android es bajo petición y el escritorio debe permanecer abierto.',
             'Es software en beta, y a veces se comporta como software en beta.',
             'No es un proveedor de modelos. Traes tus propias suscripciones de Claude, OpenAI, Google, el proveedor que uses con opencode y Kimi, y funciona encima de ellas.',

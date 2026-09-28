@@ -16,7 +16,7 @@ Kimi Code moves fast, with new releases landing almost daily, so where something
     ctaAgent: 'kimi-code',
     highlightedWords: ['Kimi Code'],
     publishedAt: '2026-07-18',
-    updatedAt: '2026-08-11',
+    updatedAt: '2026-09-29',
     alternateSlug: 'como-usar-kimi-code',
   },
   sections: [
@@ -188,7 +188,7 @@ Kimi Code moves fast, with new releases landing almost daily, so where something
       content: [
         {
           type: 'paragraph',
-          text: 'One Kimi Code session is one process working on one task. The moment you want a second task moving at the same time, you are into multiple terminals, and that is where <a href="/en" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a> comes in. It is a desktop app for macOS and Windows that runs several AI CLI terminals in one visual workspace, and Kimi Code is a first-class agent in it, alongside Claude Code, Codex CLI, Antigravity CLI, opencode and Grok Build.',
+          text: 'One Kimi Code session is one process working on one task. The moment you want a second task moving at the same time, you are into multiple terminals, and that is where <a href="/en" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a> comes in. It is a desktop app for macOS, Windows and Linux that runs several AI CLI terminals in one visual workspace, and Kimi Code is a first-class agent in it, alongside Claude Code, Codex CLI, Antigravity CLI, opencode and Grok Build.',
         },
         {
           type: 'paragraph',
@@ -224,7 +224,7 @@ Kimi Code moves fast, with new releases landing almost daily, so where something
     },
     {
       question: 'How do I run several Kimi Code sessions at once?',
-      answer: 'Each kimi session is an independent process, so you can run one per terminal. CodeAgentSwarm makes that manageable: it is a desktop app for macOS and Windows where Kimi Code is a supported agent, and it adds desktop notifications, searchable history, live diffs and a quota indicator across all your parallel sessions.',
+      answer: 'Each kimi session is an independent process, so you can run one per terminal. CodeAgentSwarm makes that manageable: it is a desktop app for macOS, Windows and Linux where Kimi Code is a supported agent, and it adds desktop notifications, searchable history, live diffs and a quota indicator across all your parallel sessions.',
     },
   ],
 }

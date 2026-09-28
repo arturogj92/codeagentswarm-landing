@@ -16,7 +16,7 @@ And once opencode is running, we will also show you how to go from a single open
     ctaAgent: 'opencode',
     highlightedWords: ['OpenCode', 'Windows'],
     publishedAt: '2026-07-05',
-    updatedAt: '2026-07-05',
+    updatedAt: '2026-09-29',
     alternateSlug: 'opencode-en-windows',
   },
   sections: [
@@ -208,7 +208,7 @@ opencode`,
         },
         {
           type: 'paragraph',
-          text: 'That is the problem <a href="/en" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a> solves, and it is a native desktop app for both Windows and macOS. It runs your opencode sessions inside a visual workspace, so Windows developers get a real GUI plus multiple opencode terminals side by side, with desktop notifications when an agent finishes or needs input, searchable history across every session, and a live diff of what each terminal changed. It also reads opencode\'s local sessions, so past conversations stay searchable and you can resume them.',
+          text: 'That is the problem <a href="/en" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a> solves, and it is a native desktop app for Windows, macOS and Linux. It runs your opencode sessions inside a visual workspace, so Windows developers get a real GUI plus multiple opencode terminals side by side, with desktop notifications when an agent finishes or needs input, searchable history across every session, and a live diff of what each terminal changed. It also reads opencode\'s local sessions, so past conversations stay searchable and you can resume them.',
         },
         {
           type: 'image',
@@ -256,7 +256,7 @@ opencode`,
     },
     {
       question: 'Does CodeAgentSwarm work on Windows?',
-      answer: 'Yes. CodeAgentSwarm is a native desktop app for Windows (x64 and ARM64) and macOS. It runs on top of your existing opencode install and lets Windows developers supervise several opencode terminals in parallel with a real GUI.',
+      answer: 'Yes. CodeAgentSwarm is a native desktop app for Windows (x64 and ARM64), macOS and Linux. It runs on top of your existing opencode install and lets Windows developers supervise several opencode terminals in parallel with a real GUI.',
     },
   ],
 }

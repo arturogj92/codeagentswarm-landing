@@ -9,14 +9,14 @@ export const guide: Guide = {
     metaDescription: 'Claude Squad gestiona agentes de IA en paralelo dentro de tu terminal. CodeAgentSwarm hace lo mismo desde el escritorio. Comparativa honesta verificada en agosto de 2026.',
     intro: `Claude Squad gestiona varios agentes de programación con IA dentro de tu terminal. CodeAgentSwarm le da a ese mismo paralelismo una interfaz de escritorio, con notificaciones, historial buscable entre agentes y un tablero kanban que los propios agentes actualizan.
 
-Antes de seguir, transparencia total: CodeAgentSwarm lo hacemos nosotros. Justo por eso esta página dice dónde gana Claude Squad y enumera nuestros límites en voz alta (código cerrado, sin build de escritorio para Linux, Mobile Connect aún en alpha, todavía en beta, y tú pones tus propias suscripciones de agentes). Los dos se juzgan con los mismos criterios, y cada dato de terceros se verificó el 25 de agosto de 2026 en la web del fabricante, su README público y los datos públicos de GitHub. La disponibilidad de CodeAgentSwarm en esta página se actualizó el 23 de agosto de 2026.
+Antes de seguir, transparencia total: CodeAgentSwarm lo hacemos nosotros. Justo por eso esta página dice dónde gana Claude Squad y enumera nuestros límites en voz alta (código cerrado, Mobile Connect aún en alpha, todavía en beta, y tú pones tus propias suscripciones de agentes). Los dos se juzgan con los mismos criterios, y cada dato de terceros se verificó el 25 de agosto de 2026 en la web del fabricante, su README público y los datos públicos de GitHub. La disponibilidad de CodeAgentSwarm en esta página se actualizó el 29 de septiembre de 2026.
 
 Resumen rápido: si vives en la terminal, trabajas por SSH en máquinas remotas y quieres código abierto AGPL, Claude Squad te encaja mejor. Si prefieres una ventana de escritorio con notificaciones, historial entre agentes, diffs en vivo y siete proveedores en el mismo sitio, eso es lo que construimos nosotros.`,
     ctaText: 'Si quieres los mismos agentes en paralelo pero con ventana de escritorio, notificaciones e historial buscable de todos los agentes, descarga CodeAgentSwarm y pruébalo junto a Claude Squad.',
     ctaAgent: 'comparison',
     highlightedWords: ['Claude Squad', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
-    updatedAt: '2026-08-25',
+    updatedAt: '2026-09-29',
     alternateSlug: 'claude-squad-vs-codeagentswarm',
   },
   sections: [
@@ -74,7 +74,7 @@ Resumen rápido: si vives en la terminal, trabajas por SSH en máquinas remotas 
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm es una app de escritorio para ejecutar y supervisar varios agentes de programación con IA en paralelo. Funciona en macOS y Windows, cada terminal es un proceso de agente real, y eliges el agente por terminal: Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build o Cursor Agent.',
+          text: 'CodeAgentSwarm es una app de escritorio para ejecutar y supervisar varios agentes de programación con IA en paralelo. Funciona en macOS, Windows y Linux, cada terminal es un proceso de agente real, y eliges el agente por terminal: Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build o Cursor Agent.',
         },
         {
           type: 'image',
@@ -96,7 +96,7 @@ Resumen rápido: si vives en la terminal, trabajas por SSH en máquinas remotas 
         },
         {
           type: 'paragraph',
-          text: 'Nuestros límites, sin adornos: la app es de código cerrado y no tiene repositorio público, el escritorio solo se distribuye para macOS y Windows, Mobile Connect sigue en alpha (beta web para todas las cuentas, acceso nativo para iOS y Android bajo petición y el escritorio debe seguir abierto), seguimos en beta con Pro incluido y no somos proveedor de modelos, así que pones tus suscripciones de Claude, OpenAI u otras.',
+          text: 'Nuestros límites, sin adornos: la app es de código cerrado y no tiene repositorio público, Mobile Connect sigue en alpha (beta web para todas las cuentas, acceso nativo para iOS y Android bajo petición y el escritorio debe seguir abierto), seguimos en beta con Pro incluido y no somos proveedor de modelos, así que pones tus suscripciones de Claude, OpenAI u otras.',
         },
       ],
     },
@@ -108,7 +108,7 @@ Resumen rápido: si vives en la terminal, trabajas por SSH en máquinas remotas 
           type: 'table',
           headers: ['', 'Claude Squad', 'CodeAgentSwarm'],
           rows: [
-            ['Plataformas', 'Entornos de terminal con tmux y la CLI de GitHub instalados, vía Homebrew o script de shell. Una instalación nativa en Windows no está documentada en su web a 25 de agosto de 2026', 'App de escritorio para macOS y Windows'],
+            ['Plataformas', 'Entornos de terminal con tmux y la CLI de GitHub instalados, vía Homebrew o script de shell. Una instalación nativa en Windows no está documentada en su web a 25 de agosto de 2026', 'App de escritorio para macOS, Windows y Linux'],
             ['Interfaz', 'Interfaz de terminal, guiada por teclado', 'Espacio de trabajo gráfico de escritorio con paneles de terminal'],
             ['Agentes soportados', 'Claude Code, Codex, Gemini y Aider; comandos locales arbitrarios mediante el flag de programa', 'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build y Cursor Agent'],
             ['Modelo de aislamiento', 'Una sesión de tmux y un git worktree por tarea, con una rama para cada una', 'Un proceso separado por terminal, con git worktrees opcionales por sesión'],
@@ -136,7 +136,6 @@ Resumen rápido: si vives en la terminal, trabajas por SSH en máquinas remotas 
           items: [
             '<strong>Trabajas en máquinas remotas.</strong> Claude Squad se ejecuta donde vive tu código. Por SSH contra un servidor de desarrollo, un VPS o una estación Linux, una app de terminal tiene la forma correcta y una interfaz de escritorio directamente no está.',
             '<strong>Quieres código abierto.</strong> AGPL-3.0, repositorio público y unas 8.400 estrellas. Puedes leer cada línea, hacer un fork y auditar qué hace con tu código. CodeAgentSwarm no puede ofrecerte eso.',
-            '<strong>Quieres Linux.</strong> CodeAgentSwarm solo se distribuye para macOS y Windows. Si tu máquina diaria es Linux, Claude Squad está disponible para ti y nosotros no.',
             '<strong>Ya vives en tmux.</strong> Si tu memoria muscular es de teclado y te molesta pasar al ratón, una interfaz de texto con gestión de sesiones a una tecla te va a parecer más rápida que cualquier ventana.',
             '<strong>Quieres cero peso de instalación.</strong> Un binario, sin cuenta, sin actualizador y sin runtime de escritorio empaquetado.',
             '<strong>Quieres Aider u otro agente local.</strong> Su flag de programa lanza cualquier comando de agente local, algo más amplio que nuestra lista fija de siete.',

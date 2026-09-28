@@ -7,7 +7,7 @@ export const guide: Guide = {
     title: 'Claude Code Agent Teams vs CodeAgentSwarm: What Is the Difference?',
     metaTitle: 'Claude Code Agent Teams vs CodeAgentSwarm: What Is the Difference? (2026)',
     metaDescription: 'Compare Claude Code teams of independent sessions with CodeAgentSwarm: context, coordination, providers and how to enable Agent Teams.',
-    intro: 'Agent Teams coordinates several Claude Code sessions with their own context. CodeAgentSwarm brings sessions from different providers into a desktop workspace for macOS and Windows. Both support delegation: in CodeAgentSwarm you can supervise work directly or use a <a href="/en/guides/ai-coding-agent-coordinator" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm coordinator</a>.\n\nThe useful distinction is the workspace, the providers and how you review results. This comparison also explains how to enable the experimental Claude Code feature.',
+    intro: 'Agent Teams coordinates several Claude Code sessions with their own context. CodeAgentSwarm brings sessions from different providers into a desktop workspace for macOS, Windows and Linux. Both support delegation: in CodeAgentSwarm you can supervise work directly or use a <a href="/en/guides/ai-coding-agent-coordinator" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm coordinator</a>.\n\nThe useful distinction is the workspace, the providers and how you review results. This comparison also explains how to enable the experimental Claude Code feature.',
     ctaText: 'Coordinate Claude Code and Codex sessions in CodeAgentSwarm, with tasks, history and change review in one workspace.',
     ctaAgent: 'comparison',
     highlightedWords: [
@@ -15,7 +15,7 @@ export const guide: Guide = {
       'CodeAgentSwarm',
     ],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-09-27',
+    updatedAt: '2026-09-29',
     alternateSlug: 'agent-teams-de-claude-code-vs-codeagentswarm',
     relatedSlug: 'ai-coding-agent-coordinator',
   },

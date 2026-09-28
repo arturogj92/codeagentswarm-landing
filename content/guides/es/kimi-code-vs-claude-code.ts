@@ -16,7 +16,7 @@ En esta comparativa repaso qué hace mejor cada uno, qué se transfiere entre el
     ctaAgent: 'multi',
     highlightedWords: ['Kimi Code', 'Claude Code'],
     publishedAt: '2026-07-18',
-    updatedAt: '2026-08-11',
+    updatedAt: '2026-09-29',
     alternateSlug: 'kimi-code-vs-claude-code',
   },
   sections: [
@@ -311,7 +311,7 @@ En esta comparativa repaso qué hace mejor cada uno, qué se transfiere entre el
       content: [
         {
           type: 'paragraph',
-          text: 'Justo para esto existe <a href="/" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a>. Es un workspace de escritorio (macOS y Windows) que ejecuta varios terminales de CLIs de IA en paralelo, y Kimi Code es un agente de primera clase dentro de él, junto a Claude Code, Codex CLI, Antigravity CLI, opencode y Grok Build.',
+          text: 'Justo para esto existe <a href="/" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a>. Es un workspace de escritorio (macOS, Windows y Linux) que ejecuta varios terminales de CLIs de IA en paralelo, y Kimi Code es un agente de primera clase dentro de él, junto a Claude Code, Codex CLI, Antigravity CLI, opencode y Grok Build.',
         },
         {
           type: 'list',

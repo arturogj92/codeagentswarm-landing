@@ -14,7 +14,7 @@ Ese es el momento en el que casi todo el mundo se relaja. Escribes "wip", o "arr
 CodeAgentSwarm tiene un Git Manager integrado justo para esto. Lee tus archivos en staging y el diff, genera un mensaje de commit claro con IA, y te deja hacer stage, commit, push y pull sin salir de la app. Puedes obtener un mensaje corto y conciso o uno más detallado con cuerpo. En esta guía te enseño cómo funciona y cómo lo uso yo después de una sesión movida.`,
     highlightedWords: ['Mensajes de commit con IA', 'commit', 'Claude Code'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-06-07',
+    updatedAt: '2026-09-29',
     alternateSlug: 'ai-commit-messages-claude-code',
     ctaText: 'La próxima vez que tus agentes dejen un montón de cambios, abre el Git Manager, genera el mensaje de commit con IA y haz commit sin salir de CodeAgentSwarm.',
     ctaAgent: 'claude-code',
@@ -141,7 +141,7 @@ CodeAgentSwarm tiene un Git Manager integrado justo para esto. Lee tus archivos 
         },
         {
           type: 'paragraph',
-          text: 'Esto funciona tanto en macOS como en Windows, sobre tu configuración de Git existente. La generación de mensajes con IA está disponible en el plan Pro, y se apoya en las suscripciones que ya pagas, así que no hay que gestionar una clave de modelo aparte solo para los commits.',
+          text: 'Esto funciona en macOS, Windows y Linux, sobre tu configuración de Git existente. La generación de mensajes con IA está disponible en el plan Pro, y se apoya en las suscripciones que ya pagas, así que no hay que gestionar una clave de modelo aparte solo para los commits.',
         },
       ],
     },
@@ -169,7 +169,7 @@ CodeAgentSwarm tiene un Git Manager integrado justo para esto. Lee tus archivos 
     },
     {
       question: '¿El generador de mensajes de commit con IA está en macOS y Windows?',
-      answer: 'Sí, CodeAgentSwarm funciona tanto en macOS como en Windows. El Git Manager y la generación de mensajes con IA funcionan en ambos, sobre tu instalación de Git existente. La generación con IA forma parte del plan Pro.',
+      answer: 'Sí. CodeAgentSwarm funciona en macOS y Windows, y también en Linux. El Git Manager y la generación de mensajes con IA funcionan en todos, sobre tu instalación de Git existente. La generación con IA forma parte del plan Pro.',
     },
   ],
 }

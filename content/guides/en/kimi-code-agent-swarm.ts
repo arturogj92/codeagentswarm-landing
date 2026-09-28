@@ -16,7 +16,7 @@ In this guide I walk through the three practical ways to run a Kimi Code swarm, 
     ctaAgent: 'kimi-code',
     highlightedWords: ['Kimi Code Agent Swarm', 'Kimi'],
     publishedAt: '2026-07-18',
-    updatedAt: '2026-08-23',
+    updatedAt: '2026-09-29',
     alternateSlug: 'enjambre-de-agentes-kimi-code',
   },
   sections: [
@@ -191,7 +191,7 @@ In this guide I walk through the three practical ways to run a Kimi Code swarm, 
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm is a desktop app built for exactly this: running and supervising a swarm of AI CLI agents in one place. It runs on macOS and Windows, gives you multiple terminals in a single workspace, and lets you choose the agent per terminal. Kimi Code is a first-class agent alongside Claude Code, Codex CLI, Antigravity CLI and opencode, so for a Kimi swarm you just pick Kimi Code in the agent picker in each terminal you want running kimi.',
+          text: 'CodeAgentSwarm is a desktop app built for exactly this: running and supervising a swarm of AI CLI agents in one place. It runs on macOS, Windows and Linux, gives you multiple terminals in a single workspace, and lets you choose the agent per terminal. Kimi Code is a first-class agent alongside Claude Code, Codex CLI, Antigravity CLI and opencode, so for a Kimi swarm you just pick Kimi Code in the agent picker in each terminal you want running kimi.',
         },
         {
           type: 'paragraph',

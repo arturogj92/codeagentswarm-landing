@@ -16,7 +16,7 @@ Y cuando tengas opencode funcionando, también te enseñamos cómo pasar de un s
     ctaAgent: 'opencode',
     highlightedWords: ['OpenCode', 'Windows'],
     publishedAt: '2026-07-05',
-    updatedAt: '2026-07-05',
+    updatedAt: '2026-09-29',
     alternateSlug: 'opencode-on-windows',
   },
   sections: [
@@ -208,7 +208,7 @@ opencode`,
         },
         {
           type: 'paragraph',
-          text: 'Ese es el problema que resuelve <a href="/es" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a>, y es una app de escritorio nativa tanto para Windows como para macOS. Ejecuta tus sesiones de opencode dentro de un espacio de trabajo visual, así que los desarrolladores en Windows tienen una GUI de verdad más varios terminales de opencode en paralelo, con notificaciones de escritorio cuando un agente termina o necesita tu input, historial buscable de todas las sesiones y un diff en vivo de lo que cambió cada terminal. Además lee las sesiones locales de opencode, así que las conversaciones anteriores siguen siendo buscables y puedes retomarlas.',
+          text: 'Ese es el problema que resuelve <a href="/es" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a>, y es una app de escritorio nativa para Windows, macOS y Linux. Ejecuta tus sesiones de opencode dentro de un espacio de trabajo visual, así que los desarrolladores en Windows tienen una GUI de verdad más varios terminales de opencode en paralelo, con notificaciones de escritorio cuando un agente termina o necesita tu input, historial buscable de todas las sesiones y un diff en vivo de lo que cambió cada terminal. Además lee las sesiones locales de opencode, así que las conversaciones anteriores siguen siendo buscables y puedes retomarlas.',
         },
         {
           type: 'image',
@@ -256,7 +256,7 @@ opencode`,
     },
     {
       question: '¿CodeAgentSwarm funciona en Windows?',
-      answer: 'Sí. CodeAgentSwarm es una app de escritorio nativa para Windows (x64 y ARM64) y macOS. Funciona sobre tu instalación existente de opencode y permite a los desarrolladores en Windows supervisar varios terminales de opencode en paralelo con una GUI de verdad.',
+      answer: 'Sí. CodeAgentSwarm es una app de escritorio nativa para Windows (x64 y ARM64), macOS y Linux. Funciona sobre tu instalación existente de opencode y permite a los desarrolladores en Windows supervisar varios terminales de opencode en paralelo con una GUI de verdad.',
     },
   ],
 }

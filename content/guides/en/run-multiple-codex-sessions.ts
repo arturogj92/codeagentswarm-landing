@@ -16,7 +16,7 @@ This guide walks through the three practical ways to run several Codex CLI sessi
     ctaAgent: 'codex',
     highlightedWords: ['multiple Codex CLI sessions', 'at once'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-08-23',
+    updatedAt: '2026-09-29',
     alternateSlug: 'ejecutar-multiples-sesiones-codex',
   },
   sections: [
@@ -173,7 +173,7 @@ This guide walks through the three practical ways to run several Codex CLI sessi
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm is a desktop app built for exactly this: running and supervising several AI CLI sessions in one place. It runs on macOS and Windows, gives you multiple terminals in a single workspace, and lets you choose the agent per terminal. To run Codex CLI in parallel you just pick "codex cli" in the SELECT AI AGENT picker in each terminal you want running Codex. It is effectively a <a href="/en/guides/codex-gui" class="text-neon-cyan hover:text-neon-purple transition-colors">GUI for Codex CLI</a>, so you get the terminal agent with a visual layer on top.',
+          text: 'CodeAgentSwarm is a desktop app built for exactly this: running and supervising several AI CLI sessions in one place. It runs on macOS, Windows and Linux, gives you multiple terminals in a single workspace, and lets you choose the agent per terminal. To run Codex CLI in parallel you just pick "codex cli" in the SELECT AI AGENT picker in each terminal you want running Codex. It is effectively a <a href="/en/guides/codex-gui" class="text-neon-cyan hover:text-neon-purple transition-colors">GUI for Codex CLI</a>, so you get the terminal agent with a visual layer on top.',
         },
         {
           type: 'image',

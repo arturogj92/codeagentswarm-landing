@@ -9,14 +9,14 @@ export const guide: Guide = {
     metaDescription: 'Claude Squad manages parallel AI agents inside your terminal. CodeAgentSwarm is a desktop app for the same job. Honest comparison, verified August 2026.',
     intro: `Claude Squad manages several AI coding agents inside your terminal. CodeAgentSwarm gives that same parallelism a desktop interface, with notifications, searchable history across agents and a kanban board the agents update themselves.
 
-Full disclosure before you read another line: we build CodeAgentSwarm. That is exactly why this page states where Claude Squad is the better pick and lists our own limits out loud (closed source, no Linux desktop build, Mobile Connect still in alpha, still in beta, and you bring your own agent subscriptions). Both tools are judged on the same criteria, and every third-party fact here was checked on August 25, 2026 against the vendor own site, their public README and public GitHub data. CodeAgentSwarm availability on this page was updated on August 23, 2026.
+Full disclosure before you read another line: we build CodeAgentSwarm. That is exactly why this page states where Claude Squad is the better pick and lists our own limits out loud (closed source, Mobile Connect still in alpha, still in beta, and you bring your own agent subscriptions). Both tools are judged on the same criteria, and every third-party fact here was checked on August 25, 2026 against the vendor own site, their public README and public GitHub data. CodeAgentSwarm availability on this page was updated on September 29, 2026.
 
 Short version: if you live in the terminal, work over SSH on remote machines and want AGPL open source, Claude Squad fits you better. If you want a desktop window with notifications, cross-agent history, live diffs and seven agent vendors in one place, that is what we built.`,
     ctaText: 'If you want the same parallel agents but with a desktop window, notifications and a searchable history across every agent, download CodeAgentSwarm and try it next to Claude Squad.',
     ctaAgent: 'comparison',
     highlightedWords: ['Claude Squad', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
-    updatedAt: '2026-08-25',
+    updatedAt: '2026-09-29',
     alternateSlug: 'claude-squad-vs-codeagentswarm',
   },
   sections: [
@@ -74,7 +74,7 @@ Short version: if you live in the terminal, work over SSH on remote machines and
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm is a desktop workspace to run and supervise multiple AI coding agents in parallel. It runs on macOS and Windows, each terminal inside it is a real agent process, and you choose the agent per terminal: Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build or Cursor Agent.',
+          text: 'CodeAgentSwarm is a desktop workspace to run and supervise multiple AI coding agents in parallel. It runs on macOS, Windows and Linux, each terminal inside it is a real agent process, and you choose the agent per terminal: Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build or Cursor Agent.',
         },
         {
           type: 'image',
@@ -96,7 +96,7 @@ Short version: if you live in the terminal, work over SSH on remote machines and
         },
         {
           type: 'paragraph',
-          text: 'Our honest limits: the app is closed source with no public repository, the desktop ships for macOS and Windows only, Mobile Connect is still in alpha (web beta for every account, native iOS and Android access by request, desktop must stay open), it is still in beta with Pro included, and it is not a model provider, so you bring your own Claude, OpenAI or other subscriptions.',
+          text: 'Our honest limits: the app is closed source with no public repository, Mobile Connect is still in alpha (web beta for every account, native iOS and Android access by request, desktop must stay open), it is still in beta with Pro included, and it is not a model provider, so you bring your own Claude, OpenAI or other subscriptions.',
         },
       ],
     },
@@ -108,7 +108,7 @@ Short version: if you live in the terminal, work over SSH on remote machines and
           type: 'table',
           headers: ['', 'Claude Squad', 'CodeAgentSwarm'],
           rows: [
-            ['Platforms', 'Terminal environments with tmux and the GitHub CLI installed, via Homebrew or a shell script. A native Windows install is not documented on their site as of August 25, 2026', 'Desktop app for macOS and Windows'],
+            ['Platforms', 'Terminal environments with tmux and the GitHub CLI installed, via Homebrew or a shell script. A native Windows install is not documented on their site as of August 25, 2026', 'Desktop app for macOS, Windows and Linux'],
             ['Interface', 'Terminal UI, keyboard driven', 'Graphical desktop workspace with terminal panes'],
             ['Supported agents', 'Claude Code, Codex, Gemini and Aider; arbitrary local commands via the program flag', 'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build and Cursor Agent'],
             ['Isolation model', 'A tmux session plus a git worktree per task, one branch each', 'A separate process per terminal, with optional git worktrees per session'],
@@ -136,7 +136,6 @@ Short version: if you live in the terminal, work over SSH on remote machines and
           items: [
             '<strong>You work on remote machines.</strong> Claude Squad runs where your code runs. Over SSH on a dev box, a VPS or a Linux workstation, a terminal app is the right shape and a desktop GUI simply is not there.',
             '<strong>You want open source.</strong> AGPL-3.0, public repository, roughly 8,400 stars. You can read every line, fork it and audit what it does with your code. CodeAgentSwarm cannot offer that.',
-            '<strong>You want Linux.</strong> CodeAgentSwarm ships for macOS and Windows only. If your daily machine is Linux, Claude Squad is available to you and we are not.',
             '<strong>You already live in tmux.</strong> If your muscle memory is keyboard-first and you resent switching to a mouse, a TUI with single-key session management will feel faster than any window.',
             '<strong>You want zero install weight.</strong> One binary, no account, no updater, no packaged desktop runtime.',
             '<strong>You want Aider or another local agent.</strong> Its program flag launches any local agent command, which is broader than our fixed list of seven.',

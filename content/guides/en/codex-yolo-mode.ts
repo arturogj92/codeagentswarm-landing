@@ -8,14 +8,14 @@ export const guide: Guide = {
     metaTitle: 'Codex YOLO Mode: --yolo, Approvals & Sandbox (2026)',
     metaDescription: 'See what codex --yolo disables, how to keep the sandbox without approval prompts, and why the older --full-auto flag depends on your CLI version.',
     intro: 'Codex accepts --yolo as an alias for --dangerously-bypass-approvals-and-sandbox: it disables approval prompts and the sandbox. To let Codex work with fewer interruptions inside your project, configure sandbox access and approvals separately.\n\nThis guide gives you the commands, explains the older --full-auto flag, and shows how to supervise sessions in CodeAgentSwarm. A desktop interface does not make a dangerous command safe.',
-    ctaText: 'Supervise your Codex sessions in CodeAgentSwarm: see what needs a reply, search conversations and review project changes. Download the app for macOS or Windows and use your own Codex account.',
+    ctaText: 'Supervise your Codex sessions in CodeAgentSwarm: see what needs a reply, search conversations and review project changes. Download the app for macOS, Windows or Linux and use your own Codex account.',
     ctaAgent: 'codex',
     highlightedWords: [
       'Codex CLI',
       'YOLO mode',
     ],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-09-25',
+    updatedAt: '2026-09-29',
     alternateSlug: 'modo-yolo-codex',
   },
   sections: [
@@ -213,7 +213,7 @@ export const guide: Guide = {
     },
     {
       question: 'How do I supervise multiple Codex sessions?',
-      answer: 'CodeAgentSwarm provides independent sessions, conversation history and project change review in a macOS and Windows app. Configure permissions for each session and use worktrees when you need separate working files.',
+      answer: 'CodeAgentSwarm provides independent sessions, conversation history and project change review in an app for macOS, Windows and Linux. Configure permissions for each session and use worktrees when you need separate working files.',
     },
   ],
 }
