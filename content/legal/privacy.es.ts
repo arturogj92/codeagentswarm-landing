@@ -7,7 +7,7 @@ const privacyEs: LegalDoc = {
   metaTitle: 'Política de Privacidad | CodeAgentSwarm',
   metaDescription:
     'Cómo trata CodeAgentSwarm tus datos: qué recogemos, qué no recogemos nunca, quién los procesa, cuánto los conservamos y cómo ejercer tus derechos RGPD.',
-  lastUpdated: '2026-08-23',
+  lastUpdated: '2026-09-27',
   intro:
     'Esta Política de Privacidad explica qué datos personales recoge CodeAgentSwarm cuando usas la aplicación de escritorio y este sitio web, por qué los recogemos, con quién los compartimos y qué derechos tienes sobre ellos. La hemos redactado para que coincida exactamente con lo que hace nuestro software. Si algo no queda claro, escríbenos a hello@codeagentswarm.com.',
   sections: [
@@ -70,7 +70,7 @@ const privacyEs: LegalDoc = {
         },
         {
           type: 'paragraph',
-          text: 'En las versiones de producción, la app registra los arranques correctos y qué acciones se usan dentro de la app (por ejemplo, abrir una terminal o pulsar un botón), junto con la versión de la app, el sistema operativo, la arquitectura del procesador, un identificador de sesión aleatorio y otro identificador aleatorio de instalación para analítica guardado localmente en tu dispositivo. El identificador de instalación nos permite medir el primer uso y si una instalación vuelve. Esto se envía a nuestro propio backend. No incluye tu nombre, email, rutas de archivo, código ni contenido de las terminales. Los eventos no se asocian a tu cuenta mientras no has iniciado sesión; si inicias sesión, pueden asociarse a tu cuenta.',
+          text: 'La analítica opcional de uso de la app de escritorio está desactivada hasta que la habilitas expresamente en Ajustes > Privacidad. Puedes retirar el consentimiento allí en cualquier momento; se detiene la recogida y se descartan los eventos pendientes de envío. Con consentimiento, las versiones de producción envían acciones y resultados de funciones, proveedor y modelo público elegidos (los nombres de modelos personalizados se sustituyen por "custom"), uso de worktrees y nombres de controles de ajustes utilizados, nunca sus valores de texto libre. Los eventos incluyen además versión de la app, sistema operativo, arquitectura del procesador e identificadores aleatorios de sesión e instalación. El identificador de instalación se guarda localmente tras el consentimiento para medir instalaciones que vuelven. Los eventos se envían a nuestro backend; las versiones de desarrollo y las pruebas automatizadas no envían eventos de uso de producción. La analítica no incluye nombres ni rutas de proyectos o archivos, prompts, código, comandos ni salida de terminales, capturas o credenciales. Los eventos son seudónimos: sin iniciar sesión no se asocian a una cuenta; con sesión iniciada pueden vincularse a tu cuenta. Por eso no se describen como totalmente anónimos.',
         },
         {
           type: 'heading',
@@ -140,8 +140,8 @@ const privacyEs: LegalDoc = {
           type: 'list',
           items: [
             'Ejecución de un contrato (art. 6.1.b): para proporcionarte tu cuenta, el asistente de ayuda y cualquier suscripción de pago que solicites.',
-            'Interés legítimo (art. 6.1.f): para mantener la app segura y funcional, corregir errores, entender el uso de forma anónima y prevenir abusos, de manera proporcionada y sin prevalecer sobre tus derechos.',
-            'Consentimiento (art. 6.1.a): cuando lo pedimos, por ejemplo analítica opcional o emails comerciales. Puedes retirarlo en cualquier momento.',
+            'Interés legítimo (art. 6.1.f): para mantener la app segura y funcional, corregir errores y prevenir abusos, de manera proporcionada y sin prevalecer sobre tus derechos.',
+            'Consentimiento (art. 6.1.a): para la analítica opcional de escritorio y, cuando se solicita, emails comerciales. Puedes retirarlo en cualquier momento.',
             'Obligación legal (art. 6.1.c): para cumplir con obligaciones contables, fiscales u otras cuando corresponda.',
           ],
         },
@@ -193,7 +193,7 @@ const privacyEs: LegalDoc = {
           items: [
             'Datos de cuenta: mientras tu cuenta exista, y se eliminan cuando nos pides que los borremos.',
             'Mensajes de soporte, feedback y encuestas: se conservan mientras sean necesarios para atender tu solicitud y durante un periodo razonable posterior.',
-            'Analítica anónima e informes de errores: se conservan de forma agregada para mejorar el producto.',
+            'Eventos de uso de escritorio: se conservan hasta 14 meses y después se eliminan mediante el proceso de retención. Los informes de errores tienen su propio plazo de retención.',
             'Registros de facturación: se conservan durante el tiempo que exija la ley por motivos contables y fiscales.',
           ],
         },
