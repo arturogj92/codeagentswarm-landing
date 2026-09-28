@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server'
+import { publicReleases } from '@/lib/releases'
 
 const BACKEND_URL = 'https://codeagentswarm-backend-production.up.railway.app'
 
@@ -32,6 +33,8 @@ export async function GET(request: Request) {
     }
 
     const data = await response.json()
+    data.releases = publicReleases(data.releases || [])
+    data.total = data.releases.length
 
     // Return the data with CORS headers enabled for the frontend.
     // s-maxage lets Vercel's CDN serve this for 5 min without invoking

@@ -86,3 +86,30 @@ export function resolveDownloadForTarget(
   }
   return null
 }
+
+// Explicit opt-in: publishing an update must not enable public Linux downloads.
+export const LINUX_DOWNLOADS_ENABLED = process.env.NEXT_PUBLIC_LINUX_DOWNLOADS_ENABLED === 'true'
+
+export function getLinuxDownloads(releases: Release[]) {
+  if (!LINUX_DOWNLOADS_ENABLED) return []
+  return (['x64', 'arm64'] as const).flatMap(arch =>
+    (['deb', 'appimage'] as const).flatMap(format => {
+      const target = `linux-${arch}-${format}`
+      const release = releases.find(r => r.downloads?.[target])
+      if (!release) return []
+      return [{ target, arch, format, version: release.version,
+        href: getTrackedDownloadUrl(release.version, target),
+        asset: release.downloads![target],
+      }]
+    })
+  )
+}
+
+export function publicReleases(releases: Release[]): Release[] {
+  if (LINUX_DOWNLOADS_ENABLED) return releases
+  return releases.map(release => ({
+    ...release,
+    downloads: Object.fromEntries(Object.entries(release.downloads || {}).filter(([key]) => !key.startsWith('linux-'))),
+    formattedDownloads: Object.fromEntries(Object.entries(release.formattedDownloads || {}).filter(([key]) => !key.toLowerCase().startsWith('linux'))) as Release['formattedDownloads'],
+  })).filter(release => Object.keys(release.downloads).length || release.formattedDownloads.macArm || release.formattedDownloads.macIntel)
+}

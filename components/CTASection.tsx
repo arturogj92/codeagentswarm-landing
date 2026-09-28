@@ -12,6 +12,7 @@ import {
   notifyLandingEvent,
   pickMacRelease,
   pickWinRelease,
+  getLinuxDownloads,
   type Release,
 } from '@/lib/releases'
 
@@ -243,6 +244,7 @@ export default function CTASection() {
   const allReleases = latestRelease ? [latestRelease, ...olderReleases] : []
   const macRelease = pickMacRelease(allReleases)
   const winRelease = pickWinRelease(allReleases)
+  const linuxDownloads = getLinuxDownloads(allReleases)
   const winX64 = winRelease?.downloads?.['win32-x64'] || null
   const winArm = winRelease?.downloads?.['win32-arm64'] || null
   // Keep the historical cards anchored to macOS releases (excluding the one
@@ -563,6 +565,23 @@ export default function CTASection() {
                 </>
                 )}
 
+                {linuxDownloads.length > 0 && (
+                  <div className="mt-8" data-linux-downloads>
+                    <h3 className="text-xl font-semibold text-white mb-4">{t('downloadFor')} Linux</h3>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      {linuxDownloads.map(download => (
+                        <a key={download.target} href={download.href}
+                          className="flex items-center gap-3 p-4 rounded-xl bg-neutral-900 border border-white/10 hover:border-white/30 transition-colors"
+                          onClick={() => notifyLandingEvent('download_app', { architecture: download.target, version: download.version })}>
+                          <Download className="w-5 h-5" />
+                          <span>Linux {download.arch === 'x64' ? 'x64' : 'ARM64'} · {download.format === 'deb' ? '.deb' : 'AppImage'}
+                            <span className="block text-sm text-neutral-400">v{download.version} · {formatFileSize(download.asset.fileSize)}</span>
+                          </span>
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                )}
                 {/* Older Versions Toggle */}
                 {olderReleasesWithMac.length > 0 && (
                   <div className="mt-8 text-center">
@@ -736,7 +755,7 @@ export default function CTASection() {
               />
               <span className="text-neutral-400">{t('platforms.windows')}</span>
             </div>
-            <button
+            {linuxDownloads.length > 0 ? <span className="text-neutral-400">Linux</span> : <button
               onClick={() => {
                 setFomoPopup({ open: true, platform: 'linux' })
                 if (typeof window !== 'undefined') {
@@ -756,7 +775,7 @@ export default function CTASection() {
               <span className="text-[10px] px-2 py-0.5 rounded-full bg-white/10 text-neutral-400 font-medium">
                 {t('platforms.notify')}
               </span>
-            </button>
+            </button>}
           </div>
         </motion.div>
 
