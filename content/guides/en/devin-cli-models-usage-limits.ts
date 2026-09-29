@@ -184,7 +184,7 @@ const guide: Guide = {
       "content": [
         {
           "type": "paragraph",
-          "text": "Devin is available in CodeAgentSwarm 2.4.0 for macOS and Windows. The screenshots were captured during beta testing. Sign in with the official Devin CLI on the computer that runs the agent."
+          "text": "Devin is available in CodeAgentSwarm for macOS, Windows and Linux. The screenshots were captured during beta testing. Sign in with the official Devin CLI on the computer that runs the agent."
         }
       ]
     },

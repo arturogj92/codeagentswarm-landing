@@ -844,9 +844,9 @@
         "kimiCode": "Run multiple Kimi Code agents with searchable history and real-time change tracking in a single app.",
         "grokBuild": "Run multiple Grok Build agents with searchable history and real-time change tracking in a single app.",
         "cursorAgent": "Run Cursor Agent CLI through ACP with streaming Chat, visible permissions and project history in a single app.",
-        "devin": "Use Devin CLI in CodeAgentSwarm 2.4.0 for macOS and Windows. Provider access and billing are separate.",
-        "pi": "Use Pi in CodeAgentSwarm 2.4.0 for macOS and Windows. Provider access and billing are separate.",
-        "muse": "Use Muse Code in CodeAgentSwarm 2.4.0 for macOS and Windows. Provider access and billing are separate.",
+        "devin": "Use Devin CLI in CodeAgentSwarm for macOS, Windows and Linux. Provider access and billing are separate.",
+        "pi": "Use Pi in CodeAgentSwarm for macOS, Windows and Linux. Provider access and billing are separate.",
+        "muse": "Use Muse Code in CodeAgentSwarm for macOS, Windows and Linux. Provider access and billing are separate.",
         "antigravity": "Run multiple Antigravity CLI agents with searchable history and real-time change tracking in a single app.",
         "multi": "CodeAgentSwarm runs your AI coding agents side by side: Claude Code, Codex, opencode, Kimi Code, Antigravity, Grok Build, Cursor Agent, Muse Code, Pi and Devin CLI, with searchable history and one supervision surface.",
         "comparison": "The fastest way to decide is to try it yourself: CodeAgentSwarm is free, installs in a minute and runs Claude Code, Codex, opencode, Kimi Code, Antigravity, Grok Build, Cursor Agent, Muse Code, Pi and Devin CLI side by side."

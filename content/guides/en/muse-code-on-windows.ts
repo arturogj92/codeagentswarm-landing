@@ -9,7 +9,7 @@ const guide: Guide = {
     "metaDescription": "Install Muse Code on Windows with PowerShell, check PATH and sign in. Diagnose shell, sandbox and account issues, and understand current platform limits.",
     "intro": "Muse Code has a native Windows installer. The first useful check is whether PowerShell can launch the installed command from the project you intend to edit. Work through installation, authentication and a small task separately so each failure has a clear cause.",
     "socialImage": "/images/guides/muse-code-og-en.png",
-    "ctaText": "Use Muse Code in CodeAgentSwarm 2.4.0 for macOS and Windows. Meta account access and billing are separate.",
+    "ctaText": "Use Muse Code in CodeAgentSwarm for macOS, Windows and Linux. Meta account access and billing are separate.",
     "ctaAgent": "muse",
     "highlightedWords": [
       "Muse"

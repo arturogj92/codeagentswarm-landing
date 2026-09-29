@@ -8,7 +8,7 @@ const guide: Guide = {
     metaTitle: 'Pi Coding Agent: instalación, login y primeros pasos',
     metaDescription: 'Aprende qué hace Pi coding agent, instala el paquete npm actual, conecta un modelo y retoma sesiones. Incluye Pi en CodeAgentSwarm 2.4.0.',
     intro: 'Pi es un agente de programación de terminal que conecta un modelo de lenguaje con los archivos y herramientas de tu proyecto. Tú eliges el proveedor; Pi gestiona la conversación y la ejecución de herramientas. Primero vamos a arrancar Pi y después veremos la integración de CodeAgentSwarm.',
-    ctaText: 'Usa Pi con tu proveedor de modelos en CodeAgentSwarm 2.4.0. Descarga la app para macOS o Windows.',
+    ctaText: 'Usa Pi con tu proveedor de modelos en CodeAgentSwarm 2.4.0. Descarga la app para macOS, Windows o Linux.',
     ctaAgent: 'pi',
     socialImage: '/images/guides/pi-coding-agent-og-es.png',
     highlightedWords: [
@@ -180,7 +180,7 @@ const guide: Guide = {
       content: [
         {
           type: 'paragraph',
-          text: '<strong>Pi está disponible en CodeAgentSwarm 2.4.0 para macOS y Windows.</strong> CodeAgentSwarm muestra Pi en Chat y CLI, con streaming, selección de modelo, decisiones de permisos, historial y reanudación.',
+          text: '<strong>Pi está disponible en CodeAgentSwarm 2.4.0 para macOS, Windows y Linux.</strong> CodeAgentSwarm muestra Pi en Chat y CLI, con streaming, selección de modelo, decisiones de permisos, historial y reanudación.',
         },
         {
           type: 'paragraph',
@@ -204,7 +204,7 @@ const guide: Guide = {
     },
     {
       question: '¿Puedo usar Pi hoy en la descarga pública de CodeAgentSwarm?',
-      answer: 'Pi está incluido en CodeAgentSwarm 2.4.0 para macOS y Windows.',
+      answer: 'Pi está incluido en CodeAgentSwarm 2.4.0 para macOS, Windows y Linux.',
     },
   ],
 }

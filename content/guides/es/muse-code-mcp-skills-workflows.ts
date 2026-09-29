@@ -9,7 +9,7 @@ const guide: Guide = {
     "metaDescription": "Configura MCP y skills reutilizables en Muse Code. Diagnostica fallos de servidores requeridos y comprueba los workflows antes de repartir tareas entre agentes.",
     "intro": "Un servidor MCP da acceso a herramientas. Una skill aporta instrucciones reutilizables. Un workflow organiza varias tareas de agentes. Elige la incorporación más pequeña que resuelva tu problema actual y compruébala por separado antes de combinar las tres en un proyecto de producción.",
     "socialImage": "/images/guides/muse-code-og-es.png",
-    "ctaText": "Usa Muse Code en CodeAgentSwarm 2.4.0 para macOS y Windows. El acceso y la facturación de Meta son independientes.",
+    "ctaText": "Usa Muse Code en CodeAgentSwarm para macOS, Windows y Linux. El acceso y la facturación de Meta son independientes.",
     "ctaAgent": "muse",
     "highlightedWords": [
       "Muse"

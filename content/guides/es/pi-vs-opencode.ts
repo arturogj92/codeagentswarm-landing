@@ -8,7 +8,7 @@ const guide: Guide = {
     metaTitle: 'Pi vs OpenCode: diferencias entre los agentes',
     metaDescription: 'Compara Pi y OpenCode por modelos, modo plan, permisos, MCP y protocolo de integración. Elige un flujo de programación sin confundir agentes con modelos.',
     intro: 'Pi y OpenCode pueden resolver el mismo tipo de tareas y conectarse a proveedores de modelos similares. Sus diferencias están en el flujo de trabajo que rodea al modelo. Esta comparación separa el acceso al modelo de la planificación, las herramientas y la integración.',
-    ctaText: 'Usa Pi con tu proveedor de modelos en CodeAgentSwarm 2.4.0. Descarga la app para macOS o Windows.',
+    ctaText: 'Usa Pi con tu proveedor de modelos en CodeAgentSwarm 2.4.0. Descarga la app para macOS, Windows o Linux.',
     ctaAgent: 'pi',
     socialImage: '/images/guides/pi-coding-agent-og-es.png',
     highlightedWords: [

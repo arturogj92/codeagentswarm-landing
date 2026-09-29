@@ -8,7 +8,7 @@ const guide: Guide = {
     metaTitle: 'Modelos de Pi: ChatGPT, Claude y suscripciones',
     metaDescription: 'Conecta Pi con ChatGPT, Claude, APIs o modelos locales. Entiende la facturación, inicia sesión con /login y resuelve proveedores ausentes en el selector.',
     intro: 'Pi puede usar varios proveedores de modelos, pero la cuenta que conectas determina los modelos disponibles y cómo se factura el consumo. Primero elige el proveedor y después el modelo. Ver el nombre de un modelo Claude no basta para saber qué servicio atiende la petición.',
-    ctaText: 'Usa Pi con tu proveedor de modelos en CodeAgentSwarm 2.4.0. Descarga la app para macOS o Windows.',
+    ctaText: 'Usa Pi con tu proveedor de modelos en CodeAgentSwarm 2.4.0. Descarga la app para macOS, Windows o Linux.',
     ctaAgent: 'pi',
     socialImage: '/images/guides/pi-coding-agent-og-es.png',
     highlightedWords: [

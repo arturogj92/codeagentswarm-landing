@@ -33,6 +33,7 @@ Pi is a separate coding harness, not a model provider. Install the current packa
 - [Pi: pi-coding-agent-modelos-suscripciones (ES)](https://www.codeagentswarm.com/es/guias/pi-coding-agent-modelos-suscripciones)
 - [Pi: pi-vs-opencode (EN)](https://www.codeagentswarm.com/en/guides/pi-vs-opencode)
 - [Pi: pi-vs-opencode (ES)](https://www.codeagentswarm.com/es/guias/pi-vs-opencode)
+- [How to Install Pi Coding Agent on Linux (2026)](https://www.codeagentswarm.com/en/guides/pi-coding-agent-on-linux)
 - [Pi: pi-coding-agent-on-windows (EN)](https://www.codeagentswarm.com/en/guides/pi-coding-agent-on-windows)
 - [Pi: pi-coding-agent-en-windows (ES)](https://www.codeagentswarm.com/es/guias/pi-coding-agent-en-windows)
 
@@ -71,6 +72,7 @@ Pi is a separate coding harness, not a model provider. Install the current packa
 - [Cursor CLI Conversation History and Resume Guide (2026)](https://www.codeagentswarm.com/en/guides/cursor-cli-conversation-history)
 - [Cursor Agent Swarm: Run Multiple CLI Sessions (2026)](https://www.codeagentswarm.com/en/guides/cursor-agent-swarm)
 - [Cursor CLI vs Claude Code: Practical Comparison (2026)](https://www.codeagentswarm.com/en/guides/cursor-cli-vs-claude-code)
+- [Cursor CLI on Linux: Install Cursor Agent on Ubuntu, Debian, Fedora (2026)](https://www.codeagentswarm.com/en/guides/cursor-cli-on-linux)
 - [Cursor CLI on Windows: Native Install (2026)](https://www.codeagentswarm.com/en/guides/cursor-cli-on-windows)
 - [Cursor CLI Pricing 2026: Plans, Usage Pools and Agent Cost](https://www.codeagentswarm.com/en/guides/cursor-cli-pricing)
 - [Conductor vs CodeAgentSwarm: Honest Comparison (2026)](https://www.codeagentswarm.com/en/guides/conductor-vs-codeagentswarm)
@@ -80,6 +82,7 @@ Pi is a separate coding harness, not a model provider. Install the current packa
 - [Grok Build Conversation History (xAI): Find and Resume (2026)](https://www.codeagentswarm.com/en/guides/grok-build-conversation-history)
 - [Grok Build from Claude Code (xAI): Migration Notes (2026)](https://www.codeagentswarm.com/en/guides/grok-build-from-claude-code)
 - [Grok Build Headless (xAI): grok -p for CI and Scripts (2026)](https://www.codeagentswarm.com/en/guides/grok-build-headless-ci)
+- [How to Install Grok Build on Linux: Setup, Login and Fixes (2026)](https://www.codeagentswarm.com/en/guides/grok-build-on-linux)
 - [Grok Build on Windows (xAI): Install and Setup (2026)](https://www.codeagentswarm.com/en/guides/grok-build-on-windows)
 - [Grok Build Plan Mode (xAI): Review Before It Codes (2026)](https://www.codeagentswarm.com/en/guides/grok-build-plan-mode)
 - [Grok Build Pricing 2026: Free, SuperGrok and API Cost](https://www.codeagentswarm.com/en/guides/grok-build-pricing)
@@ -92,6 +95,7 @@ Pi is a separate coding harness, not a model provider. Install the current packa
 - [How to Set Up Multiple Claude Code Terminals in Parallel (CodeAgentSwarm, 2026)](https://www.codeagentswarm.com/en/guides/how-to-use-multiple-claude-code-terminals)
 - [Kimi Code Agent Swarm: Run Multiple Kimi Agents in Parallel (2026)](https://www.codeagentswarm.com/en/guides/kimi-code-agent-swarm)
 - [Kimi Code Conversation History: Resume and Search Sessions (2026)](https://www.codeagentswarm.com/en/guides/kimi-code-conversation-history)
+- [How to Install Kimi Code on Linux: Install, Login and Fixes (2026)](https://www.codeagentswarm.com/en/guides/kimi-code-on-linux)
 - [How to Run Kimi Code on Windows (Native or WSL) (2026)](https://www.codeagentswarm.com/en/guides/kimi-code-on-windows)
 - [Kimi Code Pricing 2026: Coding Plan, Limits and API Cost](https://www.codeagentswarm.com/en/guides/kimi-code-plans-and-pricing)
 - [Kimi Code vs Claude Code: An Honest Comparison (2026)](https://www.codeagentswarm.com/en/guides/kimi-code-vs-claude-code)
@@ -100,6 +104,7 @@ Pi is a separate coding harness, not a model provider. Install the current packa
 - [Nimbalyst (formerly Crystal) vs CodeAgentSwarm: An Honest Comparison (2026)](https://www.codeagentswarm.com/en/guides/nimbalyst-vs-codeagentswarm)
 - [OpenCode Agent Swarm: Run Multiple opencode Agents in Parallel (2026)](https://www.codeagentswarm.com/en/guides/opencode-agent-swarm)
 - [OpenCode Conversation History: Resume Sessions & Search (2026)](https://www.codeagentswarm.com/en/guides/opencode-conversation-history)
+- [How to Install OpenCode on Linux: Ubuntu, Debian, Fedora, Arch (2026)](https://www.codeagentswarm.com/en/guides/opencode-on-linux)
 - [How to Run OpenCode on Windows (Native or WSL) (2026)](https://www.codeagentswarm.com/en/guides/opencode-on-windows)
 - [OpenCode vs Cursor: Which AI Coding Tool Fits You? (2026)](https://www.codeagentswarm.com/en/guides/opencode-vs-cursor)
 - [OpenCode YOLO Mode: Config-Driven Permissions Explained (2026)](https://www.codeagentswarm.com/en/guides/opencode-yolo-mode)
@@ -122,6 +127,7 @@ Pi is a separate coding harness, not a model provider. Install the current packa
 - [Antigravity Pricing 2026: Free, Pro, Ultra and Rate Limits](https://www.codeagentswarm.com/en/guides/antigravity-plans-and-pricing)
 - [Antigravity (agy) YOLO Mode: Skip Permissions Explained (2026)](https://www.codeagentswarm.com/en/guides/antigravity-yolo-mode)
 - [Antigravity CLI Conversation History: Where It Lives and How to Resume (2026)](https://www.codeagentswarm.com/en/guides/antigravity-cli-conversation-history)
+- [How to Install Antigravity CLI (agy) on Linux: Ubuntu, Debian, Fedora (2026)](https://www.codeagentswarm.com/en/guides/antigravity-cli-on-linux)
 - [How to Run Antigravity CLI on Windows (Native or WSL) (2026)](https://www.codeagentswarm.com/en/guides/antigravity-cli-on-windows)
 - [Antigravity Agent Swarm: Run Multiple agy Sessions in Parallel (2026)](https://www.codeagentswarm.com/en/guides/antigravity-agent-swarm)
 
@@ -217,6 +223,7 @@ Pi is a separate coding harness, not a model provider. Install the current packa
 Devin CLI is a local coding agent. CodeAgentSwarm 2.4.0 includes Devin on macOS and Windows, with Chat and CLI views, model selection, account quota, native Windows installation, history and optional MCP. The screenshots were captured during beta testing. Devin account access and usage are separate from CodeAgentSwarm. Provider facts reviewed 2026-09-11. CodeAgentSwarm availability updated 2026-09-24.
 
 - [Devin CLI: installation, login and your first coding task](https://www.codeagentswarm.com/en/guides/how-to-use-devin-cli)
+- [Devin CLI on Linux: Install, Login over SSH and Fix Errors (2026)](https://www.codeagentswarm.com/en/guides/devin-cli-on-linux)
 - [Devin CLI on Windows: native install and troubleshooting](https://www.codeagentswarm.com/en/guides/devin-cli-on-windows)
 - [Devin Pro pricing, free SWE-2 and CLI usage limits](https://www.codeagentswarm.com/en/guides/devin-cli-models-usage-limits)
 - [Devin CLI MCP and history: connect tools and resume work](https://www.codeagentswarm.com/en/guides/devin-cli-mcp-history)
@@ -234,6 +241,7 @@ Muse Code is Meta's coding agent; Muse Spark is its model family. Muse is availa
 
 - [Muse Code: installation, login and first task](https://www.codeagentswarm.com/en/guides/how-to-use-muse-code)
 - [Muse Code en español: instalación y primera tarea](https://www.codeagentswarm.com/es/guias/como-usar-muse-code)
+- [How to Install Muse Code (Meta) on Linux: Setup, Login and Errors (2026)](https://www.codeagentswarm.com/en/guides/muse-code-on-linux)
 - [Muse Code on Windows: PowerShell and troubleshooting](https://www.codeagentswarm.com/en/guides/muse-code-on-windows)
 - [Muse Code en Windows: PowerShell y solución de errores](https://www.codeagentswarm.com/es/guias/muse-code-en-windows)
 - [Muse Code models, pricing and privacy](https://www.codeagentswarm.com/en/guides/muse-code-models-pricing-privacy)

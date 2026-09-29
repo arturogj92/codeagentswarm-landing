@@ -56,6 +56,22 @@ import enClaudeCodeLinux from './en/claude-code-on-linux'
 import enCodexLinux from './en/codex-cli-on-linux'
 import esClaudeCodeLinux from './es/claude-code-en-linux'
 import esCodexLinux from './es/codex-cli-en-linux'
+import enOpencodeOnLinux from './en/opencode-on-linux'
+import esOpencodeEnLinux from './es/opencode-en-linux'
+import enKimiCodeOnLinux from './en/kimi-code-on-linux'
+import esKimiCodeEnLinux from './es/kimi-code-en-linux'
+import enAntigravityCliOnLinux from './en/antigravity-cli-on-linux'
+import esAntigravityCliEnLinux from './es/antigravity-cli-en-linux'
+import enGrokBuildOnLinux from './en/grok-build-on-linux'
+import esGrokBuildEnLinux from './es/grok-build-en-linux'
+import enCursorCliOnLinux from './en/cursor-cli-on-linux'
+import esCursorCliEnLinux from './es/cursor-cli-en-linux'
+import enPiCodingAgentOnLinux from './en/pi-coding-agent-on-linux'
+import esPiCodingAgentEnLinux from './es/pi-coding-agent-en-linux'
+import enDevinCliOnLinux from './en/devin-cli-on-linux'
+import esDevinCliEnLinux from './es/devin-cli-en-linux'
+import enMuseCodeOnLinux from './en/muse-code-on-linux'
+import esMuseCodeEnLinux from './es/muse-code-en-linux'
 import enOpenCodeAgentSwarm from './en/opencode-agent-swarm'
 import enRunMultipleOpenCode from './en/run-multiple-opencode-sessions'
 import enOpenCodeVsCursor from './en/opencode-vs-cursor'
@@ -266,6 +282,14 @@ export const guides: Record<string, Record<string, Guide>> = {
     'codex-cli-on-windows': enCodexWindows,
     'claude-code-on-linux': enClaudeCodeLinux,
     'codex-cli-on-linux': enCodexLinux,
+    'opencode-on-linux': enOpencodeOnLinux,
+    'kimi-code-on-linux': enKimiCodeOnLinux,
+    'antigravity-cli-on-linux': enAntigravityCliOnLinux,
+    'grok-build-on-linux': enGrokBuildOnLinux,
+    'cursor-cli-on-linux': enCursorCliOnLinux,
+    'pi-coding-agent-on-linux': enPiCodingAgentOnLinux,
+    'devin-cli-on-linux': enDevinCliOnLinux,
+    'muse-code-on-linux': enMuseCodeOnLinux,
     'opencode-agent-swarm': enOpenCodeAgentSwarm,
     'run-multiple-opencode-sessions': enRunMultipleOpenCode,
     'opencode-vs-cursor': enOpenCodeVsCursor,
@@ -371,6 +395,14 @@ export const guides: Record<string, Record<string, Guide>> = {
     'codex-cli-en-windows': esCodexWindows,
     'claude-code-en-linux': esClaudeCodeLinux,
     'codex-cli-en-linux': esCodexLinux,
+    'opencode-en-linux': esOpencodeEnLinux,
+    'kimi-code-en-linux': esKimiCodeEnLinux,
+    'antigravity-cli-en-linux': esAntigravityCliEnLinux,
+    'grok-build-en-linux': esGrokBuildEnLinux,
+    'cursor-cli-en-linux': esCursorCliEnLinux,
+    'pi-coding-agent-en-linux': esPiCodingAgentEnLinux,
+    'devin-cli-en-linux': esDevinCliEnLinux,
+    'muse-code-en-linux': esMuseCodeEnLinux,
     'enjambre-de-agentes-opencode': esOpenCodeAgentSwarm,
     'ejecutar-multiples-sesiones-opencode': esRunMultipleOpenCode,
     'opencode-vs-cursor': esOpenCodeVsCursor,

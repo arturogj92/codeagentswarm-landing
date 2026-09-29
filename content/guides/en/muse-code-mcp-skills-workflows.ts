@@ -9,7 +9,7 @@ const guide: Guide = {
     "metaDescription": "Set up Muse Code MCP and reusable skills, diagnose required-server failures and check workflow availability before designing parallel agent tasks.",
     "intro": "An MCP server gives Muse access to tools. A skill supplies reusable instructions. A workflow organizes several agent tasks. Choose the smallest addition that solves your current problem, and test it separately before combining all three in a production project.",
     "socialImage": "/images/guides/muse-code-og-en.png",
-    "ctaText": "Use Muse Code in CodeAgentSwarm 2.4.0 for macOS and Windows. Meta account access and billing are separate.",
+    "ctaText": "Use Muse Code in CodeAgentSwarm for macOS, Windows and Linux. Meta account access and billing are separate.",
     "ctaAgent": "muse",
     "highlightedWords": [
       "Muse"

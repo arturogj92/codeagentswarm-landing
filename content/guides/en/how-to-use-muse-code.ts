@@ -9,7 +9,7 @@ const guide: Guide = {
     "metaDescription": "Install Muse Code, choose Muse Spark 1.3, sign in and verify your first coding task. Learn project rules, resume commands and CodeAgentSwarm 2.4.0 support.",
     "intro": "Muse Code is Meta’s terminal coding agent. Start with a small repository you understand, ask it to inspect the project and verify its first edit with a check you can run yourself. This guide takes you from installation to a saved conversation you can resume.",
     "socialImage": "/images/guides/muse-code-og-en.png",
-    "ctaText": "Use Muse Code in CodeAgentSwarm 2.4.0 for macOS and Windows. Meta account access and billing are separate.",
+    "ctaText": "Use Muse Code in CodeAgentSwarm for macOS, Windows and Linux. Meta account access and billing are separate.",
     "ctaAgent": "muse",
     "highlightedWords": [
       "Muse"
@@ -131,7 +131,7 @@ const guide: Guide = {
         {
           "type": "callout",
           "variant": "info",
-          "content": "Muse is available in CodeAgentSwarm 2.4.0 for macOS and Windows. Use this guide to install the standalone CLI and sign in with your Meta account."
+          "content": "Muse is available in CodeAgentSwarm for macOS, Windows and Linux. Use this guide to install the standalone CLI and sign in with your Meta account."
         }
       ]
     }

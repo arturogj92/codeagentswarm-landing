@@ -8,7 +8,7 @@ const guide: Guide = {
     metaTitle: 'Pi Coding Agent on Windows: Install and Use PowerShell',
     metaDescription: 'Install Pi coding agent on Windows, choose Git Bash or its PowerShell tool, fix PATH problems and understand how CodeAgentSwarm with Pi runs commands.',
     intro: 'Pi can run on Windows, but the terminal you launch it from and the shell its model uses are separate choices. This guide covers installation and the PowerShell tool, then explains the behavior verified in CodeAgentSwarm\'s Windows beta.',
-    ctaText: 'Use Pi with your chosen model provider in CodeAgentSwarm 2.4.0. Download the app for macOS or Windows.',
+    ctaText: 'Use Pi with your chosen model provider in CodeAgentSwarm 2.4.0. Download the app for macOS, Windows or Linux.',
     ctaAgent: 'pi',
     socialImage: '/images/guides/pi-coding-agent-og-en.png',
     highlightedWords: [

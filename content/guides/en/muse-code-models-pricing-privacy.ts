@@ -9,7 +9,7 @@ const guide: Guide = {
     "metaDescription": "Compare Muse Code Standard and Contributor models, API token prices and subscriptions. Check training, retention and credentials before sending project code.",
     "intro": "Choosing a Muse model also means choosing how your project data is treated. Keep that decision separate from how you pay. This guide covers the model IDs, a worked API cost example and the account checks that prevent a subscription session from accidentally using a separate API key.",
     "socialImage": "/images/guides/muse-code-og-en.png",
-    "ctaText": "Use Muse Code in CodeAgentSwarm 2.4.0 for macOS and Windows. Meta account access and billing are separate.",
+    "ctaText": "Use Muse Code in CodeAgentSwarm for macOS, Windows and Linux. Meta account access and billing are separate.",
     "ctaAgent": "muse",
     "highlightedWords": [
       "Muse"

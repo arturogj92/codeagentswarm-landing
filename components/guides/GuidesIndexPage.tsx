@@ -22,18 +22,21 @@ type Family = 'cross' | 'claude' | 'codex' | 'antigravity' | 'opencode' | 'kimi'
 const FAMILY_BY_EN_SLUG: Record<string, Family> = {
   'how-to-use-muse-code': 'muse',
   'muse-code-on-windows': 'muse',
+  'muse-code-on-linux': 'muse',
   'muse-code-models-pricing-privacy': 'muse',
   'muse-code-mcp-skills-workflows': 'muse',
 
   'swe-2-benchmarks': 'devin',
   'how-to-use-devin-cli': 'devin',
   'devin-cli-on-windows': 'devin',
+  'devin-cli-on-linux': 'devin',
   'devin-cli-models-usage-limits': 'devin',
   'devin-cli-mcp-history': 'devin',
   'how-to-use-pi-coding-agent': 'pi',
   'pi-coding-agent-models-subscriptions': 'pi',
   'pi-vs-opencode': 'pi',
   'pi-coding-agent-on-windows': 'pi',
+  'pi-coding-agent-on-linux': 'pi',
 
   'best-tools-to-run-multiple-ai-coding-agents': 'cross',
   'ai-cli-agent-swarm': 'cross',
@@ -61,6 +64,7 @@ const FAMILY_BY_EN_SLUG: Record<string, Family> = {
   'run-multiple-opencode-sessions': 'opencode',
   'opencode-vs-cursor': 'opencode',
   'opencode-on-windows': 'opencode',
+  'opencode-on-linux': 'opencode',
   'opencode-yolo-mode': 'opencode',
   'opencode-conversation-history': 'opencode',
   'how-to-use-kimi-code': 'kimi',
@@ -71,6 +75,7 @@ const FAMILY_BY_EN_SLUG: Record<string, Family> = {
   'kimi-code-yolo-mode': 'kimi',
   'kimi-code-conversation-history': 'kimi',
   'kimi-code-on-windows': 'kimi',
+  'kimi-code-on-linux': 'kimi',
   'kimi-k3-with-claude-code': 'kimi',
   'claude-code-plans-and-pricing': 'claude',
   'codex-plans-and-pricing': 'codex',
@@ -79,6 +84,7 @@ const FAMILY_BY_EN_SLUG: Record<string, Family> = {
   'antigravity-yolo-mode': 'antigravity',
   'antigravity-cli-conversation-history': 'antigravity',
   'antigravity-cli-on-windows': 'antigravity',
+  'antigravity-cli-on-linux': 'antigravity',
   'antigravity-agent-swarm': 'antigravity',
   // Grok Build cluster (see docs/plans/2026-07-28-seo-grok-build.md — Opus-revised inventory)
   'how-to-use-grok-build': 'grok',
@@ -88,6 +94,7 @@ const FAMILY_BY_EN_SLUG: Record<string, Family> = {
   'grok-build-subagents-vs-agent-swarm': 'grok',
   'grok-build-pricing': 'grok',
   'grok-build-on-windows': 'grok',
+  'grok-build-on-linux': 'grok',
   'grok-build-from-claude-code': 'grok',
   'grok-build-vs-cursor': 'grok',
   'grok-build-headless-ci': 'grok',
@@ -97,6 +104,7 @@ const FAMILY_BY_EN_SLUG: Record<string, Family> = {
   'cursor-agent-swarm': 'cursor',
   'cursor-cli-vs-claude-code': 'cursor',
   'cursor-cli-on-windows': 'cursor',
+  'cursor-cli-on-linux': 'cursor',
   'cursor-cli-pricing': 'cursor',
 }
 
