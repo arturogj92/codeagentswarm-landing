@@ -52,6 +52,10 @@ import enBestSetupWindows from './en/best-claude-code-setup-windows'
 import enCodexVsCursor from './en/codex-cli-vs-cursor'
 import enCodexHistory from './en/codex-cli-conversation-history'
 import enCodexWindows from './en/codex-cli-on-windows'
+import enClaudeCodeLinux from './en/claude-code-on-linux'
+import enCodexLinux from './en/codex-cli-on-linux'
+import esClaudeCodeLinux from './es/claude-code-en-linux'
+import esCodexLinux from './es/codex-cli-en-linux'
 import enOpenCodeAgentSwarm from './en/opencode-agent-swarm'
 import enRunMultipleOpenCode from './en/run-multiple-opencode-sessions'
 import enOpenCodeVsCursor from './en/opencode-vs-cursor'
@@ -260,6 +264,8 @@ export const guides: Record<string, Record<string, Guide>> = {
     'codex-cli-vs-cursor': enCodexVsCursor,
     'codex-cli-conversation-history': enCodexHistory,
     'codex-cli-on-windows': enCodexWindows,
+    'claude-code-on-linux': enClaudeCodeLinux,
+    'codex-cli-on-linux': enCodexLinux,
     'opencode-agent-swarm': enOpenCodeAgentSwarm,
     'run-multiple-opencode-sessions': enRunMultipleOpenCode,
     'opencode-vs-cursor': enOpenCodeVsCursor,
@@ -363,6 +369,8 @@ export const guides: Record<string, Record<string, Guide>> = {
     'codex-cli-vs-cursor': esCodexVsCursor,
     'historial-conversaciones-codex': esCodexHistory,
     'codex-cli-en-windows': esCodexWindows,
+    'claude-code-en-linux': esClaudeCodeLinux,
+    'codex-cli-en-linux': esCodexLinux,
     'enjambre-de-agentes-opencode': esOpenCodeAgentSwarm,
     'ejecutar-multiples-sesiones-opencode': esRunMultipleOpenCode,
     'opencode-vs-cursor': esOpenCodeVsCursor,

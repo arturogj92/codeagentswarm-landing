@@ -53,6 +53,7 @@ const FAMILY_BY_EN_SLUG: Record<string, Family> = {
   'codex-cli-vs-cursor': 'codex',
   'codex-cli-conversation-history': 'codex',
   'codex-cli-on-windows': 'codex',
+  'codex-cli-on-linux': 'codex',
   'how-to-use-antigravity-cli': 'antigravity',
   'run-multiple-antigravity-cli-sessions': 'antigravity',
   'antigravity-cli-vs-gemini-cli': 'antigravity',
