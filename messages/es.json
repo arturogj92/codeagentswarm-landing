@@ -593,6 +593,8 @@
       "windowsArmDesc": "Dispositivos ARM",
       "windowsSoon": "Windows (Proximamente)",
       "linuxSoon": "Linux (Proximamente)",
+      "linuxDebDesc": "Ubuntu, Debian y derivadas",
+      "linuxAppImageDesc": "Fedora y casi cualquier otra distro",
       "notify": "Avisarme"
     },
     "olderVersions": {

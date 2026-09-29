@@ -593,6 +593,8 @@
       "windowsArmDesc": "ARM devices",
       "windowsSoon": "Windows (Soon)",
       "linuxSoon": "Linux (Soon)",
+      "linuxDebDesc": "Ubuntu, Debian and derivatives",
+      "linuxAppImageDesc": "Fedora and most other distros",
       "notify": "Notify me"
     },
     "olderVersions": {
