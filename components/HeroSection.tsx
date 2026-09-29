@@ -357,10 +357,6 @@ export default function HeroSection() {
               <br />
               <span className="gradient-text inline-block">{t('titleLine2')}</span>
             </h1>
-
-            <p className="max-w-3xl mx-auto text-base md:text-xl leading-relaxed text-white/50">
-              {t('subtitle')}
-            </p>
           </div>
 
           <motion.div
@@ -387,54 +383,56 @@ export default function HeroSection() {
 
             <p className="text-xs text-white/30">{t('microcopy')}</p>
 
-            <div className="flex items-center justify-center gap-3 flex-wrap text-xs text-white/35">
-              <span>{t('worksWith')}</span>
-              <div className="flex items-center -space-x-2">
-                <span className="w-7 h-7 rounded-full flex items-center justify-center bg-white border-2 border-[#0e0e12] shadow-lg">
-                  <img src="/icons/apps/claude-icon.svg" alt="Claude Code" className="w-4 h-4 object-contain" />
+            <div className="mt-4 flex flex-col items-center gap-5">
+              <div className="flex items-center gap-4">
+                <span className="h-px w-10 bg-white/15" aria-hidden="true" />
+                <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/60">{t('worksWith')}</span>
+                <span className="h-px w-10 bg-white/15" aria-hidden="true" />
+              </div>
+              <div className="grid grid-cols-5 sm:grid-cols-10 gap-3 sm:gap-4">
+                <span className="w-12 h-12 rounded-2xl flex items-center justify-center bg-black border border-white/10">
+                  <img src="/icons/apps/claude-icon-dark.svg" alt="Claude Code" className="w-8 h-8 object-contain" />
                 </span>
-                <span className="w-7 h-7 rounded-full flex items-center justify-center bg-[#0d0d0d] border-2 border-[#0e0e12] shadow-lg">
-                  <img src="/icons/apps/codex-icon.svg" alt="Codex CLI" className="w-4 h-4 object-contain" />
+                <span className="w-12 h-12 rounded-2xl flex items-center justify-center bg-black border border-white/10">
+                  <img src="/icons/apps/codex-icon.svg" alt="Codex CLI" className="w-8 h-8 object-contain" />
                 </span>
-                <span className="w-7 h-7 rounded-full flex items-center justify-center bg-white border-2 border-[#0e0e12] shadow-lg">
-                  <img src="/icons/apps/antigravity-icon.png" alt="Antigravity CLI" className="w-4 h-4 object-contain" />
+                <span className="w-12 h-12 rounded-2xl flex items-center justify-center bg-black border border-white/10">
+                  <img src="/icons/apps/antigravity-icon.png" alt="Antigravity CLI" className="w-8 h-8 object-contain" />
                 </span>
                 <span
-                  className="w-7 h-7 rounded-full flex items-center justify-center bg-[#0d0d0d] border-2 border-[#0e0e12] shadow-lg"
+                  className="w-12 h-12 rounded-2xl flex items-center justify-center bg-black border border-white/10"
                   title="OpenCode"
                 >
-                  <img src="/icons/apps/opencode-icon.svg" alt="OpenCode" className="w-5 h-5 object-contain" />
+                  <img src="/icons/apps/opencode-icon.svg" alt="OpenCode" className="w-8 h-8 object-contain" />
                 </span>
                 <span
-                  className="w-7 h-7 rounded-full flex items-center justify-center bg-[#0d0d0d] border-2 border-[#0e0e12] shadow-lg"
+                  className="w-12 h-12 rounded-2xl flex items-center justify-center bg-black border border-white/10"
                   title="Kimi Code"
                 >
-                  <img src="/icons/apps/kimi-icon.png" alt="Kimi Code" className="w-5 h-5 object-contain" />
+                  <img src="/icons/apps/kimi-icon.png" alt="Kimi Code" className="w-8 h-8 object-contain" />
                 </span>
                 <span
-                  className="w-7 h-7 rounded-full flex items-center justify-center bg-[#0d0d0d] border-2 border-[#0e0e12] shadow-lg"
+                  className="w-12 h-12 rounded-2xl flex items-center justify-center bg-black border border-white/10"
                   title="Grok Build"
                 >
-                  <img src="/icons/apps/grok-icon.svg" alt="Grok Build" className="w-4 h-4 object-contain" />
+                  <img src="/icons/apps/grok-icon.svg" alt="Grok Build" className="w-8 h-8 object-contain" />
                 </span>
                 <span
-                  className="w-7 h-7 rounded-full flex items-center justify-center bg-[#0d0d0d] border-2 border-[#0e0e12] shadow-lg"
+                  className="w-12 h-12 rounded-2xl flex items-center justify-center bg-black border border-white/10"
                   title="Cursor Agent"
                 >
-                  <img src="/icons/apps/cursor-icon.svg" alt="Cursor Agent" className="w-4 h-4 object-contain" />
+                  <img src="/icons/apps/cursor-icon.svg" alt="Cursor Agent" className="w-8 h-8 object-contain" />
                 </span>
-                <span className="w-7 h-7 rounded-full flex items-center justify-center bg-[#0d0d0d] border-2 border-[#0e0e12] shadow-lg" title="Muse Code">
-                  <img src="/icons/apps/muse-icon.svg" alt="Muse Code" className="w-4 h-4 object-contain" />
+                <span className="w-12 h-12 rounded-2xl flex items-center justify-center bg-black border border-white/10" title="Muse Code">
+                  <img src="/icons/apps/muse-icon.svg" alt="Muse Code" className="w-8 h-8 object-contain" />
                 </span>
-                <span className="w-7 h-7 rounded-full flex items-center justify-center bg-[#0d0d0d] border-2 border-[#0e0e12] shadow-lg" title="Pi">
-                  <img src="/icons/apps/pi-icon.svg" alt="Pi" className="w-4 h-4 object-contain" />
+                <span className="w-12 h-12 rounded-2xl flex items-center justify-center bg-black border border-white/10" title="Pi">
+                  <img src="/icons/apps/pi-icon.svg" alt="Pi" className="w-8 h-8 object-contain" />
                 </span>
-                <span className="w-7 h-7 rounded-full flex items-center justify-center bg-[#0d0d0d] border-2 border-[#0e0e12] shadow-lg" title="Devin CLI">
-                  <img src="/icons/apps/devin-icon.svg" alt="Devin CLI" className="w-4 h-4 object-contain" />
+                <span className="w-12 h-12 rounded-2xl flex items-center justify-center bg-black border border-white/10" title="Devin CLI">
+                  <img src="/icons/apps/devin-icon.svg" alt="Devin CLI" className="w-8 h-8 object-contain" />
                 </span>
               </div>
-              <span className="hidden sm:block h-4 w-px bg-white/10" aria-hidden="true" />
-              <span>{t('existingAccounts')}</span>
             </div>
             <p className="max-w-2xl text-center text-sm leading-relaxed text-white/60">
               {t.rich('newAgents', {
