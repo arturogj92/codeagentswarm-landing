@@ -101,6 +101,78 @@ node scripts/indexnow-ping.mjs https://www.codeagentswarm.com/en/guides/UPDATED-
 
 References: [GitHub deployment status events](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#deployment_status), [IndexNow protocol](https://www.indexnow.org/documentation), [Umami metrics and page filters](https://docs.umami.is/docs/api/website-stats).
 
+### Bing discovery access correction (2026-09-25)
+
+Scope clarification after accessing the signed-in Bing UI: the supplied warning
+screenshot belongs to **megakill.app**, not CodeAgentSwarm. The independently
+verified CodeAgentSwarm access correction below remains valid, but does not resolve
+megakill.app's warnings. Its public sitemap has 35 URLs, all returning HTTP 200;
+its Bing Sitemaps screen had no registered sitemaps when inspected. Registration
+and crawl diagnostics for that property remain pending.
+
+Unauthenticated automated requests to `robots.txt`, `sitemap.xml` and the IndexNow
+ownership file returned Vercel's HTTP 429 bot challenge. The files already existed;
+adding another sitemap would not fix their accessibility. This reproduced a public
+discovery problem, not proof that verified Bingbot was challenged: Vercel excludes
+verified search bots from its managed bot protection.
+
+Published Vercel Firewall version 2 with one custom rule, **Allow public search
+discovery files** (`rule_allow_public_search_discovery_files_9w0x6A`):
+
+- Host is exactly `codeagentswarm.com` or `www.codeagentswarm.com`.
+- Method is `GET` or `HEAD`.
+- Path is exactly `/robots.txt`, `/sitemap.xml` or
+  `/23805737595743fe97240d74cb15ff20.txt`.
+- Action is `bypass`, with `bypassSystem: false`. System DDoS protection remains
+  enabled, and the existing managed bot challenge is unchanged for other paths.
+
+Read-back confirmed the rule is active, with no pending draft. GET and HEAD now
+return 200 for all three files on both hosts, following apex-to-www redirects.
+The sitemap parses as XML and contains 208 unique canonical HTTPS www URLs; robots
+advertises that sitemap and the ownership file matches the public IndexNow key.
+Generic automated requests to a guide and `/api/releases` still receive the
+challenge, confirming the exception did not open the rest of the site.
+
+Production deployment `dpl_D4H3gb9vNKivj12jPBvoE5QpXaoL` was READY at commit
+`49976674da913a473d54e8ee81048aad9b8acba5`. After the firewall correction,
+`node scripts/indexnow-ping.mjs --sitemap` submitted all 208 URLs and received
+HTTP 200. Acceptance is not evidence of indexing or removal of Bing's warnings.
+
+Read-only access regression check, using Python's standard library:
+
+```sh
+python3 - <<'PY'
+from urllib.request import Request, urlopen
+for host in ('codeagentswarm.com', 'www.codeagentswarm.com'):
+    for path in ('robots.txt', 'sitemap.xml', '23805737595743fe97240d74cb15ff20.txt'):
+        for method in ('GET', 'HEAD'):
+            with urlopen(Request(f'https://{host}/{path}', method=method), timeout=30) as response:
+                assert response.status == 200, (host, path, method, response.status)
+                assert not response.headers.get('x-vercel-mitigated'), (host, path, method)
+                print(method, host, path, response.status)
+PY
+node scripts/indexnow-ping.mjs --dry-run --sitemap
+```
+
+To roll back, disable only the named custom rule, inspect the pending firewall
+diff and publish it. Do not revert unrelated rules or disable global protection.
+This configuration lives in Vercel, not in the application deployment.
+
+**Still pending:** the accessible Bing Webmaster Tools browser is signed out.
+Once authenticated, submit `https://www.codeagentswarm.com/sitemap.xml` in the
+correct property, inspect its processing result and use URL Inspection/Site
+Explorer to diagnose the limited-crawl warning. Do not increase crawl limits
+without seeing the actual errors and crawl-control settings. The warning about
+high-quality inbound links requires relevant external editorial links; neither
+this firewall change nor IndexNow fixes it. Existing outreach and its approval
+history are recorded in `docs/seo/listicle-outreach.md`; no additional messages
+were sent during this correction.
+
+References: [Vercel bot management](https://vercel.com/docs/bot-management),
+[firewall rule actions](https://vercel.com/docs/vercel-firewall/firewall-concepts),
+[Bing sitemap submission](https://www2.bing.com/webmasters/help/sitemaps-3b5cf6ed),
+[Bing crawl control](https://www.bing.com/webmasters/help/crawl-control-55a30303).
+
 ## September content and conversion review
 
 The September 5 change corrects the bilingual Claude history cluster, adds an actual worktree isolation check to the existing bilingual worktree guide, and links that check from the parallel-session guides. It preserves their SEO titles, descriptions, canonical URLs and existing section anchors. Product-block copy follows the existing history, parallel-session and worktree video selection. Other guide intents keep their existing copy.
