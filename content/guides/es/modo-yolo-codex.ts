@@ -4,10 +4,10 @@ export const guide: Guide = {
   meta: {
     slug: 'modo-yolo-codex',
     locale: 'es',
-    title: 'Modo YOLO de Codex CLI: comandos, aprobaciones y sandbox',
-    metaTitle: 'Modo YOLO de Codex: --yolo, permisos y sandbox (2026)',
-    metaDescription: 'Qué desactiva codex --yolo, cómo conservar el sandbox sin peticiones de aprobación y por qué el antiguo --full-auto depende de tu versión de Codex CLI.',
-    intro: 'Codex acepta --yolo como alias de --dangerously-bypass-approvals-and-sandbox: desactiva las peticiones de aprobación y el sandbox. Si buscas que trabaje con menos interrupciones dentro del proyecto, configura el sandbox y las aprobaciones por separado.\n\nAquí tienes los comandos, qué pasa con el antiguo --full-auto y cómo supervisar varias sesiones desde CodeAgentSwarm. Una interfaz de escritorio no convierte un comando peligroso en uno seguro.',
+    title: 'Modo automático y YOLO de Codex CLI: comandos, permisos y sandbox',
+    metaTitle: 'Codex Auto Mode y YOLO: modo automático y permisos (2026)',
+    metaDescription: 'Configura el modo automático de Codex CLI con permisos del proyecto. Compara la aprobación automática, --yolo y el antiguo --full-auto con comandos y límites.',
+    intro: 'El modo automático de Codex (Auto Mode) permite al CLI leer archivos, editar código y ejecutar comandos dentro de los permisos configurados para el proyecto. Inícialo con --sandbox workspace-write --ask-for-approval on-request para conservar el sandbox y permitir solicitudes de permisos adicionales.\n\nEl modo YOLO usa --yolo, un alias de --dangerously-bypass-approvals-and-sandbox, que desactiva ambas protecciones. Esta guía explica la diferencia, cómo ejecutar sin preguntas conservando el sandbox y qué pasa con el antiguo --full-auto. Una interfaz de escritorio no convierte un comando peligroso en uno seguro.',
     ctaText: 'Supervisa tus sesiones de Codex en CodeAgentSwarm: consulta qué necesita respuesta, busca conversaciones y revisa los cambios del proyecto. Descarga la app para macOS, Windows o Linux y usa tu cuenta de Codex.',
     ctaAgent: 'codex',
     highlightedWords: [
@@ -15,17 +15,17 @@ export const guide: Guide = {
       'modo YOLO',
     ],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-09-29',
+    updatedAt: '2026-10-01',
     alternateSlug: 'codex-yolo-mode',
   },
   sections: [
     {
       id: 'que-es-modo-yolo-codex',
-      title: 'Comando de Codex YOLO y alternativa con sandbox',
+      title: 'Cómo activar el modo automático de Codex CLI (Auto Mode)',
       content: [
         {
           type: 'paragraph',
-          text: 'Para trabajar dentro del proyecto y consultar las ampliaciones de permisos, inicia Codex con esta configuración explícita:',
+          text: 'La <a href="https://learn.chatgpt.com/docs/agent-approvals-security" class="text-neon-cyan hover:text-neon-purple transition-colors">documentación de aprobaciones de OpenAI</a> llama Auto a esta combinación: sandbox <code>workspace-write</code> y aprobaciones <code>on-request</code>. Codex puede realizar tareas dentro de sus permisos y solicitar aprobación cuando necesita ampliarlos. Para activar esta configuración de modo automático de forma explícita, ejecuta:',
         },
         {
           type: 'code',
@@ -191,6 +191,10 @@ export const guide: Guide = {
     },
   ],
   faq: [
+    {
+      question: '¿Qué es Codex Auto Mode y cómo activo el modo automático?',
+      answer: 'El modo automático de Codex combina el sandbox workspace-write con aprobaciones on-request. Ejecuta codex --sandbox workspace-write --ask-for-approval on-request. Codex puede trabajar dentro de los permisos configurados y solicitar acceso adicional cuando lo necesita. La aprobación automática no tiene por qué implicar YOLO: --yolo omite tanto las aprobaciones como el sandbox.',
+    },
     {
       question: '¿Existe el flag codex --yolo?',
       answer: 'Sí. --yolo es un alias de --dangerously-bypass-approvals-and-sandbox. Omite las aprobaciones y el sandbox. Está pensado para entornos aislados externamente.',
