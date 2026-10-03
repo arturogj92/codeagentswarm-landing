@@ -7,7 +7,7 @@ const privacyEs: LegalDoc = {
   metaTitle: 'Política de Privacidad | CodeAgentSwarm',
   metaDescription:
     'Cómo trata CodeAgentSwarm tus datos: qué recogemos, qué no recogemos nunca, quién los procesa, cuánto los conservamos y cómo ejercer tus derechos RGPD.',
-  lastUpdated: '2026-09-27',
+  lastUpdated: '2026-10-03',
   intro:
     'Esta Política de Privacidad explica qué datos personales recoge CodeAgentSwarm cuando usas la aplicación de escritorio y este sitio web, por qué los recogemos, con quién los compartimos y qué derechos tienes sobre ellos. La hemos redactado para que coincida exactamente con lo que hace nuestro software. Si algo no queda claro, escríbenos a hello@codeagentswarm.com.',
   sections: [
@@ -70,7 +70,7 @@ const privacyEs: LegalDoc = {
         },
         {
           type: 'paragraph',
-          text: 'La analítica opcional de uso de la app de escritorio está desactivada hasta que la habilitas expresamente en Ajustes > Privacidad. Puedes retirar el consentimiento allí en cualquier momento; se detiene la recogida y se descartan los eventos pendientes de envío. Con consentimiento, las versiones de producción envían acciones y resultados de funciones, proveedor y modelo público elegidos (los nombres de modelos personalizados se sustituyen por "custom"), uso de worktrees y nombres de controles de ajustes utilizados, nunca sus valores de texto libre. Los eventos incluyen además versión de la app, sistema operativo, arquitectura del procesador e identificadores aleatorios de sesión e instalación. El identificador de instalación se guarda localmente tras el consentimiento para medir instalaciones que vuelven. Los eventos se envían a nuestro backend; las versiones de desarrollo y las pruebas automatizadas no envían eventos de uso de producción. La analítica no incluye nombres ni rutas de proyectos o archivos, prompts, código, comandos ni salida de terminales, capturas o credenciales. Los eventos son seudónimos: sin iniciar sesión no se asocian a una cuenta; con sesión iniciada pueden vincularse a tu cuenta. Por eso no se describen como totalmente anónimos.',
+          text: 'La analítica opcional de uso de la app de escritorio está desactivada hasta que eliges compartirla, cuando la app te lo pregunta una vez o después en Ajustes > Privacidad. Puedes retirar el consentimiento allí en cualquier momento; se detiene la recogida y se descartan los eventos pendientes de envío. Con consentimiento, las versiones de producción envían acciones y resultados de funciones, proveedor y modelo público elegidos (los nombres de modelos personalizados se sustituyen por "custom"), uso de worktrees y nombres de controles de ajustes utilizados, nunca sus valores de texto libre. Los eventos incluyen además versión de la app, sistema operativo, arquitectura del procesador e identificadores aleatorios de sesión e instalación. El identificador de instalación se guarda localmente tras el consentimiento para medir instalaciones que vuelven. Los eventos se envían a nuestro backend; las versiones de desarrollo y las pruebas automatizadas no envían eventos de uso de producción. La analítica no incluye nombres ni rutas de proyectos o archivos, prompts, código, comandos ni salida de terminales, capturas o credenciales. Los eventos son seudónimos: sin iniciar sesión no se asocian a una cuenta; con sesión iniciada pueden vincularse a tu cuenta. Por eso no se describen como totalmente anónimos.',
         },
         {
           type: 'heading',
@@ -89,6 +89,14 @@ const privacyEs: LegalDoc = {
         {
           type: 'paragraph',
           text: 'Iniciar sesión es opcional y se realiza mediante proveedores OAuth de terceros (GitHub, Google o Discord). Cuando inicias sesión recibimos y almacenamos los datos de perfil que comparten esos proveedores: tu dirección de email, nombre, nombre de usuario, URL de avatar, el proveedor y su identificador de usuario, y los tokens OAuth de acceso y de refresco (que sirven para mantener tu sesión). También registramos la fecha de tu último inicio de sesión y, por cada sesión, tu dirección IP e información básica del dispositivo.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Mientras tienes la sesión iniciada, la app de escritorio comprueba tu cuenta y tu plan con nuestro backend al arrancar, cuando vuelves a ella y aproximadamente cada 15 minutos mientras está abierta. Por cada día que se usa la app registramos la fecha, la hora de la primera y la última comprobación, cuántas comprobaciones hubo, y la versión de la app y el sistema operativo que la app indica. Esta actividad del servicio nos dice cuántas personas usan la app cada día, semana y mes, mantiene el servicio y el soporte funcionando y nos permite enviarte emails de la cuenta. No incluye lo que haces dentro de la app y no depende de tu elección sobre la analítica de uso.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Podemos enviar emails a los usuarios registrados sobre su cuenta, para pedir su opinión y sobre funciones y planes de CodeAgentSwarm. Cada email incluye un enlace para darse de baja, y también puedes pedirnos que paremos escribiendo a hello@codeagentswarm.com.',
         },
         {
           type: 'heading',
@@ -139,9 +147,9 @@ const privacyEs: LegalDoc = {
         {
           type: 'list',
           items: [
-            'Ejecución de un contrato (art. 6.1.b): para proporcionarte tu cuenta, el asistente de ayuda y cualquier suscripción de pago que solicites.',
-            'Interés legítimo (art. 6.1.f): para mantener la app segura y funcional, corregir errores y prevenir abusos, de manera proporcionada y sin prevalecer sobre tus derechos.',
-            'Consentimiento (art. 6.1.a): para la analítica opcional de escritorio y, cuando se solicita, emails comerciales. Puedes retirarlo en cualquier momento.',
+            'Ejecución de un contrato (art. 6.1.b): para proporcionarte tu cuenta, el asistente de ayuda y cualquier suscripción de pago que solicites, incluida la comprobación del plan que registra la actividad del servicio.',
+            'Interés legítimo (art. 6.1.f): para mantener la app segura y funcional, corregir errores, prevenir abusos, medir cuántas personas usan la app a partir de la actividad del servicio y enviar a los usuarios registrados emails sobre CodeAgentSwarm con un enlace de baja en cada uno, de manera proporcionada y sin prevalecer sobre tus derechos.',
+            'Consentimiento (art. 6.1.a): para la analítica opcional de escritorio, como qué funciones, proveedores y modelos usas, que eliges en la app o en Ajustes > Privacidad. Puedes retirarlo en cualquier momento.',
             'Obligación legal (art. 6.1.c): para cumplir con obligaciones contables, fiscales u otras cuando corresponda.',
           ],
         },
@@ -193,7 +201,7 @@ const privacyEs: LegalDoc = {
           items: [
             'Datos de cuenta: mientras tu cuenta exista, y se eliminan cuando nos pides que los borremos.',
             'Mensajes de soporte, feedback y encuestas: se conservan mientras sean necesarios para atender tu solicitud y durante un periodo razonable posterior.',
-            'Eventos de uso de escritorio: se conservan hasta 14 meses y después se eliminan mediante el proceso de retención. Los informes de errores tienen su propio plazo de retención.',
+            'Eventos de uso de escritorio y días de actividad del servicio: se conservan hasta 14 meses y después se eliminan mediante el proceso de retención. Los informes de errores tienen su propio plazo de retención.',
             'Registros de facturación: se conservan durante el tiempo que exija la ley por motivos contables y fiscales.',
           ],
         },

@@ -7,7 +7,7 @@ const privacyEn: LegalDoc = {
   metaTitle: 'Privacy Policy | CodeAgentSwarm',
   metaDescription:
     'How CodeAgentSwarm handles your data: what we collect, what we never collect, who processes it, how long we keep it and how to exercise your GDPR rights.',
-  lastUpdated: '2026-09-27',
+  lastUpdated: '2026-10-03',
   intro:
     'This Privacy Policy explains what personal data CodeAgentSwarm collects when you use the desktop application and this website, why we collect it, who we share it with, and the rights you have over it. We have written it to match exactly what our software actually does. If anything here is unclear, email us at hello@codeagentswarm.com.',
   sections: [
@@ -70,7 +70,7 @@ const privacyEn: LegalDoc = {
         },
         {
           type: 'paragraph',
-          text: 'Optional desktop usage analytics are off until you explicitly enable them in Settings > Privacy. You can withdraw consent there at any time; this stops new collection and discards unsent events. With consent, production builds send feature actions and outcomes, provider and public model choices (custom model names become "custom"), worktree usage, and the names of settings controls used, never their free-text values. Events also include app version, operating system, processor architecture, and random session and installation identifiers. Installation identifiers are stored locally after consent and help measure returning installations. Events go to our own backend; development builds and automated tests do not send production usage events. We do not include project names or paths, file names, prompts, code, terminal commands or output, screenshots, or credentials in usage analytics. Events are pseudonymous: while signed out they have no account association; while signed in they can be linked to your account. They are therefore not described as fully anonymous.',
+          text: 'Optional desktop usage analytics stay off until you choose to share them, when the app asks you once or later in Settings > Privacy. You can withdraw consent there at any time; this stops new collection and discards unsent events. With consent, production builds send feature actions and outcomes, provider and public model choices (custom model names become "custom"), worktree usage, and the names of settings controls used, never their free-text values. Events also include app version, operating system, processor architecture, and random session and installation identifiers. Installation identifiers are stored locally after consent and help measure returning installations. Events go to our own backend; development builds and automated tests do not send production usage events. We do not include project names or paths, file names, prompts, code, terminal commands or output, screenshots, or credentials in usage analytics. Events are pseudonymous: while signed out they have no account association; while signed in they can be linked to your account. They are therefore not described as fully anonymous.',
         },
         {
           type: 'heading',
@@ -89,6 +89,14 @@ const privacyEn: LegalDoc = {
         {
           type: 'paragraph',
           text: 'Signing in is optional and uses third-party OAuth providers (GitHub, Google or Discord). When you sign in we receive and store the profile data those providers share: your email address, name, username, avatar URL, the provider and provider user ID, and OAuth access and refresh tokens (used to keep you signed in). We also record your last login time and, for each session, your IP address and basic device information.',
+        },
+        {
+          type: 'paragraph',
+          text: 'While you are signed in, the desktop app checks your account and plan with our backend when it starts, when you return to it and about every 15 minutes while it is open. For each day the app is used we record the date, the times of the first and last check, how many checks there were, and the app version and operating system the app reports. This service activity tells us how many people use the app each day, week and month, keeps the service and support working and lets us send account emails. It does not include what you do inside the app and does not depend on your usage analytics choice.',
+        },
+        {
+          type: 'paragraph',
+          text: 'We may email registered users about their account, to ask for feedback and about CodeAgentSwarm features and plans. Every email includes an unsubscribe link, and you can also ask us to stop by writing to hello@codeagentswarm.com.',
         },
         {
           type: 'heading',
@@ -139,9 +147,9 @@ const privacyEn: LegalDoc = {
         {
           type: 'list',
           items: [
-            'Performance of a contract (Art. 6.1.b): to provide your account, the help assistant and any paid subscription you request.',
-            'Legitimate interest (Art. 6.1.f): to keep the app secure and working, fix errors and prevent abuse, in a way that is proportionate and does not override your rights.',
-            'Consent (Art. 6.1.a): for optional desktop usage analytics and, where requested, marketing emails. You can withdraw consent at any time.',
+            'Performance of a contract (Art. 6.1.b): to provide your account, the help assistant and any paid subscription you request, including the plan check that records service activity.',
+            'Legitimate interest (Art. 6.1.f): to keep the app secure and working, fix errors, prevent abuse, measure how many people use the app from service activity, and email registered users about CodeAgentSwarm with an unsubscribe link in every email, in a way that is proportionate and does not override your rights.',
+            'Consent (Art. 6.1.a): for optional desktop usage analytics, such as which features, providers and models you use, which you choose in the app or in Settings > Privacy. You can withdraw consent at any time.',
             'Legal obligation (Art. 6.1.c): to comply with accounting, tax or other legal duties when applicable.',
           ],
         },
@@ -193,7 +201,7 @@ const privacyEn: LegalDoc = {
           items: [
             'Account data: while your account exists, and deleted when you ask us to delete it.',
             'Support, feedback and survey messages: kept while needed to handle your request and for a reasonable period afterwards.',
-            'Desktop usage events: retained for up to 14 months, then deleted by our retention process. Error reports have their own retention schedule.',
+            'Desktop usage events and service activity days: retained for up to 14 months, then deleted by our retention process. Error reports have their own retention schedule.',
             'Billing records: kept for as long as legally required for accounting and tax purposes.',
           ],
         },
