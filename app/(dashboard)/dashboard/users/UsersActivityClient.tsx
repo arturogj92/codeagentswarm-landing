@@ -182,9 +182,10 @@ function last7Count(flags: boolean[]): number {
 
 function matchesSegment(user: UserActivityRow, segment: Segment): boolean {
   if (segment === 'all') return true
-  if (segment === 'active30') return user.days_since_last !== null && user.days_since_last <= 30
+  const lifecycle = getLifecycle(user.last_active)
+  if (segment === 'active30') return lifecycle === 'active' || lifecycle === 'inactive'
   if (segment === 'activated') return Boolean(user.activation_at)
-  return getLifecycle(user.days_since_last) === segment
+  return lifecycle === segment
 }
 
 function unique(values: Array<string | null | undefined>): string[] {
@@ -1422,7 +1423,7 @@ function UsersTable({ users, sortKey, sortDirection, onSort, onOpen }: {
         </thead>
         <tbody>
           {users.map((user) => {
-            const lifecycle = LIFECYCLE_META[getLifecycle(user.days_since_last)]
+            const lifecycle = LIFECYCLE_META[getLifecycle(user.last_active)]
             const agentSignal = primaryAgentSignal(user)
             return (
               <tr key={user.user_id} className="border-b border-white/[0.055] last:border-0 hover:bg-white/[0.025]">
@@ -1539,7 +1540,7 @@ function UsersMobileList({ users, onOpen }: { users: UserActivityRow[]; onOpen: 
 }
 
 function LifecycleBadge({ user }: { user: UserActivityRow }) {
-  const metadata = LIFECYCLE_META[getLifecycle(user.days_since_last)]
+  const metadata = LIFECYCLE_META[getLifecycle(user.last_active)]
   return (
     <span className={`inline-flex items-center gap-1.5 rounded-md border px-2 py-1 text-[10px] font-medium ${metadata.badge}`}>
       <span className={`h-1.5 w-1.5 rounded-full ${metadata.dot}`} />{metadata.label}

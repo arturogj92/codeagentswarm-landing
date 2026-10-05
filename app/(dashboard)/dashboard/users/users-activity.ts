@@ -483,10 +483,14 @@ export function parseFeatureWindowDays(value: unknown): FeatureWindowDays | null
   return value === 7 || value === 30 || value === 90 || value === 180 ? value : null
 }
 
-export function getLifecycle(daysSinceLast: number | null): Lifecycle {
-  if (daysSinceLast === null) return 'no-tracked'
-  if (daysSinceLast < 7) return 'active'
-  if (daysSinceLast <= 30) return 'inactive'
+// Rolling windows ending now, like the global metrics (`last_seen >= now() - N days`); calendar
+// days would shrink "last 7 days" to barely six early in the UTC day.
+export function getLifecycle(lastActive: string | null, now = Date.now()): Lifecycle {
+  const at = lastActive ? Date.parse(lastActive) : Number.NaN
+  if (!Number.isFinite(at)) return 'no-tracked'
+  const age = now - at
+  if (age <= 7 * 86_400_000) return 'active'
+  if (age <= 30 * 86_400_000) return 'inactive'
   return 'dormant'
 }
 
@@ -511,7 +515,7 @@ export function summarizeUsers(users: UserActivityRow[], now = new Date()) {
     if (Number.isFinite(createdAt) && createdAt >= cutoff && createdAt <= now.getTime()) new30 += 1
     if (user.activation_at) activated += 1
 
-    switch (getLifecycle(user.days_since_last)) {
+    switch (getLifecycle(user.last_active, now.getTime())) {
       case 'active':
         active7 += 1
         active30 += 1
@@ -541,7 +545,7 @@ export function summarizeUsers(users: UserActivityRow[], now = new Date()) {
   }
 }
 
-export function filterUsers(users: UserActivityRow[], filters: UserFilters): UserActivityRow[] {
+export function filterUsers(users: UserActivityRow[], filters: UserFilters, now = Date.now()): UserActivityRow[] {
   const query = filters.query.trim().toLowerCase()
 
   return users.filter((user) => {
@@ -552,7 +556,7 @@ export function filterUsers(users: UserActivityRow[], filters: UserFilters): Use
         .some((value) => String(value).toLowerCase().includes(query))
     ) return false
 
-    if (filters.lifecycle !== 'all' && getLifecycle(user.days_since_last) !== filters.lifecycle) return false
+    if (filters.lifecycle !== 'all' && getLifecycle(user.last_active, now) !== filters.lifecycle) return false
     if (filters.agent !== 'all' && primaryAgentSignal(user).agent !== filters.agent) return false
     if (filters.activation === 'activated' && !user.activation_at) return false
     if (filters.activation === 'not-activated' && user.activation_at) return false

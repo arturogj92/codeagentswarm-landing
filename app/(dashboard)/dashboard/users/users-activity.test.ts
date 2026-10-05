@@ -145,20 +145,25 @@ test('real-time action breakdown stays optional and resolves the matching produc
   assert.deepEqual(realtimeActionBreakdown({} as RealtimeActivitySnapshot, 'terminal_controls'), [])
 })
 
-test('lifecycle boundaries are exact and mutually exclusive', () => {
-  assert.equal(getLifecycle(null), 'no-tracked')
-  assert.equal(getLifecycle(0), 'active')
-  assert.equal(getLifecycle(6), 'active')
-  assert.equal(getLifecycle(7), 'inactive')
-  assert.equal(getLifecycle(30), 'inactive')
-  assert.equal(getLifecycle(31), 'dormant')
+test('lifecycle uses rolling windows ending now, not calendar days', () => {
+  const now = Date.parse('2026-10-05T07:00:00.000Z')
+  const ago = (hours: number) => new Date(now - hours * 3_600_000).toISOString()
+  assert.equal(getLifecycle(null, now), 'no-tracked')
+  assert.equal(getLifecycle('not a date', now), 'no-tracked')
+  assert.equal(getLifecycle(ago(0), now), 'active')
+  // Seven calendar days back but inside the last 168 hours: still active.
+  assert.equal(getLifecycle('2026-09-28T09:00:00.000Z', now), 'active')
+  assert.equal(getLifecycle(ago(7 * 24), now), 'active')
+  assert.equal(getLifecycle(ago(7 * 24 + 1), now), 'inactive')
+  assert.equal(getLifecycle(ago(30 * 24), now), 'inactive')
+  assert.equal(getLifecycle(ago(30 * 24 + 1), now), 'dormant')
 })
 
 test('summary reports the six dashboard metrics without inventing trends', () => {
   const users = [
-    user({ user_id: 'active', days_since_last: 2 }),
-    user({ user_id: 'inactive', days_since_last: 14, activation_at: null, created_at: '2026-06-01T00:00:00.000Z' }),
-    user({ user_id: 'dormant', days_since_last: 45, created_at: '2026-05-01T00:00:00.000Z' }),
+    user({ user_id: 'active', last_active: '2026-08-06T12:00:00.000Z', days_since_last: 2 }),
+    user({ user_id: 'inactive', last_active: '2026-07-25T12:00:00.000Z', days_since_last: 14, activation_at: null, created_at: '2026-06-01T00:00:00.000Z' }),
+    user({ user_id: 'dormant', last_active: '2026-06-24T12:00:00.000Z', days_since_last: 45, created_at: '2026-05-01T00:00:00.000Z' }),
     user({ user_id: 'none', days_since_last: null, last_active: null, total_events: 0 }),
   ]
 
@@ -185,6 +190,7 @@ test('filters combine search, lifecycle, normalized agent and operational dimens
       user_id: 'user-2',
       name: 'Grace Hopper',
       email: 'grace@example.com',
+      last_active: '2026-07-27T12:00:00.000Z',
       days_since_last: 12,
       most_used_agent: 'Open_Code CLI',
       activation_at: null,
@@ -207,7 +213,7 @@ test('filters combine search, lifecycle, normalized agent and operational dimens
     plan: 'free',
     integration: 'linear',
     outreach: 'contacted',
-  })
+  }, Date.parse('2026-08-08T12:00:00.000Z'))
 
   assert.deepEqual(result.map((entry) => entry.user_id), ['user-2'])
   assert.equal(normalizeAgent('Gemini CLI'), 'gemini')
