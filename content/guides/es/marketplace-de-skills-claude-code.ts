@@ -30,9 +30,9 @@ Lo que más me gusta: cuando instalas una skill, eliges dónde va. Las versiones
         },
         {
           type: 'image',
-          alt: 'Marketplace de Skills de CodeAgentSwarm mostrando una cuadrícula de tarjetas de skills, cada una con nombre, descripción, número de estrellas y un botón de Instalar',
-          src: '/images/guides/skills-marketplace.png',
-          caption: 'El Marketplace de Skills: una cuadrícula de tarjetas con búsqueda, número de estrellas y botones de instalación con un clic.',
+          alt: 'Marketplace de Skills actual con una colección de ejemplo',
+          src: '/images/guides/skills-marketplace-current.webp',
+          caption: 'Skills de ejemplo en el marketplace actual, con búsqueda, ordenación y controles de instalación.',
           size: 'full',
         },
         {
@@ -59,7 +59,7 @@ Lo que más me gusta: cuando instalas una skill, eliges dónde va. Las versiones
         },
         {
           type: 'paragraph',
-          text: 'En la vista de detalle de una skill no tienes solo un botón de Instalar. Tienes un conjunto de destinos:',
+          text: 'La flecha junto a Install all abre el selector de agentes. La vista de detalle también ofrece destinos individuales:',
         },
         {
           type: 'list',
@@ -70,9 +70,9 @@ Lo que más me gusta: cuando instalas una skill, eliges dónde va. Las versiones
         },
         {
           type: 'image',
-          alt: 'Vista antigua de CodeAgentSwarm con los anteriores destinos de instalación Claude, Gemini y Codex',
-          src: '/images/guides/skills-install-multi-cli.png',
-          caption: 'Esta captura de transición muestra el antiguo selector de tres destinos. Las versiones actuales ofrecen Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi y Devin CLI.',
+          alt: 'Selector de instalación de skills con los diez agentes compatibles',
+          src: '/images/guides/skills-install-current.webp',
+          caption: 'Elige agentes concretos o instala en los diez. La colección de ejemplo muestra el selector actual.',
           size: 'full',
         },
         {

@@ -113,10 +113,10 @@ export default function BetaHeroSection() {
             }}
           >
             <Image
-              src="/images/guides/multi-terminal.png"
-              alt="CodeAgentSwarm - Multiple AI Agents Interface"
-              width={1800}
-              height={1100}
+              src="/images/guides/workspace-list.webp"
+              alt="CodeAgentSwarm List workspace with sample projects grouped by agent status"
+              width={1440}
+              height={900}
               className="w-full h-auto"
               priority
             />

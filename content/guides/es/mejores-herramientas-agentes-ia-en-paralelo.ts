@@ -211,9 +211,9 @@ export const guide: Guide = {
         },
         {
           type: 'image',
-          alt: 'El tablero kanban de tareas de CodeAgentSwarm con tareas en las columnas de pendiente, en progreso y en pruebas',
-          src: '/images/guides/task-board-kanban.png',
-          caption: 'El tablero no es decorativo: los agentes mueven sus propias tarjetas por MCP según van trabajando.',
+          alt: 'Tablero Kanban actual con columnas Pending, Auto, In Progress, In Testing y Completed',
+          src: '/images/guides/task-board-current.webp',
+          caption: 'Tareas de ejemplo de tres proyectos, con sus colores y la cola Auto visible.',
         },
         {
           type: 'paragraph',
@@ -221,9 +221,9 @@ export const guide: Guide = {
         },
         {
           type: 'image',
-          alt: 'Historial de conversaciones de CodeAgentSwarm con sesiones de varios agentes, buscables y retomables',
-          src: '/images/guides/conversation-history.png',
-          caption: 'Un único historial buscable con todos los agentes, y con resume, para que una conversación de hace tres días en otro CLI se siga encontrando.',
+          alt: 'Historial actual con filtros de agente y conversaciones de ejemplo agrupadas por fecha',
+          src: '/images/guides/history-browse-current.webp',
+          caption: 'Conversaciones de ejemplo de varios proyectos, agrupadas por fecha con indicadores de agente y proyecto.',
         },
         {
           type: 'paragraph',

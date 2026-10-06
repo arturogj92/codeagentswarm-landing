@@ -9,7 +9,7 @@ import LogoText from './LogoText'
 
 // Visual Comparison - Without/With CodeAgentSwarm
 // Left side is a pure HTML/CSS "window chaos" scene (crisp text, no AI-generated images).
-// Right side is a real screenshot of the app running 12 terminals.
+// Right side records the current List workspace with ten sample agent sessions.
 
 const CLAUDE_ASCII = ' ▐▛███▜▌\n▝▜█████▛▘\n  ▘▘ ▝▝'
 const MONO = { fontFamily: "var(--font-mono)" }
@@ -360,10 +360,10 @@ function VisualComparison() {
                   muted
                   playsInline
                   preload="metadata"
-                  poster="/images/list-mode-demo-poster.jpg"
+                  poster="/images/guides/workspace-list-poster.webp"
                   aria-hidden="true"
                 >
-                  <source src="/videos/list-mode-demo.mp4" type="video/mp4" />
+                  <source src="/videos/workspace-list-current.mp4" type="video/mp4" />
                 </video>
               </div>
               <div className="absolute -bottom-3 left-1/2 -translate-x-1/2">

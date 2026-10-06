@@ -180,10 +180,10 @@ Choose it when you want shared supervision across providers or projects. For a s
         },
         {
           type: 'image',
-          alt: 'CodeAgentSwarm dashboard showing a kanban task board with columns for tasks, on top of Claude Code terminals',
-          src: '/images/guides/task-board-kanban.png',
-          caption: 'One surface of the GUI: a kanban task board the agent updates as it works while you watch.',
-          size: 'medium',
+          alt: 'Current Kanban board with Pending, Auto, In Progress, In Testing and Completed columns',
+          src: '/images/guides/task-board-current.webp',
+          caption: 'Sample tasks from three projects, with separate project colors and the Auto queue visible.',
+          size: 'full',
         },
         {
           type: 'callout',

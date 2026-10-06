@@ -180,10 +180,10 @@ Encaja cuando quieres supervisión compartida entre proveedores o proyectos. Par
         },
         {
           type: 'image',
-          alt: 'Panel de CodeAgentSwarm mostrando un tablero kanban de tareas con columnas, sobre los terminales de Claude Code',
-          src: '/images/guides/task-board-kanban.png',
-          caption: 'Una de las superficies de la GUI: un tablero kanban que el agente actualiza mientras trabaja.',
-          size: 'medium',
+          alt: 'Tablero Kanban actual con columnas Pending, Auto, In Progress, In Testing y Completed',
+          src: '/images/guides/task-board-current.webp',
+          caption: 'Tareas de ejemplo de tres proyectos, con sus colores y la cola Auto visible.',
+          size: 'full',
         },
         {
           type: 'callout',

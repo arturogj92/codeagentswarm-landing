@@ -211,9 +211,9 @@ export const guide: Guide = {
         },
         {
           type: 'image',
-          alt: 'The CodeAgentSwarm kanban task board with tasks in pending, in progress and testing columns',
-          src: '/images/guides/task-board-kanban.png',
-          caption: 'The task board is not decoration: the agents move their own cards through it over MCP as they work.',
+          alt: 'Current Kanban board with Pending, Auto, In Progress, In Testing and Completed columns',
+          src: '/images/guides/task-board-current.webp',
+          caption: 'Sample tasks from three projects, with separate project colors and the Auto queue visible.',
         },
         {
           type: 'paragraph',
@@ -221,9 +221,9 @@ export const guide: Guide = {
         },
         {
           type: 'image',
-          alt: 'CodeAgentSwarm conversation history showing sessions from several agents, searchable, with resume when the agent supports it',
-          src: '/images/guides/conversation-history.png',
-          caption: 'One searchable history across every agent and capability-aware resume, so a conversation from three days ago in a different CLI is still findable.',
+          alt: 'Current conversation history with agent filters and sample conversations grouped by date',
+          src: '/images/guides/history-browse-current.webp',
+          caption: 'Sample conversations from several projects, grouped by date with agent and project indicators.',
         },
         {
           type: 'paragraph',

@@ -1,5 +1,16 @@
 # SEO publishing and download measurement
 
+
+## Feature media refresh — October 6, 2026
+
+Replaced 42 old image placements across 20 EN/ES guides with current app captures and added two project-filter examples. Kanban shows eight sample tasks across three public projects and the current Auto queue. Skills shows a clearly labelled sample collection and the real ten-agent installation menu. History covers the toolbar entry, date groups, a project filter, search, message preview and CLI/Chat reopening choices. Captions identify sample content; image dimensions are 1440 × 900 and all new stills use WebP.
+
+The Beta hero now uses the approved List workspace. The home List demo and poster use current renderer captures, switching between sample Codex, Claude and Pi conversations across three projects, with all four status headings visible. The silent H.264 loop retains reduced-motion behavior and uses a new asset URL to avoid old cache entries. It is a UI demonstration, not evidence of live agent execution.
+
+Capture uses the existing isolated E2E launcher and the shared `codeagentswarm-guide-workspace-image` skill. Only public sample data is seeded; agent transport and catalogue/history responses are fixtures. No live prompts are sent. The real ten-agent detail footer overflows at this viewport, so the screenshot uses the existing marketplace installation dropdown with all targets visible. Do not hide or repaint controls to stage captures. The footer layout issue is separate from this website refresh.
+
+Validation: inspect every image and video scene; run `node scripts/check-guide-workspaces.mjs`, ESLint, the production build and release/Pi/Muse/Devin SEO checks. Browser verification covers EN/ES home, Beta, Kanban, Skills and history at desktop/mobile sizes, video playback and reduced motion.
+
 ## Guide workspace and agent audit (2026-10-05)
 
 All 220 EN/ES guide sources were checked. General workspace, agent-selector and agent-grid illustrations now use `/images/guides/workspace-list.webp`; each article uses the shared capture at most once. Captions and alternative text describe List view and identify sample tasks. Feature-specific screenshots retain their own subject.

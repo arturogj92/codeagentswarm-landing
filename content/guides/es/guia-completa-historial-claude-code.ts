@@ -106,9 +106,9 @@ Esta guía explica cómo encontrar, buscar y respaldar conversaciones. Si trabaj
         },
         {
           type: 'image',
-          alt: 'Historial de conversaciones de CodeAgentSwarm mostrando todas las sesiones de Claude Code organizadas por proyecto con búsqueda y filtros',
-          src: '/images/guides/conversation_history.png',
-          caption: 'Todas tus conversaciones de Claude Code en un solo lugar, organizadas por proyecto y con búsqueda completa.',
+          alt: 'Historial de conversaciones filtrado por el proyecto memois',
+          src: '/images/guides/history-filter-current.webp',
+          caption: 'Filtra las conversaciones de ejemplo por proyecto y combina la selección con los filtros de agente.',
           size: 'full',
         },
         {
@@ -166,10 +166,10 @@ Esta guía explica cómo encontrar, buscar y respaldar conversaciones. Si trabaj
         },
         {
           type: 'image',
-          alt: 'Resultados de búsqueda mostrando conversaciones de múltiples proyectos con vista previa de mensajes',
-          src: '/images/guides/mcp-marketplace-search.png',
-          caption: 'Busca en todos los proyectos a la vez. Ve los mensajes coincidentes antes de abrir.',
-          size: 'medium',
+          alt: 'Resultados del historial al buscar skills marketplace en un proyecto de ejemplo',
+          src: '/images/guides/history-search-current.webp',
+          caption: 'Busca el nombre de un módulo para encontrar su conversación. Este ejemplo busca skills marketplace.',
+          size: 'full',
         },
         {
           type: 'heading',
@@ -183,10 +183,10 @@ Esta guía explica cómo encontrar, buscar y respaldar conversaciones. Si trabaj
         },
         {
           type: 'image',
-          alt: 'Modo retomar mostrando conversaciones recientes de un proyecto con búsqueda y vista previa',
-          src: '/images/guides/resume-selected-conversation.png',
-          caption: 'Elige exactamente qué conversación continuar cuando abres un proyecto.',
-          size: 'medium',
+          alt: 'Vista previa de conversación con mensajes de ejemplo del usuario y del asistente',
+          src: '/images/guides/history-detail-current.webp',
+          caption: 'Lee la vista previa antes de reabrir una conversación. Los mensajes son de ejemplo.',
+          size: 'full',
         },
         {
           type: 'paragraph',

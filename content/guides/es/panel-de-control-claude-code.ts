@@ -79,10 +79,10 @@ Esta guía explica ese flujo de supervisión. Pro está incluido durante la beta
         },
         {
           type: 'image',
-          alt: 'El tablero de tareas de CodeAgentSwarm con columnas kanban Pendiente, En progreso, En testing y Completada, con cada tarjeta ligada a un terminal',
-          src: '/images/guides/task-board-kanban.png',
-          caption: 'Tareas ligadas a terminales: el tablero muestra qué debería estar haciendo cada sesión, y los agentes lo mantienen al día.',
-          size: 'medium',
+          alt: 'Tablero Kanban actual con columnas Pending, Auto, In Progress, In Testing y Completed',
+          src: '/images/guides/task-board-current.webp',
+          caption: 'Tareas de ejemplo de tres proyectos, con sus colores y la cola Auto visible.',
+          size: 'full',
         },
         {
           type: 'heading',

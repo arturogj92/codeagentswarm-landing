@@ -79,9 +79,9 @@ export const guide: Guide = {
         },
         {
           type: 'image',
-          alt: 'The CodeAgentSwarm kanban task board with tasks that the agents themselves move between columns over MCP',
-          src: '/images/guides/task-board-kanban.png',
-          caption: 'Our kanban board is one feature of the workspace: agents create and move their own tasks over MCP while you watch the terminals next to it.',
+          alt: 'Current Kanban board with Pending, Auto, In Progress, In Testing and Completed columns',
+          src: '/images/guides/task-board-current.webp',
+          caption: 'Sample tasks from three projects, with separate project colors and the Auto queue visible.',
         },
         {
           type: 'paragraph',

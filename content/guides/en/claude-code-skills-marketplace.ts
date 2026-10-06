@@ -30,9 +30,9 @@ The part I like most: when you install a skill, you choose where it goes. Curren
         },
         {
           type: 'image',
-          alt: 'CodeAgentSwarm Skills Marketplace showing a grid of skill cards, each with a name, description, star count and an Install button',
-          src: '/images/guides/skills-marketplace.png',
-          caption: 'The Skills Marketplace: a grid of skill cards with search, star counts and one-click Install buttons.',
+          alt: 'Current Skills Marketplace with a sample collection',
+          src: '/images/guides/skills-marketplace-current.webp',
+          caption: 'Sample skills in the current marketplace, with search, sorting and installation controls.',
           size: 'full',
         },
         {
@@ -59,7 +59,7 @@ The part I like most: when you install a skill, you choose where it goes. Curren
         },
         {
           type: 'paragraph',
-          text: 'On a skill\'s detail view you do not just get a single Install button. You get a set of targets:',
+          text: 'The arrow beside Install all opens the agent selector. The skill detail view also offers individual installation targets:',
         },
         {
           type: 'list',
@@ -70,9 +70,9 @@ The part I like most: when you install a skill, you choose where it goes. Curren
         },
         {
           type: 'image',
-          alt: 'Older CodeAgentSwarm skill detail view showing the previous Claude, Gemini and Codex install targets',
-          src: '/images/guides/skills-install-multi-cli.png',
-          caption: 'This transition-era screenshot shows the former three-target selector. Current builds offer Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi and Devin CLI.',
+          alt: 'Skill installation selector showing all ten supported agents',
+          src: '/images/guides/skills-install-current.webp',
+          caption: 'Choose individual agents or install for all ten. The sample collection demonstrates the current selector.',
           size: 'full',
         },
         {

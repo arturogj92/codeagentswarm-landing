@@ -79,9 +79,9 @@ export const guide: Guide = {
         },
         {
           type: 'image',
-          alt: 'El tablero kanban de CodeAgentSwarm con tareas que los propios agentes mueven entre columnas por MCP',
-          src: '/images/guides/task-board-kanban.png',
-          caption: 'Nuestro kanban es una función más del espacio de trabajo: los agentes crean y mueven sus propias tareas por MCP mientras tú vigilas las terminales al lado.',
+          alt: 'Tablero Kanban actual con columnas Pending, Auto, In Progress, In Testing y Completed',
+          src: '/images/guides/task-board-current.webp',
+          caption: 'Tareas de ejemplo de tres proyectos, con sus colores y la cola Auto visible.',
         },
         {
           type: 'paragraph',

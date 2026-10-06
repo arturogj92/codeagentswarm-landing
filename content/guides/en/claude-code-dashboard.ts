@@ -79,10 +79,10 @@ This guide covers that supervision workflow. Pro is included during the open bet
         },
         {
           type: 'image',
-          alt: 'The Agent Task Board in CodeAgentSwarm with kanban columns for Pending, In Progress, In Testing and Completed, each card linked to a terminal',
-          src: '/images/guides/task-board-kanban.png',
-          caption: 'Tasks linked to terminals: the board shows what each session is supposed to be doing, and the agents keep it current.',
-          size: 'medium',
+          alt: 'Current Kanban board with Pending, Auto, In Progress, In Testing and Completed columns',
+          src: '/images/guides/task-board-current.webp',
+          caption: 'Sample tasks from three projects, with separate project colors and the Auto queue visible.',
+          size: 'full',
         },
         {
           type: 'heading',

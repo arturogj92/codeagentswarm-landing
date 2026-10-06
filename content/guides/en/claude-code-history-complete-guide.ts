@@ -106,9 +106,9 @@ This guide covers finding, searching and backing up conversations. If you work a
         },
         {
           type: 'image',
-          alt: 'CodeAgentSwarm conversation history showing all past Claude Code sessions organized by project with search and filtering',
-          src: '/images/guides/conversation_history.png',
-          caption: 'All your Claude Code conversations in one place, organized by project and fully searchable.',
+          alt: 'Conversation history filtered to the memois project',
+          src: '/images/guides/history-filter-current.webp',
+          caption: 'Filter sample conversations by project while keeping the agent filters available.',
           size: 'full',
         },
         {
@@ -166,10 +166,10 @@ This guide covers finding, searching and backing up conversations. If you work a
         },
         {
           type: 'image',
-          alt: 'Search results showing conversations from multiple projects matching a search query with message previews',
-          src: '/images/guides/mcp-marketplace-search.png',
-          caption: 'Search across all projects at once. See matching messages before opening.',
-          size: 'medium',
+          alt: 'History search results for skills marketplace in a sample project',
+          src: '/images/guides/history-search-current.webp',
+          caption: 'Search a module name to find its previous conversation. This example searches for skills marketplace.',
+          size: 'full',
         },
         {
           type: 'heading',
@@ -183,10 +183,10 @@ This guide covers finding, searching and backing up conversations. If you work a
         },
         {
           type: 'image',
-          alt: 'Resume mode showing recent conversations for a project with search and message preview',
-          src: '/images/guides/resume-selected-conversation.png',
-          caption: 'Choose exactly which conversation to continue when you open a project.',
-          size: 'medium',
+          alt: 'Conversation preview with sample user and assistant messages',
+          src: '/images/guides/history-detail-current.webp',
+          caption: 'Read the conversation preview before reopening it. Messages shown are sample content.',
+          size: 'full',
         },
         {
           type: 'paragraph',
