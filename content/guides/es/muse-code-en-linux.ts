@@ -18,7 +18,7 @@ Cuando lo tengas funcionando, también te enseñamos a usar varias sesiones de M
     ctaAgent: 'muse',
     highlightedWords: ['Muse Code', 'Linux'],
     publishedAt: '2026-09-29',
-    updatedAt: '2026-09-29',
+    updatedAt: '2026-10-05',
     alternateSlug: 'muse-code-on-linux',
   },
   sections: [
@@ -145,9 +145,9 @@ META_API_KEY="$MUSE_KEY" muse exec "Resume el README"`,
         },
         {
           type: 'image',
-          alt: 'Varios terminales de agentes de IA en paralelo en una ventana de CodeAgentSwarm',
-          src: '/images/guides/multi-terminal.png',
-          caption: 'Varios terminales de agentes en paralelo en una ventana de CodeAgentSwarm.',
+          alt: 'CodeAgentSwarm en modo lista con agentes, estados, actividad y accesos a proyectos',
+          src: '/images/guides/workspace-list.webp',
+          caption: 'Vista de lista de CodeAgentSwarm: cada sesión muestra su agente, estado y actividad. Tareas de ejemplo.',
         },
         {
           type: 'paragraph',

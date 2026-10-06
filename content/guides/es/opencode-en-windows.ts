@@ -16,7 +16,7 @@ Y cuando tengas opencode funcionando, también te enseñamos cómo pasar de un s
     ctaAgent: 'opencode',
     highlightedWords: ['OpenCode', 'Windows'],
     publishedAt: '2026-07-05',
-    updatedAt: '2026-09-29',
+    updatedAt: '2026-10-05',
     alternateSlug: 'opencode-on-windows',
   },
   sections: [
@@ -26,9 +26,9 @@ Y cuando tengas opencode funcionando, también te enseñamos cómo pasar de un s
       content: [
         {
           type: 'image',
-          alt: 'Varios terminales de opencode ejecutándose en paralelo en un único espacio de trabajo de CodeAgentSwarm en el escritorio',
-          src: '/images/guides/opencode-agent-swarm.png',
-          caption: 'opencode en el escritorio: varias sesiones independientes, una al lado de otra, en una sola ventana de CodeAgentSwarm.',
+          alt: 'CodeAgentSwarm en modo lista con agentes, estados, actividad y accesos a proyectos',
+          src: '/images/guides/workspace-list.webp',
+          caption: 'Vista de lista de CodeAgentSwarm: cada sesión muestra su agente, estado y actividad. Tareas de ejemplo.',
         },
         {
           type: 'callout',
@@ -209,12 +209,6 @@ opencode`,
         {
           type: 'paragraph',
           text: 'Ese es el problema que resuelve <a href="/es" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a>, y es una app de escritorio nativa para Windows, macOS y Linux. Ejecuta tus sesiones de opencode dentro de un espacio de trabajo visual, así que los desarrolladores en Windows tienen una GUI de verdad más varios terminales de opencode en paralelo, con notificaciones de escritorio cuando un agente termina o necesita tu input, historial buscable de todas las sesiones y un diff en vivo de lo que cambió cada terminal. Además lee las sesiones locales de opencode, así que las conversaciones anteriores siguen siendo buscables y puedes retomarlas.',
-        },
-        {
-          type: 'image',
-          alt: 'Terminal de CodeAgentSwarm mostrando el selector SELECT AI AGENT donde eliges el agente por terminal, incluido opencode',
-          src: '/images/guides/multi-cli-agent-selector.png',
-          caption: 'En CodeAgentSwarm eliges el agente por terminal. Selecciona opencode en cada uno para ejecutar un enjambre completo de opencode en Windows.',
         },
         {
           type: 'paragraph',

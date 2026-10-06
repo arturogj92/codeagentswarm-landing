@@ -16,7 +16,7 @@ Esta guía cubre instalación, primer login, los flags que usarás de verdad, re
     ctaAgent: 'grok-build',
     highlightedWords: ['Grok Build'],
     publishedAt: '2026-07-28',
-    updatedAt: '2026-08-23',
+    updatedAt: '2026-10-05',
     alternateSlug: 'how-to-use-grok-build',
   },
   sections: [
@@ -63,7 +63,7 @@ Esta guía cubre instalación, primer login, los flags que usarás de verdad, re
       id: 'cas',
       title: 'Grok Build dentro de CodeAgentSwarm',
       content: [
-        { type: 'image', alt: 'Selector SELECT AI AGENT de CodeAgentSwarm incluyendo Grok Build', src: '/images/guides/multi-cli-agent-selector.png', caption: 'Elige Grok Build por terminal como cualquier otro agente.' },
+        { type: 'image', alt: 'CodeAgentSwarm en modo lista con agentes, estados, actividad y accesos a proyectos', src: '/images/guides/workspace-list.webp', caption: 'Vista de lista de CodeAgentSwarm: cada sesión muestra su agente, estado y actividad. Tareas de ejemplo.' },
         { type: 'paragraph', text: 'CodeAgentSwarm es un workspace de escritorio encima de las CLIs oficiales. Instala Grok Build, abre CodeAgentSwarm y elige <strong>Grok Build</strong> en el selector de agente de ese terminal. Obtienes notificaciones de escritorio, historial buscable, diffs en vivo y la posibilidad de mezclar Grok Build con Claude Code, Codex, Antigravity, OpenCode y Kimi Code en una ventana.' },
         { type: 'paragraph', text: 'Eso es distinto de los subagentes nativos de Grok Build, que viven dentro de una sola sesión del vendor. Un enjambre de CodeAgentSwarm son varios terminales independientes que supervisas tú. Ver la <a href="/es/guias/enjambre-de-agentes-grok-build" class="text-neon-cyan hover:text-neon-purple transition-colors">guía de enjambre</a> y la <a href="/es/guias/subagentes-grok-build-vs-enjambre" class="text-neon-cyan hover:text-neon-purple transition-colors">comparación subagentes vs enjambre</a>.' },
       ],

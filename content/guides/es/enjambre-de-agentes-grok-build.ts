@@ -16,7 +16,7 @@ Esta guía es el pilar del paralelismo con Grok Build: pestañas, tmux y CodeAge
     ctaAgent: 'grok-build',
     highlightedWords: ['Grok Build', 'enjambre'],
     publishedAt: '2026-07-28',
-    updatedAt: '2026-08-23',
+    updatedAt: '2026-10-05',
     alternateSlug: 'grok-build-agent-swarm',
   },
   sections: [
@@ -24,7 +24,7 @@ Esta guía es el pilar del paralelismo con Grok Build: pestañas, tmux y CodeAge
       id: 'que-es',
       title: '¿Qué cuenta como enjambre de Grok Build?',
       content: [
-        { type: 'image', alt: 'Varios terminales Grok Build en CodeAgentSwarm', src: '/images/guides/multi-cli-agent-selector.png', caption: 'Varias sesiones grok independientes en un solo workspace.' },
+        { type: 'image', alt: 'CodeAgentSwarm en modo lista con agentes, estados, actividad y accesos a proyectos', src: '/images/guides/workspace-list.webp', caption: 'Vista de lista de CodeAgentSwarm: cada sesión muestra su agente, estado y actividad. Tareas de ejemplo.' },
         { type: 'paragraph', text: 'Un enjambre son N procesos CLI independientes. Abre tres terminales, ejecuta <code>grok</code> en cada uno, da una tarea distinta: ya es un enjambre. Los subagentes nativos (desactivables con <code>--no-subagents</code>) son otra herramienta: la sesión padre lanza hijos que controla. Ambos sirven; resuelven problemas distintos. Ver <a href="/es/guias/subagentes-grok-build-vs-enjambre" class="text-neon-cyan hover:text-neon-purple transition-colors">subagentes vs enjambre</a>.' },
         { type: 'callout', variant: 'info', content: 'xAI no cobra un recargo separado por cada sesión en paralelo. Todas consumen los mismos límites de la cuenta gratuita o de pago, o el mismo presupuesto de API.' },
       ],

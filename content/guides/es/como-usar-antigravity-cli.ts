@@ -16,7 +16,7 @@ Al terminar te manejarás con Antigravity CLI por tu cuenta, y sabrás cómo eje
     ctaAgent: 'antigravity',
     highlightedWords: ['Antigravity CLI', 'agy'],
     publishedAt: '2026-06-29',
-    updatedAt: '2026-09-29',
+    updatedAt: '2026-10-05',
     alternateSlug: 'how-to-use-antigravity-cli',
   },
   sections: [
@@ -243,19 +243,13 @@ Al terminar te manejarás con Antigravity CLI por tu cuenta, y sabrás cómo eje
         },
         {
           type: 'image',
-          alt: 'Un terminal de CodeAgentSwarm mostrando el selector SELECT AI AGENT con las opciones claude-code, codex cli y antigravity, para que cada terminal ejecute un agente distinto',
-          src: '/images/guides/multi-cli-agent-selector.png',
-          caption: 'En CodeAgentSwarm eliges el agente por terminal. Pon cada uno en antigravity para ejecutar varias sesiones de agy en un mismo espacio de trabajo, o mezcla Claude Code y Codex CLI.',
+          alt: 'CodeAgentSwarm en modo lista con agentes, estados, actividad y accesos a proyectos',
+          src: '/images/guides/workspace-list.webp',
+          caption: 'Vista de lista de CodeAgentSwarm: cada sesión muestra su agente, estado y actividad. Tareas de ejemplo.',
         },
         {
           type: 'paragraph',
           text: 'CodeAgentSwarm es una app de escritorio para macOS, Windows y Linux hecha justo para esto. Te da varios terminales en una ventana, y en el selector SELECT AI AGENT eliges el agente por terminal: claude-code, codex cli o antigravity. Pon varios terminales en antigravity y tienes una sala de control para sesiones de agy en paralelo, todo en un mismo sitio.',
-        },
-        {
-          type: 'image',
-          alt: 'Varias sesiones de Antigravity CLI ejecutándose en paralelo dentro de una ventana de CodeAgentSwarm, cada terminal un proceso agy independiente trabajando en un proyecto distinto',
-          src: '/images/guides/antigravity-agent-swarm.png',
-          caption: 'Varias sesiones de Antigravity CLI independientes ejecutándose una al lado de otra en una ventana de CodeAgentSwarm, cada proceso agy en su propia tarea.',
         },
         {
           type: 'paragraph',

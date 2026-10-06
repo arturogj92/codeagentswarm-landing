@@ -16,7 +16,7 @@ And once Codex is running, we will also show you how to go from a single Codex t
     ctaAgent: 'codex',
     highlightedWords: ['Codex CLI', 'Windows'],
     publishedAt: '2026-06-24',
-    updatedAt: '2026-09-29',
+    updatedAt: '2026-10-05',
     alternateSlug: 'codex-cli-en-windows',
   },
   sections: [
@@ -26,9 +26,9 @@ And once Codex is running, we will also show you how to go from a single Codex t
       content: [
         {
           type: 'image',
-          alt: 'Multiple OpenAI Codex CLI terminals running in parallel in a single CodeAgentSwarm workspace on a desktop',
-          src: '/images/guides/codex-agent-swarm.png',
-          caption: 'OpenAI Codex CLI running on the desktop: multiple independent Codex sessions side by side in one CodeAgentSwarm window.',
+          alt: 'CodeAgentSwarm in List mode with agents, statuses, current activities and project shortcuts',
+          src: '/images/guides/workspace-list.webp',
+          caption: 'CodeAgentSwarm List view: each session shows its agent, status and current activity. Sample tasks shown.',
         },
         {
           type: 'callout',
@@ -209,12 +209,6 @@ codex`,
         {
           type: 'paragraph',
           text: 'That is the problem <a href="/en" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a> solves, and it is a native desktop app for Windows, macOS and Linux. It runs your Codex CLI inside a visual workspace, so Windows developers get a real GUI plus multiple Codex terminals side by side, with desktop notifications when an agent finishes or needs input, searchable history across every session, and a live diff of what each terminal changed.',
-        },
-        {
-          type: 'image',
-          alt: 'CodeAgentSwarm terminal showing the SELECT AI AGENT picker with claude-code, gemini cli and codex cli options',
-          src: '/images/guides/multi-cli-agent-selector.png',
-          caption: 'In CodeAgentSwarm you pick the agent per terminal. Choose codex cli in each one to run a full Codex swarm on Windows.',
         },
         {
           type: 'paragraph',

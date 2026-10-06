@@ -5,18 +5,18 @@ export const guide: Guide = {
     slug: 'enjambre-de-agentes-cli-ia',
     locale: 'es',
     title: 'Enjambre de agentes CLI de IA: ejecuta varios agentes de código en paralelo',
-    metaTitle: 'Enjambre de agentes CLI IA: 7 agentes en paralelo (2026)',
-    metaDescription: 'Ejecuta Claude Code, Codex, Cursor Agent, Antigravity, OpenCode, Kimi Code y Grok Build en paralelo como un enjambre CLI supervisado.',
+    metaTitle: 'Enjambre de agentes CLI IA: 10 agentes en paralelo (2026)',
+    metaDescription: 'Ejecuta diez agentes en paralelo con CodeAgentSwarm, incluidos Claude Code, Codex, Muse Code, Pi y Devin CLI. Un espacio para supervisar cada sesión.',
     intro: `Un enjambre de agentes CLI de IA es lo que tienes cuando dejas de pensar en un solo agente de código en un terminal y empiezas a ejecutar varios a la vez. Claude Code en un terminal, Codex CLI en otro, Grok Build u OpenCode en un tercero, todos trabajando en el mismo proyecto al mismo tiempo.
 
 La idea suena caótica, y mal hecha lo es. El objetivo de esta guía es enseñarte a hacerlo bien: cómo ejecutar de verdad varios agentes de código en paralelo, cómo decidir qué agente se encarga de qué, y cómo no perder la visibilidad de un workspace donde tres o cuatro agentes editan archivos a la vez.
 
 Yo trabajo con enjambres mixtos casi todos los días. Esto es orquestación de agentes de código con IA a nivel de proceso: agentes independientes y una persona que los supervisa. Aquí te cuento los compromisos honestos de cada forma de montarlo y dónde un workspace hecho a propósito se gana su sitio frente a las pestañas del terminal o tmux. Para comparar productos, consulta las <a href="/es/guias/mejores-herramientas-agentes-ia-en-paralelo" class="text-neon-cyan hover:text-neon-purple transition-colors">mejores herramientas para ejecutar varios agentes de código</a>.`,
-    ctaText: 'Ejecuta Claude Code, Codex, Cursor Agent, Antigravity, OpenCode, Kimi Code y Grok Build en paralelo en un solo workspace de CodeAgentSwarm. Varios agentes, visibilidad compartida y un único sitio desde el que vigilarlos.',
+    ctaText: 'Ejecuta Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi y Devin CLI en paralelo en un solo workspace de CodeAgentSwarm. Varios agentes, visibilidad compartida y un único sitio desde el que vigilarlos.',
     ctaAgent: 'multi',
     highlightedWords: ['enjambre de agentes CLI de IA', 'en paralelo'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-09-29',
+    updatedAt: '2026-10-05',
     relatedSlug: 'git-worktrees-para-agentes-de-ia',
     alternateSlug: 'ai-cli-agent-swarm',
   },
@@ -279,7 +279,7 @@ Yo trabajo con enjambres mixtos casi todos los días. Esto es orquestación de a
         },
         {
           type: 'paragraph',
-          text: 'Cada terminal tiene un selector SELECT AI AGENT con Claude Code, Codex CLI, Cursor Agent, Antigravity CLI, OpenCode, Kimi Code y Grok Build. Pon uno en Claude para un refactor, otro en Cursor Agent para un cambio planificado y otro en Codex para una tarea acotada. Tú decides la mezcla por terminal.',
+          text: 'Cada terminal tiene un selector SELECT AI AGENT con Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi y Devin CLI. Pon uno en Claude para un refactor, otro en Cursor Agent para un cambio planificado y otro en Codex para una tarea acotada. Tú decides la mezcla por terminal.',
         },
         {
           type: 'heading',

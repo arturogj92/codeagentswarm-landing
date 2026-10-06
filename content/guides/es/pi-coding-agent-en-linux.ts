@@ -17,7 +17,7 @@ En esta guía vemos los dos métodos de instalación, la versión de Node.js que
     ctaAgent: 'pi',
     highlightedWords: ['Pi', 'Linux'],
     publishedAt: '2026-09-29',
-    updatedAt: '2026-09-29',
+    updatedAt: '2026-10-05',
     alternateSlug: 'pi-coding-agent-on-linux',
   },
   sections: [
@@ -152,9 +152,9 @@ pi`,
         },
         {
           type: 'image',
-          alt: 'Varios terminales de agentes de IA en paralelo en una ventana de CodeAgentSwarm',
-          src: '/images/guides/multi-terminal.png',
-          caption: 'Varios terminales de agentes en paralelo en una ventana de CodeAgentSwarm.',
+          alt: 'CodeAgentSwarm en modo lista con agentes, estados, actividad y accesos a proyectos',
+          src: '/images/guides/workspace-list.webp',
+          caption: 'Vista de lista de CodeAgentSwarm: cada sesión muestra su agente, estado y actividad. Tareas de ejemplo.',
         },
         {
           type: 'paragraph',

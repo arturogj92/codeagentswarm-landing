@@ -15,7 +15,7 @@ export const guide: Guide = {
       'CodeAgentSwarm',
     ],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-09-29',
+    updatedAt: '2026-10-05',
     alternateSlug: 'claude-code-agent-teams-vs-codeagentswarm',
     relatedSlug: 'coordinador-agentes-ia',
   },
@@ -26,9 +26,9 @@ export const guide: Guide = {
       content: [
         {
           type: 'image',
-          alt: 'OpenAI Codex, la retirada Gemini CLI de Google mostrando su aviso de migración y Anthropic Claude Code ejecutándose en CodeAgentSwarm',
-          src: '/images/guides/multi-cli-three-agents.png',
-          caption: 'Codex, Claude Code y el aviso de migración de la antigua Gemini CLI en una captura histórica de CodeAgentSwarm.',
+          alt: 'CodeAgentSwarm en modo lista con agentes, estados, actividad y accesos a proyectos',
+          src: '/images/guides/workspace-list.webp',
+          caption: 'Vista de lista de CodeAgentSwarm: cada sesión muestra su agente, estado y actividad. Tareas de ejemplo.',
         },
         {
           type: 'paragraph',

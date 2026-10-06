@@ -18,7 +18,7 @@ Once Grok Build is running, we also show how to go from one terminal to several 
     ctaAgent: 'grok-build',
     highlightedWords: ['Grok Build', 'Linux'],
     publishedAt: '2026-09-29',
-    updatedAt: '2026-09-29',
+    updatedAt: '2026-10-05',
     alternateSlug: 'grok-build-en-linux',
   },
   sections: [
@@ -145,9 +145,9 @@ grok`,
         },
         {
           type: 'image',
-          alt: 'Several AI coding agent terminals running side by side in one CodeAgentSwarm window',
-          src: '/images/guides/multi-terminal.png',
-          caption: 'Several agent terminals side by side in one CodeAgentSwarm window.',
+          alt: 'CodeAgentSwarm in List mode with agents, statuses, current activities and project shortcuts',
+          src: '/images/guides/workspace-list.webp',
+          caption: 'CodeAgentSwarm List view: each session shows its agent, status and current activity. Sample tasks shown.',
         },
         {
           type: 'paragraph',

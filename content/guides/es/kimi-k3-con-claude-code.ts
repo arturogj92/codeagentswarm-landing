@@ -16,7 +16,7 @@ Todo lo de abajo está contrastado con la documentación oficial de Moonshot. Su
     ctaAgent: 'claude-code',
     highlightedWords: ['Kimi K3', 'Claude Code'],
     publishedAt: '2026-07-17',
-    updatedAt: '2026-07-18',
+    updatedAt: '2026-10-05',
     alternateSlug: 'kimi-k3-with-claude-code',
   },
   sections: [
@@ -202,9 +202,9 @@ Todo lo de abajo está contrastado con la documentación oficial de Moonshot. Su
       content: [
         {
           type: 'image',
-          alt: 'El selector de agente de CodeAgentSwarm donde eliges qué CLI de IA corre en cada terminal',
-          src: '/images/guides/multi-cli-agent-selector.png',
-          caption: 'Cada terminal de CodeAgentSwarm lleva su propio agente y su propio entorno, así que un terminal con Kimi K3 y otro con Claude pueden convivir en la misma ventana sobre el mismo repo.',
+          alt: 'CodeAgentSwarm en modo lista con agentes, estados, actividad y accesos a proyectos',
+          src: '/images/guides/workspace-list.webp',
+          caption: 'Vista de lista de CodeAgentSwarm: cada sesión muestra su agente, estado y actividad. Tareas de ejemplo.',
         },
         {
           type: 'paragraph',

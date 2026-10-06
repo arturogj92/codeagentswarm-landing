@@ -49,7 +49,12 @@ for (const pair of pairs) {
     const url = `${base}/${route}/${meta.slug}`
     assert.equal(meta.alternateSlug, pair[1 - i])
     assert.equal(meta.ctaAgent, 'devin')
-    assert.match(meta.ctaText, /2\.4\.0/)
+    if (['how-to-use-devin-cli', 'como-usar-devin-cli'].includes(meta.slug)) {
+      assert.match(meta.ctaText, /macOS, Windows (?:and|y) Linux/)
+      assert.match(meta.ctaText, /available|disponibles/)
+    } else {
+      assert.match(meta.ctaText, /2\.4\.0/)
+    }
     assert.ok(!titles.has(meta.metaTitle), 'duplicate title')
     titles.add(meta.metaTitle)
     assert.ok(meta.metaTitle.length <= 65, meta.slug + ' title too long')

@@ -16,7 +16,7 @@ Esta guía explica ese flujo de supervisión. Pro está incluido durante la beta
     ctaAgent: 'claude-code',
     highlightedWords: ['Panel de control de Claude Code', 'todas tus sesiones'],
     publishedAt: '2026-07-13',
-    updatedAt: '2026-09-29',
+    updatedAt: '2026-10-05',
     alternateSlug: 'claude-code-dashboard',
   },
   sections: [
@@ -62,9 +62,9 @@ Esta guía explica ese flujo de supervisión. Pro está incluido durante la beta
         },
         {
           type: 'image',
-          alt: 'Panel de CodeAgentSwarm mostrando varios terminales con colores y estados distintos, unos trabajando, otros terminados y otros esperando entrada',
-          src: '/images/guides/terminal-status-indicators.png',
-          caption: 'El núcleo del panel: cada sesión con su estado visible, para que la que está bloqueada no pueda esconderse.',
+          alt: 'CodeAgentSwarm en modo lista con agentes, estados, actividad y accesos a proyectos',
+          src: '/images/guides/workspace-list.webp',
+          caption: 'Vista de lista de CodeAgentSwarm: cada sesión muestra su agente, estado y actividad. Tareas de ejemplo.',
           size: 'medium',
         },
         {

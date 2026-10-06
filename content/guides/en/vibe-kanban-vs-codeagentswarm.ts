@@ -7,12 +7,12 @@ export const guide: Guide = {
     title: 'Vibe Kanban vs CodeAgentSwarm: An Honest Comparison (2026)',
     metaTitle: 'Vibe Kanban vs CodeAgentSwarm: An Honest Comparison (2026)',
     metaDescription: 'Vibe Kanban turns agent work into a kanban of issues. CodeAgentSwarm lets you watch and drive the agent terminals. Honest comparison with facts verified August 2026.',
-    intro: 'Vibe Kanban turns agent work into a kanban of issues for teams. CodeAgentSwarm lets you watch and drive the agent terminals themselves, with the board as one feature rather than the whole product.\n\nWe build CodeAgentSwarm, and you should read this page knowing that. It is why we list our own limits here (closed source, Mobile Connect still in alpha, still in beta, and you supply your own agent subscriptions) and why we credit Vibe Kanban for the things it does better, starting with being open source and having by far the biggest community in this category. Every third-party fact below was verified on August 25, 2026 against the vendor own site, their public README and public GitHub data, including a public status change we cover in full. CodeAgentSwarm availability on this page was updated on September 29, 2026.\n\nIf your bottleneck is planning and reviewing work as a team, a kanban-first tool is the right shape. If your bottleneck is keeping up with several agent sessions running at once, a supervision workspace is.\n\nDefault-branch activity was checked again on September 27, 2026: the latest commit is a September 19 router fix. Other claims retain their stated verification date.',
+    intro: 'Vibe Kanban turns agent work into a kanban of issues for teams. CodeAgentSwarm lets you watch and drive the agent terminals themselves, with the board as one feature rather than the whole product.\n\nWe build CodeAgentSwarm, and you should read this page knowing that. It is why we list our own limits here (closed source, Mobile Connect still in alpha, still in beta, and you supply your own agent subscriptions) and why we credit Vibe Kanban for the things it does better, starting with being open source and having by far the biggest community in this category. Every third-party fact below was verified on August 25, 2026 against the vendor own site, their public README and public GitHub data, including a public status change we cover in full. CodeAgentSwarm availability and supported agents were updated on October 5, 2026.\n\nIf your bottleneck is planning and reviewing work as a team, a kanban-first tool is the right shape. If your bottleneck is keeping up with several agent sessions running at once, a supervision workspace is.\n\nDefault-branch activity was checked again on September 27, 2026: the latest commit is a September 19 router fix. Other claims retain their stated verification date.',
     ctaText: 'If you want to see what each agent is doing right now, get notified the moment one needs you, and keep a task board that the agents update themselves, download CodeAgentSwarm and try it on your next parallel session.',
     ctaAgent: 'comparison',
     highlightedWords: ['Vibe Kanban', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
-    updatedAt: '2026-09-29',
+    updatedAt: '2026-10-05',
     alternateSlug: 'vibe-kanban-vs-codeagentswarm',
   },
   sections: [
@@ -75,7 +75,7 @@ export const guide: Guide = {
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm is a desktop workspace to run and supervise multiple AI coding agents in parallel. It runs on macOS, Windows and Linux, each terminal is a real agent process, and you pick the agent per terminal from Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build and Cursor Agent.',
+          text: 'CodeAgentSwarm is a desktop workspace to run and supervise multiple AI coding agents in parallel. It runs on macOS, Windows and Linux, each terminal is a real agent process, and you pick the agent per terminal from Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi and Devin CLI.',
         },
         {
           type: 'image',
@@ -85,7 +85,7 @@ export const guide: Guide = {
         },
         {
           type: 'paragraph',
-          text: 'The board exists, but it is not the point. The point is supervision: desktop notifications when an agent finishes or needs input, searchable conversation history across all seven agents and capability-aware resume, per-terminal live file diffs, permission control with a Turbo mode, git worktrees per session, multi-project switching, AI commit messages, a provider quota indicator, and skills and MCP marketplaces shared across agents.',
+          text: 'The board exists, but it is not the point. The point is supervision: desktop notifications when an agent finishes or needs input, searchable conversation history across all ten agents and capability-aware resume, per-terminal live file diffs, permission control with a Turbo mode, git worktrees per session, multi-project switching, AI commit messages, a provider quota indicator, and skills and MCP marketplaces shared across agents.',
         },
         {
           type: 'paragraph',
@@ -103,10 +103,10 @@ export const guide: Guide = {
           rows: [
             ['Platforms', 'Runs locally with npx vibe-kanban and is used in the browser; Docker Compose self-hosting documented', 'Desktop app for macOS, Windows and Linux'],
             ['Interface', 'Kanban board and workspace UI in the browser, with a built-in app preview', 'Desktop workspace with live terminal panes'],
-            ['Supported agents', 'Claude Code, Codex, Gemini CLI, GitHub Copilot, Amp, Cursor, OpenCode, Droid, CCR and Qwen Code per their README', 'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build and Cursor Agent'],
+            ['Supported agents', 'Claude Code, Codex, Gemini CLI, GitHub Copilot, Amp, Cursor, OpenCode, Droid, CCR and Qwen Code per their README', 'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi and Devin CLI'],
             ['Isolation model', 'One workspace per issue, each with its own branch, terminal and dev server', 'A separate process per terminal, with optional git worktrees per session'],
             ['Notifications', 'Not documented on their site as of August 25, 2026', 'Desktop notifications when an agent finishes or needs input'],
-            ['Conversation history', 'Sessions per workspace with a chat interface and a changes panel, documented per workspace', 'Searchable history across all seven agents and capability-aware resume'],
+            ['Conversation history', 'Sessions per workspace with a chat interface and a changes panel, documented per workspace', 'Searchable history across all ten agents and capability-aware resume'],
             ['Task management', 'The whole product: kanban issues, filtering, board customisation, team assignment', 'One feature of the workspace: a kanban the agents update over MCP'],
             ['Open source', 'Yes, Apache-2.0, roughly 27,900 stars', 'No, closed source with no public app repository'],
             ['Price', 'Open source and self-hostable; the paid cloud subscriptions were terminated per their April 10, 2026 announcement', 'Free during beta with Pro included, and you bring your own agent subscriptions'],
@@ -126,7 +126,7 @@ export const guide: Guide = {
             '<strong>Your unit of work is an issue, not a session.</strong> If planning and assigning tickets is the job and agents are how the tickets get done, a kanban-first tool matches that model better than a terminal workspace.',
             '<strong>You want open source you can host.</strong> Apache-2.0, roughly 27,900 stars, and documented Docker Compose self-hosting. Our app is closed source and there is nothing to self-host.',
             '<strong>You review in the browser.</strong> Inline comments on a diff that go straight back to the agent, plus a built-in preview with devtools and device emulation, are genuinely nice and we do not have an equivalent.',
-            '<strong>You want more agent choices.</strong> Their README lists more than ten agents, including Cursor, Amp, Droid and Qwen Code. Our list is seven.',
+            '<strong>You want more agent choices.</strong> Their README lists more than ten agents, including Cursor, Amp, Droid and Qwen Code. Our list is ten.',
             '<strong>You want pull requests handled in the tool.</strong> Opening a PR with an AI-written description and merging from the same UI is part of their flow.',
             '<strong>You want nothing to install.</strong> It runs from npx wherever Node runs. CodeAgentSwarm is a desktop app you install.',
           ],

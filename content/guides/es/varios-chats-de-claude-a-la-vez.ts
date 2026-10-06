@@ -16,7 +16,7 @@ Elige el camino que encaja con lo que intentas hacer. Si chateas en el navegador
     ctaAgent: 'claude-code',
     highlightedWords: ['varios chats de Claude', 'a la vez'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-08-21',
+    updatedAt: '2026-10-05',
     alternateSlug: 'run-multiple-claude-chats',
   },
   sections: [
@@ -26,9 +26,9 @@ Elige el camino que encaja con lo que intentas hacer. Si chateas en el navegador
       content: [
         {
           type: 'image',
-          alt: 'Dos terminales de CodeAgentSwarm funcionando a la vez, uno de ellos una sesión de Claude Code, con el selector SELECT AI AGENT abierto',
-          src: '/images/guides/multi-cli-agent-selector.png',
-          caption: 'Dos terminales a la vez en CodeAgentSwarm, uno ejecutando una sesión de Claude Code, con el selector de agente por terminal abierto.',
+          alt: 'CodeAgentSwarm en modo lista con agentes, estados, actividad y accesos a proyectos',
+          src: '/images/guides/workspace-list.webp',
+          caption: 'Vista de lista de CodeAgentSwarm: cada sesión muestra su agente, estado y actividad. Tareas de ejemplo.',
         },
         {
           type: 'paragraph',

@@ -16,7 +16,7 @@ En esta guía te explico, tal cual se lo contaría a un amigo, cómo usar varios
     ctaAgent: 'claude-code',
     highlightedWords: ['varios terminales', 'Claude Code'],
     publishedAt: '2026-02-01',
-    updatedAt: '2026-08-11',
+    updatedAt: '2026-10-05',
     alternateSlug: 'how-to-use-multiple-claude-code-terminals',
   },
   sections: [
@@ -75,9 +75,9 @@ En esta guía te explico, tal cual se lo contaría a un amigo, cómo usar varios
         },
         {
           type: 'image',
-          alt: 'Vista en cuadrícula con varios terminales de Claude Code trabajando en paralelo',
-          src: '/images/guides/multi-terminal.png',
-          caption: 'Varios terminales trabajando simultáneamente, cada uno en su feature.',
+          alt: 'CodeAgentSwarm en modo lista con agentes, estados, actividad y accesos a proyectos',
+          src: '/images/guides/workspace-list.webp',
+          caption: 'Vista de lista de CodeAgentSwarm: cada sesión muestra su agente, estado y actividad. Tareas de ejemplo.',
         },
         {
           type: 'paragraph',
@@ -176,13 +176,6 @@ En esta guía te explico, tal cual se lo contaría a un amigo, cómo usar varios
         {
           type: 'paragraph',
           text: 'Conforme cada terminal empiece a trabajar, irá cambiando el título dinámicamente para mostrarte en qué está trabajando en cada momento. También puedes ver los cambios actuales que está haciendo.',
-        },
-        {
-          type: 'image',
-          alt: 'Terminal mostrando título dinámico y cambios actuales en CodeAgentSwarm',
-          src: '/images/guides/terminal-title-and-changes.png',
-          caption: '1. El título cambia según lo que esté haciendo. 2. Haciendo click en el botón puedes ver los cambios que hace el terminal en tiempo real en formato diff para no perder contexto de lo que hace la IA.',
-          size: 'medium',
         },
       ],
     },

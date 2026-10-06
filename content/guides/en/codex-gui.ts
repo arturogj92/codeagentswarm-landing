@@ -15,7 +15,7 @@ export const guide: Guide = {
       'desktop app',
     ],
     publishedAt: '2026-07-13',
-    updatedAt: '2026-09-29',
+    updatedAt: '2026-10-05',
     alternateSlug: 'interfaz-grafica-codex',
   },
   sections: [
@@ -74,9 +74,9 @@ export const guide: Guide = {
         },
         {
           type: 'image',
-          src: '/images/guides/parallel-workspace-codex.webp',
-          alt: 'Codex Chat and terminal sessions inside CodeAgentSwarm',
-          caption: 'One window with several Codex tasks. Each session keeps its own controls.',
+          src: '/images/guides/workspace-list.webp',
+          alt: 'CodeAgentSwarm in List mode with ten agents and project shortcuts',
+          caption: 'CodeAgentSwarm List view with Codex and other agents. Sample tasks shown.',
         },
         {
           type: 'heading',

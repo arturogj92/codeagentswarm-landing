@@ -18,7 +18,7 @@ Once Codex is running, we also show how to run several Codex sessions in paralle
     ctaAgent: 'codex',
     highlightedWords: ['Codex CLI', 'Linux'],
     publishedAt: '2026-09-29',
-    updatedAt: '2026-09-29',
+    updatedAt: '2026-10-05',
     alternateSlug: 'codex-cli-en-linux',
   },
   sections: [
@@ -28,9 +28,9 @@ Once Codex is running, we also show how to run several Codex sessions in paralle
       content: [
         {
           type: 'image',
-          alt: 'Multiple OpenAI Codex CLI terminals running in parallel in a single CodeAgentSwarm workspace',
-          src: '/images/guides/codex-agent-swarm.png',
-          caption: 'Several Codex CLI sessions side by side in one CodeAgentSwarm window.',
+          alt: 'CodeAgentSwarm in List mode with agents, statuses, current activities and project shortcuts',
+          src: '/images/guides/workspace-list.webp',
+          caption: 'CodeAgentSwarm List view: each session shows its agent, status and current activity. Sample tasks shown.',
         },
         {
           type: 'callout',

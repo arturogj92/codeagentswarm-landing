@@ -16,7 +16,7 @@ By the end you will be comfortable using Antigravity CLI on its own, and you wil
     ctaAgent: 'antigravity',
     highlightedWords: ['Antigravity CLI', 'agy'],
     publishedAt: '2026-06-29',
-    updatedAt: '2026-09-29',
+    updatedAt: '2026-10-05',
     alternateSlug: 'como-usar-antigravity-cli',
   },
   sections: [
@@ -243,19 +243,13 @@ By the end you will be comfortable using Antigravity CLI on its own, and you wil
         },
         {
           type: 'image',
-          alt: 'A CodeAgentSwarm terminal showing the SELECT AI AGENT picker with claude-code, codex cli, and antigravity options, so each terminal can run a different agent',
-          src: '/images/guides/multi-cli-agent-selector.png',
-          caption: 'In CodeAgentSwarm you pick the agent per terminal. Set each one to antigravity to run several agy sessions in one workspace, or mix in Claude Code and Codex CLI.',
+          alt: 'CodeAgentSwarm in List mode with agents, statuses, current activities and project shortcuts',
+          src: '/images/guides/workspace-list.webp',
+          caption: 'CodeAgentSwarm List view: each session shows its agent, status and current activity. Sample tasks shown.',
         },
         {
           type: 'paragraph',
           text: 'CodeAgentSwarm is a desktop app for macOS, Windows and Linux built for exactly this. It gives you multiple terminals in one window, and in the SELECT AI AGENT picker you choose the agent per terminal: claude-code, codex cli, or antigravity. Set several terminals to antigravity and you have a control room for parallel agy sessions, all in one place.',
-        },
-        {
-          type: 'image',
-          alt: 'Several Antigravity CLI sessions running in parallel inside one CodeAgentSwarm window, each terminal an independent agy process working on a different project',
-          src: '/images/guides/antigravity-agent-swarm.png',
-          caption: 'Several independent Antigravity CLI sessions running side by side in one CodeAgentSwarm window, each agy process on its own task.',
         },
         {
           type: 'paragraph',

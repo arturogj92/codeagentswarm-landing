@@ -12,7 +12,7 @@ export const guide: Guide = {
     ctaAgent: 'claude-code',
     highlightedWords: ['Claude Code Agent Swarm', 'Claude Agents'],
     publishedAt: '2026-07-31',
-    updatedAt: '2026-09-29',
+    updatedAt: '2026-10-05',
     relatedSlug: 'claude-code-dashboard',
     alternateSlug: 'enjambre-de-agentes-claude-code',
   },
@@ -62,9 +62,9 @@ export const guide: Guide = {
       content: [
         {
           type: 'image',
-          alt: 'Several independent Claude Code sessions running in parallel terminals inside one CodeAgentSwarm workspace',
-          src: '/images/guides/multi-terminal.png',
-          caption: 'A Claude agent swarm: several independent Claude Code sessions side by side in one window.',
+          alt: 'CodeAgentSwarm in List mode with agents, statuses, current activities and project shortcuts',
+          src: '/images/guides/workspace-list.webp',
+          caption: 'CodeAgentSwarm List view: each session shows its agent, status and current activity. Sample tasks shown.',
         },
         {
           type: 'paragraph',
@@ -201,12 +201,6 @@ export const guide: Guide = {
         {
           type: 'paragraph',
           text: 'CodeAgentSwarm is a desktop app built for exactly this: running and supervising a swarm of AI CLI agents in one place. It runs on macOS, Windows and Linux, gives you multiple terminals in one workspace, and lets you pick the agent per terminal. For a Claude swarm you select "claude code" in the SELECT AI AGENT picker in each terminal.',
-        },
-        {
-          type: 'image',
-          alt: 'The CodeAgentSwarm SELECT AI AGENT picker showing claude code, codex cli and opencode options with a Turbo Mode toggle',
-          src: '/images/guides/multi-cli-agent-selector.png',
-          caption: 'Choose the agent per terminal. Set every one to claude code for a pure Claude swarm, or mix agents where they fit better.',
         },
         {
           type: 'heading',

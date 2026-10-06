@@ -16,7 +16,7 @@ En esta guía te explico las tres formas reales de ejecutar varias sesiones de C
     ctaAgent: 'codex',
     highlightedWords: ['varias sesiones de Codex CLI', 'a la vez'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-09-29',
+    updatedAt: '2026-10-05',
     alternateSlug: 'run-multiple-codex-sessions',
   },
   sections: [
@@ -26,9 +26,9 @@ En esta guía te explico las tres formas reales de ejecutar varias sesiones de C
       content: [
         {
           type: 'image',
-          alt: 'Varios terminales de OpenAI Codex CLI ejecutándose en paralelo en un único espacio de trabajo de CodeAgentSwarm, cada uno una sesión de Codex independiente',
-          src: '/images/guides/codex-agent-swarm.png',
-          caption: 'Varias sesiones de Codex CLI independientes ejecutándose a la vez en una sola ventana de CodeAgentSwarm, cada una con su tarea.',
+          alt: 'CodeAgentSwarm en modo lista con agentes, estados, actividad y accesos a proyectos',
+          src: '/images/guides/workspace-list.webp',
+          caption: 'Vista de lista de CodeAgentSwarm: cada sesión muestra su agente, estado y actividad. Tareas de ejemplo.',
         },
         {
           type: 'paragraph',
@@ -174,12 +174,6 @@ En esta guía te explico las tres formas reales de ejecutar varias sesiones de C
         {
           type: 'paragraph',
           text: 'CodeAgentSwarm es una app de escritorio hecha exactamente para esto: ejecutar y supervisar varias sesiones de CLI de IA en un solo sitio. Funciona en macOS, Windows y Linux, te da varios terminales en un único espacio de trabajo y te deja elegir el agente por terminal. Para ejecutar Codex CLI en paralelo solo tienes que elegir "codex cli" en el selector SELECT AI AGENT de cada terminal donde quieras correr Codex. En la práctica es una <a href="/es/guias/interfaz-grafica-codex" class="text-neon-cyan hover:text-neon-purple transition-colors">interfaz gráfica para Codex CLI</a>: el agente de terminal con una capa visual encima.',
-        },
-        {
-          type: 'image',
-          alt: 'Un terminal de CodeAgentSwarm mostrando el selector SELECT AI AGENT con las opciones claude-code, gemini cli y codex cli más un interruptor Enable Turbo Mode',
-          src: '/images/guides/multi-cli-agent-selector.png',
-          caption: 'En CodeAgentSwarm eliges el agente por terminal. Pon cada uno en codex cli para ejecutar varias sesiones de Codex, con un interruptor de Turbo Mode para las tiradas en full-auto.',
         },
         {
           type: 'paragraph',

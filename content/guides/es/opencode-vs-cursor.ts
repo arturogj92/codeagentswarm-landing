@@ -16,7 +16,7 @@ En esta guía los comparo por capacidad y flujo de trabajo en lugar de perseguir
     ctaAgent: 'opencode',
     highlightedWords: ['OpenCode', 'Cursor'],
     publishedAt: '2026-07-05',
-    updatedAt: '2026-08-16',
+    updatedAt: '2026-10-05',
     alternateSlug: 'opencode-vs-cursor',
   },
   sections: [
@@ -49,9 +49,9 @@ En esta guía los comparo por capacidad y flujo de trabajo en lugar de perseguir
       content: [
         {
           type: 'image',
-          alt: 'opencode ejecutándose en un terminal dentro de CodeAgentSwarm, con varias sesiones disponibles en paralelo',
-          src: '/images/guides/opencode-agent-swarm.png',
-          caption: 'opencode vive en tu shell, así que puedes correr varias sesiones en paralelo, cada una con su propia tarea.',
+          alt: 'CodeAgentSwarm en modo lista con agentes, estados, actividad y accesos a proyectos',
+          src: '/images/guides/workspace-list.webp',
+          caption: 'Vista de lista de CodeAgentSwarm: cada sesión muestra su agente, estado y actividad. Tareas de ejemplo.',
         },
         {
           type: 'heading',
@@ -376,12 +376,6 @@ En esta guía los comparo por capacidad y flujo de trabajo en lugar de perseguir
         {
           type: 'paragraph',
           text: '<a href="/" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a> es una app de escritorio para ejecutar y supervisar un enjambre de agentes CLI de IA en un solo workspace. Tienes varios terminales a la vez y eliges el agente por terminal. Ponlos todos en opencode para un enjambre puro de opencode, o mezcla Claude Code y Codex CLI donde encajen mejor.',
-        },
-        {
-          type: 'image',
-          alt: 'Selector SELECT AI AGENT de CodeAgentSwarm donde eliges el agente por terminal, incluido opencode',
-          src: '/images/guides/multi-cli-agent-selector.png',
-          caption: 'En CodeAgentSwarm eliges el agente por terminal. Pon cada uno en opencode para un enjambre de opencode.',
         },
         {
           type: 'list',

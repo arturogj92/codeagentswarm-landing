@@ -16,7 +16,7 @@ Esta guía explica cómo es de verdad ese modelo por configuración, qué se rom
     ctaAgent: 'opencode',
     highlightedWords: ['OpenCode', 'modo YOLO'],
     publishedAt: '2026-07-05',
-    updatedAt: '2026-09-01',
+    updatedAt: '2026-10-05',
     alternateSlug: 'opencode-yolo-mode',
   },
   sections: [
@@ -36,9 +36,9 @@ Esta guía explica cómo es de verdad ese modelo por configuración, qué se rom
         },
         {
           type: 'image',
-          alt: 'Un terminal de CodeAgentSwarm mostrando el selector SELECT AI AGENT donde eliges el agente por terminal, incluido opencode',
-          src: '/images/guides/multi-cli-agent-selector.png',
-          caption: 'En CodeAgentSwarm pones un terminal en opencode. Lo autónomo que se ejecuta viene de la propia config de permisos de opencode, y CodeAgentSwarm mantiene la tirada supervisada con diffs en vivo y notificaciones.',
+          alt: 'CodeAgentSwarm en modo lista con agentes, estados, actividad y accesos a proyectos',
+          src: '/images/guides/workspace-list.webp',
+          caption: 'Vista de lista de CodeAgentSwarm: cada sesión muestra su agente, estado y actividad. Tareas de ejemplo.',
         },
         {
           type: 'paragraph',

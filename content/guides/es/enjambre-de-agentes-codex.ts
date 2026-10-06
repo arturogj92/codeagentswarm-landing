@@ -16,7 +16,7 @@ En esta guía te explico las tres formas reales de ejecutar un enjambre de Codex
     ctaAgent: 'codex',
     highlightedWords: ['enjambre de agentes Codex', 'Codex CLI'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-09-27',
+    updatedAt: '2026-10-05',
     relatedSlug: 'interfaz-grafica-codex',
     alternateSlug: 'codex-agent-swarm',
   },
@@ -27,9 +27,9 @@ En esta guía te explico las tres formas reales de ejecutar un enjambre de Codex
       content: [
         {
           type: 'image',
-          alt: 'Varios terminales de OpenAI Codex CLI ejecutándose en paralelo en un único espacio de trabajo de CodeAgentSwarm, cada uno una sesión de Codex independiente',
-          src: '/images/guides/codex-agent-swarm.png',
-          caption: 'Un enjambre de agentes Codex: varias sesiones de Codex CLI independientes ejecutándose a la vez en una sola ventana de CodeAgentSwarm.',
+          alt: 'CodeAgentSwarm en modo lista con agentes, estados, actividad y accesos a proyectos',
+          src: '/images/guides/workspace-list.webp',
+          caption: 'Vista de lista de CodeAgentSwarm: cada sesión muestra su agente, estado y actividad. Tareas de ejemplo.',
         },
         {
           type: 'paragraph',
@@ -171,12 +171,6 @@ En esta guía te explico las tres formas reales de ejecutar un enjambre de Codex
         {
           type: 'paragraph',
           text: 'CodeAgentSwarm es una app de escritorio hecha justo para esto: ejecutar y supervisar un enjambre de agentes CLI de IA en un solo sitio. Funciona en macOS y en Windows, te da varios terminales en un mismo espacio de trabajo y te deja elegir el agente por terminal. Para un enjambre de Codex solo tienes que elegir "codex cli" en el selector SELECT AI AGENT de cada terminal que quieras con Codex.',
-        },
-        {
-          type: 'image',
-          alt: 'Un terminal de CodeAgentSwarm mostrando el selector SELECT AI AGENT con claude-code, gemini cli y codex cli, además de un interruptor Enable Turbo Mode',
-          src: '/images/guides/multi-cli-agent-selector.png',
-          caption: 'En CodeAgentSwarm eliges el agente por terminal. Pon cada uno en codex cli para montar un enjambre de Codex, con un interruptor de Turbo Mode para el modo full-auto.',
         },
         {
           type: 'paragraph',

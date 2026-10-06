@@ -16,7 +16,7 @@ For the ground-up explanation of what a worktree is and why isolation matters, r
     ctaAgent: 'multi',
     highlightedWords: ['Git Worktree vs Branch', 'Parallel AI Agents'],
     publishedAt: '2026-07-05',
-    updatedAt: '2026-07-05',
+    updatedAt: '2026-10-05',
     alternateSlug: 'git-worktree-vs-rama-agentes-ia-en-paralelo',
   },
   sections: [
@@ -26,9 +26,9 @@ For the ground-up explanation of what a worktree is and why isolation matters, r
       content: [
         {
           type: 'image',
-          alt: 'Several AI coding agents running in parallel in one CodeAgentSwarm workspace, each on its own branch in its own git worktree',
-          src: '/images/guides/opencode-agent-swarm.png',
-          caption: 'A parallel agent swarm. The setup underneath decides whether they truly run at once or take turns fighting over one working copy.',
+          alt: 'CodeAgentSwarm in List mode with agents, statuses, current activities and project shortcuts',
+          src: '/images/guides/workspace-list.webp',
+          caption: 'CodeAgentSwarm List view: each session shows its agent, status and current activity. Sample tasks shown.',
         },
         {
           type: 'paragraph',
@@ -218,12 +218,6 @@ For the ground-up explanation of what a worktree is and why isolation matters, r
         {
           type: 'paragraph',
           text: 'CodeAgentSwarm is a desktop app for running a swarm of AI CLI agents (Claude Code, Codex CLI, opencode, Antigravity CLI) in one place, and it builds the worktree option straight into each terminal so you never run the commands yourself.',
-        },
-        {
-          type: 'image',
-          alt: 'CodeAgentSwarm per-terminal session config with an OPTIONS row showing a Git Worktree toggle next to Turbo Mode',
-          src: '/images/guides/multi-cli-agent-selector.png',
-          caption: 'The OPTIONS row in a terminal\'s config has a Git Worktree toggle. Turn it on and that agent runs isolated on its own branch.',
         },
         {
           type: 'paragraph',

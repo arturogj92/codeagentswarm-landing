@@ -16,7 +16,7 @@ En esta guía explico el problema en concreto, qué es de verdad un git worktree
     ctaAgent: 'multi',
     highlightedWords: ['Git worktrees', 'agentes de IA'],
     publishedAt: '2026-07-05',
-    updatedAt: '2026-09-27',
+    updatedAt: '2026-10-05',
     relatedSlug: 'kanban-automatico-agentes-ia',
     alternateSlug: 'git-worktrees-for-ai-coding-agents',
   },
@@ -27,9 +27,9 @@ En esta guía explico el problema en concreto, qué es de verdad un git worktree
       content: [
         {
           type: 'image',
-          alt: 'Nueve terminales de agentes de código de IA ejecutándose en paralelo en un solo workspace de CodeAgentSwarm, cada uno aislado en su propio git worktree',
-          src: '/images/guides/opencode-agent-swarm.png',
-          caption: 'Varios agentes ejecutándose en paralelo en una ventana de CodeAgentSwarm. Con un worktree por terminal, cada uno edita su propio checkout en vez de pelearse por uno compartido.',
+          alt: 'CodeAgentSwarm en modo lista con agentes, estados, actividad y accesos a proyectos',
+          src: '/images/guides/workspace-list.webp',
+          caption: 'Vista de lista de CodeAgentSwarm: cada sesión muestra su agente, estado y actividad. Tareas de ejemplo.',
         },
         {
           type: 'paragraph',
@@ -184,12 +184,6 @@ En esta guía explico el problema en concreto, qué es de verdad un git worktree
         {
           type: 'paragraph',
           text: 'CodeAgentSwarm es una app de escritorio para ejecutar un enjambre de agentes CLI de IA en un solo sitio. Funciona sobre las CLIs oficiales (Claude Code, Codex CLI, opencode, Antigravity CLI), así que no es un proveedor de modelos, orquesta los agentes que ya usas. Y puede crear un worktree por terminal por ti, así consigues el aislamiento de arriba sin tocar un solo comando de git.',
-        },
-        {
-          type: 'image',
-          alt: 'Configuración de sesión por terminal de CodeAgentSwarm con una fila OPTIONS que muestra un interruptor Git Worktree junto a Turbo Mode',
-          src: '/images/guides/multi-cli-agent-selector.png',
-          caption: 'Al configurar un terminal, la fila OPTIONS tiene un interruptor Git Worktree. Actívalo y el agente de ese terminal se ejecuta en su propio worktree aislado.',
         },
         {
           type: 'heading',

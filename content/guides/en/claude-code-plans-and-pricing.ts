@@ -16,7 +16,7 @@ This guide lays out what is known, dates every number, and flags the parts you s
     ctaAgent: 'claude-code',
     highlightedWords: ['Claude Code', 'Plans', 'Pricing'],
     publishedAt: '2026-08-05',
-    updatedAt: '2026-09-01',
+    updatedAt: '2026-10-05',
     alternateSlug: 'planes-y-precios-de-claude-code',
   },
   sections: [
@@ -155,7 +155,7 @@ This guide lays out what is known, dates every number, and flags the parts you s
       content: [
         {
           type: 'paragraph',
-          text: 'A price only means something next to the alternatives. Claude Code is the only one of the seven with no free path at all, and its entry price sits in the middle of the pack rather than at the top. Here is the whole category, one line each, checked on the same day.',
+          text: 'A price only means something next to the alternatives. Claude Code is the only one of the seven compared here with no free path at all, and its entry price sits in the middle of the pack rather than at the top. Here are the compared agents, one line each, checked on the same day.',
         },
         {
           type: 'table',

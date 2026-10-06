@@ -16,7 +16,7 @@ And once opencode is running, we will also show you how to go from a single open
     ctaAgent: 'opencode',
     highlightedWords: ['OpenCode', 'Windows'],
     publishedAt: '2026-07-05',
-    updatedAt: '2026-09-29',
+    updatedAt: '2026-10-05',
     alternateSlug: 'opencode-en-windows',
   },
   sections: [
@@ -26,9 +26,9 @@ And once opencode is running, we will also show you how to go from a single open
       content: [
         {
           type: 'image',
-          alt: 'Multiple opencode terminals running in parallel in a single CodeAgentSwarm workspace on a desktop',
-          src: '/images/guides/opencode-agent-swarm.png',
-          caption: 'opencode on the desktop: multiple independent sessions side by side in one CodeAgentSwarm window.',
+          alt: 'CodeAgentSwarm in List mode with agents, statuses, current activities and project shortcuts',
+          src: '/images/guides/workspace-list.webp',
+          caption: 'CodeAgentSwarm List view: each session shows its agent, status and current activity. Sample tasks shown.',
         },
         {
           type: 'callout',
@@ -209,12 +209,6 @@ opencode`,
         {
           type: 'paragraph',
           text: 'That is the problem <a href="/en" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a> solves, and it is a native desktop app for Windows, macOS and Linux. It runs your opencode sessions inside a visual workspace, so Windows developers get a real GUI plus multiple opencode terminals side by side, with desktop notifications when an agent finishes or needs input, searchable history across every session, and a live diff of what each terminal changed. It also reads opencode\'s local sessions, so past conversations stay searchable and you can resume them.',
-        },
-        {
-          type: 'image',
-          alt: 'CodeAgentSwarm terminal showing the SELECT AI AGENT picker where you choose the agent per terminal, including opencode',
-          src: '/images/guides/multi-cli-agent-selector.png',
-          caption: 'In CodeAgentSwarm you pick the agent per terminal. Choose opencode in each one to run a full opencode swarm on Windows.',
         },
         {
           type: 'paragraph',

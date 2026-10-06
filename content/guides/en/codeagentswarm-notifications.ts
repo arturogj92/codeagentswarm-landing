@@ -9,7 +9,7 @@ export const guide: Guide = {
     metaTitle: 'Claude Code Notifications: Get Alerted When It Finishes (2026)',
     metaDescription: 'Desktop alerts the moment Claude Code finishes or needs your input. Stop staring at the terminal: set it up in minutes and get your focus back.',
     publishedAt: '2026-02-20',
-    updatedAt: '2026-04-15',
+    updatedAt: '2026-10-05',
     intro: `If you use Claude Code while you're working on other things, this will sound familiar:
 
 You ask Claude to implement something relatively big, you can see it's going to take a few minutes, and you think: "in the meantime I'll check email / Slack / another repo".
@@ -147,9 +147,9 @@ In this guide I'll show you how CodeAgentSwarm notifications work and how to use
         },
         {
           type: 'image',
-          alt: 'Several terminals with different colours and statuses (running, finished, waiting) showing how you can quickly spot which one has completed a specific task',
-          src: '/images/guides/terminal-status-indicators.png',
-          caption: 'Colours and statuses let you see at a glance what\'s happening in each terminal.',
+          alt: 'CodeAgentSwarm in List mode with agents, statuses, current activities and project shortcuts',
+          src: '/images/guides/workspace-list.webp',
+          caption: 'CodeAgentSwarm List view: each session shows its agent, status and current activity. Sample tasks shown.',
           size: 'medium',
         },
         {

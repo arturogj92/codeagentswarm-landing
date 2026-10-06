@@ -12,7 +12,7 @@ export const guide: Guide = {
     ctaAgent: 'claude-code',
     highlightedWords: ['Enjambre de agentes Claude Code', 'varios agentes'],
     publishedAt: '2026-07-31',
-    updatedAt: '2026-09-29',
+    updatedAt: '2026-10-05',
     relatedSlug: 'panel-de-control-claude-code',
     alternateSlug: 'claude-code-agent-swarm',
   },
@@ -58,9 +58,9 @@ export const guide: Guide = {
       content: [
         {
           type: 'image',
-          alt: 'Varias sesiones independientes de Claude Code funcionando en paralelo dentro de un mismo espacio de trabajo de CodeAgentSwarm',
-          src: '/images/guides/multi-terminal.png',
-          caption: 'Un enjambre de agentes Claude: varias sesiones independientes de Claude Code una al lado de otra.',
+          alt: 'CodeAgentSwarm en modo lista con agentes, estados, actividad y accesos a proyectos',
+          src: '/images/guides/workspace-list.webp',
+          caption: 'Vista de lista de CodeAgentSwarm: cada sesión muestra su agente, estado y actividad. Tareas de ejemplo.',
         },
         {
           type: 'paragraph',
@@ -197,12 +197,6 @@ export const guide: Guide = {
         {
           type: 'paragraph',
           text: 'CodeAgentSwarm es una app de escritorio hecha justo para esto: ejecutar y supervisar un enjambre de agentes CLI en un solo sitio. Funciona en macOS, Windows y Linux, te da varios terminales en un mismo espacio de trabajo y te deja elegir el agente por terminal. Para un enjambre de Claude eliges "claude code" en el selector SELECT AI AGENT de cada terminal.',
-        },
-        {
-          type: 'image',
-          alt: 'Selector SELECT AI AGENT de CodeAgentSwarm mostrando las opciones claude code, codex cli y opencode junto al interruptor de Turbo Mode',
-          src: '/images/guides/multi-cli-agent-selector.png',
-          caption: 'Eliges el agente por terminal. Pon todos en claude code para un enjambre puro de Claude, o mezcla agentes donde encajen mejor.',
         },
         {
           type: 'heading',

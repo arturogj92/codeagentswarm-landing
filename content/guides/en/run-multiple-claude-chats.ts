@@ -16,7 +16,7 @@ Pick the path that matches what you are trying to do. If you are chatting in the
     ctaAgent: 'claude-code',
     highlightedWords: ['multiple Claude chats', 'at once'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-08-21',
+    updatedAt: '2026-10-05',
     alternateSlug: 'varios-chats-de-claude-a-la-vez',
   },
   sections: [
@@ -26,9 +26,9 @@ Pick the path that matches what you are trying to do. If you are chatting in the
       content: [
         {
           type: 'image',
-          alt: 'Two CodeAgentSwarm terminals running side by side, one of them a Claude Code session, with the SELECT AI AGENT picker open',
-          src: '/images/guides/multi-cli-agent-selector.png',
-          caption: 'Two terminals at once in CodeAgentSwarm, one running a Claude Code session, with the per-terminal agent picker open.',
+          alt: 'CodeAgentSwarm in List mode with agents, statuses, current activities and project shortcuts',
+          src: '/images/guides/workspace-list.webp',
+          caption: 'CodeAgentSwarm List view: each session shows its agent, status and current activity. Sample tasks shown.',
         },
         {
           type: 'paragraph',
