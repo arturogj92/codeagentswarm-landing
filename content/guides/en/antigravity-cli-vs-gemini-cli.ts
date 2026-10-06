@@ -16,7 +16,7 @@ Gemini CLI was a good tool and it earned its audience, so this is not a hype pie
     ctaAgent: 'antigravity',
     highlightedWords: ['Antigravity CLI', 'Gemini CLI', 'Migrate'],
     publishedAt: '2026-06-29',
-    updatedAt: '2026-09-29',
+    updatedAt: '2026-10-05',
     alternateSlug: 'antigravity-cli-vs-gemini-cli',
   },
   sections: [
@@ -232,19 +232,13 @@ Gemini CLI was a good tool and it earned its audience, so this is not a hype pie
         },
         {
           type: 'image',
-          alt: 'A CodeAgentSwarm terminal showing the SELECT AI AGENT picker, where you choose Antigravity CLI for a terminal alongside Claude Code and Codex CLI options',
-          src: '/images/guides/multi-cli-agent-selector.png',
-          caption: 'In CodeAgentSwarm you pick the agent per terminal. Set a terminal to Antigravity CLI and run it next to Claude Code or Codex CLI in the same window.',
+          alt: 'CodeAgentSwarm in List mode with agents, statuses, current activities and project shortcuts',
+          src: '/images/guides/workspace-list.webp',
+          caption: 'CodeAgentSwarm List view: each session shows its agent, status and current activity. Sample tasks shown.',
         },
         {
           type: 'paragraph',
           text: 'CodeAgentSwarm is a desktop app for running several AI CLI sessions in parallel with real visibility. It runs on macOS, Windows and Linux, and it is not a model provider, so each Antigravity CLI session keeps using your own Google sign-in and your own <code>agy</code> install. The app just gives the sessions a place to live: multiple terminals in one workspace, the agent chosen per terminal from the SELECT AI AGENT picker.',
-        },
-        {
-          type: 'image',
-          alt: 'Several Antigravity CLI sessions running in parallel inside a single CodeAgentSwarm workspace, each terminal an independent agy process',
-          src: '/images/guides/antigravity-agent-swarm.png',
-          caption: 'Several Antigravity CLI sessions in parallel: independent agy processes running side by side in one CodeAgentSwarm window.',
         },
         {
           type: 'paragraph',

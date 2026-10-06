@@ -16,7 +16,7 @@ This guide covers that supervision workflow. Pro is included during the open bet
     ctaAgent: 'claude-code',
     highlightedWords: ['Claude Code Dashboard', 'Every Session'],
     publishedAt: '2026-07-13',
-    updatedAt: '2026-09-29',
+    updatedAt: '2026-10-05',
     alternateSlug: 'panel-de-control-claude-code',
   },
   sections: [
@@ -62,9 +62,9 @@ This guide covers that supervision workflow. Pro is included during the open bet
         },
         {
           type: 'image',
-          alt: 'CodeAgentSwarm dashboard showing several terminals with different colours and statuses, some running, some finished, some waiting for input',
-          src: '/images/guides/terminal-status-indicators.png',
-          caption: 'The core of the dashboard: every session with its status visible, so the blocked one cannot hide.',
+          alt: 'CodeAgentSwarm in List mode with agents, statuses, current activities and project shortcuts',
+          src: '/images/guides/workspace-list.webp',
+          caption: 'CodeAgentSwarm List view: each session shows its agent, status and current activity. Sample tasks shown.',
           size: 'medium',
         },
         {

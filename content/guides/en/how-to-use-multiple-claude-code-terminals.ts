@@ -16,7 +16,7 @@ In this guide I'll explain, just like I'd tell a friend, how to use multiple ter
     ctaAgent: 'claude-code',
     highlightedWords: ['multiple terminals', 'Claude Code'],
     publishedAt: '2026-02-01',
-    updatedAt: '2026-08-11',
+    updatedAt: '2026-10-05',
     alternateSlug: 'como-usar-varios-terminales-claude-code',
   },
   sections: [
@@ -75,9 +75,9 @@ In this guide I'll explain, just like I'd tell a friend, how to use multiple ter
         },
         {
           type: 'image',
-          alt: 'Grid view of multiple Claude Code terminals working in parallel',
-          src: '/images/guides/multi-terminal.png',
-          caption: 'Multiple terminals working simultaneously, each on its own feature.',
+          alt: 'CodeAgentSwarm in List mode with agents, statuses, current activities and project shortcuts',
+          src: '/images/guides/workspace-list.webp',
+          caption: 'CodeAgentSwarm List view: each session shows its agent, status and current activity. Sample tasks shown.',
         },
         {
           type: 'paragraph',
@@ -176,13 +176,6 @@ In this guide I'll explain, just like I'd tell a friend, how to use multiple ter
         {
           type: 'paragraph',
           text: 'As each terminal starts working, it will dynamically change its title to show you what it\'s working on at any moment. You can also see the current changes it\'s making.',
-        },
-        {
-          type: 'image',
-          alt: 'Terminal showing dynamic title and current changes in CodeAgentSwarm',
-          src: '/images/guides/terminal-title-and-changes.png',
-          caption: '1. The title changes based on what it\'s doing. 2. By clicking the button you can see the changes the terminal makes in real time in diff format so you don\'t lose context of what the AI is doing.',
-          size: 'medium',
         },
       ],
     },

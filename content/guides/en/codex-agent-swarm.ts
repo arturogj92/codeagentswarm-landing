@@ -16,7 +16,7 @@ In this guide I walk through the three practical ways to run a Codex swarm, comp
     ctaAgent: 'codex',
     highlightedWords: ['Codex agent swarm', 'Codex CLI'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-09-29',
+    updatedAt: '2026-10-05',
     relatedSlug: 'codex-gui',
     alternateSlug: 'enjambre-de-agentes-codex',
   },
@@ -27,9 +27,9 @@ In this guide I walk through the three practical ways to run a Codex swarm, comp
       content: [
         {
           type: 'image',
-          alt: 'Multiple OpenAI Codex CLI terminals running in parallel in a single CodeAgentSwarm workspace, each an independent Codex session',
-          src: '/images/guides/codex-agent-swarm.png',
-          caption: 'A Codex agent swarm: several independent Codex CLI sessions running side by side in one CodeAgentSwarm window.',
+          alt: 'CodeAgentSwarm in List mode with agents, statuses, current activities and project shortcuts',
+          src: '/images/guides/workspace-list.webp',
+          caption: 'CodeAgentSwarm List view: each session shows its agent, status and current activity. Sample tasks shown.',
         },
         {
           type: 'paragraph',
@@ -171,12 +171,6 @@ In this guide I walk through the three practical ways to run a Codex swarm, comp
         {
           type: 'paragraph',
           text: 'CodeAgentSwarm is a desktop app built for exactly this: running and supervising a swarm of AI CLI agents in one place. It runs on macOS, Windows and Linux, gives you multiple terminals in a single workspace, and lets you choose the agent per terminal. For a Codex swarm you just pick "codex cli" in the SELECT AI AGENT picker in each terminal you want running Codex.',
-        },
-        {
-          type: 'image',
-          alt: 'A CodeAgentSwarm terminal showing the SELECT AI AGENT picker with claude-code, gemini cli and codex cli options plus an Enable Turbo Mode toggle',
-          src: '/images/guides/multi-cli-agent-selector.png',
-          caption: 'In CodeAgentSwarm you choose the agent per terminal. Set each one to codex cli to build a Codex swarm, with a Turbo Mode toggle for full-auto runs.',
         },
         {
           type: 'paragraph',

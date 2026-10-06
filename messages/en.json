@@ -560,7 +560,7 @@
     "titleHighlight": "Transform",
     "titleLine2": "Your Development?",
     "subtitle": "Run all your AI coding agents from one visual command center, with live status, notifications and searchable conversation history.",
-    "instantSetup": "Already using Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code, Grok Build or Cursor Agent? It just works. Install and open.",
+    "instantSetup": "Already using Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi or Devin CLI? It just works. Install and open.",
     "version": "Version",
     "released": "Released",
     "loading": "Loading releases...",
@@ -611,7 +611,7 @@
       "memory": "4GB RAM minimum",
       "storageLabel": "Storage",
       "storage": "500MB available",
-      "claudeCode": "Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code, Grok Build or Cursor Agent",
+      "claudeCode": "Claude Code, Codex, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi or Devin CLI",
       "gatekeeper": "First time installing? You might need to right-click and select \"Open\" to bypass Gatekeeper."
     }
   },
@@ -821,8 +821,8 @@
       "agentTitle": "Your {agent} sessions, in one window.",
       "agentCopy": "Run {agent} alongside your other agents. Search their history and see when a session needs your attention.",
       "workspaceLabel": "Your agent workspace",
-      "workspaceAlt": "CodeAgentSwarm in List mode with eight agent sessions and their current activities",
-      "workspaceCaption": "Eight sessions, one list. See what each agent is working on.",
+      "workspaceAlt": "CodeAgentSwarm in List mode with ten agent sessions, current activities and project shortcuts",
+      "workspaceCaption": "Ten agents, one list. See what each session is working on.",
       "featureCaption": "See this workflow in CodeAgentSwarm.",
       "enlarge": "Enlarge the workspace preview",
       "close": "Close preview",

@@ -16,7 +16,7 @@ En esta guía te explico las tres formas reales de ejecutar varias sesiones de o
     ctaAgent: 'opencode',
     highlightedWords: ['múltiples sesiones de OpenCode', 'a la vez'],
     publishedAt: '2026-07-05',
-    updatedAt: '2026-09-29',
+    updatedAt: '2026-10-05',
     alternateSlug: 'run-multiple-opencode-sessions',
   },
   sections: [
@@ -26,9 +26,9 @@ En esta guía te explico las tres formas reales de ejecutar varias sesiones de o
       content: [
         {
           type: 'image',
-          alt: 'Varios terminales de opencode ejecutándose en paralelo en un único espacio de trabajo de CodeAgentSwarm, cada uno una sesión de opencode independiente',
-          src: '/images/guides/opencode-agent-swarm.png',
-          caption: 'Varias sesiones de opencode independientes ejecutándose a la vez en una sola ventana de CodeAgentSwarm, cada una con su tarea.',
+          alt: 'CodeAgentSwarm en modo lista con agentes, estados, actividad y accesos a proyectos',
+          src: '/images/guides/workspace-list.webp',
+          caption: 'Vista de lista de CodeAgentSwarm: cada sesión muestra su agente, estado y actividad. Tareas de ejemplo.',
         },
         {
           type: 'paragraph',
@@ -174,12 +174,6 @@ En esta guía te explico las tres formas reales de ejecutar varias sesiones de o
         {
           type: 'paragraph',
           text: 'CodeAgentSwarm es una app de escritorio hecha exactamente para esto: ejecutar y supervisar varias sesiones de CLI de IA en un solo sitio. Funciona en macOS, Windows y Linux, te da varios terminales en un único espacio de trabajo y te deja elegir el agente por terminal. Para ejecutar opencode en paralelo solo tienes que elegir "opencode" en el selector SELECT AI AGENT de cada terminal donde quieras correr opencode.',
-        },
-        {
-          type: 'image',
-          alt: 'Un terminal de CodeAgentSwarm mostrando el selector SELECT AI AGENT donde eliges el agente por terminal, incluido opencode',
-          src: '/images/guides/multi-cli-agent-selector.png',
-          caption: 'En CodeAgentSwarm eliges el agente por terminal. Pon cada uno en opencode para ejecutar varias sesiones de opencode en la misma ventana.',
         },
         {
           type: 'paragraph',

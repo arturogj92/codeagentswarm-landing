@@ -15,7 +15,7 @@ export const guide: Guide = {
       'modo YOLO',
     ],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-10-01',
+    updatedAt: '2026-10-05',
     alternateSlug: 'codex-yolo-mode',
   },
   sections: [
@@ -153,9 +153,9 @@ export const guide: Guide = {
         },
         {
           type: 'image',
-          src: '/images/guides/parallel-workspace-codex.webp',
-          alt: 'Cuatro sesiones de Codex en CodeAgentSwarm, con Chat y terminal en la misma cuadrícula',
-          caption: 'Cada sesión tiene su tarea y sus controles. La captura ilustra la supervisión, no un aislamiento de seguridad.',
+          src: '/images/guides/workspace-list.webp',
+          alt: 'CodeAgentSwarm en modo lista con diez agentes y accesos a proyectos',
+          caption: 'Vista de lista de CodeAgentSwarm con Codex y otros agentes. Tareas de ejemplo.',
         },
         {
           type: 'heading',

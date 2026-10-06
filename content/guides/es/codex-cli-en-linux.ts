@@ -18,7 +18,7 @@ Cuando Codex esté funcionando, también te enseñamos a tener varias sesiones d
     ctaAgent: 'codex',
     highlightedWords: ['Codex CLI', 'Linux'],
     publishedAt: '2026-09-29',
-    updatedAt: '2026-09-29',
+    updatedAt: '2026-10-05',
     alternateSlug: 'codex-cli-on-linux',
   },
   sections: [
@@ -28,9 +28,9 @@ Cuando Codex esté funcionando, también te enseñamos a tener varias sesiones d
       content: [
         {
           type: 'image',
-          alt: 'Varios terminales de OpenAI Codex CLI en paralelo en un único espacio de trabajo de CodeAgentSwarm',
-          src: '/images/guides/codex-agent-swarm.png',
-          caption: 'Varias sesiones de Codex CLI en paralelo en una ventana de CodeAgentSwarm.',
+          alt: 'CodeAgentSwarm en modo lista con agentes, estados, actividad y accesos a proyectos',
+          src: '/images/guides/workspace-list.webp',
+          caption: 'Vista de lista de CodeAgentSwarm: cada sesión muestra su agente, estado y actividad. Tareas de ejemplo.',
         },
         {
           type: 'callout',

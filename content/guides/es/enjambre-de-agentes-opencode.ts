@@ -16,7 +16,7 @@ En esta guía te explico las tres formas reales de ejecutar un enjambre de openc
     ctaAgent: 'opencode',
     highlightedWords: ['Enjambre de agentes OpenCode', 'opencode'],
     publishedAt: '2026-07-05',
-    updatedAt: '2026-09-29',
+    updatedAt: '2026-10-05',
     alternateSlug: 'opencode-agent-swarm',
   },
   sections: [
@@ -30,9 +30,9 @@ En esta guía te explico las tres formas reales de ejecutar un enjambre de openc
         },
         {
           type: 'image',
-          alt: 'Varios terminales de opencode ejecutándose en paralelo en un único espacio de trabajo de CodeAgentSwarm, cada uno una sesión de opencode independiente',
-          src: '/images/guides/opencode-agent-swarm.png',
-          caption: 'Un enjambre de agentes opencode: varias sesiones de opencode independientes ejecutándose a la vez en una sola ventana de CodeAgentSwarm.',
+          alt: 'CodeAgentSwarm en modo lista con agentes, estados, actividad y accesos a proyectos',
+          src: '/images/guides/workspace-list.webp',
+          caption: 'Vista de lista de CodeAgentSwarm: cada sesión muestra su agente, estado y actividad. Tareas de ejemplo.',
         },
         {
           type: 'paragraph',
@@ -174,12 +174,6 @@ En esta guía te explico las tres formas reales de ejecutar un enjambre de openc
         {
           type: 'paragraph',
           text: 'CodeAgentSwarm es una app de escritorio hecha justo para esto: ejecutar y supervisar un enjambre de agentes CLI de IA en un solo sitio. Funciona en macOS, Windows y Linux, te da varios terminales en un mismo espacio de trabajo y te deja elegir el agente por terminal. Para un enjambre de opencode solo tienes que elegir "opencode" en el selector SELECT AI AGENT de cada terminal que quieras con opencode.',
-        },
-        {
-          type: 'image',
-          alt: 'Un terminal de CodeAgentSwarm mostrando el selector SELECT AI AGENT donde eliges el agente por terminal, incluido opencode',
-          src: '/images/guides/multi-cli-agent-selector.png',
-          caption: 'En CodeAgentSwarm eliges el agente por terminal. Pon cada uno en opencode para montar un enjambre de opencode.',
         },
         {
           type: 'paragraph',

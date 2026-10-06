@@ -15,7 +15,7 @@ export const guide: Guide = {
       'app de escritorio',
     ],
     publishedAt: '2026-07-13',
-    updatedAt: '2026-09-29',
+    updatedAt: '2026-10-05',
     alternateSlug: 'codex-gui',
   },
   sections: [
@@ -74,9 +74,9 @@ export const guide: Guide = {
         },
         {
           type: 'image',
-          src: '/images/guides/parallel-workspace-codex.webp',
-          alt: 'Sesiones de Codex en Chat y terminal dentro de CodeAgentSwarm',
-          caption: 'Una ventana con varias tareas de Codex. Cada sesión conserva sus propios controles.',
+          src: '/images/guides/workspace-list.webp',
+          alt: 'CodeAgentSwarm en modo lista con diez agentes y accesos a proyectos',
+          caption: 'Vista de lista de CodeAgentSwarm con Codex y otros agentes. Tareas de ejemplo.',
         },
         {
           type: 'heading',

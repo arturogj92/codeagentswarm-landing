@@ -9,14 +9,14 @@ export const guide: Guide = {
     metaDescription: 'Claude Squad manages parallel AI agents inside your terminal. CodeAgentSwarm is a desktop app for the same job. Honest comparison, verified August 2026.',
     intro: `Claude Squad manages several AI coding agents inside your terminal. CodeAgentSwarm gives that same parallelism a desktop interface, with notifications, searchable history across agents and a kanban board the agents update themselves.
 
-Full disclosure before you read another line: we build CodeAgentSwarm. That is exactly why this page states where Claude Squad is the better pick and lists our own limits out loud (closed source, Mobile Connect still in alpha, still in beta, and you bring your own agent subscriptions). Both tools are judged on the same criteria, and every third-party fact here was checked on August 25, 2026 against the vendor own site, their public README and public GitHub data. CodeAgentSwarm availability on this page was updated on September 29, 2026.
+Full disclosure before you read another line: we build CodeAgentSwarm. That is exactly why this page states where Claude Squad is the better pick and lists our own limits out loud (closed source, Mobile Connect still in alpha, still in beta, and you bring your own agent subscriptions). Both tools are judged on the same criteria, and every third-party fact here was checked on August 25, 2026 against the vendor own site, their public README and public GitHub data. CodeAgentSwarm availability and supported agents were updated on October 5, 2026.
 
-Short version: if you live in the terminal, work over SSH on remote machines and want AGPL open source, Claude Squad fits you better. If you want a desktop window with notifications, cross-agent history, live diffs and seven agent vendors in one place, that is what we built.`,
+Short version: if you live in the terminal, work over SSH on remote machines and want AGPL open source, Claude Squad fits you better. If you want a desktop window with notifications, cross-agent history, live diffs and ten agent CLIs in one place, that is what we built.`,
     ctaText: 'If you want the same parallel agents but with a desktop window, notifications and a searchable history across every agent, download CodeAgentSwarm and try it next to Claude Squad.',
     ctaAgent: 'comparison',
     highlightedWords: ['Claude Squad', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
-    updatedAt: '2026-09-29',
+    updatedAt: '2026-10-05',
     alternateSlug: 'claude-squad-vs-codeagentswarm',
   },
   sections: [
@@ -74,19 +74,19 @@ Short version: if you live in the terminal, work over SSH on remote machines and
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm is a desktop workspace to run and supervise multiple AI coding agents in parallel. It runs on macOS, Windows and Linux, each terminal inside it is a real agent process, and you choose the agent per terminal: Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build or Cursor Agent.',
+          text: 'CodeAgentSwarm is a desktop workspace to run and supervise multiple AI coding agents in parallel. It runs on macOS, Windows and Linux, each terminal inside it is a real agent process, and you choose the agent per terminal: Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi and Devin CLI.',
         },
         {
           type: 'image',
-          alt: 'Three separate AI coding agents running as independent terminals side by side in one CodeAgentSwarm window',
-          src: '/images/guides/multi-cli-three-agents.png',
-          caption: 'CodeAgentSwarm runs several agent CLIs at once in one window, each terminal its own process and its own conversation.',
+          alt: 'CodeAgentSwarm in List mode with agents, statuses, current activities and project shortcuts',
+          src: '/images/guides/workspace-list.webp',
+          caption: 'CodeAgentSwarm List view: each session shows its agent, status and current activity. Sample tasks shown.',
         },
         {
           type: 'list',
           items: [
             'Desktop notifications when an agent finishes or stops to ask you something',
-            'Searchable conversation history across all seven agents and capability-aware resume from any entry',
+            'Searchable conversation history across all ten agents and capability-aware resume from any entry',
             'Per-terminal live file diffs, so you see what each agent is touching while it works',
             'Permission control, including a Turbo mode for the operations you are happy to auto-approve',
             'A kanban task board the agents update themselves over MCP',
@@ -110,10 +110,10 @@ Short version: if you live in the terminal, work over SSH on remote machines and
           rows: [
             ['Platforms', 'Terminal environments with tmux and the GitHub CLI installed, via Homebrew or a shell script. A native Windows install is not documented on their site as of August 25, 2026', 'Desktop app for macOS, Windows and Linux'],
             ['Interface', 'Terminal UI, keyboard driven', 'Graphical desktop workspace with terminal panes'],
-            ['Supported agents', 'Claude Code, Codex, Gemini and Aider; arbitrary local commands via the program flag', 'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build and Cursor Agent'],
+            ['Supported agents', 'Claude Code, Codex, Gemini and Aider; arbitrary local commands via the program flag', 'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi and Devin CLI'],
             ['Isolation model', 'A tmux session plus a git worktree per task, one branch each', 'A separate process per terminal, with optional git worktrees per session'],
             ['Notifications', 'Not documented on their site as of August 25, 2026', 'Desktop notifications when an agent finishes or needs input'],
-            ['Conversation history', 'Sessions can be paused and resumed in the app. A searchable history across agents is not documented on their site as of August 25, 2026', 'Searchable history across all seven agents and capability-aware resume'],
+            ['Conversation history', 'Sessions can be paused and resumed in the app. A searchable history across agents is not documented on their site as of August 25, 2026', 'Searchable history across all ten agents and capability-aware resume'],
             ['Task management', 'Session list with per-session state. A kanban board is not documented on their site as of August 25, 2026', 'Kanban board that the agents update over MCP'],
             ['Open source', 'Yes, AGPL-3.0', 'No, closed source with no public app repository'],
             ['Price', 'Free', 'Free during beta with Pro included, and you bring your own agent subscriptions'],
@@ -138,7 +138,7 @@ Short version: if you live in the terminal, work over SSH on remote machines and
             '<strong>You want open source.</strong> AGPL-3.0, public repository, roughly 8,400 stars. You can read every line, fork it and audit what it does with your code. CodeAgentSwarm cannot offer that.',
             '<strong>You already live in tmux.</strong> If your muscle memory is keyboard-first and you resent switching to a mouse, a TUI with single-key session management will feel faster than any window.',
             '<strong>You want zero install weight.</strong> One binary, no account, no updater, no packaged desktop runtime.',
-            '<strong>You want Aider or another local agent.</strong> Its program flag launches any local agent command, which is broader than our fixed list of seven.',
+            '<strong>You want Aider or another local agent.</strong> Its program flag launches any local agent command, which is broader than our fixed list of ten.',
           ],
         },
       ],
@@ -151,7 +151,7 @@ Short version: if you live in the terminal, work over SSH on remote machines and
           type: 'list',
           items: [
             '<strong>You want to be told, not to check.</strong> Desktop notifications fire when an agent finishes or needs input, so you can go do something else instead of watching a pane.',
-            '<strong>You run seven vendors.</strong> Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build and Cursor Agent are all supported directly. Antigravity, Kimi and Grok Build are not listed among the agents in the Claude Squad README as of August 25, 2026.',
+            '<strong>You use ten agent CLIs.</strong> Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi and Devin CLI are all supported directly. Antigravity, Kimi and Grok Build are not listed among the agents in the Claude Squad README as of August 25, 2026.',
             '<strong>You want history you can search.</strong> Every conversation from every agent is searchable in one place, and you can resume any of them where you left it.',
             '<strong>You want to watch the diffs live.</strong> Per-terminal file diffs update as the agent edits, so overlapping work is visible early rather than at review time.',
             '<strong>You want the work tracked.</strong> The kanban board is updated by the agents themselves over MCP, so the board reflects what actually happened.',

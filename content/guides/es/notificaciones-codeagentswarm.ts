@@ -24,7 +24,7 @@ En esta guía te cuento cómo funcionan las notificaciones de CodeAgentSwarm y c
     ctaAgent: 'multi',
     highlightedWords: ['notificaciones', 'CodeAgentSwarm'],
     publishedAt: '2026-02-20',
-    updatedAt: '2026-04-15',
+    updatedAt: '2026-10-05',
     alternateSlug: 'codeagentswarm-notifications',
   },
   sections: [
@@ -148,9 +148,9 @@ En esta guía te cuento cómo funcionan las notificaciones de CodeAgentSwarm y c
         },
         {
           type: 'image',
-          alt: 'Varios terminales con diferentes colores y estados (ejecutando, terminado, esperando) mostrando cómo se identifica rápidamente cuál ha terminado una tarea concreta',
-          src: '/images/guides/terminal-status-indicators.png',
-          caption: 'Los colores y estados te permiten ver de un vistazo qué está pasando en cada terminal.',
+          alt: 'CodeAgentSwarm en modo lista con agentes, estados, actividad y accesos a proyectos',
+          src: '/images/guides/workspace-list.webp',
+          caption: 'Vista de lista de CodeAgentSwarm: cada sesión muestra su agente, estado y actividad. Tareas de ejemplo.',
           size: 'medium',
         },
         {

@@ -14,7 +14,7 @@ Según la documentación de precios de Cursor del 25 de agosto de 2026, Hobby es
     ctaAgent: 'cursor-agent',
     highlightedWords: ['Cursor CLI', 'Precios', 'Uso'],
     publishedAt: '2026-08-16',
-    updatedAt: '2026-09-01',
+    updatedAt: '2026-10-05',
     alternateSlug: 'cursor-cli-pricing',
   },
   sections: [
@@ -77,7 +77,7 @@ Según la documentación de precios de Cursor del 25 de agosto de 2026, Hobby es
       id: 'comparar-con-otros-agentes',
       title: 'Cómo se compara el precio de Cursor CLI con las demás CLI de agentes',
       content: [
-        { type: 'paragraph', text: 'Cursor pone sus niveles individuales en los mismos puntos que casi toda la categoría: gratis abajo, 20 $ en medio, 200 $ arriba. Lo que cambia entre las siete CLI de agentes no es la cifra de portada, sino cómo te mide cada una, y eso es lo que decide la factura en cuanto tienes varias sesiones a la vez.' },
+        { type: 'paragraph', text: 'Cursor pone sus niveles individuales en los mismos puntos que casi toda la categoría: gratis abajo, 20 $ en medio, 200 $ arriba. Lo que cambia entre las siete CLI de agentes comparadas aquí no es la cifra de portada, sino cómo te mide cada una, y eso es lo que decide la factura en cuanto tienes varias sesiones a la vez.' },
         { type: 'table', headers: ['Agente', 'Nivel gratuito', 'Pago más barato', 'Nivel individual más alto', 'Cómo te facturan'], rows: [
           ['Claude Code', 'No (el plan Free no incluye Claude Code)', 'Pro, 20 $/mes', 'Max 20x, 200 $/mes', 'Suscripción con ventanas de 5 horas y semanales; tokens de API opcionales'],
           ['Codex CLI', 'Limitado', 'Go, 8 $/mes', 'Pro, 200 $/mes', 'Suscripción de ChatGPT compartida con la web y el IDE; tokens de API opcionales'],

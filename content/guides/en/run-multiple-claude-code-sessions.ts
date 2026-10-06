@@ -16,7 +16,7 @@ In this guide I will walk you through the three main methods, compare them hones
     ctaAgent: 'claude-code',
     highlightedWords: ['multiple sessions', 'Claude Code'],
     publishedAt: '2026-04-15',
-    updatedAt: '2026-09-27',
+    updatedAt: '2026-10-05',
     relatedSlug: 'claude-code-gui',
     alternateSlug: 'ejecutar-multiples-sesiones-claude-code',
   },
@@ -180,9 +180,9 @@ In this guide I will walk you through the three main methods, compare them hones
         },
         {
           type: 'image',
-          alt: 'Multiple Claude Code terminals running in parallel in CodeAgentSwarm workspace',
-          src: '/images/guides/multi-terminal.png',
-          caption: 'Multiple AI terminals running simultaneously, each with its own context, dynamic title, and real-time status.',
+          alt: 'CodeAgentSwarm in List mode with agents, statuses, current activities and project shortcuts',
+          src: '/images/guides/workspace-list.webp',
+          caption: 'CodeAgentSwarm List view: each session shows its agent, status and current activity. Sample tasks shown.',
         },
         {
           type: 'paragraph',

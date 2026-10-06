@@ -16,7 +16,7 @@ Para la explicación desde cero de qué es un worktree y por qué importa el ais
     ctaAgent: 'multi',
     highlightedWords: ['Git worktree vs rama', 'agentes de IA en paralelo'],
     publishedAt: '2026-07-05',
-    updatedAt: '2026-07-05',
+    updatedAt: '2026-10-05',
     alternateSlug: 'git-worktree-vs-branch-parallel-ai-agents',
   },
   sections: [
@@ -26,9 +26,9 @@ Para la explicación desde cero de qué es un worktree y por qué importa el ais
       content: [
         {
           type: 'image',
-          alt: 'Varios agentes de código de IA ejecutándose en paralelo en un workspace de CodeAgentSwarm, cada uno en su propia rama en su propio git worktree',
-          src: '/images/guides/opencode-agent-swarm.png',
-          caption: 'Un enjambre de agentes en paralelo. El montaje de debajo decide si de verdad se ejecutan a la vez o van por turnos peleándose por una sola copia de trabajo.',
+          alt: 'CodeAgentSwarm en modo lista con agentes, estados, actividad y accesos a proyectos',
+          src: '/images/guides/workspace-list.webp',
+          caption: 'Vista de lista de CodeAgentSwarm: cada sesión muestra su agente, estado y actividad. Tareas de ejemplo.',
         },
         {
           type: 'paragraph',
@@ -218,12 +218,6 @@ Para la explicación desde cero de qué es un worktree y por qué importa el ais
         {
           type: 'paragraph',
           text: 'CodeAgentSwarm es una app de escritorio para ejecutar un enjambre de agentes CLI de IA (Claude Code, Codex CLI, opencode, Antigravity CLI) en un solo sitio, y mete la opción de worktree directamente en cada terminal, así nunca ejecutas los comandos tú mismo.',
-        },
-        {
-          type: 'image',
-          alt: 'Configuración de sesión por terminal de CodeAgentSwarm con una fila OPTIONS que muestra un interruptor Git Worktree junto a Turbo Mode',
-          src: '/images/guides/multi-cli-agent-selector.png',
-          caption: 'La fila OPTIONS en la configuración de un terminal tiene un interruptor Git Worktree. Actívalo y ese agente se ejecuta aislado en su propia rama.',
         },
         {
           type: 'paragraph',

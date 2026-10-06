@@ -16,7 +16,7 @@ En esta guía te explico los tres métodos principales, los comparo de forma hon
     ctaAgent: 'claude-code',
     highlightedWords: ['varias sesiones', 'Claude Code'],
     publishedAt: '2026-04-15',
-    updatedAt: '2026-09-27',
+    updatedAt: '2026-10-05',
     relatedSlug: 'interfaz-grafica-claude-code',
     alternateSlug: 'run-multiple-claude-code-sessions',
   },
@@ -180,9 +180,9 @@ En esta guía te explico los tres métodos principales, los comparo de forma hon
         },
         {
           type: 'image',
-          alt: 'Varios terminales de Claude Code ejecutándose en paralelo en el espacio de trabajo de CodeAgentSwarm',
-          src: '/images/guides/multi-terminal.png',
-          caption: 'Varios terminales de IA funcionando simultáneamente, cada uno con su propio contexto, título dinámico y estado en tiempo real.',
+          alt: 'CodeAgentSwarm en modo lista con agentes, estados, actividad y accesos a proyectos',
+          src: '/images/guides/workspace-list.webp',
+          caption: 'Vista de lista de CodeAgentSwarm: cada sesión muestra su agente, estado y actividad. Tareas de ejemplo.',
         },
         {
           type: 'paragraph',

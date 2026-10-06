@@ -16,7 +16,7 @@ This guide covers install, first login, the flags you will actually use, session
     ctaAgent: 'grok-build',
     highlightedWords: ['Grok Build'],
     publishedAt: '2026-07-28',
-    updatedAt: '2026-08-23',
+    updatedAt: '2026-10-05',
     alternateSlug: 'como-usar-grok-build',
   },
   sections: [
@@ -64,7 +64,7 @@ This guide covers install, first login, the flags you will actually use, session
       id: 'cas',
       title: 'Run Grok Build inside CodeAgentSwarm',
       content: [
-        { type: 'image', alt: 'CodeAgentSwarm SELECT AI AGENT picker including Grok Build', src: '/images/guides/multi-cli-agent-selector.png', caption: 'Pick Grok Build per terminal like any other agent.' },
+        { type: 'image', alt: 'CodeAgentSwarm in List mode with agents, statuses, current activities and project shortcuts', src: '/images/guides/workspace-list.webp', caption: 'CodeAgentSwarm List view: each session shows its agent, status and current activity. Sample tasks shown.' },
         { type: 'paragraph', text: 'CodeAgentSwarm is a desktop workspace that runs on top of the official CLIs. Install Grok Build on the machine, open CodeAgentSwarm, and choose <strong>Grok Build</strong> in the SELECT AI AGENT picker for that terminal. From there you get desktop notifications when a session finishes or needs input, searchable history across agents, live per-terminal diffs, and the ability to mix Grok Build with Claude Code, Codex, Antigravity, OpenCode and Kimi Code in one window.' },
         { type: 'paragraph', text: 'That is different from Grok Build\'s own native subagents: those stay inside one vendor session. A CodeAgentSwarm swarm is several independent terminals you supervise. The <a href="/en/guides/grok-build-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Grok Build agent swarm guide</a> and the <a href="/en/guides/grok-build-subagents-vs-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">subagents vs swarm comparison</a> spell out the difference.' },
       ],

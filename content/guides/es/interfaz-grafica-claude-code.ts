@@ -16,7 +16,7 @@ Encaja cuando quieres supervisión compartida entre proveedores o proyectos. Par
     ctaAgent: 'claude-code',
     highlightedWords: ['interfaz gráfica de Claude Code', 'app de escritorio'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-09-29',
+    updatedAt: '2026-10-05',
     alternateSlug: 'claude-code-gui',
   },
   sections: [
@@ -26,9 +26,9 @@ Encaja cuando quieres supervisión compartida entre proveedores o proyectos. Par
       content: [
         {
           type: 'image',
-          alt: 'Tres agentes CLI de código de IA ejecutándose a la vez como terminales separados en una ventana de CodeAgentSwarm, el workspace visual que es el núcleo de una interfaz gráfica de Claude Code',
-          src: '/images/guides/multi-cli-three-agents.png',
-          caption: 'Una interfaz gráfica de Claude Code: varios agentes en sus propios terminales en una sola ventana visual, la parte que un terminal a secas no te puede dar.',
+          alt: 'CodeAgentSwarm en modo lista con agentes, estados, actividad y accesos a proyectos',
+          src: '/images/guides/workspace-list.webp',
+          caption: 'Vista de lista de CodeAgentSwarm: cada sesión muestra su agente, estado y actividad. Tareas de ejemplo.',
         },
         {
           type: 'paragraph',

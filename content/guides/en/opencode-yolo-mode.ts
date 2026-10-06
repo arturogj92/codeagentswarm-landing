@@ -16,7 +16,7 @@ This guide explains what that config-driven model actually looks like, what genu
     ctaAgent: 'opencode',
     highlightedWords: ['OpenCode', 'YOLO mode'],
     publishedAt: '2026-07-05',
-    updatedAt: '2026-09-01',
+    updatedAt: '2026-10-05',
     alternateSlug: 'modo-yolo-opencode',
   },
   sections: [
@@ -36,9 +36,9 @@ This guide explains what that config-driven model actually looks like, what genu
         },
         {
           type: 'image',
-          alt: 'A CodeAgentSwarm terminal showing the SELECT AI AGENT picker where you choose the agent per terminal, including opencode',
-          src: '/images/guides/multi-cli-agent-selector.png',
-          caption: 'In CodeAgentSwarm you set a terminal to opencode. How autonomous it runs comes from opencode\'s own permission config, and CodeAgentSwarm keeps the run supervised with live diffs and notifications.',
+          alt: 'CodeAgentSwarm in List mode with agents, statuses, current activities and project shortcuts',
+          src: '/images/guides/workspace-list.webp',
+          caption: 'CodeAgentSwarm List view: each session shows its agent, status and current activity. Sample tasks shown.',
         },
         {
           type: 'paragraph',

@@ -16,7 +16,7 @@ By the end you will know which approach fits the way you work, whether you want 
     ctaAgent: 'antigravity',
     highlightedWords: ['multiple Antigravity CLI sessions', 'parallel'],
     publishedAt: '2026-06-29',
-    updatedAt: '2026-09-29',
+    updatedAt: '2026-10-05',
     alternateSlug: 'ejecutar-multiples-sesiones-antigravity-cli',
   },
   sections: [
@@ -26,9 +26,9 @@ By the end you will know which approach fits the way you work, whether you want 
       content: [
         {
           type: 'image',
-          alt: 'Multiple Antigravity CLI sessions running in parallel inside a single CodeAgentSwarm workspace, each terminal an independent agy process',
-          src: '/images/guides/antigravity-agent-swarm.png',
-          caption: 'Multiple Antigravity CLI sessions in parallel: several independent agy processes running side by side in one CodeAgentSwarm window.',
+          alt: 'CodeAgentSwarm in List mode with agents, statuses, current activities and project shortcuts',
+          src: '/images/guides/workspace-list.webp',
+          caption: 'CodeAgentSwarm List view: each session shows its agent, status and current activity. Sample tasks shown.',
         },
         {
           type: 'paragraph',
@@ -175,12 +175,6 @@ By the end you will know which approach fits the way you work, whether you want 
         {
           type: 'paragraph',
           text: 'CodeAgentSwarm is a desktop app built for exactly this: running several AI CLI sessions in parallel with real visibility and control. It runs on macOS, Windows and Linux, gives you multiple terminals in one workspace, and lets you choose the agent per terminal. To run Antigravity CLI in parallel you just pick "antigravity" in each terminal you want, and you can mix in Claude Code or Codex CLI alongside it.',
-        },
-        {
-          type: 'image',
-          alt: 'A CodeAgentSwarm terminal showing the SELECT AI AGENT picker with claude-code, antigravity, and codex cli options plus an Enable Turbo Mode toggle',
-          src: '/images/guides/multi-cli-agent-selector.png',
-          caption: 'In CodeAgentSwarm you choose the agent per terminal. Set each one to antigravity to run multiple Antigravity CLI sessions in one workspace.',
         },
         {
           type: 'paragraph',

@@ -16,7 +16,7 @@ This guide compares them on capability and workflow rather than chasing benchmar
     ctaAgent: 'opencode',
     highlightedWords: ['OpenCode', 'Cursor'],
     publishedAt: '2026-07-05',
-    updatedAt: '2026-08-16',
+    updatedAt: '2026-10-05',
     alternateSlug: 'opencode-vs-cursor',
   },
   sections: [
@@ -49,9 +49,9 @@ This guide compares them on capability and workflow rather than chasing benchmar
       content: [
         {
           type: 'image',
-          alt: 'opencode running in a terminal inside CodeAgentSwarm, with several sessions available in parallel',
-          src: '/images/guides/opencode-agent-swarm.png',
-          caption: 'opencode lives in your shell, so you can run several sessions in parallel, each on its own task.',
+          alt: 'CodeAgentSwarm in List mode with agents, statuses, current activities and project shortcuts',
+          src: '/images/guides/workspace-list.webp',
+          caption: 'CodeAgentSwarm List view: each session shows its agent, status and current activity. Sample tasks shown.',
         },
         {
           type: 'heading',
@@ -376,12 +376,6 @@ This guide compares them on capability and workflow rather than chasing benchmar
         {
           type: 'paragraph',
           text: '<a href="/" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a> is a desktop app for running and supervising a swarm of AI CLI agents in one workspace. You get multiple terminals at once, and you choose the agent per terminal. Set them all to opencode for a pure opencode swarm, or mix in Claude Code and Codex CLI where they fit better.',
-        },
-        {
-          type: 'image',
-          alt: 'CodeAgentSwarm SELECT AI AGENT picker where you choose the agent per terminal, including opencode',
-          src: '/images/guides/multi-cli-agent-selector.png',
-          caption: 'In CodeAgentSwarm you pick the agent per terminal. Set each one to opencode for an opencode swarm.',
         },
         {
           type: 'list',

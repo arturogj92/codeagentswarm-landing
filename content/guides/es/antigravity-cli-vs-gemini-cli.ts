@@ -16,7 +16,7 @@ Gemini CLI fue una buena herramienta y se ganó a su público, así que esto no 
     ctaAgent: 'antigravity',
     highlightedWords: ['Antigravity CLI', 'Gemini CLI', 'migrar'],
     publishedAt: '2026-06-29',
-    updatedAt: '2026-09-29',
+    updatedAt: '2026-10-05',
     alternateSlug: 'antigravity-cli-vs-gemini-cli',
   },
   sections: [
@@ -232,19 +232,13 @@ Gemini CLI fue una buena herramienta y se ganó a su público, así que esto no 
         },
         {
           type: 'image',
-          alt: 'Un terminal de CodeAgentSwarm mostrando el selector SELECT AI AGENT, donde eliges Antigravity CLI para un terminal junto a las opciones de Claude Code y Codex CLI',
-          src: '/images/guides/multi-cli-agent-selector.png',
-          caption: 'En CodeAgentSwarm eliges el agente por terminal. Pon un terminal en Antigravity CLI y ejecútalo junto a Claude Code o Codex CLI en la misma ventana.',
+          alt: 'CodeAgentSwarm en modo lista con agentes, estados, actividad y accesos a proyectos',
+          src: '/images/guides/workspace-list.webp',
+          caption: 'Vista de lista de CodeAgentSwarm: cada sesión muestra su agente, estado y actividad. Tareas de ejemplo.',
         },
         {
           type: 'paragraph',
           text: 'CodeAgentSwarm es una app de escritorio para ejecutar varias sesiones de CLI de IA en paralelo con visibilidad real. Funciona en macOS, Windows y Linux, y no es un proveedor de modelos, así que cada sesión de Antigravity CLI sigue usando tu propio inicio de sesión de Google y tu propia instalación de <code>agy</code>. La app solo le da un sitio donde vivir a las sesiones: varios terminales en un espacio de trabajo, con el agente elegido por terminal desde el selector SELECT AI AGENT.',
-        },
-        {
-          type: 'image',
-          alt: 'Varias sesiones de Antigravity CLI ejecutándose en paralelo dentro de un único espacio de trabajo de CodeAgentSwarm, cada terminal un proceso agy independiente',
-          src: '/images/guides/antigravity-agent-swarm.png',
-          caption: 'Varias sesiones de Antigravity CLI en paralelo: procesos agy independientes ejecutándose a la vez en una sola ventana de CodeAgentSwarm.',
         },
         {
           type: 'paragraph',

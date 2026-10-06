@@ -17,7 +17,7 @@ In this guide we cover both install methods, the Node.js version Pi needs, loggi
     ctaAgent: 'pi',
     highlightedWords: ['Pi', 'Linux'],
     publishedAt: '2026-09-29',
-    updatedAt: '2026-09-29',
+    updatedAt: '2026-10-05',
     alternateSlug: 'pi-coding-agent-en-linux',
   },
   sections: [
@@ -152,9 +152,9 @@ pi`,
         },
         {
           type: 'image',
-          alt: 'Several AI coding agent terminals running side by side in one CodeAgentSwarm window',
-          src: '/images/guides/multi-terminal.png',
-          caption: 'Several agent terminals side by side in one CodeAgentSwarm window.',
+          alt: 'CodeAgentSwarm in List mode with agents, statuses, current activities and project shortcuts',
+          src: '/images/guides/workspace-list.webp',
+          caption: 'CodeAgentSwarm List view: each session shows its agent, status and current activity. Sample tasks shown.',
         },
         {
           type: 'paragraph',

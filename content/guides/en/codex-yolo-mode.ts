@@ -15,7 +15,7 @@ export const guide: Guide = {
       'YOLO mode',
     ],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-10-01',
+    updatedAt: '2026-10-05',
     alternateSlug: 'modo-yolo-codex',
   },
   sections: [
@@ -153,9 +153,9 @@ export const guide: Guide = {
         },
         {
           type: 'image',
-          src: '/images/guides/parallel-workspace-codex.webp',
-          alt: 'Four Codex sessions in CodeAgentSwarm, with Chat and terminal views in the same grid',
-          caption: 'Each session has its own task and controls. This screenshot illustrates supervision, not security isolation.',
+          src: '/images/guides/workspace-list.webp',
+          alt: 'CodeAgentSwarm in List mode with ten agents and project shortcuts',
+          caption: 'CodeAgentSwarm List view with Codex and other agents. Sample tasks shown.',
         },
         {
           type: 'heading',

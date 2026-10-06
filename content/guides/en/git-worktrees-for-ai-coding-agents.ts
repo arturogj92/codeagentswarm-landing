@@ -16,7 +16,7 @@ In this guide I explain the problem in concrete terms, what a git worktree actua
     ctaAgent: 'multi',
     highlightedWords: ['Git Worktrees', 'AI Coding Agents'],
     publishedAt: '2026-07-05',
-    updatedAt: '2026-09-27',
+    updatedAt: '2026-10-05',
     relatedSlug: 'auto-kanban-ai-coding-agents',
     alternateSlug: 'git-worktrees-para-agentes-de-ia',
   },
@@ -27,9 +27,9 @@ In this guide I explain the problem in concrete terms, what a git worktree actua
       content: [
         {
           type: 'image',
-          alt: 'Nine AI coding agent terminals running in parallel in a single CodeAgentSwarm workspace, each isolated in its own git worktree',
-          src: '/images/guides/opencode-agent-swarm.png',
-          caption: 'Several agents running in parallel in one CodeAgentSwarm window. With a worktree per terminal, each one edits its own checkout instead of fighting over a shared one.',
+          alt: 'CodeAgentSwarm in List mode with agents, statuses, current activities and project shortcuts',
+          src: '/images/guides/workspace-list.webp',
+          caption: 'CodeAgentSwarm List view: each session shows its agent, status and current activity. Sample tasks shown.',
         },
         {
           type: 'paragraph',
@@ -184,12 +184,6 @@ In this guide I explain the problem in concrete terms, what a git worktree actua
         {
           type: 'paragraph',
           text: 'CodeAgentSwarm is a desktop app for running a swarm of AI CLI agents in one place. It runs on top of the official CLIs (Claude Code, Codex CLI, opencode, Antigravity CLI), so it is not a model provider, it orchestrates the agents you already use. And it can create a worktree per terminal for you, so you get the isolation above without touching a single git command.',
-        },
-        {
-          type: 'image',
-          alt: 'CodeAgentSwarm per-terminal session config with an OPTIONS row showing a Git Worktree toggle next to Turbo Mode',
-          src: '/images/guides/multi-cli-agent-selector.png',
-          caption: 'When you configure a terminal, the OPTIONS row has a Git Worktree toggle. Turn it on and that terminal\'s agent runs in its own isolated worktree.',
         },
         {
           type: 'heading',

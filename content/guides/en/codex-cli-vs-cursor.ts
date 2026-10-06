@@ -16,7 +16,7 @@ This guide compares them on capability and workflow rather than chasing benchmar
     ctaAgent: 'codex',
     highlightedWords: ['Codex CLI', 'Cursor'],
     publishedAt: '2026-06-24',
-    updatedAt: '2026-08-16',
+    updatedAt: '2026-10-05',
     alternateSlug: 'codex-cli-vs-cursor',
   },
   sections: [
@@ -49,9 +49,9 @@ This guide compares them on capability and workflow rather than chasing benchmar
       content: [
         {
           type: 'image',
-          alt: 'OpenAI Codex CLI running in a terminal inside CodeAgentSwarm, showing the agent reading a repository and making changes',
-          src: '/images/guides/codex-agent-swarm.png',
-          caption: 'Codex CLI running in a terminal. Because it lives in your shell, you can run several sessions in parallel, each on its own task.',
+          alt: 'CodeAgentSwarm in List mode with agents, statuses, current activities and project shortcuts',
+          src: '/images/guides/workspace-list.webp',
+          caption: 'CodeAgentSwarm List view: each session shows its agent, status and current activity. Sample tasks shown.',
         },
         {
           type: 'heading',
@@ -362,12 +362,6 @@ This guide compares them on capability and workflow rather than chasing benchmar
         {
           type: 'paragraph',
           text: '<a href="/" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a> is a desktop app for running and supervising a swarm of AI CLI agents in one workspace. You get multiple terminals at once, and you choose the agent per terminal. Set them all to Codex CLI for a pure Codex swarm, or mix in Claude Code and Antigravity CLI where they fit better.',
-        },
-        {
-          type: 'image',
-          alt: 'CodeAgentSwarm SELECT AI AGENT picker showing claude-code, gemini cli and codex cli options with an Enable Turbo Mode toggle',
-          src: '/images/guides/multi-cli-agent-selector.png',
-          caption: 'In CodeAgentSwarm you pick the agent per terminal. Set each one to codex cli for a Codex swarm, with a Turbo Mode toggle for full-auto runs.',
         },
         {
           type: 'list',

@@ -16,7 +16,7 @@ This guide is the pillar for parallel Grok Build: plain tabs, tmux, and CodeAgen
     ctaAgent: 'grok-build',
     highlightedWords: ['Grok Build', 'agent swarm'],
     publishedAt: '2026-07-28',
-    updatedAt: '2026-08-23',
+    updatedAt: '2026-10-05',
     alternateSlug: 'enjambre-de-agentes-grok-build',
   },
   sections: [
@@ -24,7 +24,7 @@ This guide is the pillar for parallel Grok Build: plain tabs, tmux, and CodeAgen
       id: 'what',
       title: 'What counts as a Grok Build swarm?',
       content: [
-        { type: 'image', alt: 'Multiple Grok Build terminals in CodeAgentSwarm', src: '/images/guides/multi-cli-agent-selector.png', caption: 'Several independent grok sessions supervised in one workspace.' },
+        { type: 'image', alt: 'CodeAgentSwarm in List mode with agents, statuses, current activities and project shortcuts', src: '/images/guides/workspace-list.webp', caption: 'CodeAgentSwarm List view: each session shows its agent, status and current activity. Sample tasks shown.' },
         { type: 'paragraph', text: 'A swarm is N independent CLI processes. Open three terminals, run <code>grok</code> in each, give each a different task: that is already a swarm. Native subagents (<code>--no-subagents</code> to disable) are a different tool: the parent Grok Build session spawns children it owns. Both are useful; they solve different problems. See <a href="/en/guides/grok-build-subagents-vs-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">subagents vs agent swarm</a>.' },
         { type: 'callout', variant: 'info', content: 'There is no separate xAI fee per parallel session. Each session draws from the same free or paid account limits, or from the same API budget.' },
       ],

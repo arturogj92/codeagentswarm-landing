@@ -16,7 +16,7 @@ Choose it when you want shared supervision across providers or projects. For a s
     ctaAgent: 'claude-code',
     highlightedWords: ['Claude Code GUI', 'desktop app'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-09-29',
+    updatedAt: '2026-10-05',
     alternateSlug: 'interfaz-grafica-claude-code',
   },
   sections: [
@@ -26,9 +26,9 @@ Choose it when you want shared supervision across providers or projects. For a s
       content: [
         {
           type: 'image',
-          alt: 'Three AI coding CLI agents running side by side as separate terminals in one CodeAgentSwarm window, the visual workspace at the core of a Claude Code GUI',
-          src: '/images/guides/multi-cli-three-agents.png',
-          caption: 'A Claude Code GUI: several agents in their own terminals in one visual window, the part a plain terminal cannot give you.',
+          alt: 'CodeAgentSwarm in List mode with agents, statuses, current activities and project shortcuts',
+          src: '/images/guides/workspace-list.webp',
+          caption: 'CodeAgentSwarm List view: each session shows its agent, status and current activity. Sample tasks shown.',
         },
         {
           type: 'paragraph',

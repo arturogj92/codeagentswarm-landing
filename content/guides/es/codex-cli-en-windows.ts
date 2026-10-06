@@ -16,7 +16,7 @@ Y cuando tengas Codex funcionando, también te enseñamos cómo pasar de un solo
     ctaAgent: 'codex',
     highlightedWords: ['Codex CLI', 'Windows'],
     publishedAt: '2026-06-24',
-    updatedAt: '2026-09-29',
+    updatedAt: '2026-10-05',
     alternateSlug: 'codex-cli-on-windows',
   },
   sections: [
@@ -26,9 +26,9 @@ Y cuando tengas Codex funcionando, también te enseñamos cómo pasar de un solo
       content: [
         {
           type: 'image',
-          alt: 'Varios terminales de OpenAI Codex CLI ejecutándose en paralelo en un único espacio de trabajo de CodeAgentSwarm en el escritorio',
-          src: '/images/guides/codex-agent-swarm.png',
-          caption: 'OpenAI Codex CLI en el escritorio: varias sesiones de Codex independientes, una al lado de otra, en una sola ventana de CodeAgentSwarm.',
+          alt: 'CodeAgentSwarm en modo lista con agentes, estados, actividad y accesos a proyectos',
+          src: '/images/guides/workspace-list.webp',
+          caption: 'Vista de lista de CodeAgentSwarm: cada sesión muestra su agente, estado y actividad. Tareas de ejemplo.',
         },
         {
           type: 'callout',
@@ -209,12 +209,6 @@ codex`,
         {
           type: 'paragraph',
           text: 'Ese es el problema que resuelve <a href="/es" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a>, y es una app de escritorio nativa para Windows, macOS y Linux. Ejecuta tu Codex CLI dentro de un espacio de trabajo visual, así que los desarrolladores en Windows tienen una GUI de verdad más varios terminales de Codex en paralelo, con notificaciones de escritorio cuando un agente termina o necesita tu input, historial buscable de todas las sesiones y un diff en vivo de lo que cambió cada terminal.',
-        },
-        {
-          type: 'image',
-          alt: 'Terminal de CodeAgentSwarm mostrando el selector SELECT AI AGENT con las opciones claude-code, gemini cli y codex cli',
-          src: '/images/guides/multi-cli-agent-selector.png',
-          caption: 'En CodeAgentSwarm eliges el agente por terminal. Selecciona codex cli en cada uno para ejecutar un enjambre completo de Codex en Windows.',
         },
         {
           type: 'paragraph',

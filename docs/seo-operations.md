@@ -1,5 +1,17 @@
 # SEO publishing and download measurement
 
+## Guide workspace and agent audit (2026-10-05)
+
+All 220 EN/ES guide sources were checked. General workspace, agent-selector and agent-grid illustrations now use `/images/guides/workspace-list.webp`; each article uses the shared capture at most once. Captions and alternative text describe List view and identify sample tasks. Feature-specific screenshots retain their own subject.
+
+The image was captured from the running macOS app (2.4.3, dark theme, 1440 × 900), in an isolated profile with the existing signed-in account. The visible avatar is real; session titles, goals, activities and chat messages are sample content rendered by the actual app components. Project shortcut names/settings match existing CodeAgentSwarm, memois and Pop by Pop launchers. The October 6 capture distributes the ten sample sessions across those three projects, using yellow, purple and pink accents respectively. The List is grouped into visible Needs input, Needs testing, Working and Done sections with text headings and counts. Status bars separately show working (yellow), needs input (orange), needs testing (blue) and done (green), with matching activity text. The repeatable capture and validation procedure is saved in the shared `codeagentswarm-guide-workspace-image` skill. No private conversations are included. Capture setup opens the selected session through `startChatConversation`, so Chat state and controls agree: the lower-left CLI dock is hidden and the composer footer offers the CLI switch. This was checked before saving the image.
+
+Supported-agent lists now include Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi and Devin CLI. Counts, metadata, FAQs and the incorrect Paseo/Pi exclusion were updated. Competitor verification dates remain unchanged. Numeric examples and the seven-provider pricing tables still refer to the examples or providers actually compared.
+
+Run `node scripts/check-guide-workspaces.mjs` to check all guide sources, comparison rows, the shared CTA image, missing assets and duplicate/obsolete workspace images. Also run `npm run lint` and `npm run build`, then inspect EN/ES article and enlarged CTA images at desktop and mobile widths.
+
+Validation: the production build, lint, TypeScript, workspace audit and release/Pi/Muse/Devin SEO checks passed. Browser checks covered T3 and Superset in EN/ES at 1440 × 1000 and 390 × 1000, plus the desktop CTA and enlarged image. No horizontal overflow or page errors were observed. Analytics and release requests were intercepted; no email or download was sent. The preview used no feature flags. This validation was completed locally before production publication.
+
 ## Product discovery review, September 25
 
 The home FAQ and About page now state current product availability, separate provider costs and when the workspace fits. The existing Claude GUI, Codex GUI and Claude dashboard guides in both languages acknowledge official desktop interfaces and native history. They explain the shared-provider workflow without claiming those native features are absent. Their titles, descriptions, canonical URLs, language alternates and section anchors are preserved. The four Claude guides receive a new review date; the two Codex guides retain the September 25 review already published in PR #25. The existing conversion layout and event attribution are unchanged.
@@ -58,7 +70,7 @@ For installation follow-up, keep website clicks, installer requests and observed
 
 ## Guide download block (September 12)
 
-The approved compact block puts the platform download before the workspace preview. It applies to the existing eligible guides, including articles covering macOS. Download detection still selects Apple Silicon, Intel, Windows x64 or Windows ARM64; native “Other platforms” links reuse the same resolved release list and tracking. Existing Cursor/Pi/Devin showcase exclusions stay in place. General workspace imagery reuses the existing English `list-mode-demo-poster.jpg`, showing eight agent sessions in List mode, including in the enlarged preview; feature-specific history/worktree videos retain their matching footage.
+The approved compact block puts the platform download before the workspace preview. It applies to the existing eligible guides, including articles covering macOS. Download detection still selects Apple Silicon, Intel, Windows x64 or Windows ARM64; native “Other platforms” links reuse the same resolved release list and tracking. Existing Cursor/Pi/Devin showcase exclusions stay in place. General workspace imagery uses `workspace-list.webp` (1440 × 900), captured from the current macOS app in List view with a signed-in account, project shortcuts and ten sample agent sessions. Article images and enlarged CTA previews use the same asset. Feature-specific history/worktree videos retain their matching footage.
 
 Below 768px the block reuses the home email form and `/api/download-link`. `mobile_link_offer_view`, `mobile_link_submit` and `mobile_link_error` now carry `source`, plus `guide` and `position: product_block` for guide traffic. A submit is successful only when the endpoint acknowledges `emailSent: true`. Keep those email events separate from installer clicks; the existing backend email/download-link tracking remains unchanged.
 

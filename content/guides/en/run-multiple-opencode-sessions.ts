@@ -16,7 +16,7 @@ This guide walks through the three practical ways to run several opencode sessio
     ctaAgent: 'opencode',
     highlightedWords: ['multiple OpenCode sessions', 'at once'],
     publishedAt: '2026-07-05',
-    updatedAt: '2026-09-29',
+    updatedAt: '2026-10-05',
     alternateSlug: 'ejecutar-multiples-sesiones-opencode',
   },
   sections: [
@@ -26,9 +26,9 @@ This guide walks through the three practical ways to run several opencode sessio
       content: [
         {
           type: 'image',
-          alt: 'Multiple opencode terminals running in parallel in a single CodeAgentSwarm workspace, each an independent opencode session',
-          src: '/images/guides/opencode-agent-swarm.png',
-          caption: 'Multiple independent opencode sessions running at once in one CodeAgentSwarm window, each on its own task.',
+          alt: 'CodeAgentSwarm in List mode with agents, statuses, current activities and project shortcuts',
+          src: '/images/guides/workspace-list.webp',
+          caption: 'CodeAgentSwarm List view: each session shows its agent, status and current activity. Sample tasks shown.',
         },
         {
           type: 'paragraph',
@@ -174,12 +174,6 @@ This guide walks through the three practical ways to run several opencode sessio
         {
           type: 'paragraph',
           text: 'CodeAgentSwarm is a desktop app built for exactly this: running and supervising several AI CLI sessions in one place. It runs on macOS, Windows and Linux, gives you multiple terminals in a single workspace, and lets you choose the agent per terminal. To run opencode in parallel you just pick "opencode" in the SELECT AI AGENT picker in each terminal you want running opencode.',
-        },
-        {
-          type: 'image',
-          alt: 'A CodeAgentSwarm terminal showing the SELECT AI AGENT picker where you choose the agent per terminal, including opencode',
-          src: '/images/guides/multi-cli-agent-selector.png',
-          caption: 'In CodeAgentSwarm you choose the agent per terminal. Set each one to opencode to run several opencode sessions in the same window.',
         },
         {
           type: 'paragraph',

@@ -16,7 +16,7 @@ Al terminar sabrás qué enfoque encaja con tu forma de trabajar, ya quieras dos
     ctaAgent: 'antigravity',
     highlightedWords: ['varias sesiones de Antigravity CLI', 'paralelo'],
     publishedAt: '2026-06-29',
-    updatedAt: '2026-09-29',
+    updatedAt: '2026-10-05',
     alternateSlug: 'run-multiple-antigravity-cli-sessions',
   },
   sections: [
@@ -26,9 +26,9 @@ Al terminar sabrás qué enfoque encaja con tu forma de trabajar, ya quieras dos
       content: [
         {
           type: 'image',
-          alt: 'Varias sesiones de Antigravity CLI ejecutándose en paralelo dentro de un único espacio de trabajo de CodeAgentSwarm, cada terminal un proceso agy independiente',
-          src: '/images/guides/antigravity-agent-swarm.png',
-          caption: 'Varias sesiones de Antigravity CLI en paralelo: varios procesos agy independientes ejecutándose a la vez en una sola ventana de CodeAgentSwarm.',
+          alt: 'CodeAgentSwarm en modo lista con agentes, estados, actividad y accesos a proyectos',
+          src: '/images/guides/workspace-list.webp',
+          caption: 'Vista de lista de CodeAgentSwarm: cada sesión muestra su agente, estado y actividad. Tareas de ejemplo.',
         },
         {
           type: 'paragraph',
@@ -175,12 +175,6 @@ Al terminar sabrás qué enfoque encaja con tu forma de trabajar, ya quieras dos
         {
           type: 'paragraph',
           text: 'CodeAgentSwarm es una aplicación de escritorio creada justo para esto: ejecutar varias sesiones de CLI de IA en paralelo con visibilidad y control reales. Funciona en macOS, Windows y Linux, te da varios terminales en un mismo espacio de trabajo y te deja elegir el agente por terminal. Para ejecutar Antigravity CLI en paralelo solo eliges "antigravity" en cada terminal que quieras, y puedes mezclar Claude Code o Codex CLI junto a él.',
-        },
-        {
-          type: 'image',
-          alt: 'Un terminal de CodeAgentSwarm mostrando el selector SELECT AI AGENT con claude-code, antigravity y codex cli, además de un interruptor Enable Turbo Mode',
-          src: '/images/guides/multi-cli-agent-selector.png',
-          caption: 'En CodeAgentSwarm eliges el agente por terminal. Pon cada uno en antigravity para ejecutar varias sesiones de Antigravity CLI en un mismo espacio de trabajo.',
         },
         {
           type: 'paragraph',

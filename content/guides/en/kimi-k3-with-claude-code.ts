@@ -16,7 +16,7 @@ Everything below was checked against Moonshot's official docs. Their CLI ships r
     ctaAgent: 'claude-code',
     highlightedWords: ['Kimi K3', 'Claude Code'],
     publishedAt: '2026-07-17',
-    updatedAt: '2026-07-18',
+    updatedAt: '2026-10-05',
     alternateSlug: 'kimi-k3-con-claude-code',
   },
   sections: [
@@ -202,9 +202,9 @@ Everything below was checked against Moonshot's official docs. Their CLI ships r
       content: [
         {
           type: 'image',
-          alt: 'The CodeAgentSwarm agent picker where you choose which AI CLI runs in each terminal',
-          src: '/images/guides/multi-cli-agent-selector.png',
-          caption: 'Each terminal in CodeAgentSwarm carries its own agent and its own environment, so a Kimi K3 terminal and a Claude terminal can run in the same window on the same repo.',
+          alt: 'CodeAgentSwarm in List mode with agents, statuses, current activities and project shortcuts',
+          src: '/images/guides/workspace-list.webp',
+          caption: 'CodeAgentSwarm List view: each session shows its agent, status and current activity. Sample tasks shown.',
         },
         {
           type: 'paragraph',

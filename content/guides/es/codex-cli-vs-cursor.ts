@@ -16,7 +16,7 @@ En esta guía los comparo por capacidad y flujo de trabajo en lugar de perseguir
     ctaAgent: 'codex',
     highlightedWords: ['Codex CLI', 'Cursor'],
     publishedAt: '2026-06-24',
-    updatedAt: '2026-08-16',
+    updatedAt: '2026-10-05',
     alternateSlug: 'codex-cli-vs-cursor',
   },
   sections: [
@@ -49,9 +49,9 @@ En esta guía los comparo por capacidad y flujo de trabajo en lugar de perseguir
       content: [
         {
           type: 'image',
-          alt: 'OpenAI Codex CLI ejecutándose en un terminal dentro de CodeAgentSwarm, mostrando al agente leyendo un repositorio y haciendo cambios',
-          src: '/images/guides/codex-agent-swarm.png',
-          caption: 'Codex CLI ejecutándose en un terminal. Como vive en tu shell, puedes correr varias sesiones en paralelo, cada una con su propia tarea.',
+          alt: 'CodeAgentSwarm en modo lista con agentes, estados, actividad y accesos a proyectos',
+          src: '/images/guides/workspace-list.webp',
+          caption: 'Vista de lista de CodeAgentSwarm: cada sesión muestra su agente, estado y actividad. Tareas de ejemplo.',
         },
         {
           type: 'heading',
@@ -362,12 +362,6 @@ En esta guía los comparo por capacidad y flujo de trabajo en lugar de perseguir
         {
           type: 'paragraph',
           text: '<a href="/" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a> es una app de escritorio para ejecutar y supervisar un enjambre de agentes CLI de IA en un solo workspace. Tienes varios terminales a la vez y eliges el agente por terminal. Ponlos todos en Codex CLI para un enjambre puro de Codex, o mezcla Claude Code y Antigravity CLI donde encajen mejor.',
-        },
-        {
-          type: 'image',
-          alt: 'Selector SELECT AI AGENT de CodeAgentSwarm mostrando las opciones claude-code, gemini cli y codex cli con un interruptor Enable Turbo Mode',
-          src: '/images/guides/multi-cli-agent-selector.png',
-          caption: 'En CodeAgentSwarm eliges el agente por terminal. Pon cada uno en codex cli para un enjambre de Codex, con un interruptor de Turbo Mode para ejecuciones full-auto.',
         },
         {
           type: 'list',
