@@ -68,6 +68,9 @@ export type RealtimeWindowHours = 0.5 | 1 | 4 | 12 | 24
 export interface RealtimeActivitySnapshot {
   generated_at: string
   window_minutes: number
+  // Signed-in apps seen by the plan check or a click; absent before migration 059.
+  connected_users?: number
+  connected_now?: number
   active_users: number
   active_now: number
   events: number

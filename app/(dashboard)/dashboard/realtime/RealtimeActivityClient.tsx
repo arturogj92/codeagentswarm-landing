@@ -126,7 +126,7 @@ export default function RealtimeActivityClient() {
             </div>
             <h1 className="text-3xl font-bold tracking-[-0.035em] text-white sm:text-4xl">Real-time activity</h1>
             <p className="mt-2 text-sm leading-6 text-white/55">
-              See recent product activity by identified users. This view refreshes every 30 seconds.
+              See who has the app open and what users who share usage analytics are doing. This view refreshes every 30 seconds.
             </p>
           </div>
 
@@ -174,10 +174,10 @@ export default function RealtimeActivityClient() {
         ) : snapshot ? (
           <>
             <section aria-label="Real-time summary" className="grid grid-cols-2 gap-2.5 lg:grid-cols-4">
-              <Metric label="Active users" value={snapshot.active_users} note={`Last ${hours === 0.5 ? '30 minutes' : `${hours} hour${hours === 1 ? '' : 's'}`}`} />
-              <Metric label="Active now" value={snapshot.active_now} note="Recorded in the last 5 minutes" accent />
-              <Metric label="Tracked events" value={snapshot.events} note="Privacy-safe product events" />
-              <Metric label="Agent sessions" value={snapshot.agent_sessions} note="Successful desktop and mobile launches" />
+              <Metric label="Connected users" value={snapshot.connected_users ?? snapshot.active_users} note={`App open in the last ${hours === 0.5 ? '30 minutes' : `${hours} hour${hours === 1 ? '' : 's'}`}`} />
+              <Metric label="Connected now" value={snapshot.connected_now ?? snapshot.active_now} note="App open in the last 20 minutes" accent />
+              <Metric label="Sharing analytics" value={snapshot.active_users} note={`${snapshot.events} tracked events in this range`} />
+              <Metric label="Agent sessions" value={snapshot.agent_sessions} note="Launches by users sharing analytics" />
             </section>
 
             <section className="mt-5 rounded-2xl border border-white/[0.09] bg-[#111111] p-4 sm:p-5" aria-labelledby="activity-chart-title">
@@ -211,7 +211,7 @@ export default function RealtimeActivityClient() {
               <section className="overflow-hidden rounded-2xl border border-white/[0.09] bg-[#111111]" aria-labelledby="latest-users-title">
                 <div className="border-b border-white/[0.07] px-4 py-4 sm:px-5">
                   <h2 id="latest-users-title" className="text-base font-semibold text-white/90">Latest active users</h2>
-                  <p className="mt-1 text-xs text-white/45">Most recent meaningful action per user</p>
+                  <p className="mt-1 text-xs text-white/45">Most recent meaningful action per user sharing analytics</p>
                 </div>
                 <div className="divide-y divide-white/[0.06]">
                   {snapshot.latest_users.slice(0, 8).map((user) => (

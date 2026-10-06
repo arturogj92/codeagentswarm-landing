@@ -93,7 +93,7 @@ export default function UserAnalyticsCharts({ excludedUserIds, ready, refreshKey
               description="By operating system · today included · UTC"
               unit="downloads"
               counts={Object.fromEntries(charts.downloads_7d.map((row) => [row.platform, row.downloads]))}
-              note="Tracked download requests, including repeats. Mac and Windows each include both architectures."
+              note="Tracked download requests, including repeats. Mac and Windows each include both architectures; Linux includes .deb and AppImage."
             />
           </div>
           <AgentTrend key={`${charts.generated_at}:${charts.window_days}`} charts={charts} onWindowDays={setWindowDays} />
