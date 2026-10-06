@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, useInView, useReducedMotion } from 'framer-motion'
-import { useRef, ReactNode } from 'react'
+import { useEffect, useRef, ReactNode } from 'react'
 import { AlertTriangle, RefreshCw, Brain, X, Check, ArrowRight, Download } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
@@ -193,6 +193,17 @@ function ChaosScene() {
 function VisualComparison() {
   const t = useTranslations('problem.chaos')
   const shouldReduceMotion = useReducedMotion()
+  const demoVideoRef = useRef<HTMLVideoElement>(null)
+
+  useEffect(() => {
+    const video = demoVideoRef.current
+    if (!video) return
+    if (shouldReduceMotion !== false) {
+      video.pause()
+    } else {
+      void video.play().catch(() => {})
+    }
+  }, [shouldReduceMotion])
 
   const painPoints = [
     { icon: RefreshCw, text: t('pain1') },
@@ -353,9 +364,9 @@ function VisualComparison() {
             >
               <div className="relative aspect-[16/10] rounded-2xl overflow-hidden bg-[#050505] border border-amber-400/35 shadow-[0_0_40px_rgba(251,191,36,0.07)]">
                 <video
+                  ref={demoVideoRef}
                   data-testid="list-mode-demo"
                   className="h-full w-full object-cover"
-                  autoPlay={!shouldReduceMotion}
                   loop
                   muted
                   playsInline
