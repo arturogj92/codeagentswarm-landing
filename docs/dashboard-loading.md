@@ -40,3 +40,23 @@ remained service-role-only. The isolated production build passed compilation,
 type checking and lint; all 17 landing checks and SQL regression checks passed.
 Cold authenticated requests in that build returned HTTP 200: overview 4.76s,
 global 9.94s. Final domain checks are recorded in the deployment report.
+
+## 2026-10-08: charts and usage trend cancelled by the 8-second API limit
+
+The API role (`authenticator`) has `statement_timeout = 8s`. Overview, operational and global v3
+set their own 30-second budget; `user_activity_charts_v1` and `user_activity_trend_v1` did not.
+Run alone they took 7.4 s and 3.0 s, so next to the other RPCs they were cancelled
+("Charts could not load", "Usage trend could not load"); Postgres logged
+`canceling statement due to statement timeout`.
+
+Backend migration `061_dashboard_loading.sql`:
+
+- Charts: the OS comes from the plan check, then the sign-in session, and only then from a
+  consented click. The per-user click walk (about 2.4 s) now runs only when both are missing
+  (a one-time filter; measured 52 ms for the OS part).
+- Usage trend: `idx_button_clicks_timestamp_user (timestamp) INCLUDE (user_id) WHERE user_id IS NOT
+  NULL` lets the 43-day click-day scan stay in the index instead of visiting about 200k rows.
+- Both RPCs get `statement_timeout = 30s`.
+
+The landing caches `/api/dashboard/users/charts` and `/api/dashboard/users/trend` for 60 seconds,
+keyed by the sorted exclusion set and the range, like overview and global.
