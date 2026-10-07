@@ -11,6 +11,7 @@ import {
 } from 'react'
 import ActivityHeatmap from './ActivityHeatmap'
 import UserAnalyticsCharts from './UserAnalyticsCharts'
+import UsageTrend from './UsageTrend'
 import {
   EMPTY_USER_FILTERS,
   MAIN_BUTTONS,
@@ -571,6 +572,8 @@ export default function UsersActivityClient() {
           </div>
           <p className="text-[11px] text-white/55">Exclusive lifecycle groups · based on last recorded event</p>
         </div>
+
+        <UsageTrend excludedUserIds={excludedUserIds} ready={exclusionsReady} refreshKey={chartsRefreshKey} />
 
         <UserAnalyticsCharts excludedUserIds={excludedUserIds} ready={exclusionsReady} refreshKey={chartsRefreshKey} />
 

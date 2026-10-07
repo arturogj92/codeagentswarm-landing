@@ -8,6 +8,9 @@ import {
   compareAppVersions,
   filterUsers,
   getLifecycle,
+  parseTrendDays,
+  stickinessPct,
+  trendScale,
   mainButtonUsage,
   normalizeAgent,
   parseExcludedUserIds,
@@ -319,4 +322,17 @@ test('workspace mode copy does not present manual selections as real usage', () 
     leaderLabel: 'Most used',
     sample: '42 tracked launches from 9 users. Default modes count.',
   })
+})
+
+test('usage trend helpers accept only the offered ranges and round stickiness', () => {
+  assert.equal(parseTrendDays(undefined), 30)
+  assert.equal(parseTrendDays(14), 14)
+  assert.equal(parseTrendDays(90), null)
+  assert.equal(stickinessPct({ daily_average: 48.3, active_7d: 92 }), 53)
+  assert.equal(stickinessPct({ daily_average: null, active_7d: 92 }), null)
+  assert.equal(stickinessPct({ daily_average: 4, active_7d: 0 }), null)
+  // Three whole steps: 60 → 40/20, 150 → 100/50; never below 30.
+  assert.equal(trendScale([57, 12]), 60)
+  assert.equal(trendScale([131]), 150)
+  assert.equal(trendScale([]), 30)
 })

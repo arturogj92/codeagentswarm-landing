@@ -486,6 +486,48 @@ export function parseFeatureWindowDays(value: unknown): FeatureWindowDays | null
   return value === 7 || value === 30 || value === 90 || value === 180 ? value : null
 }
 
+// Usage trend: every signed-in app (plan checks) plus users sharing analytics (clicks).
+export type TrendDays = 14 | 30
+
+export interface UsageTrend {
+  generated_at: string
+  days: number
+  coverage_start: string | null
+  connected_now: number
+  active_today: number
+  active_24h: number
+  active_7d: number
+  daily_average: number | null
+  streak_7: number
+  daily: { day: string; active: number; signups: number }[]
+  weeks: {
+    starts_at: string
+    ends_at: string
+    active: number
+    returning: number
+    new: number
+    back: number
+    left: number
+    signups: number
+  }[]
+}
+
+export function parseTrendDays(value: unknown): TrendDays | null {
+  if (value === undefined) return 30
+  return value === 14 || value === 30 ? value : null
+}
+
+/** Daily average over active-in-7-days, as a whole percentage. */
+export function stickinessPct(trend: Pick<UsageTrend, 'daily_average' | 'active_7d'>): number | null {
+  if (!trend.active_7d || trend.daily_average === null) return null
+  return Math.round((Number(trend.daily_average) / trend.active_7d) * 100)
+}
+
+/** A chart ceiling that splits into three whole steps (30, 60, 90...). */
+export function trendScale(values: number[]): number {
+  return Math.max(30, Math.ceil(Math.max(0, ...values) / 30) * 30)
+}
+
 // Rolling windows ending now, like the global metrics (`last_seen >= now() - N days`); calendar
 // days would shrink "last 7 days" to barely six early in the UTC day.
 export function getLifecycle(lastActive: string | null, now = Date.now()): Lifecycle {

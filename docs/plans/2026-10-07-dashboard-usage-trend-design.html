@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Proposal · Users dashboard · Usage trend</title>
+<style>
+  :root {
+    --bg: #090909; --card: #111111; --line: rgba(255,255,255,.09); --line-soft: rgba(255,255,255,.07);
+    --t90: rgba(255,255,255,.9); --t70: rgba(255,255,255,.7); --t55: rgba(255,255,255,.55); --t40: rgba(255,255,255,.4); --t30: rgba(255,255,255,.3);
+    --amber: #fcd34d; --amber-soft: rgba(251,191,36,.07); --amber-line: rgba(251,191,36,.45);
+    --green: #6ee7b7; --green-bar: #34d399; --rose: #fda4af; --sky: #7dd3fc;
+    --mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: #fff; font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif; }
+  .demo { position: sticky; top: 0; z-index: 50; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding: 8px 16px; background: #1e1b4b; border-bottom: 1px solid #4338ca; font-size: 12px; color: #c7d2fe; }
+  .demo b { color: #fff; margin-right: 4px; }
+  .demo button { background: transparent; color: #c7d2fe; border: 1px solid #4338ca; border-radius: 6px; padding: 3px 9px; cursor: pointer; font: inherit; }
+  .demo button[aria-pressed="true"] { background: #4338ca; color: #fff; }
+  .topbar { height: 56px; display: flex; align-items: center; gap: 10px; padding: 0 32px; background: rgba(17,17,17,.95); border-bottom: 1px solid rgba(255,255,255,.1); }
+  .logo { width: 28px; height: 28px; display: grid; place-items: center; border-radius: 8px; border: 1px solid rgba(251,191,36,.25); background: rgba(251,191,36,.1); color: var(--amber); font: 700 14px var(--mono); }
+  .topbar .name { font-weight: 600; color: var(--t90); font-size: 14px; } .topbar .name span { color: var(--t55); font-weight: 400; }
+  .nav { margin-left: auto; display: flex; gap: 4px; } .nav a { color: var(--t55); text-decoration: none; padding: 6px 10px; border-radius: 8px; font-size: 13px; } .nav a.on { color: #fff; background: rgba(255,255,255,.06); }
+  main { max-width: 1600px; margin: 0 auto; padding: 36px 32px 64px; }
+  .eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .18em; color: rgba(252,211,77,.8); margin: 0 0 8px; }
+  h1 { font-size: 36px; letter-spacing: -.035em; margin: 0; }
+  .lede { color: var(--t55); margin: 8px 0 28px; max-width: 640px; }
+  .cards { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; }
+  .metric { min-height: 112px; border-radius: 12px; border: 1px solid var(--line); background: var(--card); padding: 16px; }
+  .metric .l { font-size: 11px; font-weight: 500; color: var(--t55); } .metric .v { display: block; margin-top: 8px; font: 600 30px/1.1 var(--mono); letter-spacing: -.04em; } .metric .n { display: block; margin-top: 6px; font-size: 10px; color: var(--t55); }
+  .green { color: var(--green); } .amber { color: var(--amber); }
+  .existing { opacity: .5; position: relative; }
+  .tag { display: inline-block; font-size: 10px; font-weight: 600; letter-spacing: .08em; padding: 2px 7px; border-radius: 999px; }
+  .tag.new { background: rgba(251,191,36,.12); color: var(--amber); border: 1px solid rgba(251,191,36,.3); }
+  .tag.old { background: rgba(255,255,255,.05); color: var(--t40); border: 1px solid var(--line); }
+  .marker { display: flex; align-items: center; gap: 8px; margin: 22px 0 10px; color: var(--t40); font-size: 11px; }
+  .marker::after { content: ""; flex: 1; height: 1px; background: var(--line-soft); }
+  section.trend { border-radius: 12px; border: 1px solid rgba(251,191,36,.25); background: var(--card); padding: 20px; }
+  .head { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-start; justify-content: space-between; }
+  h2 { font-size: 18px; letter-spacing: -.02em; margin: 0; } .sub { color: var(--t55); font-size: 13px; margin: 4px 0 0; }
+  .seg { display: flex; border: 1px solid rgba(255,255,255,.1); background: rgba(0,0,0,.25); border-radius: 8px; padding: 2px; }
+  .seg button { background: none; border: 0; color: var(--t55); font: 500 12px inherit; padding: 5px 11px; border-radius: 6px; cursor: pointer; }
+  .seg button[aria-pressed="true"] { background: rgba(255,255,255,.08); color: #fff; }
+  .seg button:focus-visible, .demo button:focus-visible { outline: 2px solid var(--amber); outline-offset: 1px; }
+  .kpis { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; margin-top: 18px; }
+  .kpi { border-radius: 10px; border: 1px solid var(--line-soft); background: rgba(0,0,0,.2); padding: 12px 14px; }
+  .kpi .l { font-size: 11px; color: var(--t55); } .kpi .v { display: block; margin-top: 4px; font: 600 24px/1.15 var(--mono); letter-spacing: -.03em; } .kpi .n { display: block; margin-top: 3px; font-size: 10px; color: var(--t40); }
+  .live { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--green-bar); margin-right: 6px; vertical-align: 1px; }
+  .grid2 { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(360px, .85fr); gap: 16px; margin-top: 16px; }
+  .panel { min-width: 0; border-radius: 10px; border: 1px solid var(--line-soft); background: rgba(0,0,0,.18); padding: 16px; }
+  .panel h3 { margin: 0; font-size: 13px; font-weight: 600; color: var(--t90); } .panel .hint { margin: 2px 0 0; font-size: 11px; color: var(--t40); }
+  .legend { display: flex; gap: 14px; font-size: 11px; color: var(--t55); margin-top: 10px; }
+  .legend i { display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin-right: 5px; vertical-align: -1px; }
+  .chart { position: relative; height: 210px; margin-top: 14px; display: flex; align-items: flex-end; gap: 3px; padding-left: 28px; border-bottom: 1px solid var(--line-soft); }
+  .axis { position: absolute; left: 0; top: 0; bottom: 0; width: 26px; display: flex; flex-direction: column; justify-content: space-between; font: 10px var(--mono); color: var(--t30); }
+  .gridline { position: absolute; left: 28px; right: 0; border-top: 1px dashed rgba(255,255,255,.05); }
+  .col { position: relative; flex: 1; height: 100%; display: flex; align-items: flex-end; justify-content: center; cursor: default; }
+  .bar { width: 100%; max-width: 22px; border-radius: 3px 3px 0 0; background: rgba(52,211,153,.75); }
+  .col.weekend .bar { background: rgba(52,211,153,.4); }
+  .col.today .bar { background: repeating-linear-gradient(45deg, rgba(52,211,153,.75) 0 4px, rgba(52,211,153,.45) 4px 8px); }
+  .col:hover .bar, .col:focus-visible .bar { background: #6ee7b7; }
+  .col:focus-visible { outline: none; }
+  .dot { position: absolute; width: 6px; height: 6px; border-radius: 50%; background: var(--amber); left: 50%; transform: translate(-50%, 50%); }
+  .boundary { position: absolute; top: -4px; bottom: 0; border-left: 1px dashed rgba(125,211,252,.55); }
+  .boundary span { position: absolute; top: -2px; left: 6px; white-space: nowrap; font-size: 10px; color: var(--sky); }
+  .boundary.flip span { left: auto; right: 6px; }
+  .tablewrap { overflow-x: auto; }
+  .xlabels { overflow: hidden; display: flex; gap: 3px; padding-left: 28px; margin-top: 6px; font: 10px var(--mono); color: var(--t30); }
+  .xlabels span { flex: 1; text-align: center; overflow: visible; white-space: nowrap; }
+  .tip { position: fixed; pointer-events: none; z-index: 60; background: #1a1a1a; border: 1px solid rgba(255,255,255,.14); border-radius: 8px; padding: 8px 10px; font-size: 11px; color: var(--t70); display: none; box-shadow: 0 6px 18px rgba(0,0,0,.4); }
+  .tip b { color: #fff; font-family: var(--mono); }
+  table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 12px; }
+  th { text-align: right; font-weight: 500; font-size: 10px; color: var(--t40); padding: 0 6px 8px; white-space: nowrap; }
+  th:first-child, td:first-child { text-align: left; padding-left: 0; }
+  td { text-align: right; padding: 9px 6px; border-top: 1px solid var(--line-soft); font-family: var(--mono); color: var(--t70); }
+  td:first-child { font-family: inherit; color: var(--t90); white-space: nowrap; }
+  td.total { color: #fff; font-weight: 600; }
+  td.left { color: var(--rose); }
+  .mix { display: flex; height: 6px; border-radius: 999px; overflow: hidden; background: rgba(255,255,255,.05); margin-top: 5px; min-width: 70px; }
+  .mix .a { background: #34d399; } .mix .b { background: var(--amber); } .mix .c { background: var(--sky); }
+  .foot { margin-top: 14px; font-size: 11px; color: var(--t40); line-height: 1.6; }
+  .skeleton { border-radius: 10px; background: rgba(255,255,255,.045); animation: pulse 1.4s ease-in-out infinite; }
+  @keyframes pulse { 50% { opacity: .45; } }
+  @media (prefers-reduced-motion: reduce) { .skeleton { animation: none; } }
+  .alert { margin-top: 18px; border-radius: 10px; border: 1px solid rgba(251,113,133,.2); background: rgba(251,113,133,.06); padding: 12px; color: #fecdd3; font-size: 13px; }
+  .alert button { background: none; border: 0; color: inherit; font: 600 13px inherit; text-decoration: underline; cursor: pointer; }
+  .below { margin-top: 18px; display: grid; grid-template-columns: minmax(0,1.35fr) minmax(340px,.65fr); gap: 16px; }
+  .below .ghost { height: 140px; border-radius: 12px; border: 1px solid var(--line); background: var(--card); padding: 18px; color: var(--t40); font-size: 13px; }
+  @media (max-width: 1180px) { .cards, .kpis { grid-template-columns: repeat(3, 1fr); } .grid2, .below { grid-template-columns: 1fr; } }
+  @media (max-width: 640px) { main { padding: 24px 16px; } .cards, .kpis { grid-template-columns: repeat(2, 1fr); } .topbar { padding: 0 16px; } .nav { display: none; } .xlabels span:nth-child(odd) { visibility: hidden; } }
+</style>
+</head>
+<body>
+<div class="demo" role="region" aria-label="Demo controls (not part of the product)">
+  <b>DEMO ONLY</b> State:
+  <button type="button" data-state="normal" aria-pressed="true">Normal</button>
+  <button type="button" data-state="loading" aria-pressed="false">Loading</button>
+  <button type="button" data-state="error" aria-pressed="false">Error</button>
+  <span style="margin-left:auto">Real data from production · 2026-10-07 18:24 UTC</span>
+</div>
+
+<header class="topbar">
+  <span class="logo">@</span><span class="name">CodeAgentSwarm <span>/ Operations</span></span>
+  <nav class="nav" aria-label="Dashboard"><a class="on" href="#">Users</a><a href="#">Real-time</a><a href="#">Emails</a><a href="#">Cloudflare</a></nav>
+</header>
+
+<main>
+  <p class="eyebrow">USER ACTIVITY</p>
+  <h1>Users</h1>
+  <p class="lede">Review registered accounts and activity recorded by in-app events. Sign-ins and product activity are kept separate.</p>
+
+  <div class="marker"><span class="tag old">ALREADY THERE</span></div>
+  <section class="cards existing" aria-label="Existing summary cards">
+    <div class="metric"><span class="l">Registered users</span><span class="v">365</span><span class="n">+117 in 30d</span></div>
+    <div class="metric"><span class="l">Active in 7d</span><span class="v green">92</span><span class="n">Recorded activity</span></div>
+    <div class="metric"><span class="l">Active in 30d</span><span class="v green">178</span><span class="n">Includes active 7d</span></div>
+    <div class="metric"><span class="l">Activated</span><span class="v amber">238</span><span class="n">Tracked launch signal</span></div>
+    <div class="metric"><span class="l">Inactive 7–30d</span><span class="v amber">86</span><span class="n">Follow-up window</span></div>
+    <div class="metric"><span class="l">No tracked activity</span><span class="v">15</span><span class="n">Telemetry may be off</span></div>
+  </section>
+
+  <div class="marker"><span class="tag new">NEW</span></div>
+  <section class="trend" aria-labelledby="trend-title">
+    <div class="head">
+      <div>
+        <h2 id="trend-title">Usage trend</h2>
+        <p class="sub">Every signed-in app plus users sharing analytics · UTC days</p>
+      </div>
+      <div class="seg" role="group" aria-label="Trend period">
+        <button type="button" data-days="14" aria-pressed="false">14 days</button>
+        <button type="button" data-days="30" aria-pressed="true">30 days</button>
+      </div>
+    </div>
+
+    <div id="trend-body"></div>
+  </section>
+
+  <div class="marker"><span class="tag old">ALREADY THERE</span></div>
+  <div class="below existing" aria-hidden="true">
+    <div class="ghost">Main button usage</div>
+    <div class="ghost">Cohort health</div>
+  </div>
+</main>
+
+<div class="tip" id="tip" role="status" aria-live="polite"></div>
+
+<script>
+const DAILY = [
+  ['2026-09-08',42,9],['2026-09-09',33,3],['2026-09-10',41,5],['2026-09-11',40,4],['2026-09-12',22,2],['2026-09-13',23,2],['2026-09-14',32,2],
+  ['2026-09-15',38,3],['2026-09-16',34,3],['2026-09-17',37,7],['2026-09-18',36,3],['2026-09-19',26,2],['2026-09-20',25,2],['2026-09-21',42,4],
+  ['2026-09-22',41,3],['2026-09-23',40,4],['2026-09-24',39,1],['2026-09-25',35,3],['2026-09-26',30,6],['2026-09-27',41,4],['2026-09-28',54,2],
+  ['2026-09-29',51,2],['2026-09-30',46,5],['2026-10-01',48,7],['2026-10-02',50,3],['2026-10-03',41,4],['2026-10-04',43,7],['2026-10-05',53,5],
+  ['2026-10-06',57,5],['2026-10-07',56,3]
+];
+const WEEKS = [
+  ['Sep 30 – Oct 7', 92, 35, 50, 7, 30, 35],
+  ['Sep 23 – Sep 30', 80, 22, 49, 9, 33, 24],
+  ['Sep 16 – Sep 23', 82, 23, 48, 11, 23, 24],
+  ['Sep 9 – Sep 16', 71, 19, 43, 9, 29, 20],
+  ['Sep 2 – Sep 9', 72, 32, 36, 4, 27, 32],
+];
+const BOUNDARY = '2026-09-27';
+const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const fmt = (iso) => { const [, m, d] = iso.split('-'); return `${MONTHS[+m - 1]} ${+d}`; };
+const weekday = (iso) => new Date(iso + 'T00:00:00Z').getUTCDay();
+let days = 30, state = 'normal';
+
+function kpis() {
+  return `<div class="kpis">
+    <div class="kpi"><span class="l"><span class="live"></span>Connected now</span><span class="v green">15</span><span class="n">App open in the last 20 min</span></div>
+    <div class="kpi"><span class="l">Active today</span><span class="v">56</span><span class="n">Since 00:00 UTC</span></div>
+    <div class="kpi"><span class="l">Last 24 hours</span><span class="v">60</span><span class="n">Rolling window</span></div>
+    <div class="kpi"><span class="l">Daily average</span><span class="v">48</span><span class="n">Last 7 full days</span></div>
+    <div class="kpi"><span class="l">Stickiness</span><span class="v">52%</span><span class="n">Daily average ÷ active in 7d</span></div>
+    <div class="kpi"><span class="l">7+ day streaks</span><span class="v amber">22</span><span class="n">Used every day for a week</span></div>
+  </div>`;
+}
+
+function chart() {
+  const rows = DAILY.slice(-days);
+  const max = 60, ticks = [60, 40, 20, 0];
+  const cols = rows.map(([d, a, s], i) => {
+    const cls = ['col', weekday(d) % 6 === 0 ? 'weekend' : '', i === rows.length - 1 ? 'today' : ''].join(' ');
+    return `<div class="${cls}" tabindex="0" data-i="${i}" aria-label="${fmt(d)}: ${a} active accounts, ${s} sign-ups">
+      <div class="bar" style="height:${(a / max) * 100}%"></div>
+      <span class="dot" style="bottom:${(s / max) * 100}%"></span>
+    </div>`;
+  }).join('');
+  const bIndex = rows.findIndex(([d]) => d === BOUNDARY);
+  const flip = bIndex / rows.length > 0.55 && innerWidth < 900 ? ' flip' : '';
+  const boundary = bIndex >= 0 ? `<div class="boundary${flip}" style="left:calc(28px + (100% - 28px) * ${bIndex / rows.length})"><span>Plan checks counted from Sep 27</span></div>` : '';
+  const step = days > 14 ? 5 : 2;
+  const labels = rows.map(([d], i) => `<span>${i % step === 0 || i === rows.length - 1 ? fmt(d) : ''}</span>`).join('');
+  return `<div class="panel">
+    <h3>Daily active accounts</h3>
+    <p class="hint">Hover a day for exact values. Today is still in progress.</p>
+    <div class="legend"><span><i style="background:rgba(52,211,153,.75)"></i>Active accounts</span><span><i style="background:rgba(52,211,153,.4)"></i>Weekend</span><span><i style="background:#fcd34d;border-radius:50%"></i>Sign-ups</span></div>
+    <div class="chart" id="chart">
+      <div class="axis">${ticks.map((t) => `<span>${t}</span>`).join('')}</div>
+      ${[0, 1, 2].map((n) => `<div class="gridline" style="top:${(n / 3) * 100}%"></div>`).join('')}
+      ${boundary}${cols}
+    </div>
+    <div class="xlabels">${labels}</div>
+  </div>`;
+}
+
+function weeks() {
+  const body = WEEKS.map(([label, active, fresh, back7, back, left, signups]) => {
+    const pct = (n) => `${(n / active) * 100}%`;
+    return `<tr>
+      <td>${label}<div class="mix" aria-hidden="true"><span class="a" style="width:${pct(back7)}"></span><span class="b" style="width:${pct(fresh)}"></span><span class="c" style="width:${pct(back)}"></span></div></td>
+      <td class="total">${active}</td><td>${back7}</td><td>${fresh}</td><td>${back}</td><td class="left">−${left}</td><td>${signups}</td>
+    </tr>`;
+  }).join('');
+  return `<div class="panel">
+    <h3>Weekly flow</h3>
+    <p class="hint">Who makes up each 7-day window, and who did not come back</p>
+    <div class="legend"><span><i style="background:#34d399"></i>Returning</span><span><i style="background:#fcd34d"></i>New</span><span><i style="background:#7dd3fc"></i>Back after a break</span></div>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Week</th><th>Active</th><th>Returning</th><th>New</th><th>Back</th><th>Left</th><th>Sign-ups</th></tr></thead>
+      <tbody>${body}</tbody>
+    </table></div>
+  </div>`;
+}
+
+function render() {
+  const el = document.getElementById('trend-body');
+  if (state === 'loading') {
+    el.innerHTML = `<div class="kpis">${Array.from({ length: 6 }, () => '<div class="skeleton" style="height:84px"></div>').join('')}</div>
+      <div class="grid2"><div class="skeleton" style="height:300px"></div><div class="skeleton" style="height:300px"></div></div>`;
+    return;
+  }
+  if (state === 'error') {
+    el.innerHTML = `<div class="alert" role="alert">Usage trend could not load. <button type="button" onclick="setState('normal')">Retry</button></div>`;
+    return;
+  }
+  el.innerHTML = kpis() + `<div class="grid2">${chart()}${weeks()}</div>
+    <p class="foot">An account is active on a day when its app checked the plan while signed in, or when it sent a usage event. Before Sep 27 only usage events were recorded, so earlier days can read lower. Returning = also active in the previous 7 days. Left = active in the previous 7 days but not in this one.</p>`;
+  wireTips();
+}
+
+function wireTips() {
+  const tip = document.getElementById('tip');
+  const rows = DAILY.slice(-days);
+  document.querySelectorAll('.col').forEach((col) => {
+    const show = (x, y) => {
+      const [d, a, s] = rows[+col.dataset.i];
+      tip.innerHTML = `${fmt(d)}${col.classList.contains('today') ? ' · so far' : ''}<br><b>${a}</b> active accounts · <b>${s}</b> sign-ups`;
+      tip.style.display = 'block';
+      tip.style.left = Math.min(x + 12, innerWidth - 200) + 'px';
+      tip.style.top = (y - 52) + 'px';
+    };
+    col.addEventListener('mousemove', (e) => show(e.clientX, e.clientY));
+    col.addEventListener('focus', () => { const r = col.getBoundingClientRect(); show(r.left, r.top); });
+    col.addEventListener('mouseleave', () => { tip.style.display = 'none'; });
+    col.addEventListener('blur', () => { tip.style.display = 'none'; });
+  });
+}
+
+function setState(next) {
+  state = next;
+  document.querySelectorAll('.demo [data-state]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.state === next)));
+  render();
+}
+document.querySelectorAll('.demo [data-state]').forEach((b) => b.addEventListener('click', () => setState(b.dataset.state)));
+addEventListener('resize', () => { if (state === 'normal') render(); });
+document.querySelectorAll('.seg [data-days]').forEach((b) => b.addEventListener('click', () => {
+  days = +b.dataset.days;
+  document.querySelectorAll('.seg [data-days]').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+  render();
+}));
+render();
+</script>
+</body>
+</html>
