@@ -2,6 +2,7 @@
 // Daily acquisition report. Only completed UTC days; clicks and installer requests
 // are separate measures. Importing this file never fetches data or sends messages.
 import { pathToFileURL } from 'node:url'
+import { collectAiTraffic, formatAiTraffic, DOWNLOAD_EVENT } from './ai-traffic-report.mjs'
 
 const UMAMI_BASE = 'https://umami-codeagentswarm-production.up.railway.app'
 const UMAMI_WEBSITE_ID = 'a6cf83f7-4ba1-47af-87b3-4fdbd2d537d9'
@@ -42,7 +43,7 @@ const count = (value) => {
 }
 export function downloadClicks(events, source) {
   return metricRows(events).filter(({ x }) =>
-    new RegExp(`^download_app_${source}_(silicon|intel|windows_x64|windows_arm64)$`).test(x)
+    DOWNLOAD_EVENT.exec(x)?.[1] === source
   ).reduce((sum, { y }) => sum + y, 0)
 }
 
@@ -86,7 +87,7 @@ export async function buildReport(now = new Date()) {
   const date = new Date(startAt).toISOString().slice(0, 10)
   const previousDate = new Date(startAt - 7 * DAY_MS).toISOString().slice(0, 10)
   const lines = [`Informe SEO landing: ${date} (dia completo UTC)`, '']
-  let current, previous, umamiError
+  let current, previous, umamiError, aiTraffic, aiError
   try {
     const { token } = await getJson(`${UMAMI_BASE}/api/auth/login`, {
       method: 'POST',
@@ -97,6 +98,8 @@ export async function buildReport(now = new Date()) {
       umamiWindow(token, startAt, endAt),
       umamiWindow(token, startAt - 7 * DAY_MS, endAt - 7 * DAY_MS),
     ])
+    try { aiTraffic = await collectAiTraffic(token, startAt, endAt) }
+    catch (error) { aiError = error.message }
   } catch (error) { umamiError = error.message }
 
   try {
@@ -129,6 +132,7 @@ export async function buildReport(now = new Date()) {
   } else {
     lines.push(`Umami no disponible (${umamiError}). No se calcula conversion.`)
   }
+  lines.push('', aiTraffic ? formatAiTraffic(aiTraffic) : `Tráfico de IA no disponible (${aiError || umamiError}). No se interpreta como cero.`)
   return lines.join('\n')
 }
 

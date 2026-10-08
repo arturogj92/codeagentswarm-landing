@@ -195,7 +195,7 @@ Running both scripts will:
 
 ## ai-citation-scan.mjs
 
-Measures whether AI answer engines (Perplexity, ChatGPT search, Google AI Mode) recommend
+Measures whether AI answer engines (Perplexity, ChatGPT search, Google AI Mode and Gemini) recommend
 CodeAgentSwarm and cite codeagentswarm.com when someone asks a real decision question about
 running several AI coding agents at once.
 
@@ -208,6 +208,7 @@ node scripts/ai-citation-scan.mjs
 # Same prompts, different engine
 node scripts/ai-citation-scan.mjs --engine chatgpt
 node scripts/ai-citation-scan.mjs --engine google-ai
+node scripts/ai-citation-scan.mjs --engine gemini
 
 # Only one prompt
 node scripts/ai-citation-scan.mjs --prompt category-manage-agents-2026
@@ -219,9 +220,11 @@ node scripts/ai-citation-scan.mjs --report
 ### How it works
 
 For each prompt the script opens the engine in your browser, you read the answer, and it asks
-you three quick questions: is CodeAgentSwarm cited, mentioned but not cited, or absent; which
-tools the answer recommended; which domains it cited. Each answer is appended as one JSON line
-to `docs/seo/ai-citation-log.jsonl`.
+you to record citation/mention status, an explicit recommendation, recommended tools, cited
+domains and answer evidence. Record model, country and search mode for comparable runs, and
+confirm a fresh conversation with memory/personalization off. New answers are appended to
+the ignored `docs/seo/ai-citation-log.local.jsonl`; the tracked historical log stays unchanged.
+Missing prompts remain unmeasured. Branded questions are excluded from discovery totals.
 
 ### Rules
 
@@ -263,3 +266,21 @@ together in the same commit.
 
 The API is called unauthenticated, so a run can hit the GitHub rate limit. If it does, wait an
 hour and run it again.
+
+## AI discovery and acquisition
+
+The citation scan now covers 20 frozen EN/ES prompts, including Gemini. It records
+model, country, search mode, evidence and recommendation separately from citation.
+New observations stay in the ignored `docs/seo/ai-citation-log.local.jsonl`.
+Use `--list` to inspect prompts without opening a browser.
+
+`node scripts/ai-traffic-report.mjs --days 30` reads Umami using
+`UMAMI_USERNAME` and `UMAMI_PASSWORD`. It deduplicates referrer and UTM signals
+and links later download clicks by session. It never sends a message.
+The existing daily report includes this analysis for its complete UTC day.
+
+See [the operational notes and attribution limits](../docs/seo/ai-visibility.md).
+
+```sh
+node --test scripts/ai-discovery.test.mjs scripts/seo-report-indexnow.test.mjs
+```

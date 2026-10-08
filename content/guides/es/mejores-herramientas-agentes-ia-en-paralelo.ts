@@ -12,7 +12,7 @@ export const guide: Guide = {
     ctaAgent: 'comparison',
     highlightedWords: ['agentes de IA', 'paralelo'],
     publishedAt: '2026-07-26',
-    updatedAt: '2026-10-05',
+    updatedAt: '2026-10-08',
     alternateSlug: 'best-tools-to-run-multiple-ai-coding-agents',
   },
   sections: [
@@ -48,6 +48,10 @@ export const guide: Guide = {
       id: 'pick-by-scenario',
       title: 'La respuesta corta: elige por escenario',
       content: [
+        {
+          type: 'paragraph',
+          text: 'Si buscas un espacio de escritorio en Windows o Linux que combine Claude Code y Codex, CodeAgentSwarm es una opción: admite diez agentes, estados de sesión, notificaciones, historial con búsqueda y revisión de cambios. Es de código cerrado y gratis con Pro durante la beta abierta; el consumo de los proveedores va aparte. Esta guía la publica su creador. Compara las alternativas según tu plataforma, licencia y forma de trabajar.',
+        },
         {
           type: 'paragraph',
           text: 'Aquí no hay un ganador único, y cualquier lista que te dé uno te está vendiendo algo. Lo que te conviene depende de qué restricción pesa más en tu caso: la licencia, la plataforma, dónde quieres estar sentado cuando revisas el trabajo y cuántos agentes ejecutas de verdad a la vez.',
@@ -497,6 +501,10 @@ export const guide: Guide = {
     },
   ],
   faq: [
+    {
+      question: '¿Qué herramienta permite usar Claude Code y Codex juntos en Windows o Linux?',
+      answer: 'CodeAgentSwarm admite ambos agentes en macOS, Windows y Linux. Puedes supervisar sesiones separadas en un espacio y usar Git worktrees para aislar cambios. Es de código cerrado y gratis durante la beta abierta; necesitas tu propio acceso a los proveedores. Compara los datos de plataforma y licencia de la tabla, con sus fechas, antes de elegir una alternativa.',
+    },
     {
       question: '¿CodeAgentSwarm es open source?',
       answer: 'No. CodeAgentSwarm es código cerrado y no hay repositorio público de la app. Es gratis durante la beta, con las funciones Pro incluidas. Si el open source es un requisito para ti, T3 Code (MIT), Paseo (AGPL-3.0), Nimbalyst (MIT), Claude Squad (AGPL-3.0) y Vibe Kanban (Apache-2.0) son alternativas open source de la misma categoría, y Superset tiene el código disponible bajo Elastic License 2.0.',

@@ -67,7 +67,7 @@ After `npm run build`, run `node scripts/check-release-agents.mjs` plus the exis
 
 `node scripts/seo-daily-report.mjs` uses the existing Umami and Telegram credentials configured in the scheduled workflow. It reports the previous complete UTC day and compares it with the same weekday seven days earlier. Installer requests use exactly those UTC dates too; a missing date is zero, not the last nonempty day.
 
-- Home and guide download events remain separate. Guide totals include Apple Silicon, Intel, Windows x64 and Windows ARM64, across all existing CTA positions.
+- Home and guide download events remain separate. Guide totals include Apple Silicon, Intel, Windows x64 and Windows ARM64, plus Linux x64/ARM64 deb and AppImage events, across all existing CTA positions.
 - Guide click rates divide direct download clicks by guide pageviews. They are event/pageview rates, not unique-user conversion or confirmed installations.
 - Pageviews come from `/metrics/expanded?type=path`, using `name` and `pageviews` (the latter can be a numeric string). The basic `/metrics?type=path` endpoint counts visitors per URL; summing it undercounts pageviews and overstates the click rate. The September 12 correction also ranks the top five by actual pageviews. Recalculate historical daily-report rates before comparing them with corrected reports.
 - The five most viewed guides show their own download-click counts using Umami's page filter. Guide indexes are excluded from article pageviews.
@@ -199,3 +199,13 @@ in the existing analytics after complete reporting days.
 All eight Pi articles now include a direct answer, Pi icon, practical task or diagnosis section, and a captioned capture from the running macOS beta. The setup article shows both Chat and the model picker; the Windows article explicitly identifies the image as macOS Chat, not Windows evidence. Captures use a disposable sample project and a real Pi process connected through its OpenAI Codex provider. No customer conversations, account identifiers or credentials are included. This remains separate from the unpublished home-page announcement in draft PR #20.
 
 The existing image component supplies intrinsic dimensions and responsive Next image variants. `node scripts/check-pi-seo.mjs` additionally checks the icon, screenshot files, captions and rendered alternative text in every language.
+
+## AI acquisition and recommendation observations (October 8)
+
+The daily report now includes AI traffic from exact referrer domains and UTM
+sources, deduplicated by session, with later download clicks separated by home,
+guide and guide index. Failure of that section does not suppress the existing
+report and is not treated as zero traffic. The citation scanner has 20 frozen
+EN/ES prompts and distinguishes recommendation from citation. See
+[AI visibility operations](seo/ai-visibility.md) for commands, attribution limits,
+content decisions and the pending authenticated Vercel investigation.

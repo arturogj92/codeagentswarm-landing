@@ -1,5 +1,6 @@
 # Dependencies
 node_modules/
+/node_modules
 
 # Next.js
 .next/
@@ -35,3 +36,9 @@ Thumbs.db
 # Testing
 coverage/
 .nyc_output/
+
+# Private AI observation log (historical baseline stays tracked)
+/docs/seo/ai-citation-log.local.jsonl
+
+# Local browser evidence
+/output/playwright/

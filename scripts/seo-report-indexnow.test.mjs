@@ -7,14 +7,15 @@ import { buildReport, reportWindow, downloadClicks } from './seo-daily-report.mj
 import { changedUrls, validateUrls, main as indexNow } from './indexnow-ping.mjs'
 
 const origin = 'https://www.codeagentswarm.com'
-test('report uses a complete UTC day and all four direct guide platforms', () => {
+test('report uses a complete UTC day and every shipped direct guide platform', () => {
   assert.deepEqual(reportWindow(new Date('2026-01-01T20:00:00Z')), {
     startAt: Date.parse('2025-12-31T00:00:00Z'), endAt: Date.parse('2025-12-31T23:59:59.999Z'),
   })
   assert.equal(downloadClicks([
     ...['silicon','intel','windows_x64','windows_arm64'].map(x => ({x:`download_app_guide_${x}`,y:2})),
+    {x:'download_app_guide_linux_arm64_deb',y:3}, {x:'download_app_guide_linux_x64_appimage',y:1},
     {x:'guide_product_block_click',y:20}, {x:'download_app_home_silicon',y:30},
-  ], 'guide'), 8)
+  ], 'guide'), 12)
   assert.throws(() => downloadClicks([{x:'download_app_guide_intel',y:'8'}], 'guide'))
 })
 
