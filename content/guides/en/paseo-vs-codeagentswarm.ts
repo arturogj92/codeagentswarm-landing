@@ -6,13 +6,13 @@ export const guide: Guide = {
     locale: 'en',
     title: 'Paseo vs CodeAgentSwarm: An Honest Comparison (2026)',
     metaTitle: 'Paseo vs CodeAgentSwarm: An Honest Comparison (2026)',
-    metaDescription: 'Paseo is a self-hosted, open source agent orchestrator you can drive from your phone. CodeAgentSwarm is a macOS, Windows and Linux desktop workspace for ten agent CLIs.',
-    intro: `Paseo is a self-hosted, open source orchestrator you can supervise from your phone, while CodeAgentSwarm is a macOS, Windows and Linux desktop workspace that runs ten agent CLIs in parallel terminals. That is the difference in one line, and most of the decision follows from it.
+    metaDescription: 'Paseo is a self-hosted, open source agent orchestrator you can drive from your phone. CodeAgentSwarm is a macOS, Windows and Linux desktop workspace for eleven agent CLIs.',
+    intro: `Paseo is a self-hosted, open source orchestrator you can supervise from your phone, while CodeAgentSwarm is a macOS, Windows and Linux desktop workspace that runs eleven agent CLIs in parallel terminals. That is the difference in one line, and most of the decision follows from it.
 
 Full disclosure: we build CodeAgentSwarm. That is exactly why this page says out loud where Paseo is the better tool instead of pretending we win every row. Both products are judged on the same criteria, our limitations sit next to our features, and every third-party fact below was checked on August 25, 2026 against paseo.sh, the public getpaseo/paseo repository and public GitHub data. CodeAgentSwarm availability and supported agents were updated on October 5, 2026.
 
-Short version: if you want to start a job at your desk and check on it from a train, or you need software you can host and audit yourself, Paseo fits better. If you work on macOS, Windows or Linux and want ten agent CLIs, a shared task board and one searchable history across all of them, that is where CodeAgentSwarm earns its place.`,
-    ctaText: 'If your work happens at a desk on macOS, Windows or Linux and you want ten agent CLIs, live diffs and a shared task board in one window, download CodeAgentSwarm and run your next batch of agents in parallel.',
+Short version: if you want to start a job at your desk and check on it from a train, or you need software you can host and audit yourself, Paseo fits better. If you work on macOS, Windows or Linux and want eleven agent CLIs, a shared task board and one searchable history across all of them, that is where CodeAgentSwarm earns its place.`,
+    ctaText: 'If your work happens at a desk on macOS, Windows or Linux and you want eleven agent CLIs, live diffs and a shared task board in one window, download CodeAgentSwarm and run your next batch of agents in parallel.',
     ctaAgent: 'comparison',
     highlightedWords: ['Paseo', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
@@ -26,7 +26,7 @@ Short version: if you want to start a job at your desk and check on it from a tr
       content: [
         {
           type: 'paragraph',
-          text: 'Paseo is a self-hosted, open source orchestrator with desktop, mobile, web and CLI clients talking to a daemon on your own machine, while CodeAgentSwarm is a closed source desktop app for macOS, Windows and Linux that runs ten agent CLIs side by side in parallel terminals.',
+          text: 'Paseo is a self-hosted, open source orchestrator with desktop, mobile, web and CLI clients talking to a daemon on your own machine, while CodeAgentSwarm is a closed source desktop app for macOS, Windows and Linux that runs eleven agent CLIs side by side in parallel terminals.',
         },
         {
           type: 'paragraph',
@@ -74,7 +74,7 @@ Short version: if you want to start a job at your desk and check on it from a tr
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm is a desktop workspace to run and supervise multiple AI coding agents in parallel. It runs on macOS, Windows and Linux, it is not a model provider, and it drives the agent CLIs you already have installed: Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi and Devin CLI.',
+          text: 'CodeAgentSwarm is a desktop workspace to run and supervise multiple AI coding agents in parallel. It runs on macOS, Windows and Linux, it is not a model provider, and it drives the agent CLIs you already have installed: Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI and GitHub Copilot CLI.',
         },
         {
           type: 'image',
@@ -87,7 +87,7 @@ Short version: if you want to start a job at your desk and check on it from a tr
           items: [
             'Parallel terminals, each with its own agent, project and conversation',
             'Desktop notifications when an agent finishes or stops to ask you something',
-            'Searchable conversation history across all ten agents and capability-aware resume back into a terminal',
+            'Searchable conversation history across all eleven agents and capability-aware resume back into a terminal',
             'Per-terminal live file diffs while the agent is still working',
             'Permission control, including a Turbo mode when you want to stop approving every step',
             'A kanban task board the agents update themselves over MCP',
@@ -122,7 +122,7 @@ Short version: if you want to start a job at your desk and check on it from a tr
             [
               '<strong>Supported agents</strong>',
               'Claude Code, Codex, Cursor, OpenCode and Pi per their FAQ, plus GitHub Copilot in the README',
-              'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi and Devin CLI',
+              'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI and GitHub Copilot CLI',
             ],
             [
               '<strong>Isolation model</strong>',
@@ -137,7 +137,7 @@ Short version: if you want to start a job at your desk and check on it from a tr
             [
               '<strong>Conversation history</strong>',
               'Not documented on their site as of August 25, 2026',
-              'Searchable across all ten agents and capability-aware resume',
+              'Searchable across all eleven agents and capability-aware resume',
             ],
             [
               '<strong>Task management</strong>',

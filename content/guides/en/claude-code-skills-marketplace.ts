@@ -6,17 +6,17 @@ export const guide: Guide = {
     locale: 'en',
     title: 'Claude Code Skills Marketplace: Browse and Install Agent Skills',
     metaTitle: 'Claude Code Skills Marketplace: Browse and Install Agent Skills (2026)',
-    metaDescription: 'Browse and install skills for ten coding agents, including Claude Code, Codex CLI, Muse Code, Pi and Devin CLI. Share workflows from one workspace.',
+    metaDescription: 'Browse and install skills for eleven coding agents, including Claude Code, Codex CLI, Muse Code, Pi, Devin CLI and GitHub Copilot CLI. Share workflows from one workspace.',
     intro: `If you have ever wanted to give Claude Code a reusable capability (a way to write commits, run a release, generate a changelog) you have probably ended up copying SKILL.md files around by hand, dropping folders into hidden directories, and hoping you got the path right.
 
 CodeAgentSwarm ships with a built-in Skills Marketplace so you do not have to do any of that. It mirrors a large public catalogue of agent skills (tens of thousands of them), lets you search and sort by stars, and installs the one you want with a single click.
 
-The part I like most: when you install a skill, you choose where it goes. Current builds support Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi and Devin CLI, or all ten at once. So one skill you found becomes a capability shared across every CLI agent you run, instead of something locked to a single tool.`,
+The part I like most: when you install a skill, you choose where it goes. Current builds support Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI and GitHub Copilot CLI, or all eleven at once. So one skill you found becomes a capability shared across every CLI agent you run, instead of something locked to a single tool.`,
     highlightedWords: ['Skills Marketplace', 'Agent Skills', 'Install'],
     publishedAt: '2026-06-07',
     updatedAt: '2026-10-05',
     alternateSlug: 'marketplace-de-skills-claude-code',
-    ctaText: 'Open the Skills Marketplace in CodeAgentSwarm, find a skill you actually want, and install it to one agent or all ten in one click.',
+    ctaText: 'Open the Skills Marketplace in CodeAgentSwarm, find a skill you actually want, and install it to one agent or all eleven in one click.',
     ctaAgent: 'claude-code',
   },
   sections: [
@@ -64,15 +64,15 @@ The part I like most: when you install a skill, you choose where it goes. Curren
         {
           type: 'list',
           items: [
-            'Install to one supported agent: Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi and Devin CLI',
-            'Install all, which puts the skill into all ten agents at once',
+            'Install to one supported agent: Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI and GitHub Copilot CLI',
+            'Install all, which puts the skill into all eleven agents at once',
           ],
         },
         {
           type: 'image',
-          alt: 'Skill installation selector showing all ten supported agents',
+          alt: 'Skill installation selector showing all eleven supported agents',
           src: '/images/guides/skills-install-current.webp',
-          caption: 'Choose individual agents or install for all ten. The sample collection demonstrates the current selector.',
+          caption: 'Choose individual agents or install for all eleven. The sample collection demonstrates the current selector.',
           size: 'full',
         },
         {
@@ -121,11 +121,11 @@ The part I like most: when you install a skill, you choose where it goes. Curren
     },
     {
       id: 'across-clis',
-      title: 'One skill library across all ten agents',
+      title: 'One skill library across all eleven agents',
       content: [
         {
           type: 'paragraph',
-          text: 'This is the reason the marketplace matters more inside CodeAgentSwarm than it would as a standalone catalogue. CodeAgentSwarm is built to run several CLI agents in parallel, across Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi and Devin CLI.',
+          text: 'This is the reason the marketplace matters more inside CodeAgentSwarm than it would as a standalone catalogue. CodeAgentSwarm is built to run several CLI agents in parallel, across Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI and GitHub Copilot CLI.',
         },
         {
           type: 'paragraph',
@@ -133,7 +133,7 @@ The part I like most: when you install a skill, you choose where it goes. Curren
         },
         {
           type: 'paragraph',
-          text: 'For example, a "generate a release changelog" skill installed to all ten means it does not matter which terminal handles the release. Every supported agent gets the same workflow.',
+          text: 'For example, a "generate a release changelog" skill installed to all eleven means it does not matter which terminal handles the release. Every supported agent gets the same workflow.',
         },
         {
           type: 'paragraph',
@@ -186,7 +186,7 @@ The part I like most: when you install a skill, you choose where it goes. Curren
         },
         {
           type: 'paragraph',
-          text: 'To share a skill, you can publish it to the public catalogue the marketplace mirrors, or simply commit the folder to a repo your team clones. Either way, the format is the same, so anything you build is portable across all ten supported agents.',
+          text: 'To share a skill, you can publish it to the public catalogue the marketplace mirrors, or simply commit the folder to a repo your team clones. Either way, the format is the same, so anything you build is portable across all eleven supported agents.',
         },
         {
           type: 'callout',
@@ -203,7 +203,7 @@ The part I like most: when you install a skill, you choose where it goes. Curren
     },
     {
       question: 'How do I install a Claude Code skill?',
-      answer: 'Open the Skills Marketplace inside CodeAgentSwarm, search or sort by stars to find a skill, open it, and click Install. Choose Claude, Codex, Antigravity, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI or Install all. The files are written to the right place automatically.',
+      answer: 'Open the Skills Marketplace inside CodeAgentSwarm, search or sort by stars to find a skill, open it, and click Install. Choose Claude, Codex, Antigravity, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI, GitHub Copilot CLI or Install all. The files are written to the right place automatically.',
     },
     {
       question: 'Where are Claude Code skills stored?',
@@ -211,7 +211,7 @@ The part I like most: when you install a skill, you choose where it goes. Curren
     },
     {
       question: 'Can I use the same skill with all supported agents?',
-      answer: 'Yes. Choose Claude, Codex, Antigravity, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI or Install all. Choosing Install all puts the same skill into every supported CLI agent at once.',
+      answer: 'Yes. Choose Claude, Codex, Antigravity, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI, GitHub Copilot CLI or Install all. Choosing Install all puts the same skill into every supported CLI agent at once.',
     },
     {
       question: 'How do I create my own skill?',

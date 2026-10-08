@@ -6,12 +6,12 @@ export const guide: Guide = {
     locale: 'es',
     title: 'Superset vs CodeAgentSwarm: comparativa honesta (2026)',
     metaTitle: 'Superset vs CodeAgentSwarm: comparativa honesta (2026)',
-    metaDescription: 'Superset es un editor source available para 10+ agentes en paralelo. CodeAgentSwarm supervisa diez agentes CLI. Comparativa honesta de 2026.',
-    intro: `Superset es un editor de código source available construido para ejecutar diez o más agentes en paralelo, cada uno aislado en su propio worktree de git, mientras que CodeAgentSwarm es una app de escritorio de código cerrado construida para supervisar diez agentes CLI compatibles, con notificaciones del sistema, historial buscable entre agentes y un tablero kanban que los propios agentes actualizan por MCP.
+    metaDescription: 'Superset es un editor source available para 10+ agentes en paralelo. CodeAgentSwarm supervisa once agentes CLI. Comparativa honesta de 2026.',
+    intro: `Superset es un editor de código source available construido para ejecutar diez o más agentes en paralelo, cada uno aislado en su propio worktree de git, mientras que CodeAgentSwarm es una app de escritorio de código cerrado construida para supervisar once agentes CLI compatibles, con notificaciones del sistema, historial buscable entre agentes y un tablero kanban que los propios agentes actualizan por MCP.
 
 Transparencia por delante: CodeAgentSwarm lo hacemos nosotros. Por eso esta página dice dónde Superset es mejor en vez de disimularlo, y por eso nuestras limitaciones (código cerrado, Mobile Connect aún en alpha, todavía en beta) están en la misma tabla que el resto. Las dos herramientas se juzgan con los mismos criterios. Todos los datos de terceros se verificaron el 25 de agosto de 2026 en superset.sh y en los datos públicos de GitHub, y lo que no pudimos comprobar está marcado como tal. La disponibilidad y los agentes compatibles de CodeAgentSwarm se actualizaron el 5 de octubre de 2026.
 
-Resumen rápido: elige Superset si quieres un entorno con forma de editor y código que puedas leer. Elige CodeAgentSwarm si necesitas Windows hoy, historial buscable entre agentes y un tablero kanban que los agentes actualicen solos. CodeAgentSwarm admite ahora diez agentes CLI, incluidos Muse Code, Pi y Devin CLI.`,
+Resumen rápido: elige Superset si quieres un entorno con forma de editor y código que puedas leer. Elige CodeAgentSwarm si necesitas Windows hoy, historial buscable entre agentes y un tablero kanban que los agentes actualicen solos. CodeAgentSwarm admite ahora once agentes CLI, incluidos Muse Code, Pi, Devin CLI y GitHub Copilot CLI.`,
     ctaText: 'Las dos se empiezan gratis, así que pruébalas una semana sobre el mismo repositorio. CodeAgentSwarm es gratis durante la beta, con Pro incluido, para macOS, Windows y Linux.',
     ctaAgent: 'comparison',
     highlightedWords: ['Superset', 'CodeAgentSwarm'],
@@ -26,7 +26,7 @@ Resumen rápido: elige Superset si quieres un entorno con forma de editor y cód
       content: [
         {
           type: 'paragraph',
-          text: 'Superset es un entorno con forma de editor para ejecutar muchos agentes en paralelo aislados en worktrees de git, mientras que CodeAgentSwarm es un espacio de supervisión para un conjunto cerrado de diez agentes CLI, pensado para que te enteres en cuanto uno de ellos te necesita.',
+          text: 'Superset es un entorno con forma de editor para ejecutar muchos agentes en paralelo aislados en worktrees de git, mientras que CodeAgentSwarm es un espacio de supervisión para un conjunto cerrado de once agentes CLI, pensado para que te enteres en cuanto uno de ellos te necesita.',
         },
         {
           type: 'paragraph',
@@ -84,7 +84,7 @@ Resumen rápido: elige Superset si quieres un entorno con forma de editor y cód
         },
         {
           type: 'paragraph',
-          text: 'En vez de aceptar cualquier comando de terminal, CodeAgentSwarm integra diez agentes a propósito: Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi y Devin CLI. Ese alcance más estrecho es lo que paga el resto de funciones: notificaciones cuando un agente termina o necesita respuesta, historial buscable de los diez con opción de retomar cuando el proveedor lo permite, diffs en vivo por terminal, permisos con modos Turbo y YOLO, worktrees de git por sesión, marketplaces de skills y de MCP, indicador de cuota, mensajes de commit con IA, cambio rápido entre proyectos y un kanban que los agentes actualizan solos por MCP. Si de momento solo usas un proveedor, la guía para <a href="/es/guias/ejecutar-multiples-sesiones-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">ejecutar varias sesiones de Claude Code</a> es la versión pequeña de esta idea.',
+          text: 'En vez de aceptar cualquier comando de terminal, CodeAgentSwarm integra once agentes a propósito: Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI y GitHub Copilot CLI. Ese alcance más estrecho es lo que paga el resto de funciones: notificaciones cuando un agente termina o necesita respuesta, historial buscable de los once con opción de retomar cuando el proveedor lo permite, diffs en vivo por terminal, permisos con modos Turbo y YOLO, worktrees de git por sesión, marketplaces de skills y de MCP, indicador de cuota, mensajes de commit con IA, cambio rápido entre proyectos y un kanban que los agentes actualizan solos por MCP. Si de momento solo usas un proveedor, la guía para <a href="/es/guias/ejecutar-multiples-sesiones-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">ejecutar varias sesiones de Claude Code</a> es la versión pequeña de esta idea.',
         },
         {
           type: 'paragraph',
@@ -107,10 +107,10 @@ Resumen rápido: elige Superset si quieres un entorno con forma de editor y cód
             ['Plataformas', 'macOS; AppImage experimental para Linux; Windows aún no disponible; iOS próximamente', 'macOS, Windows y Linux'],
             ['Instalación y distribución', 'Descarga de escritorio desde superset.sh. Autoalojarlo desde el código está permitido dentro de la Elastic License 2.0', 'Instalador de escritorio para macOS y Windows; .deb y AppImage para Linux'],
             ['Interfaz', 'Con forma de editor de código, con revisión de diffs y PR y opción de abrir en cualquier IDE (VS Code, Cursor, Xcode, JetBrains)', 'Workspace multiterminal con kanban, historial y diffs por terminal'],
-            ['Agentes soportados', 'Amp, Antigravity CLI, Claude Code, Codex CLI, Cursor Agent, Gemini CLI, Grok, Kimi Code y OpenCode, más agentes personalizados de terminal', 'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi y Devin CLI, integrados uno a uno'],
+            ['Agentes soportados', 'Amp, Antigravity CLI, Claude Code, Codex CLI, Cursor Agent, Gemini CLI, Grok, Kimi Code y OpenCode, más agentes personalizados de terminal', 'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI y GitHub Copilot CLI, integrados uno a uno'],
             ['Modelo de aislamiento', 'Un worktree de git aislado por agente, una rama por tarea', 'Worktrees de git por sesión, un proceso por terminal'],
             ['Notificaciones', 'Sonidos al terminar y distintivos en el dock cuando un agente necesita atención', 'Notificaciones de escritorio cuando un agente termina o necesita respuesta'],
-            ['Historial de conversaciones', 'No documentado en su web a 25 de agosto de 2026', 'Historial buscable de los diez agentes, con opción de retomar cuando el agente la admite'],
+            ['Historial de conversaciones', 'No documentado en su web a 25 de agosto de 2026', 'Historial buscable de los once agentes, con opción de retomar cuando el agente la admite'],
             ['Gestión de tareas', 'Cambio entre tareas en paralelo, automatizaciones programadas y servidor MCP para control programático', 'Kanban que los agentes actualizan por MCP. Sin botón de PR con un clic'],
             ['Código abierto', 'No. Source available (Elastic License 2.0), que no está aprobada por la OSI', 'No. Código cerrado, sin repositorio público'],
             ['Precio', 'Plan gratuito, con planes de pago y enterprise en su web', 'Gratis durante la beta con Pro incluido. Pones tus suscripciones CLI'],
@@ -132,7 +132,7 @@ Resumen rápido: elige Superset si quieres un entorno con forma de editor y cód
           type: 'list',
           items: [
             '<strong>Quieres un editor, no una rejilla de terminales.</strong> Superset tiene forma de editor, con navegación de archivos, revisión de diffs y vista de PR en la misma ventana. Si quieres leer y tocar el código sin salir de la app, encaja mejor que la nuestra.',
-            '<strong>Quieres ejecutar cualquier agente CLI, no una lista cerrada.</strong> Su postura es que si corre en un terminal, corre en Superset. Nosotros integramos diez agentes CLI: mejor para esos diez, peor para el resto.',
+            '<strong>Quieres ejecutar cualquier agente CLI, no una lista cerrada.</strong> Su postura es que si corre en un terminal, corre en Superset. Nosotros integramos once agentes CLI: mejor para esos once, peor para el resto.',
             '<strong>Quieres leer el código.</strong> La Elastic License 2.0 no es código abierto, pero source available gana a un binario cerrado si necesitas auditar el comportamiento o autoalojarlo dentro de sus términos.',
             '<strong>Quieres automatizaciones programadas y control programático.</strong> Su servidor MCP y sus automatizaciones apuntan a flujos desatendidos que CodeAgentSwarm no documenta.',
             '<strong>Quieres diez agentes o más a la vez.</strong> Es su objetivo de diseño explícito, y llevan publicando contra él desde octubre de 2025.',
@@ -146,14 +146,14 @@ Resumen rápido: elige Superset si quieres un entorno con forma de editor y cód
       content: [
         {
           type: 'paragraph',
-          text: 'Nuestras ventajas vienen del alcance estrecho: diez agentes integrados uno a uno y un workspace diseñado alrededor del momento en que un agente se para y te espera.',
+          text: 'Nuestras ventajas vienen del alcance estrecho: once agentes integrados uno a uno y un workspace diseñado alrededor del momento en que un agente se para y te espera.',
         },
         {
           type: 'list',
           items: [
             '<strong>Necesitas Windows hoy.</strong> Superset indica que Windows aún no está disponible. CodeAgentSwarm sí publica una app de escritorio para Windows.',
             '<strong>Prefieres que te interrumpan a estar comprobando.</strong> Las notificaciones saltan cuando cualquier agente termina o necesita respuesta, y eso pesa más cuantas más tareas en paralelo tengas que vigilar.',
-            '<strong>Quieres un único historial buscable.</strong> Las conversaciones de los diez agentes se guardan y se buscan en el mismo sitio, en vez de vivir en diez formatos distintos, y se retoman cuando el agente lo permite.',
+            '<strong>Quieres un único historial buscable.</strong> Las conversaciones de los once agentes se guardan y se buscan en el mismo sitio, en vez de vivir en once formatos distintos, y se retoman cuando el agente lo permite.',
             '<strong>Quieres que el tablero lo mantengan los agentes.</strong> El kanban está expuesto por MCP, así que los agentes mueven sus propias tareas mientras trabajan.',
             '<strong>Vigilas la cuota.</strong> El indicador te dice cuánto margen le queda a cada suscripción antes de lanzar una tanda larga en paralelo.',
             '<strong>Quieres permisos graduados con diffs en vivo.</strong> Los diffs por terminal muestran en tiempo real qué toca cada agente, y el modo Turbo aprueba solo lo seguro mientras lo arriesgado sigue parándose a preguntar.',

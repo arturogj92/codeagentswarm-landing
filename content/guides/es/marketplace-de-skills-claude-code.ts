@@ -6,17 +6,17 @@ export const guide: Guide = {
     locale: 'es',
     title: 'Marketplace de Skills de Claude Code: explora e instala skills para tus agentes',
     metaTitle: 'Marketplace de Skills de Claude Code: explora e instala skills para agentes (2026)',
-    metaDescription: 'Explora e instala skills para diez agentes, incluidos Claude Code, Codex CLI, Muse Code, Pi y Devin CLI. Comparte flujos desde un mismo espacio.',
+    metaDescription: 'Explora e instala skills para once agentes, incluidos Claude Code, Codex CLI, Muse Code, Pi, Devin CLI y GitHub Copilot CLI. Comparte flujos desde un mismo espacio.',
     intro: `Si alguna vez has querido darle a Claude Code una capacidad reutilizable (una forma de escribir commits, lanzar una release, generar un changelog), probablemente has acabado copiando archivos SKILL.md a mano, soltando carpetas en directorios ocultos y rezando para que la ruta fuera la correcta.
 
 CodeAgentSwarm trae un Marketplace de Skills integrado para que no tengas que hacer nada de eso. Replica un catálogo público enorme de skills para agentes (decenas de miles), te deja buscar y ordenar por estrellas, e instala la que quieras con un solo clic.
 
-Lo que más me gusta: cuando instalas una skill, eliges dónde va. Las versiones actuales admiten Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi y Devin CLI, o los diez a la vez. Así una skill que encuentras se convierte en una capacidad compartida por todos los agentes CLI que usas, en lugar de quedar atada a una sola herramienta.`,
+Lo que más me gusta: cuando instalas una skill, eliges dónde va. Las versiones actuales admiten Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI y GitHub Copilot CLI, o los once a la vez. Así una skill que encuentras se convierte en una capacidad compartida por todos los agentes CLI que usas, en lugar de quedar atada a una sola herramienta.`,
     highlightedWords: ['Marketplace de Skills', 'skills', 'instala'],
     publishedAt: '2026-06-07',
     updatedAt: '2026-10-05',
     alternateSlug: 'claude-code-skills-marketplace',
-    ctaText: 'Abre el Marketplace de Skills en CodeAgentSwarm, encuentra una skill útil e instálala en un agente o en los diez con un clic.',
+    ctaText: 'Abre el Marketplace de Skills en CodeAgentSwarm, encuentra una skill útil e instálala en un agente o en los once con un clic.',
     ctaAgent: 'claude-code',
   },
   sections: [
@@ -64,15 +64,15 @@ Lo que más me gusta: cuando instalas una skill, eliges dónde va. Las versiones
         {
           type: 'list',
           items: [
-            'Instalar en un agente compatible: Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi y Devin CLI',
-            'Instalar en todos, que coloca la skill en los diez agentes a la vez',
+            'Instalar en un agente compatible: Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI y GitHub Copilot CLI',
+            'Instalar en todos, que coloca la skill en los once agentes a la vez',
           ],
         },
         {
           type: 'image',
-          alt: 'Selector de instalación de skills con los diez agentes compatibles',
+          alt: 'Selector de instalación de skills con los once agentes compatibles',
           src: '/images/guides/skills-install-current.webp',
-          caption: 'Elige agentes concretos o instala en los diez. La colección de ejemplo muestra el selector actual.',
+          caption: 'Elige agentes concretos o instala en los once. La colección de ejemplo muestra el selector actual.',
           size: 'full',
         },
         {
@@ -121,11 +121,11 @@ Lo que más me gusta: cuando instalas una skill, eliges dónde va. Las versiones
     },
     {
       id: 'entre-clis',
-      title: 'Una biblioteca de skills compartida entre los diez agentes',
+      title: 'Una biblioteca de skills compartida entre los once agentes',
       content: [
         {
           type: 'paragraph',
-          text: 'Esta es la razón por la que el marketplace importa más dentro de CodeAgentSwarm que como un catálogo independiente. CodeAgentSwarm está hecho para ejecutar varios agentes CLI en paralelo: Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi y Devin CLI.',
+          text: 'Esta es la razón por la que el marketplace importa más dentro de CodeAgentSwarm que como un catálogo independiente. CodeAgentSwarm está hecho para ejecutar varios agentes CLI en paralelo: Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI y GitHub Copilot CLI.',
         },
         {
           type: 'paragraph',
@@ -133,7 +133,7 @@ Lo que más me gusta: cuando instalas una skill, eliges dónde va. Las versiones
         },
         {
           type: 'paragraph',
-          text: 'Por ejemplo, una skill de "generar un changelog de release" instalada en los diez hace que dé igual qué terminal se encargue de la release. Todos los agentes compatibles reciben el mismo flujo.',
+          text: 'Por ejemplo, una skill de "generar un changelog de release" instalada en los once hace que dé igual qué terminal se encargue de la release. Todos los agentes compatibles reciben el mismo flujo.',
         },
         {
           type: 'paragraph',
@@ -186,7 +186,7 @@ Lo que más me gusta: cuando instalas una skill, eliges dónde va. Las versiones
         },
         {
           type: 'paragraph',
-          text: 'Para compartir una skill, puedes publicarla en el catálogo público que el marketplace replica, o simplemente versionar la carpeta en un repo que tu equipo clone. En cualquier caso, el formato es el mismo, así que todo lo que crees es portable entre los diez agentes compatibles.',
+          text: 'Para compartir una skill, puedes publicarla en el catálogo público que el marketplace replica, o simplemente versionar la carpeta en un repo que tu equipo clone. En cualquier caso, el formato es el mismo, así que todo lo que crees es portable entre los once agentes compatibles.',
         },
         {
           type: 'callout',
@@ -203,7 +203,7 @@ Lo que más me gusta: cuando instalas una skill, eliges dónde va. Las versiones
     },
     {
       question: '¿Cómo instalo una skill de Claude Code?',
-      answer: 'Abre el Marketplace de Skills dentro de CodeAgentSwarm, busca u ordena por estrellas para encontrar una skill, ábrela y haz clic en Instalar. Elige Claude, Codex, Antigravity, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI o Instalar en todos. Los archivos se escriben en el lugar correcto automáticamente.',
+      answer: 'Abre el Marketplace de Skills dentro de CodeAgentSwarm, busca u ordena por estrellas para encontrar una skill, ábrela y haz clic en Instalar. Elige Claude, Codex, Antigravity, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI, GitHub Copilot CLI o Instalar en todos. Los archivos se escriben en el lugar correcto automáticamente.',
     },
     {
       question: '¿Dónde se guardan las skills de Claude Code?',
@@ -211,7 +211,7 @@ Lo que más me gusta: cuando instalas una skill, eliges dónde va. Las versiones
     },
     {
       question: '¿Puedo usar la misma skill con todos los agentes compatibles?',
-      answer: 'Sí. Elige Claude, Codex, Antigravity, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI o Instalar en todos. Esta última opción coloca la misma skill en todos los agentes CLI compatibles.',
+      answer: 'Sí. Elige Claude, Codex, Antigravity, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI, GitHub Copilot CLI o Instalar en todos. Esta última opción coloca la misma skill en todos los agentes CLI compatibles.',
     },
     {
       question: '¿Cómo creo mi propia skill?',
