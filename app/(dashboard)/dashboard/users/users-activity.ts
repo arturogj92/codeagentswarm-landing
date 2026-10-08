@@ -395,6 +395,9 @@ const AGENT_ALIASES: Record<string, string> = {
   muse: 'muse',
   'muse cli': 'muse',
   'muse code': 'muse',
+  copilot: 'copilot',
+  'copilot cli': 'copilot',
+  'github copilot cli': 'copilot',
 }
 
 const AGENT_LABELS: Record<string, string> = {
@@ -409,6 +412,7 @@ const AGENT_LABELS: Record<string, string> = {
   pi: 'Pi',
   devin: 'Devin',
   muse: 'Muse Code',
+  copilot: 'GitHub Copilot CLI',
 }
 
 export function normalizeAgent(value: string | null): string {

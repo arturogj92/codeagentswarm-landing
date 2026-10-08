@@ -235,6 +235,15 @@ Devin CLI is a local coding agent. CodeAgentSwarm 2.4.0 includes Devin on macOS 
 - [SWE-2 benchmarks and a practical repository test](https://www.codeagentswarm.com/en/guides/swe-2-benchmarks)
 - [Benchmarks de SWE-2 y una prueba en tu repositorio](https://www.codeagentswarm.com/es/guias/swe-2-benchmarks-comparativa)
 
+## GitHub Copilot CLI (next CodeAgentSwarm release)
+
+GitHub Copilot CLI is GitHub's terminal coding agent (command `copilot`, npm `@github/copilot`). CodeAgentSwarm support arrives in the release after 2.4.3 on macOS, Windows (x64 and ARM64) and Linux: verified installation from the official release archives, device-code sign-in, Chat over the official ACP server (public preview) with models, Agent/Plan/Autopilot modes, permissions and images, resumable root-session history, optional MCP and the monthly plan allowance in the usage panel. GitHub Copilot plans and AI credits are billed by GitHub, separately from CodeAgentSwarm. Provider facts reviewed 2026-10-08 against copilot 1.0.93.
+
+- [How to install and use GitHub Copilot CLI](https://www.codeagentswarm.com/en/guides/how-to-use-github-copilot-cli)
+- [GitHub Copilot CLI models, AI credits and usage limits](https://www.codeagentswarm.com/en/guides/github-copilot-cli-models-ai-credits)
+- [Cómo instalar y usar GitHub Copilot CLI](https://www.codeagentswarm.com/es/guias/como-usar-github-copilot-cli)
+- [Modelos, créditos de IA y límites de GitHub Copilot CLI](https://www.codeagentswarm.com/es/guias/github-copilot-cli-modelos-creditos-ia)
+
 ## Muse Code: standalone guides and CodeAgentSwarm 2.4.0 integration
 
 Muse Code is Meta's coding agent; Muse Spark is its model family. Muse is available from CodeAgentSwarm 2.4.0 on macOS and Windows. Meta account access and billing are separate. Standard and Contributor have different data-use terms. Workflows depend on the installed build and rollout; Windows has separate platform limitations. Provider facts reviewed 2026-09-22. CodeAgentSwarm availability updated 2026-09-24.

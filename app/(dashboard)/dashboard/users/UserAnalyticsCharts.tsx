@@ -9,7 +9,7 @@ const CARD = 'rounded-xl border border-white/[0.09] bg-[#111111] p-4 sm:p-5'
 const COLORS: Record<string, string> = {
   claude: '#fb923c', codex: '#34d399', antigravity: '#c084fc', opencode: '#60a5fa',
   kimi: '#f472b6', grok: '#facc15', cursor: '#22d3ee', gemini: '#a3e635', other: '#a3a3a3',
-  pi: '#f87171', devin: '#a5b4fc', muse: '#2dd4bf',
+  pi: '#f87171', devin: '#a5b4fc', muse: '#2dd4bf', copilot: '#9ca3af',
 }
 const PLATFORMS = [
   { key: 'mac', label: 'Mac', color: '#60a5fa' },

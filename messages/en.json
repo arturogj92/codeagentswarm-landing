@@ -847,6 +847,7 @@
         "devin": "Use Devin CLI in CodeAgentSwarm for macOS, Windows and Linux. Provider access and billing are separate.",
         "pi": "Use Pi in CodeAgentSwarm for macOS, Windows and Linux. Provider access and billing are separate.",
         "muse": "Use Muse Code in CodeAgentSwarm for macOS, Windows and Linux. Provider access and billing are separate.",
+        "copilot": "Use GitHub Copilot CLI in CodeAgentSwarm for macOS, Windows and Linux. Your GitHub Copilot plan or BYOK provider is billed separately.",
         "antigravity": "Run multiple Antigravity CLI agents with searchable history and real-time change tracking in a single app.",
         "multi": "CodeAgentSwarm runs your AI coding agents side by side: Claude Code, Codex, opencode, Kimi Code, Antigravity, Grok Build, Cursor Agent, Muse Code, Pi and Devin CLI, with searchable history and one supervision surface.",
         "comparison": "The fastest way to decide is to try it yourself: CodeAgentSwarm is free, installs in a minute and runs Claude Code, Codex, opencode, Kimi Code, Antigravity, Grok Build, Cursor Agent, Muse Code, Pi and Devin CLI side by side."

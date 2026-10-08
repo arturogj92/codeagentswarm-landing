@@ -129,7 +129,7 @@ export default function GuideLayout({ guide, relatedGuide }: GuideLayoutProps) {
             </header>
 
             {/* ponytail: show product footage only when it depicts the guide's agent. */}
-            {!['cursor-agent', 'pi', 'devin', 'muse'].includes(meta.ctaAgent) && (
+            {!['cursor-agent', 'pi', 'devin', 'muse', 'copilot'].includes(meta.ctaAgent) && (
               <GuideProductBlock
                 locale={locale}
                 slug={meta.slug}

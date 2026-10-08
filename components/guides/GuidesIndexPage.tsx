@@ -17,9 +17,12 @@ interface GuidesIndexPageProps {
 // Tool family for each guide, keyed by its canonical English slug so the
 // grouping works the same in both locales. Anything not listed falls back to
 // the Claude Code family.
-type Family = 'cross' | 'claude' | 'codex' | 'antigravity' | 'opencode' | 'kimi' | 'grok' | 'cursor' | 'pi' | 'devin' | 'muse'
+type Family = 'cross' | 'claude' | 'codex' | 'antigravity' | 'opencode' | 'kimi' | 'grok' | 'cursor' | 'pi' | 'devin' | 'muse' | 'copilot'
 
 const FAMILY_BY_EN_SLUG: Record<string, Family> = {
+  'how-to-use-github-copilot-cli': 'copilot',
+  'github-copilot-cli-models-ai-credits': 'copilot',
+
   'how-to-use-muse-code': 'muse',
   'muse-code-on-windows': 'muse',
   'muse-code-on-linux': 'muse',
@@ -108,7 +111,7 @@ const FAMILY_BY_EN_SLUG: Record<string, Family> = {
   'cursor-cli-pricing': 'cursor',
 }
 
-const FAMILY_ORDER: Family[] = ['cross', 'claude', 'codex', 'antigravity', 'opencode', 'kimi', 'grok', 'cursor', 'pi', 'devin', 'muse']
+const FAMILY_ORDER: Family[] = ['cross', 'claude', 'codex', 'antigravity', 'opencode', 'kimi', 'grok', 'cursor', 'pi', 'devin', 'muse', 'copilot']
 
 const FAMILY_META: Record<Family, { en: string; es: string; icons: string[] }> = {
   cross: {
@@ -124,6 +127,7 @@ const FAMILY_META: Record<Family, { en: string; es: string; icons: string[] }> =
   grok: { en: 'Grok Build', es: 'Grok Build', icons: ['/icons/apps/grok-icon.svg'] },
   devin: { en: 'Devin CLI', es: 'Devin CLI', icons: ['/icons/apps/devin-icon.svg'] },
   muse: { en: 'Muse Code', es: 'Muse Code', icons: ['/icons/apps/muse-icon.svg'] },
+  copilot: { en: 'GitHub Copilot CLI', es: 'GitHub Copilot CLI', icons: ['/icons/apps/copilot-icon.svg'] },
   pi: { en: 'Pi coding agent', es: 'Pi coding agent', icons: ['/icons/apps/pi-icon.svg'] },
   cursor: { en: 'Cursor Agent', es: 'Cursor Agent', icons: ['/icons/apps/cursor-icon.svg'] },
 }

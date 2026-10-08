@@ -70,6 +70,10 @@ import enPiCodingAgentOnLinux from './en/pi-coding-agent-on-linux'
 import esPiCodingAgentEnLinux from './es/pi-coding-agent-en-linux'
 import enDevinCliOnLinux from './en/devin-cli-on-linux'
 import esDevinCliEnLinux from './es/devin-cli-en-linux'
+import enCopilot0 from './en/how-to-use-github-copilot-cli'
+import esCopilot0 from './es/como-usar-github-copilot-cli'
+import enCopilot1 from './en/github-copilot-cli-models-ai-credits'
+import esCopilot1 from './es/github-copilot-cli-modelos-creditos-ia'
 import enMuseCodeOnLinux from './en/muse-code-on-linux'
 import esMuseCodeEnLinux from './es/muse-code-en-linux'
 import enOpenCodeAgentSwarm from './en/opencode-agent-swarm'
@@ -289,6 +293,8 @@ export const guides: Record<string, Record<string, Guide>> = {
     'cursor-cli-on-linux': enCursorCliOnLinux,
     'pi-coding-agent-on-linux': enPiCodingAgentOnLinux,
     'devin-cli-on-linux': enDevinCliOnLinux,
+    'how-to-use-github-copilot-cli': enCopilot0,
+    'github-copilot-cli-models-ai-credits': enCopilot1,
     'muse-code-on-linux': enMuseCodeOnLinux,
     'opencode-agent-swarm': enOpenCodeAgentSwarm,
     'run-multiple-opencode-sessions': enRunMultipleOpenCode,
@@ -402,6 +408,8 @@ export const guides: Record<string, Record<string, Guide>> = {
     'cursor-cli-en-linux': esCursorCliEnLinux,
     'pi-coding-agent-en-linux': esPiCodingAgentEnLinux,
     'devin-cli-en-linux': esDevinCliEnLinux,
+    'como-usar-github-copilot-cli': esCopilot0,
+    'github-copilot-cli-modelos-creditos-ia': esCopilot1,
     'muse-code-en-linux': esMuseCodeEnLinux,
     'enjambre-de-agentes-opencode': esOpenCodeAgentSwarm,
     'ejecutar-multiples-sesiones-opencode': esRunMultipleOpenCode,
