@@ -16,7 +16,7 @@ const copy = {
     factsTitle: 'What the product does today',
     facts: [
       'Runs on macOS, Windows and Linux.',
-      'CodeAgentSwarm 2.4.0 supports Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi and Devin CLI.',
+      'CodeAgentSwarm supports Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI and GitHub Copilot CLI.',
       'Uses the agent accounts and subscriptions you already have. CodeAgentSwarm is not a model provider.',
       'Mobile Connect lets you follow and message your desktop sessions from a paired mobile device. The desktop running those sessions must stay online.',
       'The desktop app is free with Pro included during the open beta.',
@@ -47,7 +47,7 @@ const copy = {
     factsTitle: 'Qué hace el producto hoy',
     facts: [
       'Funciona en macOS, Windows y Linux.',
-      'CodeAgentSwarm 2.4.0 admite Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi y Devin CLI.',
+      'CodeAgentSwarm admite Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI y GitHub Copilot CLI.',
       'Usa las cuentas y suscripciones de agentes que ya tienes. CodeAgentSwarm no es un proveedor de modelos.',
       'Mobile Connect permite seguir tus sesiones de escritorio y enviarles mensajes desde un dispositivo móvil vinculado. El ordenador que ejecuta esas sesiones debe seguir conectado.',
       'La app de escritorio es gratis con Pro incluido durante la beta abierta.',

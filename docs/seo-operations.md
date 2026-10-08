@@ -1,6 +1,18 @@
 # SEO publishing and download measurement
 
 
+## GitHub Copilot CLI guides (prepared 2026-10-08, publish with the release)
+
+Two bilingual pairs prepared for the CodeAgentSwarm release that adds GitHub Copilot CLI: `how-to-use-github-copilot-cli` / `como-usar-github-copilot-cli` and `github-copilot-cli-models-ai-credits` / `github-copilot-cli-modelos-creditos-ia`. They register a new `copilot` CTA agent and guide family, an `llms.txt` section and a dashboard agent label. The homepage roster, agent cards, comparison tables (`check-guide-workspaces.mjs` still expects ten agents) and `check-release-agents.mjs` stay unchanged until the release ships, like the Devin activation in commit c1f699c.
+
+Evidence (2026-10-08): `seo-mcp` harvest of 10 seeds (`copilot cli` 1K+ Easy, `github copilot cli` 1K+ Medium, install/how-to/Windows/MCP/models/premium-request long tail mostly under 100, Spanish `github copilot cli` 100+ Easy). Umami 90 days: 74,377 guide pageviews; for recently added agents the models/pricing page carries most traffic (Devin 697 of 799 views, Kimi pricing 2,717) and Windows pages come second. Spanish guides draw little traffic.
+
+Intent map: create the install/use guide (head terms, with install, Windows, sign-in, MCP and history as sections instead of thin pages) and the models/AI credits guide (plans, models, effort, usage). Skipped for now: separate Windows, MCP and history pages (each under 100 searches) and a Copilot vs Claude Code comparison (needs hands-on benchmark evidence). No existing URL had a Copilot CLI primary intent; `best-tools-to-run-multiple-ai-coding-agents` mentions Copilot only as a competitor, so there is no cannibalization.
+
+Facts come from copilot 1.0.93 runs and the GitHub docs checked on October 8 (plans, AI credits, reset and overage from "billing for individuals"; installation and authentication pages). Captures are real app screens; the usage-panel values are test fixtures and the history row is sample data, as the captions say.
+
+Validation: `npm run build`, `node scripts/check-copilot-seo.mjs` plus the existing Devin, Pi, Muse, release-agent and guide-workspace checks, and a local production browser pass of the EN/ES pages on desktop (1440 px) and mobile (390 px) without overflow or page errors.
+
 ## Feature media refresh — October 6, 2026
 
 Replaced 42 old image placements across 20 EN/ES guides with current app captures and added two project-filter examples. Kanban shows eight sample tasks across three public projects and the current Auto queue. Skills shows a clearly labelled sample collection and the real ten-agent installation menu. History covers the toolbar entry, date groups, a project filter, search, message preview and CLI/Chat reopening choices. Captions identify sample content; image dimensions are 1440 × 900 and all new stills use WebP.

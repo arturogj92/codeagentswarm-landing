@@ -141,7 +141,7 @@ In this guide I will walk through what the task board is, how the agents keep it
       content: [
         {
           type: 'paragraph',
-          text: 'A single agent working on a single task does not really need a board. The board earns its keep the moment you have several agents going at once, which is exactly what CodeAgentSwarm is built for. It runs multiple AI CLI terminals (Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi and Devin CLI) in parallel, and once you have four or five of them working, "what is each one doing" stops being a question you can answer from memory.',
+          text: 'A single agent working on a single task does not really need a board. The board earns its keep the moment you have several agents going at once, which is exactly what CodeAgentSwarm is built for. It runs multiple AI CLI terminals (Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI and GitHub Copilot CLI) in parallel, and once you have four or five of them working, "what is each one doing" stops being a question you can answer from memory.',
         },
         {
           type: 'paragraph',

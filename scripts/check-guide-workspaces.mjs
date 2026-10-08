@@ -3,7 +3,7 @@ import assert from 'node:assert/strict'
 import { readFileSync, readdirSync, existsSync } from 'node:fs'
 import ts from 'typescript'
 
-const names = ['Claude Code', 'Codex CLI', 'Antigravity CLI', 'OpenCode', 'Kimi Code', 'Grok Build', 'Cursor Agent', 'Muse Code', 'Pi', 'Devin CLI']
+const names = ['Claude Code', 'Codex CLI', 'Antigravity CLI', 'OpenCode', 'Kimi Code', 'Grok Build', 'Cursor Agent', 'Muse Code', 'Pi', 'Devin CLI', 'GitHub Copilot CLI']
 const legacy = /\/images\/guides\/(?:multi-terminal|multi-cli-agent-selector|multi-cli-three-agents|codex-agent-swarm|opencode-agent-swarm|antigravity-agent-swarm|terminal-status-indicators|terminal-title-and-changes)\.png|\/images\/guides\/parallel-workspace-codex\.webp/
 const image = '/images/guides/workspace-list.webp'
 const obsoleteFeatures = /\/images\/guides\/(?:task-board-kanban|skills-marketplace|skills-install-multi-cli|conversation-history|conversation_history|conversation-history-button|mcp-marketplace-search|resume-selected-conversation|resume-conversation)\.png/
@@ -58,4 +58,4 @@ for (const locale of ['en', 'es']) {
   const messages = JSON.parse(readFileSync(`messages/${locale}.json`, 'utf8'))
   assert.doesNotMatch(JSON.stringify(messages.guides), /eight agent sessions|[Oo]cho sesiones/, `${locale}: stale screenshot caption`)
 }
-console.log(`${guides} guides checked; ${comparisons} comparison tables list all ten agents; ${screenshots} List screenshots, with no obsolete or duplicate workspace images.`)
+console.log(`${guides} guides checked; ${comparisons} comparison tables list all eleven agents; ${screenshots} List screenshots, with no obsolete or duplicate workspace images.`)

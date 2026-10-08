@@ -109,6 +109,7 @@ CodeAgentSwarm 2.4.0 añade un presupuesto diario para cada proveedor que inform
             ['Grok Build', 'Semanal'],
             ['Cursor Agent', 'Mensual'],
             ['Devin CLI', 'Semanal'],
+            ['GitHub Copilot CLI', 'Mensual'],
             ['Muse Code', 'Su ventana de cuota larga'],
             ['opencode, Pi', 'Sin presupuesto: no informan de un porcentaje de cuota'],
           ],
@@ -281,7 +282,7 @@ CodeAgentSwarm 2.4.0 añade un presupuesto diario para cada proveedor que inform
     },
     {
       question: '¿Qué proveedores admiten presupuesto diario?',
-      answer: 'Todos los que informan de una cuota medible: Claude, Codex, Antigravity, Kimi Code, Grok Build, Cursor Agent, Devin CLI y Muse Code. opencode y Pi no tienen presupuesto porque no informan de un porcentaje de cuota.',
+      answer: 'Todos los que informan de una cuota medible: Claude, Codex, Antigravity, Kimi Code, Grok Build, Cursor Agent, Devin CLI, Muse Code y GitHub Copilot CLI. opencode y Pi no tienen presupuesto porque no informan de un porcentaje de cuota.',
     },
   ],
 }

@@ -22,6 +22,9 @@ for (const locale of ['en', 'es']) {
     assert.match(guide, /2\.4\.0/)
     assert.match(guide, /name="robots" content="index, follow"/)
   }
+  const copilot = `/${locale}/${locale === 'en' ? 'guides/how-to-use-github-copilot-cli' : 'guias/como-usar-github-copilot-cli'}`
+  assert.ok(visible.includes(`href="${copilot}"`), 'GitHub Copilot CLI: linked guide')
+  assert.ok(visible.includes('/icons/apps/copilot-icon.svg'), 'GitHub Copilot CLI: icon')
   for (const [language, route] of [['en', 'en'], ['es', 'es'], ['x-default', 'en']]) {
     assert.ok(html.includes(`hrefLang="${language}" href="${base}/${route}"`))
   }

@@ -5,14 +5,14 @@ export const guide: Guide = {
     slug: 'ai-cli-agent-swarm',
     locale: 'en',
     title: 'AI CLI Agent Swarm: Run Multiple AI Coding Agents in Parallel',
-    metaTitle: 'AI CLI Agent Swarm: Run 10 Coding Agents Together (2026)',
-    metaDescription: 'Run ten coding agents in parallel with CodeAgentSwarm, including Claude Code, Codex, Muse Code, Pi and Devin CLI. One workspace for every session.',
+    metaTitle: 'AI CLI Agent Swarm: Run 11 Coding Agents Together (2026)',
+    metaDescription: 'Run eleven coding agents in parallel with CodeAgentSwarm, including Claude Code, Codex, Muse Code, Pi, Devin CLI and GitHub Copilot CLI. One workspace for every session.',
     intro: `An AI CLI agent swarm is what you get when you stop thinking of one coding agent in one terminal and start running several of them at once. Claude Code in one terminal, Codex CLI in another, Grok Build or OpenCode in a third, all working on the same project at the same time.
 
 The idea sounds chaotic, and done badly it is. The point of this guide is to show you how to do it well: how to actually run multiple AI coding agents in parallel, how to decide which agent handles what, and how to keep visibility over a workspace where three or four agents are editing files at the same time.
 
 I run mixed swarms most days. This is AI coding agent orchestration at the process level: independent coding agents, one human supervisor. Below I cover the honest tradeoffs of each setup method and where a purpose-built workspace earns its place over plain terminal tabs or tmux. For the product comparison, see the <a href="/en/guides/best-tools-to-run-multiple-ai-coding-agents" class="text-neon-cyan hover:text-neon-purple transition-colors">best tools for running multiple AI coding agents</a>.`,
-    ctaText: 'Run Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi and Devin CLI side by side in one CodeAgentSwarm workspace. Multiple agents, shared visibility, one place to watch them all.',
+    ctaText: 'Run Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI and GitHub Copilot CLI side by side in one CodeAgentSwarm workspace. Multiple agents, shared visibility, one place to watch them all.',
     ctaAgent: 'multi',
     highlightedWords: ['AI CLI agent swarm', 'in parallel'],
     publishedAt: '2026-06-07',
@@ -302,7 +302,7 @@ I run mixed swarms most days. This is AI coding agent orchestration at the proce
         },
         {
           type: 'paragraph',
-          text: 'Each terminal has a SELECT AI AGENT picker offering Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi and Devin CLI. Set one terminal to Claude Code for a refactor, another to Cursor Agent for a planned change and another to Codex for a contained task. You decide the mix per terminal.',
+          text: 'Each terminal has a SELECT AI AGENT picker offering Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI and GitHub Copilot CLI. Set one terminal to Claude Code for a refactor, another to Cursor Agent for a planned change and another to Codex for a contained task. You decide the mix per terminal.',
         },
         {
           type: 'heading',
@@ -480,7 +480,7 @@ I run mixed swarms most days. This is AI coding agent orchestration at the proce
     },
     {
       question: 'What is an AI CLI agent swarm?',
-      answer: 'It is several independent AI coding CLI agents (such as Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi and Devin CLI) running in parallel in one place, with shared visibility over what each one is doing. Each agent is its own process with its own conversation and context, and the swarm is the layer around them that adds notifications, searchable history, file change visibility, and permission control.',
+      answer: 'It is several independent AI coding CLI agents (such as Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI and GitHub Copilot CLI) running in parallel in one place, with shared visibility over what each one is doing. Each agent is its own process with its own conversation and context, and the swarm is the layer around them that adds notifications, searchable history, file change visibility, and permission control.',
     },
     {
       question: 'What is an Agentic Development Environment (ADE)?',

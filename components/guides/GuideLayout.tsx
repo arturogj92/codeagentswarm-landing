@@ -129,7 +129,7 @@ export default function GuideLayout({ guide, relatedGuide }: GuideLayoutProps) {
             </header>
 
             {/* ponytail: show product footage only when it depicts the guide's agent. */}
-            {!['cursor-agent', 'pi', 'devin', 'muse'].includes(meta.ctaAgent) && (
+            {!['cursor-agent', 'pi', 'devin', 'muse', 'copilot'].includes(meta.ctaAgent) && (
               <GuideProductBlock
                 locale={locale}
                 slug={meta.slug}
@@ -183,7 +183,7 @@ export default function GuideLayout({ guide, relatedGuide }: GuideLayoutProps) {
                       {relatedGuide.title}
                     </h4>
                     <p className="text-white/70 leading-relaxed line-clamp-3 mb-4">
-                      {relatedGuide.intro.split('\n')[0]}
+                      {relatedGuide.intro.split('\n')[0].replace(/<[^>]+>/g, '')}
                     </p>
                     <span className="inline-flex items-center gap-2 text-neon-cyan text-sm font-medium">
                       {locale === 'es' ? 'Leer guía' : 'Read guide'}

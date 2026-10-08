@@ -112,6 +112,16 @@ export default function WorksWithSection() {
       icon: '/icons/apps/devin-icon.svg',
       isNew: true,
     },
+    {
+      name: 'GitHub Copilot CLI',
+      desc: g(
+        'Sign in with GitHub, pick a model and approve each action from Chat. Monthly AI credits sit next to your other agents.',
+        'Entra con GitHub, elige modelo y aprueba cada acción desde el Chat. Los créditos de IA del mes aparecen junto a tus otros agentes.'
+      ),
+      href: guidePath('how-to-use-github-copilot-cli', 'como-usar-github-copilot-cli'),
+      icon: '/icons/apps/copilot-icon.svg',
+      isNew: true,
+    },
   ]
 
   const umbrellaHref = guidePath('ai-cli-agent-swarm', 'enjambre-de-agentes-cli-ia')
@@ -134,13 +144,13 @@ export default function WorksWithSection() {
           </h2>
           <p className="text-white/70 text-lg max-w-2xl mx-auto">
             {g(
-              'One workspace for Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi and Devin CLI. Run them in parallel, mix vendors, and watch all of them from one place.',
-              'Un espacio de trabajo para Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi y Devin CLI. Ejecútalos en paralelo, mezcla proveedores y vigílalos todos desde un sitio.'
+              'One workspace for Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI and GitHub Copilot CLI. Run them in parallel, mix vendors, and watch all of them from one place.',
+              'Un espacio de trabajo para Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI y GitHub Copilot CLI. Ejecútalos en paralelo, mezcla proveedores y vigílalos todos desde un sitio.'
             )}
           </p>
         </motion.div>
 
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {tools.map((tool, i) => {
             const inner = (
               <>

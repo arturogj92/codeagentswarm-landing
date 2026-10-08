@@ -73,7 +73,7 @@ Short version: choose Conductor for cloud sandboxes, multiplayer collaboration a
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm is a desktop workspace to run and supervise multiple AI coding agents in parallel. It runs on macOS, Windows and Linux, it is not a model provider, and it drives agent CLIs you install yourself, including: Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi and Devin CLI.',
+          text: 'CodeAgentSwarm is a desktop workspace to run and supervise multiple AI coding agents in parallel. It runs on macOS, Windows and Linux, it is not a model provider, and it drives agent CLIs you install yourself, including: Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI and GitHub Copilot CLI.',
         },
         {
           type: 'image',
@@ -121,7 +121,7 @@ Short version: choose Conductor for cloud sandboxes, multiplayer collaboration a
             [
               '<strong>Supported agents</strong>',
               'Claude Code, Codex, Cursor and OpenCode',
-              'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi and Devin CLI',
+              'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI and GitHub Copilot CLI',
             ],
             [
               '<strong>Isolation model</strong>',
@@ -200,7 +200,7 @@ Short version: choose Conductor for cloud sandboxes, multiplayer collaboration a
           type: 'list',
           items: [
             '<strong>You or your team use Windows or Linux.</strong> Conductor is macOS only per their site. CodeAgentSwarm runs on macOS, Windows and Linux, which matters the moment one person is not on a Mac.',
-            '<strong>You want multiple agent CLIs.</strong> Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi and Devin CLI, mixed freely across terminals. Antigravity, Kimi and Grok are not among the agents Conductor documents.',
+            '<strong>You want multiple agent CLIs.</strong> Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI and GitHub Copilot CLI, mixed freely across terminals. Antigravity, Kimi and Grok are not among the agents Conductor documents.',
             '<strong>You want one searchable history across vendors,</strong> with any conversation resumable back into a live terminal.',
             '<strong>You want the agents to maintain the task board.</strong> The kanban is updated by the agents over MCP while they work, not by you afterwards.',
             '<strong>You want to be told, not to check.</strong> Desktop notifications fire when an agent finishes or needs input.',
@@ -257,7 +257,7 @@ Short version: choose Conductor for cloud sandboxes, multiplayer collaboration a
     },
     {
       question: 'What agents does each one support?',
-      answer: 'Conductor supports Claude Code, Codex, Cursor and OpenCode. CodeAgentSwarm supports CLIs including: Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi and Devin CLI. Both run Cursor and OpenCode; CodeAgentSwarm also runs Antigravity CLI, Kimi Code and Grok Build.',
+      answer: 'Conductor supports Claude Code, Codex, Cursor and OpenCode. CodeAgentSwarm supports CLIs including: Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI and GitHub Copilot CLI. Both run Cursor and OpenCode; CodeAgentSwarm also runs Antigravity CLI, Kimi Code and Grok Build.',
     },
     {
       question: 'Is there a free way to try both?',

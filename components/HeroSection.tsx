@@ -389,7 +389,7 @@ export default function HeroSection() {
                 <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/60">{t('worksWith')}</span>
                 <span className="h-px w-10 bg-white/15" aria-hidden="true" />
               </div>
-              <div className="grid grid-cols-5 sm:grid-cols-10 gap-3 sm:gap-4">
+              <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
                 <span className="w-12 h-12 rounded-2xl flex items-center justify-center bg-black border border-white/10">
                   <img src="/icons/apps/claude-icon-dark.svg" alt="Claude Code" className="w-8 h-8 object-contain" />
                 </span>
@@ -432,6 +432,9 @@ export default function HeroSection() {
                 <span className="w-12 h-12 rounded-2xl flex items-center justify-center bg-black border border-white/10" title="Devin CLI">
                   <img src="/icons/apps/devin-icon.svg" alt="Devin CLI" className="w-8 h-8 object-contain" />
                 </span>
+                <span className="w-12 h-12 rounded-2xl flex items-center justify-center bg-black border border-white/10" title="GitHub Copilot CLI">
+                  <img src="/icons/apps/copilot-icon.svg" alt="GitHub Copilot CLI" className="w-8 h-8 object-contain" />
+                </span>
               </div>
             </div>
             <p className="max-w-2xl text-center text-sm leading-relaxed text-white/60">
@@ -439,6 +442,7 @@ export default function HeroSection() {
                 muse: chunks => <Link href={locale === 'es' ? '/es/guias/como-usar-muse-code' : '/en/guides/how-to-use-muse-code'} className="text-neon-cyan underline underline-offset-4 hover:text-white">{chunks}</Link>,
                 pi: chunks => <Link href={locale === 'es' ? '/es/guias/como-usar-pi-coding-agent' : '/en/guides/how-to-use-pi-coding-agent'} className="text-neon-cyan underline underline-offset-4 hover:text-white">{chunks}</Link>,
                 devin: chunks => <Link href={locale === 'es' ? '/es/guias/como-usar-devin-cli' : '/en/guides/how-to-use-devin-cli'} className="text-neon-cyan underline underline-offset-4 hover:text-white">{chunks}</Link>,
+                copilot: chunks => <Link href={locale === 'es' ? '/es/guias/como-usar-github-copilot-cli' : '/en/guides/how-to-use-github-copilot-cli'} className="text-neon-cyan underline underline-offset-4 hover:text-white">{chunks}</Link>,
               })}
             </p>
           </motion.div>

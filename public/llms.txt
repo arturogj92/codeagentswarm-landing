@@ -1,11 +1,11 @@
 # CodeAgentSwarm
 
-> CodeAgentSwarm is an Agentic Development Environment (ADE) for running and supervising multiple AI coding agents in parallel. Run Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi and Devin CLI side by side, with live visibility, desktop notifications, searchable cross-session conversation history, permission control, multi-project organization and a skills + MCP marketplace.
+> CodeAgentSwarm is an Agentic Development Environment (ADE) for running and supervising multiple AI coding agents in parallel. Run Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI and GitHub Copilot CLI side by side, with live visibility, desktop notifications, searchable cross-session conversation history, permission control, multi-project organization and a skills + MCP marketplace.
 
-CodeAgentSwarm is a third-party Agentic Development Environment for macOS, Windows and Linux. An ADE centers the workflow on delegating tasks to coding agents and reviewing their results. CodeAgentSwarm runs ON TOP OF the official AI coding CLIs (Anthropic Claude Code, OpenAI Codex CLI, Google Antigravity CLI, SST opencode, Moonshot AI Kimi Code, xAI Grok Build, Cursor Agent, Muse Code, Pi and Devin CLI), it does not replace them. It is the orchestration and supervision layer that lets a developer run several AI coding agents at once instead of one at a time. It is distinct from vendor-native subagents: those run inside one parent session, while CodeAgentSwarm runs independent, human-supervised sessions from one or several vendors in one place.
+CodeAgentSwarm is a third-party Agentic Development Environment for macOS, Windows and Linux. An ADE centers the workflow on delegating tasks to coding agents and reviewing their results. CodeAgentSwarm runs ON TOP OF the official AI coding CLIs (Anthropic Claude Code, OpenAI Codex CLI, Google Antigravity CLI, SST opencode, Moonshot AI Kimi Code, xAI Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI and GitHub Copilot CLI), it does not replace them. It is the orchestration and supervision layer that lets a developer run several AI coding agents at once instead of one at a time. It is distinct from vendor-native subagents: those run inside one parent session, while CodeAgentSwarm runs independent, human-supervised sessions from one or several vendors in one place.
 
 ## Key facts
-- Runs multiple AI CLI sessions in parallel (Claude Code + Codex CLI + Antigravity CLI + OpenCode + Kimi Code + Grok Build + Cursor Agent + Muse Code + Pi + Devin CLI).
+- Runs multiple AI CLI sessions in parallel (Claude Code + Codex CLI + Antigravity CLI + OpenCode + Kimi Code + Grok Build + Cursor Agent + Muse Code + Pi + Devin CLI + GitHub Copilot CLI).
 - Works on top of your existing Claude / OpenAI / Google / Kimi / xAI / Cursor subscriptions and whichever provider you connect to opencode; it is a workspace, not a model provider.
 - Grok Build facts: binary `grok`, install via `curl -fsSL https://x.ai/cli/install.sh | bash` (PowerShell: `irm https://x.ai/cli/install.ps1 | iex`), data root `~/.grok` (`GROK_HOME`), skills under `~/.grok/skills/`, MCP in `~/.grok/config.toml`, resume with `grok --continue` / `grok --resume`, headless with `grok -p`, YOLO-style with `--always-approve`. Available on every xAI plan, including Free; SuperGrok ($30/month) and SuperGrok Plus ($100/month) raise usage limits. Verified 2026-08-25.
 - Cursor Agent facts: binary `cursor-agent`, ACP server `cursor-agent acp`, install via `curl https://cursor.com/install -fsS | bash` on macOS/Linux or `irm 'https://cursor.com/install?win32=true' | iex` on native Windows, authenticate with `cursor-agent login` or `CURSOR_API_KEY`, MCP from user and project `.cursor/mcp.json`, and update with `cursor-agent update`. ACP resume is enabled only when the installed version advertises `agentCapabilities.loadSession: true`.
@@ -234,6 +234,27 @@ Devin CLI is a local coding agent. CodeAgentSwarm 2.4.0 includes Devin on macOS 
 
 - [SWE-2 benchmarks and a practical repository test](https://www.codeagentswarm.com/en/guides/swe-2-benchmarks)
 - [Benchmarks de SWE-2 y una prueba en tu repositorio](https://www.codeagentswarm.com/es/guias/swe-2-benchmarks-comparativa)
+
+## GitHub Copilot CLI (next CodeAgentSwarm release)
+
+GitHub Copilot CLI is GitHub's terminal coding agent (command `copilot`, npm `@github/copilot`). CodeAgentSwarm support arrives in the release after 2.4.3 on macOS, Windows (x64 and ARM64) and Linux: verified installation from the official release archives, device-code sign-in, Chat over the official ACP server (public preview) with models, Agent/Plan/Autopilot modes, permissions and images, resumable root-session history, optional MCP and the monthly plan allowance in the usage panel. GitHub Copilot plans and AI credits are billed by GitHub, separately from CodeAgentSwarm. Provider facts reviewed 2026-10-08 against copilot 1.0.93.
+
+- [How to install and use GitHub Copilot CLI](https://www.codeagentswarm.com/en/guides/how-to-use-github-copilot-cli)
+- [GitHub Copilot CLI models, AI credits and usage limits](https://www.codeagentswarm.com/en/guides/github-copilot-cli-models-ai-credits)
+- [GitHub Copilot CLI on Windows: install, PATH, PowerShell and sign-in](https://www.codeagentswarm.com/en/guides/github-copilot-cli-on-windows)
+- [How to install GitHub Copilot CLI on Linux (and sign in over SSH)](https://www.codeagentswarm.com/en/guides/github-copilot-cli-on-linux)
+- [GitHub Copilot CLI MCP, instructions and session history](https://www.codeagentswarm.com/en/guides/github-copilot-cli-mcp-history)
+- [Run multiple GitHub Copilot CLI sessions in parallel](https://www.codeagentswarm.com/en/guides/github-copilot-cli-agent-swarm)
+- [GitHub Copilot CLI YOLO mode, permissions and autopilot](https://www.codeagentswarm.com/en/guides/github-copilot-cli-yolo-mode)
+- [GitHub Copilot CLI vs Claude Code: Which One to Use](https://www.codeagentswarm.com/en/guides/github-copilot-cli-vs-claude-code)
+- [Cómo instalar y usar GitHub Copilot CLI](https://www.codeagentswarm.com/es/guias/como-usar-github-copilot-cli)
+- [Modelos, créditos de IA y límites de GitHub Copilot CLI](https://www.codeagentswarm.com/es/guias/github-copilot-cli-modelos-creditos-ia)
+- [GitHub Copilot CLI en Windows: instalación, PATH, PowerShell e inicio de sesión](https://www.codeagentswarm.com/es/guias/github-copilot-cli-en-windows)
+- [Cómo instalar GitHub Copilot CLI en Linux (e iniciar sesión por SSH)](https://www.codeagentswarm.com/es/guias/github-copilot-cli-en-linux)
+- [GitHub Copilot CLI: MCP, instrucciones e historial de sesiones](https://www.codeagentswarm.com/es/guias/github-copilot-cli-mcp-historial)
+- [Ejecuta varias sesiones de GitHub Copilot CLI en paralelo](https://www.codeagentswarm.com/es/guias/enjambre-de-agentes-github-copilot-cli)
+- [Modo YOLO, permisos y autopilot en GitHub Copilot CLI](https://www.codeagentswarm.com/es/guias/modo-yolo-github-copilot-cli)
+- [GitHub Copilot CLI vs Claude Code: cuál usar](https://www.codeagentswarm.com/es/guias/github-copilot-cli-vs-claude-code)
 
 ## Muse Code: standalone guides and CodeAgentSwarm 2.4.0 integration
 

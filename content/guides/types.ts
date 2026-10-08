@@ -29,6 +29,7 @@ export type GuideCtaAgent =
   | 'pi'
   | 'devin'
   | 'muse'
+  | 'copilot'
   | 'multi'
   | 'comparison'
 
@@ -44,6 +45,7 @@ export const CTA_AGENT_MESSAGE_KEY: Record<GuideCtaAgent, string> = {
   pi: 'pi',
   devin: 'devin',
   muse: 'muse',
+  copilot: 'copilot',
   multi: 'multi',
   comparison: 'comparison',
 }
