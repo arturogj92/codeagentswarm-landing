@@ -389,7 +389,7 @@ export default function HeroSection() {
                 <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/60">{t('worksWith')}</span>
                 <span className="h-px w-10 bg-white/15" aria-hidden="true" />
               </div>
-              <div className="grid grid-cols-5 sm:grid-cols-10 gap-3 sm:gap-4">
+              <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
                 <span className="w-12 h-12 rounded-2xl flex items-center justify-center bg-black border border-white/10">
                   <img src="/icons/apps/claude-icon-dark.svg" alt="Claude Code" className="w-8 h-8 object-contain" />
                 </span>
