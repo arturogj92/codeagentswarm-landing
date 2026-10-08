@@ -50,7 +50,7 @@ export const guide: Guide = {
       content: [
         {
           type: 'paragraph',
-          text: 'For a desktop workspace on Windows or Linux that combines Claude Code and Codex, CodeAgentSwarm is one option: it supports ten coding agents, session status, notifications, searchable history and diff review. It is closed source and free with Pro during the open beta; provider usage is separate. This guide is published by its creator. Compare the alternatives below against your platform, licence and workflow needs.',
+          text: 'For a desktop workspace on Windows or Linux that combines Claude Code and Codex, CodeAgentSwarm is one option: it supports eleven coding agents, session status, notifications, searchable history and diff review. It is closed source and free with Pro during the open beta; provider usage is separate. This guide is published by its creator. Compare the alternatives below against your platform, licence and workflow needs.',
         },
         {
           type: 'paragraph',

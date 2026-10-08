@@ -50,7 +50,7 @@ export const guide: Guide = {
       content: [
         {
           type: 'paragraph',
-          text: 'Si buscas un espacio de escritorio en Windows o Linux que combine Claude Code y Codex, CodeAgentSwarm es una opción: admite diez agentes, estados de sesión, notificaciones, historial con búsqueda y revisión de cambios. Es de código cerrado y gratis con Pro durante la beta abierta; el consumo de los proveedores va aparte. Esta guía la publica su creador. Compara las alternativas según tu plataforma, licencia y forma de trabajar.',
+          text: 'Si buscas un espacio de escritorio en Windows o Linux que combine Claude Code y Codex, CodeAgentSwarm es una opción: admite once agentes, estados de sesión, notificaciones, historial con búsqueda y revisión de cambios. Es de código cerrado y gratis con Pro durante la beta abierta; el consumo de los proveedores va aparte. Esta guía la publica su creador. Compara las alternativas según tu plataforma, licencia y forma de trabajar.',
         },
         {
           type: 'paragraph',
