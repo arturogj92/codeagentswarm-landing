@@ -5,7 +5,7 @@ export const guide: Guide = {
     slug: 'ai-cli-agent-swarm',
     locale: 'en',
     title: 'AI CLI Agent Swarm: Run Multiple AI Coding Agents in Parallel',
-    metaTitle: 'AI CLI Agent Swarm: Run 7 Coding Agents Together (2026)',
+    metaTitle: 'AI CLI Agent Swarm: Run 10 Coding Agents Together (2026)',
     metaDescription: 'Run ten coding agents in parallel with CodeAgentSwarm, including Claude Code, Codex, Muse Code, Pi and Devin CLI. One workspace for every session.',
     intro: `An AI CLI agent swarm is what you get when you stop thinking of one coding agent in one terminal and start running several of them at once. Claude Code in one terminal, Codex CLI in another, Grok Build or OpenCode in a third, all working on the same project at the same time.
 
@@ -16,11 +16,34 @@ I run mixed swarms most days. This is AI coding agent orchestration at the proce
     ctaAgent: 'multi',
     highlightedWords: ['AI CLI agent swarm', 'in parallel'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-10-05',
+    updatedAt: '2026-10-08',
     relatedSlug: 'git-worktrees-for-ai-coding-agents',
     alternateSlug: 'enjambre-de-agentes-cli-ia',
   },
   sections: [
+    {
+      id: 'claude-and-codex-together',
+      title: 'How to run Claude Code and Codex together',
+      content: [
+        {
+          type: 'paragraph',
+          text: 'CodeAgentSwarm lets you run Claude Code and Codex in separate sessions in one desktop workspace on macOS, Windows or Linux. You keep your own provider accounts and usage limits. Start with one small task per agent so you can review the changes independently.',
+        },
+        {
+          type: 'list',
+          items: [
+            'Open your project in CodeAgentSwarm and create a Claude Code session.',
+            'Create a Codex session. If both tasks will edit the repository, use a separate Git worktree for each task.',
+            'Give each agent a task with a clear boundary: for example, one changes a component and the other investigates a failing test. State which files each may edit.',
+            'Watch session statuses, answer permission requests and review the diff and tests before merging either change.',
+          ],
+        },
+        {
+          type: 'paragraph',
+          text: 'Check the isolation yourself with the <a href="/en/guides/git-worktrees-for-ai-coding-agents" class="text-neon-cyan hover:text-neon-purple transition-colors">Git worktree guide and its runnable example</a>. Worktrees separate files; they do not separate shared databases, ports or external services. For one session, your existing CLI may be enough.',
+        },
+      ],
+    },
     {
       id: 'what-is-it',
       title: 'What is an AI CLI agent swarm?',
@@ -452,6 +475,10 @@ I run mixed swarms most days. This is AI coding agent orchestration at the proce
   ],
   faq: [
     {
+      question: 'Can I use Claude Code and Codex together on Windows?',
+      answer: 'Yes. CodeAgentSwarm is available on Windows and lets you choose Claude Code or Codex for each session. Sign in to each provider, assign separate tasks and use Git worktrees when their edits need isolation. The beta includes Pro features; model access and usage remain with each provider.',
+    },
+    {
       question: 'What is an AI CLI agent swarm?',
       answer: 'It is several independent AI coding CLI agents (such as Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi and Devin CLI) running in parallel in one place, with shared visibility over what each one is doing. Each agent is its own process with its own conversation and context, and the swarm is the layer around them that adds notifications, searchable history, file change visibility, and permission control.',
     },
@@ -469,7 +496,7 @@ I run mixed swarms most days. This is AI coding agent orchestration at the proce
     },
     {
       question: 'Do I need git worktrees to run agents in parallel?',
-      answer: 'No, worktrees are optional. You can run several agents against one workspace and one checkout. When they edit different files there is no conflict, and when they touch the same file Git handles the merge and the agents resolve it reasonably well. Git worktrees are useful when you want hard isolation for big conflicting changes, but they are not a prerequisite for running a swarm.',
+      answer: 'Worktrees are optional, but use separate worktrees when parallel tasks need independent working copies. Agents in the same folder can overwrite each other before Git has a chance to merge anything. Worktrees isolate files, not shared databases or ports; review and test each change before merging.',
     },
     {
       question: 'Is an AI CLI agent swarm the same as Claude Code agent teams?',

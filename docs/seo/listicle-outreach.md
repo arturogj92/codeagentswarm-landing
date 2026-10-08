@@ -1,6 +1,6 @@
 # Editorial outreach
 
-Last reviewed: 2026-09-01
+Last reviewed: 2026-10-08 (current facts and follow-up drafts; historical sent copy preserved)
 
 ## Send log
 
@@ -21,15 +21,106 @@ Earn a small number of relevant editorial links and accurate product mentions. D
 
 ## Current product facts
 
-- CodeAgentSwarm is a closed-source desktop workspace for running and supervising AI coding agents in parallel.
-- Supported agents: Claude Code, Codex CLI, Antigravity, OpenCode, Kimi Code, Grok Build and Cursor Agent.
-- Platforms: macOS and Windows.
-- Pricing: free during the beta.
-- Linux is not available.
-- Mobile Connect is in alpha. The web beta is open to every account, native iOS and Android access is by request, and the desktop must remain open.
-- Canonical URL: https://www.codeagentswarm.com
+- CodeAgentSwarm is a closed-source desktop workspace for supervising parallel coding sessions.
+- Ten supported agents: Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi and Devin CLI.
+- Platforms: macOS, Windows and Linux. Linux downloads include deb and AppImage for x64 and ARM64.
+- Pro is included during the open beta. Model access and usage are billed or limited by each provider separately.
+- Separate Git worktrees isolate working copies, not shared databases, ports or external services. Changes still need review and testing.
+- Product facts: https://www.codeagentswarm.com/en/about
+- Workflow and runnable isolation example: https://www.codeagentswarm.com/en/guides/git-worktrees-for-ai-coding-agents
+- Existing screenshot: https://www.codeagentswarm.com/images/guides/workspace-list.webp (sample tasks, not customer evidence).
 
-Verify every fact again against the production site immediately before sending.
+The ten-agent and Linux claims were checked against the updated landing source on October 8. Recheck the actual download links immediately before sending. No independent review or endorsement is implied by these facts.
+
+## October 8 follow-up drafts (not sent)
+
+The four target pages were read again on October 8. Singularity Society still includes the product name in a plain-text list. No CodeAgentSwarm mention was found in the readable AgentsRoom, amux or Tembo articles. All four recipients already received a message on September 1, according to the send log. Reply status has not been checked: check the original threads before sending a single follow-up, and do not send if the recipient declined or opted out.
+
+Recipient addresses are from the existing send log, not newly verified contacts. Arturo must approve the exact final message and recipient. These drafts replace the old pitch for future use; the September text below is preserved as history.
+
+### Singularity Society follow-up
+
+Recipient: `info@singularitysociety.org`
+
+Subject: Re: CodeAgentSwarm link in your parallel agent guide
+
+```text
+Hi Singularity Society team,
+
+One follow-up to my September note: your parallel-agent guide still includes CodeAgentSwarm in the opening list. Would you consider linking the name to https://www.codeagentswarm.com/en/about so readers can check the current product facts?
+
+The desktop app now supports ten coding agents on macOS, Windows and Linux. The facts page explains the supported agents, provider requirements and where separate worktrees are needed.
+
+Thanks,
+Arturo
+```
+
+### AgentsRoom follow-up
+
+Recipient: `contact@agentsroom.dev`
+
+Subject: Re: CodeAgentSwarm for your multi-agent tools guide
+
+```text
+Hi AgentsRoom team,
+
+I wrote in September about CodeAgentSwarm for your multi-agent tools guide. If you revisit the comparison, would you consider trying it with a Claude Code session and a Codex session in separate worktrees?
+
+It now supports ten coding agents on macOS, Windows and Linux, with session status, notifications, searchable history and diff review. It is closed source, with Pro included during the open beta; model access is separate.
+
+Product facts and download: https://www.codeagentswarm.com/en/about
+
+I would welcome a review that includes its limitations as well as anything useful you find.
+
+Thanks,
+Arturo
+```
+
+### amux follow-up
+
+Recipient: `support@amux.io`
+
+Subject: Re: CodeAgentSwarm for your multiplexer comparison
+
+```text
+Hi amux team,
+
+Following up once on my September message about your agent multiplexer comparison. CodeAgentSwarm now has Linux builds alongside macOS and Windows and supports ten coding agents, including Claude Code and Codex.
+
+If you update the guide, would you consider testing its desktop workflow for supervising separate sessions and reviewing their changes? It is closed source and free with Pro during the open beta. Provider usage remains separate.
+
+Product facts and download: https://www.codeagentswarm.com/en/about
+
+Thanks,
+Arturo
+```
+
+### Tembo follow-up
+
+Recipient: `support@tembo.io`
+
+Subject: Re: Local desktop orchestrator for your 2026 comparison
+
+```text
+Hi Tembo team,
+
+One follow-up to my September note about your coding-agent orchestration guide. CodeAgentSwarm now runs on macOS, Windows and Linux, with ten supported agents.
+
+If you revisit desktop tools for supervising Claude Code and Codex sessions, would you consider evaluating it? The workflow combines session status, notifications, a task board and diff review. It is closed source, with Pro included during the open beta and provider usage separate.
+
+Product facts and download: https://www.codeagentswarm.com/en/about
+
+Thanks,
+Arturo
+```
+
+### Hands-on review brief
+
+Use a disposable repository. Run one Claude Code task and one Codex task in separate worktrees, inspect permissions, review both diffs and tests, then resume a saved conversation. Record the app version, OS, provider/model and what did not work. Do not claim a speed or quality improvement without a repeatable comparison. Publish the reviewer's own conclusions and disclose any relationship with the creator; no positive review is required.
+
+## Historical September material
+
+The following facts and draft text reflect September 1 and must not be reused as current copy. Sent messages and receipts are not rewritten.
 
 ## Revalidated editorial targets
 

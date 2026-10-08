@@ -1,0 +1,47 @@
+{
+  "action": "rules.update",
+  "id": "rule_allow_public_search_discovery_files_9w0x6A",
+  "value": {
+    "name": "Allow public search discovery files",
+    "description": "Allow GET/HEAD for robots, sitemap, llms.txt and the IndexNow ownership file on the production domains.",
+    "active": true,
+    "action": {
+      "mitigate": {
+        "bypassSystem": false,
+        "action": "bypass"
+      }
+    },
+    "conditionGroup": [
+      {
+        "conditions": [
+          {
+            "type": "host",
+            "op": "inc",
+            "value": [
+              "codeagentswarm.com",
+              "www.codeagentswarm.com"
+            ]
+          },
+          {
+            "type": "method",
+            "value": [
+              "GET",
+              "HEAD"
+            ],
+            "op": "inc"
+          },
+          {
+            "type": "path",
+            "op": "inc",
+            "value": [
+              "/robots.txt",
+              "/sitemap.xml",
+              "/23805737595743fe97240d74cb15ff20.txt",
+              "/llms.txt"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

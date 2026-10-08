@@ -16,11 +16,34 @@ Yo trabajo con enjambres mixtos casi todos los días. Esto es orquestación de a
     ctaAgent: 'multi',
     highlightedWords: ['enjambre de agentes CLI de IA', 'en paralelo'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-10-05',
+    updatedAt: '2026-10-08',
     relatedSlug: 'git-worktrees-para-agentes-de-ia',
     alternateSlug: 'ai-cli-agent-swarm',
   },
   sections: [
+    {
+      id: 'claude-and-codex-together',
+      title: 'Cómo usar Claude Code y Codex juntos',
+      content: [
+        {
+          type: 'paragraph',
+          text: 'CodeAgentSwarm permite ejecutar Claude Code y Codex en sesiones separadas dentro de un espacio de escritorio en macOS, Windows o Linux. Mantienes tus cuentas y los límites de cada proveedor. Empieza con una tarea pequeña por agente para revisar los cambios por separado.',
+        },
+        {
+          type: 'list',
+          items: [
+            'Abre tu proyecto en CodeAgentSwarm y crea una sesión de Claude Code.',
+            'Crea una sesión de Codex. Si ambas tareas van a editar el repositorio, usa un Git worktree separado para cada una.',
+            'Asigna a cada agente una tarea con límites claros: por ejemplo, uno modifica un componente y el otro investiga un test que falla. Indica qué archivos puede editar cada uno.',
+            'Observa los estados, responde a las solicitudes de permisos y revisa el diff y los tests antes de integrar cada cambio.',
+          ],
+        },
+        {
+          type: 'paragraph',
+          text: 'Comprueba el aislamiento con la <a href="/es/guias/git-worktrees-para-agentes-de-ia" class="text-neon-cyan hover:text-neon-purple transition-colors">guía de Git worktrees y su ejemplo ejecutable</a>. Los worktrees separan archivos, pero no bases de datos, puertos ni servicios externos compartidos. Para una sola sesión, tu CLI habitual puede ser suficiente.',
+        },
+      ],
+    },
     {
       id: 'what-is-it',
       title: '¿Qué es un enjambre de agentes CLI de IA?',
@@ -452,6 +475,10 @@ Yo trabajo con enjambres mixtos casi todos los días. Esto es orquestación de a
   ],
   faq: [
     {
+      question: '¿Puedo usar Claude Code y Codex juntos en Windows?',
+      answer: 'Sí. CodeAgentSwarm está disponible en Windows y permite elegir Claude Code o Codex en cada sesión. Inicia sesión en cada proveedor, asigna tareas separadas y usa Git worktrees si necesitas aislar sus cambios. La beta incluye las funciones Pro; el acceso y el consumo de modelos dependen de cada proveedor.',
+    },
+    {
       question: '¿Qué es un enjambre de agentes CLI de IA?',
       answer: 'Son varios agentes de código por línea de comandos, independientes (como Claude Code, Codex CLI, OpenCode, Kimi Code y Grok Build), ejecutándose en paralelo en un solo sitio, con visibilidad compartida de lo que hace cada uno. Cada agente es su propio proceso, con su conversación y su contexto, y el enjambre es la capa a su alrededor que añade notificaciones, historial buscable, visibilidad de cambios de archivos y control de permisos.',
     },
@@ -469,7 +496,7 @@ Yo trabajo con enjambres mixtos casi todos los días. Esto es orquestación de a
     },
     {
       question: '¿Necesito git worktrees para ejecutar agentes en paralelo?',
-      answer: 'No, los worktrees son opcionales. Puedes ejecutar varios agentes contra un mismo workspace y un mismo checkout. Cuando editan archivos distintos no hay conflicto, y cuando tocan el mismo archivo Git gestiona el merge y los agentes lo resuelven bastante bien. Los git worktrees son útiles cuando quieres aislamiento total para cambios grandes y en conflicto, pero no son un requisito para montar un enjambre.',
+      answer: 'Los worktrees son opcionales, pero usa uno por tarea cuando necesites copias de trabajo independientes. Los agentes en la misma carpeta pueden sobrescribirse antes de que Git llegue a fusionar nada. Los worktrees aíslan archivos, no bases de datos ni puertos compartidos; revisa y prueba cada cambio antes de integrarlo.',
     },
     {
       question: '¿Un enjambre de agentes CLI de IA es lo mismo que los agent teams de Claude Code?',
