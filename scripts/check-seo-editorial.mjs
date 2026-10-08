@@ -43,7 +43,7 @@ for (const guide of catalog) {
     }
   }
 }
-assert.equal(editorialCount, 14)
+assert.equal(editorialCount, 30)
 const corrected = [
   'claude-code-agent-teams-vs-codeagentswarm', 'agent-teams-de-claude-code-vs-codeagentswarm',
   'claude-code-agent-swarm', 'enjambre-de-agentes-claude-code',

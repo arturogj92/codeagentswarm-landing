@@ -74,6 +74,18 @@ import enCopilot0 from './en/how-to-use-github-copilot-cli'
 import esCopilot0 from './es/como-usar-github-copilot-cli'
 import enCopilot1 from './en/github-copilot-cli-models-ai-credits'
 import esCopilot1 from './es/github-copilot-cli-modelos-creditos-ia'
+import enCopilot2 from './en/github-copilot-cli-on-windows'
+import esCopilot2 from './es/github-copilot-cli-en-windows'
+import enCopilot3 from './en/github-copilot-cli-on-linux'
+import esCopilot3 from './es/github-copilot-cli-en-linux'
+import enCopilot4 from './en/github-copilot-cli-mcp-history'
+import esCopilot4 from './es/github-copilot-cli-mcp-historial'
+import enCopilot5 from './en/github-copilot-cli-agent-swarm'
+import esCopilot5 from './es/enjambre-de-agentes-github-copilot-cli'
+import enCopilot6 from './en/github-copilot-cli-yolo-mode'
+import esCopilot6 from './es/modo-yolo-github-copilot-cli'
+import enCopilot7 from './en/github-copilot-cli-vs-claude-code'
+import esCopilot7 from './es/github-copilot-cli-vs-claude-code'
 import enMuseCodeOnLinux from './en/muse-code-on-linux'
 import esMuseCodeEnLinux from './es/muse-code-en-linux'
 import enOpenCodeAgentSwarm from './en/opencode-agent-swarm'
@@ -295,6 +307,12 @@ export const guides: Record<string, Record<string, Guide>> = {
     'devin-cli-on-linux': enDevinCliOnLinux,
     'how-to-use-github-copilot-cli': enCopilot0,
     'github-copilot-cli-models-ai-credits': enCopilot1,
+    'github-copilot-cli-on-windows': enCopilot2,
+    'github-copilot-cli-on-linux': enCopilot3,
+    'github-copilot-cli-mcp-history': enCopilot4,
+    'github-copilot-cli-agent-swarm': enCopilot5,
+    'github-copilot-cli-yolo-mode': enCopilot6,
+    'github-copilot-cli-vs-claude-code': enCopilot7,
     'muse-code-on-linux': enMuseCodeOnLinux,
     'opencode-agent-swarm': enOpenCodeAgentSwarm,
     'run-multiple-opencode-sessions': enRunMultipleOpenCode,
@@ -410,6 +428,12 @@ export const guides: Record<string, Record<string, Guide>> = {
     'devin-cli-en-linux': esDevinCliEnLinux,
     'como-usar-github-copilot-cli': esCopilot0,
     'github-copilot-cli-modelos-creditos-ia': esCopilot1,
+    'github-copilot-cli-en-windows': esCopilot2,
+    'github-copilot-cli-en-linux': esCopilot3,
+    'github-copilot-cli-mcp-historial': esCopilot4,
+    'enjambre-de-agentes-github-copilot-cli': esCopilot5,
+    'modo-yolo-github-copilot-cli': esCopilot6,
+    'github-copilot-cli-vs-claude-code': esCopilot7,
     'muse-code-en-linux': esMuseCodeEnLinux,
     'enjambre-de-agentes-opencode': esOpenCodeAgentSwarm,
     'ejecutar-multiples-sesiones-opencode': esRunMultipleOpenCode,

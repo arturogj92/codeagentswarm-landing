@@ -193,6 +193,16 @@ const guide: Guide = {
           type: 'paragraph',
           text: `Los planes y el uso están en ${link('/es/guias/github-copilot-cli-modelos-creditos-ia', 'modelos, créditos de IA y límites de GitHub Copilot CLI')}. Para compararlo con otras herramientas, consulta ${link('/es/guias/mejores-herramientas-agentes-ia-en-paralelo', 'las mejores herramientas para usar varios agentes de IA en paralelo')}.`,
         },
+        {
+          type: 'list',
+          items: [
+            `Instalación por sistema: ${link('/es/guias/github-copilot-cli-en-windows', 'Copilot CLI en Windows')} y ${link('/es/guias/github-copilot-cli-en-linux', 'Copilot CLI en Linux')}.`,
+            `${link('/es/guias/modo-yolo-github-copilot-cli', 'Modo YOLO, permisos y autopilot')}: qué deja pasar de verdad cada regla.`,
+            `${link('/es/guias/github-copilot-cli-mcp-historial', 'MCP, instrucciones e historial de sesiones')}: archivos de configuración y reanudación.`,
+            `${link('/es/guias/enjambre-de-agentes-github-copilot-cli', 'Varias sesiones de Copilot en paralelo')}, y en qué se diferencia de <code>/fleet</code>.`,
+            `${link('/es/guias/github-copilot-cli-vs-claude-code', 'GitHub Copilot CLI vs Claude Code')}: precio, modelos y configuración, uno al lado del otro.`,
+          ],
+        },
       ],
     },
   ],

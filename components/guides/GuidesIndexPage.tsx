@@ -22,6 +22,12 @@ type Family = 'cross' | 'claude' | 'codex' | 'antigravity' | 'opencode' | 'kimi'
 const FAMILY_BY_EN_SLUG: Record<string, Family> = {
   'how-to-use-github-copilot-cli': 'copilot',
   'github-copilot-cli-models-ai-credits': 'copilot',
+  'github-copilot-cli-on-windows': 'copilot',
+  'github-copilot-cli-on-linux': 'copilot',
+  'github-copilot-cli-mcp-history': 'copilot',
+  'github-copilot-cli-agent-swarm': 'copilot',
+  'github-copilot-cli-yolo-mode': 'copilot',
+  'github-copilot-cli-vs-claude-code': 'copilot',
 
   'how-to-use-muse-code': 'muse',
   'muse-code-on-windows': 'muse',

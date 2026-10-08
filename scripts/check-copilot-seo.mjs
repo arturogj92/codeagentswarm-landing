@@ -6,6 +6,12 @@ import { stripTypeScriptTypes } from 'node:module'
 const pairs = [
   ['how-to-use-github-copilot-cli', 'como-usar-github-copilot-cli'],
   ['github-copilot-cli-models-ai-credits', 'github-copilot-cli-modelos-creditos-ia'],
+  ['github-copilot-cli-on-windows', 'github-copilot-cli-en-windows'],
+  ['github-copilot-cli-on-linux', 'github-copilot-cli-en-linux'],
+  ['github-copilot-cli-mcp-history', 'github-copilot-cli-mcp-historial'],
+  ['github-copilot-cli-agent-swarm', 'enjambre-de-agentes-github-copilot-cli'],
+  ['github-copilot-cli-yolo-mode', 'modo-yolo-github-copilot-cli'],
+  ['github-copilot-cli-vs-claude-code', 'github-copilot-cli-vs-claude-code'],
 ]
 const base = 'https://www.codeagentswarm.com'
 const read = (path) => readFile(new URL('../' + path, import.meta.url), 'utf8')
@@ -56,4 +62,4 @@ for (const pair of pairs) {
     }
   }
 }
-console.log('Copilot SEO: 4 bilingual pages, matching FAQs, canonical/hreflang, indexability, sitemap, llms and internal links passed.')
+console.log(`Copilot SEO: ${pairs.length * 2} bilingual pages, matching FAQs, canonical/hreflang, indexability, sitemap, llms and internal links passed.`)

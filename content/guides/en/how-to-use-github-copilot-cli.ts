@@ -193,6 +193,16 @@ const guide: Guide = {
           type: 'paragraph',
           text: `Plans and usage are covered in ${link('/en/guides/github-copilot-cli-models-ai-credits', 'GitHub Copilot CLI models, AI credits and usage limits')}. To compare it with other tools, see ${link('/en/guides/best-tools-to-run-multiple-ai-coding-agents', 'the best tools to run multiple AI coding agents')}.`,
         },
+        {
+          type: 'list',
+          items: [
+            `Setup by system: ${link('/en/guides/github-copilot-cli-on-windows', 'Copilot CLI on Windows')} and ${link('/en/guides/github-copilot-cli-on-linux', 'Copilot CLI on Linux')}.`,
+            `${link('/en/guides/github-copilot-cli-yolo-mode', 'YOLO mode, permissions and autopilot')}: what each allow rule really lets through.`,
+            `${link('/en/guides/github-copilot-cli-mcp-history', 'MCP, instructions and session history')}: config files and resume.`,
+            `${link('/en/guides/github-copilot-cli-agent-swarm', 'Several Copilot sessions in parallel')}, and how that differs from <code>/fleet</code>.`,
+            `${link('/en/guides/github-copilot-cli-vs-claude-code', 'GitHub Copilot CLI vs Claude Code')}: pricing, models and setup side by side.`,
+          ],
+        },
       ],
     },
   ],
