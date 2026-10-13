@@ -50,6 +50,7 @@ const FAMILY_BY_EN_SLUG: Record<string, Family> = {
   'claude-squad-vs-codeagentswarm': 'cross',
   'vibe-kanban-vs-codeagentswarm': 'cross',
   'nimbalyst-vs-codeagentswarm': 'cross',
+  'gpt-6-1-sol-for-coding': 'codex',
   'codex-agent-swarm': 'codex',
   'run-multiple-codex-sessions': 'codex',
   'codex-yolo-mode': 'codex',

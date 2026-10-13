@@ -56,6 +56,14 @@ Record date, exact prompt, model, language, personalization settings, whether se
 
 Record the actual production deployment date. Compare 28 complete post-deployment days against 28 complete pre-deployment days for these guide URLs in Search Console and Umami, splitting locale and device. Review clicks, impressions, position and guide download clicks per pageview together. A fall needs investigation of query mix and ranking before attribution to these edits. No ranking or mention increase is guaranteed.
 
+## GPT-6.1 Sol content (2026-10-13)
+
+New bilingual guide `gpt-6-1-sol-for-coding` / `gpt-6-1-sol-para-programar` (Codex family, `ctaAgent: codex`). The Codex comparison and pricing pairs now name GPT-6.1 Sol instead of GPT-5.6 Sol and GPT-5.3-Codex and link to it.
+
+Sources, checked 2026-10-13: OpenAI model pages for `gpt-6.1-sol` and `gpt-6-astra` (prices, context, efforts, 272K surcharge), TechCrunch and unite.ai for OpenAI's DevDay claims, Artificial Analysis model pages (Sol 52, Astra 53, Opus 5.5 58 and its $4/$20 price, Muse Wonder 52) and Vals AI. `openai.com/index/...` returns a Cloudflare challenge to automated clients; the system card at `deploymentsafety.openai.com/gpt-6-1-sol/gpt-6-1-sol.pdf` is reachable but has safety results only, so OpenAI's capability table was not read first-hand and the guide quotes only claims confirmed by two outlets.
+
+The capture `gpt-6-1-sol-codex-model-menu.webp` uses the same isolated fixture scene; its model list copies exactly what `codex app-server` `model/list` returned for a ChatGPT Pro account (Codex CLI 0.159.0, `gpt-6.1-sol` default, efforts up to `ultra`). The chart `gpt-6-1-sol-score-price-{en,es}.webp` has two panels (index, output price) instead of a dual axis.
+
 ## Muse Wonder launch content (2026-10-13)
 
 Meta released Muse Wonder (`muse-wonder-1.0`) and Muse Wonder Full on 2026-10-12. New bilingual guide `muse-wonder-for-coding` / `muse-wonder-para-programar` targets the new model name plus coding intent and the "no LLM lock-in" angle. The existing Muse models/pricing pair gains Wonder rows and the first-task pair a pointer; their titles, slugs and anchors are unchanged. `llms.txt` and `check-muse-seo.mjs` include the new pair. Ahrefs had no data for "muse wonder" one day after launch, so this is a news-driven decision, not a measured keyword choice.

@@ -123,6 +123,7 @@ Pi is a separate coding harness, not a model provider. Install the current packa
 - [View Claude Code Changes in Real Time: Live Diff, Git Diff & Terminal Tracking (2026)](https://www.codeagentswarm.com/en/guides/view-claude-code-changes-real-time)
 - [Claude Code Pricing 2026: Plans, Limits, Parallel Agent Cost](https://www.codeagentswarm.com/en/guides/claude-code-plans-and-pricing)
 - [Codex CLI Pricing 2026: Plans, Limits, Parallel Agent Cost](https://www.codeagentswarm.com/en/guides/codex-plans-and-pricing)
+- [GPT-6.1 Sol for Coding: Price, Benchmarks and Codex Setup](https://www.codeagentswarm.com/en/guides/gpt-6-1-sol-for-coding): OpenAI model released 2026-09-29, API gpt-6.1-sol at $2 input / $0.10 cached / $10 output per million tokens, Artificial Analysis Intelligence Index 52 (GPT-6 Astra 53, Claude Opus 5.5 58); selectable in Codex CLI and in CodeAgentSwarm's Codex Chat model menu.
 - [OpenCode Pricing 2026: Free CLI, Zen, BYOK and Real Cost](https://www.codeagentswarm.com/en/guides/opencode-plans-and-pricing)
 - [Antigravity Pricing 2026: Free, Pro, Ultra and Rate Limits](https://www.codeagentswarm.com/en/guides/antigravity-plans-and-pricing)
 - [Antigravity (agy) YOLO Mode: Skip Permissions Explained (2026)](https://www.codeagentswarm.com/en/guides/antigravity-yolo-mode)
@@ -211,6 +212,7 @@ Pi is a separate coding harness, not a model provider. Install the current packa
 - [Vibe Kanban vs CodeAgentSwarm: comparativa honesta (2026)](https://www.codeagentswarm.com/es/guias/vibe-kanban-vs-codeagentswarm)
 - [Precios de Claude Code 2026: planes, límites y coste real](https://www.codeagentswarm.com/es/guias/planes-y-precios-de-claude-code)
 - [Precios de Codex CLI 2026: planes, límites y coste real](https://www.codeagentswarm.com/es/guias/planes-y-precios-de-codex)
+- [GPT-6.1 Sol para programar: precio, benchmarks y Codex](https://www.codeagentswarm.com/es/guias/gpt-6-1-sol-para-programar)
 - [Precios de OpenCode 2026: CLI gratis, Zen, BYOK y coste real](https://www.codeagentswarm.com/es/guias/planes-y-precios-de-opencode)
 - [Precios de Antigravity 2026: Free, Pro, Ultra y límites](https://www.codeagentswarm.com/es/guias/planes-y-precios-de-antigravity)
 - [Modo YOLO de Antigravity (agy): saltar permisos (2026)](https://www.codeagentswarm.com/es/guias/modo-yolo-antigravity)
