@@ -25,6 +25,8 @@ const GUIDE_IMAGE_DIMENSIONS: Record<string, { width: number; height: number }> 
   '/images/guides/pi-model-picker-beta.webp': { width: 1440, height: 980 },
   '/images/guides/muse-wonder-chat.webp': { width: 1440, height: 900 },
   '/images/guides/muse-wonder-model-menu.webp': { width: 1440, height: 900 },
+  '/images/guides/muse-wonder-benchmarks-en.webp': { width: 1000, height: 1855 },
+  '/images/guides/muse-wonder-benchmarks-es.webp': { width: 1000, height: 1886 },
   '/images/guides/resume-conversation.png': { width: 1316, height: 1195 },
   '/images/guides/task-board-kanban.png': { width: 3024, height: 1964 },
   '/images/guides/codex-agent-swarm.png': { width: 3024, height: 1964 },

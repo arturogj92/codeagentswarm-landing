@@ -46,7 +46,45 @@ const guide: Guide = {
         },
         {
           type: 'paragraph',
-          text: 'El anuncio no incluye tabla de benchmarks. Meta dijo a <a href="https://techcrunch.com/2026/10/12/meta-releases-its-first-frontier-model-muse-wonder/" class="' + link + '">TechCrunch</a> que los dos modelos obtienen resultados comparables a los de Fable 5.1 y GPT-6 Astra. Tómalo como una afirmación del fabricante hasta que haya resultados independientes. Tu propio repositorio es mejor prueba que cualquier ranking.',
+          text: 'Meta compara los dos modelos con Claude Fable 5.1, GPT-6 Astra y Claude Opus 5.5. La siguiente sección muestra los resultados de programación.',
+        },
+      ],
+    },
+    {
+      id: 'benchmarks',
+      title: 'Benchmarks de Muse Wonder para programar',
+      content: [
+        {
+          type: 'paragraph',
+          text: 'La <a href="https://research.meta.ai/static/muse-wonder-model-card" class="' + link + '">model card de Muse Wonder</a> incluye una tabla de resultados. Todos los modelos usaron el razonamiento máximo. Meta eligió los benchmarks y algunas pruebas de la competencia las hizo ella misma de forma orientativa, así que tómalas como la visión del fabricante.',
+        },
+        {
+          type: 'image',
+          src: '/images/guides/muse-wonder-benchmarks-es.webp',
+          alt: 'Gráfico de barras con benchmarks de programación de Muse Wonder Full, Muse Wonder, Claude Fable 5.1, GPT-6 Astra y Claude Opus 5.5',
+          size: 'full',
+          caption: 'Gráfico de CodeAgentSwarm con los datos de la model card de Muse Wonder publicada por Meta el 12 de octubre de 2026.',
+        },
+        {
+          type: 'table',
+          headers: ['Benchmark', 'Wonder Full', 'Wonder', 'Fable 5.1', 'GPT-6 Astra', 'Opus 5.5'],
+          rows: [
+            ['Terminal-Bench 4.0-AA', '57,1', '52,0', '52,0', '59,1', '59,6'],
+            ['DeepSWE 1.1', '79,0', '78,8', '67,4', '74,1', '74,2'],
+            ['SWE-Marathon', '57,5', '53,1', '45,6', '42,5', '46,3'],
+            ['ProgramBench', '59,0', '50,0', '55,5', '52,5', '70,5'],
+            ['MemoryBench', '85,5', '85,6', '79,0', '81,4', '81,5'],
+            ['Artificial Analysis Index', '56', '52', '53', '53', '58'],
+          ],
+          caption: 'Fuente: model card de Muse Wonder. MemoryBench es un benchmark interno de Meta. SWE-Marathon mezcla entornos de agente y Wonder Full usó el nivel xhigh.',
+        },
+        {
+          type: 'paragraph',
+          text: 'En programación, el resultado es desigual. Muse Wonder va por delante en tareas largas: 78,8 en DeepSWE 1.1 frente a 74,2 de Opus 5.5, y 53,1 en SWE-Marathon frente a 46,3. Va por detrás de Opus 5.5 en Terminal-Bench 4.0 (52,0 frente a 59,6) y en ProgramBench, que reconstruye programas desde cero (50,0 frente a 70,5).',
+        },
+        {
+          type: 'paragraph',
+          text: 'El Artificial Analysis Index es la única cifra independiente. <a href="https://artificialanalysis.ai/models/muse-wonder" class="' + link + '">Artificial Analysis</a> da a Muse Wonder 52 puntos, el noveno de 216 modelos de su ranking, y a Wonder Full 56. Claude Opus 5.5 saca 58. Ningún modelo gana en todas las filas, así que prueba los mejores en tu propio repositorio.',
         },
       ],
     },
@@ -196,6 +234,10 @@ const guide: Guide = {
     {
       question: '¿Qué diferencia hay entre Muse Wonder y Muse Wonder Full?',
       answer: 'Wonder está disponible en la API y en Muse Code. Wonder Full es la versión más grande y solo está disponible para suscriptores de Muse Code. Meta no ofrece Full por la API.',
+    },
+    {
+      question: '¿Muse Wonder programa mejor que Claude Opus 5.5?',
+      answer: 'Depende de la tarea. En la tabla de Meta, Muse Wonder supera a Opus 5.5 en DeepSWE 1.1 (78,8 frente a 74,2) y en SWE-Marathon (53,1 frente a 46,3), pero queda por detrás en Terminal-Bench 4.0 (52,0 frente a 59,6) y en ProgramBench (50,0 frente a 70,5). Prueba los dos en tu propio repositorio.',
     },
     {
       question: '¿Cuánto cuesta Muse Wonder?',

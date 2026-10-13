@@ -64,6 +64,8 @@ Facts and sources, checked 2026-10-13: Meta announcement, `dev.meta.ai/docs/mode
 
 Model availability depends on the account: a `model/list` discovery through the app's Muse driver (Muse Code 1.4.6, no prompt sent) returned only `muse-spark-1.3` on 2026-10-13. The guides say so. Both images (`muse-wonder-chat.webp`, `muse-wonder-model-menu.webp`, 1440×900) are real renderer captures made with the `codeagentswarm-guide-workspace-image` scene in an isolated hidden profile, with fixture Chat IPC: the Muse model list and conversation are simulated, and the captions state it. The "Continue in another LLM" section is the app's real handoff menu with a stubbed installed-agent list.
 
+Benchmarks: the scorecard is an image on page 3 of Meta's model card PDF (`research.meta.ai/static/muse-wonder-model-card`); the text layer has no numbers, so extract it with `pdfimages` and read it. The guide's bar charts (`muse-wonder-benchmarks-{en,es}.webp`, 1000 px wide) are our own renders of the coding rows plus the Artificial Analysis Index, not copies of Meta's image; Muse bars use #d97706 and competitors neutral gray, each bar direct-labelled. Artificial Analysis independently lists Muse Wonder (max) at 52 (ninth of 216) and Wonder Full at 56, matching Meta's figures; the other rows are vendor-selected.
+
 Validation: build, lint, `check-muse-seo` (10 pages; needs Node 22 for `stripTypeScriptTypes`), release, Pi, Devin, product-discovery and guide-workspace checks, and 20 node tests. EN/ES pages render at 1440 and 390 widths with one H1, no overflow, no long dashes and loaded images.
 
 ## Release 2.4.0 availability (2026-09-24)

@@ -46,7 +46,45 @@ const guide: Guide = {
         },
         {
           type: 'paragraph',
-          text: 'The announcement does not include a benchmark table. Meta told <a href="https://techcrunch.com/2026/10/12/meta-releases-its-first-frontier-model-muse-wonder/" class="' + link + '">TechCrunch</a> that both models score comparably to Fable 5.1 and GPT-6 Astra. Treat that as a vendor claim until independent results appear. Your own repository is a better test than any leaderboard.',
+          text: 'Meta compares both models with Claude Fable 5.1, GPT-6 Astra and Claude Opus 5.5. The next section shows the coding results.',
+        },
+      ],
+    },
+    {
+      id: 'benchmarks',
+      title: 'Muse Wonder benchmarks for coding',
+      content: [
+        {
+          type: 'paragraph',
+          text: 'The <a href="https://research.meta.ai/static/muse-wonder-model-card" class="' + link + '">Muse Wonder model card</a> includes a scorecard. Every model ran at maximum reasoning effort. Meta chose the benchmarks, and some competitor runs are its own best-effort tests, so read these numbers as the vendor’s view.',
+        },
+        {
+          type: 'image',
+          src: '/images/guides/muse-wonder-benchmarks-en.webp',
+          alt: 'Bar chart of coding benchmarks for Muse Wonder Full, Muse Wonder, Claude Fable 5.1, GPT-6 Astra and Claude Opus 5.5',
+          size: 'full',
+          caption: 'Chart made by CodeAgentSwarm from the scorecard in Meta’s Muse Wonder model card, October 12, 2026.',
+        },
+        {
+          type: 'table',
+          headers: ['Benchmark', 'Wonder Full', 'Wonder', 'Fable 5.1', 'GPT-6 Astra', 'Opus 5.5'],
+          rows: [
+            ['Terminal-Bench 4.0-AA', '57.1', '52.0', '52.0', '59.1', '59.6'],
+            ['DeepSWE 1.1', '79.0', '78.8', '67.4', '74.1', '74.2'],
+            ['SWE-Marathon', '57.5', '53.1', '45.6', '42.5', '46.3'],
+            ['ProgramBench', '59.0', '50.0', '55.5', '52.5', '70.5'],
+            ['MemoryBench', '85.5', '85.6', '79.0', '81.4', '81.5'],
+            ['Artificial Analysis Index', '56', '52', '53', '53', '58'],
+          ],
+          caption: 'Source: Muse Wonder model card. MemoryBench is an internal Meta benchmark. SWE-Marathon mixes agent harnesses, and Wonder Full ran with xhigh effort there.',
+        },
+        {
+          type: 'paragraph',
+          text: 'For coding, the picture is mixed. Muse Wonder leads on long tasks: 78.8 on DeepSWE 1.1 against 74.2 for Opus 5.5, and 53.1 on SWE-Marathon against 46.3. It trails Opus 5.5 on Terminal-Bench 4.0 (52.0 against 59.6) and on ProgramBench, which rebuilds programs from scratch (50.0 against 70.5).',
+        },
+        {
+          type: 'paragraph',
+          text: 'The Artificial Analysis Index is the one independent number. <a href="https://artificialanalysis.ai/models/muse-wonder" class="' + link + '">Artificial Analysis</a> lists Muse Wonder with 52 points, ninth of 216 models it ranks, and Wonder Full with 56. Claude Opus 5.5 scores 58. No model wins every row, so test the leaders on your own repository.',
         },
       ],
     },
@@ -196,6 +234,10 @@ const guide: Guide = {
     {
       question: 'What is the difference between Muse Wonder and Muse Wonder Full?',
       answer: 'Wonder is available through the API and Muse Code. Wonder Full is the larger version and is only available to Muse Code subscribers. Meta does not serve Full through the API.',
+    },
+    {
+      question: 'Is Muse Wonder better than Claude Opus 5.5 for coding?',
+      answer: 'It depends on the task. In Meta’s scorecard, Muse Wonder beats Opus 5.5 on DeepSWE 1.1 (78.8 against 74.2) and SWE-Marathon (53.1 against 46.3), but trails it on Terminal-Bench 4.0 (52.0 against 59.6) and ProgramBench (50.0 against 70.5). Test both on your own repository.',
     },
     {
       question: 'How much does Muse Wonder cost?',
