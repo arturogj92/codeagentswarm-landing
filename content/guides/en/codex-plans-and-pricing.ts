@@ -16,7 +16,7 @@ The rest of the detail is where people get surprised: the CLI, the web version a
     ctaAgent: 'codex',
     highlightedWords: ['Codex', 'Plans', 'Pricing'],
     publishedAt: '2026-08-05',
-    updatedAt: '2026-09-01',
+    updatedAt: '2026-10-13',
     alternateSlug: 'planes-y-precios-de-codex',
   },
   sections: [
@@ -146,7 +146,7 @@ The rest of the detail is where people get surprised: the CLI, the web version a
       content: [
         {
           type: 'paragraph',
-          text: 'Codex accepts an OpenAI API key instead of a ChatGPT login, which swaps the whole quota system for per-token billing. As of August 2026, GPT-5.3-Codex is priced at $1.75 per million input tokens and $14.00 per million output tokens.',
+          text: 'Codex accepts an OpenAI API key instead of a ChatGPT login, which swaps the whole quota system for per-token billing. As of October 2026, <a href="/en/guides/gpt-6-1-sol-for-coding" class="text-neon-cyan hover:text-neon-purple transition-colors">GPT-6.1 Sol</a> costs $2.00 per million input tokens, $0.10 per million cached input tokens and $10.00 per million output tokens. GPT-6 Astra costs $10.00 input, $1.00 cached input and $50.00 output per million tokens.',
         },
         {
           type: 'paragraph',

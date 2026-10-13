@@ -7,6 +7,7 @@ const pairs = [
   ['muse-code-on-windows', 'muse-code-en-windows'],
   ['muse-code-models-pricing-privacy', 'muse-code-modelos-precios-privacidad'],
   ['muse-code-mcp-skills-workflows', 'muse-code-mcp-skills-workflows'],
+  ['muse-wonder-for-coding', 'muse-wonder-para-programar'],
 ]
 const base = 'https://www.codeagentswarm.com'
 const read = path => readFile(new URL('../' + path, import.meta.url), 'utf8')
@@ -62,4 +63,4 @@ for (const pair of pairs) {
     assert.ok(visible.includes(availability), 'final CTA preserves release availability')
   }
 }
-console.log('Muse SEO: 8 bilingual pages, structured data, canonical/hreflang, indexability, hub, sitemap, llms, images and internal links passed.')
+console.log(`Muse SEO: ${pairs.length * 2} bilingual pages, structured data, canonical/hreflang, indexability, hub, sitemap, llms, images and internal links passed.`)

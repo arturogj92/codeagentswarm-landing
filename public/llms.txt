@@ -123,6 +123,7 @@ Pi is a separate coding harness, not a model provider. Install the current packa
 - [View Claude Code Changes in Real Time: Live Diff, Git Diff & Terminal Tracking (2026)](https://www.codeagentswarm.com/en/guides/view-claude-code-changes-real-time)
 - [Claude Code Pricing 2026: Plans, Limits, Parallel Agent Cost](https://www.codeagentswarm.com/en/guides/claude-code-plans-and-pricing)
 - [Codex CLI Pricing 2026: Plans, Limits, Parallel Agent Cost](https://www.codeagentswarm.com/en/guides/codex-plans-and-pricing)
+- [GPT-6.1 Sol for Coding: Price, Benchmarks and Codex Setup](https://www.codeagentswarm.com/en/guides/gpt-6-1-sol-for-coding): OpenAI model released 2026-09-29, API gpt-6.1-sol at $2 input / $0.10 cached / $10 output per million tokens, Artificial Analysis Intelligence Index 52 (GPT-6 Astra 53, Claude Opus 5.5 58); selectable in Codex CLI and in CodeAgentSwarm's Codex Chat model menu.
 - [OpenCode Pricing 2026: Free CLI, Zen, BYOK and Real Cost](https://www.codeagentswarm.com/en/guides/opencode-plans-and-pricing)
 - [Antigravity Pricing 2026: Free, Pro, Ultra and Rate Limits](https://www.codeagentswarm.com/en/guides/antigravity-plans-and-pricing)
 - [Antigravity (agy) YOLO Mode: Skip Permissions Explained (2026)](https://www.codeagentswarm.com/en/guides/antigravity-yolo-mode)
@@ -211,6 +212,7 @@ Pi is a separate coding harness, not a model provider. Install the current packa
 - [Vibe Kanban vs CodeAgentSwarm: comparativa honesta (2026)](https://www.codeagentswarm.com/es/guias/vibe-kanban-vs-codeagentswarm)
 - [Precios de Claude Code 2026: planes, límites y coste real](https://www.codeagentswarm.com/es/guias/planes-y-precios-de-claude-code)
 - [Precios de Codex CLI 2026: planes, límites y coste real](https://www.codeagentswarm.com/es/guias/planes-y-precios-de-codex)
+- [GPT-6.1 Sol para programar: precio, benchmarks y Codex](https://www.codeagentswarm.com/es/guias/gpt-6-1-sol-para-programar)
 - [Precios de OpenCode 2026: CLI gratis, Zen, BYOK y coste real](https://www.codeagentswarm.com/es/guias/planes-y-precios-de-opencode)
 - [Precios de Antigravity 2026: Free, Pro, Ultra y límites](https://www.codeagentswarm.com/es/guias/planes-y-precios-de-antigravity)
 - [Modo YOLO de Antigravity (agy): saltar permisos (2026)](https://www.codeagentswarm.com/es/guias/modo-yolo-antigravity)
@@ -237,8 +239,10 @@ Devin CLI is a local coding agent. CodeAgentSwarm 2.4.0 includes Devin on macOS 
 
 ## Muse Code: standalone guides and CodeAgentSwarm 2.4.0 integration
 
-Muse Code is Meta's coding agent; Muse Spark is its model family. Muse is available from CodeAgentSwarm 2.4.0 on macOS and Windows. Meta account access and billing are separate. Standard and Contributor have different data-use terms. Workflows depend on the installed build and rollout; Windows has separate platform limitations. Provider facts reviewed 2026-09-22. CodeAgentSwarm availability updated 2026-09-24.
+Muse Code is Meta's coding agent. Its models are Muse Wonder (muse-wonder-1.0, released 2026-10-12; API price $4 input / $20 output per million tokens), Muse Wonder Full (Muse Code subscriptions only, not served through the API) and the cheaper Muse Spark family. Meta's model card scorecard (max effort) gives Muse Wonder 52.0 on Terminal-Bench 4.0-AA (Claude Opus 5.5: 59.6), 78.8 on DeepSWE 1.1 (74.2), 53.1 on SWE-Marathon (46.3), 50.0 on ProgramBench (70.5) and 52 on the Artificial Analysis Index (58); Wonder Full scores 56 on that index. In CodeAgentSwarm the Chat model menu lists the models the user's Muse account returns, and "Continue in another LLM" moves a conversation to another installed agent. Muse is available from CodeAgentSwarm 2.4.0 on macOS, Windows and Linux. Meta account access and billing are separate. Standard and Contributor have different data-use terms. Workflows depend on the installed build and rollout; Windows has separate platform limitations. Provider facts reviewed 2026-10-13. CodeAgentSwarm availability updated 2026-09-24.
 
+- [Muse Wonder for coding: prices, access and how to use it without lock-in](https://www.codeagentswarm.com/en/guides/muse-wonder-for-coding)
+- [Muse Wonder para programar: precios, acceso y cómo usarlo](https://www.codeagentswarm.com/es/guias/muse-wonder-para-programar)
 - [Muse Code: installation, login and first task](https://www.codeagentswarm.com/en/guides/how-to-use-muse-code)
 - [Muse Code en español: instalación y primera tarea](https://www.codeagentswarm.com/es/guias/como-usar-muse-code)
 - [How to Install Muse Code (Meta) on Linux: Setup, Login and Errors (2026)](https://www.codeagentswarm.com/en/guides/muse-code-on-linux)

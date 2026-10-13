@@ -6,7 +6,7 @@ const guide: Guide = {
     "locale": "en",
     "title": "Muse Code Models, Pricing and Privacy: What to Check",
     "metaTitle": "Muse Code Models, Pricing and Privacy: What to Check",
-    "metaDescription": "Compare Muse Code Standard and Contributor models, API token prices and subscriptions. Check training, retention and credentials before sending project code.",
+    "metaDescription": "Compare Muse Wonder and Muse Spark, Standard and Contributor tiers, API token prices and subscriptions. Check training and retention before sending code.",
     "intro": "Choosing a Muse model also means choosing how your project data is treated. Keep that decision separate from how you pay. This guide covers the model IDs, a worked API cost example and the account checks that prevent a subscription session from accidentally using a separate API key.",
     "socialImage": "/images/guides/muse-code-og-en.png",
     "ctaText": "Use Muse Code in CodeAgentSwarm for macOS, Windows and Linux. Meta account access and billing are separate.",
@@ -15,7 +15,7 @@ const guide: Guide = {
       "Muse"
     ],
     "publishedAt": "2026-09-22",
-    "updatedAt": "2026-09-24",
+    "updatedAt": "2026-10-13",
     "alternateSlug": "muse-code-modelos-precios-privacidad"
   },
   "sections": [
@@ -31,7 +31,7 @@ const guide: Guide = {
         },
         {
           "type": "paragraph",
-          "text": "For a Standard session, launch the model explicitly. The <a href=\"https://dev.meta.ai/docs/models\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">official model catalog</a> lists Muse Spark 1.3 and its Contributor variant. The suffix is meaningful: a model selection can change the data terms that apply to your prompts and responses."
+          "text": "For a Standard session, launch the model explicitly. The <a href=\"https://dev.meta.ai/docs/models\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">official model catalog</a> lists Muse Wonder 1.0, released on October 12, 2026, plus Muse Spark 1.3 and its Contributor variant. Wonder has no Contributor variant. The suffix is meaningful: a model selection can change the data terms that apply to your prompts and responses. The <a href=\"/en/guides/muse-wonder-for-coding\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Muse Wonder guide</a> covers what changed."
         },
         {
           "type": "code",
@@ -46,6 +46,11 @@ const guide: Guide = {
             "Training choice"
           ],
           "rows": [
+            [
+              "muse-wonder-1.0",
+              "Standard",
+              "Prompts and completions excluded from training."
+            ],
             [
               "muse-spark-1.3",
               "Standard",
@@ -74,28 +79,32 @@ const guide: Guide = {
       "content": [
         {
           "type": "paragraph",
-          "text": "The <a href=\"https://dev.meta.ai/docs/pricing-rate-limits\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">published API rates</a> checked on September 22, 2026 are in US dollars per one million tokens. These are metered API rates, not monthly subscription prices."
+          "text": "The <a href=\"https://dev.meta.ai/docs/pricing-rate-limits\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">published API rates</a> checked on October 13, 2026 are in US dollars per one million tokens. These are metered API rates, not monthly subscription prices."
         },
         {
           "type": "table",
           "headers": [
             "Token category",
-            "Standard",
-            "Contributor"
+            "Wonder 1.0",
+            "Spark 1.3 Standard",
+            "Spark 1.3 Contributor"
           ],
           "rows": [
             [
               "Uncached input",
+              "$4.00",
               "$1.25",
               "$0.10"
             ],
             [
               "Cached input",
+              "$0.20",
               "$0.15",
               "$0.002"
             ],
             [
               "Output",
+              "$20.00",
               "$4.25",
               "$0.20"
             ]
@@ -103,7 +112,7 @@ const guide: Guide = {
         },
         {
           "type": "paragraph",
-          "text": "Suppose a small evaluation consumes 200,000 uncached input tokens and 20,000 output tokens. Standard token charges would be <code>0.2 × 1.25 + 0.02 × 4.25 = $0.335</code>. Contributor would be <code>0.2 × 0.10 + 0.02 × 0.20 = $0.024</code>. This is arithmetic for that stated workload, not a prediction of the cost of fixing one bug."
+          "text": "Suppose a small evaluation consumes 200,000 uncached input tokens and 20,000 output tokens. Wonder 1.0 would be <code>0.2 × 4 + 0.02 × 20 = $1.20</code>. Spark 1.3 Standard would be <code>0.2 × 1.25 + 0.02 × 4.25 = $0.335</code>. Spark 1.3 Contributor would be <code>0.2 × 0.10 + 0.02 × 0.20 = $0.024</code>. This is arithmetic for that stated workload, not a prediction of the cost of fixing one bug."
         },
         {
           "type": "paragraph",
@@ -117,7 +126,7 @@ const guide: Guide = {
       "content": [
         {
           "type": "paragraph",
-          "text": "Meta documents Everyday Usage, High Usage and Power Usage plans. Availability and benefits can differ by region, so use the price and allowance shown during your own onboarding. The <a href=\"https://dev.meta.ai/docs/muse-code/subscriptions\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">subscription documentation</a> does not establish a single monthly price for every reader."
+          "text": "Meta documents Everyday Usage, High Usage, Power Usage and Maximum Usage plans. Muse Wonder Full is only offered through these subscriptions, not the API. Engadget reports it is part of the $50 Power Usage and $200 Maximum Usage plans. Availability and benefits can differ by region, so use the price and allowance shown during your own onboarding. The <a href=\"https://dev.meta.ai/docs/muse-code/subscriptions\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">subscription documentation</a> does not establish a single monthly price for every reader."
         },
         {
           "type": "paragraph",
@@ -183,6 +192,10 @@ const guide: Guide = {
     }
   ],
   "faq": [
+    {
+      "question": "Is Muse Wonder Full available through the API?",
+      "answer": "No. Meta serves Muse Wonder Full only to Muse Code subscribers. Muse Wonder 1.0 is available through both the Model API and Muse Code."
+    },
     {
       "question": "Is Muse Code free?",
       "answer": "The CLI connects to a service with metered API billing or eligible subscription access. Check your account’s current offer; installation alone does not establish a free usage allowance."

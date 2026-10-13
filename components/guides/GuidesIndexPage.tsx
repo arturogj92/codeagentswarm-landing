@@ -20,6 +20,7 @@ interface GuidesIndexPageProps {
 type Family = 'cross' | 'claude' | 'codex' | 'antigravity' | 'opencode' | 'kimi' | 'grok' | 'cursor' | 'pi' | 'devin' | 'muse'
 
 const FAMILY_BY_EN_SLUG: Record<string, Family> = {
+  'muse-wonder-for-coding': 'muse',
   'how-to-use-muse-code': 'muse',
   'muse-code-on-windows': 'muse',
   'muse-code-on-linux': 'muse',
@@ -49,6 +50,7 @@ const FAMILY_BY_EN_SLUG: Record<string, Family> = {
   'claude-squad-vs-codeagentswarm': 'cross',
   'vibe-kanban-vs-codeagentswarm': 'cross',
   'nimbalyst-vs-codeagentswarm': 'cross',
+  'gpt-6-1-sol-for-coding': 'codex',
   'codex-agent-swarm': 'codex',
   'run-multiple-codex-sessions': 'codex',
   'codex-yolo-mode': 'codex',

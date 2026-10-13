@@ -6,6 +6,10 @@ import enMuse2 from './en/muse-code-models-pricing-privacy'
 import esMuse2 from './es/muse-code-modelos-precios-privacidad'
 import enMuse3 from './en/muse-code-mcp-skills-workflows'
 import esMuse3 from './es/muse-code-mcp-skills-workflows'
+import enMuseWonder from './en/muse-wonder-for-coding'
+import enGpt61Sol from './en/gpt-6-1-sol-for-coding'
+import esGpt61Sol from './es/gpt-6-1-sol-para-programar'
+import esMuseWonder from './es/muse-wonder-para-programar'
 import enSwe2Benchmarks from './en/swe-2-benchmarks'
 import esSwe2Benchmarks from './es/swe-2-benchmarks-comparativa'
 import enDevin0 from './en/how-to-use-devin-cli'
@@ -237,6 +241,8 @@ export const guides: Record<string, Record<string, Guide>> = {
     'muse-code-on-windows': enMuse1,
     'muse-code-models-pricing-privacy': enMuse2,
     'muse-code-mcp-skills-workflows': enMuse3,
+    'muse-wonder-for-coding': enMuseWonder,
+    'gpt-6-1-sol-for-coding': enGpt61Sol,
     'how-to-use-devin-cli': enDevin0,
     'devin-cli-on-windows': enDevin1,
     'devin-cli-models-usage-limits': enDevin2,
@@ -350,6 +356,8 @@ export const guides: Record<string, Record<string, Guide>> = {
     'muse-code-en-windows': esMuse1,
     'muse-code-modelos-precios-privacidad': esMuse2,
     'muse-code-mcp-skills-workflows': esMuse3,
+    'muse-wonder-para-programar': esMuseWonder,
+    'gpt-6-1-sol-para-programar': esGpt61Sol,
     'como-usar-devin-cli': esDevin0,
     'devin-cli-en-windows': esDevin1,
     'devin-cli-modelos-cuotas': esDevin2,
