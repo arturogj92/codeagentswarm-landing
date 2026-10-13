@@ -56,6 +56,16 @@ Record date, exact prompt, model, language, personalization settings, whether se
 
 Record the actual production deployment date. Compare 28 complete post-deployment days against 28 complete pre-deployment days for these guide URLs in Search Console and Umami, splitting locale and device. Review clicks, impressions, position and guide download clicks per pageview together. A fall needs investigation of query mix and ranking before attribution to these edits. No ranking or mention increase is guaranteed.
 
+## Muse Wonder launch content (2026-10-13)
+
+Meta released Muse Wonder (`muse-wonder-1.0`) and Muse Wonder Full on 2026-10-12. New bilingual guide `muse-wonder-for-coding` / `muse-wonder-para-programar` targets the new model name plus coding intent and the "no LLM lock-in" angle. The existing Muse models/pricing pair gains Wonder rows and the first-task pair a pointer; their titles, slugs and anchors are unchanged. `llms.txt` and `check-muse-seo.mjs` include the new pair. Ahrefs had no data for "muse wonder" one day after launch, so this is a news-driven decision, not a measured keyword choice.
+
+Facts and sources, checked 2026-10-13: Meta announcement, `dev.meta.ai/docs/models` (Wonder is Standard only, no Contributor variant, 1,048,576-token context), `dev.meta.ai/docs/pricing-rate-limits` ($4 input, $0.20 cached, $20 output), Muse Code changelog (1.4.5 adds `/model <id>`), TechCrunch (Meta's comparison with Fable 5.1 and GPT-6 Astra; Full not served by the API) and Engadget (Full in the $50 Power Usage and $200 Maximum Usage plans). Meta's catalog publishes no Wonder Full ID; the guides do not invent one.
+
+Model availability depends on the account: a `model/list` discovery through the app's Muse driver (Muse Code 1.4.6, no prompt sent) returned only `muse-spark-1.3` on 2026-10-13. The guides say so. Both images (`muse-wonder-chat.webp`, `muse-wonder-model-menu.webp`, 1440×900) are real renderer captures made with the `codeagentswarm-guide-workspace-image` scene in an isolated hidden profile, with fixture Chat IPC: the Muse model list and conversation are simulated, and the captions state it. The "Continue in another LLM" section is the app's real handoff menu with a stubbed installed-agent list.
+
+Validation: build, lint, `check-muse-seo` (10 pages; needs Node 22 for `stripTypeScriptTypes`), release, Pi, Devin, product-discovery and guide-workspace checks, and 20 node tests. EN/ES pages render at 1440 and 390 widths with one H1, no overflow, no long dashes and loaded images.
+
 ## Release 2.4.0 availability (2026-09-24)
 
 Muse Code, Pi and Devin CLI are available in the public macOS and Windows app from 2.4.0. The EN/ES homepage, agent cards, guide CTAs, availability sections and `llms.txt` reflect this release. Historical beta screenshot captions and provider-specific limitations remain accurate; they are not availability gates. Earlier beta rollout notes below are historical.

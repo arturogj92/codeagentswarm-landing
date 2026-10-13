@@ -15,7 +15,7 @@ const guide: Guide = {
       "Muse"
     ],
     "publishedAt": "2026-09-22",
-    "updatedAt": "2026-09-24",
+    "updatedAt": "2026-10-13",
     "alternateSlug": "how-to-use-muse-code"
   },
   "sections": [
@@ -59,7 +59,7 @@ const guide: Guide = {
         },
         {
           "type": "paragraph",
-          "text": "El modelo explícito permite repetir este ejemplo. Algunas páginas de configuración siguen indicando Spark 1.2 como predeterminado, mientras que el catálogo actual incluye 1.3. Comprueba el modelo mostrado en la sesión y consulta la <a href=\"/es/guias/muse-code-modelos-precios-privacidad\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">guía de modelos, precios y privacidad</a> antes de cambiar de modalidad."
+          "text": "El modelo explícito permite repetir este ejemplo. Algunas páginas de configuración siguen indicando Spark 1.2 como predeterminado, mientras que el catálogo actual incluye 1.3. Meta añadió Muse Wonder (<code>muse-wonder-1.0</code>) el 12 de octubre de 2026. Si tu cuenta lo muestra, usa ese identificador; la <a href=\"/es/guias/muse-wonder-para-programar\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">guía de Muse Wonder</a> compara su precio con Spark. Comprueba el modelo mostrado en la sesión y consulta la <a href=\"/es/guias/muse-code-modelos-precios-privacidad\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">guía de modelos, precios y privacidad</a> antes de cambiar de modalidad."
         }
       ]
     },

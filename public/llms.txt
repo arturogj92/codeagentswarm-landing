@@ -237,8 +237,10 @@ Devin CLI is a local coding agent. CodeAgentSwarm 2.4.0 includes Devin on macOS 
 
 ## Muse Code: standalone guides and CodeAgentSwarm 2.4.0 integration
 
-Muse Code is Meta's coding agent; Muse Spark is its model family. Muse is available from CodeAgentSwarm 2.4.0 on macOS and Windows. Meta account access and billing are separate. Standard and Contributor have different data-use terms. Workflows depend on the installed build and rollout; Windows has separate platform limitations. Provider facts reviewed 2026-09-22. CodeAgentSwarm availability updated 2026-09-24.
+Muse Code is Meta's coding agent. Its models are Muse Wonder (muse-wonder-1.0, released 2026-10-12; API price $4 input / $20 output per million tokens), Muse Wonder Full (Muse Code subscriptions only, not served through the API) and the cheaper Muse Spark family. In CodeAgentSwarm the Chat model menu lists the models the user's Muse account returns, and "Continue in another LLM" moves a conversation to another installed agent. Muse is available from CodeAgentSwarm 2.4.0 on macOS, Windows and Linux. Meta account access and billing are separate. Standard and Contributor have different data-use terms. Workflows depend on the installed build and rollout; Windows has separate platform limitations. Provider facts reviewed 2026-10-13. CodeAgentSwarm availability updated 2026-09-24.
 
+- [Muse Wonder for coding: prices, access and how to use it without lock-in](https://www.codeagentswarm.com/en/guides/muse-wonder-for-coding)
+- [Muse Wonder para programar: precios, acceso y cómo usarlo](https://www.codeagentswarm.com/es/guias/muse-wonder-para-programar)
 - [Muse Code: installation, login and first task](https://www.codeagentswarm.com/en/guides/how-to-use-muse-code)
 - [Muse Code en español: instalación y primera tarea](https://www.codeagentswarm.com/es/guias/como-usar-muse-code)
 - [How to Install Muse Code (Meta) on Linux: Setup, Login and Errors (2026)](https://www.codeagentswarm.com/en/guides/muse-code-on-linux)

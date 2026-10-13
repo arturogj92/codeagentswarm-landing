@@ -20,6 +20,7 @@ interface GuidesIndexPageProps {
 type Family = 'cross' | 'claude' | 'codex' | 'antigravity' | 'opencode' | 'kimi' | 'grok' | 'cursor' | 'pi' | 'devin' | 'muse'
 
 const FAMILY_BY_EN_SLUG: Record<string, Family> = {
+  'muse-wonder-for-coding': 'muse',
   'how-to-use-muse-code': 'muse',
   'muse-code-on-windows': 'muse',
   'muse-code-on-linux': 'muse',
