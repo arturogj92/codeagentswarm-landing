@@ -9,7 +9,7 @@ const guide: Guide = {
     title: 'GPT-6.1 Sol for Coding: Price, Benchmarks and How to Use It in Codex',
     metaTitle: 'GPT-6.1 Sol for Coding: Price, Benchmarks and Codex Setup',
     metaDescription: 'OpenAI released GPT-6.1 Sol on September 29, 2026. See API prices, independent benchmarks and how to use it in Codex CLI and CodeAgentSwarm.',
-    intro: 'GPT-6.1 Sol is OpenAI’s mid-price model for agentic coding. OpenAI released it on September 29, 2026, at DevDay, and says it comes close to GPT-6 Astra for one-fifth of Astra’s token price. You can use it in Codex with a Plus, Pro, Business, Enterprise or Edu plan, and in the API as <code>gpt-6.1-sol</code>. This guide covers the price, the independent benchmark results, how to select it in Codex and how to run it in CodeAgentSwarm next to Claude Code, Muse Code and other agents.',
+    intro: 'GPT-6.1 Sol is OpenAI’s cheaper alternative to GPT-6 Astra for agentic coding. OpenAI released it on September 29, 2026, at DevDay, and says it comes close to GPT-6 Astra for one-fifth of Astra’s token price. You can use it in Codex with a Plus, Pro, Business, Enterprise or Edu plan, and in the API as <code>gpt-6.1-sol</code>.',
     ctaText: 'Run GPT-6.1 Sol in Codex inside CodeAgentSwarm, next to Claude Code and other agents, and switch models when the task needs it.',
     ctaAgent: 'codex',
     highlightedWords: ['GPT-6.1 Sol'],
@@ -25,7 +25,7 @@ const guide: Guide = {
       content: [
         {
           type: 'paragraph',
-          text: 'GPT-6.1 Sol upgrades GPT-6 Sol, OpenAI’s cheaper model for long coding and agent tasks. GPT-6 Astra remains the most capable and most expensive option. As <a href="https://techcrunch.com/2026/09/29/openai-launches-gpt-6-1-sol-says-it-nearly-matches-gpt-6-astra-and-costs-less/" class="' + link + '">TechCrunch</a> reports, OpenAI says the new model “delivers nearly the same level of intelligence as GPT-6 Astra for agentic coding, computer use, and professional work, at one-fifth the standard input and output token prices.”',
+          text: 'GPT-6.1 Sol is the upgrade to GPT-6 Sol, OpenAI’s cheaper model for long coding and agent tasks. GPT-6 Astra remains the most capable and most expensive option. As <a href="https://techcrunch.com/2026/09/29/openai-launches-gpt-6-1-sol-says-it-nearly-matches-gpt-6-astra-and-costs-less/" class="' + link + '">TechCrunch</a> reports, OpenAI says the new model “delivers nearly the same level of intelligence as GPT-6 Astra for agentic coding, computer use, and professional work, at one-fifth the standard input and output token prices.”',
         },
         {
           type: 'table',
@@ -65,7 +65,7 @@ const guide: Guide = {
         },
         {
           type: 'paragraph',
-          text: 'Take a task that uses 200,000 input tokens and 20,000 output tokens. With Sol it costs <code>0.2 × 2 + 0.02 × 10 = $0.60</code>. With Astra it costs <code>0.2 × 10 + 0.02 × 50 = $3.00</code>. Prompts longer than 272,000 input tokens are billed at a higher rate: twice the input price and 1.5 times the output price for the whole request.',
+          text: 'Take a task that uses 200,000 input tokens and 20,000 output tokens. With Sol it costs <code>0.2 × 2 + 0.02 × 10 = $0.60</code>. With Astra it costs <code>0.2 × 10 + 0.02 × 50 = $3.00</code>. Above 272,000 input tokens a long-context rate applies to the whole request: twice the input and cached-input price, and 1.5 times the output price. OpenAI states this threshold on Astra’s page; check it for Sol.',
         },
         {
           type: 'paragraph',
@@ -86,7 +86,7 @@ const guide: Guide = {
         },
         {
           type: 'paragraph',
-          text: '<a href="https://artificialanalysis.ai/models/gpt-6-1-sol" class="' + link + '">Artificial Analysis</a> runs its own tests. It gives GPT-6.1 Sol 52 points, twelfth of 216 models it ranks. GPT-6 Astra scores 53, Muse Wonder 52 and Claude Opus 5.5 leads with 58. Sol lands one point below Astra and costs one-fifth as much per token.',
+          text: '<a href="https://artificialanalysis.ai/models/gpt-6-1-sol" class="' + link + '">Artificial Analysis</a> runs its own tests. It gives GPT-6.1 Sol 52 points. GPT-6 Astra scores 53, Muse Wonder 52 and Claude Opus 5.5 leads with 58. Sol lands one point below Astra and costs one-fifth as much per token.',
         },
         {
           type: 'table',
@@ -105,7 +105,7 @@ const guide: Guide = {
         },
         {
           type: 'paragraph',
-          text: 'In short, GPT-6.1 Sol is not the strongest model, but it gives near-top results for far less money. That makes it a good default for long or frequent tasks. Keep a stronger model for the hardest problems.',
+          text: 'GPT-6.1 Sol is not the strongest model, but it gives near-top results for far less money. That makes it a good default for long or frequent tasks. Keep a stronger model for the hardest problems.',
         },
       ],
     },
@@ -164,7 +164,7 @@ const guide: Guide = {
         },
         {
           type: 'paragraph',
-          text: 'The Terminal view runs the same CLI, so <code>/model</code> works there too. Projects, task board, notifications and searchable history stay the same for every agent.',
+          text: 'The Terminal view runs the same CLI, so <code>/model</code> works there too. Projects, task board, notifications and searchable history work the same way with every agent.',
         },
       ],
     },
@@ -174,11 +174,11 @@ const guide: Guide = {
       content: [
         {
           type: 'paragraph',
-          text: 'The table at the top changes often. Today GPT-6.1 Sol is the price winner, Claude Opus 5.5 leads the Artificial Analysis index and Meta reports that <a href="/en/guides/muse-wonder-for-coding" class="' + link + '">Muse Wonder</a> leads its long coding benchmarks. Next month the order may change again.',
+          text: 'The rankings change often. Today GPT-6.1 Sol is the cheapest of the four models in the chart, Claude Opus 5.5 leads the Artificial Analysis index and Meta reports that <a href="/en/guides/muse-wonder-for-coding" class="' + link + '">Muse Wonder</a> leads Meta’s long-task coding benchmarks. Next month the order may change again.',
         },
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm runs Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi and Devin CLI side by side. Run the same task with Sol and with another agent in separate Git worktrees, compare the diffs, and keep the winner for that kind of work. From the model menu, <strong>Continue in another LLM</strong> moves a conversation to another installed agent with a summary of the work so far.',
+          text: 'CodeAgentSwarm runs Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi and Devin CLI side by side. Run the same task with Sol and with another agent in separate Git worktrees, compare the diffs, and keep the winner for that kind of work. From the model menu, <strong>Continue in another LLM</strong> opens a new session with another installed agent and passes it a summary plus the full transcript.',
         },
         {
           type: 'paragraph',
@@ -190,7 +190,7 @@ const guide: Guide = {
   faq: [
     {
       question: 'What is GPT-6.1 Sol?',
-      answer: 'GPT-6.1 Sol is an OpenAI model for agentic coding and professional work, released on September 29, 2026. It upgrades GPT-6 Sol and is available in Codex, ChatGPT Work and the API as gpt-6.1-sol.',
+      answer: 'GPT-6.1 Sol is an OpenAI model for agentic coding and professional work, released on September 29, 2026. It is the upgrade to GPT-6 Sol and is available in Codex, ChatGPT Work and the API as gpt-6.1-sol.',
     },
     {
       question: 'How much does GPT-6.1 Sol cost?',

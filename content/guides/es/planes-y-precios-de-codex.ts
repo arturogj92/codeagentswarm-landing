@@ -146,7 +146,7 @@ El resto del detalle es donde llega la sorpresa: la CLI, la versión web y la ex
       content: [
         {
           type: 'paragraph',
-          text: 'Codex acepta una clave de API de OpenAI en lugar de un inicio de sesión de ChatGPT, lo que cambia todo el sistema de cuotas por facturación por token. A octubre de 2026, <a href="/es/guias/gpt-6-1-sol-para-programar" class="text-neon-cyan hover:text-neon-purple transition-colors">GPT-6.1 Sol</a> cuesta 2,00 $ por millón de tokens de entrada, 0,10 $ por millón en caché y 10,00 $ por millón de salida. GPT-6 Astra cuesta 10,00 $ y 50,00 $.',
+          text: 'Codex acepta una clave de API de OpenAI en lugar de un inicio de sesión de ChatGPT, lo que cambia todo el sistema de cuotas por facturación por token. En octubre de 2026, <a href="/es/guias/gpt-6-1-sol-para-programar" class="text-neon-cyan hover:text-neon-purple transition-colors">GPT-6.1 Sol</a> cuesta 2,00 $ por millón de tokens de entrada, 0,10 $ por millón de tokens de entrada en caché y 10,00 $ por millón de salida. GPT-6 Astra cuesta 10,00 $ de entrada, 1,00 $ en caché y 50,00 $ de salida por millón.',
         },
         {
           type: 'paragraph',

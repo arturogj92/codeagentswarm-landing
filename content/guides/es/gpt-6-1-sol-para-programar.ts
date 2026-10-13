@@ -9,7 +9,7 @@ const guide: Guide = {
     title: 'GPT-6.1 Sol para programar: precio, benchmarks y cómo usarlo en Codex',
     metaTitle: 'GPT-6.1 Sol para programar: precio, benchmarks y Codex',
     metaDescription: 'OpenAI lanzó GPT-6.1 Sol el 29 de septiembre de 2026. Precios de la API, benchmarks independientes y cómo usarlo en Codex CLI y en CodeAgentSwarm.',
-    intro: 'GPT-6.1 Sol es el modelo de precio medio de OpenAI para programar con agentes. OpenAI lo lanzó el 29 de septiembre de 2026, en su DevDay, y asegura que se acerca a GPT-6 Astra por la quinta parte del precio por token. Puedes usarlo en Codex con los planes Plus, Pro, Business, Enterprise o Edu, y en la API como <code>gpt-6.1-sol</code>. Esta guía explica el precio, los resultados de benchmarks independientes, cómo elegirlo en Codex y cómo usarlo en CodeAgentSwarm junto a Claude Code, Muse Code y otros agentes.',
+    intro: 'GPT-6.1 Sol es una alternativa de OpenAI más barata que GPT-6 Astra para programar con agentes. OpenAI lo lanzó el 29 de septiembre de 2026, en su DevDay, y asegura que se acerca a GPT-6 Astra por la quinta parte del precio por token de Astra. Puedes usarlo en Codex con los planes Plus, Pro, Business, Enterprise o Edu, y en la API como <code>gpt-6.1-sol</code>.',
     ctaText: 'Usa GPT-6.1 Sol en Codex dentro de CodeAgentSwarm, junto a Claude Code y otros agentes, y cambia de modelo cuando la tarea lo pida.',
     ctaAgent: 'codex',
     highlightedWords: ['GPT-6.1 Sol'],
@@ -25,7 +25,7 @@ const guide: Guide = {
       content: [
         {
           type: 'paragraph',
-          text: 'GPT-6.1 Sol mejora a GPT-6 Sol, el modelo más barato de OpenAI para tareas largas de código y agentes. GPT-6 Astra sigue siendo la opción más capaz y más cara. Según recoge <a href="https://techcrunch.com/2026/09/29/openai-launches-gpt-6-1-sol-says-it-nearly-matches-gpt-6-astra-and-costs-less/" class="' + link + '">TechCrunch</a>, OpenAI dice que el nuevo modelo ofrece casi el mismo nivel que GPT-6 Astra en programación con agentes, uso del ordenador y trabajo profesional, a la quinta parte del precio estándar por token.',
+          text: 'GPT-6.1 Sol es la nueva versión de GPT-6 Sol, una opción de OpenAI más barata que Astra para tareas largas de código y agentes. GPT-6 Astra sigue siendo la opción más capaz y más cara. Según recoge <a href="https://techcrunch.com/2026/09/29/openai-launches-gpt-6-1-sol-says-it-nearly-matches-gpt-6-astra-and-costs-less/" class="' + link + '">TechCrunch</a>, OpenAI dice que el nuevo modelo ofrece casi el mismo nivel que GPT-6 Astra en programación con agentes, uso del ordenador y trabajo profesional, a la quinta parte del precio estándar por token.',
         },
         {
           type: 'table',
@@ -42,7 +42,7 @@ const guide: Guide = {
         },
         {
           type: 'paragraph',
-          text: 'OpenAI cita además dos mejoras frente a GPT-6 Sol. En DeepSWE, un benchmark de ingeniería de software con tareas largas, el nuevo modelo saca 6,4 puntos más e iguala a Astra con una quinta parte del coste. Su tasa de errores factuales con razonamiento bajo pasó del 11,4 % al 7,7 %. Son mediciones de la propia OpenAI.',
+          text: 'OpenAI cita además dos mejoras frente a GPT-6 Sol. En DeepSWE, un benchmark de ingeniería de software con tareas largas, el nuevo modelo saca 6,4 puntos más e iguala a Astra con cerca de la quinta parte del coste. Su tasa de errores factuales con razonamiento bajo pasó del 11,4 % al 7,7 %. Son mediciones de la propia OpenAI.',
         },
       ],
     },
@@ -65,7 +65,7 @@ const guide: Guide = {
         },
         {
           type: 'paragraph',
-          text: 'Imagina una tarea que gasta 200.000 tokens de entrada y 20.000 de salida. Con Sol cuesta <code>0,2 × 2 + 0,02 × 10 = 0,60 USD</code>. Con Astra cuesta <code>0,2 × 10 + 0,02 × 50 = 3,00 USD</code>. Las peticiones de más de 272.000 tokens de entrada se cobran más caras: el doble por la entrada y 1,5 veces por la salida, en toda la petición.',
+          text: 'Imagina una tarea que gasta 200.000 tokens de entrada y 20.000 de salida. Con Sol cuesta <code>0,2 × 2 + 0,02 × 10 = 0,60 USD</code>. Con Astra cuesta <code>0,2 × 10 + 0,02 × 50 = 3,00 USD</code>. Por encima de 272.000 tokens de entrada se aplica una tarifa de contexto largo a toda la petición: el doble por la entrada y la entrada en caché, y 1,5 veces por la salida. OpenAI indica ese umbral en la página de Astra; compruébalo para Sol.',
         },
         {
           type: 'paragraph',
@@ -86,7 +86,7 @@ const guide: Guide = {
         },
         {
           type: 'paragraph',
-          text: '<a href="https://artificialanalysis.ai/models/gpt-6-1-sol" class="' + link + '">Artificial Analysis</a> hace sus propias pruebas. Da a GPT-6.1 Sol 52 puntos, el duodécimo de los 216 modelos de su ranking. GPT-6 Astra saca 53, Muse Wonder 52 y Claude Opus 5.5 va primero con 58. Sol queda un punto por debajo de Astra y cuesta la quinta parte por token.',
+          text: '<a href="https://artificialanalysis.ai/models/gpt-6-1-sol" class="' + link + '">Artificial Analysis</a> hace sus propias pruebas. Le da a GPT-6.1 Sol 52 puntos. GPT-6 Astra saca 53, Muse Wonder 52 y Claude Opus 5.5 va primero con 58. Sol queda un punto por debajo de Astra y cuesta la quinta parte por token.',
         },
         {
           type: 'table',
@@ -105,7 +105,7 @@ const guide: Guide = {
         },
         {
           type: 'paragraph',
-          text: 'En resumen, GPT-6.1 Sol no es el modelo más fuerte, pero da resultados cercanos a los mejores por mucho menos dinero. Por eso es buena opción por defecto para tareas largas o frecuentes. Guarda un modelo más fuerte para los problemas más difíciles.',
+          text: 'GPT-6.1 Sol no es el modelo más potente, pero da resultados cercanos a los mejores por mucho menos dinero. Por eso es buena opción por defecto para tareas largas o frecuentes. Reserva un modelo más potente para los problemas más difíciles.',
         },
       ],
     },
@@ -164,7 +164,7 @@ const guide: Guide = {
         },
         {
           type: 'paragraph',
-          text: 'La vista Terminal ejecuta la misma CLI, así que <code>/model</code> también funciona ahí. Los proyectos, el tablero de tareas, las notificaciones y el historial con búsqueda son los mismos para todos los agentes.',
+          text: 'La vista Terminal ejecuta la misma CLI, así que <code>/model</code> también funciona ahí. Los proyectos, el tablero de tareas, las notificaciones y el historial con búsqueda funcionan igual con todos los agentes.',
         },
       ],
     },
@@ -174,11 +174,11 @@ const guide: Guide = {
       content: [
         {
           type: 'paragraph',
-          text: 'La clasificación cambia a menudo. Hoy GPT-6.1 Sol gana en precio, Claude Opus 5.5 lidera el índice de Artificial Analysis y Meta asegura que <a href="/es/guias/muse-wonder-para-programar" class="' + link + '">Muse Wonder</a> lidera sus benchmarks de código largo. El mes que viene el orden puede volver a cambiar.',
+          text: 'La clasificación cambia a menudo. Hoy GPT-6.1 Sol es el más barato de los cuatro modelos del gráfico, Claude Opus 5.5 lidera el índice de Artificial Analysis y Meta asegura que <a href="/es/guias/muse-wonder-para-programar" class="' + link + '">Muse Wonder</a> lidera sus benchmarks de tareas largas de programación. El mes que viene el orden puede volver a cambiar.',
         },
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm ejecuta Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi y Devin CLI a la vez. Lanza la misma tarea con Sol y con otro agente en worktrees de Git separados, compara los cambios y quédate con el ganador para ese tipo de trabajo. Desde el menú de modelo, <strong>Continue in another LLM</strong> pasa una conversación a otro agente instalado con un resumen de lo hecho.',
+          text: 'CodeAgentSwarm ejecuta Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi y Devin CLI a la vez. Lanza la misma tarea con Sol y con otro agente en worktrees de Git separados, compara los cambios y quédate con el ganador para ese tipo de trabajo. Desde el menú de modelo, <strong>Continue in another LLM</strong> abre una sesión nueva con otro agente instalado y le pasa un resumen y la transcripción completa.',
         },
         {
           type: 'paragraph',
@@ -190,11 +190,11 @@ const guide: Guide = {
   faq: [
     {
       question: '¿Qué es GPT-6.1 Sol?',
-      answer: 'GPT-6.1 Sol es un modelo de OpenAI para programar con agentes y para trabajo profesional, lanzado el 29 de septiembre de 2026. Mejora a GPT-6 Sol y está disponible en Codex, en ChatGPT Work y en la API como gpt-6.1-sol.',
+      answer: 'GPT-6.1 Sol es un modelo de OpenAI para programar con agentes y para trabajo profesional, lanzado el 29 de septiembre de 2026. Es la nueva versión de GPT-6 Sol y está disponible en Codex, en ChatGPT Work y en la API como gpt-6.1-sol.',
     },
     {
       question: '¿Cuánto cuesta GPT-6.1 Sol?',
-      answer: 'En la API de OpenAI cuesta 2,00 USD por millón de tokens de entrada, 0,10 USD por millón de tokens de entrada en caché y 10,00 USD por millón de tokens de salida, consultado el 13 de octubre de 2026. En Codex con un plan de ChatGPT, el uso cuenta contra los límites del plan.',
+      answer: 'En la API de OpenAI cuesta 2,00 USD por millón de tokens de entrada, 0,10 USD por millón de tokens de entrada en caché y 10,00 USD por millón de tokens de salida, consultado el 13 de octubre de 2026. En Codex con un plan de ChatGPT, el uso consume parte de los límites del plan.',
     },
     {
       question: '¿GPT-6.1 Sol es mejor que GPT-6 Astra?',
