@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 
 const SUPABASE_URL = 'https://fqamfucosytcyueqadog.supabase.co'
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZxYW1mdWNvc3l0Y3l1ZXFhZG9nIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTM4MTgwNzgsImV4cCI6MjA2OTM5NDA3OH0.xt7-hlYgNT0vYOcz96HhV278Pmoc5LNmoga7a65AraY'
+const SUPABASE_ANON_KEY = process.env.SUPABASE_ANON_KEY ?? ''
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'https://codeagentswarm-backend-production.up.railway.app'
 
 export async function POST(request: Request) {
@@ -38,7 +38,6 @@ export async function POST(request: Request) {
       headers: {
         'Content-Type': 'application/json',
         'apikey': SUPABASE_ANON_KEY,
-        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
         'Prefer': 'return=minimal'
       },
       body: JSON.stringify({
