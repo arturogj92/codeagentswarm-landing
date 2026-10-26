@@ -14,7 +14,7 @@ This guide compares what each one does, where it fits and what it costs so you c
     ctaAgent: 'multi',
     highlightedWords: ['Claude Code', 'Cursor', 'Codex CLI'],
     publishedAt: '2026-04-15',
-    updatedAt: '2026-08-23',
+    updatedAt: '2026-10-13',
     alternateSlug: 'claude-code-vs-cursor-vs-codex',
   },
   sections: [
@@ -170,7 +170,7 @@ This guide compares what each one does, where it fits and what it costs so you c
         },
         {
           type: 'paragraph',
-          text: 'Codex CLI is OpenAI\'s open-source terminal coding agent. Conceptually, it is similar to Claude Code: you run it in your terminal, point it at a repository, and it reads files, makes changes and runs commands. Current Codex models include GPT-5.6 Sol, Terra and Luna.',
+          text: 'Codex CLI is OpenAI\'s open-source terminal coding agent. Conceptually, it is similar to Claude Code: you run it in your terminal, point it at a repository, and it reads files, makes changes and runs commands. Current Codex models include <a href="/en/guides/gpt-6-1-sol-for-coding" class="text-neon-cyan hover:text-neon-purple transition-colors">GPT-6.1 Sol</a> (released September 29, 2026), GPT-6 Astra and GPT-6 Luna.',
         },
         {
           type: 'paragraph',
@@ -261,7 +261,7 @@ This guide compares what each one does, where it fits and what it costs so you c
           items: [
             '<strong>Claude Code:</strong> Claude models only (Sonnet, Opus)',
             '<strong>Cursor:</strong> multiple current Claude, GPT, Gemini and Grok models',
-            '<strong>Codex CLI:</strong> OpenAI models only, including GPT-5.6 Sol, Terra and Luna',
+            '<strong>Codex CLI:</strong> OpenAI models only, including GPT-6.1 Sol, GPT-6 Astra and GPT-6 Luna',
           ],
         },
         {

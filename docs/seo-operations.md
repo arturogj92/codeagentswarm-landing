@@ -56,6 +56,26 @@ Record date, exact prompt, model, language, personalization settings, whether se
 
 Record the actual production deployment date. Compare 28 complete post-deployment days against 28 complete pre-deployment days for these guide URLs in Search Console and Umami, splitting locale and device. Review clicks, impressions, position and guide download clicks per pageview together. A fall needs investigation of query mix and ranking before attribution to these edits. No ranking or mention increase is guaranteed.
 
+## GPT-6.1 Sol content (2026-10-13)
+
+New bilingual guide `gpt-6-1-sol-for-coding` / `gpt-6-1-sol-para-programar` (Codex family, `ctaAgent: codex`). The Codex comparison and pricing pairs now name GPT-6.1 Sol instead of GPT-5.6 Sol and GPT-5.3-Codex and link to it.
+
+Sources, checked 2026-10-13: OpenAI model pages for `gpt-6.1-sol` and `gpt-6-astra` (prices, context, efforts, 272K surcharge), TechCrunch and unite.ai for OpenAI's DevDay claims, Artificial Analysis model pages (Sol 52, Astra 53, Opus 5.5 58 and its $4/$20 price, Muse Wonder 52) and Vals AI. `openai.com/index/...` returns a Cloudflare challenge to automated clients; the system card at `deploymentsafety.openai.com/gpt-6-1-sol/gpt-6-1-sol.pdf` is reachable but has safety results only, so OpenAI's capability table was not read first-hand and the guide quotes only claims confirmed by two outlets.
+
+The capture `gpt-6-1-sol-codex-model-menu.webp` uses the same isolated fixture scene; its model list copies exactly what `codex app-server` `model/list` returned for a ChatGPT Pro account (Codex CLI 0.159.0, `gpt-6.1-sol` default, efforts up to `ultra`). The chart `gpt-6-1-sol-score-price-{en,es}.webp` has two panels (index, output price) instead of a dual axis.
+
+## Muse Wonder launch content (2026-10-13)
+
+Meta released Muse Wonder (`muse-wonder-1.0`) and Muse Wonder Full on 2026-10-12. New bilingual guide `muse-wonder-for-coding` / `muse-wonder-para-programar` targets the new model name plus coding intent and the "no LLM lock-in" angle. The existing Muse models/pricing pair gains Wonder rows and the first-task pair a pointer; their titles, slugs and anchors are unchanged. `llms.txt` and `check-muse-seo.mjs` include the new pair. Ahrefs had no data for "muse wonder" one day after launch, so this is a news-driven decision, not a measured keyword choice.
+
+Facts and sources, checked 2026-10-13: Meta announcement, `dev.meta.ai/docs/models` (Wonder is Standard only, no Contributor variant, 1,048,576-token context), `dev.meta.ai/docs/pricing-rate-limits` ($4 input, $0.20 cached, $20 output), Muse Code changelog (1.4.5 adds `/model <id>`), TechCrunch (Meta's comparison with Fable 5.1 and GPT-6 Astra; Full not served by the API) and Engadget (Full in the $50 Power Usage and $200 Maximum Usage plans). Meta's catalog publishes no Wonder Full ID; the guides do not invent one.
+
+Model availability depends on the account: a `model/list` discovery through the app's Muse driver (Muse Code 1.4.6, no prompt sent) returned only `muse-spark-1.3` on 2026-10-13. The guides say so. Both images (`muse-wonder-chat.webp`, `muse-wonder-model-menu.webp`, 1440×900) are real renderer captures made with the `codeagentswarm-guide-workspace-image` scene in an isolated hidden profile, with fixture Chat IPC: the Muse model list and conversation are simulated, and the captions state it. The "Continue in another LLM" section is the app's real handoff menu with a stubbed installed-agent list.
+
+Benchmarks: the scorecard is an image on page 3 of Meta's model card PDF (`research.meta.ai/static/muse-wonder-model-card`); the text layer has no numbers, so extract it with `pdfimages` and read it. The guide's bar charts (`muse-wonder-benchmarks-{en,es}.webp`, 1000 px wide) are our own renders of the coding rows plus the Artificial Analysis Index, not copies of Meta's image; Muse bars use #d97706 and competitors neutral gray, each bar direct-labelled. Artificial Analysis independently lists Muse Wonder (max) at 52 (ninth of 216) and Wonder Full at 56, matching Meta's figures; the other rows are vendor-selected.
+
+Validation: build, lint, `check-muse-seo` (10 pages; needs Node 22 for `stripTypeScriptTypes`), release, Pi, Devin, product-discovery and guide-workspace checks, and 20 node tests. EN/ES pages render at 1440 and 390 widths with one H1, no overflow, no long dashes and loaded images.
+
 ## Release 2.4.0 availability (2026-09-24)
 
 Muse Code, Pi and Devin CLI are available in the public macOS and Windows app from 2.4.0. The EN/ES homepage, agent cards, guide CTAs, availability sections and `llms.txt` reflect this release. Historical beta screenshot captions and provider-specific limitations remain accurate; they are not availability gates. Earlier beta rollout notes below are historical.

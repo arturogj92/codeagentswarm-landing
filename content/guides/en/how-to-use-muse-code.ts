@@ -15,7 +15,7 @@ const guide: Guide = {
       "Muse"
     ],
     "publishedAt": "2026-09-22",
-    "updatedAt": "2026-09-24",
+    "updatedAt": "2026-10-13",
     "alternateSlug": "como-usar-muse-code"
   },
   "sections": [
@@ -59,7 +59,7 @@ const guide: Guide = {
         },
         {
           "type": "paragraph",
-          "text": "The explicit model flag makes this example reproducible. Some Muse setup pages still name Spark 1.2 as the default, while the current model catalog lists 1.3. Do not infer the active model from the age of an article. Read the model shown in your session and use <a href=\"/en/guides/muse-code-models-pricing-privacy\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">the models, pricing and privacy guide</a> before choosing a different tier."
+          "text": "The explicit model flag makes this example reproducible. Some Muse setup pages still name Spark 1.2 as the default, while the current model catalog lists 1.3. Meta added Muse Wonder (<code>muse-wonder-1.0</code>) on October 12, 2026. If your account lists it, use that ID instead; <a href=\"/en/guides/muse-wonder-for-coding\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">the Muse Wonder guide</a> compares its price with Spark. Do not infer the active model from the age of an article. Read the model shown in your session and use <a href=\"/en/guides/muse-code-models-pricing-privacy\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">the models, pricing and privacy guide</a> before choosing a different tier."
         }
       ]
     },
