@@ -7,9 +7,9 @@ const privacyEn: LegalDoc = {
   metaTitle: 'Privacy Policy | CodeAgentSwarm',
   metaDescription:
     'How CodeAgentSwarm handles your data: what we collect, what we never collect, who processes it, how long we keep it and how to exercise your GDPR rights.',
-  lastUpdated: '2026-10-03',
+  lastUpdated: '2026-10-28',
   intro:
-    'This Privacy Policy explains what personal data CodeAgentSwarm collects when you use the desktop application and this website, why we collect it, who we share it with, and the rights you have over it. We have written it to match exactly what our software actually does. If anything here is unclear, email us at hello@codeagentswarm.com.',
+    'This Privacy Policy explains what personal data CodeAgentSwarm collects when you use the desktop application, the CodeAgentSwarm mobile app for iOS and Android, and this website, why we collect it, who we share it with, and the rights you have over it. We have written it to match exactly what our software actually does. If anything here is unclear, email us at hello@codeagentswarm.com.',
   sections: [
     {
       id: 'controller',
@@ -134,6 +134,27 @@ const privacyEn: LegalDoc = {
           type: 'paragraph',
           text: 'To tell you about new versions, the app periodically asks our update server whether an update exists, sending only the current version, platform and architecture. No personal or device identifier is sent with update checks.',
         },
+        {
+          type: 'heading',
+          text: 'h) Mobile app (iOS and Android)',
+          id: 'collected-mobile',
+        },
+        {
+          type: 'paragraph',
+          text: 'The CodeAgentSwarm mobile app is a companion to the desktop app. It has no separate login: you pair it once by scanning a QR code shown by CodeAgentSwarm Desktop. Your conversations, messages, attachments and agent output travel between your phone and your computer through our relay with end-to-end encryption, so neither we nor the relay provider can read them, and we do not store them.',
+        },
+        {
+          type: 'paragraph',
+          text: 'To run the service we store, for each paired device: a random device identifier, the device name, its public key, a hashed access token, when it was paired and last seen, and, if you allow notifications, the push token used to alert you when an agent finishes or needs input. The app also sends connection diagnostics (how long reconnections and commands take, whether they succeeded, and the app and desktop versions) so we can keep it fast and reliable. These diagnostics contain no conversation content.',
+        },
+        {
+          type: 'paragraph',
+          text: 'If you record a voice message, the audio is sent to our backend and to our transcription provider, Groq, only to turn it into text. The audio is processed in memory and is not stored; we only keep the number of seconds transcribed per day to enforce usage limits. The camera is used only to scan the pairing QR code, and the microphone only while you record. The mobile app shows no ads and does not use an advertising identifier.',
+        },
+        {
+          type: 'paragraph',
+          text: 'To remove this data, unpair the phone from CodeAgentSwarm Desktop, or email hello@codeagentswarm.com from the address of your account and we will delete your paired devices, push tokens and mobile diagnostics.',
+        },
       ],
     },
     {
@@ -174,6 +195,9 @@ const privacyEn: LegalDoc = {
             ['GitHub, Google, Discord', 'OAuth sign-in (only if you choose to sign in)', 'United States'],
             ['Anthropic, OpenAI, Google', 'The AI CLIs you run connect to these directly with your own account', 'United States'],
             ['Umami (self-hosted)', 'Privacy-friendly, cookieless website analytics', 'Hosted by us on Railway'],
+            ['Cloudflare', 'End-to-end encrypted relay between the mobile app and your computer', 'Global'],
+            ['Expo, Apple Push Notification service, Firebase Cloud Messaging', 'Delivery of mobile notifications', 'United States'],
+            ['Groq', 'Transcription of voice messages recorded in the mobile app (not stored)', 'United States'],
           ],
         },
         {
@@ -200,6 +224,7 @@ const privacyEn: LegalDoc = {
           type: 'list',
           items: [
             'Account data: while your account exists, and deleted when you ask us to delete it.',
+            'Paired mobile devices, push tokens and mobile connection diagnostics: while the device is paired or your account exists, and deleted when you unpair the device or ask us to delete them. Voice recordings are not stored.',
             'Support, feedback and survey messages: kept while needed to handle your request and for a reasonable period afterwards.',
             'Desktop usage events and service activity days: retained for up to 14 months, then deleted by our retention process. Error reports have their own retention schedule.',
             'Billing records: kept for as long as legally required for accounting and tax purposes.',
