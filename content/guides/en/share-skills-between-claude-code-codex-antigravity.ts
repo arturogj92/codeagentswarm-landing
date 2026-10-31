@@ -5,7 +5,7 @@ export const guide: Guide = {
     slug: 'share-skills-between-claude-code-codex-antigravity',
     locale: 'en',
     title: 'How to Share Your Skills Between Claude Code, Codex and Antigravity',
-    metaTitle: 'Share Skills Between Claude Code, Codex and Antigravity (CodeAgentSwarm, 2026)',
+    metaTitle: 'Share Skills Between Claude Code, Codex and Antigravity (2026)',
     metaDescription: 'Your Claude Code skills only live in Claude. Here is how to copy the same SKILL.md skills to Codex and Antigravity in one click with CodeAgentSwarm, instead of moving folders by hand.',
     intro: `You spent time setting up good skills for Claude Code. Then you open Codex or Antigravity for a task, and none of them are there. Same SKILL.md format, same machine, but each agent only reads its own folder.
 
