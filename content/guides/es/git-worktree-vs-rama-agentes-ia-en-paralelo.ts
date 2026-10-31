@@ -5,7 +5,7 @@ export const guide: Guide = {
     slug: 'git-worktree-vs-rama-agentes-ia-en-paralelo',
     locale: 'es',
     title: 'Git worktree vs rama para agentes de IA en paralelo: cuál usar',
-    metaTitle: 'Git worktree vs rama: la mejor forma de ejecutar agentes de IA en paralelo (2026)',
+    metaTitle: 'Git worktree vs rama para agentes de IA en paralelo (2026)',
     metaDescription: '¿Cambiar de rama, clonar el repo o git worktrees? Aquí ves por qué los worktrees ganan para ejecutar agentes de IA en paralelo, y cuándo basta con una rama.',
     intro: `Si quieres varios agentes de código de IA trabajando a la vez, la pregunta de fondo es de git: ¿cómo consigue cada agente un sitio donde trabajar sin sobrescribir a los demás? Hay tres respuestas honestas. Un solo árbol de trabajo y vas cambiando de rama. Varios clones completos del repo. O git worktrees.
 

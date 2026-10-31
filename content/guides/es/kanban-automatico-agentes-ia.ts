@@ -5,7 +5,7 @@ export const guide: Guide = {
     slug: 'kanban-automatico-agentes-ia',
     locale: 'es',
     title: 'Kanban automático para agentes IA: tareas que arrancan solas',
-    metaTitle: 'Kanban automático para agentes IA: encola tareas y los agentes las hacen (2026)',
+    metaTitle: 'Kanban automático para agentes IA: encolas y ellos trabajan',
     metaDescription: 'Suelta tareas en el carril Auto y cada una arranca su sesión con el agente, modelo, razonamiento y permisos que elijas. Lo terminado llega a In Testing.',
     intro: `Un tablero de tareas te dice qué hay que hacer. Hasta ahora no podía hacer nada al respecto. Seguías teniendo que abrir una sesión, elegir un agente, pegar la tarea y esperar, tarjeta a tarjeta.
 
@@ -14,7 +14,7 @@ CodeAgentSwarm 2.4.0 añade un carril Auto al Kanban. Sueltas una tarea ahí y l
 En esta guía te cuento cómo encolar tareas, qué ajustes puede llevar cada una, cuántas se ejecutan a la vez, qué recibe el agente y un flujo sencillo para que tu backlog avance mientras haces otra cosa.`,
     highlightedWords: ['Kanban automático', 'agentes IA'],
     publishedAt: '2026-09-27',
-    updatedAt: '2026-09-27',
+    updatedAt: '2026-10-31',
     ctaText: 'Encola tres tareas en el carril Auto esta noche y revísalas mañana en In Testing.',
     ctaAgent: 'multi',
     relatedSlug: 'coordinador-agentes-ia',

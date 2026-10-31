@@ -5,7 +5,7 @@ export const guide: Guide = {
     slug: 'git-worktrees-for-ai-coding-agents',
     locale: 'en',
     title: 'Git Worktrees for AI Coding Agents: Give Each Agent Its Own Checkout',
-    metaTitle: 'Git Worktrees for AI Coding Agents: Run Multiple Agents on One Repo (2026)',
+    metaTitle: 'Git Worktrees for AI Coding Agents: Many Agents, One Repo',
     metaDescription: 'Running several AI agents on one repo means they fight over the same files. Git worktrees give each agent its own checkout on its own branch. Here is how.',
     intro: `Run more than one AI coding agent on the same repository and you hit a wall fast: they edit the same files and overwrite each other's uncommitted changes. Claude Code is halfway through a refactor, Codex CLI saves over one of those files, and now neither of them has a clean state to work from.
 

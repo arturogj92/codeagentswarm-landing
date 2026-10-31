@@ -5,7 +5,7 @@ export const guide: Guide = {
     slug: 'coordinador-agentes-ia',
     locale: 'es',
     title: 'Coordinador de agentes IA: un agente que planifica y dirige a los demás',
-    metaTitle: 'Coordinador de agentes IA: un agente que dirige a todo tu equipo (2026)',
+    metaTitle: 'Coordinador de agentes IA: un agente dirige a tu equipo (2026)',
     metaDescription: 'Un agente coordinador divide tu objetivo, abre sesiones con el agente y el modelo adecuados para cada parte y te responde en un solo Chat. Modo proyecto y global.',
     intro: `Tener cinco agentes en paralelo está genial hasta que te das cuenta de quién los coordina de verdad: tú. Escribes cinco prompts, eliges cinco modelos, llevas cinco contextos en la cabeza y copias respuestas de una sesión a otra.
 
@@ -14,7 +14,7 @@ CodeAgentSwarm 2.4.0 trae coordinadores. Un coordinador es un Chat con un único
 En esta guía te explico los dos tipos de coordinador, cómo arrancar uno, qué hace y qué no, y unos cuantos prompts que enseñan para qué sirve.`,
     highlightedWords: ['Coordinador', 'agentes IA'],
     publishedAt: '2026-09-27',
-    updatedAt: '2026-09-27',
+    updatedAt: '2026-10-31',
     ctaText: 'Arranca un coordinador, dale un objetivo real y deja que abra él las sesiones de trabajo.',
     ctaAgent: 'multi',
     alternateSlug: 'ai-coding-agent-coordinator',

@@ -5,7 +5,7 @@ export const guide: Guide = {
     slug: 'git-worktree-vs-branch-parallel-ai-agents',
     locale: 'en',
     title: 'Git Worktree vs Branch for Parallel AI Agents: Which to Use',
-    metaTitle: 'Git Worktree vs Branch: Best Way to Run Parallel AI Agents (2026)',
+    metaTitle: 'Git Worktree vs Branch for Parallel AI Coding Agents (2026)',
     metaDescription: 'Switching branches, cloning the repo, or git worktrees? Here is why worktrees win for running parallel AI agents, and when a plain branch is still enough.',
     intro: `If you want several AI coding agents working at the same time, the question underneath is a git one: how does each agent get a place to work without overwriting the others? There are three honest answers. One working tree and you switch branches. Several full clones of the repo. Or git worktrees.
 
