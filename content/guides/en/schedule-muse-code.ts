@@ -6,8 +6,8 @@ const guide: Guide = {
     "locale": "en",
     "title": "How to schedule Muse Code: /loop, muse exec in cron and CodeAgentSwarm",
     "metaTitle": "Schedule Muse Code: /loop, Cron with muse exec, CodeAgentSwarm",
-    "metaDescription": "Muse Code /loop only repeats inside a session. Run Meta's Muse Code on a real schedule with muse exec in cron, or with CodeAgentSwarm.",
-    "intro": "Muse Code, Meta's terminal coding agent, has <code>/loop</code> for repeating a prompt inside an interactive session. Nothing in its docs starts Muse on its own at a set time with no session open. For that, use cron with <code>muse exec</code> or CodeAgentSwarm Scheduled Conversations.",
+    "metaDescription": "Muse Code /loop jobs expire after 7 days. Run Meta's Muse Code at set times, week after week, with muse exec in cron or with CodeAgentSwarm.",
+    "intro": "Muse Code, Meta's terminal coding agent, has <code>/loop</code>, which schedules a recurring prompt as a cron job. Recurring jobs expire after 7 days, so a job that must run every weekday needs something longer-lived: cron with <code>muse exec</code> or CodeAgentSwarm Scheduled Conversations.",
     "ctaText": "Schedule Muse Code in CodeAgentSwarm 2.5.0 and read each run in a Chat you can continue.",
     "ctaAgent": "muse",
     "highlightedWords": [
@@ -31,8 +31,8 @@ const guide: Guide = {
         {
           "type": "list",
           "items": [
-            "<strong>Inside a session:</strong> <code>/loop</code>, with shorthand like 1h or a cron expression.",
-            "<strong>At set times with nothing open:</strong> cron with <code>muse exec</code>, or CodeAgentSwarm."
+            "<strong>For up to a week:</strong> <code>/loop</code>, with shorthand like 1h or a cron expression.",
+            "<strong>At set times, week after week:</strong> cron with <code>muse exec</code>, or CodeAgentSwarm."
           ]
         }
       ]
@@ -43,7 +43,7 @@ const guide: Guide = {
       "content": [
         {
           "type": "paragraph",
-          "text": "<code>/loop</code> takes shorthand (5m, 1h, 2d) or a five-field cron expression and defaults to every 10 minutes. It lives in the interactive session, and recurring jobs expire after 7 days. <a href=\"https://dev.meta.ai/docs/muse-code/interactive\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Muse Code interactive docs</a>"
+          "text": "<code>/loop</code> \"schedules a recurring prompt as a cron job\". It takes shorthand (5m, 1h, 2d) or a five-field cron expression in local time, and with no cadence it runs every 10 minutes. Recurring jobs expire after 7 days, and an occurrence that lands while a run is active is skipped, not queued. <a href=\"https://dev.meta.ai/docs/muse-code/interactive\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Muse Code interactive docs</a>"
         }
       ]
     },
@@ -58,7 +58,7 @@ const guide: Guide = {
         },
         {
           "type": "paragraph",
-          "text": "<code>--json</code> gives machine-readable output and <code>--prompt-file</code> reads a longer prompt from disk. <code>--disable-approval</code> keeps the sandbox; <code>--yolo</code> removes both approvals and sandbox, so leave it out of unattended jobs. <a href=\"https://dev.meta.ai/docs/muse-code/extending\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Muse Code automation docs</a>"
+          "text": "<code>muse exec</code> \"takes one prompt, runs it to completion, and exits\". <code>--json</code> prints JSONL events and <code>--prompt-file</code> reads the prompt from a file. <code>--disable-approval</code> skips approvals but keeps the sandbox; <code>--yolo</code> disables both and is meant only for trusted code in a disposable container. <a href=\"https://dev.meta.ai/docs/muse-code/extending\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Muse Code automation docs</a>"
         }
       ]
     },
@@ -136,7 +136,7 @@ const guide: Guide = {
   "faq": [
     {
       "question": "Is Muse Code /loop a cron job?",
-      "answer": "No. It repeats a prompt inside an interactive session and recurring jobs expire after 7 days. It does not start Muse when no session is open."
+      "answer": "It schedules a recurring prompt as a cron job, but recurring jobs expire after 7 days. For a schedule that keeps going, use cron with muse exec or CodeAgentSwarm."
     },
     {
       "question": "How do I run Muse Code from cron?",

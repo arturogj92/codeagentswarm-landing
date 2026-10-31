@@ -90,7 +90,7 @@ const guide: Guide = {
         },
         {
           "type": "paragraph",
-          "text": "Cloud scheduled tasks were called routines until recently; <code>/routines</code> still works as an alias. They need a paid Claude plan and the repository on GitHub. <a href=\"https://code.claude.com/docs/en/routines\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Cloud scheduled tasks</a> · <a href=\"https://code.claude.com/docs/en/desktop-scheduled-tasks\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Desktop scheduled tasks</a> · <a href=\"https://code.claude.com/docs/en/scheduled-tasks\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">/loop</a>"
+          "text": "Cloud scheduled tasks were called routines until recently; <code>/routines</code> still works as an alias. They are available on Pro, Max, Ultra, Team and Enterprise plans and need GitHub access to clone your repositories. <a href=\"https://code.claude.com/docs/en/routines\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Cloud scheduled tasks</a> · <a href=\"https://code.claude.com/docs/en/desktop-scheduled-tasks\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Desktop scheduled tasks</a> · <a href=\"https://code.claude.com/docs/en/scheduled-tasks\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">/loop</a>"
         },
         {
           "type": "paragraph",

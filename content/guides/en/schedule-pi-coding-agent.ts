@@ -58,7 +58,7 @@ const guide: Guide = {
         },
         {
           "type": "paragraph",
-          "text": "<code>--mode json</code> prints JSON lines if a script reads the output. The npm package is now <code>@earendil-works/pi-coding-agent</code>."
+          "text": "<code>-p</code> writes the final answer to stdout and exits; <code>--mode json</code> writes JSONL events instead, if a script reads the output. <a href=\"https://github.com/earendil-works/pi/blob/main/packages/coding-agent/docs/cli.md\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Pi CLI docs</a>"
         }
       ]
     },
@@ -140,7 +140,7 @@ const guide: Guide = {
   "faq": [
     {
       "question": "Does Pi coding agent have a scheduler?",
-      "answer": "No. The official docs describe print, JSON and RPC modes but no scheduling. Use cron with pi -p or CodeAgentSwarm."
+      "answer": "Not in its docs. The official CLI docs describe print, JSON and RPC modes but no scheduling. Use cron with pi -p or CodeAgentSwarm."
     },
     {
       "question": "Can I schedule Pi with a specific model?",

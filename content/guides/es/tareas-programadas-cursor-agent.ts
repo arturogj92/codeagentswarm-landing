@@ -7,7 +7,7 @@ const guide: Guide = {
     "title": "Cómo programar Cursor Agent: Automations o una tarea local",
     "metaTitle": "Programar Cursor Agent: Automations, cron y tareas locales",
     "metaDescription": "Las Automations de Cursor se ejecutan como agentes en la nube. Para programar Cursor Agent CLI en tu ordenador, usa cron con agent -p o CodeAgentSwarm.",
-    "intro": "Cursor tiene Automations: disparadores, entre ellos una programación horaria, que arrancan un Cloud Agent de Cursor. Se ejecutan en la nube de Cursor y se cobran como uso de agentes en la nube. El CLI de Cursor Agent en tu ordenador no tiene programador. Esta guía compara las dos cosas y explica cómo programar el CLI en local.",
+    "intro": "Cursor tiene Automations: disparadores, entre ellos una programación horaria, que arrancan un Cloud Agent de Cursor. Se ejecutan en la nube de Cursor y se cobran como uso de agentes en la nube. La documentación del CLI de Cursor describe un modo print para scripts, pero ningún programador. Esta guía compara las dos cosas y explica cómo programar el CLI en local.",
     "ctaText": "Programa Cursor Agent en CodeAgentSwarm 2.5.0 y mantén cada ejecución en tu ordenador, en un Chat que puedes continuar.",
     "ctaAgent": "cursor-agent",
     "highlightedWords": [
@@ -44,7 +44,7 @@ const guide: Guide = {
       "content": [
         {
           "type": "paragraph",
-          "text": "Las Automations se crean en la ventana de agentes, en cursor.com/automations o con <code>/automate</code> desde una sesión. El disparador de horario acepta atajos o una expresión cron; una ejecución puede empezar tarde, nunca antes. Cada ejecución es un Cloud Agent, cobrado por uso a precio de API, y los disparadores cron empiezan sin repositorio, así que tienes que elegir uno si la ejecución va a cambiar código. <a href=\"https://cursor.com/docs/cloud-agent/automations\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Documentación de Automations</a>"
+          "text": "Las Automations se crean en la ventana de agentes, en cursor.com/automations o con <code>/automate</code> desde una sesión. El disparador de horario acepta atajos o una expresión cron; una ejecución puede empezar tarde, nunca antes. Cada ejecución es un Cloud Agent, cobrado como uso de agentes en la nube, y los disparadores cron empiezan sin repositorio, así que tienes que elegir uno si la ejecución va a cambiar código. <a href=\"https://cursor.com/docs/cloud-agent/automations\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Documentación de Automations</a>"
         },
         {
           "type": "paragraph",
@@ -63,7 +63,7 @@ const guide: Guide = {
         },
         {
           "type": "paragraph",
-          "text": "El modo print solo propone cambios salvo que pases <code>--force</code>; usa <code>CURSOR_API_KEY</code> para autenticarte sin interacción. La documentación actual de Cursor llama al comando <code>agent</code>; las instalaciones anteriores usaban <code>cursor-agent</code>. <a href=\"https://cursor.com/docs/cli/headless\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Documentación headless del CLI</a>"
+          "text": "El modo print solo propone cambios salvo que pases <code>--force</code>; usa <code>CURSOR_API_KEY</code> para autenticarte sin interacción. <a href=\"https://cursor.com/docs/cli/headless\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Documentación headless del CLI</a>"
         }
       ]
     },
@@ -145,7 +145,7 @@ const guide: Guide = {
     },
     {
       "question": "¿Cursor Agent CLI se puede programar?",
-      "answer": "No por sí solo. Lánzalo desde cron en modo print o prográmalo en CodeAgentSwarm."
+      "answer": "La documentación del CLI describe el modo print pero ningún programador, y las Automations van como agentes en la nube. Para ejecutar el CLI en local a una hora, lánzalo desde cron o usa CodeAgentSwarm."
     },
     {
       "question": "¿Cuál elijo?",

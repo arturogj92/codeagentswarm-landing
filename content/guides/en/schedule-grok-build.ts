@@ -6,8 +6,8 @@ const guide: Guide = {
     "locale": "en",
     "title": "How to schedule Grok Build: /loop, grok -p in cron and CodeAgentSwarm",
     "metaTitle": "Schedule Grok Build: /loop, Cron with grok -p, CodeAgentSwarm",
-    "metaDescription": "Grok Build /loop only repeats inside a session. Run Grok Build on a real schedule with grok -p in cron, or locally with CodeAgentSwarm.",
-    "intro": "Grok Build has <code>/loop</code>, which repeats a prompt while the session is open. It does not start Grok on its own at 08:00 tomorrow. For that, use cron with <code>grok -p</code> or CodeAgentSwarm Scheduled Conversations.",
+    "metaDescription": "Grok Build /loop repeats a prompt and expires after 7 days. Run Grok Build at set times with grok -p in cron, or locally with CodeAgentSwarm.",
+    "intro": "Grok Build has <code>/loop</code>, which runs a prompt now and then again on an interval, and loops expire after 7 days. For a job pinned to 08:00 every weekday that keeps going, use cron with <code>grok -p</code> or CodeAgentSwarm Scheduled Conversations.",
     "ctaText": "Schedule Grok Build in CodeAgentSwarm 2.5.0 and get every run in a Chat you can answer.",
     "ctaAgent": "grok-build",
     "highlightedWords": [
@@ -31,8 +31,8 @@ const guide: Guide = {
         {
           "type": "list",
           "items": [
-            "<strong>While a session is open:</strong> <code>/loop 30m &lt;prompt&gt;</code>.",
-            "<strong>At set times with nothing open:</strong> cron with <code>grok -p</code>, or CodeAgentSwarm."
+            "<strong>Repeat something for a while:</strong> <code>/loop 30m &lt;prompt&gt;</code>.",
+            "<strong>At set times, week after week:</strong> cron with <code>grok -p</code>, or CodeAgentSwarm."
           ]
         }
       ]
@@ -43,7 +43,11 @@ const guide: Guide = {
       "content": [
         {
           "type": "paragraph",
-          "text": "<code>/loop [interval] &lt;prompt&gt;</code> runs locally inside the session. Intervals take s, m, h or d with a 60 second minimum, loops expire after 7 days and a session holds up to 50. xAI notes that <code>/loop</code> appears when the feature is available on your account. <a href=\"https://docs.x.ai/build/features/background-tasks\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Grok Build background tasks</a>"
+          "text": "<code>/loop</code> \"runs a prompt on a recurring interval\". The interval takes <code>Ns</code> (minimum 60), <code>Nm</code>, <code>Nh</code> or <code>Nd</code>; the prompt fires immediately and then repeats, each firing as a new agent turn. Loops expire after 7 days and at most 50 scheduled tasks can be active at once. <a href=\"https://docs.x.ai/build/features/background-tasks\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Grok Build background tasks</a>"
+        },
+        {
+          "type": "paragraph",
+          "text": "xAI also notes that <code>/loop</code> is one of the commands that appear only when their feature is available. <a href=\"https://docs.x.ai/build/modes-and-commands\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Modes and commands</a>"
         }
       ]
     },
@@ -58,7 +62,7 @@ const guide: Guide = {
         },
         {
           "type": "paragraph",
-          "text": "Use <code>XAI_API_KEY</code> for auth in scripts and <code>--no-auto-update</code> so a job never stops to update. The <a href=\"/en/guides/grok-build-headless-ci\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Grok Build headless guide</a> covers the flags in detail. <a href=\"https://docs.x.ai/build/cli/headless-scripting\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">xAI headless docs</a>"
+          "text": "Output formats are <code>plain</code>, <code>json</code> or <code>streaming-json</code>. Scripts can authenticate with <code>XAI_API_KEY</code>, and <code>--no-auto-update</code> skips background update checks. The <a href=\"/en/guides/grok-build-headless-ci\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Grok Build headless guide</a> covers the flags in detail. <a href=\"https://docs.x.ai/build/cli/headless-scripting\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">xAI headless docs</a>"
         }
       ]
     },
@@ -136,11 +140,11 @@ const guide: Guide = {
   "faq": [
     {
       "question": "Is /loop in Grok Build a cron job?",
-      "answer": "No. It repeats a prompt inside an open session, at least 60 seconds apart, for up to 7 days. Closing the session stops it."
+      "answer": "Not quite. It runs a prompt now and then on an interval of at least 60 seconds, and loops expire after 7 days. It is not pinned to clock times."
     },
     {
       "question": "How do I run Grok Build from cron?",
-      "answer": "Add a crontab line that changes to the project and runs grok -p with your prompt. Set XAI_API_KEY and --no-auto-update for unattended runs."
+      "answer": "Add a crontab line that changes to the project and runs grok -p with your prompt. XAI_API_KEY and --no-auto-update help for unattended runs."
     },
     {
       "question": "Can I schedule Grok Build on Windows?",

@@ -43,7 +43,7 @@ const guide: Guide = {
       "content": [
         {
           "type": "paragraph",
-          "text": "Automations can repeat every N minutes, hours, days, weeks or months, follow an RRULE, or run once. The default limit is 50 runs per hour, and you can cap the compute (ACUs) a session may use. The older Scheduled Sessions still work but are marked legacy. <a href=\"https://docs.devin.ai/product-guides/automations\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Devin Automations</a>"
+          "text": "Automations can repeat every N minutes, hours, days, weeks or months, follow an RRULE, or run once. The default limit is 50 runs per hour, and you can cap the compute (ACUs) a session may use. <a href=\"https://docs.devin.ai/product-guides/automations\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Devin Automations</a>. The older scheduled sessions are a legacy feature that keeps working; new scheduled work is created as an automation. <a href=\"https://docs.devin.ai/product-guides/scheduled-sessions\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Scheduled sessions</a>"
         },
         {
           "type": "paragraph",
@@ -62,7 +62,7 @@ const guide: Guide = {
         },
         {
           "type": "paragraph",
-          "text": "In a folder Devin does not trust yet, a non-interactive run also needs <code>--respect-workspace-trust false</code>. Keep the default permission mode for unattended jobs unless the project is disposable."
+          "text": "Print mode cannot show the workspace trust prompt, so in a folder Devin does not trust yet it fails; Cognition documents <code>--respect-workspace-trust false</code> to skip that check in scripts. <a href=\"https://docs.devin.ai/cli/reference/commands.md\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Devin CLI commands</a> Keep the default permission mode for unattended jobs unless the project is disposable."
         }
       ]
     },

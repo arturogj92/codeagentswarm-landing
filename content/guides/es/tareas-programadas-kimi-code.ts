@@ -7,7 +7,7 @@ const guide: Guide = {
     "title": "Cómo programar Kimi Code: cron en la sesión, kimi -p y CodeAgentSwarm",
     "metaTitle": "Programar Kimi Code: cron con kimi -p o CodeAgentSwarm",
     "metaDescription": "Kimi Code solo repite prompts dentro de una sesión abierta. Ejecútalo a una hora con kimi -p en cron o con CodeAgentSwarm en tu ordenador.",
-    "intro": "Kimi Code puede repetir un prompt dentro de una sesión, pero no tiene un programador que arranque el agente por ti. Para ejecutar Kimi Code cada mañana sin nada abierto, usa cron con <code>kimi -p</code> o las conversaciones programadas de CodeAgentSwarm.",
+    "intro": "Kimi Code puede repetir un prompt dentro de una sesión con sus herramientas cron, y esas herramientas están ligadas a la sesión. Para ejecutar Kimi Code cada mañana sin nada abierto, usa cron con <code>kimi -p</code> o las conversaciones programadas de CodeAgentSwarm.",
     "ctaText": "Programa Kimi Code en CodeAgentSwarm 2.5.0 y lee cada ejecución en un Chat que puedes continuar.",
     "ctaAgent": "kimi-code",
     "highlightedWords": [
@@ -32,7 +32,7 @@ const guide: Guide = {
           "type": "list",
           "items": [
             "<strong>Dentro de una sesión:</strong> sí, el agente puede poner prompts que se repiten mientras la sesión exista.",
-            "<strong>Sin nada abierto:</strong> no de serie. Usa cron con <code>kimi -p</code> o CodeAgentSwarm."
+            "<strong>Sin nada abierto:</strong> usa cron con <code>kimi -p</code> o CodeAgentSwarm."
           ]
         }
       ]
@@ -43,7 +43,7 @@ const guide: Guide = {
       "content": [
         {
           "type": "paragraph",
-          "text": "Kimi Code tiene las herramientas CronCreate, CronList y CronDelete, que vuelven a enviar un prompt a la misma sesión. Esas tareas pertenecen a la sesión: vuelven si la restauras con <code>kimi --session</code>, pero no pasan a sesiones nuevas. Caben 50 por sesión, las periódicas caducan a los 7 días y <code>KIMI_DISABLE_CRON=1</code> las desactiva. <a href=\"https://www.kimi.com/code/docs/en/kimi-code-cli/reference/tools.html\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Referencia de herramientas de Kimi Code</a>"
+          "text": "Kimi Code tiene las herramientas CronCreate, CronList y CronDelete, que vuelven a enviar un prompt a la misma sesión. Esas tareas están ligadas a la sesión y siguen activas cuando la retomas con <code>kimi --session</code>. Caben 50 por sesión, las periódicas caducan a los 7 días y <code>KIMI_DISABLE_CRON=1</code> las desactiva. <a href=\"https://www.kimi.com/code/docs/en/kimi-code-cli/reference/tools.html\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Referencia de herramientas de Kimi Code</a>"
         },
         {
           "type": "paragraph",
@@ -62,7 +62,7 @@ const guide: Guide = {
         },
         {
           "type": "paragraph",
-          "text": "<code>--output-format stream-json</code> da una salida legible por máquina. Evita <code>--yolo</code> en trabajos desatendidos salvo que el proyecto sea desechable. <a href=\"https://www.kimi.com/resources/kimi-code-cheat-sheet\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Chuleta de Kimi Code</a>"
+          "text": "<code>--output-format stream-json</code> da una salida legible por máquina. Kimi recomienda usar <code>--yolo</code> solo en espacios de trabajo de confianza y con control de versiones. <a href=\"https://www.kimi.com/resources/kimi-code-cheat-sheet\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Chuleta de Kimi Code</a>"
         }
       ]
     },
@@ -103,7 +103,7 @@ const guide: Guide = {
         },
         {
           "type": "paragraph",
-          "text": "El uso de Kimi Code tiene una ventana móvil y un límite semanal. Reparte los trabajos pesados a lo largo del día con <em>Every few hours</em> en vez de ponerlos todos a la misma hora."
+          "text": "Cada ejecución programada usa tu plan de Kimi Code como cualquier otra sesión. Reparte los trabajos pesados a lo largo del día con <em>Every few hours</em> en vez de ponerlos todos a la misma hora."
         }
       ]
     },
@@ -144,7 +144,7 @@ const guide: Guide = {
   "faq": [
     {
       "question": "¿Kimi Code tiene cron?",
-      "answer": "Solo dentro de una sesión: el agente puede programar prompts que se repiten en esa sesión hasta 7 días. No arranca sesiones nuevas a una hora."
+      "answer": "Dentro de una sesión: el agente puede programar prompts que se repiten en esa sesión, y los periódicos caducan a los 7 días. Para programar sin nada abierto, usa cron o CodeAgentSwarm."
     },
     {
       "question": "¿Cómo ejecuto Kimi Code desde cron?",

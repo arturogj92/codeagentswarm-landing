@@ -7,7 +7,7 @@ const guide: Guide = {
     "title": "How to schedule Kimi Code: in-session cron, kimi -p and CodeAgentSwarm",
     "metaTitle": "Schedule Kimi Code: Cron Jobs with kimi -p or CodeAgentSwarm",
     "metaDescription": "Kimi Code only repeats prompts inside an open session. Run it on a real schedule with kimi -p in cron, or with CodeAgentSwarm on your machine.",
-    "intro": "Kimi Code can repeat a prompt inside a session, but it has no scheduler that starts the agent for you. To run Kimi Code every morning with nothing open, use cron with <code>kimi -p</code> or CodeAgentSwarm Scheduled Conversations.",
+    "intro": "Kimi Code can repeat a prompt inside a session with its cron tools, and those tools are bound to that session. To run Kimi Code every morning with nothing open, use cron with <code>kimi -p</code> or CodeAgentSwarm Scheduled Conversations.",
     "ctaText": "Schedule Kimi Code in CodeAgentSwarm 2.5.0 and read every run in a Chat you can continue.",
     "ctaAgent": "kimi-code",
     "highlightedWords": [
@@ -32,7 +32,7 @@ const guide: Guide = {
           "type": "list",
           "items": [
             "<strong>Inside a session:</strong> yes, the agent can set recurring prompts while that session lives.",
-            "<strong>With nothing open:</strong> not natively. Use cron with <code>kimi -p</code>, or CodeAgentSwarm."
+            "<strong>With nothing open:</strong> use cron with <code>kimi -p</code>, or CodeAgentSwarm."
           ]
         }
       ]
@@ -43,7 +43,7 @@ const guide: Guide = {
       "content": [
         {
           "type": "paragraph",
-          "text": "Kimi Code has CronCreate, CronList and CronDelete tools that re-send a prompt into the same session. Those tasks belong to that session: they come back if you restore it with <code>kimi --session</code>, but not in new sessions. A session holds up to 50, recurring ones expire after 7 days, and <code>KIMI_DISABLE_CRON=1</code> turns them off. <a href=\"https://www.kimi.com/code/docs/en/kimi-code-cli/reference/tools.html\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Kimi Code tools reference</a>"
+          "text": "Kimi Code has CronCreate, CronList and CronDelete tools that re-send a prompt into the same session. Those tasks are bound to that session and stay active when you resume it with <code>kimi --session</code>. A session holds up to 50, recurring ones expire after 7 days, and <code>KIMI_DISABLE_CRON=1</code> turns them off. <a href=\"https://www.kimi.com/code/docs/en/kimi-code-cli/reference/tools.html\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Kimi Code tools reference</a>"
         },
         {
           "type": "paragraph",
@@ -62,7 +62,7 @@ const guide: Guide = {
         },
         {
           "type": "paragraph",
-          "text": "<code>--output-format stream-json</code> gives machine-readable output. Avoid <code>--yolo</code> in unattended jobs unless the project is disposable. <a href=\"https://www.kimi.com/resources/kimi-code-cheat-sheet\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Kimi Code cheat sheet</a>"
+          "text": "<code>--output-format stream-json</code> gives machine-readable output. Kimi says to use <code>--yolo</code> only in trusted, version-controlled workspaces. <a href=\"https://www.kimi.com/resources/kimi-code-cheat-sheet\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Kimi Code cheat sheet</a>"
         }
       ]
     },
@@ -103,7 +103,7 @@ const guide: Guide = {
         },
         {
           "type": "paragraph",
-          "text": "Kimi Code usage has a rolling window and a weekly limit. Spread heavy jobs over the day with <em>Every few hours</em> instead of stacking them at the same minute."
+          "text": "Every scheduled run uses your Kimi Code plan like any other session. Spread heavy jobs over the day with <em>Every few hours</em> instead of stacking them at the same minute."
         }
       ]
     },
@@ -144,7 +144,7 @@ const guide: Guide = {
   "faq": [
     {
       "question": "Does Kimi Code have cron?",
-      "answer": "Only inside a session: the agent can schedule prompts that repeat in that session for up to 7 days. It does not start new sessions on a schedule."
+      "answer": "Inside a session: the agent can schedule prompts that repeat in that session, and recurring ones expire after 7 days. For a schedule with nothing open, use cron or CodeAgentSwarm."
     },
     {
       "question": "How do I run Kimi Code from cron?",

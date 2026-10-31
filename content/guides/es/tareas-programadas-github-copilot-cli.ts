@@ -49,7 +49,7 @@ const guide: Guide = {
         },
         {
           "type": "paragraph",
-          "text": "GitHub también documenta cómo ejecutar Copilot CLI desde un workflow programado de Actions con un token de permisos limitados. <a href=\"https://docs.github.com/en/copilot/how-tos/copilot-cli/automate-copilot-cli/automate-with-actions\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Automatizar con GitHub Actions</a>"
+          "text": "GitHub también documenta cómo ejecutar Copilot CLI desde GitHub Actions. <a href=\"https://docs.github.com/en/copilot/how-tos/copilot-cli/automate-copilot-cli/automate-with-actions\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Automatizar con GitHub Actions</a>"
         }
       ]
     },

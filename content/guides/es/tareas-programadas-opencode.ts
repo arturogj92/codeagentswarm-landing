@@ -44,7 +44,7 @@ const guide: Guide = {
       "content": [
         {
           "type": "paragraph",
-          "text": "La referencia del CLI no tiene comando de programación. La <a href=\"https://opencode.ai/docs/github/\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">integración oficial con GitHub</a> acepta un disparador cron <code>schedule</code>, que se ejecuta en las máquinas de GitHub sobre tu repositorio. Hay plugins de la comunidad que añaden programación, pero no forman parte de opencode."
+          "text": "La referencia del CLI no tiene comando de programación. La <a href=\"https://opencode.ai/docs/github/\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">integración oficial con GitHub</a> acepta un disparador cron <code>schedule</code>, que se ejecuta en las máquinas de GitHub sobre tu repositorio."
         }
       ]
     },

@@ -49,7 +49,7 @@ const guide: Guide = {
         },
         {
           "type": "paragraph",
-          "text": "GitHub also documents running Copilot CLI from a scheduled Actions workflow with a fine-grained token. <a href=\"https://docs.github.com/en/copilot/how-tos/copilot-cli/automate-copilot-cli/automate-with-actions\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Automate with GitHub Actions</a>"
+          "text": "GitHub also documents running Copilot CLI from GitHub Actions. <a href=\"https://docs.github.com/en/copilot/how-tos/copilot-cli/automate-copilot-cli/automate-with-actions\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Automate with GitHub Actions</a>"
         }
       ]
     },

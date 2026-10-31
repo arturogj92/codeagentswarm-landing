@@ -7,7 +7,7 @@ const guide: Guide = {
     "title": "How to schedule Cursor Agent: Automations vs a local schedule",
     "metaTitle": "Schedule Cursor Agent: Automations, Cron and Local Runs",
     "metaDescription": "Cursor Automations run as cloud agents. To schedule the Cursor Agent CLI on your machine, use cron with agent -p or CodeAgentSwarm.",
-    "intro": "Cursor has Automations: triggers, including a schedule, that start a Cursor Cloud Agent. They run in Cursor's cloud and are billed as cloud agent usage. The Cursor Agent CLI on your machine has no scheduler. This guide compares the two and shows how to schedule the CLI locally.",
+    "intro": "Cursor has Automations: triggers, including a schedule, that start a Cursor Cloud Agent. They run in Cursor's cloud and are billed as cloud agent usage. The Cursor CLI docs describe a print mode for scripts but no scheduler. This guide compares the two and shows how to schedule the CLI locally.",
     "ctaText": "Schedule Cursor Agent in CodeAgentSwarm 2.5.0 and keep every run on your machine, in a Chat you can continue.",
     "ctaAgent": "cursor-agent",
     "highlightedWords": [
@@ -44,7 +44,7 @@ const guide: Guide = {
       "content": [
         {
           "type": "paragraph",
-          "text": "You create Automations in the Agents window, at cursor.com/automations or with <code>/automate</code> from an agent session. A schedule trigger takes presets or a cron expression; runs may start late but never early. Each run is a Cloud Agent, billed per usage at API pricing, and cron triggers start with no repository, so you pick one if the run must change code. <a href=\"https://cursor.com/docs/cloud-agent/automations\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Cursor Automations docs</a>"
+          "text": "You create Automations in the Agents window, at cursor.com/automations or with <code>/automate</code> from an agent session. A schedule trigger takes presets or a cron expression; runs may start late but never early. Each run is a Cloud Agent, billed as cloud agent usage, and cron triggers start with no repository, so you pick one if the run must change code. <a href=\"https://cursor.com/docs/cloud-agent/automations\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Cursor Automations docs</a>"
         },
         {
           "type": "paragraph",
@@ -63,7 +63,7 @@ const guide: Guide = {
         },
         {
           "type": "paragraph",
-          "text": "Print mode only proposes edits unless you pass <code>--force</code>; set <code>CURSOR_API_KEY</code> for unattended auth. Cursor's current docs call the command <code>agent</code>; earlier installs used <code>cursor-agent</code>. <a href=\"https://cursor.com/docs/cli/headless\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Cursor CLI headless docs</a>"
+          "text": "Print mode only proposes edits unless you pass <code>--force</code>; set <code>CURSOR_API_KEY</code> for unattended auth. <a href=\"https://cursor.com/docs/cli/headless\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Cursor CLI headless docs</a>"
         }
       ]
     },
@@ -145,7 +145,7 @@ const guide: Guide = {
     },
     {
       "question": "Can the Cursor Agent CLI run on a schedule?",
-      "answer": "Not by itself. Call it from cron in print mode, or schedule it in CodeAgentSwarm."
+      "answer": "The CLI docs describe print mode but no scheduler, and Automations run as cloud agents. To run the CLI locally on a schedule, call it from cron or use CodeAgentSwarm."
     },
     {
       "question": "Which should I pick?",

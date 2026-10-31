@@ -6,8 +6,8 @@ const guide: Guide = {
     "locale": "es",
     "title": "Cómo programar Muse Code: /loop, muse exec en cron y CodeAgentSwarm",
     "metaTitle": "Programar Muse Code: /loop, cron con muse exec o CodeAgentSwarm",
-    "metaDescription": "El /loop de Muse Code solo repite dentro de una sesión. Ejecuta Muse Code de Meta a una hora con muse exec en cron o con CodeAgentSwarm.",
-    "intro": "Muse Code, el agente de terminal de Meta, tiene <code>/loop</code> para repetir un prompt dentro de una sesión interactiva. Nada en su documentación arranca Muse solo a una hora fija sin una sesión abierta. Para eso, usa cron con <code>muse exec</code> o las conversaciones programadas de CodeAgentSwarm.",
+    "metaDescription": "Los /loop de Muse Code caducan a los 7 días. Ejecuta Muse Code de Meta a horas fijas, semana tras semana, con muse exec en cron o con CodeAgentSwarm.",
+    "intro": "Muse Code, el agente de terminal de Meta, tiene <code>/loop</code>, que programa un prompt periódico como un trabajo cron. Los trabajos periódicos caducan a los 7 días, así que uno que tiene que ejecutarse cada día laborable necesita algo más duradero: cron con <code>muse exec</code> o las conversaciones programadas de CodeAgentSwarm.",
     "ctaText": "Programa Muse Code en CodeAgentSwarm 2.5.0 y lee cada ejecución en un Chat que puedes continuar.",
     "ctaAgent": "muse",
     "highlightedWords": [
@@ -31,8 +31,8 @@ const guide: Guide = {
         {
           "type": "list",
           "items": [
-            "<strong>Dentro de una sesión:</strong> <code>/loop</code>, con atajos como 1h o una expresión cron.",
-            "<strong>A horas fijas sin nada abierto:</strong> cron con <code>muse exec</code> o CodeAgentSwarm."
+            "<strong>Durante una semana como mucho:</strong> <code>/loop</code>, con atajos como 1h o una expresión cron.",
+            "<strong>A horas fijas, semana tras semana:</strong> cron con <code>muse exec</code> o CodeAgentSwarm."
           ]
         }
       ]
@@ -43,7 +43,7 @@ const guide: Guide = {
       "content": [
         {
           "type": "paragraph",
-          "text": "<code>/loop</code> acepta atajos (5m, 1h, 2d) o una expresión cron de cinco campos, y por defecto se repite cada 10 minutos. Vive en la sesión interactiva y los trabajos periódicos caducan a los 7 días. <a href=\"https://dev.meta.ai/docs/muse-code/interactive\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Documentación interactiva de Muse Code</a>"
+          "text": "<code>/loop</code> \"schedules a recurring prompt as a cron job\". Acepta atajos (5m, 1h, 2d) o una expresión cron de cinco campos en hora local, y si no le das cadencia se repite cada 10 minutos. Los trabajos periódicos caducan a los 7 días, y una ejecución que coincide con otra en marcha se salta, no se pone en cola. <a href=\"https://dev.meta.ai/docs/muse-code/interactive\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Documentación interactiva de Muse Code</a>"
         }
       ]
     },
@@ -58,7 +58,7 @@ const guide: Guide = {
         },
         {
           "type": "paragraph",
-          "text": "<code>--json</code> da salida legible por máquina y <code>--prompt-file</code> lee un prompt largo desde un archivo. <code>--disable-approval</code> mantiene el sandbox; <code>--yolo</code> quita aprobaciones y sandbox, así que no lo uses en trabajos desatendidos. <a href=\"https://dev.meta.ai/docs/muse-code/extending\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Automatización de Muse Code</a>"
+          "text": "<code>muse exec</code> \"takes one prompt, runs it to completion, and exits\". <code>--json</code> imprime eventos JSONL y <code>--prompt-file</code> lee el prompt de un archivo. <code>--disable-approval</code> se salta las aprobaciones pero mantiene el sandbox; <code>--yolo</code> quita las dos cosas y solo está pensado para código de confianza en un contenedor desechable. <a href=\"https://dev.meta.ai/docs/muse-code/extending\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Automatización de Muse Code</a>"
         }
       ]
     },
@@ -136,7 +136,7 @@ const guide: Guide = {
   "faq": [
     {
       "question": "¿El /loop de Muse Code es un cron?",
-      "answer": "No. Repite un prompt dentro de una sesión interactiva y los trabajos periódicos caducan a los 7 días. No arranca Muse si no hay sesión abierta."
+      "answer": "Programa un prompt periódico como un trabajo cron, pero los trabajos periódicos caducan a los 7 días. Para una programación que no se acabe, usa cron con muse exec o CodeAgentSwarm."
     },
     {
       "question": "¿Cómo ejecuto Muse Code desde cron?",

@@ -4,10 +4,10 @@ const guide: Guide = {
   "meta": {
     "slug": "schedule-antigravity-cli",
     "locale": "en",
-    "title": "How to schedule Antigravity CLI (agy): cron and recurring runs",
-    "metaTitle": "Schedule Antigravity CLI (agy): Cron and Recurring Runs",
-    "metaDescription": "Antigravity CLI has no documented scheduler. Run agy on a schedule with agy -p in cron, or with CodeAgentSwarm in a Chat you can continue.",
-    "intro": "Google's Antigravity CLI (<code>agy</code>, the successor to Gemini CLI) has no documented way to run on a schedule. Its changelog mentions a schedule tool the agent can use inside a session, but no docs page explains it. To run agy every morning you have two solid options: cron with headless mode, or CodeAgentSwarm Scheduled Conversations.",
+    "title": "How to schedule Antigravity CLI (agy): /schedule, cron and recurring runs",
+    "metaTitle": "Schedule Antigravity CLI (agy): /schedule, Cron and More",
+    "metaDescription": "Antigravity CLI /schedule lives in one conversation. Run agy at set times with agy -p in cron, or with CodeAgentSwarm in a Chat you can continue.",
+    "intro": "Google's Antigravity CLI (<code>agy</code>, the successor to Gemini CLI) has <code>/schedule</code>, which sets a timer or a cron schedule inside the current conversation. Google's persistent option, scheduled sidecars, is documented for the Antigravity app. To run agy every morning from the terminal, use cron with headless mode or CodeAgentSwarm Scheduled Conversations.",
     "ctaText": "Schedule Antigravity CLI in CodeAgentSwarm 2.5.0 and read every run in its own Chat.",
     "ctaAgent": "antigravity",
     "highlightedWords": [
@@ -29,25 +29,26 @@ const guide: Guide = {
           "size": "inline"
         },
         {
-          "type": "paragraph",
-          "text": "Not as a documented feature. Use one of these:"
-        },
-        {
           "type": "list",
           "items": [
-            "<strong>cron plus <code>agy -p</code>.</strong> Headless mode runs one prompt and prints the answer.",
-            "<strong>CodeAgentSwarm.</strong> Pick Antigravity CLI as the agent, set the times and read each run in a Chat you can continue."
+            "<strong>While a conversation is open:</strong> <code>/schedule</code>, a timer or a cron schedule that wakes the agent.",
+            "<strong>Jobs that outlive the conversation:</strong> Google points to scheduled sidecars, documented for the Antigravity app.",
+            "<strong>From the CLI at set times:</strong> cron with <code>agy -p</code>, or CodeAgentSwarm."
           ]
         }
       ]
     },
     {
       "id": "native",
-      "title": "What Antigravity CLI offers today",
+      "title": "What Antigravity offers on its own",
       "content": [
         {
           "type": "paragraph",
-          "text": "The official docs cover headless mode but no scheduler. The <a href=\"https://raw.githubusercontent.com/google-antigravity/antigravity-cli/refs/heads/main/CHANGELOG.md\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">changelog</a> lists a <code>schedule</code> tool for recurring and one-shot timers inside the agent, without a page that explains how long those schedules live. Treat it as an in-session helper, not a cron replacement, until Google documents it."
+          "text": "<code>/schedule</code> sets \"a one-time timer or a recurring cron schedule that wakes the agent with an instruction\". Google is explicit about its scope: timers and schedules belong to the conversation that created them, and for \"standing jobs that outlive a session\" you should use a persistent sidecar or Automation instead. <a href=\"https://antigravity.google/docs/commands/schedule/\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Antigravity /schedule</a>"
+        },
+        {
+          "type": "paragraph",
+          "text": "Scheduled sidecars are a <code>sidecar.json</code> file with <code>\"builtin\": \"schedule\"</code> and a five-field cron expression. They are off until you enable them, and the sidecars page lists them as available on the Antigravity app, without mentioning the CLI. <a href=\"https://antigravity.google/docs/sidecars\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Antigravity sidecars</a>"
         }
       ]
     },
@@ -57,7 +58,7 @@ const guide: Guide = {
       "content": [
         {
           "type": "paragraph",
-          "text": "Sign in once interactively, then cron can call headless mode:"
+          "text": "Headless mode uses your cached credentials, so sign in once in an interactive <code>agy</code> session. Then cron can call it:"
         },
         {
           "type": "code",
@@ -66,7 +67,7 @@ const guide: Guide = {
         },
         {
           "type": "paragraph",
-          "text": "Options include <code>--output-format text|json|stream-json</code> and <code>--model</code>. Skipping permission prompts in an unattended job is risky; keep the prompt read-only. <a href=\"https://antigravity.google/docs/cli/headless\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Antigravity headless docs</a>"
+          "text": "<code>--output-format</code> takes <code>text</code>, <code>json</code> or <code>stream-json</code>, and <code>--model</code> pins a model. Google warns that <code>--dangerously-skip-permissions</code> approves every tool call and recommends scoped allow rules instead. <a href=\"https://antigravity.google/docs/cli/headless\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Antigravity headless mode</a>"
         }
       ]
     },
@@ -143,12 +144,12 @@ const guide: Guide = {
   ],
   "faq": [
     {
-      "question": "Does Antigravity CLI have a scheduler?",
-      "answer": "Not a documented one. The changelog mentions an in-session schedule tool, but the docs only describe headless mode, which you can call from cron."
+      "question": "What does /schedule do in Antigravity CLI?",
+      "answer": "It sets a one-time timer or a recurring cron schedule that wakes the agent with an instruction. It belongs to the current conversation."
     },
     {
       "question": "How do I run agy from cron?",
-      "answer": "Sign in once, then add a crontab line that changes to the project and runs agy -p with your prompt, writing output to a log."
+      "answer": "Sign in once in an interactive agy session, then add a crontab line that changes to the project and runs agy -p with your prompt, writing output to a log."
     },
     {
       "question": "Can I schedule Antigravity CLI and still continue the conversation?",

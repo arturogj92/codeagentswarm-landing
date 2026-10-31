@@ -58,7 +58,7 @@ const guide: Guide = {
         },
         {
           "type": "paragraph",
-          "text": "<code>--mode json</code> imprime líneas JSON si un script va a leer la salida. El paquete de npm ahora es <code>@earendil-works/pi-coding-agent</code>."
+          "text": "<code>-p</code> escribe la respuesta final en stdout y sale; <code>--mode json</code> escribe eventos JSONL, por si un script va a leer la salida. <a href=\"https://github.com/earendil-works/pi/blob/main/packages/coding-agent/docs/cli.md\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Documentación del CLI de Pi</a>"
         }
       ]
     },
@@ -140,7 +140,7 @@ const guide: Guide = {
   "faq": [
     {
       "question": "¿Pi coding agent tiene programador?",
-      "answer": "No. La documentación oficial describe los modos print, JSON y RPC, pero no la programación. Usa cron con pi -p o CodeAgentSwarm."
+      "answer": "No en su documentación. La documentación oficial del CLI describe los modos print, JSON y RPC, pero no la programación. Usa cron con pi -p o CodeAgentSwarm."
     },
     {
       "question": "¿Puedo programar Pi con un modelo concreto?",

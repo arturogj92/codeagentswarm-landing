@@ -43,7 +43,7 @@ const guide: Guide = {
       "content": [
         {
           "type": "paragraph",
-          "text": "Las Automations pueden repetirse cada N minutos, horas, días, semanas o meses, seguir una regla RRULE o ejecutarse una vez. El límite por defecto es de 50 ejecuciones por hora, y puedes poner un tope al cómputo (ACU) de cada sesión. Las antiguas Scheduled Sessions siguen funcionando, pero están marcadas como legacy. <a href=\"https://docs.devin.ai/product-guides/automations\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Automations de Devin</a>"
+          "text": "Las Automations pueden repetirse cada N minutos, horas, días, semanas o meses, seguir una regla RRULE o ejecutarse una vez. El límite por defecto es de 50 ejecuciones por hora, y puedes poner un tope al cómputo (ACU) de cada sesión. <a href=\"https://docs.devin.ai/product-guides/automations\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Automations de Devin</a>. Las antiguas sesiones programadas son una función legacy que sigue funcionando; lo nuevo se crea como automation. <a href=\"https://docs.devin.ai/product-guides/scheduled-sessions\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Sesiones programadas</a>"
         },
         {
           "type": "paragraph",
@@ -62,7 +62,7 @@ const guide: Guide = {
         },
         {
           "type": "paragraph",
-          "text": "En una carpeta en la que Devin todavía no confía, una ejecución no interactiva necesita además <code>--respect-workspace-trust false</code>. Mantén el modo de permisos por defecto en trabajos desatendidos salvo que el proyecto sea desechable."
+          "text": "El modo print no puede enseñar el aviso de confianza del espacio de trabajo, así que en una carpeta en la que Devin aún no confía falla; Cognition documenta <code>--respect-workspace-trust false</code> para saltarse esa comprobación en scripts. <a href=\"https://docs.devin.ai/cli/reference/commands.md\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Comandos de Devin CLI</a> Mantén el modo de permisos por defecto en trabajos desatendidos salvo que el proyecto sea desechable."
         }
       ]
     },

@@ -44,7 +44,7 @@ const guide: Guide = {
       "content": [
         {
           "type": "paragraph",
-          "text": "The CLI reference has no schedule command. The official <a href=\"https://opencode.ai/docs/github/\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">GitHub integration</a> accepts a <code>schedule</code> cron trigger, which runs on GitHub's machines against your repository. Community plugins add scheduling too, but they are not part of opencode."
+          "text": "The CLI reference has no schedule command. The official <a href=\"https://opencode.ai/docs/github/\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">GitHub integration</a> accepts a <code>schedule</code> cron trigger, which runs on GitHub's machines against your repository."
         }
       ]
     },

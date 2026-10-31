@@ -4,10 +4,10 @@ const guide: Guide = {
   "meta": {
     "slug": "tareas-programadas-antigravity-cli",
     "locale": "es",
-    "title": "Cómo programar Antigravity CLI (agy): cron y ejecuciones periódicas",
-    "metaTitle": "Programar Antigravity CLI (agy): cron y tareas periódicas",
-    "metaDescription": "Antigravity CLI no documenta un programador. Ejecuta agy a una hora con agy -p en cron o con CodeAgentSwarm, en un Chat que puedes continuar.",
-    "intro": "Antigravity CLI de Google (<code>agy</code>, el sucesor de Gemini CLI) no tiene una forma documentada de ejecutarse a una hora. Su changelog menciona una herramienta de programación que el agente usa dentro de una sesión, pero ninguna página de la documentación la explica. Para lanzar agy cada mañana tienes dos opciones sólidas: cron con el modo sin interfaz o las conversaciones programadas de CodeAgentSwarm.",
+    "title": "Cómo programar Antigravity CLI (agy): /schedule, cron y ejecuciones periódicas",
+    "metaTitle": "Programar Antigravity CLI (agy): /schedule, cron y más",
+    "metaDescription": "El /schedule de Antigravity CLI vive en una conversación. Ejecuta agy a horas fijas con agy -p en cron o con CodeAgentSwarm, en un Chat que puedes seguir.",
+    "intro": "Antigravity CLI de Google (<code>agy</code>, el sucesor de Gemini CLI) tiene <code>/schedule</code>, que pone un temporizador o una programación cron dentro de la conversación actual. La opción persistente de Google, los sidecars programados, está documentada para la app de Antigravity. Para lanzar agy cada mañana desde la terminal, usa cron con el modo sin interfaz o las conversaciones programadas de CodeAgentSwarm.",
     "ctaText": "Programa Antigravity CLI en CodeAgentSwarm 2.5.0 y lee cada ejecución en su propio Chat.",
     "ctaAgent": "antigravity",
     "highlightedWords": [
@@ -29,25 +29,26 @@ const guide: Guide = {
           "size": "inline"
         },
         {
-          "type": "paragraph",
-          "text": "No como función documentada. Usa una de estas:"
-        },
-        {
           "type": "list",
           "items": [
-            "<strong>cron con <code>agy -p</code>.</strong> El modo sin interfaz ejecuta un prompt e imprime la respuesta.",
-            "<strong>CodeAgentSwarm.</strong> Elige Antigravity CLI como agente, pon las horas y lee cada ejecución en un Chat que puedes continuar."
+            "<strong>Con una conversación abierta:</strong> <code>/schedule</code>, un temporizador o una programación cron que despierta al agente.",
+            "<strong>Trabajos que sobreviven a la conversación:</strong> Google remite a los sidecars programados, documentados para la app de Antigravity.",
+            "<strong>Desde el CLI a horas fijas:</strong> cron con <code>agy -p</code> o CodeAgentSwarm."
           ]
         }
       ]
     },
     {
       "id": "nativo",
-      "title": "Lo que ofrece Antigravity CLI hoy",
+      "title": "Lo que ofrece Antigravity de serie",
       "content": [
         {
           "type": "paragraph",
-          "text": "La documentación oficial cubre el modo sin interfaz, pero no un programador. El <a href=\"https://raw.githubusercontent.com/google-antigravity/antigravity-cli/refs/heads/main/CHANGELOG.md\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">changelog</a> incluye una herramienta <code>schedule</code> con temporizadores periódicos y de una vez dentro del agente, sin una página que diga cuánto duran. Tómala como una ayuda dentro de la sesión, no como sustituto de cron, hasta que Google la documente."
+          "text": "<code>/schedule</code> pone \"a one-time timer or a recurring cron schedule that wakes the agent with an instruction\". Google deja claro su alcance: los temporizadores y programaciones pertenecen a la conversación que los creó, y para trabajos que deben sobrevivir a la sesión recomienda un sidecar persistente o una Automation. <a href=\"https://antigravity.google/docs/commands/schedule/\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">/schedule de Antigravity</a>"
+        },
+        {
+          "type": "paragraph",
+          "text": "Los sidecars programados son un archivo <code>sidecar.json</code> con <code>\"builtin\": \"schedule\"</code> y una expresión cron de cinco campos. Vienen desactivados hasta que los activas, y la página de sidecars los da como disponibles en la app de Antigravity, sin mencionar el CLI. <a href=\"https://antigravity.google/docs/sidecars\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Sidecars de Antigravity</a>"
         }
       ]
     },
@@ -57,7 +58,7 @@ const guide: Guide = {
       "content": [
         {
           "type": "paragraph",
-          "text": "Inicia sesión una vez de forma interactiva y después cron puede lanzar el modo sin interfaz:"
+          "text": "El modo sin interfaz usa tus credenciales guardadas, así que inicia sesión una vez en una sesión interactiva de <code>agy</code>. Después cron puede lanzarlo:"
         },
         {
           "type": "code",
@@ -66,7 +67,7 @@ const guide: Guide = {
         },
         {
           "type": "paragraph",
-          "text": "Tiene opciones como <code>--output-format text|json|stream-json</code> y <code>--model</code>. Saltarse los permisos en un trabajo desatendido es arriesgado; mantén el prompt en solo lectura. <a href=\"https://antigravity.google/docs/cli/headless\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Documentación del modo headless</a>"
+          "text": "<code>--output-format</code> acepta <code>text</code>, <code>json</code> o <code>stream-json</code>, y <code>--model</code> fija el modelo. Google avisa de que <code>--dangerously-skip-permissions</code> aprueba todas las herramientas y recomienda reglas de permisos acotadas. <a href=\"https://antigravity.google/docs/cli/headless\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Modo headless de Antigravity</a>"
         }
       ]
     },
@@ -143,12 +144,12 @@ const guide: Guide = {
   ],
   "faq": [
     {
-      "question": "¿Antigravity CLI tiene programador?",
-      "answer": "No uno documentado. El changelog menciona una herramienta de programación dentro de la sesión, pero la documentación solo describe el modo sin interfaz, que puedes lanzar desde cron."
+      "question": "¿Qué hace /schedule en Antigravity CLI?",
+      "answer": "Pone un temporizador de una vez o una programación cron periódica que despierta al agente con una instrucción. Pertenece a la conversación actual."
     },
     {
       "question": "¿Cómo ejecuto agy desde cron?",
-      "answer": "Inicia sesión una vez y añade una línea al crontab que entre en el proyecto y ejecute agy -p con tu prompt, guardando la salida en un log."
+      "answer": "Inicia sesión una vez en una sesión interactiva de agy y añade una línea al crontab que entre en el proyecto y ejecute agy -p con tu prompt, guardando la salida en un log."
     },
     {
       "question": "¿Puedo programar Antigravity CLI y seguir la conversación?",

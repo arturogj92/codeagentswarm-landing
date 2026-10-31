@@ -90,7 +90,7 @@ const guide: Guide = {
         },
         {
           "type": "paragraph",
-          "text": "Las tareas en la nube se llamaban routines hasta hace poco; <code>/routines</code> sigue funcionando. Piden un plan de pago de Claude y el repositorio en GitHub. <a href=\"https://code.claude.com/docs/en/routines\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Tareas en la nube</a> · <a href=\"https://code.claude.com/docs/en/desktop-scheduled-tasks\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Tareas de Desktop</a> · <a href=\"https://code.claude.com/docs/en/scheduled-tasks\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">/loop</a>"
+          "text": "Las tareas en la nube se llamaban routines hasta hace poco; <code>/routines</code> sigue funcionando. Están disponibles en los planes Pro, Max, Ultra, Team y Enterprise y necesitan acceso a GitHub para clonar tus repositorios. <a href=\"https://code.claude.com/docs/en/routines\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Tareas en la nube</a> · <a href=\"https://code.claude.com/docs/en/desktop-scheduled-tasks\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Tareas de Desktop</a> · <a href=\"https://code.claude.com/docs/en/scheduled-tasks\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">/loop</a>"
         },
         {
           "type": "paragraph",

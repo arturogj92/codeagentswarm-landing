@@ -6,8 +6,8 @@ const guide: Guide = {
     "locale": "es",
     "title": "Cómo programar Grok Build: /loop, grok -p en cron y CodeAgentSwarm",
     "metaTitle": "Programar Grok Build: /loop, cron con grok -p o CodeAgentSwarm",
-    "metaDescription": "El /loop de Grok Build solo repite dentro de una sesión. Ejecuta Grok Build a una hora con grok -p en cron o en local con CodeAgentSwarm.",
-    "intro": "Grok Build tiene <code>/loop</code>, que repite un prompt mientras la sesión está abierta. No arranca Grok solo mañana a las 08:00. Para eso, usa cron con <code>grok -p</code> o las conversaciones programadas de CodeAgentSwarm.",
+    "metaDescription": "El /loop de Grok Build repite un prompt y caduca a los 7 días. Ejecuta Grok Build a horas fijas con grok -p en cron o en local con CodeAgentSwarm.",
+    "intro": "Grok Build tiene <code>/loop</code>, que ejecuta un prompt ahora y luego cada cierto tiempo, y los bucles caducan a los 7 días. Para un trabajo fijo a las 08:00 cada día laborable que no se acabe, usa cron con <code>grok -p</code> o las conversaciones programadas de CodeAgentSwarm.",
     "ctaText": "Programa Grok Build en CodeAgentSwarm 2.5.0 y recibe cada ejecución en un Chat al que puedes responder.",
     "ctaAgent": "grok-build",
     "highlightedWords": [
@@ -31,8 +31,8 @@ const guide: Guide = {
         {
           "type": "list",
           "items": [
-            "<strong>Con una sesión abierta:</strong> <code>/loop 30m &lt;prompt&gt;</code>.",
-            "<strong>A horas fijas sin nada abierto:</strong> cron con <code>grok -p</code> o CodeAgentSwarm."
+            "<strong>Repetir algo durante un rato:</strong> <code>/loop 30m &lt;prompt&gt;</code>.",
+            "<strong>A horas fijas, semana tras semana:</strong> cron con <code>grok -p</code> o CodeAgentSwarm."
           ]
         }
       ]
@@ -43,7 +43,11 @@ const guide: Guide = {
       "content": [
         {
           "type": "paragraph",
-          "text": "<code>/loop [intervalo] &lt;prompt&gt;</code> se ejecuta en local dentro de la sesión. El intervalo acepta s, m, h o d con un mínimo de 60 segundos, los bucles caducan a los 7 días y caben 50 por sesión. xAI avisa de que <code>/loop</code> aparece cuando la función está disponible en tu cuenta. <a href=\"https://docs.x.ai/build/features/background-tasks\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Tareas en segundo plano de Grok Build</a>"
+          "text": "<code>/loop</code> \"runs a prompt on a recurring interval\". El intervalo acepta <code>Ns</code> (mínimo 60), <code>Nm</code>, <code>Nh</code> o <code>Nd</code>; el prompt se lanza en el momento y luego se repite, cada vez como un turno nuevo del agente. Los bucles caducan a los 7 días y puede haber como mucho 50 tareas programadas activas. <a href=\"https://docs.x.ai/build/features/background-tasks\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Tareas en segundo plano de Grok Build</a>"
+        },
+        {
+          "type": "paragraph",
+          "text": "xAI avisa además de que <code>/loop</code> es de los comandos que solo aparecen cuando su función está disponible. <a href=\"https://docs.x.ai/build/modes-and-commands\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Modos y comandos</a>"
         }
       ]
     },
@@ -58,7 +62,7 @@ const guide: Guide = {
         },
         {
           "type": "paragraph",
-          "text": "En scripts usa <code>XAI_API_KEY</code> para autenticarte y <code>--no-auto-update</code> para que el trabajo no se pare a actualizar. La <a href=\"/es/guias/grok-build-headless-ci\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">guía de Grok Build sin interfaz</a> explica las opciones. <a href=\"https://docs.x.ai/build/cli/headless-scripting\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Documentación de xAI</a>"
+          "text": "Los formatos de salida son <code>plain</code>, <code>json</code> o <code>streaming-json</code>. En scripts puedes autenticarte con <code>XAI_API_KEY</code>, y <code>--no-auto-update</code> evita las comprobaciones de actualización en segundo plano. La <a href=\"/es/guias/grok-build-headless-ci\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">guía de Grok Build sin interfaz</a> explica las opciones. <a href=\"https://docs.x.ai/build/cli/headless-scripting\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Documentación de xAI</a>"
         }
       ]
     },
@@ -136,11 +140,11 @@ const guide: Guide = {
   "faq": [
     {
       "question": "¿El /loop de Grok Build es un cron?",
-      "answer": "No. Repite un prompt dentro de una sesión abierta, con al menos 60 segundos entre ejecuciones, durante un máximo de 7 días. Si cierras la sesión, se para."
+      "answer": "No exactamente. Ejecuta un prompt en el momento y luego cada cierto intervalo, de al menos 60 segundos, y los bucles caducan a los 7 días. No va ligado a horas del reloj."
     },
     {
       "question": "¿Cómo ejecuto Grok Build desde cron?",
-      "answer": "Añade una línea al crontab que entre en el proyecto y ejecute grok -p con tu prompt. Pon XAI_API_KEY y --no-auto-update para ejecuciones desatendidas."
+      "answer": "Añade una línea al crontab que entre en el proyecto y ejecute grok -p con tu prompt. XAI_API_KEY y --no-auto-update ayudan en ejecuciones desatendidas."
     },
     {
       "question": "¿Puedo programar Grok Build en Windows?",
