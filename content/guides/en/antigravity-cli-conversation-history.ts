@@ -16,7 +16,7 @@ There is a second, less obvious quirk that matters more if you run several proje
     ctaAgent: 'antigravity',
     highlightedWords: ['Antigravity', 'Conversation', 'History'],
     publishedAt: '2026-08-05',
-    updatedAt: '2026-08-05',
+    updatedAt: '2026-10-31',
     alternateSlug: 'historial-conversaciones-antigravity',
   },
   sections: [
@@ -27,15 +27,15 @@ There is a second, less obvious quirk that matters more if you run several proje
         {
           type: 'code',
           language: 'bash',
-          code: '# Start a fresh session in the current directory\nagy\n\n# Continue your most recent conversation, wherever you left it\nagy -c\n\n# Resume a specific conversation by id\nagy --conversation <id>',
+          code: '# Start a fresh session in the current directory\nagy\n\n# Continue the most recent conversation for this directory\nagy -c\n\n# Resume a specific conversation by id\nagy --conversation <id>',
         },
         {
           type: 'paragraph',
-          text: '<code>agy -c</code> is the one you will use ninety percent of the time. It picks up your most recent conversation exactly where it ended, with the full context intact, which is what you want after stepping away for lunch or reviewing a diff and deciding the agent needs another pass.',
+          text: '<code>agy -c</code> is the one you will use ninety percent of the time. It picks up the most recent conversation for the directory you are in, exactly where it ended, with the full context intact, which is what you want after stepping away for lunch or reviewing a diff and deciding the agent needs another pass.',
         },
         {
           type: 'paragraph',
-          text: '<code>agy --conversation &lt;id&gt;</code> is for everything else: the session from Tuesday, the one on the other project, the one you abandoned halfway and now want to finish. It needs the conversation id, and getting hold of that id is the part nobody documents.',
+          text: '<code>agy --conversation &lt;id&gt;</code> is for everything else: the session from Tuesday, the one on the other project, the one you abandoned halfway and now want to finish. It needs the conversation id. Inside a session, <code>/resume</code> opens a picker of previous conversations, but Antigravity scopes history to the current directory, so a conversation from another project only comes back by id, and getting hold of that id is the part nobody documents.',
         },
         {
           type: 'callout',
@@ -141,7 +141,7 @@ There is a second, less obvious quirk that matters more if you run several proje
   faq: [
     {
       question: 'How do I resume a conversation in Antigravity CLI?',
-      answer: 'Use agy -c to continue your most recent conversation exactly where it ended, or agy --conversation <id> to resume a specific one by its id. Resuming keeps the agent accumulated understanding of the codebase, which is usually worth more than the tokens it took to build.',
+      answer: 'Use agy -c to continue the most recent conversation for the current directory exactly where it ended, /resume inside a session to pick another one, or agy --conversation <id> to resume a specific one by its id. Resuming keeps the agent accumulated understanding of the codebase, which is usually worth more than the tokens it took to build.',
     },
     {
       question: 'Where does Antigravity CLI store conversation history?',

@@ -26,10 +26,13 @@ the recorded value, the current value and any flags:
   STARS-DRIFT   stars moved more than ${DRIFT_PCT} percent since the recorded value
   NOW-STALLED   the current last push is older than ${STALE_DAYS} days
 
---check exits non-zero when recorded stars or last-push dates have changed.
+--check exits non-zero only when a fact the guides rely on has moved: stars drifted
+more than ${DRIFT_PCT} percent, a repo that was active when verified has now stalled, or the
+API failed. Small star changes and new pushes are reported but do not fail the check,
+because the guides round star counts and date every observation.
 
-The API is called unauthenticated, so a run can hit the rate limit. Wait an hour and
-try again if that happens.`)
+The API is called unauthenticated unless GITHUB_TOKEN is set, so a run can hit the
+rate limit. Set GITHUB_TOKEN (for example GITHUB_TOKEN=$(gh auth token)) or wait an hour.`)
 }
 
 function dayOf(value) {
@@ -42,18 +45,25 @@ function daysSince(isoDay) {
   return Math.floor((Date.now() - then) / 86400000)
 }
 
+function daysBetween(fromDay, toDay) {
+  const from = Date.parse(`${fromDay}T00:00:00Z`)
+  const to = Date.parse(`${toDay}T00:00:00Z`)
+  if (Number.isNaN(from) || Number.isNaN(to)) return null
+  return Math.floor((to - from) / 86400000)
+}
+
 function pad(value, width) {
   const text = String(value)
   return text.length >= width ? text : text + ' '.repeat(width - text.length)
 }
 
 async function fetchRepo(repo) {
-  const res = await fetch(`https://api.github.com/repos/${repo}`, {
-    headers: {
-      'User-Agent': 'codeagentswarm-competitor-refresh',
-      Accept: 'application/vnd.github+json',
-    },
-  })
+  const headers = {
+    'User-Agent': 'codeagentswarm-competitor-refresh',
+    Accept: 'application/vnd.github+json',
+  }
+  if (process.env.GITHUB_TOKEN) headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`
+  const res = await fetch(`https://api.github.com/repos/${repo}`, { headers })
   if (!res.ok) {
     throw new Error(`HTTP ${res.status} ${res.statusText}`)
   }
@@ -91,21 +101,24 @@ async function main() {
     const currentPush = dayOf(data.pushed_at)
     const flags = []
 
-    if (currentPush !== entry.pushed_at) {
-      flags.push('DATA-STALE')
-      needsRefresh = true
-    }
+    if (currentPush !== entry.pushed_at) flags.push('DATA-STALE')
 
     let starsText = `${entry.stars} -> ${currentStars}`
-    if (currentStars !== entry.stars) needsRefresh = true
     if (typeof entry.stars === 'number' && entry.stars > 0) {
       const change = ((currentStars - entry.stars) / entry.stars) * 100
       starsText += ` (${change >= 0 ? '+' : ''}${change.toFixed(1)}%)`
-      if (Math.abs(change) > DRIFT_PCT) flags.push('STARS-DRIFT')
+      if (Math.abs(change) > DRIFT_PCT) {
+        flags.push('STARS-DRIFT')
+        needsRefresh = true
+      }
     }
 
     const age = currentPush ? daysSince(currentPush) : null
-    if (age !== null && age > STALE_DAYS) flags.push(`NOW-STALLED (${age}d)`)
+    if (age !== null && age > STALE_DAYS) {
+      flags.push(`NOW-STALLED (${age}d)`)
+      const ageWhenVerified = daysBetween(entry.pushed_at, facts.verified_at)
+      if (ageWhenVerified !== null && ageWhenVerified <= STALE_DAYS) needsRefresh = true
+    }
 
     rows.push([entry.name, starsText, `${entry.pushed_at} -> ${currentPush}`, flags.join(' ')])
   }

@@ -16,7 +16,7 @@ Hay una segunda rareza, menos evidente y más importante si llevas varios proyec
     ctaAgent: 'antigravity',
     highlightedWords: ['Antigravity', 'historial', 'conversaciones'],
     publishedAt: '2026-08-05',
-    updatedAt: '2026-08-05',
+    updatedAt: '2026-10-31',
     alternateSlug: 'antigravity-cli-conversation-history',
   },
   sections: [
@@ -27,15 +27,15 @@ Hay una segunda rareza, menos evidente y más importante si llevas varios proyec
         {
           type: 'code',
           language: 'bash',
-          code: '# Empezar una sesión nueva en el directorio actual\nagy\n\n# Continuar tu conversación más reciente, donde la dejaras\nagy -c\n\n# Retomar una conversación concreta por id\nagy --conversation <id>',
+          code: '# Empezar una sesión nueva en el directorio actual\nagy\n\n# Continuar la conversación más reciente de este directorio\nagy -c\n\n# Retomar una conversación concreta por id\nagy --conversation <id>',
         },
         {
           type: 'paragraph',
-          text: '<code>agy -c</code> es el que vas a usar el noventa por ciento de las veces. Retoma tu conversación más reciente exactamente donde acabó, con todo el contexto intacto, que es lo que quieres después de irte a comer o de revisar un diff y decidir que el agente necesita otra pasada.',
+          text: '<code>agy -c</code> es el que vas a usar el noventa por ciento de las veces. Retoma la conversación más reciente del directorio en el que estás, exactamente donde acabó, con todo el contexto intacto, que es lo que quieres después de irte a comer o de revisar un diff y decidir que el agente necesita otra pasada.',
         },
         {
           type: 'paragraph',
-          text: '<code>agy --conversation &lt;id&gt;</code> es para todo lo demás: la sesión del martes, la del otro proyecto, la que abandonaste a medias y ahora quieres terminar. Necesita el id de la conversación, y conseguir ese id es la parte que nadie documenta.',
+          text: '<code>agy --conversation &lt;id&gt;</code> es para todo lo demás: la sesión del martes, la del otro proyecto, la que abandonaste a medias y ahora quieres terminar. Necesita el id de la conversación. Dentro de una sesión, <code>/resume</code> abre un selector de conversaciones anteriores, pero Antigravity limita el historial al directorio actual, así que una conversación de otro proyecto solo vuelve por id, y conseguir ese id es la parte que nadie documenta.',
         },
         {
           type: 'callout',
@@ -141,7 +141,7 @@ Hay una segunda rareza, menos evidente y más importante si llevas varios proyec
   faq: [
     {
       question: '¿Cómo retomo una conversación en Antigravity CLI?',
-      answer: 'Usa agy -c para continuar tu conversación más reciente exactamente donde acabó, o agy --conversation <id> para retomar una concreta por su id. Retomar conserva la comprensión acumulada que el agente tiene del código, que suele valer más que los tokens que costó construirla.',
+      answer: 'Usa agy -c para continuar la conversación más reciente del directorio actual exactamente donde acabó, /resume dentro de una sesión para elegir otra, o agy --conversation <id> para retomar una concreta por su id. Retomar conserva la comprensión acumulada que el agente tiene del código, que suele valer más que los tokens que costó construirla.',
     },
     {
       question: '¿Dónde guarda Antigravity CLI el historial de conversaciones?',

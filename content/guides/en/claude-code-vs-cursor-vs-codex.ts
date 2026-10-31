@@ -14,7 +14,7 @@ This guide compares what each one does, where it fits and what it costs so you c
     ctaAgent: 'multi',
     highlightedWords: ['Claude Code', 'Cursor', 'Codex CLI'],
     publishedAt: '2026-04-15',
-    updatedAt: '2026-08-23',
+    updatedAt: '2026-10-31',
     alternateSlug: 'claude-code-vs-cursor-vs-codex',
   },
   sections: [
@@ -28,7 +28,7 @@ This guide compares what each one does, where it fits and what it costs so you c
         },
         {
           type: 'paragraph',
-          text: '<strong><a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a></strong> is a CLI agent. It runs in your terminal, reads your codebase, makes changes across files, runs commands, and handles complex multi-step tasks autonomously. It is built by Anthropic and powered by Claude Sonnet and Opus models.',
+          text: '<strong><a href="https://code.claude.com/docs/en/overview" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a></strong> is a CLI agent. It runs in your terminal, reads your codebase, makes changes across files, runs commands, and handles complex multi-step tasks autonomously. It is built by Anthropic and powered by Claude Sonnet and Opus models.',
         },
         {
           type: 'paragraph',
@@ -61,7 +61,7 @@ This guide compares what each one does, where it fits and what it costs so you c
         },
         {
           type: 'paragraph',
-          text: 'It is powered by Claude Sonnet (for speed) and Claude Opus (for complex reasoning). The key word here is "agentic": Claude Code does not just suggest code, it takes action. It creates files, modifies existing ones, runs shell commands, and chains multiple steps together to complete a task.',
+          text: 'It runs on Anthropic\'s Claude models, and the <a href="https://code.claude.com/docs/en/cli-reference" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">CLI</a> lets you pick them by alias: <code>sonnet</code>, <code>opus</code>, <code>haiku</code> or <code>fable</code>. The key word here is "agentic": Claude Code does not just suggest code, it takes action. It creates files, modifies existing ones, runs shell commands, and chains multiple steps together to complete a task.',
         },
         {
           type: 'heading',
@@ -87,7 +87,7 @@ This guide compares what each one does, where it fits and what it costs so you c
         },
         {
           type: 'paragraph',
-          text: 'Claude Code requires a Claude Pro subscription ($20/month, or $17/month billed annually) or Claude Max ($100/month for 5x Pro usage, $200/month for 20x). The Pro tier gives you a solid amount of usage for everyday development. Max is for heavy, all-day coding sessions where you need higher rate limits.',
+          text: 'Claude Code needs a paid Claude plan. As of October 31, 2026, the <a href="https://claude.com/pricing" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude pricing page</a> lists Pro at $20/month ($17/month billed annually), Max at $100/month with 5x Pro usage and Ultra at $200/month with 10x Pro usage. Team and Enterprise plans include it too. Pro gives you a solid amount of usage for everyday development; Max and Ultra are for heavy, all-day coding sessions.',
         },
         {
           type: 'heading',
@@ -144,7 +144,7 @@ This guide compares what each one does, where it fits and what it costs so you c
         },
         {
           type: 'paragraph',
-          text: 'Cursor has a free Hobby tier for evaluation. Paid individual plans as of August 23, 2026 are Pro at $20/month, Pro Plus at $60/month and Ultra at $200/month. Teams Standard is $40 per user/month and Teams Premium is $120 per user/month. Included usage depends on model token costs, and optional on-demand usage continues after the included amount with a spend limit you control.',
+          text: 'Cursor has a free plan for evaluation. As of October 31, 2026, the <a href="https://cursor.com/pricing" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Cursor pricing page</a> lists individual plans Plus at $8/month, Premium at $30/month, Super at $100/month and Ultra at $200/month, with Teams from $30 per user/month. Check that page for the usage each plan includes, because Cursor notes that prices can change.',
         },
         {
           type: 'heading',
@@ -170,7 +170,7 @@ This guide compares what each one does, where it fits and what it costs so you c
         },
         {
           type: 'paragraph',
-          text: 'Codex CLI is OpenAI\'s open-source terminal coding agent. Conceptually, it is similar to Claude Code: you run it in your terminal, point it at a repository, and it reads files, makes changes and runs commands. Current Codex models include GPT-5.6 Sol, Terra and Luna.',
+          text: 'Codex CLI is OpenAI\'s open-source terminal coding agent. Conceptually, it is similar to Claude Code: you run it in your terminal, point it at a repository, and it reads files, makes changes and runs commands. The <a href="https://learn.chatgpt.com/docs/models" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">recommended Codex models</a> are currently GPT-6.1 Sol, GPT-6.1 Terra, GPT-6 Luna and Astra.',
         },
         {
           type: 'paragraph',
@@ -200,7 +200,7 @@ This guide compares what each one does, where it fits and what it costs so you c
         },
         {
           type: 'paragraph',
-          text: 'Codex CLI is included with ChatGPT Free, Go ($8/month), Plus ($20/month) and Pro, which is offered from $100/month for 5x usage or $200/month for 20x. Included usage is measured in credits shared across OpenAI\'s agentic features, and credits can extend it. You can also use an OpenAI API key for pay-per-use.',
+          text: 'Codex CLI is included with ChatGPT Free, Go ($8/month), Plus ($20/month), Pro (tiers at $100, $200 or $500/month), Business, Edu and Enterprise, according to the <a href="https://learn.chatgpt.com/docs/pricing" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex pricing page</a> checked October 31, 2026. Plus and Pro can extend usage with ChatGPT credits. You can also use an OpenAI API key for pay-per-use.',
         },
         {
           type: 'heading',
@@ -245,9 +245,9 @@ This guide compares what each one does, where it fits and what it costs so you c
         {
           type: 'list',
           items: [
-            '<strong>Claude Code:</strong> Claude Pro $20/month, Max $100/month (5x) or $200/month (20x)',
-            '<strong>Cursor:</strong> Free Hobby tier, Pro $20/month, Pro Plus $60/month, Ultra $200/month, Teams Standard $40/user and Premium $120/user',
-            '<strong>Codex CLI:</strong> limited on ChatGPT Free, Go $8/month, Plus $20/month; Pro from $100/month (5x) or $200/month (20x)',
+            '<strong>Claude Code:</strong> Claude Pro $20/month, Max $100/month (5x) or Ultra $200/month (10x)',
+            '<strong>Cursor:</strong> Free plan, Plus $8/month, Premium $30/month, Super $100/month, Ultra $200/month, Teams from $30/user',
+            '<strong>Codex CLI:</strong> limited on ChatGPT Free, Go $8/month, Plus $20/month; Pro at $100, $200 or $500/month',
           ],
         },
         {
@@ -259,9 +259,9 @@ This guide compares what each one does, where it fits and what it costs so you c
         {
           type: 'list',
           items: [
-            '<strong>Claude Code:</strong> Claude models only (Sonnet, Opus)',
+            '<strong>Claude Code:</strong> Claude models only (Fable, Opus, Sonnet, Haiku)',
             '<strong>Cursor:</strong> multiple current Claude, GPT, Gemini and Grok models',
-            '<strong>Codex CLI:</strong> OpenAI models only, including GPT-5.6 Sol, Terra and Luna',
+            '<strong>Codex CLI:</strong> OpenAI models only, including GPT-6.1 Sol, GPT-6.1 Terra and GPT-6 Luna',
           ],
         },
         {
@@ -487,7 +487,7 @@ This guide compares what each one does, where it fits and what it costs so you c
     },
     {
       question: 'What is the cheapest AI coding setup?',
-      answer: 'Cursor Hobby and limited Codex on ChatGPT Free both start at $0. Claude Code starts with Pro at $20/month or metered API use. Test the free options first, then pay for the workflow whose limits you actually reach.',
+      answer: 'The Cursor Free plan and limited Codex on ChatGPT Free both start at $0. Claude Code starts with Pro at $20/month or metered API use. Test the free options first, then pay for the workflow whose limits you actually reach.',
     },
   ],
 }

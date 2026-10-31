@@ -6,17 +6,17 @@ export const guide: Guide = {
     locale: 'en',
     title: 'Grok Build Pricing and Access: Plans, API Cost and Parallel Agents',
     metaTitle: 'Grok Build Pricing 2026: Free, SuperGrok and API Cost',
-    metaDescription: 'Grok Build is free to try. SuperGrok $30, SuperGrok Plus $100, API $2 in and $6 out. Plus what several sessions at once do to your limits.',
-    intro: `Grok Build is now available to try free. xAI also lists SuperGrok at $30/month and SuperGrok Plus at $100/month for higher usage, with additional individual and business tiers shown on its live comparison page. For automation there is a separate pay-per-token route through the xAI API.
+    metaDescription: 'Grok Build is free to try. X Subscription from $8, Grok 4.7 API at $2 in and $6 out. Plus what several sessions at once do to your limits.',
+    intro: `Grok Build is available to try free. Since October 12, 2026, xAI sells new customers <a href="https://x.ai/news/x-subscription" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">The X Subscription</a>: Plus at $8/month, Premium at $30, Super at $100 and Ultra at $200, with one Grok model usage pool shared across Grok and Cursor. Existing SuperGrok subscribers keep their plans. For automation there is a separate pay-per-token route through the xAI API.
 
 Before anything else, the disambiguation that most pages skip. Three different things are called Grok: the <strong>Grok chatbot</strong> (xAI's consumer chat app), <strong>Grok Build</strong> (xAI's official coding CLI, the <code>grok</code> command, which is what this page is about and what CodeAgentSwarm supports), and various unaffiliated community projects on GitHub named <code>grok-cli</code>. If you install the wrong one, nothing here applies.
 
-The current source of truth is xAI's <a href="https://x.ai/build" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Grok Build page</a> and <a href="https://x.ai/pricing" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">plan comparison</a>. Older articles that describe Grok Build as paid-only are no longer accurate.`,
+The current source of truth is xAI's <a href="https://x.ai/build" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Grok Build page</a> and <a href="https://x.ai/pricing" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">plan comparison</a>. Older articles that describe Grok Build as paid-only, or SuperGrok as the only way in, are no longer accurate.`,
     ctaText: 'CodeAgentSwarm is a workspace on top of your xAI access, not a reseller of it. You bring an xAI account or API key; we add multi-terminal supervision, quota visibility and searchable history.',
     ctaAgent: 'grok-build',
     highlightedWords: ['Grok Build', 'Pricing', 'Access'],
     publishedAt: '2026-07-28',
-    updatedAt: '2026-09-01',
+    updatedAt: '2026-10-31',
     alternateSlug: 'precios-y-acceso-grok-build',
   },
   sections: [
@@ -26,28 +26,30 @@ The current source of truth is xAI's <a href="https://x.ai/build" target="_blank
       content: [
         {
           type: 'paragraph',
-          text: 'xAI offers Grok Build on every plan, including Free, with paid plans providing higher limits. The official pages show this current lineup as of August 25, 2026:',
+          text: 'Grok Build is free to try, and paid plans raise the limits. Since October 12, 2026, The X Subscription is available to new customers. This is the lineup as of October 31, 2026:',
         },
         {
           type: 'table',
           headers: ['Plan', 'Price', 'Grok Build', 'Notes'],
           rows: [
-            ['Free', '$0', 'Yes', 'Available to try with limited usage'],
-            ['SuperGrok', '$30/month', 'Yes', 'Higher rate limits'],
-            ['SuperGrok Plus', '$100/month', 'Yes', 'Significantly higher usage across Build and other xAI features'],
-            ['Other individual tiers', 'Check live checkout', 'Check your account', 'Lite and Heavy pricing can vary or be omitted from public page text'],
+            ['Free', '$0', 'Yes', 'Limited usage; Grok 4.7 Fast is not included'],
+            ['Plus', '$8/month', 'Through the plan\'s Grok pool', 'More Grok and Cursor usage'],
+            ['Premium', '$30/month', 'Through the plan\'s Grok pool', '4x Plus usage; includes the benefits of SuperGrok'],
+            ['Super', '$100/month', 'Through the plan\'s Grok pool', '15x Plus usage'],
+            ['Ultra', '$200/month', 'Through the plan\'s Grok pool', '50x Plus usage'],
+            ['SuperGrok plans', 'Existing subscribers', 'Yes', 'Nothing changes for current subscribers; switching is optional'],
             ['xAI API', 'Per token', 'Yes, headless', 'For CI and automation'],
           ],
-          caption: 'Routes into Grok Build, verified August 25, 2026. Check the live xAI page before budgeting a rollout.',
+          caption: 'Routes into Grok Build from xAI\'s October 12, 2026 X Subscription announcement and the Grok API docs, verified October 31, 2026. Check the live xAI checkout before budgeting a rollout.',
         },
         {
           type: 'paragraph',
-          text: 'The important change is that payment is no longer required for evaluation. SuperGrok raises the limits, while SuperGrok Plus explicitly includes significantly higher usage across Build, Chat, Imagine and Voice. xAI lists Lite and Heavy in its comparison, but does not expose a stable public price for every tier in the page text, so use the live checkout for those plans.',
+          text: 'Payment is not required for evaluation. The paid ladder is now a set of multiples of Plus: Premium gives 4x, Super 15x and Ultra 50x, and xAI says each plan includes at least twice as much coding usage with its models as the comparable Cursor plan. Usage beyond the plan is billed at API list prices through top-ups. The announcement does not break the shared pool out per product, so it does not say how much of it Grok Build alone can use.',
         },
         {
           type: 'callout',
           variant: 'warning',
-          content: 'xAI changes plans quickly. Treat the table above as a dated snapshot and confirm the live checkout before committing a team. If a page says Grok Build is paid-only or quotes exact request counts without a primary xAI source, treat it as stale.',
+          content: 'xAI changes plans quickly. Treat the table above as a dated snapshot and confirm the live checkout before committing a team. If a page says Grok Build is paid-only, lists SuperGrok as the only paid route, or quotes exact request counts without a primary xAI source, treat it as stale.',
         },
       ],
     },
@@ -75,11 +77,11 @@ The current source of truth is xAI's <a href="https://x.ai/build" target="_blank
       content: [
         {
           type: 'paragraph',
-          text: 'For unattended work, <code>XAI_API_KEY</code> is the headless path and swaps account limits for per-token billing. Grok Build is now powered by Grok 4.6. Its standard API rate is $2 per million input tokens, $0.50 per million cached input tokens and $6 per million output tokens, with higher pricing when a request exceeds 200K context.',
+          text: 'For unattended work, <code>XAI_API_KEY</code> is the headless path and swaps account limits for per-token billing. Grok 4.7 is the default model of Grok Build. Its <a href="https://docs.x.ai/developers/pricing" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">standard API rate</a> is $2 per million input tokens, $0.50 per million cached input tokens and $6 per million output tokens, rising to $4, $1 and $12 when a prompt reaches 200K tokens.',
         },
         {
           type: 'paragraph',
-          text: 'Grok 4.6 has a 500K context window. Its $2 input rate matches Claude Sonnet 5, while its $6 output rate is lower. Compare the current figures with the <a href="/en/guides/claude-code-plans-and-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code rates</a> before choosing a CI model.',
+          text: 'Grok 4.7 has a 500K context window. Its $2 input rate matches Claude Sonnet 5.5, while its $6 output rate is lower than Sonnet\'s $10. Grok 4.7 Fast is available only in Cursor and Grok Build, billed through your plan and not on the free tier. Compare the current figures with the <a href="/en/guides/claude-code-plans-and-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code rates</a> before choosing a CI model.',
         },
         {
           type: 'paragraph',
@@ -102,7 +104,7 @@ The current source of truth is xAI's <a href="https://x.ai/build" target="_blank
         },
         {
           type: 'paragraph',
-          text: 'On an API key the effect is a direct cost instead of an earlier wall. Grok 4.6 bills $2 per million input tokens, $0.50 per million cached input tokens and $6 per million output tokens at the standard context tier, with higher pricing above 200K context, so spend over an hour tracks how many agents are actually working.',
+          text: 'On an API key the effect is a direct cost instead of an earlier wall. Grok 4.7 bills $2 per million input tokens, $0.50 per million cached input tokens and $6 per million output tokens at the standard context tier, with higher pricing above 200K context, so spend over an hour tracks how many agents are actually working.',
         },
         {
           type: 'table',
@@ -150,8 +152,8 @@ The current source of truth is xAI's <a href="https://x.ai/build" target="_blank
           type: 'list',
           items: [
             '<strong>Evaluation starts at $0.</strong> The official Grok Build page says it is available to try free.',
-            '<strong>SuperGrok starts at $30.</strong> That is above the $20 entry plans for <a href="/en/guides/claude-code-plans-and-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a> and Cursor, but paid access is optional for a first test.',
-            '<strong>SuperGrok Plus costs $100.</strong> It adds significantly higher usage across Build and other xAI features.',
+            '<strong>Paid plans start at $8.</strong> X Subscription Plus is below the $20 entry plan for <a href="/en/guides/claude-code-plans-and-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, and paid access is optional for a first test.',
+            '<strong>Premium costs $30, Super $100 and Ultra $200.</strong> They give 4x, 15x and 50x Plus usage from a pool shared with Grok and Cursor.',
             '<strong>The current API is $2 input and $6 output.</strong> Cached input is $0.50 per million tokens, and requests above 200K context cost more.',
           ],
         },
@@ -163,15 +165,15 @@ The current source of truth is xAI's <a href="https://x.ai/build" target="_blank
           type: 'table',
           headers: ['Agent', 'Free tier', 'Cheapest paid', 'Top individual tier', 'How you are billed'],
           rows: [
-            ['Claude Code', 'No (Free plan has no Claude Code)', 'Pro, $20/month', 'Max 20x, $200/month', 'Subscription with 5 hour and weekly windows; API tokens optional'],
-            ['Codex CLI', 'Limited', 'Go, $8/month', 'Pro, $200/month', 'ChatGPT subscription shared with web and IDE; API tokens optional'],
-            ['Kimi Code', 'CLI is free, model usage is not', 'Andante, ¥49/month', 'Allegro, ¥699/month', 'Membership with weekly and 5 hour limits; API per token'],
-            ['OpenCode', 'CLI is free and open source', 'None, pay as you go', 'None', 'Your own provider key, or OpenCode Zen prepaid per token'],
-            ['Antigravity', 'Yes, with weekly rate limits', 'Google AI Plus, around $8/month', 'Google AI Ultra 20x, $200/month', 'Google AI plan with rate limits and credits'],
-            ['Grok Build', 'Yes, limited usage', 'SuperGrok, $30/month', 'SuperGrok Plus, $100/month', 'xAI plan rate limits; API per token'],
-            ['Cursor Agent', 'Hobby, free', 'Pro, $20/month', 'Ultra, $200/month', 'Cursor plan with usage pools per model'],
+            ['Claude Code', 'No (Free plan has no Claude Code)', 'Pro, $20/month', 'Ultra, $200/month', 'Claude plan with 5 hour and weekly limits (verified Ultra accounts have no 5 hour limit); API tokens optional'],
+            ['Codex CLI', 'Limited', 'Go, $8/month', 'Pro, $500/month', 'ChatGPT plan shared across the CLI, web and IDE; API tokens optional'],
+            ['Kimi Code', 'CLI is free, model usage is not', 'Plus, ¥99/month', 'Ultra, ¥1,399/month', 'Membership credits plus a 5 hour Kimi Code limit; API per token'],
+            ['OpenCode', 'CLI is free and open source', 'OpenCode Go, $10/month', 'Go Plus, $40/month', 'Your own provider key, prepaid Console credits per token, or a Go subscription'],
+            ['Antigravity', 'Yes, with weekly rate limits', 'Google AI Plus, $4.99/month', 'Google AI Ultra 20x, $199.99/month', 'Google AI plan with rate limits and credits'],
+            ['Grok Build', 'Yes, limited usage', 'X Subscription Plus, $8/month', 'X Subscription Ultra, $200/month', 'X Subscription pool shared with Grok and Cursor; API per token'],
+            ['Cursor Agent', 'Free, limited usage', 'Plus, $8/month', 'Ultra, $200/month', 'Weekly pool for Cursor models; third-party models billed by usage'],
           ],
-          caption: 'Entry and top tiers per agent CLI, all verified August 25, 2026. Prices change often; each linked guide carries its own verification date.',
+          caption: 'Entry and top tiers per agent CLI, all verified October 31, 2026. Prices change often; each linked guide carries its own verification date.',
         },
         {
           type: 'paragraph',
@@ -203,15 +205,15 @@ The current source of truth is xAI's <a href="https://x.ai/build" target="_blank
   faq: [
     {
       question: 'Is Grok Build free?',
-      answer: 'Yes. xAI says Grok Build is available to try free. SuperGrok at $30/month and SuperGrok Plus at $100/month raise usage limits, while an xAI API key provides pay-per-token access for headless work.',
+      answer: 'Yes. xAI says Grok Build is available to try free, although the free tier does not include Grok 4.7 Fast. The X Subscription, from $8/month, raises usage limits, while an xAI API key provides pay-per-token access for headless work.',
     },
     {
       question: 'How much does Grok Build cost per month?',
-      answer: 'As of August 25, 2026, Grok Build is available on every plan, including Free. xAI lists SuperGrok at $30/month and SuperGrok Plus at $100/month. Other individual tiers appear in the live comparison, so verify their current checkout prices before paying.',
+      answer: 'As of October 31, 2026, Grok Build is free to try. The X Subscription, available to new customers, has Plus at $8/month, Premium at $30, Super at $100 and Ultra at $200. Existing SuperGrok subscribers keep their plans. Verify the current checkout price before paying.',
     },
     {
       question: 'What does SuperGrok Plus add for Grok Build?',
-      answer: 'xAI describes SuperGrok Plus as significantly higher usage across Build, Chat, Imagine and Voice, plus priority access and faster replies. It costs $100/month compared with $30/month for SuperGrok.',
+      answer: 'Since October 12, 2026, xAI offers new customers The X Subscription, and nothing changes for existing SuperGrok subscribers. In the new ladder, Premium at $30/month includes the benefits of SuperGrok, and Super at $100/month gives 15x the usage of Plus, shared across Grok and Cursor.',
     },
     {
       question: 'How many requests does Grok Build allow?',
@@ -219,7 +221,7 @@ The current source of truth is xAI's <a href="https://x.ai/build" target="_blank
     },
     {
       question: 'Can I use an API key instead of a subscription?',
-      answer: 'Yes. Grok 4.6 API usage costs $2 per million input tokens, $0.50 per million cached input tokens and $6 per million output tokens at the standard context tier. Requests above 200K context cost more. Keep a capped key in the pipeline and use account login interactively.',
+      answer: 'Yes. Grok 4.7 API usage costs $2 per million input tokens, $0.50 per million cached input tokens and $6 per million output tokens below 200K prompt tokens, and $4, $1 and $12 above. Keep a capped key in the pipeline and use account login interactively.',
     },
     {
       question: 'Does CodeAgentSwarm include Grok usage?',
@@ -227,11 +229,11 @@ The current source of truth is xAI's <a href="https://x.ai/build" target="_blank
     },
     {
       question: 'Is there a Grok Build subscription?',
-      answer: 'Not a standalone one. Grok Build comes with your xAI plan: Free with limited usage, SuperGrok at $30/month and SuperGrok Plus at $100/month, with other individual tiers shown in the live comparison. An xAI API key is the separate pay-per-token route for headless work.',
+      answer: 'Not a standalone one. Grok Build is free to try, and paid usage comes from The X Subscription: Plus at $8/month, Premium at $30, Super at $100 and Ultra at $200, one pool shared across Grok and Cursor. An xAI API key is the separate pay-per-token route for headless work.',
     },
     {
       question: 'Does Grok Build cost more when several sessions run at once?',
-      answer: 'On a plan there is no extra fee, but the shared account limits arrive faster because each session reads files, runs tools and reasons on its own. On an API key it is a direct cost: Grok 4.6 bills $2 per million input tokens and $6 per million output tokens at the standard context tier, and more above 200K context.',
+      answer: 'On a plan there is no extra fee, but the shared account limits arrive faster because each session reads files, runs tools and reasons on its own. On an API key it is a direct cost: Grok 4.7 bills $2 per million input tokens and $6 per million output tokens below 200K prompt tokens, and double that above.',
     },
   ],
 }

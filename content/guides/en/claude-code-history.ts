@@ -46,7 +46,7 @@ ls ~/.claude/projects/   # where the raw history (JSONL files) lives`,
         },
         {
           type: 'paragraph',
-          text: 'If you already use <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, you have probably used "claude --continue" or "claude --resume" to get back into a past session. The <a href="https://code.claude.com/docs/en/sessions" class="text-neon-cyan hover:text-neon-purple transition-colors">native session picker</a> supports search, previews and other projects. CodeAgentSwarm integrates history into your multi-agent workspace: full text search, project filters, a global view of all your conversations and the ability to resume any conversation from any project in any terminal.',
+          text: 'If you already use <a href="https://code.claude.com/docs/en/overview" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, you have probably used "claude --continue" or "claude --resume" to get back into a past session. The <a href="https://code.claude.com/docs/en/sessions" class="text-neon-cyan hover:text-neon-purple transition-colors">native session picker</a> supports search, previews and other projects. CodeAgentSwarm integrates history into your multi-agent workspace: full text search, project filters, a global view of all your conversations and the ability to resume any conversation from any project in any terminal.',
         },
       ],
     },

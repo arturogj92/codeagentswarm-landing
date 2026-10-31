@@ -37,7 +37,7 @@ CodeAgentSwarm has a built-in Git Manager for exactly this. It reads your staged
         },
         {
           type: 'paragraph',
-          text: 'The whole point is to remove the friction at the end of a session. The AI did the heavy lifting in the code, and now writing a decent commit message is one click instead of a chore you skip. If you are new to <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, it is Anthropic\'s agentic coding tool that runs in your terminal and edits files across your project.',
+          text: 'The whole point is to remove the friction at the end of a session. The AI did the heavy lifting in the code, and now writing a decent commit message is one click instead of a chore you skip. If you are new to <a href="https://code.claude.com/docs/en/overview" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, it is Anthropic\'s agentic coding tool that runs in your terminal and edits files across your project.',
         },
       ],
     },

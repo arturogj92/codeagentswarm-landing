@@ -15,7 +15,7 @@ const guide: Guide = {
       'Pi',
     ],
     publishedAt: '2026-09-06',
-    updatedAt: '2026-09-24',
+    updatedAt: '2026-10-31',
     alternateSlug: 'pi-coding-agent-models-subscriptions',
   },
   sections: [
@@ -84,7 +84,7 @@ const guide: Guide = {
         },
         {
           type: 'paragraph',
-          text: 'Lee las dos partes de una selección como «GPT-5.5 · openai-codex»: la primera identifica el modelo y la segunda la conexión. La captura muestra una cuenta configurada en ese momento; tu menú puede incluir otros modelos.',
+          text: 'Lee las dos partes de una selección como «GPT-5.5 · openai-codex»: la primera identifica el modelo y la segunda la conexión. La captura muestra una cuenta configurada en ese momento; tu menú puede incluir otros modelos. Pi 1.4.0 (21 de octubre de 2026) dejó de ofrecer GPT-5.5 y GPT-5.3 Codex Spark a través de openai-codex porque siempre fallaban con cuentas de ChatGPT.',
         },
       ],
     },

@@ -5,7 +5,7 @@ export const guide: Guide = {
     slug: 'git-worktrees-para-agentes-de-ia',
     locale: 'es',
     title: 'Git worktrees para agentes de IA: da a cada agente su propio checkout',
-    metaTitle: 'Git worktrees para agentes de IA: ejecuta varios agentes en un repo (2026)',
+    metaTitle: 'Git worktrees para agentes de IA: varios agentes en un repo',
     metaDescription: 'Ejecutar varios agentes de IA en un mismo repo hace que se peleen por los mismos archivos. Los git worktrees dan a cada agente su propio checkout. Aquí ves cómo.',
     intro: `Ejecuta más de un agente de código de IA en el mismo repositorio y chocas con un muro enseguida: editan los mismos archivos y se sobrescriben los cambios sin commitear. Claude Code va por la mitad de un refactor, Codex CLI guarda encima de uno de esos archivos, y ahora ninguno de los dos tiene un estado limpio desde el que trabajar.
 
@@ -16,7 +16,7 @@ En esta guía explico el problema en concreto, qué es de verdad un git worktree
     ctaAgent: 'multi',
     highlightedWords: ['Git worktrees', 'agentes de IA'],
     publishedAt: '2026-07-05',
-    updatedAt: '2026-10-05',
+    updatedAt: '2026-10-31',
     relatedSlug: 'kanban-automatico-agentes-ia',
     alternateSlug: 'git-worktrees-for-ai-coding-agents',
   },
@@ -183,7 +183,7 @@ En esta guía explico el problema en concreto, qué es de verdad un git worktree
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm es una app de escritorio para ejecutar un enjambre de agentes CLI de IA en un solo sitio. Funciona sobre las CLIs oficiales (Claude Code, Codex CLI, opencode, Antigravity CLI), así que no es un proveedor de modelos, orquesta los agentes que ya usas. Y puede crear un worktree por terminal por ti, así consigues el aislamiento de arriba sin tocar un solo comando de git.',
+          text: 'CodeAgentSwarm es una app de escritorio para ejecutar un enjambre de agentes CLI de IA en un solo sitio. Funciona sobre las CLIs oficiales (Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI, GitHub Copilot CLI y Cline), así que no es un proveedor de modelos, orquesta los agentes que ya usas. Y puede crear un worktree por terminal por ti, así consigues el aislamiento de arriba sin tocar un solo comando de git.',
         },
         {
           type: 'heading',

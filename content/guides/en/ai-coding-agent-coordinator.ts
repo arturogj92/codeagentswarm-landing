@@ -5,7 +5,7 @@ export const guide: Guide = {
     slug: 'ai-coding-agent-coordinator',
     locale: 'en',
     title: 'AI Coding Agent Coordinator: One Agent That Plans and Runs the Others',
-    metaTitle: 'AI Coding Agent Coordinator: One Agent Runs Your Whole Team (2026)',
+    metaTitle: 'AI Coding Agent Coordinator: One Agent Runs Your Team (2026)',
     metaDescription: 'A coordinator agent splits your goal, opens worker sessions with the right agent and model for each job, and reports back in one Chat. Project and global modes.',
     intro: `Running five agents in parallel is great until you notice who is really coordinating them: you. You write five prompts, pick five models, keep five contexts in your head, and copy answers from one session into another.
 
@@ -14,7 +14,7 @@ CodeAgentSwarm 2.4.0 adds coordinators. A coordinator is a Chat with one job: ta
 This guide explains the two kinds of coordinator, how to start one, what it does and does not do, and a few prompts that show what it is good at.`,
     highlightedWords: ['Coordinator', 'AI Coding Agent'],
     publishedAt: '2026-09-27',
-    updatedAt: '2026-09-27',
+    updatedAt: '2026-10-31',
     ctaText: 'Start a coordinator, give it one real goal, and let it open the worker sessions for you.',
     ctaAgent: 'multi',
     alternateSlug: 'coordinador-agentes-ia',

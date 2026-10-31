@@ -16,7 +16,7 @@ This guide is the pillar for parallel Grok Build: plain tabs, tmux, and CodeAgen
     ctaAgent: 'grok-build',
     highlightedWords: ['Grok Build', 'agent swarm'],
     publishedAt: '2026-07-28',
-    updatedAt: '2026-10-05',
+    updatedAt: '2026-10-31',
     alternateSlug: 'enjambre-de-agentes-grok-build',
   },
   sections: [
@@ -51,7 +51,7 @@ This guide is the pillar for parallel Grok Build: plain tabs, tmux, and CodeAgen
       id: 'cas',
       title: 'Method 3: CodeAgentSwarm',
       content: [
-        { type: 'paragraph', text: 'CodeAgentSwarm is built for supervising AI CLIs. Pick Grok Build in each terminal\'s agent selector. You get a grid of terminals, desktop notifications, per-terminal live diffs, searchable history, and you can mix Grok Build with Claude Code or Codex in the same window.' },
+        { type: 'paragraph', text: 'CodeAgentSwarm is built for supervising AI CLIs. Pick Grok Build in each terminal\'s agent selector. You get a grid of terminals, desktop notifications, per-terminal live diffs, searchable history, and you can mix Grok Build with Claude Code or Codex in the same window. Grok Build also has its own <a href="https://docs.x.ai/build/features/dashboard" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Agent Dashboard</a> (<code>grok dashboard</code> or <code>Ctrl+\\</code>) that groups your Grok sessions by state. It only sees Grok sessions, so it helps when every worker is Grok and stops helping once you mix vendors.' },
         { type: 'paragraph', text: 'For worktree isolation per agent, enable worktrees when opening terminals or start with <code>grok --worktree=name</code>. See also <a href="/en/guides/git-worktrees-for-ai-coding-agents" class="text-neon-cyan hover:text-neon-purple transition-colors">git worktrees for AI agents</a>.' },
         { type: 'callout', variant: 'tip', content: 'If you only need one Grok Build session with internal helpers, native subagents may be enough. If you need several human-visible workers (or multi-vendor), use a real multi-terminal swarm.' },
       ],

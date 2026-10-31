@@ -18,7 +18,7 @@ Cuando lo tengas funcionando, también te enseñamos a pasar de un terminal a va
     ctaAgent: 'claude-code',
     highlightedWords: ['Claude Code', 'Linux'],
     publishedAt: '2026-09-29',
-    updatedAt: '2026-10-05',
+    updatedAt: '2026-10-31',
     alternateSlug: 'claude-code-on-linux',
   },
   sections: [
@@ -60,7 +60,7 @@ claude`,
             'Un Linux de 64 bits en x64 o ARM64. Con soporte oficial: Ubuntu 20.04+, Debian 10+ y Alpine Linux 3.19+. Fedora y RHEL tienen repositorio dnf oficial.',
             'Al menos 4 GB de RAM y conexión a internet.',
             'Bash o Zsh.',
-            'Una cuenta Claude Pro, Max, Team, Enterprise o Console. El plan gratuito de claude.ai no incluye Claude Code.',
+            'Una cuenta Claude Pro, Max, Ultra, Team, Enterprise o Console. El plan gratuito de claude.ai no incluye Claude Code.',
           ],
         },
         {
@@ -150,7 +150,7 @@ sudo dnf install claude-code
       content: [
         {
           type: 'paragraph',
-          text: 'Anthropic ya tiene una <a href="https://code.claude.com/docs/en/desktop-linux" target="_blank" rel="noopener noreferrer" class="' + link + '">app de escritorio de Claude para Linux</a> en beta, para Ubuntu 22.04+ y Debian 12+ en x64 y ARM64, e incluye Claude Code. Si quieres la app gráfica oficial para una conversación de Claude a la vez, empieza por ahí.',
+          text: 'Anthropic ya tiene una <a href="https://code.claude.com/docs/en/desktop-linux" target="_blank" rel="noopener noreferrer" class="' + link + '">app de escritorio de Claude para Linux</a> en beta, para Ubuntu 22.04+ y Debian 12+ en x64 y ARM64, e incluye Claude Code con sesiones en paralelo, revisión visual de diffs y un terminal integrado. Si quieres la app gráfica oficial de Anthropic, empieza por ahí.',
         },
         {
           type: 'paragraph',

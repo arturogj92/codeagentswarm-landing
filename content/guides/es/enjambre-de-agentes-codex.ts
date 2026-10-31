@@ -16,7 +16,7 @@ En esta guía te explico las tres formas reales de ejecutar un enjambre de Codex
     ctaAgent: 'codex',
     highlightedWords: ['enjambre de agentes Codex', 'Codex CLI'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-10-05',
+    updatedAt: '2026-10-31',
     relatedSlug: 'interfaz-grafica-codex',
     alternateSlug: 'codex-agent-swarm',
   },
@@ -234,7 +234,7 @@ En esta guía te explico las tres formas reales de ejecutar un enjambre de Codex
         },
         {
           type: 'paragraph',
-          text: 'Codex tiene sus propios modos de aprobación, desde solo-sugerir hasta full auto con <code>--full-auto</code>, además de un sandbox. CodeAgentSwarm se coloca por encima con Turbo Mode y permisos por terminal, así que puedes dejar que los agentes corran en full auto en las operaciones seguras mientras frenas las peligrosas. Esa es la forma práctica de tener un enjambre de Codex rápido sin dejarlo sin supervisión. La <a href="/es/guias/modo-yolo-claude-code-explicado" class="text-neon-cyan hover:text-neon-purple transition-colors">guía de Turbo Mode</a> cubre la configuración.',
+          text: 'Codex tiene sus propios controles: un sandbox, una política de aprobación y la revisión automática, que <code>--approve-for-me</code> activa para que un agente revisor responda a las aprobaciones dentro del sandbox <code>workspace-write</code>. El antiguo flag <code>--full-auto</code> ya no aparece en la <a href="https://learn.chatgpt.com/docs/developer-commands?surface=cli" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">referencia oficial de comandos</a>. CodeAgentSwarm se coloca por encima con Turbo Mode y permisos por terminal, así que puedes dejar que los agentes corran en full auto en las operaciones seguras mientras frenas las peligrosas. Esa es la forma práctica de tener un enjambre de Codex rápido sin dejarlo sin supervisión. La <a href="/es/guias/modo-yolo-claude-code-explicado" class="text-neon-cyan hover:text-neon-purple transition-colors">guía de Turbo Mode</a> cubre la configuración.',
         },
         {
           type: 'heading',

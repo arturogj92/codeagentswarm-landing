@@ -17,7 +17,7 @@ In this guide we cover both install methods, the Node.js version Pi needs, loggi
     ctaAgent: 'pi',
     highlightedWords: ['Pi', 'Linux'],
     publishedAt: '2026-09-29',
-    updatedAt: '2026-10-05',
+    updatedAt: '2026-10-31',
     alternateSlug: 'pi-coding-agent-en-linux',
   },
   sections: [
@@ -56,7 +56,7 @@ pi --version`,
           type: 'list',
           items: [
             'A Linux machine with a terminal. The official installer supports macOS and Linux.',
-            'Node.js 22.19 or newer if you install with npm. CodeAgentSwarm verified Pi 0.85.1 on that Node version.',
+            'Node.js 22.19 or newer if you install with npm. CodeAgentSwarm verified Pi 0.85.1 on that Node version, and the current 1.4.0 release has the same minimum. The official installer can install Node.js for you.',
             'Access to a model: a subscription, an API key or a local model through a supported provider.',
           ],
         },
@@ -188,7 +188,7 @@ pi`,
     },
     {
       question: 'Which Node.js version does Pi need?',
-      answer: 'The npm package requires Node.js 22.19 or newer. CodeAgentSwarm verified Pi 0.85.1 on that version.',
+      answer: 'The npm package requires Node.js 22.19 or newer, including the current 1.4.0 release. CodeAgentSwarm verified Pi 0.85.1 on that version.',
     },
     {
       question: 'Can I log in to Pi on a server over SSH?',

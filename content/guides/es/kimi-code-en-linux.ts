@@ -18,7 +18,7 @@ Cuando lo tengas funcionando, también te enseñamos a pasar de un terminal a va
     ctaAgent: 'kimi-code',
     highlightedWords: ['Kimi Code', 'Linux'],
     publishedAt: '2026-09-29',
-    updatedAt: '2026-10-05',
+    updatedAt: '2026-10-31',
     alternateSlug: 'kimi-code-on-linux',
   },
   sections: [
@@ -124,7 +124,7 @@ pnpm add -g @moonshot-ai/kimi-code`,
             '<strong>"Alpine / musl Linux is not currently supported":</strong> el script solo trae binarios para glibc. Instala Node.js 22.19 o superior y usa <code>npm install -g @moonshot-ai/kimi-code</code>.',
             '<strong>"curl or wget is required" o "shasum or sha256sum required to verify download":</strong> pasa a menudo en contenedores mínimos. Instala curl y coreutils con tu gestor de paquetes y vuelve a lanzar el script.',
             '<strong>"unsupported architecture":</strong> el script solo cubre x64 y ARM64. En cualquier otra, prueba con el paquete de npm.',
-            '<strong><code>kimi --version</code> muestra 1.4x:</strong> estás usando el antiguo kimi-cli de Python. Kimi Code muestra una versión 0.x. El script renombra el <code>kimi</code> antiguo a <code>kimi-legacy</code> para que se use el nuevo.',
+            '<strong><code>kimi --version</code> muestra 1.x:</strong> estás usando el antiguo kimi-cli de Python. Kimi Code muestra una versión 2.x. El script renombra el <code>kimi</code> antiguo a <code>kimi-legacy</code> para que se use el nuevo.',
           ],
         },
         {

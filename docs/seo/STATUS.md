@@ -1,8 +1,21 @@
 # SEO status
 
-Last updated: 2026-09-25
+Last updated: 2026-10-31
 
 Release state: the August 31 conversion, comparison and media changes passed production validation. Start post-release measurement only after the master deployment reports success.
+
+## October 31 freshness pass
+
+Four parallel workers re-verified volatile facts against first-party sources fetched on October 31, 2026, then one integrated build was published. Slugs, alternates, section anchors and canonical URLs are unchanged; `updatedAt` moved only on materially changed guides, so sitemap `lastmod` marks exactly those pages.
+
+- Pricing (14 guides + weekly-limit pair): Claude Max $100 (5x) and Ultra $200 (10x, no 5-hour limit for verified accounts) replace Max 5x/20x; ChatGPT Pro $100/$200/$500 with GPT-6.1 Sol/Terra and GPT-6 Luna; Kimi Plus/Pro (5-hour window, no weekly quota; Go has no coding quota); The X Subscription (Plus $8, Premium $30, Super $100, Ultra $200) for Grok and Cursor; Google AI Plus/Pro/Ultra for Antigravity; OpenCode Go plans. The shared cross-agent table is identical in all 14 files.
+- Agent guides: Codex removed `--full-auto` (now `--approve-for-me`, `--yolo` still accepted in 0.159.0); OpenCode ships `--auto`; Claude auto mode is the default start mode; Kimi default model K2.8 Preview, `--yolo` vs `--auto`, endpoint api.kimi.ai/coding; Grok 4.7 and real permission modes; Antigravity free-tier Claude 4.6/GPT-OSS removal on 2026-11-02; Gemini CLI stopped serving personal accounts on 2026-06-18 but is not shut down; Pi 1.4.0; Devin SWE-2 free until 2026-11-30.
+- Comparisons: Superset is now Paradev; Paseo moved to Apache 2.0 and supports more agents; Conductor shipped iOS; Vibe Kanban is sunsetting; stars refreshed. `competitor-refresh --check` now fails only on >10% star drift, a stalled repo or API errors.
+- Technical: home `SoftwareApplication.operatingSystem` includes Linux; `llms.txt` titles resynced from metaTitles (51) and 16 missing guides added (Linux ES guides, coordinator, auto Kanban, weekly limit); guide tables no longer split words letter by letter on mobile.
+
+Unverified and left as published: Grok Build "free to try" (x.ai/cli returns 403), per-tier ChatGPT Pro multipliers, whether Google AI Plus $4.99 is promotional, Kimi USD plans (only CNY published). Possible app follow-ups: Codex skills export path (~/.codex/skills is deprecated, still read), Kimi/Cursor quota labels (new plans have no weekly Kimi quota and a weekly Cursor pool), Muse driver never passes `--contributor-mode off`.
+
+Measure 28 complete days after deployment against the 28 days before, per page and locale, before judging this pass.
 
 ## September 25 measurement
 

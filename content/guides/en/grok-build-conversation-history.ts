@@ -14,7 +14,7 @@ Grok Build is xAI's coding CLI (<code>grok</code>), not the Grok chatbot. Resume
     ctaAgent: 'grok-build',
     highlightedWords: ['conversation history', 'Grok Build'],
     publishedAt: '2026-07-28',
-    updatedAt: '2026-07-28',
+    updatedAt: '2026-10-31',
     alternateSlug: 'historial-conversaciones-grok-build',
   },
   sections: [
@@ -23,14 +23,14 @@ Grok Build is xAI's coding CLI (<code>grok</code>), not the Grok chatbot. Resume
       title: 'Resume from the CLI',
       content: [
         { type: 'code', language: 'bash', code: '# Continue most recent session for this directory\ngrok --continue\n\n# Resume by id or title\ngrok --resume\ngrok --resume "auth refactor"\n\n# Optional: fork instead of reusing the same session id\ngrok --resume SESSION --fork-session' },
-        { type: 'paragraph', text: '<code>grok sessions list</code> and <code>grok sessions search</code> help you find older work. <code>grok export</code> writes a Markdown transcript when you need a shareable artifact.' },
+        { type: 'paragraph', text: 'Inside the TUI, <code>/resume</code> opens a picker of recent sessions for the current folder, and <code>/rename</code> gives the current session a title you can resume by later. A title passed to <code>--resume</code> is matched against sessions in the current directory; scripts should pass the id. <code>grok sessions list</code> and <code>grok sessions search</code> help you find older work. <code>grok export</code> writes a Markdown transcript when you need a shareable artifact.' },
       ],
     },
     {
       id: 'storage',
       title: 'Where history lives',
       content: [
-        { type: 'paragraph', text: 'Session data lives under <code>~/.grok/</code> (or <code>GROK_HOME</code>). Do not casually delete that tree if you care about resume. Back it up like any other local agent state.' },
+        { type: 'paragraph', text: 'Grok Build saves every conversation automatically under <code>~/.grok/sessions/</code> (or <code>$GROK_HOME/sessions/</code>), grouped by working directory, with prompts, responses, tool calls and file snapshots. Do not casually delete that tree if you care about resume. Back it up like any other local agent state. Details are in the <a href="https://docs.x.ai/build/features/sessions" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">official sessions docs</a>.' },
       ],
     },
     {
@@ -43,7 +43,7 @@ Grok Build is xAI's coding CLI (<code>grok</code>), not the Grok chatbot. Resume
   ],
   faq: [
     { question: 'How do I continue my last Grok session?', answer: 'Run grok --continue in the same project directory.' },
-    { question: 'How do I find an old session?', answer: 'Use grok sessions list or grok sessions search, then grok --resume with the id or title.' },
+    { question: 'How do I find an old session?', answer: 'Use grok sessions list or grok sessions search, or /resume inside the TUI, then grok --resume with the id or title.' },
     { question: 'Does CodeAgentSwarm store Grok history?', answer: 'CAS provides searchable history across agents, including Grok Build sessions it has indexed from your machine.' },
   ],
 }

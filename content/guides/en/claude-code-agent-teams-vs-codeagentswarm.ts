@@ -5,7 +5,7 @@ export const guide: Guide = {
     slug: 'claude-code-agent-teams-vs-codeagentswarm',
     locale: 'en',
     title: 'Claude Code Agent Teams vs CodeAgentSwarm: What Is the Difference?',
-    metaTitle: 'Claude Code Agent Teams vs CodeAgentSwarm: What Is the Difference? (2026)',
+    metaTitle: 'Claude Code Agent Teams vs CodeAgentSwarm: Key Differences',
     metaDescription: 'Compare Claude Code teams of independent sessions with CodeAgentSwarm: context, coordination, providers and how to enable Agent Teams.',
     intro: 'Agent Teams coordinates several Claude Code sessions with their own context. CodeAgentSwarm brings sessions from different providers into a desktop workspace for macOS, Windows and Linux. Both support delegation: in CodeAgentSwarm you can supervise work directly or use a <a href="/en/guides/ai-coding-agent-coordinator" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm coordinator</a>.\n\nThe useful distinction is the workspace, the providers and how you review results. This comparison also explains how to enable the experimental Claude Code feature.',
     ctaText: 'Coordinate Claude Code and Codex sessions in CodeAgentSwarm, with tasks, history and change review in one workspace.',
@@ -15,7 +15,7 @@ export const guide: Guide = {
       'CodeAgentSwarm',
     ],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-10-05',
+    updatedAt: '2026-10-31',
     alternateSlug: 'agent-teams-de-claude-code-vs-codeagentswarm',
     relatedSlug: 'ai-coding-agent-coordinator',
   },
@@ -42,7 +42,7 @@ export const guide: Guide = {
       content: [
         {
           type: 'paragraph',
-          text: 'The <a href="https://code.claude.com/docs/en/agent-teams" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code Agent Teams</a> documentation describes teammates with separate context windows. A lead session coordinates the team through shared tasks and messages.',
+          text: 'The <a href="https://code.claude.com/docs/en/agent-teams" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code Agent Teams</a> documentation describes teammates with separate context windows. A lead session coordinates the team through a shared task list and messages, and teammates can also message each other directly. You can talk to any teammate without going through the lead.',
         },
         {
           type: 'paragraph',
@@ -51,7 +51,7 @@ export const guide: Guide = {
         {
           type: 'callout',
           variant: 'info',
-          content: 'Agent Teams is experimental. Resumption, task coordination and shutdown have limitations; check the documentation for your version before relying on it.',
+          content: 'Agent Teams is still experimental and disabled by default (checked against the official docs on October 31, 2026). Known limits: /resume and /rewind do not bring back in-process teammates, task status can lag, shutdown can be slow, there is one team per session, teammates cannot start their own teams and the lead cannot be changed.',
         },
       ],
     },
@@ -61,7 +61,7 @@ export const guide: Guide = {
       content: [
         {
           type: 'paragraph',
-          text: 'Enable the environment variable when starting an interactive Claude Code session. On macOS or Linux:',
+          text: 'Set CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS to 1 in your shell or in the env block of settings.json. Teammates only spawn in interactive sessions, not with the -p flag. On macOS or Linux:',
         },
         {
           type: 'code',
@@ -79,7 +79,7 @@ export const guide: Guide = {
         },
         {
           type: 'paragraph',
-          text: 'Then request a team with specific responsibilities, such as separate accessibility and test reviews of a change. The feature is disabled by default.',
+          text: 'Then request a team with specific responsibilities, such as separate accessibility and test reviews of a change. While the feature is on, a subagent that Claude names on its own can launch as a teammate, so a team can form even if you did not ask for one.',
         },
       ],
     },
@@ -139,7 +139,7 @@ export const guide: Guide = {
         },
         {
           type: 'paragraph',
-          text: 'Independent contexts do not mean independent quotas. Agents authenticated with the same account can consume shared limits. More parallel work can increase usage.',
+          text: 'Independent contexts do not mean independent quotas. Agents authenticated with the same account can consume shared limits. Anthropic says Agent Teams use significantly more tokens than a single session, and usage grows with the number of active teammates.',
         },
         {
           type: 'heading',
@@ -169,7 +169,7 @@ export const guide: Guide = {
       content: [
         {
           type: 'paragraph',
-          text: 'You can start Claude Code in a CodeAgentSwarm terminal and enable its native Agent Teams feature. Use the display mode and configuration supported by that terminal; do not assume every teammate will appear as a separate CodeAgentSwarm session.',
+          text: 'You can start Claude Code in a CodeAgentSwarm terminal and enable its native Agent Teams feature. The default in-process mode works in any terminal and shows teammates in a panel below the prompt. Split panes need tmux or iTerm2 and are not supported in VS Code, Windows Terminal or Ghostty. Teammates do not appear as separate CodeAgentSwarm sessions.',
         },
         {
           type: 'paragraph',
@@ -181,7 +181,7 @@ export const guide: Guide = {
   faq: [
     {
       question: 'What are Claude Code Agent Teams?',
-      answer: 'They are teams of Claude Code sessions with separate context, coordinated through a lead, shared tasks and messages.',
+      answer: 'They are teams of Claude Code sessions with separate context, coordinated through a lead, a shared task list and messages. Teammates can also message each other directly.',
     },
     {
       question: 'Are they the same as subagents?',
@@ -189,7 +189,7 @@ export const guide: Guide = {
     },
     {
       question: 'How do I enable them?',
-      answer: 'Set CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1 in the environment of an interactive Claude Code session. The feature is experimental and disabled by default.',
+      answer: 'Set CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1 in your environment or in the env block of settings.json, then start an interactive Claude Code session. As of October 31, 2026 the feature is still experimental and disabled by default.',
     },
     {
       question: 'Can CodeAgentSwarm coordinate agents too?',

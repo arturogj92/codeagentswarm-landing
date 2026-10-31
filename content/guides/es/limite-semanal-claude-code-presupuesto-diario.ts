@@ -5,7 +5,7 @@ export const guide: Guide = {
     slug: 'limite-semanal-claude-code-presupuesto-diario',
     locale: 'es',
     title: 'Límite semanal de Claude Code: un presupuesto diario para que la cuota te dure toda la semana',
-    metaTitle: 'Límite semanal de Claude Code: presupuesto diario para cada agente (2026)',
+    metaTitle: 'Límite semanal de Claude Code: presupuesto diario por agente',
     metaDescription: 'No gastes el límite semanal de Claude Code en dos días. Pon un presupuesto diario por proveedor, reparte lo que queda hasta el reinicio y pausa el trabajo nuevo.',
     intro: `El límite que duele es el semanal. La ventana de cinco horas se reinicia mientras comes, pero la semanal va a su ritmo. Si el lunes y el martes tienes cuatro agentes a tope, el miércoles por la mañana te quedas bloqueado hasta el reinicio, con media semana por delante.
 
@@ -14,7 +14,7 @@ El problema no es que la cuota sea pequeña. Es que nada te impide gastarte la s
 CodeAgentSwarm 2.4.0 añade un presupuesto diario para cada proveedor que informa de su cuota. Tú decides cuánto de la semana puede gastar cada día: una parte fija o un Smart pace que reparte lo que queda hasta el reinicio. Cuando llegas al límite de hoy, la app puede avisarte, pausar el trabajo nuevo o pararlo. En esta guía te cuento cómo funciona, cómo configurarlo y unos cuantos hábitos para seguir trabajando hasta el viernes.`,
     highlightedWords: ['Límite semanal', 'presupuesto diario'],
     publishedAt: '2026-09-27',
-    updatedAt: '2026-09-27',
+    updatedAt: '2026-10-31',
     ctaText: 'Activa un presupuesto diario para tu agente principal y llega al viernes con semana de sobra.',
     ctaAgent: 'multi',
     alternateSlug: 'claude-code-weekly-limit-daily-budget',
@@ -26,7 +26,7 @@ CodeAgentSwarm 2.4.0 añade un presupuesto diario para cada proveedor que inform
       content: [
         {
           type: 'paragraph',
-          text: 'Casi todas las suscripciones de agentes de programación miden el uso en dos capas. Claude Code tiene una ventana corta de unas cinco horas y, por encima, un límite semanal. Codex funciona de forma parecida. Cursor mide una ventana mensual. La ventana corta te frena una tarde. La larga te puede bloquear varios días.',
+          text: 'Casi todas las suscripciones de agentes de programación miden el uso en dos capas. En Pro y Max, Claude Code tiene una ventana corta de unas cinco horas y, por encima, un límite semanal; las cuentas Ultra verificadas solo tienen el semanal. Codex Plus funciona de forma parecida, mientras que Codex Pro no tiene ahora límite de cinco horas. Los planes actuales de Cursor usan una bolsa semanal, y los antiguos, una mensual. La ventana corta te frena una tarde. La larga te puede bloquear varios días.',
         },
         {
           type: 'paragraph',
@@ -262,7 +262,7 @@ CodeAgentSwarm 2.4.0 añade un presupuesto diario para cada proveedor que inform
   faq: [
     {
       question: '¿Qué es el límite semanal de Claude Code?',
-      answer: 'Las suscripciones de Claude Code tienen una ventana corta de unas cinco horas y, por encima, un límite semanal. Cuando se acaba el semanal tienes que esperar al reinicio, aunque la ventana de cinco horas esté libre. El presupuesto diario de CodeAgentSwarm te ayuda a repartir ese límite semanal a lo largo de la semana.',
+      answer: 'Las suscripciones de Claude Code tienen una ventana corta de unas cinco horas y, por encima, un límite semanal, salvo las cuentas Ultra verificadas, que no tienen límite de cinco horas. Cuando se acaba el semanal tienes que esperar al reinicio, aunque la ventana de cinco horas esté libre. El presupuesto diario de CodeAgentSwarm te ayuda a repartir ese límite semanal a lo largo de la semana.',
     },
     {
       question: '¿Cómo mide el uso el presupuesto diario?',

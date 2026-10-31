@@ -7,16 +7,16 @@ export const guide: Guide = {
     title: 'Cómo usar Kimi K3 con Claude Code: guía de configuración completa',
     metaTitle: 'Kimi K3 con Claude Code: configuración, variables y límites reales (2026)',
     metaDescription: 'Ejecuta Kimi K3 de Moonshot dentro de Claude Code con el endpoint compatible con Anthropic. Las dos configuraciones, las variables que importan y los límites que nadie cuenta.',
-    intro: `Moonshot sacó Kimi K3 el 16 de julio de 2026 y la primera pregunta de todo el mundo fue si se podía apuntar Claude Code hacia él. La respuesta es sí. Moonshot publica un endpoint compatible con Anthropic, así que Claude Code habla con Kimi K3 con un par de variables de entorno y sin aprender una herramienta nueva. Mantienes la CLI que ya conoces, tus hooks, tus servidores MCP y tu memoria muscular, y cambias el modelo de debajo.
+    intro: `Moonshot sacó Kimi K3 el 16 de julio de 2026 y la primera pregunta de todo el mundo fue si se podía apuntar Claude Code hacia él. La respuesta es sí, y el 23 de octubre de 2026 la misma pregunta volvió con K3.1 Pro. Moonshot publica un endpoint compatible con Anthropic, así que Claude Code habla con Kimi K3 con un par de variables de entorno y sin aprender una herramienta nueva. Mantienes la CLI que ya conoces, tus hooks, tus servidores MCP y tu memoria muscular, y cambias el modelo de debajo.
 
-Esta guía cubre las dos formas de hacerlo, porque hay dos endpoints distintos con dos variables de autenticación distintas y dos ids de modelo distintos, y confundirlos es el motivo más común por el que la gente acaba mirando un 401. También cubre la parte que casi todos los posts se saltan: qué cambia cuando te pasas. Tool Search tiene que quedarse apagado, WebFetch da error y el soporte de imágenes se vuelve turbio según el endpoint que elijas. Son renuncias reales y conviene saberlas antes de mover un proyecto de verdad a esto.
+Esta guía cubre las dos formas de hacerlo, porque hay dos endpoints distintos con dos variables de autenticación distintas y dos ids de modelo distintos, y confundirlos es el motivo más común por el que la gente acaba mirando un 401. También cubre la parte que casi todos los posts se saltan: qué cambia cuando te pasas. Tool Search conviene apagarlo, WebFetch puede no funcionar y el soporte de imágenes depende del modelo y del endpoint que elijas. Son renuncias reales y conviene saberlas antes de mover un proyecto de verdad a esto.
 
-Todo lo de abajo está contrastado con la documentación oficial de Moonshot. Su CLI saca ahora mismo casi una versión al día, así que si algo baila, su documentación manda.`,
+Todo lo de abajo se ha vuelto a contrastar con la documentación oficial de Moonshot en octubre de 2026. Sus modelos y planes cambian a menudo, así que si algo baila, su documentación manda.`,
     ctaText: 'Tener Kimi K3 en un terminal y Claude en otro es la forma más rápida de descubrir qué modelo encaja en cada trabajo. CodeAgentSwarm ejecuta los dos a la vez, cada uno en su terminal, con diffs en vivo, notificaciones de escritorio e historial buscable en todos.',
     ctaAgent: 'claude-code',
     highlightedWords: ['Kimi K3', 'Claude Code'],
     publishedAt: '2026-07-17',
-    updatedAt: '2026-10-05',
+    updatedAt: '2026-10-31',
     alternateSlug: 'kimi-k3-with-claude-code',
   },
   sections: [
@@ -26,15 +26,15 @@ Todo lo de abajo está contrastado con la documentación oficial de Moonshot. Su
       content: [
         {
           type: 'paragraph',
-          text: 'Kimi K3 es el modelo insignia de Moonshot AI, lanzado el 16 de julio de 2026. Es un modelo Mixture of Experts de 2,8 billones de parámetros con una ventana de contexto de 1.048.576 tokens y visión nativa. Moonshot lo vende como el primer modelo abierto de la clase 3T y dice que los pesos completos salen antes del 27 de julio de 2026.',
+          text: 'Kimi K3 es el modelo que Moonshot AI lanzó el 16 de julio de 2026: un Mixture of Experts de 2,8 billones de parámetros con una ventana de contexto de 1.048.576 tokens, visión nativa y pesos abiertos. El 23 de octubre de 2026 Moonshot sacó K3.1 Pro, una versión de K3 con más post-entrenamiento y la misma ventana de 1M, y ahora llama a K3 su insignia de la generación anterior. Todo lo de esta guía vale para los dos; solo cambia el id del modelo.',
         },
         {
           type: 'paragraph',
-          text: 'El detalle que más se nota en el día a día es que K3 razona siempre. Ahora mismo <code>reasoning_effort</code> solo acepta <code>max</code> y no existe una variante sin razonamiento. Moonshot ha dicho que llegarán modos de esfuerzo bajo y alto, pero de salida cada petición piensa a fondo. Eso lo hace fuerte en problemas difíciles y lento y caro en los fáciles.',
+          text: 'El detalle que más se nota en el día a día es que K3 razona siempre. En el lanzamiento <code>reasoning_effort</code> solo aceptaba <code>max</code>. Moonshot ha añadido después <code>low</code> y <code>high</code>, y K3.1 Pro ofrece los mismos tres niveles. En K3.1 Pro el razonamiento no se puede apagar: las peticiones sin él se rechazan. Dentro de Claude Code cambias de nivel con <code>/effort</code>, como explica la <a href="https://www.kimi.com/code/docs/en/third-party-tools/claude-code.html" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">página de configuración de Claude Code</a> de Moonshot.',
         },
         {
           type: 'paragraph',
-          text: 'El precio por token es de 0,30 dólares por millón de tokens en aciertos de caché, 3,00 en fallos de caché y 15,00 de salida, plano en todo el contexto de 1M y sin recargo por contexto largo. Ese descuento de 10x por acierto de caché importa mucho en un agente que reenvía el contexto de un repo grande en cada turno.',
+          text: 'Las tarifas por token de K3 y K3.1 Pro están en la <a href="https://platform.kimi.ai/docs/pricing/chat" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">página oficial de precios</a> de Moonshot. La caché de contexto es automática y los aciertos se cobran al precio de entrada en caché, más barato, algo que importa mucho en un agente que reenvía el contexto de un repo grande en cada turno.',
         },
         {
           type: 'paragraph',
@@ -67,7 +67,7 @@ Todo lo de abajo está contrastado con la documentación oficial de Moonshot. Su
         },
         {
           type: 'paragraph',
-          text: 'Pagas una cuota mensual fija y tienes un cupo. El endpoint es <code>https://api.kimi.com/coding/</code>, te autenticas con <code>ANTHROPIC_API_KEY</code> usando una clave de la consola de Kimi Code, y el id de modelo es <code>k3[1m]</code>. El cupo se renueva cada 7 días desde la fecha de tu suscripción y no se acumula, y encima hay una ventana rodante de 5 horas, así que puedes chocarte contra un límite aunque te quede cupo.',
+          text: 'Pagas una cuota mensual fija y tienes un cupo. El endpoint es <code>https://api.kimi.ai/coding/</code> (<code>https://api.kimi.com/coding/</code> para cuentas de China continental), te autenticas con <code>ANTHROPIC_API_KEY</code> usando una clave de la consola de Kimi Code, y el id de modelo es <code>k3.1-pro</code>, o <code>k3.1-pro[1m]</code> para la ventana completa de 1M (<code>k3</code> y <code>k3[1m]</code> siguen funcionando para K3). En los planes que Moonshot lanzó en octubre de 2026 ya no hay cupo semanal: quedan una ventana móvil de 5 horas y el total mensual de la membresía. Los planes antiguos mantienen la renovación cada 7 días. La <a href="https://www.kimi.com/code/docs/en/kimi-code/membership.html" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">página de membresía</a> tiene las reglas actuales.',
         },
         {
           type: 'heading',
@@ -77,7 +77,7 @@ Todo lo de abajo está contrastado con la documentación oficial de Moonshot. Su
         },
         {
           type: 'paragraph',
-          text: 'Pagas por token sin compromiso mensual. El endpoint es <code>https://api.moonshot.ai/anthropic</code>, te autenticas con <code>ANTHROPIC_AUTH_TOKEN</code> usando una clave de platform.kimi.ai, y el id de modelo es <code>kimi-k3</code>. Los límites van por niveles según cuánto has recargado en total, y el nivel de entrada es directamente inusable para trabajo agéntico: en el Tier 0 tienes 1 petición concurrente y 3 peticiones por minuto. Necesitas al menos 10 dólares de recarga acumulada para llegar al Tier 1 y sus 50 concurrentes.',
+          text: 'Pagas por token sin compromiso mensual. El endpoint es <code>https://api.moonshot.ai/anthropic</code>, te autenticas con <code>ANTHROPIC_AUTH_TOKEN</code> usando una clave de platform.kimi.ai, y el <a href="https://platform.kimi.ai/docs/guide/claude-code-kimi" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">ejemplo oficial para Claude Code</a> de Moonshot usa <code>kimi-k3[1m]</code>. Los modelos insignia se desbloquean tras una recarga mínima de 1 dólar, y tu recarga acumulada fija el nivel de la cuenta, que decide la concurrencia y las peticiones por minuto. Los niveles bajos se quedan cortos para trabajo agéntico, así que lee la página de <a href="https://platform.kimi.ai/docs/pricing/limits" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">recargas y límites</a> antes de juzgar la velocidad.',
         },
         {
           type: 'callout',
@@ -97,20 +97,20 @@ Todo lo de abajo está contrastado con la documentación oficial de Moonshot. Su
         {
           type: 'code',
           language: 'bash',
-          code: 'export ANTHROPIC_BASE_URL=https://api.kimi.com/coding/\nexport ANTHROPIC_API_KEY=tu_clave_de_kimi_code\nexport ANTHROPIC_MODEL="k3[1m]"\nexport CLAUDE_CODE_AUTO_COMPACT_WINDOW=1048576\nexport CLAUDE_CODE_MAX_CONTEXT_TOKENS=1048576\nexport CLAUDE_CODE_EFFORT_LEVEL=max',
+          code: 'export ANTHROPIC_BASE_URL=https://api.kimi.ai/coding/\nexport ANTHROPIC_API_KEY=tu_clave_de_kimi_code\nexport ANTHROPIC_MODEL="k3.1-pro[1m]"\nexport ANTHROPIC_DEFAULT_OPUS_MODEL=$ANTHROPIC_MODEL\nexport ANTHROPIC_DEFAULT_SONNET_MODEL=$ANTHROPIC_MODEL\nexport ANTHROPIC_DEFAULT_HAIKU_MODEL=$ANTHROPIC_MODEL\nexport ANTHROPIC_DEFAULT_FABLE_MODEL=$ANTHROPIC_MODEL\nexport CLAUDE_CODE_SUBAGENT_MODEL=$ANTHROPIC_MODEL\nexport CLAUDE_CODE_EFFORT_LEVEL=high\nexport CLAUDE_CODE_AUTO_COMPACT_WINDOW=1048576\nexport CLAUDE_CODE_MAX_CONTEXT_TOKENS=1048576',
         },
         {
           type: 'paragraph',
-          text: 'Luego ejecuta <code>claude</code> y escribe <code>/status</code>. La base URL que muestre debería ser <code>https://api.kimi.com/coding/</code>. Si sigue apareciendo la de Anthropic, tus exports no llegaron al proceso, y eso casi siempre significa que los pusiste en un shell distinto del que lanzó la CLI.',
+          text: 'Luego ejecuta <code>claude</code> y escribe <code>/status</code>. La base URL que muestre debería ser <code>https://api.kimi.ai/coding/</code>. Si sigue apareciendo la de Anthropic, tus exports no llegaron al proceso, y eso casi siempre significa que los pusiste en un shell distinto del que lanzó la CLI.',
         },
         {
           type: 'callout',
           variant: 'warning',
-          content: 'El contexto de 1M está limitado por tu plan. K3 te da 256k en Moderato y el 1M completo solo en Allegretto o superior. Si estás en el plan barato y copias CLAUDE_CODE_MAX_CONTEXT_TOKENS=1048576 igualmente, le estás diciendo a Claude Code que tiene una ventana que tu plan no te da, y Moonshot avisa de que eso provoca compactación prematura y errores. En Moderato usa 262144.',
+          content: 'El contexto de 1M está limitado por tu plan. K3.1 Pro y K3 te dan 262.144 tokens en Plus (el antiguo Moderato) y el 1M completo solo en Pro (el antiguo Allegretto) o superior. En el plan inferior quita el sufijo <code>[1m]</code> y pon las dos variables de contexto a 262144. Si le dices a Claude Code que tiene una ventana que tu plan no da, Moonshot avisa de errores por desbordamiento de contexto; si te quedas corto, compacta demasiado pronto.',
         },
         {
           type: 'paragraph',
-          text: 'Ese límite conviene entenderlo antes de suscribirte, porque el contexto de 1M es el argumento de venta principal y no está en el plan de entrada. Las propias páginas de Moonshot se contradicen ahora mismo sobre si el acceso a Kimi Code empieza en Moderato o en Allegretto, así que mira qué incluye tu plan en el momento de pagar en vez de fiarte de ninguna tabla que leas en un post, incluido este.',
+          text: 'Ese límite conviene entenderlo antes de suscribirte, porque el contexto de 1M es uno de los grandes argumentos de venta y no está en el plan de entrada para programar. Moonshot renombró sus planes en octubre de 2026 (Plus y Pro sustituyen a Moderato y Allegretto para los miembros nuevos, y Go no incluye cupo de programación), así que mira la <a href="https://www.kimi.com/code/docs/en/kimi-code/membership.html" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">página oficial de membresía</a> al pagar en vez de fiarte de cualquier tabla de un blog, esta incluida.',
         },
       ],
     },
@@ -125,15 +125,15 @@ Todo lo de abajo está contrastado con la documentación oficial de Moonshot. Su
         {
           type: 'code',
           language: 'bash',
-          code: 'unset ANTHROPIC_API_KEY\n\nexport ANTHROPIC_BASE_URL=https://api.moonshot.ai/anthropic\nexport ANTHROPIC_AUTH_TOKEN=tu_clave_de_plataforma\nexport ANTHROPIC_MODEL=kimi-k3\nexport ANTHROPIC_DEFAULT_OPUS_MODEL=kimi-k3\nexport ANTHROPIC_DEFAULT_SONNET_MODEL=kimi-k3\nexport ANTHROPIC_DEFAULT_HAIKU_MODEL=kimi-k3\nexport CLAUDE_CODE_SUBAGENT_MODEL=kimi-k3\nexport ENABLE_TOOL_SEARCH=false\nexport CLAUDE_CODE_AUTO_COMPACT_WINDOW=1048576',
+          code: 'unset ANTHROPIC_API_KEY\n\nexport ANTHROPIC_BASE_URL=https://api.moonshot.ai/anthropic\nexport ANTHROPIC_AUTH_TOKEN=tu_clave_de_plataforma\nexport ANTHROPIC_MODEL="kimi-k3[1m]"\nexport ANTHROPIC_DEFAULT_OPUS_MODEL="kimi-k3[1m]"\nexport ANTHROPIC_DEFAULT_SONNET_MODEL="kimi-k3[1m]"\nexport ANTHROPIC_DEFAULT_HAIKU_MODEL="kimi-k3[1m]"\nexport ANTHROPIC_DEFAULT_FABLE_MODEL="kimi-k3[1m]"\nexport CLAUDE_CODE_SUBAGENT_MODEL="kimi-k3[1m]"\nexport CLAUDE_CODE_EFFORT_LEVEL=max\nexport CLAUDE_CODE_AUTO_COMPACT_WINDOW=1000000\nexport ENABLE_TOOL_SEARCH=false',
         },
         {
           type: 'paragraph',
-          text: 'Las tres líneas de <code>ANTHROPIC_DEFAULT_*</code> importan más de lo que parece. Claude Code elige modelos distintos para trabajos distintos, y si solo pones <code>ANTHROPIC_MODEL</code> puede seguir intentando tirar de un id de Haiku o de Sonnet que no existe en el endpoint de Moonshot. Apuntarlos todos a <code>kimi-k3</code>, más <code>CLAUDE_CODE_SUBAGENT_MODEL</code> para los subagentes, mantiene todas las llamadas internas en el mismo modelo.',
+          text: 'Las líneas <code>ANTHROPIC_DEFAULT_*</code> importan más de lo que parece. Claude Code elige modelos distintos para trabajos distintos, y si solo pones <code>ANTHROPIC_MODEL</code> puede intentar tirar de un id de Haiku o Sonnet que no existe en el endpoint de Moonshot. Apuntarlas todas al mismo modelo de Kimi, más <code>CLAUDE_CODE_SUBAGENT_MODEL</code> para los subagentes, mantiene funcionando cada llamada interna. El ejemplo de Moonshot manda el nivel Haiku a <code>kimi-k2.7-code</code>, pero los modelos K2 dejan de estar disponibles para cuentas nuevas de la plataforma desde el 31 de octubre de 2026 y Moonshot prevé retirarlos a finales de diciembre, así que esta configuración deja todos los niveles en K3.',
         },
         {
           type: 'paragraph',
-          text: 'Cuando arranque, recuerda que la escalera de niveles va según tu recarga acumulada, no según un plan que elijas. El Tier 0 con 3 peticiones por minuto hace que una sesión agéntica parezca rota más que lenta, así que si vas a probar esto en serio, recarga hasta el Tier 1 primero.',
+          text: 'Cuando arranque, recuerda que los límites de la plataforma dependen de tu recarga acumulada, no de un plan que elijas. Si una sesión agéntica parece rota más que lenta, mira tu nivel en la página de <a href="https://platform.kimi.ai/docs/pricing/limits" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">recargas y límites</a> antes de culpar al modelo.',
         },
       ],
     },
@@ -153,7 +153,7 @@ Todo lo de abajo está contrastado con la documentación oficial de Moonshot. Su
         },
         {
           type: 'paragraph',
-          text: 'La documentación de Moonshot del endpoint de plataforma dice literalmente que el endpoint de Kimi todavía no soporta esta función y que hay que poner <code>ENABLE_TOOL_SEARCH=false</code> porque, si no, las tool calls se comportan mal. En la práctica no suele hacer falta tocar nada: Claude Code ya desactiva Tool Search por defecto cuando <code>ANTHROPIC_BASE_URL</code> apunta a un host que no es de Anthropic. El peligro real es forzar <code>ENABLE_TOOL_SEARCH=true</code> a mano: hay un reporte abierto y sin respuesta en el tracker de Moonshot según el cual, en el endpoint de suscripción, los bloques <code>tool_reference</code> dejan la sesión devolviendo HTTP 400 en todas las peticiones siguientes, y la única salida práctica es abrir una sesión nueva. Es un reporte de un solo usuario sin confirmar, pero no hay motivo para jugársela. El <code>false</code> explícito de la configuración de arriba es cinturón y tirantes.',
+          text: 'Tool Search es el ajuste a vigilar. Desde Claude Code v2.1.304, tool search viene activado por defecto cuando <code>ANTHROPIC_BASE_URL</code> apunta a un gateway, así que las peticiones llevan campos <code>defer_loading</code> y bloques <code>tool_reference</code> que un endpoint que no es de Anthropic puede no aceptar (<a href="https://code.claude.com/docs/en/mcp" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">documentación MCP de Claude Code</a>). Las versiones nuevas reintentan sin tool search tras un 400 que no reconocen, a costa de una petición rechazada extra. Poner <code>ENABLE_TOOL_SEARCH=false</code> carga todas las herramientas MCP desde el principio y se ahorra esas peticiones fallidas. Además hay un reporte abierto en el tracker de Moonshot de sesiones del endpoint de suscripción atascadas en HTTP 400 tras bloques <code>tool_reference</code>. Está sin confirmar, pero el <code>false</code> explícito de la configuración de arriba no te cuesta nada.',
         },
         {
           type: 'heading',
@@ -163,7 +163,7 @@ Todo lo de abajo está contrastado con la documentación oficial de Moonshot. Su
         },
         {
           type: 'paragraph',
-          text: 'WebFetch no funciona ahora mismo en el endpoint de Kimi. Al llamarlo, o devuelve un error de "temporarily unavailable" o vuelve sin contenido. Moonshot lo reconoce en su FAQ: es una limitación de su plataforma, no de tu configuración, y funcionará cuando añadan soporte. Mientras tanto, el workaround oficial es pegar el contenido de la página en el chat o usar un MCP de scraping. Ojo, no lo confundas con WebSearch, que sí funciona con <code>kimi-k3</code>.',
+          text: 'Versiones anteriores de la FAQ de Moonshot decían que WebFetch no estaba disponible en el endpoint de Kimi y que devolvía un error de "temporarily unavailable" o una respuesta vacía. La FAQ actual de Kimi Code ya no lo menciona, y no hemos podido confirmar si la limitación sigue. Prueba una llamada a WebFetch en tu endpoint antes de depender de ella. Si falla, pega el contenido de la página en el chat o usa una herramienta MCP de scraping.',
         },
         {
           type: 'heading',
@@ -177,7 +177,7 @@ Todo lo de abajo está contrastado con la documentación oficial de Moonshot. Su
         },
         {
           type: 'paragraph',
-          text: 'El endpoint de plataforma de pago por token sí documenta visión, porque K3 es multimodal de forma nativa. Pero de momento solo acepta imágenes en base64 o ficheros subidos por file id (ids <code>ms://</code>), no URLs públicas de imagen.',
+          text: 'El endpoint de plataforma de pago por token documenta visión, porque K3 y K3.1 Pro son multimodales de forma nativa. Su guía de visión muestra imágenes en base64 y ficheros subidos por file id (ids <code>ms://</code>). Si una imagen pegada falla en las herramientas de Kimi, su FAQ dice que el modelo actual no admite imágenes y que cambies a uno con visión.',
         },
         {
           type: 'callout',
@@ -192,7 +192,7 @@ Todo lo de abajo está contrastado con la documentación oficial de Moonshot. Su
         },
         {
           type: 'paragraph',
-          text: 'Como K3 hoy solo admite esfuerzo de razonamiento máximo, las preguntas baratas cuestan dinero de verdad. La prueba de Simon Willison el día del lanzamiento gastó 13.241 tokens de razonamiento para producir 3.417 tokens de respuesta, y lo señaló como caro. Para un agente de código que dispara muchas llamadas pequeñas a herramientas, esto suma de una forma que una comparación de precio por token esconde.',
+          text: 'En el lanzamiento K3 solo admitía esfuerzo de razonamiento máximo, y las preguntas baratas costaban dinero de verdad: la prueba de Simon Willison gastó 13.241 tokens de razonamiento para producir 3.417 tokens de respuesta. Ahora que existen low y high, elige el nivel por tarea con <code>/effort</code>. La guía de suscripción de Moonshot recomienda high para K3.1 Pro y K3. En un agente de código que lanza muchas tool calls pequeñas, el esfuerzo suma de una forma que una comparación de precio por token no enseña.',
         },
       ],
     },
@@ -208,7 +208,7 @@ Todo lo de abajo está contrastado con la documentación oficial de Moonshot. Su
         },
         {
           type: 'paragraph',
-          text: 'La respuesta honesta a "¿es Kimi K3 mejor que Claude para lo mío?" es que nadie lo sabe todavía. K3 tiene días, toda la señal de calidad que circula son primeras impresiones, y lo que de verdad importa en un agente de código, llamar a herramientas de forma fiable según se alarga la conversación, no tiene ningún dato público detrás. Willison señaló justo eso en el lanzamiento: los benchmarks que circulan ni lo tocan.',
+          text: 'La respuesta honesta a "¿es Kimi K3 mejor que Claude para lo mío?" es que los benchmarks no te lo van a decir. Cada lanzamiento trae sus gráficas, y lo que de verdad importa en un agente de código, llamar bien a herramientas cuando la conversación se alarga, casi nunca aparece en ellas. Willison lo dijo tal cual en el lanzamiento de K3.',
         },
         {
           type: 'paragraph',
@@ -233,8 +233,8 @@ Todo lo de abajo está contrastado con la documentación oficial de Moonshot. Su
           items: [
             '<strong>401 Unauthorized</strong>: casi seguro estás usando una clave de la plataforma equivocada. Las claves de platform.kimi.ai y platform.kimi.com son completamente independientes, y una clave de una devuelve 401 en la otra. Lo mismo si mezclas una clave de la consola de Kimi Code con el endpoint de plataforma.',
             '<strong>/status sigue mostrando la base URL de Anthropic</strong>: tus exports no llegaron al proceso. Expórtalos en el mismo shell que lanza la CLI, o ponlos en tu perfil de shell y abre un terminal nuevo.',
-            '<strong>HTTP 400 permanente que no se recupera</strong>: mira si algo en tu configuración forzó ENABLE_TOOL_SEARCH=true (Claude Code lo desactiva por defecto en hosts que no son de Anthropic). Hay un reporte sin confirmar de bloques tool_reference dejando sesiones del endpoint de suscripción clavadas en 400. Ponlo en false y empieza una sesión nueva.',
-            '<strong>El contexto se compacta demasiado pronto</strong>: tu ajuste de contexto no cuadra con lo que te da tu plan. En Moderato usa 262144, no 1048576.',
+            '<strong>HTTP 400 permanente que no se recupera</strong>: pon ENABLE_TOOL_SEARCH=false. Desde Claude Code v2.1.304 tool search viene activado por defecto con un ANTHROPIC_BASE_URL propio, y un endpoint que no es de Anthropic puede rechazar sus bloques tool_reference. Después abre una sesión nueva.',
+            '<strong>El contexto se compacta demasiado pronto o se desborda</strong>: tu ajuste de contexto no cuadra con lo que te da tu plan. En Plus o en el antiguo Moderato usa 262144, no 1048576.',
             '<strong>Tienes puestas a la vez una API key y un auth token</strong>: en el endpoint de plataforma, quita ANTHROPIC_API_KEY. Moonshot documenta el conflicto de forma explícita.',
           ],
         },
@@ -244,7 +244,7 @@ Todo lo de abajo está contrastado con la documentación oficial de Moonshot. Su
   faq: [
     {
       question: '¿Se puede usar Kimi K3 con Claude Code?',
-      answer: 'Sí. Moonshot publica un endpoint compatible con Anthropic, así que Claude Code habla con Kimi K3 solo con variables de entorno y sin ninguna CLI nueva. Pon ANTHROPIC_BASE_URL a https://api.kimi.com/coding/ con una clave de suscripción de Kimi Code, o a https://api.moonshot.ai/anthropic con una clave de plataforma de pago por token, y luego pon ANTHROPIC_MODEL a k3[1m] o a kimi-k3 respectivamente.',
+      answer: 'Sí. Moonshot publica endpoints compatibles con Anthropic, así que Claude Code habla con Kimi K3 o K3.1 Pro solo con variables de entorno y sin ninguna CLI nueva. Con una clave de suscripción de Kimi Code, pon ANTHROPIC_BASE_URL a https://api.kimi.ai/coding/ (https://api.kimi.com/coding/ en China continental) y ANTHROPIC_MODEL a k3.1-pro o k3. Con una clave de pago por token de la plataforma, usa https://api.moonshot.ai/anthropic y kimi-k3[1m].',
     },
     {
       question: '¿Por qué me da 401 al usar mi clave de Kimi con Claude Code?',
@@ -252,15 +252,15 @@ Todo lo de abajo está contrastado con la documentación oficial de Moonshot. Su
     },
     {
       question: '¿Kimi K3 soporta el contexto completo de 1M en Claude Code?',
-      answer: 'Solo con el plan adecuado. K3 da 256k de contexto en Moderato y los 1.048.576 tokens completos en Allegretto o superior. Poner CLAUDE_CODE_MAX_CONTEXT_TOKENS=1048576 en un plan que solo da 256k provoca compactación prematura y errores, así que usa 262144 en el plan inferior.',
+      answer: 'Solo con el plan adecuado. K3.1 Pro y K3 dan 262.144 tokens en Plus (el antiguo Moderato) y los 1.048.576 tokens completos en Pro (el antiguo Allegretto) o superior. Poner CLAUDE_CODE_MAX_CONTEXT_TOKENS=1048576 en un plan que solo da 256K provoca errores de contexto, así que en el plan inferior usa 262144 y el id de modelo sin [1m].',
     },
     {
       question: '¿Qué deja de funcionar al ejecutar Kimi K3 en Claude Code?',
-      answer: 'Tool Search tiene que quedarse apagado: Claude Code ya lo desactiva por defecto en hosts que no son de Anthropic, y Moonshot documenta que el endpoint todavía no lo soporta. WebFetch no está disponible en el endpoint de Kimi y devuelve un error visible de "temporarily unavailable" (WebSearch sí funciona). El soporte de imágenes desde clientes de terceros en el endpoint de suscripción es inconsistente, y en el de pago por token la visión funciona solo como base64 o ids de fichero ms://, no URLs públicas.',
+      answer: 'Pon ENABLE_TOOL_SEARCH=false: desde Claude Code v2.1.304 tool search viene activado por defecto con una base URL propia, y un endpoint que no es de Anthropic puede rechazar sus bloques tool_reference. FAQs anteriores de Moonshot decían que WebFetch no estaba disponible en el endpoint de Kimi; la FAQ actual ya no lo dice, así que pruébalo una vez. Las imágenes solo funcionan con modelos con visión, y el endpoint de plataforma documenta imágenes en base64 e ids de fichero ms://.',
     },
     {
       question: '¿Kimi K3 es más barato que Claude para programar?',
-      answer: 'Por token parece mucho más barato: 0,30 dólares por millón en aciertos de caché, 3,00 en fallos y 15,00 de salida. Pero K3 ahora mismo solo admite esfuerzo de razonamiento máximo, así que cada petición piensa a fondo y quema tokens de razonamiento incluso en preguntas simples. El coste real depende de tu carga de trabajo, y por eso tenerlo unos días en un terminal al lado de tu configuración normal te dice más que cualquier tabla de precios.',
+      answer: 'Depende de tu carga de trabajo. Moonshot publica las tarifas por token de K3 y K3.1 Pro en su página oficial de precios, y los aciertos de caché se cobran más baratos. El esfuerzo de razonamiento pesa tanto como la tarifa: en el lanzamiento K3 solo admitía esfuerzo máximo, y ahora K3 y K3.1 Pro ofrecen low, high y max. Tenerlo unos días en un terminal al lado de tu configuración normal te dice más que cualquier tabla de precios.',
     },
     {
       question: '¿Kimi K3 es lo mismo que Kimi Code CLI?',

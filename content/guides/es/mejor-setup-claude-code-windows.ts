@@ -16,7 +16,7 @@ Da por hecho que ya tienes Claude Code instalado. Si no, empieza por nuestra gu�
     ctaAgent: 'claude-code',
     highlightedWords: ['Claude Code', 'Windows'],
     publishedAt: '2026-06-12',
-    updatedAt: '2026-06-12',
+    updatedAt: '2026-10-31',
     alternateSlug: 'best-claude-code-setup-windows',
   },
   sections: [
@@ -161,7 +161,7 @@ Da por hecho que ya tienes Claude Code instalado. Si no, empieza por nuestra gu�
         },
         {
           type: 'paragraph',
-          text: '<a href="/es" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a> es una app de escritorio para Windows (y macOS) construida exactamente para esto: varios terminales de Claude Code en paralelo, notificaciones de escritorio cuando un agente termina o necesita tu input, historial buscable de todas las sesiones, diffs en vivo por terminal y un tablero kanban que los propios agentes mantienen al día. Funciona sobre tu instalación existente de Claude Code, así que todo lo de esta guía sigue aplicando.',
+          text: '<a href="/es" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a> es una app de escritorio para Windows, macOS y Linux construida exactamente para esto: varios terminales de Claude Code en paralelo, notificaciones de escritorio cuando un agente termina o necesita tu input, historial buscable de todas las sesiones, diffs en vivo por terminal y un tablero kanban que los propios agentes mantienen al día. Funciona sobre tu instalación existente de Claude Code, así que todo lo de esta guía sigue aplicando.',
         },
         {
           type: 'paragraph',

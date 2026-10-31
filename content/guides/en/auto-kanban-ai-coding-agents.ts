@@ -5,7 +5,7 @@ export const guide: Guide = {
     slug: 'auto-kanban-ai-coding-agents',
     locale: 'en',
     title: 'Auto Kanban for AI Coding Agents: Tasks That Start on Their Own',
-    metaTitle: 'Auto Kanban for AI Coding Agents: Queue Tasks, Agents Run Them (2026)',
+    metaTitle: 'Auto Kanban for AI Coding Agents: Queue Tasks, Agents Run Them',
     metaDescription: 'Drop tasks into the Auto lane and each one starts its own session with the agent, model, reasoning and permissions you chose. Finished work lands in In Testing.',
     intro: `A task board tells you what needs doing. Until now it could not do anything about it. You still had to open a session, pick an agent, paste the task and wait, one card at a time.
 
@@ -14,7 +14,7 @@ CodeAgentSwarm 2.4.0 adds an Auto lane to the Kanban. Drop a task into it and th
 This guide covers how to queue tasks, the settings each task can carry, how many run at once, what the agent receives, and a simple workflow for letting your backlog move while you do something else.`,
     highlightedWords: ['Auto Kanban', 'AI Coding Agents'],
     publishedAt: '2026-09-27',
-    updatedAt: '2026-09-27',
+    updatedAt: '2026-10-31',
     ctaText: 'Queue three tasks in the Auto lane tonight and review them in In Testing tomorrow.',
     ctaAgent: 'multi',
     relatedSlug: 'ai-coding-agent-coordinator',

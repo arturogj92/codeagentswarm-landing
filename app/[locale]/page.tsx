@@ -44,7 +44,7 @@ export default function Home() {
       : 'CodeAgentSwarm is an Agentic Development Environment (ADE) for running and supervising multiple AI coding agents in parallel: Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI, GitHub Copilot CLI and Cline.',
     url: baseUrl,
     applicationCategory: 'DeveloperApplication',
-    operatingSystem: 'macOS, Windows',
+    operatingSystem: 'macOS, Windows, Linux',
     featureList: locale === 'es'
       ? [
           'Ejecuta varios agentes de programación con IA en paralelo',

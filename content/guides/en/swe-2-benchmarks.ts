@@ -14,7 +14,7 @@ const guide: Guide = {
       "SWE-2"
     ],
     "publishedAt": "2026-09-11",
-    "updatedAt": "2026-09-24",
+    "updatedAt": "2026-10-31",
     "alternateSlug": "swe-2-benchmarks-comparativa",
     "socialImage": "/images/guides/devin-cli-og-en.png"
   },
@@ -29,7 +29,7 @@ const guide: Guide = {
         },
         {
           "type": "paragraph",
-          "text": "To try it, follow <a href=\"/en/guides/how-to-use-devin-cli\">Devin CLI setup</a>, open <code>/model</code> and select SWE-2 from your account’s catalog. Check the <a href=\"/en/guides/devin-cli-models-usage-limits\">pricing and quota guide</a> before a long test. The published comparison below was checked against Cognition’s source on September 22, 2026."
+          "text": "To try it, follow <a href=\"/en/guides/how-to-use-devin-cli\">Devin CLI setup</a>, open <code>/model</code> and select SWE-2 from your account’s catalog. Check the <a href=\"/en/guides/devin-cli-models-usage-limits\">pricing and quota guide</a> before a long test. The published comparison below was rechecked against Cognition’s source on October 31, 2026."
         }
       ]
     },
@@ -201,7 +201,7 @@ const guide: Guide = {
       "content": [
         {
           "type": "paragraph",
-          "text": "For Pro pricing, the temporary promotion and its end dates, see <a href=\"/en/guides/devin-cli-models-usage-limits\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">the Devin models and quota guide</a>. Record your account terms on the test date so the result remains understandable when the offer changes."
+          "text": "For Pro pricing, the temporary SWE-2 promotion and its end date, see <a href=\"/en/guides/devin-cli-models-usage-limits\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">the Devin models and quota guide</a>. Record your account terms on the test date so the result remains understandable when the offer changes."
         },
         {
           "type": "paragraph",

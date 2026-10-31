@@ -16,7 +16,7 @@ The speed gain is real. But so are the risks. This guide covers what YOLO mode a
     ctaAgent: 'claude-code',
     highlightedWords: ['YOLO mode', 'Claude Code'],
     publishedAt: '2026-04-15',
-    updatedAt: '2026-08-11',
+    updatedAt: '2026-10-31',
     alternateSlug: 'modo-yolo-claude-code-explicado',
   },
   sections: [
@@ -95,7 +95,7 @@ The speed gain is real. But so are the risks. This guide covers what YOLO mode a
         },
         {
           type: 'paragraph',
-          text: 'Anthropic introduced a middle ground called <a href="https://www.anthropic.com/engineering/claude-code-auto-mode" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Auto mode</a>. Instead of skipping everything or asking everything, it uses a classifier to decide which actions are safe to auto-approve and which need your confirmation. You can read more about all available options in the <a href="https://code.claude.com/docs/en/permission-modes" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">permission modes documentation</a>:',
+          text: 'Anthropic introduced a middle ground called <a href="https://www.anthropic.com/research/claude-code-auto-mode" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Auto mode</a>. Claude runs without routine permission prompts while a separate classifier model reviews each action and blocks anything that goes beyond your request. Since Claude Code v2.1.283 it is the starting mode for interactive terminal and VS Code sessions on every plan, so many people already use it without typing a flag. Details and requirements are in the <a href="https://code.claude.com/docs/en/permission-modes" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">permission modes documentation</a> (checked October 31, 2026):',
         },
         {
           type: 'code',
@@ -104,7 +104,7 @@ The speed gain is real. But so are the risks. This guide covers what YOLO mode a
         },
         {
           type: 'paragraph',
-          text: 'Auto mode is a step in the right direction - it reduces prompts for low-risk actions like reading files or running tests while still asking about riskier ones. However, you do not control the classification. What the classifier considers "safe" might not match your preferences, and it can still interrupt you on actions you are comfortable auto-approving.',
+          text: 'Auto mode is a step in the right direction: it removes routine prompts and blocks risky actions instead of running them. When the classifier blocks an action, Claude gets the reason and keeps working; after 3 blocks in a row or 20 in a session, Claude Code goes back to asking you. You do not choose what the classifier treats as routine, but explicit ask rules still force a prompt and deny rules block in every mode.',
         },
       ],
     },
@@ -174,7 +174,7 @@ The speed gain is real. But so are the risks. This guide covers what YOLO mode a
         },
         {
           type: 'paragraph',
-          text: 'Auto mode uses an internal classifier to auto-approve actions it deems safe and prompt for risky ones. It is better than the raw flag, but you cannot customize what counts as "safe" - the classifier decides for you. If you want reads and diffs to auto-approve but Git operations to always ask, you cannot configure that with Auto mode.',
+          text: 'Auto mode lets a classifier model approve routine actions and block risky ones. It is better than the raw flag, and you can still add your own limits on top: an ask rule for <code>git push</code> keeps forcing a prompt in auto mode, and a deny rule blocks in every mode. What you do not get is a single panel with Allow, Ask or Deny per tool category.',
         },
         {
           type: 'heading',
@@ -344,11 +344,11 @@ The speed gain is real. But so are the risks. This guide covers what YOLO mode a
   faq: [
     {
       question: 'What does --dangerously-skip-permissions do in Claude Code?',
-      answer: 'It skips all permission prompts. Claude Code will auto-approve every action - file edits, shell commands, network requests, MCP tool calls - without asking for your confirmation. This gives maximum speed but removes all safety guardrails.',
+      answer: 'It skips permission prompts. Claude Code runs file edits, shell commands, network requests and MCP tool calls without asking for confirmation. Only explicit deny rules, explicit ask rules and a few protected removals still stop it, and on Linux and macOS it refuses to start as root. This gives maximum speed but removes almost every guardrail.',
     },
     {
       question: 'Is YOLO mode safe to use?',
-      answer: 'The raw --dangerously-skip-permissions flag is risky because it auto-approves everything, including destructive actions like git push or file deletion. For safer alternatives, use Anthropic\'s Auto mode (which classifies actions by risk) or CodeAgentSwarm Turbo Mode (which lets you configure permissions per tool category).',
+      answer: 'The raw --dangerously-skip-permissions flag is risky because it approves almost everything, including destructive actions like git push or file deletion. For safer alternatives, use Anthropic\'s Auto mode (a classifier reviews each action) or CodeAgentSwarm Turbo Mode (which lets you configure permissions per tool category).',
     },
     {
       question: 'How do I enable YOLO mode in Claude Code?',
@@ -356,7 +356,11 @@ The speed gain is real. But so are the risks. This guide covers what YOLO mode a
     },
     {
       question: 'What is the difference between YOLO mode and Auto mode?',
-      answer: 'YOLO mode (--dangerously-skip-permissions) skips every single permission prompt. Auto mode (--permission-mode auto) uses an internal classifier to auto-approve actions it considers safe while still prompting for risky ones. Auto mode is safer but you cannot customize what it considers "safe."',
+      answer: 'YOLO mode (--dangerously-skip-permissions) skips the permission prompts almost entirely. Auto mode (--permission-mode auto) lets a classifier model approve routine actions and block risky ones. Auto mode is safer; you cannot choose what the classifier treats as routine, but your explicit ask and deny rules still apply.',
+    },
+    {
+      question: 'Is auto mode the default in Claude Code?',
+      answer: 'Yes, in recent versions. Since Claude Code v2.1.283, auto mode is the built-in starting mode for interactive terminal and VS Code sessions on every plan and provider. It does not apply to claude -p and Agent SDK runs, which start in Manual, or when an administrator disables auto mode. Press Shift+Tab to switch to Manual, acceptEdits or plan.',
     },
     {
       question: 'Can YOLO mode delete my files?',

@@ -6,15 +6,15 @@ const guide: Guide = {
     "locale": "es",
     "title": "Devin Pro: precio, SWE-2 gratis y cuotas de la CLI",
     "metaTitle": "Devin Pro: precio, SWE-2 gratis y límites de uso",
-    "metaDescription": "Consulta el precio de Devin Pro, la promoción de SWE-2 y sus fechas oficiales discrepantes. Aprende a leer modelos, contexto y cuotas diarias y semanales.",
-    "intro": "¿Buscas SWE-2 ilimitado con Devin Pro? La oferta vigente permite usarlo gratis temporalmente en Desktop y CLI. Comprueba la fecha y el modelo antes de contratar. Revisado el 22 de septiembre de 2026.",
+    "metaDescription": "Consulta el precio de Devin Pro y SWE-2 gratis en Desktop y CLI hasta el 30 de noviembre de 2026. Aprende a leer modelos, contexto y cuotas diarias y semanales.",
+    "intro": "¿Buscas SWE-2 ilimitado con Devin Pro? La oferta vigente permite usarlo gratis temporalmente en Desktop y CLI. Comprueba la fecha y el modelo antes de contratar. Revisado el 31 de octubre de 2026.",
     "ctaText": "El selector de modelos y el panel de cuotas de Devin están disponibles en CodeAgentSwarm 2.4.0; la descarga no incluye una suscripción a Devin.",
     "ctaAgent": "devin",
     "highlightedWords": [
       "Devin"
     ],
     "publishedAt": "2026-09-11",
-    "updatedAt": "2026-09-24",
+    "updatedAt": "2026-10-31",
     "alternateSlug": "devin-cli-models-usage-limits",
     "socialImage": "/images/guides/devin-cli-og-es.png"
   },
@@ -25,16 +25,16 @@ const guide: Guide = {
       "content": [
         {
           "type": "paragraph",
-          "text": "La <a href=\"https://devin.ai/pricing\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">página oficial de precios</a> anuncia Pro por <strong>20 USD al mes</strong> y SWE-2 gratis en Desktop y CLI hasta el <strong>10 de octubre de 2026</strong>."
+          "text": "La <a href=\"https://devin.ai/pricing\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">página oficial de precios</a> anuncia Pro por <strong>20 USD al mes</strong> con uso gratuito de SWE-2. Max cuesta <strong>200 USD al mes</strong> y añade una cuota semanal mucho mayor."
         },
         {
           "type": "paragraph",
-          "text": "El 10 de septiembre, <a href=\"https://x.com/devindesktop/status/2098092331140296972\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Devin Desktop anunció en X un mes de uso ilimitado</a> para Pro y Teams. La oferta corresponde a SWE-2 en Desktop y CLI."
+          "text": "El 10 de septiembre, <a href=\"https://x.com/devindesktop/status/2098092331140296972\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Devin Desktop anunció en X un mes de uso ilimitado</a> para Pro y Teams. Ese primer periodo ya terminó y la oferta de SWE-2 se ha ampliado."
         },
         {
           "type": "callout",
           "variant": "info",
-          "content": "Hay una discrepancia: <a href=\"https://docs.devin.ai/desktop/models\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">la documentación de modelos</a> indica el <strong>15 de octubre de 2026</strong>. Confirma las condiciones en el selector y tu cuenta antes de pagar."
+          "content": "<a href=\"https://docs.devin.ai/desktop/models\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">La documentación de modelos</a> indica ahora que SWE-2 es gratis en los planes self-serve de Devin Desktop y Devin CLI hasta el <strong>30 de noviembre de 2026</strong>, y que la oferta no se aplica a las sesiones de Devin Cloud. Confirma las condiciones en el selector y tu cuenta antes de pagar."
         },
         {
           "type": "paragraph",
@@ -206,7 +206,7 @@ const guide: Guide = {
   "faq": [
     {
       "question": "¿SWE-2 es ilimitado para siempre con Devin Pro?",
-      "answer": "No hay una promesa permanente. La promoción es temporal y las fuentes oficiales discrepan entre el 10 y el 15 de octubre de 2026. Confirma la fecha y la etiqueta de precio en tu cuenta."
+      "answer": "No hay una promesa permanente. Según la documentación de modelos de Devin, SWE-2 es gratis en los planes self-serve de Desktop y CLI hasta el 30 de noviembre de 2026 y después se aplica el precio de lista. Confirma la fecha y la etiqueta de precio en tu cuenta."
     },
     {
       "question": "¿Los tokens de contexto son la cuota de Devin?",

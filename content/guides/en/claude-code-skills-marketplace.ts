@@ -45,7 +45,7 @@ The part I like most: when you install a skill, you choose where it goes. Curren
         },
         {
           type: 'paragraph',
-          text: 'If you are new to <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, it is Anthropic\'s agentic coding tool that runs in your terminal. Skills are how you extend what it knows how to do without retyping the same instructions in every session.',
+          text: 'If you are new to <a href="https://code.claude.com/docs/en/overview" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, it is Anthropic\'s agentic coding tool that runs in your terminal. Skills are how you extend what it knows how to do without retyping the same instructions in every session.',
         },
       ],
     },

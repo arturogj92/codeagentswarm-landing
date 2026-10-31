@@ -14,7 +14,7 @@ Esta guía explica cómo encontrar, buscar y respaldar conversaciones. Si trabaj
     ctaAgent: 'claude-code',
     highlightedWords: ['historial', 'Claude Code', 'conversaciones'],
     publishedAt: '2026-04-15',
-    updatedAt: '2026-09-05',
+    updatedAt: '2026-10-31',
     alternateSlug: 'claude-code-history-complete-guide',
   },
   sections: [
@@ -36,11 +36,12 @@ Esta guía explica cómo encontrar, buscar y respaldar conversaciones. Si trabaj
             '<code>/resume</code> - Lista las sesiones recientes dentro de una sesión activa de Claude Code',
             '<code>claude -c</code> - Retoma la conversación más reciente del proyecto actual',
             '<code>claude -r SESSION_ID</code> - Retoma una conversación específica por su ID',
+            '<code>claude --resume NOMBRE</code> - Retoma una sesión a la que pusiste nombre con <code>/rename</code> o <code>claude -n</code>',
           ],
         },
         {
           type: 'paragraph',
-          text: 'Puedes encontrar todos los detalles sobre estos comandos en la <a href="https://code.claude.com/docs/en/cli-reference" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">documentación oficial de Claude Code</a>. Los comandos y el selector se comprobaron con la documentación oficial el 5 de septiembre de 2026.',
+          text: 'Puedes encontrar todos los detalles sobre estos comandos en la <a href="https://code.claude.com/docs/en/cli-reference" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">documentación oficial de Claude Code</a>. Los comandos y el selector se comprobaron con la documentación oficial el 31 de octubre de 2026.',
         },
         {
           type: 'paragraph',
@@ -78,7 +79,7 @@ Esta guía explica cómo encontrar, buscar y respaldar conversaciones. Si trabaj
       content: [
         {
           type: 'paragraph',
-          text: 'El <a href="https://code.claude.com/docs/en/sessions#use-the-session-picker" class="text-neon-cyan hover:text-neon-purple transition-colors">selector actual</a> permite buscar y previsualizar: escribe para filtrar, pulsa Espacio para previsualizar o Ctrl+A para incluir otros proyectos. Para buscar prompts anteriores, usa Ctrl+R en la entrada: consulta el <a href="https://code.claude.com/docs/en/interactive-mode#command-history" class="text-neon-cyan hover:text-neon-purple transition-colors">historial de comandos</a>.',
+          text: 'El <a href="https://code.claude.com/docs/en/sessions#use-the-session-picker" class="text-neon-cyan hover:text-neon-purple transition-colors">selector actual</a> permite buscar y previsualizar: escribe para filtrar, pulsa Espacio para previsualizar, Ctrl+R para renombrar una sesión, Ctrl+A para incluir otros proyectos, Ctrl+W para incluir otros worktrees del repositorio y Ctrl+B para ver solo la rama de Git actual. La app de escritorio de Claude tiene su propia lista de sesiones y puede retomar una sesión de la CLI, como explica la <a href="https://code.claude.com/docs/en/sessions" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">documentación de sesiones</a>. Para buscar prompts anteriores dentro de una sesión, usa Ctrl+R en la entrada: consulta el <a href="https://code.claude.com/docs/en/interactive-mode#command-history" class="text-neon-cyan hover:text-neon-purple transition-colors">historial de comandos</a>.',
         },
         {
           type: 'paragraph',

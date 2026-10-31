@@ -14,7 +14,7 @@ Grok Build is xAI's coding CLI (<code>grok</code>), not the Grok chatbot.`,
     ctaAgent: 'multi',
     highlightedWords: ['Grok Build', 'Cursor'],
     publishedAt: '2026-07-28',
-    updatedAt: '2026-07-28',
+    updatedAt: '2026-10-31',
     alternateSlug: 'grok-build-vs-cursor',
   },
   sections: [
@@ -22,7 +22,7 @@ Grok Build is xAI's coding CLI (<code>grok</code>), not the Grok chatbot.`,
       id: 'category',
       title: 'Different categories',
       content: [
-        { type: 'list', items: ['<strong>Cursor:</strong> fork of VS Code with deep AI chat/edit integrations inside the editor.', '<strong>Grok Build:</strong> TUI/CLI agent that edits via tools, runnable headless, multi-session, subagents.', '<strong>CodeAgentSwarm:</strong> desktop supervisor for many CLI agents (including Grok Build), not an IDE replacement.'] },
+        { type: 'list', items: ['<strong>Cursor:</strong> fork of VS Code with deep AI chat/edit integrations inside the editor. It also ships a terminal agent, <a href="/en/guides/cursor-agent-cli-acp-codeagentswarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Cursor Agent</a>, and xAI lists <a href="https://docs.x.ai/developers/grok-4-7" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Grok 4.7</a> as available in Cursor on all plans.', '<strong>Grok Build:</strong> TUI/CLI agent that edits via tools, runnable headless, multi-session, subagents.', '<strong>CodeAgentSwarm:</strong> desktop supervisor for many CLI agents (including Grok Build), not an IDE replacement.'] },
       ],
     },
     {

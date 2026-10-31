@@ -6,17 +6,17 @@ export const guide: Guide = {
     locale: 'en',
     title: 'Claude Squad vs CodeAgentSwarm: An Honest Comparison (2026)',
     metaTitle: 'Claude Squad vs CodeAgentSwarm: An Honest Comparison (2026)',
-    metaDescription: 'Claude Squad manages parallel AI agents inside your terminal. CodeAgentSwarm is a desktop app for the same job. Honest comparison, verified August 2026.',
+    metaDescription: 'Claude Squad manages parallel AI agents inside your terminal. CodeAgentSwarm is a desktop app for the same job. Honest comparison, verified October 2026.',
     intro: `Claude Squad manages several AI coding agents inside your terminal. CodeAgentSwarm gives that same parallelism a desktop interface, with notifications, searchable history across agents and a kanban board the agents update themselves.
 
-Full disclosure before you read another line: we build CodeAgentSwarm. That is exactly why this page states where Claude Squad is the better pick and lists our own limits out loud (closed source, Mobile Connect still in alpha, still in beta, and you bring your own agent subscriptions). Both tools are judged on the same criteria, and every third-party fact here was checked on August 25, 2026 against the vendor own site, their public README and public GitHub data. CodeAgentSwarm availability and supported agents were updated on October 5, 2026.
+Full disclosure before you read another line: we build CodeAgentSwarm. That is exactly why this page states where Claude Squad is the better pick and lists our own limits out loud (closed source, Mobile Connect still in alpha, still in beta, and you bring your own agent subscriptions). Both tools are judged on the same criteria, and every third-party fact here was checked on October 31, 2026 against the vendor own site, their public README and public GitHub data. CodeAgentSwarm availability and supported agents were updated on October 5, 2026.
 
 Short version: if you live in the terminal, work over SSH on remote machines and want AGPL open source, Claude Squad fits you better. If you want a desktop window with notifications, cross-agent history, live diffs and twelve agent CLIs in one place, that is what we built.`,
     ctaText: 'If you want the same parallel agents but with a desktop window, notifications and a searchable history across every agent, download CodeAgentSwarm and try it next to Claude Squad.',
     ctaAgent: 'comparison',
     highlightedWords: ['Claude Squad', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
-    updatedAt: '2026-10-05',
+    updatedAt: '2026-10-31',
     alternateSlug: 'claude-squad-vs-codeagentswarm',
   },
   sections: [
@@ -35,7 +35,7 @@ Short version: if you live in the terminal, work over SSH on remote machines and
         {
           type: 'callout',
           variant: 'info',
-          content: 'We make CodeAgentSwarm, so treat this as an interested comparison and check the claims yourself. All third-party facts on this page were verified on August 25, 2026 against the vendor own site, their public README and public GitHub data. Where something is not documented publicly, we say so instead of guessing.',
+          content: 'We make CodeAgentSwarm, so treat this as an interested comparison and check the claims yourself. All third-party facts on this page were verified on October 31, 2026 against the vendor own site, their public README and public GitHub data. Where something is not documented publicly, we say so instead of guessing.',
         },
       ],
     },
@@ -45,20 +45,20 @@ Short version: if you live in the terminal, work over SSH on remote machines and
       content: [
         {
           type: 'paragraph',
-          text: '<a href="https://smtg-ai.github.io/claude-squad/" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Squad</a> is a terminal application that manages multiple AI terminal agents. Its current <a href="https://github.com/smtg-ai/claude-squad" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">README</a> names Claude Code, Codex, Gemini and Aider, and its program flag or named profiles can launch arbitrary local commands per session.',
+          text: '<a href="https://smtg-ai.github.io/claude-squad/" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Squad</a> is a terminal application that manages multiple AI terminal agents. Its current <a href="https://github.com/smtg-ai/claude-squad" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">README</a> names Claude Code, Codex, Gemini and Aider, its GitHub description also mentions OpenCode and Amp, and its program flag or named profiles can launch arbitrary local commands per session.',
         },
         {
           type: 'paragraph',
-          text: 'The README documents how it works under the hood: tmux to create an isolated terminal session for each agent, git worktrees so each session works on its own branch, and a text UI to move between them. You install it with Homebrew or a shell script, it lands as the <code>cs</code> binary, and tmux plus the GitHub CLI are listed as prerequisites.',
+          text: 'The README documents how it works under the hood: tmux to create an isolated terminal session for each agent, git worktrees so each session works on its own branch, and a text UI to move between them. You install it with Homebrew or a shell script, it lands as the <code>cs</code> binary, and tmux plus the GitHub CLI are listed as prerequisites. The latest release also ships Windows binaries, but the install docs do not cover Windows and the install script tells Windows users to install tmux via WSL.',
         },
         {
           type: 'list',
           items: [
-            'Open source under AGPL-3.0, roughly 8,400 stars on GitHub (8,362 on August 25, 2026)',
-            'Last public commit on August 20, 2026',
+            'Open source under AGPL-3.0, about 8,700 stars on GitHub (8,708 on October 31, 2026)',
+            'Last commit and latest release (v1.0.20) on August 20, 2026',
             'One tmux session and one git worktree per task, so branches never collide',
             'A diff tab to review changes, plus keys to commit, push, pause and resume a session',
-            'A background auto-accept mode (the autoyes flag) for agents that keep asking for confirmation',
+            'A background auto-accept mode (the experimental autoyes flag) for agents that keep asking for confirmation',
             'Free, with no account and no server component',
           ],
         },
@@ -108,18 +108,18 @@ Short version: if you live in the terminal, work over SSH on remote machines and
           type: 'table',
           headers: ['', 'Claude Squad', 'CodeAgentSwarm'],
           rows: [
-            ['Platforms', 'Terminal environments with tmux and the GitHub CLI installed, via Homebrew or a shell script. A native Windows install is not documented on their site as of August 25, 2026', 'Desktop app for macOS, Windows and Linux'],
+            ['Platforms', 'Terminal environments with tmux and the GitHub CLI installed, via Homebrew or a shell script. Release builds exist for macOS, Linux and Windows, but a native Windows setup is not documented on their site as of October 31, 2026, and the installer points Windows users to WSL for tmux', 'Desktop app for macOS, Windows and Linux'],
             ['Interface', 'Terminal UI, keyboard driven', 'Graphical desktop workspace with terminal panes'],
-            ['Supported agents', 'Claude Code, Codex, Gemini and Aider; arbitrary local commands via the program flag', 'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI, GitHub Copilot CLI and Cline'],
+            ['Supported agents', 'Claude Code, Codex, Gemini and Aider in the README (the repo description also mentions OpenCode and Amp); arbitrary local commands via the program flag or profiles', 'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI, GitHub Copilot CLI and Cline'],
             ['Isolation model', 'A tmux session plus a git worktree per task, one branch each', 'A separate process per terminal, with optional git worktrees per session'],
-            ['Notifications', 'Not documented on their site as of August 25, 2026', 'Desktop notifications when an agent finishes or needs input'],
-            ['Conversation history', 'Sessions can be paused and resumed in the app. A searchable history across agents is not documented on their site as of August 25, 2026', 'Searchable history across all twelve agents and capability-aware resume'],
-            ['Task management', 'Session list with per-session state. A kanban board is not documented on their site as of August 25, 2026', 'Kanban board that the agents update over MCP'],
+            ['Notifications', 'Not documented on their site as of October 31, 2026', 'Desktop notifications when an agent finishes or needs input'],
+            ['Conversation history', 'Sessions can be paused and resumed in the app. A searchable history across agents is not documented on their site as of October 31, 2026', 'Searchable history across all twelve agents and capability-aware resume'],
+            ['Task management', 'Session list with per-session state. A kanban board is not documented on their site as of October 31, 2026', 'Kanban board that the agents update over MCP'],
             ['Open source', 'Yes, AGPL-3.0', 'No, closed source with no public app repository'],
             ['Price', 'Free', 'Free during beta with Pro included, and you bring your own agent subscriptions'],
-            ['Last public commit (verified Aug 25, 2026)', 'August 20, 2026', 'Closed source, no public repo'],
+            ['Last public commit (verified Oct 31, 2026)', 'August 20, 2026 (release v1.0.20)', 'Closed source, no public repo'],
           ],
-          caption: 'Verified on August 25, 2026 from the Claude Squad site, its public README and GitHub. Empty claims about missing features are avoided on purpose: where their documentation says nothing, this table says nothing.',
+          caption: 'Verified on October 31, 2026 from the Claude Squad site, its public README and GitHub. Empty claims about missing features are avoided on purpose: where their documentation says nothing, this table says nothing.',
         },
       ],
     },
@@ -135,7 +135,7 @@ Short version: if you live in the terminal, work over SSH on remote machines and
           type: 'list',
           items: [
             '<strong>You work on remote machines.</strong> Claude Squad runs where your code runs. Over SSH on a dev box, a VPS or a Linux workstation, a terminal app is the right shape and a desktop GUI simply is not there.',
-            '<strong>You want open source.</strong> AGPL-3.0, public repository, roughly 8,400 stars. You can read every line, fork it and audit what it does with your code. CodeAgentSwarm cannot offer that.',
+            '<strong>You want open source.</strong> AGPL-3.0, public repository, about 8,700 stars. You can read every line, fork it and audit what it does with your code. CodeAgentSwarm cannot offer that.',
             '<strong>You already live in tmux.</strong> If your muscle memory is keyboard-first and you resent switching to a mouse, a TUI with single-key session management will feel faster than any window.',
             '<strong>You want zero install weight.</strong> One binary, no account, no updater, no packaged desktop runtime.',
             '<strong>You want Aider or another local agent.</strong> Its program flag launches any local agent command, which is broader than our fixed list of twelve.',
@@ -151,11 +151,11 @@ Short version: if you live in the terminal, work over SSH on remote machines and
           type: 'list',
           items: [
             '<strong>You want to be told, not to check.</strong> Desktop notifications fire when an agent finishes or needs input, so you can go do something else instead of watching a pane.',
-            '<strong>You use twelve agent CLIs.</strong> Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI, GitHub Copilot CLI and Cline are all supported directly. Antigravity, Kimi and Grok Build are not listed among the agents in the Claude Squad README as of August 25, 2026.',
+            '<strong>You use twelve agent CLIs.</strong> Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI, GitHub Copilot CLI and Cline are all supported directly. Antigravity, Kimi and Grok Build are not listed among the agents in the Claude Squad README as of October 31, 2026.',
             '<strong>You want history you can search.</strong> Every conversation from every agent is searchable in one place, and you can resume any of them where you left it.',
             '<strong>You want to watch the diffs live.</strong> Per-terminal file diffs update as the agent edits, so overlapping work is visible early rather than at review time.',
             '<strong>You want the work tracked.</strong> The kanban board is updated by the agents themselves over MCP, so the board reflects what actually happened.',
-            '<strong>You are on Windows.</strong> CodeAgentSwarm is a first-class Windows app, while a native Windows install for Claude Squad is not documented on their site as of August 25, 2026.',
+            '<strong>You are on Windows.</strong> CodeAgentSwarm is a first-class Windows app, while Claude Squad publishes Windows binaries but does not document a native Windows setup on its site as of October 31, 2026, and its installer points Windows users to WSL for tmux.',
             '<strong>You keep hitting plan limits.</strong> The quota indicator shows how much of your provider allowance is left before an agent stalls mid-task.',
           ],
         },
@@ -184,15 +184,15 @@ Short version: if you live in the terminal, work over SSH on remote machines and
   faq: [
     {
       question: 'Is Claude Squad open source?',
-      answer: 'Yes. Claude Squad is published at github.com/smtg-ai/claude-squad under the AGPL-3.0 license, with roughly 8,400 stars (8,362 when verified on August 25, 2026). CodeAgentSwarm is closed source and has no public application repository, which is a real point in Claude Squad favour if auditability or forking matters to you.',
+      answer: 'Yes. Claude Squad is published at github.com/smtg-ai/claude-squad under the AGPL-3.0 license, with about 8,700 stars (8,708 when verified on October 31, 2026). CodeAgentSwarm is closed source and has no public application repository, which is a real point in Claude Squad favour if auditability or forking matters to you.',
     },
     {
       question: 'Is Claude Squad still maintained?',
-      answer: 'Its last public commit on the default branch was August 20, 2026, five days before this page was verified. That confirms active development at the time of checking. Check the repository yourself before you build a workflow on it.',
+      answer: 'Its last commit on the default branch and its latest release, v1.0.20, are both from August 20, 2026, 72 days before this page was verified on October 31, 2026. Earlier 2026 releases came out in March, May and June. New issues and pull requests were still being opened in October 2026, and the project has not announced an end of maintenance. Check the repository yourself before you build a workflow on it.',
     },
     {
       question: 'Does Claude Squad support Antigravity CLI or Kimi Code?',
-      answer: 'Neither is named in the Claude Squad README as of August 25, 2026, which lists Claude Code, Codex, Gemini and Aider. Its program flag launches an arbitrary local command, so pointing it at another CLI may work, but it is not a documented first-party integration. CodeAgentSwarm supports Antigravity CLI, OpenCode and Kimi Code directly.',
+      answer: 'Neither is named in the Claude Squad README as of October 31, 2026, which lists Claude Code, Codex, Gemini and Aider (its GitHub description also mentions OpenCode and Amp). Its program flag launches an arbitrary local command, so pointing it at another CLI may work, but it is not a documented first-party integration. CodeAgentSwarm supports Antigravity CLI, OpenCode and Kimi Code directly.',
     },
     {
       question: 'Do I need to know tmux to use Claude Squad?',

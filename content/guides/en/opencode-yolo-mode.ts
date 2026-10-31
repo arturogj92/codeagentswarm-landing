@@ -6,17 +6,17 @@ export const guide: Guide = {
     locale: 'en',
     title: 'OpenCode YOLO Mode: Does opencode Have One? Permissions Explained',
     metaTitle: 'OpenCode YOLO Mode: Config-Driven Permissions Explained (2026)',
-    metaDescription: 'How to bypass permissions in opencode: there is no YOLO flag. Autonomy is config-driven in opencode.json. Run opencode full auto without flying blind.',
+    metaDescription: 'How to bypass permissions in opencode: the --auto flag approves anything not explicitly denied, or set permission to allow in opencode.json. Risks and safe setups.',
     intro: `If you use any terminal coding agent for more than a few minutes, the approval prompts get old fast. Every file write, every shell command stops and waits for you to say yes. With Claude Code and Codex, people reach for a one-flag bypass and the community started calling that "YOLO mode".
 
-opencode takes a different route. There is no <code>--yolo</code>, no <code>--full-auto</code>, no dangerously-skip-anything flag. Instead of one blunt switch, opencode reads how much freedom you gave it from its permission configuration. You decide, in a config file, which kinds of actions run automatically, which ask first, and which are blocked. The closest thing to "YOLO mode" is setting everything to allow, and that carries exactly the same risks as any bypass flag.
+opencode takes a different route. There is no <code>--yolo</code> and no dangerously-skip-permissions flag, but opencode does ship <code>--auto</code>, which approves every permission request that a rule does not explicitly deny. For anything permanent, opencode reads how much freedom you gave it from its permission configuration: in a config file you decide which kinds of actions run automatically, which ask first, and which are blocked. <code>--auto</code> or an all-allow config is the closest thing to "YOLO mode", and both carry the same risks as any bypass flag.
 
-This guide explains what that config-driven model actually looks like, what genuinely goes wrong when you allow everything, and how to get full-auto speed without losing control. That last part is where CodeAgentSwarm comes in: it does not add a Turbo Mode toggle for opencode, because opencode\'s own config is the control plane, but it does keep a permissive opencode config supervised with live diffs, desktop notifications and searchable history.`,
+This guide explains how the flag and the config work together, what genuinely goes wrong when you allow everything, and how to get full-auto speed without losing control. That last part is where CodeAgentSwarm comes in: it does not add a Turbo Mode toggle for opencode, because opencode handles autonomy with its own flag and config, but it does keep a permissive opencode session supervised with live diffs, desktop notifications and searchable history.`,
     ctaText: 'Run opencode with a permissive config without flying blind. CodeAgentSwarm gives every opencode terminal live diffs, desktop notifications and searchable history, so full-auto work never turns into a black box.',
     ctaAgent: 'opencode',
     highlightedWords: ['OpenCode', 'YOLO mode'],
     publishedAt: '2026-07-05',
-    updatedAt: '2026-10-05',
+    updatedAt: '2026-10-31',
     alternateSlug: 'modo-yolo-opencode',
   },
   sections: [
@@ -32,7 +32,12 @@ This guide explains what that config-driven model actually looks like, what genu
         },
         {
           type: 'paragraph',
-          text: 'There is no opencode bypass permissions flag. opencode ships no <code>--yolo</code>, no <code>--full-auto</code> and no dangerously-skip-permissions option. Permissions are config-driven: in <code>opencode.json</code> you set each action type to allow, ask or deny, and setting everything to allow is the closest opencode gets to bypassing permissions.',
+          text: 'Yes: <code>--auto</code>. Start <code>opencode --auto</code>, or <code>opencode run --auto</code> for a one-off task, and opencode approves every permission request that is not explicitly denied. There is no <code>--yolo</code> and no dangerously-skip-permissions option. For a lasting setting, use <code>opencode.json</code>: set each action type to allow, ask or deny, or set <code>"permission": "allow"</code> to allow everything at once.',
+        },
+        {
+          type: 'code',
+          language: 'bash',
+          code: '# Interactive session\nopencode --auto\n\n# One-off task\nopencode run --auto "Run the tests and fix the failures"',
         },
         {
           type: 'image',
@@ -46,16 +51,16 @@ This guide explains what that config-driven model actually looks like, what genu
         },
         {
           type: 'paragraph',
-          text: 'The short answer for <a href="https://opencode.ai" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">opencode</a> is that there is no such flag. No <code>--yolo</code>, no <code>--full-auto</code>, no dangerously-skip-anything option exists. opencode, the open-source terminal agent from SST, does not ship a one-switch bypass at all. Instead, it reads how much freedom you gave it from its permission configuration.',
+          text: 'The short answer for <a href="https://opencode.ai" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">opencode</a> is the <code>--auto</code> flag, described in the official <a href="https://opencode.ai/docs/permissions/" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">opencode permissions docs</a> (checked October 31, 2026). It only changes requests that would otherwise ask for approval, so explicit deny rules are still enforced. In the TUI you can also choose Enable auto-approve permissions or Disable auto-approve permissions to switch mode during a session.',
         },
         {
           type: 'paragraph',
-          text: 'That means the question "how do I turn on YOLO mode in opencode?" does not have a flag as its answer. The answer is a config file. You tell opencode which kinds of actions auto-run, which ask first, and which are denied, and it behaves accordingly on every session.',
+          text: 'For a setting that applies to every session, the answer is a config file. You tell opencode which kinds of actions auto-run, which ask first, and which are denied, and it behaves accordingly on every session.',
         },
         {
           type: 'callout',
           variant: 'info',
-          content: 'This is a design difference, not a missing feature. Instead of one blunt switch you type in a hurry, opencode asks you to say which kinds of actions auto-run, which ask, and which are blocked. The permissive state becomes something explicit you configure rather than a flag you flip.',
+          content: 'Check what still asks before you reach for --auto. According to the official docs, most opencode permissions already default to allow. doom_loop and external_directory default to ask, and reading .env files needs approval. So --auto mainly removes those prompts plus any ask rules you added yourself.',
         },
         {
           type: 'paragraph',
@@ -69,7 +74,7 @@ This guide explains what that config-driven model actually looks like, what genu
       content: [
         {
           type: 'paragraph',
-          text: 'opencode autonomy lives in configuration, not in a flag. Permissions are defined in <code>opencode.json</code>. There is a global config at <code>~/.config/opencode/opencode.json</code>, plus project-level config and per-agent config, so different agents can run with different amounts of freedom. A trusted refactor agent can run freer than a general one, and your day job repo can stay stricter than a side project.',
+          text: 'Lasting opencode autonomy lives in configuration; <code>--auto</code> only changes the session you start with it. Permissions are defined in <code>opencode.json</code>. There is a global config at <code>~/.config/opencode/opencode.json</code>, plus project-level config and per-agent config, so different agents can run with different amounts of freedom. A trusted refactor agent can run freer than a general one, and your day job repo can stay stricter than a side project.',
         },
         {
           type: 'paragraph',
@@ -86,7 +91,7 @@ This guide explains what that config-driven model actually looks like, what genu
         },
         {
           type: 'paragraph',
-          text: 'Setting everything to allow is the closest thing opencode has to YOLO mode. It makes opencode read, write and run commands on its own, with no prompt in between. The speed is real, and so is the risk: an all-allow config carries exactly the same danger as any bypass flag, because there is nothing left to stop a destructive command.',
+          text: 'Setting everything to allow, with <code>"permission": "allow"</code>, is the config version of <code>--auto</code>. It makes opencode read, write and run commands on its own, with no prompt in between. The speed is real, and so is the risk: an all-allow config carries exactly the same danger as any bypass flag, because there is nothing left to stop a destructive command.',
         },
         {
           type: 'heading',
@@ -96,7 +101,7 @@ This guide explains what that config-driven model actually looks like, what genu
         },
         {
           type: 'paragraph',
-          text: 'Claude Code and Codex both expose a one-flag bypass. Claude Code has <code>--dangerously-skip-permissions</code>, Codex has <code>--full-auto</code>. You type the flag and approvals go off for that run. The CodeAgentSwarm <a href="/en/guides/claude-code-yolo-mode-explained" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code YOLO Turbo Mode guide</a> walks through that model in detail.',
+          text: 'Claude Code has <code>--dangerously-skip-permissions</code> and Codex has <code>--yolo</code>, which also drops the Codex sandbox. opencode <code>--auto</code> is narrower: explicit deny rules still block. The CodeAgentSwarm <a href="/en/guides/claude-code-yolo-mode-explained" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code YOLO Turbo Mode guide</a> walks through the Claude model in detail.',
         },
         {
           type: 'paragraph',
@@ -126,7 +131,7 @@ This guide explains what that config-driven model actually looks like, what genu
         {
           type: 'callout',
           variant: 'warning',
-          content: 'The all-allow config is exactly as dangerous as any YOLO flag. The advantage of opencode\'s model is that you do not have to go all-or-nothing: the config lets you allow file edits while keeping shell or Git risky actions on ask, so the safe work flies through while the dangerous commands still stop.',
+          content: 'An all-allow config, or <code>--auto</code> with no deny rules, is exactly as dangerous as any YOLO flag. The advantage of opencode is that deny rules survive <code>--auto</code>: you can let file edits run while <code>git push</code> or <code>rm</code> stay denied, so the safe work flies through while the dangerous commands still stop.',
         },
         {
           type: 'paragraph',
@@ -150,7 +155,7 @@ This guide explains what that config-driven model actually looks like, what genu
         },
         {
           type: 'paragraph',
-          text: 'Set every permission to allow and let opencode run unattended. This is fine for scratch projects and disposable branches, where you are confident nothing destructive can matter and you can throw the whole thing away. On a real repo with real history, running fully open is a gamble, because a single misread instruction reaches Git, deletions, and the network with no prompt in the way.',
+          text: 'Start <code>opencode --auto</code> or set every permission to allow, and let opencode run unattended. This is fine for scratch projects and disposable branches, where you are confident nothing destructive can matter and you can throw the whole thing away. On a real repo with real history, running fully open is a gamble, because a single misread instruction reaches Git, deletions, and the network with no prompt in the way.',
         },
         {
           type: 'heading',
@@ -174,7 +179,7 @@ This guide explains what that config-driven model actually looks like, what genu
         },
         {
           type: 'paragraph',
-          text: 'To be clear: CodeAgentSwarm does not expose a Turbo Mode toggle for opencode. Turbo Mode exists for Claude Code and Codex, which have a bypass flag to turn on. opencode has no such flag, so its own permission config is the control plane, and there is nothing for a toggle to switch. What CodeAgentSwarm adds instead is supervision around your permissive opencode config, so full-auto work is never a black box.',
+          text: 'To be clear: CodeAgentSwarm does not offer Turbo Mode for opencode sessions. opencode controls autonomy with its own <code>--auto</code> flag and permission config, so that is where you decide what auto-runs. What CodeAgentSwarm adds instead is supervision around your permissive opencode setup, so full-auto work is never a black box.',
         },
         {
           type: 'paragraph',
@@ -214,7 +219,7 @@ This guide explains what that config-driven model actually looks like, what genu
           items: [
             '<strong>Always work on a feature branch, never main.</strong> If opencode makes a mess, you throw the branch away. If it messes up main, the whole team feels it.',
             '<strong>Commit before starting a permissive run.</strong> A clean restore point means <code>git checkout .</code> brings you straight back if something goes wrong.',
-            '<strong>Keep destructive Git and shell actions on ask.</strong> Even with everything else set to allow, push, force-push, merge, branch delete, and irreversible shell commands should still stop for confirmation. These are the highest-impact, hardest-to-undo actions.',
+            '<strong>Keep destructive Git and shell actions on ask.</strong> Even with everything else set to allow, push, force-push, merge, branch delete, and irreversible shell commands should still stop for confirmation. If you start with <code>--auto</code>, ask rules are approved automatically, so set these to deny instead. These are the highest-impact, hardest-to-undo actions.',
             '<strong>Put standing instructions in AGENTS.md.</strong> House rules in the shared instructions file mean every opencode session inherits the same guardrails without you repeating them.',
             '<strong>Watch the live diff.</strong> A per-terminal file change view turns a permissive config from a black box into something you can actually supervise.',
             '<strong>Keep prompts focused.</strong> "Refactor the auth middleware to use JWT" is far safer in full auto than "improve the codebase". The tighter the scope, the less room opencode has to go off-script.',
@@ -231,47 +236,47 @@ This guide explains what that config-driven model actually looks like, what genu
   faq: [
     {
       question: 'Does opencode have a YOLO mode?',
-      answer: 'Not as a single flag. "YOLO mode" is the community nickname for running a coding agent with approvals bypassed, and opencode has no one-switch bypass. Instead, autonomy is config-driven: in opencode.json you set which kinds of actions run automatically, which ask first, and which are denied. Setting everything to allow is the closest opencode gets to YOLO mode.',
+      answer: 'Close to it. The --auto flag approves every permission request that is not explicitly denied, and setting "permission": "allow" in opencode.json does the same for every session. There is no --yolo or dangerously-skip-permissions flag, and deny rules still apply under --auto.',
     },
     {
       question: 'Is there an opencode --yolo or --full-auto flag?',
-      answer: 'No. Unlike Claude Code or Codex, opencode does not ship a --yolo, --full-auto, or dangerously-skip-permissions flag. There is nothing to type to turn approvals off for a run. You configure autonomy through opencode\'s permission settings in opencode.json instead, which is where all of its allow, ask, and deny behaviour lives.',
+      answer: 'No. opencode has no --yolo, no --full-auto and no dangerously-skip-permissions flag. Its equivalent is --auto: opencode --auto, or opencode run --auto, approves every permission request that a rule does not explicitly deny. For a permanent setting, use the permission settings in opencode.json.',
     },
     {
       question: 'How do I make opencode run without asking for approval?',
-      answer: 'Set the permissions to allow in opencode.json. A minimal example is { "permission": { "edit": "allow", "bash": "ask" } }, and allowing every action type is the fully unattended version. Because the exact keys and values change between versions, check the official opencode docs for the schema your installed version supports before relying on a config.',
+      answer: 'Start it with opencode --auto, or opencode run --auto for a one-off task. For every session, set permissions to allow in opencode.json: "permission": "allow" allows everything, while { "permission": { "edit": "allow", "bash": "ask" } } keeps shell commands on ask. Check the official opencode docs for the schema your installed version supports.',
     },
     {
       question: 'How do I bypass permissions in opencode?',
-      answer: 'You cannot bypass them with a flag, because opencode does not have one. You bypass them in configuration: set the permissions to allow in opencode.json, and an all-allow config is the fully unattended version. Since the exact keys and values change between versions, check the official opencode docs for the schema your installed version supports.',
+      answer: 'Use the --auto flag, which approves every request that is not explicitly denied, or set permissions to allow in opencode.json. Explicit deny rules still block under --auto, which is the main difference from Claude Code --dangerously-skip-permissions. Check the official opencode docs for the schema your installed version supports.',
     },
     {
       question: 'Does opencode have a --dangerously-skip-permissions flag?',
-      answer: 'No. That flag belongs to Claude Code, and Codex has --full-auto. opencode ships no equivalent, so there is nothing to type to turn approvals off for a run. Its allow, ask and deny behaviour lives in opencode.json instead.',
+      answer: 'No. That flag belongs to Claude Code, and Codex uses --yolo. The closest opencode equivalent is --auto, which keeps explicit deny rules in force. Lasting allow, ask and deny behaviour lives in opencode.json.',
     },
     {
       question: 'How do I make opencode skip permission prompts?',
-      answer: 'Set the action types you want unattended to allow in opencode.json, either globally at ~/.config/opencode/opencode.json or per project and per agent. A selective config is the safer version: allow file edits so routine work flies through, and keep shell and destructive Git actions on ask.',
+      answer: 'Start opencode with --auto, or set the action types you want unattended to allow in opencode.json, either globally at ~/.config/opencode/opencode.json or per project and per agent. A selective config is the safer version: allow file edits so routine work flies through, and keep shell and destructive Git actions on ask, or on deny if you use --auto.',
     },
     {
       question: 'Is it safe to set all opencode permissions to allow?',
-      answer: 'An all-allow config is fast but exactly as dangerous as any YOLO flag: with nothing on ask, opencode can run git push, rm -rf, or DROP TABLE with no prompt. It is reasonable on a throwaway branch. On a real repo, use a selective config that allows file edits while keeping shell and Git risky actions on ask, and supervise the run with live diffs.',
+      answer: 'An all-allow config, or --auto without deny rules, is fast but exactly as dangerous as any YOLO flag: opencode can run git push, rm -rf, or DROP TABLE with no prompt. It is reasonable on a throwaway branch. On a real repo, allow file edits and keep risky shell and Git actions on ask (or deny with --auto), and supervise the run with live diffs.',
     },
     {
       question: 'Where does opencode\'s permission config live?',
       answer: 'The global config is at ~/.config/opencode/opencode.json, following the XDG layout. There is also project-level config and per-agent config, so different agents and different repos can run with different amounts of freedom. Standing instructions go in AGENTS.md, the cross-tool instructions file that every session inherits.',
     },
     {
-      question: 'How is opencode\'s approach different from Codex --full-auto or Claude Code --dangerously-skip-permissions?',
-      answer: 'Codex and Claude Code both bypass approvals with a single flag you type per run. opencode has no such flag; its autonomy is config-driven through opencode.json. The practical difference is that the permissive state is explicit, versionable and scoped in a file you can read and commit, rather than a flag someone types in a hurry and forgets.',
+      question: 'How is opencode --auto different from Codex --yolo or Claude Code --dangerously-skip-permissions?',
+      answer: 'Claude Code --dangerously-skip-permissions and Codex --yolo skip their checks for that run, and Codex --yolo also drops its sandbox. opencode --auto only approves requests that would otherwise ask, so explicit deny rules still block. Its lasting policy lives in opencode.json, a file you can read and commit, rather than a flag someone types in a hurry and forgets.',
     },
     {
       question: 'Does CodeAgentSwarm have Turbo Mode for opencode?',
-      answer: 'No, and that is intentional. Turbo Mode exists for Claude Code and Codex because those have a bypass flag to switch on. opencode\'s own permission config drives its autonomy, so there is nothing for a toggle to flip. What CodeAgentSwarm adds for opencode instead is supervision: live per-terminal diffs, desktop notifications when an agent finishes or stalls, dynamic titles, and searchable, resumable history.',
+      answer: 'No. CodeAgentSwarm does not offer Turbo Mode for opencode sessions; opencode handles autonomy with its own --auto flag and permission config. What CodeAgentSwarm adds for opencode is supervision: live per-terminal diffs, desktop notifications when an agent finishes or stalls, dynamic titles, and searchable, resumable history.',
     },
     {
       question: 'Can opencode delete files or push to the wrong branch in full auto?',
-      answer: 'Yes, if you allow it. With shell and Git actions set to allow, opencode can run rm -rf, overwrite uncommitted work, and commit or force-push to the wrong branch, all without asking. Keeping destructive Git and shell actions on ask, working on a feature branch, and committing before a run are the guardrails that prevent the most common accidents.',
+      answer: 'Yes, if you allow it. With shell and Git actions set to allow, or with --auto and no deny rules, opencode can run rm -rf, overwrite uncommitted work, and commit or force-push to the wrong branch, all without asking. Keeping destructive Git and shell actions on ask (deny under --auto), working on a feature branch, and committing before a run are the guardrails that prevent the most common accidents.',
     },
   ],
 }

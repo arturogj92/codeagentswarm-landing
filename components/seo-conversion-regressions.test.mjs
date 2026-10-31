@@ -223,7 +223,7 @@ test('volatile pricing, token and competitor facts retain review dates at least 
   const facts = JSON.parse(await readFile(new URL('../scripts/competitor-facts.json', import.meta.url), 'utf8'))
 
   assert.match(llms, /Available on every xAI plan, including Free/)
-  assert.equal(facts.verified_at, '2026-08-31')
+  assert.ok(facts.verified_at >= '2026-08-31', 'competitor facts review date went backwards')
 })
 
 test('Codex guides give usable commands and link to existing bilingual destinations', async () => {

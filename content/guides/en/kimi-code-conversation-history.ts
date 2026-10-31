@@ -16,7 +16,7 @@ This guide maps out exactly where Kimi Code history lives on disk (it is more in
     ctaAgent: 'kimi-code',
     highlightedWords: ['Kimi Code', 'history', 'resume'],
     publishedAt: '2026-07-18',
-    updatedAt: '2026-07-18',
+    updatedAt: '2026-10-31',
     alternateSlug: 'historial-conversaciones-kimi-code',
   },
   sections: [
@@ -59,7 +59,7 @@ kimi --session <session-id>`,
         {
           type: 'callout',
           variant: 'warning',
-          content: 'Mode flags override a resumed session. If you pass <code>--yolo</code>, <code>--auto</code> or <code>--plan</code> while resuming, the flag replaces the mode the session had saved. A careful session resumed with a leftover <code>-y</code> silently becomes a full-auto one. The <a href="/en/guides/kimi-code-yolo-mode" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi Code YOLO mode</a> guide covers this in depth.',
+          content: 'Mode flags override a resumed session. If you pass <code>--yolo</code>, <code>--auto</code> or <code>--plan</code> while resuming, the flag replaces the mode the session had saved. A careful session resumed with a leftover <code>-y</code> silently switches to Ask When Needed. The <a href="/en/guides/kimi-code-yolo-mode" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi Code YOLO mode</a> guide covers this in depth.',
         },
         {
           type: 'heading',
@@ -103,7 +103,7 @@ kimi --session <session-id>`,
         {
           type: 'callout',
           variant: 'info',
-          content: 'Treat this layout as informative, not contractual. Kimi Code ships releases almost daily and is pre-1.0, so paths and file shapes can evolve. The resume flags and <code>/title</code> are the stable, documented surface.',
+          content: 'Treat this layout as informative, not contractual. Kimi Code ships releases every few days, so paths and file shapes can evolve. The resume flags and <code>/title</code> are the stable, documented surface.',
         },
       ],
     },

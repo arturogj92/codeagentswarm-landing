@@ -7,7 +7,7 @@ export const guide: Guide = {
     slug: 'muse-code-on-linux',
     locale: 'en',
     title: 'How to Install Muse Code (Meta) on Linux',
-    metaTitle: 'How to Install Muse Code (Meta) on Linux: Setup, Login and Errors (2026)',
+    metaTitle: 'How to Install Muse Code on Linux: Setup, Login and Errors',
     metaDescription: 'Install Meta\'s Muse Code on Linux with the official one-line installer. Requirements, browser or API key login, SSH servers, common errors and how to run several Muse sessions at once.',
     intro: `Muse Code, Meta's coding agent for the terminal, runs on Linux. Open a terminal, run "curl -fsSL https://dev.meta.ai/install.sh | bash", then type "muse" inside a project folder and sign in with your Meta account or an API key.
 
@@ -18,7 +18,7 @@ Once Muse is working, we also show how to run several Muse sessions side by side
     ctaAgent: 'muse',
     highlightedWords: ['Muse Code', 'Linux'],
     publishedAt: '2026-09-29',
-    updatedAt: '2026-10-05',
+    updatedAt: '2026-10-31',
     alternateSlug: 'muse-code-en-linux',
   },
   sections: [
@@ -66,7 +66,7 @@ muse`,
         {
           type: 'callout',
           variant: 'info',
-          content: 'Meta\'s docs list the Linux features as the same as macOS, including voice input and session messaging between local sessions. Both are unavailable on Windows.',
+          content: 'Meta\'s docs list the Linux features as the same as macOS, including voice input and session messaging between local sessions. Voice starts turned off on Linux; enable it in /settings. Both are unavailable on Windows.',
         },
       ],
     },
@@ -173,7 +173,7 @@ META_API_KEY="$MUSE_KEY" muse exec "Summarize the README"`,
   faq: [
     {
       question: 'Does Muse Code work on Linux?',
-      answer: 'Yes. Meta ships one installer for macOS and Linux, and its docs list full feature support on both, including voice input and session messaging.',
+      answer: 'Yes. Meta ships one installer for macOS and Linux, and its docs list full feature support on both, including voice input (off by default on Linux) and session messaging.',
     },
     {
       question: 'How do I install Muse Code on Ubuntu or Fedora?',

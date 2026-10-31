@@ -7,16 +7,16 @@ export const guide: Guide = {
     title: 'Paseo vs CodeAgentSwarm: An Honest Comparison (2026)',
     metaTitle: 'Paseo vs CodeAgentSwarm: An Honest Comparison (2026)',
     metaDescription: 'Paseo is a self-hosted, open source agent orchestrator you can drive from your phone. CodeAgentSwarm is a macOS, Windows and Linux desktop workspace for twelve agent CLIs.',
-    intro: `Paseo is a self-hosted, open source orchestrator you can supervise from your phone, while CodeAgentSwarm is a macOS, Windows and Linux desktop workspace that runs twelve agent CLIs in parallel terminals. That is the difference in one line, and most of the decision follows from it.
+    intro: `Paseo is an open source, self-hosted agentic development environment you can supervise from your phone, while CodeAgentSwarm is a macOS, Windows and Linux desktop workspace that runs twelve agent CLIs in parallel terminals. That is the difference in one line, and most of the decision follows from it.
 
-Full disclosure: we build CodeAgentSwarm. That is exactly why this page says out loud where Paseo is the better tool instead of pretending we win every row. Both products are judged on the same criteria, our limitations sit next to our features, and every third-party fact below was checked on August 25, 2026 against paseo.sh, the public getpaseo/paseo repository and public GitHub data. CodeAgentSwarm availability and supported agents were updated on October 5, 2026.
+Full disclosure: we build CodeAgentSwarm. That is exactly why this page says out loud where Paseo is the better tool instead of pretending we win every row. Both products are judged on the same criteria, our limitations sit next to our features, and every third-party fact below was checked on October 31, 2026 against paseo.sh, its docs, the public getpaseo/paseo repository and public GitHub data. CodeAgentSwarm availability and supported agents were updated on October 5, 2026.
 
-Short version: if you want to start a job at your desk and check on it from a train, or you need software you can host and audit yourself, Paseo fits better. If you work on macOS, Windows or Linux and want twelve agent CLIs, a shared task board and one searchable history across all of them, that is where CodeAgentSwarm earns its place.`,
+Short version: if you want to start a job at your desk and check on it from a train, or you need software you can host and audit yourself, Paseo fits better. If you work at a desk on macOS, Windows or Linux and want your agent CLIs side by side in parallel terminals, a task board the agents keep updated and one searchable history across all of them, that is where CodeAgentSwarm earns its place.`,
     ctaText: 'If your work happens at a desk on macOS, Windows or Linux and you want twelve agent CLIs, live diffs and a shared task board in one window, download CodeAgentSwarm and run your next batch of agents in parallel.',
     ctaAgent: 'comparison',
     highlightedWords: ['Paseo', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
-    updatedAt: '2026-10-05',
+    updatedAt: '2026-10-31',
     alternateSlug: 'paseo-vs-codeagentswarm',
   },
   sections: [
@@ -26,7 +26,7 @@ Short version: if you want to start a job at your desk and check on it from a tr
       content: [
         {
           type: 'paragraph',
-          text: 'Paseo is a self-hosted, open source orchestrator with desktop, mobile, web and CLI clients talking to a daemon on your own machine, while CodeAgentSwarm is a closed source desktop app for macOS, Windows and Linux that runs twelve agent CLIs side by side in parallel terminals.',
+          text: 'Paseo is an open source, self-hosted agentic development environment with desktop, mobile, web and CLI clients talking to a daemon on your own machine, while CodeAgentSwarm is a closed source desktop app for macOS, Windows and Linux that runs twelve agent CLIs side by side in parallel terminals.',
         },
         {
           type: 'paragraph',
@@ -35,7 +35,7 @@ Short version: if you want to start a job at your desk and check on it from a tr
         {
           type: 'callout',
           variant: 'info',
-          content: 'Disclosure: we build CodeAgentSwarm, so treat this as a comparison written by an interested party. Everything stated about Paseo was verified on August 25, 2026 against paseo.sh, its public repository and public GitHub data. Where something is not documented publicly, this page says so instead of guessing.',
+          content: 'Disclosure: we build CodeAgentSwarm, so treat this as a comparison written by an interested party. Everything stated about Paseo was verified on October 31, 2026 against paseo.sh, its docs, its public repository and public GitHub data. Where something is not documented publicly, this page says so instead of guessing.',
         },
       ],
     },
@@ -45,26 +45,29 @@ Short version: if you want to start a job at your desk and check on it from a tr
       content: [
         {
           type: 'paragraph',
-          text: '<a href="https://paseo.sh" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Paseo</a> describes itself as a way to orchestrate coding agents from your desk and your phone. Architecturally it is a local daemon that manages your agents, plus desktop, mobile, web and CLI clients that connect to it. You install the daemon on the machine that holds your code and your credentials, then reach it from whatever device is in front of you, over your network, an end to end encrypted relay or your own tunnel.',
+          text: '<a href="https://paseo.sh" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Paseo</a> describes itself as an agentic development environment: run many coding agents at once, on any machine, from your desk and from your phone. Architecturally it is a local daemon that manages your agents, plus desktop, mobile, web and CLI clients that connect to it. You install the daemon on the machine that holds your code and your credentials, then reach it from whatever device is in front of you, over your network, an end to end encrypted relay or your own tunnel.',
         },
         {
           type: 'paragraph',
-          text: 'The public repository is <a href="https://github.com/getpaseo/paseo" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">getpaseo/paseo</a>. It had 15,543 stars when its public GitHub data was refreshed on August 31, 2026, and its most recent public commit landed on August 30. The LICENSE file places the code under AGPLv3, with third-party components under their own licenses.',
+          text: 'The public repository is <a href="https://github.com/getpaseo/paseo" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">getpaseo/paseo</a>. It had about 22,600 stars on October 31, 2026, its most recent public commit landed that same day, and the latest release was v0.14.0 on October 29. Since August 27, 2026 the LICENSE file places Paseo\'s own code under Apache 2.0, replacing the earlier AGPLv3, while third-party components keep their own licenses.',
         },
         {
           type: 'list',
           items: [
-            '<strong>Truly cross-device:</strong> native iOS and Android apps, plus desktop, web and a scriptable CLI',
-            '<strong>Self-hosted by design:</strong> the daemon and the agents run on your laptop, VM or dev server',
-            '<strong>Multi-provider:</strong> their FAQ lists Claude Code, Codex, Cursor, OpenCode and Pi, and the README also lists GitHub Copilot',
-            '<strong>Git worktrees:</strong> optional per-agent worktrees so each one works on its own branch',
+            '<strong>Truly cross-device:</strong> native iOS and Android apps they describe as having full feature parity with desktop, plus web and a scriptable CLI',
+            '<strong>Self-hosted by design:</strong> the daemon and the agents run on your laptop, VM or dev server, and the desktop app bundles and starts the daemon for you',
+            '<strong>Multi-provider:</strong> native support for Claude Code, Codex, OpenCode, Pi, Antigravity and Muse Code, plus dozens more through an ACP catalog that includes GitHub Copilot, Cursor, Kimi Code CLI, Grok and Devin CLI',
+            '<strong>A full dev workflow:</strong> file editor, terminals, diff review, pull requests and a built-in browser in split panes',
+            '<strong>Orchestration:</strong> agents can create worktrees, launch other agents and talk to them, and schedules start agents on a cron cadence',
+            '<strong>Git worktrees:</strong> optional worktree isolation per workspace so each task works on its own branch',
             '<strong>Push notifications:</strong> the repository contains push and agent attention notification code',
             '<strong>Local voice control</strong> and a stated policy of no telemetry, no tracking and no forced login',
+            '<strong>Optional Hub:</strong> GitHub, Slack and Discord triggers that start agents on your daemons, free to self-host or hosted by Paseo',
           ],
         },
         {
           type: 'paragraph',
-          text: 'That is a strong product and we will not pretend otherwise. The mobile story in particular is not a checkbox: they lean on parity between the phone app and the desktop app. CodeAgentSwarm offers Mobile Connect in alpha, with a web beta for every account and native access by request while the desktop stays open. That is not the same as Paseo shipping public native clients.',
+          text: 'That is a strong product and we will not pretend otherwise. The mobile story in particular is not a checkbox: they say the native phone app has full feature parity with the desktop app. CodeAgentSwarm offers Mobile Connect in alpha, with a web beta for every account and native access by request while the desktop stays open. That is not the same as Paseo shipping public native clients.',
         },
       ],
     },
@@ -111,22 +114,22 @@ Short version: if you want to start a job at your desk and check on it from a tr
           rows: [
             [
               '<strong>Platforms</strong>',
-              'macOS, Windows and Linux desktop builds, iOS and Android apps, web and CLI',
+              'macOS (13 or newer), Windows and Linux desktop apps, iOS and Android apps, web app, CLI and Docker',
               'macOS, Windows and Linux desktop app. Mobile Connect alpha: web beta for every account, native iOS and Android access by request, desktop must stay open',
             ],
             [
               '<strong>Interface</strong>',
-              'Self-hosted daemon plus desktop, mobile, web and CLI clients',
+              'Desktop app that bundles its own daemon, plus mobile, web and CLI clients that can connect to a daemon on any machine',
               'Desktop workspace plus Mobile Connect alpha. Web beta for every account; native access by request; desktop must stay open',
             ],
             [
               '<strong>Supported agents</strong>',
-              'Claude Code, Codex, Cursor, OpenCode and Pi per their FAQ, plus GitHub Copilot in the README',
+              'Native: Claude Code, Codex, OpenCode, Pi, Antigravity and Muse Code. Dozens more through its ACP catalog, including GitHub Copilot, Cursor, Kimi Code CLI, Grok, Gemini CLI and Devin CLI',
               'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI, GitHub Copilot CLI and Cline',
             ],
             [
               '<strong>Isolation model</strong>',
-              'Optional git worktree per agent, one branch per job',
+              'Workspaces with local or git worktree isolation, one branch per worktree',
               'Git worktree per session plus a separate process per terminal',
             ],
             [
@@ -136,31 +139,31 @@ Short version: if you want to start a job at your desk and check on it from a tr
             ],
             [
               '<strong>Conversation history</strong>',
-              'Not documented on their site as of August 25, 2026',
+              'The app has a History view and the repo contains agent history search code. How search and resume work across providers is not documented in their docs as of October 31, 2026',
               'Searchable across all twelve agents and capability-aware resume',
             ],
             [
               '<strong>Task management</strong>',
-              'Their docs list schedules and orchestration workflows. A task board is not documented as of August 25, 2026',
+              'Schedules, heartbeats and agent-to-agent orchestration, plus GitHub, Slack and Discord triggers through the optional Hub. A kanban-style task board is not documented as of October 31, 2026',
               'Kanban board the agents update over MCP',
             ],
             [
               '<strong>Open source</strong>',
-              'Yes. Public repo under AGPLv3, self-hostable, no telemetry',
+              'Yes. Apache 2.0 for Paseo\'s own code (third-party components keep their licenses), self-hostable, no telemetry',
               'No. Closed source, no public app repository',
             ],
             [
               '<strong>Price</strong>',
-              'Their FAQ states Paseo is free and open source, and you bring your own agent credentials',
+              'Free and open source per their FAQ, with your own agent credentials. The optional Hub is free to self-host; hosted Hub has a free tier (50 agent runs a month, 1 seat) and Pro at $15 per seat per month',
               'Free during beta with Pro included, and you bring your own CLI subscriptions',
             ],
             [
               '<strong>Last public commit</strong>',
-              'August 30, 2026, on a repo with 15,543 stars when refreshed on August 31',
+              'October 31, 2026, on a repo with about 22,600 stars that day. Latest release v0.14.0 on October 29',
               'Closed source, no public repo',
             ],
           ],
-          caption: 'Product facts checked on August 25, 2026 against paseo.sh. Public GitHub stars and activity refreshed on August 31, 2026. Rows marked as not documented mean we could not find them published, not that the feature is missing.',
+          caption: 'Paseo facts checked on October 31, 2026 against paseo.sh, its docs and the public getpaseo/paseo repository, including GitHub stars and activity. Rows marked as not documented mean we could not find them published, not that the feature is missing.',
         },
       ],
     },
@@ -177,9 +180,10 @@ Short version: if you want to start a job at your desk and check on it from a tr
           items: [
             '<strong>You want public native mobile access today.</strong> Paseo has public iOS and Android apps. CodeAgentSwarm Mobile Connect is still in alpha, native access is by request and the desktop must stay open.',
             '<strong>You need to self-host.</strong> Paseo is a daemon you run on your own laptop, VM or dev server. That is the architecture, not an add-on.',
-            '<strong>Open source is a requirement.</strong> The code is public under AGPLv3, so you can read it and keep running it whatever happens to the company. With us you take our word for things.',
+            '<strong>Open source is a requirement.</strong> The code is public under Apache 2.0, so you can read it, fork it and keep running it whatever happens to the project. With us you take our word for things.',
             '<strong>You care about telemetry and forced logins.</strong> Paseo states it has neither, which is an easy answer if procurement asks.',
-            '<strong>You use GitHub Copilot.</strong> Paseo lists it as a supported agent; CodeAgentSwarm does not currently integrate it. Pi is supported by both.',
+            '<strong>You use an agent outside our twelve.</strong> Gemini CLI, Amp, goose and dozens more are in Paseo\'s provider list or ACP catalog, and every other agent CodeAgentSwarm supports appears there too (Cline was not part of the October 31 check). On agent coverage, Paseo is wider.',
+            '<strong>You want the agent, editor and browser in one window.</strong> Paseo bundles a file editor, terminals, diff review, pull requests and a built-in browser, and its stated goal is to replace your IDE for agent-driven work.',
           ],
         },
         {
@@ -200,12 +204,11 @@ Short version: if you want to start a job at your desk and check on it from a tr
         {
           type: 'list',
           items: [
-            '<strong>You want Antigravity CLI or Kimi Code.</strong> Neither is listed among the agents Paseo documents as of August 25, 2026. We run both, alongside Claude Code, Codex CLI and OpenCode.',
+            '<strong>You want each agent in its own terminal.</strong> CodeAgentSwarm runs the vendors\' CLIs side by side in parallel terminals. Paseo drives agents through native integrations and ACP inside its own interface, and for Antigravity its docs say full access is the only mode, with every tool call approved automatically.',
             '<strong>You want one searchable history across vendors,</strong> with any conversation resumable back into a live terminal.',
             '<strong>You want the agents to keep the board updated.</strong> The kanban is written by the agents over MCP while they work.',
-            '<strong>You review as you go.</strong> Live diffs per terminal catch a wrong turn during the task, not in the pull request.',
-            '<strong>You are juggling provider limits.</strong> The quota indicator tells you where you stand before an agent stalls.',
-            '<strong>You want everything on one screen,</strong> without stitching a daemon and its clients together.',
+            '<strong>You review as you go.</strong> Live diffs per terminal catch a wrong turn during the task, not in the pull request. Paseo has diff review too, so try both on a real task.',
+            '<strong>You are juggling provider limits.</strong> The quota indicator tells you where you stand before an agent stalls. Paseo\'s repository also has usage plugins for several providers.',
           ],
         },
         {
@@ -232,7 +235,7 @@ Short version: if you want to start a job at your desk and check on it from a tr
   faq: [
     {
       question: 'Is Paseo open source?',
-      answer: 'Yes. Paseo is developed in public at github.com/getpaseo/paseo and its LICENSE file places the code under AGPLv3, with third-party components keeping their original licenses. The repository had 15,543 stars when refreshed on August 31, 2026. CodeAgentSwarm, by contrast, is closed source with no public application repository.',
+      answer: 'Yes. Paseo is developed in public at github.com/getpaseo/paseo. Since August 27, 2026 its LICENSE file places Paseo\'s own code under Apache 2.0, replacing the earlier AGPLv3, and third-party components keep their original licenses. The repository had about 22,600 stars on October 31, 2026. CodeAgentSwarm, by contrast, is closed source with no public application repository.',
     },
     {
       question: 'Can I supervise CodeAgentSwarm from my phone?',
@@ -240,11 +243,11 @@ Short version: if you want to start a job at your desk and check on it from a tr
     },
     {
       question: 'Does Paseo support Antigravity CLI or Kimi Code?',
-      answer: 'Neither is listed among the agents documented by Paseo as of August 25, 2026. Their FAQ names Claude Code, Codex, Cursor, OpenCode and Pi, and the README also lists GitHub Copilot. CodeAgentSwarm supports Antigravity CLI and Kimi Code alongside Claude Code, Codex CLI and OpenCode. Paseo advertises further providers, so check their current docs first.',
+      answer: 'Yes, both, as of October 31, 2026. Antigravity is a native Paseo provider that uses your installed agy CLI, and its docs say it runs only in full access mode there. Kimi Code CLI is in Paseo\'s ACP catalog. CodeAgentSwarm supports Antigravity CLI and Kimi Code too, alongside Claude Code, Codex CLI and OpenCode. Paseo\'s provider list changes often, so check its supported providers page.',
     },
     {
       question: 'Are both projects actively maintained?',
-      answer: 'Paseo is verifiably active: its most recent public commit was August 30, 2026 when the repository data was refreshed on August 31. CodeAgentSwarm is under active development too, but it is closed source, so there is no public commit history you can inspect to confirm that yourself. That asymmetry is worth weighing.',
+      answer: 'Paseo is verifiably active: its most recent public commit was on October 31, 2026, and v0.14.0 shipped on October 29. Its site says it is maintained full time by one person. CodeAgentSwarm is under active development too, but it is closed source, so there is no public commit history you can inspect to confirm that yourself. That asymmetry is worth weighing.',
     },
   ],
 }

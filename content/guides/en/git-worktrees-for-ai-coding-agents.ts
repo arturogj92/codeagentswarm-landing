@@ -5,7 +5,7 @@ export const guide: Guide = {
     slug: 'git-worktrees-for-ai-coding-agents',
     locale: 'en',
     title: 'Git Worktrees for AI Coding Agents: Give Each Agent Its Own Checkout',
-    metaTitle: 'Git Worktrees for AI Coding Agents: Run Multiple Agents on One Repo (2026)',
+    metaTitle: 'Git Worktrees for AI Coding Agents: Many Agents, One Repo',
     metaDescription: 'Running several AI agents on one repo means they fight over the same files. Git worktrees give each agent its own checkout on its own branch. Here is how.',
     intro: `Run more than one AI coding agent on the same repository and you hit a wall fast: they edit the same files and overwrite each other's uncommitted changes. Claude Code is halfway through a refactor, Codex CLI saves over one of those files, and now neither of them has a clean state to work from.
 
@@ -16,7 +16,7 @@ In this guide I explain the problem in concrete terms, what a git worktree actua
     ctaAgent: 'multi',
     highlightedWords: ['Git Worktrees', 'AI Coding Agents'],
     publishedAt: '2026-07-05',
-    updatedAt: '2026-10-05',
+    updatedAt: '2026-10-31',
     relatedSlug: 'auto-kanban-ai-coding-agents',
     alternateSlug: 'git-worktrees-para-agentes-de-ia',
   },
@@ -183,7 +183,7 @@ In this guide I explain the problem in concrete terms, what a git worktree actua
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm is a desktop app for running a swarm of AI CLI agents in one place. It runs on top of the official CLIs (Claude Code, Codex CLI, opencode, Antigravity CLI), so it is not a model provider, it orchestrates the agents you already use. And it can create a worktree per terminal for you, so you get the isolation above without touching a single git command.',
+          text: 'CodeAgentSwarm is a desktop app for running a swarm of AI CLI agents in one place. It runs on top of the official CLIs (Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI, GitHub Copilot CLI and Cline), so it is not a model provider, it orchestrates the agents you already use. And it can create a worktree per terminal for you, so you get the isolation above without touching a single git command.',
         },
         {
           type: 'heading',

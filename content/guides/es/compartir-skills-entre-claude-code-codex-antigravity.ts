@@ -5,7 +5,7 @@ export const guide: Guide = {
     slug: 'compartir-skills-entre-claude-code-codex-antigravity',
     locale: 'es',
     title: 'Cómo compartir tus skills entre Claude Code, Codex y Antigravity',
-    metaTitle: 'Compartir skills entre Claude Code, Codex y Antigravity (CodeAgentSwarm, 2026)',
+    metaTitle: 'Compartir skills entre Claude Code, Codex y Antigravity (2026)',
     metaDescription: 'Tus skills de Claude Code solo viven en Claude. Aquí tienes cómo copiar las mismas skills SKILL.md a Codex y Antigravity en un clic con CodeAgentSwarm, sin mover carpetas a mano.',
     intro: `Dedicaste tiempo a montar buenas skills para Claude Code. Luego abres Codex o Antigravity para una tarea y no aparece ninguna. Mismo formato SKILL.md, misma máquina, pero cada agente solo lee su propia carpeta.
 
@@ -16,7 +16,7 @@ En esta guía te explico, claro y sencillo, por qué tus skills se quedan atrapa
     ctaAgent: 'multi',
     highlightedWords: ['skills', 'Codex', 'Antigravity'],
     publishedAt: '2026-07-04',
-    updatedAt: '2026-09-29',
+    updatedAt: '2026-10-31',
     alternateSlug: 'share-skills-between-claude-code-codex-antigravity',
   },
   sections: [
@@ -32,7 +32,7 @@ En esta guía te explico, claro y sencillo, por qué tus skills se quedan atrapa
           type: 'list',
           items: [
             'Claude Code lee las skills de ~/.claude/skills',
-            'Codex las lee de ~/.codex/skills',
+            'Codex las lee de ~/.codex/skills, una ubicación antigua que sigue leyendo, aunque <a href="https://learn.chatgpt.com/docs/build-skills" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">su documentación</a> indica ahora ~/.agents/skills (comprobado el 31 de octubre de 2026)',
             'Antigravity las lee de ~/.gemini/antigravity-cli/skills',
             'OpenCode las lee de ~/.config/opencode/skills',
           ],
@@ -169,7 +169,7 @@ En esta guía te explico, claro y sencillo, por qué tus skills se quedan atrapa
         },
         {
           type: 'paragraph',
-          text: 'Y si tienes varios agentes trabajando a la vez, esto encaja bien con el flujo multi agente: <a href="/es/guias/enjambre-de-agentes-cli-ia" class="text-neon-cyan hover:text-neon-purple transition-colors">Cómo ejecutar agentes de Claude Code, Codex y Gemini en paralelo</a>.',
+          text: 'Y si tienes varios agentes trabajando a la vez, esto encaja bien con el flujo multi agente: <a href="/es/guias/enjambre-de-agentes-cli-ia" class="text-neon-cyan hover:text-neon-purple transition-colors">Cómo ejecutar varios agentes de código con IA en paralelo</a>.',
         },
       ],
     },
@@ -185,7 +185,7 @@ En esta guía te explico, claro y sencillo, por qué tus skills se quedan atrapa
     },
     {
       question: '¿Dónde guarda cada agente sus skills?',
-      answer: 'Claude Code usa ~/.claude/skills, Codex usa ~/.codex/skills, Antigravity usa ~/.gemini/antigravity-cli/skills y OpenCode usa ~/.config/opencode/skills. Cada carpeta tiene una subcarpeta por skill con su SKILL.md dentro.',
+      answer: 'Claude Code usa ~/.claude/skills, Codex usa ~/.codex/skills (su documentación indica ahora ~/.agents/skills y sigue leyendo la carpeta antigua), Antigravity usa ~/.gemini/antigravity-cli/skills y OpenCode usa ~/.config/opencode/skills. Cada carpeta tiene una subcarpeta por skill con su SKILL.md dentro.',
     },
     {
       question: '¿Al exportar se sobrescriben las skills que ya edité en el destino?',

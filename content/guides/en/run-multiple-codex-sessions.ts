@@ -16,7 +16,7 @@ This guide walks through the three practical ways to run several Codex CLI sessi
     ctaAgent: 'codex',
     highlightedWords: ['multiple Codex CLI sessions', 'at once'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-10-05',
+    updatedAt: '2026-10-31',
     alternateSlug: 'ejecutar-multiples-sesiones-codex',
   },
   sections: [
@@ -237,7 +237,7 @@ This guide walks through the three practical ways to run several Codex CLI sessi
         },
         {
           type: 'paragraph',
-          text: 'Codex has its own approval modes, from suggest-only up to full auto with <code>--full-auto</code>, plus a sandbox. CodeAgentSwarm sits above that with Turbo Mode and per-terminal permissions, so you can let sessions run in full auto on the safe operations while still gating the dangerous ones. That is the practical way to keep several Codex sessions fast without leaving them unsupervised. The <a href="/en/guides/claude-code-yolo-mode-explained" class="text-neon-cyan hover:text-neon-purple transition-colors">Turbo Mode guide</a> covers the setup.',
+          text: 'Codex has its own controls: a sandbox, an approval policy and auto review, which <code>--approve-for-me</code> turns on so a reviewer agent answers approval requests inside the <code>workspace-write</code> sandbox. The old <code>--full-auto</code> flag is gone from the <a href="https://learn.chatgpt.com/docs/developer-commands?surface=cli" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">official command reference</a>. CodeAgentSwarm sits above that with Turbo Mode and per-terminal permissions, so you can let sessions run in full auto on the safe operations while still gating the dangerous ones. That is the practical way to keep several Codex sessions fast without leaving them unsupervised. The <a href="/en/guides/claude-code-yolo-mode-explained" class="text-neon-cyan hover:text-neon-purple transition-colors">Turbo Mode guide</a> covers the setup.',
         },
         {
           type: 'heading',
@@ -377,7 +377,7 @@ This guide walks through the three practical ways to run several Codex CLI sessi
     },
     {
       question: 'How do I run Codex CLI sessions in full auto?',
-      answer: 'Codex has its own approval modes, from suggest-only up to full auto, which you reach with the --full-auto flag, backed by a sandbox. When you run several sessions in full auto at once, the risk is that they act without you watching. CodeAgentSwarm adds Turbo Mode and per-terminal permissions on top, so you can auto-approve safe operations while still gating the dangerous ones.',
+      answer: 'Keep the workspace-write sandbox and pick an approval policy: codex --sandbox workspace-write --ask-for-approval never runs without prompts, and codex --approve-for-me lets a reviewer agent answer approval requests. The old --full-auto flag no longer works in current Codex CLI. When you run several sessions in full auto at once, the risk is that they act without you watching. CodeAgentSwarm adds Turbo Mode and per-terminal permissions on top, so you can auto-approve safe operations while still gating the dangerous ones.',
     },
     {
       question: 'How many Codex sessions can I run at once?',

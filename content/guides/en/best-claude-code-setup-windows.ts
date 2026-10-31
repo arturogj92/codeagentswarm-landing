@@ -16,7 +16,7 @@ It assumes you already have Claude Code installed. If not, start with our guide 
     ctaAgent: 'claude-code',
     highlightedWords: ['Claude Code', 'Windows'],
     publishedAt: '2026-06-12',
-    updatedAt: '2026-06-12',
+    updatedAt: '2026-10-31',
     alternateSlug: 'mejor-setup-claude-code-windows',
   },
   sections: [
@@ -161,7 +161,7 @@ It assumes you already have Claude Code installed. If not, start with our guide 
         },
         {
           type: 'paragraph',
-          text: '<a href="/en" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a> is a Windows (and macOS) desktop app built exactly for this: multiple Claude Code terminals side by side, desktop notifications when an agent finishes or needs input, searchable history across all sessions, live per-terminal diffs and a kanban board the agents themselves keep updated. It runs on top of your existing Claude Code install, so everything in this guide still applies.',
+          text: '<a href="/en" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a> is a desktop app for Windows, macOS and Linux built exactly for this: multiple Claude Code terminals side by side, desktop notifications when an agent finishes or needs input, searchable history across all sessions, live per-terminal diffs and a kanban board the agents themselves keep updated. It runs on top of your existing Claude Code install, so everything in this guide still applies.',
         },
         {
           type: 'paragraph',

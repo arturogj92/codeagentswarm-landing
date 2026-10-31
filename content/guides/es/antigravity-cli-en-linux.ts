@@ -43,7 +43,7 @@ agy`,
         },
         {
           type: 'paragraph',
-          text: 'Es el mismo comando que usa CodeAgentSwarm cuando instala Antigravity por ti en Linux. Todos los comandos de esta guía salen de la <a href="https://antigravity.google/docs/getting-started?tab=cli" target="_blank" rel="noopener noreferrer" class="' + link + '">página oficial de primeros pasos de Antigravity CLI</a> y de su <a href="https://antigravity.google/docs/cli/install" target="_blank" rel="noopener noreferrer" class="' + link + '">guía de instalación y autenticación</a>.',
+          text: 'Es el mismo comando que usa CodeAgentSwarm cuando instala Antigravity por ti en Linux. Todos los comandos de esta guía salen de la <a href="https://antigravity.google/docs/getting-started?tab=cli" target="_blank" rel="noopener noreferrer" class="' + link + '">página oficial de primeros pasos de Antigravity CLI</a> y de su <a href="https://antigravity.google/docs/install?tab=cli" target="_blank" rel="noopener noreferrer" class="' + link + '">guía de instalación y autenticación</a>.',
         },
       ],
     },
