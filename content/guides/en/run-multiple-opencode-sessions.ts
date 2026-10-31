@@ -16,7 +16,7 @@ This guide walks through the three practical ways to run several opencode sessio
     ctaAgent: 'opencode',
     highlightedWords: ['multiple OpenCode sessions', 'at once'],
     publishedAt: '2026-07-05',
-    updatedAt: '2026-10-05',
+    updatedAt: '2026-10-31',
     alternateSlug: 'ejecutar-multiples-sesiones-opencode',
   },
   sections: [
@@ -237,7 +237,7 @@ This guide walks through the three practical ways to run several opencode sessio
         },
         {
           type: 'paragraph',
-          text: 'opencode has no single full-auto flag, nothing like a one-shot danger-bypass switch. Its autonomy is config-driven: you set permissions in <code>opencode.json</code>, globally, per project, or per agent, to decide when a session acts on its own and when it stops to ask. Because of that, CodeAgentSwarm does not add a Turbo Mode toggle for opencode terminals the way it does for Claude Code and Codex. Instead it keeps your permissive configs supervised, with live file diffs and desktop notifications so a session running with few prompts is still one you can watch. The <a href="/en/guides/opencode-yolo-mode" class="text-neon-cyan hover:text-neon-purple transition-colors">opencode YOLO mode</a> guide walks through the config side of this.',
+          text: 'opencode has one hands-off flag, <code>--auto</code>, which approves every permission request that a rule does not explicitly deny (<a href="https://opencode.ai/docs/permissions/" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">opencode permissions docs</a>). Lasting autonomy is config-driven: you set permissions in <code>opencode.json</code>, globally, per project, or per agent, to decide when a session acts on its own and when it stops to ask. CodeAgentSwarm does not add a Turbo Mode toggle for opencode terminals the way it does for Claude Code and Codex. Instead it keeps your permissive configs supervised, with live file diffs and desktop notifications so a session running with few prompts is still one you can watch. The <a href="/en/guides/opencode-yolo-mode" class="text-neon-cyan hover:text-neon-purple transition-colors">opencode YOLO mode</a> guide walks through the config side of this.',
         },
         {
           type: 'heading',
@@ -377,7 +377,7 @@ This guide walks through the three practical ways to run several opencode sessio
     },
     {
       question: 'How do I run opencode sessions in full auto?',
-      answer: 'opencode does not have a single full-auto flag. Its autonomy is config-driven: you set permissions in opencode.json, globally, per project, or per agent, to decide when a session acts on its own and when it stops to ask. When you run several sessions with permissive configs at once, the risk is that they act without you watching, so CodeAgentSwarm keeps those runs supervised with live file diffs and desktop notifications rather than adding a separate toggle.',
+      answer: 'Start each session with opencode --auto, which approves every permission request that is not explicitly denied, or make it permanent in config: you set permissions in opencode.json, globally, per project, or per agent, to decide when a session acts on its own and when it stops to ask. When you run several sessions with permissive configs at once, the risk is that they act without you watching, so CodeAgentSwarm keeps those runs supervised with live file diffs and desktop notifications rather than adding a separate toggle.',
     },
     {
       question: 'How many opencode sessions can I run at once?',

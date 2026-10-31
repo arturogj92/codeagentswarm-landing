@@ -27,7 +27,7 @@ En esta guía te explico los tres métodos principales, los comparo de forma hon
       content: [
         {
           type: 'paragraph',
-          text: 'Las sesiones de <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a> son procesos independientes. Cuando abres un terminal y ejecutas <code>claude</code>, esa sesión tiene su propio hilo de conversación, su propia ventana de contexto y su propio estado. No comparte nada con otras sesiones.',
+          text: 'Las sesiones de <a href="https://code.claude.com/docs/en/overview" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a> son procesos independientes. Cuando abres un terminal y ejecutas <code>claude</code>, esa sesión tiene su propio hilo de conversación, su propia ventana de contexto y su propio estado. No comparte nada con otras sesiones.',
         },
         {
           type: 'paragraph',

@@ -16,7 +16,7 @@ En esta guía te explico las tres formas reales de ejecutar varias sesiones de C
     ctaAgent: 'codex',
     highlightedWords: ['varias sesiones de Codex CLI', 'a la vez'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-10-05',
+    updatedAt: '2026-10-31',
     alternateSlug: 'run-multiple-codex-sessions',
   },
   sections: [
@@ -237,7 +237,7 @@ En esta guía te explico las tres formas reales de ejecutar varias sesiones de C
         },
         {
           type: 'paragraph',
-          text: 'Codex tiene sus propios modos de aprobación, desde solo sugerir hasta full auto con <code>--full-auto</code>, además de un sandbox. CodeAgentSwarm se sitúa por encima con Turbo Mode y permisos por terminal, así que puedes dejar que las sesiones corran en full auto en las operaciones seguras mientras sigues controlando las peligrosas. Esa es la forma práctica de mantener varias sesiones de Codex rápidas sin dejarlas sin supervisión. La <a href="/es/guias/modo-yolo-claude-code-explicado" class="text-neon-cyan hover:text-neon-purple transition-colors">guía de Turbo Mode</a> cubre la configuración.',
+          text: 'Codex tiene sus propios controles: un sandbox, una política de aprobación y la revisión automática, que <code>--approve-for-me</code> activa para que un agente revisor responda a las aprobaciones dentro del sandbox <code>workspace-write</code>. El antiguo flag <code>--full-auto</code> ya no aparece en la <a href="https://learn.chatgpt.com/docs/developer-commands?surface=cli" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">referencia oficial de comandos</a>. CodeAgentSwarm se sitúa por encima con Turbo Mode y permisos por terminal, así que puedes dejar que las sesiones corran en full auto en las operaciones seguras mientras sigues controlando las peligrosas. Esa es la forma práctica de mantener varias sesiones de Codex rápidas sin dejarlas sin supervisión. La <a href="/es/guias/modo-yolo-claude-code-explicado" class="text-neon-cyan hover:text-neon-purple transition-colors">guía de Turbo Mode</a> cubre la configuración.',
         },
         {
           type: 'heading',
@@ -377,7 +377,7 @@ En esta guía te explico las tres formas reales de ejecutar varias sesiones de C
     },
     {
       question: '¿Cómo ejecuto sesiones de Codex CLI en full auto?',
-      answer: 'Codex tiene sus propios modos de aprobación, desde solo sugerir hasta full auto, al que llegas con el flag --full-auto, respaldado por un sandbox. Cuando ejecutas varias sesiones en full auto a la vez, el riesgo es que actúen sin que las estés vigilando. CodeAgentSwarm añade Turbo Mode y permisos por terminal por encima, así que puedes aprobar automáticamente las operaciones seguras mientras sigues controlando las peligrosas.',
+      answer: 'Conserva el sandbox workspace-write y elige una política de aprobación: codex --sandbox workspace-write --ask-for-approval never trabaja sin preguntas, y codex --approve-for-me deja que un agente revisor responda a las aprobaciones. El antiguo flag --full-auto ya no funciona en el Codex CLI actual. Cuando ejecutas varias sesiones en full auto a la vez, el riesgo es que actúen sin que las estés vigilando. CodeAgentSwarm añade Turbo Mode y permisos por terminal por encima, así que puedes aprobar automáticamente las operaciones seguras mientras sigues controlando las peligrosas.',
     },
     {
       question: '¿Cuántas sesiones de Codex puedo ejecutar a la vez?',

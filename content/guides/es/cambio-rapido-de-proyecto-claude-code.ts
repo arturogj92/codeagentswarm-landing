@@ -41,7 +41,7 @@ CodeAgentSwarm tiene accesos directos de proyecto en la barra de navegación jus
         },
         {
           type: 'paragraph',
-          text: 'Esto está pensado para quien hace malabares con varios repos a la vez. Si tienes varias sesiones en paralelo, el cambiador encaja de forma natural con <a href="/es/guias/ejecutar-multiples-sesiones-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">ejecutar múltiples sesiones de Claude Code</a>, ya que cada clic puede abrir otro terminal en un proyecto distinto. Si no conoces todavía <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, es la herramienta de coding agéntico de Anthropic que se ejecuta en tu terminal.',
+          text: 'Esto está pensado para quien hace malabares con varios repos a la vez. Si tienes varias sesiones en paralelo, el cambiador encaja de forma natural con <a href="/es/guias/ejecutar-multiples-sesiones-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">ejecutar múltiples sesiones de Claude Code</a>, ya que cada clic puede abrir otro terminal en un proyecto distinto. Si no conoces todavía <a href="https://code.claude.com/docs/en/overview" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, es la herramienta de coding agéntico de Anthropic que se ejecuta en tu terminal.',
         },
       ],
     },

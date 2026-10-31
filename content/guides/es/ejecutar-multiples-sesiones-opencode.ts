@@ -16,7 +16,7 @@ En esta guía te explico las tres formas reales de ejecutar varias sesiones de o
     ctaAgent: 'opencode',
     highlightedWords: ['múltiples sesiones de OpenCode', 'a la vez'],
     publishedAt: '2026-07-05',
-    updatedAt: '2026-10-05',
+    updatedAt: '2026-10-31',
     alternateSlug: 'run-multiple-opencode-sessions',
   },
   sections: [
@@ -237,7 +237,7 @@ En esta guía te explico las tres formas reales de ejecutar varias sesiones de o
         },
         {
           type: 'paragraph',
-          text: 'opencode no tiene un único flag de full auto, nada parecido a un interruptor de saltarse peligros de un tirón. Su autonomía se gobierna por configuración: fijas los permisos en <code>opencode.json</code>, de forma global, por proyecto o por agente, para decidir cuándo una sesión actúa por su cuenta y cuándo se para a preguntar. Por eso, CodeAgentSwarm no añade un interruptor de Turbo Mode para los terminales de opencode como sí lo hace para Claude Code y Codex. En su lugar mantiene tus configuraciones permisivas supervisadas, con diffs de archivos en vivo y notificaciones de escritorio, para que una sesión que corre con pocos permisos siga siendo una que puedes vigilar. La guía del <a href="/es/guias/modo-yolo-opencode" class="text-neon-cyan hover:text-neon-purple transition-colors">modo YOLO de opencode</a> repasa la parte de configuración.',
+          text: 'opencode tiene un flag para trabajar sin intervención, <code>--auto</code>, que aprueba cualquier petición de permiso que una regla no deniegue de forma explícita (<a href="https://opencode.ai/docs/permissions/" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">documentación de permisos de opencode</a>). La autonomía duradera se gobierna por configuración: fijas los permisos en <code>opencode.json</code>, de forma global, por proyecto o por agente, para decidir cuándo una sesión actúa por su cuenta y cuándo se para a preguntar. CodeAgentSwarm no añade un interruptor de Turbo Mode para los terminales de opencode como sí lo hace para Claude Code y Codex. En su lugar mantiene tus configuraciones permisivas supervisadas, con diffs de archivos en vivo y notificaciones de escritorio, para que una sesión que corre con pocos permisos siga siendo una que puedes vigilar. La guía del <a href="/es/guias/modo-yolo-opencode" class="text-neon-cyan hover:text-neon-purple transition-colors">modo YOLO de opencode</a> repasa la parte de configuración.',
         },
         {
           type: 'heading',
@@ -377,7 +377,7 @@ En esta guía te explico las tres formas reales de ejecutar varias sesiones de o
     },
     {
       question: '¿Cómo ejecuto sesiones de opencode en full auto?',
-      answer: 'opencode no tiene un único flag de full auto. Su autonomía se gobierna por configuración: fijas los permisos en opencode.json, de forma global, por proyecto o por agente, para decidir cuándo una sesión actúa por su cuenta y cuándo se para a preguntar. Cuando ejecutas varias sesiones con configuraciones permisivas a la vez, el riesgo es que actúen sin que las estés vigilando, así que CodeAgentSwarm mantiene esas tiradas supervisadas con diffs de archivos en vivo y notificaciones de escritorio en lugar de añadir un interruptor aparte.',
+      answer: 'Arranca cada sesión con opencode --auto, que aprueba cualquier petición de permiso que no esté denegada de forma explícita, o hazlo permanente en la configuración: fijas los permisos en opencode.json, de forma global, por proyecto o por agente, para decidir cuándo una sesión actúa por su cuenta y cuándo se para a preguntar. Cuando ejecutas varias sesiones con configuraciones permisivas a la vez, el riesgo es que actúen sin que las estés vigilando, así que CodeAgentSwarm mantiene esas tiradas supervisadas con diffs de archivos en vivo y notificaciones de escritorio en lugar de añadir un interruptor aparte.',
     },
     {
       question: '¿Cuántas sesiones de opencode puedo ejecutar a la vez?',

@@ -68,7 +68,7 @@ export const guide: Guide = {
         },
         {
           type: 'paragraph',
-          text: 'A <a href="https://docs.claude.com/en/docs/claude-code/overview" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a> session is just a process. You start it with <code>claude</code>, sign in once, and from then on that session has its own conversation, its own context window, and its own working directory. Two sessions know nothing about each other.',
+          text: 'A <a href="https://code.claude.com/docs/en/overview" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a> session is just a process. You start it with <code>claude</code>, sign in once, and from then on that session has its own conversation, its own context window, and its own working directory. Two sessions know nothing about each other.',
         },
         {
           type: 'paragraph',

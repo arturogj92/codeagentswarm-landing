@@ -16,7 +16,7 @@ In this guide I walk through the three practical ways to run an opencode swarm, 
     ctaAgent: 'opencode',
     highlightedWords: ['OpenCode Agent Swarm', 'opencode'],
     publishedAt: '2026-07-05',
-    updatedAt: '2026-10-05',
+    updatedAt: '2026-10-31',
     alternateSlug: 'enjambre-de-agentes-opencode',
   },
   sections: [
@@ -237,7 +237,7 @@ In this guide I walk through the three practical ways to run an opencode swarm, 
         },
         {
           type: 'paragraph',
-          text: 'opencode has no single full-auto or danger-bypass flag. How autonomous an agent runs is decided by its permission config in <code>opencode.json</code>, which you can set globally at <code>~/.config/opencode/opencode.json</code>, per project, or per agent. So the way to run a swarm hands-off is to loosen the permissions in that config, not to flip a switch. Because of that, CodeAgentSwarm does not add a Turbo Mode toggle for opencode the way it does for Claude Code and Codex. Instead it keeps a permissive opencode config supervised: you get the live diffs and desktop notifications below so a hands-off config never runs blind. The <a href="/en/guides/opencode-yolo-mode" class="text-neon-cyan hover:text-neon-purple transition-colors">opencode YOLO mode guide</a> has the full picture on autonomy and permissions.',
+          text: 'opencode has one hands-off switch, <code>--auto</code>, which approves every permission request that a rule does not explicitly deny (<a href="https://opencode.ai/docs/permissions/" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">opencode permissions docs</a>). Lasting autonomy is decided by its permission config in <code>opencode.json</code>, which you can set globally at <code>~/.config/opencode/opencode.json</code>, per project, or per agent. CodeAgentSwarm does not add a Turbo Mode toggle for opencode the way it does for Claude Code and Codex. Instead it keeps a permissive opencode config supervised: you get the live diffs and desktop notifications below so a hands-off config never runs blind. The <a href="/en/guides/opencode-yolo-mode" class="text-neon-cyan hover:text-neon-purple transition-colors">opencode YOLO mode guide</a> has the full picture on autonomy and permissions.',
         },
         {
           type: 'heading',
@@ -247,7 +247,7 @@ In this guide I walk through the three practical ways to run an opencode swarm, 
         },
         {
           type: 'paragraph',
-          text: 'You can watch the file changes each opencode agent is making in real time, per terminal and at the project level. When two agents edit the same file, you see it as it happens instead of discovering it in a messy diff later. Git still handles the merge, but the visibility means overlapping edits never surprise you. This matters more with opencode precisely because there is no full-auto switch to lean on: live diffs are how you keep a permissive config accountable.',
+          text: 'You can watch the file changes each opencode agent is making in real time, per terminal and at the project level. When two agents edit the same file, you see it as it happens instead of discovering it in a messy diff later. Git still handles the merge, but the visibility means overlapping edits never surprise you. With opencode --auto or a permissive config, live diffs are how you keep the run accountable.',
         },
         {
           type: 'callout',

@@ -41,7 +41,7 @@ CodeAgentSwarm has navbar project shortcuts for exactly this. You save a shortcu
         },
         {
           type: 'paragraph',
-          text: 'This is built for people juggling several repos at once. If you are running a few sessions in parallel, the switcher pairs naturally with <a href="/en/guides/run-multiple-claude-code-sessions" class="text-neon-cyan hover:text-neon-purple transition-colors">running multiple Claude Code sessions</a>, since each click can spin up another terminal in a different project. If you are new to <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, it is Anthropic\'s agentic coding tool that runs in your terminal.',
+          text: 'This is built for people juggling several repos at once. If you are running a few sessions in parallel, the switcher pairs naturally with <a href="/en/guides/run-multiple-claude-code-sessions" class="text-neon-cyan hover:text-neon-purple transition-colors">running multiple Claude Code sessions</a>, since each click can spin up another terminal in a different project. If you are new to <a href="https://code.claude.com/docs/en/overview" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, it is Anthropic\'s agentic coding tool that runs in your terminal.',
         },
       ],
     },

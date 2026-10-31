@@ -37,7 +37,7 @@ CodeAgentSwarm tiene un Git Manager integrado justo para esto. Lee tus archivos 
         },
         {
           type: 'paragraph',
-          text: 'La idea es quitar la fricción al final de la sesión. La IA ha hecho el trabajo pesado en el código, y ahora escribir un mensaje de commit decente es un clic en lugar de una tarea que te saltas. Si eres nuevo en <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, es la herramienta de coding agéntico de Anthropic que se ejecuta en tu terminal y edita archivos por todo tu proyecto.',
+          text: 'La idea es quitar la fricción al final de la sesión. La IA ha hecho el trabajo pesado en el código, y ahora escribir un mensaje de commit decente es un clic en lugar de una tarea que te saltas. Si eres nuevo en <a href="https://code.claude.com/docs/en/overview" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, es la herramienta de coding agéntico de Anthropic que se ejecuta en tu terminal y edita archivos por todo tu proyecto.',
         },
       ],
     },

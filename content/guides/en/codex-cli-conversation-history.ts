@@ -12,7 +12,7 @@ export const guide: Guide = {
     ctaAgent: 'codex',
     highlightedWords: ['history', 'Codex CLI', 'resume'],
     publishedAt: '2026-06-24',
-    updatedAt: '2026-09-29',
+    updatedAt: '2026-10-31',
     alternateSlug: 'historial-conversaciones-codex',
   },
   sections: [
@@ -64,13 +64,17 @@ export const guide: Guide = {
             ],
             [
               'codex resume SESSION_ID',
-              'Resume a session by ID.',
+              'Resume a session by ID or session name.',
+            ],
+            [
+              'codex fork',
+              'Copy a saved session into a new conversation and keep the original transcript.',
             ],
           ],
         },
         {
           type: 'paragraph',
-          text: 'Options checked with <code>codex resume --help</code> in Codex CLI 0.156.0 on September 25, 2026. Check your installed version’s help if its behavior differs.',
+          text: 'Options checked with <code>codex resume --help</code> and <code>codex fork --help</code> in Codex CLI 0.159.0 on October 31, 2026. Check your installed version’s help if its behavior differs.',
         },
         {
           type: 'paragraph',

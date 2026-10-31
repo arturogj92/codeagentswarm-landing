@@ -16,7 +16,7 @@ Y cuando lo tengas funcionando, también te enseñamos cómo pasar de un termina
     ctaAgent: 'claude-code',
     highlightedWords: ['Claude Code', 'Windows'],
     publishedAt: '2026-06-12',
-    updatedAt: '2026-06-12',
+    updatedAt: '2026-10-31',
     alternateSlug: 'claude-code-on-windows',
   },
   sections: [
@@ -61,7 +61,7 @@ claude --version`,
             'Windows 10 (versión 1809 o posterior) o Windows 11, de 64 bits. Windows de 32 bits no está soportado.',
             'PowerShell, que viene preinstalado con Windows.',
             'Git para Windows: opcional pero recomendado. Con él, Claude Code usa Git Bash como shell, lo que da mejor compatibilidad con comandos bash. Sin él, Claude Code usa PowerShell.',
-            'Una cuenta de Anthropic (suscripción Claude Pro/Max o acceso por API).',
+            'Una cuenta Claude Pro, Max, Ultra, Team, Enterprise o Console. El plan gratuito de claude.ai no incluye Claude Code.',
           ],
         },
         {

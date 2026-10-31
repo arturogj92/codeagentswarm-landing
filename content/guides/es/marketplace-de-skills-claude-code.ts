@@ -45,7 +45,7 @@ Lo que más me gusta: cuando instalas una skill, eliges dónde va. Las versiones
         },
         {
           type: 'paragraph',
-          text: 'Si eres nuevo con <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, es la herramienta de codificación agéntica de Anthropic que corre en tu terminal. Las skills son la forma de ampliar lo que sabe hacer sin reescribir las mismas instrucciones en cada sesión.',
+          text: 'Si eres nuevo con <a href="https://code.claude.com/docs/en/overview" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, es la herramienta de codificación agéntica de Anthropic que corre en tu terminal. Las skills son la forma de ampliar lo que sabe hacer sin reescribir las mismas instrucciones en cada sesión.',
         },
       ],
     },

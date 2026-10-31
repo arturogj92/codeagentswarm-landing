@@ -46,7 +46,7 @@ ls ~/.claude/projects/   # donde vive el historial en bruto (archivos JSONL)`,
         },
         {
           type: 'paragraph',
-          text: 'Si ya usas <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, seguramente habrás usado "claude --continue" o "claude --resume" para volver a una sesión anterior. El <a href="https://code.claude.com/docs/en/sessions" class="text-neon-cyan hover:text-neon-purple transition-colors">selector nativo</a> permite buscar, previsualizar e incluir otros proyectos. CodeAgentSwarm integra el historial en tu espacio de trabajo con varios agentes: buscador de texto completo, filtros por proyecto, vista global de todas tus conversaciones y la posibilidad de retomar cualquier conversación de cualquier proyecto desde cualquier terminal.',
+          text: 'Si ya usas <a href="https://code.claude.com/docs/en/overview" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, seguramente habrás usado "claude --continue" o "claude --resume" para volver a una sesión anterior. El <a href="https://code.claude.com/docs/en/sessions" class="text-neon-cyan hover:text-neon-purple transition-colors">selector nativo</a> permite buscar, previsualizar e incluir otros proyectos. CodeAgentSwarm integra el historial en tu espacio de trabajo con varios agentes: buscador de texto completo, filtros por proyecto, vista global de todas tus conversaciones y la posibilidad de retomar cualquier conversación de cualquier proyecto desde cualquier terminal.',
         },
       ],
     },

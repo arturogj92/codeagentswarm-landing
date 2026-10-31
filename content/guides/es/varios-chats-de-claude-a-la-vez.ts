@@ -97,7 +97,7 @@ Elige el camino que encaja con lo que intentas hacer. Si chateas en el navegador
       content: [
         {
           type: 'paragraph',
-          text: 'Aquí es donde las sesiones en paralelo se vuelven de verdad potentes. <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a> es el agente de código por línea de comandos, y cada sesión que inicias con <code>claude</code> es su propio proceso independiente. Tiene su propio hilo de conversación, su propia ventana de contexto y su propio estado de trabajo. No se comparte nada entre sesiones.',
+          text: 'Aquí es donde las sesiones en paralelo se vuelven de verdad potentes. <a href="https://code.claude.com/docs/en/overview" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a> es el agente de código por línea de comandos, y cada sesión que inicias con <code>claude</code> es su propio proceso independiente. Tiene su propio hilo de conversación, su propia ventana de contexto y su propio estado de trabajo. No se comparte nada entre sesiones.',
         },
         {
           type: 'paragraph',
