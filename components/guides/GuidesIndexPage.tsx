@@ -17,9 +17,24 @@ interface GuidesIndexPageProps {
 // Tool family for each guide, keyed by its canonical English slug so the
 // grouping works the same in both locales. Anything not listed falls back to
 // the Claude Code family.
-type Family = 'cross' | 'claude' | 'codex' | 'antigravity' | 'opencode' | 'kimi' | 'grok' | 'cursor' | 'pi' | 'devin' | 'muse'
+type Family = 'cross' | 'scheduled' | 'claude' | 'codex' | 'antigravity' | 'opencode' | 'kimi' | 'grok' | 'cursor' | 'pi' | 'devin' | 'muse'
 
 const FAMILY_BY_EN_SLUG: Record<string, Family> = {
+  // Scheduled Conversations (2.5.0): pillar + one guide per agent
+  'schedule-ai-coding-agents': 'scheduled',
+  'schedule-claude-code': 'scheduled',
+  'schedule-codex': 'scheduled',
+  'schedule-antigravity-cli': 'scheduled',
+  'schedule-opencode': 'scheduled',
+  'schedule-kimi-code': 'scheduled',
+  'schedule-grok-build': 'scheduled',
+  'schedule-cursor-agent': 'scheduled',
+  'schedule-pi-coding-agent': 'scheduled',
+  'schedule-devin-cli': 'scheduled',
+  'schedule-muse-code': 'scheduled',
+  'schedule-cline': 'scheduled',
+  'schedule-github-copilot-cli': 'scheduled',
+
   'how-to-use-muse-code': 'muse',
   'muse-code-on-windows': 'muse',
   'muse-code-on-linux': 'muse',
@@ -108,13 +123,18 @@ const FAMILY_BY_EN_SLUG: Record<string, Family> = {
   'cursor-cli-pricing': 'cursor',
 }
 
-const FAMILY_ORDER: Family[] = ['cross', 'claude', 'codex', 'antigravity', 'opencode', 'kimi', 'grok', 'cursor', 'pi', 'devin', 'muse']
+const FAMILY_ORDER: Family[] = ['cross', 'scheduled', 'claude', 'codex', 'antigravity', 'opencode', 'kimi', 'grok', 'cursor', 'pi', 'devin', 'muse']
 
 const FAMILY_META: Record<Family, { en: string; es: string; icons: string[] }> = {
   cross: {
     en: 'Cross-CLI & Agent Swarm',
     es: 'Cross-CLI y enjambre de agentes',
     icons: ['/icons/apps/claude-icon.svg', '/icons/apps/codex-icon.svg', '/icons/apps/antigravity-icon.png'],
+  },
+  scheduled: {
+    en: 'Scheduled agents (cron)',
+    es: 'Agentes programados (cron)',
+    icons: ['/icons/apps/claude-icon.svg', '/icons/apps/codex-icon.svg', '/icons/apps/cursor-icon.svg'],
   },
   claude: { en: 'Claude Code', es: 'Claude Code', icons: ['/icons/apps/claude-icon.svg'] },
   codex: { en: 'Codex CLI', es: 'Codex CLI', icons: ['/icons/apps/codex-icon.svg'] },

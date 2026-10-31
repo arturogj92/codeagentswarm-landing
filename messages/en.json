@@ -228,6 +228,19 @@
       "yourTurn": "Your turn: queue task #4 with the lightning button"
     }
   },
+  "scheduled250": {
+    "eyebrow": "New in 2.5.0 · Scheduled Conversations",
+    "titlePre": "Your agents start",
+    "titleHighlight": "on their own.",
+    "description": "Pick a project, an agent and a prompt, then choose when: at set times on the days you want, every few hours, or only when you press Run now. Each run opens a normal Chat you can read and continue, or works headless with no tab.",
+    "check1": "Works with all 12 agents, from Claude Code and Codex to Pi and GitHub Copilot CLI",
+    "check2": "Up to 24 set times a day, or every 1 to 12 hours",
+    "check3": "Ask an agent to set it up, or manage your schedules from your phone",
+    "note": "Runs on your computer while CodeAgentSwarm is open. Missed a slot because the app was closed? It runs once when the app opens.",
+    "viewGuide": "How scheduling works",
+    "videoLabel": "Creating a schedule in CodeAgentSwarm and watching the run start on time",
+    "caption": "Real capture: a daily 21:00 schedule for Codex, then the run arriving in its Chat."
+  },
   "socialProof": {
     "stats": {
       "workflow": {
