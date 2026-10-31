@@ -26,7 +26,7 @@ It also covers the part that matters once the prompts are off: how to keep a ful
       content: [
         {
           type: 'paragraph',
-          text: '"YOLO mode" is the community nickname for running a coding agent with approvals bypassed. Claude Code has <code>--dangerously-skip-permissions</code> and Codex has <code>--full-auto</code>. Kimi Code splits the idea in two: <code>--yolo</code> auto-approves routine work but still stops for risky actions, and <code>--auto</code> approves everything and never asks. The <a href="https://www.kimi.com/code/docs/en/kimi-code-cli/guides/interaction.html" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">official permission modes page</a> calls them Ask When Needed and Never Ask.',
+          text: '"YOLO mode" is the community nickname for running a coding agent with approvals bypassed. Claude Code has <code>--dangerously-skip-permissions</code> and Codex has <code>--yolo</code> (<code>--dangerously-bypass-approvals-and-sandbox</code>). Kimi Code splits the idea in two: <code>--yolo</code> auto-approves routine work but still stops for risky actions, and <code>--auto</code> approves everything and never asks. The <a href="https://www.kimi.com/code/docs/en/kimi-code-cli/guides/interaction.html" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">official permission modes page</a> calls them Ask When Needed and Never Ask.',
         },
         {
           type: 'code',
@@ -197,7 +197,7 @@ It also covers the part that matters once the prompts are off: how to keep a ful
           type: 'list',
           items: [
             '<strong>Claude Code:</strong> <code>--dangerously-skip-permissions</code>, plus granular allow rules in settings. The <a href="/en/guides/claude-code-yolo-mode-explained" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code YOLO guide</a> covers it.',
-            '<strong>Codex CLI:</strong> <code>--full-auto</code> and approval modes. Covered in <a href="/en/guides/codex-yolo-mode" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex YOLO mode</a>.',
+            '<strong>Codex CLI:</strong> <code>--yolo</code>, <code>--approve-for-me</code> and approval modes. Covered in <a href="/en/guides/codex-yolo-mode" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex YOLO mode</a>.',
             '<strong>opencode:</strong> no flag at all; autonomy is config-driven. See <a href="/en/guides/opencode-yolo-mode" class="text-neon-cyan hover:text-neon-purple transition-colors">opencode YOLO mode</a>.',
             '<strong>Kimi Code:</strong> <code>--auto</code> for the full bypass, <code>--yolo</code> / <code>-y</code> for Ask When Needed, permission rules and hooks in config.toml for the graded version, and mode flags that override a resumed session\'s saved mode.',
           ],
