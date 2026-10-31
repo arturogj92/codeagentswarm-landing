@@ -25,6 +25,9 @@ for (const locale of ['en', 'es']) {
   const copilot = `/${locale}/${locale === 'en' ? 'guides/how-to-use-github-copilot-cli' : 'guias/como-usar-github-copilot-cli'}`
   assert.ok(visible.includes(`href="${copilot}"`), 'GitHub Copilot CLI: linked guide')
   assert.ok(visible.includes('/icons/apps/copilot-icon.svg'), 'GitHub Copilot CLI: icon')
+  const cline = `/${locale}/${locale === 'en' ? 'guides/how-to-use-cline-cli' : 'guias/como-usar-cline-cli'}`
+  assert.ok(visible.includes(`href="${cline}"`), 'Cline: linked guide')
+  assert.ok(visible.includes('/icons/apps/cline-icon.svg'), 'Cline: icon')
   for (const [language, route] of [['en', 'en'], ['es', 'es'], ['x-default', 'en']]) {
     assert.ok(html.includes(`hrefLang="${language}" href="${base}/${route}"`))
   }

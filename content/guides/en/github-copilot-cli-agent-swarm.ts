@@ -14,7 +14,7 @@ const guide: Guide = {
     ctaAgent: 'copilot',
     highlightedWords: ['GitHub Copilot CLI'],
     publishedAt: '2026-10-08',
-    updatedAt: '2026-10-08',
+    updatedAt: '2026-10-31',
     alternateSlug: 'enjambre-de-agentes-github-copilot-cli',
     relatedSlug: 'github-copilot-cli-models-ai-credits',
     socialImage: '/images/guides/copilot-cli-og-en.png',
@@ -36,7 +36,7 @@ const guide: Guide = {
         {
           type: 'callout',
           variant: 'info',
-          content: 'GitHub Copilot CLI support in CodeAgentSwarm arrives in the release after 2.4.3. The app behavior described here comes from a development build.',
+          content: 'GitHub Copilot CLI support arrives in CodeAgentSwarm 2.5.0, in beta. The app behavior described here was checked during 2.5.0 development.',
         },
       ],
     },
@@ -114,7 +114,7 @@ const guide: Guide = {
         },
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm puts every session in one window. Pick GitHub Copilot CLI in the agent picker for each session you want, and open each one in its own project or git worktree. Copilot sessions sit next to Claude Code, Codex, OpenCode, Kimi Code, Antigravity, Grok Build, Cursor Agent, Pi, Devin CLI and Muse Code.',
+          text: 'CodeAgentSwarm puts every session in one window. Pick GitHub Copilot CLI in the agent picker for each session you want, and open each one in its own project or git worktree. Copilot sessions sit next to Claude Code, Codex, OpenCode, Kimi Code, Antigravity, Grok Build, Cursor Agent, Pi, Devin CLI, Muse Code and Cline.',
         },
         {
           type: 'heading',
@@ -134,7 +134,7 @@ const guide: Guide = {
         },
         {
           type: 'paragraph',
-          text: `Each Copilot session has its own status, and you get a desktop notification when one finishes or waits for you. You stop checking tabs and come back when a session actually needs you. More on that in ${link('/en/guides/codeagentswarm-notifications', 'CodeAgentSwarm notifications')}.`,
+          text: `In Chat, each Copilot session shows whether it is working or waiting for you, and you get a desktop notification when it finishes or needs you. You stop checking tabs and come back when a session actually needs you. More on that in ${link('/en/guides/codeagentswarm-notifications', 'CodeAgentSwarm notifications')}.`,
         },
         {
           type: 'heading',
@@ -146,7 +146,7 @@ const guide: Guide = {
           type: 'image',
           src: '/images/guides/copilot-chat-real.webp',
           alt: 'GitHub Copilot CLI answering in CodeAgentSwarm Chat',
-          caption: 'Real capture from a CodeAgentSwarm development build: a reply from GitHub Copilot CLI 1.0.93 to a test prompt.',
+          caption: 'Real capture from CodeAgentSwarm, taken during 2.5.0 development: a reply from GitHub Copilot CLI 1.0.93 to a test prompt.',
           size: 'medium',
         },
         {
@@ -167,7 +167,7 @@ const guide: Guide = {
           type: 'image',
           src: '/images/guides/copilot-history.webp',
           alt: 'GitHub Copilot CLI conversations filtered in CodeAgentSwarm history',
-          caption: 'Real capture from a CodeAgentSwarm development build, with a sample conversation created for testing.',
+          caption: 'Real capture from CodeAgentSwarm, taken during 2.5.0 development, with a sample conversation created for testing.',
           size: 'full',
         },
         {
@@ -268,7 +268,7 @@ const guide: Guide = {
     },
     {
       question: 'Does CodeAgentSwarm already support GitHub Copilot CLI?',
-      answer: 'Support arrives in the release after 2.4.3. It covers installation, sign-in from Chat, Chat and terminal views, history, notifications and status for Copilot sessions next to your other agents.',
+      answer: 'Support arrives in CodeAgentSwarm 2.5.0, in beta. It covers installation, sign-in from Chat, Chat and terminal views and history for Copilot sessions next to your other agents.',
     },
   ],
 }

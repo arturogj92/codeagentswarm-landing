@@ -16,7 +16,7 @@ export default function WorksWithSection() {
   const guidePath = (enSlug: string, esSlug: string) =>
     es ? `/es/guias/${esSlug}` : `/en/guides/${enSlug}`
 
-  type Tool = { name: string; desc: string; href: string; icon: string; isNew?: boolean }
+  type Tool = { name: string; desc: string; href: string; icon: string; isNew?: boolean; isBeta?: boolean }
   const tools: Tool[] = [
     {
       name: 'Claude Code',
@@ -115,12 +115,24 @@ export default function WorksWithSection() {
     {
       name: 'GitHub Copilot CLI',
       desc: g(
-        'Sign in with GitHub, pick a model and approve each action from Chat. Monthly AI credits sit next to your other agents.',
-        'Entra con GitHub, elige modelo y aprueba cada acción desde el Chat. Los créditos de IA del mes aparecen junto a tus otros agentes.'
+        'Sign in with GitHub, pick a model and approve each action from Chat. Your monthly Copilot usage sits next to your other agents. New in 2.5.0.',
+        'Entra con GitHub, elige modelo y aprueba cada acción desde el Chat. Tu uso mensual de Copilot aparece junto a tus otros agentes. Nuevo en la 2.5.0.'
       ),
       href: guidePath('how-to-use-github-copilot-cli', 'como-usar-github-copilot-cli'),
       icon: '/icons/apps/copilot-icon.svg',
       isNew: true,
+      isBeta: true,
+    },
+    {
+      name: 'Cline',
+      desc: g(
+        'Bring any model provider to the open source Cline CLI, in Chat or the terminal, with history and session spend. New in 2.5.0.',
+        'Usa Cline, la CLI open source, con el proveedor de modelos que quieras, en Chat o en la terminal, con historial y gasto por sesión. Nuevo en la 2.5.0.'
+      ),
+      href: guidePath('how-to-use-cline-cli', 'como-usar-cline-cli'),
+      icon: '/icons/apps/cline-icon.svg',
+      isNew: true,
+      isBeta: true,
     },
   ]
 
@@ -144,8 +156,8 @@ export default function WorksWithSection() {
           </h2>
           <p className="text-white/70 text-lg max-w-2xl mx-auto">
             {g(
-              'One workspace for Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI and GitHub Copilot CLI. Run them in parallel, mix vendors, and watch all of them from one place.',
-              'Un espacio de trabajo para Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI y GitHub Copilot CLI. Ejecútalos en paralelo, mezcla proveedores y vigílalos todos desde un sitio.'
+              'One workspace for Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI, GitHub Copilot CLI and Cline. Run them in parallel, mix vendors, and watch all of them from one place.',
+              'Un espacio de trabajo para Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI, GitHub Copilot CLI y Cline. Ejecútalos en paralelo, mezcla proveedores y vigílalos todos desde un sitio.'
             )}
           </p>
         </motion.div>
@@ -169,6 +181,11 @@ export default function WorksWithSection() {
                   {tool.isNew && (
                     <span className="text-[10px] px-2 py-0.5 rounded-full bg-neon-cyan/15 text-neon-cyan font-medium">
                       {g('New', 'Nuevo')}
+                    </span>
+                  )}
+                  {tool.isBeta && (
+                    <span className="text-[10px] px-2 py-0.5 rounded-full border border-white/20 text-white/70 font-medium uppercase tracking-wide">
+                      Beta
                     </span>
                   )}
                 </div>

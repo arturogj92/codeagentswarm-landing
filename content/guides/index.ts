@@ -86,6 +86,17 @@ import enCopilot6 from './en/github-copilot-cli-yolo-mode'
 import esCopilot6 from './es/modo-yolo-github-copilot-cli'
 import enCopilot7 from './en/github-copilot-cli-vs-claude-code'
 import esCopilot7 from './es/github-copilot-cli-vs-claude-code'
+// Cline (CodeAgentSwarm 2.5.0, beta)
+import enCline0 from './en/how-to-use-cline-cli'
+import esCline0 from './es/como-usar-cline-cli'
+import enCline1 from './en/cline-vs-claude-code'
+import esCline1 from './es/cline-vs-claude-code'
+import enCline2 from './en/cline-agent-swarm'
+import esCline2 from './es/enjambre-de-agentes-cline'
+import enCline3 from './en/cline-cli-on-windows-and-linux'
+import esCline3 from './es/cline-cli-en-windows-y-linux'
+import enCline4 from './en/cline-conversation-history'
+import esCline4 from './es/historial-conversaciones-cline'
 import enMuseCodeOnLinux from './en/muse-code-on-linux'
 import esMuseCodeEnLinux from './es/muse-code-en-linux'
 import enOpenCodeAgentSwarm from './en/opencode-agent-swarm'
@@ -313,6 +324,11 @@ export const guides: Record<string, Record<string, Guide>> = {
     'github-copilot-cli-agent-swarm': enCopilot5,
     'github-copilot-cli-yolo-mode': enCopilot6,
     'github-copilot-cli-vs-claude-code': enCopilot7,
+    'how-to-use-cline-cli': enCline0,
+    'cline-vs-claude-code': enCline1,
+    'cline-agent-swarm': enCline2,
+    'cline-cli-on-windows-and-linux': enCline3,
+    'cline-conversation-history': enCline4,
     'muse-code-on-linux': enMuseCodeOnLinux,
     'opencode-agent-swarm': enOpenCodeAgentSwarm,
     'run-multiple-opencode-sessions': enRunMultipleOpenCode,
@@ -434,6 +450,11 @@ export const guides: Record<string, Record<string, Guide>> = {
     'enjambre-de-agentes-github-copilot-cli': esCopilot5,
     'modo-yolo-github-copilot-cli': esCopilot6,
     'github-copilot-cli-vs-claude-code': esCopilot7,
+    'como-usar-cline-cli': esCline0,
+    'cline-vs-claude-code': esCline1,
+    'enjambre-de-agentes-cline': esCline2,
+    'cline-cli-en-windows-y-linux': esCline3,
+    'historial-conversaciones-cline': esCline4,
     'muse-code-en-linux': esMuseCodeEnLinux,
     'enjambre-de-agentes-opencode': esOpenCodeAgentSwarm,
     'ejecutar-multiples-sesiones-opencode': esRunMultipleOpenCode,

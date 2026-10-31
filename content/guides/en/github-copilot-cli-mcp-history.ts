@@ -10,11 +10,11 @@ const guide: Guide = {
     metaTitle: 'GitHub Copilot CLI MCP Setup and Session Resume',
     metaDescription: 'Add MCP servers to GitHub Copilot CLI with mcp-config.json or copilot mcp add, load custom instructions and skills, and resume saved sessions by ID or name.',
     intro: 'MCP servers give GitHub Copilot CLI extra tools, instruction files tell it how your project works, and saved sessions let you pick up where you stopped. This guide shows where each one lives and the commands to check them, tested with Copilot CLI 1.0.93 on October 8, 2026.',
-    ctaText: 'Search every GitHub Copilot CLI session and reopen it in Chat or the terminal with CodeAgentSwarm, starting with the release after 2.4.3.',
+    ctaText: 'Search every GitHub Copilot CLI session and reopen it in Chat or the terminal with CodeAgentSwarm, starting with 2.5.0.',
     ctaAgent: 'copilot',
     highlightedWords: ['GitHub Copilot CLI'],
     publishedAt: '2026-10-08',
-    updatedAt: '2026-10-08',
+    updatedAt: '2026-10-31',
     alternateSlug: 'github-copilot-cli-mcp-historial',
     relatedSlug: 'how-to-use-github-copilot-cli',
     socialImage: '/images/guides/copilot-cli-og-en.png',
@@ -185,13 +185,13 @@ const guide: Guide = {
       content: [
         {
           type: 'paragraph',
-          text: 'GitHub Copilot CLI support arrives in the CodeAgentSwarm release after 2.4.3; it is not in a published version yet. With it, Conversation History lists your Copilot sessions next to those of your other agents. You can filter by agent and project, search inside the messages, bookmark a conversation and reopen it in Chat or in the terminal.',
+          text: 'GitHub Copilot CLI support arrives in CodeAgentSwarm 2.5.0, in beta. With it, Conversation History lists your Copilot sessions next to those of your other agents. You can filter by agent and project, search inside the messages, bookmark a conversation and reopen it in Chat or in the terminal.',
         },
         {
           type: 'image',
           src: '/images/guides/copilot-history.webp',
           alt: 'GitHub Copilot CLI conversations filtered in CodeAgentSwarm history',
-          caption: 'Real capture from a CodeAgentSwarm development build, with a sample conversation created for testing.',
+          caption: 'Real capture from CodeAgentSwarm, taken during 2.5.0 development, with a sample conversation created for testing.',
           size: 'full',
         },
         {
@@ -202,7 +202,7 @@ const guide: Guide = {
           type: 'image',
           src: '/images/guides/copilot-cli-resume.webp',
           alt: 'A Chat conversation resumed in the GitHub Copilot CLI terminal with the folder trust prompt',
-          caption: 'Real capture from a CodeAgentSwarm development build: a session started in Chat continues in the terminal, and Copilot asks for folder trust.',
+          caption: 'Real capture from CodeAgentSwarm, taken during 2.5.0 development: a session started in Chat continues in the terminal, and Copilot asks for folder trust.',
           size: 'full',
         },
         {
@@ -222,7 +222,7 @@ const guide: Guide = {
         {
           type: 'callout',
           variant: 'info',
-          content: 'Turning the option off removes only the CodeAgentSwarm entry. Copilot works without it.',
+          content: 'Turning the option off removes only the CodeAgentSwarm entry. Copilot works without it. If your GitHub organization turns off third-party MCP servers for Copilot, Copilot only starts the built-in GitHub server, so the CodeAgentSwarm tools are missing and the app shows a warning in Chat. Sign in with an account that allows MCP servers to use them.',
         },
         {
           type: 'paragraph',
@@ -250,7 +250,7 @@ const guide: Guide = {
     },
     {
       question: 'Can CodeAgentSwarm reopen sessions I started in the terminal?',
-      answer: 'Yes, from the release after 2.4.3. Conversation History lists Copilot sessions, searches their messages and reopens any of them in Chat or in the terminal.',
+      answer: 'Yes, from CodeAgentSwarm 2.5.0. Conversation History lists Copilot sessions, searches their messages and reopens any of them in Chat or in the terminal.',
     },
   ],
 }

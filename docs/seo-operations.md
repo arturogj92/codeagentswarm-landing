@@ -1,6 +1,16 @@
 # SEO publishing and download measurement
 
 
+## Cline guides and the twelve-agent sweep (prepared 2026-10-31, publish with 2.5.0)
+
+Release 2.5.0 adds Cline and GitHub Copilot CLI, both labelled beta in the app picker (Pi and Devin lost their beta label in the same release). PR #30 now carries both. Merge it the day 2.5.0 ships: merging to `master` deploys production.
+
+- Five bilingual Cline pairs: `how-to-use-cline-cli` / `como-usar-cline-cli`, `cline-vs-claude-code` (same slug), `cline-agent-swarm` / `enjambre-de-agentes-cline`, `cline-cli-on-windows-and-linux` / `cline-cli-en-windows-y-linux`, `cline-conversation-history` / `historial-conversaciones-cline`. New `cline` CTA agent, guide family, icon (`public/icons/apps/cline-icon.svg`, same artwork as the app icon on a dark tile), OG cards and `llms.txt` section. `scripts/check-cline-seo.mjs` mirrors the Copilot check.
+- Agent lists swept to twelve with a literal-replacement script anchored on `Devin CLI and GitHub Copilot CLI` and its `y`/`or`/`o` variants, then a `Cline.{0,60}?Cline` duplicate check. Spanish `once` → `doce` also hits English idioms inside Spanish files (`run-at-once` anchor, "you only live once"): check those by hand.
+- Beta marking: the home agent cards gained an `isBeta` badge (Cline, Copilot) and the hero line says "New in 2.5.0, in beta". The Copilot guides no longer say "the release after 2.4.3".
+- Facts: Cline from docs.cline.bot (CLI reference, installation, rules, ACP) and the npm registry (`cline` 3.0.74, Apache-2.0, six native optional packages), checked 2026-10-31; app behaviour from `codeagentswarm-app` develop (`cline-cli-strategy.js`, `docs/systems/cline-acp-agent.md`). Only real image: a frame of `release-notes/2.5.0/cline-copilot.gif` (`cline-agent-picker.webp`); history images are the shared samples with captions that say so.
+- Keyword data (seo-mcp harvest 2026-10-31): `cline cli`, `cline vs claude code` (100+), `cline cli vs claude code`, `how to use cline cli`, `install cline cli`.
+
 ## GitHub Copilot CLI guides (prepared 2026-10-08, publish with the release)
 
 Two bilingual pairs prepared for the CodeAgentSwarm release that adds GitHub Copilot CLI: `how-to-use-github-copilot-cli` / `como-usar-github-copilot-cli` and `github-copilot-cli-models-ai-credits` / `github-copilot-cli-modelos-creditos-ia`. They register a new `copilot` CTA agent and guide family, an `llms.txt` section and a dashboard agent label. The homepage roster, agent cards, comparison tables (`check-guide-workspaces.mjs` still expects ten agents) and `check-release-agents.mjs` stay unchanged until the release ships, like the Devin activation in commit c1f699c.

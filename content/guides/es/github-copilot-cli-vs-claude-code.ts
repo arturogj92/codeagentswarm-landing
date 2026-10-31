@@ -14,7 +14,7 @@ const guide: Guide = {
     ctaAgent: 'copilot',
     highlightedWords: ['GitHub Copilot CLI'],
     publishedAt: '2026-10-08',
-    updatedAt: '2026-10-08',
+    updatedAt: '2026-10-31',
     alternateSlug: 'github-copilot-cli-vs-claude-code',
     relatedSlug: 'como-usar-github-copilot-cli',
     socialImage: '/images/guides/copilot-cli-og-es.png',
@@ -65,7 +65,7 @@ const guide: Guide = {
           type: 'image',
           src: '/images/guides/copilot-usage-panel.webp',
           alt: 'Cuota mensual de GitHub Copilot CLI en el panel de uso de CodeAgentSwarm',
-          caption: 'Interfaz real de una versión de desarrollo de CodeAgentSwarm. El 7 % restante que se ve es un valor de prueba, no una cuenta real.',
+          caption: 'Interfaz real de CodeAgentSwarm, capturada durante el desarrollo de la 2.5.0. El 7 % restante que se ve es un valor de prueba, no una cuenta real.',
           size: 'medium',
         },
         {
@@ -175,7 +175,7 @@ const guide: Guide = {
       content: [
         {
           type: 'paragraph',
-          text: 'No tienes que quedarte con uno. CodeAgentSwarm te deja elegir el agente en cada sesión, así que Copilot puede llevar una tarea mientras Claude Code trabaja en otra, cada uno en su propio proyecto o git worktree. Cada sesión muestra su propio estado y manda sus propias notificaciones.',
+          text: 'No tienes que quedarte con uno. CodeAgentSwarm te deja elegir el agente en cada sesión, así que Copilot puede llevar una tarea mientras Claude Code trabaja en otra, cada uno en su propio proyecto o git worktree. En Chat, cada sesión muestra su propio estado y manda sus propias notificaciones.',
         },
         {
           type: 'image',
@@ -196,7 +196,7 @@ const guide: Guide = {
         {
           type: 'callout',
           variant: 'info',
-          content: `El soporte de GitHub Copilot CLI llega en la versión de CodeAgentSwarm posterior a la 2.4.3. Con Copilot, Chat no tiene selector de razonamiento y la app no puede generar títulos de conversación ni mensajes de commit, así que usa otro proveedor para eso, como Claude Code (mira ${link('/es/guias/mensajes-de-commit-con-ia-claude-code', 'mensajes de commit con IA en Claude Code')}). Para repartir trabajo entre sesiones en paralelo, lee ${link('/es/guias/enjambre-de-agentes-github-copilot-cli', 'la guía del enjambre de agentes con GitHub Copilot CLI')}.`,
+          content: `El soporte de GitHub Copilot CLI llega en CodeAgentSwarm 2.5.0, en beta. Con Copilot, Chat no tiene selector de razonamiento y la app no puede generar títulos de conversación ni mensajes de commit, así que usa otro proveedor para eso, como Claude Code (mira ${link('/es/guias/mensajes-de-commit-con-ia-claude-code', 'mensajes de commit con IA en Claude Code')}). Para repartir trabajo entre sesiones en paralelo, lee ${link('/es/guias/enjambre-de-agentes-github-copilot-cli', 'la guía del enjambre de agentes con GitHub Copilot CLI')}.`,
         },
       ],
     },
@@ -210,6 +210,7 @@ const guide: Guide = {
             'Elige Copilot CLI si tu equipo ya paga GitHub Copilot o quiere Claude, GPT y otros modelos con un solo plan.',
             'Elige Claude Code si tus proyectos ya usan <code>CLAUDE.md</code>, skills de Claude Code y facturación de Anthropic.',
             'Elige Codex CLI si ya tienes un plan de ChatGPT, y mira Antigravity CLI si usabas Gemini CLI en el nivel gratuito.',
+            `Mira Cline si quieres un agente open source y elegir tú el proveedor de modelos: tienes ${link('/es/guias/cline-vs-claude-code', 'Cline vs Claude Code')}.`,
             'Usa más de uno cuando cada tarea encaje mejor con una herramienta y puedas revisar lo que hacen en paralelo.',
           ],
         },
@@ -239,7 +240,7 @@ const guide: Guide = {
     },
     {
       question: '¿Puedo usar Copilot CLI y Claude Code a la vez?',
-      answer: 'Sí. En CodeAgentSwarm eliges el agente en cada sesión y los usas en paralelo, cada uno en su propio proyecto o worktree. El soporte de Copilot llega en la versión posterior a la 2.4.3.',
+      answer: 'Sí. En CodeAgentSwarm eliges el agente en cada sesión y los usas en paralelo, cada uno en su propio proyecto o worktree. El soporte de Copilot llega en la 2.5.0, en beta.',
     },
   ],
 }

@@ -10,11 +10,11 @@ const guide: Guide = {
     metaTitle: 'MCP en GitHub Copilot CLI: configurar y reanudar sesiones',
     metaDescription: 'Añade servidores MCP a GitHub Copilot CLI con mcp-config.json o copilot mcp add, carga instrucciones y skills, y reanuda sesiones guardadas por ID o nombre.',
     intro: 'Los servidores MCP dan a GitHub Copilot CLI herramientas extra, los archivos de instrucciones le cuentan cómo funciona tu proyecto y las sesiones guardadas te dejan seguir donde lo dejaste. Esta guía explica dónde vive cada cosa y qué comandos sirven para comprobarla. La probamos con Copilot CLI 1.0.93 el 8 de octubre de 2026.',
-    ctaText: 'Busca cualquier sesión de GitHub Copilot CLI y reábrela en Chat o en la terminal con CodeAgentSwarm, a partir de la versión que sigue a la 2.4.3.',
+    ctaText: 'Busca cualquier sesión de GitHub Copilot CLI y reábrela en Chat o en la terminal con CodeAgentSwarm, a partir de la 2.5.0.',
     ctaAgent: 'copilot',
     highlightedWords: ['GitHub Copilot CLI'],
     publishedAt: '2026-10-08',
-    updatedAt: '2026-10-08',
+    updatedAt: '2026-10-31',
     alternateSlug: 'github-copilot-cli-mcp-history',
     relatedSlug: 'como-usar-github-copilot-cli',
     socialImage: '/images/guides/copilot-cli-og-es.png',
@@ -185,13 +185,13 @@ const guide: Guide = {
       content: [
         {
           type: 'paragraph',
-          text: 'El soporte de GitHub Copilot CLI llega en la versión de CodeAgentSwarm que sigue a la 2.4.3; todavía no está en ninguna versión publicada. Con ella, el historial de conversaciones muestra tus sesiones de Copilot junto a las de tus otros agentes. Puedes filtrar por agente y proyecto, buscar dentro de los mensajes, guardar una conversación en marcadores y reabrirla en Chat o en la terminal.',
+          text: 'El soporte de GitHub Copilot CLI llega en CodeAgentSwarm 2.5.0, en beta. Con ella, el historial de conversaciones muestra tus sesiones de Copilot junto a las de tus otros agentes. Puedes filtrar por agente y proyecto, buscar dentro de los mensajes, guardar una conversación en marcadores y reabrirla en Chat o en la terminal.',
         },
         {
           type: 'image',
           src: '/images/guides/copilot-history.webp',
           alt: 'Conversaciones de GitHub Copilot CLI filtradas en el historial de CodeAgentSwarm',
-          caption: 'Captura real de una versión de desarrollo de CodeAgentSwarm, con una conversación de ejemplo creada para pruebas.',
+          caption: 'Captura real de CodeAgentSwarm, tomada durante el desarrollo de la 2.5.0, con una conversación de ejemplo creada para pruebas.',
           size: 'full',
         },
         {
@@ -202,7 +202,7 @@ const guide: Guide = {
           type: 'image',
           src: '/images/guides/copilot-cli-resume.webp',
           alt: 'Conversación de Chat reanudada en la terminal de GitHub Copilot CLI con la pregunta de confianza en la carpeta',
-          caption: 'Captura real de una versión de desarrollo de CodeAgentSwarm: la sesión iniciada en Chat continúa en la terminal y Copilot pide confianza en la carpeta.',
+          caption: 'Captura real de CodeAgentSwarm, tomada durante el desarrollo de la 2.5.0: la sesión iniciada en Chat continúa en la terminal y Copilot pide confianza en la carpeta.',
           size: 'full',
         },
         {
@@ -222,7 +222,7 @@ const guide: Guide = {
         {
           type: 'callout',
           variant: 'info',
-          content: 'Al desactivar la opción solo se quita la entrada de CodeAgentSwarm. Copilot funciona igual sin ella.',
+          content: 'Al desactivar la opción solo se quita la entrada de CodeAgentSwarm. Copilot funciona igual sin ella. Si tu organización de GitHub desactiva los servidores MCP de terceros para Copilot, Copilot solo arranca el servidor integrado de GitHub, así que faltan las herramientas de CodeAgentSwarm y la app te avisa en el Chat. Para usarlas, inicia sesión con una cuenta que permita servidores MCP.',
         },
         {
           type: 'paragraph',
@@ -250,7 +250,7 @@ const guide: Guide = {
     },
     {
       question: '¿CodeAgentSwarm puede reabrir sesiones que empecé en la terminal?',
-      answer: 'Sí, a partir de la versión que sigue a la 2.4.3. El historial de conversaciones muestra las sesiones de Copilot, busca en sus mensajes y reabre cualquiera en Chat o en la terminal.',
+      answer: 'Sí, a partir de la 2.5.0. El historial de conversaciones muestra las sesiones de Copilot, busca en sus mensajes y reabre cualquiera en Chat o en la terminal.',
     },
   ],
 }

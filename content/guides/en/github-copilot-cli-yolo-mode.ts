@@ -14,7 +14,7 @@ const guide: Guide = {
     ctaAgent: 'copilot',
     highlightedWords: ['GitHub Copilot CLI'],
     publishedAt: '2026-10-08',
-    updatedAt: '2026-10-08',
+    updatedAt: '2026-10-31',
     alternateSlug: 'modo-yolo-github-copilot-cli',
     relatedSlug: 'how-to-use-github-copilot-cli',
     socialImage: '/images/guides/copilot-cli-og-en.png',
@@ -134,7 +134,7 @@ const guide: Guide = {
           type: 'image',
           src: '/images/guides/copilot-cli-resume.webp',
           alt: 'GitHub Copilot CLI asking to confirm folder trust with three options',
-          caption: 'Real capture from a CodeAgentSwarm development build: Copilot asks for folder trust the first time the terminal opens it in a test folder.',
+          caption: 'Real capture from CodeAgentSwarm, taken during 2.5.0 development: Copilot asks for folder trust the first time the terminal opens it in a test folder.',
           size: 'full',
         },
       ],
@@ -173,7 +173,7 @@ const guide: Guide = {
       content: [
         {
           type: 'paragraph',
-          text: 'Copilot support arrives in the CodeAgentSwarm release after 2.4.3. In Chat, the app talks to Copilot through its ACP server and shows each permission request so you can approve or reject it. You choose one of three modes per session:',
+          text: 'Copilot support arrives in CodeAgentSwarm 2.5.0, in beta. In Chat, the app talks to Copilot through its ACP server and shows each permission request so you can approve or reject it. The app remembers the last mode you picked for Copilot and reuses it for new sessions; until you pick one, it adds no permission flag and Copilot follows its own configuration. You choose one of three modes per session:',
         },
         {
           type: 'table',
@@ -188,7 +188,7 @@ const guide: Guide = {
           type: 'image',
           src: '/images/guides/copilot-chat-real.webp',
           alt: 'GitHub Copilot CLI in CodeAgentSwarm Chat with the Always approve mode selected',
-          caption: 'Real capture from a CodeAgentSwarm development build: GitHub Copilot CLI 1.0.93 in Chat with Always approve selected, answering a test prompt.',
+          caption: 'Real capture from CodeAgentSwarm, taken during 2.5.0 development: GitHub Copilot CLI 1.0.93 in Chat with Always approve selected, answering a test prompt.',
           size: 'medium',
         },
         {

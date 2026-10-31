@@ -14,7 +14,7 @@ const guide: Guide = {
     ctaAgent: 'copilot',
     highlightedWords: ['GitHub Copilot CLI'],
     publishedAt: '2026-10-08',
-    updatedAt: '2026-10-08',
+    updatedAt: '2026-10-31',
     alternateSlug: 'github-copilot-cli-modelos-creditos-ia',
     relatedSlug: 'how-to-use-github-copilot-cli',
     socialImage: '/images/guides/copilot-cli-og-en.png',

@@ -25,6 +25,7 @@ export default function BringYourOwnSubSection() {
     { name: 'Pi', command: 'pi', icon: '/icons/apps/pi-icon.svg' },
     { name: 'Devin CLI', command: 'devin', icon: '/icons/apps/devin-icon.svg' },
     { name: 'GitHub Copilot CLI', command: 'copilot', icon: '/icons/apps/copilot-icon.svg' },
+    { name: 'Cline', command: 'cline', icon: '/icons/apps/cline-icon.svg' },
   ]
 
   /**

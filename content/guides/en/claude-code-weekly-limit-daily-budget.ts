@@ -282,7 +282,7 @@ CodeAgentSwarm 2.4.0 adds a daily budget for every provider that reports its quo
     },
     {
       question: 'Which providers support a daily budget?',
-      answer: 'Every provider that reports a measurable quota: Claude, Codex, Antigravity, Kimi Code, Grok Build, Cursor Agent, Devin CLI, Muse Code and GitHub Copilot CLI. opencode and Pi have no budget because they do not report a quota percentage.',
+      answer: 'Every provider that reports a measurable quota: Claude, Codex, Antigravity, Kimi Code, Grok Build, Cursor Agent, Devin CLI, Muse Code and GitHub Copilot CLI. opencode, Pi and Cline have no budget because they do not report a quota percentage.',
     },
   ],
 }

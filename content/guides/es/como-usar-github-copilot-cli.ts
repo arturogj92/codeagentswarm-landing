@@ -14,7 +14,7 @@ const guide: Guide = {
     ctaAgent: 'copilot',
     highlightedWords: ['GitHub Copilot CLI'],
     publishedAt: '2026-10-08',
-    updatedAt: '2026-10-08',
+    updatedAt: '2026-10-31',
     alternateSlug: 'how-to-use-github-copilot-cli',
     relatedSlug: 'github-copilot-cli-modelos-creditos-ia',
     socialImage: '/images/guides/copilot-cli-og-es.png',
@@ -57,7 +57,7 @@ const guide: Guide = {
           type: 'image',
           src: '/images/guides/copilot-install.webp',
           alt: 'Diálogo de instalación de GitHub Copilot CLI en CodeAgentSwarm',
-          caption: 'Captura real de una versión de desarrollo de CodeAgentSwarm. El botón Install automatically descarga el archivo oficial de la versión y comprueba su SHA-256 antes de extraerlo.',
+          caption: 'Captura real de CodeAgentSwarm, tomada durante el desarrollo de la 2.5.0. El botón Install automatically descarga el archivo oficial de la versión y comprueba su SHA-256 antes de extraerlo.',
           size: 'full',
         },
         {
@@ -108,7 +108,7 @@ const guide: Guide = {
           type: 'image',
           src: '/images/guides/copilot-chat-real.webp',
           alt: 'GitHub Copilot CLI respondiendo en Chat de CodeAgentSwarm',
-          caption: 'Respuesta real de GitHub Copilot CLI 1.0.93 en una versión de desarrollo de CodeAgentSwarm, con un mensaje de prueba.',
+          caption: 'Respuesta real de GitHub Copilot CLI 1.0.93 en CodeAgentSwarm durante el desarrollo de la 2.5.0, con un mensaje de prueba.',
           size: 'medium',
         },
         {
@@ -172,7 +172,7 @@ const guide: Guide = {
         },
         {
           type: 'paragraph',
-          text: 'Si lo permites en Settings > Privacy, CodeAgentSwarm añade sus herramientas de tareas y títulos como una entrada MCP y una sección breve de instrucciones. Tus servidores no cambian, y al desactivar la opción solo se quita esa entrada.',
+          text: 'Si lo permites en Settings > Privacy, CodeAgentSwarm añade sus herramientas de tareas y títulos como una entrada MCP y una sección breve de instrucciones. Tus servidores no cambian, y al desactivar la opción solo se quita esa entrada. Si tu organización de GitHub desactiva los servidores MCP de terceros para Copilot, esas herramientas no están disponibles con esa cuenta y la app te avisa; no se salta la política.',
         },
       ],
     },

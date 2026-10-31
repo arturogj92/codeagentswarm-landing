@@ -14,7 +14,7 @@ const guide: Guide = {
     ctaAgent: 'copilot',
     highlightedWords: ['GitHub Copilot CLI'],
     publishedAt: '2026-10-08',
-    updatedAt: '2026-10-08',
+    updatedAt: '2026-10-31',
     alternateSlug: 'github-copilot-cli-vs-claude-code',
     relatedSlug: 'how-to-use-github-copilot-cli',
     socialImage: '/images/guides/copilot-cli-og-en.png',
@@ -65,7 +65,7 @@ const guide: Guide = {
           type: 'image',
           src: '/images/guides/copilot-usage-panel.webp',
           alt: 'GitHub Copilot CLI monthly allowance in the CodeAgentSwarm usage panel',
-          caption: 'Real interface from a CodeAgentSwarm development build. The 7% left shown here is a test fixture, not a real account.',
+          caption: 'Real interface from CodeAgentSwarm, captured during 2.5.0 development. The 7% left shown here is a test fixture, not a real account.',
           size: 'medium',
         },
         {
@@ -175,7 +175,7 @@ const guide: Guide = {
       content: [
         {
           type: 'paragraph',
-          text: 'You do not have to pick one. CodeAgentSwarm lets you choose the agent per session, so Copilot can take one task while Claude Code works on another, each in its own project or git worktree. Every session shows its own status and sends its own notifications.',
+          text: 'You do not have to pick one. CodeAgentSwarm lets you choose the agent per session, so Copilot can take one task while Claude Code works on another, each in its own project or git worktree. In Chat, every session shows its own status and sends its own notifications.',
         },
         {
           type: 'image',
@@ -196,7 +196,7 @@ const guide: Guide = {
         {
           type: 'callout',
           variant: 'info',
-          content: `GitHub Copilot CLI support arrives in the CodeAgentSwarm release after 2.4.3. With Copilot, Chat has no reasoning selector and the app cannot generate conversation titles or commit messages, so pick another provider for those, such as Claude Code (see ${link('/en/guides/ai-commit-messages-claude-code', 'AI commit messages with Claude Code')}). To split work between parallel sessions, read ${link('/en/guides/github-copilot-cli-agent-swarm', 'the GitHub Copilot CLI agent swarm guide')}.`,
+          content: `GitHub Copilot CLI support arrives in CodeAgentSwarm 2.5.0, in beta. With Copilot, Chat has no reasoning selector and the app cannot generate conversation titles or commit messages, so pick another provider for those, such as Claude Code (see ${link('/en/guides/ai-commit-messages-claude-code', 'AI commit messages with Claude Code')}). To split work between parallel sessions, read ${link('/en/guides/github-copilot-cli-agent-swarm', 'the GitHub Copilot CLI agent swarm guide')}.`,
         },
       ],
     },
@@ -210,6 +210,7 @@ const guide: Guide = {
             'Choose Copilot CLI if your team already pays for GitHub Copilot or wants Claude, GPT and other models under one plan.',
             'Choose Claude Code if your projects already use <code>CLAUDE.md</code>, Claude Code skills and Anthropic billing.',
             'Choose Codex CLI if you already have a ChatGPT plan, and look at Antigravity CLI if you used Gemini CLI on the free tier.',
+            `Look at Cline if you want an open source agent and your own choice of model provider: see ${link('/en/guides/cline-vs-claude-code', 'Cline vs Claude Code')}.`,
             'Use more than one when separate tasks fit different tools and you can review the parallel output.',
           ],
         },
@@ -239,7 +240,7 @@ const guide: Guide = {
     },
     {
       question: 'Can I run Copilot CLI and Claude Code at the same time?',
-      answer: 'Yes. In CodeAgentSwarm you pick the agent per session and run them side by side, each in its own project or worktree. Copilot support arrives in the release after 2.4.3.',
+      answer: 'Yes. In CodeAgentSwarm you pick the agent per session and run them side by side, each in its own project or worktree. Copilot support arrives in 2.5.0, in beta.',
     },
   ],
 }

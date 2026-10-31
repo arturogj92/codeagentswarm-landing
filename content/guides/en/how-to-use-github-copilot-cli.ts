@@ -14,7 +14,7 @@ const guide: Guide = {
     ctaAgent: 'copilot',
     highlightedWords: ['GitHub Copilot CLI'],
     publishedAt: '2026-10-08',
-    updatedAt: '2026-10-08',
+    updatedAt: '2026-10-31',
     alternateSlug: 'como-usar-github-copilot-cli',
     relatedSlug: 'github-copilot-cli-models-ai-credits',
     socialImage: '/images/guides/copilot-cli-og-en.png',
@@ -57,7 +57,7 @@ const guide: Guide = {
           type: 'image',
           src: '/images/guides/copilot-install.webp',
           alt: 'GitHub Copilot CLI installation dialog in CodeAgentSwarm',
-          caption: 'Real capture from a CodeAgentSwarm development build. The Install automatically button downloads the official release archive and checks its SHA-256 before extracting it.',
+          caption: 'Real capture from CodeAgentSwarm, taken during 2.5.0 development. The Install automatically button downloads the official release archive and checks its SHA-256 before extracting it.',
           size: 'full',
         },
         {
@@ -108,7 +108,7 @@ const guide: Guide = {
           type: 'image',
           src: '/images/guides/copilot-chat-real.webp',
           alt: 'GitHub Copilot CLI answering in CodeAgentSwarm Chat',
-          caption: 'Real reply from GitHub Copilot CLI 1.0.93 in a CodeAgentSwarm development build, with a test prompt.',
+          caption: 'Real reply from GitHub Copilot CLI 1.0.93 in CodeAgentSwarm during 2.5.0 development, with a test prompt.',
           size: 'medium',
         },
         {
@@ -172,7 +172,7 @@ const guide: Guide = {
         },
         {
           type: 'paragraph',
-          text: 'When you allow it in Settings > Privacy, CodeAgentSwarm adds its task and title tools as one MCP entry and a short instruction section. Your own servers stay as they are, and turning the option off removes only that entry.',
+          text: 'When you allow it in Settings > Privacy, CodeAgentSwarm adds its task and title tools as one MCP entry and a short instruction section. Your own servers stay as they are, and turning the option off removes only that entry. If your GitHub organization turns off third-party MCP servers for Copilot, those tools are not available in that account and the app shows a warning; it does not bypass the policy.',
         },
       ],
     },

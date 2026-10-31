@@ -10,11 +10,11 @@ const guide: Guide = {
     metaTitle: 'GitHub Copilot CLI en Windows: instalación, PATH y login',
     metaDescription: 'Instala GitHub Copilot CLI en Windows x64 o ARM64 con WinGet, MSI, zip o npm. Corrige el PATH, prepara PowerShell, inicia sesión con un código y actualízalo.',
     intro: 'GitHub Copilot CLI funciona de forma nativa en Windows, tanto en x64 como en ARM64. Esta guía explica las cuatro formas de instalarlo, los problemas de PATH que hacen que PowerShell no reconozca <code>copilot</code>, la versión de PowerShell que espera Copilot, el inicio de sesión y las actualizaciones. Comprobamos los comandos con la documentación oficial el 8 de octubre de 2026.',
-    ctaText: 'A partir de la versión que sigue a la 2.4.3, instala GitHub Copilot CLI en Windows desde el selector de agentes, inicia sesión desde Chat y trabaja con varias sesiones de Copilot a la vez en CodeAgentSwarm.',
+    ctaText: 'A partir de la 2.5.0, instala GitHub Copilot CLI en Windows desde el selector de agentes, inicia sesión desde Chat y trabaja con varias sesiones de Copilot a la vez en CodeAgentSwarm.',
     ctaAgent: 'copilot',
     highlightedWords: ['GitHub Copilot CLI'],
     publishedAt: '2026-10-08',
-    updatedAt: '2026-10-08',
+    updatedAt: '2026-10-31',
     alternateSlug: 'github-copilot-cli-on-windows',
     relatedSlug: 'como-usar-github-copilot-cli',
     socialImage: '/images/guides/copilot-cli-og-es.png',
@@ -192,13 +192,13 @@ const guide: Guide = {
       content: [
         {
           type: 'paragraph',
-          text: 'El soporte de Copilot llega en la versión de CodeAgentSwarm posterior a la 2.4.3. No está en la 2.4.3 ni en versiones anteriores. Así funciona en la versión de desarrollo actual, probada en macOS.',
+          text: 'El soporte de Copilot llega en CodeAgentSwarm 2.5.0, en beta. Estos pasos se comprobaron durante el desarrollo de la 2.5.0, y el instalador también se probó en Windows ARM64.',
         },
         {
           type: 'image',
           src: '/images/guides/copilot-install.webp',
           alt: 'Diálogo de instalación de GitHub Copilot CLI en CodeAgentSwarm',
-          caption: 'Captura real de una versión de desarrollo de CodeAgentSwarm. Al pulsar Install, la app descarga el archivo oficial y comprueba su SHA-256 antes de extraerlo.',
+          caption: 'Captura real de CodeAgentSwarm, tomada durante el desarrollo de la 2.5.0. Al pulsar Install, la app descarga el archivo oficial y comprueba su SHA-256 antes de extraerlo.',
           size: 'full',
         },
         {
@@ -214,7 +214,7 @@ const guide: Guide = {
           type: 'image',
           src: '/images/guides/copilot-cli-resume.webp',
           alt: 'Una conversación de Chat reanudada en la terminal de GitHub Copilot CLI con la pregunta de confianza en la carpeta',
-          caption: 'Captura real de una versión de desarrollo de CodeAgentSwarm: una sesión iniciada en Chat sigue en la terminal, y Copilot pregunta la primera vez si confías en la carpeta.',
+          caption: 'Captura real de CodeAgentSwarm, tomada durante el desarrollo de la 2.5.0: una sesión iniciada en Chat sigue en la terminal, y Copilot pregunta la primera vez si confías en la carpeta.',
           size: 'full',
         },
         {

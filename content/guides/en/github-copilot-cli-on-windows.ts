@@ -10,11 +10,11 @@ const guide: Guide = {
     metaTitle: 'GitHub Copilot CLI on Windows: Install, PATH and Sign In',
     metaDescription: 'Install GitHub Copilot CLI on Windows x64 or ARM64 with WinGet, MSI, zip or npm. Fix PATH errors, set up PowerShell, sign in with a device code and update.',
     intro: 'GitHub Copilot CLI runs natively on Windows, on both x64 and ARM64. This guide covers the four ways to install it, the PATH problems that make PowerShell say <code>copilot</code> is not recognized, the PowerShell version Copilot expects, sign-in and updates. The commands were checked against the official docs on October 8, 2026.',
-    ctaText: 'Starting with the release after 2.4.3, install GitHub Copilot CLI on Windows from the agent picker, sign in from Chat and run several Copilot sessions side by side in CodeAgentSwarm.',
+    ctaText: 'Starting with 2.5.0, install GitHub Copilot CLI on Windows from the agent picker, sign in from Chat and run several Copilot sessions side by side in CodeAgentSwarm.',
     ctaAgent: 'copilot',
     highlightedWords: ['GitHub Copilot CLI'],
     publishedAt: '2026-10-08',
-    updatedAt: '2026-10-08',
+    updatedAt: '2026-10-31',
     alternateSlug: 'github-copilot-cli-en-windows',
     relatedSlug: 'how-to-use-github-copilot-cli',
     socialImage: '/images/guides/copilot-cli-og-en.png',
@@ -192,13 +192,13 @@ const guide: Guide = {
       content: [
         {
           type: 'paragraph',
-          text: 'Copilot support arrives in the CodeAgentSwarm release after 2.4.3. It is not part of 2.4.3 or earlier versions. Here is how it works in the current development build, tested on macOS.',
+          text: 'Copilot support arrives in CodeAgentSwarm 2.5.0, in beta. The steps below were checked during 2.5.0 development, and the installer was also tested on Windows ARM64.',
         },
         {
           type: 'image',
           src: '/images/guides/copilot-install.webp',
           alt: 'GitHub Copilot CLI installation dialog in CodeAgentSwarm',
-          caption: 'Real capture from a CodeAgentSwarm development build. Pressing Install downloads the official release archive and checks its SHA-256 before extracting it.',
+          caption: 'Real capture from CodeAgentSwarm, taken during 2.5.0 development. Pressing Install downloads the official release archive and checks its SHA-256 before extracting it.',
           size: 'full',
         },
         {
@@ -214,7 +214,7 @@ const guide: Guide = {
           type: 'image',
           src: '/images/guides/copilot-cli-resume.webp',
           alt: 'A Chat conversation resumed in the GitHub Copilot CLI terminal with the folder trust prompt',
-          caption: 'Real capture from a CodeAgentSwarm development build: a session started in Chat continues in the terminal, and Copilot asks for folder trust the first time.',
+          caption: 'Real capture from CodeAgentSwarm, taken during 2.5.0 development: a session started in Chat continues in the terminal, and Copilot asks for folder trust the first time.',
           size: 'full',
         },
         {

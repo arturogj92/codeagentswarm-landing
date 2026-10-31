@@ -435,6 +435,9 @@ export default function HeroSection() {
                 <span className="w-12 h-12 rounded-2xl flex items-center justify-center bg-black border border-white/10" title="GitHub Copilot CLI">
                   <img src="/icons/apps/copilot-icon.svg" alt="GitHub Copilot CLI" className="w-8 h-8 object-contain" />
                 </span>
+                <span className="w-12 h-12 rounded-2xl flex items-center justify-center bg-black border border-white/10" title="Cline">
+                  <img src="/icons/apps/cline-icon.svg" alt="Cline" className="w-8 h-8 object-contain" />
+                </span>
               </div>
             </div>
             <p className="max-w-2xl text-center text-sm leading-relaxed text-white/60">
@@ -443,6 +446,7 @@ export default function HeroSection() {
                 pi: chunks => <Link href={locale === 'es' ? '/es/guias/como-usar-pi-coding-agent' : '/en/guides/how-to-use-pi-coding-agent'} className="text-neon-cyan underline underline-offset-4 hover:text-white">{chunks}</Link>,
                 devin: chunks => <Link href={locale === 'es' ? '/es/guias/como-usar-devin-cli' : '/en/guides/how-to-use-devin-cli'} className="text-neon-cyan underline underline-offset-4 hover:text-white">{chunks}</Link>,
                 copilot: chunks => <Link href={locale === 'es' ? '/es/guias/como-usar-github-copilot-cli' : '/en/guides/how-to-use-github-copilot-cli'} className="text-neon-cyan underline underline-offset-4 hover:text-white">{chunks}</Link>,
+                cline: chunks => <Link href={locale === 'es' ? '/es/guias/como-usar-cline-cli' : '/en/guides/how-to-use-cline-cli'} className="text-neon-cyan underline underline-offset-4 hover:text-white">{chunks}</Link>,
               })}
             </p>
           </motion.div>

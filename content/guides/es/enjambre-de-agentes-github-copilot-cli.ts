@@ -14,7 +14,7 @@ const guide: Guide = {
     ctaAgent: 'copilot',
     highlightedWords: ['GitHub Copilot CLI'],
     publishedAt: '2026-10-08',
-    updatedAt: '2026-10-08',
+    updatedAt: '2026-10-31',
     alternateSlug: 'github-copilot-cli-agent-swarm',
     relatedSlug: 'github-copilot-cli-modelos-creditos-ia',
     socialImage: '/images/guides/copilot-cli-og-es.png',
@@ -36,7 +36,7 @@ const guide: Guide = {
         {
           type: 'callout',
           variant: 'info',
-          content: 'El soporte de GitHub Copilot CLI en CodeAgentSwarm llega en la versión siguiente a la 2.4.3. Lo que cuenta esta guía sobre la app sale de una versión de desarrollo.',
+          content: 'El soporte de GitHub Copilot CLI llega a CodeAgentSwarm en la 2.5.0, en beta. Lo que cuenta esta guía sobre la app se comprobó durante el desarrollo de la 2.5.0.',
         },
       ],
     },
@@ -114,7 +114,7 @@ const guide: Guide = {
         },
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm reúne todas las sesiones en una ventana. Elige GitHub Copilot CLI en el selector de agentes para cada sesión que quieras y abre cada una en su propio proyecto o git worktree. Las sesiones de Copilot conviven con Claude Code, Codex, OpenCode, Kimi Code, Antigravity, Grok Build, Cursor Agent, Pi, Devin CLI y Muse Code.',
+          text: 'CodeAgentSwarm reúne todas las sesiones en una ventana. Elige GitHub Copilot CLI en el selector de agentes para cada sesión que quieras y abre cada una en su propio proyecto o git worktree. Las sesiones de Copilot conviven con Claude Code, Codex, OpenCode, Kimi Code, Antigravity, Grok Build, Cursor Agent, Pi, Devin CLI, Muse Code y Cline.',
         },
         {
           type: 'heading',
@@ -134,7 +134,7 @@ const guide: Guide = {
         },
         {
           type: 'paragraph',
-          text: `Cada sesión de Copilot tiene su propio estado, y recibes una notificación de escritorio cuando una termina o te espera. Dejas de revisar pestañas y vuelves solo cuando una sesión te necesita de verdad. Lo tienes explicado en ${link('/es/guias/notificaciones-codeagentswarm', 'notificaciones de CodeAgentSwarm')}.`,
+          text: `En Chat, cada sesión de Copilot muestra si está trabajando o esperándote, y recibes una notificación de escritorio cuando termina o te necesita. Dejas de revisar pestañas y vuelves solo cuando una sesión te necesita de verdad. Lo tienes explicado en ${link('/es/guias/notificaciones-codeagentswarm', 'notificaciones de CodeAgentSwarm')}.`,
         },
         {
           type: 'heading',
@@ -146,7 +146,7 @@ const guide: Guide = {
           type: 'image',
           src: '/images/guides/copilot-chat-real.webp',
           alt: 'GitHub Copilot CLI respondiendo en Chat de CodeAgentSwarm',
-          caption: 'Captura real de una versión de desarrollo de CodeAgentSwarm: respuesta de GitHub Copilot CLI 1.0.93 a un mensaje de prueba.',
+          caption: 'Captura real de CodeAgentSwarm, tomada durante el desarrollo de la 2.5.0: respuesta de GitHub Copilot CLI 1.0.93 a un mensaje de prueba.',
           size: 'medium',
         },
         {
@@ -167,7 +167,7 @@ const guide: Guide = {
           type: 'image',
           src: '/images/guides/copilot-history.webp',
           alt: 'Conversaciones de GitHub Copilot CLI filtradas en el historial de CodeAgentSwarm',
-          caption: 'Captura real de una versión de desarrollo de CodeAgentSwarm, con una conversación de ejemplo creada para pruebas.',
+          caption: 'Captura real de CodeAgentSwarm, tomada durante el desarrollo de la 2.5.0, con una conversación de ejemplo creada para pruebas.',
           size: 'full',
         },
         {
@@ -268,7 +268,7 @@ const guide: Guide = {
     },
     {
       question: '¿CodeAgentSwarm ya es compatible con GitHub Copilot CLI?',
-      answer: 'El soporte llega en la versión siguiente a la 2.4.3. Incluye la instalación, el inicio de sesión desde Chat, las vistas de Chat y terminal, el historial, los avisos y el estado de las sesiones de Copilot junto a tus otros agentes.',
+      answer: 'El soporte llega en CodeAgentSwarm 2.5.0, en beta. Incluye la instalación, el inicio de sesión desde Chat, las vistas de Chat y terminal y el historial de las sesiones de Copilot junto a tus otros agentes.',
     },
   ],
 }
