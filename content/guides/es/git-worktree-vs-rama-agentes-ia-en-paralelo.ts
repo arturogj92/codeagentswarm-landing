@@ -16,7 +16,7 @@ Para la explicación desde cero de qué es un worktree y por qué importa el ais
     ctaAgent: 'multi',
     highlightedWords: ['Git worktree vs rama', 'agentes de IA en paralelo'],
     publishedAt: '2026-07-05',
-    updatedAt: '2026-10-05',
+    updatedAt: '2026-10-31',
     alternateSlug: 'git-worktree-vs-branch-parallel-ai-agents',
   },
   sections: [
@@ -217,7 +217,7 @@ Para la explicación desde cero de qué es un worktree y por qué importa el ais
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm es una app de escritorio para ejecutar un enjambre de agentes CLI de IA (Claude Code, Codex CLI, opencode, Antigravity CLI) en un solo sitio, y mete la opción de worktree directamente en cada terminal, así nunca ejecutas los comandos tú mismo.',
+          text: 'CodeAgentSwarm es una app de escritorio para ejecutar un enjambre de agentes CLI de IA (Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi y Devin CLI) en un solo sitio, y mete la opción de worktree directamente en cada terminal, así nunca ejecutas los comandos tú mismo.',
         },
         {
           type: 'paragraph',

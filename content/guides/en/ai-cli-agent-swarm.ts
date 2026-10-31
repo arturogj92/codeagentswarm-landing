@@ -16,7 +16,7 @@ I run mixed swarms most days. This is AI coding agent orchestration at the proce
     ctaAgent: 'multi',
     highlightedWords: ['AI CLI agent swarm', 'in parallel'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-10-08',
+    updatedAt: '2026-10-31',
     relatedSlug: 'git-worktrees-for-ai-coding-agents',
     alternateSlug: 'enjambre-de-agentes-cli-ia',
   },
@@ -129,7 +129,7 @@ I run mixed swarms most days. This is AI coding agent orchestration at the proce
         },
         {
           type: 'paragraph',
-          text: 'Antigravity CLI (agy) is Google\'s current coding CLI and fits when you want a wide-context Google model in the swarm. OpenCode is provider agnostic, so parallel sessions can use different vendors. Kimi Code fits Moonshot models. Grok Build (xAI, binary <code>grok</code>) now uses Grok 4.6 and can be tried free before moving to paid limits or API billing. None replaces the others; the point of a swarm is to run them side by side.',
+          text: 'Antigravity CLI (agy) is Google\'s current coding CLI and fits when you want a wide-context Google model in the swarm. OpenCode is provider agnostic, so parallel sessions can use different vendors. Kimi Code fits Moonshot models. Grok Build (xAI, binary <code>grok</code>) runs xAI models; its <a href="https://docs.x.ai/build/settings" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">documented config</a> recommends the <code>grok-build</code> model for coding sessions, and Grok 4.7 is the newest model on the xAI API as of October 31, 2026. It can be tried free before moving to paid limits or API billing. None replaces the others; the point of a swarm is to run them side by side.',
         },
         {
           type: 'callout',
@@ -492,7 +492,7 @@ I run mixed swarms most days. This is AI coding agent orchestration at the proce
     },
     {
       question: 'Which AI coding CLI should I use for what?',
-      answer: 'There is no single best agent, which is why a swarm helps. Start with Claude Code for deep refactors, Codex CLI for focused tasks, OpenCode for provider flexibility, Kimi Code for Moonshot models and Grok Build for Grok 4.6. Models change often, so adjust from your own results.',
+      answer: 'There is no single best agent, which is why a swarm helps. Start with Claude Code for deep refactors, Codex CLI for focused tasks, OpenCode for provider flexibility, Kimi Code for Moonshot models and Grok Build for xAI models. Models change often, so adjust from your own results.',
     },
     {
       question: 'Do I need git worktrees to run agents in parallel?',

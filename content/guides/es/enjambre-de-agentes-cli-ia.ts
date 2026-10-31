@@ -16,7 +16,7 @@ Yo trabajo con enjambres mixtos casi todos los días. Esto es orquestación de a
     ctaAgent: 'multi',
     highlightedWords: ['enjambre de agentes CLI de IA', 'en paralelo'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-10-08',
+    updatedAt: '2026-10-31',
     relatedSlug: 'git-worktrees-para-agentes-de-ia',
     alternateSlug: 'ai-cli-agent-swarm',
   },
@@ -129,7 +129,7 @@ Yo trabajo con enjambres mixtos casi todos los días. Esto es orquestación de a
         },
         {
           type: 'paragraph',
-          text: 'Antigravity CLI (agy) es la CLI de código actual de Google y encaja cuando quieres un modelo de Google de mucho contexto. OpenCode es agnóstico de proveedor, así que las sesiones pueden usar vendors distintos. Kimi Code cubre los modelos de Moonshot. Grok Build (xAI, binario <code>grok</code>) usa ahora Grok 4.6 y se puede probar gratis antes de pasar a límites de pago o facturación por API. Ninguno sustituye a los demás; la gracia es ejecutarlos a la vez.',
+          text: 'Antigravity CLI (agy) es la CLI de código actual de Google y encaja cuando quieres un modelo de Google de mucho contexto. OpenCode es agnóstico de proveedor, así que las sesiones pueden usar vendors distintos. Kimi Code cubre los modelos de Moonshot. Grok Build (xAI, binario <code>grok</code>) usa modelos de xAI; su <a href="https://docs.x.ai/build/settings" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">configuración documentada</a> recomienda el modelo <code>grok-build</code> para sesiones de código, y Grok 4.7 es el modelo más reciente de la API de xAI a 31 de octubre de 2026. Se puede probar gratis antes de pasar a límites de pago o facturación por API. Ninguno sustituye a los demás; la gracia es ejecutarlos a la vez.',
         },
         {
           type: 'callout',
@@ -492,7 +492,7 @@ Yo trabajo con enjambres mixtos casi todos los días. Esto es orquestación de a
     },
     {
       question: '¿Qué CLI de código uso para cada cosa?',
-      answer: 'No hay un único agente mejor, y por eso ayuda un enjambre. Empieza con Claude Code para refactors profundos, Codex CLI para tareas concretas, OpenCode para flexibilidad de proveedor, Kimi Code para modelos de Moonshot y Grok Build para Grok 4.6. Los modelos cambian a menudo, así que ajústalo con tus propios resultados.',
+      answer: 'No hay un único agente mejor, y por eso ayuda un enjambre. Empieza con Claude Code para refactors profundos, Codex CLI para tareas concretas, OpenCode para flexibilidad de proveedor, Kimi Code para modelos de Moonshot y Grok Build para modelos de xAI. Los modelos cambian a menudo, así que ajústalo con tus propios resultados.',
     },
     {
       question: '¿Necesito git worktrees para ejecutar agentes en paralelo?',
