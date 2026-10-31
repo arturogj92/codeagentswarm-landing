@@ -191,7 +191,7 @@ En esta guía te explico las tres formas reales de montar un enjambre de Kimi Co
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm es una app de escritorio construida exactamente para esto: ejecutar y supervisar un enjambre de agentes CLI de IA en un solo sitio. Funciona en macOS, Windows y Linux, te da varios terminales en un mismo espacio de trabajo y te deja elegir el agente por terminal. Kimi Code es un agente de primera clase junto a Claude Code, Codex CLI, Antigravity CLI, OpenCode, Grok Build, Cursor Agent, Muse Code, Pi y Devin CLI, así que para un enjambre de Kimi solo tienes que elegir Kimi Code en el selector de agente de cada terminal.',
+          text: 'CodeAgentSwarm es una app de escritorio construida exactamente para esto: ejecutar y supervisar un enjambre de agentes CLI de IA en un solo sitio. Funciona en macOS, Windows y Linux, te da varios terminales en un mismo espacio de trabajo y te deja elegir el agente por terminal. Kimi Code es un agente de primera clase junto a Claude Code, Codex CLI, Antigravity CLI, OpenCode, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI, GitHub Copilot CLI y Cline, así que para un enjambre de Kimi solo tienes que elegir Kimi Code en el selector de agente de cada terminal.',
         },
         {
           type: 'paragraph',

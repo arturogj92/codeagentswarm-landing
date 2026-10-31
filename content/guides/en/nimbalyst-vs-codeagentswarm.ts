@@ -6,13 +6,13 @@ export const guide: Guide = {
     locale: 'en',
     title: 'Nimbalyst vs CodeAgentSwarm: An Honest Comparison (2026)',
     metaTitle: 'Nimbalyst (Crystal) vs CodeAgentSwarm: Honest Comparison 2026',
-    metaDescription: 'Nimbalyst, formerly Crystal, is a visual editor for what Claude Code and Codex produce. CodeAgentSwarm supervises ten agent CLIs. Honest comparison, verified in 2026.',
-    intro: `Nimbalyst, the project formerly known as Crystal, is an open-source visual workspace for Claude Code, Codex and other coding agents, built around editing what they produce. CodeAgentSwarm is a supervision workspace for ten agent CLIs, built around the terminals rather than around the documents.
+    metaDescription: 'Nimbalyst, formerly Crystal, is a visual editor for what Claude Code and Codex produce. CodeAgentSwarm supervises twelve agent CLIs. Honest comparison, verified in 2026.',
+    intro: `Nimbalyst, the project formerly known as Crystal, is an open-source visual workspace for Claude Code, Codex and other coding agents, built around editing what they produce. CodeAgentSwarm is a supervision workspace for twelve agent CLIs, built around the terminals rather than around the documents.
 
 We make CodeAgentSwarm, so this is an interested comparison and you should check it. That is also why this page is generous where Nimbalyst deserves it (it is open source, it runs on Linux, it has an iOS app and desktop notifications, and it had a public commit the day we verified) and why our own limits are on the page: closed source, Mobile Connect still in alpha, still in beta, and you bring your own agent subscriptions. Every third-party fact here was verified on October 31, 2026 against nimbalyst.com (home, pricing, download, mobile and docs pages), the public Nimbalyst README and public GitHub data.
 
 Pick Nimbalyst if the work you care about is the artefact: markdown, mockups, diagrams, documents you want to edit alongside the agent. Pick CodeAgentSwarm if the work you care about is the sessions: several agent CLIs running at once and you needing to know what each one is doing.`,
-    ctaText: 'If you want to supervise ten different agent CLIs at once, with notifications, live per-terminal diffs and one searchable history, download CodeAgentSwarm and see how it feels next to Nimbalyst.',
+    ctaText: 'If you want to supervise twelve different agent CLIs at once, with notifications, live per-terminal diffs and one searchable history, download CodeAgentSwarm and see how it feels next to Nimbalyst.',
     ctaAgent: 'comparison',
     highlightedWords: ['Nimbalyst', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
@@ -26,7 +26,7 @@ Pick Nimbalyst if the work you care about is the artefact: markdown, mockups, di
       content: [
         {
           type: 'paragraph',
-          text: 'Nimbalyst, formerly Crystal, is an open-source visual workspace for Claude Code, Codex and other coding agents, letting you review and edit the markdown, mockups and diagrams alongside the agent, while CodeAgentSwarm is a supervision workspace for ten agent CLIs, built around the running terminals.',
+          text: 'Nimbalyst, formerly Crystal, is an open-source visual workspace for Claude Code, Codex and other coding agents, letting you review and edit the markdown, mockups and diagrams alongside the agent, while CodeAgentSwarm is a supervision workspace for twelve agent CLIs, built around the running terminals.',
         },
         {
           type: 'paragraph',
@@ -75,7 +75,7 @@ Pick Nimbalyst if the work you care about is the artefact: markdown, mockups, di
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm is a desktop workspace to run and supervise multiple AI coding agents in parallel. Each terminal is a real agent process, and you choose per terminal between Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi and Devin CLI.',
+          text: 'CodeAgentSwarm is a desktop workspace to run and supervise multiple AI coding agents in parallel. Each terminal is a real agent process, and you choose per terminal between Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI, GitHub Copilot CLI and Cline.',
         },
         {
           type: 'image',
@@ -85,7 +85,7 @@ Pick Nimbalyst if the work you care about is the artefact: markdown, mockups, di
         },
         {
           type: 'paragraph',
-          text: 'The design is terminal-first. You get desktop notifications when an agent finishes or needs input, searchable conversation history across all ten agents and capability-aware resume, per-terminal live file diffs, permission control with a Turbo mode for the operations you trust, a kanban board the agents update over MCP, git worktrees per session, multi-project switching, AI commit messages, a provider quota indicator, and skills and MCP marketplaces shared across agents.',
+          text: 'The design is terminal-first. You get desktop notifications when an agent finishes or needs input, searchable conversation history across all twelve agents and capability-aware resume, per-terminal live file diffs, permission control with a Turbo mode for the operations you trust, a kanban board the agents update over MCP, git worktrees per session, multi-project switching, AI commit messages, a provider quota indicator, and skills and MCP marketplaces shared across agents.',
         },
         {
           type: 'paragraph',
@@ -103,10 +103,10 @@ Pick Nimbalyst if the work you care about is the artefact: markdown, mockups, di
           rows: [
             ['Platforms', 'macOS (Apple Silicon and Intel), Windows and Linux desktop, plus an iOS app for iPhone and iPad (Android planned), per their README and site', 'macOS, Windows and Linux desktop. Mobile Connect alpha: web beta for every account, native iOS and Android access by request, desktop must stay open'],
             ['Interface', 'Desktop app built around visual editors, with a session kanban, an embedded terminal and a wiki your agents write', 'Desktop workspace built around live agent terminals'],
-            ['Supported agents', 'Claude Agent, Codex and an opt-in Claude Code CLI, plus OpenCode, GitHub Copilot, Grok Build, Cursor Agent and Gemini through Antigravity in alpha, per their docs', 'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi and Devin CLI'],
+            ['Supported agents', 'Claude Agent, Codex and an opt-in Claude Code CLI, plus OpenCode, GitHub Copilot, Grok Build, Cursor Agent and Gemini through Antigravity in alpha, per their docs', 'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI, GitHub Copilot CLI and Cline'],
             ['Isolation model', 'Parallel sessions, each in its own git worktree, per their README', 'A separate process per terminal, with optional git worktrees per session'],
             ['Notifications', 'Desktop notifications when a session completes, optional completion sounds, and push notifications in their iOS app, per their docs', 'Desktop notifications when an agent finishes or needs input'],
-            ['Conversation history', 'Search and resume sessions, with sessions linked to the files they touched', 'Searchable history across all ten agents and capability-aware resume'],
+            ['Conversation history', 'Search and resume sessions, with sessions linked to the files they touched', 'Searchable history across all twelve agents and capability-aware resume'],
             ['Task management', 'Task tracking plus a kanban view of sessions, editable by you and by the agent', 'Kanban board that the agents update over MCP'],
             ['Open source', 'Yes, MIT, about 2,000 stars on the current repository', 'No, closed source with no public app repository'],
             ['Price', 'App and personal wiki free. Wiki Teams is $20 per user per month or $200 per user per year, free during beta. You bring your own subscription or API key', 'Free during beta with Pro included, and you bring your own agent subscriptions'],
@@ -143,9 +143,9 @@ Pick Nimbalyst if the work you care about is the artefact: markdown, mockups, di
         {
           type: 'list',
           items: [
-            '<strong>You use agents Nimbalyst does not list.</strong> Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi and Devin CLI are all first-class here. Kimi Code, Muse Code, Pi and Devin CLI are not among the providers in the Nimbalyst docs as of October 31, 2026, and OpenCode, Copilot, Grok Build, Cursor Agent and Gemini are still alpha there.',
+            '<strong>You use agents Nimbalyst does not list.</strong> Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI, GitHub Copilot CLI and Cline are all first-class here. Kimi Code, Muse Code, Pi and Devin CLI are not among the providers in the Nimbalyst docs as of October 31, 2026, and OpenCode, Copilot, Grok Build, Cursor Agent and Gemini are still alpha there.',
             '<strong>You want the terminals, not an abstraction over them.</strong> Every session is a real CLI in a pane you can read, scroll and type into, which matters when an agent does something unexpected. In Nimbalyst the default Claude integration is their own Claude Agent, and the raw Claude Code CLI is an opt-in provider.',
-            '<strong>You want one history across every vendor.</strong> Search a phrase and find the session, whichever of the ten agents ran it, then resume it when that agent supports resume.',
+            '<strong>You want one history across every vendor.</strong> Search a phrase and find the session, whichever of the twelve agents ran it, then resume it when that agent supports resume.',
             '<strong>You want fine-grained permission control.</strong> Turbo mode auto-approves the operations you trust and keeps the rest gated, instead of approving everything or nothing.',
             '<strong>You keep running into plan limits.</strong> The provider quota indicator tells you how much allowance is left before an agent stops mid-task.',
           ],

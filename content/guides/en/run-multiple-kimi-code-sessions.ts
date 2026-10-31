@@ -173,7 +173,7 @@ This guide covers how Kimi Code sessions actually work, the three practical ways
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm is a desktop app for macOS, Windows and Linux built for running and supervising several AI CLI sessions in one place. Kimi Code is a first-class agent alongside Claude Code, Codex CLI, Antigravity CLI, OpenCode, Grok Build, Cursor Agent, Muse Code, Pi and Devin CLI: you choose the agent per terminal, so running three Kimi Code sessions means opening three terminals and picking Kimi Code in each.',
+          text: 'CodeAgentSwarm is a desktop app for macOS, Windows and Linux built for running and supervising several AI CLI sessions in one place. Kimi Code is a first-class agent alongside Claude Code, Codex CLI, Antigravity CLI, OpenCode, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI, GitHub Copilot CLI and Cline: you choose the agent per terminal, so running three Kimi Code sessions means opening three terminals and picking Kimi Code in each.',
         },
         {
           type: 'paragraph',

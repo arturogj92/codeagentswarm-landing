@@ -6,12 +6,12 @@ export const guide: Guide = {
     locale: 'es',
     title: 'T3 Code vs CodeAgentSwarm: comparativa honesta (2026)',
     metaTitle: 'T3 Code vs CodeAgentSwarm: comparativa honesta (2026)',
-    metaDescription: 'T3 Code es un panel de control open source que termina en una PR con un clic. CodeAgentSwarm supervisa diez agentes CLI. Comparativa honesta de 2026.',
+    metaDescription: 'T3 Code es un panel de control open source que termina en una PR con un clic. CodeAgentSwarm supervisa doce agentes CLI. Comparativa honesta de 2026.',
     intro: `T3 Code es un panel de control open source con licencia MIT que reúne varios agentes de programación en una sola interfaz para escritorio, web y móvil y cierra cada hilo con una pull request de un clic, mientras que CodeAgentSwarm es una app de escritorio de código cerrado pensada para supervisar varios agentes CLI a la vez, con notificaciones del sistema, historial buscable entre agentes y un tablero kanban que los propios agentes actualizan por MCP.
 
 Antes de nada, transparencia: CodeAgentSwarm lo hacemos nosotros. T3 Code gana varias filas de la tabla, y nuestras limitaciones (código cerrado, Mobile Connect aún en alpha, todavía en beta) aparecen en esa misma tabla. Todos los datos de terceros se comprobaron el 31 de octubre de 2026 en t3.codes, en el README y la documentación de usuario de T3 Code y en los datos públicos de GitHub, y lo que no pudimos verificar está marcado como tal en lugar de inventado. La disponibilidad y los agentes compatibles de CodeAgentSwarm se actualizaron el 5 de octubre de 2026.
 
-Resumen rápido: elige T3 Code si te importan el código abierto y llegar rápido del diff a la pull request. Elige CodeAgentSwarm si trabajas con diez agentes CLI compatibles y necesitas notificaciones, historial y un tablero para no perderles la pista.`,
+Resumen rápido: elige T3 Code si te importan el código abierto y llegar rápido del diff a la pull request. Elige CodeAgentSwarm si trabajas con doce agentes CLI compatibles y necesitas notificaciones, historial y un tablero para no perderles la pista.`,
     ctaText: 'Prueba las dos sobre el mismo repositorio y quédate con la que encaje en tu semana. CodeAgentSwarm es gratis durante la beta, con Pro incluido, para macOS, Windows y Linux.',
     ctaAgent: 'comparison',
     highlightedWords: ['T3 Code', 'CodeAgentSwarm'],
@@ -26,7 +26,7 @@ Resumen rápido: elige T3 Code si te importan el código abierto y llegar rápid
       content: [
         {
           type: 'paragraph',
-          text: 'T3 Code es un panel de control open source que envuelve varios agentes de programación en una interfaz para escritorio, web y móvil y optimiza el camino entre un diff terminado y una pull request, mientras que CodeAgentSwarm es una app de escritorio de código cerrado optimizada para supervisar muchos terminales de agente a la vez, con diez agentes CLI compatibles.',
+          text: 'T3 Code es un panel de control open source que envuelve varios agentes de programación en una interfaz para escritorio, web y móvil y optimiza el camino entre un diff terminado y una pull request, mientras que CodeAgentSwarm es una app de escritorio de código cerrado optimizada para supervisar muchos terminales de agente a la vez, con doce agentes CLI compatibles.',
         },
         {
           type: 'paragraph',
@@ -84,7 +84,7 @@ Resumen rápido: elige T3 Code si te importan el código abierto y llegar rápid
         },
         {
           type: 'paragraph',
-          text: 'La idea de fondo es que a partir de dos o tres agentes el cuello de botella deja de ser el agente y pasas a serlo tú. Por eso las funciones giran en torno a tu atención: notificaciones cuando un agente termina o se para a preguntarte algo, historial buscable entre los diez agentes y con opción de retomar cuando el agente la admite, diffs en vivo por terminal, permisos con modos Turbo y YOLO, indicador de cuota, mensajes de commit con IA, worktrees de git por sesión, marketplaces de skills y de MCP, y un kanban que los agentes actualizan solos por MCP. Si por ahora usas un solo proveedor, la guía para <a href="/es/guias/ejecutar-multiples-sesiones-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">ejecutar varias sesiones de Claude Code</a> es la versión reducida de esta idea.',
+          text: 'La idea de fondo es que a partir de dos o tres agentes el cuello de botella deja de ser el agente y pasas a serlo tú. Por eso las funciones giran en torno a tu atención: notificaciones cuando un agente termina o se para a preguntarte algo, historial buscable entre los doce agentes y con opción de retomar cuando el agente la admite, diffs en vivo por terminal, permisos con modos Turbo y YOLO, indicador de cuota, mensajes de commit con IA, worktrees de git por sesión, marketplaces de skills y de MCP, y un kanban que los agentes actualizan solos por MCP. Si por ahora usas un solo proveedor, la guía para <a href="/es/guias/ejecutar-multiples-sesiones-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">ejecutar varias sesiones de Claude Code</a> es la versión reducida de esta idea.',
         },
         {
           type: 'paragraph',
@@ -107,10 +107,10 @@ Resumen rápido: elige T3 Code si te importan el código abierto y llegar rápid
             ['Plataformas', 'Escritorio en macOS, Windows y Linux; web; iOS y Android', 'macOS, Windows y Linux. Mobile Connect en alpha'],
             ['Instalación y distribución', '<code>npx t3@latest</code> sin instalar nada, scripts de instalación, app de escritorio, winget, Scoop, cask de Homebrew, .deb, AUR, Nix y descargas directas', 'Instalador de escritorio para macOS y Windows; .deb y AppImage para Linux'],
             ['Interfaz', 'Hilos con panel de diffs, terminal integrado y panel de navegador, más acceso remoto por T3 Connect, red local o Tailscale', 'Workspace multiterminal con tablero kanban, navegador de historial y diffs por terminal'],
-            ['Agentes soportados', 'Claude Code, Codex, Cursor, Grok Build, OpenCode y Google Antigravity en el README y en t3.codes; su documentación añade Pi, Muse Code, fx y agentes del ACP Registry', 'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi y Devin CLI'],
+            ['Agentes soportados', 'Claude Code, Codex, Cursor, Grok Build, OpenCode y Google Antigravity en el README y en t3.codes; su documentación añade Pi, Muse Code, fx y agentes del ACP Registry', 'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI, GitHub Copilot CLI y Cline'],
             ['Modelo de aislamiento', 'Worktrees de git, una rama por hilo de agente, con limpieza automática opcional', 'Worktrees de git por sesión, un proceso por terminal'],
             ['Notificaciones', 'Avisos push en el móvil mediante T3 Connect cuando un agente termina, falla, necesita aprobación o pregunta algo. Notificaciones de escritorio no documentadas a 31 de octubre de 2026', 'Notificaciones de escritorio cuando un agente termina o necesita respuesta'],
-            ['Historial de conversaciones', 'Búsqueda de hilos entre entornos conectados por título, rama, pull request, proyecto o texto de los mensajes', 'Historial buscable de los diez agentes, con opción de retomar cuando el agente la admite'],
+            ['Historial de conversaciones', 'Búsqueda de hilos entre entornos conectados por título, rama, pull request, proyecto o texto de los mensajes', 'Historial buscable de los doce agentes, con opción de retomar cuando el agente la admite'],
             ['Gestión de tareas', 'Acciones de proyecto y commit, push y PR con un clic (PRs en borrador, apiladas y enmendadas). Sin tablero kanban documentado a 31 de octubre de 2026', 'Kanban que los agentes actualizan por MCP. Sin botón de PR con un clic'],
             ['Código abierto', 'Sí, MIT (pingdotgg/t3code). De momento casi no aceptan contribuciones, según su README', 'No. Código cerrado, sin repositorio público'],
             ['Precio', 'Gratis y sin plan de pago, sigues pagando a tus proveedores de agentes. El acceso remoto T3 Connect es gratis por ahora para hasta 3 máquinas (según su FAQ)', 'Gratis durante la beta con Pro incluido. Pones tus suscripciones CLI'],
@@ -133,7 +133,7 @@ Resumen rápido: elige T3 Code si te importan el código abierto y llegar rápid
           items: [
             '<strong>Quieres código abierto.</strong> Licencia MIT y fork libre: lees el código, lo parcheas y publicas tu propia build. CodeAgentSwarm no te ofrece nada de eso.',
             '<strong>Quieres instalarlo con tu gestor de paquetes.</strong> T3 Code está en winget, Scoop, Homebrew, el AUR y Nix. CodeAgentSwarm se instala con su propio instalador (en Linux, .deb o AppImage).',
-            '<strong>Quieres probarlo en diez segundos.</strong> <code>npx t3@latest</code> lo arranca sin instalar nada, y no hay instalador que baje más la barrera.',
+            '<strong>Quieres probarlo en doce segundos.</strong> <code>npx t3@latest</code> lo arranca sin instalar nada, y no hay instalador que baje más la barrera.',
             '<strong>Tu cuello de botella es entregar, no supervisar.</strong> Un botón para commitear, hacer push y abrir la PR con título y cuerpo generados, incluyendo PRs en borrador y apiladas, gana a hacerlo a mano. Nosotros generamos el mensaje de commit, pero no tenemos botón de PR.',
             '<strong>Quieres apps móviles públicas.</strong> T3 Code ofrece apps para iOS y Android, con avisos push cuando un agente termina o te necesita, además de un cliente web. Mobile Connect de CodeAgentSwarm sigue en alpha.',
             '<strong>Te interesa la comunidad.</strong> Unas 33.800 estrellas, unas 12.700 de ellas sumadas entre el 31 de agosto y el 31 de octubre de 2026, más builds nightly y nuevas integraciones frecuentes, hacen que los fallos se detecten y se arreglen rápido.',
@@ -154,7 +154,7 @@ Resumen rápido: elige T3 Code si te importan el código abierto y llegar rápid
           items: [
             '<strong>Quieres las CLI de cada proveedor, en su propio terminal.</strong> Cada sesión de CodeAgentSwarm ejecuta la CLI del agente en un terminal, un proceso por terminal. T3 Code, en cambio, maneja los agentes con sus propias integraciones de proveedor (Claude mediante el Agent SDK de Anthropic, según su FAQ).',
             '<strong>Prefieres que te avise el escritorio a estar mirando.</strong> Las notificaciones de escritorio saltan cuando cualquier agente termina o necesita respuesta, así que puedes irte y volver cuando de verdad ha pasado algo. T3 Code documenta avisos push en su app móvil, no notificaciones de escritorio, a 31 de octubre de 2026.',
-            '<strong>Quieres un único historial buscable.</strong> Las conversaciones de los diez agentes se guardan y se buscan en el mismo sitio, y se retoman cuando el agente lo permite.',
+            '<strong>Quieres un único historial buscable.</strong> Las conversaciones de los doce agentes se guardan y se buscan en el mismo sitio, y se retoman cuando el agente lo permite.',
             '<strong>Quieres que los agentes mantengan el tablero al día.</strong> El kanban está expuesto por MCP, así que los agentes mueven sus propias tareas mientras trabajan.',
             '<strong>Quieres diffs en vivo con permisos graduados.</strong> Ves en tiempo real qué toca cada agente y el modo Turbo aprueba solo lo seguro, mientras que lo peligroso sigue parándose a preguntar.',
           ],

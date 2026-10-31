@@ -6,13 +6,13 @@ export const guide: Guide = {
     locale: 'es',
     title: 'Nimbalyst vs CodeAgentSwarm: comparativa honesta (2026)',
     metaTitle: 'Nimbalyst (Crystal) vs CodeAgentSwarm: comparativa honesta',
-    metaDescription: 'Nimbalyst, antes Crystal, es un editor visual de lo que producen Claude Code y Codex. CodeAgentSwarm supervisa diez CLI de agentes. Comparativa verificada en 2026.',
-    intro: `Nimbalyst, el proyecto que antes se llamaba Crystal, es un espacio de trabajo visual y de código abierto para Claude Code, Codex y otros agentes de programación, pensado para editar lo que producen. CodeAgentSwarm es un espacio de supervisión para diez CLI de agentes, montado alrededor de las terminales y no de los documentos.
+    metaDescription: 'Nimbalyst, antes Crystal, es un editor visual de lo que producen Claude Code y Codex. CodeAgentSwarm supervisa doce CLI de agentes. Comparativa verificada en 2026.',
+    intro: `Nimbalyst, el proyecto que antes se llamaba Crystal, es un espacio de trabajo visual y de código abierto para Claude Code, Codex y otros agentes de programación, pensado para editar lo que producen. CodeAgentSwarm es un espacio de supervisión para doce CLI de agentes, montado alrededor de las terminales y no de los documentos.
 
 CodeAgentSwarm lo hacemos nosotros, así que esta comparativa tiene parte interesada y conviene que la contrastes. También por eso somos generosos donde Nimbalyst lo merece (es código abierto, funciona en Linux, tiene app para iOS y notificaciones de escritorio, y recibió un commit público el mismo día que lo verificamos) y por eso nuestros límites están en la página: código cerrado, Mobile Connect aún en alpha, todavía en beta, y tú pones tus suscripciones de agentes. Cada dato de terceros se verificó el 31 de octubre de 2026 en nimbalyst.com (portada, precios, descargas, página móvil y documentación), el README público de Nimbalyst y los datos públicos de GitHub.
 
 Elige Nimbalyst si lo que te importa es el artefacto: markdown, mockups, diagramas, documentos que quieres editar junto al agente. Elige CodeAgentSwarm si lo que te importa son las sesiones: varias CLI de agentes a la vez y tú necesitando saber qué hace cada una.`,
-    ctaText: 'Si quieres supervisar diez CLI de agentes distintas a la vez, con notificaciones, diffs en vivo por terminal y un único historial buscable, descarga CodeAgentSwarm y compáralo con Nimbalyst en tu día a día.',
+    ctaText: 'Si quieres supervisar doce CLI de agentes distintas a la vez, con notificaciones, diffs en vivo por terminal y un único historial buscable, descarga CodeAgentSwarm y compáralo con Nimbalyst en tu día a día.',
     ctaAgent: 'comparison',
     highlightedWords: ['Nimbalyst', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
@@ -26,7 +26,7 @@ Elige Nimbalyst si lo que te importa es el artefacto: markdown, mockups, diagram
       content: [
         {
           type: 'paragraph',
-          text: 'Nimbalyst, antes Crystal, es un espacio de trabajo visual y de código abierto para Claude Code, Codex y otros agentes de programación, que te deja revisar y editar el markdown, los mockups y los diagramas junto al agente, mientras que CodeAgentSwarm es un espacio de supervisión para diez CLI de agentes, montado alrededor de las terminales en marcha.',
+          text: 'Nimbalyst, antes Crystal, es un espacio de trabajo visual y de código abierto para Claude Code, Codex y otros agentes de programación, que te deja revisar y editar el markdown, los mockups y los diagramas junto al agente, mientras que CodeAgentSwarm es un espacio de supervisión para doce CLI de agentes, montado alrededor de las terminales en marcha.',
         },
         {
           type: 'paragraph',
@@ -75,7 +75,7 @@ Elige Nimbalyst si lo que te importa es el artefacto: markdown, mockups, diagram
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm es una app de escritorio para ejecutar y supervisar varios agentes de programación con IA en paralelo. Cada terminal es un proceso de agente real, y eliges por terminal entre Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi y Devin CLI.',
+          text: 'CodeAgentSwarm es una app de escritorio para ejecutar y supervisar varios agentes de programación con IA en paralelo. Cada terminal es un proceso de agente real, y eliges por terminal entre Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI, GitHub Copilot CLI y Cline.',
         },
         {
           type: 'image',
@@ -85,7 +85,7 @@ Elige Nimbalyst si lo que te importa es el artefacto: markdown, mockups, diagram
         },
         {
           type: 'paragraph',
-          text: 'El diseño empieza por la terminal. Tienes notificaciones de escritorio cuando un agente termina o necesita respuesta, historial de conversaciones buscable de los diez agentes con reanudación cuando el agente la admite, diffs de archivos en vivo por terminal, control de permisos con modo Turbo para las operaciones en las que confías, un tablero kanban que los agentes actualizan por MCP, git worktrees por sesión, cambio entre proyectos, mensajes de commit con IA, indicador de cuota del proveedor y marketplaces de skills y de MCP compartidos entre agentes.',
+          text: 'El diseño empieza por la terminal. Tienes notificaciones de escritorio cuando un agente termina o necesita respuesta, historial de conversaciones buscable de los doce agentes con reanudación cuando el agente la admite, diffs de archivos en vivo por terminal, control de permisos con modo Turbo para las operaciones en las que confías, un tablero kanban que los agentes actualizan por MCP, git worktrees por sesión, cambio entre proyectos, mensajes de commit con IA, indicador de cuota del proveedor y marketplaces de skills y de MCP compartidos entre agentes.',
         },
         {
           type: 'paragraph',
@@ -103,10 +103,10 @@ Elige Nimbalyst si lo que te importa es el artefacto: markdown, mockups, diagram
           rows: [
             ['Plataformas', 'Escritorio para macOS (Apple Silicon e Intel), Windows y Linux, más una app para iOS en iPhone y iPad (Android previsto), según su README y su web', 'Escritorio para macOS, Windows y Linux. Mobile Connect en alpha: beta web para todas las cuentas, acceso nativo para iOS y Android bajo petición y el escritorio debe seguir abierto'],
             ['Interfaz', 'App de escritorio construida sobre editores visuales, con kanban de sesiones, terminal integrada y una wiki que escriben tus agentes', 'Espacio de trabajo de escritorio construido sobre terminales de agentes en vivo'],
-            ['Agentes soportados', 'Claude Agent, Codex y un Claude Code CLI opcional, más OpenCode, GitHub Copilot, Grok Build, Cursor Agent y Gemini a través de Antigravity en alpha, según su documentación', 'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi y Devin CLI'],
+            ['Agentes soportados', 'Claude Agent, Codex y un Claude Code CLI opcional, más OpenCode, GitHub Copilot, Grok Build, Cursor Agent y Gemini a través de Antigravity en alpha, según su documentación', 'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI, GitHub Copilot CLI y Cline'],
             ['Modelo de aislamiento', 'Sesiones en paralelo, cada una en su propio git worktree, según su README', 'Un proceso separado por terminal, con git worktrees opcionales por sesión'],
             ['Notificaciones', 'Notificaciones de escritorio cuando termina una sesión, sonidos opcionales al terminar y notificaciones push en su app para iOS, según su documentación', 'Notificaciones de escritorio cuando un agente termina o necesita respuesta'],
-            ['Historial de conversaciones', 'Búsqueda y reanudación de sesiones, con las sesiones enlazadas a los archivos que tocaron', 'Historial buscable de los diez agentes, con reanudación cuando el agente la admite'],
+            ['Historial de conversaciones', 'Búsqueda y reanudación de sesiones, con las sesiones enlazadas a los archivos que tocaron', 'Historial buscable de los doce agentes, con reanudación cuando el agente la admite'],
             ['Gestión de tareas', 'Seguimiento de tareas más una vista kanban de sesiones, editable por ti y por el agente', 'Tablero kanban que los agentes actualizan por MCP'],
             ['Código abierto', 'Sí, MIT, unas 2.000 estrellas en el repositorio actual', 'No, código cerrado y sin repositorio público de la app'],
             ['Precio', 'App y wiki personal gratis. Wiki Teams cuesta 20 dólares por usuario al mes o 200 dólares por usuario al año, gratis durante la beta. Tú pones tu suscripción o clave de API', 'Gratis durante la beta con Pro incluido, y tú pones tus suscripciones de agentes'],
@@ -143,7 +143,7 @@ Elige Nimbalyst si lo que te importa es el artefacto: markdown, mockups, diagram
         {
           type: 'list',
           items: [
-            '<strong>Usas agentes que Nimbalyst no lista.</strong> Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi y Devin CLI son ciudadanos de primera aquí. Kimi Code, Muse Code, Pi y Devin CLI no aparecen entre los proveedores de la documentación de Nimbalyst a 31 de octubre de 2026, y OpenCode, Copilot, Grok Build, Cursor Agent y Gemini siguen en alpha allí.',
+            '<strong>Usas agentes que Nimbalyst no lista.</strong> Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI, GitHub Copilot CLI y Cline son ciudadanos de primera aquí. Kimi Code, Muse Code, Pi y Devin CLI no aparecen entre los proveedores de la documentación de Nimbalyst a 31 de octubre de 2026, y OpenCode, Copilot, Grok Build, Cursor Agent y Gemini siguen en alpha allí.',
             '<strong>Quieres las terminales, no una capa por encima.</strong> Cada sesión es una CLI real en un panel que puedes leer, desplazar y en el que puedes escribir, algo que importa cuando un agente hace algo inesperado. En Nimbalyst la integración de Claude por defecto es su propio Claude Agent, y el Claude Code CLI tal cual es un proveedor opcional.',
             '<strong>Quieres un solo historial de todos los proveedores.</strong> Buscas una frase y encuentras la sesión, la haya ejecutado el agente que la haya ejecutado, y la reanudas ahí mismo.',
             '<strong>Quieres control de permisos con grano fino.</strong> El modo Turbo aprueba automáticamente lo que tú confías y deja el resto bajo revisión, en vez de aprobarlo todo o nada.',
