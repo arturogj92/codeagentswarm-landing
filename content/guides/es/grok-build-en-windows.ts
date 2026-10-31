@@ -14,7 +14,7 @@ Grok Build es la CLI de código de xAI (<code>grok</code>), no el chat Grok de c
     ctaAgent: 'grok-build',
     highlightedWords: ['Windows', 'Grok Build'],
     publishedAt: '2026-07-28',
-    updatedAt: '2026-07-28',
+    updatedAt: '2026-10-31',
     alternateSlug: 'grok-build-on-windows',
   },
   sections: [
@@ -23,7 +23,8 @@ Grok Build es la CLI de código de xAI (<code>grok</code>), no el chat Grok de c
       title: 'Instalar en Windows',
       content: [
         { type: 'code', language: 'powershell', code: '# PowerShell\nirm https://x.ai/cli/install.ps1 | iex\ngrok --version' },
-        { type: 'paragraph', text: 'El instalador añade <code>%USERPROFILE%\\.grok\\bin</code> al PATH de usuario. Abre un terminal nuevo después. También puedes usar Git Bash con el script curl, o WSL.' },
+        { type: 'paragraph', text: 'El instalador añade <code>%USERPROFILE%\\.grok\\bin</code> al PATH de usuario. Abre un terminal nuevo después. También puedes usar Git Bash con el script curl, o WSL para un entorno tipo Linux. xAI también publica un paquete de WinGet, <code>xAI.GrokBuild</code>. Si instalas por esa vía, actualiza con <code>winget upgrade --id xAI.GrokBuild -e</code> en lugar de <code>grok update</code>, y cuenta con que las versiones nuevas llegan a WinGet unos días después (ver la <a href="https://github.com/xai-org/grok-build/blob/main/crates/codegen/xai-grok-pager/docs/user-guide/01-getting-started.md" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">guía oficial de primeros pasos</a>).' },
+        { type: 'callout', variant: 'tip', content: 'Si no encuentra <code>grok</code>, cierra y abre el terminal, o comprueba que <code>%USERPROFILE%\\.grok\\bin</code> está en el PATH.' },
       ],
     },
     {
@@ -37,12 +38,12 @@ Grok Build es la CLI de código de xAI (<code>grok</code>), no el chat Grok de c
       id: 'cas-win',
       title: 'CodeAgentSwarm en Windows',
       content: [
-        { type: 'paragraph', text: 'CodeAgentSwarm en Windows lanza Grok Build si la CLI está en el PATH. Usa el mismo selector de agente que en macOS.' },
+        { type: 'paragraph', text: 'CodeAgentSwarm en Windows lanza Grok Build si la CLI está en el PATH. Usa el mismo selector de agente que en macOS. Para evitar problemas de rutas con el historial, mantén las rutas de proyecto coherentes (no mezcles rutas de WSL y nativas para el mismo repo).' },
       ],
     },
   ],
   faq: [
-    { question: '¿Grok Build soporta Windows?', answer: 'Sí. Usa el instalador de PowerShell o Git Bash / WSL.' },
+    { question: '¿Grok Build soporta Windows?', answer: 'Sí. Usa el instalador de PowerShell, el paquete de WinGet xAI.GrokBuild o Git Bash / WSL con el script bash.' },
     { question: '¿Dónde está la config en Windows?', answer: 'Normalmente %USERPROFILE%\\.grok salvo GROK_HOME.' },
   ],
 }

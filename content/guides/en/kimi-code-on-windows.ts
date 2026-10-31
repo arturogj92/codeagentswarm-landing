@@ -7,7 +7,7 @@ export const guide: Guide = {
     title: 'How to Run Kimi Code on Windows: Installer, Git Bash, and the Rough Edges',
     metaTitle: 'How to Run Kimi Code on Windows (Native or WSL) (2026)',
     metaDescription: 'Run Kimi Code on Windows: the PowerShell installer, the Git for Windows requirement, the ANSI rendering bug you should know about, and WSL as the reliable fallback.',
-    intro: `Kimi Code runs on Windows, and Moonshot ships a first-party PowerShell installer for it. But the Windows story has two catches the macOS one does not: Kimi Code requires Git for Windows before its first launch, because it uses Git Bash as its shell environment, and current 0.26.x builds have a known rendering issue that can dump raw escape sequences into some Windows terminals.
+    intro: `Kimi Code runs on Windows, and Moonshot ships a first-party PowerShell installer for it. But the Windows story has two catches the macOS one does not: Kimi Code requires Git for Windows before its first launch, because it uses Git Bash as its shell environment, and current builds (2.4.1 as of October 31, 2026) still have a known rendering issue that can dump raw escape sequences into some Windows terminals.
 
 This guide walks the honest version of the setup: what to install and in which order, what the Git Bash dependency means, what the rendering bug looks like when it bites, and when running Kimi Code inside WSL is simply the calmer choice. None of this is a reason to skip the tool, but going in with eyes open saves you an evening of confusion.
 
@@ -16,7 +16,7 @@ If you are setting up other agents on the same machine, our <a href="/en/guides/
     ctaAgent: 'kimi-code',
     highlightedWords: ['Kimi Code', 'Windows'],
     publishedAt: '2026-07-18',
-    updatedAt: '2026-09-29',
+    updatedAt: '2026-10-31',
     alternateSlug: 'kimi-code-en-windows',
   },
   sections: [
@@ -78,7 +78,7 @@ If you are setting up other agents on the same machine, our <a href="/en/guides/
             'Open PowerShell (no administrator rights needed).',
             'Run <code>irm https://code.kimi.com/kimi-code/install.ps1 | iex</code>. It downloads the latest release, verifies the checksum, and puts the <code>kimi</code> executable on your PATH.',
             'Close and reopen the terminal so the PATH change is picked up.',
-            'Run <code>kimi --version</code>. You should see a 0.x version, which confirms you have the current TypeScript CLI and not the legacy Python kimi-cli.',
+            'Run <code>kimi --version</code>. You should see a 2.x version, which confirms you have the current TypeScript CLI and not the legacy Python kimi-cli.',
             'Move into a project folder, run <code>kimi</code>, and log in with <code>/login</code> (browser sign-in for subscriptions, API key for pay-per-token).',
           ],
         },
@@ -118,7 +118,7 @@ If you are setting up other agents on the same machine, our <a href="/en/guides/
       content: [
         {
           type: 'paragraph',
-          text: 'Here is the part most write-ups skip. As of the 0.26.x releases, the Kimi Code repository has an open issue (#1792) where the TUI dumps raw ANSI escape sequences instead of rendering them, in Windows Terminal, PowerShell and cmd. When it hits, the screen fills with sequences like <code>[38;2;255m</code> instead of a usable interface.',
+          text: 'Here is the part most write-ups skip. The Kimi Code repository has an issue (#1792), still open on October 31, 2026 with version 2.4.1, where the TUI dumps raw ANSI escape sequences instead of rendering them, in Windows Terminal, PowerShell and cmd. When it hits, the screen fills with sequences like <code>[38;2;255m</code> instead of a usable interface.',
         },
         {
           type: 'paragraph',
@@ -160,7 +160,7 @@ If you are setting up other agents on the same machine, our <a href="/en/guides/
             '<strong>"kimi is not recognized as a command":</strong> you did not reopen the terminal after installing, or the installer\'s PATH change did not stick. Open a fresh PowerShell window; if it persists, check that the Kimi Code bin folder is on your PATH.',
             '<strong>Kimi Code complains about the shell or fails to run commands:</strong> Git for Windows is missing or Git Bash is somewhere unusual. Install Git for Windows, or point <code>KIMI_SHELL_PATH</code> at your <code>bash.exe</code>.',
             '<strong>Screen full of raw escape codes:</strong> that is issue #1792 described above, not your config. Use WSL or check the issue tracker for a fixed release.',
-            '<strong><code>kimi --version</code> prints 1.4x:</strong> you have the legacy Python kimi-cli, not Kimi Code. Install with the official script or npm package <code>@moonshot-ai/kimi-code</code>; the installer renames legacy shims to <code>kimi-legacy</code> for you.',
+            '<strong><code>kimi --version</code> prints 1.x:</strong> you have the legacy Python kimi-cli, not Kimi Code. Install with the official script or npm package <code>@moonshot-ai/kimi-code</code>; the installer renames legacy shims to <code>kimi-legacy</code> for you.',
             '<strong>npm install fails on Node version:</strong> Kimi Code needs Node 22.19.0 or later. Update Node, or skip npm entirely and use the PowerShell installer, which bundles everything.',
           ],
         },
@@ -176,7 +176,7 @@ If you are setting up other agents on the same machine, our <a href="/en/guides/
         },
         {
           type: 'paragraph',
-          text: '<a href="/en" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a> is a native desktop app for Windows, macOS and Linux built for that supervision problem. Kimi Code is a supported agent in it, next to Claude Code, Codex CLI, Antigravity CLI and opencode, and you choose the agent per terminal. You get desktop notifications when a session finishes or needs input, searchable history across every agent, live per-terminal diffs, and a quota indicator that reads Kimi\'s weekly and 5-hour windows.',
+          text: '<a href="/en" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a> is a native desktop app for Windows, macOS and Linux built for that supervision problem. Kimi Code is a supported agent in it, next to Claude Code, Codex CLI, Antigravity CLI, OpenCode, Grok Build, Cursor Agent, Muse Code, Pi and Devin CLI, and you choose the agent per terminal. You get desktop notifications when a session finishes or needs input, searchable history across every agent, live per-terminal diffs, and a quota indicator that reads Kimi\'s quota windows.',
         },
         {
           type: 'paragraph',
@@ -200,7 +200,7 @@ If you are setting up other agents on the same machine, our <a href="/en/guides/
     },
     {
       question: 'Why does Kimi Code show garbled text or escape codes on Windows?',
-      answer: 'Current 0.26.x builds have a known open issue (#1792) where the TUI prints raw ANSI escape sequences in Windows Terminal, PowerShell and cmd on some machines. It is an upstream bug, not your configuration. Kimi Code releases almost daily, so check the GitHub issue tracker; until it is fixed on your setup, WSL is the reliable route.',
+      answer: 'Kimi Code has a known issue (#1792), still open on October 31, 2026, where the TUI prints raw ANSI escape sequences in Windows Terminal, PowerShell and cmd on some machines. It is an upstream bug, not your configuration. Kimi Code releases every few days, so check the GitHub issue tracker; until it is fixed on your setup, WSL is the reliable route.',
     },
     {
       question: 'Should I use WSL for Kimi Code on Windows?',

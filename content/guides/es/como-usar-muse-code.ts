@@ -15,7 +15,7 @@ const guide: Guide = {
       "Muse"
     ],
     "publishedAt": "2026-09-22",
-    "updatedAt": "2026-09-24",
+    "updatedAt": "2026-10-31",
     "alternateSlug": "how-to-use-muse-code"
   },
   "sections": [
@@ -31,7 +31,7 @@ const guide: Guide = {
         },
         {
           "type": "paragraph",
-          "text": "En macOS o Linux, usa el instalador enlazado en la <a href=\"https://dev.meta.ai/docs/muse-code\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">guía oficial de Muse Code</a>. Después, comprueba la versión instalada antes de copiar comandos de un tutorial. Los ejemplos de esta guía se contrastaron con los comandos disponibles en Muse 1.3.0."
+          "text": "En macOS o Linux, usa el instalador enlazado en la <a href=\"https://dev.meta.ai/docs/muse-code\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">guía oficial de Muse Code</a>. Después, comprueba la versión instalada antes de copiar comandos de un tutorial. Los ejemplos de esta guía se contrastaron en octubre de 2026 con los comandos disponibles en Muse 1.4.14."
         },
         {
           "type": "code",

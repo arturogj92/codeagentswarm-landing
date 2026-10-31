@@ -14,7 +14,7 @@ Grok Build es la CLI de código de xAI (<code>grok</code>), no el chatbot Grok.`
     ctaAgent: 'multi',
     highlightedWords: ['Grok Build', 'Cursor'],
     publishedAt: '2026-07-28',
-    updatedAt: '2026-07-28',
+    updatedAt: '2026-10-31',
     alternateSlug: 'grok-build-vs-cursor',
   },
   sections: [
@@ -22,14 +22,15 @@ Grok Build es la CLI de código de xAI (<code>grok</code>), no el chatbot Grok.`
       id: 'categoria',
       title: 'Categorías distintas',
       content: [
-        { type: 'list', items: ['<strong>Cursor:</strong> fork de VS Code con chat/edición IA dentro del editor.', '<strong>Grok Build:</strong> agente TUI/CLI con tools, headless, multi-sesión, subagentes.', '<strong>CodeAgentSwarm:</strong> supervisor de escritorio para muchos agentes CLI, no un IDE.'] },
+        { type: 'list', items: ['<strong>Cursor:</strong> fork de VS Code con chat/edición IA dentro del editor. También tiene un agente de terminal, <a href="/es/guias/cursor-agent-cli-acp-codeagentswarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Cursor Agent</a>, y xAI indica que <a href="https://docs.x.ai/developers/grok-4-7" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Grok 4.7</a> está disponible en Cursor en todos los planes.', '<strong>Grok Build:</strong> agente TUI/CLI con tools, headless, multi-sesión, subagentes.', '<strong>CodeAgentSwarm:</strong> supervisor de escritorio para muchos agentes CLI, no un IDE.'] },
       ],
     },
     {
       id: 'cuando',
       title: 'Cuándo gana cada uno',
       content: [
-        { type: 'paragraph', text: 'Cursor gana con completions inline y un IDE pulido. Grok Build gana con bucles largos en terminal, CI/headless, worktrees y varios agentes en paralelo bajo un supervisor.' },
+        { type: 'paragraph', text: 'Cursor gana cuando quieres completions inline, chat dentro del editor y un único IDE pulido. Grok Build gana con bucles largos en terminal, ejecuciones CI/headless, experimentos con worktrees o varios agentes en paralelo bajo un supervisor.' },
+        { type: 'paragraph', text: 'Mucha gente usa ambos: Cursor para editar de forma interactiva y Grok Build (y compañía) para trabajo multiagente en segundo plano dentro de CodeAgentSwarm.' },
       ],
     },
   ],

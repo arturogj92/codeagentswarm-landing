@@ -15,7 +15,7 @@ const guide: Guide = {
       'Pi',
     ],
     publishedAt: '2026-09-06',
-    updatedAt: '2026-09-24',
+    updatedAt: '2026-10-31',
     alternateSlug: 'how-to-use-pi-coding-agent',
   },
   sections: [
@@ -42,7 +42,7 @@ const guide: Guide = {
       content: [
         {
           type: 'paragraph',
-          text: 'Usa Node.js 22.19.0 o posterior para la versión de Pi verificada por CodeAgentSwarm, la 0.85.1. Comprueba las versiones de Node y npm antes de instalar el paquete actual. Algunos tutoriales antiguos utilizan el nombre anterior del paquete, @mariozechner.',
+          text: 'El paquete npm necesita Node.js 22.19.0 o posterior. Ese mínimo vale tanto para Pi 0.85.1, la versión verificada por CodeAgentSwarm, como para la 1.4.0, la versión actual en octubre de 2026. Comprueba las versiones de Node y npm antes de instalar. Algunos tutoriales antiguos utilizan el nombre anterior del paquete, @mariozechner.',
         },
         {
           type: 'code',
@@ -200,7 +200,7 @@ const guide: Guide = {
     },
     {
       question: '¿Qué paquete npm debo instalar?',
-      answer: 'Usa @earendil-works/pi-coding-agent. CodeAgentSwarm verificó Pi 0.85.1 con Node.js 22.19.0 o posterior.',
+      answer: 'Usa @earendil-works/pi-coding-agent. CodeAgentSwarm verificó Pi 0.85.1 con Node.js 22.19.0 o posterior; la versión actual, 1.4.0, mantiene el mismo mínimo de Node.js.',
     },
     {
       question: '¿Puedo usar Pi hoy en la descarga pública de CodeAgentSwarm?',

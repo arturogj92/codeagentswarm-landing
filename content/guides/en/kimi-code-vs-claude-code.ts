@@ -7,16 +7,16 @@ export const guide: Guide = {
     title: 'Kimi Code vs Claude Code: Which Terminal Agent Should You Use?',
     metaTitle: 'Kimi Code vs Claude Code: An Honest Comparison (2026)',
     metaDescription: 'Kimi Code vs Claude Code compared on model, pricing, config, hooks, MCP and maturity. Where each one wins, what actually transfers, and why you may want both.',
-    intro: `Kimi Code is Moonshot AI's terminal coding agent, and it is the most direct Claude Code competitor to ship so far. Not in a vague "also an AI CLI" way: Kimi Code clones Claude Code's tool names outright (Bash, Write, Edit, Read, even the mcp__ prefix for MCP tools), reads the same shared skills folder, and its config accepts the same project-level .mcp.json. If you know Claude Code, you already know most of Kimi Code.
+    intro: `Kimi Code is Moonshot AI's terminal coding agent, and it is the most direct Claude Code competitor to ship so far. Not in a vague "also an AI CLI" way: Kimi Code clones Claude Code's tool names outright (Bash, Write, Edit, Read, even the mcp__ prefix for MCP tools), can import your Claude Code skills in one step, and its config accepts the same project-level .mcp.json. If you know Claude Code, you already know most of Kimi Code.
 
-The differences are real, though, and they cut both ways. Kimi Code now runs Kimi K2.7 Code by default, a one-trillion-parameter model with a 256K context window and low API rates. Claude Code runs Anthropic's Claude family with a far more mature harness around it. One tool has years of production hardening; the other is still pre-1.0 and changes quickly.
+The differences are real, though, and they cut both ways. Kimi Code's default model id now serves K2.8 Preview with up to a 1M context window, and Moonshot's newest flagship, K3.1 Pro, is one command away. Claude Code runs Anthropic's Claude models with a far more mature harness around it. One tool has years of production hardening; the other jumped from 0.43 to 2.0 in September 2026 and still changes quickly.
 
 This comparison goes through what each one actually does better, what carries over between them, and the setup a lot of people land on: not choosing, and running both side by side.`,
     ctaText: 'The fastest way to settle Kimi Code vs Claude Code is to run both at once. CodeAgentSwarm gives each agent its own terminal, with live diffs, desktop notifications and searchable history across every session.',
     ctaAgent: 'multi',
     highlightedWords: ['Kimi Code', 'Claude Code'],
     publishedAt: '2026-07-18',
-    updatedAt: '2026-09-29',
+    updatedAt: '2026-10-31',
     alternateSlug: 'kimi-code-vs-claude-code',
   },
   sections: [
@@ -30,7 +30,7 @@ This comparison goes through what each one actually does better, what carries ov
         },
         {
           type: 'paragraph',
-          text: '<strong><a href="https://www.kimi.com/code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi Code</a></strong> is Moonshot AI\'s answer. Same shape: a TUI agent you start with the <code>kimi</code> command inside a project, which then plans, edits, runs and loops. It is open source (MIT, TypeScript), moves quickly, and currently uses Kimi K2.7 Code as its default coding model.',
+          text: '<strong><a href="https://www.kimi.com/code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi Code</a></strong> is Moonshot AI\'s answer. Same shape: a TUI agent you start with the <code>kimi</code> command inside a project, which then plans, edits, runs and loops. It is open source (MIT, TypeScript), moves quickly, and its default <code>kimi-for-coding</code> model id currently serves K2.8 Preview, with K3.1 Pro available through <code>/model</code>.',
         },
         {
           type: 'paragraph',
@@ -39,7 +39,7 @@ This comparison goes through what each one actually does better, what carries ov
         {
           type: 'callout',
           variant: 'warning',
-          content: 'Do not confuse Kimi Code with kimi-cli. Moonshot has two CLIs: kimi-cli is the older Python agent, now in wind-down, and Kimi Code is the current TypeScript one. Both install a binary called kimi. Run kimi --version to check: 0.x means you have the current Kimi Code, 1.4x means you are on the legacy Python tool. Our <a href="/en/guides/how-to-use-kimi-code" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi Code setup guide</a> covers how to avoid installing the wrong one.',
+          content: 'Do not confuse Kimi Code with kimi-cli. Moonshot has two CLIs: kimi-cli is the older Python agent, now archived and no longer maintained, and Kimi Code is the current TypeScript one. Both install a binary called kimi. Run kimi --version to check: 2.x means you have the current Kimi Code (it jumped from 0.43 to 2.0.0 in September 2026), 1.x means you are on the legacy Python tool. Our <a href="/en/guides/how-to-use-kimi-code" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi Code setup guide</a> covers how to avoid installing the wrong one.',
         },
       ],
     },
@@ -55,7 +55,7 @@ This comparison goes through what each one actually does better, what carries ov
         },
         {
           type: 'paragraph',
-          text: 'Kimi Code currently defaults to <a href="https://www.kimi.com/es-419/resources/kimi-k2-7-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi K2.7 Code</a>: a one-trillion-parameter Mixture of Experts model with 32 billion active parameters, native vision and a 262,144-token context window. K2.7 Code always reasons; if reasoning is disabled, Kimi Code routes the request to K2.6.',
+          text: 'Kimi Code\'s default <code>kimi-for-coding</code> model id has served K2.8 Preview since September 11, 2026, replacing K2.7 Code. It offers low, high and max reasoning effort and up to a 1M token context window on every plan. On Plus and above you can switch to K3.1 Pro, Moonshot\'s newest flagship since October 23, 2026, or to K3 with <code>/model</code>; their 1M window needs Pro or above. The <a href="https://www.kimi.com/code/docs/en/kimi-code/models.html" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">official model list</a> has the current ids and limits.',
         },
         {
           type: 'paragraph',
@@ -70,11 +70,11 @@ This comparison goes through what each one actually does better, what carries ov
         {
           type: 'list',
           items: [
-            '<strong>Low K2.7 Code API rates</strong>: $0.19 per million cached input tokens, $0.95 per million uncached input tokens and $4.00 per million output tokens',
-            '<strong>A 256K context window</strong> for the default K2.7 Code model, with no long-context tier hidden behind a subscription upgrade',
-            '<strong>Familiar by design</strong>: Claude-style tool names, project-level .mcp.json support, and it reads the shared ~/.agents/skills/ folder natively',
+            '<strong>A pay-per-token option</strong>: Moonshot publishes per-token rates for its K3 models on its <a href="https://platform.kimi.ai/docs/pricing/chat" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">official pricing page</a>, with automatic context caching',
+            '<strong>Up to a 1M context window</strong> on the default model for every plan, and on K3.1 Pro from the Pro plan up',
+            '<strong>Familiar by design</strong>: Claude-style tool names, project-level .mcp.json support, and a built-in <code>/import-from-cc-codex</code> skill that copies Claude Code and Codex instructions, skills and MCP settings into Kimi Code',
             '<strong>A bigger hook surface than Claude Code</strong>: 16 lifecycle events configured in TOML, validated with kimi doctor',
-            '<strong>Open source and fast-moving</strong>: MIT license, public repo, releases land roughly daily',
+            '<strong>Open source and fast-moving</strong>: MIT license, public repo, new releases every few days',
           ],
         },
         {
@@ -86,10 +86,10 @@ This comparison goes through what each one actually does better, what carries ov
         {
           type: 'list',
           items: [
-            '<strong>Maturity</strong>: it is pre-1.0 and it shows. Users have reported sessions that hang silently after rate limits or stalled streams, which is painful when you are not watching the terminal',
+            '<strong>Maturity</strong>: it moves fast and it shows. It went from 0.43 to 2.0 in September 2026 and renamed its permission modes along the way. Users have reported sessions that hang silently after rate limits or stalled streams, which is painful when you are not watching the terminal',
             '<strong>Windows is rough</strong>: it requires Git for Windows as its shell, and there is a known open issue where the TUI prints raw ANSI codes in some Windows terminals. See <a href="/en/guides/kimi-code-on-windows" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi Code on Windows</a> for the workarounds',
             '<strong>No custom sub-agents</strong>: you get three built-ins (coder, explore, plan) and that is it',
-            '<strong>Always-on K2.7 reasoning</strong> has no low-effort mode; disabling reasoning switches the request to K2.6 instead',
+            '<strong>K3.1 Pro always reasons</strong>: you can lower the effort to low or high, but requests with thinking turned off are rejected',
           ],
         },
         {
@@ -100,7 +100,7 @@ This comparison goes through what each one actually does better, what carries ov
         },
         {
           type: 'paragraph',
-          text: 'Kimi Code works with a paid Kimi membership or a pay-per-token API key. Monthly memberships run from $19 to $199, or $15 to $159 per month when billed annually. Membership features share one credit pool, and Kimi Code also has a weekly allowance and 5-hour rate limit. The dated breakdown is in <a href="/en/guides/kimi-code-plans-and-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi Code plans and pricing</a>.',
+          text: 'Kimi Code works with a paid Kimi membership or a pay-per-token API key. On the plans Moonshot launched in October 2026, Kimi Code needs Plus or above (Go has no coding quota), and new members have no weekly allowance: a rolling 5 hour window and the membership\'s monthly total apply. Prices are on Kimi\'s plan page and the rules are on the <a href="https://www.kimi.com/code/docs/en/kimi-code/membership.html" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">membership page</a>. The dated breakdown is in <a href="/en/guides/kimi-code-plans-and-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi Code plans and pricing</a>.',
         },
       ],
     },
@@ -116,7 +116,7 @@ This comparison goes through what each one actually does better, what carries ov
         },
         {
           type: 'paragraph',
-          text: 'Claude Code is Anthropic\'s agentic coding tool, running Claude Sonnet and Opus. It established most of the conventions Kimi Code now follows: natural-language instructions in a terminal, autonomous multi-file edits, command execution, MCP integrations and a permission system that keeps you in the loop.',
+          text: 'Claude Code is Anthropic\'s agentic coding tool, running the Claude models (Opus 5.5, Sonnet 5.5 and Haiku 5.5 on the Anthropic API, plus Fable where available). It established most of the conventions Kimi Code now follows: natural-language instructions in a terminal, autonomous multi-file edits, command execution, MCP integrations and a permission system that keeps you in the loop.',
         },
         {
           type: 'heading',
@@ -128,7 +128,7 @@ This comparison goes through what each one actually does better, what carries ov
           type: 'list',
           items: [
             '<strong>Maturity</strong>: years of production use, stable releases, and predictable behavior under load. When something breaks, someone has already written about it',
-            '<strong>The Claude models</strong>: Opus for hard reasoning, Sonnet for speed, with effort control so simple tasks do not overthink',
+            '<strong>The Claude models</strong>: Opus and Fable for hard reasoning, Sonnet and Haiku for speed, with effort control so simple tasks do not overthink',
             '<strong>Ecosystem depth</strong>: hooks, skills, sub-agents (including fully custom ones), MCP, a huge library of community configs and guides',
             '<strong>Cross-platform</strong>: solid native support on macOS, Linux and <a href="/en/guides/claude-code-on-windows" class="text-neon-cyan hover:text-neon-purple transition-colors">Windows</a>',
           ],
@@ -142,7 +142,7 @@ This comparison goes through what each one actually does better, what carries ov
         {
           type: 'list',
           items: [
-            '<strong>API price per token</strong>: Anthropic\'s flagship model rates are higher than the listed K2.7 Code API rates, although subscription value depends on your real workload',
+            '<strong>API price per token</strong>: compare Anthropic\'s and Moonshot\'s official pricing pages for the models you would actually use; subscription value depends on your real workload',
             '<strong>Single vendor</strong>: it runs Claude models. If you want to try another frontier model, you need another harness (or the endpoint trick below)',
           ],
         },
@@ -154,7 +154,7 @@ This comparison goes through what each one actually does better, what carries ov
         },
         {
           type: 'paragraph',
-          text: 'Claude Code comes with a Claude Pro subscription ($20/month) or Claude Max ($100/month for 5x usage, $200/month for 20x), or pay-per-use through the Anthropic API.',
+          text: 'Claude Code comes with Claude Pro ($20/month, or $17/month billed annually), Max ($100/month) or Ultra ($200/month), or pay-per-use through the Anthropic API. Check <a href="https://claude.com/pricing" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Anthropic\'s pricing page</a> for current limits.',
         },
       ],
     },
@@ -210,8 +210,8 @@ This comparison goes through what each one actually does better, what carries ov
         {
           type: 'list',
           items: [
-            '<strong>Claude Code</strong>: skills in ~/.claude/skills and the shared ~/.agents/skills convention',
-            '<strong>Kimi Code</strong>: reads ~/.agents/skills/ natively, plus its own folders. Skills you wrote for the Claude ecosystem largely just work. If you maintain skills across several CLIs, see <a href="/en/guides/share-skills-between-claude-code-codex-antigravity" class="text-neon-cyan hover:text-neon-purple transition-colors">sharing skills between agents</a>',
+            '<strong>Claude Code</strong>: skills in ~/.claude/skills and the project\'s .claude/skills',
+            '<strong>Kimi Code</strong>: reads the shared ~/.agents/skills/ and .agents/skills/ folders plus its own ~/.kimi-code/skills/, but not ~/.claude/skills. Its /import-from-cc-codex skill copies your Claude Code skills over once. If you maintain skills across several CLIs, see <a href="/en/guides/share-skills-between-claude-code-codex-antigravity" class="text-neon-cyan hover:text-neon-purple transition-colors">sharing skills between agents</a>',
           ],
         },
         {
@@ -263,7 +263,7 @@ This comparison goes through what each one actually does better, what carries ov
           type: 'list',
           items: [
             '<strong>Claude Code</strong>: macOS, Linux, Windows (native and WSL)',
-            '<strong>Kimi Code</strong>: macOS and Linux are solid. Windows needs Git for Windows and has a known rendering issue in some terminals as of July 2026',
+            '<strong>Kimi Code</strong>: macOS and Linux are solid. Windows needs Git for Windows and has a known rendering issue in some terminals, still open as of October 2026',
           ],
         },
       ],
@@ -297,11 +297,11 @@ This comparison goes through what each one actually does better, what carries ov
         },
         {
           type: 'paragraph',
-          text: '<strong>Kimi Code is a credible challenger</strong>, and it is not close to done. K2.7 Code has low published API rates and a 256K context window, while the harness deliberately mirrors enough Claude Code conventions that trying it costs little learning time.',
+          text: '<strong>Kimi Code is a credible challenger</strong>, and it is not close to done. Its default model now has up to 1M context on every plan, K3.1 Pro is one command away, and the harness deliberately mirrors enough Claude Code conventions that trying it costs little learning time.',
         },
         {
           type: 'paragraph',
-          text: 'The practical answer for a lot of developers is to stop treating this as a binary choice. The two agents share your .mcp.json and your skills folder already. Run Claude Code on the work you cannot afford to babysit, try Kimi Code on high-volume tasks where K2.7 Code\'s pricing fits, and compare results on your own repository instead of on benchmarks.',
+          text: 'The practical answer for a lot of developers is to stop treating this as a binary choice. The two agents can share your repo\'s .mcp.json, and Kimi Code can import your Claude Code skills. Run Claude Code on the work you cannot afford to babysit, try Kimi Code on high-volume tasks where its pricing fits, and compare results on your own repository instead of on benchmarks.',
         },
       ],
     },
@@ -320,7 +320,7 @@ This comparison goes through what each one actually does better, what carries ov
             '<strong>Desktop notifications</strong> when any agent finishes or needs an approval, so a silent Kimi hang does not eat your afternoon',
             '<strong>Live diffs per terminal</strong>, so you can audit what each model actually changed',
             '<strong>Searchable history across agents</strong>: every Claude and Kimi session in one search box',
-            '<strong>Quota tracking</strong> that understands Kimi\'s weekly and 5 hour windows, so you see the wall before you hit it',
+            '<strong>Quota tracking</strong> that understands Kimi\'s quota windows, so you see the wall before you hit it',
           ],
         },
         {
@@ -333,7 +333,7 @@ This comparison goes through what each one actually does better, what carries ov
   faq: [
     {
       question: 'Is Kimi Code a copy of Claude Code?',
-      answer: 'It is heavily inspired by it, to the point of using the same internal tool names (Bash, Write, Edit, Read) and the same mcp__ naming for MCP tools. It is not a fork: it is its own open-source TypeScript codebase, with its own hook system, session format and Kimi K2.7 Code as the current default model.',
+      answer: 'It is heavily inspired by it, to the point of using the same internal tool names (Bash, Write, Edit, Read) and the same mcp__ naming for MCP tools. It is not a fork: it is its own open-source TypeScript codebase, with its own hook system and session format. Its default kimi-for-coding id currently serves K2.8 Preview, and K3.1 Pro is available with /model.',
     },
     {
       question: 'Does Kimi Code read CLAUDE.md?',
@@ -341,11 +341,11 @@ This comparison goes through what each one actually does better, what carries ov
     },
     {
       question: 'Do Claude Code skills work in Kimi Code?',
-      answer: 'Mostly yes. Kimi Code reads the shared ~/.agents/skills/ folder natively, which is where cross-agent skills live, and its Claude-style tool names mean skills that reference Bash, Write or Edit behave as expected. Hooks are the exception: Claude hooks are JSON, Kimi hooks are TOML with different payloads, so those need rewriting.',
+      answer: 'Mostly yes, after one step. Kimi Code reads the shared ~/.agents/skills/ folder and its own skills folders, but not ~/.claude/skills, so run its /import-from-cc-codex skill or move cross-agent skills to ~/.agents/skills/. Its Claude-style tool names mean skills that reference Bash, Write or Edit behave as expected. Hooks are the exception: Claude hooks are JSON, Kimi hooks are TOML with different payloads, so those need rewriting.',
     },
     {
       question: 'Is Kimi Code cheaper than Claude Code?',
-      answer: 'On listed API rates, Kimi K2.7 Code is cheaper than Anthropic\'s flagship models as of August 11, 2026: $0.19 per million cached input tokens, $0.95 uncached and $4 output. Subscriptions are not directly comparable because their allowances and limits differ. See the Kimi Code pricing guide for the dated breakdown.',
+      answer: 'It depends on the model and the workload. Both companies publish per-token API rates on their official pricing pages, and Moonshot\'s K2 models, including K2.7 Code, are closed to new API accounts from October 31, 2026. Subscriptions are not directly comparable because their allowances and limits differ. See the Kimi Code pricing guide for the dated breakdown.',
     },
     {
       question: 'Can I run Kimi Code and Claude Code at the same time?',
@@ -353,7 +353,7 @@ This comparison goes through what each one actually does better, what carries ov
     },
     {
       question: 'Should I switch from Claude Code to Kimi Code?',
-      answer: 'Switch outright, probably not yet: Kimi Code is pre-1.0, moves very fast, and has rough edges on Windows and around silent hangs. Adding it alongside Claude Code can make sense: the learning cost is low, K2.7 Code API rates are competitive, and your MCP servers and skills largely carry over.',
+      answer: 'Switch outright, probably not yet: Kimi Code moves very fast and has rough edges on Windows and around silent hangs. Adding it alongside Claude Code can make sense: the learning cost is low, its default model has up to 1M context on every plan, and your MCP servers carry over while skills import in one step.',
     },
   ],
 }

@@ -148,7 +148,7 @@ Esta guía cubre qué se salta el flag en realidad, por qué cambia lo rápido q
         },
         {
           type: 'paragraph',
-          text: 'Estos importan para YOLO en concreto porque una ejecución sin supervisión es justo el tipo de sesión a la que vas a querer volver. <code>agy -c</code> retoma tu conversación más reciente donde la dejaste, que es la que vas a buscar después de revisar un diff y decidir que el agente necesita otra pasada.',
+          text: 'Estos importan para YOLO en concreto porque una ejecución sin supervisión es justo el tipo de sesión a la que vas a querer volver. <code>agy -c</code> retoma la conversación más reciente de ese directorio donde la dejaste, que es la que vas a buscar después de revisar un diff y decidir que el agente necesita otra pasada.',
         },
         {
           type: 'paragraph',

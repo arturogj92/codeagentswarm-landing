@@ -6,17 +6,17 @@ export const guide: Guide = {
     locale: 'es',
     title: 'Modo YOLO de Kimi Code: el flag --yolo, modos y uso seguro',
     metaTitle: 'Modo YOLO de Kimi Code: flag --yolo, permisos y seguridad (2026)',
-    metaDescription: 'Kimi Code tiene modo YOLO de verdad: kimi --yolo lo aprueba todo. Qué hace el flag, en qué se diferencian --auto y --plan, y cómo usarlo sin destrozar un repo.',
-    intro: `Kimi Code tiene un modo YOLO de verdad, y es un solo flag: <code>kimi --yolo</code>. Lo lanzas así y Kimi Code deja de pedir aprobación para escribir ficheros o ejecutar comandos, y simplemente ejecuta. A diferencia de opencode, donde la autonomía vive en un fichero de configuración, Moonshot AI fue por el mismo camino que Claude Code y Codex: un interruptor único que apaga las preguntas.
+    metaDescription: 'Modo YOLO de Kimi Code: qué aprueba hoy kimi --yolo, por qué --auto es el bypass total de verdad y cómo usarlo sin destrozar un repo.',
+    intro: `Kimi Code tiene un modo YOLO de verdad, y es un solo flag: <code>kimi --yolo</code>. Lo lanzas así y Kimi Code deja de pedir aprobación para las escrituras de ficheros y los comandos rutinarios. Eso sí, ya no es un bypass total: las versiones actuales lo llaman Ask When Needed, y las acciones arriesgadas siguen parando. El modo que no pregunta nada es <code>kimi --auto</code>. A diferencia de opencode, donde la autonomía vive en un fichero de configuración, Moonshot AI fue por el mismo camino que Claude Code y Codex: flags de arranque que bajan o apagan las preguntas.
 
-Ese interruptor es tan útil como peligroso, en la misma proporción que el flag de bypass de cualquier otro agente. Esta guía cubre qué hace exactamente <code>--yolo</code>, cómo se relaciona con los otros modos de ejecución (<code>--auto</code> y <code>--plan</code>), un gotcha al reanudar sesiones que pisa en silencio el modo que la sesión tenía guardado, y el camino intermedio que casi nadie usa: pre-aprobar herramientas concretas con reglas de permisos en <code>config.toml</code> en vez de abrirlo todo de golpe.
+Ese interruptor es tan útil como peligroso, en la misma proporción que el flag de bypass de cualquier otro agente. Esta guía cubre qué hacen exactamente <code>--yolo</code> y <code>--auto</code>, cómo se relacionan con <code>--plan</code>, un gotcha al reanudar sesiones que pisa en silencio el modo que la sesión tenía guardado, y el camino intermedio que casi nadie usa: pre-aprobar herramientas concretas con reglas de permisos en <code>config.toml</code> en vez de abrirlo todo de golpe.
 
 También cubre lo que importa una vez apagadas las preguntas: cómo mantener vigilada una ejecución en full auto. Kimi Code es un agente de primera clase en CodeAgentSwarm, así que una sesión YOLO corre con diffs en vivo por terminal, notificaciones de escritorio e historial buscable en vez de ser una caja negra.`,
     ctaText: 'Ejecuta kimi --yolo sin ir a ciegas. CodeAgentSwarm corre Kimi Code como agente de primera clase, con diffs en vivo por terminal, notificaciones de escritorio e historial buscable vigilando cada ejecución en full auto.',
     ctaAgent: 'kimi-code',
     highlightedWords: ['Kimi Code', 'modo YOLO'],
     publishedAt: '2026-07-18',
-    updatedAt: '2026-08-11',
+    updatedAt: '2026-10-31',
     alternateSlug: 'kimi-code-yolo-mode',
   },
   sections: [
@@ -26,7 +26,7 @@ También cubre lo que importa una vez apagadas las preguntas: cómo mantener vig
       content: [
         {
           type: 'paragraph',
-          text: '"Modo YOLO" es el apodo que la comunidad le puso a ejecutar un agente de código con las aprobaciones desactivadas. Claude Code tiene <code>--dangerously-skip-permissions</code>, Codex tiene <code>--full-auto</code>, y Kimi Code tiene <code>--yolo</code>. La misma idea en los tres: el agente deja de pararse a preguntar si puede escribir un fichero o lanzar un comando, y lo hace sin más.',
+          text: '"Modo YOLO" es el apodo que la comunidad le puso a ejecutar un agente de código con las aprobaciones desactivadas. Claude Code tiene <code>--dangerously-skip-permissions</code> y Codex tiene <code>--full-auto</code>. Kimi Code parte la idea en dos: <code>--yolo</code> aprueba solo el trabajo rutinario pero sigue parando en las acciones arriesgadas, y <code>--auto</code> lo aprueba todo y nunca pregunta. La <a href="https://www.kimi.com/code/docs/en/kimi-code-cli/guides/interaction.html" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">página oficial de modos de permiso</a> los llama Ask When Needed y Never Ask.',
         },
         {
           type: 'code',
@@ -35,16 +35,16 @@ También cubre lo que importa una vez apagadas las preguntas: cómo mantener vig
         },
         {
           type: 'paragraph',
-          text: 'Kimi Code es el agente de código en terminal de <a href="https://www.kimi.com/code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Moonshot AI</a>, con Kimi K2.7 Code como modelo predeterminado actual. Si aún no lo tienes instalado, la guía de <a href="/es/guias/como-usar-kimi-code" class="text-neon-cyan hover:text-neon-purple transition-colors">cómo usar Kimi Code</a> cubre la instalación y el login. Esta guía asume que ya lo tienes funcionando y quieres saber cuánto abrirle la mano.',
+          text: 'Kimi Code es el agente de código en terminal de <a href="https://www.kimi.com/code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Moonshot AI</a>. Su id de modelo por defecto, <code>kimi-for-coding</code>, sirve ahora K2.8 Preview, y K3.1 Pro está a un <code>/model</code> de distancia (<a href="https://www.kimi.com/code/docs/en/kimi-code/models.html" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">lista de modelos</a>). Si todavía no lo tienes montado, la guía de <a href="/es/guias/como-usar-kimi-code" class="text-neon-cyan hover:text-neon-purple transition-colors">cómo usar Kimi Code</a> cubre la instalación y el login. Esta guía asume que ya lo tienes funcionando y quieres saber hasta dónde abrirlo.',
         },
         {
           type: 'paragraph',
-          text: 'Existen además dos alias ocultos, <code>--yes</code> y <code>--auto-approve</code>, que hacen exactamente lo mismo que <code>--yolo</code>. Están ahí para que los scripts y la memoria muscular de otras herramientas sigan funcionando. Uses la forma que uses, el comportamiento es idéntico: cada llamada a herramienta se aprueba sola.',
+          text: 'Existen además dos alias ocultos, <code>--yes</code> y <code>--auto-approve</code>, que hacen lo mismo que <code>--yolo</code>. Están para que los scripts y la memoria muscular de otras herramientas sigan funcionando, pero ojo con lo que hacen hoy: arrancan Ask When Needed, no un bypass total. Si un script antiguo contaba con que <code>--yolo</code> lo aprobaba todo, cámbialo a <code>--auto</code>.',
         },
         {
           type: 'callout',
           variant: 'info',
-          content: 'Kimi Code publica versiones casi a diario y sigue en pre-1.0, así que los flags pueden moverse. Si un flag de esta guía no responde como esperas, ejecuta <code>kimi --help</code> y fíate de tu versión instalada antes que de cualquier post, incluido este.',
+          content: 'Kimi Code publica versiones cada pocos días (la 2.4.1 salió el 30 de octubre de 2026) y ya ha renombrado una vez sus modos de permiso, así que los flags pueden moverse. Si un flag de esta guía no responde como esperas, ejecuta <code>kimi --help</code> y fíate de tu versión instalada antes que de cualquier post, este incluido.',
         },
       ],
     },
@@ -59,15 +59,15 @@ También cubre lo que importa una vez apagadas las preguntas: cómo mantener vig
         {
           type: 'list',
           items: [
-            '<strong>Por defecto (sin flag).</strong> Aprobación interactiva. Kimi Code se para y pregunta antes de las acciones que requieren permiso, y tú apruebas o rechazas cada una.',
-            '<strong>--plan.</strong> Modo plan. El agente piensa qué haría y te presenta el plan en vez de lanzarse. Ideal para acotar un cambio antes de dejarle tocar nada.',
-            '<strong>--auto.</strong> Modo auto. Más autonomía que el modo por defecto sin quitar todas las barreras.',
-            '<strong>--yolo.</strong> Todo se aprueba automáticamente. Sin preguntas, sin pausas, máxima velocidad y máximo riesgo.',
+            '<strong>Por defecto (sin flag): Always Ask.</strong> Las acciones de solo lectura van solas; cada edición y cada comando de shell se para a preguntar, y tú apruebas o rechazas cada una.',
+            '<strong>--plan.</strong> Modo plan. El agente explora con herramientas de solo lectura y te presenta un plan, y ese plan espera tu revisión en cualquier modo de permisos. Ideal para acotar un cambio antes de dejarle tocar nada.',
+            '<strong>--auto: Never Ask.</strong> Se aprueban todas las llamadas a herramientas, incluidos ficheros sensibles y comandos como <code>rm -rf</code>, y el agente nunca te pregunta nada. Solo un plan del modo plan sigue esperando. Este es el bypass total de verdad.',
+            '<strong>--yolo: Ask When Needed.</strong> Las ediciones y comandos rutinarios se ejecutan solos, mientras que los ficheros sensibles como <code>.env</code> o las claves SSH, los comandos peligrosos como <code>rm -rf</code> o <code>shutdown</code>, las preguntas y los planes siguen preguntando.',
           ],
         },
         {
           type: 'paragraph',
-          text: 'Un flujo sano combina varios. Acota un cambio arriesgado con <code>--plan</code>, haz el trabajo rutinario en modo por defecto, y reserva <code>--yolo</code> para tareas donde el radio de daño está contenido: una rama de usar y tirar, un repo desechable o un worktree aislado.',
+          text: 'Un flujo sano combina varios. Acota un cambio arriesgado con <code>--plan</code>, haz el trabajo rutinario con <code>--yolo</code>, y guarda <code>--auto</code> para tareas con el radio de daño acotado: una rama de usar y tirar, un repo desechable o un worktree aislado.',
         },
         {
           type: 'heading',
@@ -125,11 +125,11 @@ También cubre lo que importa una vez apagadas las preguntas: cómo mantener vig
         },
         {
           type: 'paragraph',
-          text: 'Eso te da una escalera con peldaños en vez de un interruptor binario: el modo por defecto con unas pocas herramientas pre-aprobadas molesta muchísimo menos que el modo por defecto a pelo, y es muchísimo más seguro que <code>--yolo</code>. La sintaxis exacta de las reglas está en la documentación oficial de Kimi Code, y evoluciona con las releases casi diarias, así que consulta la doc de tu versión instalada en vez de copiar un snippet de un post viejo.',
+          text: 'Eso te da una escalera con peldaños en vez de un interruptor binario: Always Ask con unas pocas herramientas pre-aprobadas molesta muchísimo menos que Always Ask a pelo, y es muchísimo más seguro que <code>--auto</code>. La sintaxis exacta de las reglas está en la documentación oficial de Kimi Code, y cambia con sus versiones frecuentes, así que mira la documentación de tu versión instalada en vez de copiar un snippet de un post antiguo.',
         },
         {
           type: 'paragraph',
-          text: 'Para un control más fino están los hooks: Kimi Code trae un sistema de hooks completo, configurado como bloques TOML <code>[[hooks]]</code> en el mismo <code>config.toml</code>, con 16 eventos de ciclo de vida. El que importa para seguridad es <code>PreToolUse</code>: un script de hook que sale con código 2 bloquea la llamada a la herramienta y devuelve su stderr como motivo. Con eso escribes tus propias barreras, como bloquear force-pushes o proteger un directorio, y aguantan incluso en modo YOLO.',
+          text: 'Para un control más fino están los hooks: Kimi Code trae un sistema de hooks completo, configurado como bloques TOML <code>[[hooks]]</code> en el mismo <code>config.toml</code>, con 20 eventos de ciclo de vida. El que importa para la seguridad es <code>PreToolUse</code>: un script de hook que sale con código 2 bloquea la llamada a la herramienta y devuelve su stderr como motivo. Eso te deja escribir tus propias barreras, como bloquear force-pushes o proteger un directorio, que aguantan incluso en <code>--auto</code>.',
         },
         {
           type: 'callout',
@@ -168,7 +168,7 @@ También cubre lo que importa una vez apagadas las preguntas: cómo mantener vig
         },
         {
           type: 'paragraph',
-          text: 'Queda el problema de la visibilidad. Una sesión YOLO en una ventana de terminal suelta es una caja negra: te enteras de lo que pasó cuando vuelves y lees el scrollback. CodeAgentSwarm corre Kimi Code como agente de primera clase (junto a Claude Code, Codex, Antigravity CLI y opencode) y envuelve cada terminal con la supervisión que el full auto necesita:',
+          text: 'Queda el problema de la visibilidad. Una sesión YOLO en una ventana de terminal suelta es una caja negra: te enteras de lo que pasó cuando vuelves y lees el scrollback. CodeAgentSwarm corre Kimi Code como agente de primera clase (junto a Claude Code, Codex CLI, Antigravity CLI, OpenCode, Grok Build, Cursor Agent, Muse Code, Pi y Devin CLI) y envuelve cada terminal con la supervisión que el full auto necesita:',
         },
         {
           type: 'list',
@@ -199,12 +199,12 @@ También cubre lo que importa una vez apagadas las preguntas: cómo mantener vig
             '<strong>Claude Code:</strong> <code>--dangerously-skip-permissions</code>, más reglas de allow granulares en settings. Lo cubre la <a href="/es/guias/modo-yolo-claude-code-explicado" class="text-neon-cyan hover:text-neon-purple transition-colors">guía del modo YOLO de Claude Code</a>.',
             '<strong>Codex CLI:</strong> <code>--full-auto</code> y modos de aprobación. Explicado en <a href="/es/guias/modo-yolo-codex" class="text-neon-cyan hover:text-neon-purple transition-colors">modo YOLO de Codex</a>.',
             '<strong>opencode:</strong> sin flag; la autonomía va por configuración. Mira <a href="/es/guias/modo-yolo-opencode" class="text-neon-cyan hover:text-neon-purple transition-colors">modo YOLO de opencode</a>.',
-            '<strong>Kimi Code:</strong> <code>--yolo</code> / <code>-y</code> para el bypass total, reglas de permisos y hooks en config.toml para la versión gradual, y flags de modo que pisan el modo guardado de una sesión reanudada.',
+            '<strong>Kimi Code:</strong> <code>--auto</code> para el bypass total, <code>--yolo</code> / <code>-y</code> para Ask When Needed, reglas de permisos y hooks en config.toml para la versión graduada, y flags de modo que pisan el modo guardado de una sesión al reanudarla.',
           ],
         },
         {
           type: 'paragraph',
-          text: 'Kimi Code queda pegado a Claude Code, y no es casualidad: su set de herramientas y sus convenciones siguen de cerca a Claude Code, hasta el punto de leer el mismo directorio compartido de skills. La consecuencia práctica es que los hábitos se transfieren. Si ya tienes un flujo YOLO seguro para Claude Code, la misma higiene de ramas, el aislamiento con worktrees y la supervisión valen tal cual para <code>kimi -y</code>.',
+          text: 'Kimi Code queda pegado a Claude Code, y no es casualidad: su set de herramientas sigue de cerca a Claude Code, hasta en nombres como <code>Read</code>, <code>Edit</code> y <code>Bash</code>. La consecuencia práctica es que los hábitos se transfieren. Si ya tienes un flujo YOLO seguro con Claude Code, la misma higiene de ramas, el aislamiento con worktrees y la supervisión pasan tal cual a <code>kimi -y</code> y <code>kimi --auto</code>.',
         },
       ],
     },
@@ -212,15 +212,15 @@ También cubre lo que importa una vez apagadas las preguntas: cómo mantener vig
   faq: [
     {
       question: '¿Tiene Kimi Code modo YOLO?',
-      answer: 'Sí, y se llama literalmente así: kimi --yolo (forma corta -y) ejecuta Kimi Code con todas las llamadas a herramientas aprobadas automáticamente, sin preguntas de permiso. Los alias ocultos --yes y --auto-approve hacen lo mismo. Es la misma idea que --dangerously-skip-permissions de Claude Code o --full-auto de Codex.',
+      answer: 'Sí. kimi --yolo (forma corta -y) arranca Ask When Needed: las ediciones y comandos rutinarios van sin preguntas, pero los ficheros sensibles, los comandos peligrosos, las preguntas y los planes siguen preguntando. El bypass total es kimi --auto (Never Ask), que aprueba todas las llamadas a herramientas y nunca te pregunta nada. Los alias ocultos --yes y --auto-approve se comportan como --yolo.',
     },
     {
       question: '¿Qué diferencia hay entre kimi --yolo, --auto y --plan?',
-      answer: 'Son tres modos de ejecución. --plan hace que el agente proponga un plan en vez de ejecutar, el modo por defecto pide aprobación en las acciones con permiso, --auto da más autonomía sin llegar al bypass total, y --yolo lo aprueba todo automáticamente. Además puedes pasar cualquiera de ellos al reanudar una sesión, y el flag pisa el modo que la sesión tenía guardado.',
+      answer: '--plan hace que el agente explore en solo lectura y proponga un plan que siempre espera tu revisión. Sin flag tienes Always Ask, donde las ediciones y los comandos necesitan aprobación. --yolo es Ask When Needed: el trabajo rutinario va solo y las acciones arriesgadas siguen preguntando. --auto es Never Ask: todo se aprueba y el agente nunca pregunta. También puedes pasar estos flags al reanudar una sesión, y el flag pisa el modo que la sesión tenía guardado.',
     },
     {
       question: '¿Es seguro usar kimi --yolo?',
-      answer: 'Es tan seguro como el radio de daño que le des. En una rama propia o en un git worktree aislado, con un commit limpio detrás, una ejecución YOLO acotada es un intercambio razonable. En main, en un repo con trabajo sin commitear o con un prompt abierto, puede hacer push, borrar y sobrescribir sin que nada lo pare. Contenlo, ten punto de restauración y mira el diff.',
+      answer: 'Es tan seguro como el radio de daño que le des. --yolo sigue preguntando antes de comandos peligrosos y ficheros sensibles, y --auto no. En una rama propia o en un git worktree aislado, con un commit limpio detrás, una ejecución acotada es un intercambio razonable. En main, en un repo con trabajo sin commitear o con un prompt abierto, --auto puede hacer push, borrar y sobrescribir sin que nada lo pare. Acótalo, ten un punto de restauración y mira el diff.',
     },
     {
       question: '¿Cómo hago que Kimi Code deje de pedir permiso sin ir a YOLO total?',
@@ -228,7 +228,7 @@ También cubre lo que importa una vez apagadas las preguntas: cómo mantener vig
     },
     {
       question: '¿Puedo bloquear acciones concretas incluso en modo YOLO?',
-      answer: 'Sí, con hooks. Kimi Code soporta bloques TOML [[hooks]] en config.toml sobre 16 eventos de ciclo de vida, y un hook PreToolUse que sale con código 2 bloquea la llamada con tu mensaje de stderr como motivo. Eso es una barrera impuesta, a diferencia de las instrucciones de AGENTS.md, que son guía que el modelo sigue pero nada fuerza. Ojo: los scripts de hook que fallan con otro error fallan en abierto.',
+      answer: 'Sí, con hooks. Kimi Code soporta bloques TOML [[hooks]] en config.toml sobre 20 eventos de ciclo de vida, y un hook PreToolUse que sale con código 2 bloquea la llamada a la herramienta con tu mensaje de stderr como motivo. Es una barrera real, a diferencia de las instrucciones de AGENTS.md, que el modelo sigue como guía pero que nada obliga a cumplir. Ojo: los scripts de hook que fallan con cualquier otro error dejan pasar la llamada.',
     },
     {
       question: '¿CodeAgentSwarm soporta ejecuciones YOLO de Kimi Code?',

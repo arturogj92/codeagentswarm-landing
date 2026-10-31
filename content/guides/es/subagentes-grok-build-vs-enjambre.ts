@@ -14,7 +14,7 @@ Grok Build es la CLI de código de xAI (<code>grok</code>), no el chat Grok de c
     ctaAgent: 'multi',
     highlightedWords: ['subagentes', 'enjambre'],
     publishedAt: '2026-07-28',
-    updatedAt: '2026-07-28',
+    updatedAt: '2026-10-31',
     alternateSlug: 'grok-build-subagents-vs-agent-swarm',
   },
   sections: [
@@ -22,7 +22,8 @@ Grok Build es la CLI de código de xAI (<code>grok</code>), no el chat Grok de c
       id: 'dos-modelos',
       title: 'Dos modelos de paralelismo',
       content: [
-        { type: 'list', items: ['<strong>Subagentes nativos:</strong> una sesión padre de Grok Build delega en hijos (se desactivan con <code>--no-subagents</code>). Hay opciones con worktree vía <code>--worktree</code>.', '<strong>Enjambre:</strong> varios terminales independientes con <code>grok</code> (o Claude/Codex/…), supervisados en pestañas, tmux o CodeAgentSwarm.'] },
+        { type: 'list', items: ['<strong>Subagentes nativos:</strong> una sesión padre de Grok Build delega en <a href="https://docs.x.ai/build/features/subagents" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">sesiones hijas</a> con su propio contexto que devuelven un resumen al terminar. Los tipos incluidos son <code>general-purpose</code>, <code>explore</code> (solo leer y buscar) y <code>plan</code>, y puedes añadir los tuyos en <code>.grok/agents/</code>. Los hijos pueden pedir aislamiento en un worktree cuando el padre reparte trabajo en paralelo. Se desactivan con <code>--no-subagents</code> o <code>GROK_SUBAGENTS=0</code>.', '<strong>Enjambre:</strong> varios terminales independientes con <code>grok</code> (o Claude/Codex/…), supervisados en pestañas, tmux o CodeAgentSwarm.'] },
+        { type: 'paragraph', text: 'Los subagentes optimizan una conversación de un operador que se abre en ramas. Los enjambres optimizan la visibilidad humana sobre varios trabajadores, las mezclas de proveedores y las líneas paralelas de larga duración que no comparten una sesión padre.' },
       ],
     },
     {

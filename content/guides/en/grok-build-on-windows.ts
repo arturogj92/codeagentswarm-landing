@@ -14,7 +14,7 @@ Grok Build is xAI's coding CLI (<code>grok</code>), not the consumer Grok chat a
     ctaAgent: 'grok-build',
     highlightedWords: ['Windows', 'Grok Build'],
     publishedAt: '2026-07-28',
-    updatedAt: '2026-07-28',
+    updatedAt: '2026-10-31',
     alternateSlug: 'grok-build-en-windows',
   },
   sections: [
@@ -23,7 +23,7 @@ Grok Build is xAI's coding CLI (<code>grok</code>), not the consumer Grok chat a
       title: 'Install on Windows',
       content: [
         { type: 'code', language: 'powershell', code: '# PowerShell\nirm https://x.ai/cli/install.ps1 | iex\ngrok --version' },
-        { type: 'paragraph', text: 'The PowerShell installer adds <code>%USERPROFILE%\\.grok\\bin</code> to your user PATH. Open a new terminal after install. Alternatively use Git Bash with the curl installer, or WSL for a Linux-like environment.' },
+        { type: 'paragraph', text: 'The PowerShell installer adds <code>%USERPROFILE%\\.grok\\bin</code> to your user PATH. Open a new terminal after install. Alternatively use Git Bash with the curl installer, or WSL for a Linux-like environment. xAI also publishes a WinGet package, <code>xAI.GrokBuild</code>. If you install that way, update with <code>winget upgrade --id xAI.GrokBuild -e</code> rather than <code>grok update</code>, and expect new releases to reach WinGet a few days later (see the <a href="https://github.com/xai-org/grok-build/blob/main/crates/codegen/xai-grok-pager/docs/user-guide/01-getting-started.md" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">official getting started guide</a>).' },
         { type: 'callout', variant: 'tip', content: 'If <code>grok</code> is not found, close and reopen the terminal, or check that <code>%USERPROFILE%\\.grok\\bin</code> is on PATH.' },
       ],
     },
@@ -43,7 +43,7 @@ Grok Build is xAI's coding CLI (<code>grok</code>), not the consumer Grok chat a
     },
   ],
   faq: [
-    { question: 'Does Grok Build support Windows?', answer: 'Yes. Use the PowerShell installer or Git Bash / WSL with the bash script.' },
+    { question: 'Does Grok Build support Windows?', answer: 'Yes. Use the PowerShell installer, the WinGet package xAI.GrokBuild, or Git Bash / WSL with the bash script.' },
     { question: 'Where is config stored on Windows?', answer: 'Typically %USERPROFILE%\\.grok unless GROK_HOME is set.' },
   ],
 }

@@ -15,7 +15,7 @@ const guide: Guide = {
       'Pi',
     ],
     publishedAt: '2026-09-06',
-    updatedAt: '2026-09-24',
+    updatedAt: '2026-10-31',
     alternateSlug: 'pi-vs-opencode',
   },
   sections: [
@@ -42,7 +42,7 @@ const guide: Guide = {
       "content": [
         {
           "type": "paragraph",
-          "text": "Elige Pi si quieres una configuración pequeña y estás dispuesto a añadir los flujos que necesites. Valora OpenCode si tu primera tarea ya requiere su agente Plan, subagentes o configuración MCP. Ninguna de esas diferencias demuestra qué modelo escribirá mejor código para tu proyecto."
+          "text": "Elige Pi si quieres una configuración pequeña y estás dispuesto a añadir los flujos que necesites. Valora OpenCode si tu primera tarea ya requiere su agente Plan o subagentes. Ninguna de esas diferencias demuestra qué modelo escribirá mejor código para tu proyecto."
         },
         {
           "type": "table",
@@ -69,7 +69,7 @@ const guide: Guide = {
             ],
             [
               "Conectar un servicio MCP existente",
-              "OpenCode",
+              "Cualquiera de los dos",
               "La autenticación del servidor y las herramientas que expone."
             ],
             [
@@ -150,7 +150,7 @@ const guide: Guide = {
             ],
             [
               'MCP',
-              'Mediante extensiones; CAS gestiona un puente limitado a Swarm.',
+              'Nativo desde Pi 0.99.0 (mcp.json, pi mcp add); CAS conecta solo su servidor Swarm.',
               'Configuración nativa de servidores MCP.',
             ],
             [
@@ -200,7 +200,7 @@ const guide: Guide = {
       content: [
         {
           type: 'paragraph',
-          text: 'OpenCode tiene <a href="https://opencode.ai/docs/mcp-servers/" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">configuración nativa de servidores MCP</a>. Pi puede añadir funciones mediante extensiones. En CAS, su extensión gestionada conecta únicamente el servidor MCP propio de Swarm y conserva la configuración ajena. Eso no significa que importe todos los servidores MCP personalizados a Pi.',
+          text: 'OpenCode tiene <a href="https://opencode.ai/docs/mcp-servers/" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">configuración nativa de servidores MCP</a>. Pi también tiene <a href="https://github.com/earendil-works/pi/blob/main/packages/coding-agent/docs/mcp.md" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">soporte MCP nativo</a> desde la versión 0.99.0 (29 de septiembre de 2026): los servidores se guardan en mcp.json y se gestionan con pi mcp add. En CAS, su extensión gestionada conecta únicamente el servidor MCP propio de Swarm y conserva la configuración ajena. Eso no significa que importe todos los servidores MCP personalizados a Pi.',
         },
         {
           type: 'paragraph',
@@ -217,7 +217,7 @@ const guide: Guide = {
           type: 'list',
           items: [
             'Elige una configuración pequeña de Pi si quieres seleccionar proveedor y adaptar el trabajo con unas pocas extensiones.',
-            'Evalúa OpenCode si la planificación integrada, los subagentes o la configuración MCP nativa son centrales para tu trabajo.',
+            'Evalúa OpenCode si la planificación integrada o los subagentes son centrales para tu trabajo.',
             'Aísla los archivos cuando compares agentes sobre una misma tarea y revisa sus cambios, no solo el mensaje final.',
           ],
         },

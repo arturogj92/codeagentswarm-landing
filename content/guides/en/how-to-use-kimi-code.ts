@@ -7,16 +7,16 @@ export const guide: Guide = {
     title: 'How to Use Kimi Code: Install, Login, Commands, and the kimi-cli Trap',
     metaTitle: 'How to Use Kimi Code CLI: Install, Login and Commands (2026)',
     metaDescription: 'Kimi Code CLI explained: install Moonshot AI\'s terminal coding agent, log in, learn the commands that matter, and avoid installing the legacy kimi-cli by mistake.',
-    intro: `Kimi Code is Moonshot AI's command-line coding agent. Its current default model is Kimi K2.7 Code, built for long-horizon software engineering with a 256K context window. You install it, run <code>kimi</code> inside a project, and it reads your code, edits files, and runs commands the same way Claude Code or Codex CLI do.
+    intro: `Kimi Code is Moonshot AI's command-line coding agent. Its default model id currently serves K2.8 Preview, with up to a 1M token context window, and Moonshot's newest flagship, K3.1 Pro, is one <code>/model</code> away. You install it, run <code>kimi</code> inside a project, and it reads your code, edits files, and runs commands the same way Claude Code or Codex CLI do.
 
 There is one thing you should know before you type a single install command: Moonshot has shipped two different products that both install a binary called <code>kimi</code>, and the package names are crossed in a way that sends a lot of people to the wrong one. This guide covers that trap first, because it is the most common way a Kimi Code setup goes sideways, and then walks through installation, login, the flags and conventions you will actually use, and how to run Kimi Code inside CodeAgentSwarm next to your other agents.
 
-Kimi Code moves fast, with new releases landing almost daily, so where something is likely to drift I will say so and point you at the official docs.`,
-    ctaText: 'Run Kimi Code as a first-class agent in CodeAgentSwarm, next to Claude Code, Codex and the rest. Parallel terminals, desktop notifications, searchable history and live diffs, with Kimi\'s weekly and 5-hour quota visible at a glance.',
+Kimi Code moves fast, with new releases every few days, so where something is likely to drift I will say so and point you at the official docs.`,
+    ctaText: 'Run Kimi Code as a first-class agent in CodeAgentSwarm, next to Claude Code, Codex and the rest. Parallel terminals, desktop notifications, searchable history and live diffs, with Kimi\'s quota visible at a glance.',
     ctaAgent: 'kimi-code',
     highlightedWords: ['Kimi Code'],
     publishedAt: '2026-07-18',
-    updatedAt: '2026-09-29',
+    updatedAt: '2026-10-31',
     alternateSlug: 'como-usar-kimi-code',
   },
   sections: [
@@ -30,7 +30,7 @@ Kimi Code moves fast, with new releases landing almost daily, so where something
         },
         {
           type: 'paragraph',
-          text: 'The current default is <a href="https://www.kimi.com/es-419/resources/kimi-k2-7-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi K2.7 Code</a>: a one-trillion-parameter Mixture of Experts model with 32 billion active parameters and a 262,144-token context window. It always reasons; turning reasoning off routes the request to K2.6 instead. The <a href="/en/guides/kimi-code-plans-and-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">plans and pricing guide</a> has the current subscription and API costs.',
+          text: 'The default model id, <code>kimi-for-coding</code>, has served K2.8 Preview since September 11, 2026, replacing K2.7 Code. It offers low, high and max reasoning effort and up to a 1M token context window on every plan. On Plus and above, <code>/model</code> also lists K3.1 Pro, Moonshot\'s newest flagship since October 23, 2026, and K3; their full 1M window needs Pro or above. The <a href="https://www.kimi.com/code/docs/en/kimi-code/models.html" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">official model list</a> has the current ids, and the <a href="/en/guides/kimi-code-plans-and-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">plans and pricing guide</a> has the current subscription and API costs.',
         },
         {
           type: 'paragraph',
@@ -39,7 +39,7 @@ Kimi Code moves fast, with new releases landing almost daily, so where something
         {
           type: 'callout',
           variant: 'info',
-          content: 'Kimi Code is pre-1.0 and ships roughly one release a day. That pace means fixes arrive fast, and it also means details in any guide (this one included) can drift. When in doubt, the <a href="https://www.kimi.com/code/docs/en/kimi-code-cli/guides/getting-started" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">official Kimi Code docs</a> are the source of truth.',
+          content: 'Kimi Code ships new releases every few days: it jumped from 0.43 to 2.0.0 in September 2026 and reached 2.4.1 on October 30. That pace means fixes arrive fast, and it also means details in any guide (this one included) can drift. When in doubt, the <a href="https://www.kimi.com/code/docs/en/kimi-code-cli/guides/getting-started" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">official Kimi Code docs</a> are the source of truth.',
         },
       ],
     },
@@ -54,23 +54,23 @@ Kimi Code moves fast, with new releases landing almost daily, so where something
         {
           type: 'list',
           items: [
-            '<strong>kimi-cli (legacy):</strong> the original Python agent, in the MoonshotAI/kimi-cli repository, with its data under <code>~/.kimi/</code>. It is being wound down, but it has years of stars and blog posts pointing at it, so search results and AI assistants still send people there.',
+            '<strong>kimi-cli (legacy):</strong> the original Python agent, in the MoonshotAI/kimi-cli repository, with its data under <code>~/.kimi/</code>. The repository is now archived and no longer maintained (its last release was 1.52.0), but it has years of stars and blog posts pointing at it, so search results and AI assistants still send people there.',
             '<strong>Kimi Code (current):</strong> the TypeScript agent this guide is about, in the MoonshotAI/kimi-code repository, with its data under <code>~/.kimi-code/</code>. This is the one under active development.',
           ],
         },
         {
           type: 'paragraph',
-          text: 'The package names make it worse, because they are crossed. The PyPI package called <code>kimi-code</code> is an empty meta-package that installs the legacy Python agent. The real Kimi Code lives on npm as <code>@moonshot-ai/kimi-code</code>. So installing "kimi-code" from pip gets you the old product, and the new product comes from npm or from the official install script.',
+          text: 'The package names make it worse, because they are crossed. The PyPI package called <code>kimi-code</code> belongs to the legacy Python agent: its own description now says it is archived and not the new Kimi Code CLI. The real Kimi Code lives on npm as <code>@moonshot-ai/kimi-code</code>. So installing "kimi-code" from pip gets you the old product, and the new product comes from npm or from the official install script.',
         },
         {
           type: 'code',
           language: 'bash',
-          code: '# Check which kimi you actually have\nkimi --version\n\n# 0.x  -> Kimi Code, the current TypeScript CLI (this guide)\n# 1.4x -> kimi-cli, the legacy Python agent',
+          code: '# Check which kimi you actually have\nkimi --version\n\n# 2.x -> Kimi Code, the current TypeScript CLI (this guide)\n# 1.x -> kimi-cli, the legacy Python agent (archived)',
         },
         {
           type: 'callout',
           variant: 'warning',
-          content: 'Never decide by command name, decide by version. If <code>kimi --version</code> prints a 0.x version you have Kimi Code; a 1.4x version means the legacy Python kimi-cli. The official installer handles collisions for you: it detects legacy Python shims on your PATH, renames the first one to <code>kimi-legacy</code>, and removes duplicates, so after a clean install <code>kimi</code> means Kimi Code.',
+          content: 'Never decide by command name, decide by version. If <code>kimi --version</code> prints a 2.x version you have Kimi Code (older Kimi Code builds were 0.x); a 1.x version means the legacy Python kimi-cli. The official installer handles collisions for you: it detects legacy Python shims on your PATH, renames the first one to <code>kimi-legacy</code>, and removes duplicates, so after a clean install <code>kimi</code> means Kimi Code.',
         },
       ],
     },
@@ -103,7 +103,7 @@ Kimi Code moves fast, with new releases landing almost daily, so where something
         },
         {
           type: 'paragraph',
-          text: 'Either way, open a fresh terminal afterward and confirm the install with <code>kimi --version</code>. You should see a 0.x version. To update later, run <code>kimi upgrade</code> and the CLI checks for the latest version itself, or reinstall with <code>npm install -g @moonshot-ai/kimi-code@latest</code>.',
+          text: 'Either way, open a fresh terminal afterward and confirm the install with <code>kimi --version</code>. You should see a 2.x version. To update later, run <code>kimi upgrade</code> and the CLI checks for the latest version itself, or reinstall with <code>npm install -g @moonshot-ai/kimi-code@latest</code>.',
         },
         {
           type: 'callout',
@@ -129,7 +129,7 @@ Kimi Code moves fast, with new releases landing almost daily, so where something
         },
         {
           type: 'paragraph',
-          text: 'Credentials are stored locally under <code>~/.kimi-code/</code>. Once you are logged in, every new <code>kimi</code> session in any folder reuses them. Inside the TUI, <code>/usage</code> shows where you stand against your quota, which on subscriptions works as a weekly allowance plus a rolling 5-hour window.',
+          text: 'Credentials are stored locally under <code>~/.kimi-code/</code>. Once you are logged in, every new <code>kimi</code> session in any folder reuses them. Inside the TUI, <code>/usage</code> shows where you stand against your quota. On the plans Moonshot launched in October 2026 that means a rolling 5-hour window plus the membership\'s monthly total; legacy plans also keep a weekly allowance.',
         },
       ],
     },
@@ -144,11 +144,11 @@ Kimi Code moves fast, with new releases landing almost daily, so where something
         {
           type: 'code',
           language: 'bash',
-          code: '# Start a session in the current project\nkimi\n\n# Continue the last session in this folder\nkimi --continue        # or: kimi -c\n\n# Resume a specific session by id\nkimi --session <id>\n\n# One-shot headless run (no TUI), like claude -p\nkimi -p "explain what this repo does"\n\n# Modes\nkimi --plan     # plan before acting\nkimi --auto     # more autonomy, still gated\nkimi --yolo     # auto-approve everything (careful)',
+          code: '# Start a session in the current project\nkimi\n\n# Continue the last session in this folder\nkimi --continue        # or: kimi -c\n\n# Resume a specific session by id (or pick from a list)\nkimi --session <id>\n\n# One-shot headless run (no TUI), like claude -p\nkimi -p "explain what this repo does"\n\n# Permission and plan modes\nkimi --plan     # plan before acting\nkimi --yolo     # Ask When Needed: routine work runs, risky actions ask\nkimi --auto     # Never Ask: approves everything (careful)',
         },
         {
           type: 'paragraph',
-          text: 'A few input details worth knowing: Enter sends your message, and Ctrl-J or Alt-Enter inserts a newline. <code>/title</code> names the current session, which makes it much easier to find later. And if you resume a session while passing <code>--yolo</code>, <code>--auto</code> or <code>--plan</code>, the flag overrides whatever mode the session was saved with. The <code>--yolo</code> flag deserves its own risk discussion, which is exactly what the <a href="/en/guides/kimi-code-yolo-mode" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi Code YOLO mode guide</a> is for.',
+          text: 'A few input details worth knowing: Enter sends your message, and Ctrl-J or Alt-Enter inserts a newline. <code>/title</code> names the current session, which makes it much easier to find later. And if you resume a session while passing <code>--yolo</code>, <code>--auto</code> or <code>--plan</code>, the flag overrides whatever mode the session was saved with. The difference between <code>--yolo</code> and <code>--auto</code> deserves its own risk discussion, which is exactly what the <a href="/en/guides/kimi-code-yolo-mode" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi Code YOLO mode guide</a> is for.',
         },
         {
           type: 'heading',
@@ -192,7 +192,7 @@ Kimi Code moves fast, with new releases landing almost daily, so where something
         },
         {
           type: 'paragraph',
-          text: 'You pick the agent per terminal, so you can run three Kimi Code sessions side by side, or mix Kimi with Claude Code on the same project and compare how each handles its task. On top of the terminals you get desktop notifications when an agent finishes or asks for input, searchable conversation history across every agent, per-terminal live diffs of what each session changed, a kanban board the agents update over MCP, and a quota indicator that reads Kimi\'s weekly and 5-hour windows so you see a wall coming before you hit it.',
+          text: 'You pick the agent per terminal, so you can run three Kimi Code sessions side by side, or mix Kimi with Claude Code on the same project and compare how each handles its task. On top of the terminals you get desktop notifications when an agent finishes or asks for input, searchable conversation history across every agent, per-terminal live diffs of what each session changed, a kanban board the agents update over MCP, and a quota indicator that reads Kimi\'s quota windows so you see a wall coming before you hit it.',
         },
         {
           type: 'paragraph',
@@ -204,7 +204,7 @@ Kimi Code moves fast, with new releases landing almost daily, so where something
   faq: [
     {
       question: 'What is Kimi Code?',
-      answer: 'Kimi Code is Moonshot AI\'s open-source terminal coding agent, run with the kimi command. It works like Claude Code or Codex CLI: you start it inside a project, describe what you want, and it reads code, edits files and runs commands with your approval. Its current default model is Kimi K2.7 Code with a 262,144-token context window.',
+      answer: 'Kimi Code is Moonshot AI\'s open-source terminal coding agent, run with the kimi command. It works like Claude Code or Codex CLI: you start it inside a project, describe what you want, and it reads code, edits files and runs commands with your approval. Its default kimi-for-coding model id currently serves K2.8 Preview, and K3.1 Pro is available with /model on Plus plans and above.',
     },
     {
       question: 'How do I install Kimi Code CLI?',
@@ -212,11 +212,11 @@ Kimi Code moves fast, with new releases landing almost daily, so where something
     },
     {
       question: 'What is the difference between kimi-cli and Kimi Code?',
-      answer: 'kimi-cli is Moonshot\'s legacy Python agent, being wound down. Kimi Code is the current TypeScript agent under active development. Both install a binary called kimi, and confusingly the PyPI package named kimi-code installs the legacy Python product. The real Kimi Code comes from the official install script or the npm package @moonshot-ai/kimi-code. Check with kimi --version: 0.x is Kimi Code, 1.4x is the legacy kimi-cli.',
+      answer: 'kimi-cli is Moonshot\'s legacy Python agent, now archived and no longer maintained. Kimi Code is the current TypeScript agent under active development. Both install a binary called kimi, and confusingly the PyPI package named kimi-code installs the legacy Python product. The real Kimi Code comes from the official install script or the npm package @moonshot-ai/kimi-code. Check with kimi --version: 2.x is Kimi Code, 1.x is the legacy kimi-cli.',
     },
     {
       question: 'Is Kimi Code free?',
-      answer: 'The CLI itself is open source (MIT) and free to install. Using it requires either a Kimi subscription or a Moonshot platform API key billed per token. Kimi has a free tier and paid plans starting at $19 a month, with usage working as a weekly quota plus a rolling 5-hour window. Which plans include Kimi Code has shifted, so check Moonshot\'s pricing page for the current lineup.',
+      answer: 'The CLI itself is open source (MIT) and free to install. Using it requires either a Kimi membership or a Moonshot platform API key billed per token. On the plans Moonshot launched in October 2026, Kimi Code needs Plus or above (Go has no coding quota), and usage works as a rolling 5-hour window plus a monthly total. Check Moonshot\'s membership page and our Kimi Code pricing guide for the current lineup.',
     },
     {
       question: 'Does Kimi Code work with my existing Claude Code setup?',

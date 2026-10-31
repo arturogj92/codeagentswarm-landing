@@ -148,7 +148,7 @@ This guide covers what the flag actually skips, why it changes how fast Antigrav
         },
         {
           type: 'paragraph',
-          text: 'These matter for YOLO specifically because an unattended run is exactly the kind of session you will want to come back to. <code>agy -c</code> picks up your most recent conversation where it ended, which is the one you will reach for after reviewing a diff and deciding the agent needs one more pass.',
+          text: 'These matter for YOLO specifically because an unattended run is exactly the kind of session you will want to come back to. <code>agy -c</code> picks up the most recent conversation in that directory where it ended, which is the one you will reach for after reviewing a diff and deciding the agent needs one more pass.',
         },
         {
           type: 'paragraph',

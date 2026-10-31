@@ -14,7 +14,7 @@ Grok Build is xAI's coding CLI (<code>grok</code>), not the consumer Grok chat a
     ctaAgent: 'multi',
     highlightedWords: ['subagents', 'agent swarm'],
     publishedAt: '2026-07-28',
-    updatedAt: '2026-07-28',
+    updatedAt: '2026-10-31',
     alternateSlug: 'subagentes-grok-build-vs-enjambre',
   },
   sections: [
@@ -22,7 +22,7 @@ Grok Build is xAI's coding CLI (<code>grok</code>), not the consumer Grok chat a
       id: 'two-models',
       title: 'Two parallelism models',
       content: [
-        { type: 'list', items: ['<strong>Native subagents:</strong> one parent Grok Build session delegates to children (disable with <code>--no-subagents</code>). Worktree-aware options exist via <code>--worktree</code>.', '<strong>Agent swarm:</strong> multiple independent terminals, each running <code>grok</code> (or Claude Code / Codex / …), supervised in tabs, tmux, or CodeAgentSwarm.'] },
+        { type: 'list', items: ['<strong>Native subagents:</strong> one parent Grok Build session delegates to <a href="https://docs.x.ai/build/features/subagents" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">child sessions</a> that have their own context and return a summary when they finish. Built-in types are <code>general-purpose</code>, <code>explore</code> (read and search only) and <code>plan</code>, and you can add your own in <code>.grok/agents/</code>. Children can ask for worktree isolation when the parent splits parallel work. Disable them with <code>--no-subagents</code> or <code>GROK_SUBAGENTS=0</code>.', '<strong>Agent swarm:</strong> multiple independent terminals, each running <code>grok</code> (or Claude Code / Codex / …), supervised in tabs, tmux, or CodeAgentSwarm.'] },
         { type: 'paragraph', text: 'Subagents optimize for one operator conversation that fans out. Swarms optimize for human visibility across workers, multi-vendor mixes, and long-lived parallel tracks that do not share one context window.' },
       ],
     },

@@ -16,7 +16,7 @@ Esta guía es el pilar del paralelismo con Grok Build: pestañas, tmux y CodeAge
     ctaAgent: 'grok-build',
     highlightedWords: ['Grok Build', 'enjambre'],
     publishedAt: '2026-07-28',
-    updatedAt: '2026-10-05',
+    updatedAt: '2026-10-31',
     alternateSlug: 'grok-build-agent-swarm',
   },
   sections: [
@@ -34,7 +34,7 @@ Esta guía es el pilar del paralelismo con Grok Build: pestañas, tmux y CodeAge
       title: 'Método 1: pestañas de terminal',
       content: [
         { type: 'paragraph', text: 'Abre varias pestañas, <code>cd</code> al proyecto, <code>grok</code> en cada una.' },
-        { type: 'code', language: 'bash', code: '# Pestaña 1\ncd ~/mi-proyecto && grok "migra el módulo de auth"\n\n# Pestaña 2\ncd ~/mi-proyecto && grok "añade tests de integración de auth"' },
+        { type: 'code', language: 'bash', code: '# Pestaña 1\ncd ~/mi-proyecto && grok "migra el módulo de auth"\n\n# Pestaña 2\ncd ~/mi-proyecto && grok "añade tests de integración de auth"\n\n# Pestaña 3\ncd ~/mi-proyecto && grok --continue' },
         { type: 'list', items: ['Pros: cero herramientas extra', 'Contras: se te escapan los prompts de permiso; sin historial unificado; malo a partir de 3-4 sesiones'] },
       ],
     },
@@ -43,14 +43,16 @@ Esta guía es el pilar del paralelismo con Grok Build: pestañas, tmux y CodeAge
       title: 'Método 2: tmux',
       content: [
         { type: 'paragraph', text: 'tmux mantiene paneles vivos y permite detach. Bien para migraciones largas. Sigue siendo un multiplexor general, no un supervisor de agentes.' },
-        { type: 'code', language: 'bash', code: 'tmux new-session -s grok\ntmux split-window -h\n# grok en cada panel' },
+        { type: 'code', language: 'bash', code: 'tmux new-session -s grok\ntmux split-window -h\ntmux split-window -v\n# grok en cada panel' },
+        { type: 'list', items: ['Pros: detach/reattach, cómodo para usuarios avanzados', 'Contras: solo texto; sin notificación de escritorio cuando grok se para a pedir algo'] },
       ],
     },
     {
       id: 'cas',
       title: 'Método 3: CodeAgentSwarm',
       content: [
-        { type: 'paragraph', text: 'CodeAgentSwarm está hecho para supervisar CLIs de IA. Elige Grok Build en el selector de cada terminal. Obtienes rejilla de terminales, notificaciones de escritorio, diffs en vivo, historial buscable y puedes mezclar Grok Build con Claude Code o Codex en la misma ventana.' },
+        { type: 'paragraph', text: 'CodeAgentSwarm está hecho para supervisar CLIs de IA. Elige Grok Build en el selector de cada terminal. Obtienes rejilla de terminales, notificaciones de escritorio, diffs en vivo, historial buscable y puedes mezclar Grok Build con Claude Code o Codex en la misma ventana. Grok Build también tiene su propio <a href="https://docs.x.ai/build/features/dashboard" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Agent Dashboard</a> (<code>grok dashboard</code> o <code>Ctrl+\\</code>) que agrupa tus sesiones de Grok por estado. Solo ve sesiones de Grok, así que sirve cuando todos los trabajadores son Grok y deja de servir en cuanto mezclas proveedores.' },
+        { type: 'paragraph', text: 'Para aislar cada agente en su worktree, activa worktrees al abrir terminales o arranca con <code>grok --worktree=nombre</code>. Ver también <a href="/es/guias/git-worktrees-para-agentes-de-ia" class="text-neon-cyan hover:text-neon-purple transition-colors">git worktrees para agentes de IA</a>.' },
         { type: 'callout', variant: 'tip', content: 'Si solo necesitas una sesión de Grok Build con ayudantes internos, bastan los subagentes nativos. Si necesitas varios trabajadores visibles (o multi-vendor), usa un enjambre multi-terminal de verdad.' },
       ],
     },

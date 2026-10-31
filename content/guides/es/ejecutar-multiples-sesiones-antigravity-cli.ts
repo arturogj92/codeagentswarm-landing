@@ -16,7 +16,7 @@ Al terminar sabrás qué enfoque encaja con tu forma de trabajar, ya quieras dos
     ctaAgent: 'antigravity',
     highlightedWords: ['varias sesiones de Antigravity CLI', 'paralelo'],
     publishedAt: '2026-06-29',
-    updatedAt: '2026-10-05',
+    updatedAt: '2026-10-31',
     alternateSlug: 'run-multiple-antigravity-cli-sessions',
   },
   sections: [
@@ -32,11 +32,11 @@ Al terminar sabrás qué enfoque encaja con tu forma de trabajar, ya quieras dos
         },
         {
           type: 'paragraph',
-          text: 'Para ejecutar varias sesiones de Antigravity CLI en paralelo, abre un terminal, ejecuta <code>agy</code>, luego abre otro terminal y ejecuta <code>agy</code> otra vez. Cada sesión de <a href="https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Antigravity CLI</a> es un proceso independiente, con su propia conversación, su propio contexto y su propio estado de trabajo. Antigravity es el sucesor oficial de Gemini CLI, que se retiró en junio de 2026, así que donde antes escribías gemini ahora escribes agy. Si vienes de la herramienta antigua, la <a href="/es/guias/antigravity-cli-vs-gemini-cli" class="text-neon-cyan hover:text-neon-purple transition-colors">comparativa de Antigravity CLI frente a Gemini CLI</a> cubre lo que cambió. No comparten nada entre ellas.',
+          text: 'Para ejecutar varias sesiones de Antigravity CLI en paralelo, abre un terminal, ejecuta <code>agy</code>, luego abre otro terminal y ejecuta <code>agy</code> otra vez. Cada sesión de <a href="https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Antigravity CLI</a> es un proceso independiente, con su propia conversación, su propio contexto y su propio estado de trabajo. Antigravity es el sucesor oficial de Gemini CLI, que dejó de dar servicio a las cuentas personales de Google en junio de 2026, así que donde antes escribías gemini ahora escribes agy. Si vienes de la herramienta antigua, la <a href="/es/guias/antigravity-cli-vs-gemini-cli" class="text-neon-cyan hover:text-neon-purple transition-colors">comparativa de Antigravity CLI frente a Gemini CLI</a> cubre lo que cambió. No comparten nada entre ellas.',
         },
         {
           type: 'paragraph',
-          text: 'Esa independencia es lo que hace seguro el paralelismo. Una sesión puede refactorizar tu capa de API mientras otra escribe tests y una tercera actualiza la documentación. No chocarán salvo que dos de ellas editen el mismo archivo. Antigravity te inicia sesión con tu cuenta de Google y trae un plan gratuito generoso, y cada terminal puede tirar de cualquiera de sus ocho modelos integrados (Gemini 3.x, Claude Sonnet 4.6, Claude Opus 4.6, GPT-OSS 120B y más), elegidos en automático para la tarea. Levantar varias a la vez es práctico y no te dispara un presupuesto por uso.',
+          text: 'Esa independencia es lo que hace seguro el paralelismo. Una sesión puede refactorizar tu capa de API mientras otra escribe tests y una tercera actualiza la documentación. No chocarán salvo que dos de ellas editen el mismo archivo. Antigravity te inicia sesión con tu cuenta de Google y trae un plan gratuito generoso, y cada terminal puede usar un modelo distinto de los <a href="https://antigravity.google/docs/models" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">que incluye tu plan</a>, elegido con <code>/model</code> o <code>--model</code>. Levantar varias a la vez es práctico y no te dispara un presupuesto por uso.',
         },
         {
           type: 'callout',
@@ -127,7 +127,7 @@ Al terminar sabrás qué enfoque encaja con tu forma de trabajar, ya quieras dos
         },
         {
           type: 'paragraph',
-          text: 'tmux también te deja desconectarte y volver a conectarte, así que tus sesiones de Antigravity CLI siguen corriendo aunque cierres la ventana del terminal. Y si una sesión termina, agy puede retomar el hilo: <code>agy -c</code> continúa tu última conversación, y puedes reanudar una concreta pasando su id a <code>agy --conversation</code>. Eso ayuda cuando una sesión está avanzando una migración larga en modo auto aprobación y quieres alejarte un rato.',
+          text: 'tmux también te deja desconectarte y volver a conectarte, así que tus sesiones de Antigravity CLI siguen corriendo aunque cierres la ventana del terminal. Y si una sesión termina, agy puede retomar el hilo: <code>agy -c</code> continúa la última conversación de ese directorio, y puedes reanudar una concreta pasando su id a <code>agy --conversation</code>. Eso ayuda cuando una sesión está avanzando una migración larga en modo auto aprobación y quieres alejarte un rato.',
         },
         {
           type: 'heading',
@@ -382,7 +382,7 @@ Al terminar sabrás qué enfoque encaja con tu forma de trabajar, ya quieras dos
     },
     {
       question: '¿El plan gratuito de Antigravity CLI da para ejecutar varias sesiones?',
-      answer: 'Para muchos flujos de trabajo, sí. Antigravity trae un plan gratuito generoso detrás de un inicio de sesión de Google, y cada sesión puede usar cualquiera de sus ocho modelos integrados (Gemini 3.x, Claude Sonnet 4.6, Claude Opus 4.6, GPT-OSS 120B y más), elegidos en automático. Eso hace práctico ejecutar varias sesiones en paralelo sin una factura por cada llamada. El uso intenso o sostenido puede tocar los límites, así que para configuraciones grandes o de larga duración vigila los límites de tu cuenta.',
+      answer: 'Para muchos flujos de trabajo, sí. Antigravity trae un plan gratuito generoso detrás de un inicio de sesión de Google, y cada sesión puede usar cualquier modelo que incluya tu plan, elegido con /model o --model. Eso hace práctico ejecutar varias sesiones en paralelo sin una factura por cada llamada. El uso intenso o sostenido puede tocar los límites, así que para configuraciones grandes o de larga duración vigila los límites de tu cuenta.',
     },
     {
       question: '¿Qué pasa si dos sesiones de Antigravity editan el mismo archivo?',
