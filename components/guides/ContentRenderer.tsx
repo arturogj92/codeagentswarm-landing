@@ -291,7 +291,9 @@ function renderBlock(block: ContentBlock, index: number) {
       return (
         <figure key={index} className="my-8">
           <div className="overflow-x-auto rounded-xl border border-white/10">
-            <table className="w-full text-sm">
+            {/* The article uses overflow-wrap:anywhere; inside a table that lets columns shrink
+                until words split letter by letter on mobile, so tables scroll instead. */}
+            <table className="w-full text-sm [overflow-wrap:normal]">
               <thead>
                 <tr className="bg-white/5">
                   {block.headers.map((h, i) =>
