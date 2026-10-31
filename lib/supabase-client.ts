@@ -43,7 +43,6 @@ export async function supabaseQuery<T>(options: SupabaseQueryOptions): Promise<T
   const response = await fetch(`${url}/rest/v1/${table}?${params}`, {
     headers: {
       apikey: key,
-      Authorization: `Bearer ${key}`,
       'Content-Type': 'application/json',
     },
     cache: 'no-store',
@@ -82,7 +81,6 @@ export async function supabaseRpc<T>(options: SupabaseRpcOptions): Promise<T> {
     method: 'POST',
     headers: {
       apikey: key,
-      Authorization: `Bearer ${key}`,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(args),

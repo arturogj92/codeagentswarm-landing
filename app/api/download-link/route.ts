@@ -64,7 +64,6 @@ async function countRecentRequests(email: string): Promise<number> {
   const response = await fetch(`${url}/rest/v1/download_link_requests?${params}`, {
     headers: {
       apikey: key,
-      Authorization: `Bearer ${key}`,
       Prefer: 'count=exact',
       Range: '0-0',
     },
@@ -89,7 +88,6 @@ async function insertRequest(email: string, locale: string): Promise<string | nu
     headers: {
       'Content-Type': 'application/json',
       apikey: key,
-      Authorization: `Bearer ${key}`,
       Prefer: 'return=representation',
     },
     body: JSON.stringify({ email, locale, source: 'mobile_email_link' }),
@@ -114,7 +112,6 @@ async function markEmailSent(id: string): Promise<void> {
       headers: {
         'Content-Type': 'application/json',
         apikey: key,
-        Authorization: `Bearer ${key}`,
         Prefer: 'return=minimal',
       },
       body: JSON.stringify({ email_sent: true }),

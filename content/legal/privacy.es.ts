@@ -7,9 +7,9 @@ const privacyEs: LegalDoc = {
   metaTitle: 'Política de Privacidad | CodeAgentSwarm',
   metaDescription:
     'Cómo trata CodeAgentSwarm tus datos: qué recogemos, qué no recogemos nunca, quién los procesa, cuánto los conservamos y cómo ejercer tus derechos RGPD.',
-  lastUpdated: '2026-10-03',
+  lastUpdated: '2026-10-28',
   intro:
-    'Esta Política de Privacidad explica qué datos personales recoge CodeAgentSwarm cuando usas la aplicación de escritorio y este sitio web, por qué los recogemos, con quién los compartimos y qué derechos tienes sobre ellos. La hemos redactado para que coincida exactamente con lo que hace nuestro software. Si algo no queda claro, escríbenos a hello@codeagentswarm.com.',
+    'Esta Política de Privacidad explica qué datos personales recoge CodeAgentSwarm cuando usas la aplicación de escritorio, la app móvil de CodeAgentSwarm para iOS y Android y este sitio web, por qué los recogemos, con quién los compartimos y qué derechos tienes sobre ellos. La hemos redactado para que coincida exactamente con lo que hace nuestro software. Si algo no queda claro, escríbenos a hello@codeagentswarm.com.',
   sections: [
     {
       id: 'controller',
@@ -134,6 +134,27 @@ const privacyEs: LegalDoc = {
           type: 'paragraph',
           text: 'Para avisarte de nuevas versiones, la app pregunta periódicamente a nuestro servidor de actualizaciones si existe una actualización, enviando únicamente la versión actual, la plataforma y la arquitectura. No se envía ningún identificador personal ni de dispositivo en estas comprobaciones.',
         },
+        {
+          type: 'heading',
+          text: 'h) App móvil (iOS y Android)',
+          id: 'collected-mobile',
+        },
+        {
+          type: 'paragraph',
+          text: 'La app móvil de CodeAgentSwarm es un complemento de la app de escritorio. No tiene inicio de sesión propio: la emparejas una vez escaneando el código QR que muestra CodeAgentSwarm Desktop. Tus conversaciones, mensajes, adjuntos y la salida de los agentes viajan entre tu teléfono y tu ordenador por nuestro relay con cifrado de extremo a extremo, así que ni nosotros ni el proveedor del relay podemos leerlos, y no los guardamos.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Para prestar el servicio guardamos, por cada dispositivo emparejado: un identificador aleatorio del dispositivo, su nombre, su clave pública, un token de acceso cifrado con hash, cuándo se emparejó y cuándo se vio por última vez y, si permites las notificaciones, el token push que usamos para avisarte cuando un agente termina o necesita tu respuesta. La app también envía diagnósticos de conexión (cuánto tardan las reconexiones y los comandos, si funcionaron y las versiones de la app y del escritorio) para mantenerla rápida y fiable. Estos diagnósticos no contienen el contenido de las conversaciones.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Si grabas un mensaje de voz, el audio se envía a nuestro backend y a nuestro proveedor de transcripción, Groq, solo para convertirlo en texto. El audio se procesa en memoria y no se guarda; solo conservamos los segundos transcritos por día para aplicar los límites de uso. La cámara se usa solo para escanear el código QR de emparejamiento y el micrófono solo mientras grabas. La app móvil no muestra anuncios ni usa un identificador de publicidad.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Para eliminar estos datos, desempareja el teléfono desde CodeAgentSwarm Desktop o escribe a hello@codeagentswarm.com desde el correo de tu cuenta y borraremos tus dispositivos emparejados, los tokens push y los diagnósticos del móvil.',
+        },
       ],
     },
     {
@@ -174,6 +195,9 @@ const privacyEs: LegalDoc = {
             ['GitHub, Google, Discord', 'Inicio de sesión OAuth (solo si eliges iniciar sesión)', 'Estados Unidos'],
             ['Anthropic, OpenAI, Google', 'Las CLIs de IA que ejecutas se conectan directamente con tu propia cuenta', 'Estados Unidos'],
             ['Umami (auto-alojado)', 'Analítica web respetuosa con la privacidad y sin cookies', 'Alojado por nosotros en Railway'],
+            ['Cloudflare', 'Relay cifrado de extremo a extremo entre la app móvil y tu ordenador', 'Global'],
+            ['Expo, Apple Push Notification service, Firebase Cloud Messaging', 'Envío de notificaciones al móvil', 'Estados Unidos'],
+            ['Groq', 'Transcripción de los mensajes de voz grabados en la app móvil (no se guardan)', 'Estados Unidos'],
           ],
         },
         {
@@ -200,6 +224,7 @@ const privacyEs: LegalDoc = {
           type: 'list',
           items: [
             'Datos de cuenta: mientras tu cuenta exista, y se eliminan cuando nos pides que los borremos.',
+            'Dispositivos móviles emparejados, tokens push y diagnósticos de conexión del móvil: mientras el dispositivo esté emparejado o tu cuenta exista, y se eliminan cuando desemparejas el dispositivo o nos pides que los borremos. Las grabaciones de voz no se guardan.',
             'Mensajes de soporte, feedback y encuestas: se conservan mientras sean necesarios para atender tu solicitud y durante un periodo razonable posterior.',
             'Eventos de uso de escritorio y días de actividad del servicio: se conservan hasta 14 meses y después se eliminan mediante el proceso de retención. Los informes de errores tienen su propio plazo de retención.',
             'Registros de facturación: se conservan durante el tiempo que exija la ley por motivos contables y fiscales.',
