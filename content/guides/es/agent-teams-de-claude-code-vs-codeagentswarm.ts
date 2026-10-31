@@ -53,6 +53,10 @@ export const guide: Guide = {
           variant: 'info',
           content: 'Agent Teams es experimental. Hay limitaciones de reanudación, coordinación de tareas y cierre; consulta la documentación de tu versión antes de depender de esta función.',
         },
+        {
+          type: 'paragraph',
+          text: 'Qué son los subagentes, cómo crearlos y cómo verlos trabajar lo tienes en <a href="/es/guias/subagentes-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">subagentes de Claude Code</a>.',
+        },
       ],
     },
     {

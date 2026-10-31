@@ -228,6 +228,17 @@ import enAgentCoordinator from './en/ai-coding-agent-coordinator'
 import esAgentCoordinator from './es/coordinador-agentes-ia'
 import enAutoKanban from './en/auto-kanban-ai-coding-agents'
 import esAutoKanban from './es/kanban-automatico-agentes-ia'
+// Release 2.5.0: phone app, screenshots and subagents
+import enControlClaudeCodeFromPhone from './en/control-claude-code-from-phone'
+import esControlarClaudeCodeDesdeElMovil from './es/controlar-claude-code-desde-el-movil'
+import enClaudeCodeMobileApp from './en/claude-code-mobile-app'
+import esAppMovilClaudeCode from './es/app-movil-claude-code'
+import enCodexMobileApp from './en/codex-mobile-app'
+import esAppMovilCodex from './es/app-movil-codex'
+import enSendScreenshotToClaudeCode from './en/send-screenshot-to-claude-code'
+import esEnviarCapturaAClaudeCode from './es/enviar-captura-a-claude-code'
+import enClaudeCodeSubagents from './en/claude-code-subagents'
+import esSubagentesClaudeCode from './es/subagentes-claude-code'
 
 // Registry of all guides by locale and slug
 export const guides: Record<string, Record<string, Guide>> = {
@@ -248,6 +259,12 @@ export const guides: Record<string, Record<string, Guide>> = {
     'claude-code-weekly-limit-daily-budget': enWeeklyLimitBudget,
     'ai-coding-agent-coordinator': enAgentCoordinator,
     'auto-kanban-ai-coding-agents': enAutoKanban,
+    // Release 2.5.0: phone app, screenshots and subagents
+    'control-claude-code-from-phone': enControlClaudeCodeFromPhone,
+    'claude-code-mobile-app': enClaudeCodeMobileApp,
+    'codex-mobile-app': enCodexMobileApp,
+    'send-screenshot-to-claude-code': enSendScreenshotToClaudeCode,
+    'claude-code-subagents': enClaudeCodeSubagents,
 
     'how-to-use-multiple-claude-code-terminals': enMultipleTerminals,
     'claude-code-history': enClaudeCodeHistory,
@@ -361,6 +378,12 @@ export const guides: Record<string, Record<string, Guide>> = {
     'limite-semanal-claude-code-presupuesto-diario': esWeeklyLimitBudget,
     'coordinador-agentes-ia': esAgentCoordinator,
     'kanban-automatico-agentes-ia': esAutoKanban,
+    // Release 2.5.0: phone app, screenshots and subagents
+    'controlar-claude-code-desde-el-movil': esControlarClaudeCodeDesdeElMovil,
+    'app-movil-claude-code': esAppMovilClaudeCode,
+    'app-movil-codex': esAppMovilCodex,
+    'enviar-captura-a-claude-code': esEnviarCapturaAClaudeCode,
+    'subagentes-claude-code': esSubagentesClaudeCode,
 
     'como-usar-varios-terminales-claude-code': esMultipleTerminals,
     'historial-claude-code': esHistorialClaudeCode,

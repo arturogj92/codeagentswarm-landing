@@ -174,6 +174,10 @@ export const guide: Guide = {
           type: 'paragraph',
           text: 'Empieza con un proyecto que conozcas y una tarea pequeña. Comprueba cómo se ven los mensajes, dónde encuentras el historial y cómo revisas el diff. Añade una segunda sesión cuando tengas claro el recorrido.',
         },
+        {
+          type: 'paragraph',
+          text: '¿También quieres seguir Codex desde el móvil? En <a href="/es/guias/app-movil-codex" class="text-neon-cyan hover:text-neon-purple transition-colors">app móvil de Codex</a> tienes la opción de la app de ChatGPT frente a la app de CodeAgentSwarm para Codex CLI.',
+        },
       ],
     },
     {

@@ -91,6 +91,10 @@ claude --print "convert this curl to fetch: curl -X POST https://api.example.com
           variant: 'info',
           content: 'Custom commands are just markdown files. Create <code>.claude/commands/review.md</code> with your review criteria, then use <code>/project:review</code> in any session.',
         },
+        {
+          type: 'paragraph',
+          text: 'Screenshots are often the fastest way to explain a bug. Here is <a href="/en/guides/send-screenshot-to-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">every way to send a screenshot to Claude Code</a>.',
+        },
       ],
     },
     {

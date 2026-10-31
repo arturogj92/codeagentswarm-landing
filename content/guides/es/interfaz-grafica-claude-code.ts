@@ -190,6 +190,10 @@ Encaja cuando quieres supervisión compartida entre proveedores o proyectos. Par
           variant: 'tip',
           content: 'Como la interfaz maneja el CLI en lugar de reemplazarlo, puedes volver a un terminal pelado cuando quieras. Nada de CodeAgentSwarm encierra al agente: es una capa, no un fork.',
         },
+        {
+          type: 'paragraph',
+          text: 'Las mismas sesiones llegan también al móvil. Si buscas una app móvil de Claude Code, lee <a href="/es/guias/app-movil-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">app móvil de Claude Code: qué existe</a>.',
+        },
       ],
     },
   ],

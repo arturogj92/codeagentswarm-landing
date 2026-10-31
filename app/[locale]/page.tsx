@@ -11,6 +11,9 @@ import FeatureVideosSection from '@/components/FeatureVideosSection'
 import ProblemSection from '@/components/ProblemSection'
 import FeaturesSection from '@/components/FeaturesSection'
 import NewIn240Section from '@/components/NewIn240Section'
+// Release 2.5.0 blocks (self-contained copy, see each component).
+import VisualRepliesSection from '@/components/VisualRepliesSection'
+import PhoneAppSection from '@/components/PhoneAppSection'
 import WorksWithSection from '@/components/WorksWithSection'
 // import DemoSection from '@/components/DemoSection'
 import InteractiveDemoSection from '@/components/InteractiveDemoSection'
@@ -184,6 +187,7 @@ export default function Home() {
         <ProblemSection />
         <FeaturesSection />
         <NewIn240Section />
+        <VisualRepliesSection />
         <FeatureVideosSection />
         <div className="relative max-w-5xl mx-auto px-6 pb-8">
           <GuideProductBlock locale={locale === 'es' ? 'es' : 'en'} source="home" position="feature_videos" />
@@ -194,6 +198,8 @@ export default function Home() {
             as the raw terminal. Kept three sections away from the simulator so
             the page never stacks two interactive demos. */}
         <ModeCompareSection />
+        {/* Right after Chat vs Terminal: the same sessions, now from the phone. */}
+        <PhoneAppSection />
         {/* <DemoSection /> */}
         <MCPSection />
         {/* <SocialProofSection /> */}
