@@ -14,7 +14,7 @@ This guide covers finding, searching and backing up conversations. If you work a
     ctaAgent: 'claude-code',
     highlightedWords: ['history', 'Claude Code', 'conversations'],
     publishedAt: '2026-04-15',
-    updatedAt: '2026-09-05',
+    updatedAt: '2026-10-31',
     alternateSlug: 'guia-completa-historial-claude-code',
   },
   sections: [
@@ -36,11 +36,12 @@ This guide covers finding, searching and backing up conversations. If you work a
             '<code>/resume</code> - List recent sessions inside an active Claude Code session',
             '<code>claude -c</code> - Resume the most recent conversation for the current project',
             '<code>claude -r SESSION_ID</code> - Resume a specific conversation by its ID',
+            '<code>claude --resume NAME</code> - Resume a session you named with <code>/rename</code> or <code>claude -n</code>',
           ],
         },
         {
           type: 'paragraph',
-          text: 'You can find full details on these commands in the <a href="https://code.claude.com/docs/en/cli-reference" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">official Claude Code documentation</a>. Commands and picker behavior were checked against the official documentation on September 5, 2026.',
+          text: 'You can find full details on these commands in the <a href="https://code.claude.com/docs/en/cli-reference" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">official Claude Code documentation</a>. Commands and picker behavior were checked against the official documentation on October 31, 2026.',
         },
         {
           type: 'paragraph',
@@ -78,7 +79,7 @@ This guide covers finding, searching and backing up conversations. If you work a
       content: [
         {
           type: 'paragraph',
-          text: 'The current <a href="https://code.claude.com/docs/en/sessions#use-the-session-picker" class="text-neon-cyan hover:text-neon-purple transition-colors">session picker</a> supports search and previews: type to filter, press Space to preview, or Ctrl+A to include other projects. For previous prompts, use Ctrl+R in the input to search <a href="https://code.claude.com/docs/en/interactive-mode#command-history" class="text-neon-cyan hover:text-neon-purple transition-colors">command history</a>.',
+          text: 'The current <a href="https://code.claude.com/docs/en/sessions#use-the-session-picker" class="text-neon-cyan hover:text-neon-purple transition-colors">session picker</a> supports search and previews: type to filter, press Space to preview, Ctrl+R to rename a session, Ctrl+A to include other projects, Ctrl+W to include other worktrees of the repository and Ctrl+B to show only the current Git branch. The Claude desktop app keeps its own session list and can resume a CLI session, as the <a href="https://code.claude.com/docs/en/sessions" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">sessions documentation</a> explains. For previous prompts inside a session, use Ctrl+R in the input to search <a href="https://code.claude.com/docs/en/interactive-mode#command-history" class="text-neon-cyan hover:text-neon-purple transition-colors">command history</a>.',
         },
         {
           type: 'paragraph',

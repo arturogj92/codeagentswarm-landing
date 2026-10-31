@@ -97,7 +97,7 @@ Pick the path that matches what you are trying to do. If you are chatting in the
       content: [
         {
           type: 'paragraph',
-          text: 'This is where parallel sessions get genuinely powerful. <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a> is the command-line coding agent, and each session you start with <code>claude</code> is its own independent process. It has its own conversation thread, its own context window, and its own working state. Nothing is shared between sessions.',
+          text: 'This is where parallel sessions get genuinely powerful. <a href="https://code.claude.com/docs/en/overview" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a> is the command-line coding agent, and each session you start with <code>claude</code> is its own independent process. It has its own conversation thread, its own context window, and its own working state. Nothing is shared between sessions.',
         },
         {
           type: 'paragraph',

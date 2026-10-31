@@ -16,7 +16,7 @@ In this guide I walk through the three practical ways to run a Codex swarm, comp
     ctaAgent: 'codex',
     highlightedWords: ['Codex agent swarm', 'Codex CLI'],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-10-05',
+    updatedAt: '2026-10-31',
     relatedSlug: 'codex-gui',
     alternateSlug: 'enjambre-de-agentes-codex',
   },
@@ -234,7 +234,7 @@ In this guide I walk through the three practical ways to run a Codex swarm, comp
         },
         {
           type: 'paragraph',
-          text: 'Codex has its own approval modes, from suggest-only up to full auto with <code>--full-auto</code>, plus a sandbox. CodeAgentSwarm sits above that with Turbo Mode and per-terminal permissions, so you can let agents run in full auto on the safe operations while still gating the dangerous ones. That is the practical way to keep a Codex swarm fast without leaving it unsupervised. The <a href="/en/guides/claude-code-yolo-mode-explained" class="text-neon-cyan hover:text-neon-purple transition-colors">Turbo Mode guide</a> covers the setup.',
+          text: 'Codex has its own controls: a sandbox, an approval policy and auto review, which <code>--approve-for-me</code> turns on so a reviewer agent answers approval requests inside the <code>workspace-write</code> sandbox. The old <code>--full-auto</code> flag is gone from the <a href="https://learn.chatgpt.com/docs/developer-commands?surface=cli" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">official command reference</a>. CodeAgentSwarm sits above that with Turbo Mode and per-terminal permissions, so you can let agents run in full auto on the safe operations while still gating the dangerous ones. That is the practical way to keep a Codex swarm fast without leaving it unsupervised. The <a href="/en/guides/claude-code-yolo-mode-explained" class="text-neon-cyan hover:text-neon-purple transition-colors">Turbo Mode guide</a> covers the setup.',
         },
         {
           type: 'heading',

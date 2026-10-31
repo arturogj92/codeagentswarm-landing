@@ -12,7 +12,7 @@ export const guide: Guide = {
     ctaAgent: 'codex',
     highlightedWords: ['historial', 'Codex CLI', 'retomar'],
     publishedAt: '2026-06-24',
-    updatedAt: '2026-09-29',
+    updatedAt: '2026-10-31',
     alternateSlug: 'codex-cli-conversation-history',
   },
   sections: [
@@ -64,13 +64,17 @@ export const guide: Guide = {
             ],
             [
               'codex resume SESSION_ID',
-              'Retoma una sesión por su ID.',
+              'Retoma una sesión por su ID o por su nombre.',
+            ],
+            [
+              'codex fork',
+              'Copia una sesión guardada en una conversación nueva y conserva la transcripción original.',
             ],
           ],
         },
         {
           type: 'paragraph',
-          text: 'Opciones comprobadas con <code>codex resume --help</code> en Codex CLI 0.156.0 el 25 de septiembre de 2026. Revisa la ayuda de tu instalación si se comporta de otra forma.',
+          text: 'Opciones comprobadas con <code>codex resume --help</code> y <code>codex fork --help</code> en Codex CLI 0.159.0 el 31 de octubre de 2026. Revisa la ayuda de tu instalación si se comporta de otra forma.',
         },
         {
           type: 'paragraph',

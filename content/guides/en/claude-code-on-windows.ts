@@ -16,7 +16,7 @@ And once you have it running, we will also show you how to go from one Claude Co
     ctaAgent: 'claude-code',
     highlightedWords: ['Claude Code', 'Windows'],
     publishedAt: '2026-06-12',
-    updatedAt: '2026-06-12',
+    updatedAt: '2026-10-31',
     alternateSlug: 'claude-code-en-windows',
   },
   sections: [
@@ -61,7 +61,7 @@ claude --version`,
             'Windows 10 (version 1809 or later) or Windows 11, 64-bit. 32-bit Windows is not supported.',
             'PowerShell, which comes preinstalled with Windows.',
             'Git for Windows: optional but recommended. With it, Claude Code uses Git Bash as its shell, which gives better compatibility with bash commands. Without it, Claude Code falls back to PowerShell.',
-            'An Anthropic account (Claude Pro/Max subscription or API access).',
+            'A Claude Pro, Max, Ultra, Team, Enterprise or Console account. The free claude.ai plan does not include Claude Code.',
           ],
         },
         {

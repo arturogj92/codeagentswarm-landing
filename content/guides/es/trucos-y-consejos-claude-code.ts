@@ -26,7 +26,7 @@ Tanto si acabas de empezar como si ya usas Claude Code a diario, aquí hay algo 
       content: [
         {
           type: 'paragraph',
-          text: 'Antes de pedirle a Claude que escriba una sola línea de código, estos cinco hábitos te prepararán para obtener resultados consistentemente mejores. Se implementan en minutos y dan resultados en cada sesión. Si eres nuevo en <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, empieza leyendo la documentación oficial para entender lo básico.',
+          text: 'Antes de pedirle a Claude que escriba una sola línea de código, estos cinco hábitos te prepararán para obtener resultados consistentemente mejores. Se implementan en minutos y dan resultados en cada sesión. Si eres nuevo en <a href="https://code.claude.com/docs/en/overview" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, empieza leyendo la documentación oficial para entender lo básico.',
         },
         {
           type: 'list',

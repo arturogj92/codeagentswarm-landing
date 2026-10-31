@@ -7,7 +7,7 @@ export const guide: Guide = {
     title: 'Modo automático y YOLO de Codex CLI: comandos, permisos y sandbox',
     metaTitle: 'Codex Auto Mode y YOLO: modo automático y permisos (2026)',
     metaDescription: 'Configura el modo automático de Codex CLI con permisos del proyecto. Compara la aprobación automática, --yolo y el antiguo --full-auto con comandos y límites.',
-    intro: 'El modo automático de Codex (Auto Mode) permite al CLI leer archivos, editar código y ejecutar comandos dentro de los permisos configurados para el proyecto. Inícialo con --sandbox workspace-write --ask-for-approval on-request para conservar el sandbox y permitir solicitudes de permisos adicionales.\n\nEl modo YOLO usa --yolo, un alias de --dangerously-bypass-approvals-and-sandbox, que desactiva ambas protecciones. Esta guía explica la diferencia, cómo ejecutar sin preguntas conservando el sandbox y qué pasa con el antiguo --full-auto. Una interfaz de escritorio no convierte un comando peligroso en uno seguro.',
+    intro: 'El modo automático de Codex (Auto Mode) permite al CLI leer archivos, editar código y ejecutar comandos dentro de los permisos configurados para el proyecto. Inícialo con --sandbox workspace-write --ask-for-approval on-request para conservar el sandbox y permitir solicitudes de permisos adicionales.\n\nEl modo YOLO usa --yolo, un alias de --dangerously-bypass-approvals-and-sandbox, que desactiva ambas protecciones. Esta guía explica la diferencia, cómo ejecutar sin preguntas conservando el sandbox, cómo la revisión automática (--approve-for-me) pasa las aprobaciones a un agente revisor y qué pasa con el antiguo --full-auto. Una interfaz de escritorio no convierte un comando peligroso en uno seguro.',
     ctaText: 'Supervisa tus sesiones de Codex en CodeAgentSwarm: consulta qué necesita respuesta, busca conversaciones y revisa los cambios del proyecto. Descarga la app para macOS, Windows o Linux y usa tu cuenta de Codex.',
     ctaAgent: 'codex',
     highlightedWords: [
@@ -15,7 +15,7 @@ export const guide: Guide = {
       'modo YOLO',
     ],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-10-05',
+    updatedAt: '2026-10-31',
     alternateSlug: 'codex-yolo-mode',
   },
   sections: [
@@ -40,6 +40,21 @@ export const guide: Guide = {
           type: 'code',
           language: 'bash',
           code: 'codex --sandbox workspace-write --ask-for-approval never "Ejecuta los tests existentes"',
+        },
+        {
+          type: 'heading',
+          level: 3,
+          id: 'auto-review',
+          text: 'Revisión automática: codex --approve-for-me',
+        },
+        {
+          type: 'paragraph',
+          text: 'Codex también tiene revisión automática (auto review). Arranca <code>codex --approve-for-me</code> y Codex conserva el sandbox <code>workspace-write</code> con aprobaciones <code>on-request</code>, pero un agente revisor aparte responde a las peticiones de aprobación en tu lugar. La <a href="https://learn.chatgpt.com/codex/sandboxing/auto-review" class="text-neon-cyan hover:text-neon-purple transition-colors">documentación de auto review</a> lo describe como un cambio de revisor, no como más permisos: no añade carpetas con escritura ni acceso a la red. La app de escritorio muestra la misma opción como Approve for me, y en la config es <code>approvals_reviewer = "auto_review"</code>.',
+        },
+        {
+          type: 'code',
+          language: 'bash',
+          code: 'codex --approve-for-me "Ejecuta los tests y arregla los fallos"',
         },
         {
           type: 'callout',
@@ -78,18 +93,22 @@ export const guide: Guide = {
               'Conserva los límites y no pide ampliaciones; las operaciones bloqueadas fallan.',
             ],
             [
+              '--approve-for-me',
+              'Revisión automática: aprobaciones on-request en el sandbox workspace-write, respondidas por un agente revisor en tu lugar.',
+            ],
+            [
               '--yolo',
               'Alias de --dangerously-bypass-approvals-and-sandbox. Omite ambas protecciones.',
             ],
             [
               '--full-auto',
-              'Flag antiguo. Su disponibilidad depende de la versión y del subcomando.',
+              'Retirado. El Codex CLI actual lo rechaza en codex y en codex exec.',
             ],
           ],
         },
         {
           type: 'paragraph',
-          text: 'En Codex CLI 0.156.0 comprobamos que <code>codex --full-auto --help</code> rechaza el argumento, mientras que <code>codex --yolo --help</code> lo acepta. La referencia oficial de <code>codex exec</code> todavía describe <code>--full-auto</code> como compatibilidad obsoleta. Usa opciones explícitas y comprueba la ayuda del comando que vas a ejecutar.',
+          text: 'En Codex CLI 0.159.0, comprobado el 31 de octubre de 2026, tanto <code>codex --full-auto</code> como <code>codex exec --full-auto</code> fallan con "unexpected argument", mientras que <code>--yolo</code> y <code>--approve-for-me</code> se aceptan. La referencia oficial de comandos ya no incluye <code>--full-auto</code>. Usa opciones explícitas y comprueba la ayuda del comando que vas a ejecutar.',
         },
         {
           type: 'code',
@@ -108,7 +127,7 @@ export const guide: Guide = {
         },
         {
           type: 'paragraph',
-          text: 'Fuentes verificadas el 25 de septiembre de 2026: <a href="https://learn.chatgpt.com/docs/developer-commands?surface=cli" class="text-neon-cyan hover:text-neon-purple transition-colors">referencia de comandos de OpenAI</a>; <a href="https://learn.chatgpt.com/docs/sandboxing" class="text-neon-cyan hover:text-neon-purple transition-colors">documentación del sandbox</a>.',
+          text: 'Fuentes verificadas el 31 de octubre de 2026: <a href="https://learn.chatgpt.com/docs/developer-commands?surface=cli" class="text-neon-cyan hover:text-neon-purple transition-colors">referencia de comandos de OpenAI</a>; <a href="https://learn.chatgpt.com/docs/sandboxing" class="text-neon-cyan hover:text-neon-purple transition-colors">documentación del sandbox</a>; <a href="https://learn.chatgpt.com/codex/sandboxing/auto-review" class="text-neon-cyan hover:text-neon-purple transition-colors">auto review</a>.',
         },
       ],
     },
@@ -193,7 +212,7 @@ export const guide: Guide = {
   faq: [
     {
       question: '¿Qué es Codex Auto Mode y cómo activo el modo automático?',
-      answer: 'El modo automático de Codex combina el sandbox workspace-write con aprobaciones on-request. Ejecuta codex --sandbox workspace-write --ask-for-approval on-request. Codex puede trabajar dentro de los permisos configurados y solicitar acceso adicional cuando lo necesita. La aprobación automática no tiene por qué implicar YOLO: --yolo omite tanto las aprobaciones como el sandbox.',
+      answer: 'El modo automático de Codex combina el sandbox workspace-write con aprobaciones on-request. Ejecuta codex --sandbox workspace-write --ask-for-approval on-request. Codex puede trabajar dentro de los permisos configurados y solicitar acceso adicional cuando lo necesita. Añade --approve-for-me si quieres que un agente revisor responda a esas peticiones por ti. La aprobación automática no tiene por qué implicar YOLO: --yolo omite tanto las aprobaciones como el sandbox.',
     },
     {
       question: '¿Existe el flag codex --yolo?',
@@ -201,7 +220,11 @@ export const guide: Guide = {
     },
     {
       question: '¿Qué hace --full-auto en Codex?',
-      answer: 'Es un flag antiguo. La referencia de codex exec lo marca como compatibilidad obsoleta; el comando interactivo de Codex CLI 0.156.0 que verificamos lo rechaza. Usa --sandbox workspace-write y elige la política de aprobación de forma explícita.',
+      answer: 'Ya nada. Codex CLI 0.159.0 rechaza --full-auto tanto en codex como en codex exec, y la referencia de comandos actual no lo incluye. Usa --sandbox workspace-write con una política de aprobación explícita, o --approve-for-me para la revisión automática.',
+    },
+    {
+      question: '¿Qué hace codex --approve-for-me?',
+      answer: 'Activa la revisión automática. Codex trabaja en el sandbox workspace-write con aprobaciones on-request, y un agente revisor aparte responde a las peticiones de aprobación en tu lugar. No amplía el sandbox ni activa la red. En la app de escritorio la misma opción se llama Approve for me.',
     },
     {
       question: '¿Cómo ejecuto Codex sin preguntas y con sandbox?',

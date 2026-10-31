@@ -7,7 +7,7 @@ export const guide: Guide = {
     title: 'Codex CLI Auto Mode and YOLO: Commands, Approvals and Sandbox',
     metaTitle: 'Codex Auto Mode & YOLO: Approvals and Sandbox (2026)',
     metaDescription: 'Run Codex CLI in Auto Mode with workspace permissions. Compare auto-approve, --yolo and the older --full-auto flag, with commands and sandbox limits.',
-    intro: 'Codex Auto Mode lets the CLI read files, edit code and run commands within the configured workspace permissions. Start it with --sandbox workspace-write --ask-for-approval on-request to keep the sandbox and allow requests for additional permissions.\n\nYOLO mode uses --yolo, an alias for --dangerously-bypass-approvals-and-sandbox, which disables both protections. This guide explains the difference, how to run without approval prompts while keeping the sandbox, and what happened to the older --full-auto flag. A desktop interface does not make a dangerous command safe.',
+    intro: 'Codex Auto Mode lets the CLI read files, edit code and run commands within the configured workspace permissions. Start it with --sandbox workspace-write --ask-for-approval on-request to keep the sandbox and allow requests for additional permissions.\n\nYOLO mode uses --yolo, an alias for --dangerously-bypass-approvals-and-sandbox, which disables both protections. This guide explains the difference, how to run without approval prompts while keeping the sandbox, how auto review (--approve-for-me) hands approval requests to a reviewer agent, and what happened to the older --full-auto flag. A desktop interface does not make a dangerous command safe.',
     ctaText: 'Supervise your Codex sessions in CodeAgentSwarm: see what needs a reply, search conversations and review project changes. Download the app for macOS, Windows or Linux and use your own Codex account.',
     ctaAgent: 'codex',
     highlightedWords: [
@@ -15,7 +15,7 @@ export const guide: Guide = {
       'YOLO mode',
     ],
     publishedAt: '2026-06-07',
-    updatedAt: '2026-10-05',
+    updatedAt: '2026-10-31',
     alternateSlug: 'modo-yolo-codex',
   },
   sections: [
@@ -40,6 +40,21 @@ export const guide: Guide = {
           type: 'code',
           language: 'bash',
           code: 'codex --sandbox workspace-write --ask-for-approval never "Run the existing tests"',
+        },
+        {
+          type: 'heading',
+          level: 3,
+          id: 'auto-review',
+          text: 'Auto review: codex --approve-for-me',
+        },
+        {
+          type: 'paragraph',
+          text: 'Codex also has auto review. Start <code>codex --approve-for-me</code> and Codex keeps the <code>workspace-write</code> sandbox with <code>on-request</code> approvals, but a separate reviewer agent answers the approval requests instead of you. The <a href="https://learn.chatgpt.com/codex/sandboxing/auto-review" class="text-neon-cyan hover:text-neon-purple transition-colors">auto review documentation</a> calls it a reviewer swap, not a permission grant: it does not add writable folders or network access. The desktop app shows the same option as Approve for me, and in config it is <code>approvals_reviewer = "auto_review"</code>.',
+        },
+        {
+          type: 'code',
+          language: 'bash',
+          code: 'codex --approve-for-me "Run the tests and fix the failures"',
         },
         {
           type: 'callout',
@@ -78,18 +93,22 @@ export const guide: Guide = {
               'Keeps the boundaries and does not request escalation; blocked operations fail.',
             ],
             [
+              '--approve-for-me',
+              'Auto review: on-request approvals in the workspace-write sandbox, answered by a reviewer agent instead of you.',
+            ],
+            [
               '--yolo',
               'Alias for --dangerously-bypass-approvals-and-sandbox. Bypasses both protections.',
             ],
             [
               '--full-auto',
-              'Legacy flag. Availability depends on the version and subcommand.',
+              'Removed. Current Codex CLI rejects it in codex and codex exec.',
             ],
           ],
         },
         {
           type: 'paragraph',
-          text: 'In Codex CLI 0.156.0, we checked that <code>codex --full-auto --help</code> rejects the argument while <code>codex --yolo --help</code> accepts it. The official <code>codex exec</code> reference still describes <code>--full-auto</code> as deprecated compatibility. Use explicit options and check the help for the command you intend to run.',
+          text: 'In Codex CLI 0.159.0, checked on October 31, 2026, both <code>codex --full-auto</code> and <code>codex exec --full-auto</code> fail with "unexpected argument", while <code>--yolo</code> and <code>--approve-for-me</code> are accepted. The official command reference no longer lists <code>--full-auto</code>. Use explicit options and check the help for the command you intend to run.',
         },
         {
           type: 'code',
@@ -108,7 +127,7 @@ export const guide: Guide = {
         },
         {
           type: 'paragraph',
-          text: 'Sources checked September 25, 2026: <a href="https://learn.chatgpt.com/docs/developer-commands?surface=cli" class="text-neon-cyan hover:text-neon-purple transition-colors">OpenAI command reference</a>; <a href="https://learn.chatgpt.com/docs/sandboxing" class="text-neon-cyan hover:text-neon-purple transition-colors">sandbox documentation</a>.',
+          text: 'Sources checked October 31, 2026: <a href="https://learn.chatgpt.com/docs/developer-commands?surface=cli" class="text-neon-cyan hover:text-neon-purple transition-colors">OpenAI command reference</a>; <a href="https://learn.chatgpt.com/docs/sandboxing" class="text-neon-cyan hover:text-neon-purple transition-colors">sandbox documentation</a>; <a href="https://learn.chatgpt.com/codex/sandboxing/auto-review" class="text-neon-cyan hover:text-neon-purple transition-colors">auto review</a>.',
         },
       ],
     },
@@ -193,7 +212,7 @@ export const guide: Guide = {
   faq: [
     {
       question: 'What is Codex Auto Mode, and how do I enable it?',
-      answer: 'Codex Auto Mode combines the workspace-write sandbox with on-request approvals. Run codex --sandbox workspace-write --ask-for-approval on-request. Codex can work within the configured permissions and request additional access when needed. Auto-approve does not have to mean YOLO: --yolo bypasses both approvals and the sandbox.',
+      answer: 'Codex Auto Mode combines the workspace-write sandbox with on-request approvals. Run codex --sandbox workspace-write --ask-for-approval on-request. Codex can work within the configured permissions and request additional access when needed. Add --approve-for-me if you want a reviewer agent to answer those requests for you. Auto-approve does not have to mean YOLO: --yolo bypasses both approvals and the sandbox.',
     },
     {
       question: 'Is there a codex --yolo flag?',
@@ -201,7 +220,11 @@ export const guide: Guide = {
     },
     {
       question: 'What does --full-auto do in Codex?',
-      answer: 'It is a legacy flag. The codex exec reference marks it as deprecated compatibility; the interactive command in Codex CLI 0.156.0 that we checked rejects it. Use --sandbox workspace-write and choose approval policy explicitly.',
+      answer: 'Nothing anymore. Codex CLI 0.159.0 rejects --full-auto in both codex and codex exec, and the current command reference does not list it. Use --sandbox workspace-write with an explicit approval policy, or --approve-for-me for auto review.',
+    },
+    {
+      question: 'What does codex --approve-for-me do?',
+      answer: 'It turns on auto review. Codex runs in the workspace-write sandbox with on-request approvals, and a separate reviewer agent answers the approval requests instead of you. It does not widen the sandbox or enable network access. In the desktop app the same option is called Approve for me.',
     },
     {
       question: 'How do I run Codex without prompts while keeping the sandbox?',

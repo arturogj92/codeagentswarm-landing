@@ -14,7 +14,7 @@ Esta guía compara qué hace cada una, dónde encaja y cuánto cuesta para que e
     ctaAgent: 'multi',
     highlightedWords: ['Claude Code', 'Cursor', 'Codex CLI'],
     publishedAt: '2026-04-15',
-    updatedAt: '2026-08-23',
+    updatedAt: '2026-10-31',
     alternateSlug: 'claude-code-vs-cursor-vs-codex',
   },
   sections: [
@@ -28,7 +28,7 @@ Esta guía compara qué hace cada una, dónde encaja y cuánto cuesta para que e
         },
         {
           type: 'paragraph',
-          text: '<strong><a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a></strong> es un agente CLI. Se ejecuta en tu terminal, lee tu código fuente, hace cambios en múltiples archivos, ejecuta comandos y gestiona tareas complejas de varios pasos de forma autónoma. Está desarrollado por Anthropic y funciona con los modelos Claude Sonnet y Opus.',
+          text: '<strong><a href="https://code.claude.com/docs/en/overview" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a></strong> es un agente CLI. Se ejecuta en tu terminal, lee tu código fuente, hace cambios en múltiples archivos, ejecuta comandos y gestiona tareas complejas de varios pasos de forma autónoma. Está desarrollado por Anthropic y funciona con los modelos Claude Sonnet y Opus.',
         },
         {
           type: 'paragraph',
@@ -61,7 +61,7 @@ Esta guía compara qué hace cada una, dónde encaja y cuánto cuesta para que e
         },
         {
           type: 'paragraph',
-          text: 'Funciona con Claude Sonnet (para velocidad) y Claude Opus (para razonamiento complejo). La palabra clave aquí es "agéntico": Claude Code no solo sugiere código, sino que actúa. Crea archivos, modifica los existentes, ejecuta comandos de shell y encadena múltiples pasos para completar una tarea.',
+          text: 'Funciona con los modelos Claude de Anthropic, y la <a href="https://code.claude.com/docs/en/cli-reference" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">CLI</a> te deja elegirlos por alias: <code>sonnet</code>, <code>opus</code>, <code>haiku</code> o <code>fable</code>. La palabra clave aquí es "agéntico": Claude Code no solo sugiere código, sino que actúa. Crea archivos, modifica los existentes, ejecuta comandos de shell y encadena múltiples pasos para completar una tarea.',
         },
         {
           type: 'heading',
@@ -87,7 +87,7 @@ Esta guía compara qué hace cada una, dónde encaja y cuánto cuesta para que e
         },
         {
           type: 'paragraph',
-          text: 'Claude Code requiere una suscripción a Claude Pro ($20/mes, o $17/mes con facturación anual) o Claude Max ($100/mes con 5x el uso de Pro, $200/mes con 20x). El plan Pro te da un uso más que suficiente para el desarrollo del día a día. Max es para sesiones intensivas de programación durante todo el día donde necesitas límites de uso más altos.',
+          text: 'Claude Code necesita un plan de pago de Claude. A 31 de octubre de 2026, la <a href="https://claude.com/pricing" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">página de precios de Claude</a> indica Pro por $20/mes ($17/mes con facturación anual), Max por $100/mes con 5x el uso de Pro y Ultra por $200/mes con 10x el uso de Pro. Los planes Team y Enterprise también lo incluyen. Pro te da un uso más que suficiente para el día a día; Max y Ultra son para sesiones intensivas de programación durante todo el día.',
         },
         {
           type: 'heading',
@@ -144,7 +144,7 @@ Esta guía compara qué hace cada una, dónde encaja y cuánto cuesta para que e
         },
         {
           type: 'paragraph',
-          text: 'Cursor tiene un plan Hobby gratuito para evaluar. A 23 de agosto de 2026, los planes individuales son Pro por 20 $/mes, Pro Plus por 60 $/mes y Ultra por 200 $/mes. Teams Standard cuesta 40 $ por usuario/mes y Teams Premium 120 $ por usuario/mes. El uso incluido depende del coste en tokens del modelo y el consumo bajo demanda puede continuar después con el límite de gasto que configures.',
+          text: 'Cursor tiene un plan gratuito para evaluar. A 31 de octubre de 2026, la <a href="https://cursor.com/pricing" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">página de precios de Cursor</a> indica los planes individuales Plus por 8 $/mes, Premium por 30 $/mes, Super por 100 $/mes y Ultra por 200 $/mes, y Teams desde 30 $ por usuario/mes. Mira esa página para saber el uso que incluye cada plan, porque Cursor avisa de que los precios pueden cambiar.',
         },
         {
           type: 'heading',
@@ -170,7 +170,7 @@ Esta guía compara qué hace cada una, dónde encaja y cuánto cuesta para que e
         },
         {
           type: 'paragraph',
-          text: 'Codex CLI es el agente de programación de terminal open source de OpenAI. Conceptualmente es similar a Claude Code: lo ejecutas en tu terminal, lo apuntas a un repositorio y lee archivos, hace cambios y ejecuta comandos. Los modelos actuales de Codex incluyen GPT-5.6 Sol, Terra y Luna.',
+          text: 'Codex CLI es el agente de programación de terminal open source de OpenAI. Conceptualmente es similar a Claude Code: lo ejecutas en tu terminal, lo apuntas a un repositorio y lee archivos, hace cambios y ejecuta comandos. Los <a href="https://learn.chatgpt.com/docs/models" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">modelos recomendados de Codex</a> son ahora GPT-6.1 Sol, GPT-6.1 Terra, GPT-6 Luna y Astra.',
         },
         {
           type: 'paragraph',
@@ -200,7 +200,7 @@ Esta guía compara qué hace cada una, dónde encaja y cuánto cuesta para que e
         },
         {
           type: 'paragraph',
-          text: 'Codex CLI viene incluido con ChatGPT Free, Go (8 $/mes), Plus (20 $/mes) y Pro, que se ofrece desde 100 $/mes con 5x de uso o 200 $/mes con 20x. El uso incluido se mide en créditos compartidos entre las funciones agénticas de OpenAI y se puede ampliar con más créditos. También puedes usar una clave de API de OpenAI para pagar por uso.',
+          text: 'Codex CLI viene incluido con ChatGPT Free, Go (8 $/mes), Plus (20 $/mes), Pro (niveles de 100, 200 o 500 $/mes), Business, Edu y Enterprise, según la <a href="https://learn.chatgpt.com/docs/pricing" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">página de precios de Codex</a> revisada el 31 de octubre de 2026. Plus y Pro pueden ampliar el uso con créditos de ChatGPT. También puedes usar una clave de API de OpenAI para pagar por uso.',
         },
         {
           type: 'heading',
@@ -245,9 +245,9 @@ Esta guía compara qué hace cada una, dónde encaja y cuánto cuesta para que e
         {
           type: 'list',
           items: [
-            '<strong>Claude Code:</strong> Claude Pro $20/mes, Max $100/mes (5x) o $200/mes (20x)',
-            '<strong>Cursor:</strong> Hobby gratis, Pro 20 $/mes, Pro Plus 60 $/mes, Ultra 200 $/mes, Teams Standard 40 $/usuario y Premium 120 $/usuario',
-            '<strong>Codex CLI:</strong> limitado en ChatGPT Free, Go 8 $/mes, Plus 20 $/mes; Pro desde 100 $/mes (5x) o 200 $/mes (20x)',
+            '<strong>Claude Code:</strong> Claude Pro $20/mes, Max $100/mes (5x) o Ultra $200/mes (10x)',
+            '<strong>Cursor:</strong> plan gratuito, Plus 8 $/mes, Premium 30 $/mes, Super 100 $/mes, Ultra 200 $/mes, Teams desde 30 $/usuario',
+            '<strong>Codex CLI:</strong> limitado en ChatGPT Free, Go 8 $/mes, Plus 20 $/mes; Pro por 100, 200 o 500 $/mes',
           ],
         },
         {
@@ -259,9 +259,9 @@ Esta guía compara qué hace cada una, dónde encaja y cuánto cuesta para que e
         {
           type: 'list',
           items: [
-            '<strong>Claude Code:</strong> Solo modelos Claude (Sonnet, Opus)',
+            '<strong>Claude Code:</strong> Solo modelos Claude (Fable, Opus, Sonnet, Haiku)',
             '<strong>Cursor:</strong> varios modelos actuales de Claude, GPT, Gemini y Grok',
-            '<strong>Codex CLI:</strong> solo modelos OpenAI, incluidos GPT-5.6 Sol, Terra y Luna',
+            '<strong>Codex CLI:</strong> solo modelos OpenAI, incluidos GPT-6.1 Sol, GPT-6.1 Terra y GPT-6 Luna',
           ],
         },
         {
@@ -487,7 +487,7 @@ Esta guía compara qué hace cada una, dónde encaja y cuánto cuesta para que e
     },
     {
       question: '¿Cuál es la configuración de IA para programar más barata?',
-      answer: 'Cursor Hobby y el uso limitado de Codex en ChatGPT Free empiezan en 0 $. Claude Code empieza con Pro por 20 $/mes o con uso de API medido. Prueba primero las opciones gratuitas y paga por el flujo cuyos límites alcances de verdad.',
+      answer: 'El plan gratuito de Cursor y el uso limitado de Codex en ChatGPT Free empiezan en 0 $. Claude Code empieza con Pro por 20 $/mes o con uso de API medido. Prueba primero las opciones gratuitas y paga por el flujo cuyos límites alcances de verdad.',
     },
   ],
 }

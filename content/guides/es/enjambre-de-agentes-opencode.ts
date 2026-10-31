@@ -16,7 +16,7 @@ En esta guía te explico las tres formas reales de ejecutar un enjambre de openc
     ctaAgent: 'opencode',
     highlightedWords: ['Enjambre de agentes OpenCode', 'opencode'],
     publishedAt: '2026-07-05',
-    updatedAt: '2026-10-05',
+    updatedAt: '2026-10-31',
     alternateSlug: 'opencode-agent-swarm',
   },
   sections: [
@@ -237,7 +237,7 @@ En esta guía te explico las tres formas reales de ejecutar un enjambre de openc
         },
         {
           type: 'paragraph',
-          text: 'opencode no tiene un único flag de full-auto ni de saltarse las confirmaciones. Cómo de autónomo corre un agente lo decide su configuración de permisos en <code>opencode.json</code>, que puedes fijar de forma global en <code>~/.config/opencode/opencode.json</code>, por proyecto o por agente. Así que la forma de ejecutar un enjambre sin intervención es aflojar los permisos en esa configuración, no pulsar un interruptor. Por eso CodeAgentSwarm no añade un toggle de Turbo Mode para opencode como sí hace con Claude Code y Codex. En su lugar mantiene supervisada una configuración permisiva de opencode: tienes los diffs en vivo y las notificaciones de escritorio de abajo para que una configuración sin intervención nunca corra a ciegas. La <a href="/es/guias/modo-yolo-opencode" class="text-neon-cyan hover:text-neon-purple transition-colors">guía del modo YOLO de opencode</a> tiene la foto completa sobre autonomía y permisos.',
+          text: 'opencode tiene un interruptor para trabajar sin intervención, <code>--auto</code>, que aprueba cualquier petición de permiso que una regla no deniegue de forma explícita (<a href="https://opencode.ai/docs/permissions/" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">documentación de permisos de opencode</a>). La autonomía duradera la decide su configuración de permisos en <code>opencode.json</code>, que puedes fijar de forma global en <code>~/.config/opencode/opencode.json</code>, por proyecto o por agente. CodeAgentSwarm no añade un toggle de Turbo Mode para opencode como sí hace con Claude Code y Codex. En su lugar mantiene supervisada una configuración permisiva de opencode: tienes los diffs en vivo y las notificaciones de escritorio de abajo para que una configuración sin intervención nunca corra a ciegas. La <a href="/es/guias/modo-yolo-opencode" class="text-neon-cyan hover:text-neon-purple transition-colors">guía del modo YOLO de opencode</a> tiene la foto completa sobre autonomía y permisos.',
         },
         {
           type: 'heading',
@@ -247,7 +247,7 @@ En esta guía te explico las tres formas reales de ejecutar un enjambre de openc
         },
         {
           type: 'paragraph',
-          text: 'Puedes ver en tiempo real los cambios de archivos que va haciendo cada agente de opencode, por terminal y a nivel de proyecto. Cuando dos agentes editan el mismo archivo, lo ves mientras pasa en lugar de descubrirlo más tarde en un diff hecho un lío. Git sigue encargándose del merge, pero esa visibilidad hace que las ediciones solapadas nunca te pillen por sorpresa. Con opencode esto importa más precisamente porque no hay un interruptor de full-auto en el que apoyarse: los diffs en vivo son la forma de mantener responsable una configuración permisiva.',
+          text: 'Puedes ver en tiempo real los cambios de archivos que va haciendo cada agente de opencode, por terminal y a nivel de proyecto. Cuando dos agentes editan el mismo archivo, lo ves mientras pasa en lugar de descubrirlo más tarde en un diff hecho un lío. Git sigue encargándose del merge, pero esa visibilidad hace que las ediciones solapadas nunca te pillen por sorpresa. Con opencode --auto o con una configuración permisiva, los diffs en vivo son la forma de mantener la tirada bajo control.',
         },
         {
           type: 'callout',

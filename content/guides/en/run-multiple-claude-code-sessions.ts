@@ -27,7 +27,7 @@ In this guide I will walk you through the three main methods, compare them hones
       content: [
         {
           type: 'paragraph',
-          text: '<a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a> sessions are independent processes. When you open a terminal and run <code>claude</code>, that session has its own conversation thread, its own context window, and its own working state. Conversations are separate, but sessions in one checkout still share files and an account can share usage limits.',
+          text: '<a href="https://code.claude.com/docs/en/overview" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a> sessions are independent processes. When you open a terminal and run <code>claude</code>, that session has its own conversation thread, its own context window, and its own working state. Conversations are separate, but sessions in one checkout still share files and an account can share usage limits.',
         },
         {
           type: 'paragraph',
