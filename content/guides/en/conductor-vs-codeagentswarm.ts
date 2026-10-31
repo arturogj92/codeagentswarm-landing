@@ -7,16 +7,16 @@ export const guide: Guide = {
     title: 'Conductor vs CodeAgentSwarm: An Honest Comparison (2026)',
     metaTitle: 'Conductor vs CodeAgentSwarm: Honest Comparison (2026)',
     metaDescription: 'Compare Conductor local and cloud workspaces, four agent CLIs and current pricing with CodeAgentSwarm on macOS, Windows and Linux.',
-    intro: `Conductor combines a macOS app with isolated cloud workspaces for Claude Code, Codex, Cursor and OpenCode. CodeAgentSwarm is a desktop workspace for macOS, Windows and Linux that runs multiple agent CLIs in parallel terminals. Same premise, different deployment model.
+    intro: `Conductor combines a macOS app and an iOS app with isolated cloud workspaces for Claude Code, Codex, Cursor and OpenCode. CodeAgentSwarm is a desktop workspace for macOS, Windows and Linux that runs multiple agent CLIs in parallel terminals. Same premise, different deployment model.
 
-Full disclosure: we build CodeAgentSwarm. Every third-party fact below was checked on August 25, 2026 against Conductor's site, pricing page and documentation.
+Full disclosure: we build CodeAgentSwarm. Every third-party fact below was checked on October 31, 2026 against Conductor's site, pricing page, documentation and changelog.
 
 Short version: choose Conductor for cloud sandboxes, multiplayer collaboration and its API. Choose CodeAgentSwarm for Windows or Linux, multiple integrated agents, searchable cross-agent history and an agent-managed kanban board.`,
     ctaText: 'Need a parallel agent workspace that also runs on Windows and Linux, with multiple supported agents? Download CodeAgentSwarm and set up your first batch of parallel terminals.',
     ctaAgent: 'comparison',
     highlightedWords: ['Conductor', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
-    updatedAt: '2026-10-05',
+    updatedAt: '2026-10-31',
     alternateSlug: 'conductor-vs-codeagentswarm',
   },
   sections: [
@@ -35,7 +35,7 @@ Short version: choose Conductor for cloud sandboxes, multiplayer collaboration a
         {
           type: 'callout',
           variant: 'info',
-          content: 'Disclosure: CodeAgentSwarm is our product. All Conductor facts were verified on August 25, 2026 against conductor.build, its pricing page and its documentation. Conductor has no public repository, so there is no public source history to compare.',
+          content: 'Disclosure: CodeAgentSwarm is our product. All Conductor facts were verified on October 31, 2026 against conductor.build, its pricing page, its documentation and its changelog. Conductor has no public repository, so there is no public source history to compare.',
         },
       ],
     },
@@ -45,11 +45,11 @@ Short version: choose Conductor for cloud sandboxes, multiplayer collaboration a
       content: [
         {
           type: 'paragraph',
-          text: '<a href="https://conductor.build" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Conductor</a> now leads with cloud agent teams. Local workspaces still run on a Mac, while Pro and higher plans can create isolated managed sandboxes that keep working after the app closes. The product also supports multiplayer workspace sharing, a beta HTTP API and an MCP server.',
+          text: '<a href="https://conductor.build" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Conductor</a> now leads with cloud agent teams. Local workspaces still run on a Mac, while Pro and higher plans can create isolated managed sandboxes that keep working after the app closes. The product also supports multiplayer workspace sharing, a beta HTTP API, an MCP server and, since October 2026, an iOS app that works with cloud workspaces and can remote-control local workspaces on your Mac (an experimental setting).',
         },
         {
           type: 'paragraph',
-          text: 'Local workspaces use git worktrees on your Mac. Cloud workspaces run in isolated Vercel sandboxes in us-east-1 with 8 vCPUs, 16 GB of RAM and ephemeral storage. Conductor stores cloud session inputs and outputs on its servers, while local session data stays on your device.',
+          text: 'Local workspaces use git worktrees on your Mac. Cloud workspaces run in isolated Vercel sandbox microVMs in us-east-1 with 8 vCPUs, 16 GB of RAM and 32 GB of ephemeral storage, and they support GitHub repositories only. Conductor stores cloud session inputs and outputs on its servers, while local session data stays on your device.',
         },
         {
           type: 'list',
@@ -63,7 +63,7 @@ Short version: choose Conductor for cloud sandboxes, multiplayer collaboration a
         },
         {
           type: 'paragraph',
-          text: 'Pricing is now public: Free at $0 for local Mac workspaces, Pro at $50/month with cloud, multiplayer for up to five Pro users and the API, Teams at $60/user/month, and Enterprise at a custom price. Cloud compute has no additional usage fee yet, but Conductor says usage-based cloud pricing is planned.',
+          text: 'Pricing is public: Free at $0 for local Mac workspaces, Pro at $50/month with cloud workspace hours, live collaboration for up to five Pro users, the API and the mobile app, Teams at $60/user/month (invite-only for now, per the Cloud FAQ), and Enterprise at a custom price. Cloud compute has no additional usage fee yet, but Conductor says usage-based cloud pricing is planned.',
         },
       ],
     },
@@ -110,7 +110,7 @@ Short version: choose Conductor for cloud sandboxes, multiplayer collaboration a
           rows: [
             [
               '<strong>Platforms</strong>',
-              'macOS app for local work; cloud workspaces; iOS app listed as coming soon',
+              'macOS app for local work; cloud workspaces; iOS app (since October 2026). No Windows or Linux app',
               'macOS, Windows and Linux',
             ],
             [
@@ -130,7 +130,7 @@ Short version: choose Conductor for cloud sandboxes, multiplayer collaboration a
             ],
             [
               '<strong>Notifications</strong>',
-              'Workspace attention states; mobile access is listed as coming soon',
+              'Chat notifications on the Mac; the iOS app follows cloud workspaces and can remote-control the Mac',
               'Desktop notifications when an agent finishes or needs input',
             ],
             [
@@ -145,12 +145,12 @@ Short version: choose Conductor for cloud sandboxes, multiplayer collaboration a
             ],
             [
               '<strong>Open source</strong>',
-              'No public repository as of August 25, 2026. Built by Melty Labs',
+              'No public repository as of October 31, 2026. Built by Melty Labs',
               'No. Closed source, no public app repository',
             ],
             [
               '<strong>Price</strong>',
-              'Free $0; Pro $50/month; Teams $60/user/month; Enterprise custom. Cloud usage pricing is planned',
+              'Free $0; Pro $50/month; Teams $60/user/month (invite-only); Enterprise custom. Cloud usage pricing is planned',
               'Free during beta with Pro included, and you bring your own CLI subscriptions',
             ],
             [
@@ -159,7 +159,7 @@ Short version: choose Conductor for cloud sandboxes, multiplayer collaboration a
               'Closed source, no public repo',
             ],
           ],
-          caption: 'All Conductor data checked on August 25, 2026 against conductor.build, its pricing page and documentation.',
+          caption: 'All Conductor data checked on October 31, 2026 against conductor.build, its pricing page, documentation and changelog.',
         },
       ],
     },
@@ -174,17 +174,18 @@ Short version: choose Conductor for cloud sandboxes, multiplayer collaboration a
         {
           type: 'list',
           items: [
-            '<strong>You are Mac-only and want a Mac-native app.</strong> Conductor targets one platform and nothing else, which usually shows in how an app feels day to day.',
+            '<strong>You are Mac-only and want a Mac-native app.</strong> Conductor\'s desktop app targets the Mac and nothing else, which usually shows in how an app feels day to day.',
             '<strong>Your bottleneck is review, not launching.</strong> Their product is organized around seeing what each agent did and merging it, the part most people underestimate.',
             '<strong>You want managed cloud agents.</strong> Pro and higher plans can keep agents running in isolated cloud sandboxes after the Mac app closes.',
             '<strong>You like the isolated workspace as a first-class concept.</strong> A branch, a worktree, a run environment and a shared context folder per agent is a clean mental model.',
             '<strong>You want cloud collaboration.</strong> Multiplayer workspace sharing and the beta API give teams remote coordination that CodeAgentSwarm does not currently offer.',
+            '<strong>You want a released iPhone app.</strong> Conductor for iOS is on the App Store and works with cloud workspaces. CodeAgentSwarm Mobile Connect is still in alpha.',
           ],
         },
         {
           type: 'callout',
           variant: 'tip',
-          content: 'On maturity: Conductor is built by a Y Combinator company and they say they built Conductor using Conductor. CodeAgentSwarm is beta software from a much smaller operation. That is fair to weigh, and we would rather you weigh it with real information.',
+          content: 'On maturity: Conductor is built by a Y Combinator (Summer 2024) company that says it has raised $24M and is trusted by more than 100,000 builders. CodeAgentSwarm is beta software from a much smaller operation. That is fair to weigh, and we would rather you weigh it with real information.',
         },
       ],
     },
@@ -203,7 +204,7 @@ Short version: choose Conductor for cloud sandboxes, multiplayer collaboration a
             '<strong>You want multiple agent CLIs.</strong> Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi and Devin CLI, mixed freely across terminals. Antigravity, Kimi and Grok are not among the agents Conductor documents.',
             '<strong>You want one searchable history across vendors,</strong> with any conversation resumable back into a live terminal.',
             '<strong>You want the agents to maintain the task board.</strong> The kanban is updated by the agents over MCP while they work, not by you afterwards.',
-            '<strong>You want to be told, not to check.</strong> Desktop notifications fire when an agent finishes or needs input.',
+            '<strong>You want to be told, not to check, on any OS.</strong> Desktop notifications fire when an agent finishes or needs input, on Windows and Linux too.',
             '<strong>You are managing provider limits.</strong> The quota indicator shows where you stand before an agent stalls mid-task.',
           ],
         },
@@ -215,13 +216,13 @@ Short version: choose Conductor for cloud sandboxes, multiplayer collaboration a
         },
         {
           type: 'paragraph',
-          text: 'If you found Conductor, liked the idea and then discovered its local app is macOS only, this is the section you came for. As of August 25, 2026 there is no Windows desktop build. That leaves a few honest options.',
+          text: 'If you found Conductor, liked the idea and then discovered its local app is macOS only, this is the section you came for. As of October 31, 2026 there is no Windows desktop build, and Conductor\'s install docs say Windows and Linux are not available yet. That leaves a few honest options.',
         },
         {
           type: 'list',
           items: [
             '<strong>CodeAgentSwarm</strong> runs on macOS, Windows and Linux, with parallel terminals, worktrees per session, live diffs, desktop notifications and a shared task board. It is ours, it is closed source and it is beta, so weigh that.',
-            '<strong>Paseo</strong> ships desktop builds for Windows and Linux as well as macOS, is open source under AGPLv3, and adds mobile and web clients. Detail in <a href="/en/guides/paseo-vs-codeagentswarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Paseo vs CodeAgentSwarm</a>.',
+            '<strong>Paseo</strong> ships desktop builds for Windows and Linux as well as macOS, is open source under the Apache 2.0 license, and adds iOS, Android and web clients. Detail in <a href="/en/guides/paseo-vs-codeagentswarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Paseo vs CodeAgentSwarm</a>.',
             '<strong>T3 Code</strong> also runs beyond macOS. We compare it in <a href="/en/guides/t3-code-vs-codeagentswarm" class="text-neon-cyan hover:text-neon-purple transition-colors">T3 Code vs CodeAgentSwarm</a>.',
           ],
         },
@@ -249,11 +250,11 @@ Short version: choose Conductor for cloud sandboxes, multiplayer collaboration a
   faq: [
     {
       question: 'Does Conductor run on Windows?',
-      answer: 'No. Conductor offers a macOS app and cloud workspaces, but no Windows desktop build as of August 25, 2026. CodeAgentSwarm runs locally on macOS, Windows and Linux.',
+      answer: 'No. Conductor offers a macOS app and cloud workspaces, but no Windows desktop build as of October 31, 2026. CodeAgentSwarm runs locally on macOS, Windows and Linux.',
     },
     {
       question: 'Is Conductor open source?',
-      answer: 'There is no public repository for Conductor as of August 25, 2026. It is proprietary software built by Melty Labs, so there is no commit history you can inspect. CodeAgentSwarm is also closed source with no public application repository. If source access is required, look at Paseo, which publishes its code under AGPLv3.',
+      answer: 'There is no public repository for Conductor as of October 31, 2026. It is proprietary software built by Melty Labs, so there is no commit history you can inspect. CodeAgentSwarm is also closed source with no public application repository. If source access is required, look at Paseo, which publishes its code under the Apache 2.0 license.',
     },
     {
       question: 'What agents does each one support?',
@@ -261,7 +262,7 @@ Short version: choose Conductor for cloud sandboxes, multiplayer collaboration a
     },
     {
       question: 'Is there a free way to try both?',
-      answer: 'Yes. CodeAgentSwarm is free during its beta with Pro included. Conductor has a $0 Free plan for local Mac workspaces; Pro costs $50/month, Teams costs $60/user/month and Enterprise is custom. Conductor says cloud compute has no additional usage fee yet, but usage pricing is planned. Both products use the agent subscriptions you bring.',
+      answer: 'Yes. CodeAgentSwarm is free during its beta with Pro included. Conductor has a $0 Free plan for local Mac workspaces; Pro costs $50/month, Teams costs $60/user/month (invite-only for now) and Enterprise is custom. Conductor says cloud compute has no additional usage fee yet, but usage pricing is planned. Both products use the agent subscriptions you bring.',
     },
   ],
 }

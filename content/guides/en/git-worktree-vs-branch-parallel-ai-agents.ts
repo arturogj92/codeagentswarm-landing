@@ -16,7 +16,7 @@ For the ground-up explanation of what a worktree is and why isolation matters, r
     ctaAgent: 'multi',
     highlightedWords: ['Git Worktree vs Branch', 'Parallel AI Agents'],
     publishedAt: '2026-07-05',
-    updatedAt: '2026-10-05',
+    updatedAt: '2026-10-31',
     alternateSlug: 'git-worktree-vs-rama-agentes-ia-en-paralelo',
   },
   sections: [
@@ -217,7 +217,7 @@ For the ground-up explanation of what a worktree is and why isolation matters, r
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm is a desktop app for running a swarm of AI CLI agents (Claude Code, Codex CLI, opencode, Antigravity CLI) in one place, and it builds the worktree option straight into each terminal so you never run the commands yourself.',
+          text: 'CodeAgentSwarm is a desktop app for running a swarm of AI CLI agents (Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi and Devin CLI) in one place, and it builds the worktree option straight into each terminal so you never run the commands yourself.',
         },
         {
           type: 'paragraph',

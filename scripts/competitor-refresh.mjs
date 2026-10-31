@@ -28,8 +28,8 @@ the recorded value, the current value and any flags:
 
 --check exits non-zero when recorded stars or last-push dates have changed.
 
-The API is called unauthenticated, so a run can hit the rate limit. Wait an hour and
-try again if that happens.`)
+The API is called unauthenticated unless GITHUB_TOKEN is set, so a run can hit the
+rate limit. Set GITHUB_TOKEN (for example GITHUB_TOKEN=$(gh auth token)) or wait an hour.`)
 }
 
 function dayOf(value) {
@@ -48,12 +48,12 @@ function pad(value, width) {
 }
 
 async function fetchRepo(repo) {
-  const res = await fetch(`https://api.github.com/repos/${repo}`, {
-    headers: {
-      'User-Agent': 'codeagentswarm-competitor-refresh',
-      Accept: 'application/vnd.github+json',
-    },
-  })
+  const headers = {
+    'User-Agent': 'codeagentswarm-competitor-refresh',
+    Accept: 'application/vnd.github+json',
+  }
+  if (process.env.GITHUB_TOKEN) headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`
+  const res = await fetch(`https://api.github.com/repos/${repo}`, { headers })
   if (!res.ok) {
     throw new Error(`HTTP ${res.status} ${res.statusText}`)
   }
