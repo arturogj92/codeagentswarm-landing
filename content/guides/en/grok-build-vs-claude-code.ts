@@ -16,7 +16,7 @@ This comparison stays practical: install and auth, strengths, gaps, and how Code
     ctaAgent: 'multi',
     highlightedWords: ['Grok Build', 'Claude Code'],
     publishedAt: '2026-07-28',
-    updatedAt: '2026-08-23',
+    updatedAt: '2026-10-31',
     alternateSlug: 'grok-build-vs-claude-code',
   },
   sections: [
@@ -24,7 +24,7 @@ This comparison stays practical: install and auth, strengths, gaps, and how Code
       id: 'short-answer',
       title: 'Short answer',
       content: [
-        { type: 'paragraph', text: 'Claude Code is the mature Anthropic-native coding CLI with a huge ecosystem of skills, hooks and community knowledge. Grok Build is xAI\'s coding TUI with strong headless and agent modes, plan mode, native subagents and Grok 4.6. Neither replaces the other.' },
+        { type: 'paragraph', text: 'Claude Code is the mature Anthropic-native coding CLI with a huge ecosystem of skills, hooks and community knowledge. Grok Build is xAI\'s coding TUI with strong headless and agent modes, plan mode, native subagents and <a href="https://docs.x.ai/developers/grok-4-7" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Grok 4.7</a> as its default model. Neither replaces the other.' },
         { type: 'paragraph', text: 'If your team already lives in Claude subscriptions, Claude Code stays the default. If you want to test Grok models in the terminal, Grok Build now has a free route plus paid plans and API access. If you use both, CodeAgentSwarm avoids constant context switching.' },
       ],
     },
@@ -32,7 +32,7 @@ This comparison stays practical: install and auth, strengths, gaps, and how Code
       id: 'table',
       title: 'Side-by-side',
       content: [
-        { type: 'list', items: ['<strong>Vendor:</strong> Claude Code → Anthropic. Grok Build → xAI.', '<strong>Binary:</strong> <code>claude</code> vs <code>grok</code>.', '<strong>Data dir:</strong> <code>~/.claude/</code> vs <code>~/.grok/</code> (or <code>GROK_HOME</code>).', '<strong>Auth:</strong> Anthropic account / API vs browser grok.com login or <code>XAI_API_KEY</code>.', '<strong>Permissions:</strong> Claude permission modes + hooks vs <code>--permission-mode</code>, <code>--always-approve</code>, plan mode.', '<strong>Parallelism:</strong> Claude agent teams / sub-agents inside one session vs Grok native subagents + multi-terminal swarms.', '<strong>Headless:</strong> both support non-interactive runs; Grok exposes <code>grok -p</code> and <code>grok agent</code> modes explicitly.', '<strong>Skills:</strong> both can use agentskills-style packages; paths differ (<code>~/.claude/skills</code> vs <code>~/.grok/skills</code>).'] },
+        { type: 'list', items: ['<strong>Vendor:</strong> Claude Code → Anthropic. Grok Build → xAI.', '<strong>Binary:</strong> <code>claude</code> vs <code>grok</code>.', '<strong>Data dir:</strong> <code>~/.claude/</code> vs <code>~/.grok/</code> (or <code>GROK_HOME</code>).', '<strong>Auth:</strong> Anthropic account / API vs browser grok.com login or <code>XAI_API_KEY</code>.', '<strong>Permissions:</strong> Claude permission modes + hooks vs <code>--permission-mode</code>, <code>--always-approve</code>, plan mode.', '<strong>Parallelism:</strong> Claude agent teams / sub-agents inside one session vs Grok native subagents + multi-terminal swarms.', '<strong>Headless:</strong> both support non-interactive runs; Grok exposes <code>grok -p</code> and <code>grok agent</code> modes explicitly.', '<strong>Skills:</strong> both use agentskills-style packages in <code>~/.claude/skills</code> and <code>~/.grok/skills</code>, and Grok also reads Claude Code skills, MCP config, hooks and <code>CLAUDE.md</code> without extra setup.'] },
         { type: 'callout', variant: 'info', content: 'Product details drift weekly. Re-check <code>claude --help</code> and <code>grok --help</code> before you write policy for a whole org.' },
       ],
     },
@@ -43,7 +43,7 @@ This comparison stays practical: install and auth, strengths, gaps, and how Code
         { type: 'heading', level: 3, text: 'Reach for Claude Code when', id: 'claude-when' },
         { type: 'paragraph', text: 'You need the densest ecosystem, Anthropic-model behavior you already trust, or a team that already standardized on Claude Code permissions, MCP and skills.' },
         { type: 'heading', level: 3, text: 'Reach for Grok Build when', id: 'grok-when' },
-        { type: 'paragraph', text: 'You want Grok 4.6 coding, xAI\'s plan mode and subagent tooling, or headless and agent integration paths that match your automation stack. It also fits a careful migration from Claude; see <a href="/en/guides/grok-build-from-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">Grok Build from Claude Code</a>.' },
+        { type: 'paragraph', text: 'You want Grok 4.7 coding, xAI\'s plan mode and subagent tooling, or headless and agent integration paths that match your automation stack. It also fits a careful migration from Claude; see <a href="/en/guides/grok-build-from-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">Grok Build from Claude Code</a>.' },
         { type: 'heading', level: 3, text: 'Run both when', id: 'both-when' },
         { type: 'paragraph', text: 'Different tasks benefit from different models. CodeAgentSwarm lets one terminal run Claude Code while another runs Grok Build on the same repo, with notifications so you are not babysitting both panes.' },
       ],
@@ -59,7 +59,7 @@ This comparison stays practical: install and auth, strengths, gaps, and how Code
   faq: [
     { question: 'Is Grok Build better than Claude Code?', answer: 'Neither is universally better. Claude Code wins on ecosystem maturity; Grok Build wins when you want xAI models and its plan/subagent tooling. Many people run both.' },
     { question: 'Can I run them at the same time?', answer: 'Yes. They are separate processes. CodeAgentSwarm is built for that: one agent per terminal, supervised together.' },
-    { question: 'Do skills transfer?', answer: 'Often with adaptation. Skills follow open layouts, but install paths differ. See the from-Claude-Code guide for migration notes.' },
+    { question: 'Do skills transfer?', answer: 'Mostly yes. Grok Build reads Claude Code skills, plugins, MCP config, hooks and CLAUDE.md automatically, so many setups work on day one. Check what it loaded with grok inspect, and see the from-Claude-Code guide for migration notes.' },
   ],
 }
 

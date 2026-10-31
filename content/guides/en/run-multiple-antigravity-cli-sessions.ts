@@ -16,7 +16,7 @@ By the end you will know which approach fits the way you work, whether you want 
     ctaAgent: 'antigravity',
     highlightedWords: ['multiple Antigravity CLI sessions', 'parallel'],
     publishedAt: '2026-06-29',
-    updatedAt: '2026-10-05',
+    updatedAt: '2026-10-31',
     alternateSlug: 'ejecutar-multiples-sesiones-antigravity-cli',
   },
   sections: [
@@ -32,11 +32,11 @@ By the end you will know which approach fits the way you work, whether you want 
         },
         {
           type: 'paragraph',
-          text: 'To run multiple Antigravity CLI sessions in parallel, open a terminal, run <code>agy</code>, then open another terminal and run <code>agy</code> again. Each <a href="https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Antigravity CLI</a> session is an independent process with its own conversation, its own context, and its own working state. Antigravity is Google\'s official successor to Gemini CLI, which was retired in June 2026, so where you used to type gemini you now type agy. If you are coming from the old tool, the <a href="/en/guides/antigravity-cli-vs-gemini-cli" class="text-neon-cyan hover:text-neon-purple transition-colors">Antigravity CLI vs Gemini CLI comparison</a> covers what changed. Nothing is shared between the sessions.',
+          text: 'To run multiple Antigravity CLI sessions in parallel, open a terminal, run <code>agy</code>, then open another terminal and run <code>agy</code> again. Each <a href="https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Antigravity CLI</a> session is an independent process with its own conversation, its own context, and its own working state. Antigravity is Google\'s official successor to Gemini CLI, which stopped serving personal Google accounts in June 2026, so where you used to type gemini you now type agy. If you are coming from the old tool, the <a href="/en/guides/antigravity-cli-vs-gemini-cli" class="text-neon-cyan hover:text-neon-purple transition-colors">Antigravity CLI vs Gemini CLI comparison</a> covers what changed. Nothing is shared between the sessions.',
         },
         {
           type: 'paragraph',
-          text: 'That independence is what makes the parallelism safe. One session can refactor your API layer while another writes tests and a third updates docs. They will not collide unless two of them edit the same file. Antigravity signs you in with a Google account and comes with a generous free tier, and each terminal can reach for any of its eight built-in models (Gemini 3.x, Claude Sonnet 4.6, Claude Opus 4.6, GPT-OSS 120B and more), picked automatically for the task at hand. Spinning up several at once is practical and does not blow a metered budget.',
+          text: 'That independence is what makes the parallelism safe. One session can refactor your API layer while another writes tests and a third updates docs. They will not collide unless two of them edit the same file. Antigravity signs you in with a Google account and comes with a generous free tier, and each terminal can run a different model from the <a href="https://antigravity.google/docs/models" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">ones your plan includes</a>, picked with <code>/model</code> or <code>--model</code>. Spinning up several at once is practical and does not blow a metered budget.',
         },
         {
           type: 'callout',
@@ -127,7 +127,7 @@ By the end you will know which approach fits the way you work, whether you want 
         },
         {
           type: 'paragraph',
-          text: 'tmux also lets you detach and reattach, so your Antigravity CLI sessions keep running even after you close the terminal window. And if a session does end, agy can pick the thread back up: <code>agy -c</code> continues your last conversation, and you can resume a specific one by passing its id to <code>agy --conversation</code>. That helps when one session is grinding through a long migration in auto-approve mode and you want to step away.',
+          text: 'tmux also lets you detach and reattach, so your Antigravity CLI sessions keep running even after you close the terminal window. And if a session does end, agy can pick the thread back up: <code>agy -c</code> continues the last conversation in that directory, and you can resume a specific one by passing its id to <code>agy --conversation</code>. That helps when one session is grinding through a long migration in auto-approve mode and you want to step away.',
         },
         {
           type: 'heading',
@@ -382,7 +382,7 @@ By the end you will know which approach fits the way you work, whether you want 
     },
     {
       question: 'Is the Antigravity CLI free tier enough to run several sessions?',
-      answer: 'For many workflows, yes. Antigravity comes with a generous free tier behind a Google sign-in, and each session can use any of its eight built-in models (Gemini 3.x, Claude Sonnet 4.6, Claude Opus 4.6, GPT-OSS 120B and more), chosen automatically. That makes running several sessions in parallel practical without a metered bill per call. Heavy or sustained use can hit limits, so for large or long-running setups keep an eye on the limits attached to your account.',
+      answer: 'For many workflows, yes. Antigravity comes with a generous free tier behind a Google sign-in, and each session can use any model your plan includes, chosen with /model or --model. That makes running several sessions in parallel practical without a metered bill per call. Heavy or sustained use can hit limits, so for large or long-running setups keep an eye on the limits attached to your account.',
     },
     {
       question: 'What happens if two Antigravity sessions edit the same file?',

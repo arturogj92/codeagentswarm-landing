@@ -15,7 +15,7 @@ const guide: Guide = {
       "Muse"
     ],
     "publishedAt": "2026-09-22",
-    "updatedAt": "2026-09-24",
+    "updatedAt": "2026-10-31",
     "alternateSlug": "muse-code-models-pricing-privacy"
   },
   "sections": [
@@ -31,12 +31,12 @@ const guide: Guide = {
         },
         {
           "type": "paragraph",
-          "text": "Para una sesión Standard, indica el modelo al arrancar. El <a href=\"https://dev.meta.ai/docs/models\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">catálogo oficial</a> incluye Muse Spark 1.3 y su variante Contributor. El sufijo tiene consecuencias: cambiar de modelo puede cambiar las condiciones aplicables a tus peticiones y respuestas."
+          "text": "Para una sesión Standard, indica el modelo al arrancar y desactiva el modo Contributor para esa ejecución. El <a href=\"https://dev.meta.ai/docs/models\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">catálogo oficial</a> recomienda Muse Spark 1.3 para trabajo nuevo e incluye también Muse Wonder (<code>muse-wonder-1.0</code>), un modelo más capaz que sigue en preview. La opción importa porque las suscripciones de Muse Code activan Contributor por defecto, y entonces las peticiones van al modelo <code>-contributor</code> aunque indiques el ID base."
         },
         {
           "type": "code",
           "language": "bash",
-          "code": "muse --model muse-spark-1.3 --reasoning-effort medium"
+          "code": "muse --model muse-spark-1.3 --contributor-mode off --reasoning-effort medium"
         },
         {
           "type": "table",
@@ -74,7 +74,7 @@ const guide: Guide = {
       "content": [
         {
           "type": "paragraph",
-          "text": "Las <a href=\"https://dev.meta.ai/docs/pricing-rate-limits\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">tarifas publicadas de la API</a> consultadas el 22 de septiembre de 2026 se expresan en dólares estadounidenses por millón de tokens. Son precios de consumo de API, no cuotas mensuales de suscripción."
+          "text": "Las <a href=\"https://dev.meta.ai/docs/pricing-rate-limits\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">tarifas publicadas de la API</a> consultadas el 31 de octubre de 2026 corresponden a Muse Spark y se expresan en dólares estadounidenses por millón de tokens. Son precios de consumo de API, no cuotas mensuales de suscripción. Muse Wonder cuesta más y no tiene precio Contributor en pago por uso."
         },
         {
           "type": "table",
@@ -117,7 +117,7 @@ const guide: Guide = {
       "content": [
         {
           "type": "paragraph",
-          "text": "Meta documenta los planes Everyday Usage, High Usage y Power Usage. La disponibilidad y las ventajas pueden variar por región: comprueba el precio y la capacidad mostrados al contratar desde tu cuenta. La <a href=\"https://dev.meta.ai/docs/muse-code/subscriptions\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">documentación de suscripciones</a> no establece un precio mensual único para todos los usuarios."
+          "text": "Meta documenta los planes Everyday Usage, High Usage, Power Usage y Maximum Usage. Las suscripciones empiezan en modo Contributor; puedes desactivarlo en <code>/settings</code> o para una sola ejecución con <code>--contributor-mode off</code>. La disponibilidad y las ventajas pueden variar por región: comprueba el precio y la capacidad mostrados al contratar desde tu cuenta. La <a href=\"https://dev.meta.ai/docs/muse-code/subscriptions\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">documentación de suscripciones</a> no establece un precio mensual único para todos los usuarios."
         },
         {
           "type": "paragraph",
@@ -197,7 +197,7 @@ const guide: Guide = {
     },
     {
       "question": "¿Conviene cambiar a Contributor cuando alcanzo un límite?",
-      "answer": "Comprueba primero las restricciones de contenido y la disponibilidad regional. Aceptar el entrenamiento no permite enviar código confidencial ni datos personales. Diagnostica el límite antes de decidir si la tarea puede usar Contributor."
+      "answer": "Con suscripción, comprueba primero si ya estás en modo Contributor, porque viene activado por defecto. Después revisa las restricciones de contenido y la disponibilidad regional. Aceptar el entrenamiento no permite enviar código confidencial ni datos personales. Diagnostica el límite antes de decidir si la tarea puede usar Contributor."
     }
   ]
 }

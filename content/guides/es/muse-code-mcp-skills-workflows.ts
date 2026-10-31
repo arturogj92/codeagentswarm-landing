@@ -15,7 +15,7 @@ const guide: Guide = {
       "Muse"
     ],
     "publishedAt": "2026-09-22",
-    "updatedAt": "2026-09-24",
+    "updatedAt": "2026-10-31",
     "alternateSlug": "muse-code-mcp-skills-workflows"
   },
   "sections": [
@@ -146,7 +146,7 @@ const guide: Guide = {
         {
           "type": "callout",
           "variant": "info",
-          "content": "Los workflows dependen de la versión instalada y de su despliegue. La ayuda de Muse 1.3.0 consultada para esta guía no mostraba el comando workflows. Comprueba muse --help y la paleta interactiva. No presupongas que todos los comandos documentados funcionan en cualquier instalación."
+          "content": "Los workflows dependen de la versión instalada y de su despliegue. La ayuda de Muse 1.4.14 que consultamos en macOS con Apple silicon en octubre de 2026 no mostraba el comando workflows, y la guía de workflows de Meta indica que el paquete público para Apple silicon no incluye el motor de workflows. Comprueba muse --help y la paleta interactiva. No presupongas que todos los comandos documentados funcionan en cualquier instalación."
         },
         {
           "type": "paragraph",
@@ -189,7 +189,7 @@ const guide: Guide = {
     },
     {
       "question": "¿Puedo usar workflows en todas las plataformas?",
-      "answer": "No hay una disponibilidad universal confirmada. Comprueba tu versión y su despliegue: la ayuda de Muse 1.3.0 consultada no incluía la familia de comandos workflows."
+      "answer": "No hay una disponibilidad universal confirmada. Comprueba tu versión y su despliegue: la ayuda de Muse 1.4.14 consultada en macOS con Apple silicon no incluía la familia de comandos workflows."
     },
     {
       "question": "¿Las sesiones separadas evitan ediciones simultáneas de archivos?",

@@ -7,16 +7,16 @@ export const guide: Guide = {
     title: 'Cómo usar Antigravity CLI (agy): instalación, comandos y varias sesiones',
     metaTitle: 'Cómo usar Antigravity CLI (agy): instalación y comandos (2026)',
     metaDescription: 'agy install en una línea y los comandos esenciales de agy: la guía completa de Antigravity CLI, el sucesor de Gemini CLI, y las sesiones en paralelo.',
-    intro: `Si usabas Gemini CLI y fuiste a buscarlo hace poco, ya no estaba. Google retiró Gemini CLI en junio de 2026 y lo reemplazó por Antigravity CLI, el comando <code>agy</code>. Esta guía es el recorrido práctico: qué es Antigravity CLI de verdad, cómo instalarlo en macOS, Linux y Windows, los comandos que usarás cada día y cómo recupera tu configuración antigua de Gemini en el primer arranque.
+    intro: `Si usabas Gemini CLI y fuiste a buscarlo hace poco, ya no estaba. El 18 de junio de 2026 Google dejó de dar servicio a Gemini CLI en las cuentas gratuitas y de Google AI Pro y Ultra, y pasó a esos usuarios a Antigravity CLI, el comando <code>agy</code>. Esta guía es el recorrido práctico: qué es Antigravity CLI de verdad, cómo instalarlo en macOS, Linux y Windows, los comandos que usarás cada día y cómo recupera tu configuración antigua de Gemini en el primer arranque.
 
-Antigravity CLI es un único binario compilado, sin runtime de Node ni de Python que gestionar, y trae ocho modelos en el mismo terminal en lugar de uno. Además es multiagente por defecto, así que una sola sesión de agy reparte y coordina sus propios sub-agentes dentro de una tarea en vez de funcionar como un chat lineal.
+Antigravity CLI es un único binario compilado, sin runtime de Node ni de Python que gestionar, y ofrece modelos de Gemini, Claude y de pesos abiertos en el mismo terminal en lugar de solo Gemini. Además es multiagente por defecto, así que una sola sesión de agy reparte y coordina sus propios sub-agentes dentro de una tarea en vez de funcionar como un chat lineal.
 
 Al terminar te manejarás con Antigravity CLI por tu cuenta, y sabrás cómo ejecutar varias sesiones de agy independientes en paralelo cuando un solo terminal se te quede corto.`,
     ctaText: 'Ejecuta varias sesiones de Antigravity CLI en un mismo espacio de trabajo de CodeAgentSwarm, cada una en su propio proyecto, con avisos de escritorio en cuanto una sesión termina e historial buscable entre todas.',
     ctaAgent: 'antigravity',
     highlightedWords: ['Antigravity CLI', 'agy'],
     publishedAt: '2026-06-29',
-    updatedAt: '2026-10-05',
+    updatedAt: '2026-10-31',
     alternateSlug: 'how-to-use-antigravity-cli',
   },
   sections: [
@@ -26,7 +26,7 @@ Al terminar te manejarás con Antigravity CLI por tu cuenta, y sabrás cómo eje
       content: [
         {
           type: 'paragraph',
-          text: 'Antigravity CLI es el agente de programación oficial de línea de comandos de Google, que se invoca con el comando <code>agy</code>. Es el sucesor directo de Gemini CLI. Google anunció la transición en el <a href="https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Google Developers Blog</a>, retiró Gemini CLI el 18 de junio de 2026 y a partir de ahí mandó a todo el mundo a Antigravity. Si tienes por ahí una instalación antigua de <code>gemini</code>, está al final de su vida. Ahora lo que usas es <code>agy</code>.',
+          text: 'Antigravity CLI es el agente de programación oficial de línea de comandos de Google, que se invoca con el comando <code>agy</code>. Es el sucesor directo de Gemini CLI. Google anunció la transición en el <a href="https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Google Developers Blog</a>, y el 18 de junio de 2026 Gemini CLI dejó de dar servicio a las cuentas gratuitas y de Google AI Pro y Ultra. Gemini CLI sigue mantenido para clientes empresariales de Gemini Code Assist en Google Cloud, pero para un desarrollador individual la herramienta ahora es <code>agy</code>.',
         },
         {
           type: 'paragraph',
@@ -45,12 +45,12 @@ Al terminar te manejarás con Antigravity CLI por tu cuenta, y sabrás cómo eje
         {
           type: 'heading',
           level: 3,
-          text: 'Ocho modelos en un terminal',
+          text: 'Varias familias de modelos en un terminal',
           id: 'eight-models',
         },
         {
           type: 'paragraph',
-          text: 'Donde Gemini CLI te daba Gemini, Antigravity CLI pone ocho modelos detrás del mismo comando: la familia Gemini 3.x, Claude Sonnet 4.6, Claude Opus 4.6 y GPT-OSS 120B. Arranca por defecto con Gemini 3.5 Flash y selecciona solo el modelo adecuado para el trabajo, así que no hay ningún flag <code>--model</code> que memorizar. Tener más modelos en un solo CLI es el cambio estrella, y significa que casi nunca tienes que salir de agy para ir a por otro modelo.',
+          text: 'Donde Gemini CLI te daba Gemini, Antigravity CLI pone modelos de Gemini, Claude y de pesos abiertos detrás del mismo comando. Cuáles tienes depende de tu plan. A octubre de 2026, la <a href="https://antigravity.google/docs/models" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">lista oficial de modelos</a> ofrece Gemini 3.8 Flash en todos los planes, suma Gemini 4 Argon, Claude Sonnet 5.5 y Claude Opus 5.5 en los planes de pago de Google AI, y mantiene Claude Sonnet 4.6, Claude Opus 4.6 y GPT-OSS 120B en el plan gratuito hasta que Google los retire el 2 de noviembre de 2026. Cambias de modelo con <code>/model</code> o <code>--model</code>, y <code>agy models</code> te enseña los que puede usar tu cuenta. Tener más modelos en un solo CLI es el cambio estrella, y significa que casi nunca tienes que salir de agy para ir a por otro modelo.',
         },
         {
           type: 'heading',
@@ -128,7 +128,7 @@ Al terminar te manejarás con Antigravity CLI por tu cuenta, y sabrás cómo eje
         {
           type: 'callout',
           variant: 'tip',
-          content: 'Nada de Node, ni Python, ni gestor de paquetes. Si tienes scripts o CI que todavía instalan Gemini CLI con npm, esa vía está muerta. Cámbiala por el script de instalación de arriba y llama a <code>agy</code> en lugar de <code>gemini</code>.',
+          content: 'Nada de Node, ni Python, ni gestor de paquetes. Si tienes scripts o CI que todavía instalan Gemini CLI con npm e inician sesión con una cuenta personal de Google, esa vía ya no funciona. Cámbiala por el script de instalación de arriba y llama a <code>agy</code> en lugar de <code>gemini</code>.',
         },
       ],
     },
@@ -142,7 +142,7 @@ Al terminar te manejarás con Antigravity CLI por tu cuenta, y sabrás cómo eje
         },
         {
           type: 'paragraph',
-          text: 'Si <code>~/.gemini</code> existe, agy te ofrece importar tu configuración antigua automáticamente. Eso incluye tus servidores MCP, tus comandos permitidos sin confirmación, tus atajos de teclado y tu tema. Acepta el aviso y tu setup de siempre pasa sin que tengas que volver a meter nada.',
+          text: 'Si <code>~/.gemini</code> existe, agy te enseña una lista de las extensiones y ajustes globales de Gemini CLI que puede convertir. Puedes lanzar la misma conversión más tarde con <code>agy plugin import gemini</code>, que pasa tus servidores MCP a <code>~/.gemini/config/mcp_config.json</code>. Los temas de terminal personalizados pueden no pasar, y las skills de proyecto en <code>.gemini/skills/</code> hay que moverlas a mano a <code>.agents/skills/</code>, como explica la <a href="https://antigravity.google/docs/cli/gcli-migration" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">guía oficial de migración</a>.',
         },
         {
           type: 'heading',
@@ -190,7 +190,7 @@ Al terminar te manejarás con Antigravity CLI por tu cuenta, y sabrás cómo eje
         },
         {
           type: 'paragraph',
-          text: '<code>agy</code> a secas inicia una sesión nueva en el directorio en el que estés. <code>agy -c</code> retoma tu conversación más reciente justo donde la dejaste, que es la que más vas a usar. Cuando tienes varias conversaciones y quieres una concreta más antigua, <code>agy --conversation &lt;id&gt;</code> la retoma por id.',
+          text: '<code>agy</code> a secas inicia una sesión nueva en el directorio en el que estés. <code>agy -c</code> retoma la conversación más reciente de ese directorio justo donde la dejaste, que es la que más vas a usar. Cuando tienes varias conversaciones y quieres una concreta más antigua, <code>agy --conversation &lt;id&gt;</code> la retoma por id.',
         },
         {
           type: 'heading',
@@ -205,12 +205,12 @@ Al terminar te manejarás con Antigravity CLI por tu cuenta, y sabrás cómo eje
         {
           type: 'heading',
           level: 3,
-          text: 'La selección de modelo es automática',
+          text: 'Cómo elegir modelo',
           id: 'auto-model',
         },
         {
           type: 'paragraph',
-          text: 'No pasas ningún flag de modelo. agy arranca por defecto con Gemini 3.5 Flash y selecciona solo entre sus ocho modelos según la tarea. Eso mantiene el comando corto y hace que no tengas que decidir entre Gemini, Claude Sonnet 4.6, Claude Opus 4.6 o GPT-OSS 120B en cada ejecución.',
+          text: 'No hace falta pasar ningún flag de modelo: agy arranca con uno por defecto, y el que elijas se mantiene durante el resto de la conversación. Para cambiarlo, escribe <code>/model</code> dentro de una sesión o arranca con <code>agy --model &lt;id&gt;</code>. Ejecuta <code>agy models</code> para ver los ids que incluye tu plan, porque la lista cambia entre el plan gratuito y los planes de pago de Google AI.',
         },
         {
           type: 'heading',
@@ -220,16 +220,16 @@ Al terminar te manejarás con Antigravity CLI por tu cuenta, y sabrás cómo eje
         },
         {
           type: 'paragraph',
-          text: 'Antigravity CLI admite servidores MCP, y si importaste tu configuración de Gemini CLI ya están conectados. Viven en tu archivo de ajustes, así que añadir uno nuevo es cuestión de editar el JSON.',
+          text: 'Antigravity CLI admite servidores MCP, y si importaste tu configuración de Gemini CLI ya están conectados. Los globales viven en <code>~/.gemini/config/mcp_config.json</code> y los de cada proyecto en <code>.agents/mcp_config.json</code>. Añade uno con <code>agy mcp add</code> o editando el JSON a mano, y escribe <code>/mcp</code> dentro de una sesión para ver su estado.',
         },
         {
           type: 'code',
           language: 'json',
-          code: '// ~/.gemini/antigravity-cli/settings.json\n{\n  "mcpServers": {\n    "my-server": {\n      "command": "npx",\n      "args": ["-y", "@my/mcp-server"]\n    }\n  }\n}',
+          code: '// ~/.gemini/config/mcp_config.json\n{\n  "mcpServers": {\n    "my-server": {\n      "command": "npx",\n      "args": ["-y", "@my/mcp-server"]\n    }\n  }\n}',
         },
         {
           type: 'paragraph',
-          text: 'Una vez que un servidor está en el archivo de ajustes, agy se conecta a él en la siguiente sesión y sus herramientas pasan a estar disponibles dentro del agente. Es el mismo modelo de MCP que usaba el CLI antiguo, y por eso la importación trae tus servidores sin tocar nada.',
+          text: 'Una vez que un servidor está en ese archivo, agy se conecta a él en la siguiente sesión y sus herramientas pasan a estar disponibles dentro del agente. El formato <code>mcpServers</code> es el mismo que usaba Gemini CLI. Si mueves un servidor remoto a mano, cambia su clave <code>url</code> o <code>httpUrl</code> por <code>serverUrl</code>.',
         },
       ],
     },
@@ -281,7 +281,7 @@ Al terminar te manejarás con Antigravity CLI por tu cuenta, y sabrás cómo eje
   faq: [
     {
       question: '¿Qué es Antigravity CLI (agy)?',
-      answer: 'Antigravity CLI es el agente de programación oficial de línea de comandos de Google, que se ejecuta con el comando agy. Es el sucesor directo de Gemini CLI, que Google retiró en junio de 2026. agy viene como un único binario compilado, incluye ocho modelos en un terminal y es multiagente por defecto, lo que significa que una sola sesión coordina sus propios sub-agentes dentro de una tarea.',
+      answer: 'Antigravity CLI es el agente de programación oficial de línea de comandos de Google, que se ejecuta con el comando agy. Es el sucesor directo de Gemini CLI, que dejó de dar servicio a las cuentas gratuitas y de Google AI Pro y Ultra en junio de 2026. agy viene como un único binario compilado, ofrece modelos de Gemini, Claude y de pesos abiertos en un terminal y es multiagente por defecto, lo que significa que una sola sesión coordina sus propios sub-agentes dentro de una tarea.',
     },
     {
       question: '¿Cómo instalo Antigravity CLI?',
@@ -297,15 +297,15 @@ Al terminar te manejarás con Antigravity CLI por tu cuenta, y sabrás cómo eje
     },
     {
       question: '¿Antigravity CLI es gratis?',
-      answer: 'Sí. Inicias sesión con una cuenta de Google y tienes un plan gratuito generoso. CodeAgentSwarm no cambia eso, porque no es un proveedor de modelos. Cada sesión de agy sigue usando tu propio inicio de sesión de Google, ya ejecutes una sesión o varias en paralelo.',
+      answer: 'Sí. Inicias sesión con una cuenta de Google y tienes una cuota semanal gratuita, mientras que Google AI Pro y Ultra suman límites más altos que se renuevan cada cinco horas. CodeAgentSwarm no cambia eso, porque no es un proveedor de modelos. Cada sesión de agy sigue usando tu propio inicio de sesión de Google, ya ejecutes una sesión o varias en paralelo.',
     },
     {
       question: '¿Antigravity CLI reemplaza a Gemini CLI?',
-      answer: 'Sí. Google retiró Gemini CLI el 18 de junio de 2026 y lo reemplazó por Antigravity CLI, según anunció en el Google Developers Blog. agy reutiliza el mismo directorio home ~/.gemini y lee las instrucciones globales de ~/.gemini/GEMINI.md, así que tu configuración y convenciones antiguas pasan sin problema. En el primer arranque incluso te ofrece importar tus servidores MCP, comandos permitidos, atajos de teclado y tema de Gemini CLI.',
+      answer: 'Para un desarrollador individual, sí. El 18 de junio de 2026 Gemini CLI dejó de dar servicio a las cuentas gratuitas y de Google AI Pro y Ultra, y Google pasó a esos usuarios a Antigravity CLI, según anunció en el Google Developers Blog. Gemini CLI sigue para clientes empresariales de Gemini Code Assist. agy reutiliza el mismo directorio home ~/.gemini y lee las instrucciones globales de ~/.gemini/GEMINI.md, así que tu configuración y convenciones antiguas pasan sin problema. En el primer arranque te ofrece convertir tus extensiones y ajustes de Gemini CLI, servidores MCP incluidos.',
     },
     {
       question: '¿Qué modelos admite Antigravity CLI?',
-      answer: 'Antigravity CLI te da ocho modelos en el mismo terminal: la familia Gemini 3.x, Claude Sonnet 4.6, Claude Opus 4.6 y GPT-OSS 120B. Arranca por defecto con Gemini 3.5 Flash y selecciona solo el modelo adecuado para la tarea, así que no hay ningún flag --model que gestionar.',
+      answer: 'Depende de tu plan. A octubre de 2026 Google ofrece Gemini 3.8 Flash en todos los planes, Gemini 4 Argon y Claude Sonnet 5.5 y Opus 5.5 en los planes de pago de Google AI, y Claude Sonnet 4.6, Claude Opus 4.6 y GPT-OSS 120B en el plan gratuito hasta el 2 de noviembre de 2026. Cambia con /model o --model, y ejecuta agy models para ver los tuyos.',
     },
     {
       question: '¿Cómo ejecuto varias sesiones de Antigravity CLI a la vez?',

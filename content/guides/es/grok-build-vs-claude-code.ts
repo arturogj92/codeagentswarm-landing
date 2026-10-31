@@ -16,7 +16,7 @@ Esta comparación es práctica: instalación y auth, fortalezas, huecos y cómo 
     ctaAgent: 'multi',
     highlightedWords: ['Grok Build', 'Claude Code'],
     publishedAt: '2026-07-28',
-    updatedAt: '2026-08-23',
+    updatedAt: '2026-10-31',
     alternateSlug: 'grok-build-vs-claude-code',
   },
   sections: [
@@ -24,7 +24,7 @@ Esta comparación es práctica: instalación y auth, fortalezas, huecos y cómo 
       id: 'respuesta-corta',
       title: 'Respuesta corta',
       content: [
-        { type: 'paragraph', text: 'Claude Code es la CLI nativa de Anthropic con un ecosistema enorme de skills, hooks y conocimiento comunitario. Grok Build es el TUI de código de xAI con modos headless y agent, plan mode, subagentes nativos y Grok 4.6. Ninguna sustituye a la otra.' },
+        { type: 'paragraph', text: 'Claude Code es la CLI nativa de Anthropic con un ecosistema enorme de skills, hooks y conocimiento comunitario. Grok Build es el TUI de código de xAI con modos headless y agent, plan mode, subagentes nativos y <a href="https://docs.x.ai/developers/grok-4-7" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Grok 4.7</a> como modelo por defecto. Ninguna sustituye a la otra.' },
         { type: 'paragraph', text: 'Si tu equipo ya vive en suscripciones Claude, Claude Code sigue siendo el punto de partida. Si quieres probar modelos Grok en terminal, Grok Build ya tiene acceso gratuito, planes de pago y API. Si usas ambos, CodeAgentSwarm evita cambiar de contexto sin parar.' },
       ],
     },
@@ -32,7 +32,8 @@ Esta comparación es práctica: instalación y auth, fortalezas, huecos y cómo 
       id: 'lado-a-lado',
       title: 'Lado a lado',
       content: [
-        { type: 'list', items: ['<strong>Vendor:</strong> Claude Code → Anthropic. Grok Build → xAI.', '<strong>Binario:</strong> <code>claude</code> vs <code>grok</code>.', '<strong>Datos:</strong> <code>~/.claude/</code> vs <code>~/.grok/</code> (o <code>GROK_HOME</code>).', '<strong>Auth:</strong> cuenta/API Anthropic vs login browser grok.com o <code>XAI_API_KEY</code>.', '<strong>Permisos:</strong> modos Claude + hooks vs <code>--permission-mode</code>, <code>--always-approve</code>, plan mode.', '<strong>Paralelismo:</strong> agent teams de Claude vs subagentes nativos de Grok + enjambres multi-terminal.', '<strong>Headless:</strong> ambos; Grok expone <code>grok -p</code> y <code>grok agent</code> de forma explícita.', '<strong>Skills:</strong> ambos con paquetes estilo agentskills; rutas distintas.'] },
+        { type: 'list', items: ['<strong>Vendor:</strong> Claude Code → Anthropic. Grok Build → xAI.', '<strong>Binario:</strong> <code>claude</code> vs <code>grok</code>.', '<strong>Datos:</strong> <code>~/.claude/</code> vs <code>~/.grok/</code> (o <code>GROK_HOME</code>).', '<strong>Auth:</strong> cuenta/API Anthropic vs login browser grok.com o <code>XAI_API_KEY</code>.', '<strong>Permisos:</strong> modos Claude + hooks vs <code>--permission-mode</code>, <code>--always-approve</code>, plan mode.', '<strong>Paralelismo:</strong> agent teams de Claude vs subagentes nativos de Grok + enjambres multi-terminal.', '<strong>Headless:</strong> ambos; Grok expone <code>grok -p</code> y <code>grok agent</code> de forma explícita.', '<strong>Skills:</strong> ambos usan paquetes estilo agentskills en <code>~/.claude/skills</code> y <code>~/.grok/skills</code>, y Grok también lee skills, configuración MCP, hooks y <code>CLAUDE.md</code> de Claude Code sin configurar nada.'] },
+        { type: 'callout', variant: 'info', content: 'Los detalles de producto cambian cada semana. Revisa <code>claude --help</code> y <code>grok --help</code> antes de escribir una política para toda la organización.' },
       ],
     },
     {
@@ -42,7 +43,7 @@ Esta comparación es práctica: instalación y auth, fortalezas, huecos y cómo 
         { type: 'heading', level: 3, text: 'Claude Code cuando', id: 'claude-cuando' },
         { type: 'paragraph', text: 'Necesitas el ecosistema más denso, el comportamiento de modelos Anthropic que ya confías, o un equipo estandarizado en permisos/MCP/skills de Claude.' },
         { type: 'heading', level: 3, text: 'Grok Build cuando', id: 'grok-cuando' },
-        { type: 'paragraph', text: 'Quieres programar con Grok 4.6, plan mode y subagentes de xAI, o rutas headless y agent que encajen en tu automatización. También sirve para migrar desde Claude con cuidado; consulta <a href="/es/guias/grok-build-desde-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">Grok Build desde Claude Code</a>.' },
+        { type: 'paragraph', text: 'Quieres programar con Grok 4.7, plan mode y subagentes de xAI, o rutas headless y agent que encajen en tu automatización. También sirve para migrar desde Claude con cuidado; consulta <a href="/es/guias/grok-build-desde-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">Grok Build desde Claude Code</a>.' },
         { type: 'heading', level: 3, text: 'Ambos cuando', id: 'ambos-cuando' },
         { type: 'paragraph', text: 'Tareas distintas se benefician de modelos distintos. CodeAgentSwarm deja un terminal en Claude Code y otro en Grok Build sobre el mismo repo.' },
       ],
@@ -58,7 +59,7 @@ Esta comparación es práctica: instalación y auth, fortalezas, huecos y cómo 
   faq: [
     { question: '¿Es Grok Build mejor que Claude Code?', answer: 'Ninguno es mejor en todo. Claude Code gana en madurez de ecosistema; Grok Build cuando quieres modelos xAI y su plan/subagentes. Mucha gente usa ambos.' },
     { question: '¿Puedo ejecutarlos a la vez?', answer: 'Sí. Son procesos separados. CodeAgentSwarm está hecho para eso: un agente por terminal, supervisados juntos.' },
-    { question: '¿Las skills se transfieren?', answer: 'A menudo con adaptación. El layout es abierto pero las rutas cambian. Ver la guía desde Claude Code.' },
+    { question: '¿Las skills se transfieren?', answer: 'Casi siempre sí. Grok Build lee automáticamente skills, plugins, configuración MCP, hooks y CLAUDE.md de Claude Code, así que muchos montajes funcionan desde el primer día. Comprueba qué cargó con grok inspect y consulta la guía desde Claude Code para la migración.' },
   ],
 }
 

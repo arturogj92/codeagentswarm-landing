@@ -18,7 +18,7 @@ Once Kimi Code is running, we also show how to go from one terminal to several K
     ctaAgent: 'kimi-code',
     highlightedWords: ['Kimi Code', 'Linux'],
     publishedAt: '2026-09-29',
-    updatedAt: '2026-10-05',
+    updatedAt: '2026-10-31',
     alternateSlug: 'kimi-code-en-linux',
   },
   sections: [
@@ -124,7 +124,7 @@ pnpm add -g @moonshot-ai/kimi-code`,
             '<strong>"Alpine / musl Linux is not currently supported":</strong> the script only ships glibc builds. Install Node.js 22.19 or later and use <code>npm install -g @moonshot-ai/kimi-code</code>.',
             '<strong>"curl or wget is required" or "shasum or sha256sum required to verify download":</strong> common on minimal containers. Install curl and coreutils with your package manager and run the script again.',
             '<strong>"unsupported architecture":</strong> the script only covers x64 and ARM64. On anything else, try the npm package.',
-            '<strong><code>kimi --version</code> prints 1.4x:</strong> you are running the legacy Python kimi-cli. Kimi Code prints a 0.x version. The install script renames an old <code>kimi</code> shim to <code>kimi-legacy</code> so the new one wins.',
+            '<strong><code>kimi --version</code> prints 1.x:</strong> you are running the legacy Python kimi-cli. Kimi Code prints a 2.x version. The install script renames an old <code>kimi</code> shim to <code>kimi-legacy</code> so the new one wins.',
           ],
         },
         {

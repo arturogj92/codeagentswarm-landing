@@ -16,7 +16,7 @@ Esta guía explica dónde vive exactamente el historial de Kimi Code en disco (e
     ctaAgent: 'kimi-code',
     highlightedWords: ['Kimi Code', 'historial', 'reanudar'],
     publishedAt: '2026-07-18',
-    updatedAt: '2026-07-18',
+    updatedAt: '2026-10-31',
     alternateSlug: 'kimi-code-conversation-history',
   },
   sections: [
@@ -59,7 +59,7 @@ kimi --session <session-id>`,
         {
           type: 'callout',
           variant: 'warning',
-          content: 'Los flags de modo pisan la sesión reanudada. Si pasas <code>--yolo</code>, <code>--auto</code> o <code>--plan</code> al reanudar, el flag sustituye el modo que la sesión tenía guardado. Una sesión prudente reanudada con un <code>-y</code> olvidado se convierte en silencio en una sesión full auto. La guía del <a href="/es/guias/modo-yolo-kimi-code" class="text-neon-cyan hover:text-neon-purple transition-colors">modo YOLO de Kimi Code</a> lo cubre a fondo.',
+          content: 'Los flags de modo pisan la sesión reanudada. Si pasas <code>--yolo</code>, <code>--auto</code> o <code>--plan</code> al reanudar, el flag sustituye el modo que la sesión tenía guardado. Una sesión prudente reanudada con un <code>-y</code> olvidado pasa en silencio a Ask When Needed. La guía del <a href="/es/guias/modo-yolo-kimi-code" class="text-neon-cyan hover:text-neon-purple transition-colors">modo YOLO de Kimi Code</a> lo cubre a fondo.',
         },
         {
           type: 'heading',
@@ -103,7 +103,7 @@ kimi --session <session-id>`,
         {
           type: 'callout',
           variant: 'info',
-          content: 'Toma este layout como informativo, no como contrato. Kimi Code publica versiones casi a diario y sigue en pre-1.0, así que rutas y formatos pueden cambiar. Los flags de reanudar y <code>/title</code> son la superficie estable y documentada.',
+          content: 'Toma este layout como informativo, no como contrato. Kimi Code publica versiones cada pocos días, así que rutas y formatos pueden cambiar. Los flags de reanudar y <code>/title</code> son la superficie estable y documentada.',
         },
       ],
     },

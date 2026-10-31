@@ -6,15 +6,15 @@ const guide: Guide = {
     "locale": "en",
     "title": "Devin Pro pricing, free SWE-2 and CLI usage limits",
     "metaTitle": "Devin Pro Pricing: Free SWE-2 and CLI Usage Limits",
-    "metaDescription": "Check Devin Pro pricing, the free SWE-2 promotion and its conflicting official end dates. Understand model selection, context tokens and daily or weekly quota.",
-    "intro": "Looking for unlimited SWE-2 with Devin Pro? The current offer provides temporary free use in Desktop and CLI. Check the date and selected model before subscribing. Verified September 22, 2026.",
+    "metaDescription": "Check Devin Pro pricing and free SWE-2 in Desktop and CLI through November 30, 2026. Understand model selection, context tokens and daily or weekly quota.",
+    "intro": "Looking for unlimited SWE-2 with Devin Pro? The current offer provides temporary free use in Desktop and CLI. Check the date and selected model before subscribing. Verified October 31, 2026.",
     "ctaText": "The Devin model picker and quota panel are available in CodeAgentSwarm 2.4.0; the app download does not include a Devin subscription.",
     "ctaAgent": "devin",
     "highlightedWords": [
       "Devin"
     ],
     "publishedAt": "2026-09-11",
-    "updatedAt": "2026-09-24",
+    "updatedAt": "2026-10-31",
     "alternateSlug": "devin-cli-modelos-cuotas",
     "socialImage": "/images/guides/devin-cli-og-en.png"
   },
@@ -25,16 +25,16 @@ const guide: Guide = {
       "content": [
         {
           "type": "paragraph",
-          "text": "<a href=\"https://devin.ai/pricing\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Official pricing</a> lists Pro at <strong>$20 per month</strong> with free SWE-2 in Desktop and CLI through <strong>October 10, 2026</strong>."
+          "text": "<a href=\"https://devin.ai/pricing\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Official pricing</a> lists Pro at <strong>$20 per month</strong> with free use of SWE-2. Max costs <strong>$200 per month</strong> and adds a significantly larger weekly quota."
         },
         {
           "type": "paragraph",
-          "text": "On September 10, <a href=\"https://x.com/devindesktop/status/2098092331140296972\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Devin Desktop announced a month of unlimited usage on X</a> for Pro and Teams. The offer covers SWE-2 in Desktop and CLI."
+          "text": "On September 10, <a href=\"https://x.com/devindesktop/status/2098092331140296972\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Devin Desktop announced a month of unlimited usage on X</a> for Pro and Teams. That first window has passed and the SWE-2 offer has since been extended."
         },
         {
           "type": "callout",
           "variant": "info",
-          "content": "The <a href=\"https://docs.devin.ai/desktop/models\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">model documentation</a> gives a different end date: <strong>October 15, 2026</strong>. Confirm the terms in the picker and your account before paying."
+          "content": "The <a href=\"https://docs.devin.ai/desktop/models\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">model documentation</a> now says SWE-2 is free for self-serve plans in Devin Desktop and Devin CLI through <strong>November 30, 2026</strong>, and that the offer does not apply to Devin Cloud sessions. Confirm the terms in the picker and your account before paying."
         },
         {
           "type": "paragraph",
@@ -206,7 +206,7 @@ const guide: Guide = {
   "faq": [
     {
       "question": "Is SWE-2 unlimited forever with Devin Pro?",
-      "answer": "There is no permanent promise. The promotion is temporary, and official sources disagree between October 10 and October 15, 2026. Confirm the end date and price label in your account."
+      "answer": "There is no permanent promise. Devin’s model documentation says SWE-2 is free for self-serve plans in Desktop and CLI through November 30, 2026, with list pricing afterward. Confirm the end date and price label in your account."
     },
     {
       "question": "Are context tokens the same as Devin quota?",

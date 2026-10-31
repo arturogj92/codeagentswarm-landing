@@ -15,7 +15,7 @@ const guide: Guide = {
       'Pi',
     ],
     publishedAt: '2026-09-06',
-    updatedAt: '2026-09-24',
+    updatedAt: '2026-10-31',
     alternateSlug: 'pi-coding-agent-on-windows',
   },
   sections: [
@@ -32,7 +32,7 @@ const guide: Guide = {
         {
           type: 'callout',
           variant: 'info',
-          content: 'Pi funciona en Windows nativo. Instala el paquete npm actual y elige Git Bash o configura su herramienta PowerShell. En Chat de CodeAgentSwarm beta, la integración selecciona la herramienta PowerShell nativa para Windows.',
+          content: 'Pi funciona en Windows nativo. Instálalo con el instalador oficial de PowerShell o con el paquete npm y elige Git Bash o configura su herramienta PowerShell. En Chat de CodeAgentSwarm beta, la integración selecciona la herramienta PowerShell nativa para Windows.',
         },
       ],
     },
@@ -59,7 +59,7 @@ const guide: Guide = {
       content: [
         {
           type: 'paragraph',
-          text: 'Para la versión verificada por CodeAgentSwarm, Pi 0.85.1, usa Node.js 22.19.0 o posterior. Abre PowerShell y comprueba Node y npm antes de instalar. No necesitas empezar en un terminal con permisos elevados de administrador.',
+          text: 'El instalador oficial, powershell -c "irm https://pi.dev/install.ps1 | iex", puede instalarte Node.js. Para la vía npm de abajo, usa Node.js 22.19.0 o posterior: el mismo mínimo vale para Pi 0.85.1, verificada por CodeAgentSwarm, y para la versión actual, 1.4.0. Abre PowerShell y comprueba Node y npm antes de instalar. No necesitas empezar en un terminal con permisos elevados de administrador.',
         },
         {
           type: 'code',

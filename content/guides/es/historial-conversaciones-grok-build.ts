@@ -14,7 +14,7 @@ Grok Build es la CLI de código de xAI (<code>grok</code>), no el chatbot Grok. 
     ctaAgent: 'grok-build',
     highlightedWords: ['historial', 'Grok Build'],
     publishedAt: '2026-07-28',
-    updatedAt: '2026-07-28',
+    updatedAt: '2026-10-31',
     alternateSlug: 'grok-build-conversation-history',
   },
   sections: [
@@ -23,14 +23,14 @@ Grok Build es la CLI de código de xAI (<code>grok</code>), no el chatbot Grok. 
       title: 'Reanudar desde la CLI',
       content: [
         { type: 'code', language: 'bash', code: 'grok --continue\ngrok --resume\ngrok --resume "refactor auth"\ngrok --resume SESSION --fork-session' },
-        { type: 'paragraph', text: '<code>grok sessions list</code> y <code>search</code> ayudan a encontrar trabajo antiguo. <code>grok export</code> saca un Markdown compartible.' },
+        { type: 'paragraph', text: 'Dentro del TUI, <code>/resume</code> abre un selector con las sesiones recientes de la carpeta actual y <code>/rename</code> pone a la sesión un título con el que reanudarla después. Un título pasado a <code>--resume</code> se busca entre las sesiones del directorio actual; en scripts, mejor el id. <code>grok sessions list</code> y <code>search</code> ayudan a encontrar trabajo antiguo. <code>grok export</code> saca un Markdown compartible.' },
       ],
     },
     {
       id: 'storage',
       title: 'Dónde vive el historial',
       content: [
-        { type: 'paragraph', text: 'Las sesiones viven bajo <code>~/.grok/</code> (o <code>GROK_HOME</code>). No borres ese árbol a la ligera si te importa reanudar.' },
+        { type: 'paragraph', text: 'Grok Build guarda cada conversación automáticamente en <code>~/.grok/sessions/</code> (o <code>$GROK_HOME/sessions/</code>), agrupada por directorio de trabajo, con prompts, respuestas, llamadas a herramientas y snapshots de archivos. No borres ese árbol a la ligera si te importa reanudar. Haz copia como de cualquier otro estado local de agentes. Los detalles están en la <a href="https://docs.x.ai/build/features/sessions" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">documentación oficial de sesiones</a>.' },
       ],
     },
     {
@@ -43,7 +43,7 @@ Grok Build es la CLI de código de xAI (<code>grok</code>), no el chatbot Grok. 
   ],
   faq: [
     { question: '¿Cómo continúo la última sesión?', answer: 'grok --continue en el mismo directorio de proyecto.' },
-    { question: '¿Cómo encuentro una sesión vieja?', answer: 'grok sessions list o search, luego grok --resume con id o título.' },
+    { question: '¿Cómo encuentro una sesión vieja?', answer: 'grok sessions list o search, o /resume dentro del TUI, y luego grok --resume con id o título.' },
     { question: '¿CAS guarda historial de Grok?', answer: 'CAS ofrece historial buscable entre agentes, incluidas sesiones Grok Build indexadas en tu máquina.' },
   ],
 }

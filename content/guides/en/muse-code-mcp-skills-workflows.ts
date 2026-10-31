@@ -15,7 +15,7 @@ const guide: Guide = {
       "Muse"
     ],
     "publishedAt": "2026-09-22",
-    "updatedAt": "2026-09-24",
+    "updatedAt": "2026-10-31",
     "alternateSlug": "muse-code-mcp-skills-workflows"
   },
   "sections": [
@@ -146,7 +146,7 @@ const guide: Guide = {
         {
           "type": "callout",
           "variant": "info",
-          "content": "Workflows depend on the installed build and rollout. The Muse 1.3.0 CLI help checked for this guide did not expose a workflows command. Check muse --help and the interactive command palette first. Do not assume documented workflow commands work in every installation."
+          "content": "Workflows depend on the installed build and rollout. The Muse 1.4.14 CLI help we checked on Apple silicon macOS in October 2026 did not expose a workflows command, and Meta’s workflow guide says the public Apple silicon package lacks the workflow engine. Check muse --help and the interactive command palette first. Do not assume documented workflow commands work in every installation."
         },
         {
           "type": "paragraph",
@@ -189,7 +189,7 @@ const guide: Guide = {
     },
     {
       "question": "Can I use Muse workflows on every platform?",
-      "answer": "No universal availability is established. Verify your installed build and rollout first; the checked 1.3.0 help lacked the workflows command family."
+      "answer": "No universal availability is established. Verify your installed build and rollout first; the 1.4.14 help we checked on Apple silicon macOS lacked the workflows command family."
     },
     {
       "question": "Do separate agent sessions protect files from simultaneous edits?",

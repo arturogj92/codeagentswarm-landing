@@ -16,7 +16,7 @@ This guide covers how Kimi Code sessions actually work, the three practical ways
     ctaAgent: 'kimi-code',
     highlightedWords: ['multiple Kimi Code sessions', 'at once'],
     publishedAt: '2026-07-18',
-    updatedAt: '2026-09-29',
+    updatedAt: '2026-10-31',
     alternateSlug: 'ejecutar-multiples-sesiones-kimi-code',
   },
   sections: [
@@ -26,7 +26,7 @@ This guide covers how Kimi Code sessions actually work, the three practical ways
       content: [
         {
           type: 'paragraph',
-          text: '<a href="https://github.com/MoonshotAI/kimi-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi Code</a> is Moonshot AI\'s terminal coding agent, with Kimi K2.7 Code as its current default model. You install it once (<code>curl -fsSL https://code.kimi.com/kimi-code/install.sh | bash</code>, or <code>npm install -g @moonshot-ai/kimi-code</code> with Node 22.19+), log in once with <code>/login</code>, and start it with the <code>kimi</code> command. Every invocation is a separate process with its own conversation, its own context, and its own working directory.',
+          text: '<a href="https://github.com/MoonshotAI/kimi-code" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi Code</a> is Moonshot AI\'s terminal coding agent, with K2.8 Preview behind its default model id. You install it once (<code>curl -fsSL https://code.kimi.com/kimi-code/install.sh | bash</code>, or <code>npm install -g @moonshot-ai/kimi-code</code> with Node 22.19+), log in once with <code>/login</code>, and start it with the <code>kimi</code> command. Every invocation is a separate process with its own conversation, its own context, and its own working directory.',
         },
         {
           type: 'paragraph',
@@ -39,7 +39,7 @@ This guide covers how Kimi Code sessions actually work, the three practical ways
         {
           type: 'callout',
           variant: 'info',
-          content: 'All Kimi Code sessions use the same account limits. Membership credits reset with the monthly billing cycle, while Kimi Code also has a weekly allowance and a 5 hour limit. Parallel sessions do not cost extra, but they spend those limits faster.',
+          content: 'All Kimi Code sessions use the same account limits. Kimi Code shares the membership\'s monthly total and also has a rolling 5 hour limit (legacy plans add a weekly allowance). Parallel sessions do not cost extra, but they spend those limits faster.',
         },
       ],
     },
@@ -159,7 +159,7 @@ This guide covers how Kimi Code sessions actually work, the three practical ways
       content: [
         {
           type: 'paragraph',
-          text: 'Every Kimi Code session uses the same account limits. Membership credits reset with the monthly billing cycle, while Kimi Code has a weekly allowance and a 5 hour limit. Three sessions working flat out consume roughly three times faster than one, so heavy parallel bursts tend to hit the short window first. Nothing breaks when you hit it; you wait for capacity to return.',
+          text: 'Every Kimi Code session uses the same account limits. Kimi Code shares the membership\'s monthly total and has a rolling 5 hour limit (legacy plans add a weekly allowance). Three sessions working flat out consume roughly three times faster than one, so heavy parallel bursts tend to hit the short window first. Nothing breaks when you hit it; you wait for capacity to return.',
         },
         {
           type: 'paragraph',
@@ -173,7 +173,7 @@ This guide covers how Kimi Code sessions actually work, the three practical ways
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm is a desktop app for macOS, Windows and Linux built for running and supervising several AI CLI sessions in one place. Kimi Code is a first-class agent alongside Claude Code, Codex CLI, Antigravity CLI and opencode: you choose the agent per terminal, so running three Kimi Code sessions means opening three terminals and picking Kimi Code in each.',
+          text: 'CodeAgentSwarm is a desktop app for macOS, Windows and Linux built for running and supervising several AI CLI sessions in one place. Kimi Code is a first-class agent alongside Claude Code, Codex CLI, Antigravity CLI, OpenCode, Grok Build, Cursor Agent, Muse Code, Pi and Devin CLI: you choose the agent per terminal, so running three Kimi Code sessions means opening three terminals and picking Kimi Code in each.',
         },
         {
           type: 'paragraph',
@@ -185,7 +185,7 @@ This guide covers how Kimi Code sessions actually work, the three practical ways
             '<strong>Dynamic titles:</strong> each terminal shows what its session is working on right now, instead of three tabs all labelled "kimi"',
             '<strong>Desktop notifications:</strong> a native notification when a session finishes or stops to ask for a permission, so no more babysitting tabs',
             '<strong>Searchable history:</strong> CodeAgentSwarm reads Kimi Code\'s locally stored sessions, so you can search and resume conversations across every terminal and every agent',
-            '<strong>Quota indicator:</strong> a live view of the Kimi Code weekly and 5 hour limits shared by all sessions',
+            '<strong>Quota indicator:</strong> a live view of the Kimi Code quota windows shared by all sessions',
             '<strong>Live file diffs:</strong> watch what each session changes in real time, per terminal and per project',
             '<strong>Task board:</strong> a kanban next to your terminals that the agents themselves update over MCP',
           ],
@@ -213,7 +213,7 @@ This guide covers how Kimi Code sessions actually work, the three practical ways
     },
     {
       question: 'Do multiple Kimi Code sessions cost more?',
-      answer: 'There is no surcharge for parallel sessions, but they use the same account limits. Membership credits reset with the monthly billing cycle, and Kimi Code also has a weekly allowance plus a 5 hour limit. Parallel sessions finish sooner while spending those limits faster.',
+      answer: 'There is no surcharge for parallel sessions, but they use the same account limits. Kimi Code shares the membership\'s monthly total and also has a rolling 5 hour limit (legacy plans add a weekly allowance). Parallel sessions finish sooner while spending those limits faster.',
     },
     {
       question: 'Can I run Kimi Code and Claude Code together?',

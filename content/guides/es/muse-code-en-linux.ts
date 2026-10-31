@@ -7,7 +7,7 @@ export const guide: Guide = {
     slug: 'muse-code-en-linux',
     locale: 'es',
     title: 'Cómo instalar Muse Code (Meta) en Linux',
-    metaTitle: 'Cómo instalar Muse Code (Meta) en Linux: instalación, login y errores (2026)',
+    metaTitle: 'Cómo instalar Muse Code en Linux: instalación, login y errores',
     metaDescription: 'Instala Muse Code de Meta en Linux con el instalador oficial de una línea. Requisitos, login con navegador o API key, servidores por SSH, errores comunes y cómo usar varias sesiones de Muse a la vez.',
     intro: `Muse Code, el agente de programación de Meta para el terminal, funciona en Linux. Abre un terminal, ejecuta "curl -fsSL https://dev.meta.ai/install.sh | bash", entra en la carpeta de tu proyecto, escribe "muse" e inicia sesión con tu cuenta de Meta o con una API key.
 
@@ -18,7 +18,7 @@ Cuando lo tengas funcionando, también te enseñamos a usar varias sesiones de M
     ctaAgent: 'muse',
     highlightedWords: ['Muse Code', 'Linux'],
     publishedAt: '2026-09-29',
-    updatedAt: '2026-10-05',
+    updatedAt: '2026-10-31',
     alternateSlug: 'muse-code-on-linux',
   },
   sections: [
@@ -66,7 +66,7 @@ muse`,
         {
           type: 'callout',
           variant: 'info',
-          content: 'La documentación de Meta da a Linux las mismas funciones que a macOS, con entrada por voz y mensajes entre sesiones locales. Ninguna de las dos está disponible en Windows.',
+          content: 'La documentación de Meta da a Linux las mismas funciones que a macOS, con entrada por voz y mensajes entre sesiones locales. En Linux la voz viene desactivada; actívala en /settings. Ninguna de las dos está disponible en Windows.',
         },
       ],
     },
@@ -173,7 +173,7 @@ META_API_KEY="$MUSE_KEY" muse exec "Resume el README"`,
   faq: [
     {
       question: '¿Muse Code funciona en Linux?',
-      answer: 'Sí. Meta publica un único instalador para macOS y Linux, y su documentación indica que los dos tienen todas las funciones, incluida la entrada por voz y los mensajes entre sesiones.',
+      answer: 'Sí. Meta publica un único instalador para macOS y Linux, y su documentación indica que los dos tienen todas las funciones, incluida la entrada por voz (desactivada por defecto en Linux) y los mensajes entre sesiones.',
     },
     {
       question: '¿Cómo instalo Muse Code en Ubuntu o Fedora?',

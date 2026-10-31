@@ -14,7 +14,7 @@ const guide: Guide = {
       "SWE-2"
     ],
     "publishedAt": "2026-09-11",
-    "updatedAt": "2026-09-24",
+    "updatedAt": "2026-10-31",
     "alternateSlug": "swe-2-benchmarks",
     "socialImage": "/images/guides/devin-cli-og-es.png"
   },
@@ -29,7 +29,7 @@ const guide: Guide = {
         },
         {
           "type": "paragraph",
-          "text": "Para probarlo, sigue la <a href=\"/es/guias/como-usar-devin-cli\">instalación de Devin CLI</a>, abre <code>/model</code> y selecciona SWE-2 en el catálogo de tu cuenta. Revisa la <a href=\"/es/guias/devin-cli-modelos-cuotas\">guía de precios y cuotas</a> antes de una prueba larga. La comparación publicada se contrastó con la fuente de Cognition el 22 de septiembre de 2026."
+          "text": "Para probarlo, sigue la <a href=\"/es/guias/como-usar-devin-cli\">instalación de Devin CLI</a>, abre <code>/model</code> y selecciona SWE-2 en el catálogo de tu cuenta. Revisa la <a href=\"/es/guias/devin-cli-modelos-cuotas\">guía de precios y cuotas</a> antes de una prueba larga. La comparación publicada se contrastó con la fuente de Cognition el 31 de octubre de 2026."
         }
       ]
     },
@@ -201,7 +201,7 @@ const guide: Guide = {
       "content": [
         {
           "type": "paragraph",
-          "text": "Para el precio de Pro, la promoción temporal y sus fechas, consulta <a href=\"/es/guias/devin-cli-modelos-cuotas\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">la guía de modelos y cuotas de Devin</a>. Guarda las condiciones que tenía tu cuenta el día de la prueba para que el resultado siga siendo interpretable cuando cambie la oferta."
+          "text": "Para el precio de Pro, la promoción temporal de SWE-2 y su fecha de fin, consulta <a href=\"/es/guias/devin-cli-modelos-cuotas\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">la guía de modelos y cuotas de Devin</a>. Guarda las condiciones que tenía tu cuenta el día de la prueba para que el resultado siga siendo interpretable cuando cambie la oferta."
         },
         {
           "type": "paragraph",

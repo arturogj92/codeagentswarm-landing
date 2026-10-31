@@ -7,16 +7,16 @@ export const guide: Guide = {
     title: 'Enjambre de agentes Kimi Code: ejecuta varios agentes Kimi en paralelo',
     metaTitle: 'Enjambre de agentes Kimi Code: varios agentes Kimi en paralelo (2026)',
     metaDescription: 'Un enjambre de agentes Kimi Code ejecuta varias sesiones de kimi en paralelo. 3 formas: pestañas, tmux y CodeAgentSwarm, más sus límites compartidos.',
-    intro: `Un enjambre de agentes Kimi Code no es más que varios agentes de Kimi Code trabajando en paralelo en lugar de uno detrás de otro. Cada vez que ejecutas el comando <code>kimi</code> arrancas una sesión independiente con su propia conversación y su propio contexto, así que nada te impide tener tres o cuatro funcionando a la vez, cada uno con su tarea y con Kimi K2.7 Code como modelo actual.
+    intro: `Un enjambre de agentes Kimi Code no es más que varios agentes de Kimi Code trabajando en paralelo en lugar de uno detrás de otro. Cada vez que ejecutas el comando <code>kimi</code> arrancas una sesión independiente con su propia conversación y su propio contexto, así que nada te impide tener tres o cuatro funcionando a la vez, cada uno con su tarea y con el modelo por defecto de Kimi Code (hoy K2.8 Preview).
 
-El truco no está en arrancar los procesos. Está en no perderles la pista cuando ya tienes varios agentes editando archivos, parándose a pedir permisos y terminando en momentos distintos. Todos usan la misma cuenta de Kimi. Los créditos de membresía se reinician con el ciclo mensual, mientras Kimi Code también tiene una asignación semanal y un límite de 5 horas. Un enjambre avanza más por hora y también gasta esos límites compartidos más rápido.
+El truco no está en arrancar los procesos. Está en no perderles la pista cuando ya tienes varios agentes editando archivos, parándose a pedir permisos y terminando en momentos distintos. Todos usan la misma cuenta de Kimi. Kimi Code comparte el total mensual de la membresía y además tiene un límite móvil de 5 horas (los planes antiguos añaden una asignación semanal). Un enjambre avanza más por hora y también gasta esos límites compartidos más rápido.
 
 En esta guía te explico las tres formas reales de montar un enjambre de Kimi Code, cómo se comporta la cuota compartida cuando vas en paralelo y dónde empieza a doler cada método. Para la foto completa de todas las CLI, empieza por la visión general del <a href="/es/guias/enjambre-de-agentes-cli-ia" class="text-neon-cyan hover:text-neon-purple transition-colors">enjambre de agentes CLI de IA</a>, y para la mecánica de sesiones en concreto mira cómo <a href="/es/guias/ejecutar-multiples-sesiones-kimi-code" class="text-neon-cyan hover:text-neon-purple transition-colors">ejecutar varias sesiones de Kimi Code</a>.`,
-    ctaText: 'Ejecuta tu enjambre de agentes Kimi Code en CodeAgentSwarm. Varios terminales de kimi en paralelo, con diffs en vivo, notificaciones de escritorio y un indicador de cuota que muestra cuánto lleva gastado el enjambre de tus ventanas semanal y de 5 horas.',
+    ctaText: 'Ejecuta tu enjambre de agentes Kimi Code en CodeAgentSwarm. Varios terminales de kimi en paralelo, con diffs en vivo, notificaciones de escritorio y un indicador de cuota que muestra cuánto lleva gastado el enjambre de tus ventanas de cuota de Kimi.',
     ctaAgent: 'kimi-code',
     highlightedWords: ['Enjambre de agentes Kimi Code', 'Kimi'],
     publishedAt: '2026-07-18',
-    updatedAt: '2026-09-29',
+    updatedAt: '2026-10-31',
     alternateSlug: 'kimi-code-agent-swarm',
   },
   sections: [
@@ -30,7 +30,7 @@ En esta guía te explico las tres formas reales de montar un enjambre de Kimi Co
         },
         {
           type: 'paragraph',
-          text: 'Así que un enjambre de agentes Kimi Code no es un modo especial que desbloqueas. Es simplemente más de un agente de Kimi Code funcionando al mismo tiempo. Abre un segundo terminal, ejecuta <code>kimi</code> otra vez y ya tienes dos agentes independientes. Uno puede estar migrando una capa de base de datos mientras el otro escribe tests de integración. Añade un tercero y un cuarto y tienes un pequeño enjambre, cada uno con Kimi K2.7 Code y 262.144 tokens de contexto por defecto.',
+          text: 'Así que un enjambre de agentes Kimi Code no es un modo especial que desbloqueas. Es simplemente más de un agente de Kimi Code funcionando al mismo tiempo. Abre un segundo terminal, ejecuta <code>kimi</code> otra vez y ya tienes dos agentes independientes. Uno puede estar migrando una capa de base de datos mientras el otro escribe tests de integración. Añade un tercero y un cuarto y tienes un pequeño enjambre, cada uno con el modelo por defecto, que hoy sirve K2.8 Preview con hasta 1M tokens de contexto.',
         },
         {
           type: 'paragraph',
@@ -53,7 +53,7 @@ En esta guía te explico las tres formas reales de montar un enjambre de Kimi Co
       content: [
         {
           type: 'paragraph',
-          text: 'Este es el dato específico de Kimi más importante antes de escalar. Todos los agentes de Kimi Code entran con la misma cuenta. Las funciones de membresía comparten un fondo de créditos que se reinicia con el ciclo mensual, mientras Kimi Code también tiene una asignación semanal y un límite de 5 horas. Una ráfaga intensa puede chocar con la ventana corta aunque quede capacidad semanal.',
+          text: 'Este es el dato específico de Kimi más importante antes de escalar. Todos los agentes de Kimi Code entran con la misma cuenta. Las funciones de membresía comparten el total mensual de la membresía, y Kimi Code además tiene un límite móvil de 5 horas (los planes antiguos añaden una asignación semanal). Una ráfaga intensa puede chocar con la ventana corta aunque quede capacidad mensual.',
         },
         {
           type: 'paragraph',
@@ -64,7 +64,7 @@ En esta guía te explico las tres formas reales de montar un enjambre de Kimi Co
           items: [
             'Todos los agentes usan los mismos límites de cuenta: no hay una asignación separada por terminal',
             'Los créditos de membresía se reinician con el ciclo mensual y se comparten con otras funciones de Kimi',
-            'Kimi Code también tiene una asignación semanal y un límite separado de 5 horas',
+            'Kimi Code también tiene un límite móvil de 5 horas, más una asignación semanal en los planes antiguos',
             'Consulta el consumo en cualquier momento con el comando <code>/usage</code> dentro de cualquier sesión',
           ],
         },
@@ -191,7 +191,7 @@ En esta guía te explico las tres formas reales de montar un enjambre de Kimi Co
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm es una app de escritorio construida exactamente para esto: ejecutar y supervisar un enjambre de agentes CLI de IA en un solo sitio. Funciona en macOS, Windows y Linux, te da varios terminales en un mismo espacio de trabajo y te deja elegir el agente por terminal. Kimi Code es un agente de primera clase junto a Claude Code, Codex CLI, Antigravity CLI y opencode, así que para un enjambre de Kimi solo tienes que elegir Kimi Code en el selector de agente de cada terminal.',
+          text: 'CodeAgentSwarm es una app de escritorio construida exactamente para esto: ejecutar y supervisar un enjambre de agentes CLI de IA en un solo sitio. Funciona en macOS, Windows y Linux, te da varios terminales en un mismo espacio de trabajo y te deja elegir el agente por terminal. Kimi Code es un agente de primera clase junto a Claude Code, Codex CLI, Antigravity CLI, OpenCode, Grok Build, Cursor Agent, Muse Code, Pi y Devin CLI, así que para un enjambre de Kimi solo tienes que elegir Kimi Code en el selector de agente de cada terminal.',
         },
         {
           type: 'paragraph',
@@ -215,7 +215,7 @@ En esta guía te explico las tres formas reales de montar un enjambre de Kimi Co
         },
         {
           type: 'paragraph',
-          text: 'Como todos los agentes de Kimi vacían el mismo fondo, CodeAgentSwarm muestra un indicador de consumo que lee tu cuota real de Kimi, tanto el ciclo semanal como la ventana móvil de 5 horas. Ves de un vistazo cuánto lleva gastado el enjambre en lugar de escribir /usage en cada sesión y sumar de cabeza.',
+          text: 'Como todos los agentes de Kimi vacían el mismo fondo, CodeAgentSwarm muestra un indicador de consumo que lee tu cuota real de Kimi, incluida la ventana móvil de 5 horas. Ves de un vistazo cuánto lleva gastado el enjambre en lugar de escribir /usage en cada sesión y sumar de cabeza.',
         },
         {
           type: 'heading',
@@ -335,7 +335,7 @@ En esta guía te explico las tres formas reales de montar un enjambre de Kimi Co
           items: [
             '<strong>Pestañas de terminal:</strong> Escribe /usage en cada sesión y suma tú',
             '<strong>tmux/screen:</strong> Lo mismo, panel a panel',
-            '<strong>CodeAgentSwarm:</strong> Un indicador que lee tus ventanas semanal y de 5 horas de Kimi para todo el enjambre',
+            '<strong>CodeAgentSwarm:</strong> Un indicador que lee tus ventanas de cuota de Kimi para todo el enjambre',
           ],
         },
         {
@@ -387,7 +387,7 @@ En esta guía te explico las tres formas reales de montar un enjambre de Kimi Co
     },
     {
       question: '¿Cuesta más ejecutar agentes de Kimi Code en paralelo?',
-      answer: 'No hay sobrecoste por el paralelismo, pero todos los agentes usan los mismos límites de cuenta. Los créditos de membresía se reinician con el ciclo mensual, y Kimi Code añade una asignación semanal y un límite de 5 horas. Cuatro agentes pueden terminar antes, pero gastan esos límites más rápido que uno.',
+      answer: 'No hay sobrecoste por el paralelismo, pero todos los agentes usan los mismos límites de cuenta. Kimi Code comparte el total mensual de la membresía y además tiene un límite móvil de 5 horas (los planes antiguos añaden una asignación semanal). Cuatro agentes pueden terminar antes, pero gastan esos límites más rápido que uno.',
     },
     {
       question: '¿Un enjambre es lo mismo que los subagentes de Kimi Code?',

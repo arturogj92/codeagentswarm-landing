@@ -15,7 +15,7 @@ const guide: Guide = {
       "Muse"
     ],
     "publishedAt": "2026-09-22",
-    "updatedAt": "2026-09-24",
+    "updatedAt": "2026-10-31",
     "alternateSlug": "como-usar-muse-code"
   },
   "sections": [
@@ -31,7 +31,7 @@ const guide: Guide = {
         },
         {
           "type": "paragraph",
-          "text": "On macOS or Linux, use the installer linked in the <a href=\"https://dev.meta.ai/docs/muse-code\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">official Muse Code quickstart</a>. Then check the installed version before copying commands from a tutorial. The examples here were checked against the Muse 1.3.0 command surface."
+          "text": "On macOS or Linux, use the installer linked in the <a href=\"https://dev.meta.ai/docs/muse-code\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">official Muse Code quickstart</a>. Then check the installed version before copying commands from a tutorial. The examples here were rechecked in October 2026 against the Muse 1.4.14 command surface."
         },
         {
           "type": "code",

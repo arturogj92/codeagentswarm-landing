@@ -15,7 +15,7 @@ const guide: Guide = {
       "Muse"
     ],
     "publishedAt": "2026-09-22",
-    "updatedAt": "2026-09-24",
+    "updatedAt": "2026-10-31",
     "alternateSlug": "muse-code-modelos-precios-privacidad"
   },
   "sections": [
@@ -31,12 +31,12 @@ const guide: Guide = {
         },
         {
           "type": "paragraph",
-          "text": "For a Standard session, launch the model explicitly. The <a href=\"https://dev.meta.ai/docs/models\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">official model catalog</a> lists Muse Spark 1.3 and its Contributor variant. The suffix is meaningful: a model selection can change the data terms that apply to your prompts and responses."
+          "text": "For a Standard session, launch the model explicitly and turn Contributor mode off for the run. The <a href=\"https://dev.meta.ai/docs/models\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">official model catalog</a> recommends Muse Spark 1.3 for new work and also lists Muse Wonder (<code>muse-wonder-1.0</code>), a more capable model still in preview. The flag matters because Muse Code subscriptions default to Contributor mode, which routes requests to the <code>-contributor</code> model even when you pass the base ID."
         },
         {
           "type": "code",
           "language": "bash",
-          "code": "muse --model muse-spark-1.3 --reasoning-effort medium"
+          "code": "muse --model muse-spark-1.3 --contributor-mode off --reasoning-effort medium"
         },
         {
           "type": "table",
@@ -74,7 +74,7 @@ const guide: Guide = {
       "content": [
         {
           "type": "paragraph",
-          "text": "The <a href=\"https://dev.meta.ai/docs/pricing-rate-limits\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">published API rates</a> checked on September 22, 2026 are in US dollars per one million tokens. These are metered API rates, not monthly subscription prices."
+          "text": "The <a href=\"https://dev.meta.ai/docs/pricing-rate-limits\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">published API rates</a> checked on October 31, 2026 are for Muse Spark, in US dollars per one million tokens. These are metered API rates, not monthly subscription prices. Muse Wonder costs more and has no Contributor price on pay-as-you-go."
         },
         {
           "type": "table",
@@ -117,7 +117,7 @@ const guide: Guide = {
       "content": [
         {
           "type": "paragraph",
-          "text": "Meta documents Everyday Usage, High Usage and Power Usage plans. Availability and benefits can differ by region, so use the price and allowance shown during your own onboarding. The <a href=\"https://dev.meta.ai/docs/muse-code/subscriptions\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">subscription documentation</a> does not establish a single monthly price for every reader."
+          "text": "Meta documents Everyday Usage, High Usage, Power Usage and Maximum Usage plans. Subscriptions start in Contributor mode; you can turn it off in <code>/settings</code> or for one run with <code>--contributor-mode off</code>. Availability and benefits can differ by region, so use the price and allowance shown during your own onboarding. The <a href=\"https://dev.meta.ai/docs/muse-code/subscriptions\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">subscription documentation</a> does not establish a single monthly price for every reader."
         },
         {
           "type": "paragraph",
@@ -197,7 +197,7 @@ const guide: Guide = {
     },
     {
       "question": "Should I switch to Contributor after hitting a limit?",
-      "answer": "First check the content restrictions and regional eligibility. Accepting training does not permit confidential code or personal data. Diagnose the limit before deciding whether an eligible task can use Contributor."
+      "answer": "On a subscription, check first whether you are already in Contributor mode, because it is on by default. Then check the content restrictions and regional eligibility. Accepting training does not permit confidential code or personal data. Diagnose the limit before deciding whether an eligible task can use Contributor."
     }
   ]
 }
