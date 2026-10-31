@@ -6,17 +6,17 @@ export const guide: Guide = {
     locale: 'en',
     title: 'Codex CLI Pricing: Every Plan, and Which One You Need for Parallel Agents',
     metaTitle: 'Codex CLI Pricing 2026: Plans, Limits, Parallel Agent Cost',
-    metaDescription: 'Free tier, Go $8, Plus $20, Pro $100 or $200, Business seats, credits. Plus what OpenAI skips: which plan survives 3 or 4 Codex sessions at once.',
-    intro: `There is no Codex subscription. Codex rides on whatever ChatGPT plan you already have, and as of August 2026 that lineup is: Free (limited Codex), Go at $8/month, Plus at $20/month, Pro at $100/month for 5x usage or $200/month for 20x, Business at $25/user/month, and Enterprise. If you would rather not subscribe, Codex also accepts an OpenAI API key and bills per token.
+    metaDescription: 'Free tier, Go $8, Plus $20, Pro $100 to $500, Business seats, credits. Plus what OpenAI skips: which plan survives 3 or 4 Codex sessions at once.',
+    intro: `There is no Codex subscription. Codex rides on whatever ChatGPT plan you already have, and as of October 31, 2026 <a href="https://learn.chatgpt.com/docs/pricing" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">OpenAI's Codex pricing page</a> lists: Free (quick tasks), Go at $8/month, Plus at $20/month, Pro at $100, $200 or $500/month, Business at $25/user/month ($20 billed annually), and Enterprise. If you would rather not subscribe, Codex also accepts an OpenAI API key and bills per token.
 
-That is the one-paragraph answer, and it already contains the thing most comparison articles get wrong: <strong>Pro is now two different prices</strong>. OpenAI added a $100 Pro tier in April 2026, sitting between Plus and the original $200 Pro, and the two differ in usage multiplier and in what else they bundle rather than in which models you get.
+That is the one-paragraph answer, and it already contains the thing most comparison articles get wrong: <strong>Pro is now three different prices</strong>, and none of them has a 5 hour limit at the moment. Plus still has one, with a published range of messages per model.
 
-The rest of the detail is where people get surprised: the CLI, the web version and the IDE extension all draw from one shared quota, that quota has both a 5 hour window and a weekly cap, and running out does not stop you if you have credits on the account.`,
+The rest of the detail is where people get surprised: Codex on the web, in the CLI and in the IDE draws from one plan allowance, Plus adds a weekly cap on top of the 5 hour window, and running out does not stop you if you have credits on the account.`,
     ctaText: 'Codex quota is shared across the CLI, the web app and the IDE, so it drains faster than you expect when several sessions run at once. CodeAgentSwarm shows what each terminal is burning, next to every other agent you run.',
     ctaAgent: 'codex',
     highlightedWords: ['Codex', 'Plans', 'Pricing'],
     publishedAt: '2026-08-05',
-    updatedAt: '2026-09-01',
+    updatedAt: '2026-10-31',
     alternateSlug: 'planes-y-precios-de-codex',
   },
   sections: [
@@ -26,34 +26,35 @@ The rest of the detail is where people get surprised: the CLI, the web version a
       content: [
         {
           type: 'paragraph',
-          text: 'As of August 2026, Codex access maps onto the ChatGPT plans like this. There is no plan you can buy that gives you Codex and nothing else.',
+          text: 'As of October 31, 2026, Codex access maps onto the ChatGPT plans like this. There is no plan you can buy that gives you Codex and nothing else.',
         },
         {
           type: 'table',
           headers: ['Plan', 'Price', 'Codex access', 'Usage'],
           rows: [
-            ['Free', '$0', 'Limited', 'Enough to try it, not to work'],
-            ['Go', '$8/month', 'Yes', 'The cheapest real access'],
-            ['Plus', '$20/month', 'Yes', 'The 1x baseline most people mean'],
-            ['Pro', '$100/month', 'Yes', '5x Plus'],
-            ['Pro', '$200/month', 'Yes', '20x Plus, plus the rest of the Pro bundle'],
-            ['Business', '$25/user/month ($20 annual, min. 2 users)', 'Yes', 'Team pooling and admin'],
-            ['Enterprise', 'Custom', 'Yes', 'Negotiated'],
+            ['Free', '$0', 'Limited', 'Quick coding tasks with GPT-6 Luna'],
+            ['Go', '$8/month', 'Yes', 'Lightweight coding tasks with GPT-6 Luna'],
+            ['Plus', '$20/month', 'Yes', 'GPT-6.1 Sol and GPT-6 Luna, with a 5 hour limit and weekly limits'],
+            ['Pro', '$100/month', 'Yes', 'No 5 hour limit for now; weekly limits may apply'],
+            ['Pro', '$200/month', 'Yes', 'No 5 hour limit for now; weekly limits may apply'],
+            ['Pro', '$500/month', 'Yes', 'Same, plus Ultrafast mode'],
+            ['Business', '$25/user/month ($20 annual, min. 2 users)', 'Yes', 'Team workspace and admin'],
+            ['Enterprise and Edu', 'Contact sales', 'Yes', 'Priority processing and enterprise controls'],
           ],
-          caption: 'ChatGPT plan lineup and Codex access, August 2026.',
+          caption: 'ChatGPT plan lineup and Codex access from learn.chatgpt.com/docs/pricing, verified October 31, 2026.',
         },
         {
           type: 'callout',
           variant: 'warning',
-          content: 'The $100 Pro tier is new as of April 2026 and is the single most common source of out-of-date advice about Codex pricing. Any article that says "Pro is $200" without qualification predates it. Check the current lineup before you pay, because OpenAI has moved this ladder more than once in the last year.',
+          content: 'Pro is the single most common source of out-of-date advice about Codex pricing. Any article that says "Pro is $200" without qualification, or that stops at the $100 and $200 tiers, is behind: the pricing page now lists $100, $200 and $500. Check the current lineup before you pay, because OpenAI has moved this ladder more than once this year.',
         },
         {
           type: 'paragraph',
-          text: 'The two Pro tiers give you <strong>the same model suite</strong>. The difference is the multiplier, 5x against 20x, and what else comes in the box: the $200 tier bundles the rest of the Pro package while the $100 tier is deliberately the coding-focused option. If Codex is the only reason you are paying, $100 is the tier that exists for you.',
+          text: 'The Codex pricing page does <strong>not</strong> publish a usage multiplier for each Pro tier. It sends you to OpenAI\'s Pro help article to compare limits. What the pricing page does state: Pro plans currently have no 5 hour limit, weekly limits may still apply, and only Pro $500 gets Ultrafast mode. If Codex is the only reason you are paying, start at $100 and move up only when the weekly limit stops you.',
         },
         {
           type: 'paragraph',
-          text: 'Go at $8/month deserves a mention because it is genuinely the cheapest way to run a real coding agent from any of the major vendors. It is tight, but it is not a demo.',
+          text: 'Go at $8/month is the cheapest paid door, but OpenAI pitches it at lightweight coding tasks and lists GPT-6 Luna for it, not GPT-6.1 Sol. It is fine for small jobs, not for a working day.',
         },
       ],
     },
@@ -63,7 +64,7 @@ The rest of the detail is where people get surprised: the CLI, the web version a
       content: [
         {
           type: 'paragraph',
-          text: 'This is the detail that catches people out, and it is worth putting above the mechanics of the windows themselves: <strong>Codex CLI usage draws from the same limits as Codex on the web and Codex in your IDE</strong>. They are three front ends onto one allowance.',
+          text: 'This is the detail that catches people out, and it is worth putting above the mechanics of the windows themselves: <strong>Codex CLI usage draws from the same plan allowance as Codex on the web and Codex in your IDE</strong>. OpenAI\'s pricing page says local messages and cloud chats share your plan\'s usage allowance, and that ChatGPT Work and Codex share usage too.',
         },
         {
           type: 'paragraph',
@@ -81,15 +82,15 @@ The rest of the detail is where people get surprised: the CLI, the web version a
       content: [
         {
           type: 'paragraph',
-          text: 'Like most of its rivals, Codex meters you on two layers. The first is a <strong>rolling 5 hour window</strong>: an intense session can exhaust it while your weekly allowance is barely touched, and the fix is to wait for the window to slide forward.',
+          text: 'On Plus and Business, Codex meters you on two layers. The first is a <strong>rolling 5 hour window</strong>: an intense session can exhaust it while your weekly allowance is barely touched, and the fix is to wait for the window to slide forward. Pro plans currently skip this layer.',
         },
         {
           type: 'paragraph',
-          text: 'The second is a <strong>weekly cap</strong> on top. Both apply at once, so being blocked tells you nothing by itself about which ceiling you hit.',
+          text: 'The second is a <strong>weekly cap</strong> on top, which OpenAI says "may also apply" on every plan. When both apply, being blocked tells you nothing by itself about which ceiling you hit.',
         },
         {
           type: 'paragraph',
-          text: 'What makes Codex unusual is that the published figures are given <strong>per model, as ranges</strong>, rather than as a single number. On Plus, for example, the documented per-five-hour ranges differ substantially between the reasoning-heavy models and the fast ones, because a model that thinks longer consumes more of the same allowance. The practical consequence is that your model choice changes your effective quota more than it changes your bill, which is the opposite of how pay-per-token works.',
+          text: 'What makes Codex unusual is that the published figures are given <strong>per model, as ranges</strong>, rather than as a single number. On Plus, OpenAI estimates 15 to 160 local messages per 5 hours with GPT-6.1 Sol, 35 to 285 with GPT-6.1 Terra and 350 to 3,000 with GPT-6 Luna, because a model that thinks longer consumes more of the same allowance. The practical consequence is that your model choice changes your effective quota more than it changes your bill, which is the opposite of how pay-per-token works.',
         },
         {
           type: 'callout',
@@ -110,11 +111,11 @@ The rest of the detail is where people get surprised: the CLI, the web version a
           type: 'table',
           headers: ['Sessions at once', 'Tier that usually holds', 'Why'],
           rows: [
-            ['1 session', 'Go at $8/month, or Plus at $20/month', 'Plus is the 1x baseline most people mean; Go is tight but it is real access, not a demo'],
-            ['2 to 3 sessions', 'Pro at $100/month, 5x Plus', 'Two or three sessions drain the same 5 hour window two to three times faster, and each surface you also use counts on top'],
-            ['4 or more sessions', 'Pro at $200/month, 20x Plus', 'Four terminals plus an IDE extension are five consumers on one meter, so the weekly cap arrives fast'],
+            ['1 session', 'Plus at $20/month, or Go at $8/month for light work', 'Plus gets GPT-6.1 Sol and a published range per model; Go is pitched at lightweight tasks'],
+            ['2 to 3 sessions', 'Pro at $100/month', 'Two or three sessions would drain a Plus 5 hour window two to three times faster; Pro currently has no 5 hour limit'],
+            ['4 or more sessions', 'Pro at $200 or $500/month', 'Four terminals plus an IDE extension are five consumers on one meter, so the weekly limit becomes the wall'],
           ],
-          caption: 'Rule of thumb derived from the published multipliers, not a session count OpenAI promises. Codex publishes per-model ranges rather than fixed numbers, so your model choice moves this too.',
+          caption: 'Rule of thumb, not a session count OpenAI promises. The Codex pricing page publishes per-model ranges for Plus and no multiplier per Pro tier, so your model choice moves this too.',
         },
         {
           type: 'paragraph',
@@ -128,7 +129,7 @@ The rest of the detail is where people get surprised: the CLI, the web version a
       content: [
         {
           type: 'paragraph',
-          text: 'When you run past your included allowance, Codex does not simply stop if you have credits on the account. Credits are a top-up balance that maps onto token usage, priced separately for input, cached input and output tokens, and they cost roughly $0.04 each as of August 2026.',
+          text: 'When you run past your included allowance, Codex does not simply stop if you have credits on the account. Credits are a top-up balance that maps onto token usage, priced separately for input, cached input and output tokens: GPT-6.1 Sol costs 50 credits per million input tokens and 250 per million output tokens, and Fast mode doubles the rate. OpenAI says the purchase price of a credit depends on your plan or agreement, so check it in your account.',
         },
         {
           type: 'paragraph',
@@ -146,7 +147,7 @@ The rest of the detail is where people get surprised: the CLI, the web version a
       content: [
         {
           type: 'paragraph',
-          text: 'Codex accepts an OpenAI API key instead of a ChatGPT login, which swaps the whole quota system for per-token billing. As of August 2026, GPT-5.3-Codex is priced at $1.75 per million input tokens and $14.00 per million output tokens.',
+          text: 'Codex accepts an OpenAI API key instead of a ChatGPT login, which swaps the whole quota system for per-token billing. As of October 31, 2026, <a href="https://developers.openai.com/api/docs/pricing" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">OpenAI\'s API pricing</a> lists GPT-6.1 Sol at $2.00 per million input tokens, $0.10 for cached input and $10.00 per million output tokens, and GPT-6 Luna at $0.10 input and $0.50 output.',
         },
         {
           type: 'paragraph',
@@ -165,21 +166,21 @@ The rest of the detail is where people get surprised: the CLI, the web version a
       content: [
         {
           type: 'paragraph',
-          text: 'A price only means something next to the alternatives. The $8 Go tier makes Codex the cheapest real entry in the category, and Codex is also the only one whose quota is shared with a web app and an IDE extension. Here is the whole category, one line each, checked on the same day.',
+          text: 'A price only means something next to the alternatives. The $8 Go tier puts Codex at the low end of the category, next to the $8 Plus plans from Cursor and xAI and Google AI Plus at $4.99, and its allowance is shared with ChatGPT on the web and in your IDE. Here is the whole category, one line each, checked on the same day.',
         },
         {
           type: 'table',
           headers: ['Agent', 'Free tier', 'Cheapest paid', 'Top individual tier', 'How you are billed'],
           rows: [
-            ['Claude Code', 'No (Free plan has no Claude Code)', 'Pro, $20/month', 'Max 20x, $200/month', 'Subscription with 5 hour and weekly windows; API tokens optional'],
-            ['Codex CLI', 'Limited', 'Go, $8/month', 'Pro, $200/month', 'ChatGPT subscription shared with web and IDE; API tokens optional'],
-            ['Kimi Code', 'CLI is free, model usage is not', 'Andante, ¥49/month', 'Allegro, ¥699/month', 'Membership with weekly and 5 hour limits; API per token'],
-            ['OpenCode', 'CLI is free and open source', 'None, pay as you go', 'None', 'Your own provider key, or OpenCode Zen prepaid per token'],
-            ['Antigravity', 'Yes, with weekly rate limits', 'Google AI Plus, around $8/month', 'Google AI Ultra 20x, $200/month', 'Google AI plan with rate limits and credits'],
-            ['Grok Build', 'Yes, limited usage', 'SuperGrok, $30/month', 'SuperGrok Plus, $100/month', 'xAI plan rate limits; API per token'],
-            ['Cursor Agent', 'Hobby, free', 'Pro, $20/month', 'Ultra, $200/month', 'Cursor plan with usage pools per model'],
+            ['Claude Code', 'No (Free plan has no Claude Code)', 'Pro, $20/month', 'Ultra, $200/month', 'Claude plan with 5 hour and weekly limits (verified Ultra accounts have no 5 hour limit); API tokens optional'],
+            ['Codex CLI', 'Limited', 'Go, $8/month', 'Pro, $500/month', 'ChatGPT plan shared across the CLI, web and IDE; API tokens optional'],
+            ['Kimi Code', 'CLI is free, model usage is not', 'Plus, ¥99/month', 'Ultra, ¥1,399/month', 'Membership credits plus a 5 hour Kimi Code limit; API per token'],
+            ['OpenCode', 'CLI is free and open source', 'OpenCode Go, $10/month', 'Go Plus, $40/month', 'Your own provider key, prepaid Console credits per token, or a Go subscription'],
+            ['Antigravity', 'Yes, with weekly rate limits', 'Google AI Plus, $4.99/month', 'Google AI Ultra 20x, $199.99/month', 'Google AI plan with rate limits and credits'],
+            ['Grok Build', 'Yes, limited usage', 'X Subscription Plus, $8/month', 'X Subscription Ultra, $200/month', 'X Subscription pool shared with Grok and Cursor; API per token'],
+            ['Cursor Agent', 'Free, limited usage', 'Plus, $8/month', 'Ultra, $200/month', 'Weekly pool for Cursor models; third-party models billed by usage'],
           ],
-          caption: 'Entry and top tiers per agent CLI, all verified August 25, 2026. Prices change often; each linked guide carries its own verification date.',
+          caption: 'Entry and top tiers per agent CLI, all verified October 31, 2026. Prices change often; each linked guide carries its own verification date.',
         },
         {
           type: 'paragraph',
@@ -201,7 +202,7 @@ The rest of the detail is where people get surprised: the CLI, the web version a
         },
         {
           type: 'paragraph',
-          text: 'The realistic budget framing: evaluating Codex costs $0, using it as a daily single-agent assistant costs $8 to $20/month, and running it as a parallel agent workflow costs $100/month. That $8 Go tier makes Codex the cheapest serious entry point in the category.',
+          text: 'The realistic budget framing: evaluating Codex costs $0, using it as a daily single-agent assistant costs $20/month, with Go at $8 for light work, and running it as a parallel agent workflow costs $100/month or more.',
         },
       ],
     },
@@ -227,23 +228,23 @@ The rest of the detail is where people get surprised: the CLI, the web version a
   faq: [
     {
       question: 'Is Codex free?',
-      answer: 'The CLI is free and open source, and ChatGPT Free includes limited Codex access, so you can genuinely try it without paying. It is sized for evaluation rather than work: expect to hit the ceiling on your first real task. Paid access starts at $8/month on the Go plan.',
+      answer: 'The CLI is free and open source, and ChatGPT Free includes limited Codex access for quick coding tasks, so you can genuinely try it without paying. It is sized for evaluation rather than work: expect to hit the ceiling on your first real task. Paid access starts at $8/month on the Go plan.',
     },
     {
       question: 'How much does Codex cost per month?',
-      answer: 'As of August 2026 it depends on your ChatGPT plan: Go $8, Plus $20, Pro $100 (5x Plus) or $200 (20x Plus), Business $25 per user ($20 billed annually, minimum two users). There is no standalone Codex subscription.',
+      answer: 'As of October 31, 2026 it depends on your ChatGPT plan: Go $8, Plus $20, Pro $100, $200 or $500, Business $25 per user ($20 billed annually, minimum two users). There is no standalone Codex subscription.',
     },
     {
       question: 'What is the difference between ChatGPT Pro at $100 and at $200?',
-      answer: 'The usage multiplier and the rest of the bundle, not the models. Both give the same model suite; $100 gives 5x Plus usage and is the coding-focused option, $200 gives 20x plus the full Pro package. The $100 tier launched in April 2026, which is why older articles only mention $200.',
+      answer: 'Mostly the amount of usage. OpenAI\'s Codex pricing page lists Pro at $100, $200 and $500 a month, says Pro plans currently have no 5 hour limit, and reserves Ultrafast mode for Pro $500. It does not publish a multiplier for each tier on that page, so compare the limits in OpenAI\'s Pro help article before upgrading.',
     },
     {
       question: 'Does Codex CLI have its own separate quota from Codex on the web?',
-      answer: 'No, and this catches people out. The CLI, the web version and the IDE extension all draw from one shared allowance on your ChatGPT plan. A morning on the web reduces what your terminal can do that afternoon.',
+      answer: 'No, and this catches people out. OpenAI says local messages and cloud chats share your plan\'s usage allowance, so the CLI, the web version and the IDE extension all draw from your ChatGPT plan. A morning on the web reduces what your terminal can do that afternoon.',
     },
     {
       question: 'What happens when I run out of Codex usage?',
-      answer: 'If you have credits on the account, Codex keeps working and bills against them at roughly $0.04 per credit. If you do not, it stops until the window resets. Claude paid plans can also enable usage credits, so compare each provider\'s overflow rates and controls before relying on them.',
+      answer: 'If you have credits on the account, Codex keeps working and bills against them at a per-model rate, for example 250 credits per million output tokens on GPT-6.1 Sol. If you do not, it stops until the window resets. Claude paid plans can also enable usage credits, so compare each provider\'s overflow rates and controls before relying on them.',
     },
     {
       question: 'Should I use a ChatGPT plan or an OpenAI API key for Codex?',
@@ -251,7 +252,7 @@ The rest of the detail is where people get surprised: the CLI, the web version a
     },
     {
       question: 'What are the Codex plans?',
-      answer: 'There is no standalone Codex plan. Codex rides on your ChatGPT plan: Free with limited access, Go at $8/month, Plus at $20, Pro at $100 (5x Plus) or $200 (20x Plus), Business at $25 per user and Enterprise. An OpenAI API key is the pay-per-token alternative.',
+      answer: 'There is no standalone Codex plan. Codex rides on your ChatGPT plan: Free with limited access, Go at $8/month, Plus at $20, Pro at $100, $200 or $500, Business at $25 per user and Enterprise. An OpenAI API key is the pay-per-token alternative.',
     },
     {
       question: 'Do I need a ChatGPT subscription to use Codex CLI?',
@@ -259,7 +260,7 @@ The rest of the detail is where people get surprised: the CLI, the web version a
     },
     {
       question: 'Which Codex plan do I need to run several sessions in parallel?',
-      answer: 'Plus at $20 handles one session comfortably. Two or three usually point at Pro at $100, which is 5x Plus, and four or more at Pro at $200. Remember the allowance is shared with Codex on the web and in your IDE, so those surfaces count as extra sessions.',
+      answer: 'Plus at $20 handles one session comfortably. Two or three usually point at Pro at $100, which currently has no 5 hour limit, and four or more at Pro at $200 or $500. Remember the allowance is shared with Codex on the web and in your IDE, so those surfaces count as extra sessions.',
     },
   ],
 }

@@ -5,7 +5,7 @@ export const guide: Guide = {
     slug: 'claude-code-weekly-limit-daily-budget',
     locale: 'en',
     title: 'Claude Code Weekly Limit: A Daily Budget That Makes Your Quota Last All Week',
-    metaTitle: 'Claude Code Weekly Limit: Daily Budget for Every AI Agent (2026)',
+    metaTitle: 'Claude Code Weekly Limit: A Daily Budget for Every Agent',
     metaDescription: 'Stop burning your Claude Code weekly limit in two days. Set a daily budget per provider, spread what is left until the reset, and pause new work at the limit.',
     intro: `The weekly limit is the one that hurts. The five hour window resets while you grab lunch, but the weekly one does not care about your plans. Run four agents hard on Monday and Tuesday, and by Wednesday morning you are locked out until the reset, with half the week still ahead of you.
 
@@ -14,7 +14,7 @@ The problem is not that the quota is too small. It is that nothing stops you fro
 CodeAgentSwarm 2.4.0 adds a daily budget for every provider that reports its quota. You decide how much of the week each day may use, either a fixed share or a Smart pace that spreads what is left until the reset. When today's limit is reached, the app can warn you, pause new work, or stop it. This guide covers how it works, how to set it up, and a few habits that keep you working all week.`,
     highlightedWords: ['Weekly Limit', 'Daily Budget'],
     publishedAt: '2026-09-27',
-    updatedAt: '2026-09-27',
+    updatedAt: '2026-10-31',
     ctaText: 'Turn on a daily budget for your main agent and keep enough of the week left for Friday.',
     ctaAgent: 'multi',
     alternateSlug: 'limite-semanal-claude-code-presupuesto-diario',
@@ -26,7 +26,7 @@ CodeAgentSwarm 2.4.0 adds a daily budget for every provider that reports its quo
       content: [
         {
           type: 'paragraph',
-          text: 'Most coding agent subscriptions measure usage in two layers. Claude Code has a short rolling window of about five hours and a weekly limit on top of it. Codex works in a similar way. Cursor measures a monthly window. The short window slows you down for an afternoon. The long one can block you for days.',
+          text: 'Most coding agent subscriptions measure usage in two layers. On Pro and Max, Claude Code has a short rolling window of about five hours and a weekly limit on top of it; verified Ultra accounts keep only the weekly one. Codex Plus works in a similar way, while Codex Pro currently has no five hour limit. Cursor\'s current plans use a weekly pool, and its legacy plans a monthly one. The short window slows you down for an afternoon. The long one can block you for days.',
         },
         {
           type: 'paragraph',
@@ -261,7 +261,7 @@ CodeAgentSwarm 2.4.0 adds a daily budget for every provider that reports its quo
   faq: [
     {
       question: 'What is the Claude Code weekly limit?',
-      answer: 'Claude Code subscriptions have a short rolling window of about five hours and a weekly limit on top of it. When the weekly one runs out you have to wait for the reset, even if the five hour window is free. The daily budget in CodeAgentSwarm helps you spread that weekly limit across the week.',
+      answer: 'Claude Code subscriptions have a short rolling window of about five hours and a weekly limit on top of it, except verified Ultra accounts, which have no five hour limit. When the weekly one runs out you have to wait for the reset, even if the five hour window is free. The daily budget in CodeAgentSwarm helps you spread that weekly limit across the week.',
     },
     {
       question: 'How does the daily budget measure usage?',
