@@ -25,7 +25,7 @@ CodeAgentSwarm is a third-party Agentic Development Environment for macOS, Windo
 
 ## Pi coding agent: available from CodeAgentSwarm 2.4.0
 
-Pi is a separate coding harness, not a model provider. Install the current package @earendil-works/pi-coding-agent and authenticate inside Pi with /login. CodeAgentSwarm's Pi integration is available from version 2.4.0 on macOS and Windows. It uses native Pi RPC, preserves Pi-owned credentials and exposes model/provider selection. CAS Cloud authentication belongs to the host running Pi. ChatGPT Plus/Pro login is supported by Pi; Pi documents Claude third-party harness usage as additional per-token usage. Check the linked provider sources for current account terms. Provider facts reviewed 2026-09-22. CodeAgentSwarm availability updated 2026-09-24.
+Pi is a separate coding harness, not a model provider. Install the current package @earendil-works/pi-coding-agent and authenticate inside Pi with /login. CodeAgentSwarm's Pi integration is available from version 2.4.0 and runs in the macOS, Windows and Linux apps. It uses native Pi RPC, preserves Pi-owned credentials and exposes model/provider selection. CAS Cloud authentication belongs to the host running Pi. ChatGPT Plus/Pro login is supported by Pi; Pi documents Claude third-party harness usage as additional per-token usage. Check the linked provider sources for current account terms. Provider facts reviewed 2026-09-22. CodeAgentSwarm availability updated 2026-09-24.
 
 - [Pi: how-to-use-pi-coding-agent (EN)](https://www.codeagentswarm.com/en/guides/how-to-use-pi-coding-agent)
 - [Pi: como-usar-pi-coding-agent (ES)](https://www.codeagentswarm.com/es/guias/como-usar-pi-coding-agent)
@@ -220,7 +220,7 @@ Pi is a separate coding harness, not a model provider. Install the current packa
 
 ## Devin CLI (available from CodeAgentSwarm 2.4.0)
 
-Devin CLI is a local coding agent. CodeAgentSwarm 2.4.0 includes Devin on macOS and Windows, with Chat and CLI views, model selection, account quota, native Windows installation, history and optional MCP. The screenshots were captured during beta testing. Devin account access and usage are separate from CodeAgentSwarm. Provider facts reviewed 2026-09-11. CodeAgentSwarm availability updated 2026-09-24.
+Devin CLI is a local coding agent. CodeAgentSwarm includes Devin from 2.4.0 in the macOS, Windows and Linux apps, with Chat and CLI views, model selection, account quota, native Windows installation, history and optional MCP. The screenshots were captured during beta testing. Devin account access and usage are separate from CodeAgentSwarm. Provider facts reviewed 2026-09-11. CodeAgentSwarm availability updated 2026-09-24.
 
 - [Devin CLI: installation, login and your first coding task](https://www.codeagentswarm.com/en/guides/how-to-use-devin-cli)
 - [Devin CLI on Linux: Install, Login over SSH and Fix Errors (2026)](https://www.codeagentswarm.com/en/guides/devin-cli-on-linux)
@@ -237,7 +237,7 @@ Devin CLI is a local coding agent. CodeAgentSwarm 2.4.0 includes Devin on macOS 
 
 ## Muse Code: standalone guides and CodeAgentSwarm 2.4.0 integration
 
-Muse Code is Meta's coding agent; Muse Spark is its model family. Muse is available from CodeAgentSwarm 2.4.0 on macOS and Windows. Meta account access and billing are separate. Standard and Contributor have different data-use terms. Workflows depend on the installed build and rollout; Windows has separate platform limitations. Provider facts reviewed 2026-09-22. CodeAgentSwarm availability updated 2026-09-24.
+Muse Code is Meta's coding agent; Muse Spark is its model family. Muse is available from CodeAgentSwarm 2.4.0 and runs in the macOS, Windows and Linux apps. Meta account access and billing are separate. Standard and Contributor have different data-use terms. Workflows depend on the installed build and rollout; Windows has separate platform limitations. Provider facts reviewed 2026-09-22. CodeAgentSwarm availability updated 2026-09-24.
 
 - [Muse Code: installation, login and first task](https://www.codeagentswarm.com/en/guides/how-to-use-muse-code)
 - [Muse Code en español: instalación y primera tarea](https://www.codeagentswarm.com/es/guias/como-usar-muse-code)
