@@ -37,6 +37,25 @@ Pi is a separate coding harness, not a model provider. Install the current packa
 - [Pi: pi-coding-agent-on-windows (EN)](https://www.codeagentswarm.com/en/guides/pi-coding-agent-on-windows)
 - [Pi: pi-coding-agent-en-windows (ES)](https://www.codeagentswarm.com/es/guias/pi-coding-agent-en-windows)
 
+## Scheduled Conversations (CodeAgentSwarm 2.5.0)
+
+A schedule is a project, an agent (optional model, reasoning and permissions) and a prompt. It runs only with Run now, at up to 24 set times a day on chosen days, or every 1, 2, 3, 4, 6, 8 or 12 hours. Each run opens a visible Chat you can continue, or runs headless with no tab, and can continue the same conversation or start a new one. Runs happen on the user's computer while CodeAgentSwarm is open; a missed slot runs once when the app opens (optional), and a slot is skipped while the previous run is still working (optional). Agents create and edit schedules through the CodeAgentSwarm MCP tools list_schedules, save_schedules, run_schedule and delete_schedules; the phone app lists, edits and runs them. Works with all 12 supported agents: Claude Code, Codex, Antigravity CLI, opencode, Kimi Code, Grok Build, Cursor Agent, Pi, Devin CLI, Muse Code, Cline and GitHub Copilot CLI. CAS Cloud hosts do not run schedules.
+
+- [How to schedule AI coding agents: cron for Claude Code, Codex and 10 more (EN)](https://www.codeagentswarm.com/en/guides/schedule-ai-coding-agents)
+- [Tareas programadas para agentes de IA (ES)](https://www.codeagentswarm.com/es/guias/tareas-programadas-agentes-ia)
+- [Schedule Claude Code (EN)](https://www.codeagentswarm.com/en/guides/schedule-claude-code)
+- [Schedule Codex (EN)](https://www.codeagentswarm.com/en/guides/schedule-codex)
+- [Schedule Antigravity CLI (EN)](https://www.codeagentswarm.com/en/guides/schedule-antigravity-cli)
+- [Schedule opencode (EN)](https://www.codeagentswarm.com/en/guides/schedule-opencode)
+- [Schedule Kimi Code (EN)](https://www.codeagentswarm.com/en/guides/schedule-kimi-code)
+- [Schedule Grok Build (EN)](https://www.codeagentswarm.com/en/guides/schedule-grok-build)
+- [Schedule Cursor Agent (EN)](https://www.codeagentswarm.com/en/guides/schedule-cursor-agent)
+- [Schedule Pi (EN)](https://www.codeagentswarm.com/en/guides/schedule-pi-coding-agent)
+- [Schedule Devin CLI (EN)](https://www.codeagentswarm.com/en/guides/schedule-devin-cli)
+- [Schedule Muse Code (EN)](https://www.codeagentswarm.com/en/guides/schedule-muse-code)
+- [Schedule Cline (EN)](https://www.codeagentswarm.com/en/guides/schedule-cline)
+- [Schedule GitHub Copilot CLI (EN)](https://www.codeagentswarm.com/en/guides/schedule-github-copilot-cli)
+
 ## Guides
 
 - [AI CLI Agent Swarm: Run Claude, Codex, OpenCode, Kimi and Grok (2026)](https://www.codeagentswarm.com/en/guides/ai-cli-agent-swarm)

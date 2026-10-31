@@ -228,6 +228,19 @@
       "yourTurn": "Te toca: pon en cola la tarea #4 con el rayo"
     }
   },
+  "scheduled250": {
+    "eyebrow": "Novedad en 2.5.0 · Conversaciones programadas",
+    "titlePre": "Tus agentes arrancan",
+    "titleHighlight": "solos.",
+    "description": "Elige un proyecto, un agente y un prompt, y decide cuándo: a horas fijas los días que quieras, cada pocas horas o solo cuando pulses Run now. Cada ejecución abre un Chat normal que puedes leer y continuar, o trabaja en segundo plano sin pestaña.",
+    "check1": "Funciona con los 12 agentes, de Claude Code y Codex a Pi y GitHub Copilot CLI",
+    "check2": "Hasta 24 horas fijas al día, o cada 1 a 12 horas",
+    "check3": "Pídeselo a un agente o gestiona tus tareas programadas desde el móvil",
+    "note": "Se ejecuta en tu ordenador con CodeAgentSwarm abierto. ¿La app estaba cerrada a esa hora? Se ejecuta una vez al abrirla.",
+    "viewGuide": "Cómo funciona",
+    "videoLabel": "Creando una tarea programada en CodeAgentSwarm y viendo cómo arranca a su hora",
+    "caption": "Captura real: una tarea diaria a las 21:00 para Codex y la ejecución llegando a su Chat."
+  },
   "socialProof": {
     "stats": {
       "workflow": {

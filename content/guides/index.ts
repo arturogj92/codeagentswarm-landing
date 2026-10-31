@@ -16,6 +16,33 @@ import enDevin2 from './en/devin-cli-models-usage-limits'
 import esDevin2 from './es/devin-cli-modelos-cuotas'
 import enDevin3 from './en/devin-cli-mcp-history'
 import esDevin3 from './es/devin-cli-mcp-historial'
+// Scheduled Conversations (release 2.5.0): pillar + one guide per agent
+import enScheduled0 from './en/schedule-ai-coding-agents'
+import esScheduled0 from './es/tareas-programadas-agentes-ia'
+import enScheduled1 from './en/schedule-claude-code'
+import esScheduled1 from './es/tareas-programadas-claude-code'
+import enScheduled2 from './en/schedule-codex'
+import esScheduled2 from './es/tareas-programadas-codex'
+import enScheduled3 from './en/schedule-antigravity-cli'
+import esScheduled3 from './es/tareas-programadas-antigravity-cli'
+import enScheduled4 from './en/schedule-opencode'
+import esScheduled4 from './es/tareas-programadas-opencode'
+import enScheduled5 from './en/schedule-kimi-code'
+import esScheduled5 from './es/tareas-programadas-kimi-code'
+import enScheduled6 from './en/schedule-grok-build'
+import esScheduled6 from './es/tareas-programadas-grok-build'
+import enScheduled7 from './en/schedule-cursor-agent'
+import esScheduled7 from './es/tareas-programadas-cursor-agent'
+import enScheduled8 from './en/schedule-pi-coding-agent'
+import esScheduled8 from './es/tareas-programadas-pi-coding-agent'
+import enScheduled9 from './en/schedule-devin-cli'
+import esScheduled9 from './es/tareas-programadas-devin-cli'
+import enScheduled10 from './en/schedule-muse-code'
+import esScheduled10 from './es/tareas-programadas-muse-code'
+import enScheduled11 from './en/schedule-cline'
+import esScheduled11 from './es/tareas-programadas-cline'
+import enScheduled12 from './en/schedule-github-copilot-cli'
+import esScheduled12 from './es/tareas-programadas-github-copilot-cli'
 // Guide registry - maps slugs to guide content
 
 import type { Guide } from './types'
@@ -343,6 +370,20 @@ export const guides: Record<string, Record<string, Guide>> = {
     'cursor-cli-vs-claude-code': enCursorVsClaude,
     'cursor-cli-on-windows': enCursorWindows,
     'cursor-cli-pricing': enCursorPricing,
+    // Scheduled Conversations (2.5.0)
+    'schedule-ai-coding-agents': enScheduled0,
+    'schedule-claude-code': enScheduled1,
+    'schedule-codex': enScheduled2,
+    'schedule-antigravity-cli': enScheduled3,
+    'schedule-opencode': enScheduled4,
+    'schedule-kimi-code': enScheduled5,
+    'schedule-grok-build': enScheduled6,
+    'schedule-cursor-agent': enScheduled7,
+    'schedule-pi-coding-agent': enScheduled8,
+    'schedule-devin-cli': enScheduled9,
+    'schedule-muse-code': enScheduled10,
+    'schedule-cline': enScheduled11,
+    'schedule-github-copilot-cli': enScheduled12,
   },
   es: {
     'swe-2-benchmarks-comparativa': esSwe2Benchmarks,
@@ -456,6 +497,20 @@ export const guides: Record<string, Record<string, Guide>> = {
     'cursor-cli-vs-claude-code': esCursorVsClaude,
     'cursor-cli-en-windows': esCursorWindows,
     'precios-y-uso-cursor-cli': esCursorPricing,
+    // Scheduled Conversations (2.5.0)
+    'tareas-programadas-agentes-ia': esScheduled0,
+    'tareas-programadas-claude-code': esScheduled1,
+    'tareas-programadas-codex': esScheduled2,
+    'tareas-programadas-antigravity-cli': esScheduled3,
+    'tareas-programadas-opencode': esScheduled4,
+    'tareas-programadas-kimi-code': esScheduled5,
+    'tareas-programadas-grok-build': esScheduled6,
+    'tareas-programadas-cursor-agent': esScheduled7,
+    'tareas-programadas-pi-coding-agent': esScheduled8,
+    'tareas-programadas-devin-cli': esScheduled9,
+    'tareas-programadas-muse-code': esScheduled10,
+    'tareas-programadas-cline': esScheduled11,
+    'tareas-programadas-github-copilot-cli': esScheduled12,
   },
 }
 
