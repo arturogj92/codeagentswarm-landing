@@ -9,9 +9,9 @@ export const guide: Guide = {
     locale: 'en',
     title: 'Codex Mobile App: How to Use OpenAI Codex From Your Phone',
     metaTitle: 'Codex Mobile App: Use OpenAI Codex From Your Phone (2026)',
-    metaDescription: 'What OpenAI offers for Codex on mobile in the ChatGPT app, what it needs, and how to reach Codex CLI sessions on your own computer from your phone.',
-    intro: `OpenAI does not ship a standalone Codex app for phones. Codex on mobile lives inside the ChatGPT app for iOS and Android, and it connects to Codex Cloud or to a Mac or Windows PC running the ChatGPT desktop app.\n\nThat covers a lot of people. It does not cover the Codex CLI you run in a terminal: OpenAI's docs say mobile setup cannot be started from the CLI or the IDE extension. This guide explains the official option first, then how the CodeAgentSwarm phone app reaches Codex CLI sessions running on your own computer.`,
-    ctaText: 'Run Codex CLI in CodeAgentSwarm on macOS, Windows or Linux and follow every Codex session from the CodeAgentSwarm phone app.',
+    metaDescription: 'What OpenAI offers for Codex on mobile in the ChatGPT app, what it needs, and how to reach Codex sessions on your own computer from your phone.',
+    intro: `OpenAI does not ship a standalone Codex app for phones. Codex on mobile lives inside the ChatGPT app for iOS and Android, and it connects to Codex Cloud or to a Mac or Windows PC running the ChatGPT desktop app.\n\nThat covers a lot of people. It does not cover the Codex CLI you run in a terminal: OpenAI's docs say mobile setup cannot be started from the CLI or the IDE extension. This guide explains the official option first, then how the CodeAgentSwarm phone app reaches Codex sessions that run on your own computer, on top of the Codex CLI you already installed.`,
+    ctaText: 'Run Codex in CodeAgentSwarm Chat on macOS, Windows or Linux and follow every Codex session from the CodeAgentSwarm phone app.',
     ctaAgent: 'codex',
     highlightedWords: ['Codex', 'Mobile App'],
     publishedAt: '2026-10-31',
@@ -59,7 +59,7 @@ export const guide: Guide = {
         },
         {
           type: 'paragraph',
-          text: `CodeAgentSwarm fills that gap. It is a desktop app for macOS, Windows and Linux where you run Codex CLI, Claude Code and other agents side by side (see <a href="/en/guides/codex-gui" ${A}>Codex GUI</a>). Its phone app pairs with CodeAgentSwarm, so your Codex sessions on that computer show up on the phone.`,
+          text: `CodeAgentSwarm fills that gap. It is a desktop app for macOS, Windows and Linux where you run Codex, Claude Code and other agents side by side (see <a href="/en/guides/codex-gui" ${A}>Codex GUI</a>). In its Chat view, Codex runs through the Codex CLI installed on your computer, with your own login. The phone app pairs with CodeAgentSwarm, so those Codex Chat sessions show up on the phone. A session you switch to the raw Terminal (CLI) view is not reachable from the phone until you switch it back to Chat.`,
         },
       ],
     },
@@ -87,7 +87,7 @@ export const guide: Guide = {
         {
           type: 'list',
           items: [
-            'See every Codex session with its status, next to your Claude Code and other agent sessions.',
+            'See every Codex Chat session with its status, next to your Claude Code and other agent sessions.',
             'Reply, answer questions and approvals, and start a new Codex session in one of your projects.',
             'Attach photos and files, or dictate a voice note that becomes editable text.',
             'Get a notification on iPhone or Android when a session needs you.',
@@ -108,7 +108,7 @@ export const guide: Guide = {
           headers: ['', 'Codex in the ChatGPT app', 'CodeAgentSwarm phone app'],
           rows: [
             ['Desktop side', 'ChatGPT desktop app (macOS, Windows) or Codex Cloud', 'CodeAgentSwarm (macOS, Windows, Linux)'],
-            ['Codex CLI in a terminal', 'Not a supported setup', 'Yes'],
+            ['Uses the Codex CLI on your computer', 'Not a supported setup', 'Yes, for sessions in Chat view'],
             ['Other agents', 'Codex', 'Codex, Claude Code, OpenCode and the other agents in CodeAgentSwarm'],
             ['Work with the computer off', 'Yes, with Codex Cloud', 'No, the computer must be on'],
           ],
@@ -127,7 +127,7 @@ export const guide: Guide = {
     },
     {
       question: 'Can I use the Codex CLI from my phone?',
-      answer: "OpenAI's docs say the mobile connection cannot be set up from the Codex CLI or the IDE extension. To reach Codex CLI sessions from your phone, run them in CodeAgentSwarm and pair the CodeAgentSwarm phone app.",
+      answer: "OpenAI's docs say the mobile connection cannot be set up from the Codex CLI or the IDE extension. To reach Codex on your computer from your phone, run it in CodeAgentSwarm Chat (it uses your installed Codex CLI) and pair the CodeAgentSwarm phone app. Sessions in the raw Terminal (CLI) view are not reachable from the phone.",
     },
     {
       question: 'Does Codex on mobile work with Linux?',

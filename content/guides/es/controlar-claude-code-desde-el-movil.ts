@@ -11,7 +11,7 @@ export const guide: Guide = {
     metaTitle: 'Controlar Claude Code desde el móvil: 2 formas que funcionan',
     metaDescription: 'Controla Claude Code desde el móvil con Remote Control de Anthropic o con la app de CodeAgentSwarm. Pasos, requisitos y qué puedes hacer con cada una.',
     intro: `Lanzas una tarea larga en Claude Code y te tienes que ir de la mesa. El trabajo no tiene por qué parar. Hay dos formas de seguir llevando esa sesión desde el móvil mientras Claude Code sigue corriendo en tu ordenador, con tus archivos, tus herramientas y tus servidores MCP.\n\nLa primera es Remote Control, que Anthropic incluye en Claude Code. La segunda es la app de CodeAgentSwarm para el móvil, que se empareja con la app de escritorio de CodeAgentSwarm y además cubre Codex y el resto de agentes que uses ahí. En esta guía tienes cómo se configura cada una y cuándo encaja mejor.`,
-    ctaText: 'Empareja el móvil con CodeAgentSwarm una vez y sigue todas tus sesiones de Claude Code desde la app de App Store, la beta de Android o la app web.',
+    ctaText: 'Empareja el móvil con CodeAgentSwarm una vez y sigue todas tus sesiones de Claude Code en Chat desde la app de App Store, la beta de Android o la app web.',
     ctaAgent: 'claude-code',
     highlightedWords: ['Claude Code', 'móvil'],
     publishedAt: '2026-10-31',
@@ -86,14 +86,14 @@ export const guide: Guide = {
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm es una app de escritorio para macOS, Windows y Linux que ejecuta tus agentes de programación uno al lado del otro. Su app para el móvil se empareja con esa app de escritorio, así que cada sesión que tengas abierta ahí aparece en el teléfono. Claude Code sigue corriendo en tu ordenador con la cuenta que ya tiene.',
+          text: 'CodeAgentSwarm es una app de escritorio para macOS, Windows y Linux que ejecuta tus agentes de programación uno al lado del otro. Su app para el móvil se empareja con esa app de escritorio, así que cada sesión que tengas abierta ahí en la vista Chat aparece en el teléfono. Claude Code sigue corriendo en tu ordenador con la cuenta que ya tiene.',
         },
         {
           type: 'image',
-          alt: 'CodeAgentSwarm para iPhone y Apple Watch en App Store',
-          src: '/og-app-store.png',
-          caption: 'La app de CodeAgentSwarm está en App Store para iPhone y Apple Watch. Android está en beta.',
-          size: 'medium',
+          alt: 'App de CodeAgentSwarm para el móvil, modo demo: sesiones de Chat agrupadas por proyecto con su estado',
+          src: '/images/guides/phone-app-demo-sessions.webp',
+          caption: 'App de CodeAgentSwarm para el móvil en modo demo, con datos de ejemplo. Tus sesiones de Chat, agrupadas por proyecto.',
+          size: 'small',
         },
         { type: 'heading', level: 3, id: 'descargar-app', text: 'Descarga la app' },
         {
@@ -127,7 +127,7 @@ export const guide: Guide = {
       content: [
         {
           type: 'paragraph',
-          text: 'Una vez emparejado, el móvil muestra tus sesiones agrupadas por proyecto, con el estado de cada una. Desde ahí puedes:',
+          text: 'Una vez emparejado, el móvil muestra tus sesiones de Chat agrupadas por proyecto, con el estado de cada una. Desde ahí puedes:',
         },
         {
           type: 'list',
@@ -139,6 +139,18 @@ export const guide: Guide = {
             'Dictar un mensaje: la nota de voz se convierte en texto que puedes corregir antes de enviar.',
             'Recibir un aviso en iPhone o Android cuando una sesión te necesita y abrir esa conversación con un toque.',
           ],
+        },
+        {
+          type: 'image',
+          alt: 'App de CodeAgentSwarm para el móvil, modo demo: una respuesta de Codex y una pregunta esperando respuesta',
+          src: '/images/guides/phone-app-demo-chat.webp',
+          caption: 'Modo demo, datos de ejemplo: lees la respuesta y contestas la pregunta que el agente está esperando.',
+          size: 'small',
+        },
+        {
+          type: 'callout',
+          variant: 'info',
+          content: '<strong>Solo sesiones en Chat.</strong> El móvil muestra las sesiones que usas en la vista Chat de CodeAgentSwarm. Una sesión que cambias a la vista Terminal (CLI) deja de estar al alcance del móvil hasta que la vuelves a poner en Chat en el ordenador. Las sesiones que abres desde el móvil se abren como Chat.',
         },
         {
           type: 'paragraph',
@@ -158,7 +170,7 @@ export const guide: Guide = {
             ['Agentes', 'Claude Code', 'Claude Code, Codex, OpenCode y el resto de agentes de CodeAgentSwarm'],
             ['Dónde corre el agente', 'En tu ordenador', 'En tu ordenador'],
             ['Cuenta', 'Plan de claude.ai (sin claves de API)', 'Cuenta de CodeAgentSwarm; cada agente usa su propio login'],
-            ['Varias sesiones', 'Modo servidor, o una por proceso', 'Todas las sesiones abiertas, de todos los proyectos'],
+            ['Varias sesiones', 'Modo servidor, o una por proceso', 'Todas las sesiones abiertas en Chat, de todos los proyectos'],
           ],
         },
         {
@@ -201,7 +213,7 @@ export const guide: Guide = {
     },
     {
       question: '¿También puedo controlar Codex desde el móvil?',
-      answer: 'Con CodeAgentSwarm, sí: las sesiones de Codex aparecen junto a las de Claude Code. En la guía de la app móvil de Codex tienes las opciones que ofrece OpenAI.',
+      answer: 'Con CodeAgentSwarm, sí: las sesiones de Codex en Chat aparecen junto a las de Claude Code. En la guía de la app móvil de Codex tienes las opciones que ofrece OpenAI.',
     },
   ],
 }

@@ -9,9 +9,9 @@ export const guide: Guide = {
     locale: 'es',
     title: 'App móvil de Codex: cómo usar OpenAI Codex desde el móvil',
     metaTitle: 'App móvil de Codex: usa OpenAI Codex desde el móvil (2026)',
-    metaDescription: 'Qué ofrece OpenAI para usar Codex en la app de ChatGPT, qué necesita y cómo llegar desde el móvil a las sesiones de Codex CLI de tu ordenador.',
-    intro: `OpenAI no tiene una app de Codex aparte para el móvil. Codex en el móvil vive dentro de la app de ChatGPT para iOS y Android, y se conecta a Codex Cloud o a un Mac o PC con Windows que tenga abierta la app de escritorio de ChatGPT.\n\nEso cubre a mucha gente. Lo que no cubre es Codex CLI en un terminal: la documentación de OpenAI dice que la conexión con el móvil no se puede configurar desde la CLI ni desde la extensión del IDE. En esta guía tienes primero la opción oficial y después cómo la app de CodeAgentSwarm para el móvil llega a las sesiones de Codex CLI que corren en tu ordenador.`,
-    ctaText: 'Ejecuta Codex CLI en CodeAgentSwarm en macOS, Windows o Linux y sigue todas tus sesiones de Codex desde la app de CodeAgentSwarm para el móvil.',
+    metaDescription: 'Qué ofrece OpenAI para usar Codex en la app de ChatGPT, qué necesita y cómo llegar desde el móvil a las sesiones de Codex de tu ordenador.',
+    intro: `OpenAI no tiene una app de Codex aparte para el móvil. Codex en el móvil vive dentro de la app de ChatGPT para iOS y Android, y se conecta a Codex Cloud o a un Mac o PC con Windows que tenga abierta la app de escritorio de ChatGPT.\n\nEso cubre a mucha gente. Lo que no cubre es Codex CLI en un terminal: la documentación de OpenAI dice que la conexión con el móvil no se puede configurar desde la CLI ni desde la extensión del IDE. En esta guía tienes primero la opción oficial y después cómo la app de CodeAgentSwarm para el móvil llega a las sesiones de Codex que corren en tu ordenador, sobre la Codex CLI que ya tienes instalada.`,
+    ctaText: 'Ejecuta Codex en el Chat de CodeAgentSwarm en macOS, Windows o Linux y sigue todas tus sesiones de Codex desde la app de CodeAgentSwarm para el móvil.',
     ctaAgent: 'codex',
     highlightedWords: ['Codex', 'App móvil'],
     publishedAt: '2026-10-31',
@@ -59,7 +59,7 @@ export const guide: Guide = {
         },
         {
           type: 'paragraph',
-          text: `CodeAgentSwarm cubre ese hueco. Es una app de escritorio para macOS, Windows y Linux en la que ejecutas Codex CLI, Claude Code y otros agentes uno al lado del otro (mira <a href="/es/guias/interfaz-grafica-codex" ${A}>interfaz gráfica para Codex</a>). Su app para el móvil se empareja con CodeAgentSwarm, así que tus sesiones de Codex en ese ordenador aparecen en el teléfono.`,
+          text: `CodeAgentSwarm cubre ese hueco. Es una app de escritorio para macOS, Windows y Linux en la que ejecutas Codex, Claude Code y otros agentes uno al lado del otro (mira <a href="/es/guias/interfaz-grafica-codex" ${A}>interfaz gráfica para Codex</a>). En su vista Chat, Codex funciona a través de la Codex CLI instalada en tu ordenador, con tu propia cuenta. La app para el móvil se empareja con CodeAgentSwarm, así que esas sesiones de Codex en Chat aparecen en el teléfono. Una sesión que cambias a la vista Terminal (CLI) no se ve desde el móvil hasta que la vuelves a poner en Chat.`,
         },
       ],
     },
@@ -87,7 +87,7 @@ export const guide: Guide = {
         {
           type: 'list',
           items: [
-            'Ver cada sesión de Codex con su estado, junto a tus sesiones de Claude Code y de otros agentes.',
+            'Ver cada sesión de Codex en Chat con su estado, junto a tus sesiones de Claude Code y de otros agentes.',
             'Responder, contestar preguntas y aprobaciones, y abrir una sesión nueva de Codex en uno de tus proyectos.',
             'Adjuntar fotos y archivos, o dictar una nota de voz que se convierte en texto editable.',
             'Recibir un aviso en iPhone o Android cuando una sesión te necesita.',
@@ -108,7 +108,7 @@ export const guide: Guide = {
           headers: ['', 'Codex en la app de ChatGPT', 'App de CodeAgentSwarm'],
           rows: [
             ['En el ordenador', 'App de escritorio de ChatGPT (macOS, Windows) o Codex Cloud', 'CodeAgentSwarm (macOS, Windows, Linux)'],
-            ['Codex CLI en un terminal', 'No es una configuración compatible', 'Sí'],
+            ['Usa la Codex CLI de tu ordenador', 'No es una configuración compatible', 'Sí, en las sesiones en vista Chat'],
             ['Otros agentes', 'Codex', 'Codex, Claude Code, OpenCode y el resto de agentes de CodeAgentSwarm'],
             ['Con el ordenador apagado', 'Sí, con Codex Cloud', 'No, el ordenador tiene que estar encendido'],
           ],
@@ -127,7 +127,7 @@ export const guide: Guide = {
     },
     {
       question: '¿Puedo usar Codex CLI desde el móvil?',
-      answer: 'La documentación de OpenAI dice que la conexión con el móvil no se puede configurar desde Codex CLI ni desde la extensión del IDE. Para llegar a sesiones de Codex CLI desde el móvil, ejecútalas en CodeAgentSwarm y empareja su app para el móvil.',
+      answer: 'La documentación de OpenAI dice que la conexión con el móvil no se puede configurar desde Codex CLI ni desde la extensión del IDE. Para llegar desde el móvil a Codex en tu ordenador, úsalo en el Chat de CodeAgentSwarm (funciona con tu Codex CLI instalada) y empareja su app para el móvil. Las sesiones en la vista Terminal (CLI) no se ven desde el móvil.',
     },
     {
       question: '¿Codex en el móvil funciona con Linux?',

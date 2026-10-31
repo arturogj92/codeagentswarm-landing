@@ -109,7 +109,7 @@ export const guide: Guide = {
       content: [
         {
           type: 'paragraph',
-          text: `With the CodeAgentSwarm phone app paired to your computer, you can attach a photo from the camera or the gallery to any session, draw on it, and send it. Handy for a bug you just saw on a real device. Setup is in <a href="/en/guides/control-claude-code-from-phone" ${A}>how to control Claude Code from your phone</a>.`,
+          text: `With the CodeAgentSwarm phone app paired to your computer, you can attach a photo from the camera or the gallery to any Chat session, draw on it, and send it. Handy for a bug you just saw on a real device. Setup is in <a href="/en/guides/control-claude-code-from-phone" ${A}>how to control Claude Code from your phone</a>.`,
         },
       ],
     },

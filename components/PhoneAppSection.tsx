@@ -18,12 +18,12 @@ const COPY = {
     titlePre: 'Follow your coding agents',
     titleHighlight: 'from your phone',
     description:
-      'Pair your phone with CodeAgentSwarm on your computer by scanning a QR code. Claude Code, Codex and the rest keep running on your machine, with your files and your logins, and you follow them from your pocket.',
+      'Pair your phone with CodeAgentSwarm on your computer by scanning a QR code. Claude Code, Codex and the rest keep running on your machine, with your files and your logins, and you follow their Chat sessions from your pocket.',
     checks: [
-      'Read every session and reply, or answer the question an agent is waiting on',
-      'Start a new session in any of your projects',
+      'Read every Chat session and reply, or answer the question an agent is waiting on',
+      'Start a new Chat session in any of your projects',
       'Send a photo, a file or a voice note',
-      'Get a notification when a session needs you',
+      'Get a notification when a Chat session needs you',
     ],
     privacy: 'End-to-end encrypted: the relay moves your messages but cannot read them.',
     appStore: 'iPhone and Apple Watch',
@@ -40,12 +40,12 @@ const COPY = {
     titlePre: 'Sigue a tus agentes',
     titleHighlight: 'desde el móvil',
     description:
-      'Empareja el móvil con CodeAgentSwarm en tu ordenador escaneando un código QR. Claude Code, Codex y los demás siguen corriendo en tu máquina, con tus archivos y tus cuentas, y tú los sigues desde el bolsillo.',
+      'Empareja el móvil con CodeAgentSwarm en tu ordenador escaneando un código QR. Claude Code, Codex y los demás siguen corriendo en tu máquina, con tus archivos y tus cuentas, y tú sigues sus sesiones de Chat desde el bolsillo.',
     checks: [
-      'Lee cada sesión y responde, o contesta la pregunta que un agente te está esperando',
-      'Abre una sesión nueva en cualquiera de tus proyectos',
+      'Lee cada sesión de Chat y responde, o contesta la pregunta que un agente te está esperando',
+      'Abre una sesión de Chat nueva en cualquiera de tus proyectos',
       'Envía una foto, un archivo o una nota de voz',
-      'Recibe un aviso cuando una sesión te necesita',
+      'Recibe un aviso cuando una sesión de Chat te necesita',
     ],
     privacy: 'Cifrado de extremo a extremo: el relay mueve tus mensajes, pero no puede leerlos.',
     appStore: 'iPhone y Apple Watch',

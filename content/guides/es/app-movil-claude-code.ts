@@ -11,7 +11,7 @@ export const guide: Guide = {
     metaTitle: 'App móvil de Claude Code: qué existe y cuál usar (2026)',
     metaDescription: '¿Hay app móvil de Claude Code? Qué hace la pestaña Code de la app de Claude, sesiones en la nube frente a Remote Control y cuándo encaja CodeAgentSwarm.',
     intro: `Si buscas "Claude Code" en App Store, no vas a encontrar una app aparte. Anthropic mete Claude Code en el móvil dentro de la app normal de Claude, en una pestaña que se llama Code. Lo que puedes hacer ahí depende de dónde corre el trabajo: en la nube de Anthropic o en tu propio ordenador.\n\nEn esta guía tienes las opciones oficiales, con sus requisitos, y dónde encaja la app de CodeAgentSwarm para el móvil si usas Claude Code junto a otros agentes en tu ordenador.`,
-    ctaText: 'Ejecuta Claude Code en CodeAgentSwarm en tu ordenador y lleva todas tus sesiones en el bolsillo con la app de CodeAgentSwarm para el móvil.',
+    ctaText: 'Ejecuta Claude Code en CodeAgentSwarm en tu ordenador y lleva todas tus sesiones de Chat en el bolsillo con la app de CodeAgentSwarm para el móvil.',
     ctaAgent: 'claude-code',
     highlightedWords: ['Claude Code', 'App móvil'],
     publishedAt: '2026-10-31',
@@ -80,24 +80,31 @@ export const guide: Guide = {
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm es una app de escritorio para macOS, Windows y Linux en la que ejecutas Claude Code, Codex, OpenCode y otros agentes de programación uno al lado del otro. Su app para el móvil se empareja una vez con esa app de escritorio, con un código QR, y a partir de ahí muestra cada sesión que tengas abierta.',
+          text: 'CodeAgentSwarm es una app de escritorio para macOS, Windows y Linux en la que ejecutas Claude Code, Codex, OpenCode y otros agentes de programación uno al lado del otro. Su app para el móvil se empareja una vez con esa app de escritorio, con un código QR, y a partir de ahí muestra cada sesión que tengas abierta en la vista Chat.',
         },
         {
           type: 'image',
-          alt: 'CodeAgentSwarm para iPhone y Apple Watch en App Store',
-          src: '/og-app-store.png',
-          caption: 'CodeAgentSwarm para iPhone y Apple Watch. Android está en beta y hay app web.',
-          size: 'medium',
+          alt: 'App de CodeAgentSwarm para el móvil, modo demo: sesiones de Chat agrupadas por proyecto con su estado',
+          src: '/images/guides/phone-app-demo-sessions.webp',
+          caption: 'App de CodeAgentSwarm para el móvil en modo demo, con datos de ejemplo. Tus sesiones de Chat, agrupadas por proyecto.',
+          size: 'small',
         },
         {
           type: 'list',
           items: [
-            'Tus sesiones en una lista, agrupadas por proyecto, con su estado.',
+            'Tus sesiones de Chat en una lista, agrupadas por proyecto, con su estado.',
             'Responder, contestar preguntas y aprobaciones, y abrir sesiones nuevas en tus proyectos.',
             'Adjuntar fotos, dibujar encima, adjuntar archivos o dictar una nota de voz.',
             'Avisos en iPhone y Android cuando una sesión te necesita.',
             'Cifrado de extremo a extremo entre móvil y ordenador: el relay no puede leer tus conversaciones.',
           ],
+        },
+        {
+          type: 'image',
+          alt: 'App de CodeAgentSwarm para el móvil, modo demo: una respuesta de Codex y una pregunta esperando respuesta',
+          src: '/images/guides/phone-app-demo-chat.webp',
+          caption: 'Modo demo, datos de ejemplo: lees la respuesta y contestas la pregunta que el agente está esperando.',
+          size: 'small',
         },
         {
           type: 'paragraph',
@@ -139,7 +146,7 @@ export const guide: Guide = {
     },
     {
       question: '¿Qué es la app de CodeAgentSwarm para el móvil?',
-      answer: 'Una compañera de la app de escritorio de CodeAgentSwarm. La emparejas una vez y desde ahí sigues y contestas todas las sesiones de agentes que corren en tu ordenador, incluidos Claude Code y Codex. Está en App Store para iPhone, en beta para Android y como app web.',
+      answer: 'Una compañera de la app de escritorio de CodeAgentSwarm. La emparejas una vez y desde ahí sigues y contestas todas las sesiones de agentes que usas en la vista Chat de tu ordenador, incluidos Claude Code y Codex. Las sesiones que cambias a la vista Terminal (CLI) no se ven desde el móvil. Está en App Store para iPhone, en beta para Android y como app web.',
     },
   ],
 }

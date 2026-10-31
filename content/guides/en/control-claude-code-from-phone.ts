@@ -11,7 +11,7 @@ export const guide: Guide = {
     metaTitle: 'Control Claude Code From Your Phone: 2 Ways That Work (2026)',
     metaDescription: 'Control Claude Code from your phone with Anthropic Remote Control or the CodeAgentSwarm app. Setup steps, requirements and what each one can do.',
     intro: `You start a long task in Claude Code, then you need to leave the desk. The work does not have to stop. There are two ways to keep driving that session from your phone while Claude Code keeps running on your own computer, with your files, tools and MCP servers.\n\nThe first is Remote Control, built into Claude Code by Anthropic. The second is the CodeAgentSwarm phone app, which pairs with the CodeAgentSwarm desktop app and also covers Codex and the other agents you run there. This guide shows the setup for both and when each one fits.`,
-    ctaText: 'Pair your phone with CodeAgentSwarm once and follow every Claude Code session from the App Store app, the Android beta or the web app.',
+    ctaText: 'Pair your phone with CodeAgentSwarm once and follow every Claude Code Chat session from the App Store app, the Android beta or the web app.',
     ctaAgent: 'claude-code',
     highlightedWords: ['Claude Code', 'Phone'],
     publishedAt: '2026-10-31',
@@ -86,14 +86,14 @@ export const guide: Guide = {
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm is a desktop app for macOS, Windows and Linux that runs your coding agents side by side. Its phone app pairs with that desktop app, so every session you have open there shows up on the phone. Claude Code still runs on your computer with the login it already has.',
+          text: 'CodeAgentSwarm is a desktop app for macOS, Windows and Linux that runs your coding agents side by side. Its phone app pairs with that desktop app, so every session you have open there in Chat view shows up on the phone. Claude Code still runs on your computer with the login it already has.',
         },
         {
           type: 'image',
-          alt: 'CodeAgentSwarm for iPhone and Apple Watch on the App Store',
-          src: '/og-app-store.png',
-          caption: 'The CodeAgentSwarm phone app is on the App Store for iPhone and Apple Watch. Android is in beta.',
-          size: 'medium',
+          alt: 'CodeAgentSwarm phone app, demo mode: Chat sessions grouped by project with their status',
+          src: '/images/guides/phone-app-demo-sessions.webp',
+          caption: 'CodeAgentSwarm phone app in demo mode, with sample data. Your Chat sessions, grouped by project.',
+          size: 'small',
         },
         { type: 'heading', level: 3, id: 'get-the-app', text: 'Get the app' },
         {
@@ -127,7 +127,7 @@ export const guide: Guide = {
       content: [
         {
           type: 'paragraph',
-          text: 'Once paired, the phone shows your sessions grouped by project, with the status of each one. From there you can:',
+          text: 'Once paired, the phone shows your Chat sessions grouped by project, with the status of each one. From there you can:',
         },
         {
           type: 'list',
@@ -139,6 +139,18 @@ export const guide: Guide = {
             'Dictate a message: the voice note is turned into text you can edit before sending.',
             'Get a notification on iPhone or Android when a session needs you, and tap it to open that conversation.',
           ],
+        },
+        {
+          type: 'image',
+          alt: 'CodeAgentSwarm phone app, demo mode: a Codex reply and a question waiting for an answer',
+          src: '/images/guides/phone-app-demo-chat.webp',
+          caption: 'Demo mode, sample data: read the reply and answer the question the agent is waiting on.',
+          size: 'small',
+        },
+        {
+          type: 'callout',
+          variant: 'info',
+          content: '<strong>Chat sessions only.</strong> The phone shows the sessions you run in Chat view in CodeAgentSwarm. A session switched to the Terminal (CLI) view is not reachable from the phone until you switch it back to Chat on the computer. Sessions you start from the phone open as Chats.',
         },
         {
           type: 'paragraph',
@@ -158,7 +170,7 @@ export const guide: Guide = {
             ['Agents', 'Claude Code', 'Claude Code, Codex, OpenCode and the other agents in CodeAgentSwarm'],
             ['Where the agent runs', 'Your computer', 'Your computer'],
             ['Account', 'claude.ai plan (no API keys)', 'CodeAgentSwarm account; each agent uses its own login'],
-            ['Several sessions', 'Server mode, or one per process', 'Every open session, across projects'],
+            ['Several sessions', 'Server mode, or one per process', 'Every open Chat session, across projects'],
           ],
         },
         {
@@ -201,7 +213,7 @@ export const guide: Guide = {
     },
     {
       question: 'Can I control Codex from the phone too?',
-      answer: 'With CodeAgentSwarm, yes: Codex sessions show up next to Claude Code ones. See the Codex mobile app guide for the options OpenAI offers.',
+      answer: 'With CodeAgentSwarm, yes: Codex Chat sessions show up next to Claude Code ones. See the Codex mobile app guide for the options OpenAI offers.',
     },
   ],
 }

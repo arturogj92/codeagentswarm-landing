@@ -11,7 +11,7 @@ export const guide: Guide = {
     metaTitle: 'Claude Code Mobile App: What Exists and What to Use (2026)',
     metaDescription: 'Is there a Claude Code mobile app? What the Claude app Code tab does, how cloud sessions and Remote Control differ, and when the CodeAgentSwarm app fits.',
     intro: `If you search the App Store for "Claude Code", you will not find a separate app. Anthropic puts Claude Code on the phone inside the regular Claude app, in a tab called Code. What that tab can do depends on where the work runs: in Anthropic's cloud or on your own computer.\n\nThis guide explains the official options, with their requirements, and where the CodeAgentSwarm phone app fits if you run Claude Code next to other agents on your computer.`,
-    ctaText: 'Run Claude Code in CodeAgentSwarm on your computer and keep every session in your pocket with the CodeAgentSwarm phone app.',
+    ctaText: 'Run Claude Code in CodeAgentSwarm on your computer and keep every Chat session in your pocket with the CodeAgentSwarm phone app.',
     ctaAgent: 'claude-code',
     highlightedWords: ['Claude Code', 'Mobile App'],
     publishedAt: '2026-10-31',
@@ -80,24 +80,31 @@ export const guide: Guide = {
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm is a desktop app for macOS, Windows and Linux where you run Claude Code, Codex, OpenCode and other coding agents side by side. Its phone app pairs with that desktop app once, by QR code, and then shows every session you have open there.',
+          text: 'CodeAgentSwarm is a desktop app for macOS, Windows and Linux where you run Claude Code, Codex, OpenCode and other coding agents side by side. Its phone app pairs with that desktop app once, by QR code, and then shows every session you have open there in Chat view.',
         },
         {
           type: 'image',
-          alt: 'CodeAgentSwarm for iPhone and Apple Watch on the App Store',
-          src: '/og-app-store.png',
-          caption: 'CodeAgentSwarm for iPhone and Apple Watch. Android is in beta and there is a web app.',
-          size: 'medium',
+          alt: 'CodeAgentSwarm phone app, demo mode: Chat sessions grouped by project with their status',
+          src: '/images/guides/phone-app-demo-sessions.webp',
+          caption: 'CodeAgentSwarm phone app in demo mode, with sample data. Your Chat sessions, grouped by project.',
+          size: 'small',
         },
         {
           type: 'list',
           items: [
-            'Your sessions in one list, grouped by project, with their status.',
+            'Your Chat sessions in one list, grouped by project, with their status.',
             'Reply, answer questions and approvals, and start new sessions in your projects.',
             'Attach photos, draw on them, attach files or dictate a voice note.',
             'Push notifications on iPhone and Android when a session needs you.',
             'End-to-end encryption between phone and computer: the relay cannot read your conversations.',
           ],
+        },
+        {
+          type: 'image',
+          alt: 'CodeAgentSwarm phone app, demo mode: a Codex reply and a question waiting for an answer',
+          src: '/images/guides/phone-app-demo-chat.webp',
+          caption: 'Demo mode, sample data: read the reply and answer the question the agent is waiting on.',
+          size: 'small',
         },
         {
           type: 'paragraph',
@@ -139,7 +146,7 @@ export const guide: Guide = {
     },
     {
       question: 'What is the CodeAgentSwarm phone app?',
-      answer: 'A companion for the CodeAgentSwarm desktop app. You pair it once and then follow and answer every agent session running on your computer, including Claude Code and Codex. It is on the App Store for iPhone, in beta for Android and available as a web app.',
+      answer: 'A companion for the CodeAgentSwarm desktop app. You pair it once and then follow and answer every agent session you run in Chat view on your computer, including Claude Code and Codex. Sessions switched to the Terminal (CLI) view are not reachable from the phone. It is on the App Store for iPhone, in beta for Android and available as a web app.',
     },
   ],
 }

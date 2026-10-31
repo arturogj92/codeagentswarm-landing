@@ -109,7 +109,7 @@ export const guide: Guide = {
       content: [
         {
           type: 'paragraph',
-          text: `Con la app de CodeAgentSwarm para el móvil emparejada con tu ordenador, puedes adjuntar una foto de la cámara o de la galería a cualquier sesión, dibujar encima y enviarla. Muy útil para un fallo que acabas de ver en un dispositivo real. Los pasos están en <a href="/es/guias/controlar-claude-code-desde-el-movil" ${A}>cómo controlar Claude Code desde el móvil</a>.`,
+          text: `Con la app de CodeAgentSwarm para el móvil emparejada con tu ordenador, puedes adjuntar una foto de la cámara o de la galería a cualquier sesión de Chat, dibujar encima y enviarla. Muy útil para un fallo que acabas de ver en un dispositivo real. Los pasos están en <a href="/es/guias/controlar-claude-code-desde-el-movil" ${A}>cómo controlar Claude Code desde el móvil</a>.`,
         },
       ],
     },
