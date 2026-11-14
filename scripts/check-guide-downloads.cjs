@@ -18,13 +18,15 @@ const mac = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.1
 const iphone = 'Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 Version/18.0 Mobile/15E148 Safari/604.1'
 let emailReply = { status: 200, body: { queued: true, emailSent: true } }
 const emailRequests = [], notifications = [], errors = []
-async function prepare(browser, userAgent, width = 1440, architecture) {
+async function prepare(browser, userAgent, width = 1440, architecture, share = false) {
   const context = await browser.newContext({ userAgent, viewport: { width, height: 1050 } })
-  await context.addInitScript(({ architecture }) => {
+  await context.addInitScript(({ architecture, share }) => {
+    // Whether a share sheet exists depends on the host browser, so each case sets it.
+    Object.defineProperty(navigator, 'share', { configurable: true, value: share ? async data => { window.sharedLink = data.url } : undefined })
     window.guideEvents = []
     window.umami = { track: (name, data) => window.guideEvents.push({ name, data }) }
     Object.defineProperty(navigator, 'userAgentData', { value: architecture ? { getHighEntropyValues: async () => ({ architecture }) } : undefined })
-  }, { architecture })
+  }, { architecture, share })
   await context.route('**/*', async route => {
     const req = route.request(), url = new URL(req.url())
     if (url.pathname === '/api/releases') return route.fulfill({ json: { releases } })
@@ -98,6 +100,23 @@ async function submit(page) {
       await page.keyboard.press('Escape')
       assert.equal(await block.locator('dialog').evaluate(el => el.open), false)
       assert.ok(alternateUrl)
+      await context.close()
+    }
+    {
+      // A phone with a share sheet sends the link in one tap; the email form stays one tap away.
+      const { context, page } = await prepare(browser, iphone, 390, undefined, true)
+      await page.goto(`${base}/en/guides/opencode-on-windows`)
+      const block = page.locator('[data-guide-product-block]')
+      const share = block.getByRole('button', { name: /Send the link to my computer/ })
+      await share.waitFor()
+      assert.equal(await block.getByRole('textbox').count(), 0)
+      await screenshot(page, 'mobile-share')
+      await share.click()
+      await block.getByText('Sent. Open it on your computer to install.', { exact: true }).waitFor()
+      assert.equal(await page.evaluate(() => window.sharedLink), 'https://www.codeagentswarm.com/en?source=mobile_share#download')
+      assert.ok(await page.evaluate(() => window.guideEvents.some(e => e.name === 'mobile_share_done' && e.data.guide === 'opencode-on-windows')))
+      await block.getByRole('button', { name: 'Or email it to me', exact: true }).click()
+      await block.getByRole('textbox', { name: 'Email address' }).waitFor()
       await context.close()
     }
     const { context, page } = await prepare(browser, iphone, 390)

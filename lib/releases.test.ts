@@ -1,6 +1,6 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
-import { getLinuxDownloads, publicReleases, resolveDownloadForTarget, type Release } from './releases.ts'
+import { getDirectDownloadUrl, getLinuxDownloads, getTrackedDownloadUrl, publicReleases, resolveDownloadForTarget, type Release } from './releases.ts'
 const asset = { fileName: 'test', fileUrl: 'https://example.invalid/test', fileSize: 17 }
 const releases: Release[] = [{ version: '2.4.1', releaseDate: '', formattedDownloads: { macArm: null, macIntel: null },
   downloads: Object.fromEntries(['x64', 'arm64'].flatMap(arch => ['deb', 'appimage'].map(format => [`linux-${arch}-${format}`, asset]))),
@@ -19,4 +19,18 @@ test('Linux is public by default and hidden only by an explicit false', () => {
   }
   assert.ok(resolveDownloadForTarget(releases, 'windows_x64')?.href.includes('/2.4.0/windows-x64'))
   assert.ok(resolveDownloadForTarget(releases, 'silicon')?.href.includes('/2.4.0/arm64'))
+})
+
+test('A shared link carries its source to the installer request', () => {
+  const page = (search: string) => Object.defineProperty(globalThis, 'window', { configurable: true, value: { location: { search } } })
+  try {
+    page('?source=mobile_share')
+    assert.ok(getTrackedDownloadUrl('2.4.3', 'windows-x64').endsWith('/2.4.3/windows-x64?source=mobile_share'))
+    assert.ok(getDirectDownloadUrl('2.4.3', 'arm64').endsWith('/2.4.3/arm64?source=mobile_share'))
+    page('?source=Not%20Valid!')
+    assert.ok(getTrackedDownloadUrl('2.4.3', 'windows-x64').endsWith('/windows-x64'))
+  } finally {
+    // @ts-expect-error test cleanup
+    delete globalThis.window
+  }
 })

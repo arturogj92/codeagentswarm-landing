@@ -27,14 +27,22 @@ export const DOWNLOAD_TARGETS: DownloadTarget[] = ['silicon', 'intel', 'windows_
 
 export const BACKEND_BASE = 'https://codeagentswarm-backend-production.up.railway.app'
 
+// Carries ?source= from the page URL to the installer request, so the backend
+// can attribute it (e.g. the link a phone visitor shared with their computer).
+function attribution() {
+  if (typeof window === 'undefined') return ''
+  const source = new URLSearchParams(window.location.search).get('source') || ''
+  return /^[a-z0-9_-]{1,32}$/.test(source) ? `?source=${source}` : ''
+}
+
 export function getDirectDownloadUrl(version: string, arch: string) {
-  return `${BACKEND_BASE}/api/releases/download-dmg/${version}/${arch}`
+  return `${BACKEND_BASE}/api/releases/download-dmg/${version}/${arch}${attribution()}`
 }
 
 // Routes the download through the backend so it is counted server-side
 // (app_downloads); platform must be silicon | intel | windows-x64 | windows-arm64
 export function getTrackedDownloadUrl(version: string, platform: string) {
-  return `${BACKEND_BASE}/api/releases/download/${version}/${platform}`
+  return `${BACKEND_BASE}/api/releases/download/${version}/${platform}${attribution()}`
 }
 
 export function notifyLandingEvent(event: string, data: Record<string, string>) {

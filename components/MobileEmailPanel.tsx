@@ -18,6 +18,24 @@ export default function MobileEmailPanel({ guide, source = guide ? 'guide' : 'ho
   const viewTracked = useRef(false)
   const [email, setEmail] = useState('')
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error' | 'rateLimited'>('idle')
+  // Guide readers rarely type an email (0.6% did). Where the phone has a share
+  // sheet, one tap sends the link to their computer; the form stays one tap away.
+  const [canShare, setCanShare] = useState(true)
+  const [useEmail, setUseEmail] = useState(false)
+  const [shared, setShared] = useState(false)
+  const shareFirst = compact && canShare && !useEmail
+  useEffect(() => setCanShare(typeof navigator.share === 'function'), [])
+
+  const handleShare = async () => {
+    window.umami?.track('mobile_share_click', tracking)
+    try {
+      await navigator.share({ title: 'CodeAgentSwarm', text: g('shareText'), url: `https://www.codeagentswarm.com/${locale}?source=mobile_share#download` })
+      setShared(true)
+      window.umami?.track('mobile_share_done', tracking)
+    } catch {
+      // The visitor closed the share sheet.
+    }
+  }
 
   // Track mobile_link_offer_view once, when the panel enters the viewport.
   useEffect(() => {
@@ -71,7 +89,7 @@ export default function MobileEmailPanel({ guide, source = guide ? 'guide' : 'ho
       ref={panelRef}
       className={compact ? '' : 'mb-8 rounded-2xl bg-neutral-950 border border-neon-cyan/30 p-5'}
     >
-      {compact ? <p className="text-[13px] text-neutral-300 mb-3 leading-relaxed">{g('mobilePrompt')}</p> : <div className="flex items-start gap-3 mb-4">
+      {compact ? <p className="text-[13px] text-neutral-300 mb-3 leading-relaxed">{g(shareFirst ? 'sharePrompt' : 'mobilePrompt')}</p> : <div className="flex items-start gap-3 mb-4">
         <div className="w-10 h-10 shrink-0 rounded-xl bg-neon-cyan/10 border border-neon-cyan/30 flex items-center justify-center">
           <Smartphone className="w-5 h-5 text-neon-cyan" aria-hidden="true" />
         </div>
@@ -83,7 +101,22 @@ export default function MobileEmailPanel({ guide, source = guide ? 'guide' : 'ho
         </div>
       </div>}
 
-      {status !== 'success' ? (
+      {shareFirst ? (
+        <div>
+          <button
+            type="button"
+            onClick={handleShare}
+            className="w-full py-3 min-h-[46px] bg-neon-cyan text-black font-semibold hover:bg-amber-300 transition-colors rounded-[9px] text-[13px] text-left px-3.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-neon-cyan"
+          >
+            {g('shareButton')}
+            <span aria-hidden="true" className="ml-2">↗</span>
+          </button>
+          <div role="status" aria-live="polite">
+            {shared && <p className="mt-3 p-4 border border-emerald-400/20 bg-emerald-500/5 rounded-[9px] text-sm text-emerald-200">{g('shareDone')}</p>}
+          </div>
+          <button type="button" className="mt-3 text-xs text-neutral-300 underline underline-offset-4" onClick={() => { setUseEmail(true); requestAnimationFrame(() => inputRef.current?.focus()) }}>{g('emailInstead')}</button>
+        </div>
+      ) : status !== 'success' ? (
         <>
           <form onSubmit={handleSubmit} className="flex flex-col gap-3">
             <label htmlFor={inputId} className="sr-only">

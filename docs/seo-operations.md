@@ -105,6 +105,20 @@ For a private local preview, use `node scripts/seo-daily-report.mjs --dry-run`. 
 
 For installation follow-up, keep website clicks, installer requests and observed fresh launches separate. The existing `installation_activation_v1` RPC measures first-terminal activation within seven days, but its `returned_after_1d` and `returned_after_7d` fields have no fixed upper bound. They are not fixed-window retention. Compare mature cohorts with the same observation window, exclude update-harness versions `90.0.x`, and account for the late-August rollout of installation telemetry. Installation identifiers do not attribute app use to a particular guide or acquisition source.
 
+## Phone readers: share the link first (proposed November 14, not published)
+
+Branch `feat/mobile-share-link`. Interactive proposal with real captures: `docs/plans/2026-11-14-mobile-share-link-design.html`.
+
+Evidence, Umami, 30 days to November 14: 5,476 phone visitors (14% of traffic, 94% of their pageviews on guides). The email form inside the guide block was seen 4,080 times and submitted 26 times (0.64%). The same form in the home download section: 110 views, 15 submissions (13.6%). Of 39 emails sent, 18 produced an installer request (backend `by_source.mobile_email`). The form works for visitors who are looking for the download; guide readers do not type an email.
+
+Change: in the compact block (`MobileEmailPanel` with `compact`), phones with a share sheet (`navigator.share`) get one button that shares `https://www.codeagentswarm.com/{locale}?source=mobile_share#download`. The email form stays behind "Or email it to me" and is unchanged. Browsers without a share sheet keep the form. The home download section is unchanged.
+
+Measurement: `mobile_share_click` on tap and `mobile_share_done` when the share resolves, with the usual `source`, `position` and `guide` fields. A cancelled share sheet rejects and records only the click. `lib/releases.ts` forwards a valid `?source=` from the page URL to both installer routes, so installer requests from a shared link appear as `by_source.mobile_share` in the backend download stats. The backend already accepted any source matching `^[a-z0-9_-]{1,32}$`; no backend change.
+
+Compare 14 complete days after release with the 14 before: phone visitors who share or submit, target 3% or more from 0.7%, with email submissions not falling in absolute numbers. Unknown until then: how many shared links are opened on a computer. A shared link leaves no email address.
+
+`check-guide-downloads.cjs` sets `navigator.share` explicitly per case, because Chromium exposes it on some hosts and not others.
+
 ## Linux downloads in guide CTAs (November 14)
 
 `lib/platform.ts` detects desktop Linux and `lib/releases.ts` resolves the four Linux installers through the same tracked backend route as the home cards. Android and ChromeOS still get no direct target. The default is `.deb`; Fedora, SUSE, Red Hat and CentOS user agents get the AppImage. Chromium hides the distribution, so the caption names the format and "Other platforms" lists the other format for the same CPU first.
