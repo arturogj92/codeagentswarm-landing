@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { unstable_cache } from 'next/cache'
 import { verifyToken, COOKIE_NAME } from '@/lib/auth'
 import { supabaseRpc } from '@/lib/supabase-client'
 import type {
@@ -16,7 +15,10 @@ interface OperationalRpcRow {
   agent_launches: number | string
 }
 
-const loadOverview = unstable_cache(async () => {
+// No unstable_cache: it serves the last snapshot on the first visit after a gap, and the
+// lifecycle counts compare that old last_active with the browser clock (85 instead of 102
+// active in 7d on 2026-11-14). Both RPCs answer in ~2 s.
+async function loadOverview() {
   const [baseUsers, operationalRows] = await Promise.all([
     supabaseRpc<Omit<UserActivityRow,
       'avg_terminal_slots' | 'max_terminal_slots' | 'terminal_metric_source' |
@@ -43,7 +45,7 @@ const loadOverview = unstable_cache(async () => {
     generated_at: new Date().toISOString(),
   }
   return overview
-}, ['user-activity-overview-v2'], { revalidate: 30 })
+}
 
 export async function GET(request: NextRequest) {
   const token = request.cookies.get(COOKIE_NAME)?.value

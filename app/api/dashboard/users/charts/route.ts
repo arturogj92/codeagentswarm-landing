@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { unstable_cache } from 'next/cache'
 import { verifyToken, COOKIE_NAME } from '@/lib/auth'
 import { supabaseRpc } from '@/lib/supabase-client'
 import {
@@ -8,12 +7,12 @@ import {
   type UserActivityCharts,
 } from '@/app/(dashboard)/dashboard/users/users-activity'
 
-// Cached like overview and global: these RPCs compete for database CPU when the page opens.
-const loadCharts = unstable_cache(async (excludedUserIds: string[], windowDays: number) => supabaseRpc<UserActivityCharts>({
+// Not cached for the same reason as overview and trend; the RPC answers in ~0.3 s.
+const loadCharts = (excludedUserIds: string[], windowDays: number) => supabaseRpc<UserActivityCharts>({
   signal: AbortSignal.timeout(45_000),
   fn: 'user_activity_charts_v1',
   args: { p_excluded_user_ids: excludedUserIds, p_window_days: windowDays },
-}), ['user-activity-charts-v1'], { revalidate: 60 })
+})
 
 export async function POST(request: NextRequest) {
   const token = request.cookies.get(COOKIE_NAME)?.value

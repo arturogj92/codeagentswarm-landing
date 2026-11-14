@@ -12,10 +12,13 @@ import {
   type UserGlobalMetrics,
 } from '@/app/(dashboard)/dashboard/users/users-activity'
 
+export const maxDuration = 60
+
 const loadGlobalMetrics = unstable_cache(async (
   excludedUserIds: string[], windowDays: number, featureWindowDays: number,
 ) => {
-  const signal = AbortSignal.timeout(45_000)
+  // ~29 s + ~12 s in sequence (Nov 2026); budgets raised in backend migration 063.
+  const signal = AbortSignal.timeout(58_000)
   const args = {
     p_excluded_user_ids: excludedUserIds,
     p_window_days: windowDays,

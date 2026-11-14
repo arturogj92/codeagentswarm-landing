@@ -75,9 +75,10 @@ export async function supabaseRpc<T>(options: SupabaseRpcOptions): Promise<T> {
   const { url, key } = getConfig(useServiceRole)
 
   const response = await fetch(`${url}/rest/v1/rpc/${fn}`, {
+    // 60 s matches the longest admin RPC budget (user_activity_global_v3, migration 063).
     signal: options.signal
-      ? AbortSignal.any([options.signal, AbortSignal.timeout(35_000)])
-      : AbortSignal.timeout(35_000),
+      ? AbortSignal.any([options.signal, AbortSignal.timeout(60_000)])
+      : AbortSignal.timeout(60_000),
     method: 'POST',
     headers: {
       apikey: key,

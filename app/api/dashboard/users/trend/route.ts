@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { unstable_cache } from 'next/cache'
 import { verifyToken, COOKIE_NAME } from '@/lib/auth'
 import { supabaseRpc } from '@/lib/supabase-client'
 import {
@@ -8,12 +7,13 @@ import {
   type UsageTrend,
 } from '@/app/(dashboard)/dashboard/users/users-activity'
 
-// One minute is fresh enough for "connected now" and keeps reloads off the database.
-const loadTrend = unstable_cache(async (excludedUserIds: string[], days: number) => supabaseRpc<UsageTrend>({
+// Not cached: a stale snapshot showed an old "today" and stopped the chart days back.
+// The RPC answers in ~2.5 s.
+const loadTrend = (excludedUserIds: string[], days: number) => supabaseRpc<UsageTrend>({
   signal: AbortSignal.timeout(45_000),
   fn: 'user_activity_trend_v1',
   args: { p_excluded_user_ids: excludedUserIds, p_days: days },
-}), ['user-activity-trend-v1'], { revalidate: 60 })
+})
 
 export async function POST(request: NextRequest) {
   const token = request.cookies.get(COOKIE_NAME)?.value
