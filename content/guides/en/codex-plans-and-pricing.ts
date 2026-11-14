@@ -147,7 +147,7 @@ The rest of the detail is where people get surprised: Codex on the web, in the C
       content: [
         {
           type: 'paragraph',
-          text: 'Codex accepts an OpenAI API key instead of a ChatGPT login, which swaps the whole quota system for per-token billing. As of October 31, 2026, <a href="https://developers.openai.com/api/docs/pricing" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">OpenAI\'s API pricing</a> lists GPT-6.1 Sol at $2.00 per million input tokens, $0.10 for cached input and $10.00 per million output tokens, and GPT-6 Luna at $0.10 input and $0.50 output.',
+          text: 'Codex accepts an OpenAI API key instead of a ChatGPT login, which swaps the whole quota system for per-token billing. As of October 31, 2026, <a href="https://developers.openai.com/api/docs/pricing" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">OpenAI\'s API pricing</a> lists <a href="/en/guides/gpt-6-1-sol-for-coding" class="text-neon-cyan hover:text-neon-purple transition-colors">GPT-6.1 Sol</a> at $2.00 per million input tokens, $0.10 for cached input and $10.00 per million output tokens, and GPT-6 Luna at $0.10 input and $0.50 output.',
         },
         {
           type: 'paragraph',

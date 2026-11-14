@@ -74,7 +74,7 @@ const guide: Guide = {
       "content": [
         {
           "type": "paragraph",
-          "text": "The <a href=\"https://dev.meta.ai/docs/pricing-rate-limits\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">published API rates</a> checked on October 31, 2026 are for Muse Spark, in US dollars per one million tokens. These are metered API rates, not monthly subscription prices. Muse Wonder costs more and has no Contributor price on pay-as-you-go."
+          "text": "The <a href=\"https://dev.meta.ai/docs/pricing-rate-limits\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">published API rates</a> checked on October 31, 2026 are for Muse Spark, in US dollars per one million tokens. These are metered API rates, not monthly subscription prices. <a href=\"/en/guides/muse-wonder-for-coding\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Muse Wonder</a> costs more and has no Contributor price on pay-as-you-go."
         },
         {
           "type": "table",
