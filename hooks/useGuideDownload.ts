@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { detectDownloadTarget } from '@/lib/platform'
-import { resolveDownloadForTarget, type DownloadTarget, type Release } from '@/lib/releases'
+import { DOWNLOAD_TARGETS, resolveDownloadForTarget, type DownloadTarget, type Release } from '@/lib/releases'
 
 export interface GuideDownloadState {
   href: string
@@ -44,8 +44,7 @@ export function useGuideDownload(locale: 'en' | 'es'): GuideDownloadState {
     let cancelled = false
     Promise.all([fetchReleases(), detectDownloadTarget()]).then(([releases, target]) => {
       if (cancelled) return
-      const targets: DownloadTarget[] = ['silicon', 'intel', 'windows_x64', 'windows_arm64']
-      const options = targets.flatMap((target) => {
+      const options = DOWNLOAD_TARGETS.flatMap((target) => {
         const resolved = resolveDownloadForTarget(releases, target)
         return resolved ? [{ target, ...resolved }] : []
       })

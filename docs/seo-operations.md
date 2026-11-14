@@ -79,6 +79,18 @@ For a private local preview, use `node scripts/seo-daily-report.mjs --dry-run`. 
 
 For installation follow-up, keep website clicks, installer requests and observed fresh launches separate. The existing `installation_activation_v1` RPC measures first-terminal activation within seven days, but its `returned_after_1d` and `returned_after_7d` fields have no fixed upper bound. They are not fixed-window retention. Compare mature cohorts with the same observation window, exclude update-harness versions `90.0.x`, and account for the late-August rollout of installation telemetry. Installation identifiers do not attribute app use to a particular guide or acquisition source.
 
+## Linux downloads in guide CTAs (November 14)
+
+`lib/platform.ts` detects desktop Linux and `lib/releases.ts` resolves the four Linux installers through the same tracked backend route as the home cards. Android and ChromeOS still get no direct target. The default is `.deb`; Fedora, SUSE, Red Hat and CentOS user agents get the AppImage. Chromium hides the distribution, so the caption names the format and "Other platforms" lists the other format for the same CPU first.
+
+Linux download events follow the existing pattern: `download_app_guide_linux_x64_deb` and so on, with the same `source`, `position` and `guide` fields. Home Linux cards send `download_app_home_linux_*`. Before November 14 no Umami event recorded a Linux download, so use backend installer requests for any earlier Linux baseline.
+
+```sh
+node --experimental-strip-types --test lib/releases.test.ts lib/platform.test.ts   # Node 22 or newer
+```
+
+`check-guide-downloads.cjs` now runs six desktop cases, including Linux x64 and ARM64.
+
 ## Guide download block (September 12)
 
 The approved compact block puts the platform download before the workspace preview. It applies to the existing eligible guides, including articles covering macOS. Download detection still selects Apple Silicon, Intel, Windows x64 or Windows ARM64; native “Other platforms” links reuse the same resolved release list and tracking. Existing Cursor/Pi/Devin showcase exclusions stay in place. General workspace imagery uses `workspace-list.webp` (1440 × 900), captured from the current macOS app in List view with a signed-in account, project shortcuts and ten sample agent sessions. Article images and enlarged CTA previews use the same asset. Feature-specific history/worktree videos retain their matching footage.

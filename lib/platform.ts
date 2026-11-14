@@ -16,7 +16,9 @@ export async function detectDownloadTarget(): Promise<DownloadTarget | null> {
   // Modern iPadOS reports a Macintosh user agent; touch points give it away.
   if (isMacLike && navigator.maxTouchPoints > 1) return null
   const isWindows = /Windows/.test(ua)
-  if (!isMacLike && !isWindows) return null
+  // Android is already excluded above; ChromeOS reports CrOS, not Linux.
+  const isLinux = /Linux/.test(ua)
+  if (!isMacLike && !isWindows && !isLinux) return null
 
   // Chromium exposes the CPU architecture via UA client hints; Safari and
   // Firefox do not, so we default to the overwhelmingly common arch and offer
@@ -32,5 +34,12 @@ export async function detectDownloadTarget(): Promise<DownloadTarget | null> {
   }
 
   if (isMacLike) return arch === 'x86' ? 'intel' : 'silicon'
+  if (isLinux) {
+    const cpu = arch === 'arm' || /aarch64|arm64/i.test(ua) ? 'arm64' : 'x64'
+    // Visitors pick .deb about twice as often as AppImage. Most browsers hide
+    // the distro; the ones that name an RPM distro get the AppImage instead.
+    const format = /Fedora|SUSE|Red Hat|CentOS/i.test(ua) ? 'appimage' : 'deb'
+    return `linux_${cpu}_${format}` as const
+  }
   return arch === 'arm' ? 'windows_arm64' : 'windows_x64'
 }

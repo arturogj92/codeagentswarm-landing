@@ -856,10 +856,15 @@
         "intel": "macOS · Intel",
         "windowsX64": "Windows · x64",
         "windowsArm64": "Windows · ARM64",
+        "linuxX64Deb": "Linux · x64 (.deb)",
+        "linuxX64AppImage": "Linux · x64 (AppImage)",
+        "linuxArm64Deb": "Linux · ARM64 (.deb)",
+        "linuxArm64AppImage": "Linux · ARM64 (AppImage)",
         "generic": "macOS, Windows y Linux"
       },
       "windowsButton": "Descargar para Windows",
       "macButton": "Descargar para Mac",
+      "linuxButton": "Descargar para Linux",
       "freeBeta": "Beta gratis"
     },
     "stickyBar": {
