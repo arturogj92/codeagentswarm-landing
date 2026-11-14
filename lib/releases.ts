@@ -21,7 +21,9 @@ export interface Release {
 export type DownloadSource = 'guide' | 'home' | 'guides_index'
 export type DownloadPosition = 'inline' | 'product_block' | 'final' | 'feature_videos' | 'after_first_group' | 'download_section'
 
-export type DownloadTarget = 'silicon' | 'intel' | 'windows_x64' | 'windows_arm64'
+export const LINUX_TARGETS = ['linux_x64_deb', 'linux_x64_appimage', 'linux_arm64_deb', 'linux_arm64_appimage'] as const
+export type DownloadTarget = 'silicon' | 'intel' | 'windows_x64' | 'windows_arm64' | (typeof LINUX_TARGETS)[number]
+export const DOWNLOAD_TARGETS: DownloadTarget[] = ['silicon', 'intel', 'windows_x64', 'windows_arm64', ...LINUX_TARGETS]
 
 export const BACKEND_BASE = 'https://codeagentswarm-backend-production.up.railway.app'
 
@@ -54,17 +56,19 @@ export function pickWinRelease(releases: Release[]): Release | null {
 }
 
 // Umami/notification architecture labels, matching what the home sends today.
-export const ARCHITECTURE_BY_TARGET: Record<DownloadTarget, string> = {
-  silicon: 'silicon',
-  intel: 'intel',
-  windows_x64: 'windows-x64',
-  windows_arm64: 'windows-arm64',
-}
+// They are also the backend platform keys (windows-x64, linux-x64-deb...).
+export const ARCHITECTURE_BY_TARGET = Object.fromEntries(
+  DOWNLOAD_TARGETS.map((target) => [target, target.replaceAll('_', '-')])
+) as Record<DownloadTarget, string>
 
 export function resolveDownloadForTarget(
   releases: Release[],
   target: DownloadTarget
 ): { href: string; version: string } | null {
+  if (target.startsWith('linux')) {
+    const linux = getLinuxDownloads(releases).find((d) => d.target === ARCHITECTURE_BY_TARGET[target])
+    return linux ? { href: linux.href, version: linux.version } : null
+  }
   if (target === 'silicon' || target === 'intel') {
     const mac = pickMacRelease(releases)
     if (!mac) return null

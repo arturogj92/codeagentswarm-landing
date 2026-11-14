@@ -1,8 +1,37 @@
 # SEO status
 
-Last updated: 2026-10-31
+Last updated: 2026-11-14
 
 Release state: the August 31 conversion, comparison and media changes passed production validation. Start post-release measurement only after the master deployment reports success.
+
+## November 14 measurement and Linux download fix
+
+Umami, 30 days to November 14: 48,228 pageviews and 39,189 visitors, up 25% on the previous 30 days. Guide articles hold 43,237 pageviews (89.6%). The backend counted 2,476 installer requests in the same period.
+
+Installer requests per visitor, by system (backend requests over Umami visitors, so directional: requests include retries and bots):
+
+| System | Visitors | Share | Installer requests | Requests per visitor |
+| --- | ---: | ---: | ---: | ---: |
+| Windows | 18,015 | 46.0% | 1,459 | 8.1% |
+| macOS | 8,388 | 21.4% | 667 | 8.0% |
+| Linux | 7,109 | 18.1% | 350 | 4.9% |
+| Android and iOS | 5,600 | 14.3% | 18, by email | 0.3% |
+
+Linux was the gap. Downloads have been public since 2.4.1, but `detectDownloadTarget` returned no target for Linux, so every guide CTA sent Linux readers to the home download section instead of serving the installer, and "Other platforms" listed only macOS and Windows. Two thirds of the readers of the Linux setup guides use Linux (598 of 895 visitors on `opencode-on-linux`). No Umami event recorded a Linux download anywhere, so the per-guide rates of the Linux guides (0.0% to 0.6%) were a measurement gap, not a real rate.
+
+Changed on `feat/linux-guide-downloads`:
+
+- Guide, guide-index, home feature-video and demo CTAs detect Linux and serve the installer directly: `.deb` by default (chosen twice as often as AppImage on x64), AppImage when the browser names an RPM distribution, ARM64 when the browser reports it. "Other platforms" lists the visitor's own system first.
+- New events `download_app_{home,guide,guides_index,demo}_linux_{x64,arm64}_{deb,appimage}`. The home Linux cards now send the home event too. The daily report already accepted these names.
+- `scripts/check-guide-downloads.cjs` covers Linux x64 and ARM64, and no longer expects the Pi and Devin beta wording retired with 2.4.0.
+
+Measure 14 complete days after deployment against the 14 days before: backend Linux installer requests per Linux visitor, target 6.5% or more. Do not compare Linux guide click rates across the deployment date; the event did not exist before.
+
+Other findings from the same pull, not acted on:
+
+- Intent decides conversion. Guide download clicks per pageview: `claude-code-gui` 11.3%, `codex-gui` 10.5%, `claude-code-on-windows` 9.2%, `claude-code-dashboard` 6.7%, against `claude-code-plans-and-pricing` 0.95% on 5,448 pageviews and `codex-yolo-mode` 0.28%. The high-intent pages hold under 1,600 pageviews together.
+- Phones: 5,105 views of the email offer produced 42 submissions (0.8%) and 18 installer requests.
+- Search Console has no export after October 1. The pricing snippet comparison and the October 31 pass still need a date-filtered export.
 
 ## October 31 freshness pass
 

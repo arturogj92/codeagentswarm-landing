@@ -10,8 +10,10 @@ test('Linux is public by default and hidden only by an explicit false', () => {
     assert.equal(publicReleases(releases).length, 2)
     assert.equal(getLinuxDownloads(releases).length, 4)
     assert.ok(getLinuxDownloads(releases).every(d => d.href.endsWith(d.target)))
+    assert.ok(resolveDownloadForTarget(releases, 'linux_arm64_appimage')?.href.endsWith('/2.4.1/linux-arm64-appimage'))
   } else {
     assert.deepEqual(getLinuxDownloads(releases), [])
+    assert.equal(resolveDownloadForTarget(releases, 'linux_x64_deb'), null)
     assert.equal(publicReleases(releases).length, 1)
     assert.equal(publicReleases(releases)[0].version, '2.4.0')
   }

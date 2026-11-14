@@ -578,7 +578,10 @@ export default function CTASection() {
                         <motion.a
                           key={download.target}
                           href={download.href}
-                          onClick={() => notifyLandingEvent('download_app', { architecture: download.target, version: download.version })}
+                          onClick={() => {
+                            window.umami?.track(`download_app_home_${download.target.replaceAll('-', '_')}`)
+                            notifyLandingEvent('download_app', { architecture: download.target, version: download.version })
+                          }}
                           whileHover={{ scale: 1.02, y: -4 }}
                           whileTap={{ scale: 0.98 }}
                           className="group relative"
