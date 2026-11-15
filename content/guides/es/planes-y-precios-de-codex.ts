@@ -220,7 +220,7 @@ El resto del detalle es donde llega la sorpresa: Codex en la web, en la CLI y en
         },
         {
           type: 'paragraph',
-          text: 'Encaja con el patrón de <a href="/es/guias/enjambre-de-agentes-codex" class="text-neon-cyan hover:text-neon-purple transition-colors">la guía del enjambre de agentes de Codex</a>: reparte el trabajo entre agentes que van a contadores distintos, para que agotar un proveedor no detenga toda la sesión. Codex y Claude facturan de botes completamente separados, lo cual es mejor razón para usar los dos que cualquier benchmark.',
+          text: 'Encaja con el patrón de <a href="/es/guias/enjambre-de-agentes-codex" class="text-neon-cyan hover:text-neon-purple transition-colors">la guía del enjambre de agentes de Codex</a>: reparte el trabajo entre agentes que van a contadores distintos, para que agotar un proveedor no detenga toda la sesión. Codex y Claude facturan de botes completamente separados, lo cual es mejor razón para usar los dos que cualquier benchmark. Si prefieres trabajar en una ventana y no en pestañas de terminal, mira <a href="/es/guias/interfaz-grafica-codex" class="text-neon-cyan hover:text-neon-purple transition-colors">qué aporta una interfaz gráfica para Codex</a>.',
         },
       ],
     },

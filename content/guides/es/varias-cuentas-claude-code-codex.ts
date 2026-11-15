@@ -30,7 +30,7 @@ Esta guía explica cómo añadir cuentas de Claude Code y Codex, elegir la prede
         },
         {
           type: 'paragraph',
-          text: 'Si buscas trabajar en paralelo con un solo login, consulta la guía para <a href="/es/guias/ejecutar-multiples-sesiones-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">ejecutar varias sesiones de Claude Code</a> o la de <a href="/es/guias/ejecutar-multiples-sesiones-codex" class="text-neon-cyan hover:text-neon-purple transition-colors">varias sesiones de Codex</a>. También puedes combinar ambas ideas, por ejemplo con dos conversaciones de trabajo en una cuenta y una conversación personal en otra.',
+          text: 'Si buscas trabajar en paralelo con un solo login, consulta la guía para <a href="/es/guias/ejecutar-multiples-sesiones-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">ejecutar varias sesiones de Claude Code</a> o la de <a href="/es/guias/ejecutar-multiples-sesiones-codex" class="text-neon-cyan hover:text-neon-purple transition-colors">varias sesiones de Codex</a>. También puedes combinar ambas ideas, por ejemplo con dos conversaciones de trabajo en una cuenta y una conversación personal en otra. La <a href="/es/guias/panel-de-control-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">guía del panel de control de Claude Code</a> explica cómo tener todas esas conversaciones a la vista.',
         },
         {
           type: 'callout',

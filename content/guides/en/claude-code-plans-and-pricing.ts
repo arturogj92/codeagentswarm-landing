@@ -114,7 +114,7 @@ This guide lays out what is known, dates every number, and flags the parts you s
         },
         {
           type: 'paragraph',
-          text: 'Treat that as a starting point rather than a guarantee. Anthropic publishes multipliers, not token counts, so the only honest test is a week on the cheaper tier with <code>/usage</code> open. If you finish the week without hitting a wall, the upgrade is money you do not need to spend.',
+          text: 'Treat that as a starting point rather than a guarantee. Anthropic publishes multipliers, not token counts, so the only honest test is a week on the cheaper tier with <code>/usage</code> open. If you finish the week without hitting a wall, the upgrade is money you do not need to spend. To keep several sessions in view while you run that test, see the <a href="/en/guides/claude-code-dashboard" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code dashboard guide</a>.',
         },
       ],
     },
@@ -212,7 +212,7 @@ This guide lays out what is known, dates every number, and flags the parts you s
         },
         {
           type: 'paragraph',
-          text: 'It also pairs with the obvious mitigation: when Claude is close to its weekly ceiling, move the less demanding work to another agent for a day rather than upgrading a tier you only need occasionally. <a href="/en/guides/opencode-plans-and-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">OpenCode</a> bills per token with no wall, and <a href="/en/guides/codex-plans-and-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex</a> has its own separate quota, so a mixed setup rarely stops entirely.',
+          text: 'It also pairs with the obvious mitigation: when Claude is close to its weekly ceiling, move the less demanding work to another agent for a day rather than upgrading a tier you only need occasionally. <a href="/en/guides/opencode-plans-and-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">OpenCode</a> bills per token with no wall, and <a href="/en/guides/codex-plans-and-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex</a> has its own separate quota, so a mixed setup rarely stops entirely. If you would rather work in a window than in terminal tabs, see <a href="/en/guides/claude-code-gui" class="text-neon-cyan hover:text-neon-purple transition-colors">what a Claude Code GUI adds</a>.',
         },
       ],
     },

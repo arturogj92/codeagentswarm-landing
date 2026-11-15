@@ -105,7 +105,7 @@ codex`,
         },
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm no la sustituye. Está pensado para el CLI de Codex que acabas de instalar: varios terminales de Codex a la vez, junto a Claude Code y otros agentes si los usas, con un solo sitio donde ver qué agente ha terminado y qué ha cambiado cada uno.',
+          text: 'CodeAgentSwarm no la sustituye. Está pensado para el CLI de Codex que acabas de instalar: varios terminales de Codex a la vez, junto a Claude Code y otros agentes si los usas, con un solo sitio donde ver qué agente ha terminado y qué ha cambiado cada uno. La <a href="/es/guias/interfaz-grafica-codex" class="' + link + '">guía de la interfaz gráfica para Codex</a> enseña cómo se ve frente al terminal a secas.',
         },
       ],
     },

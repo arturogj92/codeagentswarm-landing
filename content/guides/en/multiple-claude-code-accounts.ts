@@ -30,7 +30,7 @@ This guide shows how to add Claude Code and Codex accounts, choose the default f
         },
         {
           type: 'paragraph',
-          text: 'If your goal is parallel work under one login, use the <a href="/en/guides/run-multiple-claude-code-sessions" class="text-neon-cyan hover:text-neon-purple transition-colors">multiple Claude Code sessions guide</a> or the <a href="/en/guides/run-multiple-codex-sessions" class="text-neon-cyan hover:text-neon-purple transition-colors">multiple Codex sessions guide</a>. You can also combine both ideas, for example by running two work conversations on one account and a personal conversation on another.',
+          text: 'If your goal is parallel work under one login, use the <a href="/en/guides/run-multiple-claude-code-sessions" class="text-neon-cyan hover:text-neon-purple transition-colors">multiple Claude Code sessions guide</a> or the <a href="/en/guides/run-multiple-codex-sessions" class="text-neon-cyan hover:text-neon-purple transition-colors">multiple Codex sessions guide</a>. You can also combine both ideas, for example by running two work conversations on one account and a personal conversation on another. The <a href="/en/guides/claude-code-dashboard" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code dashboard guide</a> shows how to keep all of those conversations in view.',
         },
         {
           type: 'callout',

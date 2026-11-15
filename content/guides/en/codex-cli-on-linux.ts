@@ -105,7 +105,7 @@ codex`,
         },
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm is not a replacement for it. It is built around the Codex CLI you just installed: several Codex terminals at once, next to Claude Code and other agents if you use them, with one place to see which agent is done and what each one changed.',
+          text: 'CodeAgentSwarm is not a replacement for it. It is built around the Codex CLI you just installed: several Codex terminals at once, next to Claude Code and other agents if you use them, with one place to see which agent is done and what each one changed. The <a href="/en/guides/codex-gui" class="' + link + '">Codex GUI guide</a> shows what that looks like next to the raw terminal.',
         },
       ],
     },

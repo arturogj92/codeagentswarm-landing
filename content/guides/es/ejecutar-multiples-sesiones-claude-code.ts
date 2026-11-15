@@ -256,7 +256,7 @@ En esta guía te explico los tres métodos principales, los comparo de forma hon
         },
         {
           type: 'paragraph',
-          text: 'Cuando dos terminales tocan el mismo archivo, CodeAgentSwarm te ayuda a verlo en el momento. Puedes rastrear los cambios de archivos en tiempo real por terminal y a nivel de proyecto, para que las ediciones superpuestas no te pillen por sorpresa. Claude gestiona bien los conflictos de Git por sí solo, pero tener visibilidad de lo que cambia cada sesión hace que todo el flujo de trabajo sea más fluido. Más información en la <a href="/es/guias/ver-cambios-claude-code-tiempo-real" class="text-neon-cyan hover:text-neon-purple transition-colors">guía de cambios en tiempo real</a>.',
+          text: 'Cuando dos terminales tocan el mismo archivo, CodeAgentSwarm te ayuda a verlo en el momento. Puedes rastrear los cambios de archivos en tiempo real por terminal y a nivel de proyecto, para que las ediciones superpuestas no te pillen por sorpresa. Claude gestiona bien los conflictos de Git por sí solo, pero tener visibilidad de lo que cambia cada sesión hace que todo el flujo de trabajo sea más fluido. Más información en la <a href="/es/guias/ver-cambios-claude-code-tiempo-real" class="text-neon-cyan hover:text-neon-purple transition-colors">guía de cambios en tiempo real</a>. Para ver todas las sesiones en una sola pantalla, mira la <a href="/es/guias/panel-de-control-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">guía del panel de control de Claude Code</a>.',
         },
         {
           type: 'callout',

@@ -206,7 +206,7 @@ claude --version`,
         },
         {
           type: 'paragraph',
-          text: 'Si quieres tirar por ese camino, estas dos guías son el siguiente paso natural: <a href="/es/guias/como-usar-varios-terminales-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">Cómo usar varios terminales de Claude Code</a> y <a href="/es/guias/ejecutar-multiples-sesiones-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">Ejecutar múltiples sesiones de Claude Code</a>.',
+          text: 'Si quieres tirar por ese camino, estas dos guías son el siguiente paso natural: <a href="/es/guias/como-usar-varios-terminales-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">Cómo usar varios terminales de Claude Code</a> y <a href="/es/guias/ejecutar-multiples-sesiones-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">Ejecutar múltiples sesiones de Claude Code</a>. Si quieres una ventana en lugar de pestañas de terminal, mira la <a href="/es/guias/interfaz-grafica-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">guía de la interfaz gráfica de Claude Code</a>.',
         },
       ],
     },

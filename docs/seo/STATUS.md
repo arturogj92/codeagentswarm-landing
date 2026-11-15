@@ -1,8 +1,28 @@
 # SEO status
 
-Last updated: 2026-11-14
+Last updated: 2026-11-15
 
 Release state: the August 31 conversion, comparison and media changes passed production validation. Start post-release measurement only after the master deployment reports success.
+
+## November 15 internal links to the high-intent guides
+
+Decision from the November 14 per-guide figures: `claude-code-gui` (11.3% download clicks per pageview), `codex-gui` (10.5%) and `claude-code-dashboard` (6.7%) convert five to ten times better than the guides that hold the traffic, yet they received 353, 191 and 331 pageviews in 30 days and few internal links. No new page was created; the existing pages already own these intents.
+
+Ten source guides gained one sentence with a contextual link at the end of the section that already discusses the same need, in English and Spanish (24 links, 20 files). Titles, descriptions, slugs, anchors, `updatedAt` and every existing sentence are unchanged.
+
+| Target | English guides linking to it, before | After | New sources |
+| --- | ---: | ---: | --- |
+| `claude-code-gui` | 3 | 6 | Claude pricing, Claude on Linux, Claude on Windows |
+| `claude-code-dashboard` | 4 | 9 | Claude pricing, Claude on Linux, multiple chats, multiple accounts, multiple sessions |
+| `codex-gui` | 5 | 9 | Codex on Windows, Codex on Linux, Codex pricing, GPT-6.1 Sol |
+
+The nine existing sources held about 10,600 of the 43,237 guide pageviews in the last 30 days; the GPT-6.1 Sol guide is new. Each anchor names the target intent ("Claude Code GUI guide", "Claude Code dashboard guide", "Codex GUI guide") and each sentence says why the reader would go there.
+
+Not done on purpose: no link from `codex-yolo-mode` or the history guides, which already link to these targets; no GUI page for OpenCode, Antigravity or Kimi, which needs keyword evidence first; no change to the Windows guides as targets, since their readers arrive from Windows queries and not from other guides.
+
+Measure 28 complete days after deployment against the 28 before, per target and locale: Search Console position and clicks, Umami pageviews, and guide download clicks. Internal links move rankings slowly and the lift is not guaranteed; the direct effect to expect first is more pageviews on the three targets from readers who follow the link.
+
+Open finding, not addressed here: `node scripts/competitor-refresh.mjs --check` now fails on star drift for one competitor (33,790 recorded on October 31, 60,658 on November 15). The comparison guides and `scripts/competitor-facts.json` need a refresh pass.
 
 ## November 14 measurement and Linux download fix
 

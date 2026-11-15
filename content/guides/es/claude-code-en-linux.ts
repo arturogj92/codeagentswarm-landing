@@ -154,7 +154,7 @@ sudo dnf install claude-code
         },
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm resuelve otra cosa: tener varios agentes de terminal trabajando a la vez y no perderles la pista. Usa el CLI de Claude Code que acabas de instalar, lo combina con Codex y otros agentes en la misma ventana y también se distribuye como AppImage, así que funciona en Fedora y en la mayoría de distros.',
+          text: 'CodeAgentSwarm resuelve otra cosa: tener varios agentes de terminal trabajando a la vez y no perderles la pista. Usa el CLI de Claude Code que acabas de instalar, lo combina con Codex y otros agentes en la misma ventana y también se distribuye como AppImage, así que funciona en Fedora y en la mayoría de distros. La <a href="/es/guias/interfaz-grafica-claude-code" class="' + link + '">guía de la interfaz gráfica de Claude Code</a> enseña cómo se ve frente al terminal a secas.',
         },
       ],
     },
@@ -198,7 +198,7 @@ sudo dnf install claude-code
         },
         {
           type: 'paragraph',
-          text: 'Siguientes pasos: <a href="/es/guias/como-usar-varios-terminales-claude-code" class="' + link + '">cómo usar varios terminales de Claude Code</a> y <a href="/es/guias/ejecutar-multiples-sesiones-claude-code" class="' + link + '">ejecutar múltiples sesiones de Claude Code</a>. ¿Vas a instalar Codex en la misma máquina? Mira <a href="/es/guias/codex-cli-en-linux" class="' + link + '">Codex CLI en Linux</a>.',
+          text: 'Siguientes pasos: <a href="/es/guias/como-usar-varios-terminales-claude-code" class="' + link + '">cómo usar varios terminales de Claude Code</a> y <a href="/es/guias/ejecutar-multiples-sesiones-claude-code" class="' + link + '">ejecutar múltiples sesiones de Claude Code</a>. ¿Vas a instalar Codex en la misma máquina? Mira <a href="/es/guias/codex-cli-en-linux" class="' + link + '">Codex CLI en Linux</a>. Para seguirlas todas desde una pantalla, mira la <a href="/es/guias/panel-de-control-claude-code" class="' + link + '">guía del panel de control de Claude Code</a>.',
         },
       ],
     },

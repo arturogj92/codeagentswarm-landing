@@ -114,7 +114,7 @@ Esta guía deja claro lo que se sabe, fecha cada número y señala qué partes c
         },
         {
           type: 'paragraph',
-          text: 'Tómatelo como punto de partida, no como garantía. Anthropic publica multiplicadores y no recuentos de tokens, así que la única prueba honesta es una semana en el nivel más barato con <code>/usage</code> a mano. Si acabas la semana sin chocar con el muro, subir de nivel es dinero que no necesitas gastar.',
+          text: 'Tómatelo como punto de partida, no como garantía. Anthropic publica multiplicadores y no recuentos de tokens, así que la única prueba honesta es una semana en el nivel más barato con <code>/usage</code> a mano. Si acabas la semana sin chocar con el muro, subir de nivel es dinero que no necesitas gastar. Para tener varias sesiones a la vista mientras haces esa prueba, mira la <a href="/es/guias/panel-de-control-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">guía del panel de control de Claude Code</a>.',
         },
       ],
     },
@@ -212,7 +212,7 @@ Esta guía deja claro lo que se sabe, fecha cada número y señala qué partes c
         },
         {
           type: 'paragraph',
-          text: 'Además encaja con la mitigación evidente: cuando Claude está cerca de su techo semanal, mueve el trabajo menos exigente a otro agente durante un día en vez de subir un nivel que solo necesitas de vez en cuando. <a href="/es/guias/planes-y-precios-de-opencode" class="text-neon-cyan hover:text-neon-purple transition-colors">OpenCode</a> factura por token sin muro, y <a href="/es/guias/planes-y-precios-de-codex" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex</a> tiene su propia cuota independiente, así que un montaje mixto casi nunca se para del todo.',
+          text: 'Además encaja con la mitigación evidente: cuando Claude está cerca de su techo semanal, mueve el trabajo menos exigente a otro agente durante un día en vez de subir un nivel que solo necesitas de vez en cuando. <a href="/es/guias/planes-y-precios-de-opencode" class="text-neon-cyan hover:text-neon-purple transition-colors">OpenCode</a> factura por token sin muro, y <a href="/es/guias/planes-y-precios-de-codex" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex</a> tiene su propia cuota independiente, así que un montaje mixto casi nunca se para del todo. Si prefieres trabajar en una ventana y no en pestañas de terminal, mira <a href="/es/guias/interfaz-grafica-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">qué aporta una interfaz gráfica para Claude Code</a>.',
         },
       ],
     },

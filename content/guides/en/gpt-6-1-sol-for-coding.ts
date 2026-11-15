@@ -157,7 +157,7 @@ const guide: Guide = {
         },
         {
           type: 'paragraph',
-          text: 'The Terminal view runs the same CLI, so <code>/model</code> works there too. Projects, task board, notifications and searchable history work the same way with every agent.',
+          text: 'The Terminal view runs the same CLI, so <code>/model</code> works there too. Projects, task board, notifications and searchable history work the same way with every agent. For everything else the window does with Codex, see the <a href="/en/guides/codex-gui" class="' + link + '">Codex GUI guide</a>.',
         },
       ],
     },

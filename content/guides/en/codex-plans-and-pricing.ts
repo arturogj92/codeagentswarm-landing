@@ -220,7 +220,7 @@ The rest of the detail is where people get surprised: Codex on the web, in the C
         },
         {
           type: 'paragraph',
-          text: 'It pairs with the pattern from <a href="/en/guides/codex-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">the Codex agent swarm guide</a>: spread work across agents on different meters, so that exhausting one provider does not stop the whole session. Codex and Claude bill from entirely separate pools, which is a better reason to run both than any benchmark.',
+          text: 'It pairs with the pattern from <a href="/en/guides/codex-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">the Codex agent swarm guide</a>: spread work across agents on different meters, so that exhausting one provider does not stop the whole session. Codex and Claude bill from entirely separate pools, which is a better reason to run both than any benchmark. If you would rather work in a window than in terminal tabs, see <a href="/en/guides/codex-gui" class="text-neon-cyan hover:text-neon-purple transition-colors">what a Codex GUI adds</a>.',
         },
       ],
     },

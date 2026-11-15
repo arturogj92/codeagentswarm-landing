@@ -212,7 +212,7 @@ codex`,
         },
         {
           type: 'paragraph',
-          text: 'Si quieres tirar por ese camino, estas guías son el siguiente paso natural: <a href="/es/guias/enjambre-de-agentes-codex" class="text-neon-cyan hover:text-neon-purple transition-colors">ejecutar un enjambre de agentes Codex</a>, <a href="/es/guias/ejecutar-multiples-sesiones-codex" class="text-neon-cyan hover:text-neon-purple transition-colors">ejecutar múltiples sesiones de Codex</a> y la visión más amplia del <a href="/es/guias/enjambre-de-agentes-cli-ia" class="text-neon-cyan hover:text-neon-purple transition-colors">enjambre de agentes CLI de IA</a> en cualquier CLI.',
+          text: 'Si quieres tirar por ese camino, estas guías son el siguiente paso natural: <a href="/es/guias/enjambre-de-agentes-codex" class="text-neon-cyan hover:text-neon-purple transition-colors">ejecutar un enjambre de agentes Codex</a>, <a href="/es/guias/ejecutar-multiples-sesiones-codex" class="text-neon-cyan hover:text-neon-purple transition-colors">ejecutar múltiples sesiones de Codex</a> y la visión más amplia del <a href="/es/guias/enjambre-de-agentes-cli-ia" class="text-neon-cyan hover:text-neon-purple transition-colors">enjambre de agentes CLI de IA</a> en cualquier CLI. Si quieres una ventana en lugar de pestañas de terminal, mira la <a href="/es/guias/interfaz-grafica-codex" class="text-neon-cyan hover:text-neon-purple transition-colors">guía de la interfaz gráfica para Codex</a>.',
         },
       ],
     },

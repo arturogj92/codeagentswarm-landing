@@ -212,7 +212,7 @@ codex`,
         },
         {
           type: 'paragraph',
-          text: 'If you want to go down that path, these guides are the natural next step: <a href="/en/guides/codex-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">running a Codex agent swarm</a>, <a href="/en/guides/run-multiple-codex-sessions" class="text-neon-cyan hover:text-neon-purple transition-colors">running multiple Codex sessions</a>, and the broader <a href="/en/guides/ai-cli-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">AI CLI agent swarm</a> overview across every CLI.',
+          text: 'If you want to go down that path, these guides are the natural next step: <a href="/en/guides/codex-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">running a Codex agent swarm</a>, <a href="/en/guides/run-multiple-codex-sessions" class="text-neon-cyan hover:text-neon-purple transition-colors">running multiple Codex sessions</a>, and the broader <a href="/en/guides/ai-cli-agent-swarm" class="text-neon-cyan hover:text-neon-purple transition-colors">AI CLI agent swarm</a> overview across every CLI. If you want a window in place of terminal tabs, see the <a href="/en/guides/codex-gui" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex GUI guide</a>.',
         },
       ],
     },

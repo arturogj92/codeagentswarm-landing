@@ -157,7 +157,7 @@ const guide: Guide = {
         },
         {
           type: 'paragraph',
-          text: 'La vista Terminal ejecuta la misma CLI, así que <code>/model</code> también funciona ahí. Los proyectos, el tablero de tareas, las notificaciones y el historial con búsqueda funcionan igual con todos los agentes.',
+          text: 'La vista Terminal ejecuta la misma CLI, así que <code>/model</code> también funciona ahí. Los proyectos, el tablero de tareas, las notificaciones y el historial con búsqueda funcionan igual con todos los agentes. Para ver todo lo demás que hace la ventana con Codex, mira la <a href="/es/guias/interfaz-grafica-codex" class="' + link + '">guía de la interfaz gráfica para Codex</a>.',
         },
       ],
     },

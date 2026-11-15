@@ -154,7 +154,7 @@ sudo dnf install claude-code
         },
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm solves a different problem: running several terminal agents at once and keeping track of them. It works with the Claude Code CLI you just installed, mixes it with Codex and other agents in the same window, and ships as an AppImage too, so it also runs on Fedora and most other distributions.',
+          text: 'CodeAgentSwarm solves a different problem: running several terminal agents at once and keeping track of them. It works with the Claude Code CLI you just installed, mixes it with Codex and other agents in the same window, and ships as an AppImage too, so it also runs on Fedora and most other distributions. The <a href="/en/guides/claude-code-gui" class="' + link + '">Claude Code GUI guide</a> shows what that looks like next to the raw terminal.',
         },
       ],
     },
@@ -198,7 +198,7 @@ sudo dnf install claude-code
         },
         {
           type: 'paragraph',
-          text: 'Good next steps: <a href="/en/guides/how-to-use-multiple-claude-code-terminals" class="' + link + '">how to use multiple Claude Code terminals</a> and <a href="/en/guides/run-multiple-claude-code-sessions" class="' + link + '">run multiple Claude Code sessions</a>. Setting up Codex on the same machine? See <a href="/en/guides/codex-cli-on-linux" class="' + link + '">Codex CLI on Linux</a>.',
+          text: 'Good next steps: <a href="/en/guides/how-to-use-multiple-claude-code-terminals" class="' + link + '">how to use multiple Claude Code terminals</a> and <a href="/en/guides/run-multiple-claude-code-sessions" class="' + link + '">run multiple Claude Code sessions</a>. Setting up Codex on the same machine? See <a href="/en/guides/codex-cli-on-linux" class="' + link + '">Codex CLI on Linux</a>. To follow all of them from one screen, see the <a href="/en/guides/claude-code-dashboard" class="' + link + '">Claude Code dashboard guide</a>.',
         },
       ],
     },

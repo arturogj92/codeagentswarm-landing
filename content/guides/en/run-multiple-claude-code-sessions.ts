@@ -256,7 +256,7 @@ In this guide I will walk you through the three main methods, compare them hones
         },
         {
           type: 'paragraph',
-          text: 'When two terminals touch the same file, CodeAgentSwarm helps you see it happening. You can track real-time file changes per terminal and at project level, so overlapping edits do not catch you off guard. Claude handles Git conflicts well on its own, but having visibility into what each session is changing makes the whole workflow smoother. Learn more in the <a href="/en/guides/view-claude-code-changes-real-time" class="text-neon-cyan hover:text-neon-purple transition-colors">real-time changes guide</a>.',
+          text: 'When two terminals touch the same file, CodeAgentSwarm helps you see it happening. You can track real-time file changes per terminal and at project level, so overlapping edits do not catch you off guard. Claude handles Git conflicts well on its own, but having visibility into what each session is changing makes the whole workflow smoother. Learn more in the <a href="/en/guides/view-claude-code-changes-real-time" class="text-neon-cyan hover:text-neon-purple transition-colors">real-time changes guide</a>. For the overview of every session on one screen, see the <a href="/en/guides/claude-code-dashboard" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code dashboard guide</a>.',
         },
         {
           type: 'callout',
