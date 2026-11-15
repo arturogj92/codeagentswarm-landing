@@ -4,6 +4,18 @@ Last updated: 2026-11-15
 
 Release state: the August 31 conversion, comparison and media changes passed production validation. Start post-release measurement only after the master deployment reports success.
 
+## November 15 release 2.5.0 content published ahead of the app
+
+Arturo asked to publish the 2.5.0 content before the app release, expected within a day, so the new pages start being crawled. Until 2.5.0 is downloadable the site describes Cline, GitHub Copilot CLI, Scheduled Conversations, Visual Replies and the phone app while the installer is still 2.4.3. If the release slips, revert the three merges or hold the homepage sections.
+
+Merged PRs 30, 32 and 33 onto the November 15 master: 62 new guide pages in English and Spanish (13 Cline and Copilot CLI pairs, 13 scheduling pairs, 5 phone, screenshot and subagent pairs), the homepage sections for Scheduled Conversations, Visual Replies and the phone app, twelve agents across cards, comparison tables and `llms.txt`. The build now prerenders 345 pages.
+
+Conflicts were limited to the guide family map, the homepage section list, `llms.txt` and an expected count; both sides were kept. `check-seo-editorial.mjs` now expects 54 editorial next steps: it had not been updated when the GPT-6.1 Sol and Muse Wonder guides were published on November 14.
+
+Checked before publishing: type check, production build, the nine `scripts/check-*.mjs`, 27 node tests, `check-guide-downloads.cjs`, and the homepage in both languages on desktop and phone widths with no overflow or script errors. Spot-checked on November 15 against first-party pages: GitHub Copilot individual plans and AI credits (Pro $10 with 1,500, Pro+ $39 with 7,000, Max $100 with 20,000, $0.01 per extra credit) and the Cline CLI install command, Node.js requirement and `cline auth`. Every other third-party fact in these guides keeps its October verification date and is covered by the weekly data refresh.
+
+A weekly scheduled session ("SEO landing: datos al día", Mondays 09:00) now refreshes competitor facts, agent pricing and verification dates and may push those data updates to master. Its scope excludes new guides, titles, slugs and design.
+
 ## November 15 internal links to the high-intent guides
 
 Decision from the November 14 per-guide figures: `claude-code-gui` (11.3% download clicks per pageview), `codex-gui` (10.5%) and `claude-code-dashboard` (6.7%) convert five to ten times better than the guides that hold the traffic, yet they received 353, 191 and 331 pageviews in 30 days and few internal links. No new page was created; the existing pages already own these intents.

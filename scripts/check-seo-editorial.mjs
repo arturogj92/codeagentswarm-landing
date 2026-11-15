@@ -43,7 +43,7 @@ for (const guide of catalog) {
     }
   }
 }
-assert.equal(editorialCount, 50) // 40 + 10: release 2.5.0 phone, screenshot and subagent guides
+assert.equal(editorialCount, 54) // 40 + 10 for the 2.5.0 phone, screenshot and subagent guides + 4 for GPT-6.1 Sol and Muse Wonder
 const corrected = [
   'claude-code-agent-teams-vs-codeagentswarm', 'agent-teams-de-claude-code-vs-codeagentswarm',
   'claude-code-agent-swarm', 'enjambre-de-agentes-claude-code',
