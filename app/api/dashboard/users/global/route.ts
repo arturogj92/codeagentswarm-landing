@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { unstable_cache } from 'next/cache'
 import { verifyToken, COOKIE_NAME } from '@/lib/auth'
 import { supabaseRpc } from '@/lib/supabase-client'
 import {
@@ -14,10 +13,11 @@ import {
 
 export const maxDuration = 60
 
-const loadGlobalMetrics = unstable_cache(async (
+// Not cached: every visit shows current numbers. The RPCs read daily click totals
+// (backend migrations 064/065) and the whole chain takes ~5 s instead of ~40 s.
+async function loadGlobalMetrics(
   excludedUserIds: string[], windowDays: number, featureWindowDays: number,
-) => {
-  // ~29 s + ~12 s in sequence (Nov 2026); budgets raised in backend migration 063.
+) {
   const signal = AbortSignal.timeout(58_000)
   const args = {
     p_excluded_user_ids: excludedUserIds,
@@ -75,7 +75,7 @@ const loadGlobalMetrics = unstable_cache(async (
       return_lift_pp: feature.return_lift_pp === null ? null : Number(feature.return_lift_pp),
     })),
   } satisfies UserGlobalMetrics
-}, ['user-activity-global-v3'], { revalidate: 30, tags: ['user-activity-global'] })
+}
 
 export async function POST(request: NextRequest) {
   const token = request.cookies.get(COOKIE_NAME)?.value
