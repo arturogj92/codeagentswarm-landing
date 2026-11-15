@@ -108,6 +108,10 @@ En esta guía te cuento cómo funcionan las notificaciones de CodeAgentSwarm y c
           type: 'paragraph',
           text: 'En lugar de tener que estar pendiente del terminal, CodeAgentSwarm te dice claramente: "Oye, este terminal ya ha terminado" o "Este terminal está esperando tu decisión".',
         },
+        {
+          type: 'paragraph',
+          text: '¿Lejos de la mesa? Empareja la app de CodeAgentSwarm para el móvil y la sesión que te necesita también te avisa en el teléfono. Mira <a href="/es/guias/controlar-claude-code-desde-el-movil" class="text-neon-cyan hover:text-neon-purple transition-colors">cómo controlar Claude Code desde el móvil</a>.',
+        },
       ],
     },
     {

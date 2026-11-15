@@ -107,6 +107,10 @@ In this guide I'll show you how CodeAgentSwarm notifications work and how to use
           type: 'paragraph',
           text: 'Instead of having to constantly watch the terminal, CodeAgentSwarm tells you clearly: "Hey, this terminal has finished" or "This terminal is waiting for your decision".',
         },
+        {
+          type: 'paragraph',
+          text: 'Away from the desk? Pair the CodeAgentSwarm phone app and a session that needs you also pings your phone. See <a href="/en/guides/control-claude-code-from-phone" class="text-neon-cyan hover:text-neon-purple transition-colors">how to control Claude Code from your phone</a>.',
+        },
       ],
     },
     {

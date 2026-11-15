@@ -91,6 +91,10 @@ claude --print "convert this curl to fetch: curl -X POST https://api.example.com
           variant: 'info',
           content: 'Los comandos personalizados son simplemente archivos markdown. Crea <code>.claude/commands/review.md</code> con tus criterios de revisión y luego usa <code>/project:review</code> en cualquier sesión.',
         },
+        {
+          type: 'paragraph',
+          text: 'Una captura suele ser la forma más rápida de explicar un fallo. Aquí tienes <a href="/es/guias/enviar-captura-a-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">todas las formas de enviar una captura a Claude Code</a>.',
+        },
       ],
     },
     {

@@ -190,6 +190,10 @@ Choose it when you want shared supervision across providers or projects. For a s
           variant: 'tip',
           content: 'Because the GUI drives the CLI rather than replacing it, you can switch back to a bare terminal any time. Nothing about CodeAgentSwarm locks the agent in: it is a layer, not a fork.',
         },
+        {
+          type: 'paragraph',
+          text: 'The same sessions also reach your phone. If you are looking for a Claude Code mobile app, read <a href="/en/guides/claude-code-mobile-app" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code mobile app: what exists</a>.',
+        },
       ],
     },
   ],

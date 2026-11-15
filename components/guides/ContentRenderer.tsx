@@ -16,6 +16,8 @@ const GUIDE_IMAGE_DIMENSIONS: Record<string, { width: number; height: number }> 
   '/images/guides/skills-marketplace-current.webp': { width: 1440, height: 900 },
   '/images/guides/task-board-current.webp': { width: 1440, height: 900 },
   '/images/guides/workspace-list.webp': { width: 1440, height: 900 },
+  '/images/guides/phone-app-demo-sessions.webp': { width: 780, height: 1688 },
+  '/images/guides/phone-app-demo-chat.webp': { width: 780, height: 1688 },
   '/images/guides/devin-chat-beta.webp': { width: 1440, height: 977 },
   '/images/guides/devin-models-beta.webp': { width: 1440, height: 977 },
   '/images/guides/devin-history-beta.webp': { width: 1440, height: 977 },

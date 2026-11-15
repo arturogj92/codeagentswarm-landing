@@ -53,6 +53,10 @@ export const guide: Guide = {
           variant: 'info',
           content: 'Agent Teams is still experimental and disabled by default (checked against the official docs on October 31, 2026). Known limits: /resume and /rewind do not bring back in-process teammates, task status can lag, shutdown can be slow, there is one team per session, teammates cannot start their own teams and the lead cannot be changed.',
         },
+        {
+          type: 'paragraph',
+          text: 'Subagents, how to create them and how to watch them work are covered in <a href="/en/guides/claude-code-subagents" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code subagents</a>.',
+        },
       ],
     },
     {

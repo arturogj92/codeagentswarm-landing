@@ -53,6 +53,10 @@ export const guide: Guide = {
           variant: 'info',
           content: 'Agent Teams sigue siendo experimental y está desactivado por defecto (comprobado en la documentación oficial el 31 de octubre de 2026). Límites conocidos: /resume y /rewind no recuperan a los compañeros en proceso, el estado de las tareas puede ir con retraso, el cierre puede tardar, hay un solo equipo por sesión, los compañeros no pueden crear sus propios equipos y el líder no se puede cambiar.',
         },
+        {
+          type: 'paragraph',
+          text: 'Qué son los subagentes, cómo crearlos y cómo verlos trabajar lo tienes en <a href="/es/guias/subagentes-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">subagentes de Claude Code</a>.',
+        },
       ],
     },
     {
