@@ -183,7 +183,7 @@ En esta guía explico el problema en concreto, qué es de verdad un git worktree
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm es una app de escritorio para ejecutar un enjambre de agentes CLI de IA en un solo sitio. Funciona sobre las CLIs oficiales (Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi y Devin CLI), así que no es un proveedor de modelos, orquesta los agentes que ya usas. Y puede crear un worktree por terminal por ti, así consigues el aislamiento de arriba sin tocar un solo comando de git.',
+          text: 'CodeAgentSwarm es una app de escritorio para ejecutar un enjambre de agentes CLI de IA en un solo sitio. Funciona sobre las CLIs oficiales (Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI, GitHub Copilot CLI y Cline), así que no es un proveedor de modelos, orquesta los agentes que ya usas. Y puede crear un worktree por terminal por ti, así consigues el aislamiento de arriba sin tocar un solo comando de git.',
         },
         {
           type: 'heading',

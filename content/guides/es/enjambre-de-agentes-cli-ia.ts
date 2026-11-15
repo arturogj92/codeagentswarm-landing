@@ -5,14 +5,14 @@ export const guide: Guide = {
     slug: 'enjambre-de-agentes-cli-ia',
     locale: 'es',
     title: 'Enjambre de agentes CLI de IA: ejecuta varios agentes de código en paralelo',
-    metaTitle: 'Enjambre de agentes CLI IA: 10 agentes en paralelo (2026)',
-    metaDescription: 'Ejecuta diez agentes en paralelo con CodeAgentSwarm, incluidos Claude Code, Codex, Muse Code, Pi y Devin CLI. Un espacio para supervisar cada sesión.',
+    metaTitle: 'Enjambre de agentes CLI IA: 11 agentes en paralelo (2026)',
+    metaDescription: 'Ejecuta doce agentes en paralelo con CodeAgentSwarm, incluidos Claude Code, Codex, Muse Code, Pi, Devin CLI, GitHub Copilot CLI y Cline. Un espacio para supervisar cada sesión.',
     intro: `Un enjambre de agentes CLI de IA es lo que tienes cuando dejas de pensar en un solo agente de código en un terminal y empiezas a ejecutar varios a la vez. Claude Code en un terminal, Codex CLI en otro, Grok Build u OpenCode en un tercero, todos trabajando en el mismo proyecto al mismo tiempo.
 
 La idea suena caótica, y mal hecha lo es. El objetivo de esta guía es enseñarte a hacerlo bien: cómo ejecutar de verdad varios agentes de código en paralelo, cómo decidir qué agente se encarga de qué, y cómo no perder la visibilidad de un workspace donde tres o cuatro agentes editan archivos a la vez.
 
 Yo trabajo con enjambres mixtos casi todos los días. Esto es orquestación de agentes de código con IA a nivel de proceso: agentes independientes y una persona que los supervisa. Aquí te cuento los compromisos honestos de cada forma de montarlo y dónde un workspace hecho a propósito se gana su sitio frente a las pestañas del terminal o tmux. Para comparar productos, consulta las <a href="/es/guias/mejores-herramientas-agentes-ia-en-paralelo" class="text-neon-cyan hover:text-neon-purple transition-colors">mejores herramientas para ejecutar varios agentes de código</a>.`,
-    ctaText: 'Ejecuta Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi y Devin CLI en paralelo en un solo workspace de CodeAgentSwarm. Varios agentes, visibilidad compartida y un único sitio desde el que vigilarlos.',
+    ctaText: 'Ejecuta Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI, GitHub Copilot CLI y Cline en paralelo en un solo workspace de CodeAgentSwarm. Varios agentes, visibilidad compartida y un único sitio desde el que vigilarlos.',
     ctaAgent: 'multi',
     highlightedWords: ['enjambre de agentes CLI de IA', 'en paralelo'],
     publishedAt: '2026-06-07',
@@ -67,7 +67,7 @@ Yo trabajo con enjambres mixtos casi todos los días. Esto es orquestación de a
         },
         {
           type: 'paragraph',
-          text: 'Si solo te interesa un proveedor, las guías por herramienta entran en más detalle: <a href="/es/guias/enjambre-de-agentes-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, <a href="/es/guias/enjambre-de-agentes-codex" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex</a>, <a href="/es/guias/enjambre-de-agentes-cursor-cli" class="text-neon-cyan hover:text-neon-purple transition-colors">Cursor Agent</a>, <a href="/es/guias/enjambre-de-agentes-antigravity" class="text-neon-cyan hover:text-neon-purple transition-colors">Antigravity</a>, <a href="/es/guias/enjambre-de-agentes-opencode" class="text-neon-cyan hover:text-neon-purple transition-colors">OpenCode</a>, <a href="/es/guias/enjambre-de-agentes-kimi-code" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi Code</a> y <a href="/es/guias/enjambre-de-agentes-grok-build" class="text-neon-cyan hover:text-neon-purple transition-colors">Grok Build</a>. Esta página es la vista entre proveedores.',
+          text: 'Si solo te interesa un proveedor, las guías por herramienta entran en más detalle: <a href="/es/guias/enjambre-de-agentes-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, <a href="/es/guias/enjambre-de-agentes-codex" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex</a>, <a href="/es/guias/enjambre-de-agentes-cursor-cli" class="text-neon-cyan hover:text-neon-purple transition-colors">Cursor Agent</a>, <a href="/es/guias/enjambre-de-agentes-antigravity" class="text-neon-cyan hover:text-neon-purple transition-colors">Antigravity</a>, <a href="/es/guias/enjambre-de-agentes-opencode" class="text-neon-cyan hover:text-neon-purple transition-colors">OpenCode</a>, <a href="/es/guias/enjambre-de-agentes-kimi-code" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi Code</a>, <a href="/es/guias/enjambre-de-agentes-grok-build" class="text-neon-cyan hover:text-neon-purple transition-colors">Grok Build</a>, <a href="/es/guias/enjambre-de-agentes-github-copilot-cli" class="text-neon-cyan hover:text-neon-purple transition-colors">GitHub Copilot CLI</a> y <a href="/es/guias/enjambre-de-agentes-cline" class="text-neon-cyan hover:text-neon-purple transition-colors">Cline</a>. Esta página es la vista entre proveedores.',
         },
         {
           type: 'paragraph',
@@ -302,7 +302,7 @@ Yo trabajo con enjambres mixtos casi todos los días. Esto es orquestación de a
         },
         {
           type: 'paragraph',
-          text: 'Cada terminal tiene un selector SELECT AI AGENT con Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi y Devin CLI. Pon uno en Claude para un refactor, otro en Cursor Agent para un cambio planificado y otro en Codex para una tarea acotada. Tú decides la mezcla por terminal.',
+          text: 'Cada terminal tiene un selector SELECT AI AGENT con Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI, GitHub Copilot CLI y Cline. Pon uno en Claude para un refactor, otro en Cursor Agent para un cambio planificado y otro en Codex para una tarea acotada. Tú decides la mezcla por terminal.',
         },
         {
           type: 'heading',

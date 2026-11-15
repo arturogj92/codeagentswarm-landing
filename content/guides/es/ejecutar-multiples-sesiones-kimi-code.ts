@@ -173,7 +173,7 @@ Esta guía cubre cómo funcionan de verdad las sesiones de Kimi Code, las tres f
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm es una app de escritorio para macOS, Windows y Linux construida para ejecutar y supervisar varias sesiones CLI de IA en un solo sitio. Kimi Code es un agente de primera clase junto a Claude Code, Codex CLI, Antigravity CLI, OpenCode, Grok Build, Cursor Agent, Muse Code, Pi y Devin CLI: eliges el agente por terminal, así que ejecutar tres sesiones de Kimi Code es abrir tres terminales y elegir Kimi Code en cada uno.',
+          text: 'CodeAgentSwarm es una app de escritorio para macOS, Windows y Linux construida para ejecutar y supervisar varias sesiones CLI de IA en un solo sitio. Kimi Code es un agente de primera clase junto a Claude Code, Codex CLI, Antigravity CLI, OpenCode, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI, GitHub Copilot CLI y Cline: eliges el agente por terminal, así que ejecutar tres sesiones de Kimi Code es abrir tres terminales y elegir Kimi Code en cada uno.',
         },
         {
           type: 'paragraph',

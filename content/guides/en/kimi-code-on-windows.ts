@@ -176,7 +176,7 @@ If you are setting up other agents on the same machine, our <a href="/en/guides/
         },
         {
           type: 'paragraph',
-          text: '<a href="/en" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a> is a native desktop app for Windows, macOS and Linux built for that supervision problem. Kimi Code is a supported agent in it, next to Claude Code, Codex CLI, Antigravity CLI, OpenCode, Grok Build, Cursor Agent, Muse Code, Pi and Devin CLI, and you choose the agent per terminal. You get desktop notifications when a session finishes or needs input, searchable history across every agent, live per-terminal diffs, and a quota indicator that reads Kimi\'s quota windows.',
+          text: '<a href="/en" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a> is a native desktop app for Windows, macOS and Linux built for that supervision problem. Kimi Code is a supported agent in it, next to Claude Code, Codex CLI, Antigravity CLI, OpenCode, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI, GitHub Copilot CLI and Cline, and you choose the agent per terminal. You get desktop notifications when a session finishes or needs input, searchable history across every agent, live per-terminal diffs, and a quota indicator that reads Kimi\'s quota windows.',
         },
         {
           type: 'paragraph',

@@ -76,7 +76,7 @@ export const guide: Guide = {
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm es una app de escritorio para ejecutar y supervisar varios agentes de programación con IA en paralelo. Funciona en macOS, Windows y Linux, cada terminal es un proceso de agente real y eliges el agente por terminal entre Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi y Devin CLI.',
+          text: 'CodeAgentSwarm es una app de escritorio para ejecutar y supervisar varios agentes de programación con IA en paralelo. Funciona en macOS, Windows y Linux, cada terminal es un proceso de agente real y eliges el agente por terminal entre Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI, GitHub Copilot CLI y Cline.',
         },
         {
           type: 'image',
@@ -86,7 +86,7 @@ export const guide: Guide = {
         },
         {
           type: 'paragraph',
-          text: 'El tablero existe, pero no es el eje. El eje es la supervisión: notificaciones de escritorio cuando un agente termina o necesita respuesta, historial de conversaciones buscable de los diez agentes con reanudación cuando el agente la admite, diffs de archivos en vivo por terminal, control de permisos con modo Turbo, git worktrees por sesión, cambio entre proyectos, mensajes de commit con IA, indicador de cuota del proveedor y marketplaces de skills y de MCP compartidos entre agentes.',
+          text: 'El tablero existe, pero no es el eje. El eje es la supervisión: notificaciones de escritorio cuando un agente termina o necesita respuesta, historial de conversaciones buscable de los doce agentes con reanudación cuando el agente la admite, diffs de archivos en vivo por terminal, control de permisos con modo Turbo, git worktrees por sesión, cambio entre proyectos, mensajes de commit con IA, indicador de cuota del proveedor y marketplaces de skills y de MCP compartidos entre agentes.',
         },
         {
           type: 'paragraph',
@@ -104,10 +104,10 @@ export const guide: Guide = {
           rows: [
             ['Plataformas', 'Se ejecuta en local con npx vibe-kanban y se usa desde el navegador; su documentación cubre macOS, Linux y Windows, y el autohospedaje con Docker Compose', 'App de escritorio para macOS, Windows y Linux'],
             ['Interfaz', 'Tablero kanban e interfaz de workspaces en el navegador, con previsualización integrada de la app', 'Espacio de trabajo de escritorio con paneles de terminal en vivo'],
-            ['Agentes soportados', 'Claude Code, Codex, Gemini CLI, GitHub Copilot, Amp, Cursor, OpenCode, Droid, CCR y Qwen Code según su README', 'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi y Devin CLI'],
+            ['Agentes soportados', 'Claude Code, Codex, Gemini CLI, GitHub Copilot, Amp, Cursor, OpenCode, Droid, CCR y Qwen Code según su README', 'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI, GitHub Copilot CLI y Cline'],
             ['Modelo de aislamiento', 'Un workspace por issue, cada uno con su rama, su terminal y su servidor de desarrollo', 'Un proceso separado por terminal, con git worktrees opcionales por sesión'],
             ['Notificaciones', 'Efectos de sonido y notificaciones push del navegador cuando una tarea termina o necesita atención, según su documentación de ajustes', 'Notificaciones de escritorio cuando un agente termina o necesita respuesta'],
-            ['Historial de conversaciones', 'Sesiones por workspace con interfaz de chat y panel de cambios, documentadas por workspace', 'Historial buscable de los diez agentes, con reanudación cuando el agente la admite'],
+            ['Historial de conversaciones', 'Sesiones por workspace con interfaz de chat y panel de cambios, documentadas por workspace', 'Historial buscable de los doce agentes, con reanudación cuando el agente la admite'],
             ['Gestión de tareas', 'Es el producto entero: issues de kanban, filtros, personalización del tablero, asignación en equipo. Su anuncio del 10 de abril de 2026 incluye las issues del kanban entre los servicios remotos retirados', 'Una función más del espacio de trabajo: un kanban que los agentes actualizan por MCP'],
             ['Código abierto', 'Sí, Apache-2.0, unas 28.500 estrellas', 'No, código cerrado y sin repositorio público de la app'],
             ['Precio', 'Gratis y de código abierto. Su anuncio del 10 de abril de 2026 dice que las suscripciones de pago se cancelaron, aunque su página de precios sigue mostrando Free, Pro a 30 $ por usuario al mes y Enterprise', 'Gratis durante la beta con Pro incluido, y tú pones tus suscripciones de agentes'],
@@ -127,7 +127,7 @@ export const guide: Guide = {
             '<strong>Tu unidad de trabajo es una issue, no una sesión.</strong> Si el trabajo consiste en planificar y repartir tickets y los agentes son la forma de completarlos, una herramienta que arranca por el kanban encaja mejor que un espacio de terminales.',
             '<strong>Quieres código abierto que puedas hospedar.</strong> Apache-2.0, unas 28.500 estrellas y autohospedaje documentado con Docker Compose. Nuestra app es de código cerrado y no hay nada que hospedar.',
             '<strong>Revisas en el navegador.</strong> Los comentarios en línea sobre un diff que vuelven directos al agente, más una previsualización integrada con devtools y emulación de dispositivos, están muy bien y nosotros no tenemos equivalente.',
-            '<strong>Usas GitHub Copilot, Gemini CLI, Amp, Droid, CCR o Qwen Code.</strong> Los seis están en su lista de diez agentes y ninguno en la nuestra. Las dos listas tienen diez agentes, con elecciones distintas.',
+            '<strong>Usas Gemini CLI, Amp, Droid, CCR o Qwen Code.</strong> Los cinco están en su lista de diez agentes y ninguno en la nuestra. GitHub Copilot está en las dos, como GitHub Copilot CLI desde CodeAgentSwarm 2.5.0. Su lista tiene diez agentes y la nuestra doce, con elecciones distintas.',
             '<strong>Quieres gestionar las pull requests dentro de la herramienta.</strong> Abrir una PR con descripción escrita por IA y hacer merge desde la misma interfaz forma parte de su flujo.',
             '<strong>No quieres instalar una app de escritorio.</strong> Se lanza con npx allí donde haya Node y se usa desde el navegador. CodeAgentSwarm necesita su app de escritorio.',
           ],

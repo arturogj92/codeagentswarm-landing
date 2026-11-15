@@ -176,7 +176,7 @@ Si estás montando otros agentes en la misma máquina, nuestras guías de <a hre
         },
         {
           type: 'paragraph',
-          text: '<a href="/es" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a> es una app de escritorio nativa para Windows, macOS y Linux construida para ese problema de supervisión. Kimi Code es un agente soportado en ella, junto a Claude Code, Codex CLI, Antigravity CLI, OpenCode, Grok Build, Cursor Agent, Muse Code, Pi y Devin CLI, y el agente se elige por terminal. Tienes notificaciones de escritorio cuando una sesión termina o necesita algo, historial buscable entre todos los agentes, diffs en vivo por terminal, y un indicador de cuota que lee las ventanas de cuota de Kimi.',
+          text: '<a href="/es" class="text-neon-cyan hover:text-neon-purple transition-colors">CodeAgentSwarm</a> es una app de escritorio nativa para Windows, macOS y Linux construida para ese problema de supervisión. Kimi Code es un agente soportado en ella, junto a Claude Code, Codex CLI, Antigravity CLI, OpenCode, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI, GitHub Copilot CLI y Cline, y el agente se elige por terminal. Tienes notificaciones de escritorio cuando una sesión termina o necesita algo, historial buscable entre todos los agentes, diffs en vivo por terminal, y un indicador de cuota que lee las ventanas de cuota de Kimi.',
         },
         {
           type: 'paragraph',

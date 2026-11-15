@@ -8,7 +8,7 @@ export const guide: Guide = {
     metaTitle: 'Mejores herramientas para agentes de IA en paralelo (2026)',
     metaDescription: 'CodeAgentSwarm, T3 Code, Superset (Paradev), Paseo, Conductor, Claude Squad y más: estrellas, último commit y licencia. Datos verificados el 31 de octubre de 2026.',
     intro: 'Si quieres ejecutar varios agentes de programación con IA a la vez y seguir sabiendo qué hace cada uno, las herramientas hechas para eso son CodeAgentSwarm, T3 Code, Superset, Paseo, Conductor, Vibe Kanban, Claude Squad y Nimbalyst. Son aplicaciones que lanzan y supervisan CLIs de programación como Claude Code, Codex CLI y OpenCode. No son lo mismo que LangGraph, CrewAI o AutoGen, que son librerías para construir sistemas de agentes escribiendo código y no abren un terminal por ti.\n\nAntes de nada, transparencia: nosotros hacemos CodeAgentSwarm, así que somos una de las herramientas de la lista. Justo por eso los criterios son idénticos para todas y nuestras limitaciones están escritas en la misma sección que nuestras ventajas. Los datos de producto, licencia, agentes soportados y GitHub se verificaron el 31 de octubre de 2026 contra la web, la documentación y el repositorio de cada proyecto. Nada de lo que leas aquí viene de la página de marketing de un competidor sin decirlo. La disponibilidad y los agentes compatibles de CodeAgentSwarm se actualizaron el 5 de octubre de 2026.\n\nQué ha cambiado desde agosto: Superset ahora se llama Paradev, Paseo pasó de AGPL-3.0 a Apache 2.0, Conductor y Paradev sacaron app para iPhone, y Vibe Kanban anunció su cierre aunque sigue recibiendo commits de la comunidad.',
-    ctaText: 'Si quieres sesiones en paralelo supervisadas con Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi y Devin CLI en macOS, Windows o Linux, con notificaciones, historial compartido y un kanban que actualizan los propios agentes, CodeAgentSwarm es gratis durante la beta. Descárgalo y júzgalo con la tabla de arriba delante.',
+    ctaText: 'Si quieres sesiones en paralelo supervisadas con Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI, GitHub Copilot CLI y Cline en macOS, Windows o Linux, con notificaciones, historial compartido y un kanban que actualizan los propios agentes, CodeAgentSwarm es gratis durante la beta. Descárgalo y júzgalo con la tabla de arriba delante.',
     ctaAgent: 'comparison',
     highlightedWords: ['agentes de IA', 'paralelo'],
     publishedAt: '2026-07-26',
@@ -50,7 +50,7 @@ export const guide: Guide = {
       content: [
         {
           type: 'paragraph',
-          text: 'Si buscas un espacio de escritorio en Windows o Linux que combine Claude Code y Codex, CodeAgentSwarm es una opción: admite diez agentes, estados de sesión, notificaciones, historial con búsqueda y revisión de cambios. Es de código cerrado y gratis con Pro durante la beta abierta; el consumo de los proveedores va aparte. Esta guía la publica su creador. Compara las alternativas según tu plataforma, licencia y forma de trabajar.',
+          text: 'Si buscas un espacio de escritorio en Windows o Linux que combine Claude Code y Codex, CodeAgentSwarm es una opción: admite doce agentes, estados de sesión, notificaciones, historial con búsqueda y revisión de cambios. Es de código cerrado y gratis con Pro durante la beta abierta; el consumo de los proveedores va aparte. Esta guía la publica su creador. Compara las alternativas según tu plataforma, licencia y forma de trabajar.',
         },
         {
           type: 'paragraph',
@@ -60,13 +60,13 @@ export const guide: Guide = {
           type: 'list',
           items: [
             '<strong>Quieres un plano de control open source y sin instalar nada</strong>: T3 Code. Lo puedes probar con <code>npx t3@latest</code> en una máquina donde no está instalado, y su licencia es MIT.',
-            '<strong>Trabajas con diez agentes o más y quieres un espacio con forma de IDE</strong>: Superset, que ahora se llama Paradev. Su propuesta es ejecutar muchos agentes en paralelo, un git worktree por tarea, con revisión, un tablero de tareas y planes de pago para equipos.',
+            '<strong>Trabajas con doce agentes o más y quieres un espacio con forma de IDE</strong>: Superset, que ahora se llama Paradev. Su propuesta es ejecutar muchos agentes en paralelo, un git worktree por tarea, con revisión, un tablero de tareas y planes de pago para equipos.',
             '<strong>Quieres supervisar desde el móvil o alojarlo tú mismo</strong>: Paseo. Funciona con un demonio autoalojado y clientes de escritorio, móvil, web y CLI, tiene apps en la App Store de iOS y en Google Play, y su licencia es Apache 2.0.',
             '<strong>Quieres sandboxes cloud gestionados y colaboración multiplayer</strong>: Conductor. Su app local es solo para macOS, pero sus workspaces cloud siguen ejecutando agentes después de cerrarla.',
             '<strong>Vives en el terminal y quieres tmux y SSH, no una interfaz gráfica</strong>: Claude Squad. Gestiona los agentes como sesiones de tmux, así que funciona por SSH en una máquina sin escritorio.',
             '<strong>Quieres organizar el trabajo en un kanban</strong>: evalúa Vibe Kanban sabiendo que se está cerrando oficialmente y que ahora lo mantiene la comunidad. A finales de octubre de 2026 seguía recibiendo commits.',
             '<strong>Quieres editar visualmente lo que producen los agentes</strong>: Nimbalyst. Se posiciona como editor visual para Claude Code y Codex, tanto para markdown, mockups y diagramas como para código.',
-            '<strong>Quieres un escritorio supervisado con varios proveedores, notificaciones, historial compartido y un kanban que actualizan los propios agentes</strong>: CodeAgentSwarm. Diez CLIs en macOS, Windows y Linux, a cambio de ser código cerrado.',
+            '<strong>Quieres un escritorio supervisado con varios proveedores, notificaciones, historial compartido y un kanban que actualizan los propios agentes</strong>: CodeAgentSwarm. Doce CLIs en macOS, Windows y Linux, a cambio de ser código cerrado.',
           ],
         },
         {
@@ -92,7 +92,7 @@ export const guide: Guide = {
               'Sin repo público',
               'Código cerrado',
               'macOS, Windows y Linux',
-              'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi y Devin CLI',
+              'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI, GitHub Copilot CLI y Cline',
               'No, propietaria',
             ],
             [
@@ -124,7 +124,7 @@ export const guide: Guide = {
               'Unas 28.500',
               '28 de octubre de 2026',
               'Se ejecuta en local en el navegador (npx), su documentación cubre macOS, Windows y Linux; autoalojable con Docker',
-              'Diez, entre ellos Claude Code, Codex, GitHub Copilot, Gemini CLI, Amp, Cursor Agent CLI y OpenCode',
+              'Doce, entre ellos Claude Code, Codex, GitHub Copilot, Gemini CLI, Amp, Cursor Agent CLI y OpenCode',
               'Sí, Apache-2.0',
             ],
             [
@@ -198,7 +198,7 @@ export const guide: Guide = {
     },
     {
       id: 'codeagentswarm',
-      title: 'CodeAgentSwarm: sesiones en paralelo supervisadas con diez CLIs',
+      title: 'CodeAgentSwarm: sesiones en paralelo supervisadas con doce CLIs',
       content: [
         {
           type: 'paragraph',
@@ -211,7 +211,7 @@ export const guide: Guide = {
         },
         {
           type: 'paragraph',
-          text: 'Las diez CLIs compatibles son Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi y Devin CLI. La ventaja está en la profundidad de las integraciones: CodeAgentSwarm entiende las sesiones, permisos y capacidades de cada agente en vez de tratar cada comando como un proceso de terminal intercambiable.',
+          text: 'Las doce CLIs compatibles son Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI, GitHub Copilot CLI y Cline. La ventaja está en la profundidad de las integraciones: CodeAgentSwarm entiende las sesiones, permisos y capacidades de cada agente en vez de tratar cada comando como un proceso de terminal intercambiable.',
         },
         {
           type: 'image',
@@ -231,7 +231,7 @@ export const guide: Guide = {
         },
         {
           type: 'paragraph',
-          text: 'Dos cosas más que merecen nombre propio. El historial de conversaciones es transversal: las sesiones de los diez CLIs caen en un mismo sitio buscable y se pueden retomar desde ahí cuando el agente lo permite, que no es lo mismo que cada CLI guardando su historial en su formato en disco. Y el indicador de cuota lee las ventanas de uso reales de cada proveedor, así que ves qué agente está a punto de quedarse sin presupuesto antes de que se pare a mitad de tarea, y no después.',
+          text: 'Dos cosas más que merecen nombre propio. El historial de conversaciones es transversal: las sesiones de los doce CLIs caen en un mismo sitio buscable y se pueden retomar desde ahí cuando el agente lo permite, que no es lo mismo que cada CLI guardando su historial en su formato en disco. Y el indicador de cuota lee las ventanas de uso reales de cada proveedor, así que ves qué agente está a punto de quedarse sin presupuesto antes de que se pare a mitad de tarea, y no después.',
         },
         {
           type: 'paragraph',
@@ -240,9 +240,9 @@ export const guide: Guide = {
         {
           type: 'list',
           items: [
-            'Diez CLIs en un mismo espacio, elegidas terminal a terminal, incluidas Cursor Agent, Antigravity CLI, Kimi Code y Grok Build',
+            'Doce CLIs en un mismo espacio, elegidas terminal a terminal, incluidas Cursor Agent, Antigravity CLI, Kimi Code y Grok Build',
             'Notificaciones cuando un agente termina o necesita algo, que es lo que de verdad te deja irte de la ventana',
-            'Un solo historial buscable y retomable con todos los agentes, en vez de diez por separado',
+            'Un solo historial buscable y retomable con todos los agentes, en vez de doce por separado',
             'Un tablero kanban que actualizan los propios agentes por MCP',
             'Diffs en vivo por terminal y un git worktree por sesión',
             'Indicador de cuota que lee las ventanas de uso reales de cada agente',

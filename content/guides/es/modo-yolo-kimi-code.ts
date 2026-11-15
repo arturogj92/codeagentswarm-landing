@@ -168,7 +168,7 @@ También cubre lo que importa una vez apagadas las preguntas: cómo mantener vig
         },
         {
           type: 'paragraph',
-          text: 'Queda el problema de la visibilidad. Una sesión YOLO en una ventana de terminal suelta es una caja negra: te enteras de lo que pasó cuando vuelves y lees el scrollback. CodeAgentSwarm corre Kimi Code como agente de primera clase (junto a Claude Code, Codex CLI, Antigravity CLI, OpenCode, Grok Build, Cursor Agent, Muse Code, Pi y Devin CLI) y envuelve cada terminal con la supervisión que el full auto necesita:',
+          text: 'Queda el problema de la visibilidad. Una sesión YOLO en una ventana de terminal suelta es una caja negra: te enteras de lo que pasó cuando vuelves y lees el scrollback. CodeAgentSwarm corre Kimi Code como agente de primera clase (junto a Claude Code, Codex CLI, Antigravity CLI, OpenCode, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI, GitHub Copilot CLI y Cline) y envuelve cada terminal con la supervisión que el full auto necesita:',
         },
         {
           type: 'list',

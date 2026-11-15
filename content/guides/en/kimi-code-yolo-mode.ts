@@ -168,7 +168,7 @@ It also covers the part that matters once the prompts are off: how to keep a ful
         },
         {
           type: 'paragraph',
-          text: 'The remaining problem is visibility. A YOLO run in a lone terminal window is a black box: you find out what happened when you come back and read the scrollback. CodeAgentSwarm runs Kimi Code as a first-class agent (alongside Claude Code, Codex CLI, Antigravity CLI, OpenCode, Grok Build, Cursor Agent, Muse Code, Pi and Devin CLI) and wraps every terminal with the supervision that full-auto work needs:',
+          text: 'The remaining problem is visibility. A YOLO run in a lone terminal window is a black box: you find out what happened when you come back and read the scrollback. CodeAgentSwarm runs Kimi Code as a first-class agent (alongside Claude Code, Codex CLI, Antigravity CLI, OpenCode, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI, GitHub Copilot CLI and Cline) and wraps every terminal with the supervision that full-auto work needs:',
         },
         {
           type: 'list',

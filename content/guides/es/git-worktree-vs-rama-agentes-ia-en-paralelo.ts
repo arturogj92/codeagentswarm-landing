@@ -217,7 +217,7 @@ Para la explicación desde cero de qué es un worktree y por qué importa el ais
       content: [
         {
           type: 'paragraph',
-          text: 'CodeAgentSwarm es una app de escritorio para ejecutar un enjambre de agentes CLI de IA (Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi y Devin CLI) en un solo sitio, y mete la opción de worktree directamente en cada terminal, así nunca ejecutas los comandos tú mismo.',
+          text: 'CodeAgentSwarm es una app de escritorio para ejecutar un enjambre de agentes CLI de IA (Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI, GitHub Copilot CLI y Cline) en un solo sitio, y mete la opción de worktree directamente en cada terminal, así nunca ejecutas los comandos tú mismo.',
         },
         {
           type: 'paragraph',

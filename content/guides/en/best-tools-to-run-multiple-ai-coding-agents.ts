@@ -8,7 +8,7 @@ export const guide: Guide = {
     metaTitle: 'Best Tools to Run Multiple AI Coding Agents in Parallel (2026)',
     metaDescription: 'CodeAgentSwarm, T3 Code, Superset (Paradev), Paseo, Conductor, Claude Squad and more compared: stars, last commit, platforms. Verified October 31, 2026.',
     intro: 'If you want to run several AI coding agents at once and still know what each of them is doing, the tools built for that job are CodeAgentSwarm, T3 Code, Superset, Paseo, Conductor, Vibe Kanban, Claude Squad and Nimbalyst. They are apps that run and supervise coding CLIs such as Claude Code, Codex CLI and OpenCode. They are not the same thing as LangGraph, CrewAI or AutoGen, which are libraries for building agent systems in code and cannot open a terminal for you.\n\nDisclosure before anything else: we build CodeAgentSwarm, so we are one of the tools on this list. That is exactly why the criteria are identical for everyone and why our own limitations are written down in the same section as our features. Product, licence, supported-agent and GitHub facts were verified on October 31, 2026 against each vendor\'s own site, docs and repository. Nothing in this guide is quoted from a competitor\'s marketing page without saying so. CodeAgentSwarm availability and supported agents were updated on October 5, 2026.\n\nWhat changed since August: Superset is now called Paradev, Paseo moved from AGPL-3.0 to Apache 2.0, Conductor and Paradev shipped iPhone apps, and Vibe Kanban announced it is sunsetting while still receiving community commits.',
-    ctaText: 'If you want supervised parallel sessions across Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi and Devin CLI on macOS, Windows or Linux, with notifications, shared history and a kanban the agents update themselves, CodeAgentSwarm is free during the beta. Download it and judge it against the table above.',
+    ctaText: 'If you want supervised parallel sessions across Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI, GitHub Copilot CLI and Cline on macOS, Windows or Linux, with notifications, shared history and a kanban the agents update themselves, CodeAgentSwarm is free during the beta. Download it and judge it against the table above.',
     ctaAgent: 'comparison',
     highlightedWords: ['AI Coding Agents', 'Parallel'],
     publishedAt: '2026-07-26',
@@ -50,7 +50,7 @@ export const guide: Guide = {
       content: [
         {
           type: 'paragraph',
-          text: 'For a desktop workspace on Windows or Linux that combines Claude Code and Codex, CodeAgentSwarm is one option: it supports ten coding agents, session status, notifications, searchable history and diff review. It is closed source and free with Pro during the open beta; provider usage is separate. This guide is published by its creator. Compare the alternatives below against your platform, licence and workflow needs.',
+          text: 'For a desktop workspace on Windows or Linux that combines Claude Code and Codex, CodeAgentSwarm is one option: it supports twelve coding agents, session status, notifications, searchable history and diff review. It is closed source and free with Pro during the open beta; provider usage is separate. This guide is published by its creator. Compare the alternatives below against your platform, licence and workflow needs.',
         },
         {
           type: 'paragraph',
@@ -60,13 +60,13 @@ export const guide: Guide = {
           type: 'list',
           items: [
             '<strong>You want an open-source control plane with nothing to install</strong>: T3 Code. You can try it with <code>npx t3@latest</code> on a machine where it is not installed at all, and it is MIT licensed.',
-            '<strong>You run ten or more agents and want an IDE-shaped workspace</strong>: Superset, now called Paradev. Its pitch is running many parallel agents, one git worktree per task, with review, a task board and paid team plans.',
+            '<strong>You run twelve or more agents and want an IDE-shaped workspace</strong>: Superset, now called Paradev. Its pitch is running many parallel agents, one git worktree per task, with review, a task board and paid team plans.',
             '<strong>You want to supervise from your phone, or self-host the whole thing</strong>: Paseo. It runs a self-hosted daemon with desktop, mobile, web and CLI clients, ships apps on the iOS App Store and Google Play, and is Apache 2.0.',
             '<strong>You want managed cloud sandboxes and multiplayer collaboration</strong>: Conductor. Its local app is macOS only, while cloud workspaces can keep agents running after the app closes.',
             '<strong>You live in the terminal and want tmux and SSH, not a GUI</strong>: Claude Squad. It manages agents as tmux sessions, which means it works fine over SSH on a box with no desktop at all.',
             '<strong>You want to organize work in a kanban</strong>: evaluate Vibe Kanban knowing that it is officially sunsetting and now community maintained. Commits were still landing in late October 2026.',
             '<strong>You want to visually edit what the agents produce</strong>: Nimbalyst. It positions itself as a visual editor for Claude Code and Codex, for markdown, mockups and diagrams as well as code.',
-            '<strong>You want a supervised desktop workspace across several vendors, with notifications, shared history and a kanban the agents update themselves</strong>: CodeAgentSwarm. Ten CLIs on macOS, Windows and Linux, at the cost of being closed source.',
+            '<strong>You want a supervised desktop workspace across several vendors, with notifications, shared history and a kanban the agents update themselves</strong>: CodeAgentSwarm. Twelve CLIs on macOS, Windows and Linux, at the cost of being closed source.',
           ],
         },
         {
@@ -92,7 +92,7 @@ export const guide: Guide = {
               'No public repo',
               'Closed source',
               'macOS, Windows and Linux',
-              'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi and Devin CLI',
+              'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI, GitHub Copilot CLI and Cline',
               'No, proprietary',
             ],
             [
@@ -124,7 +124,7 @@ export const guide: Guide = {
               'About 28,500',
               'October 28, 2026',
               'Runs locally in the browser (npx), docs cover macOS, Windows and Linux; Docker self-hosting',
-              'Ten, including Claude Code, Codex, GitHub Copilot, Gemini CLI, Amp, Cursor Agent CLI and OpenCode',
+              'Twelve, including Claude Code, Codex, GitHub Copilot, Gemini CLI, Amp, Cursor Agent CLI and OpenCode',
               'Yes, Apache-2.0',
             ],
             [
@@ -198,7 +198,7 @@ export const guide: Guide = {
     },
     {
       id: 'codeagentswarm',
-      title: 'CodeAgentSwarm: supervised parallel sessions across ten CLIs',
+      title: 'CodeAgentSwarm: supervised parallel sessions across twelve CLIs',
       content: [
         {
           type: 'paragraph',
@@ -211,7 +211,7 @@ export const guide: Guide = {
         },
         {
           type: 'paragraph',
-          text: 'The ten supported CLIs are Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi and Devin CLI. The advantage is the depth of those integrations: CodeAgentSwarm understands each agent\'s sessions, permissions and capabilities instead of treating every command as an interchangeable terminal process.',
+          text: 'The twelve supported CLIs are Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI, GitHub Copilot CLI and Cline. The advantage is the depth of those integrations: CodeAgentSwarm understands each agent\'s sessions, permissions and capabilities instead of treating every command as an interchangeable terminal process.',
         },
         {
           type: 'image',
@@ -231,7 +231,7 @@ export const guide: Guide = {
         },
         {
           type: 'paragraph',
-          text: 'Two more worth naming. The conversation history is cross-agent: sessions from all ten CLIs land in one searchable place, with resume when the agent supports it, which is not the same as each CLI keeping its own history in its own format on disk. And the quota indicator reads the real usage windows per provider, so you see which agent is about to run out of budget before it stops mid-task rather than after.',
+          text: 'Two more worth naming. The conversation history is cross-agent: sessions from all twelve CLIs land in one searchable place, with resume when the agent supports it, which is not the same as each CLI keeping its own history in its own format on disk. And the quota indicator reads the real usage windows per provider, so you see which agent is about to run out of budget before it stops mid-task rather than after.',
         },
         {
           type: 'paragraph',
@@ -240,9 +240,9 @@ export const guide: Guide = {
         {
           type: 'list',
           items: [
-            'Ten CLIs in one workspace, chosen per terminal, including Cursor Agent, Antigravity CLI, Kimi Code and Grok Build',
+            'Twelve CLIs in one workspace, chosen per terminal, including Cursor Agent, Antigravity CLI, Kimi Code and Grok Build',
             'Notifications when an agent finishes or needs input, which is what actually lets you leave the window',
-            'One searchable, resumable conversation history across every agent instead of ten separate ones',
+            'One searchable, resumable conversation history across every agent instead of twelve separate ones',
             'A kanban board the agents update themselves over MCP',
             'Per-terminal live diffs and a git worktree per session',
             'Provider quota indicator that reads real usage windows per agent',
