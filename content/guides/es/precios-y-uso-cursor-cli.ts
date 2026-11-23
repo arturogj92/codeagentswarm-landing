@@ -9,12 +9,12 @@ export const guide: Guide = {
     metaDescription: 'Precios de Cursor CLI: Free, Plus 8 $, Premium 30 $, Super 100 $, Ultra 200 $, Teams desde 30 $. Y qué le hacen a tu bolsa de uso varias sesiones a la vez.',
     intro: `Cursor Agent CLI utiliza tu cuenta de Cursor. Ejecutarlo mediante ACP no genera una factura independiente de modelos en CodeAgentSwarm. Inicias sesión con <code>cursor-agent login</code> o proporcionas <code>CURSOR_API_KEY</code>, y Cursor aplica la suscripción y el uso asociados a esa cuenta.
 
-Según la página de precios de Cursor del 31 de octubre de 2026, los planes actuales son Free, Plus por 8 $ al mes, Premium por 30 $, Super por 100 $ y Ultra por 200 $. Teams cuesta 30 $, 100 $ o 200 $ por asiento al mes. Los antiguos Hobby, Pro y Pro+ siguen solo para quien ya era cliente. Los precios y el uso incluido pueden cambiar, así que consulta la <a href="https://cursor.com/pricing" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">página oficial de precios de Cursor</a> antes de comprar.`,
+Según la página de precios de Cursor del 23 de noviembre de 2026, los planes actuales son Free, Plus por 8 $ al mes, Premium por 30 $, Super por 100 $ y Ultra por 200 $. Teams cuesta 30 $, 100 $ o 200 $ por asiento al mes. Los antiguos Hobby, Start, Pro y Pro+ siguen solo para quien ya era cliente. Los precios y el uso incluido pueden cambiar, así que consulta la <a href="https://cursor.com/pricing" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">página oficial de precios de Cursor</a> antes de comprar.`,
     ctaText: 'Usa tu propia cuenta de Cursor en CodeAgentSwarm y supervisa sesiones de Cursor Agent sin trasladar la facturación de modelos fuera de Cursor.',
     ctaAgent: 'cursor-agent',
     highlightedWords: ['Cursor CLI', 'Precios', 'Uso'],
     publishedAt: '2026-08-16',
-    updatedAt: '2026-10-31',
+    updatedAt: '2026-11-23',
     alternateSlug: 'cursor-cli-pricing',
   },
   sections: [
@@ -28,8 +28,8 @@ Según la página de precios de Cursor del 31 de octubre de 2026, los planes act
           ['Premium', '30 $ al mes', '4x el uso de Plus; modelos de terceros a precio de lista de la API'],
           ['Super', '100 $ al mes', '15x el uso de Plus y acceso prioritario a modelos en horas punta'],
           ['Ultra', '200 $ al mes', '50x el uso de Plus y acceso anticipado a productos y modelos nuevos'],
-          ['Teams', '30 $, 100 $ o 200 $ por asiento al mes', 'Uso compartido por el equipo'],
-          ['Planes antiguos', 'Solo clientes actuales', 'Hobby, Pro, Pro+, el Ultra anterior y los asientos Teams mantienen dos pozos mensuales'],
+          ['Teams', '30 $, 100 $ o 200 $ por asiento al mes', 'Cada asiento tiene el uso semanal del plan individual equivalente; el uso compartido es solo de Enterprise'],
+          ['Planes antiguos', 'Solo clientes actuales', 'Hobby, Start, Pro, Pro+, el Ultra anterior y los asientos Teams mantienen dos pozos mensuales'],
         ], caption: 'Según cursor.com/pricing y la documentación de precios de Cursor, verificados el 31 de octubre de 2026. Comprueba la página actual y tu cuenta antes de preparar un presupuesto.' },
         { type: 'callout', variant: 'warning', content: 'La tabla recoge lo que Cursor publicaba el 31 de octubre de 2026. No promete un número fijo de solicitudes ni una asignación concreta de modelos. Cursor vende ahora los mismos cinco niveles que The X Subscription de xAI, con una bolsa compartida entre Cursor y Grok.' },
       ],
@@ -48,7 +48,7 @@ Según la página de precios de Cursor del 31 de octubre de 2026, los planes act
       title: 'Cómo funcionan los pozos de uso actuales',
       content: [
         { type: 'paragraph', text: 'Cada plan de pago actual incluye <strong>una bolsa semanal para los modelos propios de Cursor</strong>: Grok 4.7, Grok 4.6, Grok 4.5 y Composer 2.5. Según la <a href="https://cursor.com/docs/account/pricing" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">documentación de precios de Cursor</a>, esa bolsa se comparte entre Agent en el editor, la CLI, Cloud Agents, Grok Bot y las apps de Grok. Los modelos de terceros como Claude, GPT y Gemini no entran en la bolsa: en Premium y superiores se cobran al precio de lista de la API desde la primera petición, con crédito prepago.' },
-        { type: 'paragraph', text: 'Cursor también documenta una tarifa propia de 0,25 $ por millón de tokens en las peticiones elegibles a modelos de terceros. Se suma al precio de la API del modelo; los modelos propios de Cursor, incluidos Grok y Composer, quedan exentos. Los planes antiguos mantienen el esquema anterior: dos pozos mensuales, Cursor Models y Other Models, con uso bajo demanda en vez de recargas.' },
+        { type: 'paragraph', text: 'En Teams y Enterprise, Cursor también documenta una tarifa propia de 0,25 $ por millón de tokens en las peticiones elegibles a modelos de terceros; los planes individuales no la pagan. Se suma al precio de la API del modelo; los modelos propios de Cursor, incluidos Grok y Composer, quedan exentos. Los planes antiguos mantienen el esquema anterior: dos pozos mensuales, Cursor Models y Other Models, con uso bajo demanda en vez de recargas.' },
         { type: 'paragraph', text: 'El consumo real depende del trabajo, del modelo seleccionado y del número de sesiones activas. Una investigación larga de un repositorio puede consumir más que una pregunta breve, y varios agentes paralelos consumen uso de forma independiente.' },
         { type: 'callout', variant: 'info', content: 'Consulta la información de uso dentro de tu cuenta de Cursor para conocer la asignación que se aplica a tu caso. Las etiquetas públicas de los planes no sustituyen los datos de uso específicos de la cuenta.' },
       ],
@@ -87,7 +87,7 @@ Según la página de precios de Cursor del 31 de octubre de 2026, los planes act
           ['Antigravity', 'Sí, con límites de frecuencia semanales', 'Google AI Plus, 4,99 $/mes', 'Google AI Ultra 20x, 199,99 $/mes', 'Plan de Google AI con límites de frecuencia y créditos'],
           ['Grok Build', 'Sí, con uso limitado', 'X Subscription Plus, 8 $/mes', 'X Subscription Ultra, 200 $/mes', 'Bolsa de X Subscription compartida con Grok y Cursor; API por token'],
           ['Cursor Agent', 'Free, uso limitado', 'Plus, 8 $/mes', 'Ultra, 200 $/mes', 'Bolsa semanal para los modelos de Cursor; los modelos de terceros se cobran por uso'],
-        ], caption: 'Niveles de entrada y superiores de cada CLI de agente, verificados el 31 de octubre de 2026. Los precios cambian a menudo; cada guía enlazada lleva su propia fecha de verificación.' },
+        ], caption: 'Niveles de entrada y superiores de cada CLI de agente, verificados el 23 de noviembre de 2026. Los precios cambian a menudo; cada guía enlazada lleva su propia fecha de verificación.' },
         { type: 'paragraph', text: 'Cada cifra de esa tabla tiene su propia página con la lista completa de niveles y la letra pequeña: <a href="/es/guias/planes-y-precios-de-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>, <a href="/es/guias/planes-y-precios-de-codex" class="text-neon-cyan hover:text-neon-purple transition-colors">Codex</a>, <a href="/es/guias/planes-y-precios-de-kimi-code" class="text-neon-cyan hover:text-neon-purple transition-colors">Kimi Code</a>, <a href="/es/guias/planes-y-precios-de-opencode" class="text-neon-cyan hover:text-neon-purple transition-colors">OpenCode</a>, <a href="/es/guias/planes-y-precios-de-antigravity" class="text-neon-cyan hover:text-neon-purple transition-colors">Antigravity</a> y <a href="/es/guias/precios-y-acceso-grok-build" class="text-neon-cyan hover:text-neon-purple transition-colors">Grok Build</a>.' },
       ],
     },
@@ -103,7 +103,7 @@ Según la página de precios de Cursor del 31 de octubre de 2026, los planes act
   faq: [
     { question: '¿Cursor Agent CLI es gratis?', answer: 'Cursor muestra un plan Free con uso limitado de Agent y Chat a fecha de 31 de octubre de 2026, sin modelos de terceros. La CLI usa tu cuenta de Cursor, y el uso disponible puede cambiar. Consulta cursor.com/pricing para conocer las condiciones actuales.' },
     { question: '¿Cuánto cuestan los planes individuales de Cursor?', answer: 'A 31 de octubre de 2026 Cursor muestra Plus por 8 $, Premium por 30 $, Super por 100 $ y Ultra por 200 $ al mes. Premium da 4x el uso de Plus, Super 15x y Ultra 50x. Los antiguos Pro y Pro+ siguen solo para quien ya era cliente.' },
-    { question: '¿Cuánto cuesta Cursor Teams?', answer: 'Cursor muestra Teams por 30 $, 100 $ o 200 $ por asiento al mes a fecha de 31 de octubre de 2026, con el uso compartido por el equipo. Los antiguos asientos Teams Standard y Premium siguen para quien ya era cliente.' },
+    { question: '¿Cuánto cuesta Cursor Teams?', answer: 'Cursor muestra Teams por 30 $, 100 $ o 200 $ por asiento al mes a fecha de 23 de noviembre de 2026; cada asiento tiene el uso semanal del plan individual equivalente, y el uso compartido queda para Enterprise. Los antiguos asientos Teams Standard y Premium siguen para quien ya era cliente.' },
     { question: '¿Cómo mide Cursor el uso incluido?', answer: 'Los planes de pago actuales tienen una bolsa semanal para los modelos propios de Cursor, Grok y Composer, compartida con el editor, la CLI, Cloud Agents y las apps de Grok. En Premium y superiores, los modelos de terceros se cobran por uso a su precio de lista de la API. Los planes antiguos mantienen los pozos separados Cursor Models y Other Models.' },
     { question: '¿CodeAgentSwarm cobra por los modelos de Cursor?', answer: 'La integración ACP no crea un cargo independiente por uso del modelo. La autenticación, la suscripción y el uso permanecen en tu cuenta de Cursor o CURSOR_API_KEY.' },
     { question: '¿Cursor CLI cuesta algo aparte del plan de Cursor?', answer: 'No. Cursor Agent CLI usa la suscripción y el uso que ya tiene tu cuenta de Cursor, tanto si entras con cursor-agent login como si defines CURSOR_API_KEY. CodeAgentSwarm inicia la CLI oficial mediante ACP y no crea una factura de modelos aparte.' },

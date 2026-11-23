@@ -7,12 +7,12 @@ export const guide: Guide = {
     title: 'Vibe Kanban vs CodeAgentSwarm: An Honest Comparison (2026)',
     metaTitle: 'Vibe Kanban vs CodeAgentSwarm: An Honest Comparison (2026)',
     metaDescription: 'Vibe Kanban turns agent work into a kanban of issues. CodeAgentSwarm lets you watch and drive the agent terminals. Honest comparison with facts verified October 2026.',
-    intro: 'Vibe Kanban turns agent work into a kanban of issues for teams. CodeAgentSwarm lets you watch and drive the agent terminals themselves, with the board as one feature rather than the whole product.\n\nWe build CodeAgentSwarm, and you should read this page knowing that. It is why we list our own limits here (closed source, Mobile Connect still in alpha, still in beta, and you supply your own agent subscriptions) and why we credit Vibe Kanban for the things it does better, starting with being open source and having by far the biggest community in this category. Every third-party fact below was verified on October 31, 2026 against the vendor\'s own site, their docs, their public README, npm and public GitHub data, including a public status change we cover in full. CodeAgentSwarm availability and supported agents were updated on October 5, 2026.\n\nIf your bottleneck is planning and reviewing work as a team, a kanban-first tool is the right shape. If your bottleneck is keeping up with several agent sessions running at once, a supervision workspace is.\n\nOn October 31, 2026 their README and site banner still read "Vibe Kanban is sunsetting", and the site adds that the project will continue as open source and community maintained. Commits keep landing on the default branch (the latest on October 28, 2026), while the last GitHub release is v0.1.44 from April 24, 2026.',
+    intro: 'Vibe Kanban turns agent work into a kanban of issues for teams. CodeAgentSwarm lets you watch and drive the agent terminals themselves, with the board as one feature rather than the whole product.\n\nWe build CodeAgentSwarm, and you should read this page knowing that. It is why we list our own limits here (closed source, Mobile Connect still in alpha, still in beta, and you supply your own agent subscriptions) and why we credit Vibe Kanban for the things it does better, starting with being open source and having by far the biggest community in this category. Every third-party fact below was verified on November 23, 2026 against the vendor\'s own site, their docs, their public README, npm and public GitHub data, including a public status change we cover in full. CodeAgentSwarm availability and supported agents were updated on October 5, 2026.\n\nIf your bottleneck is planning and reviewing work as a team, a kanban-first tool is the right shape. If your bottleneck is keeping up with several agent sessions running at once, a supervision workspace is.\n\nOn November 23, 2026 their README and site banner still read "Vibe Kanban is sunsetting", and the site adds that the project will continue as open source and community maintained. On November 15, 2026 the project published v0.1.46, its first GitHub release since v0.1.44 of April 24, 2026, and that is also the date of the latest commit on the default branch.',
     ctaText: 'If you want to see what each agent is doing right now, get notified the moment one needs you, and keep a task board that the agents update themselves, download CodeAgentSwarm and try it on your next parallel session.',
     ctaAgent: 'comparison',
     highlightedWords: ['Vibe Kanban', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
-    updatedAt: '2026-10-31',
+    updatedAt: '2026-11-23',
     alternateSlug: 'vibe-kanban-vs-codeagentswarm',
   },
   sections: [
@@ -31,7 +31,7 @@ export const guide: Guide = {
         {
           type: 'callout',
           variant: 'info',
-          content: 'Disclosure: CodeAgentSwarm is our product, so read this as an interested comparison and verify the claims. All third-party facts here were checked on October 31, 2026 against vibekanban.com, their docs, the public BloopAI/vibe-kanban README, npm and public GitHub data. Where their documentation does not cover something, we say it is not documented rather than claiming it is missing.',
+          content: 'Disclosure: CodeAgentSwarm is our product, so read this as an interested comparison and verify the claims. All third-party facts here were checked on November 23, 2026 against vibekanban.com, their docs, the public BloopAI/vibe-kanban README, npm and public GitHub data. Where their documentation does not cover something, we say it is not documented rather than claiming it is missing.',
         },
       ],
     },
@@ -50,23 +50,23 @@ export const guide: Guide = {
         {
           type: 'list',
           items: [
-            'Open source under Apache-2.0, with about 28,500 stars on GitHub on October 31, 2026, the largest community of any tool in this comparison',
+            'Open source under Apache-2.0, with about 28,800 stars on GitHub on November 23, 2026, the largest community of any tool in this comparison',
             'Kanban issues as the primary unit of work, built for teams rather than one developer',
             'Diff review with inline comments sent back to the agent without leaving the UI',
             'A built-in browser preview with devtools, inspect mode and device emulation',
             'Pull request creation and merge from inside the tool',
             'Sound effects and browser push notifications when tasks complete or need attention, per their settings docs',
-            'Last public commit on the default branch: October 28, 2026 (GitHub Copilot fixes and a local CI script). Last GitHub release: v0.1.44 on April 24, 2026',
+            'Last public commit on the default branch: November 15, 2026 (a Codex version bump and a local release script). Last GitHub release: v0.1.46 on November 15, 2026, the first since v0.1.44 on April 24, 2026',
           ],
         },
         {
           type: 'paragraph',
-          text: 'There is one more fact you should have before choosing it, and it comes from their own site. On April 10, 2026 the company behind Vibe Kanban, bloop, published <a href="https://www.vibekanban.com/blog/shutdown" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">an announcement</a> that it was shutting down, and that the project would continue as open source and community maintained. The same announcement says remote services would remain available for 30 days, after which Vibe Kanban would move to a fully local architecture, with the remote pieces removed being kanban issues, comments, projects and organisations, while local workspaces keep working. As of October 31, 2026, the README on their default branch and a banner across vibekanban.com still say "Vibe Kanban is sunsetting" and link to that post. The announcement promised a roadmap for the community maintained edition within weeks; their blog has no later post. On npm, version 0.1.45 was published on September 19, 2026, but the latest tag still points to 0.1.44, which is what npx vibe-kanban installs by default.',
+          text: 'There is one more fact you should have before choosing it, and it comes from their own site. On April 10, 2026 the company behind Vibe Kanban, bloop, published <a href="https://www.vibekanban.com/blog/shutdown" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">an announcement</a> that it was shutting down, and that the project would continue as open source and community maintained. The same announcement says remote services would remain available for 30 days, after which Vibe Kanban would move to a fully local architecture, with the remote pieces removed being kanban issues, comments, projects and organisations, while local workspaces keep working. As of November 23, 2026, the README on their default branch and a banner across vibekanban.com still say "Vibe Kanban is sunsetting" and link to that post. The announcement promised a roadmap for the community maintained edition within weeks; their blog has no later post. On npm, version 0.1.46 was published on November 15, 2026 and the latest tag now points to it, so that is what npx vibe-kanban installs by default.',
         },
         {
           type: 'callout',
           variant: 'warning',
-          content: 'We are stating dates, not delivering a verdict. Apache-2.0 code with about 28,500 stars does not evaporate, and community-maintained projects can outlive their companies. Read the announcement, check the repository activity yourself, and decide what that means for the way your team works.',
+          content: 'We are stating dates, not delivering a verdict. Apache-2.0 code with about 28,800 stars does not evaporate, and community-maintained projects can outlive their companies. Read the announcement, check the repository activity yourself, and decide what that means for the way your team works.',
         },
       ],
     },
@@ -109,11 +109,11 @@ export const guide: Guide = {
             ['Notifications', 'Sound effects and browser push notifications when tasks complete or need attention, per their settings docs', 'Desktop notifications when an agent finishes or needs input'],
             ['Conversation history', 'Sessions per workspace with a chat interface and a changes panel, documented per workspace', 'Searchable history across all twelve agents and capability-aware resume'],
             ['Task management', 'The whole product: kanban issues, filtering, board customisation, team assignment. Their April 10, 2026 announcement lists kanban issues among the remote services removed', 'One feature of the workspace: a kanban the agents update over MCP'],
-            ['Open source', 'Yes, Apache-2.0, about 28,500 stars', 'No, closed source with no public app repository'],
+            ['Open source', 'Yes, Apache-2.0, about 28,800 stars', 'No, closed source with no public app repository'],
             ['Price', 'Free and open source. Their April 10, 2026 announcement says paid subscriptions were terminated, though the pricing page still lists Free, Pro at $30 per user per month and Enterprise', 'Free during beta with Pro included, and you bring your own agent subscriptions'],
-            ['Last public commit (verified Oct 31, 2026)', 'October 28, 2026', 'Closed source, no public repo'],
+            ['Last public commit (verified Nov 23, 2026)', 'November 15, 2026', 'Closed source, no public repo'],
           ],
-          caption: 'Verified on October 31, 2026 from vibekanban.com, their public README, their docs, npm and GitHub.',
+          caption: 'Verified on November 23, 2026 from vibekanban.com, their public README, their docs, npm and GitHub.',
         },
       ],
     },
@@ -125,7 +125,7 @@ export const guide: Guide = {
           type: 'list',
           items: [
             '<strong>Your unit of work is an issue, not a session.</strong> If planning and assigning tickets is the job and agents are how the tickets get done, a kanban-first tool matches that model better than a terminal workspace.',
-            '<strong>You want open source you can host.</strong> Apache-2.0, about 28,500 stars, and documented Docker Compose self-hosting. Our app is closed source and there is nothing to self-host.',
+            '<strong>You want open source you can host.</strong> Apache-2.0, about 28,800 stars, and documented Docker Compose self-hosting. Our app is closed source and there is nothing to self-host.',
             '<strong>You review in the browser.</strong> Inline comments on a diff that go straight back to the agent, plus a built-in preview with devtools and device emulation, are genuinely nice and we do not have an equivalent.',
             '<strong>You use Gemini CLI, Amp, Droid, CCR or Qwen Code.</strong> All five are on their list of ten agents and none is on ours. GitHub Copilot is on both lists, as GitHub Copilot CLI in CodeAgentSwarm 2.5.0. Their list has ten agents and ours twelve, with different picks.',
             '<strong>You want pull requests handled in the tool.</strong> Opening a PR with an AI-written description and merging from the same UI is part of their flow.',
@@ -143,7 +143,7 @@ export const guide: Guide = {
           items: [
             '<strong>You want to see the agents work.</strong> Live terminal panes, per-terminal file diffs as they happen, and titles that tell you what each session is on right now.',
             '<strong>You want native desktop notifications.</strong> CodeAgentSwarm tells you the moment an agent finishes or stops to ask a question, from a desktop app instead of a browser tab. Vibe Kanban documents sound effects and browser push notifications, so this is a difference of form, not a missing feature on their side.',
-            '<strong>You use Antigravity CLI or Kimi Code.</strong> Neither is listed among the agents in the Vibe Kanban README or docs as of October 31, 2026. Both are first-class here, alongside Claude Code, Codex CLI and OpenCode.',
+            '<strong>You use Antigravity CLI or Kimi Code.</strong> Neither is listed among the agents in the Vibe Kanban README or docs as of November 23, 2026. Both are first-class here, alongside Claude Code, Codex CLI and OpenCode.',
             '<strong>You want one searchable history across vendors.</strong> Every conversation from every agent in one search box and capability-aware resume from any point.',
             '<strong>You want permission control per operation.</strong> Turbo mode auto-approves what you trust and keeps the rest gated, instead of an all-or-nothing switch.',
             '<strong>You want to know your quota before the agent stalls.</strong> The provider quota indicator shows how much allowance is left.',
@@ -170,19 +170,19 @@ export const guide: Guide = {
   faq: [
     {
       question: 'Is Vibe Kanban open source?',
-      answer: 'Yes. Vibe Kanban is published at github.com/BloopAI/vibe-kanban under the Apache-2.0 license, with about 28,500 stars when verified on October 31, 2026, the largest community of any tool compared here. CodeAgentSwarm is closed source with no public application repository.',
+      answer: 'Yes. Vibe Kanban is published at github.com/BloopAI/vibe-kanban under the Apache-2.0 license, with about 28,800 stars when verified on November 23, 2026, the largest community of any tool compared here. CodeAgentSwarm is closed source with no public application repository.',
     },
     {
       question: 'Is Vibe Kanban still maintained?',
-      answer: 'bloop, the company behind it, shut down on April 10, 2026, and as of October 31, 2026 the README and site banner still say Vibe Kanban is sunsetting and will continue as open source and community maintained. The code still moves: the latest commits, on October 26 and 28, 2026, fix GitHub Copilot sessions and approvals and add a local CI script. No GitHub release has been published since v0.1.44 on April 24, 2026; version 0.1.45 reached npm on September 19, 2026, but the npm latest tag still points to 0.1.44.',
+      answer: 'bloop, the company behind it, shut down on April 10, 2026, and as of November 23, 2026 the README and site banner still say Vibe Kanban is sunsetting and will continue as open source and community maintained. The code still moves: November 2026 commits add GitHub Copilot sign-in and agents installed from the ACP registry, and on November 15, 2026 the project published v0.1.46, its first GitHub release since v0.1.44 on April 24, 2026. The npm latest tag now points to 0.1.46 as well.',
     },
     {
       question: 'Can I still use the Vibe Kanban cloud and team features?',
-      answer: 'Their April 10, 2026 announcement states that remote services would remain available for 30 days and then be removed, with Vibe Kanban transitioning to a fully local architecture. The remote pieces listed as being removed are kanban issues, comments, projects and organisations, paid subscriptions were terminated with refunds for the previous 30 days, and local workspaces continue to function. The latest version at that time included a data export feature. As of October 31, 2026 their docs still include the Cloud and self-hosting pages, and the pricing page still lists Free, Pro and Enterprise plans, so check with the project before planning a team rollout.',
+      answer: 'Their April 10, 2026 announcement states that remote services would remain available for 30 days and then be removed, with Vibe Kanban transitioning to a fully local architecture. The remote pieces listed as being removed are kanban issues, comments, projects and organisations, paid subscriptions were terminated with refunds for the previous 30 days, and local workspaces continue to function. The latest version at that time included a data export feature. As of November 23, 2026 their docs still include the Cloud and self-hosting pages, and the pricing page still lists Free, Pro and Enterprise plans, so check with the project before planning a team rollout.',
     },
     {
       question: 'Does Vibe Kanban support Antigravity CLI or Kimi Code?',
-      answer: 'Neither is listed among the coding agents in the Vibe Kanban README or docs as of October 31, 2026, which name Claude Code, Codex, Gemini CLI, GitHub Copilot, Amp, Cursor, OpenCode, Droid, CCR and Qwen Code. CodeAgentSwarm supports Antigravity CLI and Kimi Code directly, along with Claude Code, Codex CLI and OpenCode.',
+      answer: 'Neither is listed among the coding agents in the Vibe Kanban README or docs as of November 23, 2026, which name Claude Code, Codex, Gemini CLI, GitHub Copilot, Amp, Cursor, OpenCode, Droid, CCR and Qwen Code. CodeAgentSwarm supports Antigravity CLI and Kimi Code directly, along with Claude Code, Codex CLI and OpenCode.',
     },
   ],
 }

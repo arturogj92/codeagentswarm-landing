@@ -14,7 +14,7 @@ const guide: Guide = {
       "Devin"
     ],
     "publishedAt": "2026-09-11",
-    "updatedAt": "2026-10-31",
+    "updatedAt": "2026-11-23",
     "alternateSlug": "devin-cli-modelos-cuotas",
     "socialImage": "/images/guides/devin-cli-og-en.png"
   },
@@ -152,7 +152,7 @@ const guide: Guide = {
       "content": [
         {
           "type": "paragraph",
-          "text": "Devin documents daily and weekly allowances for Pro and Teams full seats, and a weekly allowance without a daily cap for Max. Included quota can be shared across Devin products; on-demand credits have separate billing rules. Consult <a href=\"https://docs.devin.ai/admin/billing/self-serve\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Devin billing</a> for the current terms."
+          "text": "Devin documents daily and weekly allowances for Pro and a weekly allowance without a daily cap for Max; Teams has no per-member allowance and draws all usage from the team's shared credits. Included quota can be shared across Devin products; on-demand credits have separate billing rules. Consult <a href=\"https://docs.devin.ai/admin/billing/self-serve\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">Devin billing</a> for the current terms."
         },
         {
           "type": "paragraph",

@@ -9,14 +9,14 @@ export const guide: Guide = {
     metaDescription: 'T3 Code is an open source control plane that ends in a one-click PR. CodeAgentSwarm is a supervision workspace for twelve agent CLIs. Honest 2026 comparison.',
     intro: `T3 Code is an MIT licensed, open source control plane that puts several coding agents behind one desktop, web and mobile interface and finishes each thread with a one-click pull request, while CodeAgentSwarm is a closed source desktop workspace built for supervising several agent CLIs at once, with desktop notifications, searchable cross-agent history and a kanban board the agents update themselves over MCP.
 
-Disclosure before anything else: we build CodeAgentSwarm. T3 Code wins several rows below, and our own limitations (closed source, Mobile Connect still in alpha, still in beta) are printed in the same table as everything else. Every third-party fact here was checked on October 31, 2026 against t3.codes, the T3 Code README and user docs, and public GitHub data, and anything we could not verify is labelled as such instead of guessed. CodeAgentSwarm availability and supported agents were updated on October 5, 2026.
+Disclosure before anything else: we build CodeAgentSwarm. T3 Code wins several rows below, and our own limitations (closed source, Mobile Connect still in alpha, still in beta) are printed in the same table as everything else. Every third-party fact here was checked on November 23, 2026 against t3.codes, the T3 Code README and user docs, and public GitHub data, and anything we could not verify is labelled as such instead of guessed. CodeAgentSwarm availability and supported agents were updated on October 5, 2026.
 
 Short version: pick T3 Code if open source and a fast path from diff to pull request matter most. Pick CodeAgentSwarm if you run twelve supported agent CLIs and need notifications, history and a task board to keep track of them.`,
     ctaText: 'Try both on the same repository and keep the one that fits your week. CodeAgentSwarm is free during beta, with Pro included, for macOS, Windows and Linux.',
     ctaAgent: 'comparison',
     highlightedWords: ['T3 Code', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
-    updatedAt: '2026-10-31',
+    updatedAt: '2026-11-23',
     alternateSlug: 't3-code-vs-codeagentswarm',
   },
   sections: [
@@ -35,7 +35,7 @@ Short version: pick T3 Code if open source and a fast path from diff to pull req
         {
           type: 'callout',
           variant: 'info',
-          content: 'Disclosure: CodeAgentSwarm is our product. Everything we say about T3 Code was verified on October 31, 2026 against their own site (t3.codes), the README and user docs in pingdotgg/t3code, and public GitHub data. Where a feature is not documented publicly, this page says so rather than claiming T3 Code lacks it.',
+          content: 'Disclosure: CodeAgentSwarm is our product. Everything we say about T3 Code was verified on November 23, 2026 against their own site (t3.codes), the README and user docs in pingdotgg/t3code, and public GitHub data. Where a feature is not documented publicly, this page says so rather than claiming T3 Code lacks it.',
         },
       ],
     },
@@ -49,7 +49,7 @@ Short version: pick T3 Code if open source and a fast path from diff to pull req
         },
         {
           type: 'paragraph',
-          text: 'The momentum is real and worth stating plainly. The repository was created on February 8, 2026. It had 21,084 stars on August 31, 2026 and about 33,800 on October 31, 2026, so roughly 12,700 more in two months. Its last public commit and its v0.1.6 release both landed on October 31, 2026, with nightly builds published several times that day. That pace is a legitimate reason to take T3 Code seriously. Their README is also candid that the project is very early, that you should expect bugs, and that they are mostly not accepting contributions yet.',
+          text: 'The momentum is real and worth stating plainly. The repository was created on February 8, 2026. It had 21,084 stars on August 31, 2026, about 33,800 on October 31, 2026 and about 72,800 on November 23, 2026, so roughly 39,000 more in a little over three weeks. Its last public commit landed on November 23, 2026, its latest stable release, v0.1.11, on November 20, 2026, and nightly builds ship daily. That pace is a legitimate reason to take T3 Code seriously. Their README is also candid that the team has limited review capacity: small, focused fixes are the most likely to be merged, and features need an approved discussion first.',
         },
         {
           type: 'list',
@@ -64,7 +64,7 @@ Short version: pick T3 Code if open source and a fast path from diff to pull req
         },
         {
           type: 'paragraph',
-          text: 'On agents, their README and homepage list Claude Code, Codex, Cursor, Grok Build, OpenCode and Google Antigravity, and say more harnesses ship weekly. Their docs add Pi, Muse Code, fx and any agent from the ACP Registry. Distribution is unusually generous: desktop apps for macOS, Windows and Linux, a web app at app.t3.codes, and public iOS and Android apps with push notifications. It is free, open source under MIT and uses your existing agent subscriptions.',
+          text: 'On agents, their README lists Claude Code, Codex, Cursor, OpenCode, Grok Build, Antigravity, Kiro, Pi, Muse Code, fx and any ACP agent, and their homepage says more harnesses ship weekly. Distribution is unusually generous: desktop apps for macOS, Windows and Linux, a web app at app.t3.codes, and public iOS and Android apps with push notifications. It is free, open source under MIT and uses your existing agent subscriptions.',
         },
       ],
     },
@@ -107,16 +107,16 @@ Short version: pick T3 Code if open source and a fast path from diff to pull req
             ['Platforms', 'macOS, Windows and Linux desktop; web; iOS and Android', 'macOS, Windows and Linux. Mobile Connect alpha'],
             ['Install and distribution', '<code>npx t3@latest</code> with nothing installed, install scripts, desktop app, winget, Scoop, Homebrew cask, .deb, AUR, Nix, direct downloads', 'Desktop installer for macOS and Windows; .deb and AppImage for Linux'],
             ['Interface', 'Threads with a diff pane, integrated terminal and browser panel, plus remote access through T3 Connect, LAN pairing or Tailscale', 'Multi-terminal workspace with a kanban board, history browser and per-terminal diffs'],
-            ['Supported agents', 'Claude Code, Codex, Cursor, Grok Build, OpenCode and Google Antigravity in the README and on t3.codes; their docs add Pi, Muse Code, fx and ACP Registry agents', 'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI, GitHub Copilot CLI and Cline'],
+            ['Supported agents', 'Claude Code, Codex, Cursor, OpenCode, Grok Build, Antigravity, Kiro, Pi, Muse Code, fx and any ACP agent, per the README', 'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI, GitHub Copilot CLI and Cline'],
             ['Isolation model', 'Git worktrees, one branch per agent thread, optional automatic cleanup', 'Git worktrees per session, one process per terminal'],
-            ['Notifications', 'Mobile push alerts through T3 Connect when an agent finishes, fails, needs approval or asks for input. Desktop notifications not documented as of October 31, 2026', 'Desktop notifications when an agent finishes or needs input'],
+            ['Notifications', 'Mobile push alerts through T3 Connect when an agent finishes, fails, needs approval or asks for input. Desktop notifications not documented as of November 23, 2026', 'Desktop notifications when an agent finishes or needs input'],
             ['Conversation history', 'Thread search across connected environments by title, branch, pull request, project or message text', 'Searchable history across all twelve agents and capability-aware resume'],
-            ['Task management', 'Project actions, plus one-click Commit, Push and Create PR (draft, stacked and amended PRs). No kanban board documented as of October 31, 2026', 'Kanban board the agents update over MCP. No one-click PR button'],
-            ['Open source', 'Yes, MIT (pingdotgg/t3code). Mostly not accepting contributions yet, per the README', 'No. Closed source, no public app repository'],
+            ['Task management', 'Project actions, plus one-click Commit, Push and Create PR (draft, stacked and amended PRs). No kanban board documented as of November 23, 2026', 'Kanban board the agents update over MCP. No one-click PR button'],
+            ['Open source', 'Yes, MIT (pingdotgg/t3code). Limited review capacity for outside contributions, per the README', 'No. Closed source, no public app repository'],
             ['Price', 'Free, no paid plan, you keep paying your agent providers. T3 Connect remote access is free for now for up to 3 machines (their FAQ)', 'Free during beta with Pro included. You bring your own CLI subscriptions'],
-            ['Last public commit (verified Oct 31, 2026)', 'October 31, 2026, same day as release v0.1.6. About 33,800 stars since February 8, 2026', 'Closed source, no public repo'],
+            ['Last public commit (verified Nov 23, 2026)', 'November 23, 2026. Latest stable release v0.1.11 on November 20, 2026. About 72,800 stars since February 8, 2026', 'Closed source, no public repo'],
           ],
-          caption: 'Product facts verified on October 31, 2026 against t3.codes and the T3 Code README and user docs. Public GitHub stars and activity checked the same day.',
+          caption: 'Product facts verified on November 23, 2026 against t3.codes and the T3 Code README and user docs. Public GitHub stars and activity checked the same day.',
         },
       ],
     },
@@ -136,7 +136,7 @@ Short version: pick T3 Code if open source and a fast path from diff to pull req
             '<strong>You want to try it in twelve seconds.</strong> <code>npx t3@latest</code> runs it with nothing installed, a lower barrier than any installer.',
             '<strong>Your bottleneck is shipping, not supervising.</strong> One button to commit, push and open a PR with a generated title and body, including draft and stacked PRs, beats doing it by hand. We generate commit messages but have no PR button.',
             '<strong>You want public mobile apps.</strong> T3 Code ships iOS and Android apps today, with push alerts when an agent finishes or needs you, plus a web client. CodeAgentSwarm Mobile Connect is still in alpha.',
-            '<strong>You value community momentum.</strong> About 33,800 stars, roughly 12,700 of them added between August 31 and October 31, 2026, plus nightly builds and frequent harness additions, mean bugs get found and fixed fast.',
+            '<strong>You value community momentum.</strong> About 72,800 stars, roughly 39,000 of them added between October 31 and November 23, 2026, plus nightly builds and frequent harness additions, mean bugs get found and fixed fast.',
           ],
         },
       ],
@@ -153,7 +153,7 @@ Short version: pick T3 Code if open source and a fast path from diff to pull req
           type: 'list',
           items: [
             '<strong>You want the vendor CLIs themselves, in their own terminals.</strong> Each CodeAgentSwarm session runs the agent CLI in a terminal, one process per terminal. T3 Code drives agents through its own provider integrations instead (Claude through Anthropic\'s Agent SDK, per their FAQ).',
-            '<strong>You want to be told on the desktop, not to check.</strong> Desktop notifications fire when any agent finishes or needs input, so you can leave the window and come back when something happened. T3 Code documents push alerts on its mobile app, not desktop notifications, as of October 31, 2026.',
+            '<strong>You want to be told on the desktop, not to check.</strong> Desktop notifications fire when any agent finishes or needs input, so you can leave the window and come back when something happened. T3 Code documents push alerts on its mobile app, not desktop notifications, as of November 23, 2026.',
             '<strong>You want one searchable history across vendors.</strong> Conversations from all twelve agents are stored and searchable in one place, with resume when the agent supports it.',
             '<strong>You want the agents to keep your board honest.</strong> The kanban is exposed over MCP, so agents move their own tasks as they work.',
             '<strong>You want live diffs with graded permissions.</strong> Per-terminal diffs show what each agent touches in real time, and Turbo mode auto-approves the safe operations while the risky ones still stop and ask.',
@@ -183,11 +183,11 @@ Short version: pick T3 Code if open source and a fast path from diff to pull req
     },
     {
       question: 'Does T3 Code support Antigravity CLI or Kimi Code?',
-      answer: 'Antigravity, yes. Kimi Code, not as a built-in provider. As of October 31, 2026, their README lists Google Antigravity as a supported provider, set up from Settings with a Google sign-in and no CLI required. Kimi Code is not named in their README, site or user docs, but their docs say agents from the ACP Registry can be added, and that registry lists Kimi CLI. We have not tested that path. CodeAgentSwarm supports Antigravity CLI and Kimi Code as built-in agents, along with Claude Code, Codex CLI and OpenCode.',
+      answer: 'Antigravity, yes. Kimi Code, not as a built-in provider. As of November 23, 2026, their README lists Antigravity as a supported provider, set up from Settings with a Google sign-in and no CLI required. Kimi Code is not named in their README, site or user docs, but their docs say agents from the ACP Registry can be added, and that registry lists Kimi CLI. We have not tested that path. CodeAgentSwarm supports Antigravity CLI and Kimi Code as built-in agents, along with Claude Code, Codex CLI and OpenCode.',
     },
     {
       question: 'Which one is more actively maintained?',
-      answer: 'Both are active, and neither side wins this row. The public t3code repository had its last commit on October 31, 2026, the same day as release v0.1.6, and about 33,800 stars when we checked that day. CodeAgentSwarm is closed source, so there is no public commit history to inspect: our cadence has to be taken on trust, and that is a fair criticism.',
+      answer: 'Both are active, and neither side wins this row. The public t3code repository had its last commit on November 23, 2026, three days after stable release v0.1.11, and about 72,800 stars when we checked that day. CodeAgentSwarm is closed source, so there is no public commit history to inspect: our cadence has to be taken on trust, and that is a fair criticism.',
     },
     {
       question: 'Can I try both for free?',

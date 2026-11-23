@@ -9,14 +9,14 @@ export const guide: Guide = {
     metaDescription: 'Nimbalyst, formerly Crystal, is a visual editor for what Claude Code and Codex produce. CodeAgentSwarm supervises twelve agent CLIs. Honest comparison, verified in 2026.',
     intro: `Nimbalyst, the project formerly known as Crystal, is an open-source visual workspace for Claude Code, Codex and other coding agents, built around editing what they produce. CodeAgentSwarm is a supervision workspace for twelve agent CLIs, built around the terminals rather than around the documents.
 
-We make CodeAgentSwarm, so this is an interested comparison and you should check it. That is also why this page is generous where Nimbalyst deserves it (it is open source, it runs on Linux, it has an iOS app and desktop notifications, and it had a public commit the day we verified) and why our own limits are on the page: closed source, Mobile Connect still in alpha, still in beta, and you bring your own agent subscriptions. Every third-party fact here was verified on October 31, 2026 against nimbalyst.com (home, pricing, download, mobile and docs pages), the public Nimbalyst README and public GitHub data.
+We make CodeAgentSwarm, so this is an interested comparison and you should check it. That is also why this page is generous where Nimbalyst deserves it (it is open source, it runs on Linux, it has an iOS app and desktop notifications, and it had a public commit two days before we verified) and why our own limits are on the page: closed source, Mobile Connect still in alpha, still in beta, and you bring your own agent subscriptions. Every third-party fact here was verified on November 23, 2026 against nimbalyst.com (home, pricing, download, mobile and docs pages), the public Nimbalyst README and public GitHub data.
 
 Pick Nimbalyst if the work you care about is the artefact: markdown, mockups, diagrams, documents you want to edit alongside the agent. Pick CodeAgentSwarm if the work you care about is the sessions: several agent CLIs running at once and you needing to know what each one is doing.`,
     ctaText: 'If you want to supervise twelve different agent CLIs at once, with notifications, live per-terminal diffs and one searchable history, download CodeAgentSwarm and see how it feels next to Nimbalyst.',
     ctaAgent: 'comparison',
     highlightedWords: ['Nimbalyst', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
-    updatedAt: '2026-10-31',
+    updatedAt: '2026-11-23',
     alternateSlug: 'nimbalyst-vs-codeagentswarm',
   },
   sections: [
@@ -35,7 +35,7 @@ Pick Nimbalyst if the work you care about is the artefact: markdown, mockups, di
         {
           type: 'callout',
           variant: 'info',
-          content: 'Disclosure: CodeAgentSwarm is our product. All third-party facts on this page were verified on October 31, 2026 against nimbalyst.com, their docs, the public nimbalyst/nimbalyst README and public GitHub data, including the Crystal rename. Where their documentation does not mention something, we say it is not documented rather than claiming it is absent.',
+          content: 'Disclosure: CodeAgentSwarm is our product. All third-party facts on this page were verified on November 23, 2026 against nimbalyst.com, their docs, the public nimbalyst/nimbalyst README and public GitHub data, including the Crystal rename. Where their documentation does not mention something, we say it is not documented rather than claiming it is absent.',
         },
       ],
     },
@@ -49,12 +49,12 @@ Pick Nimbalyst if the work you care about is the artefact: markdown, mockups, di
         },
         {
           type: 'paragraph',
-          text: 'This is the project formerly called Crystal. The old repository, <a href="https://github.com/stravu/crystal" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">stravu/crystal</a>, still says in its own description that Crystal is now Nimbalyst and points at nimbalyst.com. That repository is MIT with about 3,100 stars and its last public commit was February 26, 2026. Development moved to <a href="https://github.com/nimbalyst/nimbalyst" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">nimbalyst/nimbalyst</a>, also MIT, with about 2,000 stars on October 31, 2026, a public commit that same day and a latest release, v0.82.4, from October 27. So if you remember Crystal, the star count looks like it dropped: it did not, the project changed address.',
+          text: 'This is the project formerly called Crystal. The old repository, <a href="https://github.com/stravu/crystal" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">stravu/crystal</a>, still says in its own description that Crystal is now Nimbalyst and points at nimbalyst.com. That repository is MIT with about 3,100 stars and its last public commit was February 26, 2026. Development moved to <a href="https://github.com/nimbalyst/nimbalyst" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">nimbalyst/nimbalyst</a>, also MIT, with about 2,100 stars on November 23, 2026, a public commit on November 21 and a latest release, v0.84.3, from that same day. So if you remember Crystal, the star count looks like it dropped: it did not, the project changed address.',
         },
         {
           type: 'list',
           items: [
-            'Open source under the MIT license, with builds for macOS (Apple Silicon and Intel), Windows and Linux (.deb and AppImage) per their README',
+            'Open source under the MIT license, with builds for macOS 13 or later (Apple Silicon and Intel), Windows and Linux (.deb and AppImage) per their README',
             'An iOS app for iPhone and iPad on the App Store, with a session dashboard, voice or text replies, swipe-through diff review and push notifications when agents need you. Their mobile page says Android is planned',
             'Desktop notifications when a session completes, with a system notification when Nimbalyst is not the active window and optional completion sounds, per their docs',
             'Session management: run sessions in parallel, search and resume them, link sessions to the files they touched, and see them in a kanban view',
@@ -101,18 +101,18 @@ Pick Nimbalyst if the work you care about is the artefact: markdown, mockups, di
           type: 'table',
           headers: ['', 'Nimbalyst (formerly Crystal)', 'CodeAgentSwarm'],
           rows: [
-            ['Platforms', 'macOS (Apple Silicon and Intel), Windows and Linux desktop, plus an iOS app for iPhone and iPad (Android planned), per their README and site', 'macOS, Windows and Linux desktop. Mobile Connect alpha: web beta for every account, native iOS and Android access by request, desktop must stay open'],
+            ['Platforms', 'macOS 13 or later (Apple Silicon and Intel), Windows and Linux desktop, plus an iOS app for iPhone and iPad (Android planned), per their README and site', 'macOS, Windows and Linux desktop. Mobile Connect alpha: web beta for every account, native iOS and Android access by request, desktop must stay open'],
             ['Interface', 'Desktop app built around visual editors, with a session kanban, an embedded terminal and a wiki your agents write', 'Desktop workspace built around live agent terminals'],
             ['Supported agents', 'Claude Agent, Codex and an opt-in Claude Code CLI, plus OpenCode, GitHub Copilot, Grok Build, Cursor Agent and Gemini through Antigravity in alpha, per their docs', 'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI, GitHub Copilot CLI and Cline'],
             ['Isolation model', 'Parallel sessions, each in its own git worktree, per their README', 'A separate process per terminal, with optional git worktrees per session'],
             ['Notifications', 'Desktop notifications when a session completes, optional completion sounds, and push notifications in their iOS app, per their docs', 'Desktop notifications when an agent finishes or needs input'],
             ['Conversation history', 'Search and resume sessions, with sessions linked to the files they touched', 'Searchable history across all twelve agents and capability-aware resume'],
             ['Task management', 'Task tracking plus a kanban view of sessions, editable by you and by the agent', 'Kanban board that the agents update over MCP'],
-            ['Open source', 'Yes, MIT, about 2,000 stars on the current repository', 'No, closed source with no public app repository'],
+            ['Open source', 'Yes, MIT, about 2,100 stars on the current repository', 'No, closed source with no public app repository'],
             ['Price', 'App and personal wiki free. Wiki Teams is $20 per user per month or $200 per user per year, free during beta. You bring your own subscription or API key', 'Free during beta with Pro included, and you bring your own agent subscriptions'],
-            ['Last public commit (verified Oct 31, 2026)', 'October 31, 2026 on nimbalyst/nimbalyst (latest release v0.82.4, October 27); February 26, 2026 on the old stravu/crystal repository', 'Closed source, no public repo'],
+            ['Last public commit (verified Nov 23, 2026)', 'November 21, 2026 on nimbalyst/nimbalyst (latest release v0.84.3, same day); February 26, 2026 on the old stravu/crystal repository', 'Closed source, no public repo'],
           ],
-          caption: 'All Nimbalyst facts and repository data were verified on October 31, 2026 against nimbalyst.com, their docs and public GitHub data.',
+          caption: 'All Nimbalyst facts and repository data were verified on November 23, 2026 against nimbalyst.com, their docs and public GitHub data.',
         },
       ],
     },
@@ -128,7 +128,7 @@ Pick Nimbalyst if the work you care about is the artefact: markdown, mockups, di
           type: 'list',
           items: [
             '<strong>You want to edit what the agent produces, visually.</strong> Markdown, mockups with annotations, Mermaid, Excalidraw, CSV and data models in WYSIWYG editors, approving changes as red and green diffs. We have no equivalent to that at all.',
-            '<strong>You want open source.</strong> MIT, public repository, and a very active one: there was a public commit on October 31, 2026, the day we checked, and several releases in the last week of October. CodeAgentSwarm is closed source.',
+            '<strong>You want open source.</strong> MIT, public repository, and a very active one: there was a public commit on November 21, 2026, two days before we checked, and nine releases so far in November. CodeAgentSwarm is closed source.',
             '<strong>You want a public native mobile app today.</strong> Their iOS app, on the App Store for iPhone and iPad, offers a session dashboard, push notifications, voice or text replies and swipe-through diff approval. CodeAgentSwarm Mobile Connect is still in alpha: web beta is available, while native iOS and Android access is by request and the desktop must stay open.',
             '<strong>Non-developers are involved.</strong> Product and design people can work on documents and mockups in the same tool, and Wiki Teams lets teammates read and edit shared pages in the browser. A terminal workspace does not really allow that.',
             '<strong>You want to extend the tool.</strong> Their extension system lets you build custom editors for your own file types.',
@@ -143,7 +143,7 @@ Pick Nimbalyst if the work you care about is the artefact: markdown, mockups, di
         {
           type: 'list',
           items: [
-            '<strong>You use agents Nimbalyst does not list.</strong> Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI, GitHub Copilot CLI and Cline are all first-class here. Kimi Code, Muse Code, Pi and Devin CLI are not among the providers in the Nimbalyst docs as of October 31, 2026, and OpenCode, Copilot, Grok Build, Cursor Agent and Gemini are still alpha there.',
+            '<strong>You use agents Nimbalyst does not list.</strong> Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI, GitHub Copilot CLI and Cline are all first-class here. Kimi Code, Muse Code, Pi and Devin CLI are not among the providers in the Nimbalyst docs as of November 23, 2026, and OpenCode, Copilot, Grok Build, Cursor Agent and Gemini are still alpha there.',
             '<strong>You want the terminals, not an abstraction over them.</strong> Every session is a real CLI in a pane you can read, scroll and type into, which matters when an agent does something unexpected. In Nimbalyst the default Claude integration is their own Claude Agent, and the raw Claude Code CLI is an opt-in provider.',
             '<strong>You want one history across every vendor.</strong> Search a phrase and find the session, whichever of the twelve agents ran it, then resume it when that agent supports resume.',
             '<strong>You want fine-grained permission control.</strong> Turbo mode auto-approves the operations you trust and keeps the rest gated, instead of approving everything or nothing.',
@@ -175,19 +175,19 @@ Pick Nimbalyst if the work you care about is the artefact: markdown, mockups, di
   faq: [
     {
       question: 'Is Nimbalyst the same as Crystal?',
-      answer: 'Yes, it is the same project renamed. The old repository stravu/crystal states in its own description that Crystal is now Nimbalyst and links to nimbalyst.com. Crystal is MIT with about 3,100 stars and its last public commit was February 26, 2026, while development continues at nimbalyst/nimbalyst, also MIT, with about 2,000 stars and a public commit on October 31, 2026. All of this was verified on October 31, 2026.',
+      answer: 'Yes, it is the same project renamed. The old repository stravu/crystal states in its own description that Crystal is now Nimbalyst and links to nimbalyst.com. Crystal is MIT with about 3,100 stars and its last public commit was February 26, 2026, while development continues at nimbalyst/nimbalyst, also MIT, with about 2,100 stars and a public commit on November 21, 2026. All of this was verified on November 23, 2026.',
     },
     {
       question: 'Is Nimbalyst open source?',
-      answer: 'Yes. The nimbalyst/nimbalyst repository is published under the MIT license, with about 2,000 stars (2,006 when checked on October 31, 2026). Their README notes that the collaboration sync server behind their team features is a separate project. CodeAgentSwarm is closed source with no public application repository, so if open source is a requirement, Nimbalyst wins that point.',
+      answer: 'Yes. The nimbalyst/nimbalyst repository is published under the MIT license, with about 2,100 stars (exactly 2,100 when checked on November 23, 2026). Their README notes that the collaboration sync server behind their team features is a separate project. CodeAgentSwarm is closed source with no public application repository, so if open source is a requirement, Nimbalyst wins that point.',
     },
     {
       question: 'Is Nimbalyst actively maintained?',
-      answer: 'When checked on October 31, 2026, the nimbalyst/nimbalyst repository had a public commit from that same day and its latest release, v0.82.4, was from October 27, so it was very active at the time of verification. The predecessor repository, stravu/crystal, last saw a public commit on February 26, 2026, which is expected after the rename. Check the repository yourself before committing a workflow to any tool.',
+      answer: 'When checked on November 23, 2026, the nimbalyst/nimbalyst repository had a public commit from November 21 and its latest release, v0.84.3, was from that same day, so it was very active at the time of verification. The predecessor repository, stravu/crystal, last saw a public commit on February 26, 2026, which is expected after the rename. Check the repository yourself before committing a workflow to any tool.',
     },
     {
       question: 'Does Nimbalyst support Antigravity CLI or Kimi Code?',
-      answer: 'Kimi Code is not among the providers in the Nimbalyst docs as of October 31, 2026. For Antigravity, they offer Gemini through Antigravity in alpha, which uses the language server bundled with Google\'s Antigravity desktop app rather than the Antigravity CLI. Their docs also list Claude Agent, Codex and an opt-in Claude Code CLI, plus OpenCode, GitHub Copilot, Grok Build and Cursor Agent in alpha. CodeAgentSwarm runs Antigravity CLI and Kimi Code directly, alongside eight other agent CLIs.',
+      answer: 'Kimi Code is not among the providers in the Nimbalyst docs as of November 23, 2026. For Antigravity, they offer Gemini through Antigravity in alpha, which uses the language server bundled with Google\'s Antigravity desktop app rather than the Antigravity CLI. Their docs also list Claude Agent, Codex and an opt-in Claude Code CLI, plus OpenCode, GitHub Copilot, Grok Build and Cursor Agent in alpha. CodeAgentSwarm runs Antigravity CLI and Kimi Code directly, alongside eight other agent CLIs.',
     },
   ],
 }

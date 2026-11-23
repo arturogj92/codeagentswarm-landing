@@ -14,7 +14,7 @@ const guide: Guide = {
     ctaAgent: 'cline',
     highlightedWords: ['Cline CLI'],
     publishedAt: '2026-10-31',
-    updatedAt: '2026-10-31',
+    updatedAt: '2026-11-23',
     alternateSlug: 'como-usar-cline-cli',
     relatedSlug: 'cline-vs-claude-code',
     socialImage: '/images/guides/cline-cli-og-en.png',
@@ -176,7 +176,7 @@ const guide: Guide = {
   faq: [
     {
       question: 'Is Cline CLI free?',
-      answer: 'The CLI is open source and free to install. You pay for the model you use: through the Cline provider, which bills inference by usage, or through your own provider key. CodeAgentSwarm does not include model usage.',
+      answer: 'The CLI is open source and free to install. You pay for the model you use: through the Cline provider, which bills inference by usage, through ClinePass, an optional $9.99 monthly subscription for popular open coding models, or through your own provider key. CodeAgentSwarm does not include model usage.',
     },
     {
       question: 'How do I install Cline CLI?',

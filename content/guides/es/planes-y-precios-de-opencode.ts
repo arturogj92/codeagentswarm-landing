@@ -9,14 +9,14 @@ export const guide: Guide = {
     metaDescription: 'La CLI de OpenCode es gratis y abierta. Go cuesta 10 o 40 $ al mes y los créditos de Zen se pagan por token. Y lo que hacen varios agentes con tu factura.',
     intro: `OpenCode es el raro de la categoría, y la respuesta corta es de verdad corta: <strong>la CLI es gratis y la suscripción es opcional</strong>. Puedes traer tu propia clave de API de cualquier proveedor, y entonces ese proveedor te factura directamente y OpenCode no se lleva nada. Puedes comprar créditos prepago en el servicio de pago por uso de OpenCode, que su documentación llama ahora OpenCode Console (la antigua documentación de Zen redirige ahí). O, a 31 de octubre de 2026, puedes suscribirte a <a href="https://opencode.ai/docs/go/" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">OpenCode Go</a> por 10 o 40 $ al mes.
 
-Con tu propia clave o con créditos de Console no hay ventana de 5 horas, ni tope semanal, ni nivel que se te quede pequeño. Tampoco hay techo: OpenCode nunca te va a parar porque se haya agotado una cuota, solo porque se acabe el saldo. Go es la excepción, con límites de 5 horas, semanales y mensuales por modelo.
+Con tu propia clave o con créditos de Console no hay ventana de 5 horas, ni tope semanal, ni nivel que se te quede pequeño. Tampoco hay techo: OpenCode nunca te va a parar porque se haya agotado una cuota, solo porque se acabe el saldo. Go es la excepción, con límites de 5 horas, semanales y mensuales sobre una asignación que comparten sus modelos.
 
 Esta guía cubre lo que cuesta de verdad cada vía, los modelos gratuitos que lleva Console, el número que decide tu factura y el intercambio honesto frente a una CLI de suscripción como <a href="/es/guias/planes-y-precios-de-claude-code" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>.`,
     ctaText: 'Pagar por uso significa que nada frena a un agente desbocado salvo que tú lo estés mirando. CodeAgentSwarm mantiene visibles todas tus sesiones de OpenCode en un solo espacio, así siempre sabes qué está corriendo y desde cuándo.',
     ctaAgent: 'opencode',
     highlightedWords: ['OpenCode', 'Planes', 'precios'],
     publishedAt: '2026-08-05',
-    updatedAt: '2026-10-31',
+    updatedAt: '2026-11-23',
     alternateSlug: 'opencode-plans-and-pricing',
   },
   sections: [
@@ -34,7 +34,7 @@ Esta guía cubre lo que cuesta de verdad cada vía, los modelos gratuitos que ll
           rows: [
             ['Tu propia clave (BYOK)', 'Las tarifas de API normales de tu proveedor', 'Anthropic, OpenAI, Google, quien sea', 'Ninguna'],
             ['OpenCode Console (antes Zen)', 'Tarifas por token sobre créditos prepago', 'OpenCode, a precio de coste más una comisión de pago', 'Ninguna'],
-            ['OpenCode Go', 'Go 10 $/mes, Go Plus 40 $/mes, Go Teams 20 $ por miembro', 'OpenCode', 'Sí, con límites por modelo'],
+            ['OpenCode Go', 'Go 10 $/mes, Go Plus 40 $/mes, Go Teams 20 $ por miembro (mínimo 2 miembros)', 'OpenCode', 'Sí, con una asignación compartida'],
           ],
           caption: 'Vías de pago de OpenCode según su documentación oficial, verificadas el 31 de octubre de 2026.',
         },
@@ -69,7 +69,7 @@ Esta guía cubre lo que cuesta de verdad cada vía, los modelos gratuitos que ll
           type: 'table',
           headers: ['Modelo', 'Entrada / 1M', 'Salida / 1M'],
           rows: [
-            ['Big Pickle, GLM-5.3-Flash Free y otros modelos gratuitos temporales', '0,00 $', '0,00 $'],
+            ['Big Pickle y otros modelos gratuitos temporales', '0,00 $', '0,00 $'],
             ['GPT 6 Luna', '0,10 $', '0,50 $'],
             ['Claude Sonnet 5.5', '2,00 $', '10,00 $'],
             ['GPT 5.5 Pro', '30,00 $', '180,00 $'],
@@ -119,7 +119,7 @@ Esta guía cubre lo que cuesta de verdad cada vía, los modelos gratuitos que ll
       content: [
         {
           type: 'paragraph',
-          text: 'Con tu propia clave o con créditos de Console, OpenCode factura por token, así que no hay una asignación compartida que repartir ni un muro contra el que chocar. Go es la excepción: sus límites por modelo funcionan como una cuota de suscripción, así que varias sesiones con el mismo modelo de Go llegan antes a su parte de 5 horas. Dos agentes trabajando a la vez consumen tokens a la vez, y tu gasto en una hora sigue al número de agentes que están ocupados de verdad, no al número de terminales que tengas abiertos.',
+          text: 'Con tu propia clave o con créditos de Console, OpenCode factura por token, así que no hay una asignación compartida que repartir ni un muro contra el que chocar. Go es la excepción: su asignación compartida funciona como una cuota de suscripción, así que varias sesiones de Go a la vez llegan antes a la parte de 5 horas, usen el modelo que usen. Dos agentes trabajando a la vez consumen tokens a la vez, y tu gasto en una hora sigue al número de agentes que están ocupados de verdad, no al número de terminales que tengas abiertos.',
         },
         {
           type: 'paragraph',
@@ -182,7 +182,7 @@ Esta guía cubre lo que cuesta de verdad cada vía, los modelos gratuitos que ll
             ['Grok Build', 'Sí, con uso limitado', 'X Subscription Plus, 8 $/mes', 'X Subscription Ultra, 200 $/mes', 'Bolsa de X Subscription compartida con Grok y Cursor; API por token'],
             ['Cursor Agent', 'Free, uso limitado', 'Plus, 8 $/mes', 'Ultra, 200 $/mes', 'Bolsa semanal para los modelos de Cursor; los modelos de terceros se cobran por uso'],
           ],
-          caption: 'Niveles de entrada y superiores de cada CLI de agente, verificados el 31 de octubre de 2026. Los precios cambian a menudo; cada guía enlazada lleva su propia fecha de verificación.',
+          caption: 'Niveles de entrada y superiores de cada CLI de agente, verificados el 23 de noviembre de 2026. Los precios cambian a menudo; cada guía enlazada lleva su propia fecha de verificación.',
         },
         {
           type: 'paragraph',
@@ -246,7 +246,7 @@ Esta guía cubre lo que cuesta de verdad cada vía, los modelos gratuitos que ll
     },
     {
       question: '¿OpenCode tiene límites de uso o cuota semanal?',
-      answer: 'Con tu propia clave o con créditos de Console, no: no hay ventana de 5 horas ni tope semanal, y solo te para un saldo vacío. OpenCode Go sí tiene límites: por modelo, el 20% del límite mensual cada 5 horas y el 50% cada semana.',
+      answer: 'Con tu propia clave o con créditos de Console, no: no hay ventana de 5 horas ni tope semanal, y solo te para un saldo vacío. OpenCode Go sí tiene límites sobre una asignación que comparten todos sus modelos: el 20% de la asignación mensual cada 5 horas y el 50% cada semana.',
     },
     {
       question: '¿Cómo evito que un agente de OpenCode gaste de más?',
@@ -258,7 +258,7 @@ Esta guía cubre lo que cuesta de verdad cada vía, los modelos gratuitos que ll
     },
     {
       question: '¿Hay suscripción de OpenCode?',
-      answer: 'Sí, una opcional: OpenCode Go cuesta 10 $/mes, Go Plus 40 $/mes y Go Teams 20 $ por miembro. Cubre una lista de modelos de programación, sobre todo abiertos, con límites por modelo. La CLI sigue siendo gratis, y tu propia clave o los créditos de Console no necesitan suscripción.',
+      answer: 'Sí, una opcional: OpenCode Go cuesta 10 $/mes, Go Plus 40 $/mes y Go Teams 20 $ por miembro, con un mínimo de 2 miembros. Cubre una lista de modelos de programación, sobre todo abiertos, que comparten una asignación. La CLI sigue siendo gratis, y tu propia clave o los créditos de Console no necesitan suscripción.',
     },
     {
       question: '¿Ejecutar varios agentes de OpenCode a la vez cuesta más?',

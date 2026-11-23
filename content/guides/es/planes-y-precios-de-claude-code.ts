@@ -18,7 +18,7 @@ Esta guía deja claro lo que se sabe, fecha cada número y señala qué partes c
     ctaAgent: 'claude-code',
     highlightedWords: ['Claude Code', 'Planes', 'precios'],
     publishedAt: '2026-08-05',
-    updatedAt: '2026-10-31',
+    updatedAt: '2026-11-23',
     alternateSlug: 'claude-code-plans-and-pricing',
   },
   sections: [
@@ -124,22 +124,23 @@ Esta guía deja claro lo que se sabe, fecha cada número y señala qué partes c
       content: [
         {
           type: 'paragraph',
-          text: 'No estás obligado a suscribirte. Claude Code acepta una clave de API de Anthropic y factura por token, sin cuota mensual y sin muro semanal. A 31 de octubre de 2026 los modelos actuales cuestan, por millón de tokens:',
+          text: 'No estás obligado a suscribirte. Claude Code acepta una clave de API de Anthropic y factura por token, sin cuota mensual y sin muro semanal. A 23 de noviembre de 2026 los modelos actuales cuestan, por millón de tokens:',
         },
         {
           type: 'table',
           headers: ['Modelo', 'Entrada', 'Salida'],
           rows: [
+            ['Claude Fable 5.2', '8,00 $', '40,00 $'],
             ['Claude Fable 5.1', '10,00 $', '50,00 $'],
             ['Claude Opus 5.5', '4,00 $', '20,00 $'],
             ['Claude Sonnet 5.5', '2,00 $', '10,00 $'],
             ['Claude Haiku 5.5', '0,10 $ (0,50 $ con prompts de más de 100K tokens)', '0,50 $ (2,50 $ con prompts de más de 100K tokens)'],
           ],
-          caption: 'Tarifas de la API propia de Anthropic según su documentación oficial de precios, verificadas el 31 de octubre de 2026. Bedrock y Google Cloud los operan terceros y tienen precios aparte.',
+          caption: 'Tarifas de la API propia de Anthropic según su documentación oficial de precios, verificadas el 23 de noviembre de 2026. Bedrock y Google Cloud los operan terceros y tienen precios aparte.',
         },
         {
           type: 'paragraph',
-          text: 'El número que decide si esto sale barato o ruinoso es la <strong>caché de prompts</strong>. En Opus 5.5 y Sonnet 5.5 los aciertos de caché cuestan 0,05x el precio base de entrada, una vigésima parte, y en Fable 5.1 0,025x (<a href="https://platform.claude.com/docs/en/about-claude/pricing" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">documentación de precios de Anthropic</a>). Los agentes de programación reenvían en cada turno un contexto grande y bastante estable, que es justo el tráfico para el que se diseñaron las cachés. Una sesión de agente que se porta bien se apoya sobre todo en la tarifa cacheada. Un agente que no para de invalidar su caché, no.',
+          text: 'El número que decide si esto sale barato o ruinoso es la <strong>caché de prompts</strong>. En Opus 5.5 y Sonnet 5.5 los aciertos de caché cuestan 0,05x el precio base de entrada, una vigésima parte, y en Fable 5.2 y Fable 5.1 0,025x (<a href="https://platform.claude.com/docs/en/about-claude/pricing" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">documentación de precios de Anthropic</a>). Los agentes de programación reenvían en cada turno un contexto grande y bastante estable, que es justo el tráfico para el que se diseñaron las cachés. Una sesión de agente que se porta bien se apoya sobre todo en la tarifa cacheada. Un agente que no para de invalidar su caché, no.',
         },
         {
           type: 'paragraph',
@@ -172,7 +173,7 @@ Esta guía deja claro lo que se sabe, fecha cada número y señala qué partes c
             ['Grok Build', 'Sí, con uso limitado', 'X Subscription Plus, 8 $/mes', 'X Subscription Ultra, 200 $/mes', 'Bolsa de X Subscription compartida con Grok y Cursor; API por token'],
             ['Cursor Agent', 'Free, uso limitado', 'Plus, 8 $/mes', 'Ultra, 200 $/mes', 'Bolsa semanal para los modelos de Cursor; los modelos de terceros se cobran por uso'],
           ],
-          caption: 'Niveles de entrada y superiores de cada CLI de agente, verificados el 31 de octubre de 2026. Los precios cambian a menudo; cada guía enlazada lleva su propia fecha de verificación.',
+          caption: 'Niveles de entrada y superiores de cada CLI de agente, verificados el 23 de noviembre de 2026. Los precios cambian a menudo; cada guía enlazada lleva su propia fecha de verificación.',
         },
         {
           type: 'paragraph',

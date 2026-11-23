@@ -14,7 +14,7 @@ const guide: Guide = {
     ctaAgent: 'codex',
     highlightedWords: ['GPT-6.1 Sol'],
     publishedAt: '2026-11-14',
-    updatedAt: '2026-11-14',
+    updatedAt: '2026-11-23',
     alternateSlug: 'gpt-6-1-sol-for-coding',
     relatedSlug: 'planes-y-precios-de-codex',
   },
@@ -25,7 +25,7 @@ const guide: Guide = {
       content: [
         {
           type: 'paragraph',
-          text: 'GPT-6.1 Sol es la nueva versión de GPT-6 Sol, una opción de OpenAI más barata que Astra para tareas largas de código y agentes. GPT-6 Astra sigue siendo la opción más capaz y más cara. Según recoge <a href="https://techcrunch.com/2026/09/29/openai-launches-gpt-6-1-sol-says-it-nearly-matches-gpt-6-astra-and-costs-less/" class="' + link + '">TechCrunch</a>, OpenAI dice que el nuevo modelo ofrece casi el mismo nivel que GPT-6 Astra en programación con agentes, uso del ordenador y trabajo profesional, a la quinta parte del precio estándar por token.',
+          text: 'GPT-6.1 Sol es la nueva versión de GPT-6 Sol, una opción de OpenAI más barata que Astra para tareas largas de código y agentes. GPT-6 Astra era la opción más capaz y más cara cuando salió Sol; después OpenAI lanzó GPT-6.2 Astra, ahora su modelo más capaz, a 8 USD por millón de tokens de entrada y 40 USD de salida. Según recoge <a href="https://techcrunch.com/2026/09/29/openai-launches-gpt-6-1-sol-says-it-nearly-matches-gpt-6-astra-and-costs-less/" class="' + link + '">TechCrunch</a>, OpenAI dice que el nuevo modelo ofrece casi el mismo nivel que GPT-6 Astra en programación con agentes, uso del ordenador y trabajo profesional, a la quinta parte del precio estándar por token.',
         },
         {
           type: 'table',

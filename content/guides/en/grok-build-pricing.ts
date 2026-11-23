@@ -173,7 +173,7 @@ The current source of truth is xAI's <a href="https://x.ai/build" target="_blank
             ['Grok Build', 'Yes, limited usage', 'X Subscription Plus, $8/month', 'X Subscription Ultra, $200/month', 'X Subscription pool shared with Grok and Cursor; API per token'],
             ['Cursor Agent', 'Free, limited usage', 'Plus, $8/month', 'Ultra, $200/month', 'Weekly pool for Cursor models; third-party models billed by usage'],
           ],
-          caption: 'Entry and top tiers per agent CLI, all verified October 31, 2026. Prices change often; each linked guide carries its own verification date.',
+          caption: 'Entry and top tiers per agent CLI, all verified November 23, 2026. Prices change often; each linked guide carries its own verification date.',
         },
         {
           type: 'paragraph',

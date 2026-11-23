@@ -14,7 +14,7 @@ const guide: Guide = {
     ctaAgent: 'codex',
     highlightedWords: ['GPT-6.1 Sol'],
     publishedAt: '2026-11-14',
-    updatedAt: '2026-11-14',
+    updatedAt: '2026-11-23',
     alternateSlug: 'gpt-6-1-sol-para-programar',
     relatedSlug: 'codex-plans-and-pricing',
   },
@@ -25,7 +25,7 @@ const guide: Guide = {
       content: [
         {
           type: 'paragraph',
-          text: 'GPT-6.1 Sol is the upgrade to GPT-6 Sol, OpenAI’s cheaper model for long coding and agent tasks. GPT-6 Astra remains the most capable and most expensive option. As <a href="https://techcrunch.com/2026/09/29/openai-launches-gpt-6-1-sol-says-it-nearly-matches-gpt-6-astra-and-costs-less/" class="' + link + '">TechCrunch</a> reports, OpenAI says the new model “delivers nearly the same level of intelligence as GPT-6 Astra for agentic coding, computer use, and professional work, at one-fifth the standard input and output token prices.”',
+          text: 'GPT-6.1 Sol is the upgrade to GPT-6 Sol, OpenAI’s cheaper model for long coding and agent tasks. GPT-6 Astra was the most capable and most expensive option when Sol launched; OpenAI has since released GPT-6.2 Astra, now its most capable model, at $8 input and $40 output per million tokens. As <a href="https://techcrunch.com/2026/09/29/openai-launches-gpt-6-1-sol-says-it-nearly-matches-gpt-6-astra-and-costs-less/" class="' + link + '">TechCrunch</a> reports, OpenAI says the new model “delivers nearly the same level of intelligence as GPT-6 Astra for agentic coding, computer use, and professional work, at one-fifth the standard input and output token prices.”',
         },
         {
           type: 'table',

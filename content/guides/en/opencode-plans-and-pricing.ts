@@ -9,14 +9,14 @@ export const guide: Guide = {
     metaDescription: 'OpenCode CLI is free and open source. Go costs $10 or $40 a month, Zen credits are pay per token. Plus what several agents at once do to your bill.',
     intro: `OpenCode is the odd one out in this category, and the short answer is genuinely short: <strong>the CLI is free, and a subscription is optional</strong>. You can bring your own API key from any provider, in which case that provider bills you directly and OpenCode takes nothing. You can buy prepaid credits on OpenCode's pay-as-you-go service, which its docs now call OpenCode Console (the old Zen docs redirect there). Or, as of October 31, 2026, you can subscribe to <a href="https://opencode.ai/docs/go/" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">OpenCode Go</a> for $10 or $40 a month.
 
-On your own key or on Console credits there is no 5 hour window, no weekly cap and no tier to outgrow. There is also no ceiling: OpenCode will never stop you because a quota ran out, only because your balance did. Go is the exception, with 5 hour, weekly and monthly limits per model.
+On your own key or on Console credits there is no 5 hour window, no weekly cap and no tier to outgrow. There is also no ceiling: OpenCode will never stop you because a quota ran out, only because your balance did. Go is the exception, with 5 hour, weekly and monthly limits on one allowance shared by its models.
 
 This guide covers what each route actually costs, the free models Console carries, the one number that decides your bill, and the honest trade-off against a subscription CLI like <a href="/en/guides/claude-code-plans-and-pricing" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Code</a>.`,
     ctaText: 'Pay-as-you-go means nothing stops a runaway agent except you watching it. CodeAgentSwarm keeps every OpenCode session visible in one workspace, so you always know what is running and for how long.',
     ctaAgent: 'opencode',
     highlightedWords: ['OpenCode', 'Plans', 'Pricing'],
     publishedAt: '2026-08-05',
-    updatedAt: '2026-10-31',
+    updatedAt: '2026-11-23',
     alternateSlug: 'planes-y-precios-de-opencode',
   },
   sections: [
@@ -34,7 +34,7 @@ This guide covers what each route actually costs, the free models Console carrie
           rows: [
             ['Bring your own key (BYOK)', 'Your provider\'s normal API rates', 'Anthropic, OpenAI, Google, whoever', 'None'],
             ['OpenCode Console (formerly Zen)', 'Per-token rates on prepaid credits', 'OpenCode, at cost plus a processing fee', 'None'],
-            ['OpenCode Go', 'Go $10/month, Go Plus $40/month, Go Teams $20 per member', 'OpenCode', 'Yes, with limits per model'],
+            ['OpenCode Go', 'Go $10/month, Go Plus $40/month, Go Teams $20 per member (2-member minimum)', 'OpenCode', 'Yes, with one shared allowance'],
           ],
           caption: 'OpenCode pricing routes from the official OpenCode docs, verified October 31, 2026.',
         },
@@ -69,7 +69,7 @@ This guide covers what each route actually costs, the free models Console carrie
           type: 'table',
           headers: ['Model', 'Input / 1M', 'Output / 1M'],
           rows: [
-            ['Big Pickle, GLM-5.3-Flash Free and other temporary free models', '$0.00', '$0.00'],
+            ['Big Pickle and other temporary free models', '$0.00', '$0.00'],
             ['GPT 6 Luna', '$0.10', '$0.50'],
             ['Claude Sonnet 5.5', '$2.00', '$10.00'],
             ['GPT 5.5 Pro', '$30.00', '$180.00'],
@@ -119,7 +119,7 @@ This guide covers what each route actually costs, the free models Console carrie
       content: [
         {
           type: 'paragraph',
-          text: 'On your own key or on Console credits, OpenCode bills per token, so there is no shared allowance to divide and no wall to hit. Go is the exception: its per-model limits behave like a subscription quota, so parallel sessions on the same Go model reach its 5 hour share sooner. Two agents working at the same time simply consume tokens at the same time, and your spend over an hour tracks the number of agents that are actually busy rather than the number of terminals you have open.',
+          text: 'On your own key or on Console credits, OpenCode bills per token, so there is no shared allowance to divide and no wall to hit. Go is the exception: its shared allowance behaves like a subscription quota, so parallel Go sessions reach the 5 hour share sooner, whichever models they use. Two agents working at the same time simply consume tokens at the same time, and your spend over an hour tracks the number of agents that are actually busy rather than the number of terminals you have open.',
         },
         {
           type: 'paragraph',
@@ -182,7 +182,7 @@ This guide covers what each route actually costs, the free models Console carrie
             ['Grok Build', 'Yes, limited usage', 'X Subscription Plus, $8/month', 'X Subscription Ultra, $200/month', 'X Subscription pool shared with Grok and Cursor; API per token'],
             ['Cursor Agent', 'Free, limited usage', 'Plus, $8/month', 'Ultra, $200/month', 'Weekly pool for Cursor models; third-party models billed by usage'],
           ],
-          caption: 'Entry and top tiers per agent CLI, all verified October 31, 2026. Prices change often; each linked guide carries its own verification date.',
+          caption: 'Entry and top tiers per agent CLI, all verified November 23, 2026. Prices change often; each linked guide carries its own verification date.',
         },
         {
           type: 'paragraph',
@@ -246,7 +246,7 @@ This guide covers what each route actually costs, the free models Console carrie
     },
     {
       question: 'Does OpenCode have usage limits or a weekly quota?',
-      answer: 'Not on your own key or on Console credits: there is no 5 hour window and no weekly cap, and only an empty balance stops you. OpenCode Go does have limits: per model, 20% of the monthly limit per 5 hours and 50% per week.',
+      answer: 'Not on your own key or on Console credits: there is no 5 hour window and no weekly cap, and only an empty balance stops you. OpenCode Go does have limits on one allowance shared by all its models: 20% of the monthly allowance per 5 hours and 50% per week.',
     },
     {
       question: 'How do I stop an OpenCode agent from spending too much?',
@@ -258,7 +258,7 @@ This guide covers what each route actually costs, the free models Console carrie
     },
     {
       question: 'Is there an OpenCode subscription?',
-      answer: 'Yes, an optional one: OpenCode Go costs $10/month, Go Plus $40/month and Go Teams $20 per member. It covers a list of mostly open coding models with limits per model. The CLI itself stays free, and your own key or Console credits need no subscription at all.',
+      answer: 'Yes, an optional one: OpenCode Go costs $10/month, Go Plus $40/month and Go Teams $20 per member with a 2-member minimum. It covers a list of mostly open coding models that share one allowance. The CLI itself stays free, and your own key or Console credits need no subscription at all.',
     },
     {
       question: 'Does running several OpenCode agents at once cost more?',

@@ -16,7 +16,7 @@ Hay una pega que conviene conocer antes de montar un flujo de trabajo encima, y 
     ctaAgent: 'antigravity',
     highlightedWords: ['Antigravity', 'Planes', 'precios'],
     publishedAt: '2026-08-05',
-    updatedAt: '2026-10-31',
+    updatedAt: '2026-11-23',
     alternateSlug: 'antigravity-plans-and-pricing',
   },
   sections: [
@@ -62,11 +62,11 @@ Hay una pega que conviene conocer antes de montar un flujo de trabajo encima, y 
       content: [
         {
           type: 'paragraph',
-          text: 'El plan gratuito es inusualmente generoso sobre el papel. Según la <a href="https://antigravity.google/docs/models" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">documentación de modelos de Antigravity</a>, los usuarios gratuitos y de Plus tienen <strong>Gemini 3.8 Flash</strong>, más Claude Sonnet 4.6, Claude Opus 4.6 y GPT-OSS 120B hasta que Google retire esos tres el 2 de noviembre de 2026. El autocompletado y las peticiones de comando son ilimitados. La barrera son los límites de frecuencia semanales en las peticiones del agente, no un muro de funciones.',
+          text: 'El plan gratuito es inusualmente generoso sobre el papel. Según la <a href="https://antigravity.google/docs/models" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">documentación de modelos de Antigravity</a>, los usuarios gratuitos y de Plus tienen <strong>Gemini 3.8 Flash</strong>, más Claude Sonnet 4.6, Claude Opus 4.6 y GPT-OSS 120B hasta que Google retire esos tres el 30 de noviembre de 2026. El autocompletado y las peticiones de comando son ilimitados. La barrera son los límites de frecuencia semanales en las peticiones del agente, no un muro de funciones.',
         },
         {
           type: 'paragraph',
-          text: 'Esa combinación es realmente rara, al menos hasta el 2 de noviembre. Gemini 4 Argon y los modelos Claude 5.5 requieren Google AI Pro o superior, así que tras la retirada el nivel gratuito se queda solo con un modelo Flash. Para evaluar si un flujo de trabajo agéntico te encaja, sigue siendo una de las mejores opciones gratuitas de la categoría.',
+          text: 'Esa combinación es realmente rara, al menos hasta el 30 de noviembre. Gemini 4 Argon y los modelos Claude 5.5 requieren Google AI Pro o superior, así que tras la retirada el nivel gratuito se queda solo con un modelo Flash. Para evaluar si un flujo de trabajo agéntico te encaja, sigue siendo una de las mejores opciones gratuitas de la categoría.',
         },
         {
           type: 'callout',
@@ -188,7 +188,7 @@ Hay una pega que conviene conocer antes de montar un flujo de trabajo encima, y 
             ['Grok Build', 'Sí, con uso limitado', 'X Subscription Plus, 8 $/mes', 'X Subscription Ultra, 200 $/mes', 'Bolsa de X Subscription compartida con Grok y Cursor; API por token'],
             ['Cursor Agent', 'Free, uso limitado', 'Plus, 8 $/mes', 'Ultra, 200 $/mes', 'Bolsa semanal para los modelos de Cursor; los modelos de terceros se cobran por uso'],
           ],
-          caption: 'Niveles de entrada y superiores de cada CLI de agente, verificados el 31 de octubre de 2026. Los precios cambian a menudo; cada guía enlazada lleva su propia fecha de verificación.',
+          caption: 'Niveles de entrada y superiores de cada CLI de agente, verificados el 23 de noviembre de 2026. Los precios cambian a menudo; cada guía enlazada lleva su propia fecha de verificación.',
         },
         {
           type: 'paragraph',

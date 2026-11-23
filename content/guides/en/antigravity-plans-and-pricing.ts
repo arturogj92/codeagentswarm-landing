@@ -16,7 +16,7 @@ There is a catch worth knowing before you build a workflow around it, and it is 
     ctaAgent: 'antigravity',
     highlightedWords: ['Antigravity', 'Plans', 'Pricing'],
     publishedAt: '2026-08-05',
-    updatedAt: '2026-10-31',
+    updatedAt: '2026-11-23',
     alternateSlug: 'planes-y-precios-de-antigravity',
   },
   sections: [
@@ -62,11 +62,11 @@ There is a catch worth knowing before you build a workflow around it, and it is 
       content: [
         {
           type: 'paragraph',
-          text: 'The free plan is unusually generous on paper. According to the <a href="https://antigravity.google/docs/models" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Antigravity model docs</a>, free and Plus users get <strong>Gemini 3.8 Flash</strong>, plus Claude Sonnet 4.6, Claude Opus 4.6 and GPT-OSS 120B until Google removes those three on November 2, 2026. Tab completions and command requests are unlimited. The gate is weekly rate limits on agent requests, not a feature wall.',
+          text: 'The free plan is unusually generous on paper. According to the <a href="https://antigravity.google/docs/models" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Antigravity model docs</a>, free and Plus users get <strong>Gemini 3.8 Flash</strong>, plus Claude Sonnet 4.6, Claude Opus 4.6 and GPT-OSS 120B until Google removes those three on November 30, 2026. Tab completions and command requests are unlimited. The gate is weekly rate limits on agent requests, not a feature wall.',
         },
         {
           type: 'paragraph',
-          text: 'That combination is genuinely unusual, at least until November 2. Gemini 4 Argon and the Claude 5.5 models need Google AI Pro or higher, so after the removal the free tier keeps a Flash model only. For evaluating whether an agentic workflow suits you at all, it is still one of the best free options in the category.',
+          text: 'That combination is genuinely unusual, at least until November 30. Gemini 4 Argon and the Claude 5.5 models need Google AI Pro or higher, so after the removal the free tier keeps a Flash model only. For evaluating whether an agentic workflow suits you at all, it is still one of the best free options in the category.',
         },
         {
           type: 'callout',
@@ -188,7 +188,7 @@ There is a catch worth knowing before you build a workflow around it, and it is 
             ['Grok Build', 'Yes, limited usage', 'X Subscription Plus, $8/month', 'X Subscription Ultra, $200/month', 'X Subscription pool shared with Grok and Cursor; API per token'],
             ['Cursor Agent', 'Free, limited usage', 'Plus, $8/month', 'Ultra, $200/month', 'Weekly pool for Cursor models; third-party models billed by usage'],
           ],
-          caption: 'Entry and top tiers per agent CLI, all verified October 31, 2026. Prices change often; each linked guide carries its own verification date.',
+          caption: 'Entry and top tiers per agent CLI, all verified November 23, 2026. Prices change often; each linked guide carries its own verification date.',
         },
         {
           type: 'paragraph',

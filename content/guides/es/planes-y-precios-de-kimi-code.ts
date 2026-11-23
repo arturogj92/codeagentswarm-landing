@@ -158,7 +158,7 @@ Esta guía separa ambos sistemas de facturación y enlaza cada cifra cambiante c
             ['Grok Build', 'Sí, con uso limitado', 'X Subscription Plus, 8 $/mes', 'X Subscription Ultra, 200 $/mes', 'Bolsa de X Subscription compartida con Grok y Cursor; API por token'],
             ['Cursor Agent', 'Free, uso limitado', 'Plus, 8 $/mes', 'Ultra, 200 $/mes', 'Bolsa semanal para los modelos de Cursor; los modelos de terceros se cobran por uso'],
           ],
-          caption: 'Niveles de entrada y superiores de cada CLI de agente, verificados el 31 de octubre de 2026. Los precios cambian a menudo; cada guía enlazada lleva su propia fecha de verificación.',
+          caption: 'Niveles de entrada y superiores de cada CLI de agente, verificados el 23 de noviembre de 2026. Los precios cambian a menudo; cada guía enlazada lleva su propia fecha de verificación.',
         },
         {
           type: 'paragraph',

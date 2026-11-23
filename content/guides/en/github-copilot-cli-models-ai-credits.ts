@@ -14,7 +14,7 @@ const guide: Guide = {
     ctaAgent: 'copilot',
     highlightedWords: ['GitHub Copilot CLI'],
     publishedAt: '2026-10-08',
-    updatedAt: '2026-10-31',
+    updatedAt: '2026-11-23',
     alternateSlug: 'github-copilot-cli-modelos-creditos-ia',
     relatedSlug: 'how-to-use-github-copilot-cli',
     socialImage: '/images/guides/copilot-cli-og-en.png',
@@ -29,7 +29,7 @@ const guide: Guide = {
           type: 'table',
           headers: ['Copilot plan', 'Price', 'Monthly AI credits'],
           rows: [
-            ['Free', 'Free', 'None; Copilot CLI uses automatic model selection within a limited monthly Chat allowance'],
+            ['Free', 'Free', 'A monthly allowance GitHub does not quantify; automatic model selection only'],
             ['Pro', '$10 per month', '1,500 (1,000 base + 500 flex)'],
             ['Pro+', '$39 per month', '7,000 (3,900 base + 3,100 flex)'],
             ['Max', '$100 per month', '20,000 (10,000 base + 10,000 flex)'],
@@ -108,7 +108,7 @@ const guide: Guide = {
         },
         {
           type: 'paragraph',
-          text: 'If you signed in only with <code>copilot login</code> and have no GitHub CLI, the panel shows the allowance as not available. That means it could not read it, not that you have unlimited usage. On Copilot Free, which has no AI credits, the panel shows that monthly Chat allowance instead.',
+          text: 'If you signed in only with <code>copilot login</code> and have no GitHub CLI, the panel shows the allowance as not available. That means it could not read it, not that you have unlimited usage. On Copilot Free, whose AI credit allowance GitHub does not quantify, the panel shows that monthly Chat allowance instead.',
         },
       ],
     },

@@ -9,16 +9,16 @@ export const guide: Guide = {
     metaDescription: 'Superset, now Paradev, is a source available IDE for running 100+ parallel coding agents. CodeAgentSwarm is a supervision workspace for twelve agent CLIs. Honest comparison.',
     intro: `Superset is now called Paradev. The team announced the new name on October 12, 2026, and says only the name changed: same product, account and workspaces. superset.sh now redirects to paradev.com, the GitHub repository moved to ParadevAI/Paradev, and the CLI command is still superset. We kept the old name in the title because that is what most people still search for, and we say Paradev below when we describe the product as it is today.
 
-Superset (now Paradev) is a source available desktop IDE for running many CLI coding agents in parallel, each task in its own git worktree, with code review, pull requests, an in-app browser, automations and an iPhone app. CodeAgentSwarm is a closed source desktop workspace for supervising twelve supported agent CLIs, with desktop notifications, searchable cross-agent history and a kanban board the agents update themselves over MCP.
+Superset (now Paradev) is an open source (MIT) desktop IDE for running many CLI coding agents in parallel, each task in its own git worktree, with code review, pull requests, an in-app browser, automations and an iPhone app. CodeAgentSwarm is a closed source desktop workspace for supervising twelve supported agent CLIs, with desktop notifications, searchable cross-agent history and a kanban board the agents update themselves over MCP.
 
-Disclosure up front: we build CodeAgentSwarm. That is the reason this page states where Paradev is better instead of pretending otherwise, and why our own limitations (closed source, Mobile Connect still in alpha, still in beta) sit in the same table as everything else. Every third-party fact was verified on October 31, 2026 against paradev.com, docs.paradev.com and the public ParadevAI/Paradev repository, and anything we could not verify is labelled rather than guessed. CodeAgentSwarm availability and supported agents were updated on October 5, 2026.
+Disclosure up front: we build CodeAgentSwarm. That is the reason this page states where Paradev is better instead of pretending otherwise, and why our own limitations (closed source, Mobile Connect still in alpha, still in beta) sit in the same table as everything else. Every third-party fact was verified on November 23, 2026 against paradev.com, docs.paradev.com and the public ParadevAI/Paradev repository, and anything we could not verify is labelled rather than guessed. CodeAgentSwarm availability and supported agents were updated on October 5, 2026.
 
 Short version: pick Paradev if you want an IDE-shaped environment, source you can inspect, team plans or an iPhone app today. Pick CodeAgentSwarm if you need Windows today, searchable cross-agent history and graded permissions, with Pro included free during the beta.`,
     ctaText: 'Both are free to start, so run them on the same repository for a week. CodeAgentSwarm is free during beta, with Pro included, for macOS, Windows and Linux.',
     ctaAgent: 'comparison',
     highlightedWords: ['Superset', 'Paradev', 'CodeAgentSwarm'],
     publishedAt: '2026-07-26',
-    updatedAt: '2026-10-31',
+    updatedAt: '2026-11-23',
     alternateSlug: 'superset-vs-codeagentswarm',
   },
   sections: [
@@ -37,7 +37,7 @@ Short version: pick Paradev if you want an IDE-shaped environment, source you ca
         {
           type: 'callout',
           variant: 'info',
-          content: 'Disclosure: CodeAgentSwarm is our product. Everything stated here about Superset (now Paradev) was verified on October 31, 2026 against their own site (paradev.com), their documentation (docs.paradev.com) and public GitHub data for ParadevAI/Paradev, formerly superset-sh/superset. Where something is not documented publicly, this page says so rather than claiming Paradev lacks it.',
+          content: 'Disclosure: CodeAgentSwarm is our product. Everything stated here about Superset (now Paradev) was verified on November 23, 2026 against their own site (paradev.com), their documentation (docs.paradev.com) and public GitHub data for ParadevAI/Paradev, formerly superset-sh/superset. Where something is not documented publicly, this page says so rather than claiming Paradev lacks it.',
         },
       ],
     },
@@ -47,11 +47,11 @@ Short version: pick Paradev if you want an IDE-shaped environment, source you ca
       content: [
         {
           type: 'paragraph',
-          text: '<a href="https://paradev.com" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Paradev</a>, formerly Superset, now calls itself "The IDE for Parallel Agents" and promises to scale to 100+ agents running at once. Its repository, <a href="https://github.com/ParadevAI/Paradev" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">ParadevAI/Paradev</a> (the old superset-sh/superset address redirects there), describes it as "an agentic IDE to orchestrate 100+ coding agents in parallel". Their README adds that it is not a coding agent itself: you bring your own agent subscriptions and API keys, and it does not proxy model calls. It is also unrelated to Apache Superset, the business intelligence tool.',
+          text: '<a href="https://paradev.com" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Paradev</a>, formerly Superset, now calls itself "the open-source IDE for the AI agents era" and its pricing promises 100+ parallel coding agents. Its repository, <a href="https://github.com/ParadevAI/Paradev" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">ParadevAI/Paradev</a> (the old superset-sh/superset address redirects there), describes it as "an open-source Codex App and Conductor alternative". Their README adds that it is not a coding agent itself: you bring your own agent subscriptions and API keys, and it does not proxy model calls. It is also unrelated to Apache Superset, the business intelligence tool.',
         },
         {
           type: 'paragraph',
-          text: 'The licensing deserves precision, because it is easy to get wrong. Paradev is source available under the Elastic License 2.0. That is not an OSI approved open source license: you can read the code, fork it and self-host it for your team, but you cannot resell it as a hosted service, and the usual open source freedoms do not all apply. Their README says the desktop app is "free forever" for running agents on your own machine. On October 31, 2026 the repository had about 15,800 stars, its last public commit that same day and desktop release v2.0.2 from October 29, 2026. It has been public since October 21, 2025.',
+          text: 'The licensing deserves precision, because it changed recently. Paradev was source available under the Elastic License 2.0 until November 4, 2026, when it was relicensed under the MIT License. It is now open source in the usual OSI sense: you can inspect, modify, fork and self-host it, and anyone can file issues or open pull requests. Their README says the Free plan covers local workspaces, the desktop app and the CLI, with no credit card required. On November 23, 2026 the repository had about 16,500 stars, its last public commit that same day and desktop release v2.0.11 from November 20, 2026. It has been public since October 21, 2025.',
         },
         {
           type: 'list',
@@ -69,7 +69,7 @@ Short version: pick Paradev if you want an IDE-shaped environment, source you ca
         },
         {
           type: 'paragraph',
-          text: 'Their README lists 21 built-in agents as fully supported: Amp Code, Antigravity CLI, Claude Code, Codex CLI, Cursor Agent, Devin, Droid, fx, Gemini CLI, GitHub Copilot, Grok, Hermes, Kimi Code, Kiro, Mastra Code, Mistral Vibe, Muse Code, Oh My Pi, OpenCode, Pi and Polygraph, and any other CLI agent works as a custom agent. Their docs are honest that integration depth varies: some agents report status, resume and usage, others run as plain terminal programs. The desktop app supports macOS (Apple Silicon and Intel); Linux ships as an experimental x64 AppImage; Windows is planned with no date. The iPhone and iPad app is on the App Store and needs Paradev Pro and iOS 26 or later. Android is on a waitlist.',
+          text: 'Their README lists 21 built-in agents: Amp Code, Antigravity CLI, Claude Code, Codex CLI, Cursor Agent, Devin, Droid, fx, Gemini CLI, GitHub Copilot, Grok, Hermes, Kimi Code, Kiro, Mastra Code, Mistral Vibe, Muse Code, Oh My Pi, OpenCode, Pi and Polygraph, and any other CLI agent works as a custom agent. Their docs are honest that integration depth varies: some agents report status, resume and usage, others run as plain terminal programs. The desktop app supports macOS (Apple Silicon and Intel); Linux ships as an experimental x64 AppImage; Windows is not yet available. The iPhone and iPad app is on the App Store and needs Paradev Pro and iOS 26 or later, and their README adds that there is also an Android app on Google Play.',
         },
       ],
     },
@@ -109,19 +109,19 @@ Short version: pick Paradev if you want an IDE-shaped environment, source you ca
           type: 'table',
           headers: ['', 'Superset (now Paradev)', 'CodeAgentSwarm'],
           rows: [
-            ['Platforms', 'macOS (Apple Silicon and Intel); experimental Linux x64 AppImage; Windows planned with no date; iPhone and iPad app (Pro, iOS 26 or later); Android on a waitlist', 'macOS, Windows and Linux'],
-            ['Install and distribution', 'Desktop download from paradev.com or GitHub releases, plus a standalone CLI. Self-hosting from source is allowed subject to the Elastic License 2.0 terms', 'Desktop installer for macOS and Windows; .deb and AppImage for Linux'],
-            ['Interface', 'IDE ("The IDE for Parallel Agents") with terminals, a Changes pane, a PR pane, an in-app browser, a file editor and a chat pane, plus open-in-any-IDE', 'Multi-terminal workspace with a kanban board, history browser and per-terminal diffs'],
-            ['Supported agents', '21 built-in agents listed as fully supported, among them Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok, Cursor Agent, Muse Code, Pi, Devin, Gemini CLI and GitHub Copilot, plus any CLI as a custom agent. Status, resume and usage support vary by agent', 'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI, GitHub Copilot CLI and Cline, integrated individually'],
+            ['Platforms', 'macOS (Apple Silicon and Intel); experimental Linux x64 AppImage; Windows not yet available; iPhone and iPad app (Pro, iOS 26 or later); Android app on Google Play', 'macOS, Windows and Linux'],
+            ['Install and distribution', 'Desktop download from paradev.com or GitHub releases, plus a standalone CLI. Self-hosting from source is allowed under the MIT License', 'Desktop installer for macOS and Windows; .deb and AppImage for Linux'],
+            ['Interface', 'IDE ("the open-source IDE for the AI agents era") with terminals, a Changes pane, a PR pane, an in-app browser, a file editor and a chat pane, plus open-in-any-IDE', 'Multi-terminal workspace with a kanban board, history browser and per-terminal diffs'],
+            ['Supported agents', '21 built-in agents, among them Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok, Cursor Agent, Muse Code, Pi, Devin, Gemini CLI and GitHub Copilot, plus any CLI as a custom agent. Status, resume and usage support vary by agent', 'Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI, GitHub Copilot CLI and Cline, integrated individually'],
             ['Isolation model', 'One git worktree, branch and terminals per task; remote hosts and cloud workspaces (beta) on paid plans', 'Git worktrees per session, one process per terminal'],
             ['Notifications', 'Sidebar status, completion chimes, dock badges and notifications when an agent finishes or needs input (the needs-input state depends on the agent). Mobile push notifications are listed as coming', 'Desktop notifications when an agent finishes or needs input'],
-            ['Conversation history', 'Resume after restart, fork and hand-off to another agent are documented. A searchable history across agents is not documented on their site as of October 31, 2026', 'Searchable history across all twelve agents and capability-aware resume'],
+            ['Conversation history', 'Resume after restart, fork and hand-off to another agent are documented. A searchable history across agents is not documented on their site as of November 23, 2026', 'Searchable history across all twelve agents and capability-aware resume'],
             ['Task management', 'Tasks view with list and kanban board (Linear, GitHub issues, native tasks), MCP task tools on their hosted server, and automations on paid plans', 'Kanban board the agents update themselves over MCP. No one-click PR button'],
-            ['Open source', 'No. Source available (Elastic License 2.0), which is not an OSI approved open source license', 'No. Closed source, no public app repository'],
+            ['Open source', 'Yes. MIT since November 4, 2026 (Elastic License 2.0, source available, before that)', 'No. Closed source, no public app repository'],
             ['Price', 'Free: $0 for 1 user with local workspaces, the desktop app and the CLI. Pro $20 per user per month ($16 billed yearly), Team $60 ($54 yearly), Ultra $200, Enterprise custom', 'Free during beta with Pro included. You bring your own CLI subscriptions'],
-            ['Public repo activity (verified Oct 31, 2026)', 'ParadevAI/Paradev: last commit October 31, 2026, about 15,800 stars, public since October 21, 2025', 'Closed source, no public repo'],
+            ['Public repo activity (verified Nov 23, 2026)', 'ParadevAI/Paradev: last commit November 23, 2026, about 16,500 stars, public since October 21, 2025', 'Closed source, no public repo'],
           ],
-          caption: 'Product, pricing and GitHub facts verified on October 31, 2026 against paradev.com, docs.paradev.com and github.com/ParadevAI/Paradev.',
+          caption: 'Product, pricing and GitHub facts verified on November 23, 2026 against paradev.com, docs.paradev.com and github.com/ParadevAI/Paradev.',
         },
       ],
     },
@@ -138,7 +138,7 @@ Short version: pick Paradev if you want an IDE-shaped environment, source you ca
           items: [
             '<strong>You want an IDE, not a terminal grid.</strong> Paradev puts terminals, diff review, a PR pane with checks and merge, an in-app browser and a file editor in one window. If you want to review, preview and ship what your agents wrote without leaving the app, that shape fits better than ours.',
             '<strong>You want to run any CLI agent, not a curated list.</strong> Paradev lists 21 built-in agents and accepts any other terminal agent as a custom one. We integrate twelve agent CLIs: better for those twelve, worse for everything else.',
-            '<strong>You want to read the source.</strong> Elastic License 2.0 is not open source, but source available still beats a closed binary if you need to audit behaviour or self-host under their terms.',
+            '<strong>You want to read the source.</strong> Paradev has been open source under the MIT License since November 4, 2026 (it was Elastic License 2.0 before), so you can audit its behaviour, patch it or self-host it. A closed binary like ours does not allow that.',
             '<strong>You want automations and remote or cloud machines.</strong> Scheduled and event-driven automations, remote hosts and cloud workspaces point at unattended workflows that CodeAgentSwarm does not document. They need a paid plan.',
             '<strong>You work as a team or need an iPhone app now.</strong> Team and Enterprise plans, SSO, audit logs and a SOC 2 Type II report are on their pricing page, and the iPhone and iPad app is already on the App Store.',
             '<strong>You want a very large number of agents at once.</strong> 100+ parallel agents is their stated design target, and they have been shipping against it publicly since October 2025.',
@@ -157,7 +157,7 @@ Short version: pick Paradev if you want an IDE-shaped environment, source you ca
         {
           type: 'list',
           items: [
-            '<strong>You need Windows today.</strong> Paradev says Windows is planned with no date. CodeAgentSwarm ships a Windows desktop build.',
+            '<strong>You need Windows today.</strong> Paradev says Windows is not yet available. CodeAgentSwarm ships a Windows desktop build.',
             '<strong>You want one searchable history across vendors.</strong> Conversations from all twelve agents are stored and searchable in one place instead of twelve CLI formats on disk, with resume when the agent supports it. Paradev documents resume, fork and hand-off, but not a searchable history across agents.',
             '<strong>You want the board to stay on your machine.</strong> Our kanban is exposed through a local MCP server, so agents move their own tasks while they work. Paradev\'s task tools run on its hosted MCP server, tied to your organization.',
             '<strong>You want graded permissions with live diffs.</strong> Per-terminal diffs show what each agent touches in real time, and Turbo mode auto-approves the safe operations while the risky ones still stop and ask. Paradev\'s default Claude Code and Codex commands turn approval prompts off, which you can change in its settings.',
@@ -184,15 +184,15 @@ Short version: pick Paradev if you want an IDE-shaped environment, source you ca
   faq: [
     {
       question: 'Is Superset free and open source?',
-      answer: 'Superset is now called Paradev. It has a free plan at $0 for one user, with local workspaces, the desktop app and the CLI. Paid plans start at $20 per user per month ($16 billed yearly) for Pro, and add remote access, automations and the mobile app. On licensing the precise answer is that Paradev is source available under the Elastic License 2.0, which is not an OSI approved open source license: you can inspect the code, fork it and self-host it for your team, but it is not open source in the strict sense. CodeAgentSwarm is free during beta with Pro included, and closed source with no public repository.',
+      answer: 'Superset is now called Paradev. It has a free plan at $0 for one user, with local workspaces, the desktop app and the CLI. Paid plans start at $20 per user per month ($16 billed yearly) for Pro, and add remote access, automations and the mobile app. On licensing, yes: Paradev has been open source under the MIT License since November 4, 2026, so you can inspect, modify, fork and self-host it. Until then it was source available under the Elastic License 2.0, which is not an OSI approved open source license. CodeAgentSwarm is free during beta with Pro included, and closed source with no public repository.',
     },
     {
       question: 'Does Superset support Antigravity CLI, Kimi Code or Grok?',
-      answer: 'Yes. The Paradev README (formerly Superset) lists Antigravity CLI, Kimi Code and Grok as fully supported, alongside Claude Code, Codex CLI, Cursor Agent, OpenCode and others. Its docs note that Antigravity does not report a "needs input" state and that Kimi Code has no usage history or quota meter there. CodeAgentSwarm also integrates all three.',
+      answer: 'Yes. The Paradev README (formerly Superset) lists Antigravity CLI, Kimi Code and Grok as built-in agents, alongside Claude Code, Codex CLI, Cursor Agent, OpenCode and others. Its docs note that Antigravity does not report a "needs input" state and that Kimi Code has no usage history or quota meter there. CodeAgentSwarm also integrates all three.',
     },
     {
       question: 'Which one is more actively maintained?',
-      answer: 'Both are actively developed, and neither side wins this row. On October 31, 2026 the public ParadevAI/Paradev repository (formerly superset-sh/superset) had its last commit that same day, about 15,800 stars, desktop release v2.0.2 from October 29, 2026 and a public history going back to October 21, 2025. CodeAgentSwarm is closed source, so there is no public commit history to check: our cadence has to be taken on trust, which is a fair point against us.',
+      answer: 'Both are actively developed, and neither side wins this row. On November 23, 2026 the public ParadevAI/Paradev repository (formerly superset-sh/superset) had its last commit that same day, about 16,500 stars, desktop release v2.0.11 from November 20, 2026 and a public history going back to October 21, 2025. CodeAgentSwarm is closed source, so there is no public commit history to check: our cadence has to be taken on trust, which is a fair point against us.',
     },
     {
       question: 'Can I try both for free?',

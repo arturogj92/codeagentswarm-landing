@@ -1,77 +1,77 @@
 {
-  "verified_at": "2026-10-31",
+  "verified_at": "2026-11-23",
   "note": "Canonical verified competitor facts used by the comparison guides. Re-verify with competitor-refresh.mjs and update the guides plus this file together.",
   "competitors": [
     {
       "name": "T3 Code",
       "site": "https://t3.codes",
       "repo": "pingdotgg/t3code",
-      "stars": 33790,
-      "pushed_at": "2026-10-31",
+      "stars": 72845,
+      "pushed_at": "2026-11-23",
       "license": "MIT"
     },
     {
       "name": "Paradev (formerly Superset)",
       "site": "https://paradev.com",
       "repo": "ParadevAI/Paradev",
-      "stars": 15775,
-      "pushed_at": "2026-10-31",
-      "license": "Elastic-2.0"
+      "stars": 16497,
+      "pushed_at": "2026-11-23",
+      "license": "MIT"
     },
     {
       "name": "Paseo",
       "site": "https://paseo.sh",
       "repo": "getpaseo/paseo",
-      "stars": 22587,
-      "pushed_at": "2026-10-31",
+      "stars": 24739,
+      "pushed_at": "2026-11-23",
       "license": "Apache-2.0"
     },
     {
       "name": "Vibe Kanban",
       "site": "https://www.vibekanban.com",
       "repo": "BloopAI/vibe-kanban",
-      "stars": 28530,
-      "pushed_at": "2026-10-29",
+      "stars": 28794,
+      "pushed_at": "2026-11-15",
       "license": "Apache-2.0"
     },
     {
       "name": "opcode",
       "site": "https://opcode.sh",
       "repo": "winfunc/opcode",
-      "stars": 22428,
-      "pushed_at": "2026-09-18",
+      "stars": 22461,
+      "pushed_at": "2026-11-06",
       "license": "AGPL-3.0"
     },
     {
       "name": "Claude Squad",
       "site": "https://github.com/smtg-ai/claude-squad",
       "repo": "smtg-ai/claude-squad",
-      "stars": 8708,
-      "pushed_at": "2026-08-20",
+      "stars": 8851,
+      "pushed_at": "2026-11-13",
       "license": "AGPL-3.0"
     },
     {
       "name": "Nimbalyst",
       "site": "https://nimbalyst.com",
       "repo": "nimbalyst/nimbalyst",
-      "stars": 2006,
-      "pushed_at": "2026-10-31",
+      "stars": 2100,
+      "pushed_at": "2026-11-21",
       "license": "MIT"
     },
     {
       "name": "Pane",
       "site": "https://runpane.com",
       "repo": "greenfield-inc/Pane",
-      "stars": 594,
-      "pushed_at": "2026-10-31",
+      "stars": 674,
+      "pushed_at": "2026-11-23",
       "license": "AGPL-3.0"
     },
     {
       "name": "Parallel Code",
       "site": "https://parallelcode.app",
       "repo": "johannesjo/parallel-code",
-      "stars": 1069,
-      "pushed_at": "2026-10-31",
+      "stars": 1105,
+      "pushed_at": "2026-11-21",
       "license": "MIT"
     },
     {

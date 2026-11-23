@@ -16,7 +16,7 @@ Everything below was rechecked against Moonshot's official docs in October 2026.
     ctaAgent: 'claude-code',
     highlightedWords: ['Kimi K3', 'Claude Code'],
     publishedAt: '2026-07-17',
-    updatedAt: '2026-10-31',
+    updatedAt: '2026-11-23',
     alternateSlug: 'kimi-k3-con-claude-code',
   },
   sections: [
@@ -129,7 +129,7 @@ Everything below was rechecked against Moonshot's official docs in October 2026.
         },
         {
           type: 'paragraph',
-          text: 'The <code>ANTHROPIC_DEFAULT_*</code> lines matter more than they look. Claude Code picks different models for different jobs, and if you only set <code>ANTHROPIC_MODEL</code> it can still reach for a Haiku or Sonnet id that does not exist on Moonshot\'s endpoint. Pointing all of them at the same Kimi model, plus <code>CLAUDE_CODE_SUBAGENT_MODEL</code> for subagents, keeps every internal call working. Moonshot\'s example routes the Haiku tier to <code>kimi-k2.7-code</code>, but K2 models are closed to new platform accounts from October 31, 2026 and are planned for retirement by the end of December, so this setup keeps every tier on K3.',
+          text: 'The <code>ANTHROPIC_DEFAULT_*</code> lines matter more than they look. Claude Code picks different models for different jobs, and if you only set <code>ANTHROPIC_MODEL</code> it can still reach for a Haiku or Sonnet id that does not exist on Moonshot\'s endpoint. Pointing all of them at the same Kimi model, plus <code>CLAUDE_CODE_SUBAGENT_MODEL</code> for subagents, keeps every internal call working. Moonshot\'s own example now points the Haiku tier at <code>kimi-k3[1m]</code> too, since K2 models are closed to new platform accounts from October 31, 2026 and are planned for retirement by the end of December, so this setup keeps every tier on K3.',
         },
         {
           type: 'paragraph',

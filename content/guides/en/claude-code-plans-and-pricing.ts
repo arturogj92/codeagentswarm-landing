@@ -18,7 +18,7 @@ This guide lays out what is known, dates every number, and flags the parts you s
     ctaAgent: 'claude-code',
     highlightedWords: ['Claude Code', 'Plans', 'Pricing'],
     publishedAt: '2026-08-05',
-    updatedAt: '2026-10-31',
+    updatedAt: '2026-11-23',
     alternateSlug: 'planes-y-precios-de-claude-code',
   },
   sections: [
@@ -124,22 +124,23 @@ This guide lays out what is known, dates every number, and flags the parts you s
       content: [
         {
           type: 'paragraph',
-          text: 'You do not have to subscribe. Claude Code accepts an Anthropic API key and bills per token instead, with no monthly fee and no weekly wall. As of October 31, 2026 the current models cost, per million tokens:',
+          text: 'You do not have to subscribe. Claude Code accepts an Anthropic API key and bills per token instead, with no monthly fee and no weekly wall. As of November 23, 2026 the current models cost, per million tokens:',
         },
         {
           type: 'table',
           headers: ['Model', 'Input', 'Output'],
           rows: [
+            ['Claude Fable 5.2', '$8.00', '$40.00'],
             ['Claude Fable 5.1', '$10.00', '$50.00'],
             ['Claude Opus 5.5', '$4.00', '$20.00'],
             ['Claude Sonnet 5.5', '$2.00', '$10.00'],
             ['Claude Haiku 5.5', '$0.10 ($0.50 above 100K prompt tokens)', '$0.50 ($2.50 above 100K prompt tokens)'],
           ],
-          caption: 'Anthropic first-party API rates from the official pricing docs, verified October 31, 2026. Bedrock and Google Cloud are partner-operated and priced separately.',
+          caption: 'Anthropic first-party API rates from the official pricing docs, verified November 23, 2026. Bedrock and Google Cloud are partner-operated and priced separately.',
         },
         {
           type: 'paragraph',
-          text: 'The number that decides whether this is cheap or ruinous is <strong>prompt caching</strong>. On Opus 5.5 and Sonnet 5.5, cache hits cost 0.05x the base input price, a twentieth, and on Fable 5.1 0.025x (<a href="https://platform.claude.com/docs/en/about-claude/pricing" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Anthropic pricing docs</a>). Coding agents resend a large, mostly stable context on every turn, which is exactly the traffic caches are built for. A well-behaved agent session leans heavily on the cached rate. An agent that keeps invalidating its cache does not.',
+          text: 'The number that decides whether this is cheap or ruinous is <strong>prompt caching</strong>. On Opus 5.5 and Sonnet 5.5, cache hits cost 0.05x the base input price, a twentieth, and on Fable 5.2 and Fable 5.1 0.025x (<a href="https://platform.claude.com/docs/en/about-claude/pricing" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Anthropic pricing docs</a>). Coding agents resend a large, mostly stable context on every turn, which is exactly the traffic caches are built for. A well-behaved agent session leans heavily on the cached rate. An agent that keeps invalidating its cache does not.',
         },
         {
           type: 'paragraph',
@@ -172,7 +173,7 @@ This guide lays out what is known, dates every number, and flags the parts you s
             ['Grok Build', 'Yes, limited usage', 'X Subscription Plus, $8/month', 'X Subscription Ultra, $200/month', 'X Subscription pool shared with Grok and Cursor; API per token'],
             ['Cursor Agent', 'Free, limited usage', 'Plus, $8/month', 'Ultra, $200/month', 'Weekly pool for Cursor models; third-party models billed by usage'],
           ],
-          caption: 'Entry and top tiers per agent CLI, all verified October 31, 2026. Prices change often; each linked guide carries its own verification date.',
+          caption: 'Entry and top tiers per agent CLI, all verified November 23, 2026. Prices change often; each linked guide carries its own verification date.',
         },
         {
           type: 'paragraph',

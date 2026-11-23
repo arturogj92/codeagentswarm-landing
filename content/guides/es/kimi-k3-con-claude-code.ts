@@ -16,7 +16,7 @@ Todo lo de abajo se ha vuelto a contrastar con la documentación oficial de Moon
     ctaAgent: 'claude-code',
     highlightedWords: ['Kimi K3', 'Claude Code'],
     publishedAt: '2026-07-17',
-    updatedAt: '2026-10-31',
+    updatedAt: '2026-11-23',
     alternateSlug: 'kimi-k3-with-claude-code',
   },
   sections: [
@@ -129,7 +129,7 @@ Todo lo de abajo se ha vuelto a contrastar con la documentación oficial de Moon
         },
         {
           type: 'paragraph',
-          text: 'Las líneas <code>ANTHROPIC_DEFAULT_*</code> importan más de lo que parece. Claude Code elige modelos distintos para trabajos distintos, y si solo pones <code>ANTHROPIC_MODEL</code> puede intentar tirar de un id de Haiku o Sonnet que no existe en el endpoint de Moonshot. Apuntarlas todas al mismo modelo de Kimi, más <code>CLAUDE_CODE_SUBAGENT_MODEL</code> para los subagentes, mantiene funcionando cada llamada interna. El ejemplo de Moonshot manda el nivel Haiku a <code>kimi-k2.7-code</code>, pero los modelos K2 dejan de estar disponibles para cuentas nuevas de la plataforma desde el 31 de octubre de 2026 y Moonshot prevé retirarlos a finales de diciembre, así que esta configuración deja todos los niveles en K3.',
+          text: 'Las líneas <code>ANTHROPIC_DEFAULT_*</code> importan más de lo que parece. Claude Code elige modelos distintos para trabajos distintos, y si solo pones <code>ANTHROPIC_MODEL</code> puede intentar tirar de un id de Haiku o Sonnet que no existe en el endpoint de Moonshot. Apuntarlas todas al mismo modelo de Kimi, más <code>CLAUDE_CODE_SUBAGENT_MODEL</code> para los subagentes, mantiene funcionando cada llamada interna. El propio ejemplo de Moonshot ya manda también el nivel Haiku a <code>kimi-k3[1m]</code>, porque los modelos K2 dejan de estar disponibles para cuentas nuevas de la plataforma desde el 31 de octubre de 2026 y Moonshot prevé retirarlos a finales de diciembre, así que esta configuración deja todos los niveles en K3.',
         },
         {
           type: 'paragraph',

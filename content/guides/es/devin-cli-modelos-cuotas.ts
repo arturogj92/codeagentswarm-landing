@@ -14,7 +14,7 @@ const guide: Guide = {
       "Devin"
     ],
     "publishedAt": "2026-09-11",
-    "updatedAt": "2026-10-31",
+    "updatedAt": "2026-11-23",
     "alternateSlug": "devin-cli-models-usage-limits",
     "socialImage": "/images/guides/devin-cli-og-es.png"
   },
@@ -152,7 +152,7 @@ const guide: Guide = {
       "content": [
         {
           "type": "paragraph",
-          "text": "Devin documenta asignaciones diarias y semanales para Pro y puestos completos de Teams, y una asignación semanal sin límite diario para Max. La cuota incluida puede compartirse entre productos de Devin; los créditos adicionales tienen reglas de facturación propias. Consulta <a href=\"https://docs.devin.ai/admin/billing/self-serve\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">la facturación de Devin</a> para conocer las condiciones actuales."
+          "text": "Devin documenta asignaciones diarias y semanales para Pro y una asignación semanal sin límite diario para Max; Teams no tiene asignación por miembro y todo el uso sale de los créditos compartidos del equipo. La cuota incluida puede compartirse entre productos de Devin; los créditos adicionales tienen reglas de facturación propias. Consulta <a href=\"https://docs.devin.ai/admin/billing/self-serve\" class=\"text-neon-cyan hover:text-neon-purple transition-colors\">la facturación de Devin</a> para conocer las condiciones actuales."
         },
         {
           "type": "paragraph",

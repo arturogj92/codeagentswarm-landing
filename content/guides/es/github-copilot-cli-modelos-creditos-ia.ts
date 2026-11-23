@@ -14,7 +14,7 @@ const guide: Guide = {
     ctaAgent: 'copilot',
     highlightedWords: ['GitHub Copilot CLI'],
     publishedAt: '2026-10-08',
-    updatedAt: '2026-10-31',
+    updatedAt: '2026-11-23',
     alternateSlug: 'github-copilot-cli-models-ai-credits',
     relatedSlug: 'como-usar-github-copilot-cli',
     socialImage: '/images/guides/copilot-cli-og-es.png',
@@ -29,7 +29,7 @@ const guide: Guide = {
           type: 'table',
           headers: ['Plan de Copilot', 'Precio', 'Créditos de IA al mes'],
           rows: [
-            ['Free', 'Gratis', 'Ninguno; Copilot CLI usa selección automática de modelo dentro de una asignación mensual limitada de Chat'],
+            ['Free', 'Gratis', 'Una asignación mensual que GitHub no cuantifica; solo selección automática de modelo'],
             ['Pro', '10 $ al mes', '1.500 (1.000 base + 500 flexibles)'],
             ['Pro+', '39 $ al mes', '7.000 (3.900 base + 3.100 flexibles)'],
             ['Max', '100 $ al mes', '20.000 (10.000 base + 10.000 flexibles)'],
@@ -108,7 +108,7 @@ const guide: Guide = {
         },
         {
           type: 'paragraph',
-          text: 'Si solo iniciaste sesión con <code>copilot login</code> y no tienes GitHub CLI, el panel muestra la asignación como no disponible. Significa que no pudo leerla, no que tengas uso ilimitado. En Copilot Free, que no tiene créditos de IA, el panel muestra esa asignación mensual de Chat.',
+          text: 'Si solo iniciaste sesión con <code>copilot login</code> y no tienes GitHub CLI, el panel muestra la asignación como no disponible. Significa que no pudo leerla, no que tengas uso ilimitado. En Copilot Free, cuya asignación de créditos de IA GitHub no cuantifica, el panel muestra esa asignación mensual de Chat.',
         },
       ],
     },

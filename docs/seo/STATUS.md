@@ -1,8 +1,18 @@
 # SEO status
 
-Last updated: 2026-11-15
+Last updated: 2026-11-23
 
 Release state: the August 31 conversion, comparison and media changes passed production validation. Start post-release measurement only after the master deployment reports success.
+
+## November 23 weekly data refresh
+
+Competitors (GitHub API, READMEs and vendor sites, November 23): stars, last commits, releases and agent lists refreshed in the ranking and six comparison pairs, plus `scripts/competitor-facts.json`; visible verification dates moved from October 31 to November 23. Material changes: Paradev relicensed from Elastic 2.0 to MIT on November 4 (licence rows, pros and cons, FAQs rewritten); T3 Code went from about 33,800 to 72,800 stars, its README no longer says "very early" and now lists Kiro, Pi, Muse Code and fx; Paseo supports GitHub Copilot natively; Vibe Kanban shipped v0.1.46 on November 15, its first release since April; opcode had its first code change in almost a year on November 6; Claude Squad committed on November 13 (last release still August 20). The November 16 run left these changes uncommitted in its worktree and never pushed.
+
+Pricing (first-party pages only): new Claude Fable 5.2 API row ($8/$40); GPT-6.2 Astra replaces GPT-6 Astra as OpenAI's top model in the Sol guide; Copilot Free has an unquantified AI credit allowance; Cursor Teams seats are not pooled (Enterprise is), the $0.25 Cursor Token Rate applies only to Teams and Enterprise, legacy list adds Start; OpenCode Go uses one shared allowance, Go Teams needs two members, GLM-5.3-Flash is no longer free; Antigravity removes the free Claude 4.6 and GPT-OSS models on November 30, not November 2; Moonshot's Claude Code example now routes Haiku to `kimi-k3[1m]`; Devin Teams has no per-member allowance; Cline adds ClinePass ($9.99). The shared cross-agent table is unchanged except its date, identical in all 14 files.
+
+Not verified or left as published: x.ai/pricing and x.ai/cli return 403 (Grok facts confirmed through the x.ai news post, docs.x.ai and cursor.com); whether Codex CLI works on ChatGPT Free and Go (OpenAI's page names only the desktop app for those plans, so the table still says "Limited" and Go $8); Claude's 5 hour window "slides forward" (support article says it resets five hours after the first message, the costs page says rolling); Antigravity "unlimited command requests" (no longer on the plans page, not contradicted); Copilot effort levels (docs list five, CLI 1.0.114 accepts seven, guide kept). Muse Wonder Full plan prices still come only from Engadget.
+
+Out of scope, needs a decision: `metaDescription` of the Superset pair still says "source available" and the ranking pair still says "Verified October 31, 2026"; Vibe Kanban and Claude Squad descriptions say "verified October 2026". The Sol guide presents GPT-6.1 Sol as the Codex pick while Codex now recommends GPT-6.2 Sol. Devin SWE-2 is free only through November 30, so the Devin guides go stale on December 1. Kimi Code CLI is at 2.7.2 (guide cites 2.4.1 as of October 30). The weekly-limit guide's "Cursor Agent: Monthly" row describes the app's quota window, while current Cursor plans are weekly.
 
 ## November 15 release 2.5.0 content published ahead of the app
 

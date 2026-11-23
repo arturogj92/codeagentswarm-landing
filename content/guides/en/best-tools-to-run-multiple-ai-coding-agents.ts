@@ -7,12 +7,12 @@ export const guide: Guide = {
     title: 'The Best Tools to Run Multiple AI Coding Agents in Parallel (2026)',
     metaTitle: 'Best Tools to Run Multiple AI Coding Agents in Parallel (2026)',
     metaDescription: 'CodeAgentSwarm, T3 Code, Superset (Paradev), Paseo, Conductor, Claude Squad and more compared: stars, last commit, platforms. Verified October 31, 2026.',
-    intro: 'If you want to run several AI coding agents at once and still know what each of them is doing, the tools built for that job are CodeAgentSwarm, T3 Code, Superset, Paseo, Conductor, Vibe Kanban, Claude Squad and Nimbalyst. They are apps that run and supervise coding CLIs such as Claude Code, Codex CLI and OpenCode. They are not the same thing as LangGraph, CrewAI or AutoGen, which are libraries for building agent systems in code and cannot open a terminal for you.\n\nDisclosure before anything else: we build CodeAgentSwarm, so we are one of the tools on this list. That is exactly why the criteria are identical for everyone and why our own limitations are written down in the same section as our features. Product, licence, supported-agent and GitHub facts were verified on October 31, 2026 against each vendor\'s own site, docs and repository. Nothing in this guide is quoted from a competitor\'s marketing page without saying so. CodeAgentSwarm availability and supported agents were updated on October 5, 2026.\n\nWhat changed since August: Superset is now called Paradev, Paseo moved from AGPL-3.0 to Apache 2.0, Conductor and Paradev shipped iPhone apps, and Vibe Kanban announced it is sunsetting while still receiving community commits.',
+    intro: 'If you want to run several AI coding agents at once and still know what each of them is doing, the tools built for that job are CodeAgentSwarm, T3 Code, Superset, Paseo, Conductor, Vibe Kanban, Claude Squad and Nimbalyst. They are apps that run and supervise coding CLIs such as Claude Code, Codex CLI and OpenCode. They are not the same thing as LangGraph, CrewAI or AutoGen, which are libraries for building agent systems in code and cannot open a terminal for you.\n\nDisclosure before anything else: we build CodeAgentSwarm, so we are one of the tools on this list. That is exactly why the criteria are identical for everyone and why our own limitations are written down in the same section as our features. Product, licence, supported-agent and GitHub facts were verified on November 23, 2026 against each vendor\'s own site, docs and repository. Nothing in this guide is quoted from a competitor\'s marketing page without saying so. CodeAgentSwarm availability and supported agents were updated on October 5, 2026.\n\nWhat changed since August: Superset is now called Paradev, Paseo moved from AGPL-3.0 to Apache 2.0, Conductor and Paradev shipped iPhone apps, and Vibe Kanban announced it is sunsetting while still receiving community commits.',
     ctaText: 'If you want supervised parallel sessions across Claude Code, Codex CLI, Antigravity CLI, OpenCode, Kimi Code, Grok Build, Cursor Agent, Muse Code, Pi, Devin CLI, GitHub Copilot CLI and Cline on macOS, Windows or Linux, with notifications, shared history and a kanban the agents update themselves, CodeAgentSwarm is free during the beta. Download it and judge it against the table above.',
     ctaAgent: 'comparison',
     highlightedWords: ['AI Coding Agents', 'Parallel'],
     publishedAt: '2026-07-26',
-    updatedAt: '2026-10-31',
+    updatedAt: '2026-11-23',
     alternateSlug: 'mejores-herramientas-agentes-ia-en-paralelo',
   },
   sections: [
@@ -85,7 +85,7 @@ export const guide: Guide = {
         },
         {
           type: 'table',
-          headers: ['Tool', 'GitHub stars (Oct 31, 2026)', 'Last public commit', 'Platforms', 'Agents supported', 'Open source'],
+          headers: ['Tool', 'GitHub stars (Nov 23, 2026)', 'Last public commit', 'Platforms', 'Agents supported', 'Open source'],
           rows: [
             [
               'CodeAgentSwarm',
@@ -97,56 +97,56 @@ export const guide: Guide = {
             ],
             [
               'T3 Code',
-              'About 33,800',
-              'October 31, 2026',
+              'About 72,800',
+              'November 23, 2026',
               'macOS, Windows and Linux desktop; web; iOS and Android',
-              'Claude Code, Codex, Cursor, Grok Build, OpenCode and Antigravity, plus ACP agents such as Pi',
+              'Claude Code, Codex, Cursor, OpenCode, Grok Build, Antigravity, Kiro, Pi, Muse Code and fx, plus any ACP agent',
               'Yes, MIT',
             ],
             [
               'Superset (now Paradev)',
-              'About 15,800 (repo ParadevAI/Paradev)',
-              'October 31, 2026',
-              'macOS; experimental Linux AppImage; Windows planned; iPhone and iPad app on Pro',
+              'About 16,500 (repo ParadevAI/Paradev)',
+              'November 23, 2026',
+              'macOS; experimental Linux AppImage; no Windows build yet; iPhone and iPad app on Pro; Android app',
               '21 built-in, including Claude Code, Codex, Antigravity, OpenCode, Kimi Code, Grok, Cursor Agent and Gemini CLI, plus any CLI',
-              'Source available, Elastic License 2.0',
+              'Yes, MIT since November 4, 2026 (Elastic License 2.0 before)',
             ],
             [
               'Paseo',
-              'About 22,600',
-              'October 31, 2026',
+              'About 24,700',
+              'November 23, 2026',
               'Self-hosted daemon with macOS, Windows and Linux desktop, iOS and Android apps, web and CLI',
-              'Claude Code, Codex, OpenCode, Pi, Antigravity and Muse Code natively, plus dozens via ACP (Copilot, Cursor, Kimi, Grok, Devin)',
+              'Claude Code, Codex, GitHub Copilot, OpenCode, Pi, Antigravity and Muse Code natively, plus dozens via ACP (Cursor, Kimi, Grok, Devin, Cline)',
               'Yes, Apache 2.0 since August 27, 2026',
             ],
             [
               'Vibe Kanban',
-              'About 28,500',
-              'October 28, 2026',
+              'About 28,800',
+              'November 15, 2026',
               'Runs locally in the browser (npx), docs cover macOS, Windows and Linux; Docker self-hosting',
-              'Twelve, including Claude Code, Codex, GitHub Copilot, Gemini CLI, Amp, Cursor Agent CLI and OpenCode',
+              'More than ten, including Claude Code, Codex, GitHub Copilot, Gemini CLI, Amp, Cursor, OpenCode, Droid and Qwen Code',
               'Yes, Apache-2.0',
             ],
             [
               'opcode',
-              'About 22,400',
-              'September 18, 2026, README only (last code change October 16, 2025)',
+              'About 22,500',
+              'November 6, 2026, a fix after almost a year without code changes',
               'macOS and Linux builds in its last release, v0.2.0 (August 31, 2025)',
               'Claude Code',
               'Yes, AGPL-3.0',
             ],
             [
               'Claude Squad',
-              'About 8,700',
-              'August 20, 2026',
+              'About 8,900',
+              'November 13, 2026 (last release August 20, 2026)',
               'Terminal, tmux based, no GUI; macOS and Linux, Windows via WSL',
               'Claude Code, Codex, Gemini, Aider and any local command',
               'Yes, AGPL-3.0',
             ],
             [
               'Nimbalyst',
-              'About 2,000',
-              'October 31, 2026',
+              'About 2,100',
+              'November 21, 2026',
               'macOS, Windows and Linux; iOS app',
               'Claude Code and Codex; OpenCode, Copilot, Grok Build and Cursor Agent in alpha',
               'Yes, MIT',
@@ -160,12 +160,12 @@ export const guide: Guide = {
               'No, proprietary',
             ],
           ],
-          caption: 'Product, licence and supported-agent facts were read from each vendor\'s own site, docs or repository on October 31, 2026. GitHub stars and last commits were checked the same day.',
+          caption: 'Product, licence and supported-agent facts were read from each vendor\'s own site, docs or repository on November 23, 2026. GitHub stars and last commits were checked the same day.',
         },
         {
           type: 'callout',
           variant: 'info',
-          content: 'Every fact in this table was verified on October 31, 2026. Star counts move, repos get renamed or archived, products change names, and a tool that was quiet in September can ship in October. If a row is out of date or wrong, tell us and we will fix it and say when we did.',
+          content: 'Every fact in this table was verified on November 23, 2026. Star counts move, repos get renamed or archived, products change names or licences, and a tool that was quiet for a year can ship a fix in November. If a row is out of date or wrong, tell us and we will fix it and say when we did.',
         },
         {
           type: 'paragraph',
@@ -179,11 +179,11 @@ export const guide: Guide = {
       content: [
         {
           type: 'paragraph',
-          text: 'Stars measure accumulated interest, not software health. Two examples from the October 31 check. Vibe Kanban has about 28,500 stars and commits from October 28, 2026, yet its README and site say the project is sunsetting and will continue as open source and community maintained, as explained in their <a href="https://www.vibekanban.com/blog/shutdown" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">shutdown post</a>. opcode has about 22,400 stars, but its last code change was on October 16, 2025; the only commit since is a <a href="https://github.com/winfunc/opcode/commit/d1ca30a3c0c39fff01fde2f86c2d5af6a1db658b" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">README edit</a> on September 18, 2026, and its last release, v0.2.0, is from August 31, 2025.',
+          text: 'Stars measure accumulated interest, not software health. Two examples from the November 23 check. Vibe Kanban has about 28,800 stars and a commit and release from November 15, 2026, yet its README and site say the project is sunsetting and will continue as open source and community maintained, as explained in their <a href="https://www.vibekanban.com/blog/shutdown" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">shutdown post</a>. opcode has about 22,500 stars, but between October 16, 2025 and November 6, 2026 it had no code changes; the <a href="https://github.com/winfunc/opcode/commit/c24004d3bbc910bd30b49d402daec254dac26ab2" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">fix</a> that landed on November 6 is the first in almost a year, and its last release, v0.2.0, is from August 31, 2025.',
         },
         {
           type: 'paragraph',
-          text: 'Star counts and dates in the table were read on October 31, 2026. Before choosing, review recent changes, releases and issues relevant to your workflow. Today\'s count will not be current next month either.',
+          text: 'Star counts and dates in the table were read on November 23, 2026. Before choosing, review recent changes, releases and issues relevant to your workflow. Today\'s count will not be current next month either.',
         },
         {
           type: 'paragraph',
@@ -274,11 +274,11 @@ export const guide: Guide = {
       content: [
         {
           type: 'paragraph',
-          text: 'T3 Code calls itself the open-source control plane for coding agents. The repository pingdotgg/t3code was created on February 8, 2026 and had about 33,800 stars on October 31, 2026, up from about 21,100 two months earlier, with commits and a release (v0.1.6) that same day. Its README still describes the project as very early.',
+          text: 'T3 Code calls itself the open-source control plane for coding agents. The repository pingdotgg/t3code was created on February 8, 2026 and had about 72,800 stars on November 23, 2026, up from about 33,800 on October 31 and about 21,100 on August 31. It had commits that same day and a release (v0.1.11) on November 20, 2026.',
         },
         {
           type: 'paragraph',
-          text: 'The distribution story is the most flexible here: npx t3@latest on a machine with nothing installed, or the desktop app, with winget and Scoop on Windows, a Homebrew cask on macOS, the AUR and Nix on Linux, plus a web app and mobile apps. Per its README as of October 31, 2026 it drives Claude Code, Codex, Cursor, Grok Build, OpenCode and Antigravity, and its docs add agents from the ACP Registry. It offers git worktrees, a diff pane, an integrated terminal and browser, plan mode, remote access and a Commit, Push and Create PR path out of a finished session.',
+          text: 'The distribution story is the most flexible here: npx t3@latest on a machine with nothing installed, or the desktop app, with winget and Scoop on Windows, a Homebrew cask on macOS, the AUR and Nix on Linux, plus a web app and mobile apps. Per its README as of November 23, 2026 it drives Claude Code, Codex, Cursor, OpenCode, Grok Build, Antigravity, Kiro, Pi, Muse Code and fx, plus any ACP agent. It offers git worktrees, a diff pane, an integrated terminal and browser, plan mode, remote access and a Commit, Push and Create PR path out of a finished session.',
         },
         {
           type: 'paragraph',
@@ -295,7 +295,7 @@ export const guide: Guide = {
             'Runs with npx without installing anything, which no other tool here offers',
             'Packaged for macOS, Windows and Linux, with web and mobile apps',
             'One-click Commit, Push and Create PR out of a session',
-            'About 12,700 new stars in two months and commits landing daily',
+            'About 39,000 new stars between October 31 and November 23, 2026, and commits landing daily',
           ],
         },
         {
@@ -305,8 +305,7 @@ export const guide: Guide = {
         {
           type: 'list',
           items: [
-            'Its README calls the project very early and asks you to expect bugs',
-            'Kimi Code, Devin CLI and Muse Code are not built-in providers; some are reachable only through the ACP Registry',
+            'Kimi Code and Devin CLI are not built-in providers; they are reachable only through ACP',
             'A project that young is still moving fast, which cuts both ways',
           ],
         },
@@ -322,7 +321,7 @@ export const guide: Guide = {
         },
         {
           type: 'paragraph',
-          text: 'The repository, now ParadevAI/Paradev, had about 15,800 stars and a commit on October 31, 2026. Its README lists 21 built-in agents as fully supported, including Claude Code, Codex, Antigravity, OpenCode, Kimi Code, Grok, Cursor Agent and Gemini CLI, and any CLI can be added as a custom agent. The desktop app is free; Pro is $20 per user per month, Team $60 and Ultra $200. The licence deserves precision: Elastic License 2.0. The code is on GitHub and you can read it, but Elastic 2.0 is not OSI-approved, so the accurate phrase is source available rather than open source. If your company has a licence policy, that is the distinction that will come up in review.',
+          text: 'The repository, now ParadevAI/Paradev, had about 16,500 stars and a commit on November 23, 2026. Its README lists 21 built-in agents as fully supported, including Claude Code, Codex, Antigravity, OpenCode, Kimi Code, Grok, Cursor Agent and Gemini CLI, and any CLI can be added as a custom agent. The desktop app is free; Pro is $20 per user per month, Team $60 and Ultra $200. The licence changed recently: Paradev moved from the Elastic License 2.0, which is source available, to the MIT License on November 4, 2026, so it is now open source in the OSI sense. If your company has a licence policy, that is the distinction that will come up in review.',
         },
         {
           type: 'paragraph',
@@ -348,8 +347,7 @@ export const guide: Guide = {
         {
           type: 'list',
           items: [
-            'Elastic License 2.0 is source available, not OSI open source, which some organisations treat as disqualifying',
-            'No Windows build yet; Linux is an experimental AppImage, per their FAQ as of October 31, 2026',
+            'No Windows build yet; Linux is an experimental AppImage, per their README as of November 23, 2026',
             'Team features and automations sit behind paid plans, from $20 per user per month',
           ],
         },
@@ -365,7 +363,7 @@ export const guide: Guide = {
         },
         {
           type: 'paragraph',
-          text: 'The repository getpaseo/paseo had about 22,600 stars and a commit on October 31, 2026, and since August 27, 2026 its own code is under <a href="https://github.com/getpaseo/paseo/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Apache 2.0</a>, replacing AGPL-3.0. It runs Claude Code, Codex, OpenCode, Pi, Antigravity and Muse Code natively and dozens more through ACP, including Copilot, Cursor, Kimi, Grok and Devin, the widest published agent list in this guide. It gives you git worktrees, diff review, live streaming of agent output and local-first voice input, and states plainly that there is no telemetry and no forced login.',
+          text: 'The repository getpaseo/paseo had about 24,700 stars and a commit on November 23, 2026, and since August 27, 2026 its own code is under <a href="https://github.com/getpaseo/paseo/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">Apache 2.0</a>, replacing AGPL-3.0. It runs Claude Code, Codex, GitHub Copilot, OpenCode, Pi, Antigravity and Muse Code natively and dozens more through ACP, including Cursor, Kimi, Grok, Devin and Cline, the widest published agent list in this guide. It gives you git worktrees, diff review, live streaming of agent output and local-first voice input, and states plainly that there is no telemetry and no forced login.',
         },
         {
           type: 'paragraph',
@@ -425,7 +423,7 @@ export const guide: Guide = {
         },
         {
           type: 'paragraph',
-          text: 'Claude Squad manages multiple AI terminal agents such as Claude Code, Codex, Gemini and Aider as tmux sessions, and can launch an arbitrary local command. It is AGPL-3.0 and had about 8,700 stars on October 31, 2026. Its last commit and release, v1.0.20, are from August 20, 2026; issues and pull requests were still being opened in October. There is no GUI, which is a feature if you want to run it on a remote box over SSH and a problem if you wanted diffs and notifications on a desktop. For terminal purists it is the most natural fit here. We compare the two approaches in <a href="/en/guides/claude-squad-vs-codeagentswarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Squad vs CodeAgentSwarm</a>.',
+          text: 'Claude Squad manages multiple AI terminal agents such as Claude Code, Codex, Gemini and Aider as tmux sessions, and can launch an arbitrary local command. It is AGPL-3.0 and had about 8,900 stars on November 23, 2026. Its last release, v1.0.20, is from August 20, 2026, and its last commit from November 13, 2026. There is no GUI, which is a feature if you want to run it on a remote box over SSH and a problem if you wanted diffs and notifications on a desktop. For terminal purists it is the most natural fit here. We compare the two approaches in <a href="/en/guides/claude-squad-vs-codeagentswarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Claude Squad vs CodeAgentSwarm</a>.',
         },
         {
           type: 'heading',
@@ -435,7 +433,7 @@ export const guide: Guide = {
         },
         {
           type: 'paragraph',
-          text: 'Vibe Kanban offers a kanban task workflow and publishes its code under Apache-2.0. Its README and site say it is sunsetting after bloop shut down in April 2026 and will continue as open source and community maintained (<a href="https://www.vibekanban.com/blog/shutdown" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">announcement</a>). Commits kept landing through October 28, 2026, but the last GitHub release is v0.1.44 from April 24. Evaluate current releases and issues before adopting it. More detail in <a href="/en/guides/vibe-kanban-vs-codeagentswarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Vibe Kanban vs CodeAgentSwarm</a>.',
+          text: 'Vibe Kanban offers a kanban task workflow and publishes its code under Apache-2.0. Its README and site say it is sunsetting after bloop shut down in April 2026 and will continue as open source and community maintained (<a href="https://www.vibekanban.com/blog/shutdown" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">announcement</a>). A commit and a GitHub release, v0.1.46, landed on November 15, 2026, the first release since v0.1.44 on April 24. Evaluate current releases and issues before adopting it. More detail in <a href="/en/guides/vibe-kanban-vs-codeagentswarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Vibe Kanban vs CodeAgentSwarm</a>.',
         },
         {
           type: 'heading',
@@ -445,7 +443,7 @@ export const guide: Guide = {
         },
         {
           type: 'paragraph',
-          text: 'Nimbalyst is an open-source visual workspace for Claude Code and Codex: parallel sessions, AI diff review, a session kanban, and editing markdown, mockups, diagrams and code, with OpenCode, Copilot, Grok Build and Cursor Agent in alpha. The app is MIT and free; a paid Wiki Teams plan is $20 per user per month. The repository had about 2,000 stars and a commit on October 31, 2026. The star count is low because the repository is new, not because the project is: this is the tool formerly known as Crystal, and the old repo carries about 3,100 stars. If your work with agents produces documents and diagrams as often as code, this is the one shaped for that. More in <a href="/en/guides/nimbalyst-vs-codeagentswarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Nimbalyst vs CodeAgentSwarm</a>.',
+          text: 'Nimbalyst is an open-source visual workspace for Claude Code and Codex: parallel sessions, AI diff review, a session kanban, and editing markdown, mockups, diagrams and code, with OpenCode, Copilot, Grok Build and Cursor Agent in alpha. The app is MIT and free; a paid Wiki Teams plan is $20 per user per month. The repository had about 2,100 stars and a commit on November 21, 2026. The star count is low because the repository is new, not because the project is: this is the tool formerly known as Crystal, and the old repo carries about 3,100 stars. If your work with agents produces documents and diagrams as often as code, this is the one shaped for that. More in <a href="/en/guides/nimbalyst-vs-codeagentswarm" class="text-neon-cyan hover:text-neon-purple transition-colors">Nimbalyst vs CodeAgentSwarm</a>.',
         },
         {
           type: 'heading',
@@ -455,7 +453,7 @@ export const guide: Guide = {
         },
         {
           type: 'paragraph',
-          text: 'opcode is a desktop GUI and toolkit for Claude Code under AGPL-3.0, with macOS and Linux builds in its last release, v0.2.0, from August 31, 2025. Its latest default-branch commit, checked on October 31, 2026, is a <a href="https://github.com/winfunc/opcode/commit/d1ca30a3c0c39fff01fde2f86c2d5af6a1db658b" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">September 18 README edit</a>; the last code change is from October 16, 2025. That does not show that its Claude Code integration has kept up with a year of Claude Code releases. Review releases and functional changes before deciding whether it fits.',
+          text: 'opcode is a desktop GUI and toolkit for Claude Code under AGPL-3.0, with macOS and Linux builds in its last release, v0.2.0, from August 31, 2025. Checked on November 23, 2026, its latest default-branch commit is a <a href="https://github.com/winfunc/opcode/commit/c24004d3bbc910bd30b49d402daec254dac26ab2" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:text-neon-purple transition-colors">November 6 fix</a> for chat output and project paths, the first code change since October 16, 2025. One fix after almost a year does not show that its Claude Code integration has kept up with a year of Claude Code releases. Review releases and functional changes before deciding whether it fits.',
         },
       ],
     },
@@ -465,7 +463,7 @@ export const guide: Guide = {
       content: [
         {
           type: 'paragraph',
-          text: '<strong>Pane</strong> (runpane.com, now published by Greenfield, formerly Dcouple; repo greenfield-inc/Pane) is a terminal-first, AGPL-3.0 agent manager for Claude Code, Codex, Cursor Agent, Aider or any CLI agent, on macOS, Windows and Linux, with a Remote Pane mode for your phone. It had about 600 stars and a release (v2.4.212) on October 31, 2026. Small, and being worked on. The any-agent, any-OS combination is rarer than it sounds.',
+          text: '<strong>Pane</strong> (runpane.com, now published by Greenfield, formerly Dcouple; repo greenfield-inc/Pane) is a terminal-first, AGPL-3.0 agent manager for Claude Code, Codex, Cursor Agent, Aider or any CLI agent, on macOS, Windows and Linux, with a Remote Pane mode for your phone. It had about 670 stars and a release (v2.4.252) on November 23, 2026. Small, and being worked on. The any-agent, any-OS combination is rarer than it sounds.',
         },
         {
           type: 'paragraph',
@@ -511,11 +509,11 @@ export const guide: Guide = {
     },
     {
       question: 'Is CodeAgentSwarm open source?',
-      answer: 'No. CodeAgentSwarm is closed source and there is no public repository for the app. It is free during the beta with the Pro features included. If open source is a requirement for you, T3 Code (MIT), Paseo (Apache 2.0), Nimbalyst (MIT), Claude Squad (AGPL-3.0) and Vibe Kanban (Apache-2.0) are open source alternatives in the same category, and Superset, now Paradev, is source available under the Elastic License 2.0.',
+      answer: 'No. CodeAgentSwarm is closed source and there is no public repository for the app. It is free during the beta with the Pro features included. If open source is a requirement for you, T3 Code (MIT), Paseo (Apache 2.0), Nimbalyst (MIT), Claude Squad (AGPL-3.0), Vibe Kanban (Apache-2.0) and Paradev, formerly Superset (MIT since November 4, 2026), are open source alternatives in the same category.',
     },
     {
       question: 'Which of these tools are actively maintained in 2026?',
-      answer: 'Checked on October 31, 2026: Paradev (formerly Superset), Paseo, Nimbalyst, Pane and Parallel Code all had commits in the last week. Vibe Kanban had commits on October 28 but officially announced it is sunsetting and is now community maintained. Claude Squad\'s last commit and release are from August 20, 2026. opcode\'s last code change is from October 16, 2025, with only a README edit since. CodeAgentSwarm and Conductor have no public application commit history for this comparison.',
+      answer: 'Checked on November 23, 2026: T3 Code, Paradev (formerly Superset), Paseo, Nimbalyst, Pane and Parallel Code all had commits in the last week. Vibe Kanban had a commit and a release on November 15 but officially announced it is sunsetting and is now community maintained. Claude Squad\'s last commit is from November 13, 2026 and its last release from August 20, 2026. opcode had its first code change in almost a year on November 6, 2026, and no release since August 31, 2025. CodeAgentSwarm and Conductor have no public application commit history for this comparison.',
     },
     {
       question: 'Are LangGraph, CrewAI or AutoGen alternatives to these tools?',
@@ -523,7 +521,7 @@ export const guide: Guide = {
     },
     {
       question: 'What happened to Crystal?',
-      answer: 'Crystal was renamed to Nimbalyst. The old repository stravu/crystal states that Crystal is now Nimbalyst and points to nimbalyst.com. The current repository is nimbalyst/nimbalyst, MIT licensed, with about 2,000 stars and a commit on October 31, 2026. Older articles that recommend Crystal are describing the same product under its previous name.',
+      answer: 'Crystal was renamed to Nimbalyst. The old repository stravu/crystal states that Crystal is now Nimbalyst and points to nimbalyst.com. The current repository is nimbalyst/nimbalyst, MIT licensed, with about 2,100 stars and a commit on November 21, 2026. Older articles that recommend Crystal are describing the same product under its previous name.',
     },
     {
       question: 'Is Terragon still available?',
